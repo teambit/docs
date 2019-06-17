@@ -1,5 +1,5 @@
 {
-  "name": "docusaurus-starter-pack",
+  "name": "bit-docs",
   "version": "1.0.0",
   "description": "A starter pack for docusarus markdown generator.",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luctst/docusaurus-starter-pack.git"
+    "url": "git+https://github.com/teambit/docs.git"
   },
   "keywords": [],
-  "author": "tostée lucas",
+  "author": "teambit",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luctst/docusaurus-starter-pack/issues"
+    "url": "https://github.com/teambit/docs/issues"
   },
-  "homepage": "https://github.com/luctst/docusaurus-starter-pack#readme",
+  "homepage": "https://github.com/teambit/docs#readme",
   "devDependencies": {
     "docusaurus-init": "^1.0.1"
   }

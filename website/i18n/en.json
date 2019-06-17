@@ -3,33 +3,36 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A starter pack for docusaurus project.",
-    "css": "Custom CSS",
-    "Add css": "Add css",
-    "doc": "Create your documentation",
-    "Start your documentation": "Start your documentation",
-    "footer": "Configure your footer",
-    "Customize your footer": "Customize your footer",
-    "header": "Configure your header",
-    "Header": "Header",
-    "help": "Customize your help page",
-    "Help page": "Help page",
-    "homepage": "Configure your homepage",
-    "Homepage": "Homepage",
-    "overview": "Getting started",
-    "Overview": "Overview",
-    "publish": "Publish your site",
-    "Publishing your site": "Publishing your site",
-    "sidebar": "Configure your sidebar",
-    "Configure your sidebar": "Configure your sidebar",
-    "siteconfig": "siteConfig.js file",
-    "siteConfig.js": "siteConfig.js",
-    "Docs": "Docs",
-    "Help": "Help",
-    "Github": "Github",
-    "Setup": "Setup",
-    "Guide": "Guide",
-    "Memos": "Memos"
+    "tagline": "A website for testing",
+    "docs": {
+      "doc1": {
+        "title": "Latin-ish",
+        "sidebar_label": "Example Page"
+      },
+      "doc2": {
+        "title": "document number 2"
+      },
+      "doc3": {
+        "title": "This is document number 3"
+      },
+      "doc4": {
+        "title": "Other Document"
+      },
+      "doc5": {
+        "title": "Fifth Document"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "API": "API",
+      "Help": "Help",
+      "Blog": "Blog"
+    },
+    "categories": {
+      "Docusaurus": "Docusaurus",
+      "First Category": "First Category",
+      "Second Category": "Second Category"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
