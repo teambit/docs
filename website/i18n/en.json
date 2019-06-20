@@ -5,36 +5,131 @@
     "previous": "Previous",
     "tagline": "A website for testing",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "apis/compilers": {
+        "title": "Compilers APIs",
+        "sidebar_label": "Compilers"
       },
-      "doc2": {
-        "title": "document number 2"
+      "apis/bit-configuration": {
+        "title": "Bit Configuration",
+        "sidebar_label": "Configuration"
       },
-      "doc3": {
-        "title": "This is document number 3"
+      "apis/testers": {
+        "title": "Testers APIs",
+        "sidebar_label": "Testers"
       },
-      "doc4": {
-        "title": "Other Document"
+      "apis/workspace": {
+        "title": "Workspace Options",
+        "sidebar_label": "Workspace"
       },
-      "doc5": {
-        "title": "Fifth Document"
+      "cli/cli": {
+        "title": "Command Line Options",
+        "sidebar_label": "CLI Options"
+      },
+      "bit-cloud": {
+        "title": "Working with Bit Cloud",
+        "sidebar_label": "Bit Cloud"
+      },
+      "components/build": {
+        "title": "Building Components",
+        "sidebar_label": "Build"
+      },
+      "components/consume": {
+        "title": "Consuming Components",
+        "sidebar_label": "Consume"
+      },
+      "components/lifecycle": {
+        "title": "Components Lifecycle",
+        "sidebar_label": "Components Lifecycle"
+      },
+      "components/modify": {
+        "title": "Modifying Components",
+        "sidebar_label": "Modify"
+      },
+      "components/remove": {
+        "title": "Removing Components",
+        "sidebar_label": "Remove"
+      },
+      "components/share": {
+        "title": "Sharing Components",
+        "sidebar_label": "Share"
+      },
+      "components/test": {
+        "title": "Testing Components",
+        "sidebar_label": "Test"
+      },
+      "components/tracking": {
+        "title": "Components Tracking",
+        "sidebar_label": "Track"
+      },
+      "frameworks/react": {
+        "title": "Bit and React",
+        "sidebar_label": "React"
+      },
+      "frameworks/angular": {
+        "title": "Bit and Angular",
+        "sidebar_label": "Angular"
+      },
+      "frameworks/vue": {
+        "title": "Bit and Vue",
+        "sidebar_label": "Vue"
+      },
+      "guides/collections": {
+        "title": "Working with Collections",
+        "sidebar_label": "Working with Collections"
+      },
+      "guides/version-management": {
+        "title": "CI and Versioning",
+        "sidebar_label": "CI and Versioning"
+      },
+      "installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
+      },
+      "overview": {
+        "title": "Understanding Bit",
+        "sidebar_label": "Understandig Bit"
+      },
+      "troubleshoot": {
+        "title": "troubleshoot"
+      },
+      "tutorials/angular-components": {
+        "title": "Share Angular Components",
+        "sidebar_label": "Share Angular Components"
+      },
+      "tutorials/design-library": {
+        "title": "Share A Components Library",
+        "sidebar_label": "Share Components Library"
+      },
+      "tutorials/react-components": {
+        "title": "Share React Components",
+        "sidebar_label": "Share React Components"
       }
     },
     "links": {
+      "What is Bit?": "What is Bit?",
       "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
       "Blog": "Blog"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Getting started": "Getting started",
+      "Tutorials": "Tutorials",
+      "Guides": "Guides",
+      "Components": "Components",
+      "Frameworks": "Frameworks",
+      "CLI": "CLI",
+      "APIs": "APIs",
+      "Help": "Help"
     }
   },
   "pages-strings": {
+    "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)|no description given": "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)",
+    "Browse Docs|no description given": "Browse Docs",
+    "Ask questions about the documentation and project|no description given": "Ask questions about the documentation and project",
+    "Join the community|no description given": "Join the community",
+    "Find out what's new with this project|no description given": "Find out what's new with this project",
+    "Stay up to date|no description given": "Stay up to date",
+    "Need help?|no description given": "Need help?",
+    "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

@@ -1,10 +1,48 @@
 {
+  
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Getting started": [
+      "overview",
+      "installation",
+      "bit-cloud"
+    ],
+    "Tutorials": [
+      "tutorials/react-components",
+      "tutorials/angular-components",
+      "tutorials/design-library"
+    ],
+    "Guides": [
+      "guides/collections",
+      "guides/version",
+      "guides/"
+    ],
+    "Components": [
+      "components/lifecycle",
+      "components/tracking",
+      "components/build",
+      "components/test",
+      "components/share",
+      "components/consume",
+      "components/modify",
+      "components/remove"      
+    ],
+    "Frameworks": [
+      "frameworks/react",
+      "frameworks/angular",
+      "frameworks/vue"
+    ],
+    "CLI": [
+      "cli/add"
+    ],
+    "APIs": [
+      "apis/workspace",
+      "apis/configuration",
+      "apis/compilers",
+      "apis/testers"
+    ],
+    "Help": [
+      "troubleshoot",
+      "community"
+    ]
   }
 }
