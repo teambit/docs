@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Bit Documentation', // Title for your website.
-  tagline: 'A website for testing',
+  title: 'Bit Docs', // Title for your website.
+  tagline: 'The Components Collaboration Platform',
   url: 'https://docs.bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,9 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'overview', label: 'What is Bit?'},
-    {doc: 'installation', label: 'Docs'},
-    {blog: true, label: 'Blog'}
+    // {doc: 'overview', label: 'What is Bit?'},
+    // {doc: 'installation', label: 'Docs'},
+    // {blog: true, label: 'Blog'}
   ],
 
   docsSideNavCollapsible: true,
@@ -54,8 +54,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#074015',
-    secondaryColor: '#042c0e',
+    primaryColor: '#400080',
+    secondaryColor: '#d9b3ff',
   },
 
   /* Custom fonts for website */
