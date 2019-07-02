@@ -45,6 +45,14 @@
         "title": "Modifying Components",
         "sidebar_label": "Modify"
       },
+      "components/organize": {
+        "title": "Organizing Components",
+        "sidebar_label": "Organize"
+      },
+      "components/playground": {
+        "title": "Components Playground",
+        "sidebar_label": "Playground"
+      },
       "components/remove": {
         "title": "Removing Components",
         "sidebar_label": "Remove"
@@ -77,7 +85,7 @@
         "title": "Working with Collections",
         "sidebar_label": "Working with Collections"
       },
-      "guides/version-management": {
+      "guides/versions": {
         "title": "CI and Versioning",
         "sidebar_label": "CI and Versioning"
       },
@@ -89,12 +97,16 @@
         "title": "Understanding Bit",
         "sidebar_label": "Understandig Bit"
       },
+      "support": {
+        "title": "Support",
+        "sidebar_label": "Support"
+      },
       "troubleshoot": {
-        "title": "troubleshoot"
+        "title": "Troubleshoot",
+        "sidebar_label": "Troubleshoot"
       },
       "tutorials/angular-components": {
-        "title": "Share Angular Components",
-        "sidebar_label": "Share Angular Components"
+        "title": "tutorials/angular-components"
       },
       "tutorials/design-library": {
         "title": "Share A Components Library",
@@ -113,8 +125,8 @@
     "categories": {
       "Getting started": "Getting started",
       "Tutorials": "Tutorials",
-      "Guides": "Guides",
       "Components": "Components",
+      "Guides": "Guides",
       "Frameworks": "Frameworks",
       "CLI": "CLI",
       "APIs": "APIs",
@@ -122,14 +134,6 @@
     }
   },
   "pages-strings": {
-    "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)|no description given": "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)",
-    "Browse Docs|no description given": "Browse Docs",
-    "Ask questions about the documentation and project|no description given": "Ask questions about the documentation and project",
-    "Join the community|no description given": "Join the community",
-    "Find out what's new with this project|no description given": "Find out what's new with this project",
-    "Stay up to date|no description given": "Stay up to date",
-    "Need help?|no description given": "Need help?",
-    "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

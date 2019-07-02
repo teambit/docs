@@ -1,5 +1,4 @@
-{
-  
+{  
   "docs": {
     "Getting started": [
       "overview",
@@ -11,12 +10,9 @@
       "tutorials/angular-components",
       "tutorials/design-library"
     ],
-    "Guides": [
-      "guides/collections",
-      "guides/version",
-      "guides/"
-    ],
     "Components": [
+      "components/organize",
+      "components/playground",
       "components/lifecycle",
       "components/tracking",
       "components/build",
@@ -25,6 +21,12 @@
       "components/consume",
       "components/modify",
       "components/remove"      
+    ],
+    "Guides": [
+      "guides/collections",
+      "guides/versions",
+      "guides/authentication",
+      "guides/server"
     ],
     "Frameworks": [
       "frameworks/react",
@@ -42,7 +44,7 @@
     ],
     "Help": [
       "troubleshoot",
-      "community"
+      "support"
     ]
   }
 }

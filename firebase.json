@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "website/build/bit-docs",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
