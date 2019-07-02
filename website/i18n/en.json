@@ -81,9 +81,17 @@
         "title": "Bit and Vue",
         "sidebar_label": "Vue"
       },
+      "guides/authentication": {
+        "title": "Working with Collections",
+        "sidebar_label": "Working with Collections"
+      },
       "guides/collections": {
         "title": "Working with Collections",
         "sidebar_label": "Working with Collections"
+      },
+      "guides/server": {
+        "title": "Managing Bit Server",
+        "sidebar_label": "Bit Server"
       },
       "guides/versions": {
         "title": "CI and Versioning",
@@ -105,16 +113,17 @@
         "title": "Troubleshoot",
         "sidebar_label": "Troubleshoot"
       },
-      "tutorials/angular-components": {
-        "title": "tutorials/angular-components"
+      "tutorials/angular-tutorial": {
+        "title": "Angular Tutorial",
+        "sidebar_label": "Angular"
       },
-      "tutorials/design-library": {
-        "title": "Share A Components Library",
-        "sidebar_label": "Share Components Library"
+      "tutorials/react-tutorial": {
+        "title": "React Tutorial",
+        "sidebar_label": "React"
       },
-      "tutorials/react-components": {
-        "title": "Share React Components",
-        "sidebar_label": "Share React Components"
+      "tutorials/vue-tutorial": {
+        "title": "Vue Tutorial",
+        "sidebar_label": "Vue"
       }
     },
     "links": {
@@ -127,8 +136,6 @@
       "Tutorials": "Tutorials",
       "Components": "Components",
       "Guides": "Guides",
-      "Frameworks": "Frameworks",
-      "CLI": "CLI",
       "APIs": "APIs",
       "Help": "Help"
     }

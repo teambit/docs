@@ -6,9 +6,9 @@
       "bit-cloud"
     ],
     "Tutorials": [
-      "tutorials/react-components",
-      "tutorials/angular-components",
-      "tutorials/design-library"
+      "tutorials/react-tutorial",
+      "tutorials/angular-tutorial",
+      "tutorials/vue-tutorial"
     ],
     "Components": [
       "components/organize",
@@ -28,15 +28,8 @@
       "guides/authentication",
       "guides/server"
     ],
-    "Frameworks": [
-      "frameworks/react",
-      "frameworks/angular",
-      "frameworks/vue"
-    ],
-    "CLI": [
-      "cli/add"
-    ],
     "APIs": [
+      "apis/cli",
       "apis/workspace",
       "apis/configuration",
       "apis/compilers",

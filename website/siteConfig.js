@@ -21,9 +21,9 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Site', // Title for your website.
+  title: 'Bit Documentation', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
+  url: 'https://docs.bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'installation', label: 'What is Bit?'},
+    {doc: 'overview', label: 'What is Bit?'},
     {doc: 'installation', label: 'Docs'},
     {blog: true, label: 'Blog'}
   ],
@@ -59,18 +59,17 @@ const siteConfig = {
   },
 
   /* Custom fonts for website */
-  /*
+
   fonts: {
     myFont: [
-      "Times New Roman",
-      "Serif"
+      "CircularProBook",
+      "/css/custom.css"
     ],
     myOtherFont: [
-      "-apple-system",
+      "CircularProBlack",
       "system-ui"
     ]
   },
-  */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,

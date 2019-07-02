@@ -1,4 +1,34 @@
-/* your custom css */
+@font-face {
+    font-family: "CircularProBook";
+    src: url(CircularPro-Book.otf);
+  }
+  
+  /* headlines font */
+  @font-face {
+    font-family: "CircularProBlack";
+    src: url(CircularPro-Black.otf);
+  }
+  
+  /* headlines regular +bold */
+  @font-face {
+    font-family: "CircularProBold";
+    src: url(CircularPro-Bold.otf);
+  }
+  
+  /* headlines regular +semi-bold */
+  @font-face {
+    font-family: "CircularProMedium";
+    src: url(CircularPro-Medium.otf);
+  }
+
+body {
+    font-family: $myFont;
+    font-weigth
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
