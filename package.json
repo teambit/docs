@@ -4,8 +4,9 @@
   "description": "A starter pack for docusarus markdown generator.",
   "main": "index.js",
   "scripts": {
+    "build": "cd website && npm run build && cd -",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "firebase deploy"
+    "deploy": "npm run build && firebase deploy"
   },
   "repository": {
     "type": "git",

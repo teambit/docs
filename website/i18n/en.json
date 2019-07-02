@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "The Components Collaboration Platform",
     "docs": {
       "apis/compilers": {
         "title": "Compilers APIs",
@@ -126,11 +126,7 @@
         "sidebar_label": "Vue"
       }
     },
-    "links": {
-      "What is Bit?": "What is Bit?",
-      "Docs": "Docs",
-      "Blog": "Blog"
-    },
+    "links": {},
     "categories": {
       "Getting started": "Getting started",
       "Tutorials": "Tutorials",
