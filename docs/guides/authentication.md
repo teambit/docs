@@ -9,7 +9,7 @@ This guide describes how to connect bit client (cli) to work with the [Bit cloud
 
 ## Connect Bit Client to Bit Account
 
-You should have a free account on [bit.dev](https://bit.dev) or [Create one](https://bit.dev/signup).
+You should have a [bit.dev](https://bit.dev) account on  or [Create one](https://bit.dev/signup).
 
 There are two methods to authenticate a local Bit client with [bit.dev](https://bit.dev) account: 
 
@@ -17,62 +17,29 @@ There are two methods to authenticate a local Bit client with [bit.dev](https://
 - Using SSH
 
 
-> **Bit communication protocol**
+> **Using SSH in Bit**
 >
-> Bit uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
+> SSH is the preferred network protocol when using Bit.  uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
 > This makes SSH the preferred method for collaboration.
 
 ### Authenticate with Login
 
-Use [bit login](/docs/cli-login.html) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
+From the command line run: 
+```sh
+$ bit login
+```
+The [bit login](/apis/cli#login.html) command opens the browser window to log into the [bit.dev](https://bit.dev) account.
 
-To authenticate your Bit client, run the following command:
+Upon successful login, a new authentication token will be created and placed in the bit client configuration. The token can be seen by running: 
 
 ```bash
-$ bit login
-Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=http://localhost:8085...
+$ bit config
 ```
 
-The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/cli-config.html).
-
-
 ### Authenticate with SSH
+For authentiction with SSH, ssh keys are required, as explained [here](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html). 
 
-### Generate SSH Keys
-The documentation on Atlassian is great for 
-https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html
-
-If you know how to generate your SSH key, you can skip the next part and move to [authenticate your SSH Key to bit.dev](#upload-public-ssh-key-to-bitsrcio).
-
-#### Generate SSH key for macOS/Linux
-
-To generate an SSH key follow these steps:
-
-1. Open a terminal application.
-2. Run this command (replace ‘email’ with the email associated with your Bit.dev account):
-
-`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-
-3. Accept the default location for the key file.
-4. To add a private key to the SSH-agent please follow the steps below:
-
-Start the SSH agent: `eval "$(ssh-agent -s)"`
-
-Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
-
-#### Generate SSH key for Windows
-
-To generate an SSH key, please follow these steps:
-
-1. Download and start the [puttygen.exe generator](https://winscp.net/eng/docs/ui_puttygen).
-2. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
-3. Move your mouse on the small screen to generate the key pairs.
-4. Enter a key comment, which identifies the key (useful when you use several SSH keys).
-5. Click "Save private key" to save your private key.
-6. Click "Save public key" to save your public key.
-
-#### Upload public SSH key to bit.dev
-
+The public SSH key should be uploaded to `bit.dev`: 
 1. Log in to your [bit.dev](https://bit.dev/login) account.
 2. Click on the user icon to open the user actions menu.
 3. Click on the ‘Settings’ link to reach the user settings section. Once inside, click on ‘SSH Keys’ in the left pane.
@@ -83,43 +50,51 @@ To generate an SSH key, please follow these steps:
 
 A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev) community hub.
 
-### Manage authenticated devices
+## Manage authentication Tokens
 
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
 You can remove tokens, forcing Bit clients to re-authenticate themselves with your account.
 
-## Configure Local Bit Client
+## Configure Bit Client User Credentials
 
-To set your username and email in Bit, use the [bit config command](/docs/cli-config.html).
-
-* If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
-* If no configuration values are defined for Bit, it falls back to read the values from `git config`.
+User data should be set using the bit [CLI tool](apis/cli#config). 
 
 ```bash
-$ bit config set user.name "mickey mouse"
-$ bit config set user.email mickey@example.com
+$ bit config set user.name "Tuko Whaff"
+$ bit config set user.email tuko@bit-dev.com
 ```
+> If `bit login` was used, the username and email is set according to the Bit account.
+
+> If no data is set in the user credentials, Bit will attempt to use the git configuration on the local machine. 
 
 
-## Authentication Common Problems
-There are several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message.
+## Solving Authentication Problems
+
+The following error message can show up if there are authentication problems: 
+```sh
+fatal: permission to Collection <collectionname> was denied
+```
 
 ### Timeout after a long hang time
 
 Bit uses SSH to communicate with remote servers. A long hang time and authentication failure is usually the result of a firewall blocking the connection.  
 To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](support@bit.dev).
 
-**MacOS/Linux**
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--MacOS-->
 ```sh
 $ ssh hub.bit.dev
 ```
-
-**Windows**
-
+<!--Linux-->
+```sh
+$ ssh hub.bit.dev
+```
+<!--Windows-->
 ```sh
 $ telnet hub.bit.dev 22
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 ### Bit.dev account issues
 
