@@ -5,13 +5,17 @@
     "previous": "Previous",
     "tagline": "The Components Collaboration Platform",
     "docs": {
+      "apis/bit-client": {
+        "title": "Bit Client Configuration",
+        "sidebar_label": "Bit Client"
+      },
+      "apis/cli": {
+        "title": "CLI Commands",
+        "sidebar_label": "CLI Commands"
+      },
       "apis/compilers": {
         "title": "Compilers APIs",
         "sidebar_label": "Compilers"
-      },
-      "apis/bit-configuration": {
-        "title": "Bit Configuration",
-        "sidebar_label": "Configuration"
       },
       "apis/testers": {
         "title": "Testers APIs",
@@ -20,10 +24,6 @@
       "apis/workspace": {
         "title": "Workspace Options",
         "sidebar_label": "Workspace"
-      },
-      "cli/cli": {
-        "title": "Command Line Options",
-        "sidebar_label": "CLI Options"
       },
       "bit-cloud": {
         "title": "Working with Bit Cloud",
@@ -82,8 +82,8 @@
         "sidebar_label": "Vue"
       },
       "guides/authentication": {
-        "title": "Working with Collections",
-        "sidebar_label": "Working with Collections"
+        "title": "Bit User Authentication",
+        "sidebar_label": "User Authentication"
       },
       "guides/collections": {
         "title": "Working with Collections",

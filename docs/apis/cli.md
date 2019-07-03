@@ -1,14 +1,14 @@
 ---
 id: cli
-title: Command Line Options
-sidebar_label: CLI Options
+title: CLI Commands
+sidebar_label: CLI Commands
 ---
 
-`bit add <files>`
+Bit cli commands
 
-`bit a <files>`
+## add
+alias: `a`
 
-### Description
 Tracks any set of files as a single or multiple components. Specify a set of files, or a glob pattern of all the files to be added. 
 
 
@@ -17,5 +17,4 @@ Tracks any set of files as a single or multiple components. Specify a set of fil
 |`--id <id>` | `-i` | The ID of the component files are added to |
 |`--tests <tests>` | `-t` | Add paths to test files|
 |`--main <file>` | `-m` | The main file name
-
 

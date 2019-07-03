@@ -30,8 +30,8 @@
     ],
     "APIs": [
       "apis/cli",
+      "apis/bit-client",
       "apis/workspace",
-      "apis/configuration",
       "apis/compilers",
       "apis/testers"
     ],

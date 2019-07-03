@@ -25,14 +25,14 @@ body {
     font-family: $myFont;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2,h3,h4,h5,h6 {
     font-weight: 400
 }
 
 p{
     font-weight: 300;
     font-size: 18px;
-    color: #4a4a4a;
+    color: #444;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
