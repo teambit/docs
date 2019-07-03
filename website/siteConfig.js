@@ -54,7 +54,7 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#400080',
+    primaryColor: '#6C5CE7',
     secondaryColor: '#d9b3ff',
   },
 
@@ -71,8 +71,13 @@ const siteConfig = {
     ]
   },
 
+  algolia: {
+    apiKey: '24df807e1d9413cdd741492fe4ed86de',
+    indexName: 'bit__docs'
+  },
+
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} bit.dev`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
