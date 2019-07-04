@@ -53,7 +53,7 @@ A new item is added to the SSH key list. This means that you are now connected v
 ## Manage authentication Tokens
 
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
-You can remove tokens, forcing Bit clients to re-authenticate themselves with your account.
+You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
 
 ## Configure Bit Client User Credentials
 
@@ -68,12 +68,15 @@ $ bit config set user.email tuko@bit-dev.com
 > If no data is set in the user credentials, Bit will attempt to use the git configuration on the local machine. 
 
 
-## Solving Authentication Problems
+## Common Authentication Problems
+
+If you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
 
 The following error message can show up if there are authentication problems: 
 ```sh
 fatal: permission to Collection <collectionname> was denied
 ```
+Some potential causes: 
 
 ### Timeout after a long hang time
 
@@ -95,44 +98,28 @@ $ telnet hub.bit.dev 22
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-
-### Bit.dev account issues
-
-Some issues may relate to simply account configuration issues.
-
-#### You are not signed up to bit.dev
+### You are not signed up to bit.dev
 
 In order to import/export components hosted on [bit.dev](https://bit.dev) you need an to have an active account.  
 If you haven't signed up already, head over [here](https://bit.dev/signup).
 
-#### Wrong username/password combination
+### Wrong username/password combination
 
-In case you are not using [SSH key for authentication](/docs/setup-authentication.html), Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
-In case you have forgotten your password, head to your [setting page](https://bit.dev/settings/profile) to reset it.
+In case you are not using SSH key for authentication Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
+In case you have forgotten your password, head to your [setting page](https://bit.dev/settings/profile) to reset the password.
 
-#### No permission to the Collection
+### No permission to the Collection
 
 It may be that you do not have permissions to access the Collection in question.
 
 - If the Collection is public, you can import component from it, but you have to have write permissions to export to it.
 - If the Collection is private, you must have read/write permission in order to import/export components to it.
 
-### SSH keys issues
+### Private SSH key not found
 
-Bit uses SSH as the communication protocol between Bit and [bit.dev](https://bit.dev). In order to make this process works smoothly, you require to either configure Bit to use a specific SSH key, [as seen here](/docs/setup-authentication.html).  
-There are several configuration issues that may occur if you hit any permission issues when working with SSH keys and remote Collections.
+Check for the location of the private SSH key that is  configured to your SSH agent. If the configured path points to a wrong location, Bit will not be able to authenticate.
 
-**If the SSH connection is not established due to issues with SSH keys, Bit will fail to authenticate.**
-
-> *Bit and SSH Agent*
->
-> In you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
-
-#### Private SSH key not found
-
-Check for the location of the private SSH key that is either configured to your SSH agent. If the configured path points to a wrong location, Bit will not be able to authenticate.
-
-#### SSH Agent process is down
+### SSH Agent process is down
 
 Check if the SSH agent process is running correctly, and you key is configured.  
 Run these command to start the process and add the correct private key.
@@ -142,10 +129,10 @@ eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 ```
 
-#### SSH key has a passphrase
+### SSH key has a passphrase
 
 In case you use `bit config ssh_key_file` to point Bit to the location of your private key, and that key has a passphrase, Bit will not be able to use it properly. In such cases, please refer to using an SSH agent instead.
 
-#### No/Wrong public key uploaded to bit.dev
+### No/Wrong public key uploaded to bit.dev
 
-Check if you are using the right public SSH key for your profile.
+Go to you profile settings and make sure the correct publick key was uploaded to Bit. 

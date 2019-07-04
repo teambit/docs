@@ -26,7 +26,8 @@
       "guides/collections",
       "guides/versions",
       "guides/authentication",
-      "guides/server"
+      "guides/server",
+      "guides/registry"
     ],
     "APIs": [
       "apis/cli",

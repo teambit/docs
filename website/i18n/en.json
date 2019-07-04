@@ -89,6 +89,10 @@
         "title": "Working with Collections",
         "sidebar_label": "Working with Collections"
       },
+      "guides/registery": {
+        "title": "Configuring Bit Registery",
+        "sidebar_label": "Configuring Bit Registery"
+      },
       "guides/server": {
         "title": "Managing Bit Server",
         "sidebar_label": "Bit Server"
@@ -126,7 +130,10 @@
         "sidebar_label": "Vue"
       }
     },
-    "links": {},
+    "links": {
+      "What is Bit?": "What is Bit?",
+      "APIs": "APIs"
+    },
     "categories": {
       "Getting started": "Getting started",
       "Tutorials": "Tutorials",

@@ -4,12 +4,41 @@ title: Understanding Bit
 sidebar_label: Understandig Bit
 ---
 
-### What is Bit? 
+## Why Bit? 
 Modern web architectures are built with components. The major frameworks, [React](https://reactjs.com), [Vue](https://vuejs.org/), and [Angular](https://angular.io) all shares the concept of using components based architecture to construct state-of-the-art appllications. Even the browsers themselves are now supporting components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standards. 
 
-Composing components with well-defined responsibilities is a long-lived principle for writing better, more scalable and simpler to maintain software. [Encapsulated and reusable components]((https://addyosmani.com/first/)) with focused APIs are the building blocks for building software applications better and faster. 
+[Encapsulated and reusable components]((https://addyosmani.com/first/)) with focused and well defined APIs are the building blocks for building software applications better and faster. 
 
-Bit helps teams to scale components reusability by alow sharing them across teams, projects and repositories. 
+Bit let team scale components reusability by giving them flexible collaboration process that spans the traditional Version Control Systems repositories.  
+
+## What is Bit? 
+Here is what Bit Does: 
+
+## Detached Component Development
+Bit let you develop a component which is isolated from the rest of the project. 
+
+  - testing
+  - building
+  - rendering in isolation
+  - linting
+  - linking
+
+
+## Component Teamwork
+ (collaboration on shared code)
+  - versioning
+  - change management across component and repos (change bubbling [inc. auto-updates], branching across components and repos)
+  - isolation
+
+## Component Discovery
+
+- discovery
+  - search
+  - filters
+  - visuals
+- isolated (detach) component development. (capsule, rendering/storybook)
+
+Bundled Component Shell (envs)
 
 ### Bit Architecture
 

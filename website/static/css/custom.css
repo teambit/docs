@@ -25,15 +25,7 @@ body {
     font-family: $myFont;
 }
 
-h1, h2,h3,h4,h5,h6 {
-    font-weight: 400
-}
 
-p{
-    font-weight: 300;
-    font-size: 18px;
-    color: #444;
-}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
@@ -49,3 +41,63 @@ p{
 
 @media only screen and (min-width: 1500px) {
 }
+
+body {
+  font-weight: 400;
+  color: $fontColor
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 1.2em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-weight: 600;
+  font-size:1em;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+li {
+  line-height: 1.6em;
+}
+
+a {
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+.fixedHeaderContainer {
+  background-color: $secondaryColor;
+  min-height: 56px;
+  padding: 10px;
+  & header {
+    background-color: $secondaryColor;
+  }
+}
+
+.headerTitleWithLogo {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.onPageNav a {
+  font-size: 0.9em;
+  color: $onPageNavFont;
+}
+
+.onPageNav .active {
+  color: $primaryColor;
+}
+
+
