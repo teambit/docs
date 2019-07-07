@@ -36,6 +36,9 @@ A **bit workspace** is a single project that is tracking components and sharing 
 
 
 ### Bit Highlevel workflow
+![Bit Workflow](assets/workflow.png)
+
+
 `bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
 `bit import <compiler name> --compiler` to add an existing compiler to build the component. 
 `bit tag` a component to seal a version of a component with all files at their current state. 
