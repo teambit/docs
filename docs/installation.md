@@ -16,12 +16,15 @@ To start working with Bit follow the steps bellow
 
 
 ## Sign for a Bit Account
+In order to start using Bit a Bit account is required. The Bit account let you create components' collections and join existing collections. 
+To sign up for a free Bit account go to [bit.dev](https://bit.dev). 
 
+You can signup with an email or using your github credentials. 
 
 ## Install Bit CLI
 
 The Bit CLI should be locally installed on your computer. 
-Bit can be installed  on Mac, Windows or Linux. 
+Bit can be installed on Mac, Windows or Linux. 
 
 The bit cli can be installed using `npm`, `yarn` or `homebrew` (mac only).
 
@@ -52,16 +55,21 @@ Once installed, verify the installation by running the following command:
 ```bash
 bit --version
 ```
+You should get the Bit version. 
+
 
 ## Login to your Bit Account
+Once bit is installed on your machine, you can log into your account. Run the command: 
+```bash
+$ bit login
+```
+You will be taken to the browser to log into the account. If you are already logged in, a success message will be displayed. 
 
+Bit is now ready to use with your credentials. 
 
-Alternatively, you can [set up bit authentication using SSH](). 
+Alternatively, you can [set up Bit authentication using SSH](/guides/authentication). 
 
-## Create Bit Collection
-
-
-## Configure Bit Workspace
+You can now start installing and sharing components using Bit. 
 
 
 

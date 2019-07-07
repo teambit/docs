@@ -89,9 +89,9 @@
         "title": "Working with Collections",
         "sidebar_label": "Working with Collections"
       },
-      "guides/registery": {
-        "title": "Configuring Bit Registery",
-        "sidebar_label": "Configuring Bit Registery"
+      "guides/registry": {
+        "title": "Configuring Bit Registry",
+        "sidebar_label": "Configuring Bit Registry"
       },
       "guides/server": {
         "title": "Managing Bit Server",
