@@ -11,8 +11,6 @@ To start working with Bit follow the steps bellow
 - Sign for a Bit Account
 - Install Bit CLI
 - Login to Bit Account
-- Create Bit Collection
-- Configure Bit Workspace
 
 
 ## Sign for a Bit Account
