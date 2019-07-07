@@ -21,13 +21,13 @@ Bit is designed to help teams scale the sharing and management of open source an
 By analyzing the component structure, each component is becoming a stand-alone entity that can be shared and used across multiple projects. Bit provides tools for **building**, **testing**, **linting**, **linking** and **rendering** each component in its own canned environments, so it is clear what the component is built upon. 
 
 ### Component Teamwork
-*Build applications with components from different projects.*
+*Share components between different projects.*
 
 A team can work together on a component’s shared code even when projects are located in separate Version Control repositories. Versions and changes are managed per each component, and changes from one component can bubble to the components that depend on it. 
 **Isolating** each component from the rest of the project makes the introduction of a component in a new project a lightning-fast process. 
 
 ### Component Discovery
-*Find the right component for the project.*
+*Find the right components for the project.*
 
 Generic search tools (read: Google) can help in locating components only to a certain level. Finding the right component for the project usually requires drilling into the components behind what a search engine can provide. 
 Bit provides a Components Hub with dedicated searching and filtering capabilities that can narrow the components search to list only the components that are adequate to your project, by **language**, **framework**, **dependencies**, and **size**. 
