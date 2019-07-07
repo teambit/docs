@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Bit - The Component Collaboration Platform
-sidebar_label: Bit Introduction
+sidebar_label: Bit Overview
 ---
 ## What is Bit? 
 Modern web architectures are built with components. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well defined APIs are the building blocks for constructing software applications better and faster.
@@ -11,23 +11,26 @@ Projects and applications are built from components that are assembled together 
 
 ​In Bit, each component is an encapsulated piece of code that handles a single responsibility, representing a well-defined functionality and composable with other components to build larger projects. Bit manages each component separately with its dependencies and compiling and testing utilities. 
 
-Bit is designed to help teams scale the sharing and management of open sourced and closed source components to hundreds and even thousands of components.
+Bit is designed to help teams scale the sharing and management of open source and closed source components to hundreds and even thousands of components.
 
 ## What Can Bit Do? 
 
 ### Isolated Component Environment
-*Bit detaches the component from the rest of the project.*
-By analyzing the component structure, each component is becoming a stand-alone entity that can be shared and used across multiple projects. Bit provides tools for building, testing, linting, linking and rendering each component in its own canned environments, so it is clear what the component is built upon. 
+*Detach the component from the rest of the project.*
+
+By analyzing the component structure, each component is becoming a stand-alone entity that can be shared and used across multiple projects. Bit provides tools for **building**, **testing**, **linting**, **linking** and **rendering** each component in its own canned environments, so it is clear what the component is built upon. 
 
 ### Component Teamwork
-*Bit allows teams to build applications with components from different projects.* 
+*Build applications with components from different projects.*
+
 A team can work together on a component’s shared code even when projects are located in separate Version Control repositories. Versions and changes are managed per each component, and changes from one component can bubble to the components that depend on it. 
-Isolating each component from the rest of the project makes the introduction of a component in a new project a lightning-fast process. 
+**Isolating** each component from the rest of the project makes the introduction of a component in a new project a lightning-fast process. 
 
 ### Component Discovery
-*Bit helps finding the right component for the project.*
+*Find the right component for the project.*
+
 Generic search tools (read: Google) can help in locating components only to a certain level. Finding the right component for the project usually requires drilling into the components behind what a search engine can provide. 
-Bit provides a Components Hub with dedicated searching and filtering capabilities that can narrow the components search to list only the components that are adequate to your project, by language, framework, dependencies, and size. 
+Bit provides a Components Hub with dedicated searching and filtering capabilities that can narrow the components search to list only the components that are adequate to your project, by **language**, **framework**, **dependencies**, and **size**. 
 When searching components, each component is displayed in a fenced playground that make the component visual and shows how it can be used, built and tested. 
 
 ## How Does Bit work?
