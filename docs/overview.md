@@ -9,11 +9,11 @@ The major frontend frameworks, [React](https://reactjs.com), [Vue](https://vuejs
 
 Projects and applications are built from components that are assembled together to create something bigger. This is usually a teamed collaborative process. 
 
-​In Bit, each component is an encapsulated piece of code that handles a single responsibility, representing a well-defined functionality and composable with other components to build larger projects. Bit manages each component separately with its dependencies and compiling and testing utilities. 
+In Bit, each component is created by specifying all the files that build it. Bit analyzes each component to identify all of its dependencies. Each component is associated with compiling and testing utiltiies for building and validating each component. Any Bit component that is uploaded to the bit.dev cloud is also being rendered and includes examples that visualize the components with multiple variations.  
 
-Bit is designed to help teams scale the sharing and management of open source and closed source components to hundreds and even thousands of components.
+Bit components sharing accelarate teams' work to build applications with hundreds and thousands of components.
 
-## What Can Bit Do? 
+## What Does Bit Do? 
 
 ### Isolated Component Environment
 *Detach the component from the rest of the project.*
@@ -38,16 +38,21 @@ A **bit workspace** is a single project that is tracking components and sharing 
 **Bit.dev** is a cloud-based components hub, that is used for publishing and sharing components between bit workspaces. 
 
 
-### Bit Highlevel workflow
+### Bit Workflow
 ![Bit Workflow](assets/workflow.png)
 
 
-`bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
-`bit import <compiler name> --compiler` to add an existing compiler to build the component. 
-`bit tag` a component to seal a version of a component with all files at their current state. 
-`bit export` the component to a remote Bit Collection to make it shareable to other users in your project or in the community. 
-`bit install` the component in another Bit workspace to use it in another project. 
-`bit import` the component in another Bit workspace to get its source code, so it can be modified and re-exported to the remote collection. 
+- `bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
+
+- `bit import <compiler name> --compiler` to add an existing compiler to build the component. 
+
+- `bit tag` a component to seal a version of a component with all files at their current state. 
+
+- `bit export` the component to a remote Bit Collection to make it shareable to other users in your project or in the community. 
+
+- `bit install` the component in another Bit workspace to use it in another project. 
+
+- `bit import` the component in another Bit workspace to get its source code, so it can be modified and re-exported to the remote collection. 
 
 ## Is Bit...? 
 ### Is Bit the same as Git?
