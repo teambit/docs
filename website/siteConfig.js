@@ -56,7 +56,7 @@ const siteConfig = {
   colors: {
     primaryColor: '#6C5CE7',
     secondaryColor: '#3A27CE',
-    fontColor: '#4a4a4a',
+    fontColor: '#686868',
     onPageNavFont: '#6C707C' 
   },
 

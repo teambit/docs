@@ -69,6 +69,14 @@
         "title": "Components Tracking",
         "sidebar_label": "Track"
       },
+      "components/workspace": {
+        "title": "Bit Workspaces",
+        "sidebar_label": "Workspaces"
+      },
+      "concepts": {
+        "title": "Bit Concepts",
+        "sidebar_label": "Bit Concepts"
+      },
       "frameworks/react": {
         "title": "Bit and React",
         "sidebar_label": "React"

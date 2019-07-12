@@ -2,6 +2,7 @@
   "docs": {
     "Getting started": [
       "overview",
+      "concepts",
       "installation",
       "bit-cloud"
     ],
