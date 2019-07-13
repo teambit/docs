@@ -5,4 +5,4 @@ sidebar_label: Bit Concepts
 ---
 
 ## Bit Concepts
-![Bit Concepts](assets/architecture.png)
+![Bit Concepts](assets/concepts.png) 
