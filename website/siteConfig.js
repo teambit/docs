@@ -73,6 +73,8 @@ const siteConfig = {
     ]
   },
 
+  editUrl: 'https://github.com/teambit/docs/edit/master/docs/',
+
   algolia: {
     apiKey: '24df807e1d9413cdd741492fe4ed86de',
     indexName: 'bit__docs'

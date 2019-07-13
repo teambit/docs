@@ -1,31 +1,28 @@
-# docusaurus-starter-pack
-*This repo is a boilerplate for quickly create an static documentation website*
-
-
-## Features
-- **Powered by ReactJs** - docusaurus is written in ReactJs and maintained by Facebook.
-- **Ready to start** - this repo was created to be simple to use, by this way you can have a full static website ready for internet in just a few minutes.
-- **Design ready** - By default docusaurus bring some simple design who can be sufficient, but you can easily change some components as you want.
-
-
-## Installation
-Fork this repo to create your own version. Or use git clone to have this stater pack on your computer.
-
-` git clone https://github.com/luctst/docusaurus-starter-pack.git `
-> You must have at least node 6.x
+# bit.dev docs
+This repo contains the source code and documentation powering [bit.dev](https://docs.bit.dev/).
+The website is based on [Docusaurus1](https://docusaurus.io/en/)
 
 ## Getting started
-Check the documentation [here](https://luctst.github.io/docusaurus-starter-pack/) and start to build you own website documentation.
-> **Note:** This website himself is powered by docusaurus and hosted by github pages.
 
+### Installation
+1. `npm i` to install top level dependencies
+
+### Running locally
+
+1. `cd website` to go into the project root
+1. `npm i` to install the website's npm dependencies
+1. `npm run start` to start the hot-reloading development server 
+1. `open http://localhost:3000` to open the site in your browser
+
+## Deployment
+Deployment (for authorized users) is done on firebase-hosting. 
+1. Push changes to the github repo
+1. run `$(npm bin)/firebase login` from root directory to open your browser and login into firebase (firebase tools )
+1. Run `npm run deploy` to build and publish the latest version.  
 
 ## Contributing
-Please read our contributing files in our [.github](https://github.com/luctst/docusaurus-starter-pack/tree/master/.github) folder for details on our code of conduct, and the process for submitting pull requests to us.
 
+Contributions are welcome. 
+You can just hit the "Edit" button on each page to make change to the content of the page. 
 
-## Authors
-- **Tostée Lucas** - Follow him on [Twitter](https://twitter.com/ltostee), personal website [Tostée lucas](https://www.lucas-tostee.com)
-
-
-## Licence
-This project is licensed under the MIT licence, see the [LICENCE](https://github.com/luctst/docusaurus-starter-pack/blob/master/LICENSE) for details.
+Images should be placed in the `docs/assets` files and be linked into. 
