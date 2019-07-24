@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd website && npm run build && cd -",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run build && firebase deploy"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,6 @@
   },
   "homepage": "https://github.com/teambit/docs#readme",
   "devDependencies": {
-    "docusaurus-init": "^1.0.1",
-    "firebase-tools": "^7.0.2"
+    "docusaurus-init": "^1.12.0"
   }
 }
