@@ -64,6 +64,12 @@ h3 {
   font-size:1.2em;
 }
 
+h4 {
+  font-weight: 600;
+  font-size:1.1em;
+}
+
+
 p {
   margin-bottom: 1.2em;
   line-height: 1.6em;
