@@ -36,7 +36,7 @@ yarn global add bit-bin
 
 ### Install Binary Executable 
 
-| [MacOS](#macos) | [Windows](#windows) | [Unix](#unix) |
+| [MacOS](#macos) | [Windows](#windows) | [Linux](#linux) |
 | :-------: |:-------:| :-------:|
 
 --- 
@@ -69,7 +69,7 @@ set PATH=%PATH%;C:\bit\
 
 ---
 
-### Unix
+### Linux
 
 You can use package installer as per your distribution or download the executable directly. 
 
@@ -139,3 +139,20 @@ Alternatively, you can [set up Bit authentication using SSH](/guides/authenticat
 
 You can now start installing and sharing components using Bit. 
 
+## Initialize Bit Workspace
+
+You need to initialize your project's  as a [bit workspace](docs/concepts#developer-setup), in order to start tracking components. 
+
+In the root folder of your project run: 
+
+```bash
+bit init
+```
+
+### Reset Bit Workspace
+
+If an error caused data corruption you can add the `--reset` flag to `bit init` to re-initialize the workspace.
+
+```bash
+bit init --reset
+```
