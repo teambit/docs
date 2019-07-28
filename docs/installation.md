@@ -9,10 +9,11 @@ To start working with Bit follow the steps bellow
 - Sign for a Bit Account[]
 - Install Bit CLI
 - Login to Bit Account
+- Setup Bit Workspace
 
 ## Sign for a Bit Account
 
-In order to start using Bit a Bit account is required. The Bit account let you create components' collections and join existing collections. 
+In order to start using Bit a Bit account is required. The Bit account let you create components' collections and join existing collections.
 To sign up for a free Bit account go to [bit.dev](https://bit.dev).
 
 You can sign with an email or using your github credentials.

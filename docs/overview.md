@@ -11,22 +11,25 @@ Projects and applications are built from components that are assembled together 
 
 In Bit, each component is created by specifying all the files that build it. Bit analyzes each component to identify all of its dependencies. Each component is associated with compiling and testing utiltiies for building and validating each component. Any Bit component that is uploaded to the bit.dev cloud is also being rendered and includes examples that visualize the components with multiple variations.  
 
-Bit components sharing accelarate teams' work to build applications with hundreds and thousands of components.
+Bit components sharing accelerate teams' work to build applications with hundreds and thousands of components.
 
 ## What Does Bit Do? 
 
 ### Isolated Component Environment
+
 *Detach the component from the rest of the project.*
 
 By analyzing the component structure, each component is becoming a stand-alone entity that can be shared and used across multiple projects. Bit provides tools for **building**, **testing**, **linting**, **linking** and **rendering** each component in its own canned environments, so it is clear what the component is built upon. 
 
 ### Component Teamwork
+
 *Share components between different projects.*
 
 A team can work together on a component’s shared code even when projects are located in separate Version Control repositories. Versions and changes are managed per each component, and changes from one component can bubble to the components that depend on it. 
 **Isolating** each component from the rest of the project makes the introduction of a component in a new project a lightning-fast process. 
 
 ### Component Discovery
+
 *Find the right components for the project.*
 
 Generic search tools (read: Google) can help in locating components only to a certain level. Finding the right component for the project usually requires drilling into the components behind what a search engine can provide. 
@@ -34,13 +37,13 @@ Bit provides a Components Hub with dedicated searching and filtering capabilitie
 When searching components, each component is displayed in a fenced playground that make the component visual and shows how it can be used, built and tested. 
 
 ## How Does Bit work?
-A **bit workspace** is a single project that is tracking components and sharing them. Components tracking is done using the **Bit CLI** commands. 
-**Bit.dev** is a cloud-based components hub, that is used for publishing and sharing components between bit workspaces. 
 
+A **bit workspace** is a single project that is tracking components and sharing them. Components tracking is done using the **Bit CLI** commands. 
+**Bit.dev** is a cloud-based components hub, that is used for publishing and sharing components between bit workspaces.
 
 ### Bit Workflow
-![Bit Workflow](assets/workflow.png)
 
+![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow.png)
 
 - `bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
 
