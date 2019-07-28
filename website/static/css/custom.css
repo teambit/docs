@@ -21,12 +21,6 @@
     src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Medium.otf);
   }
 
-body {
-    font-family: $myFont;
-}
-
-
-
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
@@ -43,6 +37,7 @@ body {
 }
 
 body {
+  font-family: $myFont;
   font-weight: 400;
   color: $fontColor
 }
@@ -50,7 +45,6 @@ body {
 h1 {
   font-weight: 600;
   font-size: 2em;
-  margin-bottom: 1.2em;
 }
 
 h2 {
@@ -61,12 +55,12 @@ h2 {
 
 h3 {
   font-weight: 600;
-  font-size:1.2em;
+  font-size:1.25em;
 }
 
 h4 {
   font-weight: 600;
-  font-size:1.1em;
+  font-size:1em;
 }
 
 
@@ -97,14 +91,3 @@ a {
   color: #ffffff;
   margin-left: 10px;
 }
-
-.onPageNav a {
-  font-size: 0.9em;
-  color: $onPageNavFont;
-}
-
-.onPageNav .active {
-  color: $primaryColor;
-}
-
-
