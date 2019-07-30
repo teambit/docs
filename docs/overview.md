@@ -3,13 +3,14 @@ id: overview
 title: Bit - The Component Collaboration Platform
 sidebar_label: Bit Overview
 ---
-## What is Bit? 
+## What is Bit?
+
 Modern web architectures are built with components. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well defined APIs are the building blocks for constructing software applications better and faster.
 The major frontend frameworks, [React](https://reactjs.com), [Vue](https://vuejs.org/), and [Angular](https://angular.io) all share the concept of using components based architecture to compose state-of-the-art applications. Even the browsers themselves are now supporting components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standards.
 
 Projects and applications are built from components that are assembled together to create something bigger. This is usually a teamed collaborative process. 
 
-In Bit, each component is created by specifying all the files that build it. Bit analyzes each component to identify all of its dependencies. Each component is associated with compiling and testing utiltiies for building and validating each component. Any Bit component that is uploaded to the bit.dev cloud is also being rendered and includes examples that visualize the components with multiple variations.  
+In Bit, each component is created by specifying all the files that build it. Bit analyzes each component to identify all of its dependencies. Each component is associated with compiling and testing utilities for building and validating each component. Any Bit component that is uploaded to the bit.dev cloud is also being rendered and includes examples that visualize the components with multiple variations.  
 
 Bit components sharing accelerate teams' work to build applications with hundreds and thousands of components.
 
@@ -43,7 +44,7 @@ A **bit workspace** is a single project that is tracking components and sharing 
 
 ### Bit Workflow
 
-![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow.png)
+![Bit Workflow](assets/flow.jpg)
 
 - `bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
 

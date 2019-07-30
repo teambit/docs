@@ -93,7 +93,7 @@ The server is only used as a components storage and does not include the compone
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, a login is required from the local workspace. 
 Unlike Bit CLI tool that is open-sourced, Bit server is proprietary and owned by Bit. 
 
-![Bit.dev](assets/bit.dev.jpg])
+![Bit.dev](assets/bit.dev.jpg)
 
 Bit.dev server provides these functions: 
 
