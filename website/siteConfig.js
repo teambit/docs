@@ -68,9 +68,23 @@ const siteConfig = {
       "/css/custom.css"
     ],
     myOtherFont: [
-      "CircularProBlack",
-      "system-ui"
+      "CircularProBlack"
+    ],
+    bookFont: [
+      "CircularProBook"
+    ],
+    blackFont: [
+      "CircularProBlack"
+    ],
+    boldFont: [
+      "CircularProBold"
+    ],
+    mediumFont: [
+      "CircularProMedium"
     ]
+
+
+
   },
 
   editUrl: 'https://github.com/teambit/docs/edit/master/docs/',

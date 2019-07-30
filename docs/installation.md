@@ -22,24 +22,11 @@ You can sign with an email or using your github credentials.
 
 ## Install Bit CLI
 
-You can install Bit CLI as a binary executable (recommended) or using NPM / Yarn. 
-
-### Install using NPM or Yarn
-
-> Requires node 8.12 and above.
-
-```bash
-npm install bit-bin --global
-    or
-yarn global add bit-bin  
-```
-
-### Install Binary Executable 
+You can install Bit CLI as a binary executable (recommended) or using [NPM / Yarn](#npm-or-yarn).
 
 | [MacOS](#macos) | [Windows](#windows) | [Linux](#linux) |
 | :-------: |:-------:| :-------:|
 
---- 
 
 ### MacOS
 
@@ -111,6 +98,18 @@ You can copy the bit executable to a directory in your path, or any directory th
 
 ```bash
 sudo cp bit /usr/local/bin/ && rm bit
+```
+
+---
+
+### NPM or Yarn
+
+> Requires node 8.12 and above.
+
+```bash
+npm install bit-bin --global
+    or
+yarn global add bit-bin  
 ```
 
 ---
