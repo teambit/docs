@@ -4,15 +4,21 @@ title: CLI Commands
 sidebar_label: CLI Commands
 ---
 
+
 Bit cli commands
+
+Commands that are marked as workspace only must be executed inside a workspace. Commands that are marked as not workspace only, can be executed from anywhere and will run on a remote server.
+
+---
 
 ## add
 
 alias: `a`
 
+Workspace only: yes
+
 `bit add <files | directory | pattern >`
 Tracks any set of files as a single or multiple components. Specify a set of files, or a glob pattern of all the files to be added. Check [tracking components](//todo).
-
 
 **Track a single file as component**: 
 
@@ -20,19 +26,19 @@ Tracks any set of files as a single or multiple components. Specify a set of fil
 bit add src/foo/bar.js
 ```
 
-**Track multiple components**: 
+**Track multiple components**:
 
 ```bash
 bit add src/foo/bar.js src/utils/connect.js
 ```
 
-**Track a whole directory as a single component**: 
+**Track a whole directory as a single component**:
 
 ```bash
 bit add src/foo/
 ```
 
-**Track each sub directory as a component**: 
+**Track each sub directory as a component**:
 
 ```bash
 bit add src/**/
@@ -47,14 +53,18 @@ bit add src/**/
 |`--exclude <file...>` | `-e` | exclude files, directory or patterns 
 |`--override <true>`  | `-o` | override existing components. default = false 
 
+---
+
 ## build
+
+Workspace only: yes
 
 `bit build [id]`
 
 Build the component with the default or specified compiler. Default compiler is defined in the bit configuration(//todo). 
 Build command is automatically performed before a component is tagged. Building a component may change the component if its dependencies were changed.
 
-**Build all components**: 
+**Build all components**:
 
 ```bash
 bit build
@@ -71,9 +81,12 @@ bit build foo/bar
 |`--verbose` | `-v` | Show verbose output 
 |`--no-cache` | `-c` | Ignore component build files cache
 
+---
+
 ## checkout
 
 alias: `c`
+Workspace only: yes
 
 Merge the version of the sourced component(s) to your workspace
 
@@ -111,37 +124,77 @@ bit checkout 0.0.3 --all
 |`--skip-npm-install` | | Do not install npm packages for imported components. 
 |`--ignore dist` |  | Do not write dist files for incoming components
 
+---
+
+## deprecate
+
+alias: `d`
+
+Workspace only: no
+
+`bit deprecate <Ids...>`
+
+Marks a local or a remote component as deprecated
+
+Mark local component as deprecated:
+
+```bash
+bit deprecate foo/bar
+```
+
+Mark remote component as deprecated:
+
+```bash
+bit deprecate me.collection/foo/bar --remote
+```
+
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--remote` | `-r` | deprecate a component from a remote collection
+
+---
+
 ## diff
 
-`bit diff <component Ids> [version..]`
+Workspace only: yes
+
+`bit diff <Ids...> [version version]`
 
 Show differences between components' files locally. Rum `bit import` to get versions from the remote collection. 
 
-Runs `diff` for all components in local Collection. Comparing local state in the working tree to the component objets in the Collection.
+Compare all the component in working directory to their latest version in local workspace:
 
 ```bash
 bit diff
 ```
 
-Compare component in local scope to working file: 
+Compare a single component in working directory to local scope:
 
 ```bash
-bit diff bit.example/foo/bar
+bit diff me.collection/foo/bar
 ```
 
-*Compare the specified version to used or modified files
+Compare the component in working directory to the specified version in local workspace:
 
 ```bash
-bit diff bit.example/foo/bar 1.0.0
+bit diff me.collection/foo/bar 1.0.0
 ```
 
-* Compare between two specific versions of a component
+Compare between two specific versions of a component in local workspace:
 
 ```bash
-bit diff bit.example/foo/bar 1.0.0 2.0.0
+bit diff me.collection/foo/bar 1.0.0 2.0.0
 ```
+
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--verbose` | `-v` | Show detailed output
+
+---
 
 ## doctor
+
+Workspace only: yes
 
 `bit doctor`
 
@@ -153,7 +206,11 @@ Run diagnosis on your workspace, to view errors and fixing hints. Send output to
 |`--json` | `-j` | Return diagnoses in json format
 |`--list` | | List all available diagnoses
 
+---
+
 ## eject
+
+Workspace only: yes
 
 `bit eject <component Id ...>`
 replaces the components from the local scope with the corresponding NPM packages. If code was modified locally, use `--force` to override.
@@ -163,6 +220,8 @@ replaces the components from the local scope with the corresponding NPM packages
 |`--force` | `-f` | Ignore local version. Eject the components even when they are staged or modified
 |`--json` | `-j` | Print the results in JSON format
 
+---
+
 ## export
 
 `bit export <remote> [id...]`
@@ -171,17 +230,20 @@ Push staged component(s) to a remote Collection.
 **Export all staged components to the same Collection**: 
 
 ```bash
-bit export bit.examples
+bit export me.collection
 ```
 
 **Export a specific component to a Collection**:
 
 ```bash
-bit export bit.examples foo/bar
+bit export me.collection foo/bar
 ```
+
 | **Option** | **Alias** | **Description**
 |---|---|---|
 |`--eject` | `-e` | Replaces the exported components from the local scope with the corresponding packages.
+
+---
 
 ## import
 
@@ -196,7 +258,10 @@ Import components into current workspace. Can specify specific component(s) and 
 |`--tester` | `-t` | Import a tester component 
 |`--compiler` | `-c` | Import a compiler component
 |`--extension`  | `-x` | Import an extension component
-|`--environment` | `-e` | Install development environment dependencies (compiler and tester)
+|`--environment` | `-e` | Install component's compiler and tester during import.
+
+
+
 |  -p|  --path <path> | Import components into a specific directory
 |  -o|  --objects           | import components objects only, don't write the components to the file system. This is a default behavior for import with no id
 |  -d|  --display-dependencies | display the imported dependencies
