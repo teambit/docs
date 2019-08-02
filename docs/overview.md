@@ -44,7 +44,7 @@ A **bit workspace** is a single project that is tracking components and sharing 
 
 ### Bit Workflow
 
-![Bit Workflow](assets/flow.jpg)
+![Bit Workflow](assets/flow.png)
 
 - `bit add` a new component from a project with all the files that construct the component. The component is now tracked (in the .bitmap file in the workspace root). 
 
