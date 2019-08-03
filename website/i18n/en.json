@@ -26,8 +26,8 @@
         "sidebar_label": "Workspace"
       },
       "bit-cloud": {
-        "title": "Working with Bit Cloud",
-        "sidebar_label": "Bit Cloud"
+        "title": "bit.dev Cloud Service",
+        "sidebar_label": "bit.dev"
       },
       "components/build": {
         "title": "Building Components",
