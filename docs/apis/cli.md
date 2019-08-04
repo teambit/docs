@@ -130,7 +130,7 @@ bit checkout 0.0.3 --all
 
 alias: `d`
 
-Workspace only: no
+Workspace only: no. Can deprecate a remote component without a workspace. 
 
 `bit deprecate <Ids...>`
 
@@ -224,6 +224,10 @@ replaces the components from the local scope with the corresponding NPM packages
 
 ## export
 
+alias: `e`
+
+Workspace only: yes
+
 `bit export <remote> [id...]`
 Push staged component(s) to a remote Collection.
 
@@ -249,9 +253,49 @@ bit export me.collection foo/bar
 
 alias: `i`
 
-`bit import [id...|pattern][@version]`
+Workspace only: yes
 
-Import components into current workspace. Can specify specific component(s) and their versions. The component will be imported to the default location specified in the [configuration](workspace/#componentsdefaultdirectory)
+`bit import [ids...|pattern][@version]`
+
+Import components into current workspace. Can specify specific component(s) and their versions. The component will be imported to the default location specified in the [configuration](workspace/#componentsdefaultdirectory). By default Bit will generate a package.json specific for the component and install all dependencies. 
+
+**Import latest version of all sourced components**:
+
+```bash
+bit import
+```
+
+**Import a single component**:
+
+```bash
+bit import me.collection/foo/bar
+```
+
+**Import an entire collection**:
+
+```bash
+bit import me.collection/*
+```
+
+**Import an entire namespace in a collection**:
+
+```bash
+bit import me.collection/foo/*
+```
+
+**Import a single component to a different directory**:
+
+```bash
+bit import me.collection/foo/bar
+```
+
+**Import components and pass extra arguments to the package installer**:
+
+> Note the double dashes
+
+```bash
+bit import -- --production --no-optional
+```
 
 | **Option** | **Alias** | **Description**
 |---|---|---|
@@ -259,16 +303,120 @@ Import components into current workspace. Can specify specific component(s) and 
 |`--compiler` | `-c` | Import a compiler component
 |`--extension`  | `-x` | Import an extension component
 |`--environment` | `-e` | Install component's compiler and tester during import.
+|`--path path` | `-p` | Import components into a specific directory
+|`--objects` | `-o` | Import components objects only, don't write the components to the file system. This is a default behavior for import with no id 
+|`--display-dependencies` | `-d` | Display the imported dependencies
+|`--override` | `-O` | Override local changes in workspace
+|`--verbose` | `-v` | Show verbose output
+|`--ignore-dist` | | Skip writing the component's build files during import
+|`--conf [path]`| | Write the configuration file (bit.json) and the envs configuration files to the path directory or to the default directory, if path was not provided. 
+|`--skip-npm-install` | | Do not install packages of the imported components. //ToDo
+|`--ignore-package-json` | | Do not generate package.json for the imported component(s). Will also skip npm install and dependencies-as-components //ToDo
+|`--merge [strategy]` |`-m` | Merge imported version into the local workspace and apply the git merging strategy: "theirs", "ours", or "manual".
+
+## install
+
+Workspace only: yes
+
+`bit install [id]`
+
+Installs all dependencies for all the imported components (or for a specific one), whether they were defined in your package.json or in each of the sourced components, and links them.
+
+**Install dependencies for all sourced components**:
+
+```bash
+bit install
+```
+
+**Install dependencies for specific component**:
+
+```bash
+bit install foo/bar
+```
+
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--verbose` | `-v` | Show verbose output
+
+## init
+
+Workspace only: Initiates or Reset a workspace.
+
+`bit init`
+Initializes a [bit workspace](docs/concepts#bit-workspace) and create the needed directories. 
+
+**Init a workspace**:
+
+```bash
+bit init
+```
+
+**Init a bare workspace**:
+
+```bash
+bit init --bare
+```
+
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--bare` | `-b` | Initialize an empty bit bare scope
+|`--shared <groupname>` | `-s` | Add group write permissions to a scope properly //ToDo
+|`--standalone` | `-t` | Do not create the component scope inside the .git directory and do not write config data inside package.json
+|`--reset` | `-r` | Write missing or damaged Bit files. Useful when you have corrupted data
+|`--reset-hard` | | Removes Bit completely from a local workspace. Use this in case you want to completely remove Bit from your project. Delete .bitmap, bit.json and .bit. 
+|`--force` | `-f` | Force workspace initialization without clearing local objects
+
+## link
+
+alias: `b` //ToDo
+
+Workspace only: yes
+
+`bit link` 
+
+[Generates links](//Todo) to the components in the project’s node_modules and to sourced components that are dependencies for other components. This enables importing components and dependencies that are referenced with absolute paths (e.g. ../foo.js).  
+
+**Link all sourced components**:
+
+```bash
+bit link
+```
+
+## list
+
+alias: `ls`
+
+Workspace only: no. Can show components on remote collection.
+
+`bit ls [collection]` 
+Shows a list of all available components in a local workspace or a remote Collection.
+
+**List all components in current workspace**:
+
+```bash
+bit list 
+```
+
+**List all components in remote collection**:
+
+```bash
+bit list me.collection
+```
+
+**List all components in remote collection with the specified ids**:
+
+```bash
+bit list me.collection --ids 'bar,foo' 
+```
+
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--ids <ids...>` | `-ids` | Show only components with specified ids
+|`--namespace <namespace>` | `-n` | Show only the components in a specific name space
+|`--scope` | `-s` | Show all components of the scope, including indirect dependencies
+|`--bare` | `-b` | Show raw detailed output
+|`--outdated` | `-o` | Show the components versions in local workspace, in local scope and in remote 
+|`--json` | `-j` | Show the output in JSON format
+|`--json` | `-j` | Show the output in JSON format
 
 
-
-|  -p|  --path <path> | Import components into a specific directory
-|  -o|  --objects           | import components objects only, don't write the components to the file system. This is a default behavior for import with no id
-|  -d|  --display-dependencies | display the imported dependencies
-|  -O|  --override          | override local changes
-|  -v|  --verbose           | showing verbose output for inspection
-|    | --ignore-dist           | write dist files (when exist) to the configured directory
-|    |--conf [path]           | write the configuration file (bit.json) and the envs configuration files (use --conf without path to write to the default dir)
-|    |  --| skip-npm-install      | do not install packages of the imported components. (it automatically enables |save| dependencies-as-components flag)
-|    |--ignore-package-json   | do not generate package.json for the imported component(s). (it automatically enables skip-npm-install |and have-dependencies-as-components flags)
-|  -m| --merge [strategy]  | merge local changes with the imported version. strategy should be "theirs", "ours" or "manual"
