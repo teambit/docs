@@ -93,6 +93,10 @@
         "title": "Bit User Authentication",
         "sidebar_label": "User Authentication"
       },
+      "guides/ci": {
+        "title": "Running Bit on CI",
+        "sidebar_label": "User Authentication"
+      },
       "guides/collections": {
         "title": "Working with Collections",
         "sidebar_label": "Working with Collections"

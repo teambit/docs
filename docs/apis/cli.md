@@ -360,7 +360,7 @@ bit init --bare
 | **Option** | **Alias** | **Description**
 |---|---|---|
 |`--bare` | `-b` | Initialize an empty bit bare scope
-|`--shared <groupname>` | `-s` | Add group write permissions to a scope properly //ToDo
+|`--shared <groupname>` | `-s` | When installing a local server, add the [system group](http://man7.org/linux/man-pages/man5/group.5.html) that will have write permissions to the scope. Any users added to the group will be able to write to the scope. 
 |`--standalone` | `-t` | Do not create the component scope inside the .git directory and do not write config data inside package.json
 |`--reset` | `-r` | Write missing or damaged Bit files. Useful when you have corrupted data
 |`--reset-hard` | | Removes Bit completely from a local workspace. Use this in case you want to completely remove Bit from your project. Delete .bitmap, bit.json and .bit. 
@@ -419,4 +419,36 @@ bit list me.collection --ids 'bar,foo'
 |`--json` | `-j` | Show the output in JSON format
 |`--json` | `-j` | Show the output in JSON format
 
+## log
+
+workspace only: yes
+
+`bit log <id...>`
+Shows the component’s tag history.
+
+**Show history for a component**:
+
+```bash
+bit log foo.bar
+```
+
+## login
+
+Workspace only: no
+
+`bit login`
+Logs into [bit.dev server account](docs/installation#login-to-your-bit-account) and sets the path in npm configuration (`.npmrc`) to point to `bit.dev` registry.
+
+**Login**:
+
+```bash
+bit login
+```
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--port` | `-p` | Specify the port number for //ToDo
+|`--suppress-browser-launch` |  | Do not open a browser for authentication
+|`--npmrc-path` | | Path to `npmrc` file where the `bit.dev` registry will be configured (for `@bit` components)
+|`--skip-registry-config` | | Don't add the `bit.dev` registry to the NPM configuration
+|`--machine-name <name>` | `-b` | The machine name that will be paired with the token //ToDo
 
