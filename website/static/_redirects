@@ -1,6 +1,6 @@
-/docs/quick-start.html               /docs/overview.html
-/docs/bitdev-permissions.html        /docs/bit-cloud#collections-privacy
-/docs/initializing-bit.html          /docs/init-workspace.html
-/docs/faq-what-is-bit.html           /docs/what-is-bit.html
-/docs/bit-react-tutorial.html        /docs/tutorials/react.html
-/docs/bit-angular-tutorial.html      /docs/tutorials/angular.html
+/docs/quick-start.html               /docs/overview
+/docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
+/docs/initializing-bit.html          /docs/installation
+/docs/faq-what-is-bit.html           /docs/overview
+/docs/bit-react-tutorial.html        /docs/tutorials/react-tutorial
+/docs/bit-angular-tutorial.html      /docs/tutorials/angular-tutorial

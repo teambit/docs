@@ -1,5 +1,5 @@
 ---
-id: bit-dev-cloud
+id: bit.dev-cloud
 title: bit.dev Cloud Service
 sidebar_label: bit.dev
 ---
