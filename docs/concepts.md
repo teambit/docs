@@ -25,7 +25,6 @@ Bit has two flavours of scopes:
 
 A **Workspace** is a scope that resides in a project where components are authored. Bit workspace can author, export, install, and import components. 
 
-
 Any bit scope can work against multiple remote collections and export to and import from any of them.
 
 ## Bit Tools and Setup
@@ -90,7 +89,7 @@ The server is only used as a components storage and does not include the compone
 
 ## bit.dev
 
-Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, a login is required from the local workspace. 
+[Bit.dev server](docs/bit.dev) is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, a login is required from the local workspace. 
 Unlike Bit CLI tool that is open-sourced, Bit server is proprietary and owned by Bit. 
 
 ![Bit.dev](assets/bit.dev.png)
@@ -101,3 +100,4 @@ Bit.dev cloud provides the following functions:
 - **Component Explorer**: Find components by advanced features
 - **Components CI**: Build and run tests for each component detached from its original project.
 - **Components Playground**: Live environment for playing with a component and setting multiple examples.
+
