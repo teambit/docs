@@ -424,6 +424,7 @@ bit list me.collection --ids 'bar,foo'
 workspace only: yes
 
 `bit log <id...>`
+
 Shows the component’s tag history.
 
 **Show history for a component**:
@@ -437,13 +438,9 @@ bit log foo.bar
 Workspace only: no
 
 `bit login`
+
 Logs into [bit.dev server account](docs/installation#login-to-your-bit-account) and sets the path in npm configuration (`.npmrc`) to point to `bit.dev` registry.
 
-**Login**:
-
-```bash
-bit login
-```
 | **Option** | **Alias** | **Description**
 |---|---|---|
 |`--port` | `-p` | Specify the port number for //ToDo
@@ -451,4 +448,12 @@ bit login
 |`--npmrc-path` | | Path to `npmrc` file where the `bit.dev` registry will be configured (for `@bit` components)
 |`--skip-registry-config` | | Don't add the `bit.dev` registry to the NPM configuration
 |`--machine-name <name>` | `-b` | The machine name that will be paired with the token //ToDo
+
+## logout
+
+Workspace only: no
+
+`bit logout`
+
+Log out from bit. 
 
