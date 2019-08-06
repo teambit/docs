@@ -95,3 +95,7 @@ a {
 strong {
   font-family: $mediumFont;
 }
+
+tbody code {
+  background: transparent;
+}
