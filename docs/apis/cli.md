@@ -81,6 +81,12 @@ bit build foo/bar
 
 ---
 
+## config
+
+Workspace only: no.  
+
+---
+
 ## checkout
 
 alias: `c`
@@ -309,7 +315,6 @@ bit import -- --production --no-optional
 |`--ignore-package-json` | | Do not generate package.json for the imported component(s). Will also skip npm install and dependencies-as-components //ToDo
 |`--merge [strategy]` |`-m` | Merge imported version into the local workspace and apply the git merging strategy: "theirs", "ours", or "manual". Defaulted to manual
 
-
 ## install
 
 Workspace only: yes
@@ -339,7 +344,7 @@ bit install foo/bar
 Workspace only: Initiates or Reset a workspace.
 
 `bit init`
-Initializes a [bit workspace](docs/concepts#bit-workspace) and create the needed directories. 
+Initializes a [bit workspace](docs/concepts#bit-workspace) and create the needed directories.
 
 **Init a workspace**:
 
@@ -356,20 +361,18 @@ bit init --bare
 | **Option** | **Alias** | **Description**
 |---|---|---|
 |`--bare` | `-b` | Initialize an empty bit bare scope
-|`--shared <groupName>` | `-s` | When installing a local server, add the [system group](http://man7.org/linux/man-pages/man5/group.5.html) that will have write permissions to the scope. Any users added to the group will be able to write to the scope. 
+|`--shared <groupName>` | `-s` | When installing a local server, add the [system group](http://man7.org/linux/man-pages/man5/group.5.html) that will have write permissions to the scope. Any users added to the group will be able to write to the scope.
 |`--standalone` | `-t` | Do not create the component scope inside the .git directory and do not write config data inside package.json
 |`--reset` | `-r` | Write missing or damaged Bit files. Useful when you have corrupted data
-|`--reset-hard` | | Removes Bit completely from a local workspace. Use this in case you want to completely remove Bit from your project. Delete .bitmap, bit.json and .bit. 
+|`--reset-hard` | | Removes Bit completely from a local workspace. Use this in case you want to completely remove Bit from your project. Delete .bitmap, bit.json and .bit.  
 |`--force` | `-f` | Force workspace initialization without clearing local objects
 
 ## link
 
-alias: `b` //ToDo
-
+alias: `b` //ToDo  
 Workspace only: yes
 
-`bit link` 
-
+`bit link`  
 [Generates links](//Todo) to the components in the project’s node_modules and to sourced components that are dependencies for other components. This enables importing components and dependencies that are referenced with absolute paths (e.g. ../foo.js).  
 
 **Link all sourced components**:
@@ -380,17 +383,15 @@ bit link
 
 ## list
 
-alias: `ls`
-
-Workspace only: no. Can show components on remote collection.
-
-`bit ls [collection]` 
+alias: `ls`  
+Workspace only: no. Can show components on remote collection.  
+`bit ls [collection]`  
 Shows a list of all available components in a local workspace or a remote Collection.
 
 **List all components in current workspace**:
 
 ```bash
-bit list 
+bit list
 ```
 
 **List all components in remote collection**:
@@ -402,7 +403,7 @@ bit list me.collection
 **List all components in remote collection with the specified ids**:
 
 ```bash
-bit list me.collection --ids 'bar,foo' 
+bit list me.collection --ids 'bar,foo'
 ```
 
 | **Option** | **Alias** | **Description**
@@ -411,7 +412,7 @@ bit list me.collection --ids 'bar,foo'
 |`--namespace <namespace>` | `-n` | Show only the components in a specific name space
 |`--scope` | `-s` | Show all components of the scope, including indirect dependencies
 |`--raw` | `-r` | Show raw detailed output
-|`--outdated` | `-o` | Show the components versions in local workspace, in local scope and in remote 
+|`--outdated` | `-o` | Show the components versions in local workspace, in local scope and in remote
 |`--json` | `-j` | Show the output in JSON format
 |`--json` | `-j` | Show the output in JSON format
 
@@ -447,18 +448,16 @@ Logs into [bit.dev server account](docs/installation#login-to-your-bit-account) 
 
 ## logout
 
-Workspace only: no
-
-`bit logout`
-
-Log out from bit. 
+Workspace only: no  
+`bit logout`  
+Log out from bit.
 
 ## merge
 
 Workspace only: yes
 
 `bit merge <version> <ids...>`
-Merge changes of a different component version into local workspace. Component must be imported into workspace. Defaulted to manual display of conflicts. 
+Merge changes of a different component version into local workspace. Component must be imported into workspace. Defaulted to manual display of conflicts.
 
 **Merge single component from specific version**
 
@@ -472,7 +471,7 @@ bit merge 0.0.1 foo.bar
 |`--ours` | `-o` | In case of a conflict, override the current modification with the local changes
 |`--manual` | `-m` | In case of a conflict, display both changes for manual resolution
 
-> Only one of --ours --theirs or --manual can be used. 
+> Only one of --ours --theirs or --manual can be used.
 
 ## move
 
