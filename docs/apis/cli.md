@@ -344,7 +344,7 @@ bit install foo/bar
 Workspace only: Initiates or Reset a workspace.
 
 `bit init`
-Initializes a [bit workspace](docs/concepts#bit-workspace) and create the needed directories.
+Initializes a [bit workspace](docs/concepts#bit-workspace) and create the needed directories. You can specify workspace defaults as parameters. 
 
 **Init a workspace**:
 
@@ -362,10 +362,14 @@ bit init --bare
 |---|---|---|
 |`--bare` | `-b` | Initialize an empty bit bare scope
 |`--shared <groupName>` | `-s` | When installing a local server, add the [system group](http://man7.org/linux/man-pages/man5/group.5.html) that will have write permissions to the scope. Any users added to the group will be able to write to the scope.
-|`--standalone` | `-t` | Do not create the component scope inside the .git directory and do not write config data inside package.json
+|`--standalone` | `-T` | Do not create the component scope inside the .git directory and do not write config data inside package.json
 |`--reset` | `-r` | Write missing or damaged Bit files. Useful when you have corrupted data
 |`--reset-hard` | | Removes Bit completely from a local workspace. Use this in case you want to completely remove Bit from your project. Delete .bitmap, bit.json and .bit.  
 |`--force` | `-f` | Force workspace initialization without clearing local objects
+|`--compiler <compiler name>` | `-c` | Specifies default compiler to used in the workspace
+|`--tester <tester name>` | `-t` | Specifies default tester to use in the workspace
+|`--default-directory <directory name>` | `-d` | Specifies up the default directory to which components will be imported
+|`--package-manager` | `-p` | Specifies the default package manager to use when installing components
 
 ## link
 
@@ -501,9 +505,35 @@ bit move src/foo src/new/location/foo
 
 > Only one of `--theirs` `--ours` or `--manual` can be used.
 
-# remote
+## remote
 
 Workspace only: yes
+
+`bit remote [add <url> | remove <name>]`
+Manages [remotes](docs/server) for a specific workspace, or globally.  
+>bit.dev is not displayed as a remote
+
+**List all remotes**
+
+```bash
+bit remote
+```
+
+**Add a remote**
+
+```bash
+bit remote add ssh://my-username@my-server:/opt/bit/my-collection
+```
+
+**Remove a remote**
+
+```bash
+bit remote rm my-collection
+```
+
+## remove
+
+Workspace only: no. Can run on remote.
 
 `bit remote [add <url> | remove <name>]`
 Manages [remotes](docs/server) for a specific workspace, or globally.  
