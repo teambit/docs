@@ -1,11 +1,6 @@
 ---
 id: merge-changes
 title: Merging Component Changes
-permalink: docs/merge-changes.html
-layout: docs
-category: Getting Started
-prev: updating-sourced-components.html
-next: ext-concepts.html
 ---
 
 Bit allows merging component modifications with incoming changes.

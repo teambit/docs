@@ -1,12 +1,6 @@
 ---
 id: installation
 title: Installing Bit
-permalink: docs/installation.html
-redirect_from:
-  - "docs/installing-bit.html"
-layout: docs
-category: Getting Started
-next: setup-authentication.html
 ---
 
 Check if bit is installed using:

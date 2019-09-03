@@ -2,11 +2,6 @@
 ---
 id: clearing-bit-cache
 title: Clearing the Bit Cache
-permalink: docs/clearing-bit-cache.html
-layout: docs
-category: Troubleshooting
-prev: authentication-issues.html
-next: logs.html
 ---
 
 When a developer issues the bit login command, Bit configure the .npmrc file in the user's home directory (~/.npmrc) with a new entry for a scoped package registry to install components from bit.dev, named @bit.

@@ -1,11 +1,6 @@
 ---
 id: ext-using-extensions
 title: Using Extensions
-permalink: docs/ext-using-extensions.html
-layout: docs
-category: Extending Bit
-prev: ext-concepts.html
-next: ext-developing-extensions.html
 ---
 
 Using [extensions](/docs/ext-concepts.html) is fairly straightforward. Let's learn how!

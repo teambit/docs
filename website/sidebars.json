@@ -9,8 +9,8 @@
     ],
     "Tutorials": [
         "bit-react-tutorial",
-        "bit-react-library-tutorial",
         "bit-angular-tutorial",
+        "bit-react-library-tutorial",
         "bit-nodejs-tutorial"
     ],
     "Setup": [
@@ -79,7 +79,7 @@
     "Guides": [
         "react-guidelines",
         "angular-guidelines",
-        "bit-on-the-server",
+        "bit-server",
         "netlify"
     ],
     "Bit.dev": [

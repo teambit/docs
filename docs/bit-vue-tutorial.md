@@ -1,11 +1,6 @@
 ---
 id: bit-vue-tutorial
 title: Bit for Vue
-permalink: docs/bit-vue-tutorial.html
-redirect_from:
-  - "tutorial/Vue-app-tutorial.html"
-layout: docs
-category: tutorials
 ---
 
 ## Overview

@@ -1,11 +1,6 @@
 ---
 id: updating-sourced-components
 title: Updating Sourced Components
-permalink: docs/updating-sourced-components.html
-layout: docs
-category: Getting Started
-prev: update-dependencies.html
-next: merge-changes.html
 ---
 
 With Bit, we can keep sourced components synced and up-to-date with remote changes.

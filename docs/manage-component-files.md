@@ -1,11 +1,6 @@
 ---
 id: manage-component-files
 title: Managing Component Files
-permalink: docs/manage-component-files.html
-layout: docs
-category: Getting Started
-prev: tracking-dependencies.html
-next: tag-component-version.html
 ---
 
 We use `bit add` to remove, add, move and rename files in and between components.

@@ -1,11 +1,6 @@
 ---
 id: troubleshooting-isolating
 title: Troubleshooting Component Isolation
-permalink: docs/troubleshooting-isolating.html
-layout: docs
-category: Troubleshooting
-prev: authentication-issues.html
-next: troubleshooting-install-components.html
 ---
 
 There are several issues you may encounter when Bit tries to isolate components in a project.

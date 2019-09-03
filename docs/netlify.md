@@ -1,9 +1,6 @@
 ---
 id: netlify
 title: Deploy Bit project on Netlify
-permalink: docs/netlify.html
-layout: docs
-category: Guides
 ---
 
 ## Get a Bit token

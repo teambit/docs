@@ -1,13 +1,6 @@
 ---
 id: bit-nodejs-tutorial
 title: Bit for NodeJS
-permalink: docs/bit-nodejs-tutorial.html
-redirect_from:
-  - "tutorial/node-tutorial.html"
-layout: docs
-category: tutorials
-prev: bit-angular-tutorial.html
-next: installation.html
 ---
 
 This tutorial doesn’t assume any existing Bit knowledge and it takes only 15 minutes to complete.

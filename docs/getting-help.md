@@ -1,9 +1,6 @@
 ---
 id: getting-help
 title: Getting Help
-permalink: docs/getting-help.html
-layout: docs
-category: Home
 ---
 
 If you encounter any issue or have a question, you can always use these methods of communication.

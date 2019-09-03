@@ -1,11 +1,6 @@
 ---
 id: troubleshooting-doctor
 title: Troubleshooting with Doctor
-permalink: docs/troubleshooting-doctor.html
-layout: docs
-category: Troubleshooting
-prev: latest-version.html
-next: authentication-issues.html
 ---
 
 `bit doctor` is a self diagnosis and healing tool for Bit workspaces.

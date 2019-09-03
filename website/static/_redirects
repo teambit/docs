@@ -2,12 +2,11 @@
 /docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
 /docs/initializing-bit.html          /docs/installation
 /docs/faq-what-is-bit.html           /docs/overview 
-/docs/bit-react-tutorial.html        /docs/tutorials/react-tutorial
-/docs/bit-angular-tutorial.html      /docs/tutorials/angular-tutorial
 /docs/isolating-and-tracking-components.html    /docs/add-and-isolate-components.html   
 /docs/adding-tracking-files-as-components.html  /docs/add-and-isolate-components.html   
 /tutorial/node-tutorial.html        /docs/bit-nodejs-tutorial.html      
-/docs/conf-bit-on-the-server.html   /docs/bit-on-the-server.html    
+/docs/conf-bit-on-the-server.html   /docs/bit-server.html    
+/docs/bit-on-the-server.html        /docs/bit-server.html
 /tutorial/react-tutorial.html       /docs/bit-react-library-tutorial.html   
 /tutorial/react-app-tutorial.html   /docs/bit-react-tutorial.html       
 /docs/installing-bit.html           /docs/installation.html

@@ -1,11 +1,6 @@
 ---
 id: cli-remote
 title: Remote
-permalink: docs/cli-remote.html
-layout: docs
-category: CLI Reference
-prev: cli-move.html
-next: cli-remove.html
 ---
 
 Displays, adds and removes remote Collections.

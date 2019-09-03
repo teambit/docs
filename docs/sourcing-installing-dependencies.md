@@ -1,9 +1,6 @@
 ---
 id: sourcing-installing-dependencies
 title: Installing Dependencies for Sourced Components
-permalink: docs/sourcing-installing-dependencies.html
-layout: docs
-category: Getting Started
 ---
 
 Most components have external dependencies and those can be installed in different ways.

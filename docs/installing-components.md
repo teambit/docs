@@ -1,12 +1,6 @@
 ---
 id: installing-components
 title: Installing Components
-permalink: docs/installing-components.html
-redirect_from:
-  - "docs/install-components.html"
-layout: docs
-category: Getting Started
-next: sourcing-components.html
 ---
 
 Bit supports CommonJS API for consuming components as packages.

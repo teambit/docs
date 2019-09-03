@@ -1,11 +1,6 @@
 ---
 id: example-projects
 title: Example Projects
-permalink: docs/example-projects.html
-layout: docs
-category: Home
-prev: what-is-bit.html
-next: best-practices.html
 ---
 
 We've created a few tutorials and example projects that will help you learn how to use bit (don't forget to take a look at each project's `readme` file on [GitHub](github.com)).  

@@ -1,13 +1,6 @@
 ---
 id: bit-react-library-tutorial
 title: Bit for React Component Library
-permalink: docs/bit-react-library-tutorial.html
-redirect_from:
-  - "tutorial/react-tutorial.html"
-layout: docs
-category: tutorials
-prev: bit-react-tutorial.html
-next: bit-angular-tutorial.html
 ---
 
 This tutorial doesn’t assume any existing Bit knowledge.

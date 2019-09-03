@@ -1,10 +1,6 @@
 ---
 id: bitsrc-security
 title: Security and Data Policy
-permalink: docs/bitsrc-security.html
-layout: docs
-prev: bitsrc-plans.html
-next: bitdev-permissions.html
 ---
 
 Outlined in this document are the practices and policies Bit (Cocycles Ltd.) takes to make sure we release stable, secure software and keep all hosted data secured.

@@ -1,11 +1,6 @@
 ---
 id: cli-untrack
 title: Untrack
-permalink: docs/cli-untrack.html
-layout: docs
-category: CLI Reference
-prev: cli-untag.html
-next: cli-watch.html
 ---
 
 Untracks a new (not yet tagged) component.

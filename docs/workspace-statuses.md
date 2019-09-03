@@ -1,11 +1,6 @@
 ---
 id: workspace-statuses
 title: Workspace Statuses
-permalink: docs/workspace-statuses.html
-redirect_from:
-  - "docs/faq-understanding-bit-status.html"
-layout: docs
-category: Components Workflow
 ---
 
 The `bit status` [command](/docs/cli-status.html) displays the state of the tracked components in your project's workspace.

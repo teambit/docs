@@ -1,11 +1,6 @@
 ---
 id: ext-developing-extensions
 title: Developing Extensions
-permalink: docs/ext-developing-extensions.html
-layout: docs
-category: Extending Bit
-prev: ext-using-extensions.html
-next: ext-compiling.html
 ---
 
 [Extensions](/docs/ext-concepts.html) were designed in order to extend Bit's functionality. This means developing your own custom extension is very straightforward.

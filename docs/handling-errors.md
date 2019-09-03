@@ -1,8 +1,6 @@
 ---
 id: handling-errors
 title: Handling Bit Errors
-layout: docs
-category: Setup
 ---
 
 Bit has tools to help you troubleshoot common errors during setup and usage of Bit

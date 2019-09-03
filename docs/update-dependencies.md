@@ -1,11 +1,6 @@
 ---
 id: update-dependencies
 title: Update Dependencies
-permalink: docs/update-dependencies.html
-layout: docs
-category: Getting Started
-prev: modifying-sourced-components.html
-next: updating-sourced-components.html
 ---
 
 In some cases in which we want to intervene with a component's dependency management.

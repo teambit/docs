@@ -1,9 +1,6 @@
 ---
 id: conf-analytics
 title: Usage Analytics
-permalink: docs/conf-analytics.html
-layout: docs
-category: Setup
 ---
 
 Bit's maintainers use anonymous analytics and error reporting to improve the overall quality of Bit.

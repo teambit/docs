@@ -1,10 +1,6 @@
 ---
 id: react-guidelines
 title: React Guidelines
-permalink: docs/react-guidelines.html
-layout: docs
-category: guidelines
-
 ---
 
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds React specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).

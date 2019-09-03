@@ -1,14 +1,6 @@
 ---
 id: add-and-isolate-components
 title: Tracking Files as Components
-permalink: docs/add-and-isolate-components.html
-redirect_from:
-  - "docs/isolating-and-tracking-components.html"
-  - "docs/adding-tracking-files-as-components.html"
-layout: docs
-category: Getting Started
-next: tracking-dependencies.html
-prev: remote-collection.html
 ---
 
 The first step of sharing code with Bit is adding files so Bit can track them as components.

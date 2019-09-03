@@ -1,11 +1,6 @@
 ---
 id: remote-collection
 title: Creating a Remote Collection
-permalink: docs/remote-collection.html
-redirect_from:
-  - "docs/scopes-on-bitsrc.html"
-layout: docs
-category: Getting Started
 ---
 
 A Remote Collection is a curated and dynamic list of shared components on a remote server. Use collection for collaborating on components between repositories.

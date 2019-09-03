@@ -1,11 +1,6 @@
 ---
 id: best-practices
 title: Best Practices
-permalink: docs/best-practices.html
-layout: docs
-category: Home
-next: getting-help.html
-prev: quick-start.html
 ---
 
 Bellow you can find some guidelines that can help making Bit into an efficient tool in your organization:  

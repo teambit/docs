@@ -1,11 +1,6 @@
 ---
 id: setup-authentication
 title: Setup bit.dev Authentication
-permalink: docs/setup-authentication.html
-layout: docs
-category: Getting Started
-prev: installation.html
-next: initializing-bit.html
 ---
 
 Before working with [bit.dev](https://bit.dev), configure your Bit client to your bit.dev account.

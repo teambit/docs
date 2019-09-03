@@ -1,11 +1,6 @@
 ---
 id: building-components
 title: Building Components
-permalink: docs/building-components.html
-layout: docs
-category: Getting Started
-next: testing-components.html
-prev: tag-component-version.html
 ---
 
 Each component has a build task defined. Bit uses it to compile a component in a workspace.

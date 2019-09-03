@@ -1,11 +1,6 @@
 ---
 id: move-and-rename
 title: Modifying File Structure and Renaming Components
-permalink: docs/move-and-rename.html
-layout: docs
-category: Getting Started
-prev: update-component-dependencies.html
-next: updating-sourced-components.html
 ---
 
 Renaming, moving, removing and adding additional files are common procedures when modifying your code. In this section you'll learn how to move and rename component files, how to add new ones, and how to deal with component ID renaming.

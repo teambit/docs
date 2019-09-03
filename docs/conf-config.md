@@ -1,9 +1,6 @@
 ---
 id: conf-config
 title: Bit Client Configuration
-permalink: docs/conf-config.html
-layout: docs
-category: Configuring Bit
 ---
 
 These configurations are applied to the bit client and are global for all the projects and repositories that use Bit on the machine.  

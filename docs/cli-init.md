@@ -1,11 +1,6 @@
 ---
 id: cli-init
 title: Init
-permalink: docs/cli-init.html
-layout: docs
-category: CLI Reference
-prev: cli-install.html
-next: cli-link.html
 ---
 
 Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates  Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files. 

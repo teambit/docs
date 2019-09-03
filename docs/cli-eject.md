@@ -1,11 +1,6 @@
 ---
 id: cli-eject
 title: Eject
-permalink: docs/cli-eject.html
-layout: docs
-category: CLI Reference
-prev: cli-doctor.html
-next: cli-export.html
 ---
 
 Remove components from the local scope and install them by the NPM client.

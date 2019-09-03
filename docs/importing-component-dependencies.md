@@ -1,11 +1,6 @@
 ---
 id: importing-component-dependencies
 title: Sourcing Components with Dependencies
-permalink: docs/importing-component-dependencies.html
-layout: docs
-category: Reference
-prev: component-dependency-resolution.html
-next: workspace-statuses.html
 ---
 
 As there are different types of dependencies a component may have, there are two distinct flows that are available for them. You can choose to configure your preferred flow for your workspace.

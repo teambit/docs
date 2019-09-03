@@ -1,10 +1,6 @@
 ---
 id: cli-watch
 title: Watch
-permalink: docs/cli-watch.html
-layout: docs
-category: CLI Reference
-prev: cli-untrack.html
 ---
 
 Watchs components and perform `build` on changes.

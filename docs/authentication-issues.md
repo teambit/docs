@@ -1,11 +1,6 @@
 ---
 id: authentication-issues
 title: Authentication Issues
-permalink: docs/authentication-issues.html
-layout: docs
-category: Troubleshooting
-prev: troubleshooting-doctor.html
-next: troubleshooting-isolating.html
 ---
 
 There are several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message.

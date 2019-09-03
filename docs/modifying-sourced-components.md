@@ -1,11 +1,6 @@
 ---
 id: modifying-sourced-components
 title: Modifying Sourced Components
-permalink: docs/modifying-sourced-components.html
-layout: docs
-category: Getting Started
-next: update-dependencies.html
-prev: sourcing-components.html
 ---
 
 It's possible to change a component from any consuming project.

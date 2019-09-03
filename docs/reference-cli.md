@@ -1,8 +1,6 @@
 ---
 id: reference-cli
 title: Bit CLI Reference
-layout: docs
-category: Reference
 ---
 
 Overview of Bit cli commands

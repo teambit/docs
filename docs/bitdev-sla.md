@@ -1,10 +1,6 @@
 ---
 id: bitdev-sla
 title: Service Level Agreement
-permalink: docs/bitdev-sla.html
-layout: docs
-prev: bitdev-permissions.html
-next: cli-add.html
 ---
 
 Outlined in this document are the additional terms for Bit (Cocycles Ltd.) Enterprise Cloud Service Level Agreement. By agreeing to these terms, you also agree to the [Terms of Service](https://bit.dev/legals/terms), as determined by the type of account you have.

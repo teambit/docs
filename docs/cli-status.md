@@ -1,11 +1,6 @@
 ---
 id: cli-status
 title: Status
-permalink: docs/cli-status.html
-layout: docs
-category: CLI Reference
-prev: cli-show.html
-next: cli-tag.html
 ---
 
 Displays the status of all the components currently under work.

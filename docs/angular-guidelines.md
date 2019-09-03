@@ -1,9 +1,6 @@
 ---
 id: angular-guidelines
 title: Angular Guidelines
-permalink: docs/angular-guidelines.html
-layout: docs
-category: tutorials
 ---
 
 > **Angular support is in public beta.**  

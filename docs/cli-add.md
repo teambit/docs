@@ -1,11 +1,6 @@
 ---
 id: cli-add
 title: add
-permalink: docs/cli-add.html
-layout: docs
-category: CLI Reference
-next: cli-build.html
-prev: bitdev-sla.html
 ---
 
 Tracks any set of files as a single or multiple components.

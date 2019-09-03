@@ -1,11 +1,6 @@
 ---
 id: cli-import
 title: Import
-permalink: docs/cli-import.html
-layout: docs
-category: CLI Reference
-prev: cli-export.html
-next: cli-install.html
 ---
 
 Imports a component to your project from a remote Collection.

@@ -1,11 +1,6 @@
 ---
 id: documenting-components
 title: Documenting Components
-permalink: docs/documenting-components.html
-layout: docs
-category: Getting Started
-prev: tag-component-version.html
-next: organizing-components.html
 ---
 
 It’s essential to document components so that they can be discoverable. Documented components are also more comfortable to use and understand.

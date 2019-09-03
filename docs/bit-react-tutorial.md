@@ -1,11 +1,6 @@
 ---
 id: bit-react-tutorial
 title: Bit for React
-permalink: docs/bit-react-tutorial.html
-redirect_from:
-  - "tutorial/react-app-tutorial.html"
-layout: docs
-category: tutorials
 ---
 
 ## Overview
@@ -26,7 +21,7 @@ This tutorial assumes that you are familiar with:
 
 You need to verify that you have:  
 
-- Node 10.9+ (pre-requisite for React 8).
+- Node 8+ 
 
 To run this tutorial, clone and setup the React tutorial project: https://github.com/teambit/bit-react-tutorial
 

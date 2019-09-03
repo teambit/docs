@@ -1,11 +1,6 @@
 ---
 id: cli-export
 title: Export
-permalink: docs/cli-export.html
-layout: docs
-category: CLI Reference
-prev: cli-eject.html
-next: cli-import.html
 ---
 
 Pushes staged component(s) to a remote Collection.

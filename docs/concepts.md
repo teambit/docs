@@ -1,11 +1,6 @@
 ---
 id: concepts
 title: Bit Concepts
-permalink: docs/concepts.html
-layout: docs
-category: Basics
-prev: what-is-bit.html
-next: quick-start.html
 ---
 
 ## Collection 

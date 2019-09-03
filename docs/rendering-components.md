@@ -1,11 +1,6 @@
 ---
 id: rendering-components
 title: Rendering Components
-permalink: docs/rendering-components.html
-layout: docs
-category: Docs & Playground
-prev: documenting-components.html
-next: organizing-components.html
 ---
 
 Rendering allows other users to interact with your component(s), directly at [bit.dev](https://bit.dev).  

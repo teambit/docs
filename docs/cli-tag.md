@@ -1,11 +1,6 @@
 ---
 id: cli-tag
 title: Tag
-permalink: docs/cli-tag.html
-layout: docs
-category: CLI Reference
-prev: cli-status.html
-next: cli-test.html
 ---
 
 Locks the version of a 'new' or 'modified' component(s). Component's status will then be 'staged'.

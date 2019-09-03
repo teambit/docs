@@ -1,9 +1,6 @@
 ---
 id: conf-bit-json
 title: Workspace Configuration
-permalink: docs/conf-bit-json.html
-layout: docs
-category: Configuration
 ---
 
 The bit configuration may reside in the `bit.json` file or in the `bit` section in `package.json` inside a bit workspace. By default, when initializing a workspace, bit will set the configuration inside `package.json`.  

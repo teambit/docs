@@ -1,9 +1,6 @@
 ---
 id: vue-guidelines
 title: vue Guidelines
-permalink: docs/vue-guidelines.html
-layout: docs
-category: tutorials
 ---
 
 > **Vue support is in public beta.**  

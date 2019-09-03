@@ -1,11 +1,6 @@
 ---
 id: cli-diff
 title: Diff
-permalink: docs/cli-diff.html
-layout: docs
-category: CLI Reference
-prev: cli-deprecate.html
-next: cli-doctor.html
 ---
 
 Shows difference between components files.

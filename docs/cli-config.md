@@ -1,11 +1,6 @@
 ---
 id: cli-config
 title: Config
-permalink: docs/cli-config.html
-layout: docs
-category: CLI Reference
-prev: cli-clear-cache.html
-next: cli-deprecate.html
 ---
 
 Manages your global Bit configuration.

@@ -1,9 +1,6 @@
 ---
 id: conf-files
 title: Project Configuration
-permalink: docs/conf-files.html
-layout: docs
-category: Setup
 ---
 
 This document explains project configuration in details

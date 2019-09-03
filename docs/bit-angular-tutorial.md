@@ -1,9 +1,6 @@
 ---
-id: angular-tutorial
-title: Bit with Angular Tutorial
-permalink: docs/bit-angular-tutorial.html
-layout: docs
-category: tutorials
+id: bit-angular-tutorial
+title: Bit for Angular
 ---
 
 > **Angular support is in public beta.**  
@@ -13,7 +10,6 @@ category: tutorials
 
 Bit lets you share and sync components between different projects and applications.  
 In this tutorial, we'll share an Angular component between two projects.
-
 
 ### Prior Knowledge
 

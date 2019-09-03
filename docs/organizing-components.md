@@ -1,13 +1,6 @@
 ---
 id: organizing-components
 title: Organizing Components in Collections
-permalink: docs/organizing-components.html
-redirect_from:
-  - "docs/organizing-components-in-scopes.html"
-layout: docs
-category: Getting Started
-next: removing-components.html
-prev: documenting-components.html
 ---
 
 In this section, we’ll learn how to share & organize components in collections.

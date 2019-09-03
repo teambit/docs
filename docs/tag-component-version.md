@@ -1,13 +1,6 @@
 ---
 id: tag-component-version
 title: Tagging a Component
-permalink: docs/tag-component-version.html
-redirect_from:
-  - "docs/versioning-tracked-components.html"
-layout: docs
-category: Getting Started
-next: building-components.html
-prev: manage-component-files.html
 ---
 Tagging a component creates a locked version of the component.
 

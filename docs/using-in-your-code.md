@@ -1,11 +1,6 @@
 ---
 id: using-in-your-code
 title: Using Bit Components in Your Code
-permalink: docs/using-in-your-code.html
-layout: docs
-category: Getting Started
-prev: sourcing-components.html
-next: modifying-sourced-components.html
 ---
 
 ## import @bit (absolute path)

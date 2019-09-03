@@ -1,13 +1,6 @@
 ---
 id: sourcing-components
 title: Sourcing Components With Bit
-permalink: docs/sourcing-components.html
-redirect_from:
-  - "docs/importing-components.html"
-layout: docs
-category: Getting Started
-prev: installing-components.html
-next: modifying-sourced-components.html
 ---
 
 Bit allows importing component's source code to a consumer project.

@@ -1,7 +1,6 @@
 ---
 id: error-decoder
 title: Error Decoder
-permalink: docs/error-decoder.html
 ---
 
 In the minified production build of React, we avoid sending down full error messages in order to reduce the number of bytes sent over the wire.

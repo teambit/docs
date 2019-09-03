@@ -1,12 +1,6 @@
 ---
 id: bit-server
 title: Setup Bit Server
-permalink: docs/bit-on-the-server.html
-redirect_from:
-  - "docs/conf-bit-on-the-server.html"
-  - "docs/bit-on-the-server.html"
-layout: docs
-category: Reference
 ---
 
 Collaborating between Bit components require setting up a remote server accessible for all collaborators. You may use bit.dev as a remote server or setup your own.  

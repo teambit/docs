@@ -1,11 +1,6 @@
 ---
 id: cli-remove
 title: Remove
-permalink: docs/cli-remove.html
-layout: docs
-category: CLI Reference
-prev: cli-remote.html
-next: cli-show.html
 ---
 
 Removes a component - will delete a specific version, or the entire component and all of its versions. Use this with care. If a component has other components depending on it within the same Scope, you will be required to change them so they will not use it (or use the --force flag).

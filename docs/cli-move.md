@@ -1,11 +1,6 @@
 ---
 id: cli-move
 title: Move
-permalink: docs/cli-move.html
-layout: docs
-category: CLI Reference
-prev: cli-merge.html
-next: cli-remote.html
 ---
 
 Moves a file/directory that's part of a tracked component to a new location.

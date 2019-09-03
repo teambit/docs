@@ -1,11 +1,6 @@
 ---
 id: cli-checkout
 title: Checkout
-permalink: docs/cli-checkout.html
-layout: docs
-category: CLI Reference
-prev: cli-build.html
-next: cli-clear-cache.html
 ---
 
 Switch version for components, or restore working component files.

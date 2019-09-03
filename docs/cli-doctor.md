@@ -1,11 +1,6 @@
 ---
 id: cli-doctor
 title: Doctor
-permalink: docs/cli-doctor.html
-layout: docs
-category: CLI Reference
-prev: cli-diff.html
-next: cli-eject.html
 ---
 
 Diagnose a bit workspace.

@@ -1,10 +1,6 @@
 ---
 id: my-account
 title: My account
-permalink: docs/my-account.html
-layout: docs
-prev: bitsrc-component-ci.html
-next: bitsrc-plans.html
 ---
 
 Manage your account. Make it awesome.

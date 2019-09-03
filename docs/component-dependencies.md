@@ -1,9 +1,6 @@
 ---
 id: component-dependencies
 title: Component Dependencies
-permalink: docs/component-dependencies.html
-layout: docs
-category: Workflow
 ---
 
 Bit resolves all component dependencies automatically. This section aims to explain the process and how to manipulate it.

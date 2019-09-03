@@ -1,9 +1,6 @@
 ---
 id: initializing-bit
 title: Initializing Bit
-permalink: docs/initializing-bit.html
-layout: docs
-category: Setup and Configuration
 ---
 
 Initializing Bit on a repository allows you to track and share components.

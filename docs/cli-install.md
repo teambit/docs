@@ -1,11 +1,6 @@
 ---
 id: cli-install
 title: Install
-permalink: docs/cli-install.html
-layout: docs
-category: CLI Reference
-prev: cli-import.html
-next: cli-init.html
 ---
 
 Installs all dependencies for all the sourced components (or for a specific one), whether they were defined in your `package.json` or in each of the sourced components, and [links](/docs/cli-link.html) them.

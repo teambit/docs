@@ -1,8 +1,6 @@
 ---
 id: bitdev-search-api
 title: Seach API
-permalink: docs/bitdev-search-api.html
-layout: docs
 ---
 
 Learn how to integrate to [bit.dev](https://bit.dev)'s component search API.

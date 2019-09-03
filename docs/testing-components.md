@@ -1,11 +1,6 @@
 ---
 id: testing-components
 title: Testing Components
-permalink: docs/testing-components.html
-layout: docs
-category: Building and Testing
-prev: building-components.html
-next: tag-component-version.html
 ---
 
 Bit can run tests for components with a test task defined.

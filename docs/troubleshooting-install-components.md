@@ -1,11 +1,6 @@
 ---
 id: troubleshooting-install-components
 title: Installing components
-permalink: docs/troubleshooting-install-components.html
-layout: docs
-category: Troubleshooting
-prev: troubleshooting-isolating.html
-next: clearing-bit-cache.html
 ---
 
 There are several issues you may encounter when you install or import a component from [bit.dev](https://bit.dev).

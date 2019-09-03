@@ -1,11 +1,6 @@
 ---
 id: tracking-dependencies
 title: Tracking Component's Dependencies
-permalink: docs/tracking-dependencies.html
-layout: docs
-category: Getting Started
-prev: add-and-isolate-components.html
-next: manage-component-files.html
 ---
 
 Bit manages a component's package and file dependencies.

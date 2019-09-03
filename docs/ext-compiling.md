@@ -1,11 +1,6 @@
 ---
 id: ext-compiling
 title: Compiling
-permalink: docs/ext-compiling.html
-layout: docs
-category: Extending Bit
-prev: ext-developing-extensions.html
-next: ext-testing.html
 ---
 
 Bit uses compilers, which are environments - a special kind of [extension](/docs/ext-concepts.html#extensions-vs-environments), in order to [build components](/docs/building-components.html). Since there are so many build tools and configurations, some of you might discover that the existing compilers don't fit their requirements. Compilers are bit components in their own right, and anyone can develop a new compiler. In this section, we'll learn how.

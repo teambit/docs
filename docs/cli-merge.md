@@ -1,11 +1,6 @@
 ---
 id: cli-merge
 title: Merge
-permalink: docs/cli-merge.html
-layout: docs
-category: CLI Reference
-prev: cli-login.html
-next: cli-move.html
 ---
 
 Join two development histories of a component together.

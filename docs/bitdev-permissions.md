@@ -1,10 +1,6 @@
 ---
 id: bitdev-permissions
 title: Dependency Limitations
-permalink: docs/bitdev-permissions.html
-layout: docs
-prev: bitsrc-security.html
-next: bitdev-sla.html
 ---
 
 In this doc we list some of the caveats of cross collection dependencies of components.

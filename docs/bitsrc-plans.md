@@ -1,10 +1,6 @@
 ---
 id: bitsrc-plans
 title: Pricing
-permalink: docs/bitsrc-plans.html
-layout: docs
-prev: my-account.html
-next: bitsrc-security.html
 ---
 
 Bit provides free hosting for open source projects. To host private code, Bit provide a variety of plans for your team and organization.

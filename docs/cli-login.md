@@ -1,11 +1,6 @@
 ---
 id: cli-login
 title: Login
-permalink: docs/cli-login.html
-layout: docs
-category: CLI Reference
-prev: cli-log.html
-next: cli-logout.html
 ---
 
 Log the CLI into Bit.

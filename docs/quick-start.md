@@ -1,11 +1,6 @@
 ---
 id: quick-start
 title: Quick Start
-permalink: docs/quick-start.html
-layout: docs
-category: Home
-next: best-practices.html
-prev: concepts.html
 ---
 
 Learn the basics of Bit and how to share components between projects as a team.

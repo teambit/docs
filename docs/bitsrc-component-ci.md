@@ -1,11 +1,6 @@
 ---
 id: bitsrc-component-ci
 title: Component CI
-permalink: docs/bitsrc-component-ci.html
-layout: docs
-category: Bitsrc
-next: my-account.html
-prev: logs.html
 ---
 
 bit.dev runs all build/test tasks for all components it hosts in their own isolated container.
