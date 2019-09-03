@@ -6,49 +6,50 @@ sidebar_label: User Authentication
 
 This guide describes how to connect bit client (cli) to work with the [Bit cloud](https://bit.dev) account. 
 
-
 ## Connect Bit Client to Bit Account
 
-You should have a [bit.dev](https://bit.dev) account on  or [Create one](https://bit.dev/signup).
+You should have a [bit.dev](https://bit.dev) account or [Create one](https://bit.dev/signup).
 
 There are two methods to authenticate a local Bit client with [bit.dev](https://bit.dev) account: 
 
 - Using login credentials
 - Using SSH
 
-
 > **Using SSH in Bit**
 >
-> SSH is the preferred network protocol when using Bit.  uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
-> This makes SSH the preferred method for collaboration.
+> SSH is the preferred network protocol when using Bit. Bit uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
 
 ### Authenticate with Login
 
-From the command line run: 
-```sh
-$ bit login
-```
-The [bit login](/apis/cli#login.html) command opens the browser window to log into the [bit.dev](https://bit.dev) account.
-
-Upon successful login, a new authentication token will be created and placed in the bit client configuration. The token can be seen by running: 
+From the command line run:  
 
 ```bash
-$ bit config
+bit login
+```
+
+The [bit login](/docs/cli-login.html) command opens the browser window to log into the [bit.dev](https://bit.dev) account.
+
+Upon successful login, a new authentication token will be created and placed in the bit client configuration. The token can be seen by running:  
+
+```bash
+bit config
 ```
 
 ### Authenticate with SSH
-For authentiction with SSH, ssh keys are required, as explained [here](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html). 
 
-The public SSH key should be uploaded to `bit.dev`: 
+For authentication with SSH, ssh keys are required, as explained [here](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html).  
+
+The public SSH key should be uploaded to `bit.dev`:  
+
 1. Log in to your [bit.dev](https://bit.dev/login) account.
-2. Click on the user icon to open the user actions menu.
-3. Click on the ‘Settings’ link to reach the user settings section. Once inside, click on ‘SSH Keys’ in the left pane.
-4. In the ‘SSH Keys’ section, click on ‘new SSH key’.
-5. Type a name for the key. The key name documents the key, and will not affect the behavior of the system.
-6. `Key` - Copy the content of the file `id_rds.pub`.
-7. Click on ‘Add SSH key’.
+1. Click on the user icon to open the user actions menu.
+1. Click on the ‘Settings’ link to reach the user settings section. Once inside, click on ‘SSH Keys’ in the left pane.
+1. In the ‘SSH Keys’ section, click on ‘new SSH key’.
+1. Type a name for the key. The key name documents the key, and will not affect the behavior of the system.
+1. `Key` - Copy the content of the file `id_rds.pub`.
+1. Click on ‘Add SSH key’.
 
-A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev) community hub.
+A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev) hub.
 
 ## Manage authentication Tokens
 
@@ -57,25 +58,27 @@ You can remove tokens, forcing Bit clients to re-authenticate themselves with th
 
 ## Configure Bit Client User Credentials
 
-User data should be set using the bit [CLI tool](apis/cli#config). 
+User data should be set using the bit [CLI tool](docs/cli-config.html).  
 
 ```bash
-$ bit config set user.name "Tuko Whaff"
-$ bit config set user.email tuko@bit-dev.com
+bit config set user.name "Tuko Whaff"
+bit config set user.email tuko@bit-dev.com
 ```
+
 > If `bit login` was used, the username and email is set according to the Bit account.
 
-> If no data is set in the user credentials, Bit will attempt to use the git configuration on the local machine. 
-
+> If no data is set in the user credentials, Bit will attempt to use the git configuration on the local machine.  
 
 ## Common Authentication Problems
 
 If you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
 
 The following error message can show up if there are authentication problems: 
+
 ```sh
 fatal: permission to Collection <collectionname> was denied
 ```
+
 Some potential causes: 
 
 ### Timeout after a long hang time
@@ -83,20 +86,17 @@ Some potential causes:
 Bit uses SSH to communicate with remote servers. A long hang time and authentication failure is usually the result of a firewall blocking the connection.  
 To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](support@bit.dev).
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--MacOS-->
+#### MacOS / Linux
+
 ```sh
-$ ssh hub.bit.dev
+ssh hub.bit.dev
 ```
-<!--Linux-->
+
+#### windows
+
 ```sh
-$ ssh hub.bit.dev
+telnet hub.bit.dev 22
 ```
-<!--Windows-->
-```sh
-$ telnet hub.bit.dev 22
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### You are not signed up to bit.dev
 
@@ -110,7 +110,7 @@ In case you have forgotten your password, head to your [setting page](https://bi
 
 ### No permission to the Collection
 
-It may be that you do not have permissions to access the Collection in question.
+It may be that you do not have permissions to access the collection in question.
 
 - If the Collection is public, you can import component from it, but you have to have write permissions to export to it.
 - If the Collection is private, you must have read/write permission in order to import/export components to it.
@@ -135,4 +135,4 @@ In case you use `bit config ssh_key_file` to point Bit to the location of your p
 
 ### No/Wrong public key uploaded to bit.dev
 
-Go to you profile settings and make sure the correct publick key was uploaded to Bit. 
+Go to you profile settings and make sure the correct public key was uploaded to Bit.  
