@@ -6,18 +6,16 @@ layout: docs
 category: Configuration
 ---
 
-list of the different configurations for bit workspace  
-
 The bit configuration may reside in the `bit.json` file or in the `bit` section in `package.json` inside a bit workspace. By default, when initializing a workspace, bit will set the configuration inside `package.json`.  
 
-### `packageManager`
+## packageManager
 
 - Type: `npm | yarn`
 - Default: `npm`
 
 The package manager to be used when installing components. Can be set to `npm` or `yarn`. 
 
-### `componentsDefaultDirectory`
+## componentsDefaultDirectory
 
 - Type: `string`
 - Default: `src/{name}`
@@ -26,25 +24,29 @@ Define the default directory inside which all imported components will reside. T
 
 Override this path for a specific component using `bit import --path`.  
 
-### `saveDependenciesAsComponents`
+## saveDependenciesAsComponents
 
 - Type: `boolean`
 - Default: `false`
 
 If a bit component is a dependency of another component, by default bit will attempt to install it withe package manager (`npm install` or `yarn add`). By setting ths value to true, bit will import any bit scope components that are dependencies of a bit imported component. 
 
-### `dist.entry`
+## dist
+
+By default the bit compiler dist files are located with the component files. You can specify a different location for the build artifacts. The target tree under the directory will be similar to the source components directory.
+
+### dist.entry
 
 - Type: `string`
 - Default: not defined
 
-By default the bit compiler dist files are located with the component files. You can specify a different location for the build artifacts. The target tree under the directory will be similar to the source components directory. If only dist.target is set, the entry will be defaulted to the `componentsDefaultDirectory`. 
+Entry point of the dist tree.  If only dist.target is set, the entry will be defaulted to the `componentsDefaultDirectory`.  
 
-### `dist.target`
+### dist.target
 
-By default the bit compiler dist files are located with the component files. You can specify a different location for the build artifacts.  
+The target location of the build files
 
-### `resolveModules`
+## resolveModules
 
 Configure custom module resolution for Bit components. This is similar to Webpack’s resolve, and contains 2 objects:
 
@@ -60,7 +62,7 @@ Configure custom module resolution for Bit components. This is similar to Webpac
 }
 ```
 
-### `useWorkspaces`
+## useWorkspaces
 
 - Type: `boolean`
 - Default: `false`
@@ -68,7 +70,7 @@ Configure custom module resolution for Bit components. This is similar to Webpac
 Only applicable if package manager is set to `yarn`.
 Sets whether to use [yarn workspaces](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/). 
 
-### `manageWorkspaces`
+## manageWorkspaces
 
 - Type: `boolean`
 - Default: `false`
@@ -77,14 +79,14 @@ Only applicable if package manager is set to `yarn`.
 only applicable when using yarn workspaces: `useWorkspaces:true`
 Bit automatically configures each imported component directory in the root `package.json`, in the `workspaces` section.
 
-### `packageManagerArgs`
+## packageManagerArgs
 
 - Type: `string[]`
 - Default: `[]`
 
 Specify npm or yarn install arguments.
 
-### `packageManagerProcessOptions`
+## packageManagerProcessOptions
 
 - Type: `object`
 - Default: not defined
@@ -92,11 +94,11 @@ Specify npm or yarn install arguments.
 Configures additional options for the child-process running the package manager.
 The available options are the following execa options: `shell`, `env`, `extendEnv`, `uid`, `gid`, `preferLocal`, `localDir`, `timeout`.
 
-### `env`
+## env
 
 The environment utilities, i.e. compiler and tester, that used by default for all components
 
-### `env.compiler`
+### env.compiler
 
 - Type: `string`
 - Default: `none`
@@ -122,7 +124,7 @@ For testing purposes you can point to a local compiler file as follow:
 }
 ```
 
-### `env.tester`
+### env.tester
 
 - Type: `string`
 - Default: `none`
@@ -148,7 +150,7 @@ For testing purposes you can point to a local compiler file as follow:
 }
 ```
 
-### `overrides`
+## overrides
 
 The overrides section contains configuration that is specific for one component or a group of component. Also, imported components environment configuration is stored here.
 
@@ -175,28 +177,28 @@ The overrides configuration is an object where each key is a component name or a
     }
 ```
 
-### `overrides.<glob>.dependencies`
+### overrides.<glob>.dependencies
 
 - Type: `Object`
 - Default: not defined
 
 Adds additional dependencies that will be added to the component. Format is similar to package.json dependencies. 
 
-### `overrides.<glob>.devDependencies`
+### overrides.<glob>.devDependencies
 
 - Type: `Object`
 - Default: not defined
 
 Adds additional devDependencies that will be added to the component. Format is similar to package.json devDependencies. 
 
-### `overrides.<glob>.peerDependencies`
+### overrides.<glob>.peerDependencies
 
 - Type: `Object`
 - Default: not defined
 
 Adds additional peer dependencies that will be added to the component. Format is similar to package.json peer dependencies. 
 
-### `overrides.<glob>.env`
+### overrides.<glob>.env
 
 - Type: `Object`
 - Default: not defined
