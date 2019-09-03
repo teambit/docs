@@ -5,145 +5,334 @@
     "previous": "Previous",
     "tagline": "The Components Collaboration Platform",
     "docs": {
-      "apis/bit-client": {
-        "title": "Bit Client Configuration",
-        "sidebar_label": "Bit Client"
+      "add-and-isolate-components": {
+        "title": "Tracking Files as Components"
+      },
+      "angular-guidelines": {
+        "title": "Angular Guidelines"
       },
       "apis/cli": {
         "title": "CLI Commands",
         "sidebar_label": "CLI Commands"
       },
-      "apis/compilers": {
-        "title": "Compilers APIs",
-        "sidebar_label": "Compilers"
+      "authentication-issues": {
+        "title": "Authentication Issues"
       },
-      "apis/testers": {
-        "title": "Testers APIs",
-        "sidebar_label": "Testers"
+      "best-practices": {
+        "title": "Best Practices"
       },
-      "apis/workspace": {
-        "title": "Workspace Options",
-        "sidebar_label": "Workspace"
+      "angular-tutorial": {
+        "title": "Bit with Angular Tutorial"
       },
-      "bit.dev-cloud": {
-        "title": "bit.dev Cloud Service",
-        "sidebar_label": "bit.dev"
+      "bit-nodejs-tutorial": {
+        "title": "Bit for NodeJS"
       },
-      "components/build": {
-        "title": "Building Components",
-        "sidebar_label": "Build"
+      "bit-server": {
+        "title": "Setup Bit Server"
       },
-      "components/consume": {
-        "title": "Consuming Components",
-        "sidebar_label": "Consume"
+      "bit-react-library-tutorial": {
+        "title": "Bit for React Component Library"
       },
-      "components/lifecycle": {
-        "title": "Components Lifecycle",
-        "sidebar_label": "Components Lifecycle"
+      "bit-react-tutorial": {
+        "title": "Bit for React"
       },
-      "components/modify": {
-        "title": "Modifying Components",
-        "sidebar_label": "Modify"
+      "bit-search-api": {
+        "title": "bit-search-api"
       },
-      "components/organize": {
-        "title": "Organizing Components",
-        "sidebar_label": "Organize"
+      "bit-vue-tutorial": {
+        "title": "Bit for Vue"
       },
-      "components/playground": {
-        "title": "Components Playground",
-        "sidebar_label": "Playground"
+      "bitdev-permissions": {
+        "title": "Dependency Limitations"
       },
-      "components/remove": {
-        "title": "Removing Components",
-        "sidebar_label": "Remove"
+      "bitdev-search-api": {
+        "title": "Seach API"
       },
-      "components/share": {
-        "title": "Sharing Components",
-        "sidebar_label": "Share"
+      "bitdev-sla": {
+        "title": "Service Level Agreement"
       },
-      "components/test": {
-        "title": "Testing Components",
-        "sidebar_label": "Test"
+      "bitsrc-component-ci": {
+        "title": "Component CI"
       },
-      "components/tracking": {
-        "title": "Components Tracking",
-        "sidebar_label": "Track"
+      "bitsrc-plans": {
+        "title": "Pricing"
       },
-      "components/workspace": {
-        "title": "Bit Workspaces",
-        "sidebar_label": "Workspaces"
+      "bitsrc-security": {
+        "title": "Security and Data Policy"
+      },
+      "building-components": {
+        "title": "Building Components"
+      },
+      "ci": {
+        "title": "ci"
+      },
+      "clearing-bit-cache": {
+        "title": "Clearing the Bit Cache"
+      },
+      "cli-add": {
+        "title": "add"
+      },
+      "cli-build": {
+        "title": "Build"
+      },
+      "cli-checkout": {
+        "title": "Checkout"
+      },
+      "cli-clear-cache": {
+        "title": "Clear Cache"
+      },
+      "cli-config": {
+        "title": "Config"
+      },
+      "cli-deprecate": {
+        "title": "Deprecate"
+      },
+      "cli-diff": {
+        "title": "Diff"
+      },
+      "cli-doctor": {
+        "title": "Doctor"
+      },
+      "cli-eject": {
+        "title": "Eject"
+      },
+      "cli-export": {
+        "title": "Export"
+      },
+      "cli-import": {
+        "title": "Import"
+      },
+      "cli-init": {
+        "title": "Init"
+      },
+      "cli-install": {
+        "title": "Install"
+      },
+      "cli-link": {
+        "title": "Link"
+      },
+      "cli-list": {
+        "title": "List"
+      },
+      "cli-log": {
+        "title": "Log"
+      },
+      "cli-login": {
+        "title": "Login"
+      },
+      "cli-logout": {
+        "title": "Logout"
+      },
+      "cli-merge": {
+        "title": "Merge"
+      },
+      "cli-move": {
+        "title": "Move"
+      },
+      "cli-remote": {
+        "title": "Remote"
+      },
+      "cli-remove": {
+        "title": "Remove"
+      },
+      "cli-show": {
+        "title": "Show"
+      },
+      "cli-status": {
+        "title": "Status"
+      },
+      "cli-tag": {
+        "title": "Tag"
+      },
+      "cli-test": {
+        "title": "Test"
+      },
+      "cli-untag": {
+        "title": "Untag"
+      },
+      "cli-untrack": {
+        "title": "Untrack"
+      },
+      "cli-watch": {
+        "title": "Watch"
+      },
+      "component-dependencies": {
+        "title": "Component Dependencies"
       },
       "concepts": {
-        "title": "Bit Concepts",
-        "sidebar_label": "Bit Concepts"
+        "title": "Bit Concepts"
       },
-      "faq": {
-        "title": "Frequently Asked Questions",
-        "sidebar_label": "FAQ"
+      "conf-analytics": {
+        "title": "Usage Analytics"
       },
-      "frameworks/react": {
-        "title": "Bit and React",
-        "sidebar_label": "React"
+      "conf-bit-json": {
+        "title": "Workspace Configuration"
       },
-      "frameworks/angular": {
-        "title": "Bit and Angular",
-        "sidebar_label": "Angular"
+      "conf-config": {
+        "title": "Bit Client Configuration"
       },
-      "frameworks/vue": {
-        "title": "Bit and Vue",
-        "sidebar_label": "Vue"
+      "conf-files": {
+        "title": "Project Configuration"
+      },
+      "create-new-hook": {
+        "title": "Create New Hooks"
+      },
+      "debugging-extensions": {
+        "title": "Debugging Extensions"
+      },
+      "developing-extensions": {
+        "title": "Developing Extensions"
+      },
+      "documenting-components": {
+        "title": "Documenting Components"
+      },
+      "enrich-component-data": {
+        "title": "Enrich Component Data"
+      },
+      "error-decoder": {
+        "title": "Error Decoder"
+      },
+      "example-projects": {
+        "title": "Example Projects"
+      },
+      "ext-compiling": {
+        "title": "Compiling"
+      },
+      "ext-concepts": {
+        "title": "Extending Bit"
+      },
+      "ext-data-scheme-defaults": {
+        "title": "Data Scheme and Defaults"
+      },
+      "ext-developing-extensions": {
+        "title": "Developing Extensions"
+      },
+      "ext-testing": {
+        "title": "Testing"
+      },
+      "ext-using-extensions": {
+        "title": "Using Extensions"
+      },
+      "extend-component-dependencies": {
+        "title": "Extend Component"
+      },
+      "extension-lifecycle": {
+        "title": "Extension Lifecycle"
+      },
+      "getting-help": {
+        "title": "Getting Help"
       },
       "guides/authentication": {
         "title": "Bit User Authentication",
         "sidebar_label": "User Authentication"
       },
-      "guides/ci": {
-        "title": "Running Bit on CI",
-        "sidebar_label": "User Authentication"
+      "handling-errors": {
+        "title": "Handling Bit Errors"
       },
-      "guides/collections": {
-        "title": "Working with Collections",
-        "sidebar_label": "Working with Collections"
+      "importing-component-dependencies": {
+        "title": "Sourcing Components with Dependencies"
       },
-      "guides/registry": {
-        "title": "Configuring Bit Registry",
-        "sidebar_label": "Configuring Bit Registry"
-      },
-      "guides/server": {
-        "title": "Managing Bit Server",
-        "sidebar_label": "Bit Server"
-      },
-      "guides/versions": {
-        "title": "CI and Versioning",
-        "sidebar_label": "CI and Versioning"
+      "initializing-bit": {
+        "title": "Initializing Bit"
       },
       "installation": {
-        "title": "Installation",
-        "sidebar_label": "Installation"
+        "title": "Installing Bit"
+      },
+      "installing-components": {
+        "title": "Installing Components"
+      },
+      "latest-version": {
+        "title": "Installing the Latest Stable Version of Bit"
+      },
+      "logs": {
+        "title": "Checking Bit's logs"
+      },
+      "manage-component-files": {
+        "title": "Managing Component Files"
+      },
+      "merge-changes": {
+        "title": "Merging Component Changes"
+      },
+      "modifying-sourced-components": {
+        "title": "Modifying Sourced Components"
+      },
+      "move-and-rename": {
+        "title": "Modifying File Structure and Renaming Components"
+      },
+      "my-account": {
+        "title": "My account"
+      },
+      "netlify": {
+        "title": "Deploy Bit project on Netlify"
+      },
+      "organizing-components": {
+        "title": "Organizing Components in Collections"
       },
       "overview": {
-        "title": "Bit - The Component Collaboration Platform",
-        "sidebar_label": "Bit Overview"
+        "title": "What is Bit?"
       },
-      "support": {
-        "title": "Support",
-        "sidebar_label": "Support"
+      "quick-start": {
+        "title": "Quick Start"
       },
-      "troubleshoot": {
-        "title": "Troubleshoot",
-        "sidebar_label": "Troubleshoot"
+      "react-guidelines": {
+        "title": "React Guidelines"
       },
-      "tutorials/angular-tutorial": {
-        "title": "Angular Tutorial",
-        "sidebar_label": "Angular"
+      "reference-cli": {
+        "title": "Bit CLI Reference"
       },
-      "tutorials/react-tutorial": {
-        "title": "React Tutorial",
-        "sidebar_label": "React"
+      "registering-to-hooks": {
+        "title": "Registering To Hooks"
       },
-      "tutorials/vue-tutorial": {
-        "title": "Vue Tutorial",
-        "sidebar_label": "Vue"
+      "remote-collection": {
+        "title": "Creating a Remote Collection"
+      },
+      "removing-components": {
+        "title": "Remove & Deprecate Components"
+      },
+      "rendering-components": {
+        "title": "Rendering Components"
+      },
+      "setup-authentication": {
+        "title": "Setup bit.dev Authentication"
+      },
+      "sourcing-components": {
+        "title": "Sourcing Components With Bit"
+      },
+      "sourcing-installing-dependencies": {
+        "title": "Installing Dependencies for Sourced Components"
+      },
+      "tag-component-version": {
+        "title": "Tagging a Component"
+      },
+      "testing-components": {
+        "title": "Testing Components"
+      },
+      "tracking-dependencies": {
+        "title": "Tracking Component's Dependencies"
+      },
+      "troubleshooting-doctor": {
+        "title": "Troubleshooting with Doctor"
+      },
+      "troubleshooting-install-components": {
+        "title": "Installing components"
+      },
+      "troubleshooting-isolating": {
+        "title": "Troubleshooting Component Isolation"
+      },
+      "update-dependencies": {
+        "title": "Update Dependencies"
+      },
+      "updating-sourced-components": {
+        "title": "Updating Sourced Components"
+      },
+      "using-in-your-code": {
+        "title": "Using Bit Components in Your Code"
+      },
+      "vue-guidelines": {
+        "title": "vue Guidelines"
+      },
+      "workspace-statuses": {
+        "title": "Workspace Statuses"
       }
     },
     "links": {
@@ -151,12 +340,14 @@
       "APIs": "APIs"
     },
     "categories": {
-      "Getting started": "Getting started",
+      "Basics": "Basics",
       "Tutorials": "Tutorials",
-      "Components": "Components",
+      "Setup": "Setup",
+      "Components Workflow": "Components Workflow",
+      "Extending Bit": "Extending Bit",
       "Guides": "Guides",
-      "APIs": "APIs",
-      "Help": "Help"
+      "Bit.dev": "Bit.dev",
+      "Reference": "Reference"
     }
   },
   "pages-strings": {

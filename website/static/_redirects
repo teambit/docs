@@ -1,7 +1,8 @@
-/docs/quick-start.html               /docs/overview
+/docs/what-is-bit                     /docs/overview   
+/docs/quick-start.html               /docs/overview 
 /docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
 /docs/initializing-bit.html          /docs/installation
-/docs/faq-what-is-bit.html           /docs/overview
+/docs/faq-what-is-bit.html           /docs/overview 
 /docs/bit-react-tutorial.html        /docs/tutorials/react-tutorial
 /docs/bit-angular-tutorial.html      /docs/tutorials/angular-tutorial
 /docs/cli-add.html                   /apis/cli#add

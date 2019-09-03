@@ -1,12 +1,6 @@
 ---
-id: what-is-bit
+id: overview
 title: What is Bit?
-permalink: docs/what-is-bit.html
-redirect_from: 
-  - "docs/faq-what-is-bit.html"
-layout: docs
-category: Home
-next: concepts.html
 ---
 
 ## What is Bit?

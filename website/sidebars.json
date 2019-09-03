@@ -1,78 +1,27 @@
 {
   "docs": {
     "Basics": [
-      {
-        "id": "what-is-bit",
-        "title": "Introduction"
-      },
-      {
-        "id": "concepts",
-        "title": "Bit Concepts"
-      },
-      {
-        "id": "quick-start",
-        "title": "Quick Start"
-      },
-      {
-        "id": "best-practices",
-        "title": "Best Practices"
-      },
-      {
-        "id": "getting-help",
-        "title": "Getting Help"
-      }
+        "overview",
+        "concepts",
+        "quick-start",
+        "best-practices",
+        "getting-help"
     ],
     "Tutorials": [
-      {
-        "id": "bit-react-tutorial",
-        "title": "Bit for React"
-      },
-      {
-        "id": "bit-react-library-tutorial",
-        "title": "Bit for React Component Library"
-      },
-      {
-        "id": "bit-angular-tutorial",
-        "title": "Bit for Angular"
-      },
-      {
-        "id": "bit-nodejs-tutorial",
-        "title": "Bit for NodeJS"
-      }
+        "bit-react-tutorial",
+        "bit-react-library-tutorial",
+        "bit-angular-tutorial",
+        "bit-nodejs-tutorial"
     ],
     "Setup": [
-      {
-        "id": "installation",
-        "title": "Installing Bit"
-      },
-      {
-        "id": "setup-authentication",
-        "title": "Setup Bit.dev Authentication"
-      },
-      {
-        "id": "initializing-bit",
-        "title": "Initializing Bit Workspace"
-      },
-      {
-        "id": "remote-collection",
-        "title": "Creating a Remote Collection"
-      },
-      {
-        "id": "conf-files",
-        "title": "Project Configuration"
-      },
-      {
-        "id": "handling-errors",
-        "title": "Common Errors Handling"
-      },
-      {
-        "id": "authentication-issues",
-        "title": "Authentication Issues"
-      },
-      {
-        "id": "conf-analytics",
-        "title": "Usage Analytics"
-      }
+        "installation",
+        "setup-authentication",
+        "initializing-bit",
+        "remote-collection",
+        "conf-files",
+        "handling-errors",
+        "authentication-issues",
+        "conf-analytics"
     ],
     "Components Workflow": [
       {
@@ -86,27 +35,12 @@
           "troubleshooting-isolating"
         ]
       },
-      {
-        "id": "building-components",
-        "title": "Building Components"
-      },
-      {
-        "id": "testing-components",
-        "title": "Testing Components"
-      },
-      {
-        "id": "tag-component-version",
-        "title": "Versioning Components"
-      },
-      {
-        "id": "documenting-components",
-        "title": "Documenting Components"
-      },
-      {
-        "id": "organizing-components",
-        "title": "Share Components to Bit.dev"
-      },
-      {
+        "building-components",
+        "testing-components",
+        "tag-component-version",
+        "documenting-components",
+        "organizing-components",
+        {
         "type": "subcategory",
         "label": "Share Components to Bit.dev",
         "ids": [
@@ -133,209 +67,67 @@
           "merge-changes"
         ]
       },
-      {
-        "id": "workspace-statuses",
-        "title": "Workspace Statuses"
-      }
+        "workspace-statuses"
     ],
     "Extending Bit": [
-      {
-        "id": "ext-concepts",
-        "title": "Concepts"
-      },
-      {
-        "id": "ext-using-extensions",
-        "title": "Using Extensions"
-      },
-      {
-        "id": "ext-developing-extensions",
-        "title": "Developing Extensions"
-      },
-      {
-        "id": "ext-compiling",
-        "title": "Compiling"
-      },
-      {
-        "id": "ext-testing",
-        "title": "Testing"
-      }
+        "ext-concepts",
+        "ext-using-extensions",
+        "ext-developing-extensions",
+        "ext-compiling",
+        "ext-testing"
     ],
     "Guides": [
-      {
-        "id": "react-guidelines",
-        "title": "React Guidelines"
-      },
-      {
-        "id": "angular-guidelines",
-        "title": "Angular Guidelines"
-      },
-      {
-        "id": "bit-on-the-server",
-        "title": "Setup Bit Server"
-      },
-      {
-        "id": "netlify",
-        "title": "Deploy on Netlify"
-      }
+        "react-guidelines",
+        "angular-guidelines",
+        "bit-on-the-server",
+        "netlify"
     ],
     "Bit.dev": [
-      {
-        "id": "bitsrc-component-ci",
-        "title": "Component CI"
-      },
-      {
-        "id": "my-account",
-        "title": "My account"
-      },
-      {
-        "id": "bitsrc-plans",
-        "title": "Pricing"
-      },
-      {
-        "id": "bitsrc-security",
-        "title": "Security and Data Policy"
-      },
-      {
-        "id": "bitdev-permissions",
-        "title": "Dependency Limitations"
-      },
-      {
-        "id": "bitdev-sla",
-        "title": "Service Level Agreement"
-      }
+        "bitsrc-component-ci",
+        "my-account",
+        "bitsrc-plans",
+        "bitsrc-security",
+        "bitdev-permissions",
+        "bitdev-sla"
     ],
     "Reference": [
-      {
-        "id": "conf-config",
-        "title": "Bit Client Configuration"
-      },
-      {
-        "id": "conf-bit-json",
-        "title": "Workspace Configuration"
-      },
-      {
-        "id": "reference-cli",
-        "title": "Bit CLI Reference",
-        "subitems": [
-          {
-            "id": "cli-add",
-            "title": "add"
-          },
-          {
-            "id": "cli-build",
-            "title": "build"
-          },
-          {
-            "id": "cli-checkout",
-            "title": "checkout"
-          },
-          {
-            "id": "cli-clear-cache",
-            "title": "clear-cache"
-          },
-          {
-            "id": "cli-config",
-            "title": "config"
-          },
-          {
-            "id": "cli-deprecate",
-            "title": "deprecate"
-          },
-          {
-            "id": "cli-diff",
-            "title": "diff"
-          },
-          {
-            "id": "cli-doctor",
-            "title": "doctor"
-          },
-          {
-            "id": "cli-eject",
-            "title": "eject"
-          },
-          {
-            "id": "cli-export",
-            "title": "export"
-          },
-          {
-            "id": "cli-import",
-            "title": "import"
-          },
-          {
-            "id": "cli-install",
-            "title": "install"
-          },
-          {
-            "id": "cli-init",
-            "title": "init"
-          },
-          {
-            "id": "cli-link",
-            "title": "link"
-          },
-          {
-            "id": "cli-list",
-            "title": "list"
-          },
-          {
-            "id": "cli-log",
-            "title": "log"
-          },
-          {
-            "id": "cli-login",
-            "title": "login"
-          },
-          {
-            "id": "cli-logout",
-            "title": "logout"
-          },
-          {
-            "id": "cli-merge",
-            "title": "merge"
-          },
-          {
-            "id": "cli-move",
-            "title": "move"
-          },
-          {
-            "id": "cli-remote",
-            "title": "remote"
-          },
-          {
-            "id": "cli-remove",
-            "title": "remove"
-          },
-          {
-            "id": "cli-show",
-            "title": "show"
-          },
-          {
-            "id": "cli-status",
-            "title": "status"
-          },
-          {
-            "id": "cli-tag",
-            "title": "tag"
-          },
-          {
-            "id": "cli-test",
-            "title": "test"
-          },
-          {
-            "id": "cli-untag",
-            "title": "untag"
-          },
-          {
-            "id": "cli-untrack",
-            "title": "untrack"
-          },
-          {
-            "id": "cli-watch",
-            "title": "watch"
-          }
-        ]
-      }
+        "conf-config",
+        "conf-bit-json",
+        {
+          "type": "subcategory",
+          "label": "CLI Reference",
+          "ids": [
+            "cli-add",
+            "cli-build",
+            "cli-checkout",
+            "cli-clear-cache",
+            "cli-config",
+            "cli-deprecate",
+            "cli-diff",
+            "cli-doctor",
+            "cli-eject",
+            "cli-export",
+            "cli-import",
+            "cli-install",
+            "cli-init",
+            "cli-link",
+            "cli-list",
+            "cli-log",
+            "cli-login",
+            "cli-logout",
+            "cli-merge",
+            "cli-move",
+            "cli-remote",
+            "cli-remove",
+            "cli-show",
+            "cli-status",
+            "cli-tag",
+            "cli-test",
+            "cli-untag",
+            "cli-untrack",
+            "cli-watch"
+          ]
+        }
     ]
   }
-]
 }
