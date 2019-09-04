@@ -63,7 +63,6 @@ h4 {
   font-size:1em;
 }
 
-
 p {
   margin-bottom: 1.2em;
   line-height: 1.6em;
@@ -82,9 +81,16 @@ a {
   background-color: $secondaryColor;
   min-height: 56px;
   padding: 10px;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   & header {
     background-color: $secondaryColor;
   }
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+  color: #ffffff;
+  margin-left: 10px;
+
 }
 
 .headerTitleWithLogo {
@@ -99,3 +105,10 @@ strong {
 tbody code {
   background: transparent;
 }
+
+.nav-footer .copyright {
+  color: hsla(0,0%,100%,.4);
+  text-align: center;
+  margin: 0 auto 3em
+  font-size: 0.5rem;
+  }
