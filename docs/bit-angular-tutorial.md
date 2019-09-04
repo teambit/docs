@@ -272,14 +272,13 @@ The Angular component is also available on the bit.dev cloud. Go to `https://bit
 You can also access the page in the following url: `https://bit.dev/<username>/angular-tutorial/product-list
 
 The component playground provides you with a basic Angular app (you may recognize the sample as the app provided by Angular CLI).
-We will modify this application to display the product-list component. Make sure you are in the **Overview** section. 
+We will modify this application to display the product-list component. Make sure you are in the **Overview** section.  
 
-
-> The Bit playground is now only supporting Angular 8+ projects. 
+> The Bit playground is now only supporting Angular 8+ projects.  
 
 ### Edit a project Example
 
-The project is automatically recognized as an Angular project. 
+The project is automatically recognized as an Angular project.  
 
 We will modify the `app.module.ts` file to import our product-list module. Change this line:
 
@@ -330,7 +329,9 @@ Modify the `app.component.html` and replace its contents with:
 <app-product-list></app-product-list>
 ```
 
-Save the example. In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/angular-tutorial/product-list).
+**Save the example**
+
+In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/angular-tutorial/product-list).
 
 On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the npm command, we are going to use it very soon. 
 

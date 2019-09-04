@@ -278,6 +278,8 @@ Import the styles.css into the `index.js` file in the playground:
 import './styles.css';
 ```
 
+**Save the example**
+
 In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/react-tutorial/product-list).
 
 On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the npm command, we are going to use it very soon. 
