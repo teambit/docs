@@ -1,6 +1,6 @@
 ---
 id: why-bit
-title: Why Bit?
+title: Bit Benefits
 ---
 
 ## Component Teamwork

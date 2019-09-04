@@ -82,7 +82,7 @@
         "bit-server",
         "netlify"
     ],
-    "Bit.dev": [
+    "bit.dev": [
         "bitsrc-component-ci",
         "my-account",
         "bitsrc-plans",
@@ -130,8 +130,8 @@
         }
     ]
   },
-  "whybit": {
-    "whybit": [
+  "whybit?": {
+    "Why Bit?": [
     "whybit/why-bit",
     "whybit/for-teams",
     "whybit/for-libs"

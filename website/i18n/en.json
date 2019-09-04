@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "The Components Collaboration Platform",
+    "tagline": "Components Collaboration Platform",
     "docs": {
       "add-and-isolate-components": {
         "title": "Tracking Files as Components"
@@ -338,7 +338,7 @@
         "title": "Bit for Teams"
       },
       "whybit/why-bit": {
-        "title": "Why Bit?"
+        "title": "Bit Benefits"
       },
       "workspace-statuses": {
         "title": "Workspace Statuses"
@@ -357,9 +357,9 @@
       "Components Workflow": "Components Workflow",
       "Extending Bit": "Extending Bit",
       "Guides": "Guides",
-      "Bit.dev": "Bit.dev",
+      "bit.dev": "bit.dev",
       "Reference": "Reference",
-      "whybit": "whybit"
+      "Why Bit?": "Why Bit?"
     }
   },
   "pages-strings": {

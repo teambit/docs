@@ -22,8 +22,8 @@ const users = [
 
 const siteConfig = {
   title: 'Bit Docs', // Title for your website.
-  tagline: 'The Components Collaboration Platform',
-  url: 'https://docs.bit.dev', // Your website URL
+  tagline: 'Components Collaboration Platform',
+  url: 'https://bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -38,9 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'overview', label: 'Docs'},
-    {doc: 'whybit/why-bit', label: 'Why Bit?'},
-    { href: "https://blog.bitsrc.io/", label: "Blog" },
+    { doc: 'overview', label: 'Docs' },
+    { doc: 'whybit/why-bit', label: 'Why Bit?' },
+    { href: "https://blog.bitsrc.io/tagged/bit", label: "Blog" },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 
