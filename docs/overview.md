@@ -11,7 +11,7 @@ Bit is a collaboration platform for managing components at scale. Bit fits into 
 1) Discover and view live components  
 1) Support the full life cycle of components - build, test, and render
 
-## Why Bit? 
+## Components in Bit  
 
 Components are the building blocks of Modern web architectures. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well defined APIs, components let developers build software applications better and faster.
 

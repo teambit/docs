@@ -57,7 +57,7 @@ const siteConfig = {
   colors: {
     primaryColor: '#6C5CE7',
     secondaryColor: '#3A27CE',
-    fontColor: '#686868',
+    fontColor: '#585858',
     onPageNavFont: '#6C707C' 
   },
 
@@ -83,9 +83,6 @@ const siteConfig = {
     mediumFont: [
       "CircularProMedium"
     ]
-
-
-
   },
 
   editUrl: 'https://github.com/teambit/docs/edit/master/docs/',
