@@ -129,5 +129,12 @@
           ]
         }
     ]
-  }
+  },
+  "whybit": {
+    "whybit": [
+    "whybit/why-bit",
+    "whybit/for-teams",
+    "whybit/for-libs"
+  ]
+}
 }

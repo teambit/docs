@@ -331,13 +331,25 @@
       "vue-guidelines": {
         "title": "vue Guidelines"
       },
+      "whybit/for-libs": {
+        "title": "Bit for Libraries"
+      },
+      "whybit/for-teams": {
+        "title": "Bit for Teams"
+      },
+      "whybit/why-bit": {
+        "title": "Why Bit?"
+      },
       "workspace-statuses": {
         "title": "Workspace Statuses"
       }
     },
     "links": {
-      "What is Bit?": "What is Bit?",
-      "APIs": "APIs"
+      "Docs": "Docs",
+      "Why Bit?": "Why Bit?",
+      "APIs": "APIs",
+      "Blog": "Blog",
+      "Github": "Github"
     },
     "categories": {
       "Basics": "Basics",
@@ -347,7 +359,8 @@
       "Extending Bit": "Extending Bit",
       "Guides": "Guides",
       "Bit.dev": "Bit.dev",
-      "Reference": "Reference"
+      "Reference": "Reference",
+      "whybit": "whybit"
     }
   },
   "pages-strings": {

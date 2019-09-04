@@ -38,9 +38,10 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'overview', label: 'What is Bit?'},
-    {doc: 'apis/cli', label: 'APIs'},
-    // {blog: true, label: 'Blog'}
+    {doc: 'overview', label: 'Docs'},
+    {doc: 'whybit/why-bit', label: 'Why Bit?'},
+    { href: "https://blog.bitsrc.io/", label: "Blog" },
+    { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 
   docsSideNavCollapsible: true,
@@ -91,7 +92,7 @@ const siteConfig = {
 
   algolia: {
     apiKey: '563802eec701896d912fda3505a903ae',
-    indexName: 'bit__docs'
+    indexName: 'bitsrc'
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
