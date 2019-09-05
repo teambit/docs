@@ -314,7 +314,8 @@
         "title": "Troubleshooting with Doctor"
       },
       "troubleshooting-install-components": {
-        "title": "Installing components"
+        "title": "Installing components",
+        "sidebar_label": "Troubleshooting install"
       },
       "troubleshooting-isolating": {
         "title": "Troubleshooting Component Isolation"
