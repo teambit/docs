@@ -8,9 +8,9 @@
         "getting-help"
     ],
     "Tutorials": [
-        "bit-react-tutorial",
-        "bit-angular-tutorial",
-        "bit-nodejs-tutorial"
+        "tutorials/bit-react-tutorial",
+        "tutorials/bit-angular-tutorial",
+        "tutorials/bit-nodejs-tutorial"
     ],
     "Setup": [
         "installation",

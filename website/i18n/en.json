@@ -21,20 +21,8 @@
       "best-practices": {
         "title": "Best Practices"
       },
-      "bit-angular-tutorial": {
-        "title": "Bit for Angular"
-      },
-      "bit-nodejs-tutorial": {
-        "title": "Bit for NodeJS"
-      },
       "bit-server": {
         "title": "Setup Bit Server"
-      },
-      "bit-react-library-tutorial": {
-        "title": "Bit for React Component Library"
-      },
-      "bit-react-tutorial": {
-        "title": "Bit for React"
       },
       "bit-search-api": {
         "title": "bit-search-api"
@@ -318,6 +306,18 @@
       },
       "troubleshooting-isolating": {
         "title": "Isolation Common Errors"
+      },
+      "tutorials/bit-angular-tutorial": {
+        "title": "Bit for Angular"
+      },
+      "tutorials/bit-nodejs-tutorial": {
+        "title": "Bit for NodeJS"
+      },
+      "tutorials/bit-react-library-tutorial": {
+        "title": "Bit for React Component Library"
+      },
+      "tutorials/bit-react-tutorial": {
+        "title": "Bit for React"
       },
       "update-dependencies": {
         "title": "Update Dependencies"

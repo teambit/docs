@@ -14,4 +14,8 @@
 /docs/scopes-on-bitsrc.html         /docs/remote-collection.html
 /docs/importing-components.html     /docs/sourcing-components.html
 /docs/versioning-tracked-components.html   /docs/tag-component-version.html
-docs/faq-understanding-bit-status.html  /docs/workspace-statuses.html
+/docs/faq-understanding-bit-status.html  /docs/workspace-statuses.html
+/docs/bit-react-tutorial            /docs/tutorials/bit-react-tutorial
+/docs/bit-angular-tutorial          /docs/tutorials/bit-react-tutorial
+/docs/bit-nodejs-tutorial           /docs/tutorials/bit-react-tutorial
+/docs/bit-react-library-tutorial    /docs/tutorials/bit-react-tutorial
