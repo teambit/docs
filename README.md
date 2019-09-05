@@ -1,6 +1,6 @@
 # bit.dev docs
 
-This repo contains the source code and documentation powering [bit.dev](https://docs.bit.dev/).  
+This repo contains the source code and documentation powering [docs.bit.dev](https://docs.bit.dev/).  
 The website is based on [Docusaurus](https://docusaurus.io/en/)
 
 ## Getting started
@@ -13,7 +13,8 @@ The website is based on [Docusaurus](https://docusaurus.io/en/)
 
 1. `cd website` to go into the project root
 1. `npm i` to install the website's npm dependencies
-1. `npm run start` to start the hot-reloading development server
+1. `npm run start` to start the development server with docs hot reloading
+1. or `npm run watch` to start the development server with structure changes hot reloading (slower)
 1. `open http://localhost:3000` to open the site in your browser
 
 ## Contributing
