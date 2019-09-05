@@ -57,91 +57,91 @@
       "clearing-bit-cache": {
         "title": "Clearing the Bit Cache"
       },
-      "cli-add": {
+      "cli/cli-add": {
         "title": "add"
       },
-      "cli-build": {
+      "cli/cli-build": {
         "title": "Build"
       },
-      "cli-checkout": {
+      "cli/cli-checkout": {
         "title": "Checkout"
       },
-      "cli-clear-cache": {
+      "cli/cli-clear-cache": {
         "title": "Clear Cache"
       },
-      "cli-config": {
+      "cli/cli-config": {
         "title": "Config"
       },
-      "cli-deprecate": {
+      "cli/cli-deprecate": {
         "title": "Deprecate"
       },
-      "cli-diff": {
+      "cli/cli-diff": {
         "title": "Diff"
       },
-      "cli-doctor": {
+      "cli/cli-doctor": {
         "title": "Doctor"
       },
-      "cli-eject": {
+      "cli/cli-eject": {
         "title": "Eject"
       },
-      "cli-export": {
+      "cli/cli-export": {
         "title": "Export"
       },
-      "cli-import": {
+      "cli/cli-import": {
         "title": "Import"
       },
-      "cli-init": {
+      "cli/cli-init": {
         "title": "Init"
       },
-      "cli-install": {
+      "cli/cli-install": {
         "title": "Install"
       },
-      "cli-link": {
+      "cli/cli-link": {
         "title": "Link"
       },
-      "cli-list": {
+      "cli/cli-list": {
         "title": "List"
       },
-      "cli-log": {
+      "cli/cli-log": {
         "title": "Log"
       },
-      "cli-login": {
+      "cli/cli-login": {
         "title": "Login"
       },
-      "cli-logout": {
+      "cli/cli-logout": {
         "title": "Logout"
       },
-      "cli-merge": {
+      "cli/cli-merge": {
         "title": "Merge"
       },
-      "cli-move": {
+      "cli/cli-move": {
         "title": "Move"
       },
-      "cli-remote": {
+      "cli/cli-remote": {
         "title": "Remote"
       },
-      "cli-remove": {
+      "cli/cli-remove": {
         "title": "Remove"
       },
-      "cli-show": {
+      "cli/cli-show": {
         "title": "Show"
       },
-      "cli-status": {
+      "cli/cli-status": {
         "title": "Status"
       },
-      "cli-tag": {
+      "cli/cli-tag": {
         "title": "Tag"
       },
-      "cli-test": {
+      "cli/cli-test": {
         "title": "Test"
       },
-      "cli-untag": {
+      "cli/cli-untag": {
         "title": "Untag"
       },
-      "cli-untrack": {
+      "cli/cli-untrack": {
         "title": "Untrack"
       },
-      "cli-watch": {
+      "cli/cli-watch": {
         "title": "Watch"
       },
       "component-dependencies": {

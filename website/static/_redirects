@@ -19,3 +19,34 @@
 /docs/bit-angular-tutorial          /docs/tutorials/bit-react-tutorial
 /docs/bit-nodejs-tutorial           /docs/tutorials/bit-react-tutorial
 /docs/bit-react-library-tutorial    /docs/tutorials/bit-react-tutorial
+/docs/cli-add 	 /docs/cli/cli-add
+/docs/cli-build 	 /docs/cli/cli-build
+/docs/cli-checkout 	 /docs/cli/cli-checkout
+/docs/cli-clear-cache 	 /docs/cli/cli-clear-cache
+/docs/cli-config 	 /docs/cli/cli-config
+/docs/cli-deprecate 	 /docs/cli/cli-deprecate
+/docs/cli-diff 	 /docs/cli/cli-diff
+/docs/cli-doctor 	 /docs/cli/cli-doctor
+/docs/cli-eject 	 /docs/cli/cli-eject
+/docs/cli-export 	 /docs/cli/cli-export
+/docs/cli-import 	 /docs/cli/cli-import
+/docs/cli-install 	 /docs/cli/cli-install
+/docs/cli-init 	 /docs/cli/cli-init
+/docs/cli-link 	 /docs/cli/cli-link
+/docs/cli-list 	 /docs/cli/cli-list
+/docs/cli-log 	 /docs/cli/cli-log
+/docs/cli-login 	 /docs/cli/cli-login
+/docs/cli-logout 	 /docs/cli/cli-logout
+/docs/cli-merge 	 /docs/cli/cli-merge
+/docs/cli-move 	 /docs/cli/cli-move
+/docs/cli-remote 	 /docs/cli/cli-remote
+/docs/cli-remove 	 /docs/cli/cli-remove
+/docs/cli-show 	 /docs/cli/cli-show
+/docs/cli-status 	 /docs/cli/cli-status
+/docs/cli-tag 	 /docs/cli/cli-tag
+/docs/cli-test 	 /docs/cli/cli-test
+/docs/cli-untag 	 /docs/cli/cli-untag
+/docs/cli-untrack 	 /docs/cli/cli-untrack
+/docs/cli-watch 	 /docs/cli/cli-watch
+
+            
