@@ -5,13 +5,13 @@ title: What is Bit?
 
 ## What is Bit?
 
-Bit’s [open-source CLI](https://github.com/teambit/bit) is a tool multiple-components "monorepos" that enbales the development and distribution of components in a repository throughout their entire lifecycle. It helps developers build, distribute and control multiple individual components across one or more repositories.
+Bit’s [open-source CLI](https://github.com/teambit/bit) is a tool for multiple-components "monorepos" that enbales the development and distribution of components throughout their entire lifecycle. It helps developers build, distribute and control multiple individual components across one or more repositories.
 
-It automates the isolation components in any path in a repository, so each is encapsulated with all its dependencies. It lets you independently build, test, version, update and publish components in true isolation from the rest of the repository. It provides an instant and high-control “monorepo” experience for any repository containing components, so any repository becomes a multi-component repository and the developer assumes full control over the development of and change to a single or multiple related components inside the repository.
+It automates the isolation components in any path in a repository, so each is encapsulated with all its dependencies. It lets you independently build, test, version, update and publish components in true isolation from the rest of the repository. It provides an instant and high-control “monorepo” experience for any repository containing components, so the developer assumes full control over the development and distribution of a single or multiple related components in the repository.
 
-The [bit.dev collaboration platform](https://bit.dev) helps you manage and collaborate over shared components across projects and teams, at any scale. Through the platform, developers and teams can organize and share components, make them discoverable to find and use, and collaborate to synchronize the development of components from different projects.
+The [bit.dev collaboration platform](https://bit.dev) lets developers and teams manage and collaborate over shared components across projects, at any scale. Through the platform, developers and teams can organize and share components, make them discoverable to find and use, and collaborate to synchronize development, changes and updates to components across different projects.
 
-Bit CLI can be used with or without bit.dev, as a remote hosting collection can be set on any server. However, the combined experience fits into the javascript eco-system to streamline components sharing for multiple projects and teams, providing tools for:
+Bit CLI can be used with or without bit.dev, as a remote Bit component hosting can be set on any server. However, the combined experience enhances and streamlines components sharing for multiple projects and teams, providing end-to-end tools for:
 
 1) The full life-cycle of component development inside a repository:
 
@@ -20,7 +20,7 @@ Bit CLI can be used with or without bit.dev, as a remote hosting collection can 
 - **Contextual versioning**: Versioning each component and controlling each component’s dependency graph, so you can update related components together and avoid bumping versions to unrelated parts of the repository.
 - **Distribute from any path**: Publish multiple components from any path in any the repository without refactoring it’s source code or structure.
 
-2) The organization, consumption, collaboration, and discovery of components shared between different teams and projects:
+2) The organization, consumption, collaboration, and discovery of components shared between different projects and teams:
 
 - **Organizing all shared components** by team, context etc.
 - **Visuzling components** with live rendering, preview examples etc.
