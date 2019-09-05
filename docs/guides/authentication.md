@@ -19,8 +19,9 @@ There are two methods to authenticate a local Bit client with [bit.dev](https://
 >
 > SSH is the preferred network protocol when using Bit. Bit uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
 
-### Authenticate with Login
+### Authenticate with Bit-Login
 
+The `bit login` command generates a private SSH token for the specific computer and configures it automatically to the logged-in account. It is still uses the SSH protocol for establishing the connection and sending/receiving data.  
 From the command line run:  
 
 ```bash
@@ -35,11 +36,9 @@ Upon successful login, a new authentication token will be created and placed in 
 bit config
 ```
 
-### Authenticate with SSH
+### Authenticate with SSH Keys
 
-For authentication with SSH, ssh keys are required, as explained [here](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html).  
-
-The public SSH key should be uploaded to `bit.dev`:  
+For authentication with SSH keys, as explained [here](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html), the public SSH key should be uploaded to `bit.dev`:
 
 1. Log in to your [bit.dev](https://bit.dev/login) account.
 1. Click on the user icon to open the user actions menu.
@@ -66,20 +65,17 @@ bit config set user.email tuko@bit-dev.com
 ```
 
 > If `bit login` was used, the username and email is set according to the Bit account.
-
 > If no data is set in the user credentials, Bit will attempt to use the git configuration on the local machine.  
 
 ## Common Authentication Problems
 
 If you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
 
-The following error message can show up if there are authentication problems: 
+The following error message can show up if there are authentication problems:
 
 ```sh
 fatal: permission to Collection <collectionname> was denied
 ```
-
-Some potential causes: 
 
 ### Timeout after a long hang time
 
@@ -136,3 +132,27 @@ In case you use `bit config ssh_key_file` to point Bit to the location of your p
 ### No/Wrong public key uploaded to bit.dev
 
 Go to you profile settings and make sure the correct public key was uploaded to Bit.  
+
+### Verbose SSH log data
+
+In case you encounter an SSH connectivity issue, you can add an environment variable prior to running the Bit remote command. For example:
+
+```sh
+BIT_LOG=ssh bit import ...
+BIT_LOG=ssh bit export ...
+BIT_LOG=ssh bit list ...
+```
+
+#### SSH Uses a non-default port
+
+The default port for the SSH protocol is 22. If you have a connectivity issue with a collection hosted on [bit.dev](https://bit.dev). In some cases, the OS default port for SSH is different. When you run Bit with `BIT_LOG=ssh`, you might see this error:
+
+```sh
+ssh, failed to connect using token. failed to authenticate with user token. generate a new token by running `bit logout && bit login`. due to an error "connect ETIMEDOUT 104.154.25.145:10"
+```
+
+Note that Bit tried to connect to the remote server using port 10 (104.154.25.145:**10**), you can force port 22 by running:
+
+```sh
+bit config set hub_domain hub.bit.dev:22
+```
