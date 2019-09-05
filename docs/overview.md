@@ -5,7 +5,7 @@ title: What is Bit?
 
 ## What is Bit?
 
-Bit’s [open-source CLI](https://github.com/teambit/bit) is a tool for multiple-components "monorepos" that enbales the development and distribution of components throughout their entire lifecycle. It helps developers build, distribute and control multiple individual components across one or more repositories.
+Bit’s [open-source CLI](https://github.com/teambit/bit) is a tool for multiple-components "monorepos" that enables the development and distribution of components throughout their entire lifecycle. It helps developers build, distribute and control multiple individual components across one or more repositories.
 
 It automates the isolation components in any path in a repository, so each is encapsulated with all its dependencies. It lets you independently build, test, version, update and publish components in true isolation from the rest of the repository. It provides an instant and high-control “monorepo” experience for any repository containing components, so the developer assumes full control over the development and distribution of a single or multiple related components in the repository.
 
@@ -23,7 +23,7 @@ Bit CLI can be used with or without bit.dev, as a remote Bit component hosting c
 2) The organization, consumption, collaboration, and discovery of components shared between different projects and teams:
 
 - **Organizing all shared components** by team, context etc.
-- **Visuzling components** with live rendering, preview examples etc.
+- **Visualizing components** with live rendering, preview examples etc.
 - **Search and discovery of components** using semantic labels, advanced filters (bundle-size, dependencies etc), tests, examples etc.
 - **Auto-extracting component API reference** and presenting for easy use.
 - **Running each component’s CI** including Build and Tests in isolation.
@@ -124,7 +124,7 @@ Package registries and tools like NPM and Yarn help to manage packages and depen
 
 Bit supports the full life cycle of a component starting from the source code. As Bit stems from the source code itself and understands the semantics of each component, the full dependency tree is automatically generated. In addition, Bit supports the full life cycle of components: from code changes to building, testing and rendering components in isolation.  
 
-Bit manages component dependencies in relation to each component’s dependency graph, in with awareness to code changes made to components. For example, you can update a single component inside a repository and only the components dependending on it, without having to update the entire reposiotry’s package version or those of components unaffected by the changes.
+Bit manages component dependencies in relation to each component’s dependency graph, in with awareness to code changes made to components. For example, you can update a single component inside a repository and only the components that depend on it, without having to update the entire repository’s package version or those of components unaffected by the changes.
 
 Components built with Bit are published to the package registry in bit.dev. This means that NPM and Yarn can [install](#install) Bit components like any other package. The only requirement is that the .npmrc configuration has a reference to the @bit scope name. The registry configuration tells NPM and Yarn where to find Bit components.  
 
