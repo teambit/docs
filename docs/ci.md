@@ -130,9 +130,16 @@ Add the BIT_TOKEN as [environment variable](https://zeit.co/docs/v2/build-step#u
 
 ### Gitlab
 
-In `.gitlab-ci.yml` run the script that [generates the file for the user](#) as initial step, before running npm install.  
+In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as initial step, before running npm install.  
 
 Add the BIT_TOKEN as [environment variable](https://docs.gitlab.com/ee/ci/variables/)
+
+### Heroku
+
+To generate npmrc before installing dependencies, run a pre build script as described [here](https://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps).
+
+Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/articles/config-vars#managing-config-vars)
+
 
 ## Bit imported components
 
