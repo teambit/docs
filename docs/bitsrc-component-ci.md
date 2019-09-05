@@ -21,4 +21,4 @@ There are several limitations put into place when running component CI:
 - Ubuntu jessie
 - headless chrome driver
 - latest version of Bit
-- node 6.12
+- node 8
