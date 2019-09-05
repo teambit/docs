@@ -1,6 +1,6 @@
 ---
 id: troubleshooting-isolating
-title: Troubleshooting Component Isolation
+title: Isolation Common Errors
 ---
 
 There are several issues you may encounter when Bit tries to isolate components in a project.

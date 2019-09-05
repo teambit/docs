@@ -1,7 +1,6 @@
 ---
 id: troubleshooting-install-components
-title: Installing components
-sidebar_label: Troubleshooting install
+title: Installation Errors
 ---
 
 There are several issues you may encounter when you install or import a component from [bit.dev](https://bit.dev).
