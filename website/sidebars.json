@@ -44,15 +44,8 @@
         "label": "Share Components to Bit.dev",
         "ids": [
           "organizing-components",
-          "removing-components"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Installing Components",
-        "ids": [
-          "installing-components",
-          "troubleshooting-install-components"
+          "removing-components",
+          "installing-components"
         ]
       },
       {
@@ -78,8 +71,8 @@
     "Guides": [
         "react-guidelines",
         "angular-guidelines",
-        "bit-server",
-        "netlify"
+        "ci",
+        "bit-server"
     ],
     "bit.dev": [
         "bitsrc-component-ci",

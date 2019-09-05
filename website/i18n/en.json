@@ -64,7 +64,7 @@
         "title": "Building Components"
       },
       "ci": {
-        "title": "ci"
+        "title": "CI & Deployment"
       },
       "clearing-bit-cache": {
         "title": "Clearing the Bit Cache"
