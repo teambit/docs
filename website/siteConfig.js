@@ -103,8 +103,11 @@ const siteConfig = {
   gaTrackingId: 'UA-89811062-2',
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
-    'https://buttons.github.io/buttons.js',
-  'https://storage.googleapis.com/static.bit.dev/docs/mixpanel.js'
+    'https://buttons.github.io/buttons.js', {
+      src: '/js/mixpanel.js',
+      async: true
+    }
+  
 ],
 
   markdownPlugins: [
