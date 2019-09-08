@@ -588,6 +588,4 @@ $ npm run start
 That is it. A change was moved between the two projects. Your application is running with an updated component.  
 
 To learn more read the [Bit for Angular guidelines and best practices](https://docs.bit.dev/docs/angular-guidelines.html).  
-For questions or help, don't hesitate to [get in touch](https://gitter.im/bit-src/Bit).  
-
 Happy coding!

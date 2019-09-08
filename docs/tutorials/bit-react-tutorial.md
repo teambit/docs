@@ -537,6 +537,4 @@ npm start
 
 That is it. A change was moved between the two projects. Your application is running with an updated component.  
 
-For questions or help, don't hesitate to [get in touch](https://gitter.im/bit-src/Bit).  
-
 Happy coding!

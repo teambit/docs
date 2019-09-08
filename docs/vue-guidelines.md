@@ -8,7 +8,7 @@ title: vue Guidelines
 
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds vue specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
-vue sharing was tested on vue 8 version and requires Node 10.9+ which is vue 8 pre requisite. Bit should be compliant with prior versions that are ng-packagr compliant.
+vue sharing was tested on vue 2 and vue-cli 3. Bit should be compliant with prior versions.
 
 ## Vue Compiler
 
@@ -17,16 +17,24 @@ The officially supported vue Compiler can be found [here](https://bit.dev/bit/en
 
 The practices described bellow are aimed to work best with this Bit team compiler.  
 
+## Use symlinks false in target project
+
+When importing components, Bit is using symlinks to point to the component location (similar to npm link). In order to compile the application, you need to enhance the bit webpack configuration to properly work with symlinks.  
+
+If you do not have a webpack configuration in your project, add a new file `vue.config.js` with the following configuration:  
+
+```js
+module.exports = {
+    configureWebpack: {
+        resolve: {
+            symlinks: false // support npm link
+        },
+    }
+}
+```
+
+If you already have a configuration, you just need to add the relevant key in the proper place. This tells Vue webpack to retain the symlinks.
+
 ## vue Tester
 
 Each Bit component may be linked with a tester that will run the unit tests of the compiler. vue testers are still WIP.  
-
-## Use symlinks false in target project
-
-
-## Add vue Libraries as Peer Dependencies
-
-In the origin project, the vue run time dependencies (`@vue/core`, `@vue/common` etc.) should be defined both as project dependencies and project peer dependencies.
-
-vue cannot run when multiple instances of the vue runtime libraries exist, the vue dependencies should be defined as peer dependencies. When Bit extracts component dependencies, peer dependencies get higher priority, and the @vue libraries will be defined as peer dependencies, even if they are also defined as dependencies.
-

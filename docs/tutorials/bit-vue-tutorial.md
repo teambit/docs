@@ -260,7 +260,7 @@ nothing to tag or export
 
 If you want to see all the components you have you can run:
 
-```
+```bash
 $ bit list
 ```
 
@@ -423,10 +423,6 @@ getProduct(product, index) {
 
 Change the css file `components/product-list/product-list.css` to include a margin on the `.btn`:
 
-```css
-  margin: 4px;
-```
-
 Run the Vue application:
 
 ```bash
@@ -437,18 +433,31 @@ The app is not yet changed. The Bit components are compiled by the bit compiler.
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
 ```bash
-successfully installed the bit.envs/compilers/Vue@0.1.3 compiler
+successfully installed the bit.envs/bundlers/Vue@2.5.2 compiler
 ```
 
-Followed by a successful compilation of all the files.
+Followed by a successful compilation of the main file.
+
+In order to compile the application, we need to enhance the bit webpack configuration to properly work with symlinks. 
+We will add a new file `vue.config.js` with the following configuration:  
+
+```js
+module.exports = {
+    configureWebpack: {
+        resolve: {
+            symlinks: false // support npm link
+        },
+    }
+}
+```
 
 Run the `my-new-app` again and you can now see the changed component with the `view button`.
 
-> In a real project, it is recommended to commit those changes to your GitHub repository. 
+> In a real project, it is recommended to commit those changes to your GitHub repository.  
 
 ### Export the changes
 
-Next, export the changes done to the component back to bit.dev. 
+Next, export the changes done to the component back to bit.dev.  
 
 ```bash
 bit status
@@ -522,11 +531,8 @@ Merge the changes done to the component to your project. The structure of the co
 ```bash
 $ bit checkout 0.0.2 product-list
 successfully switched <username>.Vue-tutorial/product-list to version 0.0.2
-updated src/app/product-list/product-list.component.css
-updated src/app/product-list/product-list.component.html
-updated src/app/product-list/product-list.component.ts
-updated src/app/product-list/product-list.module.ts
-updated src/app/product-list/products.ts
+updated src/assets/products.js
+updated src/components/productList.vue
 ```
 
 Bit is performing a git merge, so the code from the updated component is now be merged into your code.
@@ -538,7 +544,5 @@ npm start
 ```
 
 That is it. A change was moved between the two projects. Your application is running with an updated component.  
-
-For questions or help, don't hesitate to [get in touch](https://gitter.im/bit-src/Bit).  
 
 Happy coding!

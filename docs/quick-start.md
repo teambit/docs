@@ -191,6 +191,6 @@ Awesome! You’ve learned the basics of Bit’s workflow.
 There’re are many more features to Bit, from automatic component API docs to the live example playground, but let’s leave that for later.  
 Now will be a great time to jump in and [start sharing components with your team](https://bit.dev)! You can also hang around and [explore components]( in the community.
 ​
-**Need help? Have a feature request? Want to talk over a beer?** don’t hesitate to [reach out](https://bit.dev/support) or chat with the team on [Gitter](https://gitter.im/bit-src/Bit).
+**Need help? Have a feature request? Want to talk over a beer?** don’t hesitate to [reach out](https://bit.dev/support) or chat with the team on [Slack](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg).
 
 Happy coding!
