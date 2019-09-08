@@ -2,7 +2,7 @@
   "scripts": {
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
-    "watch": "nodemon $(npm bin)/docusaurus-start -w ./static -V",
+    "watch": "nodemon $(npm bin)/docusaurus-start -w ./static -w sidebars.json -w siteConfig.js -V",
     "build": "docusaurus-build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
