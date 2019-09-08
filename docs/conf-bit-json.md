@@ -174,28 +174,28 @@ The overrides configuration is an object where each key is a component name or a
     }
 ```
 
-### overrides.<glob>.dependencies
+### `overrides.<glob>.dependencies`
 
 - Type: `Object`
 - Default: not defined
 
 Adds additional dependencies that will be added to the component. Format is similar to package.json dependencies. 
 
-### overrides.<glob>.devDependencies
+### `overrides.<glob>.devDependencies`
 
 - Type: `Object`
 - Default: not defined
 
 Adds additional devDependencies that will be added to the component. Format is similar to package.json devDependencies. 
 
-### overrides.<glob>.peerDependencies
+### `overrides.<glob>.peerDependencies`
 
 - Type: `Object`
 - Default: not defined
 
-Adds additional peer dependencies that will be added to the component. Format is similar to package.json peer dependencies. 
+Adds additional peer dependencies that will be added to the component. Format is similar to package.json peer dependencies.  
 
-### overrides.<glob>.env
+### `overrides.<glob>.env`
 
 - Type: `Object`
 - Default: not defined

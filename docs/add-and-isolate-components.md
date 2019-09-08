@@ -12,10 +12,9 @@ For more advance cases of tracking many components from the same project with al
 
 Additionally, `bit add` is used to manage the already tracked files of components. For example [adding new files to existing components](/docs/manage-component-files.html#adding-a-file-to-a-component), [removing tracked files from components](/docs/manage-component-files.html#removing-files-from-components), and [renaming tracked files](/docs/manage-component-files.html#rename-a-file).  
 
-
 > **Custom Module Definition**
 >
-> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's (Custom Module Resolution)[docs/tracking-dependencies.html#custom-module-resolution] configuration.
+> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [Custom Module Resolution](docs/tracking-dependencies.html#custom-module-resolution) configuration.
 
 ## Track a component
 

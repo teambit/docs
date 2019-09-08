@@ -1,6 +1,6 @@
 ---
 id: sourcing-components
-title: Sourcing Components With Bit
+title: Importing Components
 ---
 
 Bit allows importing component's source code to a consumer project.

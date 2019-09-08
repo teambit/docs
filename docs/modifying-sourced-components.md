@@ -1,6 +1,6 @@
 ---
 id: modifying-sourced-components
-title: Modifying Sourced Components
+title: Modifying Imported Components
 ---
 
 It's possible to change a component from any consuming project.

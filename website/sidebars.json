@@ -25,12 +25,13 @@
     "Components Workflow": [
       {
         "type": "subcategory",
-        "label": "Add & Isolate Components",
+        "label": "Tracking Components",
         "ids": [
-          "add-and-isolate-component",
-          "component-dependencies",
+
+          "add-and-isolate-components",
           "tracking-dependencies",
           "manage-component-files",
+          "component-dependencies",
           "troubleshooting-isolating"
         ]
       },

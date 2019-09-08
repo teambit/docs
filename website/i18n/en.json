@@ -27,9 +27,6 @@
       "bit-search-api": {
         "title": "bit-search-api"
       },
-      "bit-vue-tutorial": {
-        "title": "Bit for Vue"
-      },
       "bitdev-permissions": {
         "title": "Dependency Limitations"
       },
@@ -242,7 +239,7 @@
         "title": "Merging Component Changes"
       },
       "modifying-sourced-components": {
-        "title": "Modifying Sourced Components"
+        "title": "Modifying Imported Components"
       },
       "move-and-rename": {
         "title": "Modifying File Structure and Renaming Components"
@@ -284,19 +281,19 @@
         "title": "Setup bit.dev Authentication"
       },
       "sourcing-components": {
-        "title": "Sourcing Components With Bit"
+        "title": "Importing Components"
       },
       "sourcing-installing-dependencies": {
         "title": "Installing Dependencies for Sourced Components"
       },
       "tag-component-version": {
-        "title": "Tagging a Component"
+        "title": "Tagging Components"
       },
       "testing-components": {
         "title": "Testing Components"
       },
       "tracking-dependencies": {
-        "title": "Tracking Component's Dependencies"
+        "title": "Tracking Components' Dependencies"
       },
       "troubleshooting-doctor": {
         "title": "Troubleshooting with Doctor"
@@ -319,11 +316,14 @@
       "tutorials/bit-react-tutorial": {
         "title": "Bit for React"
       },
+      "tutorials/bit-vue-tutorial": {
+        "title": "Bit for Vue"
+      },
       "update-dependencies": {
         "title": "Update Dependencies"
       },
       "updating-sourced-components": {
-        "title": "Updating Sourced Components"
+        "title": "Updating Imported Components"
       },
       "using-in-your-code": {
         "title": "Using Bit Components in Your Code"

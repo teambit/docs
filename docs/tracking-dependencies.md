@@ -1,6 +1,6 @@
 ---
 id: tracking-dependencies
-title: Tracking Component's Dependencies
+title: Tracking Components' Dependencies
 ---
 
 Bit manages a component's package and file dependencies.

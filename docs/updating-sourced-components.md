@@ -1,6 +1,6 @@
 ---
 id: updating-sourced-components
-title: Updating Sourced Components
+title: Updating Imported Components
 ---
 
 With Bit, we can keep sourced components synced and up-to-date with remote changes.
