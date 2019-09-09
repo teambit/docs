@@ -1625,7 +1625,7 @@ bit tag foo/bar --force
 
 **Tagging a component with package dependencies**
 
-When tagging, make sure you've properly installed all the component's [package dependencies](/docs/how-dependency-management.html). Otherwise, tagging will be cancelled:
+When tagging, make sure you've properly installed all the component's [package dependencies](/docs/add-and-isolate-components#component-dependencies). Otherwise, tagging will be cancelled:
 
 ```bash
 bit tag foo/bar

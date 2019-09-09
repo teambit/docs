@@ -148,7 +148,7 @@ Use `overrides` to [modify](/docs/add-and-isolate-components#modify-dependency-v
 
 ## Bit Configuration Example
 
-The following is a detailed example of the Bit workspace configuration with multiple options. Learn more about each configuration [here](docs/conf-bit-json)
+The following is a detailed example of the Bit workspace configuration with multiple options. Learn more about each configuration [here](/docs/conf-bit-json)
 
 ```json
 {

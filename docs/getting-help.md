@@ -26,5 +26,5 @@ For any question, discussion or just to say 'hi':
 For any other request, premium support and general questions.
 
 * [Submit a Support Request](https://bit.dev/support)
-* [support@bit.dev](support@bit.dev)
+* [support@bit.dev](mailto:support@bit.dev)
   
