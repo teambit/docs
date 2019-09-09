@@ -125,7 +125,7 @@ As we've gained experience in developing testers for bit components, we've notic
 When a tester is imported to a workspace, its [dependencies](/docs/how-dependency-management.html) are installed as well.
 You should make sure bit recognizes the tester's dependencies, so it will later install them properly. A `require`/`import` statement is enough for bit, but there are two edge-cases where you should add `require` statements:
 
-* Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with plugins (for example, [karma plugins](http://karma-runner.github.io/1.0/config/plugins.html). [Here's a good example](https://bit.dev/bit/envs/testers/karma-mocha-react/code#testers/karma-mocha-react/karma.conf.js).
+* Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with plugins (for example, [karma plugins](http://karma-runner.github.io/1.0/config/plugins.html). [Here's a good example](https://bit.dev/bit/envs/testers/karma-mocha-react/~code#testers/karma-mocha-react/karma.conf.js).
 * Sometimes the tools you use require [peer dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/). There may not be `require` statements for those dependencies, so just make sure to add them if needed, if you want those to be installed.
 
 ## So you've written a tester. What's next?

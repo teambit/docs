@@ -49,7 +49,7 @@ Better yet, you can just add `bit link` as a [postinstall script](https://docs.n
 
 ## import relative paths
 
-It's really common to require other files from the same project using relative paths, as shown in the example component [string/left-pad](https://bit.dev/bit/utils/string/left-pad/code).
+It's really common to require other files from the same project using relative paths, as shown in the example component [string/left-pad](https://bit.dev/bit/utils/string/left-pad/~code).
 
 ```js
 import isString from '../is-string';
