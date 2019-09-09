@@ -158,7 +158,7 @@ So far, we have provided Bit with the source file of the component. But in order
 
 Bit has a large collection of compilers that are open sourced and maintained by Bit team. In addition, the community is suggesting compilers that you can use by searching Bit collections.
 
-For building the React component, you'll need the [React compiler](https://bit.dev/bit/envs/comilers/react).  
+For building the React component, you'll need the [React compiler](https://bit.dev/bit/envs/compilers/react).  
 Install the compiler and run this command inside the React tutorial repository:
 
 ```bash

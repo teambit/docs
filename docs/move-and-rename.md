@@ -7,7 +7,6 @@ Renaming, moving, removing and adding additional files are common procedures whe
 
 A component's file structure is not immutable - components are meant to grow and change over time, so adding new files, and also moving, removing and renaming existing ones, is entirely possible and easy-to-do.
 
-
 ## Renaming a component's ID
 
 It's impossible to actually rename a component's ID, for the same reason it's impossible to rename a node module package - it will break any code that consumes the component.
