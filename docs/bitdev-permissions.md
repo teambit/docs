@@ -8,7 +8,7 @@ In this doc we list some of the caveats of cross collection dependencies of comp
 ## Securing Private Components
 
 Bit aims to provide a secured and reliable hub for sharing both public and private code. There are few cases where dependencies between components that are hosted in different collections and owners may harm Bit's reliability to provide with working components and not exposing private code.  
-To ensure this does not happen, [bit.dev](bit.dev) has some limitations on cross collection dependencies. All limitations below are relevant to exported components.
+To ensure this does not happen, [bit.dev](https://bit.dev) has some limitations on cross collection dependencies. All limitations below are relevant to exported components.
 
 ### Public components not allowed to depend on private components
 

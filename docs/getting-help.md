@@ -11,7 +11,7 @@ In case you have discovered an issue with Bit, or want to request a feature or i
 
 * [Bit](https://github.com/teambit/bit)
 * [Bit documentation](https://github.com/teambit/bit-docs)
-* [Bit Tools Environments](https://github.com/teambit/bit-envs)
+* [Bit Tools Environments](https://github.com/teambit/bit.envs)
 
 ## Community Support
 
@@ -27,3 +27,4 @@ For any other request, premium support and general questions.
 
 * [Submit a Support Request](https://bit.dev/support)
 * [support@bit.dev](support@bit.dev)
+  

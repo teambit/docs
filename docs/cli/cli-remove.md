@@ -15,7 +15,7 @@ bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|-
 
 ### Remove a component from its remote Scope
 
-In order to remove a component from a [remote Scope](/docs/organizing-components-in-scopes.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote `.
+In order to remove a component from a [remote Scope](/docs/organizing-components.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote `.
 
 ```bash
 bit remove username.your-scope/foo/bar --remote
@@ -23,7 +23,7 @@ bit remove username.your-scope/foo/bar --remote
 
 > **Note**
 >
-> You have to be an [owner or a collaborator](/docs/scopes-on-bitsrc.html#permission-types) on the [remote Scope](/docs/organizing-components-in-scopes.html#create-a-remote-scope) in order to be able to remove components from it.
+> You have to be an [owner or a collaborator](/docs/scopes-on-bitsrc.html#permission-types) on the [remote Scope](/docs/organizing-components.html#create-a-remote-scope) in order to be able to remove components from it.
 
 #### Remove a component from its remote Scope when other components depend on it
 
@@ -39,7 +39,7 @@ bit remove username.your-scope/foo/bar --force
 
 ### Remove a component from your local Scope
 
-In order to remove a component from your [local Scope](/docs/what-is-bit.html#what-is-a-scope-collection), just specify the [local component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) (meaning - just namespace and name).
+In order to remove a component from your [local Collection](/docs/concepts#collection), just specify the [local component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) (meaning - just namespace and name).
 
 ```bash
 bit remove foo/bar

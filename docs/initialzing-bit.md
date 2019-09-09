@@ -26,7 +26,7 @@ bit init --reset
 
 ### Bit local storage
 
-The local storage stores Bit objects (components, versions, etc.). Bit manages it in a directory called `.bit`. If you use [Git](git-scm.com), Bit creates a local storage directory in the `.git` directory. Do not track changes in the `.bit` directory using SCM. Make sure to add it to the `.gitignore` file.
+The local storage stores Bit objects (components, versions, etc.). Bit manages it in a directory called `.bit`. If you use [Git](https://git-scm.com), Bit creates a local storage directory in the `.git` directory. Do not track changes in the `.bit` directory using SCM. Make sure to add it to the `.gitignore` file.
 
 To force Bit not to nest the local storage in `.git`, use the `--standalone` flag:
 

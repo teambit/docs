@@ -67,7 +67,7 @@ Adding your component should be done as follow:
 bit add src/app/my-comp  --main src/app/my-comp/my-comp.module.ts
 ```
 
-If your components have a consistent structure, you can add multiple ngModules as bit components by using the [Bit DSL](docs/add-and-isolate-components.html#tracking-dsl), by specifying this command:  
+If your components have a consistent structure, you can add multiple ngModules as bit components by using the [Bit DSL](/docs/add-and-isolate-components.html#tracking-dsl), by specifying this command:  
 
 ```bash
 bit add src/app/components/*/ --main 'src/app/components/{PARENT}/{PARENT}.module.ts'

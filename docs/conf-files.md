@@ -34,7 +34,7 @@ Here's the base `bit` workspace configuration:
 
 ### Configure your development workflow
 
-Bit reads the configuration set in the project's root whenever you run any Bit command. So you can define specific behaviors for Bit. Take the time and to get familiar with the [available configurations](/docs/conf-bit-conf.html) and their defaults. Below are some of the configurations and their use-cases:
+Bit reads the configuration set in the project's root whenever you run any Bit command. So you can define specific behaviors for Bit. Take the time and to get familiar with the [available configurations](/docs/conf-bit-json) and their defaults. Below are some of the configurations and their use-cases:
 
 - `componentsDefaultDirectory` - Define a default directory for all imported components. Use `bit import --path` to override if needed.
 - `saveDependenciesAsComponents` - Bit install all the component dependencies of components as node packages by default. If your components are not available to install via a registry, you should change Bit's default.
@@ -148,7 +148,7 @@ Use `overrides` to [modify](/docs/component-dependencies.html#modify-dependency-
 
 ## Bit Configuration Example
 
-The following is a detailed example of the Bit workspace configuration with mutliple options. Learn more about each configuration [here](docs/conf-bit-json.html)
+The following is a detailed example of the Bit workspace configuration with multiple options. Learn more about each configuration [here](docs/conf-bit-json)
 
 ```json
 {

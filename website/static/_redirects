@@ -1,4 +1,4 @@
-/docs/what-is-bit                    /docs/overview   
+/docs/what-is-bit.html                    /docs/overview   
 /docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
 /docs/initializing-bit.html          /docs/installation
 /docs/faq-what-is-bit.html           /docs/overview 
@@ -22,7 +22,7 @@
 /docs/cli-add.html 	 /docs/cli/cli-add
 /docs/cli-build.html 	 /docs/cli/cli-build
 /docs/cli-checkout.html 	 /docs/cli/cli-checkout
-/docs/cli-clear.html-cache 	 /docs/cli/cli-clear-cache
+/docs/cli-clear-cache.html-cache 	 /docs/cli/cli-clear-cache
 /docs/cli-config.html 	 /docs/cli/cli-config
 /docs/cli-deprecate.html 	 /docs/cli/cli-deprecate
 /docs/cli-diff.html 	 /docs/cli/cli-diff

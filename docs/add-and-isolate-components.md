@@ -14,7 +14,7 @@ Additionally, `bit add` is used to manage the already tracked files of component
 
 > **Custom Module Definition**
 >
-> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [Custom Module Resolution](docs/tracking-dependencies.html#custom-module-resolution) configuration.
+> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [Custom Module Resolution](/docs/tracking-dependencies#custom-module-resolution) configuration.
 
 ## Track a component
 
