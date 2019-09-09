@@ -19,18 +19,18 @@ These are the steps Bit does to create a dependency graph for each component. Th
     1. If a package is required by an implementation file, but is configured as `peerDependency` in the `package.json`, Bit sets it as a `peerDependency` for the component.
     2. If the package is required by a [test file](/docs/add-and-isolate-components.html#tracking-a-component-with-testspec-files)) of the component, Bit defines it as `devDependency`.
     3. For any other case, Bit defines the package as a `dependency`.
-    4. If a package is not found, Bit triggers an error about [missing package dependencies](/docs/troubleshooting-isolating.html#missing-package-dependencies).
+    4. If a package is not found, Bit triggers an error about [missing package dependencies](/docs/add-and-isolate-components#missing-package-dependencies).
 5. The package version is the one currently installed and required by the file.
 6. Another matching process starts for each required file:
-    1. If a required file is already tracked by another component, Bit sets it as a `dependency` (or a `devDependency` if the file is required by a test file), otherwise it prompts an error for [untracked file dependencies](/docs/troubleshooting-isolating.html#untracked-file-dependencies).
-    2. If the file is not found, it prompts an error for [non existing dependency file](/docs/troubleshooting-isolating.html#non-existing-dependency-files).
+    1. If a required file is already tracked by another component, Bit sets it as a `dependency` (or a `devDependency` if the file is required by a test file), otherwise it prompts an error for [untracked file dependencies](/docs/add-and-isolate-components#untracked-file-dependencies).
+    2. If the file is not found, it prompts an error for [non existing dependency file](/docs/add-and-isolate-components#non-existing-dependency-files).
 7. When the parsing process completes successfully Bit can create an immutable dependency graph for the component.
 
 > **Dependencies Edge Cases and Gotchas**
 >
 > * A package listed both as a `peerDependency` and a `dependency` or `devDependency` in the `package.json`,  will be considered as a `peerDependency`.
 > * A package required by both test-file and implementation-file is a `dependency`.
-> * A file required using a absolute path feature like Webpack resolve, tsconfig resolving, etc requires configuring [custom module resolution](/docs/tracking-dependencies.html#custom-module-resolution) for Bit.
+> * A file required using a absolute path feature like Webpack resolve, tsconfig resolving, etc requires configuring [custom module resolution](/docs/add-and-isolate-components#custom-module-resolution) for Bit.
 
 ### Working with the automated dependency resolution
 

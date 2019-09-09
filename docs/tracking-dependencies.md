@@ -6,7 +6,7 @@ title: Tracking Components' Dependencies
 Bit manages a component's package and file dependencies.
 
 A component may use packages or `import` files/components to work. Bit reads through all `require` and `import` statements for the components it tracks.  
-There are two dependencies a component may have, [Package Dependencies](#package-dependencies) and [File Dependencies](#file-dependencies). You can read more about Bit's [automated component dependency resolution](/docs/component-dependencies.html)
+There are two dependencies a component may have, [Package Dependencies](#package-dependencies) and [File Dependencies](#file-dependencies). You can read more about Bit's [automated component dependency resolution](/docs/add-and-isolate-components#component-dependencies)
 
 * Bit creates `package.json` for all package dependencies.
 * Bit should track all file dependencies. They can be a part of the same component or another one.
@@ -301,4 +301,4 @@ The output of `bit status` notifies on a missing package dependency for `@/utils
 }
 ```
 
-After defining the custom module resolution, Bit can find `utils/noop`. Since we haven't tracked `src/utils/noop` yet, Bit marks it as an untracked file dependency. Resolving this issue is explained [above](##untracked-file-dependencies).
+After defining the custom module resolution, Bit can find `utils/noop`. Since we haven't tracked `src/utils/noop` yet, Bit marks it as an untracked file dependency. Resolving this issue is explained [above](#untracked-file-dependencies).

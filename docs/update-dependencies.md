@@ -68,7 +68,7 @@ $ bit export <remote collection> # share patch component
 
 ### Change from dependency to peerDependency
 
-Bit determines the type of a package dependency [according to how a component uses it](/docs/tracking-dependencies.html). Bit keeps updating component's dependencies according to the same logic. Deciding between a `peerDependency` and a `dependency` is something that we should control. Bit offers this flexibility.  
+Bit determines the type of a package dependency [according to how a component uses it](/docs/add-and-isolate-components). Bit keeps updating component's dependencies according to the same logic. Deciding between a `peerDependency` and a `dependency` is something that we should control. Bit offers this flexibility.  
 The same flow for changing a component version works for this case as well. But unlike it, the change should be moving the package from the `dependencies` list to `peerDependencis`, and vice-versa.  
 Let's follow a simple example:
 

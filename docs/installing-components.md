@@ -1,6 +1,6 @@
 ---
 id: installing-components
-title: Installing Components
+title: Installing
 ---
 
 Bit supports CommonJS API for consuming components as packages.

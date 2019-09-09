@@ -2,8 +2,8 @@
 /docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
 /docs/initializing-bit.html          /docs/installation
 /docs/faq-what-is-bit.html           /docs/overview 
-/docs/isolating-and-tracking-components.html    /docs/add-and-isolate-components.html   
-/docs/adding-tracking-files-as-components.html  /docs/add-and-isolate-components.html   
+/docs/isolating-and-tracking-components.html    /docs/add-and-isolate-components   
+/docs/adding-tracking-files-as-components.html  /docs/add-and-isolate-components   
 /tutorial/node-tutorial.html        /docs/bit-nodejs-tutorial.html      
 /docs/conf-bit-on-the-server.html   /docs/bit-server.html    
 /docs/bit-on-the-server.html        /docs/bit-server.html
@@ -15,10 +15,20 @@
 /docs/importing-components.html     /docs/sourcing-components.html
 /docs/versioning-tracked-components.html   /docs/tag-component-version.html
 /docs/faq-understanding-bit-status.html  /docs/workspace-statuses.html
-/docs/bit-react-tutorial            /docs/tutorials/bit-react-tutorial
-/docs/bit-angular-tutorial          /docs/tutorials/bit-react-tutorial
-/docs/bit-nodejs-tutorial           /docs/tutorials/bit-react-tutorial
-/docs/bit-react-library-tutorial    /docs/tutorials/bit-react-tutorial
+/docs/bit-react-tutorial.html            /docs/tutorials/bit-react-tutorial
+/docs/bit-angular-tutorial.html          /docs/tutorials/bit-react-tutorial
+/docs/bit-nodejs-tutorial.html           /docs/tutorials/bit-react-tutorial
+/docs/bit-react-library-tutorial.html    /docs/tutorials/bit-react-tutorial
+/docs/authentication-issues.html        /docs/setup-authentication#authentication-issues
+/docs/tracking-dependencies.html        /docs/add-and-isolate-components#tracking-dependencies
+/docs/manage-components-files.html      /docs/add-and-isolate-components#manage-components-files
+/docs/component-dependencies.html       /docs/add-and-isolate-components#component-dependencies
+/docs/add-and-isolate-components#isolation-errors    /docs/add-and-isolate-components#isolation-errors
+/docs/modifying-sourced-components.html         /docs/sourcing-components#modify-imported-component
+/docs/update-dependencies.html              /docs/sourcing-components#update-component-dependencies
+/docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
+/docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
+
 /docs/cli-add.html 	 /docs/cli/cli-add
 /docs/cli-build.html 	 /docs/cli/cli-build
 /docs/cli-checkout.html 	 /docs/cli/cli-checkout

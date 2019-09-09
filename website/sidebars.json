@@ -3,9 +3,7 @@
     "Basics": [
       "quick-start",
       "overview",
-        "concepts",
-        "best-practices",
-        "getting-help"
+        "concepts"
     ],
     "Tutorials": [
         "tutorials/bit-react-tutorial",
@@ -19,57 +17,23 @@
         "remote-collection",
         "conf-files",
         "handling-errors",
-        "authentication-issues",
         "conf-analytics"
     ],
-    "Components Workflow": [
-      {
-        "type": "subcategory",
-        "label": "Tracking Components",
-        "ids": [
-
-          "add-and-isolate-components",
-          "tracking-dependencies",
-          "manage-component-files",
-          "component-dependencies",
-          "troubleshooting-isolating"
-        ]
-      },
-        "building-components",
-        "testing-components",
-        "tag-component-version",
-        "documenting-components",
-        "organizing-components",
-        {
-        "type": "subcategory",
-        "label": "Share Components to Bit.dev",
-        "ids": [
-          "organizing-components",
-          "removing-components",
-          "installing-components"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Sourcing Components",
-        "ids": [
-          "sourcing-components",
-          "modifying-sourced-components",
-          "update-dependencies",
-          "updating-sourced-components",
-          "merge-changes"
-        ]
-      },
-        "workspace-statuses"
-    ],
-    "Extending Bit": [
-        "ext-concepts",
-        "ext-using-extensions",
-        "ext-developing-extensions",
-        "ext-compiling",
-        "ext-testing"
+    "Components": [
+      "add-and-isolate-components",
+      "building-components",
+      "testing-components",
+      "tag-component-version",
+      "documenting-components",
+      "organizing-components",
+      "organizing-components",
+      "removing-components",
+      "installing-components",
+      "sourcing-components",
+      "workspace-statuses"
     ],
     "Guides": [
+        "best-practices",
         "react-guidelines",
         "angular-guidelines",
         "ci",
@@ -83,6 +47,13 @@
         "bitdev-permissions",
         "bitdev-sla"
     ],
+    "Extending Bit": [
+      "ext-concepts",
+      "ext-using-extensions",
+      "ext-developing-extensions",
+      "ext-compiling",
+      "ext-testing"
+  ],
     "Reference": [
         "conf-config",
         "conf-bit-json",

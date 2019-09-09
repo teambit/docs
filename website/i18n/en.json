@@ -6,10 +6,13 @@
     "tagline": "Components Collaboration Platform",
     "docs": {
       "add-and-isolate-components": {
-        "title": "Tracking Files as Components"
+        "title": "Tracking"
       },
       "angular-guidelines": {
         "title": "Angular Guidelines"
+      },
+      "apis/cli-all": {
+        "title": "CLI Reference"
       },
       "apis/cli": {
         "title": "CLI Commands",
@@ -46,7 +49,7 @@
         "title": "Security and Data Policy"
       },
       "building-components": {
-        "title": "Building Components"
+        "title": "Building"
       },
       "ci": {
         "title": "CI & Deployment"
@@ -169,7 +172,7 @@
         "title": "Developing Extensions"
       },
       "documenting-components": {
-        "title": "Documenting Components"
+        "title": "Documenting"
       },
       "enrich-component-data": {
         "title": "Enrich Component Data"
@@ -181,7 +184,7 @@
         "title": "Example Projects"
       },
       "ext-compiling": {
-        "title": "Compiling"
+        "title": "Build a compiler"
       },
       "ext-concepts": {
         "title": "Extending Bit"
@@ -193,7 +196,7 @@
         "title": "Developing Extensions"
       },
       "ext-testing": {
-        "title": "Testing"
+        "title": "Build a tester"
       },
       "ext-using-extensions": {
         "title": "Using Extensions"
@@ -224,7 +227,7 @@
         "title": "Installing Bit"
       },
       "installing-components": {
-        "title": "Installing Components"
+        "title": "Installing"
       },
       "latest-version": {
         "title": "Installing the Latest Stable Version of Bit"
@@ -251,7 +254,7 @@
         "title": "Deploy Bit project on Netlify"
       },
       "organizing-components": {
-        "title": "Organizing Components in Collections"
+        "title": "Exporting"
       },
       "overview": {
         "title": "What is Bit?"
@@ -272,25 +275,25 @@
         "title": "Creating a Remote Collection"
       },
       "removing-components": {
-        "title": "Remove & Deprecate Components"
+        "title": "Removing & Deprecating"
       },
       "rendering-components": {
         "title": "Rendering Components"
       },
       "setup-authentication": {
-        "title": "Setup bit.dev Authentication"
+        "title": "bit.dev Authentication"
       },
       "sourcing-components": {
-        "title": "Importing Components"
+        "title": "Importing"
       },
       "sourcing-installing-dependencies": {
         "title": "Installing Dependencies for Sourced Components"
       },
       "tag-component-version": {
-        "title": "Tagging Components"
+        "title": "Versioning"
       },
       "testing-components": {
-        "title": "Testing Components"
+        "title": "Testing"
       },
       "tracking-dependencies": {
         "title": "Tracking Components' Dependencies"
@@ -347,17 +350,17 @@
     "links": {
       "Docs": "Docs",
       "Why Bit?": "Why Bit?",
-      "Blog": "Blog",
+      "Support": "Support",
       "Github": "Github"
     },
     "categories": {
       "Basics": "Basics",
       "Tutorials": "Tutorials",
       "Setup": "Setup",
-      "Components Workflow": "Components Workflow",
-      "Extending Bit": "Extending Bit",
+      "Components": "Components",
       "Guides": "Guides",
       "bit.dev": "bit.dev",
+      "Extending Bit": "Extending Bit",
       "Reference": "Reference",
       "Why Bit?": "Why Bit?"
     }

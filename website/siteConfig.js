@@ -40,7 +40,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'quick-start', label: 'Docs' },
     { doc: 'whybit/why-bit', label: 'Why Bit?' },
-    { href: "https://blog.bitsrc.io/tagged/bit", label: "Blog" },
+    { href: "getting-help", label: "Support" },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 

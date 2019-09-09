@@ -531,28 +531,26 @@ bit remote add ssh://my-username@my-server:/opt/bit/my-collection
 bit remote rm my-collection
 ```
 
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--global` | `-g` | see globally configured remotes
+
 ## remove
 
+alias: `rm`  
 Workspace only: no. Can run on remote.
 
-`bit remote [add <url> | remove <name>]`
-Manages [remotes](docs/server) for a specific workspace, or globally.  
->bit.dev is not displayed as a remote
+`bit remove <ids...>`
 
-**List all remotes**
+Remove components from local or remote collection
 
-```bash
-bit remote
-```
+Options:
+  -f, --force [boolean]         force remove (default = false)
+  -r, --remote                  remove a component from a remote scope
+  -t, --track [boolean]         keep tracking component (default = false)
+  -d, --delete-files [boolean]  delete local component files (authored components only. for imported components the files are always deleted)
+  -s, --silent [boolean]        skip confirmation
 
-**Add a remote**
-
-```bash
-bit remote add ssh://my-username@my-server:/opt/bit/my-collection
-```
-
-**Remove a remote**
-
-```bash
-bit remote rm my-collection
-```
+| **Option** | **Alias** | **Description**
+|---|---|---|
+|`--force` | `-f` | force remove (default = false)

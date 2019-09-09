@@ -1,6 +1,6 @@
 ---
 id: testing-components
-title: Testing Components
+title: Testing
 ---
 
 Bit can run tests for components with a test task defined.

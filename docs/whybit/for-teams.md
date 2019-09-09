@@ -27,7 +27,7 @@ With Bit, you don't need to refactor anything to publish components from your li
 
 **Automatic dependency definition & management**
 
-In large-scale component libraries or apps, managing components dependencies can be a real pain. Bit makes dependency definition simple by automatically defining dependencies for each component (based on your import and require statements) while giving you an easy way out in case you need to override any of the defined dependencies. Bit will [automatically define and handle](https://docs.bit.dev/docs/tracking-dependencies.html) all the dependencies for the components in the repository and will suggest to update them whenever a dependency changes. This means saving a lot of time and effort in the maintenance and development of the library using Bit.
+In large-scale component libraries or apps, managing components dependencies can be a real pain. Bit makes dependency definition simple by automatically defining dependencies for each component (based on your import and require statements) while giving you an easy way out in case you need to override any of the defined dependencies. Bit will [automatically define and handle](https://docs.bit.dev/docs/add-and-isolate-components) all the dependencies for the components in the repository and will suggest to update them whenever a dependency changes. This means saving a lot of time and effort in the maintenance and development of the library using Bit.
 
 **Component versioning**
 

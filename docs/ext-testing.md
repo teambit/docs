@@ -1,6 +1,6 @@
 ---
 id: ext-testing
-title: Testing
+title: Build a tester
 ---
 
 Bit uses testers, which are environments - a special kind of [extension](/docs/ext-concepts.html#extensions-vs-environments), in order to [test components](/docs/testing-components.html). Since there are so many testing tools and configurations, some of you might discover that the existing testers don't fit their requirements. Testers are bit components in their own right, and anyone can develop a new tester. In this section, we'll learn how.

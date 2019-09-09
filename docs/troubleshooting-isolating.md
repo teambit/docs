@@ -24,13 +24,13 @@ npm install
 
 ### Configuring Custom Module Resolution
 
-Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [Custom Module Resolution](/docs/tracking-dependencies.html#custom-module-resolution).
+Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [Custom Module Resolution](/docs/add-and-isolate-components#custom-module-resolution).
 
 ## Untracked file dependencies
 
 This isolation error occur when one of the component's tracked files has a file dependency that is not tracked by Bit. There are several ways to resolve this issue, choose one of the option that goes with the specific implementation of your component and project.
 
-[Learn more](/docs/tracking-dependencies.html#file-dependencies) about tracking components with file dependencies.
+[Learn more](/docs/add-and-isolate-components#file-dependencies) about tracking components with file dependencies.
 
 ## Components with Relative Import Statements
 

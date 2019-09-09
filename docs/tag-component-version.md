@@ -1,6 +1,6 @@
 ---
 id: tag-component-version
-title: Tagging Components
+title: Versioning
 ---
 Tagging a component creates a locked version of the component.
 

@@ -1,6 +1,6 @@
 ---
 id: building-components
-title: Building Components
+title: Building
 ---
 
 Each component has a build task defined. Bit uses it to compile a component in a workspace.

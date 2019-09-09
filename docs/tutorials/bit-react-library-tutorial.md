@@ -155,7 +155,7 @@ import { GeneralPro ... objectKeys } from '../utils';
 ...
 ```
 
-Bit traverses all tracked files to form a dependency graph for each component. All the component’s files should be tracked by Bit. When a file Bit tracks requires an untracked file, Bit asks that you track the untracked file as well. [Learn more](/docs/tracking-dependencies.html) about the ins and outs of handling component dependencies.  
+Bit traverses all tracked files to form a dependency graph for each component. All the component’s files should be tracked by Bit. When a file Bit tracks requires an untracked file, Bit asks that you track the untracked file as well. [Learn more](/docs/add-and-isolate-components) about the ins and outs of handling component dependencies.  
 
 Run this commands to track the additional files:
 

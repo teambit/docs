@@ -1,9 +1,7 @@
 ---
 id: organizing-components
-title: Organizing Components in Collections
+title: Exporting
 ---
-
-In this section, we’ll learn how to share & organize components in collections.
 
 By exporting components to remote collections, we allow other developers to consume them. We can only export versioned components. This is because they are immutable and isolated. The command we use to export components is [bit export](/docs/cli-export.html).
 

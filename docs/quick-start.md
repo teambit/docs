@@ -183,7 +183,7 @@ When a component was updated with a new version in the collection, you can [upda
 
 ## Merge changes
 
-[Bit extends Git](/docs/merge-changes.html) to allow the merging of changes for components, including the [handling of marge-conflicts](/docs/merge-changes.html#handle-merge-conflicts). This workflow helps your team sync changes when developing components from different projects.
+[Bit extends Git](/docs/sourcing-components#merge-incoming-changes) to allow the merging of changes for components, including the [handling of marge-conflicts](/docs/sourcing-components#handle-merge-conflicts). This workflow helps your team sync changes when developing components from different projects.
 
 **Well done**
 

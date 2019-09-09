@@ -26,7 +26,7 @@ nothing to tag or export
 Components that have been tracked, but not yet tagged.
 
 Bit tries to to validate if a *new component* can be isolated, and will print all isolation issues it finds (if any).  
-[Read more about the different isolation issues and how to resolve them](/docs/troubleshooting-isolating.html).
+[Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```bash
 $ bit status
@@ -58,7 +58,7 @@ Components that have already been staged, exported or sourced, and then modified
 Modified components are meant to be tagged and set as a new version.
 
 Bit tries to to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any).  
-[Read more about the different isolation issues and how to resolve them](/docs/troubleshooting-isolating.html).
+[Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```bash
 $ bit status

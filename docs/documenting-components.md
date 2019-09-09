@@ -1,6 +1,6 @@
 ---
 id: documenting-components
-title: Documenting Components
+title: Documenting
 ---
 
 It’s essential to document components so that they can be discoverable. Documented components are also more comfortable to use and understand.

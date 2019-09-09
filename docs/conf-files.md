@@ -44,7 +44,7 @@ Bit reads the configuration set in the project's root whenever you run any Bit c
 
 ### Set default configuration for components
 
-Bit manages two types of configurations for components. `env` for defining build and test configurations, and component dependencies. While `env` is manual, [dependency management is automated](/docs/component-dependencies.html).  
+Bit manages two types of configurations for components. `env` for defining build and test configurations, and component dependencies. While `env` is manual, [dependency management is automated](/docs/add-and-isolate-components#component-dependencies).  
 During the versioning process, Bit saves the current component configuration as part of the component-version.
 
 #### Default component environment
@@ -65,7 +65,7 @@ $ cat package.json
 
 #### Component dependency definition
 
-While Bit's [automatically resolves and defines component dependencies](/docs/component-dependencies.html) according to the implementation of the component itself. This means that when you modify a component's implementation and add/remove an `import` statement to a package, file or a component - Bit changes the component dependencies configuration.
+While Bit's [automatically resolves and defines component dependencies](/docs/add-and-isolate-components#component-dependencies) according to the implementation of the component itself. This means that when you modify a component's implementation and add/remove an `import` statement to a package, file or a component - Bit changes the component dependencies configuration.
 
 ### Specific component configurations
 
@@ -102,7 +102,7 @@ Here's a short snippet from a config that demos it:
 
 > **Note**
 >
-> You can use `overrides` to [modify](/docs/component-dependencies.html#modify-dependency-version), [add](/docs/component-dependencies.html#add-dependency) or [remove](/docs/component-dependencies.html#remove-dependency) dependencies.
+> You can use `overrides` to [modify](/docs/add-and-isolate-components#modify-dependency-version), [add](/docs/add-and-isolate-components#add-dependency) or [remove](/docs/add-and-isolate-components#remove-dependency) dependencies.
 
 ## Imported Component Configuration
 
@@ -144,7 +144,7 @@ To modify a compiler or tester for imported components, edit the right key with 
 
 ### Modify dependencies
 
-Use `overrides` to [modify](/docs/component-dependencies.html#modify-dependency-version), [add](/docs/component-dependencies.html#add-dependency) or [remove](/docs/component-dependencies.html#remove-dependency) dependencies.
+Use `overrides` to [modify](/docs/add-and-isolate-components#modify-dependency-version), [add](/docs/add-and-isolate-components#add-dependency) or [remove](/docs/add-and-isolate-components#remove-dependency) dependencies.
 
 ## Bit Configuration Example
 

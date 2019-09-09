@@ -1,6 +1,6 @@
 ---
 id: ext-compiling
-title: Compiling
+title: Build a compiler
 ---
 
 Bit uses compilers, which are environments - a special kind of [extension](/docs/ext-concepts.html#extensions-vs-environments), in order to [build components](/docs/building-components.html). Since there are so many build tools and configurations, some of you might discover that the existing compilers don't fit their requirements. Compilers are bit components in their own right, and anyone can develop a new compiler. In this section, we'll learn how.
@@ -38,7 +38,7 @@ As we've gained experience in developing compilers for bit components, we've not
 
 ## Dependencies
 
-When a compiler is imported to the workspace, its [dependencies](/docs/component-dependencies.html) are installed as well.
+When a compiler is imported to the workspace, its [dependencies](/docs/add-and-isolate-components#component-dependencies) are installed as well.
 You should make sure bit recognizes the compiler's dependencies, so it will later install them properly. A `require`/`import` statement is enough for bit, but there are two edge-cases where you should add `require` statements:
 
 * Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with [babel plugins and presets](https://babeljs.io/docs/plugins/). [Here's a good example](https://bit.dev/bit/envs/compilers/babel/~code#compilers/babel/index.js).
