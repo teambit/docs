@@ -1,9 +1,9 @@
 {
   "docs": {
     "Basics": [
-        "overview",
+      "quick-start",
+      "overview",
         "concepts",
-        "quick-start",
         "best-practices",
         "getting-help"
     ],

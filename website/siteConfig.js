@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'overview', label: 'Docs' },
+    { doc: 'quick-start', label: 'Docs' },
     { doc: 'whybit/why-bit', label: 'Why Bit?' },
     { href: "https://blog.bitsrc.io/tagged/bit", label: "Blog" },
     { href: "https://github.com/teambit/bit", label: "Github" }
