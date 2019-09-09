@@ -1,9 +1,9 @@
 {
   "docs": {
-    "Basics": [
+    "Introduction": [
       "quick-start",
-      "overview",
-        "concepts"
+      "concepts",
+      "workflow"
     ],
     "Tutorials": [
         "tutorials/bit-react-tutorial",
@@ -40,7 +40,7 @@
         "bit-server"
     ],
     "bit.dev": [
-        "bitsrc-component-ci",
+        "bit-dev",
         "my-account",
         "bitsrc-plans",
         "bitsrc-security",
@@ -62,6 +62,7 @@
   },
   "whybit?": {
     "Why Bit?": [
+    "what-is-bit",  
     "whybit/why-bit",
     "whybit/for-teams",
     "whybit/for-libs"

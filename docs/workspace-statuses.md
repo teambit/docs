@@ -49,7 +49,7 @@ staged components
 
   > string/index. versions: 0.0.1, 0.0.2, 0.0.3 ... ok
   > string/is-string. versions: 0.0.1 ... ok
-	> string/pad-left. versions: 0.0.1, 0.0.2 ... ok
+  > string/pad-left. versions: 0.0.1, 0.0.2 ... ok
 ```
 
 ### Modified components

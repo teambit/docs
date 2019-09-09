@@ -23,7 +23,7 @@ Bit is the most effective way to publish and manage multiple components from any
 
 **Instantly publish components from any repository**
 
-With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months. If you have many libraries, the difference becomes that much more dramatic. 
+With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months. If you have many libraries, the difference becomes that much more dramatic.  
 
 **Automatic dependency definition & management**
 
@@ -35,7 +35,7 @@ Bit helps you easily get control, bump and manage versions for components on you
 
 **Granularity is unlimited**
 
-A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase. 
+A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase.  
 
 **Component testing is part of the workflow**
 

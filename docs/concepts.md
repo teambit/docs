@@ -2,10 +2,47 @@
 id: concepts
 title: Bit Concepts
 ---
+## Components
 
-## Collection 
+Components are the building blocks of Modern web architectures. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well defined APIs, components let developers build software applications better and faster.
 
-Bit stores components information in collections (sometimes also referenced as scopes). Just like a version control system is a collection of related files, a collection is a collection of related components. 
+The major frontend frameworks, [React](https://reactjs.org), [Vue](https://vuejs.org/), and [Angular](https://angular.io) all share the concept of using components based architecture to compose state-of-the-art applications. Even the browsers themselves are now backing components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standards.  
+
+At the same time, Version Control Systems (VCS) and package managers are still revolving around the concept of projects. Each project is a single VCS repository and requires a substantial overhead. As a result, organizations are aggregating multiple components, and sometimes multiple projects, into a single VCS repository.  
+
+A typical example of a single repository holding multiple components are shared libraries such as Bootstrap or Material UI. Similarly, organizations manage their design systems in a single code repository.  
+
+The result is a complete discrepancy between producers and consumers. The components producer is storing all the components in a single repository and a single package. The consumer of the components only needs a subset of the package.  
+
+Bit bridges this gap. Bit adds a layer on top of existing tools for destructing repositories into discrete components and supports their lifecycle.  
+
+### Components and Files
+
+Inside a repository, all files are made equal. There is no semantic definition of a component, aside from conventions of directories and files names.  
+
+Bit adds the mapping between the component as a logical unit with a defined and specific functionality and the files that comprise this functionality.  
+
+![Bit Component](https://storage.googleapis.com/static.bit.dev/docs/images/component.png)
+
+### Components Dependencies
+
+Components do not exist in a vacuum. Components depend on each other by using functionality from other components. This creates a graph of components dependencies. Understanding the relationships between components is crucial when there are tens and hundreds of components.  
+
+Bit provides the tooling for managing this dependency graph. Bit does not only know what is the code for each component, but also analyzes the source code to understand the components' dependencies.  
+
+Once a dependencies graph exist for each component, its management becomes simpler. If you want to transfer a component from one project to another, Bit knows exactly what are the additional components that should go with it. If a change occur in a component, Bit can identify what components are impacted by it, and notify on a version update that is needed on it.  
+
+### Components Packaging  
+
+The specific content of a bit component varies according to the specific framework. It may hold a single plain javascript file with a single function, React Component, Vue component, Angular module or a web component.  
+
+The modern frameworks require that components go through a build process to be usable. Good software practices also suggest unit testing for each component to validate its functionality.  
+
+Bit manages the full life cycle of the component. In addition to the source code, and the dependency graph, Bit retains information about the tools and configurations needed for building and testing the component.  
+
+## Collections  
+
+Bit stores components information in collections (sometimes also referenced as scopes). Just like a version control system is storing related files in a project, a collection is storing related components.  
 
 Bit collections are distributed. Similar to distributed version control systems (DVCS) such as git or mercurial, bit collections are all made equal. That is to say that components can be exported and imported between any two collections.  
 
@@ -35,9 +72,11 @@ A project's workspace exports components to a remote collection hosted on a Bit 
 
 There are no limitations on components exporting - a local workspace may import from and export to multiple collections stored on different servers.  
 
-Managing remote collection as well as local workspaces is by using the [`bit-cli`](#cli-tool-bit-bin). Also, the server needs to have the bit-cli and npm configurations..
+Managing remote collection as well as local workspaces is by using the [`bit-cli`](#bit-cli-bit-bin). Also, the server needs to have the bit-cli and npm configurations.
 
-## bit-cli (bit-bin)
+For hosting remote collections, you can use The [bit.dev cloud server](/docs/bit-dev) or setup own Bit Server](/docs/bit-server).
+
+## Bit CLI (bit-bin)
 
 Working with a bit workspace on local dev machine or setting up a bit server requires the bit-cli tool. bit-cli manages the components and collections and their content.  
 
@@ -47,7 +86,7 @@ All components and collections management is done using the bit-cli tool, instal
 
 The bit-cli configuration is  shared between all workspaces on a single machine. bit-cli configuration is accessible using the [`bit config`](apis/cli#config) command. The configuration file is created when running `bit login`, and is stored according to the OS.
 
-## NPM Configuration
+### NPM Configuration
 
 When using NPM or Yarn to install components, the tools should be capable of finding bit components.  
 
@@ -56,42 +95,3 @@ NPM and Yarn use the npm configuration ( the [`.npmrc` file](https://docs.npmjs.
 NPM configuration points to the bit registry for all installs that start with `@bit`. The bit registry itself is located in `https://node.bit.dev`.
 
 When a user logs into Bit, the CLI updates the NPM configuration with the Bit registry information, including the user token. The user token ensures that the user can only access authorized collections.  
-
-## bit.dev
-
-Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace. 
- 
-![Bit.dev](https://storage.googleapis.com/static.bit.dev/docs/images/bit.dev.png)
-
-> Unlike bit-cli tool that is open-sourced, bit.dev server is proprietary and owned by Bit.
-
-Bit.dev server provides these functions: 
-
-### Remote Collections Hosting
-
-A Remote Collection is a curated list of shared components on a remote server. The remote collection is used for collaborating on components between bit workspaces. Bit.dev provides hosting for remote collections for all the users.
-Each remote collection contains the bit scope of its components as well as additional information on the collection: 
-
-- Collection name - The name by which the bit scope in the collection is available to developers for sharing or consuming components. 
-- Visibility - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users. 
-- License - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses) 
-- Users & Roles - the users that have access to the collection and their roles on the collection (admin, developer, or viewer).
-
-### Component Playground
-
-![Component Playground](https://storage.googleapis.com/static.bit.dev/docs/images/playground.png)
-The component playground is a web-based editor and a rendering environment for each component hosted on Bit.dev server. 
-The component playground enables developing example wrappers for the component to show its usage.
-
-### Component CI
-
-When a component is exported to bit.dev, the components CI (Continuous Integration) runs a container for building and testing the component. The container uses the compiler and tester defined for the component in the original project. 
-The component is built in an isolated environment. The isolated environment contains the packages and dependencies defined for the component but does not have all the remaining project definitions. This isolation makes sure the component is truly stand-alone and is consumable by other projects. 
-
-The Component's CI displays the results for the component build and test run on the component page on [bit.dev](https://bit.dev). When finishing the build and test tasks, the remote container is purged. 
-The component is then available in the component playground.
-
-### Components Explorer
-
-Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components. 
-The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities. 

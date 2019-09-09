@@ -30,6 +30,9 @@
       "bit-search-api": {
         "title": "bit-search-api"
       },
+      "bit-dev": {
+        "title": "bit.dev Overview"
+      },
       "bitdev-permissions": {
         "title": "Dependency Limitations"
       },
@@ -256,9 +259,6 @@
       "organizing-components": {
         "title": "Exporting"
       },
-      "overview": {
-        "title": "What is Bit?"
-      },
       "quick-start": {
         "title": "Quick Start"
       },
@@ -334,6 +334,9 @@
       "vue-guidelines": {
         "title": "vue Guidelines"
       },
+      "what-is-bit": {
+        "title": "What is Bit?"
+      },
       "whybit/for-libs": {
         "title": "Bit for Libraries"
       },
@@ -342,6 +345,9 @@
       },
       "whybit/why-bit": {
         "title": "Bit Benefits"
+      },
+      "workflow": {
+        "title": "Components Workflow"
       },
       "workspace-statuses": {
         "title": "Workspace Statuses"
@@ -354,7 +360,7 @@
       "Github": "Github"
     },
     "categories": {
-      "Basics": "Basics",
+      "Introduction": "Introduction",
       "Tutorials": "Tutorials",
       "Setup": "Setup",
       "Components": "Components",

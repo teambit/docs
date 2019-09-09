@@ -1,7 +1,6 @@
-/docs/what-is-bit.html                    /docs/overview   
 /docs/bitdev-permissions.html        /docs/bit.dev-cloud#collections-privacy
 /docs/initializing-bit.html          /docs/installation
-/docs/faq-what-is-bit.html           /docs/overview 
+/docs/faq-what-is-bit.html           /docs/what-is-bit 
 /docs/isolating-and-tracking-components.html    /docs/add-and-isolate-components   
 /docs/adding-tracking-files-as-components.html  /docs/add-and-isolate-components   
 /tutorial/node-tutorial.html        /docs/bit-nodejs-tutorial.html      
@@ -28,6 +27,7 @@
 /docs/update-dependencies.html              /docs/sourcing-components#update-component-dependencies
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
+/docs/bitsrc-components-ci.html         /docs/bit-dev
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
 /docs/cli-build.html 	 		 /docs/apis/cli-all#build
