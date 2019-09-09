@@ -64,7 +64,7 @@ You can test your compiler from your local code, by setting the [bit workspace c
 
 ### Debugging
 
-In order to debug your compiler, first [import it](/docs/cli-import.html) as you would any other component (e.g not as an environment).
+In order to debug your compiler, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
 Next, head over to the compiler's code, and add the following lines:
 
 ```js
@@ -79,7 +79,7 @@ These lines load all the component files (here we have just two files as an exam
 
 ### Publish
 
-[Track](/docs/cli-add.html), [tag](/docs/cli-tag.html) and [export](/docs/cli-export.html) the component. Then, [import the new environment](/docs/cli-import.html#import-a-new-environment) to your workspace.
+[Track](/docs/apis/cli-all#add), [tag](/docs/apis/cli-all#tag) and [export](/docs/apis/cli-all#export) the component. Then, [import](/docs/apis/cli-all#import) the new environment to your workspace.
 
 ## Examples
 

@@ -86,7 +86,7 @@ Now that you are familiar with the project, use Bit to turn it into a component 
 
 ### Initializing a Workspace
 
-To start using Bit in this project, you first need to initialize a Bit workspace. In the root directory of the project run the [init](/docs/cli-init.html) command:
+To start using Bit in this project, you first need to initialize a Bit workspace. In the root directory of the project run the [init](/docs/apis/cli-all#init) command:
 
 ```bash
 $ bit init
@@ -111,7 +111,7 @@ $ git commit -am "initialized an emtpy bit workspace"
 
 ### Tracking Files as Components
 
-Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/cli-add.html) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.  
+Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/apis/cli-all#add) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.  
 
 In this library, every component is a file. Run the `bit add` command to mark each file as a separated component, and mark its test files.
 
@@ -127,9 +127,9 @@ We'll break down this `add` command syntax:
 
 > **Diving deeper into `bit add`**
 >
-> The [bit add](/docs/cli-add.html) command supports many use cases. Read more about the different use cases and see more examples of the `add` command [here](/docs/add-and-isolate-components.html).
+> The [bit add](/docs/apis/cli-all#add) command supports many use cases. Read more about the different use cases and see more examples of the `add` command [here](/docs/add-and-isolate-components.html).
 
-After tracking all components in the project, the next step is to see if Bit is able to model components from them. To confirm the status of all components in a workspace, run the [status](/docs/cli-status.html) command:
+After tracking all components in the project, the next step is to see if Bit is able to model components from them. To confirm the status of all components in a workspace, run the [status](/docs/apis/cli-all#status) command:
 
 ```bash
 $ bit status

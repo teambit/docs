@@ -3,7 +3,7 @@ id: organizing-components
 title: Exporting
 ---
 
-By exporting components to remote collections, we allow other developers to consume them. We can only export versioned components. This is because they are immutable and isolated. The command we use to export components is [bit export](/docs/cli-export.html).
+By exporting components to remote collections, we allow other developers to consume them. We can only export versioned components. This is because they are immutable and isolated. The command we use to export components is [bit export](/docs/apis/cli-all#export).
 
 ## Organizing components in a single Collection
 
@@ -31,7 +31,7 @@ Components exported to Bit are consumable with package managers. Bit allows ejec
 
 ### Ejecting a component on export
 
-To eject a component on export, use [bit export](/docs/cli-export.html) with the `--eject` option:
+To eject a component on export, use [bit export](/docs/apis/cli-all#export) with the `--eject` option:
 
 ```bash
 $ bit export bit.movie-app --eject
@@ -40,7 +40,7 @@ $ bit export bit.movie-app --eject
 
 ### Ejecting a component after export
 
-To eject a component after export, use [bit eject](/docs/cli-eject.html) command. 
+To eject a component after export, use [bit eject](/docs/apis/cli-all#eject) command. 
 
 ```bash
 bit eject hello/world

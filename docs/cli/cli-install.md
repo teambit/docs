@@ -3,7 +3,7 @@ id: cli-install
 title: Install
 ---
 
-Installs all dependencies for all the sourced components (or for a specific one), whether they were defined in your `package.json` or in each of the sourced components, and [links](/docs/cli-link.html) them.
+Installs all dependencies for all the sourced components (or for a specific one), whether they were defined in your `package.json` or in each of the sourced components, and [links](/docs/apis/cli-all#link) them.
 
 ## Synopsis
 

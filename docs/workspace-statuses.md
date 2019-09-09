@@ -3,7 +3,7 @@ id: workspace-statuses
 title: Workspace Statuses
 ---
 
-The `bit status` [command](/docs/cli-status.html) displays the state of the tracked components in your project's workspace.
+The `bit status` [command](/docs/apis/cli-all#status) displays the state of the tracked components in your project's workspace.
 
 Knowing the state of the workspace's components is always important - which components are staged, modified or have missing dependencies, for example.
 It's important to note that we're talking about **the state of components with pending changes** - meaning, components that are pending export - they could be tracked and before their first export, or modified after export.
@@ -38,7 +38,7 @@ new components
 
 ### Staged components
 
-All tagged components that are ready to be [exported](/docs/cli-export.html) and shared to a remote Collection.
+All tagged components that are ready to be [exported](/docs/apis/cli-all#export) and shared to a remote Collection.
 
 Staged component are fully isolated by Bit.
 
@@ -75,7 +75,7 @@ Components with newer versions fetched by `bit import` and available to use.
 
 > **Note**
 >
-> To start using the newer version, use [bit checkout](/docs/cli-checkout.html).
+> To start using the newer version, use [bit checkout](/docs/apis/cli-all#checkout).
 
 ```bash
 $ bit status

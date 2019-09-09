@@ -9,7 +9,7 @@ title: Tracking
 
 The first step of sharing code with Bit is adding files so Bit can track them as components.
 
-Using [bit add](/docs/cli-add.html) we can track sets of files as components. This is the first step of the component isolation process. Bit then creates a dependency graph for all tracked components. With this data, Bit creates an Isolated Component Environment for each component. In turn, this allows Bit to recreate a working environment for a component in any project.
+Using [bit add](/docs/apis/cli-all#add) we can track sets of files as components. This is the first step of the component isolation process. Bit then creates a dependency graph for all tracked components. With this data, Bit creates an Isolated Component Environment for each component. In turn, this allows Bit to recreate a working environment for a component in any project.
 
 Apart from [defining the component's file](#track-a-component) and set component's [spec files](#track-a-component-with-testspec-files), `bit add` can track [many components at once](#track-multiple-components-with-test-files-in-a-parallel-directory-tree). You can also determine a component's [entry point](#define-an-entry-point), decide the [component's ID](#component-id) and [namespace](#set-a-components-namespace).  
 For more advance cases of tracking many components from the same project with all the above features, read about Bit's [tracking DSL](#tracking-dsl).
@@ -46,7 +46,7 @@ export default function hello(world) {
 }
 ```
 
-To track `hello-world`, we use [bit add](/docs/cli-add.html), list the files that compose it and set an `ID` for it.
+To track `hello-world`, we use [bit add](/docs/apis/cli-all#add), list the files that compose it and set an `ID` for it.
 
 ```bash{1}
 $ bit add src/hello-world.js src/index.js --id hello/world
@@ -55,7 +55,7 @@ tracking component hello/world:
     added src/index.js
 ```
 
-To verify Bit can isolate the component, we use [bit status](/docs/cli-status.html).
+To verify Bit can isolate the component, we use [bit status](/docs/apis/cli-all#status).
 
 ```bash{3}
 $ bit status
@@ -97,7 +97,7 @@ We can track all the components in the `components` directory with a single comm
 $ bit add src/components/* --namespace user
 ```
 
-Use [bit status](/docs/cli-status.html) to verify the components' dependency graphs.
+Use [bit status](/docs/apis/cli-all#status) to verify the components' dependency graphs.
 
 ```bash{2,3,4}
 new components
@@ -110,7 +110,7 @@ new components
 
 You can classify files as test files. This allows bit to execute component tests and keep the test results. Test results function as quality certificate and documentation for the component. Test-files’ dependencies as `devDependencies`.
 
-To track files as test-file, use `--tests` feature of the [bit add](/docs/cli-add.html) command. For example:
+To track files as test-file, use `--tests` feature of the [bit add](/docs/apis/cli-all#add) command. For example:
 
 ```bash{3}
 .
@@ -171,7 +171,7 @@ bit add src/components/* --tests test/components/{PARENT}.spec.js
 
 ### Component entry point
 
-Bit looks for `index.*` files and set them as entry points for components. A component that contains many files and no `index.js` file needs to be set with an entry point manually. Use `--main` feature of the [bit add](/docs/cli-add.html) command. Here's an example directory tree of a project with a single component that does not have an index file.
+Bit looks for `index.*` files and set them as entry points for components. A component that contains many files and no `index.js` file needs to be set with an entry point manually. Use `--main` feature of the [bit add](/docs/apis/cli-all#add) command. Here's an example directory tree of a project with a single component that does not have an index file.
 
 ```bash
 .
@@ -224,7 +224,7 @@ Let's take this project as an example:
         └── noop.js
 ```
 
-If you track the file `noop.js` under the `utils` directory with [bit add](/docs/cli-add.html) without specifying an ID, Bit will automatically resolve the id as follows:
+If you track the file `noop.js` under the `utils` directory with [bit add](/docs/apis/cli-all#add) without specifying an ID, Bit will automatically resolve the id as follows:
 
 ```bash
 $ bit add src/utils/noop.js
@@ -245,7 +245,7 @@ tracking component hello-world:
 
 This time the component name is `hello-world` - that's the name of the tracked directory, and not a specific file.
 
-To see the defined component Ids, check out [bit status](/docs/cli-status.html).
+To see the defined component Ids, check out [bit status](/docs/apis/cli-all#status).
 
 ```bash
 $ bit status
@@ -323,13 +323,13 @@ $ bit add src/component/* --namespace user --exclude bad-file.js
 
 ### Untrack a component
 
-To untrack a component, use the [bit untrack](/docs/cli-untrack.html) command.
+To untrack a component, use the [bit untrack](/docs/apis/cli-all#untrack) command.
 
 ```bash
 $ bit untrack hello/world
 ```
 
-Untracking components is relevant for new components. To remove imported/tagged/exported components use [bit remove](/docs/cli-remove.html).
+Untracking components is relevant for new components. To remove imported/tagged/exported components use [bit remove](/docs/apis/cli-all#remove).
 
 ### Tracking DSL
 
@@ -567,7 +567,7 @@ $ bit add src/utils/*.js --tests src/utils/{MAIN_FILE}.test.js --namespace utils
 
 **Literal translation**: add a component for each `js` file in `src/utils` directory, and match a test file in the same path, with the name the same as the component's implementation file, only with a `test.js` suffix.
 
-To see all tracked components with their matched test files, use [bit status](/docs/cli-status.html) or [bit show](/docs/cli-show.html).
+To see all tracked components with their matched test files, use [bit status](/docs/apis/cli-all#status) or [bit show](/docs/apis/cli-all#show).
 
 ```bash
 $ bit status
@@ -587,7 +587,7 @@ It's also possible to use the `{PARENT}` DSL when setting a namespace for compon
 
 We use `bit add` to remove, add, move and rename files in and between components.
 
-[bit add](/docs/cli-add.html) is a unique command since we use it several times during a component's lifecycle. We use this command to do many operations on the files of the component.
+[bit add](/docs/apis/cli-all#add) is a unique command since we use it several times during a component's lifecycle. We use this command to do many operations on the files of the component.
 
 ### Adding a file to a component
 
@@ -631,7 +631,7 @@ tracking component src/hello-world:
 
 ### Moving and Renaming files
 
-When moving and renaming files, Bit won’t always track the changes. To ensure Bit tracks these changes use [bit move](/docs/cli-move.html), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
+When moving and renaming files, Bit won’t always track the changes. To ensure Bit tracks these changes use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
 
 To move a file:
 
@@ -713,7 +713,7 @@ tracking component hello/world:
 We get one component that depends on the package `left-pad`. The version Bit sets for the dependency is the same version as defined in the project's `package.json` file. In this case, it's `^2.1.0`.  
 If no package version found in the `package.json` file, Bit resolves it from the `node_modules` directory. Bit then sets the exact version - `2.1.0` (assuming that's the actual version installed).
 
-Verify Bit has resolved all dependencies using [bit status](/docs/cli-status.html).
+Verify Bit has resolved all dependencies using [bit status](/docs/apis/cli-all#status).
 
 ```bash{3}
 $ bit status
@@ -721,7 +721,7 @@ new components
      > component/hello-world... ok
 ```
 
-Use [bit show](/docs/cli-show.html) to check which version Bit has resolved for each package dependency.
+Use [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency.
 
 ```bash
 $ bit show hello/world
@@ -740,7 +740,7 @@ $ bit show hello/world
 
 #### Handling missing package dependencies
 
-In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/cli-status.html) or [bit tag](/docs/cli-tag.html).
+In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag).
 
 ```bash{3,4}
 $ bit status
@@ -776,7 +776,7 @@ Bit recognizes these files by reading the `import` and `require` statements. Onc
 
 - Bit already tracks a required file as part of the tracked component.
 - A required file can be part of another component in your project. Bit creates a dependency relationship between the two components.
-- If Bit does not track the file at all, it warns about `untracked file dependencies` on [bit status](/docs/cli-status.html) or [bit tag](/docs/cli-tag.html)
+- If Bit does not track the file at all, it warns about `untracked file dependencies` on [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag)
 
 #### Untracked file dependencies
 
@@ -825,7 +825,7 @@ tracking component hello/world:
     added src/index.js
 ```
 
-When running [bit status](/docs/cli-status.html), an `untracked file dependencies` warning appears.
+When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
 ```bash{3,4}
 $ bit status
@@ -850,7 +850,7 @@ tracking component hello/world:
     added src/utils/noop.js
 ```
 
-Rerun [bit status](/docs/cli-status.html) and see that Bit can isolate the component.
+Rerun [bit status](/docs/apis/cli-all#status) and see that Bit can isolate the component.
 
 ```bash
 $ bit status

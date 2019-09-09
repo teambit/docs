@@ -5,7 +5,7 @@ title: Managing Component Files
 
 We use `bit add` to remove, add, move and rename files in and between components.
 
-[bit add](/docs/cli-add.html) is a unique command since we use it several times during a component's lifecycle. We use this command to do many operations on the files of the component.
+[bit add](/docs/apis/cli-all#add) is a unique command since we use it several times during a component's lifecycle. We use this command to do many operations on the files of the component.
 
 ## Adding a file to a component
 
@@ -49,7 +49,7 @@ tracking component src/hello-world:
 
 ## Moving and Renaming files
 
-When moving and renaming files, Bit won’t always track the changes. To ensure Bit tracks these changes use [bit move](/docs/cli-move.html), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
+When moving and renaming files, Bit won’t always track the changes. To ensure Bit tracks these changes use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
 
 ### Moving a file
 

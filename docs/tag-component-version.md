@@ -21,7 +21,7 @@ new components
     > hello/world... ok
 ```
 
-To tag the `hello/world` component, use [bit tag](/docs/cli-tag.html).
+To tag the `hello/world` component, use [bit tag](/docs/apis/cli-all#tag).
 
 ```bash
 $ bit tag hello/world
@@ -29,7 +29,7 @@ $ bit tag hello/world
 added components:  hello/world@0.0.1
 ```
 
-This command has tagged the new component `hello/world` in version `0.0.1`. By default, Bit increments a patch version when tagging. The component is now `staged`, as shown in the [bit status](/docs/cli-status.html) output. Bit can only export `staged` components.
+This command has tagged the new component `hello/world` in version `0.0.1`. By default, Bit increments a patch version when tagging. The component is now `staged`, as shown in the [bit status](/docs/apis/cli-all#status) output. Bit can only export `staged` components.
 
 ```bash
 $ bit status
@@ -132,7 +132,7 @@ bit untag --all
 
 ## View component history
 
-You can view a component's tag history using [bit log](/docs/cli-log.html).
+You can view a component's tag history using [bit log](/docs/apis/cli-all#log).
 
 ```bash
 bit log hello/world

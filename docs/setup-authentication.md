@@ -20,7 +20,7 @@ There are two methods to authenticate a local Bit client to your [bit.dev](https
 
 ### Authenticate Bit using 'bit login'
 
-Use [bit login](/docs/cli-login.html) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
+Use [bit login](/docs/apis/cli-all#login) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
 
 To authenticate your Bit client, run the following command:
 
@@ -29,7 +29,7 @@ $ bit login
 Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/cli-config.html).
+The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/apis/cli-all#config).
 
 #### Manage authenticated devices
 
@@ -81,7 +81,7 @@ A new item is added to the SSH key list. This means that you are now connected v
 
 ## Configure local Bit client
 
-To set your username and email in Bit, use the [bit config command](/docs/cli-config.html).
+To set your username and email in Bit, use the [bit config command](/docs/apis/cli-all#config).
 
 * If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
 * If no configuration values are defined for Bit, it falls back to read the values from `git config`.

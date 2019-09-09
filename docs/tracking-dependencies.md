@@ -69,7 +69,7 @@ tracking component hello/world:
 We get one component that depends on the package `left-pad`. The version Bit sets for the dependency is the same version as defined in the project's `package.json` file. In this case, it's `^2.1.0`.  
 If no package version found in the `package.json` file, Bit resolves it from the `node_modules` directory. Bit then sets the exact version - `2.1.0` (assuming that's the actual version installed).
 
-Verify Bit has resolved all dependencies using [bit status](/docs/cli-status.html).
+Verify Bit has resolved all dependencies using [bit status](/docs/apis/cli-all#status).
 
 ```bash{3}
 $ bit status
@@ -77,7 +77,7 @@ new components
      > component/hello-world... ok
 ```
 
-Use [bit show](/docs/cli-show.html) to check which version Bit has resolved for each package dependency.
+Use [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency.
 
 ```bash
 $ bit show hello/world
@@ -96,7 +96,7 @@ $ bit show hello/world
 
 ### Handling missing package dependencies
 
-In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/cli-status.html) or [bit tag](/docs/cli-tag.html).
+In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag).
 
 ```bash{3,4}
 $ bit status
@@ -132,7 +132,7 @@ Bit recognizes these files by reading the `import` and `require` statements. Onc
 
 * Bit already tracks a required file as part of the tracked component.
 * A required file can be part of another component in your project. Bit creates a dependency relationship between the two components.
-* If Bit does not track the file at all, it warns about `untracked file dependencies` on [bit status](/docs/cli-status.html) or [bit tag](/docs/cli-tag.html)
+* If Bit does not track the file at all, it warns about `untracked file dependencies` on [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag)
 
 ### Untracked file dependencies
 
@@ -181,7 +181,7 @@ tracking component hello/world:
     added src/index.js
 ```
 
-When running [bit status](/docs/cli-status.html), an `untracked file dependencies` warning appears.
+When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
 ```bash{3,4}
 $ bit status
@@ -206,7 +206,7 @@ tracking component hello/world:
     added src/utils/noop.js
 ```
 
-Rerun [bit status](/docs/cli-status.html) and see that Bit can isolate the component.
+Rerun [bit status](/docs/apis/cli-all#status) and see that Bit can isolate the component.
 
 ```bash
 $ bit status

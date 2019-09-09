@@ -3,7 +3,7 @@ id: cli-log
 title: Log
 ---
 
-Shows the component's [tag](/docs/cli-tag.html) history.
+Shows the component's [tag](/docs/apis/cli-all#tag) history.
 
 ## Synopsis
 

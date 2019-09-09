@@ -28,7 +28,7 @@ From the command line run:
 bit login
 ```
 
-The [bit login](/docs/cli-login.html) command opens the browser window to log into the [bit.dev](https://bit.dev) account.
+The [bit login](/docs/apis/cli-all#login) command opens the browser window to log into the [bit.dev](https://bit.dev) account.
 
 Upon successful login, a new authentication token will be created and placed in the bit client configuration. The token can be seen by running:  
 

@@ -130,11 +130,11 @@ You should make sure bit recognizes the tester's dependencies, so it will later 
 
 ## So you've written a tester. What's next?
 
-First, as with any component, [track](/docs/cli-add.html), [tag](/docs/cli-tag.html) and [export](/docs/cli-export.html) the component. Then, [import the new environment](/docs/cli-import.html#import-a-new-environment) to your workspace.
+First, as with any component, [track](/docs/apis/cli-all#add), [tag](/docs/apis/cli-all#tag) and [export](/docs/apis/cli-all#export) the component. Then, [import](/docs/apis/cli-all#import) the new environment to your workspace.
 
 ## Debugging your compiler
 
-In order to debug your tester, first [import it](/docs/cli-import.html) as you would any other component (e.g not as an environment).
+In order to debug your tester, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
 Next, head over to the tester's code, and add the following line:
 
 ```js

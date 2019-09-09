@@ -57,41 +57,7 @@
     "Reference": [
         "conf-config",
         "conf-bit-json",
-        {
-          "type": "subcategory",
-          "label": "CLI Reference",
-          "ids": [
-            "cli/cli-add",
-            "cli/cli-build",
-            "cli/cli-checkout",
-            "cli/cli-clear-cache",
-            "cli/cli-config",
-            "cli/cli-deprecate",
-            "cli/cli-diff",
-            "cli/cli-doctor",
-            "cli/cli-eject",
-            "cli/cli-export",
-            "cli/cli-import",
-            "cli/cli-install",
-            "cli/cli-init",
-            "cli/cli-link",
-            "cli/cli-list",
-            "cli/cli-log",
-            "cli/cli-login",
-            "cli/cli-logout",
-            "cli/cli-merge",
-            "cli/cli-move",
-            "cli/cli-remote",
-            "cli/cli-remove",
-            "cli/cli-show",
-            "cli/cli-status",
-            "cli/cli-tag",
-            "cli/cli-test",
-            "cli/cli-untag",
-            "cli/cli-untrack",
-            "cli/cli-watch"
-          ]
-        }
+        "apis/cli-all"
     ]
   },
   "whybit?": {

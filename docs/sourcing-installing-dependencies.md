@@ -11,7 +11,7 @@ Components can have dependencies - [external packages](/docs/adding-package-depe
 $ bit install
 ```
 
-[bit install](/docs/cli-install.html) installs all dependencies, whether they are external packages or other bit components.
+[bit install](/docs/apis/cli-all#install) installs all dependencies, whether they are external packages or other bit components.
 External packages will be installed by a package manager such as NPM or Yarn, whereas component dependencies can be either installed using a package manager (which is the default option), or sourced.
 
 ## Installing dependencies using a package manager
@@ -57,7 +57,7 @@ For example, you've imported component `A`, which depends on component `B`. Comp
 
 The links bit adds to the `node_modules` directory can be overrun by package manager when those modify the contents of the `node_modules` directory.
 
-If bit's links were overrun, you can explicitly run [bit link](/docs/cli-link.html) in order to recreate the link.
+If bit's links were overrun, you can explicitly run [bit link](/docs/apis/cli-all#link) in order to recreate the link.
 
 ```bash
 $ bit link

@@ -32,11 +32,11 @@ We mark component's test files by using the `--tests` option for `bit add`:
 bit add src/foo.js --tests test/foo-test.js
 ```
 
-For more details about marking files as test files, see [here](/docs/cli-add.html#tracking-a-component-with-a-test-file).
+For more details about marking files as test files, see [here](/docs/add-and-isolate-components#track-a-component-with-test-spec-files).
 
 ## Testing a component
 
-Use [bit test](/docs/cli-test.html) to test components that have a tester and test files:
+Use [bit test](/docs/apis/cli-all#test) to test components that have a tester and test files:
 
 ```bash
 $ bit test foo/bar

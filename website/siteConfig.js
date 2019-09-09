@@ -44,7 +44,7 @@ const siteConfig = {
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 
-  docsSideNavCollapsible: true,
+  docsSideNavCollapsible: false,
   // If you have users set above, you add it here:
   users,
 

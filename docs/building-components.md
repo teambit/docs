@@ -26,7 +26,7 @@ the following component environments were installed
 
 ## Building a component
 
-Use [bit build](/docs/cli-build.html) to build components that have a compiler:
+Use [bit build](/docs/apis/cli-all#build) to build components that have a compiler:
 
 ```bash
 $ bit build foo/bar

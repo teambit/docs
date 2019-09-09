@@ -5,7 +5,7 @@ title: Initializing Bit
 
 Initializing Bit on a repository allows you to track and share components.
 
-Initialize a Bit workspace on a project by running the [bit init](/docs/cli-init.html) command a project’s root directory.
+Initialize a Bit workspace on a project by running the [bit init](/docs/apis/cli-all#init) command a project’s root directory.
 
 ```bash
 cd project-root

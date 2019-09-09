@@ -15,7 +15,7 @@ With Bit, we can develop components from any repository. Local modifications can
 
 ### Importing component's source code
 
-To import a component's code to a project, use [bit import](/docs/cli-import.html).
+To import a component's code to a project, use [bit import](/docs/apis/cli-all#import).
 
 ```bash
 $ bit import bit.utils/string/left-pad

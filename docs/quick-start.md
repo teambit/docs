@@ -43,7 +43,7 @@ Bit traverses the tracked files looking for `import` and `require` statements to
 
 > **Tip**
 >
-> Use [bit status](/docs/cli-status.html) to view useful information at any step. Try using it to verify that each component's dependency graph has been successfully resolved.
+> Use [bit status](/docs/apis/cli-all#status) to view useful information at any step. Try using it to verify that each component's dependency graph has been successfully resolved.
 
 **Example**: Tracking components
 
@@ -134,7 +134,7 @@ $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-Now you’re all set to [publish the components](/docs/cli-export.html).  
+Now you’re all set to [publish the components](/docs/apis/cli-all#export).  
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
 ```bash
@@ -171,7 +171,7 @@ bit import mui-org.material-ui/button
 
 This new workflow increases the adoption and usage of components, as developers can [import] and develop Bit components right from their different projects.
 
-**Tip**: Use the `eject` [command](/docs/cli-eject.html) to remove components from the local workspace and install them by the NPM client.
+**Tip**: Use the `eject` [command](/docs/apis/cli-all#eject) to remove components from the local workspace and install them by the NPM client.
 
 ## Publish component changes
 

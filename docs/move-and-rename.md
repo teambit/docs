@@ -12,7 +12,7 @@ A component's file structure is not immutable - components are meant to grow and
 
 It's impossible to actually rename a component's ID, for the same reason it's impossible to rename a node module package - it will break any code that consumes the component.
 
-Instead of renaming a component, you can [deprecate](/docs/cli-deprecate.html) the component and introduce a new identical component, only with a different name.
+Instead of renaming a component, you can [deprecate](/docs/apis/cli-all#deprecate) the component and introduce a new identical component, only with a different name.
 
 First, deprecate the component:
 

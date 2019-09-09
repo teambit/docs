@@ -186,14 +186,14 @@ headers = {
 
 These are [Bit's core hooks](/docs/ext-concepts.html#bits-core-hooks) - any extension can register to these:
 
-* `pre-tag` - Triggered before [tagging](/docs/cli-tag.html).
-* `post-tag` - Triggered after [tagging](/docs/cli-tag.html).
-* `pre-tag-all` - Triggered before [tagging all new and modified components](/docs/cli-tag.html#tagging-all-new-and-modified-components).
-* `post-tag-all` - Triggered after [tagging all new and modified components](/docs/cli-tag.html#tagging-all-new-and-modified-components).
-* `pre-import` - Triggered before [import](/docs/cli-import.html).
-* `post-import` - Triggered after [import](/docs/cli-import.html).
-* `pre-export` - Triggered before [export](/docs/cli-export.html).
-* `post-export` - Triggered after [export](/docs/cli-export.html).
+* `pre-tag` - Triggered before [tagging](/docs/apis/cli-all#tag).
+* `post-tag` - Triggered after [tagging](/docs/apis/cli-all#tag).
+* `pre-tag-all` - Triggered before [tagging all new and modified components](/docs/apis/cli-all#tag).
+* `post-tag-all` - Triggered after [tagging all new and modified components](/docs/apis/cli-all#tag.).
+* `pre-import` - Triggered before [import](/docs/apis/cli-all#import).
+* `post-import` - Triggered after [import](/docs/apis/cli-all#import).
+* `pre-export` - Triggered before [export](/docs/apis/cli-all#export).
+* `post-export` - Triggered after [export](/docs/apis/cli-all#export).
 * `pre-send-objects` -  // pre-fetch
 * `post-send-objects` -  // post-fetch
 * `pre-receive-objects` -  // pre-put
