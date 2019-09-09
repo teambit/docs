@@ -43,11 +43,11 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('overview.html')}>
-              Basics 
+            <a href='https://bit.dev/explore'>
+              Explore 
             </a>
-            <a href={this.docUrl('installation.html')}>
-              Installation 
+            <a href='https://bit.dev/about'>
+              About 
             </a>
             <a href={this.docUrl('bitsrc-plans.html')}>
               Pricing
