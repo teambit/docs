@@ -98,7 +98,7 @@ There are several things you can do if you encountered `fatal: permission to Col
 ### Timeout after a long hang time
 
 Bit uses SSH to communicate with remote servers. A long hang time and authentication failure is usually the result of a firewall blocking the connection.  
-To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](support@bit.dev).
+To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](mailto:support@bit.dev).
 
 **MacOS/Linux**
 

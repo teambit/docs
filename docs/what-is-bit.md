@@ -20,7 +20,7 @@ Bit CLI can be used with or without bit.dev, as a remote Bit component hosting c
 - **Contextual versioning**: Versioning each component and controlling each component’s dependency graph, so you can update related components together and avoid bumping versions to unrelated parts of the repository.
 - **Distribute from any path**: Publish multiple components from any path in any the repository without refactoring it’s source code or structure.
 
-1) The organization, consumption, collaboration, and discovery of components shared between different projects and teams:
+2) The organization, consumption, collaboration, and discovery of components shared between different projects and teams:
 
 - **Organizing all shared components** by team, context etc.
 - **Visualizing components** with live rendering, preview examples etc.
@@ -36,7 +36,7 @@ Bit CLI can be used with or without bit.dev, as a remote Bit component hosting c
 
 Git is a distributed version-control system for tracking changes in source code during software development. It can be used to track changes in any set of files. Git manages files contents without any reference to their structure of semantics.  
 
-Bit augments Git to control the development of components inside a Git repository, and combines it with their build, testing, versioning and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
+Bit augments Git to control the development of components inside a Git repository, and combines it with their building, testing, versioning and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
 
 Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git. Also, Git should track changes made to components exported to Bit.  
 

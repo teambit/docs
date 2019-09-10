@@ -5,7 +5,7 @@ title: Setup Bit Server
 
 Collaborating between Bit components require setting up a remote server accessible for all collaborators. You may use bit.dev as a remote server or setup your own.  
 
-> The only functionality available on own server is components export and import. Building, testing and rendering is only provided on bit.dev. Also, npm / yarn install is only available for components exported to bit.dev.  
+> You can host and share components on your own server. I.e. export components to it and import components from the server. Building, testing and rendering should be done on your own CI/CD. Search and npm / yarn install are only available for components exported to bit.dev.  
 
 A Bit server is a host server that hosts one or more bare collections. That is, collections that do not have a working directory. Bit communication to server is done using SSH protocol. Collaborators will setup the server's collection as remotes to their local collections. Then, they  export to and import from those collections.  
 
