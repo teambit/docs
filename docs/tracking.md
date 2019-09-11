@@ -1,5 +1,5 @@
 ---
-id: add-and-isolate-components
+id: tracking
 title: Tracking 
 ---
 
