@@ -20,7 +20,7 @@
         "conf-analytics"
     ],
     "Components": [
-      "add-and-isolate-components",
+      "tracking",
       "building-components",
       "testing-components",
       "tag-component-version",

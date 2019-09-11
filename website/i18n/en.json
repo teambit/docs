@@ -5,9 +5,6 @@
     "previous": "Previous",
     "tagline": "Components Collaboration Platform",
     "docs": {
-      "add-and-isolate-components": {
-        "title": "Tracking"
-      },
       "angular-guidelines": {
         "title": "Angular Guidelines"
       },
@@ -297,6 +294,9 @@
       },
       "tracking-dependencies": {
         "title": "Tracking Components' Dependencies"
+      },
+      "tracking": {
+        "title": "Tracking"
       },
       "troubleshooting-doctor": {
         "title": "Troubleshooting with Doctor"
