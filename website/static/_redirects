@@ -28,6 +28,9 @@
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
+/docs/why-bit/for-teams.html            /docs/why-bit/for-teams
+/docs/why-bit/for-teams.html            /docs/why-bit/for-libs
+
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
 /docs/cli-build.html 	 		 /docs/apis/cli-all#build
