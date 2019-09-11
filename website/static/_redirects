@@ -2,7 +2,8 @@
 /docs/initializing-bit.html          /docs/installation
 /docs/faq-what-is-bit.html           /docs/what-is-bit 
 /docs/isolating-and-tracking-components.html    /docs/tracking   
-/docs/adding-tracking-files-as-components.html  /docs/tracking   
+/docs/adding-tracking-files-as-components.html  /docs/tracking
+/docs/add-and-isolate-components.html       /docs/tracking   
 /tutorial/node-tutorial.html        /docs/bit-nodejs-tutorial.html      
 /docs/conf-bit-on-the-server.html   /docs/bit-server.html    
 /docs/bit-on-the-server.html        /docs/bit-server.html
