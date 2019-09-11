@@ -28,8 +28,8 @@
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
-/why-bit/for-teams.html            /docs/why-bit/for-teams
-/why-bit/for-teams.html            /docs/why-bit/for-libs
+/whybit/for-teams.html            /docs/why-bit/for-teams
+/whybit/for-teams.html            /docs/why-bit/for-libs
 
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
