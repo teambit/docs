@@ -29,7 +29,7 @@
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
 /whybit/for-teams.html            /docs/whybit/for-teams
-/whybit/for-teams.html            /docs/whybit/for-libs
+/whybit/for-libs.html            /docs/whybit/for-libs
 
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
