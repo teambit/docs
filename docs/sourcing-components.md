@@ -7,11 +7,10 @@ title: Importing
 
 Bit lets developers import component's source code to a consumer project.
 
-With Bit, we can develop components from any repository. Local modifications can be either contributed back or kept in the repository. Bit's distributed model preserved a single source of truth across all repositories.
+With Bit, you can develop components from any repository. Inside the importing project, you can change the component.  
+If a component was changed locally, you can either keep the changes locally or send them back to the component's collection. This depends on the organization's structure and the privileges developers have to change components.  
 
-> **Note**
->
-> The project’s SCM should track imported components.
+> If a component was changed locally for internal use, it is recommended to commit the component's source code to the project’s SCM.
 
 ### Importing component's source code
 
