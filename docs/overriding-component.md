@@ -5,9 +5,14 @@ title: Overriding Component Configuration
 
 When a component is packages for distribution, it contains the component's source code and a graph of all the components is depends upon.  
 
-Bit let's modify the component's graph, without making any changes to the component's code, by configuring an **overrides** section. 
+Bit let's modify the component's graph, without making any changes to the component's code, by configuring an **overrides** section.  
 
-## Overriding component dependencies
+The overriding function has 2 parts:  
+
+- Overriding rules - determine what components will be impacted
+- Overriding options - the component's features that can be impacted
+
+## Overriding Rules
 
 You can override the component configuration in one of two places:  
 
@@ -20,7 +25,7 @@ If the same override is defined in both the workspace configuration and the comp
 
 In the original project, a component is embedded in the original code and does not have a `pacakge.json`, and all overrides are defined in the [workspace configuration](/docs/conf-bit-json#overrides) using the overrides key in the workspace's `package.json`.  
 
-The overrides is defined as a set of patterns that are applied on all the components that match the pattern (or a specific component).  
+The overrides is defined as a set of patterns that are applied on all the components that match the pattern. A pattern may also be a specific component such as `foo/bar`.  
 
 ```json
 {
@@ -45,16 +50,17 @@ A component that was imported from Bit has a `package.json` file in the root fol
 }
 ```
 
-### Exclusion / Propagation
-
-
 ### Overrides precedence
 
 The following rules apply when specifying precedence from highest to lowest (this applies for the same rules. Multiple rules can be applied from different specifications):  
 
 - Component's package json  
 - Component's definition in workspace overrides
-- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `/foo/bar/component`, `/*/bar/*` will have higher priority over `/foo/*/`.  
+- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `foo/bar/component`, `*/bar/*` will have higher priority over `foo/*/*`.  
+
+### Propagation
+
+By default, each component will only have only the most specific rule applied on it. If you want the rule to be applied with other rules, you should specify `propagate: true` for the rule.  
 
 ## Overriding Options
 

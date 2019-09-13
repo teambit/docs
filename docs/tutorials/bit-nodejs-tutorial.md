@@ -363,17 +363,3 @@ bit export <collection name>
 ```
 
 Don't forget to commit the modifications to `.bitmap` and push them back to the code repository.
-
-### Install Components During CI
-
-To install Bit components in your application during CI you need to configure the `@bit` node registry in your CI server.
-
-1. Make sure you have a valid token generated for the CI server. To generate a token, run the following command:
-`npm login --registry=https://node.bit.dev --scope=@bit`
-2. The token will be available for you in your `~/.npmrc` file.
-3. Set a secret to your CI environment variable called `BIT_NODE_TOKEN`. This step differs from one CI to another. Console your CI provider’s documentation to understand how to do it. An abstract way of configuring the client is running this command:
-
-```bash
-$ echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
-$ echo "//node.bit.dev/:_authToken={$BIT_NODE_TOKEN}" >> ~/.npmrc
-```

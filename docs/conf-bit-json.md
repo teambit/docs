@@ -149,9 +149,11 @@ For testing purposes you can point to a local compiler file as follow:
 
 ## overrides
 
-The overrides section contains configuration that is specific for one component or a group of component. Also, imported components environment configuration is stored here.
+The overrides section contains configuration that is specific for one component or a group of components. The overriding configuration applies to components that are exported from the workspace, as well as to components that are imported into the workspace.  
 
-The overrides configuration is an object where each key is a component name or a component namespace: 
+You can also override the configuration of specific component inside its package.json file.  
+
+The overrides configuration is an object where each key is a component name or a component namespace:  
 
 ```json
  "overrides": {
