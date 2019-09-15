@@ -42,20 +42,18 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
-            <h5>Docs</h5>
+            <h5>bit.dev</h5>
             <a href='https://bit.dev/explore'>
               Explore 
             </a>
-            <a href='https://bit.dev/about'>
-              About 
+            <a href='https://bit.dev/legals/terms'>
+              Terms and Privacy 
             </a>
-            <a href={this.docUrl('bitsrc-plans.html')}>
-              Pricing
+            <a href={this.docUrl('bitdev-sla')}>
+              SLA
             </a>
           </div>
           <div>
-
-
           
             <h5>Community</h5>
             <a href="https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg">
