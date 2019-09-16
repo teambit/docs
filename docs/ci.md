@@ -140,20 +140,21 @@ To generate npmrc before installing dependencies, run a pre build script as desc
 
 Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/articles/config-vars#managing-config-vars)
 
-
 ## Bit imported components
 
-If you have Bit imported components you may work in one of 2 ways:  
+When using Bit imported components, there are multiple ways to run CI:  
 
-- Commit Bit components build artifacts to the Github repo.  
-- Run `bit build` on the CI before building your project.  
-
-If the built artifacts are deployed, you do not need to add any steps.  
-To run bit build on yor project, you need to do the following:  
+|Committed Items in VCS | Action to perform on CI |
+|---|---|
+| .bitmap file only, but no components source code | Bit import. Component is imported with built artifacts. |
+| .bitmap and components source code without built artifacts | Bit build. Component will be built from source code |
+| Components source and built artifacts | No need to run build command |
 
 ### Install bit-cli
 
-According to the CI or deployment server, you can install it globally or locally in the project. You can install it locally on the project, simply by adding it as a develoment dependency in your project:  
+If you need to run a bit command (import or build) you need to install bit-cli on the CI machine.  
+
+According to the CI or deployment server, you can install it globally or locally in the project. To install locally on the project, simply add it as a development dependency in your project:  
 
 ```bash
 npm install -D bit-bin
@@ -171,13 +172,21 @@ bit config set user.token ${BIT_TOKEN}
 
 You can do it by committing a `bit-ci.sh` file at the root of your project. Make sure the config file has execution permissions by running `chmod +x ./bit-ci.sh`.  
 
+### Run Bit command
+
 To run bit build add an npm script in your package.json:  
 
 ```bash
 "bit-build": "bit build",
 ```
 
-Run `npm run build` before running the project build. For example:
+or  
+
+```bash
+"bit-import": "bit import",
+```
+
+Run the relevant bit command `npm run bit-build` or `npm run bit-import`  before running the project build. For example:
 
 ```bash
 ./bit-ci.sh
