@@ -15,7 +15,7 @@ The package manager to be used when installing components. Can be set to `npm` o
 ## componentsDefaultDirectory
 
 - Type: `string`
-- Default: `src/{name}`
+- Default: `components/{name}`
 
 Define the default directory inside which all imported components will reside. The path is relative to the workspace configuration location.
 
