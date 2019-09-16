@@ -171,7 +171,7 @@ You may specify a specific version of the package, or you may use a special anno
 
 ### package.json keys
 
-You an add any `package.json` keys to the overrides section, and they will be added or override keys in the components `package.json`. The following keys cannot be modified:
+You an add any `package.json` keys to the overrides section, and they will be added or override keys in the components `package.json`. This is useful when you want to extend a component with a unique functionality, for example - adding a `bin` key to a component (creating an executable component). The following keys cannot be modified:
 
 - name
 - version
