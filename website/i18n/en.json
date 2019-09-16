@@ -171,6 +171,10 @@
       "debugging-extensions": {
         "title": "Debugging Extensions"
       },
+      "dependencies": {
+        "title": "Components Dependencies",
+        "sidebar_label": "Dependencies"
+      },
       "developing-extensions": {
         "title": "Developing Extensions"
       },
@@ -258,6 +262,10 @@
       },
       "organizing-components": {
         "title": "Exporting"
+      },
+      "overrides": {
+        "title": "Overriding Configuration",
+        "sidebar_label": "Overrides"
       },
       "quick-start": {
         "title": "Quick Start"

@@ -1,16 +1,17 @@
 ---
-id: overriding-components
-title: Overriding Component Configuration
+id: overrides
+title: Overriding Configuration
+sidebar_label: Overrides
 ---
 
-When a component is packages for distribution, it contains the component's source code and a graph of all the components is depends upon.  
+When a component is packaged for distribution, it contains the component's source code, a dependencies graph of all the components is depends upon, and a set of tools, i.e. compiler and tester, for building the component.  
 
-Bit let's modify the component's graph, without making any changes to the component's code, by configuring an **overrides** section.  
+Bit let's modify the component's tools, dependencies and configuration, without making any changes to the component's code, by configuring an **overrides** section.  
 
 The overriding function has 2 parts:  
 
 - Overriding rules - determine what components will be impacted
-- Overriding options - the component's features that can be impacted
+- Overriding options - the component's features that can be modified
 
 ## Overriding Rules
 
@@ -18,8 +19,6 @@ You can override the component configuration in one of two places:
 
 - In workspace configuration - override will be applied on all components exported and imported inside the workspace.  
 - In an imported component's `pacakge.json` file - applied on that specific component
-
-If the same override is defined in both the workspace configuration and the component configuration, the component's configuration will take precedence.  
 
 ### `overrides` in workspace configuration
 
@@ -31,8 +30,8 @@ The overrides is defined as a set of patterns that are applied on all the compon
 {
     "bit" : {
         "overrides" : {
-            "utils/is-string" : {},
-            "utils/*" : {}
+            "utils/is-string" : {...options},
+            "utils/*" : {...options}
         }
     }
 }
@@ -50,17 +49,31 @@ A component that was imported from Bit has a `package.json` file in the root fol
 }
 ```
 
+### Propagation
+
+By default, each component will only have only the most specific rule applied on it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule.  
+
+### Exclusion
+
+Inside each rule you may specify a pattern or an array of patterns that will define the components that are excluded from the rule.  E.g. this rule is applied on all components, except for those that are under the `bar` namespace.  
+
+```json
+"overrides": {
+    "*": {
+    "exclude": "bar/*",
+    }
+};
+```
+
 ### Overrides precedence
 
 The following rules apply when specifying precedence from highest to lowest (this applies for the same rules. Multiple rules can be applied from different specifications):  
 
 - Component's package json  
 - Component's definition in workspace overrides
-- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `foo/bar/component`, `*/bar/*` will have higher priority over `foo/*/*`.  
+- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `foo/bar/component`, `*/bar/*` will have higher priority over `foo/*/*`. 
 
-### Propagation
-
-By default, each component will only have only the most specific rule applied on it. If you want the rule to be applied with other rules, you should specify `propagate: true` for the rule.  
+Once the relevant rule apply, a state may occur when the same dependency appears as dependency, dev dependency and peer dependency. In this case Bit will apply the following priorities: peerDeps => Deps => devDeps. I.e. if a dependency is both dependency and peer dependency, it will only exist as a peerDependency.  
 
 ## Overriding Options
 
@@ -70,7 +83,7 @@ You can use override to perform the following changes:
 - Adding and removing dependencies of all types and changing dependencies classification
 - Overriding package.json values for a component  
 
-### Set Bit Tools
+### Bit Tools
 
 Use the `env` key to set Bit tools, such as compiler and tester, you need to specify the path to the collection of the compiler and a specific version.  
 
@@ -94,7 +107,7 @@ For testing purposes, you can also specify a local file name to be the root of t
 }
 ```
 
-### Modify Component Dependencies
+### Component's Dependencies
 
 For each component, Bit resolves the dependencies defined inside the component as dependencies. Node modules are resolved according to their actual package version.  
 
@@ -122,13 +135,7 @@ Here is an example of specifying dependencies:
 }
 ```
 
-Bit will resolve as follow:  
-
-- Build the original required packages tree according to the component source. Files found in source files will be resolved as dependencies and files found in test files will be resolved as devDeps.  
-- Apply the changes defined in all the overrides for each section (deps, devDeps, peerDeps)
-- Squash the changes according to the following priorities: peerDeps => Deps => devDeps. So if the same dependency is found in both peerDep and Deps, it will only remain as peerDeps. If a dependency is found both in deps and devDeps it remains in deps only.  
-
-### Overriding package.json keys
+### package.json keys
 
 You an add any `package.json` keys to the overrides section, and they will be added or override keys in the components `package.json`. The following keys cannot be modified:
 

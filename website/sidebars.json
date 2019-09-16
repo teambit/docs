@@ -30,6 +30,7 @@
       "removing-components",
       "installing-components",
       "sourcing-components",
+      "overrides",
       "workspace-statuses"
     ],
     "Guides": [
@@ -44,8 +45,7 @@
         "my-account",
         "bitsrc-plans",
         "bitsrc-security",
-        "bitdev-permissions",
-        "bitdev-sla"
+        "bitdev-permissions"
     ],
     "Extending Bit": [
       "ext-concepts",

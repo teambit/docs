@@ -18,7 +18,7 @@ Additionally, `bit add` is used to manage the already tracked files of component
 
 > **Custom Module Definition**
 >
-> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [Custom Module Resolution](/docs/tracking-dependencies#custom-module-resolution) configuration.
+> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [custom paths resolution](#custom-paths) configuration.
 
 #### Track a single component
 
@@ -309,7 +309,7 @@ tracking 4 new components
 
 The components created are: `ui/button`, `ui/login`, `utils/is-string`, `utils/pad-left`. Each component's namespace is its directory name.
 
-### Ignore files 
+### Ignore files  
 
 If we use glob patterns, we may want to exclude some files that may get tracked. For this we use `--exclude`.
 
@@ -433,7 +433,7 @@ A more complex (but very common) case would be tracking components deeper inside
 We want to track all subdirectories of `utils` and `components`.
 
 ```bash
-$ bit add src/*/* --exclude src/*/*.js
+bit add src/*/* --exclude src/*/*.js
 ```
 
 #### Track a component with multiple test files
@@ -645,23 +645,18 @@ To rename a file, use `bit move` from the old to the new file name.
 bit move src/foo/bar/index.js src/foo/bar/new-name.js
 ```
 
-## Tracking Dependencies
+## Dependencies
 
-Bit manages a component's package and file dependencies.
+A key feature of Bit is the ability to automatically create a dependency graph, based on the component's source code.  
+There are two types of dependencies that a javascript can rely on, using a require or import statements: 
 
-A component may use packages or `import` files/components to work. Bit reads through all `require` and `import` statements for the components it tracks.  
-There are two dependencies a component may have, [Package Dependencies](#package-dependencies) and [File Dependencies](#file-dependencies). You can read more about Bit's [automated component dependency resolution](/docs/add-and-isolate-components#component-dependencies)
+- Packages that are installed as node_modules
+- Files and directories from inside the project, or referenced in decorators (e.g. in Angular)
 
-- Bit creates `package.json` for all package dependencies.
-- Bit should track all file dependencies. They can be a part of the same component or another one.
-
-> **Note**
->
-> If a project uses absolute imports or aliases, we need to [configure](#custom-module-resolution) it.
+For each component, Bit builds a **dependency graph** by analyzing all the dependencies. When a new version of component is tagged, Bit saves the dependency graph together with the component sources. The dependency graph is used to generate a `package.json` file for each component when the component is installed or imported.  
 
 ### Package Dependencies
 
-Components can `import` external packages. Bit resolves those dependencies.  
 Here's an example for a component with a package dependency:
 
 ```bash
@@ -682,7 +677,7 @@ export {default} from './hello-world';
 
 `hello-world.js`
 
-```js{1}
+```js
 import leftPad from 'left-pad';
 
 export default function hello(world) {
@@ -692,7 +687,7 @@ export default function hello(world) {
 
 `package.json`
 
-```js{3}
+```json
 {
   "dependencies": {
     "left-pad": "^2.1.0"
@@ -701,7 +696,8 @@ export default function hello(world) {
 ```
 
 In this example, the package `left-pad` is in the project's `node_modules` directory. The package version range is in the project's `package.json` file. The file `hello-world.js` requires the package `left-pad`.   
-Let's track the `hello/world` component and follow Bit's steps to resolve dependencies.
+
+we track the `hello/world` component:  
 
 ```bash
 $ bit add src/hello-world.js src/index.js --id hello/world
@@ -710,18 +706,10 @@ tracking component hello/world:
     added src/index.js
 ```
 
-We get one component that depends on the package `left-pad`. The version Bit sets for the dependency is the same version as defined in the project's `package.json` file. In this case, it's `^2.1.0`.  
+The `hello/world` component now relies on the `left-pad` package. The version Bit sets for the dependency is the same version as defined in the project's `package.json` file. In this case, it's `^2.1.0`.  
 If no package version found in the `package.json` file, Bit resolves it from the `node_modules` directory. Bit then sets the exact version - `2.1.0` (assuming that's the actual version installed).
 
-Verify Bit has resolved all dependencies using [bit status](/docs/apis/cli-all#status).
-
-```bash{3}
-$ bit status
-new components
-     > component/hello-world... ok
-```
-
-Use [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency.
+We can see that Bit has resolved the dependency by using [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency:  
 
 ```bash
 $ bit show hello/world
@@ -738,70 +726,23 @@ $ bit show hello/world
 └───────────────────┴─────────────────────────────────────────────────────────────────────┘
 ```
 
-#### Handling missing package dependencies
+If Bit cannot resolve all pacakge's dependencies, it will prompt for `missing package dependencies`. We need to verify that all packages actually exist in package.json.  
 
-In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag).
+The following diagram describes the packages (i.e. node_modules) resolution flow:  
 
-```bash{3,4}
-$ bit status
-new components
-     > hello/world... missing dependencies
-       missing packages dependencies: left-pad
-```
-
-Bit prompts the `missing package dependencies` if it is unable to resolve all package dependencies. Bit is unable to isolate such components. To resolve this issue, we need to verify all required packages are in the repository’s `package.json` file.
-
-### Peer Dependencies
-
-Some peer dependencies are not explicitly required by tracked files, so Bit does not log them as `peerDepedndencies`. To work around this issue we use [overrides](/docs/conf-bit-json.html#overrides) to force them as such.  
-For this example, we'll assume that a project has react components, so we need to add `react-dom` as a peer dependency. Open the [workspace configuration](/docs/conf-files.html#workspace-configuration) and locate `bit`. Now add the `overrides` section as follows:
-
-```js
-"bit": {
-    "overrides": {
-        "ui/*": {
-            "peerDependencies": {
-                "react-dom": "16.8.6"
-            }
-        }
-    }
-```
-
-This tells Bit to add `react-dom` as a peer dependency for all components that their name matches `ui/*`. You also set a specific component ID, or any other glob patten to match a set of components.
+![Package Resolution Flow](https://storage.googleapis.com/static.bit.dev/docs/images/package_resolution.png)
 
 ### File Dependencies
 
-A component can depend on other files. To isolate such components, we need to track these files as well. This is because the component must have these files around if we want to use it in another project.  
-Bit recognizes these files by reading the `import` and `require` statements. Once Bit has the list of files, it tries to figures out whether it tracks them. There are several cases for this situation:
+A component can depend on other files, e.g. `import ./utils.js`. To isolate such components, we need to track these files as well. This is because the component must have these files around if we want to use it in another project.  
 
-- Bit already tracks a required file as part of the tracked component.
-- A required file can be part of another component in your project. Bit creates a dependency relationship between the two components.
-- If Bit does not track the file at all, it warns about `untracked file dependencies` on [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag)
+When Bit encounters a file that needs to be tracked, it will try to check if the file is already tracked in another component. In this case, Bit will make the other component a dependency of this component.  If The file is not tracked Bit will warn about `untracked file dependencies` when checking the component's status.
 
-#### Untracked file dependencies
-
-If we encounter an `untracked file dependencies` error, we need to resolve it to isolate the component. First, let's view this example:
-
-```bash
-.
-├── package.json
-└── src
-    ├── hello-world
-    │   ├── hello-world.js
-    │   └── index.js
-    └── utils
-        └── noop.js
-```
-
-`index.js`
-
-```js
-export {default} from './hello-world';
-```
+In this example, we try to track the hello-world.js file.  
 
 `hello-world.js`
 
-```js{1}
+```js
 import noop from '../utils/noop';
 
 export default function hello(world) {
@@ -816,13 +757,10 @@ export default function hello(world) {
 export default () => {};
 ```
 
-Let's track the `hello/world` component:
-
 ```bash
 $ bit add src/index.js src/hello-world --id hello/world
 tracking component hello/world:
     added src/hello-world.js
-    added src/index.js
 ```
 
 When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
@@ -834,13 +772,14 @@ new components
        untracked file dependencies: src/utils/noop.js
 ```
 
-Bit has read the `require` statement for `src/utils/noop.js`. However, Bit does not track the file. So Bit is unable to isolate the `hello/world` component. The error forbids it.  
-There are two ways to resolve this isolation issue.
+Bit has read the `require` statement for `src/utils/noop.js`. However, Bit does not track the file. So Bit is unable to isolate the `hello/world` component. There are two ways to resolve this isolation issue:
 
-#### Add an untracked file dependency to an existing component
+- Add the untracked file dependency to the existing component
+- Track the file as a new component
 
-We can add untracked file dependencies to an existing component.  
-Let's continue the flow from the [previous section](#untracked-file-dependencies) and append `src/utils/noop.js` to the component. Rerun `bit add`. Track the selected file and set the `--id` to the preexisting component.
+The decision on the approach to take is based on the context of the file. If this file is used by multiple other components, it makes sense to make it into a separate component. However, if this file is internal to the tracked file, it can be added as the component's file.  
+
+To **add the file to an existing component**, we should run `bit add` pointing to the Id of the component to which we want to add the file:  
 
 ```bash
 $ bit add src/utils/noop.js --id hello/world
@@ -850,7 +789,7 @@ tracking component hello/world:
     added src/utils/noop.js
 ```
 
-Rerun [bit status](/docs/apis/cli-all#status) and see that Bit can isolate the component.
+When running [bit status](/docs/apis/cli-all#status) we see that Bit can isolate the component:
 
 ```bash
 $ bit status
@@ -858,10 +797,7 @@ new components
     > component/hello-world... ok
 ```
 
-#### Track an untracked file dependency as a new component
-
-We can choose to create a new component from an untracked file dependency. To do this, we need to track the untracked files as a new component. This resolves the missing file dependency issue. Bit then creates a dependency relationship for components with file dependencies between them.  
-Let’s try resolving the prior untracked file dependency, but this time by adding a new component.
+To **track the file as a new component** we can run `bit add` with the new component.
 
 ```bash
 $ bit add src/utils/noop.js --namespace utils
@@ -869,7 +805,7 @@ tracking component utils/noop:
     added src/utils/noop.js
 ```
 
-The result is a new component, which is now a dependency of the `hello/world` component.
+The result is a new component, which is now a dependency of the `hello/world` component. There is no need to explicitly tell Bit that there is a new component. Bit identifies that the file is tracked as a new component and resolves the status of the requiring component.
 
 ```bash
 › bit status
@@ -878,10 +814,21 @@ new components
      > utils/noop... ok
 ```
 
-### Custom Module Resolution
+The following diagram describes the flow to resolve dependency for relative files:  
 
-Some projects use a Custom Module Definition feature. We need to define them to Bit for it to resolve the dependencies.  
-Some examples for common frameworks that allow Custom Module Definition:
+![Package Resolution Flow](https://storage.googleapis.com/static.bit.dev/docs/images/file_resolution.png)
+
+### Overriding Dependencies
+
+It is possible to change the component's dependencies, by using the [overrides](/docs/overrides) option in Bit. Overrides can be used for the following:  
+
+- Add dependencies that are not explicit in the code
+- Remove dependencies that are in the code, but we want to be provided by the consuming project, such as generic styles
+- Change dependency classification from dependencies to peerDependencies, so they will be provided in the consuming project and not by the component. This is sometimes required for frameworks packages such as react and angular that needs to exist only once in the project, or to reduce the bundle size.
+
+### Custom Paths
+
+Some projects use a custom aliases to resolve relative paths. Some common examples are: 
 
 - [Webpack resolve](https://webpack.js.org/configuration/resolve/)
 - [tsconfig resolving](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
@@ -903,41 +850,10 @@ Let's use this example, and update it to use custom module resolution.
         └── noop.js
 ```
 
-`index.js`
+In the `hello-world.js` file we may import the `noop.js` file as follow: `import noop from '@/utils/noop';`  
+For Bit to be able to resolve the `@/utils` path, we need to configure it as an resolve alias path. In order to do that we should configure the [Bit configuration](/docs/conf-bit-json#resolvemodules) to point to the module resolution path as bellow:
 
-```js
-export {default} from './hello-world';
-```
-
-`hello-world.js`
-
-```js{1}
-import noop from '@/utils/noop';
-
-export default function hello(world) {
-    noop();
-    return `hello ${world}`;
-}
-```
-
-`noop.js`
-
-```js
-export default () => {};
-```
-
-Now we track the component using this command:
-
-```bash
-$ bit add src/index.js src/hello-world --id hello/world
-tracking component hello/world:
-    added src/hello-world.js
-    added src/index.js
-```
-
-The output of `bit status` notifies on a missing package dependency for `@/utils/noop`. This is not a package. To resolve this issue, we need to edit the project's `bit` object and configure the following `resovleModules` configuration:
-
-```js
+```json
 "resolveModules": {
     "aliases": {
         "@": "src"
@@ -945,155 +861,9 @@ The output of `bit status` notifies on a missing package dependency for `@/utils
 }
 ```
 
-After defining the custom module resolution, Bit can find `utils/noop`. Since we haven't tracked `src/utils/noop` yet, Bit marks it as an untracked file dependency. Resolving this issue is explained [above](#untracked-file-dependencies).
+> It is highly recommended to use custom paths instead of backward references (i.e. `../../my-file.js`). Using custom paths makes the component more portable between environments, as there is no need to reproduce the full directory structure, and Bit can simply redirect the paths to another location.
 
-## Component Dependencies
-
-A JavaScript file has two types of dependencies it can require. They are either **Packages** that are installed as node modules by tools like npm or yarn or other **files and directories** from the project.  
-Bit automates the process of managing these dependencies for the components you track. It does so by parsing all `import` or `require` statements and building a **dependency graph** for each component. When we tag a version for a component Bit saves the dependency graph. It uses it to create a `package.json` for each component.
-
-### Dependency resolution flow
-
-These are the steps Bit does to create a dependency graph for each component. The process starts when we track a set fo files as a component.
-
-1. Bit reads through all tracked files to find all `import` and `require` statements.
-2. Bit splits the list of required modules to packages and files (and directories).
-3. Bit parses the `package.json` file at the root of the project (and all nested `package.json` files, if available), to get a complete list of the installed packages.
-4. A matching process for each required package starts:
-    1. If a package is required by an implementation file, but is configured as `peerDependency` in the `package.json`, Bit sets it as a `peerDependency` for the component.
-    2. If the package is required by a [test file](/docs/add-and-isolate-components.html#tracking-a-component-with-testspec-files)) of the component, Bit defines it as `devDependency`.
-    3. For any other case, Bit defines the package as a `dependency`.
-    4. If a package is not found, Bit triggers an error about [missing package dependencies](/docs/add-and-isolate-components#missing-package-dependencies).
-5. The package version is the one currently installed and required by the file.
-6. Another matching process starts for each required file:
-    1. If a required file is already tracked by another component, Bit sets it as a `dependency` (or a `devDependency` if the file is required by a test file), otherwise it prompts an error for [untracked file dependencies](/docs/add-and-isolate-components#untracked-file-dependencies).
-    2. If the file is not found, it prompts an error for [non existing dependency file](/docs/add-and-isolate-components#non-existing-dependency-files).
-7. When the parsing process completes successfully Bit can create an immutable dependency graph for the component.
-
-> **Dependencies Edge Cases and Gotchas**
->
-> * A package listed both as a `peerDependency` and a `dependency` or `devDependency` in the `package.json`,  will be considered as a `peerDependency`.
-> * A package required by both test-file and implementation-file is a `dependency`.
-> * A file required using a absolute path feature like Webpack resolve, tsconfig resolving, etc requires configuring [custom module resolution](/docs/add-and-isolate-components#custom-module-resolution) for Bit.
-
-#### Working with the automated dependency resolution
-
-The value fo using Bit's ability to manage component dependencies is that you don't need to modify the component's `package.json` file. By modifying the component's actual implementation, Bit updates the dependency graph.  
-This means that in order to add/remove a dependency you need only to add/remove a `require` statement from the code. For changing the version of the dependency, install the version you'd like the component to use.
-
-### Overriding component dependencies
-
-Use `overrides` to bypass Bit's automated dependency definition. Add the `overrides` key. You can use it either in the [component configuration](/docs/conf-files.html#component-configuration) or the [workspace configuration](/docs/conf-files.html#workspace-configuration):
-
-#### `overrides` in component configuration
-
-it generates a `package.json` file in the root folder of each imported component. Open it and locate the `bit` key. Add an object named `overrides`.  
-For example:
-
-```json
-{
-    "bit" : {
-        "overrides" : {}
-    }
-}
-```
-
-Now you can modify the component's `dependencies`, `devDependencies` and `peerDependencies`.
-
-#### `overrides` in workspace configuration
-
-Components don't have their own `package.json` files their original project. To manage them use `overrides` in the [workspace configuration](/docs/conf-files.html#workspace-configuration) file.  
-In your project's `package.json` locate the `bit` configuration key (or your project's `bit.json`). Add select which component you want to override dependencies for.  
-For example:
-
-```json
-{
-    "bit" : {
-        "overrides" : {
-            "utils/is-string" : {},
-            "utils/*" : {}
-        }
-    }
-}
-```
-
-> **Overriding groups of components**
->
-> You can either specify explicit component, and even glob patterns, to control groups of components.
-
-#### Manually set dependency version
-
-To set a version manually, use `overrides` and set any specific version or a SemVer range.  
-For example:
-
-```json
-{
-    "overrides" : {
-        "dependencies" : {
-            "lodash" : "2.3.1"  # set a specific package version
-        },
-        "devDependencies" : {
-            "@bit.utils/is-string" : "2.1.1"   # set a specific component version
-        }
-    }
-}
-```
-
-#### Manually add dependency
-
-You can manually add dependencies for components using `overrides`. You can either set a specific version, or let Bit set the version of the package.  
-For example:
-
-- Add `@bit.utils/is-string` as a `devDependency` in version `1.2.3`.
-- Add `react-dom` as a `peerDependency`, and let Bit define its version according the version in the project.
-
-```json
-{
-    "overrides" : {
-        "devDependencies" : {
-            "@bit.utils/is-string" : "1.2.3"   # add a specific version of dependency
-        },
-        "peerDependencies" : {
-            "react-dom" : "+"                  # add a dependency, and let Bit define the version
-        }
-    }
-}
-```
-
-> **`peerDependencies` for components**
->
-> Some `peerDependencies` are not required by neither the implementation or test files of a component. This means that Bit is unable to define them as such. For example, `react-dom` is never explicitly imported but is required as a dependency for any react component to work. Use the `overrides` feature to define `peerDependencies` for such cases.
-
-#### Manually remove a dependency
-
-To force Bit to remove any dependency from being either `dependency`, `peerDependency` or `devDependency`, add the specific dependency type to the `overrides` object. In it, write the name of the dependency to remove, and set the version number to `-`.  
-For example:
-
-- Remove the dependency for the file `./src/enums.js`.
-- Remove the dependency for the component `@bit.utils/is-string`.
-- Remove the dependency to the package `react`.
-
-```json
-{
-    "overrides" : {
-        "dependencies" : {
-            "file://./src/enums.js" : "-"
-        },
-        "devDependencies" : {
-            "@bit.utils/is-string" : "-"
-        },
-        "peerDependencies" : {
-            "react" : "-"
-        }
-    }
-}
-```
-
-> **Be careful!**
->
-> While Bit fully supports the manual removal of dependencies, be careful when doing so. This may harm the consumers of your components, as they will lack dependencies.
-
-## Isolation Errors
+## Common Isolation Errors
 
 Here are some common errors and their resolution when trying to isolate a component. 
 
@@ -1105,18 +875,14 @@ Here are some common errors and their resolution when trying to isolate a compon
 
 This error mainly occur on two distinct isolation issues. It may be that some of the project's package dependencies are not installed, or that you are using Custom Module Definition, or `NODE_PATH` environment variable in your project and Bit is unaware of that.
 
-#### Installing missing packages dependencies
-
-As described in [this section](/docs/isolating-and-tracking-components.html#tracking-a-component-with-package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit will prompt you to install the missing package dependencies.  
+As described [above](#package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit will prompt you to install the missing package dependencies.  
 Use your package manager of choice to resolve the issue.
 
 ```sh
 npm install
 ```
 
-#### Configuring Custom Module Resolution
-
-Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [Custom Module Resolution](/docs/add-and-isolate-components#custom-module-resolution).
+Alternatively, Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [custom paths resolution](#custom-paths).
 
 ### Components with Relative Import Statements
 
