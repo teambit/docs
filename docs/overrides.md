@@ -71,7 +71,7 @@ The following rules apply when specifying precedence from highest to lowest (thi
 
 - Component's package json  
 - Component's definition in workspace overrides
-- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `foo/bar/component`, `*/bar/*` will have higher priority over `foo/*/*`. 
+- Glob pattern overrides are applied with right most specifity has higher priority. I.e. if you have a `foo/bar/component`, `*/bar/*` will have higher priority over `foo/*/*`.  
 
 Once the relevant rule apply, a state may occur when the same dependency appears as dependency, dev dependency and peer dependency. In this case Bit will apply the following priorities: peerDeps => Deps => devDeps. I.e. if a dependency is both dependency and peer dependency, it will only exist as a peerDependency.  
 
@@ -114,7 +114,7 @@ For testing purposes, you can also specify a local file name to be the root of t
 }
 ```
 
-You may specify a specific version of the tool, or you may use a special annotation. Use "+" to specify Bit to use the workspace's tool for a set of components. Use "-" to specify Bit to remove the compiler for specific components. Such as: 
+You may specify a specific version of the tool, or you may use a special annotation. Use "+" to specify Bit to use the workspace's tool for a set of components. Use "-" to specify Bit to remove the compiler for specific components. Such as:  
 
 ```json
 "env": {
@@ -141,7 +141,7 @@ The components under `utils` will not have a compiler, while the ones under `uti
 
 For each component, Bit resolves the dependencies defined inside the component as dependencies. Node modules are resolved according to their actual package version.  
 
-Bit uses packages defined as `dependencies`, `devDependencies` and `peerDependencies`. 
+Bit uses packages defined as `dependencies`, `devDependencies` and `peerDependencies`.  
 
 With Bit overrides you can add, remove and change packages version, as well as move packages from one type (regular dependency to peerDependency), by using the override section.  
 
