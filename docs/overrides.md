@@ -75,13 +75,20 @@ The following rules apply when specifying precedence from highest to lowest (thi
 
 Once the relevant rule apply, a state may occur when the same dependency appears as dependency, dev dependency and peer dependency. In this case Bit will apply the following priorities: peerDeps => Deps => devDeps. I.e. if a dependency is both dependency and peer dependency, it will only exist as a peerDependency.  
 
+### Overriding annotations
+
+While it's possible to set specific values for each key you override, Bit implements a set of annotations to simplify the configuration process, and extend on it.
+
+- `-` the "minus" annotation indicates Bit to remove the key from the component. This is useful when removing a dependency from Bit's automated dependency detection, or when removing a compiler environment from a component that does not requires transpilation.
+- `+` the "plus" annotation tells Bit to try and fill the value from what is defined in the workspace. For example, when adding a `dependency` to a component, you can use `+` instead of stating the package version. Bit will resolve it from the workspace.
+
 ## Overriding Options
 
 You can use override to perform the following changes:
 
 - Set Bit tools - compilers and testers
 - Adding and removing dependencies of all types and changing dependencies classification
-- Overriding package.json values for a component  
+- Overriding package.json values for a component
 
 ### Bit Tools
 
