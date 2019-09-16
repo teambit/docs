@@ -75,13 +75,6 @@ The following rules apply when specifying precedence from highest to lowest (thi
 
 Once the relevant rule apply, a state may occur when the same dependency appears as dependency, dev dependency and peer dependency. In this case Bit will apply the following priorities: peerDeps => Deps => devDeps. I.e. if a dependency is both dependency and peer dependency, it will only exist as a peerDependency.  
 
-### Overriding annotations
-
-While it's possible to set specific values for each key you override, Bit implements a set of annotations to simplify the configuration process, and extend on it.
-
-- `-` the "minus" annotation indicates Bit to remove the key from the component. This is useful when removing a dependency from Bit's automated dependency detection, or when removing a compiler environment from a component that does not requires transpilation.
-- `+` the "plus" annotation tells Bit to try and fill the value from what is defined in the workspace. For example, when adding a `dependency` to a component, you can use `+` instead of stating the package version. Bit will resolve it from the workspace.
-
 ## Overriding Options
 
 You can use override to perform the following changes:
@@ -92,15 +85,22 @@ You can use override to perform the following changes:
 
 ### Bit Tools
 
-Use the `env` key to set Bit tools, such as compiler and tester, you need to specify the path to the collection of the compiler and a specific version.  
+Use the `env` key under overridesto set Bit tools, such as compiler and tester, you need to specify the path to the collection of the compiler and a specific version.  
 
 ```json
 "env": {
     "compiler": "bit.envs/compilers/react@0.0.3",
+},
+"overrides": {
+    "utils/*": {
+        "env": {
+            "compiler": "bit.envs/compilers/babel@1.0.0"
+        }
+    }
 }
 ```
 
-You can specify the `none` value to bypass using a compiler or a tester.  
+In this example, all components will use the react compiler, while the components under `utils` use the babel compiler.
 
 For testing purposes, you can also specify a local file name to be the root of the compiler or tester:  
 
@@ -114,33 +114,60 @@ For testing purposes, you can also specify a local file name to be the root of t
 }
 ```
 
+You may specify a specific version of the tool, or you may use a special annotation. Use "+" to specify Bit to use the workspace's tool for a set of components. Use "-" to specify Bit to remove the compiler for specific components. Such as: 
+
+```json
+"env": {
+    "compiler": "bit.envs/compilers/react@0.0.3",
+    "tester": "bit.envs/testers/jest@0.0.3",
+},
+"overrides": {
+    "utils/*": {
+        "env": {
+            "compiler": "-"
+        }
+    },
+    "utils/snippets/*": {
+        "env": {
+            "compiler": "+"
+        }
+    }
+}
+```
+
+The components under `utils` will not have a compiler, while the ones under `utils/snippets` will have the default one assigned.
+
 ### Component's Dependencies
 
 For each component, Bit resolves the dependencies defined inside the component as dependencies. Node modules are resolved according to their actual package version.  
 
 Bit uses packages defined as `dependencies`, `devDependencies` and `peerDependencies`. 
 
-With Bit overrides you can add, remove and change packages version, as well as move packages from one type (regular dependency to peerDependency), by using the override section. 
+With Bit overrides you can add, remove and change packages version, as well as move packages from one type (regular dependency to peerDependency), by using the override section.  
 
-Here is an example of specifying dependencies: 
+Here is an example of specifying dependencies:  
 
 ```json
 {
     "overrides" : {
-        "dependencies" : {
-            "lodash" : "2.3.1",  # Resolve the package to specific version
-        },
-        "devDependencies" : {
-            "debug": "^4.0.0", # Add as devDep with version that matches
-            "@bit.utils/is-string" : "+" # Add as devDep according to version in package.json or latest
-        },
-        "peerDependencies" : {
-            "chalk" : "-", # Remove the package from peerDependencies
-            "react-dom": "+" # Add as peer according to project's version or latest if not exist
+        "*": {
+            "dependencies" : {
+                "lodash" : "2.3.1",  # Resolve the package to specific version
+            },
+            "devDependencies" : {
+                "debug": "^4.0.0", # Add as devDep with version that matches
+                "@bit.utils/is-string" : "+" # Add as devDep according to version in package.json or latest
+            },
+            "peerDependencies" : {
+                "chalk" : "-", # Remove the package from peerDependencies
+                "react-dom": "+" # Add as peer according to project's version or latest if not exist
+            }
         }
     }
 }
 ```
+
+You may specify a specific version of the package, or you may use a special annotations to determine the version from the package.json. Use "+" to specify Bit to use the version that exists in the workspace `package.json`. Use "-" to specify Bit to remove the dependency for specific components.  
 
 ### package.json keys
 
