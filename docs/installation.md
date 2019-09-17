@@ -12,17 +12,12 @@ bit --version
 - [MacOS](#macos)
   - [Install with Homebrew](#install-with-homebrew)
   - [Download Bit executable](#download-bit-executable)
-  - [Install via NPM / Yarn](#install-via-npm--yarn)
 - [Windows](#windows)
   - [Download Bit executable](#download-bit-executable-1)
-  - [Install via NPM / Yarn](#install-via-npm--yarn-1)
 - [Unix](#unix)
   - [Using Package Installers](#using-package-installers)
-    - [Debian](#debian)
-    - [Ubuntu](#ubuntu)
-    - [CentOS / Fedora / RHEL](#centos--fedora--rhel)
   - [Download Bit executable](#download-bit-executable-2)
-  - [Install via NPM / Yarn](#install-via-npm--yarn-2)
+- [Install via NPM / Yarn](#install-via-npm--yarn)
 
 Once installed, verify the installation by running the following command:
 
@@ -48,16 +43,6 @@ You can copy the bit executable to a directory in your path, or any directory th
 $ sudo cp bit /usr/local/bin/ && rm bit
 ```
 
-### Install via NPM / Yarn
-
-> Requires node 8.12 and above.
-
-```bash
-npm install bit-bin --global
-    or
-yarn global add bit-bin  
-```
-
 ## Windows
 
 ### Download Bit executable
@@ -70,41 +55,33 @@ yarn global add bit-bin
 set PATH=%PATH%;C:\bit\
 ```
 
-### Install via NPM / Yarn
-
-> Requires node 8.12 and above.
-
-```bash
-$ npm install bit-bin --global
-    or
-$ yarn global add bit-bin  
-```
-
 ## Unix
 
 ### Using Package Installers
 
-#### Debian
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Debian-->
 
 ```sh
-$ sudo sh -c "echo 'deb [trusted=true] https://bitsrc.jfrog.io/bitsrc/bit-deb all stable' >> /etc/apt/sources.list"
-$ sudo apt-get update && sudo apt-get install bit
+sudo sh -c "echo 'deb [trusted=true] https://bitsrc.jfrog.io/bitsrc/bit-deb all stable' >> /etc/apt/sources.list"
+sudo apt-get update && sudo apt-get install bit
 ```
 
-#### Ubuntu
+<!--Ubuntu-->
 
 ```sh
-$ sudo apt-get update && sudo apt-get install ca-certificates
-$ sudo sh -c "echo 'deb [trusted=true] https://bitsrc.jfrog.io/bitsrc/bit-deb all stable' >> /etc/apt/sources.list"
-$ sudo apt-get update && sudo apt-get install bit
+sudo apt-get update && sudo apt-get install ca-certificates
+sudo sh -c "echo 'deb [trusted=true] https://bitsrc.jfrog.io/bitsrc/bit-deb all stable' >> /etc/apt/sources.list"
+sudo apt-get update && sudo apt-get install bit
 ```
 
-#### CentOS / Fedora / RHEL
+<!--CentOS / Fedora / RHEL-->
 
 ```sh
-$ sudo curl --silent --location https://static.bit.dev/rpm/bit.repo | sudo tee /etc/yum.repos.d/bit.repo
-$ sudo yum install bit
+sudo curl --silent --location https://static.bit.dev/rpm/bit.repo | sudo tee /etc/yum.repos.d/bit.repo
+sudo yum install bit
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Download Bit executable
 
@@ -118,12 +95,12 @@ You can copy the bit executable to a directory in your path, or any directory th
 $ sudo cp bit /usr/local/bin/ && rm bit
 ```
 
-### Install via NPM / Yarn
+## Install via NPM / Yarn
 
 > Requires node 8.12 and above.
 
 ```bash
-$ npm install bit-bin --global
+npm install bit-bin --global
     or
-$ yarn global add bit-bin  
+yarn global add bit-bin  
 ```
