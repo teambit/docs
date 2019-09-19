@@ -78,7 +78,7 @@ a {
   }
 }
 .fixedHeaderContainer {
-  background-color: $secondaryColor;
+  background-color: $primaryColor;
   min-height: 56px;
   padding: 10px;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
