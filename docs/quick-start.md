@@ -42,9 +42,7 @@ This diagram bellow provides an overflow of the workflow we will use in this gui
 
 ## Track Components
 
-The add command initiates a Bit component's lifecycle. Bit components' index is now tracking the files that comprise the component.
-
-At this point, Bit can verify the completeness of the graph dependency of the component. Bit can also associate the component with utilities - compiler and tester - and start building and testing the component.
+To start tracking components in Bit, use the `add` command. Once teh files of a components are added, Bit can identify and verify that all the dependencies of the components exist and all files are tracked. Bit can also associate the component with utilities - compiler and tester - and start building and testing the component.
 
 ### Add Files
 
