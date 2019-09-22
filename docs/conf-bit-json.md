@@ -21,6 +21,13 @@ Define the default directory inside which all imported components will reside. T
 
 Override this path for a specific component using `bit import --path`.  
 
+## defaultScope
+
+Type: `string`
+Default: none
+
+For components that are exported for the first time, sets the scope as the component's default scope, and mark the component as exported (not staged).  
+
 ## saveDependenciesAsComponents
 
 - Type: `boolean`
