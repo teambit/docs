@@ -3,90 +3,86 @@ id: quick-start
 title: Quick Start
 ---
 
-Learn the basics of Bit and how to share components between projects as a team.
+This guide will teach you the basic steps to start working with Bit. To understand more about how Bit works, refer to the [concepts](/docs/concepts) guide.
 
-In this tutorial, you will learn the basics of Bit, and how to leverage it to share components between your team’s projects and applications.  
-You will learn how to isolate components in a repository, letting Bit do the heavy lifting for packing the components while automating the management of their dependencies and versioning. No refactoring, code changes or package configurations are required.  
-Then, learn how to export the components to a reusable collection ([example](https://bit.dev/mui-org/material-ui)) you can share and reuse across your projects and applications. When done, you will have your component collection to share.
+Bit is a CLI tool to share components across repositories (poly-repos). Bit can be leveraged by teams to share components that reside in different projects, or improve components libraries distribution by sharing discrete components.  
 
-**Let’s get started**
+## Setup
 
-## Install bit
+### Install Bit
+
+If you are using node 8.12 and above, you can use NPM or yarn to install bit:  
 
 ```bash
 npm install bit-bin -g
 ```
 
-See more [installation methods](/docs/installation.html).
+If you are not using Nodejs 8.12 and above, reference other [installation methods](/docs/installation)  
 
-## Init Bit for your project
+### Initialize Bit workspace
 
-Choose an existing repository containing components you’d like to share and reuse, and [Initialize a Bit workspace](/docs/initializing-bit.html) in the project’s directory.
+To share components from a project, you should initialize Bit in that project: 
 
 ```bash
-$ cd project-directory
-$ bit init
+cd project-directory
+bit init
 ```
 
-## Track components
+<div class="learn-more">
 
-Use Bit to [track components](/docs/add-and-isolate-components.html) in the repository, which you would like to reuse in other projects.  
-To track components, use the `bit add` command. Using a glob pattern, you can add all the components in a certain path or directory (learn how to [track specific files as components](/docs/add-and-isolate-components.html#track-a-component)).
+- Understand about [workspace initialization](/docs/initializing-bit)  
+- [Project configuration](docs/conf-files)  
 
-**Example**: Track all the components in the repository's `src/components` directory.
+</div>
+
+## Workflow
+
+This diagram bellow provides an overflow of the workflow we will use in this guide:  
+![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
+
+## Track Components
+
+The add command initiates a Bit component's lifecycle. Bit components' index is now tracking the files that comprise the component.
+
+At this point, Bit can verify the completeness of the graph dependency of the component. Bit can also associate the component with utilities - compiler and tester - and start building and testing the component.
+
+### Add Files
+
+Start tracking components in the project. A good candidate for tracking is a component that is clearly defined and isolated. 
+Use the `bit add` command to track a component:
+
+```bash
+bit add src/components/my-component.ts --id my-component
+```
+
+You can track multiple components at once:  
 
 ```bash
 bit add src/components/*
 ```
 
-Bit traverses the tracked files looking for `import` and `require` statements to define and generate a dependency graph for every component, saving the need to define and manage a `package.json` file for every component manually
+This will track all the components in the `src/components` directory. Each component will be get the directory name as the component id.  
 
-> **Tip**
->
-> Use [bit status](/docs/apis/cli-all#status) to view useful information at any step. Try using it to verify that each component's dependency graph has been successfully resolved.
+You can also [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) as part of your components by appending the `--tests` flag. Bit can run these tests and display the results.
 
-**Example**: Tracking components
+Use `bit status` to verify component was tracked and no files are missing.  
 
-Let's track the components `button`, `login` and `logo` in the following project's directory structure.
+<div class="learn-more">
 
-```bash
-$ tree
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-└── components
-├── button
-│├── Button.js
-│├── Button.spec.js
-│└── index.js
-├── login
-│├── Login.js
-│├── Login.spec.js
-│└── index.js
-└── logo
-├── Logo.js
-├── Logo.spec.js
-└── index.js
-​
-5 directories, 13 files
-```
+- Advanced options for [tracking components](/docs/add-and-isolate-components)  
+- [Best Practices](/docs/best-practices) for tracking components  
+- Check out Framework specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines)  
 
-All 3 components are in `src/components/*`. Let’s use `bit add` to track them:
+</div>
 
-```bash
-$ bit add src/components/*
-tracking 3 new components
-```
+### Add compiler
 
-**Optional**: You can [track test files](/docs/add-and-isolate-components.html#track-a-component-with-testspec-files) as part of your components by appending the `--tests` flag. Bit can run these tests and present you with the results.
+There are 2 options to use Bit components in another project:
 
-## Defining a compiler
+- Import the source code and embed into the consuming project
+- Install built artifacts (e.g. dist directory) that is consumed by the project as an NPM package.  
 
-Bit lets you define a compiler for the components in your repository.  
-To define a compiler, run the `bit import` command:
+To build the component and create built artifacts, you need to define a compiler. A compiler is a component itself, so we use the `bit import` command to import it into our project:
 
 ```bash
 $ bit import bit.envs/compilers/babel --compiler
@@ -94,12 +90,18 @@ the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
 ```
 
-You can choose a compiler from [this pre-made collection](https://bit.dev/bit/envs), or implement [your own compiler configurations](/docs/ext-developing-extensions.html).  
+<div class="learn-more">
 
-#### Defining a testing framework
+- Find an [existing compiler](https://bit.dev/bit/envs)
+- Implement [your own compiler configuration](/docs/ext-developing-extensions)
+- Check out Framework specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines) to find relevant compilers
 
-If you [track test files](/docs/add-and-isolate-components.html#track-a-component-with-testspec-files) for your components, you can define a testing framework Bit will use to run them.
-To define a testing framework, run the `bit import` command:
+</div>
+
+### Add Tester
+
+If you [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) for your components, you can define a testing framework Bit will use to run them.
+A bit tester, like a compiler, is a tool provided as component: 
 
 ```bash
 $ bit import bit.envs/testers/mocha --tester
@@ -107,12 +109,24 @@ the following component environments were installed
 - bit.envs/testers/mocha@0.0.7
 ```
 
-You can choose a testing framework from [this pre-made collection](https://bit.dev/bit/envs), or implement [your own testing configurations](/docs/ext-developing-extensions.html).
+<div class="learn-more">
 
-## Tagging component versions
+- Find an [existing tester](https://bit.dev/bit/envs)
+- Implement [your own tester](/docs/ext-compiling)
+
+</div>
+
+## Publish components
+
+When a component is ready to be shared with others, the developer tags it with a version number following the semver conventions.  
+Bit stores the snapshot of the component's source code and can now notify on any changes that were made to it.  
+
+The developer can export a tagged version of the component to a centralized server. The centralized server can be self owned or [bit.dev](/docs/bit-dev) cloud service can be used as the centralized server.  
+
+### Tag component's version
 
 To set a version for your components use the `bit tag` command.  
-Bit locks the state of every component’s dependency graph, making its version immutable.
+Bit locks the state of the component's files and its dependency graph. The tagged version is now immutable (cannot be changed).  
 When tagging components, Bit first runs the build and test tasks for the components.  
 You can use the `--all` flag to tag all the components in the workspace.
 
@@ -122,7 +136,7 @@ $ bit tag --all 1.0.0
 added components: components/button@1.0.0, components/login@1.0.0, components/logo@1.0.0
 ```
 
-## Export the components
+### Export components
 
 Now that our components are tracked and versioned, export (publish) them to a remote collection. Collections host and organize your components. Each component can be quickly discovered and consumed in any other project and application.  
 First, head over to [bit.dev](https://bit.dev) and [create a free account](https://bit.dev/signup) (if you don’t already have one). Then, create a private or public collection.  
@@ -134,7 +148,7 @@ $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-Now you’re all set to [publish the components](/docs/apis/cli-all#export).  
+Now you’re all set to [publish the components](/docs/organizing-components).  
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
 ```bash
@@ -142,55 +156,87 @@ $ bit export user-name.collection-name
 exported 3 components to collection user-name.collection-name
 ```
 
-Head over to your bit.dev collection and take a look…  
-All the components have been exported. Try creating and saving examples for your components, which Bit will also show as previews in the collection’s page.
+Head over to your bit.dev collection. All the components have been exported. Try creating and saving examples for your components, which Bit will also show as previews in the collection’s page.
 
 ## Consume components
 
-Bit components can be consumed in a variety of methods.  
-To [install components with package managers](/docs/installing-components.html) like **NPM** and **Yarn**, configure Bit as a scoped registry:
+Once exported, the component is now available for consumption by other developers in one of two ways: install or import.
+
+### Install components
+
+Developers can use Npm or Yarn to install the components. The component will be installed with built artifacts (e.g., the dist folder) like any other NPM package. The installed component resides in the node_modules folder.
+
+If using NPM or Yarn, NPM should configure Bit as a scoped registry (this is done automatically when doing bit login):
 
 ```bash
 npm config set '@bit:registry' https://node.bit.dev
 ```
 
-Then simply install components with your favorite package manager using the install command in the component’s page. [Example](https://bit.dev/mui-org/material-ui/button):
+Then  install components with your favorite package manager using the install command in the component’s page. [Example](https://bit.dev/mui-org/material-ui/button):
 
 ```bash
 npm i @bit/mui-org.material-ui.button
 ```
 
+<div class="learn-more">
+
+- Use package managers to [Install components](/docs/installing-components)
+
+</div>
+
 ## Modify Component
 
+You may want to modify the component source code, for fixing a bug or changing the functionality. To do so, you need to import the component to your project and apply the changes.
+
+The updated component can now be tagged and re-exported so, the other component's consumers get the update
+
+### Import Component
+
 As Bit isolates components and decouples them from the repository, Bit components can be developed from any repository in your codebase.  
-To [develop a component from the consuming repository](/docs/sourcing-components.html) use the `bit import` command. [Example](https://bit.dev/mui-org/material-ui/button):
+To develop a component from the consuming repository(/docs/sourcing-components) use the `bit import` command:
 
 ```bash
 bit import mui-org.material-ui/button
  ```
 
-This new workflow increases the adoption and usage of components, as developers can [import] and develop Bit components right from their different projects.
+**Note**: If your changes are temporary, and you would like to revert back to using NPM, you can use the `eject` [command](/docs/apis/cli-all#eject) command to remove components from the local workspace and install them by the NPM client.
 
-**Tip**: Use the `eject` [command](/docs/apis/cli-all#eject) to remove components from the local workspace and install them by the NPM client.
+<div class="learn-more">
 
-## Publish component changes
+- [Importing components](/docs/sourcing-components)  
 
-Changes made to imported components can be updated in the collection and synced across projects.  
-When you’re done making changes, you can update them as a new version of the component in the collection (given permission). Alternatively, the changed component can be exported as a new component.  
-When a component was updated with a new version in the collection, you can [update the changes](/docs/updating-sourced-components.html) for the component in every repository it lives in.
+</div>
 
-**Tip**: Use the `bit checkout` [command](/docs/updating-sourced-components.html#checkout-a-component-version-to-the-workspace) to update component versions in the workspace, including their dependency trees.
+### Publish component changes
+
+Changes made to imported components can be updated in the collection and consumed across projects.  
+When you’re done making changes, you can update them as a new version of the component in the collection (given you have permissions to update the collection). Alternatively, the changed component can be exported as a new component.  
+When a component was updated with a new version in the collection, you can [update the changes](/docs/updating-sourced-components) for the component in every repository it lives in.
+
+<div class="learn-more">
+
+- [Update component in workspace](/docs/updating-sourced-components#checkout-a-component-version-to-the-workspace) component version
+- [Bit checkout command](/docs/apis/cli/)
+
+</div>
 
 ## Merge changes
 
-[Bit extends Git](/docs/sourcing-components#merge-incoming-changes) to allow the merging of changes for components, including the [handling of marge-conflicts](/docs/sourcing-components#handle-merge-conflicts). This workflow helps your team sync changes when developing components from different projects.
+An important feature of Bit is, that even if the component is imported and changed inside the project, it still receives all the modifications made to the original component. Updates can be received in the original project as well as any project that imported the component. This helps teams sync changes when developing components from different projects.
 
-**Well done**
+```bash
+bit import mui-org.material-ui/button
+bit checkout mui-org.material-ui/button --interactive-merge
+ ```
 
-Awesome! You’ve learned the basics of Bit’s workflow.  
-There’re are many more features to Bit, from automatic component API docs to the live example playground, but let’s leave that for later.  
-Now will be a great time to jump in and [start sharing components with your team](https://bit.dev)! You can also hang around and [explore components]( in the community.
-​
+<div class="learn-more">  
+
+- [Merging changes](/docs/sourcing-components#merge-incoming-changes) for components
+- [Handling merge conflicts](/docs/sourcing-components#handle-merge-conflicts)
+- [Bit checkout command](/docs/apis/cli-all#checkout)
+
+</div>
+
+---
+
 **Need help? Have a feature request? Want to talk over a beer?** don’t hesitate to [reach out](https://bit.dev/support) or chat with the team on [Slack](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg).
-
-Happy coding!

@@ -40,15 +40,15 @@ The modern frameworks require that components go through a build process to be u
 
 Bit manages the full life cycle of the component. In addition to the source code, and the dependency graph, Bit retains information about the tools and configurations needed for building and testing the component.  
 
-## Collections  
+## Scopes  
 
-Bit stores components information in collections (sometimes also referenced as scopes). Just like a version control system is storing related files in a project, a collection is storing related components.  
+Bit stores components information in scopes (in bit.dev they are referenced as collections). Just like a version control system is storing related files in a project, a scope is storing related components.  
 
-Bit collections are distributed. Similar to distributed version control systems (DVCS) such as git or mercurial, bit collections are all made equal. That is to say that components can be exported and imported between any two collections.  
+Bit scopes are distributed. Similar to distributed version control systems (DVCS) such as git or mercurial, bit scopes are all made equal. That is to say that components can be exported and imported between any two scoped.  
 
-However, just like a typical DVCS workflow, it is common to have a  __master collection__ that centralizes the components from different working environments. A cloud or on-premise server hosts the master collection.  
+However, just like a typical DVCS workflow, it is common to have a  __master scope that centralizes the components from different working environments. A cloud or on-premise server hosts the master scope.  
 
-![Bit collection](https://storage.googleapis.com/static.bit.dev/docs/images/scope.png)
+![Bit scope](https://storage.googleapis.com/static.bit.dev/docs/images/scope.png)
 
 ## Bit Workspace
 

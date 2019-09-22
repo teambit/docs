@@ -112,3 +112,17 @@ tbody code {
   margin: 0 auto 3em;
   font-size: 0.5rem;
   }
+
+  .learn-more {
+    background-color: lavender;
+    padding: 1.2em; 
+    border: $primaryColor solid 1px;;
+  }
+
+  .learn-more:before {
+    display: block;
+    padding-bottom: 6px;
+    content: "Learn More";
+    font-family: $boldFont;
+    color:$primaryColor;
+ }

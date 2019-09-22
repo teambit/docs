@@ -2,8 +2,7 @@
   "docs": {
     "Introduction": [
       "quick-start",
-      "concepts",
-      "workflow"
+      "concepts"
     ],
     "Tutorials": [
         "tutorials/bit-react-tutorial",
