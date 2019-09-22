@@ -39,4 +39,4 @@ Recommended tester for react components is based on [jest](https://bit.dev/bit/e
 
 In the origin project, the React run time dependencies (`react`, `react-dom` etc.) should be defined both as project dependencies and project peer dependencies.
 
-React will err if multiple instances of the runtime libraries exist. Therefore, we want our components to only exist in the consuming project and not in the components project. When Bit extracts component dependencies, peer dependencies definitions get higher priority, and the react libraries will be defined as peer dependencies, even if they are also defined as dependencies.
+React will err if multiple instances of the runtime libraries exist. Therefore, we want our components to only exist in the consuming project and not in the components project. When Bit extracts component dependencies, peer dependencies definitions get higher priority, and the `react` libraries will be defined as peer dependencies, even if they are also defined as dependencies. This requires that the `react` dependencies will be defined both as dependencies and peerDependencies.

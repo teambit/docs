@@ -91,7 +91,7 @@ If the component is exported as a bundle (e.g. UMD format), the internal files w
 
 In the origin project, the Angular run time dependencies (`@angular/core`, `@angular/common` etc.) should be defined both as project dependencies and project peer dependencies.
 
-Angular cannot run when multiple instances of the angular runtime libraries exist, the Angular dependencies should be defined as peer dependencies. When Bit extracts component dependencies, peer dependencies get higher priority, and the @angular libraries will be defined as peer dependencies, even if they are also defined as dependencies.
+Angular cannot run when multiple instances of the angular runtime libraries exist, the Angular dependencies should be defined as peer dependencies. When Bit extracts component dependencies, peer dependencies get higher priority, and the `@angular` libraries will be defined as peer dependencies, even if they are also defined as dependencies. This requires that the `@angular `dependencies will be defined both as dependencies and peerDependencies.
 
 ## Use Typescript Path Mappings for aliases
 
