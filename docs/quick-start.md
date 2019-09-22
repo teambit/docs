@@ -37,7 +37,7 @@ bit init
 
 ## Workflow
 
-This diagram bellow provides an overflow of the workflow we will use in this guide:  
+This diagram bellow provides an overview of the workflow we will use in this guide:  
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
 
 ## Track Components
