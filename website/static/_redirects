@@ -1,4 +1,3 @@
-/docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-collections
 /docs/initializing-bit.html          /docs/installation
 /docs/faq-what-is-bit.html           /docs/what-is-bit 
 /docs/isolating-and-tracking-components.html    /docs/add-and-isolate-components   
@@ -28,6 +27,8 @@
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
+/docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-collections
+
 /whybit/for-teams.html            /docs/whybit/for-teams
 /whybit/for-libs.html            /docs/whybit/for-libs
 

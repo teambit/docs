@@ -126,7 +126,7 @@ The developer can export a tagged version of the component to a centralized serv
 To set a version for your components use the `bit tag` command.  
 Bit locks the state of the component's files and its dependency graph. The tagged version is now immutable (cannot be changed).  
 When tagging components, Bit first runs the build and test tasks for the components.  
-You can use the `--all` flag to tag all the components in the workspace.
+You can use the `--all` flag to tag all the components that changed in the workspace.
 
 ```bash
 $ bit tag --all 1.0.0
@@ -197,11 +197,12 @@ To develop a component from the consuming repository(/docs/sourcing-components) 
 bit import mui-org.material-ui/button
  ```
 
-**Note**: If your changes are temporary, and you would like to revert back to using NPM, you can use the `eject` [command](/docs/apis/cli-all#eject) command to remove components from the local workspace and install them by the NPM client.
+**Note**: If your changes are temporary, and you would like to revert back to using the components from `node_modules`, you can use the `eject` command to remove components from the local workspace and install them by the NPM client.
 
 <div class="learn-more">
 
 - [Importing components](/docs/sourcing-components)  
+- [Eject command](/docs/apis/cli-all#eject)
 
 </div>
 
@@ -209,11 +210,11 @@ bit import mui-org.material-ui/button
 
 Changes made to imported components can be updated in the collection and consumed across projects.  
 When you’re done making changes, you can update them as a new version of the component in the collection (given you have permissions to update the collection). Alternatively, the changed component can be exported as a new component.  
-When a component was updated with a new version in the collection, you can [update the changes](/docs/updating-sourced-components) for the component in every repository it lives in.
+When a component was updated with a new version in the collection, you can get the component change for the component in every repository it lives in.
 
 <div class="learn-more">
 
-- [Update component in workspace](/docs/updating-sourced-components#checkout-a-component-version-to-the-workspace) component version
+- [Update component in workspace](/docs/updating-sourced-components) component version
 - [Bit checkout command](/docs/apis/cli/)
 
 </div>
