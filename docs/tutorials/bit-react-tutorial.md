@@ -282,7 +282,7 @@ import './styles.css';
 
 In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/react-tutorial/product-list).
 
-On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the npm command, we are going to use it very soon. 
+On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the yarn command, we are going to use it very soon. 
 
 ## Install Component in Another Project
 
@@ -298,16 +298,18 @@ In your terminal, switch to the `my-new-app` directory.
 
 ### Install the Component in Your Project  
 
-Use your favorite package installer (npm or yarn) to install the component. 
+Use your favorite package installer (npm or yarn) to install the component.  
 The component is stored in the Bit registry, so the full path to the component will be: `@bit/<username>.<collection name>.<component name>`
 
-Run the install command using npm:
+Run the install command using yarn:
 
 ```bash
-npm install @bit/<username>.react-tutorial.product-list --save
+yarn add @bit/<username>.react-tutorial.product-list --save
 ```
 
-The component is now added to your `package.json`: 
+> If you want to use npm, run `npm install` once after the project is created so a package-lock.json will be created and npm will organize dependencies correctly.  
+
+The component is now added to your `package.json`:  
 
 ```bash
 "@bit/<username>.react-tutorial.product-list": "0.0.1"
@@ -343,7 +345,7 @@ Fix slightly the css file
 Last, but not least, run your application using React CLI:
 
 ```bash
-npm start
+yarn start
 ```
 
 **Voila!** you can now see the components list inside the newly created application.
@@ -428,7 +430,7 @@ Change the css file `components/product-list/product-list.css` to include a marg
 Run the React application:
 
 ```bash
-npm start
+yarn start
 ```
 
 The app is not yet changed. The Bit components are compiled by the bit compiler. 
@@ -532,7 +534,7 @@ Bit is performing a git merge, so the code from the updated component is now be 
 Run the application again, to see it is working properly with the updated component:
 
 ```bash
-npm start
+yarn start
 ```
 
 That is it. A change was moved between the two projects. Your application is running with an updated component.  
