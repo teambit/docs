@@ -359,6 +359,9 @@
       },
       "workspace-statuses": {
         "title": "Workspace Statuses"
+      },
+      "workspace": {
+        "title": "Bit Workspace"
       }
     },
     "links": {

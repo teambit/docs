@@ -26,8 +26,8 @@ You need to verify that you have:
 To run this tutorial, clone and setup the Vue tutorial project: https://github.com/teambit/bit-vue-tutorial
 
 ```bash
-git clone https://github.com/teambit/bit-Vue-tutorial
-cd bit-Vue-tutorial
+git clone https://github.com/teambit/bit-vue-tutorial
+cd bit-vue-tutorial
 npm install
 ```
 
@@ -180,7 +180,7 @@ Install the compiler and run this command inside the Vue tutorial repository:
 ```bash
 $bit import bit.envs/bundlers/vue --compiler
 the following component environments were installed
-- bit.envs/bundlers/vue@2.5.1
+- bit.envs/bundlers/vue@2.6.10
 ```
 
 > Version may vary when you run the tutorial
@@ -190,9 +190,11 @@ You can check the `package.json` and verify that the compiler is installed by lo
 
 ```json
      "env": {
-      "compiler": "bit.envs/bundlers/vue@2.5.1"
+      "compiler": "bit.envs/bundlers/vue@2.6.10"
     },
 ```
+
+> Compiler's version may be different from above
 
 ### Build the Vue Component
 
@@ -246,10 +248,10 @@ To export the component to your bit.dev collection, we will use the export comma
 
 ```bash
 $ bit export <username>.vue-tutorial
-exported 1 components to scope <username>.Vue-tutorial
+exported 1 components to scope <username>.vue-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/Vue-tutorial`. You can also visit the component created for this demo on: https://bit.dev/bit/Vue-tutorial
+The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo on: https://bit.dev/bit/vue-tutorial
 
 Checking now the component's status, will no longer display the component as it is now hosted on the remote collection:
 
@@ -280,7 +282,7 @@ You can also access the page in the following url: `https://bit.dev/<username>/v
 
 The component playground provides you with a basic Vue app that already has your components. To view your component in the correct app, switch the project type to be View.  
 
-In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/Vue-tutorial/product-list).
+In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/vue-tutorial/product-list).
 
 On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the npm command, we are going to use it very soon.  
 
@@ -312,13 +314,13 @@ The component is stored in the Bit registry, so the full path to the component w
 Run the install command using npm:
 
 ```bash
-npm install @bit/<username>.Vue-tutorial.product-list --save
+npm install @bit/<username>.vue-tutorial.product-list --save
 ```
 
 The component is now added to your `package.json`: 
 
 ```bash
-"@bit/<username>.Vue-tutorial.product-list": "0.0.1"
+"@bit/<username>.vue-tutorial.product-list": "0.0.1"
 ```
 
 ### Use In your Application
@@ -372,7 +374,7 @@ After the confirmation message that the workspace was initialized, run the follo
 
 ```bash
 $ bit import <username>.vue-tutorial/product-list
-bit import bit.Vue-tutorial/product-list
+bit import <username>.vue-tutorial/product-list
 successfully imported one component
 - added <username>.vue-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
 ```
@@ -387,7 +389,7 @@ Here is what happened:
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
 ```json
-"@bit/<username>.Vue-tutorial.product-list": "file:./components/product-list"
+"@bit/<username>.vue-tutorial.product-list": "file:./components/product-list"
 ```
 
 Start your application to make sure it still works (that is true, no changes are required. Bit takes care of everything).  
@@ -438,7 +440,7 @@ successfully installed the bit.envs/bundlers/Vue@2.5.2 compiler
 
 Followed by a successful compilation of the main file.
 
-In order to compile the application, we need to enhance the bit webpack configuration to properly work with symlinks. 
+In order to compile the application, we need to enhance the bit webpack configuration to properly work with symlinks.  
 We will add a new file `vue.config.js` with the following configuration:  
 
 ```js
@@ -483,21 +485,21 @@ $ bit tag product-list
 
 changed components
 (components that got a version bump)
-     > <username>.Vue-tutorial/product-list@0.0.2
+     > <username>.vue-tutorial/product-list@0.0.2
 ```
 
 Export it back to the collection:
 
 ```bash
-$ bit export <username>.Vue-tutorial
-exported 1 components to scope <username>.Vue-tutorial
+$ bit export <username>.vue-tutorial
+exported 1 components to scope <username>.vue-tutorial
 ```
 
 Head to the component page on bit.dev, here you can see that the component has a new version. The changes are also visible on the component playground.
 
 ## Update the Component in the original project
 
-In this last stage, you are going to import the changes to the original project, switch back to `Vue-tutorial`.
+In this last stage, you are going to import the changes to the original project, switch back to `vue-tutorial`.
 
 ### Import changes
 
@@ -508,7 +510,7 @@ we will see that the product-list component was changed and a new version exists
 ```bash
 $ bit import
 successfully imported one component
-- updated <username>.Vue-tutorial/product-list new versions: 0.0.2
+- updated <username>.vue-tutorial/product-list new versions: 0.0.2
 ```
 
 The component is downloaded but is not yet changed.
@@ -521,7 +523,7 @@ pending updates
 (use "bit diff [component_id] [new_version]" to compare changes)
 (use "bit log [component_id]" to list all available versions)
 
-    > <username>.Vue-tutorial/product-list current: 0.0.1 latest: 0.0.2
+    > <username>.vue-tutorial/product-list current: 0.0.1 latest: 0.0.2
 ```
 
 ### Checkout
@@ -530,7 +532,7 @@ Merge the changes done to the component to your project. The structure of the co
 
 ```bash
 $ bit checkout 0.0.2 product-list
-successfully switched <username>.Vue-tutorial/product-list to version 0.0.2
+successfully switched <username>.vue-tutorial/product-list to version 0.0.2
 updated src/assets/products.js
 updated src/components/productList.vue
 ```

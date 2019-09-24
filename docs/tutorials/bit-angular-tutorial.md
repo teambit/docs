@@ -3,9 +3,6 @@ id: bit-angular-tutorial
 title: Bit for Angular
 ---
 
-> **Angular support is in public beta.**  
-> Everything should work fine, but please do share any issues and feedback: support@bit.dev
-
 ## Overview
 
 Bit lets you share and sync components between different projects and applications.  

@@ -1,6 +1,6 @@
 ---
 id: vue-guidelines
-title: vue Guidelines
+title: Vue Guidelines
 ---
 
 > **Vue support is in public beta.**  

@@ -7,6 +7,7 @@
     "Tutorials": [
         "tutorials/bit-react-tutorial",
         "tutorials/bit-angular-tutorial",
+        "tutorials/bit-vue-tutorial",
         "tutorials/bit-nodejs-tutorial"
     ],
     "Setup": [
@@ -36,6 +37,7 @@
         "best-practices",
         "react-guidelines",
         "angular-guidelines",
+        "vue-guidelines",
         "ci",
         "bit-server"
     ],
