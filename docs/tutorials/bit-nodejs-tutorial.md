@@ -3,6 +3,8 @@ id: bit-nodejs-tutorial
 title: Bit for NodeJS
 ---
 
+<img src="http://pluspng.com/img-png/nodejs-logo-png-javascript-node-js-nodejs-icon-download-png-512.png" height="128">
+
 This tutorial doesn’t assume any existing Bit knowledge and it takes only 15 minutes to complete.
 
 ## What You Will Learn

@@ -3,6 +3,8 @@ id: bit-react-tutorial
 title: Bit for React
 ---
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" height="128">
+
 ## Overview
 
 Bit lets you share and sync components between different projects and applications.  

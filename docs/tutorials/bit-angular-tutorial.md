@@ -1,7 +1,9 @@
 ---
 id: bit-angular-tutorial
-title: Bit for Angular
+title: Bit for Angular 
 ---
+
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" height="128">
 
 ## Overview
 
