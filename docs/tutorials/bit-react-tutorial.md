@@ -13,7 +13,7 @@ In this tutorial, we'll share a React component between two projects.
 This tutorial assumes that you are familiar with:
 
 - Terminal and command line.
-- Using node and npm (or yarn).
+- Using node and npm or yarn.
 - React development and React CRA, including editing React files in your favorite code editor.
 - Git
 
@@ -21,14 +21,14 @@ This tutorial assumes that you are familiar with:
 
 You need to verify that you have:  
 
-- Node 8+ 
+- Node 8.12+  
 
 To run this tutorial, clone and setup the React tutorial project: https://github.com/teambit/bit-react-tutorial
 
 ```bash
 git clone https://github.com/teambit/bit-react-tutorial
 cd bit-react-tutorial
-npm install
+yarn install
 ```
 
 ### What will you learn?
@@ -99,12 +99,14 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 
 ### Initialize Bit Workspace
 
-Switch to the React tutorial project directory, and run the Bit initialization command:
+Switch to the React tutorial project directory, and run the Bit initialization command using yarn:
 
 ```bash
-$ bit init
+$ init --package-manager yarn
 successfully initialized a bit workspace.
 ```
+
+> We are going to use create-react-app, so it is recommended to use yarn. If you do not have Yarn installed, you can safely use npm.  
 
 Now two other changes happen:
 
@@ -116,7 +118,7 @@ Now two other changes happen:
 "bit": {
   "env": {},
   "componentsDefaultDirectory": "components/{name}",
-  "packageManager": "npm"
+  "packageManager": "yarn"
 }
 ```
 
@@ -298,7 +300,7 @@ In your terminal, switch to the `my-new-app` directory.
 
 ### Install the Component in Your Project  
 
-Use your favorite package installer (npm or yarn) to install the component.  
+Use your favorite package installer (yarn is preferred) to install the component.  
 The component is stored in the Bit registry, so the full path to the component will be: `@bit/<username>.<collection name>.<component name>`
 
 Run the install command using yarn:
