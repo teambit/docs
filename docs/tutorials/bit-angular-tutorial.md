@@ -43,7 +43,7 @@ In this tutorial you will learn how to:
 - Preview the exported component on the Bit cloud
 - Install the component in another project
 - Modify the Angular component on the new project
-- Update the changed component back to the original project
+- Get component updates
 
 ## Setup Bit  
 
@@ -531,9 +531,9 @@ $ bit export <username>.angular-tutorial
 exported 1 components to scope <username>.angular-tutorial
 ```
 
-Head to the component page on bit.dev, here you can see that the component has a new version. The changes are also visible on the component playground. 
+Head to the component page on bit.dev, here you can see that the component has a new version. The changes are also visible on the component playground.  
 
-## Update the Component in the original project
+## Get component updates
 
 In this last stage, you are going to import the changes to the original project, switch back to `Angular-tutorial`.
 

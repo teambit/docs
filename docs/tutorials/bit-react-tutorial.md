@@ -42,7 +42,7 @@ In this tutorial you will learn how to:
 - Preview the exported component on the Bit cloud
 - Install the component in another project
 - Modify the React component on the new project
-- Update the changed component back to the original project
+- Get Component Updates
 
 ## Setup Bit  
 
@@ -490,7 +490,7 @@ exported 1 components to scope <username>.react-tutorial
 
 Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground.
 
-## Update the Component in the Original Project
+## Get component updates
 
 In this last stage, you are going to import the changes to the original project, switch back to `React-tutorial`.
 

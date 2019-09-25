@@ -42,7 +42,7 @@ In this tutorial you will learn how to:
 - Preview the exported component on the Bit cloud
 - Install the component in another project
 - Modify the Vue component on the new project
-- Update the changed component back to the original project
+- Get component updates
 
 ## Setup Bit  
 
@@ -124,7 +124,7 @@ Now two other changes happen:
 
 > In an actual project, these changes should be committed to your version control tool system.
 
-## Share an Vue Component
+## Share a Vue Component
 
 Now, we will track the product-list component from the Vue tutorial project. The component will be tracked with the id `product-list`.
 
@@ -399,38 +399,46 @@ Start your application to make sure it still works (that is true, no changes are
 ### Update the code
 
 Let's modify the product-list component.
-Change the `components/product-list/index.js` to include the following method:
+Change the `components/product-list/ProductList.vue` to include the following method:
 
-```jsx
+```vue
 view() {
     window.alert('The product has been viewed!');
  }
 ```
 
-Change the `getProduct` function in `components/product-list/index.js` to include the new button:
+Change the template to include the new button:
 
-```jsx
-getProduct(product, index) {
-        return (
-            <div key={index}>
+```vue
+<template>
+    <div>
+        <h2>Products</h2>
+        <template v-for="(product, index ) of products">
+            <div v-bind:key={index}>
                 <h3>
-                    <a title={product.name + ' details'} href="/">{product.name}</a>
+                    <a>
+                        {{ product.name }}
+                    </a>
                 </h3>
-                <p>Description: {product.description} </p>
-                <button className="btn" onClick={this.share}>Share</button>
-                <button className="btn" onClick={this.view}>View</button>
-
+                <p v-if="product.description">
+                    Description: {{ product.description }}
+                </p>
+                <button @click="share">
+                    Share
+                </button>
+                <button @click="view">
+                    View
+                </button>
             </div>
-        )
-    }
+        </template>
+    </div>
+</template>
 ```
-
-Change the css file `components/product-list/product-list.css` to include a margin on the `.btn`:
 
 Run the Vue application:
 
 ```bash
-npm start
+npm run serve
 ```
 
 The app is not yet changed. The Bit components are compiled by the bit compiler. 
@@ -499,7 +507,7 @@ exported 1 components to scope <username>.vue-tutorial
 
 Head to the component page on bit.dev, here you can see that the component has a new version. The changes are also visible on the component playground.
 
-## Update the Component in the original project
+## Get component updates
 
 In this last stage, you are going to import the changes to the original project, switch back to `vue-tutorial`.
 
@@ -544,7 +552,7 @@ Bit is performing a git merge, so the code from the updated component is now be 
 Run the application again, to see it is working properly with the updated component:
 
 ```bash
-npm start
+npm run serve
 ```
 
 That is it. A change was moved between the two projects. Your application is running with an updated component.  
