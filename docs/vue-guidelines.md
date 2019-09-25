@@ -35,6 +35,6 @@ module.exports = {
 
 If you already have a configuration, you just need to add the relevant key in the proper place. This tells Vue webpack to retain the symlinks.
 
-## vue Tester
+## Vue Tester
 
 Each Bit component may be linked with a tester that will run the unit tests of the compiler. vue testers are still WIP.  
