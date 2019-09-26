@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Bit Docs', // Title for your website.
+  title: 'Docs', // Title for your website.
   tagline: 'Components Collaboration Platform',
   url: 'https://bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
