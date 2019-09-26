@@ -689,7 +689,6 @@ Bundle all the workspace alongside Bit's logs and state and prepare it to send t
 bit doctor --save doctor-output
 ```
 
-
 ## eject
 
 Remove components from the local scope and install them by the NPM client.
@@ -705,7 +704,6 @@ If you used `bit import` to source a component, and want to replace it with its 
 ```bash
 bit eject bit/utils/array/sort
 ```
-
 
 ## export
 
@@ -758,6 +756,32 @@ Remove the component from the repository and consume it as a dependency using a 
 ```sh
 bit export string/pad-left bit.examples --eject
 ```
+
+## graph
+
+**Experimental** Generates a graphic image of the dependencies graph
+
+> Must have graphviz installed on your machine: [Read instructions](https://graphviz.gitlab.io/download/)
+
+```bash
+bit graph <component> [-i --image <image>] [-r | --remote] [--all-versions] [--layout <name>]
+```
+
+**-i, --image <image>**
+
+Path to the generated image. use one of the following extensions: [gif, png, svg, pdf]
+
+**-r, --remote [remoteName]**
+
+Remote name (name is optional, leave empty when id is specified)
+
+**--all-versions**  
+
+Display all components versions not only latest
+
+**--layout <name>**
+
+[GraphViz layout](https://graphviz.gitlab.io/documentation/) to be applied. `dot` is the default layout. Other options are: circo, dot, fdp, neato, osage, patchwork, sfdp, twopi. 
 
 ## import
 
@@ -870,7 +894,6 @@ Return the output as JSON
 bit import username.foo/bar --json
 ```
 
-
 **-c, --compiler**
 
 Import a compiler [environment](/docs/ext-concepts.html#extensions-vs-environments) component.
@@ -946,14 +969,13 @@ bit import bit.extensions/commands/pack --extension
 
 ## init
 
-Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates  Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files. 
+Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates  Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files.  
 
 ```bash
 bit init [-b|--bare] [-s|--shared <group-name>] [-T|--standalone] [--reset] [--reset-hard] [-c|--compiler] [-t|--tester] [-p|--package-manager] [-d|--default-directory]
 ```
 
- and create the needed directories.   
-
+and create the needed directories.  
 
 **Options**
 
@@ -1028,7 +1050,6 @@ Specifies up the default directory to which components will be imported.
 ```bash
 bit init --default-directory src/imports
 ```
-
 
 ## install
 
