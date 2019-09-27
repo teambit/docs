@@ -183,7 +183,7 @@ You can skip installing the components by using:
 bit import username.foo/bar --skip-npm-install
 ```
 
-Also, Bit does install components when skipping the generation of `package.json`.  
+Also, Bit does not install components when skipping the generation of `package.json`.  
 
 To permanently skip installing packages, set to true the [saveDependenciesAsComponents](/docs/conf-bit-json#savedependenciesascomponents) workspace configuration.  
 
