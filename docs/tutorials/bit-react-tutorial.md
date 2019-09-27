@@ -19,7 +19,7 @@ This tutorial assumes that you are familiar with:
 - React development and React CRA, including editing React files in your favorite code editor.
 - Git
 
-### What do you need?
+### What Do You Need?
 
 You need to verify that you have:  
 
@@ -33,28 +33,28 @@ cd bit-react-tutorial
 yarn install
 ```
 
-### What will you learn?
+### What Will You Learn?
 
 In this tutorial you will learn how to:  
 
 - Setup Bit
-- Share a react component from an existing project
+- Share a React component from an existing project
 - Preview the exported component on the Bit cloud
 - Install the component in another project
 - Modify the React component on the new project
-- Get Component Updates
+- Get component updates
 
 ## Setup Bit  
 
 First things first, we need to setup Bit.
 
-### Create a free bit.dev account  
+### Create a Free bit.dev Account  
 
 Head over to [bit.dev](https://bit.dev/) and create your free account. Enter a username and password or use your GitHub account to authenticate.
 **Welcome to Bit!**
 Make sure that you remember your username; you'll need it during this tutorial. Every time you see `<username>`, replace it with your own username.
 
-### Create a component collection  
+### Create a Component Collection  
 
 When you are logged into bit.dev you can create a **collection**. A collection is a remotely-hosted set of components that are ready to be shared and used across your applications.  
 
@@ -63,7 +63,7 @@ When you are logged into bit.dev you can create a **collection**. A collection i
 3. Decide if the collection is private or public.
 
 - Public - Components in public collections are visible to everyone.
-- Private - Components in private collections available to invitees only.
+- Private - Components in private collections are available to invitees only.
 
 ### Install Bit CLI
 
@@ -81,7 +81,7 @@ If you have Bit installed, verify the installation by running the command:
 bit --version
 ```
 
-### Login to your Bit Account
+### Login to Your Bit Account
 
 Authenticate Bit to your bit.dev account. From the command-line run:
 
@@ -101,7 +101,7 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 
 ### Initialize Bit Workspace
 
-Switch to the React tutorial project directory, and run the Bit initialization command using yarn:
+Switch to the React tutorial project directory and run the Bit initialization command using yarn:
 
 ```bash
 $ init --package-manager yarn
@@ -130,7 +130,7 @@ Now two other changes happen:
 
 Now, we will track the product-list component from the React tutorial project. The component will be tracked with the id `product-list`.
 
-### Track a new component  
+### Track a New Component  
 
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. As all the files are located under the product-list directory, the simplest way is to add all the files in the directory to your component. Bit will create a component named after the directory name.
 
@@ -386,7 +386,7 @@ You get a message that the `@react/core` and `@react/common` are peer dependenci
 
 Here is what happened:
 
-- A new top level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project.  
+- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project.  
 - The `.bitmap` file was modified to include the reference to the component
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
@@ -396,7 +396,7 @@ Here is what happened:
 
 Start your application to make sure it still works. As you'll see, no changes are required: Bit takes care of everything.
 
-### Update the code
+### Update the Code
 
 Let's modify the product-list component.
 Change the `components/product-list/index.js` to include the following method:
@@ -450,7 +450,7 @@ Run the `my-new-app` again and you'll now see the changed component with the vie
 
 > In a real project, it is recommended to commit those changes to your GitHub repository. 
 
-### Export the changes
+### Export the Changes
 
 Next, export the changes done to the component back to [bit.dev](https://bit.dev/). 
 
@@ -490,9 +490,9 @@ exported 1 components to scope <username>.react-tutorial
 
 Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground.
 
-## Get component updates
+## Get Component Updates
 
-In this last stage, you are going to import the changes to the original project, switch back to `React-tutorial`.
+In this last stage, you'll import the changes to the original project. Switch back to `React-tutorial`.
 
 ### Import Changes
 
