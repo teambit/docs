@@ -17,16 +17,16 @@ The package manager to be used when installing components. Can be set to `npm` o
 - Type: `string`
 - Default: `components/{name}`
 
-Define the default directory inside which all imported components will reside. The path is relative to the workspace configuration location.
+Define the directory inside which all imported components will reside. The path is relative to the workspace configuration location.
 
 Override this path for a specific component using `bit import --path`.  
 
-## defaultScope
+## dependenciesDirectory
 
-Type: `string`
-Default: none
+- Type: `string`
+- Default: `components/.dependencies`
 
-For components that are exported for the first time, sets the scope as the component's default scope, and mark the component as exported (not staged).  
+Specifies the directory that contains all the components that are dependencies of components that were imported.  The path is relative to the workspace configuration location.
 
 ## saveDependenciesAsComponents
 
@@ -45,10 +45,16 @@ By default the bit compiler dist files are located with the component files. You
 - Default: not defined
 
 Entry point of the dist tree.  If only dist.target is set, the entry will be defaulted to the `componentsDefaultDirectory`.  
-
 ### dist.target
 
 The target location of the build files
+
+## defaultScope
+
+Type: `string`
+Default: none
+
+For components that are exported for the first time, sets the scope as the component's default scope, and mark the component as exported (not staged).  
 
 ## resolveModules
 
