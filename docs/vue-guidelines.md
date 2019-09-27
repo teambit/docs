@@ -12,10 +12,9 @@ vue sharing was tested on vue 2 and vue-cli 3. Bit should be compliant with prio
 
 ## Vue Compiler
 
-Each Bit component is linked with a compiler. The Bit compiler is compiling or transpiling the source code to build files that can run in another project.
-The officially supported vue Compiler can be found [here](https://bit.dev/bit/envs/compilers/vue). This compiler is based on the [ng-packagr project](https://github.com/ng-packagr/ng-packagr), the same project used by vue CLI to build vue libs. The compiler is compiling the vue typescript to AOT (Ahead of Time) code. The build results are in the vue Package Format (APF), for smooth importing into any vue project.
-
-The practices described bellow are aimed to work best with this Bit team compiler.  
+Each Bit component is linked with a compiler. The Bit compiler is transpiling and bundling the source code to build files that can run in another project.  
+The officially supported vue Compiler can be found [here](https://bit.dev/bit/envs/bundlers/vue).  
+The compiler is based on the Vue webpack configuration. Check out the exact configuration [here](https://bit.dev/bit/envs/bundlers/vue/~code#webpack.config.js).
 
 ## Use symlinks false in target project
 
