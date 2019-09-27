@@ -13,9 +13,8 @@
     "Setup": [
         "installation",
         "setup-authentication",
-        "initializing-bit",
+        "workspace",
         "remote-collection",
-        "conf-files",
         "handling-errors",
         "conf-analytics"
     ],
