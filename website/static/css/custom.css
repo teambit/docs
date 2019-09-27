@@ -64,12 +64,12 @@ h4 {
 }
 
 p {
-  margin-bottom: 1.2em;
-  line-height: 1.6em;
+  margin-bottom: 1em;
+  line-height: 2em;
 }
 
 li {
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 
 a {
@@ -90,9 +90,11 @@ a {
 .fixedHeaderContainer header .headerTitleWithLogo {
   color: #ffffff;
   margin-left: 10px;
-
 }
 
+.toc ul li {
+  line-height: 1.4em;
+}
 .headerTitleWithLogo {
   color: #ffffff;
   margin-left: 10px;
@@ -121,7 +123,7 @@ tbody code {
 
   .learn-more:before {
     display: block;
-    padding-bottom: 6px;
+    padding-bottom: 0.5em;
     content: "Learn More";
     font-family: $boldFont;
     color:$primaryColor;
