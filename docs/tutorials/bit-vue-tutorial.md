@@ -19,7 +19,7 @@ This tutorial assumes that you are familiar with:
 - Vue development and vue-cli, including editing Vue files in your favorite code editor.
 - Git
 
-### What do you need?
+### What Do You Need?
 
 You need to verify that you have:  
 
@@ -33,7 +33,7 @@ cd bit-vue-tutorial
 npm install
 ```
 
-### What will you learn?
+### What Will You Learn?
 
 In this tutorial you will learn how to:  
 
@@ -48,13 +48,13 @@ In this tutorial you will learn how to:
 
 First things first, we need to setup Bit.
 
-### Create a free bit.dev account  
+### Create a Free bit.dev Account  
 
 Head over to [bit.dev](https://bit.dev/) and create your free account. Enter a username and password or use your GitHub account to authenticate.
 **Welcome to Bit!**
-Make sure that you remember your username, you'll need it during this tutorial. Every time you will see `<username>` - you should replace it with your own username.
+Make sure that you remember your username; you'll need it during this tutorial. Every time you see `<username>`, replace it with your own username.
 
-### Create a component collection  
+### Create a Component Collection  
 
 When you are logged into bit.dev you can create a **collection**. A collection is a remotely-hosted set of components that are ready to be shared and used across your applications.  
 
@@ -63,7 +63,7 @@ When you are logged into bit.dev you can create a **collection**. A collection i
 3. Decide if the collection is private or public.
 
 - Public - Components in public collections are visible to everyone.
-- Private - Components in private collection available to invitees only.
+- Private - Components in private collections are available to invitees only.
 
 ### Install Bit CLI
 
@@ -81,7 +81,7 @@ If you have Bit installed, verify the installation by running the command:
 bit --version
 ```
 
-### Login to your Bit Account
+### Login to Your Bit Account
 
 Authenticate Bit to your bit.dev account. From the command line run:
 
@@ -89,7 +89,7 @@ Authenticate Bit to your bit.dev account. From the command line run:
 bit login
 ```
 
-This will open your browser and will log into your account. If you are already logged in, a success message will be displayed. You are now ready to start using Bit.
+This will open your browser where you can log into your account. If you are already logged in, a success message will be displayed. You are now ready to start using Bit.
 
 As part of the login process, Bit sets up your local configuration. You can see your configuration by typing:
 
@@ -101,18 +101,18 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 
 ### Initialize Bit Workspace
 
-Switch to the Vue tutorial project directory, and run the Bit initialization command:
+Switch to the Vue tutorial project directory and run the Bit initialization command:
 
 ```bash
 $ bit init
 successfully initialized a bit workspace.
 ```
 
-Now two other changes happen:
+Notice two other changes have happened:
 
-- A new file named `.bitmap` is created in your root directory. This file is tracking Bit components and only includes a comment and a line with your bit version.
+- A new file named `.bitmap` has been created in your root directory. This file tracks Bit components and only includes a comment and a line with your bit version.
 
-- A new section, `bit`, is added to your `package.json` file setting the following defaults for your project:
+- A new section, `bit`, has been added to your `package.json` file with the following defaults for your project:
 
 ```json
 "bit": {
@@ -128,9 +128,9 @@ Now two other changes happen:
 
 Now, we will track the product-list component from the Vue tutorial project. The component will be tracked with the id `product-list`.
 
-### Track a new component  
+### Track a New Component  
 
-To track the product list component, we will need to tell Bit about the component and the files that are related to it. In Vue, a component is a typically a single file, so we can directly add this file. We are also telling Bit to track the file under the id product-list
+To track the product list component, we will need to tell Bit about the component and the files that are related to it. In Vue, a component is typically a single file so we can directly add this file. We also tell Bit to track the file under the id `product-list`
 
 ```bash
 $ bit add src/components/productList.vue --id product-list
@@ -139,9 +139,9 @@ tracking component product-list:
 added src/components/productList.vue
 ```
 
-When creating new components, you need to make sure that Bit properly tracked all the files required for the component. Bit can analyze the component for you and verify that all files are included. You can do that by checking the status of the component:
+When creating new components, you need to make sure that Bit properly tracks all of the files required for the component. Bit can analyze the component for you and verify that all files are included. You can do that by checking the status of the component:
 
-Our component is using the `src/assets/products.js` - Bit will identify it and alert us:  
+Our component is using `src/assets/products.js` - Bit will identify it and alert us:  
 
 ```bash
 > product-list ...  issues found  
@@ -149,7 +149,7 @@ Our component is using the `src/assets/products.js` - Bit will identify it and a
           src/components/ProductList.vue -> src/assets/products.js
 ```
 
-You will need to add the missing file to the component. In our case, this file is only used by this component, so we will add it to the component. If this file was shared between components, we should track it as a new component.
+You will need to add the missing file to the component. In our case, this file is only used by this component so we will add it to the component. If this file was shared between components, we should track it as a new component.
 
 ```bash
 $bit add src/assets/products.js --id product-list
@@ -158,7 +158,7 @@ added src/assets/products.js
 added src/components/productList.vue
 ```
 
-We are checking the status again:
+Check the status again:
 
 ```bash
 $ bit status
@@ -174,9 +174,9 @@ So far, we have provided Bit with the source file of the component. But in order
 
 >Bit is storing the source code of the component, but the code should still remain in your version control system (VCS) such as your Git repository.
 
-Bit has a large collection of compilers that are open sourced and maintained by Bit team. In addition, the community is suggesting compilers that you can use by searching Bit collections.
+Bit has a large collection of compilers that are open source and maintained by the Bit team. In addition, the community has created compilers that you can use by searching [Bit collections](https://bit.dev/).
 
-To build the vue component, you need the [Vue compiler](https://bit.dev/bit/envs/bundlers/vue). 
+To build the vue component, you'll need the [Vue compiler](https://bit.dev/bit/envs/bundlers/vue).
 Install the compiler and run this command inside the Vue tutorial repository:
 
 ```bash
@@ -185,7 +185,7 @@ the following component environments were installed
 - bit.envs/bundlers/vue@2.6.10
 ```
 
-> Version may vary when you run the tutorial
+> The version may vary slightly when you run the tutorial
 
 The Vue compiler is now set as the default compiler for the Bit workspace inside this repository.
 You can check the `package.json` and verify that the compiler is installed by locating the following entry in the Bit section:
@@ -196,7 +196,7 @@ You can check the `package.json` and verify that the compiler is installed by lo
     },
 ```
 
-> Compiler's version may be different from above
+> Your compiler's version may be different from the version shown above
 
 ### Build the Vue Component
 
@@ -213,13 +213,13 @@ To build your component, run this command inside your Vue project:
 bit build
 ```
 
-This results in the component name (product-list) followed by the built file of component in the dist directory.
+This results in the component name (product-list) followed by a list of file names. Those are the built files of the component.
 
 ### Export Component
 
 With the component properly built, it is now time to share it with the world.  
 Components are versioned according to semver standards.
-To Tag your component with a version, run the following command:
+To tag your component with a version, run the following command:
 
 ```bash
 $ bit tag --all 0.0.1
@@ -253,9 +253,9 @@ $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo on: https://bit.dev/bit/vue-tutorial
+The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo at: https://bit.dev/bit/vue-tutorial
 
-Checking now the component's status, will no longer display the component as it is now hosted on the remote collection:
+At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
 ```bash
 $ bit status
@@ -274,19 +274,19 @@ Right now, the component code is in your local project (and should be committed 
 
 ## Preview the Vue Component
 
-The Vue component is also available on the bit.dev cloud. Go to `https://bit.dev` and log into your account (if you are not logged in yet):
+The Vue component is also available on the bit.dev cloud. Go to [`https://bit.dev`](https://bit.dev) and log into your account (if you are not logged in yet):
 
 1. Select the collections navigator on the left panel and select collections.
-2. Click on your collection you׳ll see your component product-list.
-3. Click on the product-list component to see it's playground.
+2. Click on your collection--you׳ll see your product-list component.
+3. Click on the product-list component to see its playground.
 
-You can also access the page in the following url: `https://bit.dev/<username>/vue-tutorial/product-list`
+You can also access the page at the following url: `https://bit.dev/<username>/vue-tutorial/product-list`
 
-The component playground provides you with a basic Vue app that already has your components. To view your component in the correct app, switch the project type to be View.  
+The component playground provides you with a basic Vue app that already has your components. To view your component in the correct app, switch the project type to `View`.
 
 In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/vue-tutorial/product-list).
 
-On the component's page, you can also see the different commands available, to install this component using yarn or npm. You can copy the npm command, we are going to use it very soon.  
+On the component's page, you can also see the different commands available for installing this component using yarn or npm. You can copy the yarn command; we are going to use it very soon.
 
 ## Install Component in Another Project
 
@@ -298,13 +298,13 @@ You are now going to create another Vue application and use the product-list com
 npx @vue/cli create my-new-vue
 ```
 
-If you already have the vue-cli installed globally you can run: 
+If you already have vue-cli installed globally you can run: 
 
 ```bash
 vue create my-new-vue
 ```
 
-Make sure you are using babel and es6, since the 
+Make sure you are using babel and es6.
 
 In your terminal, switch to the `my-new-app` directory.
 
@@ -325,9 +325,9 @@ The component is now added to your `package.json`:
 "@bit/<username>.vue-tutorial.product-list": "0.0.1"
 ```
 
-### Use In your Application
+### Use In Your Application
 
-Now you can use the component in your code, as any import.
+Now you can use the component in your code, just like any other import.
 Your app component should look like this:
 
 ```vue
@@ -349,18 +349,18 @@ export default {
 </script>
 ```
 
-Last, but not least, run your application using Vue CLI:
+Last but not least, run your application using Vue CLI:
 
 ```bash
 npm run serve
 ```
 
-**Voila!** you can now see the components list inside the newly created application.
+**Voila!** You can now see the component list inside the newly created application.
 
 ## Modify the Component
 
 Next, we are going to make a change to the component and export it back to the collection.
-We will add a **View** button to the product list. For simplicity, it will only show an alert saying the product is viewed.
+We will add a **View** button to the product list. For simplicity, it will only show an alert saying the product has been viewed.
 
 ### Import the Component
 
@@ -386,7 +386,7 @@ successfully imported one component
 The command is also available on the component page.  
 Here is what happened:
 
-- A new top level components folder is created that includes the code of the component and its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project.  
+- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project.
 - The `.bitmap` file was modified to include the reference to the component
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
@@ -394,9 +394,9 @@ Here is what happened:
 "@bit/<username>.vue-tutorial.product-list": "file:./components/product-list"
 ```
 
-Start your application to make sure it still works (that is true, no changes are required. Bit takes care of everything).  
+Start your application to make sure it still works. As you'll see, no changes are required: Bit takes care of everything.
 
-### Update the code
+### Update the Code
 
 Let's modify the product-list component.
 Change the `components/product-list/ProductList.vue` to include the following method:
@@ -441,17 +441,17 @@ Run the Vue application:
 npm run serve
 ```
 
-The app is not yet changed. The Bit components are compiled by the bit compiler. 
+The app is not yet changed. That's because the Bit components are compiled by the bit compiler.
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
 ```bash
 successfully installed the bit.envs/bundlers/Vue@2.5.2 compiler
 ```
 
-Followed by a successful compilation of the main file.
+That will be followed by a successful compilation of the main file.
 
 In order to compile the application, we need to enhance the bit webpack configuration to properly work with symlinks.  
-We will add a new file `vue.config.js` with the following configuration:  
+Add a new file `vue.config.js` with the following configuration:  
 
 ```js
 module.exports = {
@@ -463,13 +463,13 @@ module.exports = {
 }
 ```
 
-Run the `my-new-app` again and you can now see the changed component with the `view button`.
+Run the `my-new-app` again and you'll now see the changed component with the view button.
 
 > In a real project, it is recommended to commit those changes to your GitHub repository.  
 
-### Export the changes
+### Export the Changes
 
-Next, export the changes done to the component back to bit.dev.  
+Next, export the changes done to the component back to [bit.dev](https://bit.dev/).
 
 ```bash
 bit status
@@ -505,17 +505,17 @@ $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
 
-Head to the component page on bit.dev, here you can see that the component has a new version. The changes are also visible on the component playground.
+Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground.
 
-## Get component updates
+## Get Component Updates
 
-In this last stage, you are going to import the changes to the original project, switch back to `vue-tutorial`.
+In this last stage, you'll import the changes to the original project. Switch back to `vue-tutorial`.
 
-### Import changes
+### Import Changes
 
 Run `bit import` to see if any components were changed (similar to doing git pull to check git changes).
 
-we will see that the product-list component was changed and a new version exists:
+We will see that the product-list component was changed and a new version exists:
 
 ```bash
 $ bit import
@@ -547,14 +547,14 @@ updated src/assets/products.js
 updated src/components/productList.vue
 ```
 
-Bit is performing a git merge, so the code from the updated component is now be merged into your code.
+Bit performs a git merge. The code from the updated component is now merged into your code.
 
-Run the application again, to see it is working properly with the updated component:
+Run the application again to see it is working properly with the updated component:
 
 ```bash
 npm run serve
 ```
 
-That is it. A change was moved between the two projects. Your application is running with an updated component.  
+That's it. A change was moved between the two projects. Your application is running with an updated component.  
 
 Happy coding!
