@@ -30,8 +30,7 @@ bit init
 
 <div class="learn-more">
 
-- Understand about [workspace initialization](/docs/initializing-bit)  
-- [Project configuration](docs/conf-files)  
+- Understand about [Bit workspace](/docs/workspace)  
 
 </div>
 

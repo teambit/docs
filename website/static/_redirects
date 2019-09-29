@@ -28,6 +28,8 @@
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
 /docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-collections
+/docs/initializing-bit.html             /docs/workspace
+/docs/conf-bit.html                     /docs/workspace
 
 /whybit/for-teams.html            /docs/whybit/for-teams
 /whybit/for-libs.html            /docs/whybit/for-libs
