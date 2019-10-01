@@ -3,57 +3,84 @@ id: what-is-bit
 title: What is Bit?
 ---
 
-## What is Bit?
+## Bit is a Components collaboration tool
 
-Bit’s [open-source CLI](https://github.com/teambit/bit) is a tool for multiple-components "monorepos" that enables the development and distribution of components throughout their entire lifecycle. It helps developers build, distribute and control multiple individual components across one or more repositories.
+Bit lets javascript developers share code between projects and repositories with ease.  
+Bit automates the creation of packages that wrap components and makes any repository part of a virtual mono-repo. We call it a **components poly-repo**.  
 
-It automates the isolation components in any path in a repository, so each is encapsulated with all its dependencies. It lets you independently build, test, version, update and publish components in true isolation from the rest of the repository. It provides an instant and high-control “monorepo” experience for any repository containing components, so the developer assumes full control over the development and distribution of a single or multiple related components in the repository.
+Bit simplifies the process of making packages that wrap a single component by:  
 
-The [bit.dev collaboration platform](https://bit.dev) lets developers and teams manage and collaborate over shared components across projects, at any scale. Through the platform, developers and teams can organize and share components, make them discoverable to find and use, and collaborate to synchronize development, changes and updates to components across different projects.
+- Automatic management of dependencies
+- Attaching build and test utilities at the component level with relevant configuration
+- Version each component independently
 
-Bit CLI can be used with or without bit.dev, as a remote Bit component hosting can be set on any server. However, the combined experience enhances and streamlines components sharing for multiple projects and teams, providing end-to-end tools for:
+Bit is an [open-source tool](https://github.com/teambit/bit). You can share components using your server or use The [bit.dev collaboration platform](https://bit.dev) for sharing components with advanced features.  
 
-1) The full life-cycle of component development inside a repository:
+## Philosophy  
 
-- **Component isolation**: Isolating components in any path in the repository with all their dependencies.
-- **Independent build and test**: Building and testing each component is true isolation with **zero build configurations**.
-- **Contextual versioning**: Versioning each component and controlling each component’s dependency graph, so you can update related components together and avoid bumping versions to unrelated parts of the repository.
-- **Distribute from any path**: Publish multiple components from any path in any the repository without refactoring it’s source code or structure.
+Components are the building blocks of modern web architectures. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well-defined APIs let developers build more robust software applications more quickly.
 
-2) The organization, consumption, collaboration, and discovery of components shared between different projects and teams:
+The major frontend frameworks--[React](https://reactjs.org), [Vue](https://vuejs.org/), and [Angular](https://angular.io)--all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standard.
 
-- **Organizing all shared components** by team, context etc.
-- **Visualizing components** with live rendering, preview examples etc.
-- **Search and discovery of components** using semantic labels, advanced filters (bundle-size, dependencies etc), tests, examples etc.
-- **Auto-extracting component API reference** and presenting for easy use.
-- **Running each component’s CI** including Build and Tests in isolation.
-- **Installing components** as packages using NPM or Yarn.
-- **Importing component’s** source-code into different projects (“managed and versioned cloning”), so they can be **developed in parallel** from different repositories, while **code-changes can be merged and versions updated** across projects.
+At the same time, Version Control Systems (VCS) and package managers are still revolving around the concept of projects. Each project is a single VCS repository and requires a substantial overhead. As a result, organizations are aggregating multiple components, and sometimes multiple projects, into a single VCS repository.  
+
+Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in managing components: tracking code changes, verifying dependencies completeness or isolating and executing each component.  
+
+## What Can I do with Bit? 
+
+### Without Shared UI Library
+
+If your organization does not have shared libraries, you can use Bit to:  
+
+- Share components between different repositories with different configuration
+- Collaborate on components across projects
+- Gradually start building a shared component library
+- Provide a centralized showcase for components in different projects
+
+### With Shared UI Library
+
+If your organization has a shared UI library (with or without a design system), you can find Bit useful when you want to:  
+
+- Distribute discrete components when the library is growing
+- Manage versions per component
+- Track components that changed as a result of a modification in their dependencies.  
+- Control access to each group of components
+- Showcase your components
+- Reduce CI time by building and testing only components that changed. 
+
+## Share Components Faster with [bit.dev](https://bit.dev)
+
+bit.dev provides you a robust cloud based components' hub to share components. bit.dev can be used to host shared components. When using Bit.dev, you also get: 
+
+- Build and test CI for each component
+- Components show case with multiple examples per component
+- Components access management
+- Advanced components search capabilities
 
 ## Is Bit the same as?
 
 ### Is Bit the same as Git?
 
-Git is a distributed version-control system for tracking changes in source code during software development. It can be used to track changes in any set of files. Git manages files contents without any reference to their structure of semantics.  
+Git is a distributed version-control system for tracking changes in source code during software development. Git manages changes in files' contents without any reference to their structure of semantics.
 
-Bit augments Git to control the development of components inside a Git repository, and combines it with their building, testing, versioning and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
+Bit augments Git to control the development of components inside a Git repository and combines it with the components' building, testing, versioning, and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
 
-Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git. Also, Git should track changes made to components exported to Bit.  
+Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git. 
 
 ### Is Bit the same as NPM or Yarn?
 
-Package registries and tools like NPM and Yarn help to manage packages and dependencies that are built artifacts (assuming that the dependencies are explicitly defined using package.json files).
+Package registries and tools like NPM and Yarn help to manage distributable artifacts. NPM and Yarn manage the dependencies for each package, according to the explicit definition in the package.json files.
 
-Bit supports the full life cycle of a component starting from the source code. As Bit stems from the source code itself and understands the semantics of each component, the full dependency tree is automatically generated. In addition, Bit supports the full life cycle of components: from code changes to building, testing and rendering components in isolation.  
+Bit augments this functionality by automatically generating the package dependency tree for each component, based on the analysis of the code itself. Any change in the source codereflected in the package. Also, Bit is aware of any change in the full component's tree and not just at the top level.
 
-Bit manages component dependencies in relation to each component’s dependency graph, in with awareness to code changes made to components. For example, you can update a single component inside a repository and only the components that depend on it, without having to update the entire repository’s package version or those of components unaffected by the changes.
-
-Components built with Bit are published to the package registry in bit.dev. This means that NPM and Yarn can [install](#install) Bit components like any other package. The only requirement is that the .npmrc configuration has a reference to the @bit scope name. The registry configuration tells NPM and Yarn where to find Bit components.  
+A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn. 
 
 ### Is Bit the same as Storybook?
 
 Storybook is a fantastic aid tool for visually developing components in simulated isolation and creating visual documentation for components based on their stories.
 
-Bit facilitates a shared component ecosystem, from the development and distribution of components from a repository to collaboration and management across different projects. It manages components at the source-code level through their entire lifecycle, including the encapsulation of components and their dependencies as standalone units, the building and testing of components in isolation, the versioning and publishing of components, paralleling the development of components across multiple repositories etc. Through bit.dev the actual components, as managed units of ready-to-run code, are also visualized and can be discovered through advanced features such as component search, labels, filters (bundle-size, dependencies etc) and more. Components can also be directly consumed.  
+Bit facilitates a full lifecycle of components development. Bit tracks changes to the components, package them for distribution, merge code changes, track versions, and showcase them on a cloud hub.  
 
-Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping, to create examples which can also be leveraged as part of the component discovery experience in bit.dev.
+Through bit.dev, the components are not only put on display but can also be directly consumed. 
+
+Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.
