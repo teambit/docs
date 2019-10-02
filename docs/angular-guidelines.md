@@ -87,11 +87,29 @@ Each shared component should have a single entry point which is the root file of
 This practice reduces coupling between components as one component does not need to be aware of the internal file structure of another component.
 If the component is exported as a bundle (e.g. UMD format), the internal files will not be available.
 
-## Add Angular Libraries as Peer Dependencies
+## Add Angular Libraries as Peer Dependencies with Relaxed Versions
 
-In the origin project, the Angular run time dependencies (`@angular/core`, `@angular/common` etc.) should be defined both as project dependencies and project peer dependencies.
+Angular cannot run when multiple instances of the angular runtime libraries exist. You are likely to encounter an error similar to this one:  
 
-Angular cannot run when multiple instances of the angular runtime libraries exist, the Angular dependencies should be defined as peer dependencies. When Bit extracts component dependencies, peer dependencies get higher priority, and the `@angular` libraries will be defined as peer dependencies, even if they are also defined as dependencies. This requires that the `@angular `dependencies will be defined both as dependencies and peerDependencies.
+```javascript
+NullInjectorError: StaticInjectorError(AppModule)[NgClassImpl -> ElementRef]: ...
+```
+
+
+The error occurs because the project you are trying to run has multiple instances of one or more of the `@angular/*` run time libraries.  
+
+To avoid this situation, you need to make sure that the component relies on the consuming project's `@angular` runtime and does not "bring" it's own. To do so, you can specify the runtime modules as peerDependencies in the original project, or use the [overrides](/docs/overrides) configuration.  
+
+You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using Angular 8 you can specify the dependencies for all the `@angular` libraries as follow:  
+
+```json
+"peedDependencies": {
+  "@angular/core": ">=8.0.0",
+  "@angular/common": ">=8.0.0"
+}
+```
+
+Relaxing the version is required due to the way package managers work.  If a specific version is defined (e.g. `8.2.4`), but the containing project has a slightly different version installed (e.g. `8.2.5`), NPM still installs another instance of the package, and duplication occurs.  
 
 ## Use Typescript Path Mappings for aliases
 
