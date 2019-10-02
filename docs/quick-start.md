@@ -3,9 +3,11 @@ id: quick-start
 title: Quick Start
 ---
 
-This guide will teach you the basic steps to start working with Bit. To understand more about how Bit works, refer to the [concepts](/docs/concepts) guide.
+This guide will teach you the basic steps of working with Bit hands-on. To learn more about how Bit works, please refer to the [concepts](/docs/concepts) guide.
 
-Bit is a CLI tool to share components across repositories (poly-repos). Bit can be leveraged by teams to share components that reside in different projects, or improve components libraries distribution by sharing discrete components.  
+Bit is a [CLI tool](https://github.com/teambit/bit) to share components across repositories. With Bit you can get all the benefits of working in a multi-repository environment (poly-repos) while gaining the code-sharing flexibility of a monorepo.
+Bit can be leveraged by teams to share components that reside in different projects, or enhance component libraries to develop, distribute and get adoption for discrete components.  
+
 
 ## Setup
 
@@ -17,7 +19,7 @@ If you are using node 8.12 and above, you can use NPM or yarn to install bit:
 npm install bit-bin -g
 ```
 
-If you are not using Nodejs 8.12 and above, reference other [installation methods](/docs/installation)  
+If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation). 
 
 ### Initialize Bit workspace
 
@@ -30,7 +32,7 @@ bit init
 
 <div class="learn-more">
 
-- Understand about [Bit workspace](/docs/workspace)  
+- Learn more about the [Bit workspace](/docs/workspace).
 
 </div>
 
@@ -41,7 +43,7 @@ This diagram bellow provides an overview of the workflow we will use in this gui
 
 ## Track Components
 
-To start tracking components in Bit, use the `add` command. Once the files of a component are added, Bit can identify and verify that all the dependencies of the component exist and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component.
+To start tracking components in Bit, use the `add` command. Once the files of a component are added, Bit can identify and verify that all the dependencies of the component exist and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component in isolation.
 
 ### Add Files
 
@@ -60,7 +62,7 @@ bit add src/components/*
 
 This will track all the components in the `src/components` directory. Each component will be in a directory named after its component id.  
 
-You can also [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) as part of your components by appending the `--tests` flag. Bit can run these tests and display the results.
+You can also [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) as part of your components by appending the `--tests` flag. Bit can run these tests in isolation and display the results.
 
 Use `bit status` to verify that the component was tracked and no files are missing.  
 
@@ -76,10 +78,10 @@ Use `bit status` to verify that the component was tracked and no files are missi
 
 There are 2 ways to use Bit components in another project:
 
-- Import the source code and embed into the consuming project
+- Import the source code and embed into the consuming project.
 - Install build artifacts (e.g. dist directory) that are consumed by the project as an NPM package.  
 
-To build the component and create build artifacts, you need to define a compiler. A compiler is a component itself, so we use the `bit import` command to import it into our project:
+To build the component and create build artifacts, you need to define a compiler for the components you share from your project. A compiler is also a component itself, so we use the `bit import` command to import it into our project:
 
 ```bash
 $ bit import bit.envs/compilers/babel --compiler
@@ -89,9 +91,9 @@ the following component environments were installed
 
 <div class="learn-more">
 
-- Find an [existing compiler](https://bit.dev/bit/envs)
-- Implement [your own compiler configuration](/docs/ext-developing-extensions)
-- Check out framework-specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines) to find relevant compilers
+- Find an [existing compiler](https://bit.dev/bit/envs).
+- Implement [your own compiler configuration](/docs/ext-developing-extensions).
+- Check out framework-specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines) to find relevant compilers.
 
 </div>
 
@@ -229,12 +231,12 @@ bit checkout mui-org.material-ui/button --interactive-merge
 
 <div class="learn-more">  
 
-- [Merging changes](/docs/sourcing-components#merge-incoming-changes) for components
-- [Handling merge conflicts](/docs/sourcing-components#handle-merge-conflicts)
-- [Bit checkout command](/docs/apis/cli-all#checkout)
+- [Merging changes](/docs/sourcing-components#merge-incoming-changes) for components.
+- [Handling merge conflicts](/docs/sourcing-components#handle-merge-conflicts).
+- [Bit checkout command](/docs/apis/cli-all#checkout).
 
 </div>
 
 ---
 
-**Need help? Have a feature request? Want to talk over a beer?** don’t hesitate to [reach out](https://bit.dev/support) or chat with the team on [Slack](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg).
+**Need help? Have a feature request? Want to talk over a beer?** don’t hesitate to [reach out](https://bit.dev/support) or chat with the team on [Gitter](https://gitter.im/bit-src/Bit) or [Slack](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg).
