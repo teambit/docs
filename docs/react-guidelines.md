@@ -37,9 +37,9 @@ Recommended tester for react components is based on [jest](https://bit.dev/bit/e
 
 ## Add React Libraries as Peer Dependencies with Relaxed Versions
 
-React cannot run when multiple instances of the angular runtime libraries exist, such as `react`, `react-dom`.  
+React cannot run when multiple instances of the react runtime libraries exist, such as `react`, `react-dom`.  
 
-To avoid this situation, you need to make sure that the component relies on the consuming project's `react` runtime and does not "bring" it's own. To do so, you can specify the runtime modules as peerDependencies in the original project, or use the [overrides](/docs/overrides) configuration.  
+To avoid this situation, you need to make sure that the component relies on the consuming project's `react` runtime and does not "bring" it's own. To do so, you can specify the runtime packages as peerDependencies in the original project, or use the [overrides](/docs/overrides) configuration.  
 
 You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using React 16 you can specify the dependencies for React as follow:  
 
