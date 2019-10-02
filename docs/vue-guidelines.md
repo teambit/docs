@@ -14,6 +14,14 @@ vue sharing was tested on vue 2 and vue-cli 3. Bit should be compliant with prio
 
 Each Bit component is linked with a compiler. The Bit compiler is transpiling and bundling the source code to build files that can run in another project.  
 The officially supported vue Compiler can be found [here](https://bit.dev/bit/envs/bundlers/vue).  
+To install it in your project run:  
+
+```bash
+$bit import bit.envs/bundlers/vue --compiler
+the following component environments were installed
+- bit.envs/bundlers/vue@2.6.10
+```
+
 The compiler is based on the Vue webpack configuration. Check out the exact configuration [here](https://bit.dev/bit/envs/bundlers/vue/~code#webpack.config.js).
 
 ## Use symlinks false in target project
