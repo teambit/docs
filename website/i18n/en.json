@@ -190,6 +190,9 @@
       "example-projects": {
         "title": "Example Projects"
       },
+      "export": {
+        "title": "Exporting"
+      },
       "ext-compiling": {
         "title": "Build a compiler"
       },
@@ -259,9 +262,6 @@
       },
       "netlify": {
         "title": "Deploy Bit project on Netlify"
-      },
-      "organizing-components": {
-        "title": "Exporting"
       },
       "overrides": {
         "title": "Overriding Configuration",

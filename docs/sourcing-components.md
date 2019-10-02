@@ -116,7 +116,7 @@ To eject a component after export:
 $ bit eject string/left-pad
 ```
 
-Learn more about exporting and ejecting components [here](/docs/organizing-components.html#remove-a-component-from-your-repository-after-an-export).
+Learn more about exporting and ejecting components [here](/docs/export#ejecting-components).
 
 ## Update Component Dependencies
 

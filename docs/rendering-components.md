@@ -11,7 +11,7 @@ See an example of a rendered component [here](https://bit.dev/bit/movie-app/comp
 - Add annotations to your component, documenting how it should be rendered.
 - Bundle your component as a [UMD](https://github.com/umdjs/umd) using bundler. You can use one of Bit’s existing bundlers, see [Building Components](/docs/building-components.html).
 - [Tag](/docs/apis/cli-all#tag) & [Export](/docs/apis/cli-all#export) your component.
-- Preview your component in your bit.dev [Collection](/docs/organizing-components.html).
+- Preview your component in your bit.dev [Collection](/docs/export).
 
 ### Annotations
 

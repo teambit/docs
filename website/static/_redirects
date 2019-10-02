@@ -30,6 +30,8 @@
 /docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-collections
 /docs/initializing-bit.html             /docs/workspace
 /docs/conf-bit.html                     /docs/workspace
+/docs/organizing-components.html        /docs/export
+/docs/bitdev-permissions.html           /docs/bit-dev#permissions-for-collections
 
 /whybit/for-teams.html            /docs/whybit/for-teams
 /whybit/for-libs.html            /docs/whybit/for-libs

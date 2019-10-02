@@ -25,8 +25,7 @@
       "testing-components",
       "tag-component-version",
       "documenting-components",
-      "organizing-components",
-      "organizing-components",
+      "export",
       "removing-components",
       "installing-components",
       "sourcing-components",
@@ -45,8 +44,7 @@
         "bit-dev",
         "my-account",
         "bitsrc-plans",
-        "bitsrc-security",
-        "bitdev-permissions"
+        "bitsrc-security"
     ],
     "Extending Bit": [
       "ext-concepts",

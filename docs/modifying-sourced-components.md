@@ -36,13 +36,13 @@ It's possible to replace a sourced component with its corresponding node package
 To eject a component a component on export:
 
 ```bash
-$ bit export bit.examples string/left-pad --eject
+bit export bit.examples string/left-pad --eject
 ```
 
 To eject a component after export:
 
 ```bash
-$ bit eject string/left-pad
+bit eject string/left-pad
 ```
 
-Learn more about exporting and ejecting components [here](/docs/organizing-components.html#remove-a-component-from-your-repository-after-an-export).
+Learn more about exporting and ejecting components [here](/docs/export#ejecting-components).

@@ -486,7 +486,7 @@ $ bit checkout latest foo/bar
 Use the `--all` to checkout all components in their latest version.
 
 ```bash
-$ bit checkout latest --all
+bit checkout latest --all
 ```
 
 **Remove local modifications of a component**
@@ -494,7 +494,7 @@ $ bit checkout latest --all
 Revert all changes to `foo/bar` the version `1.0.0`
 
 ```bash
-$ bit checkout 1.0.0 foo/bar --reset
+bit checkout 1.0.0 foo/bar --reset
 ```
 
 **Options**
@@ -694,7 +694,7 @@ bit doctor --save doctor-output
 Remove components from the local scope and install them by the NPM client.
 
 ```bash
-bit eject|E [-f|--force] [-j|--json] <ids...>
+bit eject|E <ids...>
 ```
 
 **Eject a non-modified tagged component and replace it with the corresponding node module**
@@ -705,35 +705,43 @@ If you used `bit import` to source a component, and want to replace it with its 
 bit eject bit/utils/array/sort
 ```
 
+**Options**
+
+**-f, --force**  
+Ignore local version. remove the components even when they are staged or modified
+
+**-j, --json**  
+print the results in JSON format
+
 ## export
 
-Pushes staged component(s) to a remote Collection.
+export components to a remote scope.
 
 ```bash
-bit export [-f|--forget] [-e|--eject] <remote> [id...]
+bit export [remote] [id...]
 ```
 
 **Export all staged components to the same Collection**
 
 ```bash
-bit export [Collection name]
+bit export scope-name
 ```
 
 **Export a specific component to a Collection**
 
 ```bash
-bit export [Collection name] [component id]
+bit export scope-name component-id
 ```
 
-**Export two (or more components) to a Collection**
+**Export multiple to a Collection**
 
 ```bash
-bit export [Collection name] [component id 1] [component id 2]
+bit export scope-name component-id component-id2
 ```
 
 **Eject component back as a dependency**
 
-In some workflows or cases, you may wish to remove a component from your repository's source-code and consume it as a dependency using common package managers such as NPM or Yarn after exporting it to a remote Collection. In order to do that, use the `--eject` flag.
+Replaces the exported components from the local scope with the corresponding packages
 
 ```sh
 bit export bit.examples string/pad-left --eject
@@ -741,21 +749,28 @@ bit export bit.examples string/pad-left --eject
 
 **Options**
 
-**-f, --forget**
+**-a, --all**  
+Export all components include non-staged components to the remote scope. This includes both authored and imported components.
 
-Export modified component and skip logging it as a dependency.
+**-f, --force**  
 
-```sh
-bit export bit.examples string/pad-left --forget
-```
+force changing a component remote without asking for a confirmation.
 
-**-e, --eject**
+**-e, --eject**  
 
 Remove the component from the repository and consume it as a dependency using a common package manager.
 
-```sh
-bit export string/pad-left bit.examples --eject
-```
+**-s, --set-current-scope**  
+EXPERIMENTAL  
+Change the component primary scope to the exported scope
+
+**-r, --rewire**  
+EXPERIMENTAL  
+when exporting to a different scope, replace import/require statements in the source code to the new scope
+
+**-d, --include-dependencies**  
+EXPERIMENTAL  
+when exporting to a different scope, replace import/require statements in the source code to the new scope
 
 ## graph
 
@@ -1371,7 +1386,7 @@ bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|-
 
 **Remove a component from its remote Scope**
 
-In order to remove a component from a [remote Scope](/docs/organizing-components.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote `.
+In order to remove a component from a [remote Scope](/docs/export.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote `.
 
 ```bash
 bit remove username.your-scope/foo/bar --remote
@@ -1379,7 +1394,7 @@ bit remove username.your-scope/foo/bar --remote
 
 > **Note**
 >
-> You have to be an [owner or a collaborator](/docs/scopes-on-bitsrc.html#permission-types) on the [remote Scope](/docs/organizing-components.html#create-a-remote-scope) in order to be able to remove components from it.
+> You have to be an [owner or a collaborator](/docs/scopes-on-bitsrc.html#permission-types) on the [remote Scope](/docs/export.html#create-a-remote-scope) in order to be able to remove components from it.
 
 **Remove a component from its remote Scope when other components depend on it**
 

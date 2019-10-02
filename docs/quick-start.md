@@ -147,7 +147,7 @@ $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-Now you’re all set to [publish the components](/docs/organizing-components).  
+Now you’re all set to [publish the components](/docs/export).  
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
 ```bash
