@@ -35,8 +35,20 @@ Run bit status to see that all components properly built.
 
 Recommended tester for react components is based on [jest](https://bit.dev/bit/envs/testers/jest).  
 
-## Add React Libraries as Peer Dependencies
+## Add React Libraries as Peer Dependencies with Relaxed Versions
 
-In the origin project, the React run time dependencies (`react`, `react-dom` etc.) should be defined both as project dependencies and project peer dependencies.
+React cannot run when multiple instances of the angular runtime libraries exist, such as `react`, `react-dom`.  
 
-React will err if multiple instances of the runtime libraries exist. Therefore, we want our components to only exist in the consuming project and not in the components project. When Bit extracts component dependencies, peer dependencies definitions get higher priority, and the `react` libraries will be defined as peer dependencies, even if they are also defined as dependencies. This requires that the `react` dependencies will be defined both as dependencies and peerDependencies.
+To avoid this situation, you need to make sure that the component relies on the consuming project's `react` runtime and does not "bring" it's own. To do so, you can specify the runtime modules as peerDependencies in the original project, or use the [overrides](/docs/overrides) configuration.  
+
+You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using React 16 you can specify the dependencies for React as follow:  
+
+```json
+"peedDependencies": {
+  "React": ">=16.3.0",
+}
+```
+
+Relaxing the version is required due to the way package managers work.  If a specific version is defined (e.g. `16.8.4`), but the containing project has a slightly different version installed (e.g. `16.8.5`), NPM still installs another instance of the package, and duplication occurs.  
+
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has.  

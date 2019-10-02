@@ -111,6 +111,8 @@ You should also make sure that the version specified in the peerDependencies is 
 
 Relaxing the version is required due to the way package managers work.  If a specific version is defined (e.g. `8.2.4`), but the containing project has a slightly different version installed (e.g. `8.2.5`), NPM still installs another instance of the package, and duplication occurs.  
 
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has.  
+
 ## Use Typescript Path Mappings for aliases
 
 To avoid backward references as suggested in the [best practices](/docs/best-practices.html#prefer-absolute-paths-and-paths-aliases), use absolute paths for imports and define [typescript path mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) in the angular project to resolve relative paths.  
