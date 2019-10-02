@@ -44,8 +44,9 @@ To avoid this situation, you need to make sure that the component relies on the 
 You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using React 16 you can specify the dependencies for React as follow:  
 
 ```json
-"peedDependencies": {
-  "React": ">=16.3.0",
+"peerDependencies": {
+  "react": "^16.9.0",
+  "react-dom": "^16.9.0"
 }
 ```
 
