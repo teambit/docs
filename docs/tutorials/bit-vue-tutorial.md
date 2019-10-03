@@ -282,7 +282,7 @@ The Vue component is also available on the bit.dev cloud. Go to [`https://bit.de
 
 You can also access the page at the following url: `https://bit.dev/<username>/vue-tutorial/product-list`
 
-The component playground provides you with a basic Vue app that already has your components. To view your component in the correct app, switch the project type to `View`.
+The component playground provides you with a basic Vue app that already has your components. To view your component in the correct app, switch the project type to `Vue`.
 
 In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/vue-tutorial/product-list).
 
