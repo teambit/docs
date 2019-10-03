@@ -3,7 +3,7 @@ id: what-is-bit
 title: What is Bit?
 ---
 
-## Bit is a Components collaboration tool
+## Bit is a components collaboration tool
 
 Bit lets javascript developers share code between projects and repositories with ease.  
 Bit automates the creation of packages that wrap components and makes any repository part of a virtual mono-repo. We call it a **components poly-repo**.  
@@ -26,9 +26,9 @@ At the same time, Version Control Systems (VCS) and package managers are still r
 
 Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in managing components: tracking code changes, verifying dependencies completeness or isolating and executing each component.  
 
-## What Can I do with Bit? 
+## What can I do with Bit? 
 
-### Without Shared UI Library
+### Without shared UI library
 
 If your organization does not have shared libraries, you can use Bit to:  
 
@@ -37,7 +37,7 @@ If your organization does not have shared libraries, you can use Bit to:
 - Gradually start building a shared component library
 - Provide a centralized showcase for components in different projects
 
-### With Shared UI Library
+### With shared UI library
 
 If your organization has a shared UI library (with or without a design system), you can find Bit useful when you want to:  
 
@@ -48,13 +48,14 @@ If your organization has a shared UI library (with or without a design system), 
 - Showcase your components
 - Reduce CI time by building and testing only components that changed. 
 
-## Share Components Faster with [bit.dev](https://bit.dev)
+## Share components with [bit.dev](https://bit.dev)
 
-bit.dev provides you a robust cloud based components' hub to share components. bit.dev can be used to host shared components. When using Bit.dev, you also get: 
+The bit.dev provides you a robust cloud based components' hub to share components. bit.dev can be used to host shared components. When using bit.dev, you also get:  
 
+- Organizing components in collections with access control
 - Build and test CI for each component
+- Components installation using NPM and Yarn
 - Components show case with multiple examples per component
-- Components access management
 - Advanced components search capabilities
 
 ## Is Bit the same as?
