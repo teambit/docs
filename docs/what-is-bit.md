@@ -50,7 +50,7 @@ The modern frameworks require that components go through a build process to be u
 
 Bit manages the full lifecycle of the component. In addition to the source code and the dependency graph, Bit retains information about the tools and configurations needed for building and testing the component.  
 
-## What can I do with Bit? 
+## What can I do with Bit?  
 
 ### Without shared UI library
 
@@ -70,7 +70,7 @@ If your organization has a shared UI library (with or without a design system), 
 - Track components that changed as a result of a modification in their dependencies.  
 - Control access to each group of components
 - Showcase your components
-- Reduce CI time by building and testing only components that changed. 
+- Reduce CI time by building and testing only components that changed.  
 
 ## Share components with [bit.dev](https://bit.dev)
 
@@ -90,7 +90,7 @@ Git is a distributed version-control system for tracking changes in source code 
 
 Bit augments Git to control the development of components inside a Git repository and combines it with the components' building, testing, versioning, and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
 
-Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git. 
+Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git.  
 
 ### Is Bit the same as NPM or Yarn?
 
@@ -98,7 +98,7 @@ Package registries and tools like NPM and Yarn help to manage distributable arti
 
 Bit augments this functionality by automatically generating the package dependency tree for each component, based on the analysis of the code itself. Any change in the source codereflected in the package. Also, Bit is aware of any change in the full component's tree and not just at the top level.
 
-A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn. 
+A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn.  
 
 ### Is Bit the same as Storybook?
 
@@ -106,6 +106,6 @@ Storybook is a fantastic aid tool for visually developing components in simulate
 
 Bit facilitates a full lifecycle of components development. Bit tracks changes to the components, package them for distribution, merge code changes, track versions, and showcase them on a cloud hub.  
 
-Through bit.dev, the components are not only put on display but can also be directly consumed. 
+Through bit.dev, the components are not only put on display but can also be directly consumed.  
 
 Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.

@@ -8,7 +8,6 @@ This guide will teach you the basic steps of working with Bit hands-on. To learn
 Bit is a [CLI tool](https://github.com/teambit/bit) to share components across repositories. With Bit you can get all the benefits of working in a multi-repository environment (poly-repos) while gaining the code-sharing flexibility of a monorepo.
 Bit can be leveraged by teams to share components that reside in different projects, or enhance component libraries to develop, distribute and get adoption for discrete components.  
 
-
 ## Setup
 
 ### Install Bit
@@ -19,11 +18,11 @@ If you are using node 8.12 and above, you can use NPM or yarn to install bit:
 npm install bit-bin -g
 ```
 
-If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation). 
+If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation).  
 
 ### Initialize Bit workspace
 
-To share components from a project, you should initialize Bit in that project: 
+To share components from a project, you should initialize Bit in that project:  
 
 ```bash
 cd project-directory
@@ -100,7 +99,7 @@ the following component environments were installed
 ### Add Tester
 
 If you [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) for your components, you can define a testing framework Bit will use to run them.
-A bit tester, like a compiler, is a tool provided as a component: 
+A bit tester, like a compiler, is a tool provided as a component:  
 
 ```bash
 $ bit import bit.envs/testers/mocha --tester

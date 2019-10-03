@@ -44,15 +44,15 @@ A single server can host multiple remote scopes. Each scope has its name.
 
 Unlike scopes stored in working projects, scopes stored on a server are **bare scopes**.  
 
-Both workspaces and servers are managed using the Bit cli tool. 
+Both workspaces and servers are managed using the Bit cli tool.  
 
 ## bit.dev
 
-Instead of hosting their own server, users can use bit.dev for storing remote scopes of components.   
+Instead of hosting their own server, users can use bit.dev for storing remote scopes of components.  
 
 Learn more about the benefits of using the [`bit.dev` service](/docs/bit-dev).  
 
-Bit works in conjunction with package managers such as NPM or Yarn. Components deployed to `bit.dev` are available for installation using package managers. 
+Bit works in conjunction with package managers such as NPM or Yarn. Components deployed to `bit.dev` are available for installation using package managers.  
 
 Bit components are stored in the `@bit` registry, located in `https://node.bit.dev`.  
 

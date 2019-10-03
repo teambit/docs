@@ -103,7 +103,6 @@ Angular cannot run when multiple instances of the angular runtime libraries exis
 NullInjectorError: StaticInjectorError(AppModule)[NgClassImpl -> ElementRef]: ...
 ```
 
-
 The error occurs because the project you are trying to run has multiple instances of one or more of the `@angular/*` run time libraries.  
 
 To avoid this situation, you need to make sure that the component relies on the consuming project's `@angular` runtime and does not "bring" it's own. To do so, you can specify the runtime modules as peerDependencies in the original project, or use the [overrides](/docs/overrides) configuration.  
