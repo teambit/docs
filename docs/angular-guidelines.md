@@ -15,6 +15,14 @@ Angular sharing was tested on Angular 8 version and requires Node 10.9+ which is
 Each Bit component is linked with a compiler. The Bit compiler is compiling or transpiling the source code to build files that can run in another project.
 The officially supported Angular Compiler can be found [here](https://bit.dev/bit/envs/compilers/angular). This compiler is based on the [ng-packagr project](https://github.com/ng-packagr/ng-packagr), the same project used by Angular CLI to build Angular libs. The compiler is compiling the Angular typescript to AOT (Ahead of Time) code. The build results are in the Angular Package Format (APF), for smooth importing into any Angular project.
 
+To install the Angular compiler run:  
+
+```bash
+$ bit import bit.envs/compilers/angular --compiler
+the following component environments were installed
+- bit.envs/compilers/angular@0.1.2
+```
+
 The practices described bellow are aimed to work best with this Bit team compiler.  
 
 ## Angular Tester

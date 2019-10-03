@@ -47,7 +47,7 @@ To start tracking components in Bit, use the `add` command. Once the files of a 
 
 ### Add Files
 
-Start tracking components in the project. A good candidate for tracking is a component that is clearly defined and isolated. 
+Start tracking components in the project. A good candidate for tracking is a component that is clearly defined and isolated.  
 Use the `bit add` command to track a component:
 
 ```bash
@@ -70,7 +70,7 @@ Use `bit status` to verify that the component was tracked and no files are missi
 
 - Advanced options for [tracking components](/docs/add-and-isolate-components)  
 - [Best Practices](/docs/best-practices) for tracking components  
-- Check out framework-specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines)  
+- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines) or [Vue](/docs/vue-guidelines)  
 
 </div>
 
@@ -93,7 +93,7 @@ the following component environments were installed
 
 - Find an [existing compiler](https://bit.dev/bit/envs).
 - Implement [your own compiler configuration](/docs/ext-developing-extensions).
-- Check out framework-specific guides for [React](/docs/react-guidelines) or [Angular](/docs/angular-guidelines) to find relevant compilers.
+- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines) or [Vue](/docs/vue-guidelines) to find relevant compilers.
 
 </div>
 

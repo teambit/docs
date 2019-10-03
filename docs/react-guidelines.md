@@ -7,17 +7,24 @@ Bit is a generic platform that can use any type of Javascript (and its flavors) 
 
 ## React Compiler
 
-Each Bit component is linked with a compiler. The Bit compiler is compiling or transpiling the source code to build files that can run in another project. There are different flavours of react compilers: 
+Each Bit component is linked with a compiler. The Bit compiler is compiling or transpiling the source code to build files that can run in another project.  
 
+The following compilers exist:
+
+- [React+TypeScript](https://bit.dev/bit/envs/compilers/react-typescript)
 - [React](https://bit.dev/bit/envs/compilers/react) - supports jsx  
-- [React+TypeScript](https://bit.dev/bit/envs/compilers/react-typescript) - supports tsx  
 - [Flow](https://bit.dev/bit/envs/compilers/flow) - supports jsx+flow
-
-Also, a Preact compiler exists:
-
 - [Preact](https://bit.dev/bit/envs/compilers/preact)  
 
 The practices described bellow are aimed to work best with this Bit team compiler.  
+
+To install the React Typescript compiler run:  
+
+```bash
+$ bit import bit.envs/compilers/react-typescript --compiler
+the following component environments were installed
+- bit.envs/react@0.1.3
+```
 
 ## Changing Compiler Configuration
 
