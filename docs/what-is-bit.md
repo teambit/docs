@@ -26,6 +26,30 @@ At the same time, Version Control Systems (VCS) and package managers are still r
 
 Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in managing components: tracking code changes, verifying dependencies completeness or isolating and executing each component.  
 
+### Component Files
+
+Inside of a repository, all files are considered equal. There is no semantic definition of a component aside from conventions of directories and filenames.  
+
+Bit adds the mapping between the component as a logical unit with a defined and specific functionality and the files that comprise this functionality.  
+
+![Bit Component](https://storage.googleapis.com/static.bit.dev/docs/images/component.png)
+
+### Component Dependencies
+
+Components do not exist in a vacuum. Components depend on each other by using functionality from other components. This creates a graph of component dependencies. Understanding the relationships between components is crucial when there are tens and hundreds of components.
+
+Bit provides the tooling for managing this dependency graph. Bit not only knows what the code for each component is but also analyzes the source code to understand the components' dependencies.  
+
+Once a dependency graph exists for each component, its management becomes simpler. If you want to transfer a component from one project to another, Bit knows exactly which additional components should go with it. If a change occurs in a component, Bit can identify which components are impacted by it and notify consumers that a version update is available.  
+
+### Component Packaging  
+
+The specific content of a bit component varies according to the specific framework. It may hold a single plain javascript file with a single function, React Component, Vue component, Angular module, or a web component.  
+
+The modern frameworks require that components go through a build process to be usable. Good software practices also suggest unit testing each component to validate its functionality.  
+
+Bit manages the full lifecycle of the component. In addition to the source code and the dependency graph, Bit retains information about the tools and configurations needed for building and testing the component.  
+
 ## What can I do with Bit? 
 
 ### Without shared UI library

@@ -7,7 +7,7 @@ Collaborating between Bit components require setting up a remote server accessib
 
 > You can host and share components on your own server. I.e. export components to it and import components from the server. Building, testing and rendering should be done on your own CI/CD. Search and npm / yarn install are only available for components exported to bit.dev.  
 
-A Bit server is a host server that hosts one or more bare collections. That is, collections that do not have a working directory. Bit communication to server is done using SSH protocol. Collaborators will setup the server's collection as remotes to their local collections. Then, they  export to and import from those collections.  
+A Bit server is a host server that hosts one or more bare scopes. That is, scopes that do not have a workspace (a working directory). Bit communication to server is done using SSH protocol. Collaborators set up the server's scopes as remotes to their local scopes. Then, they export to and import from those scopes.  
 
 ## Prerequisites
 
@@ -18,45 +18,45 @@ A Bit server is a host server that hosts one or more bare collections. That is, 
 
 - Create a user for bit on your server and assign SSH key to it
 - [Install bit on your server](/docs/installation.html)
-- Create Bit Bare collection:
+- Create Bit Bare scope:
 
 ```bash
 su bit
 mkdir /opt/bit
 cd /opt/bit
-mkdir first-collection
-cd first-collection
+mkdir first-scope
+cd first-scope
 bit init --bare
 ```
 
 - Add your own public SSH key to the authorized_keys list of the user bit. This will allow you to import and export components hosted in first-scope.  
 
-## Working with Remote Collection
+## Working with Remote Scopes
 
-### Setup the remote collection
+### Setup the remote scope
 
-To work with the remote collection do the following: 
+To work with the remote scope do the following:  
 
 ```bash
 mkdir my-project
 cd my-project
 bit init
-bit remote add ssh://bit-username@bit-server:/opt/bit/first-collection
+bit remote add ssh://bit-username@bit-server:/opt/bit/first-scope
 ```
 
-### Export to remote collection
+### Export to a remote scope
 
-To export components to the remote collection:
+To export components to the remote scope:
 
 ```bash
-bit export first-collection
+bit export first-scope
 ```
 
-### Import from remote collection
+### Import from remote scope
 
-to import components stored on the remote collection run:
+to import components stored on the remote scope run:
 
 ```bash
-bit import first-collection.component-name
+bit import first-scope.component-name
 ```
 
