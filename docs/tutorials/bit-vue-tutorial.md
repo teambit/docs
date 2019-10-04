@@ -197,8 +197,6 @@ You can check the `package.json` and verify that the compiler is installed by lo
     },
 ```
 
-> Your compiler's version may be different from the version shown above
-
 ### Build the Vue Component
 
 Now that the compiler is installed, build the component. Building the component serves two purposes:
