@@ -144,6 +144,7 @@ When creating new components, you need to make sure that Bit properly tracks all
 Our component is using `src/assets/products.js` - Bit will identify it and alert us:  
 
 ```bash
+$ bit status
 > product-list ...  issues found  
        untracked file dependencies (use "bit add <file>" to track untracked files as components): 
           src/components/ProductList.vue -> src/assets/products.js
@@ -195,8 +196,6 @@ You can check the `package.json` and verify that the compiler is installed by lo
       "compiler": "bit.envs/bundlers/vue@2.6.10"
     },
 ```
-
-> Your compiler's version may be different from the version shown above
 
 ### Build the Vue Component
 
