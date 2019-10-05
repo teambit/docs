@@ -104,7 +104,7 @@ Bit still allows fetching remote changes for these components. We can even merge
 
 It's possible to replace a sourced component with its corresponding node package. We call this process *eject*. When we eject a component using Bit, Bit triggers a delete action for the local component, and `npm install` command to install the package.
 
-To eject a component a component on export:
+To eject a component on export:
 
 ```bash
 $ bit export bit.examples string/left-pad --eject
