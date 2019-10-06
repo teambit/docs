@@ -29,8 +29,7 @@
       "removing-components",
       "installing-components",
       "sourcing-components",
-      "overrides",
-      "workspace-statuses"
+      "overrides"
     ],
     "Guides": [
         "best-practices",

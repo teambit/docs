@@ -14,6 +14,9 @@ Bit.dev server provides these functions:
 ## Remote Collections Hosting
 
 A Remote Collection is a curated list of shared components on a remote server. The remote collection is used for collaborating on components between bit workspaces. Bit.dev provides hosting for remote collections for all the users.
+
+> Only components deployed on bit.dev collections can be installed using pacakge managers (NPM or Yarn)
+
 Each remote collection contains the bit scope of its components as well as additional information on the collection:  
 
 - Collection name - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  

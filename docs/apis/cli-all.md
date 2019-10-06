@@ -1421,8 +1421,8 @@ bit remove foo/bar
 What happens when other components in your local Scope depend on the removed component?
 
 - If an [exported](/docs/apis/cli-all#export) component depends on the removed component, removal will go as planned. That's because a cached version of the removed component will remain.
-- If a [new](/docs/workspace-statuses) component depends on the removed component, removal will go on as planned.
-- If a [staged](/docs/workspace-statuses) component depends on the removed component, Bit will prevent you from removing, unless you use the `--force` flag.
+- If a [new](/docs/workspace#workspace-statuses) component depends on the removed component, removal will go on as planned.
+- If a [staged](/docs/workspace#workspace-statuses) component depends on the removed component, Bit will prevent you from removing, unless you use the `--force` flag.
 
 ```bash
 bit remove foo/bar --force
@@ -1430,7 +1430,7 @@ bit remove foo/bar --force
 
 **Remove a modified component from your local Scope**
 
-When you try to remove a [modified](/docs/workspace-statuses) component from your local Scope, Bit will prevent you from doing it, unless you use the `--force` flag.
+When you try to remove a [modified](/docs/workspace#workspace-statuses) component from your local Scope, Bit will prevent you from doing it, unless you use the `--force` flag.
 
 ```bash
 bit remove foo/bar --force
@@ -1438,18 +1438,18 @@ bit remove foo/bar --force
 
 > **Note**
 >
-> Removing a [new](/docs/workspace-statuses) component is basically just untracking it, so just use the [untrack command](/docs/apis/cli-all#untrack) for that.
+> Removing a [new](/docs/workspace#workspace-statuses) component is basically just untracking it, so just use the [untrack command](/docs/apis/cli-all#untrack) for that.
 
 **Remove a staged component from your local Scope**
 
-Removing a [staged](/docs/workspace-statuses) component will remove and untrack it (meaning - it will be removed from the [.bitmap file](/docs/initializing-bit.html#bitmap)). 
+Removing a [staged](/docs/workspace#workspace-statuses) component will remove and untrack it (meaning - it will be removed from the [.bitmap file](/docs/initializing-bit.html#bitmap)). 
 If you want Bit to also delete the component files, use the `--delete-files` flag:
 
 ```bash
 bit remove foo/bar --delete-files
 ```
 
-If, on the other hand, you want to keep tracking it as a [new](/docs/workspace-statuses) component, use the `--track` flag:
+If, on the other hand, you want to keep tracking it as a [new](/docs/workspace#workspace-statuses) component, use the `--track` flag:
 
 ```bash
 bit remove foo/bar --track
@@ -1563,7 +1563,7 @@ Does not display components that have already been exported, and components that
 
 > **Note**
 >
-> You can find a full description of all possible component statuses [here](/docs/workspace-statuses.html)
+> You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses.html)
 
 ```bash
 bit status|s [-j, --json]
