@@ -169,6 +169,49 @@ Here is an example of specifying dependencies:
 
 You may specify a specific version of the package, or you may use a special annotations to determine the version from the package.json. Use "+" to specify Bit to use the version that exists in the workspace `package.json`. Use "-" to specify Bit to remove the dependency for specific components.  
 
+### Ignore Dependency Files
+
+You can instruct Bit to ignore files that are required as dependencies inside a component.  
+To override a certain file, just add it as follow:  
+
+```js
+// comp1.js
+require('../comp2')
+```
+
+```json
+// config  
+"overrides": {
+    "comp1": {
+        "dependencies": {
+            "file://comp2.js": "-"
+        }
+    }
+}
+```
+
+This ignores this file. In the component that consumes this project, you need to supply a file that provides this config file.  
+
+You can also ignore multiple files in a single rule:  
+
+```js
+// comp1.js
+require('../utils/sort')
+require('../utils/get')
+require('../utils/unique')
+```
+
+```json
+// config  
+"overrides": {
+    "comp1": {
+        "dependencies": {
+            "file://utils/*": "-"
+        }
+    }
+}
+```
+
 ### package.json keys
 
 You an add any `package.json` keys to the overrides section, and they will be added or override keys in the components `package.json`. This is useful when you want to extend a component with a unique functionality, for example - adding a `bin` key to a component (creating an executable component). The following keys cannot be modified:
