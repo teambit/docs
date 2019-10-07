@@ -18,7 +18,22 @@ If you are using node 8.12 and above, you can use NPM or yarn to install bit:
 npm install bit-bin -g
 ```
 
-If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation).  
+If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation). 
+
+### Create account and collection
+
+To share components between different projects, you need to store the components in a centralized scope.  
+You can use [bit.dev](https://bit.dev) cloud hosting to share components, or you can use your own server. To host components on bit dev [create an account](https://bit.dev/signup) and [run bit login](/docs/cli-all#login).  
+
+To start sharing components create a collection on your account.  
+
+<div class="learn-more">
+
+- Check out [bit.dev functionality](/docs/bit-dev)
+- Find other [authentication methods](/docs/setup-authentication)
+- Setup your own [Bit server](/docs/bit-server)
+
+</div>
 
 ### Initialize Bit workspace
 

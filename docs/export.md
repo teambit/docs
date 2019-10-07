@@ -5,9 +5,9 @@ title: Exporting
 
 A scope is a set of components, usually they are semantically related. Exporting components to remote scopes makes them available for other developers to consume. You can create remote scopes on [your own server](/docs/bit-server) or manage components' collections the [bit.dev](https://bit.dev) components hub.  
 
-In bit.dev remotes scopes are called collections. Log into an account on `bit.dev` to create private or public collections. 
+In bit.dev remotes scopes are called collections. Log into an account on `bit.dev` to create private or public collections.  
 
-To define your own remote scopes follow [these steps](/docs/bit-server#working-with-remote-collection). 
+To define your own remote scopes follow [these steps](/docs/bit-server#working-with-remote-scopes).  
 
 Only components that are tagged can be exported. The tagged version is exported and resides on the remote scope. Use the [bit export](/docs/apis/cli-all#export) command to export components.
 

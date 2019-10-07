@@ -9,7 +9,7 @@ Bit provides free hosting for open source projects. To host private code, Bit pr
 
 Bit offers several billing plans. A billing plan is a Bit Organization subscription and does not require a developer to purchase a subscription to use Bit. Furthermore, developers can collaborate in any number of organizations.
 
-* **Community plan** - The basic subscription plan in Bit. This plan is active for all registered users.  The Community plan allows every developer to start working with Bit, and use it for their public and private projects, as it includes a limited amount of private Collections.
+* **Community plan** - The basic subscription plan in Bit. This plan is active for all registered users. The Community plan allows every developer to start working with Bit, and use it for their public and private projects, as it includes a limited amount of private Collections.
 * **Team plan** - This subscription allows organizations to collaborate on an unlimited amount of private code. The plan includes a premium support model and can be purchased only if you have created an organization in Bit.
 * **Business plan** - The business subscription plan is aimed at larger teams and organizations with a need for improved support and SLA.
 

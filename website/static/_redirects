@@ -9,7 +9,7 @@
 /tutorial/react-app-tutorial.html   /tutorials/bit-react-tutorial
 /docs/installing-bit.html           /docs/installation
 /docs/install-components.html       /docs/installing-components
-/docs/scopes-on-bitsrc.html         /docs/remote-collection
+/docs/scopes-on-bitsrc.html         /docs/bit-dev#remote-collections-hosting
 /docs/importing-components.html     /docs/sourcing-components
 /docs/versioning-tracked-components.html   /docs/tag-component-version
 /docs/faq-understanding-bit-status.html  /docs/workspace#workspace-statuses

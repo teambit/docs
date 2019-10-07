@@ -1,6 +1,7 @@
 ---
 id: setup-authentication
 title: bit.dev Authentication
+sidebar_label: Authentication
 ---
 
 Before working with [bit.dev](https://bit.dev), configure your Bit client to your bit.dev account.

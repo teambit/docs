@@ -1,6 +1,7 @@
 ---
 id: bit-dev
 title: bit.dev Overview
+sidebar_label: Overview
 ---
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
@@ -15,14 +16,13 @@ Bit.dev server provides these functions:
 
 A Remote Collection is a curated list of shared components on a remote server. The remote collection is used for collaborating on components between bit workspaces. Bit.dev provides hosting for remote collections for all the users.
 
-> Only components deployed on bit.dev collections can be installed using pacakge managers (NPM or Yarn)
+> Only components deployed on bit.dev collections can be installed using package managers (NPM or Yarn)
 
 Each remote collection contains the bit scope of its components as well as additional information on the collection:  
 
-- Collection name - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  
-- Visibility - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
-- License - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
-- Users & Roles - the users that have access to the collection and their roles on the collection (admin, developer, or viewer).
+- **Collection name** - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  
+- **Visibility** - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
+- **License** - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
 
 ### Permissions for Collections
 
@@ -31,6 +31,21 @@ To ensure this does not happen, bit.dev enforces the following rules on componen
 
 - Components in public collections cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in public collections.  
 - Components in private collection cannot depend on components in other organizations: Dependencies in private collections may depend on public collections or on private collections that belong to the same account (personal or organization).  
+
+### Users and Roles
+
+Collection's members are assigned with 3 possible roles:  
+
+| Role | Admin | Developer | Viewer |
+|---|---|---|---|
+| View Components* | Yes | Yes | Yes |
+| Import Components* | Yes | Yes | Yes |
+| Install Components * | Yes| Yes | Yes |
+| Export Components | Yes| No | No |
+| Manage members | Yes | No | No |
+| Edit collection's information | Yes | No | No |
+
+> *Viewing, importing and installing is available for all users for public collections. 
 
 ## Component Playground
 

@@ -11,13 +11,12 @@
         "tutorials/bit-vue-tutorial",
         "tutorials/bit-nodejs-tutorial"
     ],
-    "Setup": [
+    "Basics": [
         "installation",
-        "setup-authentication",
         "workspace",
-        "remote-collection",
         "handling-errors",
-        "conf-analytics"
+        "conf-analytics",
+        "best-practices"
     ],
     "Components": [
       "add-and-isolate-components",
@@ -32,7 +31,6 @@
       "overrides"
     ],
     "Guides": [
-        "best-practices",
         "react-guidelines",
         "angular-guidelines",
         "vue-guidelines",
@@ -42,7 +40,7 @@
     "bit.dev": [
         "bit-dev",
         "my-account",
-        "bitsrc-plans",
+        "setup-authentication",
         "bitsrc-security"
     ],
     "Extending Bit": [

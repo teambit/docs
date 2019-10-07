@@ -1,85 +1,50 @@
 ---
 id: my-account
-title: My account
+title: bit.dev Account
+sidebar_label: Account
 ---
 
-Manage your account. Make it awesome.
+## Profile Page
 
-## My profile page
+To view profile page, log-in and click on your avatar at the top right page corner. Then click on the profile name
 
-To view your profile page, log-in and click on your avatar at the top right page corner. Then click on "My Profile":
+## Change User Settings
 
-![alt text](https://storage.googleapis.com/bit-docs/myprofile1.png "Myprofile 1")
+Click on the avatar and select settings. From the settings page you can:  
 
-You will find all of your Collections under this page.
+- Change the avatar
+- Update password
+- Add and update email addresses
+- Manage organizations (you must be an admin to manage organizations)
+- Manage SSH keys for accessing the account
 
-## Generating and Adding an SSH Key
+## Change Organization Settings
 
-A common transport protocol for Bit when self-hosting is over SSH. This is because SSH access to servers is already set up in most places – and if it isn’t, it’s easy to do. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
+To view an organization select on the organization from the avatar's drop down list.  
 
-This makes SSH the preferred method for collaboration when developing components for remote Collections.
+Click on the edit button to change the organization's image, name, homepage or description.  
+Click on the settings button to edit organization's members and billing.  
 
-### Generating an SSH key with MacOS
+## Organization Billing  
 
-To generate an SSH key simply follow these steps:
+[Click here to see bit.dev plans](https://bit.dev/pricing).
 
-1. Open the terminal application.
-2. Run this command (replace ‘email’ with the email associated with your bit account):
+### Charging
 
-`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+Charging occurs at the monthly anniversary of the subscription (e.g. at the 17th of every month).  
 
-3. Accept the default location for the key file.
-4. To add a private key to the SSH-agent please follow the steps below:
+### Adding and Removing Members
 
-Start the SSH agent: `eval "$(ssh-agent -s)"`
+Members added to the organization are granted access immediately to the organizations feature, according to the plan.  
+Members removed from the organization revoke their access and support immediately when removed.  
+Charging is according to the number of actual number of members on the day of subscription's charge.  
 
-Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
+### Canceling a Paid Subscription
 
-### Generating an SSH key with Windows
+Cancelling a subscription takes effect at the end of the billing period. Cancelling a plan does not delete the private collections. However, they are no longer accessible. 
+Reactivating a subscription will renew the monthly subscription fee. If the account had private Collections, you would regain access to them immediately.
 
-To generate an SSH key, please follow these steps:
+### Charging Issues
 
-1. Download and start the [puttygen.exe generator](https://winscp.net/eng/docs/ui_puttygen).
-2. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
-3. Move your mouse randomly in the small screen in order to generate the key pairs.
-4. Enter a key comment, which will identify the key (useful when you use several SSH keys).
-5. Type in the passphrase and confirm it. The passphrase is used to protect your key. You will be asked for it when you connect via SSH.
-6. Click "Save private key" to save your private key.
-7. Click "Save public key" to save your public key.
-
-## Changing profile Settings
-
-To change your profile settings:
-Click the avatar on the top right side and click "Settings":
-
-![alt text](https://storage.googleapis.com/bit-docs/profilesettings1.png "Profile settings 1")
-
-Change your avatar, password, or profile information
-
-### Managing Emails
-
-Go to profile settings and choose "Emails".
-There you can manage your account's Emails, add Emails and set your primary Email.
-
-![alt text](https://storage.googleapis.com/bit-docs/Screen%20Shot%202017-12-18%20at%206.08.36%20PM.png "Email settings 1")
-
-## Changing my Avatar
-
-To change your avatar:
-Go to your Settings page (by clicking the avatar on the top right side).
-Click "upload new avatar" next to your Avatar.
-You will be redirected to [Gravatar](https://en.gravatar.com/site/signup).
-Sign up and follow the steps to change your avatar.
-
-## Updating my password
-
-To update your password: 
-Go to your Settings page (by clicking the avatar on the top right side).
-Under the change password section, click "request a new one here." 
-A password reset link will be sent to your registered email.
-Follow the email instructions.
-
-Note:
-The link is valid for 24 hours.
-
-If you face any problems, you can email us at [team@bit.dev](mailto:team@bit.dev).
+If there is an issue charging your payment method, the account will retain a 60 days grace period, in which all account members will still have access to premium features and private code components.
+If the issue was not resolved by the end of the grace period, all access to premium features and private Collections is removed from the organization account.

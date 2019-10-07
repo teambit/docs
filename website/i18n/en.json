@@ -24,14 +24,15 @@
       "best-practices": {
         "title": "Best Practices"
       },
+      "bit-dev": {
+        "title": "bit.dev Overview",
+        "sidebar_label": "Overview"
+      },
       "bit-search-api": {
         "title": "bit-search-api"
       },
       "bit-server": {
         "title": "Setup Bit Server"
-      },
-      "bit-dev": {
-        "title": "bit.dev Overview"
       },
       "bitdev-permissions": {
         "title": "Dependency Limitations"
@@ -171,7 +172,8 @@
         "title": "Modifying File Structure and Renaming Components"
       },
       "my-account": {
-        "title": "My account"
+        "title": "bit.dev Account",
+        "sidebar_label": "Account"
       },
       "netlify": {
         "title": "Deploy Bit project on Netlify"
@@ -202,7 +204,8 @@
         "title": "Rendering Components"
       },
       "setup-authentication": {
-        "title": "bit.dev Authentication"
+        "title": "bit.dev Authentication",
+        "sidebar_label": "Authentication"
       },
       "sourcing-components": {
         "title": "Importing"
@@ -286,7 +289,7 @@
     "categories": {
       "Introduction": "Introduction",
       "Tutorials": "Tutorials",
-      "Setup": "Setup",
+      "Basics": "Basics",
       "Components": "Components",
       "Guides": "Guides",
       "bit.dev": "bit.dev",
