@@ -106,7 +106,7 @@ The available options are the following execa options: `shell`, `env`, `extendEn
 
 ## env
 
-The environment utilities, i.e. compiler and tester, that used by default for all components
+The environment utilities, i.e. compiler and tester, that are used by default for all components
 
 ### env.compiler
 
