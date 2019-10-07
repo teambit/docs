@@ -26,13 +26,18 @@ Through the **bit.dev platform**, Bit provides **teams with a unified hub where 
 ## Why?
 
 **Modern components** are the building blocks of our software applications.
-Their **reusable nature** can be leveraged to **standartize and speed development**, while building a better **consistent UX/UI** across different projects and teams. However, the ecosystem built around repositories can be limiting in the workflow around building with smaller components.  **Bit unleashes your components from the barriers of repositories** so that different teams and projects can easily build, share and sync components between them.
+Their **reusable nature** can be leveraged to **standardize and speed development**, while building a better **consistent UX/UI** across different projects and teams. However, the ecosystem built around repositories can be limiting in the workflow around building with smaller components.  **Bit unleashes your components from the barriers of repositories** so that different teams and projects can easily build, share and sync components between them.
 
 ## Popular use-cases
 
 ### Instantly share and sync components between applications
 
-* Watch a [5 minutes demo with React](https://www.youtube.com/watch?v=E5lgoz6-nfs)
+*No repo-splitting, refactoring, boilerplating or code changes needed.*
+
+* Watch a [**5 minutes demo with React**](https://www.youtube.com/watch?v=E5lgoz6-nfs)
+
+[![Bit Component](https://storage.googleapis.com/bit-docs/reuse-react-components.jpeg)](https://www.youtube.com/watch?v=E5lgoz6-nfs)
+
 
 Small teams and solo developers are often building more than one application. Through Bit, they can easily reuse their components in multiple applications, make changes from any end, and keep changes synced between them. Bit kills the overhead so that reuse becomes a simple choice and they can focus on building their apps.
 
@@ -40,31 +45,55 @@ Bit liberates components from the boundaries of repositories, so you can use it 
 
 ### Component design systems made of real code
 
+*Let everyone see and use what you really build, to bring design and development together**.
+
 ![Bit Component](https://storage.googleapis.com/bit-docs/discover-components-aug19-gif.gif)
 
 Building a component design system is a great way to unify the UX/UI you are building for your users.
-Component libraries help to consolidate the implementation of a design system into a unified project.
+With Bit you don't need to add more tools that widen the gap between design and development. Instead, **your actual code implementation is your design system**. What you see is really what you get.
 
-Through Bit, **your actual code implementation is your design system**.
+Developers share components to bit.dev, where the code is rendered and visualized in a live editable playground that lets designers and everyone else instantly learn how it looks and suggests changes right from the web. When a developer changes a component, that designer can easily learn about it and make sure it keeps with the design system.
 
-You can use it to build, test, version and publish individual components in the library.
-You can get adoption for shared components by letting any app builder easily find, choose and use the components in their projects. They can get updates only to the components they actually use, and don't have to worry about adding too much bundle-size or maintenance complexity to their apps. They can even import and develop shared components right from their own projects, when they really have to, and suggest updates to specific back to the library without having to context-switch of dive into the whole project. The result? You build components with modularity and control like never before, and other people don't have to think twice before adopting your components.
+![Bit Component](https://storage.googleapis.com/bit-docs/component-page-chart-bit-gif.gif)
+
+Discoverability is enhanced through advanced features like a smart semantic component search, context labels, filters for key parameters bundle-size and dependencies, and more. Screenshots of the components make it simple to visually explore the design system. When you bring development and design together, your user experience becomes that much better now and over time.
 
 Since all your components are visualized and sandboxed in bit.dev, designers and developers can collaborate over a single unified platform and make sure that what you design is what your users really get. Everywhere, and always. 
 
 #### You can build your design system gradually!
 
-Since Bit makes it easy and seamless to collect components from different projects into your collection, you don't have to build your library first- you can just organize the components you already have, stanrdartize your design, and there you go, everybody is now using the same code with the same design!
+Since Bit makes it easy and seamless to collect components from different projects into your collection, you don't have to build your library first- you can just organize the components you already have, standardize your design, and there you go, everybody is now using the same code with the same design!
+
+#### Enhance component libraries
+
+*Build with a modular monorepo experience like never before, and distribute components that people actually adopt*.
+
+![Bit Component](https://storage.googleapis.com/bit-docs/UI%20library%20monorepo.jpg)
+
+Component libraries help to consolidate the implementation of a design system into a unified project.
+Great companies like Uber, Airbnb and others are implementing their design systems as component libraries.
+
+But, a component library can be challenging from both ends:
+
+- **Library maintainers** have to develop multiple logically-separated components in one repository, and manage the relationships between them. They also want to make it easy for app developers to adopt their components.
+
+- **Component consumers** (often app developers in the same organization) don't want to add (and update) heavy libraries to their projects, and are worried about coupling their own development to that of the library.
+
+Bit changes the game by bringing the two closer together than ever before.
+
+It helps library developers build multiple components in one repository by letting them easily isolate, build, test, version, update and publish components in the library. For example, they can update a single component, learn which other components are affected too, see that all the unit-tests pass even after th update, and safely update all components at once. They can also get developers to adopt their components by not forcing them to install the whole library, by letting them get updates only to the components they use, and by letting them modify the components right from their own apps and easily suggest updates. It's better to regulate and standardize than to not get true adoption.
+
+It helps component consumers and app developers easily find, modify and install specific components they need, and adopt them without heaving to worry about coupling their own development to the library project. They can develop component shared from the library right from their own projects, without having to context-switch of dive into the whole project. They can learn about the bundle-size, dependencies and environment of every component before using it. They can communicate their needs to the library maintainers.
 
 ### Shared-component economy with the organization: get true adoption
 
 ![Bit Component](https://storage.googleapis.com/bit-docs/shared-components.png)
 
-building a shared-component ecnonomy throughout larger organizations is a game-chanager. It speeds developments, standartizes your stack, simplifies development and makes sure your brand and UI stays consistent everywhere.
+building a shared-component economy throughout larger organizations is a game-changer. It speeds developments, standardizes your stack, simplifies development and makes sure your brand and UI stays consistent everywhere.
 
-But... it can be easier said than done. Getting develoeprs to adopt your libraries can be hard, as they have to couple themselves a nd their apps to your large project and its development. 
+But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves a nd their apps to your large project and its development. 
 
-Through Bit, your organization's component-economy becomes a collabaortive and unified ecosystem build around components and not projects. Everyone can share components, discover components, and suggest updates right from their own projects. After all, regualtion and leglaization is better than enforcment right? Well, at least if you want to get adoption.
+Through Bit, your organization's component-economy becomes a collaborative and unified ecosystem build around components and not projects. Everyone can share components, discover components, and suggest updates right from their own projects. After all, regulation and legalization is better than enforcement right? Well, at least if you want to get adoption.
 
 
 ## Philosophy  
