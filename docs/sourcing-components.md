@@ -39,7 +39,7 @@ import component from '@bit.<owner>.<collection>.<namespace>.<component-name>';
 
 #### Dependencies of sourced components
 
-Bit makes sure to install all dependencies of sourced components. By default Bit installs component dependencies them as packages, using the configured package manager in the [bit config](/docs/conf-bit-json.html) file. We can override this behavior and configure Bit to source the component dependencies instead.  
+Bit makes sure to install all dependencies of sourced components. By default Bit installs component dependencies as packages, using the configured package manager in the [bit config](/docs/conf-bit-json.html) file. We can override this behavior and configure Bit to source the component dependencies instead.  
 Bit installs package dependencies using the configured package manager. It is not possible to override this behavior, as node registries only support a single API for package installation.
 
 #### Import a component to a specific path
