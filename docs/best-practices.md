@@ -7,13 +7,19 @@ Below you can find some guidelines that can help make Bit an efficient tool in y
 
 ## Track Meaningful Components
 
-Components should have a [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle). In other words, a component represents a functionality. When tracking files as components, include all files related to that functionality.
+Components should have a [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle). In other words, a component represents a functionality. When tracking files as components, include all files related to that functionality. Each component should include the code, its styling, unit tests, documentation and usage examples such as storybook stories.
 
-## Publish Shared Files As Separate Bit Components
+## Publish Shared Files As Bit Components
 
-If a file or directory such as `helpers` or `utils` contains code that is used in multiple components, that file should be its own Bit component. Consider splitting such files by their functionality. These components can be marked as internal and will not be available for use as stand-alone components.
+If a file or directory such as `helpers` or `utils` contains code that is used in multiple components, that code should be its own Bit component. Consider splitting such files by their functionality.  
 
-Publishing a shared file together with another component creates an undesired and unneeded dependency between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.
+Publishing a shared file together with another component creates an undesired and unneeded coupling between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.
+
+## Publish Styles Variables as Bit Components
+
+If you have common Variables such as SCSS or SASS set of variables, consider publishing them as separate components. If you have large number of variables, it is recommended to separate them as per their usage, such as colors, breakpoints etc.  
+
+When adding styles you should consider how the styles will eventually be processed to the target application. When using scoped styles, such as CSS Modules in React, the styles need eventually to be processed and bundled by the target building app. In this case, the style components may not require a compiler. You can [override](/docs/overrides) their compiler using overrides rules.  
 
 ## Prefer Absolute Paths and Path Aliases
 
