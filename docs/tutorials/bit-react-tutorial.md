@@ -104,7 +104,7 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 Switch to the React tutorial project directory and run the Bit initialization command using yarn:
 
 ```bash
-$ init --package-manager yarn
+$ bit init --package-manager yarn
 successfully initialized a bit workspace.
 ```
 
