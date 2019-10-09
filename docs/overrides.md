@@ -18,11 +18,11 @@ The overriding function has 2 parts:
 You can override the component configuration in one of two places:  
 
 - In workspace configuration - override will be applied on all components exported and imported inside the workspace.  
-- In an imported component's `pacakge.json` file - applied on that specific component
+- In an imported component's `package.json` file - applied on that specific component
 
 ### `overrides` in workspace configuration
 
-In the original project, a component is embedded in the original code and does not have a `pacakge.json`, and all overrides are defined in the [workspace configuration](/docs/conf-bit-json#overrides) using the overrides key in the workspace's `package.json`.  
+In the original project, a component is embedded in the original code and does not have a `package.json`, and all overrides are defined in the [workspace configuration](/docs/conf-bit-json#overrides) using the overrides key in the workspace's `package.json`.  
 
 The overrides is defined as a set of patterns that are applied on all the components that match the pattern. A pattern may also be a specific component such as `foo/bar`.  
 

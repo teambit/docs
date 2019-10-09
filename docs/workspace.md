@@ -128,10 +128,10 @@ bit import username.foo/bar --path /path/to/folder
 
 ### Package.json
 
-For each imported component, Bit generates a `pacakge.json` file, in the component's root directory. The package.json is generated based on the component information. 
+For each imported component, Bit generates a `package.json` file, in the component's root directory. The package.json is generated based on the component information. 
 
 Bit generates the `package.json` to include the `name` and `version` defined in the component. The `main` property points to the generated main file of the component. 
-You can add any other properties to the `pacakge.json` file. 
+You can add any other properties to the `package.json` file. 
 
 When generating the file, Bit also adds any information defined in the workspace's `overrides` information that applies to the component.  
 
