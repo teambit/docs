@@ -6,7 +6,7 @@ sidebar_label: Overrides
 
 When a component is packaged for distribution, it contains the component's source code, a dependencies graph of all the components is depends upon, and a set of tools, i.e. compiler and tester, for building the component.  
 
-Bit let's modify the component's tools, dependencies and configuration, without making any changes to the component's code, by configuring an **overrides** section.  
+Bit let's you modify the component's tools, dependencies and configuration, without making any changes to the component's code, by configuring an **overrides** section.  
 
 The overriding function has 2 parts:  
 
