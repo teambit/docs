@@ -726,7 +726,7 @@ $ bit show hello/world
 └───────────────────┴─────────────────────────────────────────────────────────────────────┘
 ```
 
-If Bit cannot resolve all pacakge's dependencies, it will prompt for `missing package dependencies`. We need to verify that all packages actually exist in package.json.  
+If Bit cannot resolve all package's dependencies, it will prompt for `missing package dependencies`. We need to verify that all packages actually exist in package.json.  
 
 The following diagram describes the packages (i.e. node_modules) resolution flow:  
 
