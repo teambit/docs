@@ -5,63 +5,121 @@ title: Best Practices
 
 Below you can find some guidelines that can help make Bit an efficient tool in your organization:  
 
-## Track Meaningful Components
+## Component Completeness
 
-Components should have a [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle). In other words, a component represents a functionality. When tracking files as components, include all files related to that functionality. Each component should include the code, its styling, unit tests, documentation and usage examples such as storybook stories.
+Components should have a [sole responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle). In other words, a component represents a clear and meaningful functionality.  
+When tracking files as components, include all files related to that functionality and that are only relevant to this functionality.  
+Each component should include the code, styling, unit tests, documentation, and usage examples, such as storybook stories.
 
 ## Publish Shared Files As Bit Components
 
-If a file or directory such as `helpers` or `utils` contains code that is used in multiple components, that code should be its own Bit component. Consider splitting such files by their functionality.  
+If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.  
 
 Publishing a shared file together with another component creates an undesired and unneeded coupling between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.
 
-## Publish Styles Variables as Bit Components
-
-If you have common Variables such as SCSS or SASS set of variables, consider publishing them as separate components. If you have large number of variables, it is recommended to separate them as per their usage, such as colors, breakpoints etc.  
-
-When adding styles you should consider how the styles will eventually be processed to the target application. When using scoped styles, such as CSS Modules in React, the styles need eventually to be processed and bundled by the target building app. In this case, the style components may not require a compiler. You can [override](/docs/overrides) their compiler using overrides rules.  
-
-## Prefer Absolute Paths and Path Aliases
-
-Use absolute paths for imports and define path aliases in your project to resolve relative paths. As a rule of thumb, you should use current and forward references (i.e. `./slider.component`) and avoid backward references (i.e. `../button`).
-
-Having a path like `../../../components/component.ts` makes it hard to move the component files around. Relative paths also couple the component to the specific file structure of the project in which the component was shared and hence create a more complex component file structure in the consuming project.
-
 ## Use Namespaces
 
-You can use workspaces to group multiple related components. Bit can perform actions on multiple components that are grouped under a namespace. For instance, you can specify that all utils are stored under:  
-`organization.collection/utils`
+You can use namespaces inside a collection to group related components. Namespaces act as folders inside a Bit workspace, or inside a collection on bit.dev.  
 
-When using a namespace, you can also assign specific functionality related to the namespace, such as specifying that all files under `organization.collection/styles` use a tester that is different from the tester used for the rest of the collection.  
-Naming components with meaningful names, similar to naming folders, also helps to find them when searching on [bit.dev](https://bit.dev/).
+To track a component under a namespace, add the namespace with a slash on the component's id:  
 
-## Document Components
+```bash
+$bit add src/utils/my-util.js --id utils/my-utils
+tracking component utils/my-utils:
+added src/utils/my-util.js
+```
 
-Include documentation and examples alongside components. This improves collaboration and explains to others how to use your code. Use JSDocs, markdown files, and live playground examples.
+You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all.md#add) command and use a namespace.  
+
+Specifying a namespace lets you perform actions on multiple components at once: 
+
+```bash
+bit tag "utils/*"
+```
+
+Namespaces are also useful in specifying overriding rules for specific components. For example, you can override a compiler for all components under the `utils/*` namespace:
+
+```json  
+"overrides": {
+    "utils/*": {
+        "env": {
+            "compiler": "@bit.envs/compilers/typescript@3.0.34"
+        }
+    }
+}
+```
+
+## Handling Assets
+
+Components may require using assets from your projects, such as images, graphics such as SVG files, or fonts.  
+
+One possible option is to publish those assets [on a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them via their full path URL.  
+Alternatively, you can include them in your project as part of the components. You may include assets inside a component that exposes them as reusable assets. For example, you can have a logo component that also includes the logo image or SVG.  
+
+It is also possible to include the assets in their own components and reuse them, among other components.  
+Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`.  
+
+Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides.md) option:  
+
+```json  
+"overrides": {
+    "assets/*": {
+        "env": {
+            "compiler": "-"
+        }
+    }
+}
+```
+
+Now, the assets are not compiled, but the files are available as components to be used in other components.  
+
+## Handling Styles  
+
+Typically, an application contains style files that shared between different components in the application. Styling files may be pure CSS or using a pre-processor such as `scss` or `less`.  
+
+An application may also contain a set of variables (e.g., scss variables) used as [design tokens](https://css-tricks.com/what-are-design-tokens/) to denote reusable elements such as colors or breakpoints.  
+
+Those variables are reused across multiple components, and thus should be created as their own components. You can define them as a single component or as a set of separate components. If the styles are split across multiple components, it is highly recommended to group them under a dedicated [namespace](#use-namespaces) such as `styles`, to facilitate working with them.  
+
+The style files are targeted to be eventually processed by the containing project. This is especially critical if a matching process runs that aligns styles with the relevant HTML (as an example, React CSS Modules is creating a style hash that matches the class in the generated Html). Therefore, components that only contain styles do not need a compiler associated with them.  
+
+The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides.md) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow: 
+
+```json  
+"overrides": {
+    "styles/*": {
+        "env": {
+            "compiler": "-"
+        }
+    }
+}
+```
+
+Styles only components are now available for consumption, and in the target application, the CSS files are processed and bundled by the application's bundler.  
+
+## Components' Paths
+
+Use absolute paths for imports and define path aliases in your project to resolve relative paths. As a rule of thumb, you should use current and forward references (i.e., `./slider.component`) and avoid backward references (i.e., `../button`).
+
+Having a path like `../../../components/component.ts` makes it hard to move the component files around. Relative paths also couple the component to the specific file structure of the project in which the component was shared and hence created a more complex component file structure in the consuming project.
+
+## Components Tagging
+
+Tags work as commits in Git. When exported, all the intermediate tags are also available for consumption by other developers.  
+Just like a committed code, it is essential to:
+
+- Tag complete work.
+- Test before you tag.
+- Use SemVer to communicate changes by using `patch`, `minor`, and `major` versions.
+- Make the tag messages meaningful.
 
 ## Use Component Environments
 
-Code usually requires compilation tasks to make it distributable and executable. The same goes for the components in a project. When we take components out of the context of a project, Bit needs to know how to make them usable. Component Environments handle these tasks.
+The code usually requires compilation tasks to make it distributable and executable. The same goes for the components in a project. When we take components out of the context of a project, Bit needs to know how to make them usable. Component Environments handle these tasks.
 
 ## Prefer Transpiling Over Bundling
 
 Bundled code forces too many restrictions on its consumers. It forces them to include the entire bundle as a single block, dependencies included. Transpiled code gives the consumer more flexibility. It allows dependency tree management features like tree-shaking and code-splitting.
-
-## Don’t Tag Half-Done Work
-
-Tag a new version only when it’s completed. Understand that other developers may consume a version once it's exported. Tagging and exporting half-done work may introduce unwanted behaviors into their work.
-
-## Test Before You Tag
-
-Testing code you distribute is always important. With Bit, you distribute more code. Test your components and include their test files as well. Distributing component tests helps developers know if their changes modify the component’s behavior. This makes the process of collaborating on components more stable. In addition, test cases serve as excellent documentation.
-
-## Use SemVer to Communicate Changes
-
-When tagging a new version for a component, use Bit to increment the version. Proper versioning helps other developers understand and predict the side effects of a version. Bit supports this flow with the `-—patch`, `-—minor` and `-—major` flags of the `tag` command.
-
-## Write Good Version Messages
-
-Like a good Git commit message, begin with a summary of the change followed by a body that provides details for the motivation behind the change.
 
 ## Import Often
 
