@@ -34,7 +34,7 @@ $ brew install bit
 ### Download Bit executable
 
 ```sh
-$ curl -Lo bit https://github.com/teambit/bit/releases/download/v14.4.0/bit-bin-macos && chmod +x bit
+$ curl -Lo bit https://github.com/teambit/bit/releases/download/v14.4.1/bit-bin-macos && chmod +x bit
 ```
 
 You can copy the bit executable to a directory in your path, or any directory that will be added to your path:
@@ -47,7 +47,7 @@ $ sudo cp bit /usr/local/bin/ && rm bit
 
 ### Download Bit executable
 
-- Download the Windows `.exe` file from [here](https://github.com/teambit/bit/releases/download/v14.4.0/bit-bin-win.exe)
+- Download the Windows `.exe` file from [here](https://github.com/teambit/bit/releases/download/v14.4.1/bit-bin-win.exe)
 - Rename it to `bit.exe` and add it to your `PATH`:
 - Add file location to windows path:
 
@@ -86,7 +86,7 @@ sudo yum install bit
 ### Download Bit executable
 
 ```sh
-$ curl -Lo bit https://github.com/teambit/bit/releases/download/v14.4.0/bit-bin-linux && chmod +x bit
+$ curl -Lo bit https://github.com/teambit/bit/releases/download/v14.4.1/bit-bin-linux && chmod +x bit
 ```
 
 You can copy the bit executable to a directory in your path, or any directory that will be added to your path:

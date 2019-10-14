@@ -9,7 +9,7 @@ If you are experiencing issues when using an old version of Bit, please try inst
 
 ```bash
 $ bit -V
-14.4.0
+14.4.1
 ```
 
 ## Update version
