@@ -4,22 +4,18 @@ title: bit.dev Authentication
 sidebar_label: Authentication
 ---
 
-Before working with [bit.dev](https://bit.dev), configure your Bit client to your bit.dev account.
+To work with bit.dev you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
 
-## Signup to bit.dev
+Exporting components to bit.dev requires that bit client (bit cli) on your machine is logged in to the account.  
 
-[Create a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
+You can log into bit.dev with one of two methods:  
 
-## Connect Bit CLI to account
+- Using a token
+- Using SSH key pair (private and public key)
 
-There are two methods to authenticate a local Bit client to your [bit.dev](https://bit.dev) account.
+> A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are  determined according to that user's privileges.  
 
-> **Bit communication protocol**
->
-> Bit uses **SSH** as its network protocol, as in most cases it is already set up, and if not, it's easy to do so. SSH is also an authenticated network protocol; and because it’s ubiquitous, it’s generally easy to set up and use.
-> This makes SSH the preferred method for collaboration.
-
-### Authenticate Bit using 'bit login'
+## Authenticate with Token
 
 Use [bit login](/docs/apis/cli-all#login) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
 
@@ -32,34 +28,33 @@ Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=ht
 
 The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/apis/cli-all#config).
 
-#### Manage authenticated devices
+bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name: 
+
+```bash
+bit login --machine-name=ci_server
+```
 
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
-You can remove tokens, forcing Bit clients to re-authenticate themselves with your account.
+You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
 
-### Authenticate Bit using SSH key-pair
+## Authenticate with SSH
 
 If you know how to generate your SSH key, you can skip the next part and move to [authenticate your SSH Key to bit.dev](#upload-public-ssh-key-to-bitsrcio).
+Follow the steps below to generate SSH keys: 
 
-#### Generate SSH key for macOS/Linux
+### Generate SSH key 
 
-To generate an SSH key follow these steps:
+<!--DOCUSAURUS_CODE_TABS-->
+<!--MacOS / Linux-->
 
 1. Open a terminal application.
-2. Run this command (replace ‘email’ with the email associated with your Bit.dev account):
-
-`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+2. Run this command (replace ‘email’ with the email associated with your Bit.dev account): `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 3. Accept the default location for the key file.
-4. To add a private key to the SSH-agent please follow the steps below:
+4. Start the SSH agent: `eval "$(ssh-agent -s)"`
+5. Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
 
-Start the SSH agent: `eval "$(ssh-agent -s)"`
-
-Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
-
-#### Generate SSH key for Windows
-
-To generate an SSH key, please follow these steps:
+<!--Windows-->
 
 1. Download and start the [puttygen.exe generator](https://winscp.net/eng/docs/ui_puttygen).
 2. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
@@ -68,7 +63,9 @@ To generate an SSH key, please follow these steps:
 5. Click "Save private key" to save your private key.
 6. Click "Save public key" to save your public key.
 
-#### Upload public SSH key to bit.dev
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Upload public SSH key to bit.dev
 
 1. Log in to your [bit.dev](https://bit.dev/login) account.
 2. Click on the user icon to open the user actions menu.
@@ -78,23 +75,23 @@ To generate an SSH key, please follow these steps:
 6. `Key` - Copy the content of the file `id_rds.pub`.
 7. Click on ‘Add SSH key’.
 
-A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev) community hub.
+A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev).
 
 ## Configure local Bit client
 
 To set your username and email in Bit, use the [bit config command](/docs/apis/cli-all#config).
 
-* If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
-* If no configuration values are defined for Bit, it falls back to read the values from `git config`.
+- If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
+- If no configuration values are defined for Bit, it falls back to read the values from `git config`.
 
 ```bash
-$ bit config set user.name "mickey mouse"
-$ bit config set user.email mickey@example.com
+bit config set user.name "mickey mouse"
+bit config set user.email mickey@example.com
 ```
 
-There are several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message.
-
 ## Authentication issues
+
+There are several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message.
 
 ### Timeout after a long hang time
 
@@ -124,7 +121,7 @@ If you haven't signed up already, head over [here](https://bit.dev/signup).
 
 #### Wrong username/password combination
 
-In case you are not using [SSH key for authentication](/docs/setup-authentication.html), Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
+In case you are not using [SSH key for authentication](#authenticate-with-ssh), Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
 In case you have forgotten your password, head to your [setting page](https://bit.dev/settings/profile) to reset it.
 
 #### No permission to the Collection
@@ -136,7 +133,6 @@ It may be that you do not have permissions to access the Collection in question.
 
 ### SSH keys issues
 
-Bit uses SSH as the communication protocol between Bit and [bit.dev](https://bit.dev). In order to make this process works smoothly, you require to either configure Bit to use a specific SSH key, [as seen here](/docs/setup-authentication.html).  
 There are several configuration issues that may occur if you hit any permission issues when working with SSH keys and remote Collections.
 
 **If the SSH connection is not established due to issues with SSH keys, Bit will fail to authenticate.**

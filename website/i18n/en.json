@@ -79,30 +79,12 @@
       "conf-files": {
         "title": "Project Configuration"
       },
-      "create-new-hook": {
-        "title": "Create New Hooks"
-      },
-      "debugging-extensions": {
-        "title": "Debugging Extensions"
-      },
       "dependencies": {
         "title": "Components Dependencies",
         "sidebar_label": "Dependencies"
       },
-      "developing-extensions": {
-        "title": "Developing Extensions"
-      },
       "documenting-components": {
         "title": "Documenting"
-      },
-      "enrich-component-data": {
-        "title": "Enrich Component Data"
-      },
-      "error-decoder": {
-        "title": "Error Decoder"
-      },
-      "example-projects": {
-        "title": "Example Projects"
       },
       "export": {
         "title": "Exporting"
@@ -113,9 +95,6 @@
       "ext-concepts": {
         "title": "Extending Bit"
       },
-      "ext-data-scheme-defaults": {
-        "title": "Data Scheme and Defaults"
-      },
       "ext-developing-extensions": {
         "title": "Developing Extensions"
       },
@@ -124,12 +103,6 @@
       },
       "ext-using-extensions": {
         "title": "Using Extensions"
-      },
-      "extend-component-dependencies": {
-        "title": "Extend Component"
-      },
-      "extension-lifecycle": {
-        "title": "Extension Lifecycle"
       },
       "getting-help": {
         "title": "Getting Help"
@@ -156,9 +129,6 @@
       "latest-version": {
         "title": "Installing the Latest Stable Version of Bit"
       },
-      "logs": {
-        "title": "Checking Bit's logs"
-      },
       "manage-component-files": {
         "title": "Managing Component Files"
       },
@@ -175,9 +145,6 @@
         "title": "bit.dev Account",
         "sidebar_label": "Account"
       },
-      "netlify": {
-        "title": "Deploy Bit project on Netlify"
-      },
       "overrides": {
         "title": "Overriding Configuration",
         "sidebar_label": "Overrides"
@@ -190,9 +157,6 @@
       },
       "reference-cli": {
         "title": "Bit CLI Reference"
-      },
-      "registering-to-hooks": {
-        "title": "Registering To Hooks"
       },
       "remote-collection": {
         "title": "Creating a Remote Collection"
