@@ -18,6 +18,7 @@ bit --version
   - [Using Package Installers](#using-package-installers)
   - [Download Bit executable](#download-bit-executable-2)
 - [Install via NPM / Yarn](#install-via-npm--yarn)
+- [Latest Version](#latest-version)
 
 Once installed, verify the installation by running the following command:
 
@@ -104,3 +105,12 @@ npm install bit-bin --global
     or
 yarn global add bit-bin  
 ```
+
+## Latest Version
+
+```bash
+$ bit -V
+14.4.1
+```
+
+If you are experiencing issues when using an old version of Bit, please try installing the latest one according to your installation method from above.

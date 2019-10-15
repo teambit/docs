@@ -18,9 +18,6 @@
         "title": "CLI Commands",
         "sidebar_label": "CLI Commands"
       },
-      "authentication-issues": {
-        "title": "Authentication Issues"
-      },
       "best-practices": {
         "title": "Best Practices"
       },
@@ -107,10 +104,6 @@
       "getting-help": {
         "title": "Getting Help"
       },
-      "guides/authentication": {
-        "title": "Bit User Authentication",
-        "sidebar_label": "User Authentication"
-      },
       "handling-errors": {
         "title": "Handling Bit Errors"
       },
@@ -128,9 +121,6 @@
       },
       "latest-version": {
         "title": "Installing the Latest Stable Version of Bit"
-      },
-      "manage-component-files": {
-        "title": "Managing Component Files"
       },
       "merge-changes": {
         "title": "Merging Component Changes"
@@ -185,15 +175,6 @@
       },
       "tracking-dependencies": {
         "title": "Tracking Components' Dependencies"
-      },
-      "troubleshooting-doctor": {
-        "title": "Troubleshooting with Doctor"
-      },
-      "troubleshooting-install-components": {
-        "title": "Installation Errors"
-      },
-      "troubleshooting-isolating": {
-        "title": "Isolation Common Errors"
       },
       "tutorials/bit-angular-tutorial": {
         "title": "Bit for Angular"

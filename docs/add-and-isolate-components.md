@@ -14,7 +14,7 @@ Using [bit add](/docs/apis/cli-all#add) we can track sets of files as components
 Apart from [defining the component's file](#track-a-component) and set component's [spec files](#track-a-component-with-testspec-files), `bit add` can track [many components at once](#track-multiple-components-with-test-files-in-a-parallel-directory-tree). You can also determine a component's [entry point](#define-an-entry-point), decide the [component's ID](#component-id) and [namespace](#set-a-components-namespace).  
 For more advance cases of tracking many components from the same project with all the above features, read about Bit's [tracking DSL](#tracking-dsl).
 
-Additionally, `bit add` is used to manage the already tracked files of components. For example [adding new files to existing components](/docs/manage-component-files.html#adding-a-file-to-a-component), [removing tracked files from components](/docs/manage-component-files.html#removing-files-from-components), and [renaming tracked files](/docs/manage-component-files.html#rename-a-file).  
+Additionally, `bit add` is used to manage the already tracked files of components. For example [adding new files to existing components](#adding-a-file-to-a-component), [removing tracked files from components](#removing-files-from-components), and [renaming tracked files](#moving-and-renaming-files).  
 
 > **Custom Module Definition**
 >
