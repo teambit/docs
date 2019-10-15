@@ -147,7 +147,7 @@ When using Bit imported components, there are multiple ways to run CI:
 |Committed Items in VCS | Action to perform on CI |
 |---|---|
 | .bitmap file only, but no components source code | Bit import. Component is imported with built artifacts. |
-| .bitmap and components source code without built artifacts | Bit build. Component will be built from source code |
+| .bitmap and components source code without built artifacts | Bit import & Bit build. Component will be built from source code |
 | Components source and built artifacts | No need to run build command |
 
 ### Install bit-cli
