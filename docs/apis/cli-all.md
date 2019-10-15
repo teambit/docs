@@ -1378,7 +1378,7 @@ bit remote rm <collection-name>
 
 ## remove
 
-Removes a component - will delete a specific version, or the entire component and all of its versions. Use this with care. If a component has other components depending on it within the same Scope, you will be required to change them so they will not use it (or use the --force flag).
+Removes a component - will delete a specific component and all of its versions. Use this with care. If a component has other components depending on it within the same scope, you will be required to change them so they will not use it (or use the --force flag).
 
 ```bash
 bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|--track] <ids...>
@@ -1386,7 +1386,7 @@ bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|-
 
 **Remove a component from its remote Scope**
 
-In order to remove a component from a [remote Scope](/docs/export.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote `.
+In order to remove a component from a [remote Scope](/docs/export.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote`.
 
 ```bash
 bit remove username.your-scope/foo/bar --remote
@@ -1400,13 +1400,13 @@ bit remove username.your-scope/foo/bar --remote
 
 What happens in case you're trying to remove a component that's already being used by another component?
 
-* When both components are in the same Scope, Bit will prevent you from removing, unless you use the `--force` flag.
+- When both components are in the same Scope, Bit will prevent you from removing, unless you use the `--force` flag.
 
 ```bash
 bit remove username.your-scope/foo/bar --force
 ```
 
-* When the dependent component is in a different Scope, removal will go as planned. That's because a cached version of the removed component will remain on the other Scope, and the dependent component will continue functioning as usual.
+- When the dependent component is in a different Scope, removal will go as planned. That's because a cached version of the removed component will remain on the other Scope, and the dependent component will continue functioning as usual.
 
 **Remove a component from your local Scope**
 
@@ -1586,7 +1586,6 @@ no modified components
 staged components
      > moon/sun... ok
 ```
-
 
 ## tag
 

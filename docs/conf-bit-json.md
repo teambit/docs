@@ -33,7 +33,7 @@ Specifies the directory that contains all the components that are dependencies o
 - Type: `boolean`
 - Default: `false`
 
-If a bit component is a dependency of another component, by default bit will attempt to install it withe package manager (`npm install` or `yarn add`). By setting ths value to true, bit will import any bit scope components that are dependencies of a bit imported component. 
+If a bit component is a dependency of another component, by default bit will attempt to install it with package manager (`npm install` or `yarn add`). By setting ths value to true, bit will import any bit scope components that are dependencies of a bit imported component. 
 
 ## dist
 
