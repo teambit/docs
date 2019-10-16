@@ -288,7 +288,7 @@ The API exposes two more helper functions:
 `getLoader` - returns an instance of the [ora](https://github.com/sindresorhus/ora) terminal loader animation.
 
 `getLogger` - returns an instance of a [winston logger](https://github.com/winstonjs/winston). You can use the loader with `.debug`, `.warn`, `.error`, `.info`, `.log`, etc.
-The log will be written into [extensions.log file](/docs/logs.html#log-types).
+The log will be written into [extensions.log file](/docs/handling-errors#bit-logs).
 Each extension will get a different logger instance, which contains the extension name as a label. This means you can alter your logger instance without worrying about affecting other extensions.
 Each line in the log file will have the extension name as a prefix:
 

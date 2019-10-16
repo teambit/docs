@@ -258,7 +258,7 @@ Workspace only: yes
 
 `bit import [ids...|pattern][@version]`
 
-Import components into current workspace (//ToDo). Can specify specific component(s) and their versions. The component will be imported to the default location specified in the [configuration](workspace/#componentsdefaultdirectory).  
+Import components into current workspace (//ToDo). Can specify specific component(s) and their versions. The component will be imported to the default location specified in the [configuration](/docs/workspace/#componentsdefaultdirectory).  
 
 **Import latest version of all sourced components**:
 

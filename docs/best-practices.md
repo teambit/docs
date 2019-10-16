@@ -23,7 +23,7 @@ tracking component utils/my-utils:
 added src/utils/my-util.js
 ```
 
-You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all.md#add) command and use a namespace.  
+You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all#add) command and use a namespace.  
 
 Specifying a namespace lets you perform actions on multiple components at once: 
 
@@ -60,7 +60,7 @@ Alternatively, you can include them in your project as part of the components. Y
 It is also possible to include the assets in their own components and reuse them, among other components.  
 Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`.  
 
-Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides.md) option:  
+Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:  
 
 ```json  
 "overrides": {
@@ -84,7 +84,7 @@ Those variables are reused across multiple components, and thus should be create
 
 The style files are targeted to be eventually processed by the containing project. This is especially critical if a matching process runs that aligns styles with the relevant HTML (as an example, React CSS Modules is creating a style hash that matches the class in the generated Html). Therefore, components that only contain styles do not need a compiler associated with them.  
 
-The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides.md) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow: 
+The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow:  
 
 ```json  
 "overrides": {

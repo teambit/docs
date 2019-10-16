@@ -24,7 +24,7 @@ If you are not using Nodejs 8.12 and above, see reference to other [installation
 
 To share components between different projects, you need to store the components in a centralized scope.  
 You can use [bit.dev](https://bit.dev) cloud hosting to share components, or you can use your own server.  
-To host components on bit dev [create an account](https://bit.dev/signup) and [run bit login](/docs/cli-all#login).  
+To host components on bit dev [create an account](https://bit.dev/signup) and [run bit login](/docs/apis/cli-all#login).  
 
 Enter a name for your collection and click on create.  
 You now have a collection. You can see the export command that you will use later to export components to this collection.  
