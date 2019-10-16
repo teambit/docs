@@ -57,6 +57,13 @@ bit init
 This diagram bellow provides an overview of the workflow we will use in this guide:  
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
 
+<div class="learn-more">
+
+- The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.  
+- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines)  or [Vanilla Javascript or Typescript](/docs/vanilla-guideline).
+
+</div>
+
 ## Track Components
 
 To start tracking components in Bit, use the `add` command. Once the files of a component are added, Bit can identify and verify that all the dependencies of the component exist and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component in isolation.
