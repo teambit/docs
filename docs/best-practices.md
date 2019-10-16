@@ -11,12 +11,6 @@ Components should have a [sole responsibility](https://en.wikipedia.org/wiki/Sin
 When tracking files as components, include all files related to that functionality and that are only relevant to this functionality.  
 Each component should include the code, styling, unit tests, documentation, and usage examples, such as storybook stories.
 
-## Publish Shared Files As Bit Components
-
-If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.  
-
-Publishing a shared file together with another component creates an undesired and unneeded coupling between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.
-
 ## Use Namespaces
 
 You can use namespaces inside a collection to group related components. Namespaces act as folders inside a Bit workspace, or inside a collection on bit.dev.  
@@ -48,6 +42,13 @@ Namespaces are also useful in specifying overriding rules for specific component
     }
 }
 ```
+
+## Publish Shared Files As Bit Components
+
+If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.  
+
+Publishing a shared file together with another component creates an undesired and unneeded coupling between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.  
+It is recommended that all such files resides under the same [namespace](#use-namespaces).
 
 ## Handling Assets
 
