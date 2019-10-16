@@ -119,9 +119,6 @@
       "installing-components": {
         "title": "Installing"
       },
-      "latest-version": {
-        "title": "Installing the Latest Stable Version of Bit"
-      },
       "merge-changes": {
         "title": "Merging Component Changes"
       },
@@ -199,6 +196,9 @@
       },
       "using-in-your-code": {
         "title": "Using Bit Components in Your Code"
+      },
+      "vanilla-guidelines": {
+        "title": "Vanilla Guidelines"
       },
       "vue-guidelines": {
         "title": "Vue Guidelines"

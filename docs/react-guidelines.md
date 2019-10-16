@@ -35,7 +35,7 @@ To change the configuration of a compiler, here are the recommended steps to fol
 3) Modify the .babelrc file of the compiler to fit your needs
 4) Tag and export the new version of the component to your own scope
 
-Now, in your project configuration (`package.json` or`bit.json`), change the default compiler to be the new component.  
+Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
 Run bit status to see that all components properly built.  
 
 ## React Tester

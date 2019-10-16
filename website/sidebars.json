@@ -34,6 +34,7 @@
         "react-guidelines",
         "angular-guidelines",
         "vue-guidelines",
+        "vanilla-guidelines",
         "ci",
         "bit-server"
     ],
