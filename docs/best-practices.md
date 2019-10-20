@@ -114,6 +114,24 @@ Just like a committed code, it is essential to:
 - Use SemVer to communicate changes by using `patch`, `minor`, and `major` versions.
 - Make the tag messages meaningful.
 
+## State Managers
+
+Components may use state managers such as [Redux](https://redux.js.org/), [MobX](https://mobx.js.org/README.html), [React Context](https://reactjs.org/docs/context.html#reactcreatecontext) or [VueX](https://vuex.vuejs.org/).  
+You may want to share a component that is referencing a state manager. In this case, it is crucial to understand that the state manager references are in-fact part of the component APIs, and the consuming application should adhere to these APIs. 
+The getters/mutations/ actions are de-facto APIs that the consuming app should provide like the original app. e.g., if the user's data stored under `store.data.profile.user`, the exact path should exist in the consuming app.
+
+Here are some ideas on how to deal with this situation:  
+
+### Share presentational component only
+
+In most cases, the data structure is unique per project. A typical pattern for this is to split the components into presentational and container components, sometimes also called smart and dumb components. The container (smart) components are wrapping the presentational (dumb) components, that are only responsible for the layout on the page. 
+Presentational components are easy to share, as they have explicit APIs of the data they should receive from the container API. The container components are local to each project.  
+
+### Share component with state
+
+You may want to share a component that includes both state and presentational layer. In this case, expand the APIs of the components to include state actions, getters, and subscriptions that are relevant to the component.   
+As an example, a user component may include a top bar visual component calling the login/logout action and exposing an isLoggedIn getter or subscription.  
+
 ## Use Component Environments
 
 The code usually requires compilation tasks to make it distributable and executable. The same goes for the components in a project. When we take components out of the context of a project, Bit needs to know how to make them usable. Component Environments handle these tasks.

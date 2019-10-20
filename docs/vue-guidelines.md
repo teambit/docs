@@ -45,3 +45,7 @@ If you already have a configuration, you just need to add the relevant key in th
 ## Vue Tester
 
 Each Bit component may be linked with a tester that will run the unit tests of the compiler. vue testers are still WIP.  
+
+## Sharing Components with VueX
+
+Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  

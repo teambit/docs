@@ -60,3 +60,7 @@ You should also make sure that the version specified in the peerDependencies is 
 Relaxing the version is required due to the way package managers work.  If a specific version is defined (e.g. `16.8.4`), but the containing project has a slightly different version installed (e.g. `16.8.5`), NPM still installs another instance of the package, and duplication occurs.  
 
 You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has.  
+
+## Sharing Components with Redux or Mobx
+
+Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  
