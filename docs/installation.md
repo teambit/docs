@@ -1,6 +1,6 @@
 ---
 id: installation
-title: Installing Bit
+title: Installation
 ---
 
 Check if bit is installed using:

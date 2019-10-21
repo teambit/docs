@@ -1,25 +1,22 @@
 ---
-id: vanilla-guidelines
-title: Vanilla Guidelines
+id: ts-guidelines
+title: Typescript Guide
+sidebar_label: Typescript
 ---
 
-Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds vue specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
+Bit is a generic platform that can use Typescript code that encapsulate specific functionality. This section adds typescript specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
 The guide is appropriate to use with components that are not library specific. This may be NodeJS code or utility functions used in different frameworks.
 
 ## Compilers
 
-For vanilla code, you may want to use compilers or bundlers.  
-To compile ES6+ code use the [Babel compiler](https://bit.dev/bit/envs/compilers/babel).  
-If you need babel version 6, you can revert to the compiler's v6.0.1.  
-
 To compile typescript code use the [Typescript compiler](https://bit.dev/bit/envs/compilers/typescript).
 
 ```bash
-bit import bit.envs/compilers/babel --compiler
+bit import bit.envs/compilers/typescript --compiler
 ```
 
-To bundle es6 code use the [webpack bundler](https://bit.dev/bit/envs/bundlers/webpack). The configuration used in this bundler is visible [here](https://bit.dev/bit/envs/bundlers/webpack/~code#webpack.config.js).
+Check [here](https://bit.dev/bit/envs/compilers/typescript/~code#src/tsconfig.ts) the configuration used by the Typescript compiler.
 
 ### Changing Compiler Configuration
 
@@ -48,7 +45,7 @@ bit import bit.envs/testers/mocha --testers
 
 ## Use Path aliases
 
-To avoid backward references as suggested in the [best practices](/docs/best-practices.html#prefer-absolute-paths-and-paths-aliases), use absolute paths for imports. Use the following according to your environment needs: 
+To avoid backward references as suggested in the [best practices](/docs/best-practices.html#prefer-absolute-paths-and-paths-aliases), use absolute paths for imports. Use the following according to your environment needs:  
 
 - [Webpack resolve](https://webpack.js.org/configuration/resolve/)
 - [tsconfig resolving](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
@@ -57,5 +54,21 @@ To avoid backward references as suggested in the [best practices](/docs/best-pra
 
 ## Ensure Bit Components are Exposed via a Single Entry Point
 
-Each shared component should have a single entry point which is the root file of the component. Add a top-level `index.js` or `index.ts`  file that will expose all of the component’s APIs, e.g. by re-exporting them from the internal file.  
+Each shared component should have a single entry point which is the root file of the component. Add a top-level `index.ts`  file that will expose all of the component’s APIs, e.g. by re-exporting them from the internal file.  
 This practice reduces coupling between components as one component does not need to be aware of the internal file structure of another component. Specifically, if the component is bundled (e.g. UMD format) the internal files will not be available.  
+
+## Global Styles
+
+Bit is adding dependencies as defined in the code files, both source and tests. For that reason global types for typescript are not interferred by default. If you are using global styles, such as `@types/node` or `@types/jest`, you should add them as devDependencies using the [overrides](/docs/overrides#components-dependencies) option:  
+
+```json
+{
+    "overrides" : {
+        "*": {
+            "devDependencies" : {
+                "@types/node": "+"
+            }
+        }
+    }
+}
+```

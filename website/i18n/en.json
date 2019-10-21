@@ -8,9 +8,6 @@
       "add-and-isolate-components": {
         "title": "Tracking"
       },
-      "angular-guidelines": {
-        "title": "Angular Guidelines"
-      },
       "apis/cli-all": {
         "title": "CLI Reference"
       },
@@ -104,6 +101,26 @@
       "getting-help": {
         "title": "Getting Help"
       },
+      "angular-guidelines": {
+        "title": "Angular Guide",
+        "sidebar_label": "Angular"
+      },
+      "js-guidelines": {
+        "title": "Javascript Guide",
+        "sidebar_label": "Javascript"
+      },
+      "react-guidelines": {
+        "title": "React Guide",
+        "sidebar_label": "React"
+      },
+      "ts-guidelines": {
+        "title": "Typescript Guide",
+        "sidebar_label": "Typescript"
+      },
+      "vue-guidelines": {
+        "title": "Vue Guide",
+        "sidebar_label": "Vue"
+      },
       "handling-errors": {
         "title": "Handling Bit Errors"
       },
@@ -114,7 +131,7 @@
         "title": "Initializing Bit"
       },
       "installation": {
-        "title": "Installing Bit"
+        "title": "Installation"
       },
       "installing-components": {
         "title": "Installing"
@@ -138,9 +155,6 @@
       },
       "quick-start": {
         "title": "Quick Start"
-      },
-      "react-guidelines": {
-        "title": "React Guidelines"
       },
       "reference-cli": {
         "title": "Bit CLI Reference"
@@ -197,12 +211,6 @@
       "using-in-your-code": {
         "title": "Using Bit Components in Your Code"
       },
-      "vanilla-guidelines": {
-        "title": "Vanilla Guidelines"
-      },
-      "vue-guidelines": {
-        "title": "Vue Guidelines"
-      },
       "what-is-bit": {
         "title": "What is Bit?"
       },
@@ -237,6 +245,7 @@
       "Basics": "Basics",
       "Components": "Components",
       "Guides": "Guides",
+      "Advanced": "Advanced",
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
       "Reference": "Reference",

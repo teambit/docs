@@ -21,7 +21,6 @@
 /docs/tracking-dependencies.html        /docs/add-and-isolate-components#tracking-dependencies
 /docs/manage-components-files.html      /docs/add-and-isolate-components#manage-components-files
 /docs/component-dependencies.html       /docs/add-and-isolate-components#component-dependencies
-/docs/add-and-isolate-components#isolation-errors    /docs/add-and-isolate-components#isolation-errors
 /docs/modifying-sourced-components.html         /docs/sourcing-components#modify-imported-component
 /docs/update-dependencies.html              /docs/sourcing-components#update-component-dependencies
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
@@ -34,6 +33,7 @@
 /docs/bitdev-permissions.html           /docs/bit-dev#permissions-for-collections
 /docs/bitsrc-plans.html                 /docs/my-account#organization-billing
 /docs/latest-version.html               /docs/installation#latest-version
+/docs/handling-errors                   /docs/workspace#errors-amp-troubleshooting
 
 /whybit/for-teams.html            /docs/whybit/for-teams
 /whybit/for-libs.html            /docs/whybit/for-libs

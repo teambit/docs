@@ -1,6 +1,7 @@
 ---
 id: angular-guidelines
-title: Angular Guidelines
+title: Angular Guide
+sidebar_label: Angular
 ---
 
 > **Angular support is in public beta.**  

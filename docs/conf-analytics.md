@@ -21,8 +21,6 @@ Most actions using Bit are done locally, and not all errors are reported back to
 
 Error messages and commands may contain private information such as the name of a component, remote Collection and occasionally names of files in a project. We consider it as private data, and thus will not send it to the analytics platform. Bit masks all private data in a command or an error message prior to sending it, so only actual usage data is sent.
 
-> **Note**
->
 > If you want to unmask information, as this would help to better triage issues, you can do it by simply changing the default value of the `anonymous_reporting` configuration to `false`:
 >
 > ```bash

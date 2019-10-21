@@ -14,9 +14,10 @@
     "Basics": [
         "installation",
         "workspace",
+        "best-practices",
+        "overrides",
         "handling-errors",
-        "conf-analytics",
-        "best-practices"
+        "conf-analytics"
     ],
     "Components": [
       "add-and-isolate-components",
@@ -27,16 +28,18 @@
       "export",
       "removing-components",
       "installing-components",
-      "sourcing-components",
-      "overrides"
+      "sourcing-components"
     ],
-    "Guides": [
+    "Guides":[
         "react-guidelines",
         "angular-guidelines",
         "vue-guidelines",
-        "vanilla-guidelines",
-        "ci",
-        "bit-server"
+        "js-guidelines",
+        "ts-guidelines"
+    ],
+    "Advanced": [
+      "ci",
+      "bit-server"
     ],
     "bit.dev": [
         "bit-dev",
