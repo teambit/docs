@@ -28,6 +28,8 @@ Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=ht
 
 The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/apis/cli-all#config).
 
+### Additional Tokens
+
 bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:  
 
 ```bash

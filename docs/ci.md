@@ -11,8 +11,10 @@ If you want to deploy a project using bit components on CI or on a deployment se
 ## Get a Bit token
 
 The first thing to do is get a Bit token that has has access to all the collections that have the components to be installed.  
-You can create a dedicated user such as dev@company.com for the deployment, or use an existing user's token.  
-You can get the bit token from a logged-in user by running:  
+You can create a dedicated user such as `dev@company.com` for the deployment, or use an existing user's token.
+If you are using an existing user's token, follow the steps described [here](/docs/setup-authentication#additional-tokens) to generate a token that does not expire on local logins.  
+
+Login with the CI user to get the user's token:  
 
 ```bash
 bit config get user.token
