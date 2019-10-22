@@ -145,17 +145,14 @@ You could use UserAvatar directly in other projects, or create a thin wrapper th
 ### Encapsulate the state inside the component
 
 Some components benefit from internal state, and can be safely exported with the manager as a dependency or a peer dependency.
-A great example of this is [ReactDnD](https://react-dnd.github.io/react-dnd/about).
+A great example of this is [ReactDnD](https://github.com/react-dnd/react-dnd/blob/c090ee4981136a02fe75435c1b3c78fde2abba4e/packages/core/dnd-core/src/DragDropManagerImpl.ts).
 
 ### State component
 
-If the component cannot be isolated from the state, it is possible to encapsulate the state to its own component.
+If the component cannot be isolated from the state, it is possible to encapsulate the state as part of the  component.
 To make encapsulation easy, it is better to use micro-state, that follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).  
-For example, Current-User is a prime candidate, because it is consistent and behaves similarly across many project.
-It could be a Context class, MobX observable, or even a Redux reducer.  
-Note that *good reusable state is hard to find*. State describes reality, so it is rarely pure and deterministic, and is likely to vary a lot between projects.  
-Even if it somewhat consistent and reusable at present, it may grow and become overly specific in the future.
-So, try avoiding sharing state component between project, especially large global ones.  
+For example, Current-User can be a shared component that has both UI and a state. The component can export a state, a Context class, a Redux reducer or a Mobx observable.  
+However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects. 
 
 ## Use Component Environments
 
