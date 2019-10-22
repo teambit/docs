@@ -41,14 +41,14 @@ You can remove tokens, forcing Bit clients to re-authenticate themselves with th
 
 ## Authenticate with SSH
 
-It is also possible to work with SSH key pair to authenticate with bit.dev. 
+It is also possible to work with SSH key pair to authenticate with bit.dev.  
 
 Follow the steps described [here](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for generating SSH keys.
 
 If you know how to generate your SSH key, you can skip the next part and move to [authenticate your SSH Key to bit.dev](#upload-public-ssh-key-to-bitsrcio).
-Follow the steps below to generate SSH keys: 
+Follow the steps below to generate SSH keys:  
 
-### Generate SSH key 
+### Generate SSH key
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--MacOS / Linux-->
@@ -165,4 +165,4 @@ In case you use `bit config ssh_key_file` to point Bit to the location of your p
 
 #### No/Wrong public key uploaded to bit.dev
 
-Check if you are using the right public SSH key for your profile. 
+Check if you are using the right public SSH key for your profile.  

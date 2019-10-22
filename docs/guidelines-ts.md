@@ -57,9 +57,13 @@ To avoid backward references as suggested in the [best practices](/docs/best-pra
 Each shared component should have a single entry point which is the root file of the component. Add a top-level `index.ts`  file that will expose all of the component’s APIs, e.g. by re-exporting them from the internal file.  
 This practice reduces coupling between components as one component does not need to be aware of the internal file structure of another component. Specifically, if the component is bundled (e.g. UMD format) the internal files will not be available.  
 
-## Global Styles
+## Package Types
 
-Bit is adding dependencies as defined in the code files, both source and tests. For that reason global types for typescript are not interferred by default. If you are using global styles, such as `@types/node` or `@types/jest`, you should add them as devDependencies using the [overrides](/docs/overrides#components-dependencies) option:  
+When Bit is building the dependency graph for a component, it will automatically add types for packages that are required and exist in the project. For example, if a component is requiring `jquery` and the `package.json` contains `@types/jquery`, the `@types/jquery` are added to the component as a devDependency.  
+
+## Global Types
+
+Bit is adding dependencies as defined in the code files, both source and tests. For that reason global types for typescript are not interfered by default. If you are using global styles, such as `@types/node` or `@types/jest`, you should add them as devDependencies using the [overrides](/docs/overrides#components-dependencies) option:  
 
 ```json
 {
