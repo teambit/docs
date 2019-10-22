@@ -58,7 +58,7 @@ Developers share components to bit.dev, where the code is rendered and visualize
 
 Discoverability is enhanced through advanced features like a smart semantic component search, context labels, filters for key parameters bundle-size and dependencies, and more. Screenshots of the components make it simple to visually explore the design system. When you bring development and design together, your user experience becomes that much better now and over time.
 
-Since all your components are visualized and sandboxed in bit.dev, designers and developers can collaborate over a single unified platform and make sure that what you design is what your users really get. Everywhere, and always. 
+Since all your components are visualized and sandboxed in bit.dev, designers and developers can collaborate over a single unified platform and make sure that what you design is what your users really get. Everywhere, and always.  
 
 #### You can build your design system gradually!
 
@@ -76,12 +76,11 @@ Great companies like Uber, Airbnb and others are implementing their design syste
 But, a component library can be challenging from both ends:
 
 - **Library maintainers** have to develop multiple logically-separated components in one repository, and manage the relationships between them. They also want to make it easy for app developers to adopt their components.
-
 - **Component consumers** (often app developers in the same organization) don't want to add (and update) heavy libraries to their projects, and are worried about coupling their own development to that of the library.
 
 Bit changes the game by bringing the two closer together than ever before.
 
-It helps library developers build multiple components in one repository by letting them easily isolate, build, test, version, update and publish components in the library. For example, they can update a single component, learn which other components are affected too, see that all the unit-tests pass even after th update, and safely update all components at once. They can also get developers to adopt their components by not forcing them to install the whole library, by letting them get updates only to the components they use, and by letting them modify the components right from their own apps and easily suggest updates. It's better to regulate and standardize than to not get true adoption.
+It helps library developers build multiple components in one repository by letting them easily isolate, build, test, version, update and publish components in the library. For example, they can update a single component, learn which other components are affected too, see that all the unit-tests pass even after the update, and safely update all components at once. They can also get developers to adopt their components by not forcing them to install the whole library, by letting them get updates only to the components they use, and by letting them modify the components right from their own apps and easily suggest updates. It's better to regulate and standardize than to not get true adoption.
 
 It helps component consumers and app developers easily find, modify and install specific components they need, and adopt them without heaving to worry about coupling their own development to the library project. They can develop component shared from the library right from their own projects, without having to context-switch of dive into the whole project. They can learn about the bundle-size, dependencies and environment of every component before using it. They can communicate their needs to the library maintainers.
 
@@ -91,16 +90,15 @@ It helps component consumers and app developers easily find, modify and install 
 
 building a shared-component economy throughout larger organizations is a game-changer. It speeds developments, standardizes your stack, simplifies development and makes sure your brand and UI stays consistent everywhere.
 
-But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves a nd their apps to your large project and its development. 
+But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves and their apps to your large project and its development.  
 
 Through Bit, your organization's component-economy becomes a collaborative and unified ecosystem build around components and not projects. Everyone can share components, discover components, and suggest updates right from their own projects. After all, regulation and legalization is better than enforcement right? Well, at least if you want to get adoption.
-
 
 ## Philosophy  
 
 Components are the building blocks of modern web architectures. [Encapsulated and reusable components](https://addyosmani.com/first/) with focused and well-defined APIs let developers build more robust software applications more quickly.
 
-The major frontend frameworks--[React](https://reactjs.org), [Vue](https://vuejs.org/), and [Angular](https://angular.io)--all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standard.
+The major frontend frameworks - [React](https://reactjs.org), [Vue](https://vuejs.org/), and [Angular](https://angular.io) - all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) standard.
 
 At the same time, Version Control Systems (VCS) and package managers are still revolving around the concept of projects. Each project is a single VCS repository and requires a substantial overhead. As a result, organizations are aggregating multiple components, and sometimes multiple projects, into a single VCS repository.  
 
@@ -147,9 +145,9 @@ If your organization has a shared UI library (with or without a design system), 
 
 - Distribute discrete components when the library is growing
 - Manage versions per component
-- Track components that changed as a result of a modification in their dependencies.  
-- Control access to each group of components
-- Showcase your components
+- Track components that changed as a result of a modifying their dependencies.  
+- Control access to group of components
+- Showcase for components in the library
 - Reduce CI time by building and testing only components that changed.  
 
 ## Share components with [bit.dev](https://bit.dev)
@@ -159,14 +157,14 @@ The bit.dev provides you a robust cloud based components' hub to share component
 - Organizing components in collections with access control
 - Build and test CI for each component
 - Components installation using NPM and Yarn
-- Components show case with multiple examples per component
+- Components display with multiple examples per component
 - Advanced components search capabilities
 
 ## Is Bit the same as?
 
 ### Is Bit the same as Git?
 
-Git is a distributed version-control system for tracking changes in source code during software development. Git manages changes in files' contents without any reference to their structure of semantics.
+Git is a distributed version-control system for tracking changes in source code during software development. Git manages changes in files' contents without any reference to their structure or semantics.
 
 Bit augments Git to control the development of components inside a Git repository and combines it with the components' building, testing, versioning, and distribution process. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.
 
