@@ -38,7 +38,6 @@ Their **reusable nature** can be leveraged to **standardize and speed developmen
 
 [![Bit Component](https://storage.googleapis.com/bit-docs/reuse-react-components.jpeg)](https://www.youtube.com/watch?v=E5lgoz6-nfs)
 
-
 Small teams and solo developers are often building more than one application. Through Bit, they can easily reuse their components in multiple applications, make changes from any end, and keep changes synced between them. Bit kills the overhead so that reuse becomes a simple choice and they can focus on building their apps.
 
 Bit liberates components from the boundaries of repositories, so you can use it in any repo-architecture you like. No need to split or refactor anything. 
@@ -172,11 +171,13 @@ Bit does not require Git to exist in the project, but it can use Git's functiona
 
 ### Is Bit the same as NPM or Yarn?
 
+A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn.  
+
 Package registries and tools like NPM and Yarn help to manage distributable artifacts. NPM and Yarn manage the dependencies for each package, according to the explicit definition in the package.json files.
 
-Bit augments this functionality by automatically generating the package dependency tree for each component, based on the analysis of the code itself. Any change in the source code reflected in the package. Also, Bit is aware of any change in the full component's tree and not just at the top level.
+Bit automates this functionality and generate the package dependency tree for each component, based on the analysis of the code itself. Any change in the source code reflected in the package dependencies.  
 
-A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn.  
+At the same time, Bit is not limited to generating built artifacts, but can easily switch between the built artifacts and the source code. Making changes in an NPM package is a lengthy process that require cloning the source code, local linking to the package and re-publish of the package. With Bit, this process is mostly automated and simplified.  
 
 ### Is Bit the same as Storybook?
 
