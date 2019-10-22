@@ -235,13 +235,12 @@
     },
     "links": {
       "Docs": "Docs",
-      "Why Bit?": "Why Bit?",
+      "Tutorials": "Tutorials",
       "Support": "Support",
       "Github": "Github"
     },
     "categories": {
       "Introduction": "Introduction",
-      "Tutorials": "Tutorials",
       "Basics": "Basics",
       "Components": "Components",
       "Guides": "Guides",
@@ -249,7 +248,8 @@
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
       "Reference": "Reference",
-      "Why Bit?": "Why Bit?"
+      "Why Bit?": "Why Bit?",
+      "Tutorials": "Tutorials"
     }
   },
   "pages-strings": {

@@ -5,12 +5,6 @@
       "what-is-bit", 
       "concepts"
     ],
-    "Tutorials": [
-        "tutorials/bit-react-tutorial",
-        "tutorials/bit-angular-tutorial",
-        "tutorials/bit-vue-tutorial",
-        "tutorials/bit-nodejs-tutorial"
-    ],
     "Basics": [
         "installation",
         "workspace",
@@ -65,5 +59,13 @@
     "whybit/for-teams",
     "whybit/for-libs"
   ]
-}
+},
+  "tutorials": {
+    "Tutorials": [
+      "tutorials/bit-react-tutorial",
+      "tutorials/bit-angular-tutorial",
+      "tutorials/bit-vue-tutorial",
+      "tutorials/bit-nodejs-tutorial"
+    ]
+  }
 }
