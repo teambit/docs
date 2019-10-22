@@ -114,23 +114,48 @@ Just like a committed code, it is essential to:
 - Use SemVer to communicate changes by using `patch`, `minor`, and `major` versions.
 - Make the tag messages meaningful.
 
-## State Managers
+## State managers
 
-Components may use state managers such as [Redux](https://redux.js.org/), [MobX](https://mobx.js.org/README.html), [React Context](https://reactjs.org/docs/context.html#reactcreatecontext) or [VueX](https://vuex.vuejs.org/).  
-You may want to share a component that is referencing a state manager. In this case, it is crucial to understand that the state manager references are in-fact part of the component APIs, and the consuming application should adhere to these APIs. 
-The getters/mutations/ actions are de-facto APIs that the consuming app should provide like the original app. e.g., if the user's data stored under `store.data.profile.user`, the exact path should exist in the consuming app.
+Components may use state managers such as Redux, MobX, React Context or VueX.
+These managers may be difficult to encapsulate, since they tend to be *contextual* and *global*.
+For example, a user avatar component may read ```state.data.profile.user``` from the Redux global state, and use action ```Logout(username)```.
+To use this avatar in another project, the consumer would be forced to use Redux, with the same structure, in their project.
+This clearly makes the component less reusable, and less attractive to consumers.
+Here are some workarounds:
 
-Here are some ideas on how to deal with this situation:  
+### Decouple component from the state manager
 
-### UI component only
+This is the recommended method. If the component receives its state and actions directly as arguments, and *does not use the context api*, it is completely reusable, and can even be used with another state manager.
+Most state managers support this, and only provide a thin state injector on top of the component.
+For example:
 
-In most cases, the data structure is unique per project. A typical pattern for this is to split the components into the UI  (presentational or "dumb") component and data (container or "smart") component. The data components are wrapping the UI components, that are only responsible for the display on the page.  
-UI components are easy to share, as they have explicit APIs of the data they should receive from the data API. The data components are local to each project.  
+```js
+@connect(state => ({ isLoggedIn: state.data.profile.user }), { Logout })
+class UserAvatar extends React.component{
+    ...
+}
+```
 
-### Encapsulate state inside the component  
+in this case, the `connect()` method injects relevant state to the component.
+Separate the code into a "dumb" component (just the UserAvatar), and the thin wrapper (connect).
+The "dumb" component is now shareable. The wrapper is coupled to the original project, and gives little value to make into a component.
 
-You may want to share a component that includes both state and presentational layer. In this case, expand the APIs of the components to include state actions, getters, and subscriptions that are relevant to the component.  
-As an example, a user component may include a top bar visual component calling the login/logout action and exposing an isLoggedIn getter or subscription.  
+You could use UserAvatar directly in other projects, or create a thin wrapper that is appropriate for that specific project.
+
+### Encapsulate the state inside the component
+
+Some components benefit from internal state, and can be safely exported with the manager as a dependency or a peer dependency.
+A great example of this is [ReactDnD](https://react-dnd.github.io/react-dnd/about).
+
+### State component
+
+If the component cannot be isolated from the state, it is possible to encapsulate the state to its own component.
+To make encapsulation easy, it is better to use micro-state, that follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).  
+For example, Current-User is a prime candidate, because it is consistent and behaves similarly across many project.
+It could be a Context class, MobX observable, or even a Redux reducer.  
+Note that *good reusable state is hard to find*. State describes reality, so it is rarely pure and deterministic, and is likely to vary a lot between projects.  
+Even if it somewhat consistent and reusable at present, it may grow and become overly specific in the future.
+So, try avoiding sharing state component between project, especially large global ones.  
 
 ## Use Component Environments
 
