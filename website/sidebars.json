@@ -10,7 +10,6 @@
         "workspace",
         "best-practices",
         "overrides",
-        "handling-errors",
         "conf-analytics"
     ],
     "Components": [
