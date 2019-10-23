@@ -37,7 +37,7 @@ Npm and yarn do not check `.npmrc` per package.
 
 When working locally, bit login sets the registry pointer in the user's `.npmrc` file, so any installation is resolved from this location.  
 
-When trying to install a @bit component on a CI or deployment server (CircleCI, Travis, Zeit, Netlify, Gitlab etc.), server that does not have the `.npmrc` configuration, you may encounter errors like these:  
+When trying to install a @bit component on a CI or deployment server (CircleCI, Travis, ZEIT Now, Netlify, Gitlab etc.), server that does not have the `.npmrc` configuration, you may encounter errors like these:  
 
 **NPM**
 
@@ -104,31 +104,31 @@ On Netlify, [you cannot generate the file dynamically](https://community.netlify
 
 Add the BIT_TOKEN as [environment variable](https://www.netlify.com/docs/continuous-deployment/#environment-variables)
 
-### Zeit
+### ZEIT Now
 
-On Zeit, use the now.json configuration to extend npmrc configuration as follow:  
+On ZEIT Now, use the `now.json` configuration file to add an [environment variable](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets) containing the contents of your `~/.npmrc` file.
 
-Add the following to `now.json`:  
+First, add the following to `now.json`:  
 
 ```json
 {
-  "name": "bit",
+  "name": "my-app",
   "version": 2,
-  "builds": [{
-    "src": "next.config.js",
-    "use": "@now/next"
-  }],
   "build": {
     "env": {
-      "NPM_RC": "//registry.npmjs.org/:_authToken=NPM_TOKEN\n@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=_BIT_TOKEN"
+      "NPM_RC": "@my-app-npmrc"
     }
   }
 }
 ```
 
-> Make sure you are on Now 2
+Then, create a secret with the contents of your `~/.npmrc`.
 
-Add the BIT_TOKEN as [environment variable](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets).
+```sh
+now secrets add my-app-npmrc "$(cat ~/.npmrc)"
+```
+
+Note that `my-app-npmrc` is the name of the secret and can be named anything you wish.
 
 ### Gitlab
 
