@@ -15,12 +15,19 @@ Click on the avatar and select settings. From the settings page you can:
 - Change the avatar
 - Update password
 - Add and update email addresses
-- Manage organizations (you must be an admin to manage organizations)
+- Delete organizations
+  > You must be an admin to delete an organization.
+- Leave organizations
+  > You can leave an organization on which you are an admin, only if there are other admins on that organization.  
 - Manage SSH keys for accessing the account
+- Delete your account
+  > Deleting your account is possible, only if you are not an admin on any organization.
 
 ## Change Organization Settings
 
 To view an organization, select the organization from the avatar's drop-down list.  
+
+An organization's admin can:  
 
 Click on the edit button to change the organization's image, name, homepage, or description.  
 Click on the Settings button to edit the organization's members and billing.  
