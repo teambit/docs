@@ -29,8 +29,8 @@ To view an organization, select the organization from the avatar's drop-down lis
 
 An organization's admin can:  
 
-Click on the edit button to change the organization's image, name, homepage, or description.  
-Click on the Settings button to edit the organization's members and billing.  
+- Click on the edit button to change the organization's image, name, homepage, or description.  
+- Click on the Settings button to edit the organization's members and billing.  
 
 ## Organization Billing  
 
