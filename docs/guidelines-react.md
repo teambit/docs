@@ -29,7 +29,7 @@ the following component environments were installed
 
 ## Changing Compiler Configuration
 
-To change the configuration of a compiler, here are the recommended steps to follow: 
+To change the configuration of a compiler, here are the recommended steps to follow:  
 
 1) Create a new directory and an empty workspace in it
 2) Import the compiler you want to modify, but without the --compiler flag
@@ -64,7 +64,7 @@ You can run `bit show` to view the components dependencies before tagging and tr
 
 ## Sharing Components with Redux or Mobx
 
-Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers. 
+Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  
 
 ## Handling Assets and Styles
 

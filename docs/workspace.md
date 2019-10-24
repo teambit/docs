@@ -120,7 +120,7 @@ Imported component's structure is different from the authored component. For eac
 
 When a component is imported, Bit places it inside the folder defined in workspace configuration [`componentsdefaultdirectory`](/docs/conf-bit-json#componentsdefaultdirectory). It is defaulted to `components/<folder name>`.  
 
-You can override the location for a specific component during the import statement: 
+You can override the location for a specific component during the import statement:  
 
 ```bash
 bit import username.foo/bar --path /path/to/folder
@@ -128,10 +128,10 @@ bit import username.foo/bar --path /path/to/folder
 
 ### Package.json
 
-For each imported component, Bit generates a `package.json` file, in the component's root directory. The package.json is generated based on the component information. 
+For each imported component, Bit generates a `package.json` file, in the component's root directory. The package.json is generated based on the component information.  
 
-Bit generates the `package.json` to include the `name` and `version` defined in the component. The `main` property points to the generated main file of the component. 
-You can add any other properties to the `package.json` file. 
+Bit generates the `package.json` to include the `name` and `version` defined in the component. The `main` property points to the generated main file of the component.  
+You can add any other properties to the `package.json` file.  
 
 When generating the file, Bit also adds any information defined in the workspace's `overrides` information that applies to the component.  
 
@@ -141,7 +141,7 @@ You may instruct Bit to skip writing the `package.json` for a file by specifying
 bit import username.foo/bar --ignore-package-json
 ```
 
-You can also specify that the Bit writes the configuration to a `bit.json` file by specifying a `--conf` option. Add a path to determine the location of the `bit.json` file. 
+You can also specify that the Bit writes the configuration to a `bit.json` file by specifying a `--conf` option. Add a path to determine the location of the `bit.json` file.  
 
 ```bash
 bit import username.foo/bar --path /path/to/conf
@@ -176,7 +176,7 @@ Here is an example of an imported component package.json:
 
 A Bit component has two types of dependencies: regular NPM packages and Bit components.  
 
-When importing a component Bit generates for each component that has dependencies a `node_modules` folder. Bit uses the preferred package manager defined in workspace configuration to install the packages. 
+When importing a component Bit generates for each component that has dependencies a `node_modules` folder. Bit uses the preferred package manager defined in workspace configuration to install the packages.  
 You can skip installing the components by using:  
 
 ```bash
@@ -187,7 +187,7 @@ Also, Bit does not install components when skipping the generation of `package.j
 
 To permanently skip installing packages, set to true the [saveDependenciesAsComponents](/docs/conf-bit-json#savedependenciesascomponents) workspace configuration.  
 
-If the Bit components' dependencies are not installed using package manager, Bit imports them into the workspace. Bit places the dependencies in the directory specified in the [`dependenciesDirectory`](https://docs.bit.dev/docs/conf-bit-json#dependenciesdirectory) option in the configuration.  The default directory is `components/.dependencies`. 
+If the Bit components' dependencies are not installed using package manager, Bit imports them into the workspace. Bit places the dependencies in the directory specified in the [`dependenciesDirectory`](https://docs.bit.dev/docs/conf-bit-json#dependenciesdirectory) option in the configuration.  The default directory is `components/.dependencies`.  
 
 ### Source code
 
@@ -330,7 +330,7 @@ There are three different log types:
 
 - Debug log - `debug.log`.
 - Exceptions log - `exceptions.log`.
-- Extensions log - `extensions.log` 
+- Extensions log - `extensions.log`  
 
 Each log file's size can be maximum 10MB, and there can be maximum 10 log files of each type. They will be numbered as follows: `debug.log`, `debug1.log`, `debug2.log`, etc.
 The log files are actually [winston logs](https://github.com/winstonjs/winston), and are [tailable](https://github.com/winstonjs/winston/blob/master/docs/transports.md).

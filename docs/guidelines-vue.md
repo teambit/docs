@@ -27,7 +27,6 @@ The compiler is based on the Vue webpack configuration. Check out the exact conf
 
 Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them.  
 
-
 ## Use symlinks false in target project
 
 When importing components, Bit is using symlinks to point to the component location (similar to npm link). In order to compile the application, you need to enhance the bit webpack configuration to properly work with symlinks.  
