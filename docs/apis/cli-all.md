@@ -1589,94 +1589,10 @@ staged components
 
 ## tag
 
-Locks the version of a 'new' or 'modified' component(s). Component's status will then be 'staged'.
+Locks the version of a 'new' or 'modified' component(s). Component's status will then be 'staged'. Read about [versioning components](/docs/tag-component-version).
 
 ```bash
 bit tag|t [id] [version] [-m|--message <message>] [-a|--all] [-s|--scope <collection-name>] [-p|--patch] [-mi|--minor] [-ma|--major] [-f|--force] [-v|--verbose] [-i|--ignore-unresolved-dependencies] [--skip-tests]
-```
-
-**Tagging a specific component**
-
-Specify a component id.
-
-```bash
-bit tag foo/bar
-```
-
-You can also specify a version to tag.
-
-```bash
-bit tag foo/bar 1.0.2
-```
-
-**Tagging all new and modified components**
-
-Use the `all` flag.
-
-```bash
-bit tag --all
-```
-
-You can also tag all new and modified component with the same version by specifying one.
-
-```bash
-bit tag --all 0.4.2
-```
-
-**Semantic versioning**
-
-A component's version is set according to the [semantic versioning](https://semver.org/) specs.
-Meaning - version will be MAJOR.MINOR.PATCH.
-
-By default, tagging a component without specifying a version will bump the patch version. In order to bump a minor/major version, tag with the appropriate flag.
-
-Bump minor version
-
-```bash
-bit tag foo/bar --minor
-```
-
-Bump Major version
-
-```bash
-bit tag foo/bar --major
-```
-
-**Tagging and tests**
-
-Tagging a component will automatically run its tests. By default, tagging will be cancelled if tests fail.
-
-In order to see test results, use the `verbose` flag:
-
-```bash
-bit tag foo/bar --verbose
-```
-
-In order to force the tagging even though tests fail, use the `force` flag:
-
-```bash
-bit tag foo/bar --force
-```
-
-**Tagging a component with package dependencies**
-
-When tagging, make sure you've properly installed all the component's [package dependencies](/docs/add-and-isolate-components#component-dependencies). Otherwise, tagging will be cancelled:
-
-```bash
-bit tag foo/bar
-```
-
-Will result in:
-
-```bash
-foo/bar
-missing packages dependencies: some-package
-```
-
-In order to tag the component even though it has missing dependencies, use the `ignore missing dependencies` flag:
-
-```bash
-bit tag foo/bar --ignore-unresolved-dependencies
 ```
 
 **Options**
@@ -1709,7 +1625,7 @@ bit tag --scope foo
 
 Increments the patch version number (even though that's the default behavior, so that's practically redundant).
 
-```bash 
+```bash  
 bit tag foo/bar --patch
 ```
 
@@ -1717,7 +1633,7 @@ bit tag foo/bar --patch
 
 Increments the minor version number.
 
-```bash 
+```bash  
 bit tag foo/bar --minor
 ```
 
@@ -1725,7 +1641,7 @@ bit tag foo/bar --minor
 
 Increments the major version number.
 
-```bash 
+```bash  
 bit tag foo/bar --major
 ```
 
@@ -1759,6 +1675,14 @@ Skip testing components when tagging a new version.
 
 ```bash
 bit tag --skip-tests
+```
+
+**--skip-auto-tag**
+
+Skip tagging dependencies of the tagged components
+
+```bash
+bit tag --skip-auto-tag
 ```
 
 ## test

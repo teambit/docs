@@ -2,18 +2,25 @@
 id: tag-component-version
 title: Versioning
 ---
-Tagging a component creates a locked version of the component.
+Tagging a component creates a locked version of the component using the [`bit tag`](/docs/apis/cli-all#tag) command. This version can then be [exported](/docs/export).
 
-Component versions are immutable. This means that they contain all dependencies required to make a component usable. Its possible to version a component from any project. Component versioning is the last step before sharing a component.  
-When you tag a component, Bit performs the actions below:
+Component versions are immutable. I.e., they contain the source code and all dependencies required to make a component usable. Components can be tagged and versioned from any project.  
 
-* **Locking dependency resolution.** Bit ensures it can resolve all dependencies. Afterward, Bit logs the dependencies' state.
-* **Running component's build and test**. Bit runs compile and test tasks, if defined.
-* **Setting a version for the component.** Bit uses [SemVer](https://semver.org) to version components.
+A component's version is set according to the [semantic versioning](https://semver.org/) specs.
+Meaning - version is MAJOR.MINOR.PATCH. By default, tagging a component without specifying a version bumps a patch version.  
 
-## Tagging a component
+When tagging a component or multiple components, Bit performs the actions below:
 
-Bit can only version tracked components that it can isolate. This example shows the component `hello/world`, which Bit can isolate.
+- Locking dependencies versions for the components.
+- Running compile and test for the component.
+- Setting a version of the component.
+- Automatically tag components that depend on that component.
+
+When a component is tagged, it moves into the [`staged` status](/docs/workspace#staged-components). You can revert tagging a component by running the [`bit untag`](/docs/apis/cli-all#untag)
+
+## Tagging Components
+
+Bit can only version tracked components that it can isolate, that is components that are new or modified stage. This example shows the component `hello/world`, which Bit can isolate.
 
 ```bash
 $ bit status
@@ -29,15 +36,39 @@ $ bit tag hello/world
 added components:  hello/world@0.0.1
 ```
 
-This command has tagged the new component `hello/world` in version `0.0.1`. By default, Bit increments a patch version when tagging. The component is now `staged`, as shown in the [bit status](/docs/apis/cli-all#status) output. Bit can only export `staged` components.
+You can tag a single version by specifying its id:  
+
+```bash
+$ bit tag hello/world
+1 components tagged | 1 added, 0 changed, 0 auto-tagged
+added components:  hello/world@0.0.1
+```
+
+You can also tag all the components in the scope that are new or modified using the `--all` option.  
 
 ```bash
 $ bit status
-staged components
-    > hello/world
+new components
+    > hello/world... ok
+    > ui/button... ok
+modified components
+    > string/pad-left... ok
+
+$ bit tag --all
+3 components tagged | 2 added, 1 changed, 0 auto-tagged
+added components:  hello/world@0.0.1, ui/button@0.0.1
+changed components: string/pad-left@1.0.2
 ```
 
-## Set a specific version
+It is also possible to tag all the components that are in the local scope, using the `--scope` option. If you specify a version number, Bit aligns all the components to the same version.  
+
+```bash
+bit tag --scope 1.0.1 # all components on local scope are set to 1.0.1
+```
+
+### Setting a version
+
+By default, Bit creates a SemVer patch version for any component that is tagged. You can specify a version when tagging components, and Bit sets this version.  
 
 Bit can set a specific version when tagging a component.
 
@@ -47,82 +78,82 @@ $ bit tag hello/world 1.0.0
 added components:  hello/world@1.0.0
 ```
 
-## Versioning many components
-
-Often, we'll want to tag many components at the same time. We do this with the `--all` flag.
-
-The `--all` flag causes Bit to tag all new and modified components together. It can accept a specific SemVer for all components or increment each of the component's versions.  
-To better understand this, let's take the following component status as an example:
+You can specify a SemVer increment, so Bit tags all the components using that increment. Bit supports `patch`, `minor` and `major` increments.  
 
 ```bash
-$ bit status
-new components
-    > hello/world... ok
-    > ui/button... ok
-modified components
-    > string/pad-left... ok
-```
-
-We have two new components (`hello/world` and `ui/button`) and one modified component (`string/pad-left`). We tag them together as follows:
-
-```bash
-$ bit tag --all
-3 components tagged | 2 added, 1 changed, 0 auto-tagged
-added components:  hello/world@0.0.1, ui/button@0.0.1
-changed components: string/pad-left@1.0.2
-```
-
-We did not specify a version, so Bit has incremented all new and modified components by a patch version.
-
-## Aligning all local components to the same version
-
-It's possible to tag all components and set them with the same version. This is useful in cases where we need to ensure all components synced to a specific version release. To do this, we need to add the `--scope` flag to the command:
-
-```bash
-bit tag --scope 1.0.1
-```
-
-Bit tags all components with version `1.0.1`.
-
-## Bumping component versions
-
-The great thing about Semantic Versions is that it tells the consumers the type of change to expect. Bit double downs on it by allowing to state the type of change, and bump the version according to it.  
-Bit can bump either patch, minor and major versions, as flags of `bit tag`.
-
-```bash
-bit tag --major          # Increment all modified and new components with a major version.
-bit tag --minor          # Increment all modified and new components with a minor version.
+bit tag --all --major          # Increment all modified and new components with a major version.
+bit tag --all --minor          # Increment all modified and new components with a minor version.
 bit tag --scope --patch  # Increment all components with a patch version.
 bit tag --scope --patch  # Increment all components in the workspace with a patch version.
 ```
 
-## Untagging components
+### Dependencies resolution
 
-We can untag staged components. Meaning that Bit has yet to export a version to a remote collection. Untagging a version won’t undo the code changes associated with that version. So, the component’s status reverts back to `new` or `modified`.  We untag a version using the `bit untag` command:
+When tagging Bit recalculates dependencies versions, as described here: /docs/add-and-isolate-components#dependencies. If an error occurs, such as the package not found, the tagging is canceled.  
+
+To tag the component even though it has missing dependencies, use the `ignore missing dependencies` flag:
 
 ```bash
-$ bit untag foo/bar
+bit tag foo/bar --ignore-unresolved-dependencies
 ```
 
-Note that when Bit untags a staged component, it removes all pending versions.
+### Build and Test
 
-### Untagging a specific version
+Before Tagging a component, Bit runs its build and test. Failure in build or tests cancels the tagging.  
+To see test results, use the `verbose` flag:
 
-It's possible to remove a single version if we have several tagged version of a component. We need to specify the exact version we want to remove:
+```bash
+bit tag foo/bar --verbose
+```
+
+To force the tagging even when tests fail, use the `force` flag:
+
+```bash
+bit tag foo/bar --force
+```
+
+### Auto tag dependencies
+
+When Bit tags a component, it also tags any components that exist in the local scope and depends on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
+
+The components tagged as dependents move to the [status of pending auto-tag](/docs/workspace#component-pending-to-be-tagged-automatically).  You can untag those components, so a new version with the changed component is not created.  
+
+To skip tagging dependent components use the `--skip-auto-tag` flag:
+
+```bash
+bit tag foo/bar --skip-auto-tag
+```
+
+Some rules to note on auto-tag:  
+
+- If a component is being auto-tagged, the version changes only include the dependency changes, even if the component has source code modifications.  
+- Tagging is propagated to the dependency chain of the component. E.g., Foo depends on Bar, which depends on Baz. Tagging Baz triggers auto-tagging of both Bar and Foo.  
+- The auto tag only happens to components that exist in the scope where the component was tagged. The propagation of the auto-tag chain stops when a component is not on the local scope. E.g. if Bar is not in the local step, only Baz is tagged.  
+
+## Untagging components
+
+We can untag staged components, that is components that were not yet exported to a remote scope.  
+Bit untag reverts the component to its previous state, i.e., `new`, `modified` or `exported`.  
+
+>Untag does not revert code changes made in the component. 
+
+Use `bit untag` to untag a component:
+
+```bash
+bit untag foo/bar
+```
+
+Untag removes all tags of the component that were not yet exported. You can untag a specific version by providing the version to untag:  
 
 ```bash
 bit untag foo/bar 1.0.0
 ```
 
-### Untagging a specific version for all the staged components
-
-Untagging a specific *staged* version from all the staged components at once is done by using the `--all` option and specifying a version.
+To untag a version from all the unstaged components use the `--all` option and specifying a version:
 
 ```bash
 bit untag --all 0.11.4
 ```
-
-### Untagging all the staged versions for all the components
 
 To revert all staged versions in the workspace, use the `--all` flag, without specifying a version.
 
