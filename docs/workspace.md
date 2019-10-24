@@ -296,16 +296,6 @@ deleted components
          > bits/b ... ok
 ```
 
-### Component pending to be tagged automatically
-
-Components whose component dependencies have been modified, and will be tagged automatically once the modified component is tagged.
-
-```bash
-$ bit status
-components pending to be tagged automatically (when their dependencies are tagged)
-  > string/index ... ok
-```
-
 ## Errors & Troubleshooting
 
 ### Bit Doctor

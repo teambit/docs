@@ -116,13 +116,14 @@ bit tag foo/bar --force
 
 When Bit tags a component, it also tags any components that exist in the local scope and depends on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
 
-The components tagged as dependents move to the [status of pending auto-tag](/docs/workspace#component-pending-to-be-tagged-automatically).  You can untag those components, so a new version with the changed component is not created.  
-
+Once the component is tagged, all tagged components including dependent components move to the [`staged` state](/docs/workspace#staged-components).  
 To skip tagging dependent components use the `--skip-auto-tag` flag:
 
 ```bash
 bit tag foo/bar --skip-auto-tag
 ```
+
+Alternatively, you can [untag](#untagging-components) the dependent components, so a new version pointing to the changed component is not created.  
 
 Some rules to note on auto-tag:  
 
@@ -135,7 +136,7 @@ Some rules to note on auto-tag:
 We can untag staged components, that is components that were not yet exported to a remote scope.  
 Bit untag reverts the component to its previous state, i.e., `new`, `modified` or `exported`.  
 
->Untag does not revert code changes made in the component. 
+>Untag does not revert code changes made in the component.  
 
 Use `bit untag` to untag a component:
 
