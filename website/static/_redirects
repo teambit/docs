@@ -18,9 +18,9 @@
 /docs/bit-nodejs-tutorial.html           /docs/tutorials/bit-react-tutorial
 /docs/bit-react-library-tutorial.html    /docs/tutorials/bit-react-tutorial
 /docs/authentication-issues.html        /docs/setup-authentication#authentication-issues
-/docs/tracking-dependencies.html        /docs/add-and-isolate-components#tracking-dependencies
-/docs/manage-components-files.html      /docs/add-and-isolate-components#manage-components-files
-/docs/component-dependencies.html       /docs/add-and-isolate-components#component-dependencies
+/docs/tracking-dependencies.html        /docs/dependencies#tracking-dependencies
+/docs/manage-components-files.html      /docs/dependencies#manage-components-files
+/docs/component-dependencies.html       /docs/dependencies#component-dependencies
 /docs/modifying-sourced-components.html         /docs/sourcing-components#modify-imported-component
 /docs/update-dependencies.html              /docs/sourcing-components#update-component-dependencies
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
