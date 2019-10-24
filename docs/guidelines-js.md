@@ -57,3 +57,7 @@ To avoid backward references as suggested in the [best practices](/docs/best-pra
 
 Each shared component should have a single entry point which is the root file of the component. Add a top-level `index.js` file that will expose all of the component’s APIs, e.g. by re-exporting them from the internal file.  
 This practice reduces coupling between components as one component does not need to be aware of the internal file structure of another component. Specifically, if the component is bundled (e.g. UMD format) the internal files will not be available.  
+
+## Handling Assets and Styles
+
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).

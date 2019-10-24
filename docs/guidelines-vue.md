@@ -13,7 +13,7 @@ vue sharing was tested on vue 2 and vue-cli 3. Bit should be compliant with prio
 
 ## Vue Compiler
 
-Each Bit component is linked with a compiler. The Bit compiler is transpiling and bundling the source code to build files that can run in another project.  
+Each Bit component is linked with a compiler. The Bit compiler is transpiling or bundling the source code to build files that can run in another project.  
 The officially supported vue Compiler can be found [here](https://bit.dev/bit/envs/bundlers/vue).  
 To install it in your project run:  
 
@@ -24,6 +24,9 @@ the following component environments were installed
 ```
 
 The compiler is based on the Vue webpack configuration. Check out the exact configuration [here](https://bit.dev/bit/envs/bundlers/vue/~code#webpack.config.js).
+
+Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them.  
+
 
 ## Use symlinks false in target project
 
@@ -50,3 +53,7 @@ Each Bit component may be linked with a tester that will run the unit tests of t
 ## Sharing Components with VueX
 
 Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  
+
+## Handling Assets and Styles
+
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).

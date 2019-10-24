@@ -64,4 +64,8 @@ You can run `bit show` to view the components dependencies before tagging and tr
 
 ## Sharing Components with Redux or Mobx
 
-Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  
+Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers. 
+
+## Handling Assets and Styles
+
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).

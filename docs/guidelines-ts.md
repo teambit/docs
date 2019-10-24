@@ -76,3 +76,7 @@ Bit is adding dependencies as defined in the code files, both source and tests. 
     }
 }
 ```
+
+## Handling Assets and Styles
+
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
