@@ -54,7 +54,7 @@ export default function hello(world) {
 }
 ```
 
-In this example, the package `left-pad` is in the project's `node_modules` directory. The package version range is in the project's `package.json` file. The file `hello-world.js` requires the package `left-pad`.   
+In this example, the package `left-pad` is in the project's `node_modules` directory. The package version range is in the project's `package.json` file. The file `hello-world.js` requires the package `left-pad`.  
 
 we track the `hello/world` component:  
 
@@ -187,7 +187,7 @@ It is possible to change the component's dependencies, by using the [overrides](
 
 ### Custom Paths
 
-Some projects use a custom aliases to resolve relative paths. Some common examples are: 
+Some projects use a custom aliases to resolve relative paths. Some common examples are:  
 
 - [Webpack resolve](https://webpack.js.org/configuration/resolve/)
 - [tsconfig resolving](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
@@ -224,7 +224,7 @@ For Bit to be able to resolve the `@/utils` path, we need to configure it as an 
 
 ## Common Isolation Errors
 
-Here are some common errors and their resolution when trying to isolate a component. 
+Here are some common errors and their resolution when trying to isolate a component.  
 
 > **TIP**
 >
