@@ -174,7 +174,7 @@ Here is an example of an imported component package.json:
 
 ### Dependencies
 
-A Bit component has two types of dependencies: regular NPM packages and Bit components.  
+A Bit component has two types of [dependencies](/docs/dependencies): regular NPM packages and Bit components.  
 
 When importing a component Bit generates for each component that has dependencies a `node_modules` folder. Bit uses the preferred package manager defined in workspace configuration to install the packages.  
 You can skip installing the components by using:  
@@ -209,6 +209,8 @@ The `bit status` [command](/docs/apis/cli-all#status) displays the state of the 
 
 Knowing the state of the workspace's components is always important - which components are staged, modified or have missing dependencies, for example.
 It's important to note that we're talking about **the state of components with pending changes** - meaning, components that are pending export - they could be tracked and before their first export, or modified after export.
+
+A component may exist in more than one state. A state that is derived from its code status (such as modified) and a state derived from its dependencies (e.g. pending to be tagged).
 
 Listed here are all possible component states.
 
@@ -294,6 +296,16 @@ deleted components
   use "bit remove [component_id]" to remove these component from your workspace
 
          > bits/b ... ok
+```
+
+### Component pending to be tagged automatically
+
+Components whose component dependencies have been tagged and changes were made to the code. 
+
+```bash
+$ bit status
+components pending to be tagged automatically (when their dependencies are tagged)
+  > string/index ... ok
 ```
 
 ## Errors & Troubleshooting
