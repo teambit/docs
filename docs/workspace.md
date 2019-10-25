@@ -300,7 +300,7 @@ deleted components
 
 ### Component pending to be tagged automatically
 
-Components whose component dependencies have been tagged and changes were made to the code. 
+Components whose component dependencies have been tagged and changes were made to the code.  
 
 ```bash
 $ bit status
