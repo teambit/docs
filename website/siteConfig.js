@@ -58,7 +58,10 @@ const siteConfig = {
     primaryColor: '#6C5CE7',
     secondaryColor: '#3A27CE',
     fontColor: '#2B2B2B',
-    onPageNavFont: '#6C707C' 
+    onPageNavFont: '#6C707C' ,
+    headerBackgroundColor: '#fff',
+    headerLinksColor: '#414141',
+    searchbarBackground: '#EDEDED'
   },
 
   /* Custom fonts for website */

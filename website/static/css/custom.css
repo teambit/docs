@@ -1,32 +1,32 @@
 @font-face {
-    font-family: "CircularProBook";
-    src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Book.otf);
-  }
-  
-  /* headlines font */
-  @font-face {
-    font-family: "CircularProBlack";
-    src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Black.otf);
-  }
-  
-  /* headlines regular +bold */
-  @font-face {
-    font-family: "CircularProBold";
-    src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Bold.otf);
-  }
-  
-  /* headlines regular +semi-bold */
-  @font-face {
-    font-family: "CircularProMedium";
-    src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Medium.otf);
-  }
+  font-family: "CircularProBook";
+  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Book.otf);
+}
+
+/* headlines font */
+@font-face {
+  font-family: "CircularProBlack";
+  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Black.otf);
+}
+
+/* headlines regular +bold */
+@font-face {
+  font-family: "CircularProBold";
+  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Bold.otf);
+}
+
+/* headlines regular +semi-bold */
+@font-face {
+  font-family: "CircularProMedium";
+  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Medium.otf);
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
 @media only screen and (min-width: 1024px) {
-}
 
+}
 @media only screen and (max-width: 1023px) {
 }
 
@@ -37,94 +37,124 @@
 }
 
 body {
-  font-family: $myFont;
-  font-weight: 400;
-  color: $fontColor
+font-family: $myFont;
+font-weight: 400;
+color: $fontColor
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 2em;
+font-weight: 600;
+font-size: 2em;
 }
 
 h2 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-  margin-top: 1.5em;
+font-size: 1.5em;
+margin-bottom: 0.5em;
+margin-top: 1.5em;
 }
 
 h3 {
-  font-weight: 600;
-  font-size:1.25em;
+font-weight: 600;
+font-size:1.25em;
 }
 
 h4 {
-  font-weight: 600;
-  font-size:1em;
+font-weight: 600;
+font-size:1em;
 }
 
 p {
-  margin-bottom: 1em;
-  line-height: 2em;
+margin-bottom: 1em;
+line-height: 2em;
 }
 
 li {
-  line-height: 1.8em;
+line-height: 1.8em;
 }
 
 a {
-  &:hover {
-    color: $secondaryColor;
+&:hover {
+  color: $secondaryColor;
+}
+}
+.navigationSlider .slidingNav ul li a {
+color: $headerLinksColor;
+}
+
+.navigationSlider .slidingNav ul {
+background: $headerBackgroundColor;
+}
+.navigationSlider .slidingNav ul li > a:focus, .navigationSlider .slidingNav ul li > a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive > a, .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+font-weight: bold;
+background-color: $headerBackgroundColor;
+color: $primaryColor;
+}
+input#search_input_react, input#search_input_react::placeholder, input#search_input_react:focus, input#search_input_react:active {
+color: $headerLinksColor;
+background-color: $searchbarBackground;
+padding-top: 8px;
+padding-bottom: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .reactNavSearchWrapper input#search_input_react {
+    background-color: #ededed;
   }
 }
+.navSearchWrapper:before {
+border: 3px solid $headerLinksColor;
+}
+.navSearchWrapper:after {
+background: $headerLinksColor;
+}
 .fixedHeaderContainer {
-  background-color: $primaryColor;
-  min-height: 56px;
-  padding: 10px;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+background-color: $headerBackgroundColor;
+min-height: 56px;
+padding: 10px;
+box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   & header {
     background-color: $secondaryColor;
   }
 }
 
 .fixedHeaderContainer header .headerTitleWithLogo {
-  color: #ffffff;
-  margin-left: 10px;
+color: $headerLinksColor;
+margin-left: 10px;
 }
 
 .toc ul li {
-  line-height: 1.4em;
+line-height: 1.4em;
 }
 .headerTitleWithLogo {
-  color: #ffffff;
-  margin-left: 10px;
+color: $headerLinksColor;
+margin-left: 10px;
 }
 
 strong {
-  font-family: $mediumFont;
+font-family: $mediumFont;
 }
 
 tbody code {
-  background: transparent;
+background: transparent;
 }
 
 .nav-footer .copyright {
-  color: hsla(0,0%,100%,.4);
-  text-align: center;
-  margin: 0 auto 3em;
-  font-size: 0.5rem;
-  }
+color: hsla(0,0%,100%,.4);
+text-align: center;
+margin: 0 auto 3em;
+font-size: 0.5rem;
+}
 
-  .learn-more {
-    background-color: lavender;
-    padding: 1.2em; 
-    border: $primaryColor solid 1px;;
-  }
+.learn-more {
+  background-color: lavender;
+  padding: 1.2em; 
+  border: $primaryColor solid 1px;;
+}
 
-  .learn-more:before {
-    display: block;
-    padding-bottom: 0.5em;
-    content: "Learn More";
-    font-family: $boldFont;
-    color:$primaryColor;
- }
+.learn-more:before {
+  display: block;
+  padding-bottom: 0.5em;
+  content: "Learn More";
+  font-family: $boldFont;
+  color:$primaryColor;
+}
