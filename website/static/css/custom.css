@@ -90,15 +90,13 @@ background-color: $headerBackgroundColor;
 color: $primaryColor;
 }
 input#search_input_react, input#search_input_react::placeholder, input#search_input_react:focus, input#search_input_react:active {
-color: $headerLinksColor;
-background-color: $searchbarBackground;
-padding-top: 8px;
-padding-bottom: 8px;
+  color: $headerLinksColor;
+  background-color: $searchbarBackground;
 }
 
 @media only screen and (max-width: 1024px) {
   .reactNavSearchWrapper input#search_input_react {
-    background-color: #ededed;
+    background-color: $searchbarBackground;
   }
 }
 .navSearchWrapper:before {
