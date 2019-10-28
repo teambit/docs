@@ -9,7 +9,7 @@ sidebar_label: Vue
 
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds vue specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
-vue sharing was tested on vue 2 and vue-cli 3. Bit should be compliant with prior versions.
+Vue playground was tested on vue 2 and vue-cli 3. Bit should be compliant with prior versions.
 
 ## Vue Compiler
 
@@ -24,6 +24,8 @@ the following component environments were installed
 ```
 
 The compiler is based on the Vue webpack configuration. Check out the exact configuration [here](https://bit.dev/bit/envs/bundlers/vue/~code#webpack.config.js).
+
+## Using Vue SFC in target projects
 
 Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them. If you want to include the component into your Vue project that will compile and bundle it, or if you are using SSR, you should import the SFC itself as follow:  
 

@@ -27,18 +27,6 @@ the following component environments were installed
 - bit.envs/react@0.1.3
 ```
 
-## Changing Compiler Configuration
-
-To change the configuration of a compiler, here are the recommended steps to follow:  
-
-1) Create a new directory and an empty workspace in it
-2) Import the compiler you want to modify, but without the --compiler flag
-3) Modify the .babelrc file of the compiler to fit your needs
-4) Tag and export the new version of the component to your own scope
-
-Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
-Run bit status to see that all components properly built.  
-
 ## React Tester
 
 Recommended tester for react components is based on [jest](https://bit.dev/bit/envs/testers/jest).  

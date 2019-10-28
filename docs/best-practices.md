@@ -154,13 +154,23 @@ To make encapsulation easy, it is better to use micro-state, that follow the [Si
 For example, Current-User can be a shared component that has both UI and a state. The component can export a state, a Context class, a Redux reducer or a Mobx observable.  
 However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects. 
 
-## Use Component Environments
+## Compiling and testing components
 
 The code usually requires compilation tasks to make it distributable and executable. The same goes for the components in a project. When we take components out of the context of a project, Bit needs to know how to make them usable. Component Environments handle these tasks.
 
-## Prefer Transpiling Over Bundling
+It is generally recommended to transpile your code and not to bundle it. Bundled code forces too many restrictions on its consumers. It forces them to include the entire bundle as a single block, dependencies included. Transpiled code gives the consumer more flexibility. It allows dependency tree management features like tree-shaking and code-splitting.
 
-Bundled code forces too many restrictions on its consumers. It forces them to include the entire bundle as a single block, dependencies included. Transpiled code gives the consumer more flexibility. It allows dependency tree management features like tree-shaking and code-splitting.
+### Changing Compiler Configuration
+
+Bit compilers provide some default configuration. If you need to change the configuration of a compiler, here are the recommended steps to follow:  
+
+1) Create a new directory and an empty workspace in it
+2) Import the compiler you want to modify, but without the --compiler flag
+3) Modify the .babelrc file of the compiler to fit your needs
+4) Tag and export the new version of the component to your own scope
+
+Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
+Run bit status to see that all components properly built.  
 
 ## Import Often
 
