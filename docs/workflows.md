@@ -121,7 +121,7 @@ Bit enables managing versions for each component, and this is the recommended wa
 
 You can publish the components from the workspace into the collection in one of two ways:
 
-- Publish from your local workspace.
-- Publish on CI subject to certain conditions (e.g., when pushing to the master branch, or with special commit message).
+- Tag and export components from your local workspace.
+- Tag and export components from your CI. This should happen under certain conditions (e.g., when pushing to the master branch, or with special commit message). When exporting from CI, it is important to commit the changes made in the [components map](/docs/workspace#components-map)(`bitmap` file) back to your repository, so the repository is in sync with the collection.  
 
 The evaluation of these options highly depends on the organizational support, as well as the test coverage available for the components and impact of errors.  

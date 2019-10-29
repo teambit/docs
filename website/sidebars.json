@@ -3,7 +3,8 @@
     "Introduction": [
       "quick-start",
       "what-is-bit", 
-      "concepts"
+      "concepts",
+      "workflows"
     ],
     "Basics": [
         "installation",
