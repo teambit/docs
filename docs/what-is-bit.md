@@ -9,7 +9,7 @@ title: What is Bit?
 
 Key features:
 
-It lets you **isolate components** from existing projects with **0 refactoring**, with **fully-automated dependancy definition/resolution** that seamlessly wraps any component as a standalone reusable unit. 
+It lets you **isolate components** from existing projects with **0 refactoring**, with **fully-automated dependancy definition/resolution** that seamlessly wraps any component as a standalone reusable unit.  
 
 It lets you **build and test components in isolation** from their project, with **zero build configurations** required. Each component can be built on its own and run out-of-the-box in any other project's environment.
 
@@ -92,28 +92,6 @@ building a shared-component economy throughout larger organizations is a game-ch
 But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves and their apps to your large project and its development.  
 
 Through Bit, your organization's component-economy becomes a collaborative and unified ecosystem build around components and not projects. Everyone can share components, discover components, and suggest updates right from their own projects. After all, regulation and legalization is better than enforcement right? Well, at least if you want to get adoption.
-
-## What can I do with Bit?  
-
-### Without shared UI library
-
-If your organization does not have shared libraries, you can use Bit to:  
-
-- Share components between different repositories with different configuration
-- Collaborate on components across projects
-- Gradually start building a shared component library
-- Provide a centralized showcase for components in different projects
-
-### With shared UI library
-
-If your organization has a shared UI library (with or without a design system), you can find Bit useful when you want to:  
-
-- Distribute discrete components when the library is growing
-- Manage versions per component
-- Track components that changed as a result of a modifying their dependencies.  
-- Control access to group of components
-- Showcase for components in the library
-- Reduce CI time by building and testing only components that changed.  
 
 ## Share components with [bit.dev](https://bit.dev)
 
