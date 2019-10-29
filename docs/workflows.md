@@ -16,7 +16,7 @@ There are some questions worth asking when selecting the Bit workflow:
 
 The workflows below are provided as suggested examples. Each team should understand the principles behind Bit and adopt the flow that fits its needs.  
 
-## sharing Code between Projects
+## Sharing Code between Projects
 
 <img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
 
