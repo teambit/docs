@@ -3,15 +3,17 @@ id: workflows
 title: Bit Workflows
 ---
 
-A Bit Workflow is a  recommendation for how to use Bit to accomplish work in a consistent and productive manner. But not every organization is the same or works in the same way. Bit offers flexibility in managing components by enabling different workflows that can fit many organizations. 
+A Bit Workflow is a  recommendation for how to use Bit to accomplish work in a consistent and productive manner. But not every organization is the same or works in the same way. Bit offers flexibility in managing components by enabling different workflows that can fit many organizations.  
 
-There are some questions worth asking when selecting the Bit workflow: 
-How many projects need components sharing?  
-How similar are the projects that need to share components? e.g., are they all based on the same CLI with the same configuration?
-Is there a centralized repository for shared components?  
-Is there a dedicated team that builds the shared components?  
-Is Continous Integration (CI) is in place for the projects and the shared components?  
-What workflow in GIT is in place on the projects' repositories and the shared components' repository?  
+There are some questions worth asking when selecting the Bit workflow:
+
+- How many projects need components sharing?  
+- How similar are the projects that need to share components? e.g., are they all based on the same CLI with the same configuration?
+- Is there a centralized repository for shared components?  
+- Is there a dedicated team that builds the shared components?  
+- Is Continous Integration (CI) is in place for the projects and the shared components?  
+- What workflow in GIT is in place on the projects' repositories and the shared components' repository?  
+
 The workflows below provided as guidelines for possible workflows. Each team should understand the principles behind Bit and adopt the flow that fits its needs.  
 
 ## sharing Code between Projects
@@ -19,7 +21,7 @@ The workflows below provided as guidelines for possible workflows. Each team sho
 <img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
 
 This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects.  
-Typically, you extract this functionality as an NPM package and publish it to a package registry. Then, the projects consume the package using NPM (or similar tools such as Yarn). 
+Typically, you extract this functionality as an NPM package and publish it to a package registry. Then, the projects consume the package using NPM (or similar tools such as Yarn).
 
 ### Benefits
 
@@ -27,7 +29,7 @@ The benefits you can get from this workflow:
 
 - Share components without the need to build dedicated packages by hand
 - Share components between different repositories with different configuration
-- Collaborate and modify components from any project 
+- Collaborate and modify components from any project
 - Gradually start building a shared component library
 - Use bit.dev to provide a centralized showcase for components in different projects
 
@@ -41,8 +43,8 @@ The benefits you can get from this workflow:
 
 **Consume the Components:**  
 
-- In any project that wants to consume the component, install it using NPM or Yarn. 
-- If any version was changed, install the latest version (e.g., run npm update). 
+- In any project that wants to consume the component, install it using NPM or Yarn.
+- If any version was changed, install the latest version (e.g., run npm update).
 - The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
 
 **Change the component in the original project:**
@@ -55,11 +57,11 @@ The benefits you can get from this workflow:
 - Init a bit workspace in the consuming project
 - Import the component to the project
 - Make the changes in the component.  
-- Tag and export back to the collection all the components that contain changes that are valid for other consumers. 
+- Tag and export back to the collection all the components that contain changes that are valid for other consumers.
 - Eject the component to remove the source code from a project and replace it with a node module.
 - If the changes are not applicable, you can stay with the modified component and still receive updates from the original component.
 
-In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects. 
+In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.
 
 ## Shared Libraries
 
@@ -69,7 +71,7 @@ This workflow is for an organization that has a design system or a shared compon
 
 ### Benefits
 
-Organizations that use Bit for sharing discrete components of their shared library expect to benefit from: 
+Organizations that use Bit for sharing discrete components of their shared library expect to benefit from:
 
 - Fine control over the distribution of components while removing the overhead in maintaining separate packages.
 - Automatic versioning of components based on their dependencies.
@@ -90,7 +92,7 @@ Organizations that use Bit for sharing discrete components of their shared libra
 
 **Consume the Components:**
 
-- In any project that wants to consume the component, install it using NPM or Yarn. 
+- In any project that wants to consume the component, install it using NPM or Yarn.
 - Run npm update (or yarn upgrade) to update components to their latest versions
 The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
 
