@@ -1,0 +1,125 @@
+---
+id: workflows
+title: Bit Workflows
+---
+
+A Bit Workflow is a  recommendation for how to use Bit to accomplish work in a consistent and productive manner. But not every organization is the same or works in the same way. Bit offers flexibility in managing components by enabling different workflows that can fit many organizations. 
+
+There are some questions worth asking when selecting the Bit workflow: 
+How many projects need components sharing?  
+How similar are the projects that need to share components? e.g., are they all based on the same CLI with the same configuration?
+Is there a centralized repository for shared components?  
+Is there a dedicated team that builds the shared components?  
+Is Continous Integration (CI) is in place for the projects and the shared components?  
+What workflow in GIT is in place on the projects' repositories and the shared components' repository?  
+The workflows below provided as guidelines for possible workflows. Each team should understand the principles behind Bit and adopt the flow that fits its needs.  
+
+## sharing Code between Projects
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
+
+This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects.  
+Typically, you extract this functionality as an NPM package and publish it to a package registry. Then, the projects consume the package using NPM (or similar tools such as Yarn). 
+
+### Benefits
+
+The benefits you can get from this workflow:
+
+- Share components without the need to build dedicated packages by hand
+- Share components between different repositories with different configuration
+- Collaborate and modify components from any project 
+- Gradually start building a shared component library
+- Use bit.dev to provide a centralized showcase for components in different projects
+
+### Steps
+
+**Define Components:**
+
+- Track a component in any of your projects
+- Attach a compiler to the component so that the compiler can build the component.  
+- Tag and export the component from the original project
+
+**Consume the Components:**  
+
+- In any project that wants to consume the component, install it using NPM or Yarn. 
+- If any version was changed, install the latest version (e.g., run npm update). 
+- The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
+
+**Change the component in the original project:**
+
+- Modify the code
+- Tag and export a new version of the component
+
+**Change the component in a consuming project:**
+
+- Init a bit workspace in the consuming project
+- Import the component to the project
+- Make the changes in the component.  
+- Tag and export back to the collection all the components that contain changes that are valid for other consumers. 
+- Eject the component to remove the source code from a project and replace it with a node module.
+- If the changes are not applicable, you can stay with the modified component and still receive updates from the original component.
+
+In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects. 
+
+## Shared Libraries
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/shared-library-workflow.png" height="500"/>
+
+This workflow is for an organization that has a design system or a shared components library and need fine control over its distribution. The assumption is that a dedicate project or repository exists with the components that are shared within the organization.  
+
+### Benefits
+
+Organizations that use Bit for sharing discrete components of their shared library expect to benefit from: 
+
+- Fine control over the distribution of components while removing the overhead in maintaining separate packages.
+- Automatic versioning of components based on their dependencies.
+- Reduced bundle size in the consuming projects as they can consume only the specific components they need and not the whole bundle.
+- Smaller CI footprint. Only projects that are affected by changes in the components may be built when a component has changed.
+- Access control to specific components using collections privileges. Limit the users who can make changes to components.
+- Build and test CI for each component separately on bit.dev
+- Components installation using NPM and Yarn
+- Components showcase with multiple examples per component and search capabilities.
+
+### Steps
+
+**Define Components:**
+
+- Track the components in the project that contains the shared library. Use namespaces to separate components by their types (similar to the folder structure in the project)
+- Attach a compiler to the components
+- Tag and export the component from the shared library project
+
+**Consume the Components:**
+
+- In any project that wants to consume the component, install it using NPM or Yarn. 
+- Run npm update (or yarn upgrade) to update components to their latest versions
+The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
+
+**Change the component in the original project:**
+
+- Modify the code.
+- Tag and export the component. Components that depend on the changed components also get a new version.  
+
+As of now, Bit does not have a PR-like flow to suggest changes to the component. There are a few options on how to bypass this change:  
+
+- Build a separate collection for staged components. Components consumers can suggest changes to components in this collection. The shared library maintainers will merge the changes from the staging collection into the components on their local workspace, review the difference, and reject or submit them back to the primary collection. (how do you reject changes????)
+- Make the changes in the local workspace and generate a patch file with the changes or manually perform the adjustment and submit it to the shared library's repository.
+
+> We are aware that this is a sub-optimal flow, and we are working on a new feature of supporting changes to components.
+
+### Versioning Components
+
+There are two main options on managing versions for shared libraries:  
+
+- Retain all components on a single release. The version is updated if any component changed.  
+- Version each component individually, and only update when a component changed. Semver standards can be used to denote the type of the change made (fix, feature or breaking change)
+
+Bit enables managing versions for each component, and this is the recommended way. Read more about Bit components [versioning](/docs/tag-component-version)
+
+### Publishing
+
+You can publish the components from the workspace into the collection in one of two ways:
+
+- Publish from local workspace
+- Publish on CI subject to certain conditions (e.g., on the master branch, or with special commit message)
+
+The evaluation of those options highly depends on the organizational support as well as test coverage available for the components and impacts of errors.  

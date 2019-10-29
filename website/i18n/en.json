@@ -223,8 +223,8 @@
       "whybit/why-bit": {
         "title": "Bit Benefits"
       },
-      "workflow": {
-        "title": "Components Workflow"
+      "workflows": {
+        "title": "Bit Workflows"
       },
       "workspace-statuses": {
         "title": "Workspace Statuses"
