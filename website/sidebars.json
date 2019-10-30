@@ -2,7 +2,6 @@
   "docs": {
     "Introduction": [
       "quick-start",
-      "what-is-bit", 
       "concepts",
       "workflows"
     ],
@@ -57,6 +56,7 @@
   },
   "whybit?": {
     "Why Bit?": [
+    "what-is-bit", 
     "whybit/for-teams",
     "whybit/for-libs"
   ]
