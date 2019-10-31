@@ -20,14 +20,16 @@ To import a component's code to a project, use [bit import](/docs/apis/cli-all#i
 $ bit import bit.utils/string/left-pad
 ```
 
-> **Import entire collection**
->
-> You can use glob patterns to import an entire collection, or a part of it
->
-> ```
-> bit import bit.utils/*        # import entire collection
-> bit import bit.utils/array/*  # import entire namespace
-> ```
+**Import entire collection**
+
+You can use glob patterns to import an entire collection, or a part of it
+
+```bash
+bit import bit.utils/*        # import entire collection
+bit import bit.utils/array/*  # import entire namespace
+```
+
+> Depending on your OS, you may need to wrap the glob pattern with quotes
 
 This command imports the component's source code to the project. Bit also fetches all resources and dependencies it needs to build and test the component. This makes the component usable in any project.
 
@@ -177,8 +179,6 @@ $ bit tag --patch  # create a new patch version for the update
 $ bit export <remote collection> # share patch component
 ```
 
-> **Note**
->
 > The same flow is also effective for components that require other components as packages. This is not limited only for packages.
 
 #### Change from dependency to peerDependency
