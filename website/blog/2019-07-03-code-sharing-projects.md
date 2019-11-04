@@ -15,10 +15,10 @@ But how can you take this code and add it to your project?
 
 ## Option 1 - Copy the product-list source code
 
-Copy-pasting code is the most naive option. Take the code and copy it into your project. Obviously, this is far from being the best possible option. 
+Copy-pasting code is the most naive option. Take the code and copy it into your project. Obviously, this is far from being the best possible option.  
 First, copying the code is not enough. You need to identify any dependencies the code has. The code may depend on 3rd party code (namely NPM packages) or internal code that you need to isolate from the project.  
 Also, the source code itself might not fit very well into your project. Maybe there is some plugin or transpiler used in the other project that does not exist in your project?  
-But worse of all, copied code is dead code. You do not receive any changes or bug fixes from the original project. 
+But worse of all, copied code is dead code. You do not receive any changes or bug fixes from the original project.  
 
 ## Option 2 - Create a Package from a separate Repository
 
@@ -31,7 +31,7 @@ Extract the code it to its own repository
 While building the repository is mostly a one-time effort, the higher costs hide when the component is changed. Here are the typical steps when you need to make a change to a shared component:  
 
 - Clone the shared component repo
-- Switch to the repo and install 
+- Switch to the repo and install  
 - Code and test the shared component
 - Link the project code to the shared repo
 - Check the component in the code
