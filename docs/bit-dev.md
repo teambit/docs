@@ -78,4 +78,8 @@ Each container is limited to:
 ## Components Explorer
 
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components. 
-The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities. 
+The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
+
+> bit.dev server is using the following IP addresses:  
+> 104.154.235.126:22  
+> 35.184.176.52:443  
