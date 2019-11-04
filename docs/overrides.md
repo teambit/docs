@@ -4,7 +4,7 @@ title: Overriding Configuration
 sidebar_label: Overrides
 ---
 
-When a component is packaged for distribution, it contains the component's source code, a dependencies graph of all the components is depends upon, and a set of tools, i.e. compiler and tester, for building the component.  
+When a component is packed for distribution, it contains the component's source code, a dependency graph of all the components is depends upon, and a set of tools, i.e. compiler and tester, for building the component.  
 
 Bit let's you modify the component's tools, dependencies and configuration, without making any changes to the component's code, by configuring an **overrides** section.  
 
@@ -24,7 +24,7 @@ You can override the component configuration in one of two places:
 
 In the original project, a component is embedded in the original code and does not have a `package.json`, and all overrides are defined in the [workspace configuration](/docs/conf-bit-json#overrides) using the overrides key in the workspace's `package.json`.  
 
-The overrides is defined as a set of patterns that are applied on all the components that match the pattern. A pattern may also be a specific component such as `foo/bar`.  
+The overrides are defined as a set of patterns that are applied on all the components that match the pattern. A pattern may also be a specific component such as `foo/bar`.  
 
 ```json
 {
@@ -51,11 +51,11 @@ A component that was imported from Bit has a `package.json` file in the root fol
 
 ### Propagation
 
-By default, each component will only have only the most specific rule applied on it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule.  
+By default, each component will only have only the most specific rule applied to it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule.  
 
 ### Exclusion
 
-Inside each rule you may specify a pattern or an array of patterns that will define the components that are excluded from the rule.  E.g. this rule is applied on all components, except for those that are under the `bar` namespace.  
+Inside each rule you may specify a pattern or an array of patterns that will define the components that are excluded from the rule. E.g. this rule is applied on all components, except for those that are under the `bar` namespace.  
 
 ```json
 "overrides": {
