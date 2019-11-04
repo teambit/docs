@@ -24,6 +24,10 @@ Each remote collection contains the bit scope of its components as well as addit
 - **Visibility** - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
 - **License** - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
 
+> bit.dev server is using the following IP addresses:  
+> 104.154.235.126:22  
+> 35.184.176.52:443  
+
 ### Permissions for Collections
 
 bit.dev provides a secured and reliable hub for sharing both public and private code. There are few cases where dependencies between components that are hosted in different collections and owners may harm reliability to provide with working components and not exposing private code.  
@@ -69,7 +73,7 @@ Each container on the bit.dev CI runs:
 - latest version of Bit
 - node 8
 
-Each container is limited to: 
+Each container is limited to:  
 
 - 10 minutes run time
 - 2GB RAM
@@ -79,7 +83,3 @@ Each container is limited to:
 
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components. 
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
-
-> bit.dev server is using the following IP addresses:  
-> 104.154.235.126:22  
-> 35.184.176.52:443  
