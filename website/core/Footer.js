@@ -60,7 +60,7 @@ class Footer extends React.Component {
               Gitter
             </a>            
             <a
-              href="https://twitter.com/bit_src"
+              href="https://twitter.com/bitdev_"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
