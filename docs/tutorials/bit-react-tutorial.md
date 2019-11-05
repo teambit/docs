@@ -30,7 +30,7 @@ To run this tutorial, clone and setup the React tutorial project: https://github
 ```bash
 git clone https://github.com/teambit/bit-react-tutorial
 cd bit-react-tutorial
-yarn install
+yarn 
 ```
 
 ### What Will You Learn?
