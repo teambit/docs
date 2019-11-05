@@ -153,6 +153,9 @@
         "title": "Overriding Configuration",
         "sidebar_label": "Overrides"
       },
+      "registry": {
+        "title": "Package Registry"
+      },
       "quick-start": {
         "title": "Quick Start"
       },
@@ -210,6 +213,9 @@
       },
       "using-in-your-code": {
         "title": "Using Bit Components in Your Code"
+      },
+      "view": {
+        "title": "Viewing"
       },
       "what-is-bit": {
         "title": "What is Bit?"

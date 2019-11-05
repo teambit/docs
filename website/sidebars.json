@@ -21,7 +21,8 @@
       "export",
       "removing-components",
       "installing-components",
-      "sourcing-components"
+      "sourcing-components",
+      "view"
     ],
     "Guides":[
         "react-guidelines",

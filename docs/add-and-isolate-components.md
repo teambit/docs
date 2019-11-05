@@ -327,16 +327,6 @@ bit add src/component/* --namespace user --exclude bad-file.js
 >
 > `package.json`, `bit.json`, `node_modules`, `yarn.lock`, `package-lock.json`, `.gitignore`, `.bit.map.json` and `.bitmap` excluded by default. Bit also ignores files according to `.gitignore` file, if available.
 
-### Untrack a component
-
-To untrack a component, use the [bit untrack](/docs/apis/cli-all#untrack) command.
-
-```bash
-bit untrack hello/world
-```
-
-Untracking components is relevant for new components. To remove imported/tagged/exported components use [bit remove](/docs/apis/cli-all#remove).
-
 ### Tracking DSL
 
 Bit provides tools for tracking many components at once across complex directory trees.
@@ -590,6 +580,28 @@ new components
 
 It's also possible to use the `{PARENT}` DSL when setting a namespace for components using the `--namespace` option.
 
+## Untracking components
+
+Adding component action can be reverted using the [bit untrack](/docs/apis/cli-all#untrack) command. You can only untrack new components. A component that is already tagged or exported, and imported components can be only [removed](/docs/removing-components).  
+
+To remove a single component: 
+
+```bash
+bit untrack hello/world
+```
+
+You can also untrack multiple components by specifying their ids:  
+
+```bash
+bit untrack foo/bar foo/baz
+```
+
+To track all the newly added component use the `--all` flag:  
+
+```bash
+bit untrack --all
+```
+
 ## Manage Components Files
 
 We use `bit add` to remove, add, move and rename files in and between components.
@@ -651,3 +663,24 @@ To rename a file, use `bit move` from the old to the new file name.
 ```bash
 bit move src/foo/bar/index.js src/foo/bar/new-name.js
 ```
+
+Moves a file/directory that's part of a tracked component to a new location.
+This command will update the [.bitmap file](/docs/workspace#components-map) accordingly.
+
+```bash
+bit move src/foo src/components/new/location/foo
+```
+
+Move a file that's part of a tracked component:
+
+```bash
+bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
+```
+
+Move a directory that's part of a tracked component:
+
+```bash
+bit move src/foo src/components/new/location/foo
+```
+
+You can also use `move` to rename files within a component.
