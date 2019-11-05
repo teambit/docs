@@ -99,3 +99,8 @@ module.exports = (dst, src) => new Promise((resolve, reject) =>
     );
   }));
 ```
+
+## Package registry
+
+Components published to bit.dev are available for installation using npm (or yarn) under the `@bit` namespace. You can also set your own registry, using tools such as [JFrog](https://jfrog.com/) or [Verdaccio](https://verdaccio.org/).  
+To install packages to registry, you will need to run code similar to the one used in [bit e2e tests](https://github.com/teambit/bit/blob/master/e2e/npm-ci-registry.ts).  
