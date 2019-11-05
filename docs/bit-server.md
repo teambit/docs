@@ -60,3 +60,42 @@ to import components stored on the remote scope run:
 bit import first-scope.component-name
 ```
 
+### Resolve between scopes
+
+If you have components that depend on components from other scopes, you need to inter-connect the scopes. If a component in scope A is dependent on a component in scope B, you need to make scope A aware of scope B (the other direction is not required). There are two ways to define this:  
+
+Make scope A aware of scope B by adding a scope B as a remote scope in scope A. In scope A run: 
+
+```bash
+# If they are on the same machine:
+bit remote add file:///your-scope-a-directory
+```
+
+Another option is to define a resolve function that resolves the scopes. The function is defined in the bit.json in the workspace, and Bit uses it whenever it needs to resolve paths between scopes.  
+
+```json
+{
+    "name": "bit.envs",
+    "remotes": {},
+    "resolverPath": "/app/resolver.js",
+}
+```
+
+The function gets the destination scope name (the destination from to get the dependency) and source scope name (the scope that has the dependent) as parameters. It should return a valid url of the destination, e.g: `file:///tmp/my-scope-name`. The example bellow is code taken from bit.dev:  
+
+```js
+// /app/resolver.js
+const http = require('http');
+module.exports = (dst, src) => new Promise((resolve, reject) =>
+  http.get(`http://bit-permissions-service/scopes?src=${src}&dst=${dst}`,
+  res => {
+    res.setEncoding('utf8');
+    let rawData = '';
+    res.on('data', chunk => rawData += chunk);
+    res.on('end', () => ((res.statusCode === 200)
+      ? resolve(`file:///tmp/bithub/${JSON.parse(rawData).payload}`)
+      : reject({code: 134, message: `unable to export components to ${src} because they have dependencies on components in ${dst}. ` +
+        'bit does not allow setting dependencies between components in private collections managed by different owners.', sourceScope: dst, destinationScope: src }))
+    );
+  }));
+```
