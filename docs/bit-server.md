@@ -64,7 +64,7 @@ bit import first-scope.component-name
 
 If you have components that depend on components from other scopes, you need to inter-connect the scopes. If a component in scope A is dependent on a component in scope B, you need to make scope A aware of scope B (the other direction is not required). There are two ways to define this:  
 
-Make scope A aware of scope B by adding a scope B as a remote scope in scope A. In scope A run: 
+Make scope A aware of scope B by adding a scope B as a remote scope in scope A. In scope A run:  
 
 ```bash
 # If they are on the same machine:
