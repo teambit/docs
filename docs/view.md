@@ -4,7 +4,7 @@ title: Viewing
 ---
 
 Bit provides a set of tools to view the state of the workspace and of the components
-This tools are useful when you need to analyze and debug issues with components. 
+This tools are useful when you need to analyze and debug issues with components.  
 
 ## Status
 
@@ -32,7 +32,7 @@ You can find a full description of all possible component statuses [here](/docs/
 
 ## List
 
-The list command display the components in the local workspace or in remote scope. 
+The list command display the components in the local workspace or in remote scope.  
 
 To list all components in local workspace:
 
@@ -66,7 +66,7 @@ $bit list --outdated
 
 ## Show  
 
-The show command is useful to see the specific details of each component: 
+The show command is useful to see the specific details of each component:  
 
 ```bash
 $ bit show navbar

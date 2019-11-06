@@ -9,11 +9,10 @@
         "title": "Tracking"
       },
       "apis/cli-all": {
-        "title": "CLI Reference"
+        "title": "CLI Commands"
       },
       "apis/cli": {
-        "title": "CLI Commands",
-        "sidebar_label": "CLI Commands"
+        "title": "CLI Reference"
       },
       "best-practices": {
         "title": "Best Practices"
@@ -152,9 +151,6 @@
       "overrides": {
         "title": "Overriding Configuration",
         "sidebar_label": "Overrides"
-      },
-      "registry": {
-        "title": "Package Registry"
       },
       "quick-start": {
         "title": "Quick Start"
