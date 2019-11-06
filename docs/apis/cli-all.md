@@ -13,6 +13,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/add-and-isolate-components  
 
 `bit add [path...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--id <name>`|`--i`|manually set component id|
@@ -31,6 +32,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/building-components  
 
 `bit build [id]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--verbose [boolean]`|`--v`|showing npm verbose output for inspection|
@@ -49,6 +51,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit checkout 0.0.1 "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit checkout [values...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--interactive-merge`|`--i`|when a component is modified and the merge process found conflicts, display options to resolve them|
@@ -71,6 +74,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/workspace#cache  
 
 `bit clear-cache`  
+
 ---  
 
 ## config  
@@ -80,6 +84,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/conf-config  
 
 `bit config`  
+
 ---  
 
 ## deprecate  
@@ -89,6 +94,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: deprecate a component (local/remote)  
 
 `bit deprecate <ids...>`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--remote [boolean]`|`--r`|deprecate a component from a remote scope|
@@ -106,6 +112,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit diff "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit diff [values...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--verbose`|`--v`|show a more verbose output when possible|
@@ -118,6 +125,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: diagnose a bit workspace  
 
 `bit doctor [diagnosis-name]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--json`|`--j`|return diagnoses in json format|
@@ -132,6 +140,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: ejecting components configuration  
 
 `bit eject-conf [id]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--path <path>`|`--p`|ejecting configuration into a specific directory|
@@ -150,6 +159,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit export remote-scope "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit export [remote] [id...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--eject`|`--e`|replaces the exported components from the local scope with the corresponding packages|
@@ -167,6 +177,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: EXPERIMENTAL. generate an image file with the dependencies graph  
 
 `bit graph [id]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--image <image>`|`--i`|image path. use one of the following extensions: [gif, png, svg, pdf]|
@@ -185,6 +196,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit import "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit import [ids...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--tester`|`--t`|import a tester environment component|
@@ -214,6 +226,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/workspace  
 
 `bit init [path]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--bare [name]`|`--b`|initialize an empty bit bare scope|
@@ -237,6 +250,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/installing-components  
 
 `bit install [ids...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--verbose`|`--v`|show a more verbose output when possible|
@@ -251,6 +265,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/dependencies#missing-links  
 
 `bit link`  
+
 ---  
 
 ## list  
@@ -261,6 +276,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/view#list  
 
 `bit list [scope]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--ids`|`--ids`|show only component ids unformatted|
@@ -280,6 +296,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/view#log  
 
 `bit log <id>`  
+
 ---  
 
 ## login  
@@ -288,6 +305,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: log the CLI into Bit  
 
 `bit login`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--port <port>`|`--p`|port number to open for localhost server (default 8085)|
@@ -304,6 +322,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: log the CLI out of Bit  
 
 `bit logout`  
+
 ---  
 
 ## merge  
@@ -313,6 +332,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit merge 0.0.1 "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit merge <version> <ids...>`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--ours`|`--o`|in case of a conflict, override the used version with the current modification|
@@ -329,6 +349,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/add-and-isolate-components#moving-and-renaming-files  
 
 `bit move <from> <to>`  
+
 ---  
 
 ## remote  
@@ -338,6 +359,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/bit-server#working-with-remote-scopes  
 
 `bit remote`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--global`|`--g`|see globally configured remotes|
@@ -353,6 +375,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit remove "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit remove <ids...>`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--remote`|`--r`|remove a component from a remote scope|
@@ -370,6 +393,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
  https://docs.bit.dev/docs/view#show  
 
 `bit show <id>`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--json`|`--j`|return a json version of the component|
@@ -391,6 +415,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/view#status  
 
 `bit status`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--json`|`--j`|return a json version of the component|
@@ -406,6 +431,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit tag "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit tag [id] [version]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--message <message>`|`--m`|log message describing the user changes|
@@ -431,6 +457,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/testing-components)  
 
 `bit test [id]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--all`|`--a`|test all components in your workspace, including unmodified components|
@@ -446,6 +473,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: undeprecate a deprecated component (local/remote)  
 
 `bit undeprecate <ids...>`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--remote [boolean]`|`--r`|undeprecate a component from a remote scope|
@@ -460,6 +488,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit untag "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit untag [id] [version]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--all`|`--a`|revert tag for all tagged components|
@@ -476,6 +505,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   you can use a pattern for multiple ids, such as bit untrack "utils/*". (wrap the pattern with quotes to avoid collision with shell commands)  
 
 `bit untrack [ids...]`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--all`|`--a`|revert add for all tracked components|
@@ -489,6 +519,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Description**: watch components and perform `build` on changes  
 
 `bit watch`  
+
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--verbose`|`--v`|showing npm verbose output for inspection|
