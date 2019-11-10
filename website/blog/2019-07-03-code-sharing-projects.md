@@ -1,5 +1,5 @@
 ---
-title: Bit and the Art of Sharing Components between Projects
+title: Bit and Sharing Components between Projects
 author: Tally Barak
 authorTwitter: baraktally
 authorImageURL: https://avatars1.githubusercontent.com/u/7386255?s=460&v=4

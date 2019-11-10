@@ -16,55 +16,9 @@ There are some questions worth asking when selecting the Bit workflow:
 
 The workflows below are provided as suggested examples. Each team should understand the principles behind Bit and adopt the flow that fits its needs.  
 
-## Sharing Code between Projects
-
-<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
-
-This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
-
-### Benefits
-
-The benefits you can get from this workflow:
-
-- Share components without the need to build dedicated packages by hand
-- Share components between different repositories with different configurations
-- Collaborate and modify components from any project
-- Gradually start building a shared component library
-- Use bit.dev to provide a centralized showcase for components in different projects
-
-### Steps
-
-**Define Components:**
-
-- Track a component in any of your projects
-- Attach a compiler to the component so that the compiler can build the component.  
-- Tag and export the component from the original project
-
-**Consume the Components:**  
-
-- In any project that wants to consume the component, install it using NPM or Yarn.
-- If any version was changed, install the latest version (e.g., run npm update).
-- The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
-
-**Change the component in the original project:**
-
-- Modify the code
-- Tag and export a new version of the component
-
-**Change the component in a consuming project:**
-
-- Init a bit workspace in the consuming project
-- Import the component to the project
-- Make the changes in the component.  
-- Tag and export back to the collection all the components that contain changes that are valid for other consumers.
-- Eject the component to remove the source code from a project and replace it with a node module.
-- If the changes are not applicable, you can stay with the modified component and still receive updates from the original component.
-
-In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from a relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.
-
 ## Shared Libraries
 
-<img src="https://storage.googleapis.com/static.bit.dev/docs/images/shared-library-workflow.png" height="500"/>
+<img src="https://storage.googleapis.com/bit-docs/UI%20library%20monorepo.jpg" height="500"/>
 
 This workflow is for organizations that have a design system or a shared components library and need fine control over its distribution. The assumption is that a dedicated project or repository exists with the components that are shared within the organization.  
 
@@ -82,6 +36,8 @@ Organizations that use Bit for sharing discrete components of their shared libra
 - Component showcase with multiple examples per component and search capabilities.
 
 ### Steps
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/shared-library-workflow.png" height="500"/>
 
 **Define Components:**
 
@@ -125,3 +81,51 @@ You can publish the components from the workspace into the collection in one of 
 - Tag and export components from your CI. This should happen under certain conditions (e.g., when pushing to the master branch, or with special commit message). When exporting from CI, it is important to commit the changes made in the [components map](/docs/workspace#components-map)(`bitmap` file) back to your repository, so the repository is in sync with the collection.  
 
 The evaluation of these options highly depends on the organizational support, as well as the test coverage available for the components and impact of errors.  
+
+## Sharing Code between Projects
+
+<img src="https://storage.googleapis.com/bit-docs/reuse-react-components.jpeg" height="500"/>
+
+This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
+
+### Benefits
+
+The benefits you can get from this workflow:
+
+- Share components without the need to build dedicated packages by hand
+- Share components between different repositories with different configurations
+- Collaborate and modify components from any project
+- Gradually start building a shared component library
+- Use bit.dev to provide a centralized showcase for components in different projects
+
+### Steps
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
+
+**Define Components:**
+
+- Track a component in any of your projects
+- Attach a compiler to the component so that the compiler can build the component.  
+- Tag and export the component from the original project
+
+**Consume the Components:**  
+
+- In any project that wants to consume the component, install it using NPM or Yarn.
+- If any version was changed, install the latest version (e.g., run npm update).
+- The consumed components are included in the consuming project as if they were installed using NPM (i.e., in vendor bundle).  
+
+**Change the component in the original project:**
+
+- Modify the code
+- Tag and export a new version of the component
+
+**Change the component in a consuming project:**
+
+- Init a bit workspace in the consuming project
+- Import the component to the project
+- Make the changes in the component.  
+- Tag and export back to the collection all the components that contain changes that are valid for other consumers.
+- Eject the component to remove the source code from a project and replace it with a node module.
+- If the changes are not applicable, you can stay with the modified component and still receive updates from the original component.
+
+In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from a relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.
