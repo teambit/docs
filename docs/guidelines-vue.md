@@ -27,13 +27,13 @@ The compiler is based on the Vue webpack configuration. Check out the exact conf
 
 ## Using Vue SFC in target projects
 
-Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them. If you want to include the component into your Vue project that will compile and bundle it, or if you are using SSR, you should import the SFC itself as follow:  
+Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them. If you want to include the component into your Vue project that will compile and bundle it, or if you are using SSR (such as Nuxt.js), you should import the SFC itself as follow:  
 
 ```js
 import MyComp from '@bit/username.collection/component/sfc' //Note the SFC at the end.
 ```
 
-Learn more about this in [Vue documentation](/https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html)
+Learn more about this in [Vue documentation](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html)
 
 ## Use symlinks false in target project
 
