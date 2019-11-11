@@ -31,6 +31,18 @@ bit init --bare
 
 - Add your own public SSH key to the authorized_keys list of the user bit. This will allow you to import and export components hosted in first-scope.  
 
+### Authentication
+
+When logging into a server, Bit tries logs in using SSH with the following combinations:
+
+1. Username `token` and Bit token from Bit config as password
+1. SSH key pair from ssh-agent
+1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
+1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
+1. Username `anonymous`  and empty password, only for read activities only (such as import)
+
+If all the above fail, Bit prompts for username and password.
+
 ## Working with Remote Scopes
 
 ### Setup the remote scope

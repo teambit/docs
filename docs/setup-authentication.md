@@ -8,10 +8,15 @@ To work with bit.dev you need to setup [a free account](https://bit.dev/signup) 
 
 Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account.  
 
-You can log into bit.dev with one of two methods:  
+When logging into a server, Bit tries logs in using SSH with the following combinations:  
 
-- Using a token
-- Using SSH key pair (private and public key)
+1. Username `token` and Bit token from Bit config as password
+1. SSH key pair from ssh-agent
+1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
+1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
+1. Username `anonymous`  and empty password, only for read activities only (such as import)
+
+If all methods fail, Bit prompts for the username and password.  
 
 > A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.  
 
