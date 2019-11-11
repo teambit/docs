@@ -6,17 +6,7 @@ sidebar_label: Authentication
 
 To work with bit.dev you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
 
-Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account.  
-
-When logging into a server, Bit tries logs in using SSH with the following combinations:  
-
-1. Username `token` and Bit token from Bit config as password
-1. SSH key pair from ssh-agent
-1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
-1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
-1. Username `anonymous`  and empty password, only for read activities only (such as import)
-
-If all methods fail, Bit prompts for the username and password.  
+Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication). 
 
 > A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.  
 

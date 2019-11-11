@@ -1,6 +1,6 @@
 ---
 id: bit-server
-title: Setup Bit Server
+title: Bit Server
 ---
 
 Collaborating between Bit components require setting up a remote server accessible for all collaborators. You may use bit.dev as a remote server or setup your own.  
@@ -39,9 +39,8 @@ When logging into a server, Bit tries logs in using SSH with the following combi
 1. SSH key pair from ssh-agent
 1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
 1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
-1. Username `anonymous`  and empty password, only for read activities only (such as import)
 
-If all the above fail, Bit prompts for username and password.
+If all the above fail, for activities that are trying to modify components, Bit prompts for username and password.
 
 ## Working with Remote Scopes
 
