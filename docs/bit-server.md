@@ -40,7 +40,7 @@ When logging into a server, Bit tries logs in using SSH with the following combi
 1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
 1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
 
-If all the above fail, for activities that are trying to modify components, Bit prompts for username and password.
+If all the above fail Bit prompts for username and password.
 
 ## Working with Remote Scopes
 
