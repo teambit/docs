@@ -6,7 +6,7 @@ sidebar_label: Authentication
 
 To work with bit.dev you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
 
-Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication). 
+Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication).  
 
 > A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.  
 
