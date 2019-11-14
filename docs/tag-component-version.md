@@ -212,7 +212,7 @@ Alternatively, you can [untag](#untagging-components) the dependent components, 
 
 Some rules to note on auto-tag:  
 
-- If a component is being auto-tagged, the version changes only include the dependency changes, even if the component has source code modifications.  
+- If a component is being auto-tagged, the version changes only include the dependency changes, even if the component has source code modifications. To include the source modification, the auto tagged component need to be included in the tagging, e.g. by using `bit tag --all`.  
 - Tagging is propagated to the dependency chain of the component. E.g., Foo depends on Bar, which depends on Baz. Tagging Baz triggers auto-tagging of both Bar and Foo.  
 - The auto tag only happens to components that exist in the scope where the component was tagged. The propagation of the auto-tag chain stops when a component is not on the local scope. E.g. if Bar is not in the local step, only Baz is tagged.  
 
