@@ -174,13 +174,13 @@ Run bit status to see that all components properly built.
 
 ## Working with VCS (git)
 
-It is recommended to commit the following to your VCS (e.g. git) from your workspace](/docs/workspace):  
+It is recommended to commit the following to your VCS (e.g., git) from your [workspace](/docs/workspace):  
 
 - Workspace configuration. The configuration may reside in `package.json` or `bit.json` in the root of the workspace.
-- Bit index, i.e. `.bitmap` file in the root of the workspace. This file is used to restore all components that are exported to the server by using the `bit import` command.  
-- Optionally, you can commit imported components, but those can be restored from the server. However, any changes made to local components after they are imported and are not re-exported to the server should be committed.  
+- Bit index, i.e. `.bitmap` file in the root of the workspace. This file is used to restore all the components exported to the server by using the `bit import` command.  
+- Optionally, you can commit imported components, but you can also restore them from the server. However, any changes made to local components after they are imported and are not re-exported to the server should be committed.  
 
-The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default it is created under the `git` folder, so they are gitignored.  
+The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default, it is created under the `git` folder, so they are gitignored.  
 
 ## Import Often
 
