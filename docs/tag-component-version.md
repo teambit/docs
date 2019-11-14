@@ -112,6 +112,37 @@ To force the tagging even when tests fail, use the `force` flag:
 bit tag foo/bar --force
 ```
 
+## Untagging components
+
+We can untag staged components, i.e., components that were tagged by not yet exported to a remote scope.  
+Bit untag reverts the component to its previous state, i.e., `new`, `modified` or `exported`.  
+
+>Untag does not revert code changes made in the component.  
+
+Use `bit untag` to untag a component:
+
+```bash
+bit untag foo/bar
+```
+
+Untag removes all tags of the component that were not yet exported. You can untag a specific version by providing the version to untag:  
+
+```bash
+bit untag foo/bar 1.0.0
+```
+
+To untag a version from all the unstaged components use the `--all` option and specifying a version:
+
+```bash
+bit untag --all 0.11.4
+```
+
+To revert all staged versions in the workspace, use the `--all` flag, without specifying a version.
+
+```bash
+bit untag --all
+```
+
 ## Auto tagging
 
 Bit manages dependencies between Bit components by storing the full dependency graph of the components. When Bit tags a component, it also tags any other Bit components that exist in the local scope and depend on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
@@ -210,42 +241,12 @@ bit tag foo/bar --skip-auto-tag
 
 Alternatively, you can [untag](#untagging-components) the dependent components, so a new version pointing to the changed component is not created.  
 
-Some rules to note on auto-tag:  
+### Auto tag rules  
 
 - If a component is being auto-tagged, the version changes only include the dependency changes, even if the component has source code modifications. To include the source modification, the auto tagged component need to be included in the tagging, e.g. by using `bit tag --all`.  
 - Tagging is propagated to the dependency chain of the component. E.g., Foo depends on Bar, which depends on Baz. Tagging Baz triggers auto-tagging of both Bar and Foo.  
 - The auto tag only happens to components that exist in the scope where the component was tagged. The propagation of the auto-tag chain stops when a component is not on the local scope. E.g. if Bar is not in the local step, only Baz is tagged.  
 
-## Untagging components
-
-We can untag staged components, that is components that were not yet exported to a remote scope.  
-Bit untag reverts the component to its previous state, i.e., `new`, `modified` or `exported`.  
-
->Untag does not revert code changes made in the component.  
-
-Use `bit untag` to untag a component:
-
-```bash
-bit untag foo/bar
-```
-
-Untag removes all tags of the component that were not yet exported. You can untag a specific version by providing the version to untag:  
-
-```bash
-bit untag foo/bar 1.0.0
-```
-
-To untag a version from all the unstaged components use the `--all` option and specifying a version:
-
-```bash
-bit untag --all 0.11.4
-```
-
-To revert all staged versions in the workspace, use the `--all` flag, without specifying a version.
-
-```bash
-bit untag --all
-```
 
 ## View component history
 
