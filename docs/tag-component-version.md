@@ -112,11 +112,96 @@ To force the tagging even when tests fail, use the `force` flag:
 bit tag foo/bar --force
 ```
 
-### Auto tag dependencies
+## Auto tagging
 
-When Bit tags a component, it also tags any components that exist in the local scope and depends on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
+Bit manages dependencies between Bit components by storing the full dependency graph of the components. When Bit tags a component, it also tags any other Bit components that exist in the local scope and depend on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
+
+Let's say we have 2 components: A `navbar` and a `main-menu`. The `navbar` is importing the `mainmenu` component as follow:  
+
+```js
+import MainMenu from '../main-menu/main-menu';
+```
+
+We [track](/docs/add-and-isolate-components.md) the components in bit, using the `bit add` command. `bit status` shows that components are added:  
+
+```bash
+$bit status
+new components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+     > main-menu ... ok
+     > navbar ... ok
+
+```
+
+We will tag both components so they are both on version `0.0.1`.  
+
+```bash
+$bit tag --all
+2 component(s) tagged
+(use "bit export [collection]" to push these components to a remote")
+(use "bit untag" to unstage versions)
+
+new components
+(first version for components)
+     > main-menu@0.0.1
+     > navbar@0.0.1
+```
+
+Running `bit status` again now shows that the components are tagged:  
+
+```bash
+$bit status
+staged components
+(use "bit export <remote_scope> to push these components to a remote scope")
+
+     > main-menu. versions: 0.0.1 ... ok
+     > navbar. versions: 0.0.1 ... ok
+```
+
+Now, let's make some changes in the code of `main-menu`, the dependency of `navbar` and run `bit status` again:
+
+```bash
+$bit status
+modified components
+(use "bit tag --all [version]" to lock a version with all your changes)
+(use "bit diff" to compare changes)
+
+     > main-menu ... ok
+
+
+staged components
+(use "bit export <remote_scope> to push these components to a remote scope")
+
+     > main-menu. versions: 0.0.1 ... ok
+     > navbar. versions: 0.0.1 ... ok
+
+
+components pending to be tagged automatically (when their dependencies are tagged)
+     > navbar ... ok
+```
+
+We see that `main-menu` is modified, and as a result `navbar` is pending to be tagged as well, since its dependency was modified.  
+
+now we will tag `main-menu`. As a result, we see that navbar is also tagged:
+
+```bash
+$bit tag main-menu
+2 component(s) tagged
+(use "bit export [collection]" to push these components to a remote")
+(use "bit untag" to unstage versions)
+
+changed components
+(components that got a version bump)
+     > main-menu@0.0.2
+       auto-tagged dependents: navbar@0.0.2
+
+```
 
 Once the component is tagged, all tagged components including dependent components move to the [`staged` state](/docs/workspace#staged-components).  
+
+### Skip auto tag
+
 To skip tagging dependent components use the `--skip-auto-tag` flag:
 
 ```bash
