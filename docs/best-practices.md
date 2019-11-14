@@ -25,7 +25,7 @@ added src/utils/my-util.js
 
 You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all#add) command and use a namespace.  
 
-Specifying a namespace lets you perform actions on multiple components at once: 
+Specifying a namespace lets you perform actions on multiple components at once:  
 
 ```bash
 bit tag "utils/*"
@@ -152,7 +152,7 @@ A great example of this is [ReactDnD](https://github.com/react-dnd/react-dnd/blo
 If the component cannot be isolated from the state, it is possible to encapsulate the state as part of the  component.
 To make encapsulation easy, it is better to use micro-state, that follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).  
 For example, Current-User can be a shared component that has both UI and a state. The component can export a state, a Context class, a Redux reducer or a Mobx observable.  
-However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects. 
+However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects.  
 
 ## Compiling and testing components
 
@@ -171,6 +171,14 @@ Bit compilers provide some default configuration. If you need to change the conf
 
 Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
 Run bit status to see that all components properly built.  
+
+## Working with VCS
+
+It is recommended to commit the following to your VCS (e.g. git) from your workspace](/docs/workspace):  
+
+- Workspace configuration. The configuration may reside in `package.json` or `bit.json` in the root of the workspace.
+- Bit index, i.e. `.bitmap` file in the root of the workspace.  
+- Any changes made to local components after they are imported
 
 ## Import Often
 
@@ -197,7 +205,3 @@ Ejecting components from their source project is tempting. Ejecting a component 
 Build components in a way that they can be easily discovered by other developers. That includes proper naming, adding documentation, tagging the components with meaningful labels, and adding examples so that they can be played with. When publishing a component, it is best to think about how other developers are likely to search for the components.
 
 Non-descriptive naming (such as utils) or bad tags makes the components hard to find. Developers are more likely to select and reuse components that they can interact with and quickly evaluate their functionality. Good documentation promotes quick, widespread adoption.
-
-## Use SCM to Keep Local Modifications
-
-You can source and modify components. Sometimes these changes are project-specific and not meant to be shared. Keep those modifications local and committed to your SCM. Bit can merge incoming changes and keep your modifications.
