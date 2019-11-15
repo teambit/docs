@@ -153,7 +153,7 @@ Let's say we have 2 components: A `navbar` and a `main-menu`. The `navbar` is im
 import MainMenu from '../main-menu/main-menu';
 ```
 
-We [track](/docs/add-and-isolate-components.md) the components in bit, using the `bit add` command. `bit status` shows that components are added:  
+We [track](/docs/add-and-isolate-components) the components in bit, using the `bit add` command. `bit status` shows that components are added:  
 
 ```bash
 $bit status
