@@ -58,7 +58,8 @@
   },
   "whybit?": {
     "Why Bit?": [
-    "what-is-bit", 
+    "what-is-bit",
+    "whybit/is-bit-the-same", 
     "whybit/for-teams",
     "whybit/for-libs"
   ]

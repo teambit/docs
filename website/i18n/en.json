@@ -31,7 +31,7 @@
         "title": "Dependency Limitations"
       },
       "bitdev-search-api": {
-        "title": "Search API"
+        "title": "Seach API"
       },
       "bitdev-sla": {
         "title": "Service Level Agreement"
@@ -221,6 +221,9 @@
       },
       "whybit/for-teams": {
         "title": "Bit for Teams"
+      },
+      "whybit/is-bit-the-same": {
+        "title": "Is Bit the Same As?"
       },
       "whybit/why-bit": {
         "title": "Bit Benefits"
