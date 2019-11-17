@@ -111,7 +111,7 @@ To avoid this situation, you need to make sure that the component relies on the 
 You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using Angular 8 you can specify the dependencies for all the `@angular` libraries as follow:  
 
 ```json
-"peedDependencies": {
+"peerDependencies": {
   "@angular/core": ">=8.0.0",
   "@angular/common": ">=8.0.0"
 }
