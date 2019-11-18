@@ -38,11 +38,11 @@ Typically, the component’s content is not just the source code itself and can 
 
 Most of the components we build have other elements as dependencies. Bit differentiate between two types of dependencies:  
 
-- **NPM packages**: Bit stores the name of the NPM packages and their version or versions range (e.g., `^4.0.19`). Bit parses the component code and creates a package.json file with all of the dependencies mentioned in the source code of the component.  
+- **NPM packages**: Bit stores the name of the NPM packages and their version or versions range (e.g., `~4.0.19`). Bit parses the component code and creates a package.json file with all of the dependencies mentioned in the source code of the component.  
 - **Bit packages**: Bit packages are other Bit components that the component uses. Bit analyzes the source code to find import or require statements and builds a dependency graph of the Bit packages. If an imported file is not defined as a Bit component, Bit notifies about it.  
 For each component, Bit stores the full dependency graph of Bit components and their exact versions. It also stores the code source for each component and the built files. The dependency graph lets Bit move components around projects ensuring that the component has all the code it needs.  
 
-### Tools & Configuration
+### Tools and Configuration
 
 Bit is built with an extension system. Bit delegates work on the component to tools, built as extensions, that can perform work on the component. The most common tools are:  
 
