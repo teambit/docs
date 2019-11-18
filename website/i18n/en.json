@@ -123,6 +123,9 @@
       "handling-errors": {
         "title": "Handling Bit Errors"
       },
+      "how-bit-works": {
+        "title": "How bit Works?"
+      },
       "importing-component-dependencies": {
         "title": "Sourcing Components with Dependencies"
       },

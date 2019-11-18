@@ -2,9 +2,8 @@
   "docs": {
     "Introduction": [
       "quick-start",
-      "workflows",
-      "concepts"
-
+      "how-bit-works",
+      "workflows"
     ],
     "Basics": [
         "installation",
