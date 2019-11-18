@@ -25,7 +25,7 @@ A component is Bit is made of 3 parts:
 - Dependency graph
 - Tools & Configuration
 
-![Bit component](https://storage.cloud.google.com/static.bit.dev/docs/images/component-full.png)
+![Bit component](https://storage.googleapis.com/static.bit.dev/docs/images/component-full.png)
 
 From all 3 parts, only the first one is mandatory. Dependencies and tools are optional but are instrumental when sharing components between projects.  
 
@@ -64,7 +64,7 @@ Bit is a cli-tool for working with components. Bit stores components in two form
 - Inside a **scope**, Bit stores the semantic representation of Bit components as objects with all their history and relationships.  
 - Inside the **workspace**, Bit stores the file representation of a single version of the component.  
 
-![Components Management](https://storage.cloud.google.com/static.bit.dev/docs/images/scope-workspace.png)
+![Components Management](https://storage.googleapis.com/static.bit.dev/docs/images/scope-workspace.png)
 
 ### Workspace
 
