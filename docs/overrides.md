@@ -169,6 +169,8 @@ Here is an example of specifying dependencies:
 
 You may specify a specific version of the package, or you may use a special annotations to determine the version from the package.json. Use "+" to specify Bit to use the version that exists in the workspace `package.json`. Use "-" to specify Bit to remove the dependency for specific components.  
 
+> To add bit dependencies as packages use the package name syntax: `<user>.<collection>/<component name>`
+
 ### Ignore Dependency Files
 
 You can instruct Bit to ignore files that are required as dependencies inside a component.  
