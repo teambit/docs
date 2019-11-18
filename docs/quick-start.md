@@ -3,10 +3,32 @@ id: quick-start
 title: Quick Start
 ---
 
-This guide will teach you the basic steps of working with Bit hands-on. To learn more about how Bit works, please refer to the [concepts](/docs/concepts) guide.
+Bit is an [open-source](https://github.com/teambit/bit) tool for components collaboration.
 
-Bit is a [CLI tool](https://github.com/teambit/bit) to share components across repositories. With Bit you can get all the benefits of working in a multi-repository environment (poly-repos) while gaining the code-sharing flexibility of a monorepo.
-Bit can be leveraged by teams to share components that reside in different projects, or enhance component libraries to develop, distribute and get adoption for discrete components.  
+Employ Bit to wrap your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
+
+Key Features:  
+
+- Extract a component for sharing directly from an existing project.
+- Build and test each component separately from the rest of the app.
+- Change the source code of the received components inside your project.  
+- Get changes in components on top of local changes.
+- Contribute back changes made to components directly from your project.
+- Auto-generated package.json for each component. Reduces overhead.  
+- Version each component individually.
+- Automated component versioning according to changes in the dependency graph chain.
+- Works alongside with Git, NPM and Yarn.
+
+Bit is provided as a CLI tool. Because Bit is distributed, the same tool manages the developer’s workspace (client) and the centralized server for sharing components.  
+You can setup your own server for sharing components or you can use the [bit.dev](https://bit.dev) cloud hosting solution for private and public components sharing with advanced features such as components CI and showcase.
+
+<div class="learn-more">
+
+- [How bit works](/docs/how-bit-works)
+- Suggested [workflows](/docs/workflows) when using Bit
+- Setup your own [Bit server](/docs/bit-server)
+
+</div>
 
 ## Setup
 
@@ -33,7 +55,6 @@ You now have a collection. You can see the export command that you will use late
 
 - Check out [bit.dev functionality](/docs/bit-dev)
 - Find other [authentication methods](/docs/setup-authentication)
-- Setup your own [Bit server](/docs/bit-server)
 
 </div>
 
