@@ -19,7 +19,7 @@ A Bit component is somewhat different from Angular, React, or Vue component. Bit
 
 Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in managing components: tracking code changes, verifying dependencies completeness or building, and testing each component.
 
-A component is Bit is made of 3 parts:  
+A component in Bit is made of 3 parts:  
 
 - Source code
 - Dependency graph
@@ -27,7 +27,7 @@ A component is Bit is made of 3 parts:
 
 ![Bit component](https://storage.googleapis.com/static.bit.dev/docs/images/component-full.png)
 
-From all 3 parts, only the first one is mandatory. Dependencies and tools are optional but are instrumental when sharing components between projects.  
+From these parts, only the first one is mandatory. Dependencies and tools are optional but are instrumental when sharing components between projects.  
 
 ### Source Code
 
@@ -39,7 +39,7 @@ Typically, the component’s content is not just the source code itself and can 
 Most of the components we build have other elements as dependencies. Bit differentiate between two types of dependencies:  
 
 - **NPM packages**: Bit stores the name of the NPM packages and their version or versions range (e.g., `~4.0.19`). Bit parses the component code and creates a package.json file with all of the dependencies mentioned in the source code of the component.  
-- **Bit packages**: Bit packages are other Bit components that the component uses. Bit analyzes the source code to find import or require statements and builds a dependency graph of the Bit packages. If an imported file is not defined as a Bit component, Bit notifies about it.  
+- **Bit packages**: Bit packages are other Bit components that the component depends on. Bit analyzes the source code to find import or require statements and builds a dependency graph of the Bit packages. If an imported file is not defined as a Bit component, Bit errs about it.  
 For each component, Bit stores the full dependency graph of Bit components and their exact versions. It also stores the code source for each component and the built files. The dependency graph lets Bit move components around projects ensuring that the component has all the code it needs.  
 
 ### Tools and Configuration
@@ -47,14 +47,14 @@ For each component, Bit stores the full dependency graph of Bit components and t
 Bit is built with an extension system. Bit delegates work on the component to tools, built as extensions, that can perform work on the component. The most common tools are:  
 
 - **Compiler**: compiles or transpiles the original files and generate built artifacts. The artifacts are consumable by applications or other components. Compilers are specific for frameworks and usually also for flavors of the framework, as they contain the configuration required to run them.  
-- **Tester**: An extension that runs the tests associated with the compiler.  
+- **Tester**: An extension that runs the tests associated with the component and returns status.  
 
 In addition to the tools, Bit contains a set of configuration that impact the component, such as package dependencies added to it.
 
 ## Versioning Components
 
 Bit components are versioned. Every time a component is tagged, Bit snapshots a new version of the component files and dependencies. Bit versioning adheres to [semver](https://semver.org) versioning guidelines.  
-Before exporting component d from the local workspace, it should be tagged with a new unique version.
+Before exporting components from the local workspace, it should be tagged with a new unique version.
 
 ## Components Management
 
@@ -71,7 +71,7 @@ Bit creates a workspace inside a working project when running the init command. 
 
 The workspace contains the following:  
 
-- Workspace configuration - contains information about the project that contains the Bit components such as the package manager used for installing it, the compilers and testers used in the project, and the components code location. The [workspace configuration](/docs/workspace) is stored under the bit section in the `package.json` or as a separate `bit.json` file at the workspace root.
+- Workspace configuration - contains information about the project that contains the Bit components such as the package manager used for installing it, the compilers and testers used by the components, and the components code location. The [workspace configuration](/docs/workspace) is stored under the bit section in the `package.json` or as a separate `bit.json` file at the workspace root.
 - Components index - defines the files that comprise each component. Bit stores the index in the `.bitmap` file at the workspace root.
 
 ### Scope
