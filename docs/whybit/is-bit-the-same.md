@@ -1,9 +1,9 @@
 ---
-id: is-bit-the-same
-title: Is Bit the Same As?
+id: bit-tools
+title: Bit and Other Tools
 ---
 
-## Is Bit the same as Git?
+## Git and Bit
 
 Git is a distributed version-control system for tracking changes in source code during software development. Git manages changes in files' contents without any reference to their structure or semantics. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.  
 
@@ -15,7 +15,7 @@ Bit augments Git to:
 
 Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git.  
 
-## Is Bit the same as NPM or Yarn?
+## NPM / Yarn and Bit
 
 A component packaged with Bit is a valid NPM package and can be installed using NPM or Yarn.  
 
@@ -25,7 +25,7 @@ Package registries and tools like NPM and Yarn help to manage distributable arti
 - Bit provides access to package code with a single command without leaving the project context.
 - Bit manages dependencies between packages and automatic versioning based on dependencies
 
-## Is Bit the same as Storybook?
+## Storybook and Bit
 
 Storybook is a fantastic aid tool for visually developing components in simulated isolation and creating visual documentation for components based on their stories.
 
