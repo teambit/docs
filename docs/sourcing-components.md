@@ -5,120 +5,133 @@ title: Importing
 
 ## Importing Components
 
-Bit lets developers import component's source code to a consumer project.
+To use a component in a workspace, the component needs to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Bit provides some shortcut command to make the work more fluent.  
 
-With Bit, you can develop components from any repository. Inside the importing project, you can change the component.  
-If a component was changed locally, you can either keep the changes locally or send them back to the component's collection. This depends on the organization's structure and the privileges developers have to change components.  
+![import](https://storage.cloud.google.com/static.bit.dev/docs/images/import.png)
 
-> If a component was changed locally for internal use, it is recommended to commit the component's source code to the project’s SCM.
+## Initial Component Import
 
-### Importing component's source code
-
-To import a component's code to a project, use [bit import](/docs/apis/cli-all#import).
+To import a component for the first time, i.e. component not yet exists in the workspace, you need to specify the component id:  
 
 ```bash
-$ bit import bit.utils/string/left-pad
+bit import bit.examples/foo
 ```
 
-**Import entire collection**
-
-You can use glob patterns to import an entire collection, or a part of it
+You can also specify a specific version to be imported:  
 
 ```bash
-bit import bit.utils/*        # import entire collection
-bit import bit.utils/array/*  # import entire namespace
+bit import bit.examples/foo@0.0.11
 ```
 
-> Depending on your OS, you may need to wrap the glob pattern with quotes
+Bit then imports the component into the local scope and fetches the specified version (or latest, if none was specified) into the workspace with the following steps:  
 
-This command imports the component's source code to the project. Bit also fetches all resources and dependencies it needs to build and test the component. This makes the component usable in any project.
+- Update the [Bit components map](/docs/workspace#components-map) with the component's exact version
+- Copy the component source code to a directory created in the [default component's directory](/docs/conf-bit-json#componentsdefaultdirectory), or in another location specified by the user with the `--path` option during the import.
+- Update the workspace's top level `package.json` to include the new component as a dependency. This allows importing the component in the code as `'@bit.<owner>.<collection>.<namespace>.<component-name>'
+- Create a symlink between the top level node_modules in the workspace and the locaiton of the installed component.  
+- Install the component's dependencies using a package manager or imported using Bit according to the [dependencies policy](/docs/conf-bit-json#savedependenciesascomponents).  
+- Write the built files from the component's cache. This can be overridden using the `--ignore-dist` option.  
 
-As part of the import process, Bit creates a set of binding files in the project's `node_modules` directory. This allows importing components like any other package:
+At this point the source code of the component exists in the workspace. Running `bit status` does not show the component, but running `bit list` shows that the component exists in the workspace. 
 
-```js
-import component from '@bit.<owner>.<collection>.<namespace>.<component-name>';
-```
+## Importing New Versions
 
-#### Dependencies of sourced components
-
-Bit makes sure to install all dependencies of sourced components. By default Bit installs component dependencies as packages, using the configured package manager in the [bit config](/docs/conf-bit-json.html) file. We can override this behavior and configure Bit to source the component dependencies instead.  
-Bit installs package dependencies using the configured package manager. It is not possible to override this behavior, as node registries only support a single API for package installation.
-
-#### Import a component to a specific path
-
-Setting a destination to the imported component is possible. Bit writes the files there instead of the default location.
+If a new version is added on the remote scope, you can import it into the local scope by running:  
 
 ```bash
-$ bit import bit.utils/string/left-pad --path src/components
+$ bit import
+successfully imported 2 components
+- up to date bit.example/foo
+- updated bit.example/baz new versions: 1.0.1
 ```
 
-#### Import a specific version
+Bit notifies on any new versions found for the components that exist in the local workspace.
 
-To import a specific version, specify it after the `@` sign:
+Running `bit status` also shows that there are pending changes for the component: 
 
 ```bash
-bit import bit.examples/string/left-pad@0.0.11
+$ bit status
+pending updates
+(use "bit checkout [version] [component_id]" to merge changes)
+(use "bit log [component_id]" to list all available versions)
+
+    > bit.example/baz current: 1.0.0 latest: 1.0.1
 ```
 
-### Importing packaged components
+When importing specific component (or components) by their ids, Bit fetches the changes and also checks out the component's code into the workspace. Bit updates the index with the version of the newly fetched component. To fetch only the changes but without checking out the component into the workspace use:  
 
-Bit handles sourcing of packaged components by modifying the linked files. In case we have installed a component using NPM, and now we need to source it, the step we need to do is to run `bit import`. Bit overrides the package with its linked files. This means that there's no need to change the code that imports the component.
-
-### Import Default directory 
-
-Set a default directory for component sourcing in your project's [bit config](/docs/conf-bit-json.html#componentsdefaultdirectory--string).
-
-```js{2}
-{
-  "componentsDefaultDirectory": "src/{namespace}-{name}"
-}
+```bash
+bit import foo --objects
 ```
 
-## Modify Imported Component
+## Importing for modified components
 
-It's possible to change a component from any consuming project.
-
-When we import a component using Bit, it downloads the source code of the component. Moreover, Bit keeps tracking the files as a component. This allows doing modifications to the component. It's also possible to run build and test tasks for imported components. This is because Bit keeps them isolated from the consumer project. All changes are also tracked, versioned and exported.
-
-For example, if we import and component and then change, we can run `bit status` and see that the component is `modified`.
+Bit behaves slightly differently when importing changes for a component that was modified locally:  
 
 ```bash
 $ bit status
 modified components
-  > string/pad-left... ok
+  > baz... ok
 ```
 
-### Version an imported component
+> If a component was changed locally for internal use, it is recommended to commit the component's source code to the project’s SCM.
 
-Sharing a modified version of a sourced component is like sharing any modified component. First we need to tag a new version and see that it is isolated. Afterwards we run `bit export` to share the new version.
+When running `bit import` with the component id, Bit imports the changes into the scope, but stops before checking out the component into the workspace. The component now exists in two parallel statues: modified, due to the local changes and pending updates, due to the incoming version:
 
 ```bash
-$ bit tag string/left-pad
-$ bit export bit.utils
+$ bit status
+pending updates
+(use "bit checkout [version] [component_id]" to merge changes)
+(use "bit log [component_id]" to list all available versions)
+
+    > bit.example/foo current: 1.0.0 latest: 1.0.1
+
+modified components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+    > foo ... ok
 ```
 
-### Keep local changes
+There are two options for handling the changes:  
 
-In some cases we want to change a component and keep the modifications local. This can be because there are specific customizations required for that specific instance of a component. With Bit we can do that by importing components, make the changes, and track all files using Git.  
-Bit still allows fetching remote changes for these components. We can even merge the changes to the modified component.
+### Checkout
 
-### Replace component with a package
-
-It's possible to replace a sourced component with its corresponding node package. We call this process *eject*. When we eject a component using Bit, Bit triggers a delete action for the local component, and `npm install` command to install the package.
-
-To eject a component on export:
+running [`bit checkout`](/docs/apis/cli-all#checkout) checks the latest version (or a version that was specified as the component's version) in the workspace. Bit uses git diff to merge with existing changes. In case of conflicts, Bit notifies and let merge the changes: 
 
 ```bash
-$ bit export bit.examples string/left-pad --eject
+$ bit checkout 1.0.1 foo
+successfully switched bit.example/foo to version 1.0.1
+
+updated src/foo/foo.spec.js
+updated src/foo/index.js
+auto-merged src/foo/foo.js
 ```
 
-To eject a component after export:
+The component is now on the version that was checked out with the local changes on top of it.
+
+### Merge
+
+Running [`bit merge`](/docs/apis/cli-all#merge) gets the changes from the remote into the component's version that exists in our workspace.
 
 ```bash
-$ bit eject string/left-pad
+$ bit status
+modified components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+    > foo ... ok
 ```
 
-Learn more about exporting and ejecting components [here](/docs/export#ejecting-components).
+> For both merge and checkout bit can be instructed on how to resolve merge conflicts if exist, using the ours, theirs or manual strategies.
+
+
+## Component Dependencies
+
+Bit makes sure to install all dependencies of sourced components. By default Bit installs component dependencies as packages, using the configured package manager in the [bit config](/docs/conf-bit-json) file. We can override this behavior and configure Bit to source the component dependencies instead.  
+Bit installs package dependencies using the configured package manager. It is not possible to override this behavior, as node registries only support a single API for package installation.
+
+### Importing packaged components
+
+Bit handles sourcing of packaged components by modifying the linked files. In case we have installed a component using NPM, and now we need to source it, the step we need to do is to run `bit import`. Bit overrides the package with its linked files. This means that there's no need to change the code that imports the component.
 
 ## Update Component Dependencies
 
@@ -195,78 +208,7 @@ $ bit tag --patch  # create a new patch version for the update
 $ bit export <remote collection> # share patch component
 ```
 
-## Receive component changes
 
-With Bit, we can keep sourced components synced and up-to-date with remote changes.
-
-If we use Bit to [source components in a project](/docs/sourcing-components.html), it is still possible to keep them up to date with remote changes. The reason for it is that Bit allows modifications of components from other projects. Updating sourced components is a part of a distributed component development workflow.  
-The update process is a combination of two steps. The first step is to fetch all remote changes. The second step is to checkout the latest version of the components.
-
-### Check for remote changes
-
-Checking for remote changes is not a mandatory step. You can run a quick test to see if there are newer versions for all sourced components. To do this, we run the `bit list` command, with the `--outdated` flag.
-
-```bash
-bit list --outdated
-```
-
-### Get all updated versions
-
-To fetch updated versions of all sourced components, run the `bit import` command.
-
-```bash
-$ bit import
-successfully imported 2 components
-- up to date bit.example/string/is-string
-- updated bit.example/string/contains new versions: 1.0.1
-```
-
-You can also fetch the updated version of a specific component:
-
-```bash
-$ bit import bit.example/string/contains
-successfully imported 1 components
-- updated bit.example/string/contains new versions: 1.0.1
-```
-
-### See available pending updates for components
-
-Use `bit status` to list all pending local updates of all sourced components.
-
-```bash
-$ bit status
-pending updates
-(use "bit checkout [version] [component_id]" to merge changes)
-(use "bit log [component_id]" to list all available versions)
-
-    > bit.example/string/contains current: 1.0.0 latest: 1.0.1
-```
-
-### Checkout a component version to the workspace
-
-We can checkout fetched versions into the workspace. Using `bit checkout`, we tell Bit to switch the component's version in the workspace. If other components depend on a sourced component, updating its version updates their dependency tree.  
-For example:
-
-```bash
-$ bit checkout 1.0.1 string/contains
-successfully switched bit.example/string/contains to version 1.0.1
-
-updated src/pad-left/contains.spec.js
-updated src/pad-left/index.js
-updated src/pad-left/contains.js
-```
-
-Now `string/contains`'s version in the workspace is `1.0.1`. Bit also updates the dependency trees of components that depend on it.
-
-### Compare different versions of components
-
-Bit supports comparing between versions of components:
-
-```bash
-$ bit diff bit.example/string/contains
-```
-
-Bit does not have a `diff` functionality. It uses `git diff`.
 
 ## Merge incoming changes
 
@@ -287,19 +229,7 @@ successfully imported 2 components
 
 A new version is available for `string/contains`. `bit status` shows this as well:
 
-```bash
-$ bit status
-pending updates
-(use "bit checkout [version] [component_id]" to merge changes)
-(use "bit log [component_id]" to list all available versions)
 
-    > bit.example/string/contains current: 1.0.0 latest: 1.0.1
-
-modified components
-(use "bit tag --all [version]" to lock a version with all your changes)
-
-    > string/contains ... ok
-```
 
 In this case, we have also local modifications made to `string/contains`. To start the merge process, we need to checkout the latest version:
 
@@ -411,3 +341,16 @@ $ bit tag --all
 ```
 
 Version `1.0.6` can be now exported to the remote collection.
+
+
+The `bit import` command brings the source code of the component into the workspace where the user ran the build. 
+Code is imported from a remote scope, such as `bit.dev` collection:  
+
+```bash
+bit import bit.utils/string/left-pad
+```
+
+Importing components is combined of two fold:  
+
+1. Bringing the code into the [component storage](/docs/workspace#components-storage-scope) in the local workspace.  
+1. Updating the workspace with the files changes

@@ -88,10 +88,10 @@ All the components that are dependencies, are also exported to the other scope. 
 `scope1.compA` depends on `scope1.compB`.  
 
 If you run `bit export scope2.compA --include-dependencies`, 2 components are created in scope2:  
-`scope2.compA` and `scope2.compB`. However, `scope2.compA` still has `scope1.compB` as its dependency. To change scope2.compA to have `scope2.compB` as its dependency run: 
+`scope2.compA` and `scope2.compB`. However, `scope2.compA` still has `scope1.compB` as its dependency. To change scope2.compA to have `scope2.compB` as its dependency run:  
 
 ```bash
 bit export user.other-scope my-component --include-dependencies --rewire
 ```
 
-Now in scope2 you have `scope2.compA` that depends on `scope2.compB`. 
+Now in scope2 you have `scope2.compA` that depends on `scope2.compB`.  

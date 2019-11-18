@@ -5,7 +5,13 @@ title: Quick Start
 
 Bit is an [open-source](https://github.com/teambit/bit) tool for components collaboration.
 
-Employ Bit to wrap your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
+This guide will teach you how to start with Bit and run a simple workflow for sharing components between projects.  
+
+![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
+
+## What Bit Does?
+
+Use Bit to wrap your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
 
 Key Features:  
 
@@ -19,14 +25,13 @@ Key Features:
 - Automated component versioning according to changes in the dependency graph chain.
 - Works alongside with Git, NPM and Yarn.
 
-Bit is provided as a CLI tool. Because Bit is distributed, the same tool manages the developer’s workspace (client) and the centralized server for sharing components.  
+Bit is provided as a CLI tool. Bit is distributed so the same tool manages the developer’s workspace (client) and the centralized server for sharing components.  
 You can setup your own server for sharing components or you can use the [bit.dev](https://bit.dev) cloud hosting solution for private and public components sharing with advanced features such as components CI and showcase.
 
 <div class="learn-more">
 
 - [How bit works](/docs/how-bit-works)
 - Suggested [workflows](/docs/workflows) when using Bit
-- Setup your own [Bit server](/docs/bit-server)
 
 </div>
 
@@ -55,6 +60,7 @@ You now have a collection. You can see the export command that you will use late
 
 - Check out [bit.dev functionality](/docs/bit-dev)
 - Find other [authentication methods](/docs/setup-authentication)
+- Setup your own [Bit server](/docs/bit-server)
 
 </div>
 
@@ -70,16 +76,6 @@ bit init
 <div class="learn-more">
 
 - Learn more about the [Bit workspace](/docs/workspace).
-
-</div>
-
-## Workflow
-
-This diagram bellow provides an overview of the workflow we will use in this guide:  
-![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
-
-<div class="learn-more">
-
 - The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.  
 - Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines)  or [Vanilla Javascript or Typescript](/docs/vanilla-guideline).
 
