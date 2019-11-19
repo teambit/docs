@@ -128,4 +128,6 @@ The benefits you can get from this workflow:
 - Eject the component to remove the source code from a project and replace it with a node module.
 - If the changes are not applicable, you can stay with the modified component and still receive updates from the original component.
 
+### Managing Components in Projects
+
 In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from a relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.
