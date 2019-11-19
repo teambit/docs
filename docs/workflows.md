@@ -84,7 +84,7 @@ The evaluation of these options highly depends on the organizational support, as
 
 ## Sharing Code between Projects
 
-<img src="https://storage.cloud.google.com/static.bit.dev/docs/images/proejcts-sharing-comps.jpg" height="500"/>
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-sharing-comps.jpg" height="500"/>
 
 This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
 
