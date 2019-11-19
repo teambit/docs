@@ -59,7 +59,7 @@ The consumed components are included in the consuming project as if they were in
 
 For the time being, Bit does not have a PR-like flow to suggest changes to the component. There are a few options on how to bypass this change:  
 
-- Build a separate collection for staged components. Component consumers can suggest changes to components in this collection. The shared library maintainers will merge the changes from the staging collection into the components on their local workspace, review the difference, and reject or submit them back to the primary collection. 
+- Build a separate collection for staged components. Component consumers can suggest changes to components in this collection. The shared library maintainers will merge the changes from the staging collection into the components on their local workspace, review the difference, and reject or submit them back to the primary collection.  
 - Make the changes in the local workspace and generate a patch file with the changes or manually perform the adjustment and submit it to the shared library's repository.
 
 > We are aware that this is a sub-optimal flow, and we are working on a new feature of supporting changes to components.
