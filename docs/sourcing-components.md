@@ -5,7 +5,7 @@ title: Importing
 
 ## Importing Components
 
-To use a component in a workspace, the component needs to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Bit provides some shortcut command to make the work more fluent.  
+To use a component in a workspace, the component needs to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Bit provides some shortcut commands to make the work more fluent.  
 
 ![import](https://storage.googleapis.com/static.bit.dev/docs/images/import.png)
 
@@ -123,7 +123,7 @@ modified components
     > foo ... ok
 ```
 
-Bit uses git diff to attempt merging the changes between versions. When trying to merge, conflicts may occur:
+Bit uses [`git merge-file`](https://git-scm.com/docs/git-merge-file) to attempt merging the changes between versions. When trying to merge, conflicts may occur:
 
 ```bash
 $ bit checkout 1.0.5 bit.example/foo --manual
@@ -142,7 +142,6 @@ If it cannot resolve the conflict, it needs user's guidance.  There are three po
 
 > For both merge and checkout bit can be instructed on how to resolve merge conflicts if exist, using the ours, theirs or manual strategies.
 
-To resolve the conflicts within the specified file, Bit will open the merge tool configured in Git.  
 Once we resolve the merge, we can run `bit status` and see the result:
 
 ```bash
