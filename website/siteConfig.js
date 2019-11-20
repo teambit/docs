@@ -67,25 +67,29 @@ const siteConfig = {
 
   /* Custom fonts for website */
 
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Quicksand&display=swap',
+
+  ],
   fonts: {
     myFont: [
-      "CircularProBook",
+      "Quicksand",
       "/css/custom.css"
     ],
     myOtherFont: [
-      "CircularProBlack"
+      'Quicksand' 
     ],
     bookFont: [
-      "CircularProBook"
+      'Quicksand' 
     ],
     blackFont: [
-      "CircularProBlack"
+      'Quicksand' 
     ],
     boldFont: [
-      "CircularProBold"
+      'Quicksand' 
     ],
     mediumFont: [
-      "CircularProMedium"
+      'Quicksand'
     ]
   },
 

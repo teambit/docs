@@ -1,26 +1,3 @@
-@font-face {
-  font-family: "CircularProBook";
-  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Book.otf);
-}
-
-/* headlines font */
-@font-face {
-  font-family: "CircularProBlack";
-  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Black.otf);
-}
-
-/* headlines regular +bold */
-@font-face {
-  font-family: "CircularProBold";
-  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Bold.otf);
-}
-
-/* headlines regular +semi-bold */
-@font-face {
-  font-family: "CircularProMedium";
-  src: url(//storage.googleapis.com/static.bit.dev/fonts/CircularPro-Medium.otf);
-}
-
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
