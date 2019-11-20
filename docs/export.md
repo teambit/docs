@@ -74,7 +74,7 @@ You can export the same component to additional scopes which are different from 
 bit export user.other-scope my-component
 ```
 
-> When component is exported to a scope which is different from the primary scope, the component remains in staging mode. Only when exported to the primary scope, it will become exported. 
+> When component is exported to a scope which is different from the primary scope, the component remains in staging mode. Only when exported to the primary scope, it will become exported.  
 
 You can change the component primary scope when exporting to another scope by using the `--set-current-scope` during the import.  
 
