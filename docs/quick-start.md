@@ -11,7 +11,12 @@ This guide will teach you how to start with Bit and run a simple workflow for sh
 
 ## What Bit Does?
 
-Use Bit to wrap your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
+Bit wraps your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
+
+Think about it this way: without Bit, if you want to share your code between projects, you need to create a separate repo (or a package in your monorepo) for the files, push the code to github (or similar), setup configuration for the project, create a package.json for the package, install all package dependencies, compile and publish the code to NPM.
+Then you go to all your projects that need the component and and run `npm install <the new package>`.  
+Bit saves you the above process by making the package available and published directly from your project.
+All is let for you is to build your apps, be it React, Vue or other, and the code goes into the application using Webpack just like any other `node_modules` package in your project.
 
 Key Features:  
 
@@ -204,7 +209,7 @@ Once exported, the component is now available for consumption by other developer
 
 ### Install components
 
-Developers can use Npm or Yarn to install the components. The component will be installed with build artifacts (e.g., the dist folder) like any other NPM package. The installed component resides in the node_modules folder.
+You can now use Npm or Yarn to install the components. The component will be installed with build artifacts (e.g., the dist folder) like any other NPM package. The installed component resides in the node_modules folder.
 
 If using NPM or Yarn, NPM should configure Bit as a scoped registry (this is done automatically when doing bit login):
 
