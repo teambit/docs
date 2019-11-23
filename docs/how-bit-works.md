@@ -82,4 +82,11 @@ The scope resides under the `.bit` folder. Inside a workspace that it is also a 
 
 The bit `tag` and `checkout` commands are used to transfer a single version of a component between the local scope and the workspace.  
 
-Note: The workspace and scope concepts are profoundly impacted by the mechanisms used in Git for managing a git workspace and a git repository
+Note: The workspace and scope concepts in Bit are profoundly impacted by the mechanisms used in Git for managing a git workspace and a git repository, so if you are familiar with those, it is easier to understand Bit.
+
+### Remote Scope
+
+Remote scope is a scope that resides on a server. It is also called a **bare scope** since it is defined outside a workspace.  
+A remote scope is used for sharing components, so it is in fact a place where components are exported to and imported from.  
+
+A user can set up a [Bit Server](/docs/bit-server) that holds remote scopes for sharing components between Bit workspaces. Alternatively, users can use [bit.dev](/docs/bit-dev) for storing remote scopes of components.  
