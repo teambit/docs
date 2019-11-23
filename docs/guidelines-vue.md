@@ -4,8 +4,8 @@ title: Vue Guide
 sidebar_label: Vue
 ---
 
-> **Vue support is in public beta.**  
-> Everything should work fine, but please do share any issues and feedback: support@bit.dev
+> **Vue support is in public beta.** Known issues:  
+> Playground does not support specific webpack configuration such as Vuetify. 
 
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds vue specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
