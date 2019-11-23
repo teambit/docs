@@ -82,7 +82,7 @@ bit init
 
 - Learn more about the [Bit workspace](/docs/workspace).
 - The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.  
-- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines)  or [Vanilla Javascript or Typescript](/docs/vanilla-guideline).
+- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines), [Javascript](/docs/guidelines-js) or [Typescript](/docs/guideline-ts).
 
 </div>
 
@@ -261,8 +261,7 @@ When a component is updated with a new version in the collection, every reposito
 
 <div class="learn-more">
 
-- [Update component in workspace](/docs/updating-sourced-components)
-- [Bit checkout command](/docs/apis/cli/)
+- [Update component in workspace](/docs/sourcing-components#importing-for-modified-components)
 
 </div>
 
