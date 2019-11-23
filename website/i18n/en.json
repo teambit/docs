@@ -11,9 +11,6 @@
       "apis/cli-all": {
         "title": "CLI Commands"
       },
-      "apis/cli": {
-        "title": "CLI Reference"
-      },
       "best-practices": {
         "title": "Best Practices"
       },
@@ -27,20 +24,11 @@
       "bit-server": {
         "title": "Bit Server"
       },
-      "bitdev-permissions": {
-        "title": "Dependency Limitations"
-      },
       "bitdev-search-api": {
         "title": "Seach API"
       },
       "bitdev-sla": {
         "title": "Service Level Agreement"
-      },
-      "bitsrc-component-ci": {
-        "title": "Component CI"
-      },
-      "bitsrc-plans": {
-        "title": "Pricing"
       },
       "bitsrc-security": {
         "title": "Security and Data Policy"
@@ -51,15 +39,6 @@
       "ci": {
         "title": "CI & Deployment"
       },
-      "clearing-bit-cache": {
-        "title": "Clearing the Bit Cache"
-      },
-      "component-dependencies": {
-        "title": "Component Dependencies"
-      },
-      "concepts": {
-        "title": "Bit Concepts"
-      },
       "conf-analytics": {
         "title": "Usage Analytics"
       },
@@ -68,9 +47,6 @@
       },
       "conf-config": {
         "title": "Bit Client Configuration"
-      },
-      "conf-files": {
-        "title": "Project Configuration"
       },
       "dependencies": {
         "title": "Components Dependencies",
@@ -126,20 +102,11 @@
       "how-bit-works": {
         "title": "How bit Works?"
       },
-      "importing-component-dependencies": {
-        "title": "Sourcing Components with Dependencies"
-      },
-      "initializing-bit": {
-        "title": "Initializing Bit"
-      },
       "installation": {
         "title": "Installation"
       },
       "installing-components": {
         "title": "Installing"
-      },
-      "merge-changes": {
-        "title": "Merging Component Changes"
       },
       "modifying-sourced-components": {
         "title": "Modifying Imported Components"
@@ -158,17 +125,8 @@
       "quick-start": {
         "title": "Quick Start"
       },
-      "reference-cli": {
-        "title": "Bit CLI Reference"
-      },
-      "remote-collection": {
-        "title": "Creating a Remote Collection"
-      },
       "removing-components": {
         "title": "Removing & Deprecating"
-      },
-      "rendering-components": {
-        "title": "Rendering Components"
       },
       "setup-authentication": {
         "title": "bit.dev Authentication",
@@ -177,17 +135,11 @@
       "sourcing-components": {
         "title": "Importing"
       },
-      "sourcing-installing-dependencies": {
-        "title": "Installing Dependencies for Sourced Components"
-      },
       "tag-component-version": {
         "title": "Versioning"
       },
       "testing-components": {
         "title": "Testing"
-      },
-      "tracking-dependencies": {
-        "title": "Tracking Components' Dependencies"
       },
       "tutorials/bit-angular-tutorial": {
         "title": "Bit for Angular"
@@ -203,15 +155,6 @@
       },
       "tutorials/bit-vue-tutorial": {
         "title": "Bit for Vue"
-      },
-      "update-dependencies": {
-        "title": "Update Dependencies"
-      },
-      "updating-sourced-components": {
-        "title": "Updating Imported Components"
-      },
-      "using-in-your-code": {
-        "title": "Using Bit Components in Your Code"
       },
       "view": {
         "title": "Viewing"
@@ -233,9 +176,6 @@
       },
       "workflows": {
         "title": "Bit Workflows"
-      },
-      "workspace-statuses": {
-        "title": "Workspace Statuses"
       },
       "workspace": {
         "title": "Bit Workspace"

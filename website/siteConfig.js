@@ -68,7 +68,7 @@ const siteConfig = {
   /* Custom fonts for website */
 
   stylesheets: [
-    'https://fonts.googleapis.com/css?family=Quicksand&display=swap',
+    'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap',
 
   ],
   fonts: {
