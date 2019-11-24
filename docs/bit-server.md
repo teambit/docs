@@ -39,8 +39,10 @@ When logging into a server, Bit tries logs in using SSH with the following combi
 1. SSH key pair from ssh-agent
 1. SSH key pair from the [filename in bit config](/docs/conf-config#ssh_key_file)
 1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
+1. Anonymous login - username: `anonymous` and password is blank  
 
 If all the above fail Bit prompts for username and password.
+It is up for the server deployment to decide on the relevant policy. 
 
 ## Working with Remote Scopes
 

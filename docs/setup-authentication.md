@@ -4,7 +4,8 @@ title: bit.dev Authentication
 sidebar_label: Authentication
 ---
 
-To work with bit.dev you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
+You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
+To export components to bit.dev and to import from private collections you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
 
 Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication).  
 
@@ -33,6 +34,8 @@ bit login --machine-name=ci_server
 
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
 You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
+
+> You can send a specific token for each command you are running and is accessing a remote collection by specifying the `--token` flag with the relevant token.
 
 ## Authenticate with SSH
 
