@@ -16,7 +16,7 @@ To compile typescript code use the [Typescript compiler](https://bit.dev/bit/env
 bit import bit.envs/compilers/typescript --compiler
 ```
 
-Check [here](https://bit.dev/bit/envs/compilers/typescript/~code#src/tsconfig.ts) the configuration used by the Typescript compiler.
+Check [here](https://bit.dev/bit/envs/compilers/typescript/~code#config.md) the configuration used by the Typescript compiler.
 
 ### Changing Compiler Configuration
 
