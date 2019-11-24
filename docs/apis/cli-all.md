@@ -237,7 +237,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--compiler <compiler>`|`--c`|set up compiler|
 |`--tester <tester>`|`--t`|set up tester|
 |`--default-directory <default-directory>`|`--d`|set up default directory to import components into|
-|`--package-manager <package-manager>`|`--p`|set up package manager (npm | yarn)|
+|`--package-manager <package-manager>`|`--p`|set up package manager (npm or yarn)|
 |`--force`|`--f`|force workspace initialization without clearing local objects|
 |`--interactive`|`--I`|EXPERIMENTAL. start an interactive process|
 
