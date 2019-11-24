@@ -3,7 +3,7 @@ id: for-libs
 title: Bit for Libraries
 ---
 
-**Bit is the most powerful and scalable way to manage and publish components in your library**
+**Bit is a  powerful and scalable way to build, distribute and get adoption for components in your library**
 
 Shared libraries are a popular way to build and share components between teams and applications- to save time, prevent duplications and encourage consistency.
 
