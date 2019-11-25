@@ -4,7 +4,7 @@ title: bit.dev Overview
 sidebar_label: Overview
 ---
 
-Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
+Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace. 
 
 ![Bit.dev](https://storage.googleapis.com/static.bit.dev/docs/images/bit.dev.png)
 
@@ -12,21 +12,16 @@ Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requ
 
 Bit.dev server provides these functions:  
 
-## Remote Collections Hosting
+## Remote Scopes Hosting
 
-A Remote Collection is a curated list of shared components on a remote server. The remote collection is used for collaborating on components between bit workspaces. Bit.dev provides hosting for remote collections for all the users.
-
-> Only components deployed on bit.dev collections can be installed using package managers (NPM or Yarn)
-
-Each remote collection contains the bit scope of its components as well as additional information on the collection:  
+The primary goal of bit.dev is to be a SaaS service for hosting remote scopes.  
+Bit.dev is managing scopes in **collections**. The collection contains additional information on top of the scope:  
 
 - **Collection name** - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  
 - **Visibility** - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
 - **License** - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
 
-> bit.dev server is using the following IP addresses:  
-> 104.154.235.126:22  
-> 35.184.176.52:443  
+In addition, Bit provides security controls for collections, so only authorized users may access them. 
 
 ### Permissions for Collections
 
@@ -50,6 +45,11 @@ Collection's members are assigned with 3 possible roles:
 | Edit collection's information | Yes | No | No |
 
 > *Viewing, importing and installing is available for all users for public collections.  
+
+## Package Registry
+
+Bit.dev also manages a package registry for all components that are exported to bit.dev collections. Any component exported to bit.dev can be [installed](/docs/installing-components) using package managers (NPM or Yarn).  
+All components in the Bit.dev registry are available with the `@bit` prefix. The full name of the component is in the format of `npm i @bit/<owner>.<collection-name>.<component-name>`. 
 
 ## Component Playground
 
@@ -83,3 +83,7 @@ Each container is limited to:
 
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
+
+> bit.dev server is using the following IP addresses:  
+> 104.154.235.126:22  
+> 35.184.176.52:443  
