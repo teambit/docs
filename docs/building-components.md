@@ -24,6 +24,8 @@ the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
 ```
 
+See [full collection of officially maintained compilers](https://bit.dev/bit/envs).
+
 ## Building a component
 
 Use [bit build](/docs/apis/cli-all#build) to build components that have a compiler:
@@ -41,4 +43,5 @@ dist/foo/bar.js.map
 
 ## Compilers maintained by bit.dev
 
-Find a list of Compilers maintained by the [bit.dev](https://bit.dev) [here](https://bit.dev/bit/envs).
+Here is a [full list of compilers](https://bit.dev/bit/envs) maintained by the [bit.dev](https://bit.dev) team.    
+Issues regarding any of the compilers can bre [reported here](https://github.com/teambit/bit.envs).
