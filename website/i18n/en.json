@@ -73,6 +73,9 @@
       "ext-using-extensions": {
         "title": "Using Extensions"
       },
+      "faq": {
+        "title": "FAQ"
+      },
       "getting-help": {
         "title": "Getting Help"
       },
@@ -184,7 +187,6 @@
     "links": {
       "Docs": "Docs",
       "Tutorials": "Tutorials",
-      "Why Bit?": "Why Bit?",
       "Support": "Support",
       "Github": "Github"
     },
@@ -197,7 +199,6 @@
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
       "Reference": "Reference",
-      "Why Bit?": "Why Bit?",
       "Tutorials": "Tutorials"
     }
   },

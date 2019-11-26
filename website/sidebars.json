@@ -3,7 +3,8 @@
     "Introduction": [
       "quick-start",
       "how-bit-works",
-      "workflows"
+      "workflows",
+      "faq"
     ],
     "Basics": [
         "installation",
@@ -55,14 +56,6 @@
         "apis/cli-all"
     ]
   },
-  "whybit?": {
-    "Why Bit?": [
-    "what-is-bit",
-    "whybit/bit-tools", 
-    "whybit/for-teams",
-    "whybit/for-libs"
-  ]
-},
   "tutorials": {
     "Tutorials": [
       "tutorials/bit-react-tutorial",
