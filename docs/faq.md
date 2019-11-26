@@ -34,3 +34,7 @@ Bit facilitates a full lifecycle of components development. Bit tracks changes t
 Through bit.dev, the components are not only put on display but can also be directly consumed.  
 
 Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.
+
+## Does Bit support React Native?  
+
+Bit can be used to shared any javascript code. So, you can use Bit to share code for react native components. However, Bit does not have a dedicated compiler for RN, and also bit.dev does not support rendering React Native components.  
