@@ -38,3 +38,9 @@ Storybook and Bit can live separately or side by side. For example, Bit can be u
 ## Does Bit support React Native?  
 
 Bit can be used to shared any javascript code. So, you can use Bit to share code for react native components. However, Bit does not have a dedicated compiler for RN, and also bit.dev does not support rendering React Native components.  
+
+## Is there an on-premise version of Bit?  
+
+The Bit cli tool is open source and is the engine that runs for a bit client (workspace) and a Bit server (remote scope). You can host and share components on your own server. I.e. export components to it and import components from the server. Building, testing and rendering should be done on your own CI/CD. 
+Bit.dev is using Bit cli as its engine but provides [additional functionality](/docs/bit-dev) including components CI, components search, explorer and online playground. Also, components exported to bit.dev are available for installing using npm and yarn.  
+Bit.dev is  a SaaS based solution only and is not available for on-premise.
