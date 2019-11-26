@@ -37,4 +37,4 @@ Storybook and Bit can live separately or side by side. For example, Bit can be u
 
 ## Does Bit support React Native?  
 
-Bit can be used to shared any javascript code. So, you can use Bit to share code for react native components. However, Bit does not have a dedicated compiler for RN, and also bit.dev does not support rendering React Native components.  
+Bit can be used to shared any javascript code. So, you can use Bit to share code for react native components. You can use any of the [React envs](https://www.github.com/teambit/envs). Note that [bit.dev](https://bit.dev) does not support rendering of React Native components.  
