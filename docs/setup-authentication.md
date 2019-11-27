@@ -52,20 +52,19 @@ Follow the steps below to generate SSH keys:
 <!--MacOS / Linux-->
 
 1. Open a terminal application.
-2. Run this command (replace ‘email’ with the email associated with your Bit.dev account): `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-
-3. Accept the default location for the key file.
-4. Start the SSH agent: `eval "$(ssh-agent -s)"`
-5. Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
+1. Run this command (replace ‘email’ with the email associated with your Bit.dev account): `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+1. Accept the default location for the key file.
+1. Start the SSH agent: `eval "$(ssh-agent -s)"`
+1. Add the private key we’ve created in the last step: `ssh-add ~/.ssh/id_rsa`
 
 <!--Windows-->
 
 1. Download and start the [puttygen.exe generator](https://winscp.net/eng/docs/ui_puttygen).
-2. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
-3. Move your mouse on the small screen to generate the key pairs.
-4. Enter a key comment, which identifies the key (useful when you use several SSH keys).
-5. Click "Save private key" to save your private key.
-6. Click "Save public key" to save your public key.
+1. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
+1. Move your mouse on the small screen to generate the key pairs.
+1. Enter a key comment, which identifies the key (useful when you use several SSH keys).
+1. Click "Save private key" to save your private key.
+1. Click "Save public key" to save your public key.
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
