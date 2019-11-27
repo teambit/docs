@@ -60,4 +60,4 @@ This practice reduces coupling between components as one component does not need
 
 ## Handling Assets and Styles
 
-Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) and [styles](/docs/best-practices#handling-styles).
