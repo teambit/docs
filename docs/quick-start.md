@@ -7,7 +7,7 @@ Bit is an [open-source](https://github.com/teambit/bit) tool for components coll
 
 This guide will teach you how to start with Bit and run a simple workflow for sharing components between projects.  
 
-![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-full.png)
+![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow.png)
 
 ## What Bit Does?
 
