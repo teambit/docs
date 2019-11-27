@@ -11,7 +11,7 @@ Bit augments Git to:
 
 - Bundle files into components so they become granular shareable components.
 - Add an automatic layer for versioning components (creates package.json)
-- Mock building and testing in components as if they are outside of the repository while still in the repository
+- Run building and testing in components as if they are outside of the repository while still in the repository
 
 Bit does not require Git to exist in the project, but it can use Git's functionality to perform actions such as code merging. Bit should not replace Git in project development. The project's code should remain in Git.  
 
@@ -24,6 +24,7 @@ Package registries and tools like NPM and Yarn help to manage distributable arti
 - Bit automates code packaging based on code analysis.  
 - Bit provides access to package code with a single command without leaving the project context.
 - Bit manages dependencies between packages and automatic versioning based on dependencies
+- Bit lets you have the code in any consuming project and directly change it from there. 
 
 ## Is Bit the same as Storybook?
 
