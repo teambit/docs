@@ -78,10 +78,27 @@ cd project-directory
 bit init
 ```
 
+Bit components should be small and only hold the component's relevant files. However, it is common that the components are importing from the framework you are using, such as React or Vue, or that they contain project-specific dependencies such as Storybook. To make sure you exclude those dependencies inside the Bit component, we need to configure them as peerDependencies.  
+
+> The example below is for React, but you should apply a similar approach to any other framework or additional tools and libraries. Check out the specific guidelines for your framework for more information.
+
+To achieve this, you need to configure your bit workspace. In your `package.json` file add a similar section to this one:  
+
+```json
+"peerDependencies": {
+ "react": ">=16.9.0",
+ "react-dom": ">=16.9.0",
+ "styles-components": ">=4.0.0",
+ "@storybook/react": >="5.2.0"
+}
+```
+
 <div class="learn-more">
 
 - Learn more about the [Bit workspace](/docs/workspace).
-- The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.  
+- Read about how Bit [generates dependencies](/docs/dependencies).
+- Understand how Bit [overriding rules](/docs/overrides) are working.
+- The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit. 
 - Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines), [Javascript](/docs/guidelines-js) or [Typescript](/docs/guideline-ts).
 
 </div>
