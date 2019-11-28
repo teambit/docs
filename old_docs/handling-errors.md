@@ -41,7 +41,7 @@ There are three different log types:
 
 * Debug log - `debug.log`.
 * Exceptions log - `exceptions.log`.
-* Extensions log - `extensions.log` 
+* Extensions log - `extensions.log`
 
 Each log file's size can be maximum 10MB, and there can be maximum 10 log files of each type. They will be numbered as follows: `debug.log`, `debug1.log`, `debug2.log`, etc.
 The log files are actually [winston logs](https://github.com/winstonjs/winston), and are [tailable](https://github.com/winstonjs/winston/blob/master/docs/transports.md).
