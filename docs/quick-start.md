@@ -5,13 +5,14 @@ title: Quick Start
 
 Bit is an [open-source](https://github.com/teambit/bit) tool for components collaboration.
 
-This guide will teach you how to start with Bit and run a simple workflow for sharing components between projects.  
+This guide will teach you how to start with Bit and run a simple workflow for sharing components.  
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
 
 ## What Bit Does?
 
-Bit wraps your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.
+Bit wraps your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.  
+Bit is working in the Javascript ecosystem. Although it is technically possible to share any code, Bit is geared towards working in Javascript.  
 
 Think about it this way: without Bit, if you want to share your code between projects, you need to create a separate repo (or a package in your monorepo) for the files, push the code to github (or similar), setup configuration for the project, create a package.json for the package, install all package dependencies, compile and publish the code to NPM.
 Then you go to all your projects that need the component and run `npm install <the new package>`.  
@@ -98,7 +99,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
 - Learn more about the [Bit workspace](/docs/workspace).
 - Read about how Bit [generates dependencies](/docs/dependencies).
 - Understand how Bit [overriding rules](/docs/overrides) are working.
-- The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit. 
+- The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.  
 - Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines), [Javascript](/docs/guidelines-js) or [Typescript](/docs/guideline-ts).
 
 </div>
