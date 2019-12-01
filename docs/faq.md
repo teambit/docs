@@ -36,6 +36,15 @@ Through bit.dev, the components are not only put on display but can also be dire
 
 Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.
 
+## Can I share Python, PHP or Java code with Bit?  
+
+It is technically possible to share non javascript code using Bit. However, Bit best fits the **Javascript ecosystem** code, i.e. node, UI frameworks with Javascript and Typescript. The list of compilers supported in Bit for generating build assets are generating JS code.
+
+## Can I use Bit React component in Vue project?  
+
+Bit works within the **boundaries of a platform or a framework**. Node code cannot access the global window (unless poly-filled). Moving a browser code to Bit and then importing it into Bit does not bypass this limitation. The code is still non-compliant.  
+The same goes for platforms: Angular code will not work in React or vice versa. So although it is possible to share this code between React and Angular projects, code will work only if it fits the target project.
+
 ## Does Bit support React Native?  
 
 Bit can be used to shared any javascript code. So, you can use Bit to share code for react native components. You can use any of the [React envs](https://www.github.com/teambit/envs). Note that [bit.dev](https://bit.dev) does not support rendering of React Native components.  
