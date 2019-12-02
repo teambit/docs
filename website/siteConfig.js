@@ -40,7 +40,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'quick-start', label: 'Docs' },
     { doc: 'tutorials/bit-react-tutorial', label: 'Tutorials' },
-    { doc: 'workflows/workflows', label: 'Workflows' },
+//    { doc: 'workflows/workflows', label: 'Workflows' },
     { href: "/docs/getting-help", label: "Support" },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
