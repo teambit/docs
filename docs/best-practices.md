@@ -11,6 +11,18 @@ Components should have a [sole responsibility](https://en.wikipedia.org/wiki/Sin
 When tracking files as components, include all files related to that functionality and that are only relevant to this functionality.  
 Each component should include the code, styling, unit tests, documentation, and usage examples, such as storybook stories.
 
+## Minimize component dependencies
+
+When creating component, evaluate which dependencies are needed by the component, and which are provided by the consuming project. Any packages that are expected to be in the consuming project should not be a dependency of the component, but rather should be defined as a peerDependency.  
+The peerDependencies version should also be as relaxed as possible, e.g. `"react": ">=16.9.0"`. This will cover a wide range of versions used in the consuming project. If the peerDependency version range does not cover the range installed in the consuming project, the package is installed with multiple versions. Framework libraries such as React or Angular cannot run when multiple instances of their runtime libraries and will err if multiple instances are found. 
+
+There are two methods to define peerDependencies for Bit components:  
+
+- Define the dependency in the authoring project. Bit [dependency algorithm](/docs/dependencies#dependencies) takes the package as peer dependency.
+- Provide [override rules](/docs/overrides) for setting the packages as peer dependencies.
+
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has.  
+
 ## Use Namespaces
 
 You can use namespaces inside a collection to group related components. Namespaces act as folders inside a Bit workspace, or inside a collection on bit.dev.  
@@ -182,14 +194,6 @@ It is recommended to commit the following to your VCS (e.g., git) from your [wor
 
 The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default, it is created under the `git` folder, so they are gitignored.  
 
-## Import Often
-
-When working within a team, try and import remote changes for components often. Prefer integrating your work with your team's often to avoid handling larger changes. Importing remote changes often helps mitigate many integration issues.
-
-## Share Often
-
-When you have a small and meaningful version of a component, share it. Small, incremental changes are easier to handle and use by other developers. Sharing often means integrating small changes. This is easier to merge and reduces the chances and severity of merge conflicts.
-
 ## Prefer Using Package Managers
 
 Unless you need to change components, prefer installing components using package managers. This simplifies a project's structure by fetching the code in its distributed form. Treating components as any other external package simplifies a project's build process as well.
@@ -202,8 +206,10 @@ Sourcing a component should be temporary. Use this feature for modification purp
 
 Ejecting components from their source project is tempting. Ejecting a component from its project complicates the project's maintenance. It turns the component into a dependency and not an integral part of the project. Use `bit import` to sync these components with remote changes.
 
-## Build Components for Discoverability
+## Build Components for Discovery
 
 Build components in a way that they can be easily discovered by other developers. That includes proper naming, adding documentation, tagging the components with meaningful labels, and adding examples so that they can be played with. When publishing a component, it is best to think about how other developers are likely to search for the components.
 
 Non-descriptive naming (such as utils) or bad tags makes the components hard to find. Developers are more likely to select and reuse components that they can interact with and quickly evaluate their functionality. Good documentation promotes quick, widespread adoption.
+
+Add multiple examples of component usage, showing how the different inputs should be used. 
