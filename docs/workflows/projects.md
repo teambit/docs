@@ -3,6 +3,8 @@ id: projects
 title: Ad-hoc Sharing
 ---
 
+![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_projects.png)
+
 This workflow is useful for teams that:
 
 - Have several products with UI components.
@@ -46,7 +48,7 @@ There are definitely too many steps to do for every change.
 
 ### Option 3 - Monorepo
 
-Mono repo has emerged as a popular solution for sharing code between projects while skipping the need to maintain multiple repositories and retaining all the code in a single repo. Monorepos enforce that not only the shared components reside in a single repository, but also the projects that consume them.
+Monorepo has emerged as a popular solution for sharing code between projects while skipping the need to maintain multiple repositories and retaining all the code in a single repo. Monorepos enforce that not only the shared components reside in a single repository, but also the projects that consume them.
 The debate around mono repo is still happening. Matt Klein canonical post titled “monorepos, Please Don’t” details most of the downsides in monorepos.
 In addition to everything described there, it is worth noting that unless you start a completely new venture, there are also transition costs from multiple repositories to a monorepo.
 
