@@ -83,7 +83,7 @@ Inside your project identify a component that is suitable for reuse. Here are so
 - Make sure all the files of the component are combined into a single component, that includes code, styles, tests, and documentation.  
 - Tag the component with a version number and export it.  
 
-If you want the component to be the same in all projects, you can `bit eject`(/docs/export#ejecting-components) the component from the local project. The component is now installed as a node_modules package.  
+If you want the component to be the same in all projects, you can [`bit eject`](/docs/export#ejecting-components) the component from the local project. The component is now installed as a node_modules package.  
 
 ### Consume components
 
