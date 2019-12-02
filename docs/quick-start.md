@@ -104,7 +104,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
 
 </div>
 
-## Track Components
+## Track  
 
 To start tracking components in Bit, use the `add` command. Once the files of a component are added, Bit can identify and verify that all the dependencies of the component exist and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component in isolation.
 
@@ -178,7 +178,7 @@ the following component environments were installed
 
 </div>
 
-## Publish components
+## Publish
 
 When a component is ready to be shared with others, the developer tags it with a version number following the semver conventions.  
 Bit stores the snapshot of the component's source code, enabling it to notify consumers when any changes are made.  
@@ -221,11 +221,9 @@ exported 3 components to collection user-name.collection-name
 
 Head over to your [bit.dev](https://bit.dev/) collection. All the components have been exported. Try creating and saving examples for your components, which Bit will also show as previews in the collection’s page.
 
-## Consume components
+## Install
 
 Once exported, the component is now available for consumption by other developers in one of two ways: install or import.
-
-### Install components
 
 You can now use Npm or Yarn to install the components. The component will be installed with build artifacts (e.g., the dist folder) like any other NPM package. The installed component resides in the node_modules folder.
 
@@ -247,13 +245,13 @@ npm i @bit/mui-org.material-ui.button
 
 </div>
 
-## Modify Component
+## Import & modify 
 
 You may want to modify the component source code (for example, to fix a bug or change the functionality). To do so, you need to import the component into your project and apply the changes.
 
 The updated component can now be tagged and re-exported so that other consumers of the component get the update.
 
-### Import Component
+### Import component
 
 Because Bit isolates components and decouples them from the repository, Bit components can be developed from any repository in your codebase.  
 To develop a component from the [consuming repository](/docs/sourcing-components) use the `bit import` command:
@@ -283,7 +281,7 @@ When a component is updated with a new version in the collection, every reposito
 
 </div>
 
-## Merge changes
+## Merge
 
 An important feature of Bit is that even if the component is imported and changed inside of a project it still receives all of the modifications made to the original component. Updates can be received in the original project as well as any project that imported the component. This helps teams sync changes when developing components from different projects.
 
