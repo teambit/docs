@@ -37,7 +37,7 @@ You can setup your own server for sharing components or you can use the [bit.dev
 <div class="learn-more">
 
 - [How bit works](/docs/how-bit-works)
-- Suggested [workflows](/docs/workflows) when using Bit
+- Suggested [workflows](/docs/workflows/workflows) when using Bit
 
 </div>
 
