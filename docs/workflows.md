@@ -18,7 +18,7 @@ The workflows below are provided as suggested examples. Each team should underst
 
 ## Shared Libraries
 
-<img src="https://storage.googleapis.com/bit-docs/UI%20library%20monorepo.jpg" height="500"/>
+![Centralized library workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_central.png)
 
 This workflow is for organizations that have a design system or a shared components library and need fine control over its distribution. The assumption is that a dedicated project or repository exists with the components that are shared within the organization.  
 
@@ -36,8 +36,6 @@ Organizations that use Bit for sharing discrete components of their shared libra
 - Component showcase with multiple examples per component and search capabilities.
 
 ### Steps
-
-<img src="https://storage.googleapis.com/static.bit.dev/docs/images/shared-library-workflow.png" height="500"/>
 
 **Define Components:**
 
@@ -84,7 +82,7 @@ The evaluation of these options highly depends on the organizational support, as
 
 ## Sharing Code between Projects
 
-<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-sharing-comps.jpg" height="500"/>
+![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_projects.png)
 
 This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
 
@@ -99,8 +97,6 @@ The benefits you can get from this workflow:
 - Use bit.dev to provide a centralized showcase for components in different projects
 
 ### Steps
-
-<img src="https://storage.googleapis.com/static.bit.dev/docs/images/projects-workflow.png" height="500"/>
 
 **Define Components:**
 
