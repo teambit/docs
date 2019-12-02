@@ -9,7 +9,7 @@ This workflow is suggested for organizations that have:
 - A dedicated team to manage shared UI components
 - Multiple projects exist that use the shared components
 
-## Challenges
+## Challenge of centralized library
 
 Introducing a design system inside an organization can bring tremendous value for reducing the amount of code and increasing the effectiveness of the development teams. However, those benefits come with a price tag that should be considered:  
 

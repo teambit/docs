@@ -10,7 +10,7 @@ This workflow is useful for teams that:
 - Need to keep consistent UI/UX across projects.
 - Don't have the time/capacity to form a dedicated team to maintain components.
 
-## Challenges
+## Challenge with sharing components
 
 It is typical for a company to grow from developing a single application to a stage where it needs to cater for multiple applications service different business needs or different customers’ segments. 
 The introduction of new systems is likely to go as a rolling process, and the company does not always have the time to set up a designated design library. However, as the applications live in the same business domain, there will be similarities between them where code reuse is appropriate.  
