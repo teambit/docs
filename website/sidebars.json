@@ -63,5 +63,12 @@
       "tutorials/bit-vue-tutorial",
       "tutorials/bit-nodejs-tutorial"
     ]
+  },
+  "workflows": {
+    "Workflows": [
+      "workflows/workflows",
+      "workflows/centralized",
+      "workflows/projects"
+    ]
   }
 }

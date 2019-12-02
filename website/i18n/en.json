@@ -99,9 +99,6 @@
         "title": "Vue Guide",
         "sidebar_label": "Vue"
       },
-      "handling-errors": {
-        "title": "Handling Bit Errors"
-      },
       "how-bit-works": {
         "title": "How bit Works?"
       },
@@ -177,7 +174,13 @@
       "whybit/why-bit": {
         "title": "Bit Benefits"
       },
-      "workflows": {
+      "workflows/centralized": {
+        "title": "Centralized Library"
+      },
+      "workflows/projects": {
+        "title": "Ad-hoc Sharing"
+      },
+      "workflows/workflows": {
         "title": "Bit Workflows"
       },
       "workspace": {
@@ -187,6 +190,7 @@
     "links": {
       "Docs": "Docs",
       "Tutorials": "Tutorials",
+      "Workflows": "Workflows",
       "Support": "Support",
       "Github": "Github"
     },
@@ -199,7 +203,8 @@
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
       "Reference": "Reference",
-      "Tutorials": "Tutorials"
+      "Tutorials": "Tutorials",
+      "Workflows": "Workflows"
     }
   },
   "pages-strings": {
