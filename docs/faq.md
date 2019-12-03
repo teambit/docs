@@ -3,6 +3,11 @@ id: faq
 title: FAQ
 ---
 
+## Is Bit.dev open source?  
+
+Bit is an open-source CLI tool for components collaboration. You can find the Bit repo [here](https://github.com/teambit/bit). You can install Bit locally on your workspace to start working with Bit. For sharing components, you can set up [your own server](/docs/bit-server), or you can use [bit.dev](https://bit.dev). 
+Unlike the Bit CLI, bit.dev server is a proprietary tool owned by Bit. Bit.dev provides [additional functionality](/docs/bit-dev) on top of a bit server, such as components search, playground and CI for components. Bit.dev offers free plans for public collections and personal accounts and [paid plans](https://bit.dev/pricing) for private collections for organizations.  
+
 ## Is Git and Bit the same?
 
 Git is a distributed version-control system for tracking changes in source code during software development. Git manages changes in files' contents without any reference to their structure or semantics. Bit adds a layer on top of Git that understands the internal structure of the code as components and managing their internal relationships.  
