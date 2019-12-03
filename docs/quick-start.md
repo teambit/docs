@@ -9,7 +9,7 @@ This guide will teach you how to start with Bit and run a simple workflow for sh
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
 
-## What Bit Does?
+## What does Bit do?
 
 Bit wraps your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.  
 Bit is working in the Javascript ecosystem. Although it is technically possible to share any code, Bit is geared towards working in Javascript.  
