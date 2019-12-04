@@ -1,6 +1,6 @@
 ---
 id: angular-guidelines
-title: Angular Guide
+title: Angular Guidelines
 sidebar_label: Angular
 ---
 
@@ -10,6 +10,8 @@ sidebar_label: Angular
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds Angular specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
 Angular sharing was tested on Angular 8 version and requires Node 10.9+ which is Angular 8 pre requisite. Bit should be compliant with prior versions that are ng-packagr compliant.
+
+*Note: Try the [Bit for Angular tutorial](https://docs.bit.dev/docs/tutorials/bit-angular-tutorial)*.
 
 ## Angular Compiler
 
