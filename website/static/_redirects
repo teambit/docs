@@ -35,8 +35,9 @@
 /docs/latest-version.html               /docs/installation#latest-version
 /docs/handling-errors                   /docs/workspace#errors-amp-troubleshooting
 
-/whybit/for-teams.html            /docs/whybit/for-teams
-/whybit/for-libs.html            /docs/whybit/for-libs
+/docs/workflows         /docs/workflows/workflows
+/whybit/for-teams.html            /docs/workflows/workflows
+/whybit/for-libs.html            /docs/workflows/workflows
 
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
