@@ -1,12 +1,14 @@
 ---
 id: js-guidelines
-title: Javascript Guide
+title: Javascript Guidelines
 sidebar_label: Javascript
 ---
 
 Bit is a generic platform that can use with Javascript (as well as ES6) code that encapsulate specific functionality. This section adds Javascript specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
 The guide is appropriate to use with components that are not library specific. This may be NodeJS code or utility functions used in different frameworks.
+
+*Note: Try the [Bit for NodeJS tutorial](https://docs.bit.dev/docs/tutorials/bit-nodejs-tutorial)*.
 
 ## Compilers
 
