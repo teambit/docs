@@ -24,7 +24,7 @@
       "sourcing-components",
       "view"
     ],
-    "Guides":[
+    "Guidelines":[
         "react-guidelines",
         "angular-guidelines",
         "vue-guidelines",
@@ -66,8 +66,8 @@
   "workflows": {
     "Workflows": [
       "workflows/workflows",
-      "workflows/centralized",
-      "workflows/projects"
+      "workflows/projects",
+      "workflows/centralized"
     ]
   }
 }

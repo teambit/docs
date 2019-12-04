@@ -1,6 +1,6 @@
 ---
 id: vue-guidelines
-title: Vue Guide
+title: Vue Guidelines
 sidebar_label: Vue
 ---
 
@@ -10,6 +10,8 @@ sidebar_label: Vue
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds vue specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
 Vue playground was tested on vue 2 and vue-cli 3. Bit should be compliant with prior versions.
+
+*Note: Try the [Bit for Vue tutorial](https://docs.bit.dev/docs/tutorials/bit-vue-tutorial)*.
 
 ## Vue Compiler
 
