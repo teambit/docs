@@ -24,7 +24,7 @@
       "sourcing-components",
       "view"
     ],
-    "Guides":[
+    "Guidelines":[
         "react-guidelines",
         "angular-guidelines",
         "vue-guidelines",
