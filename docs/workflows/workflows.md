@@ -9,7 +9,7 @@ This allows teams to:
 - Increase code reusability
 - Increase design and development efficiency
 - Retain UI and UX consistency
-- Paves the path towards [micro frontends architecture](https://martinfowler.com/articles/micro-frontends.html)
+- A stepping stone for establishing a [micro frontends architecture](https://martinfowler.com/articles/micro-frontends.html)
 
 ## What is a Bit workflow?
 
