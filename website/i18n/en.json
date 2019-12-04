@@ -80,15 +80,15 @@
         "title": "Getting Help"
       },
       "angular-guidelines": {
-        "title": "Angular Guide",
+        "title": "Angular Guidelines",
         "sidebar_label": "Angular"
       },
       "js-guidelines": {
-        "title": "Javascript Guide",
+        "title": "Javascript Guidelines",
         "sidebar_label": "Javascript"
       },
       "react-guidelines": {
-        "title": "React Guide",
+        "title": "React Guidelines",
         "sidebar_label": "React"
       },
       "ts-guidelines": {
@@ -96,7 +96,7 @@
         "sidebar_label": "Typescript"
       },
       "vue-guidelines": {
-        "title": "Vue Guide",
+        "title": "Vue Guidelines",
         "sidebar_label": "Vue"
       },
       "how-bit-works": {
@@ -201,7 +201,7 @@
       "Introduction": "Introduction",
       "Basics": "Basics",
       "Components": "Components",
-      "Guides": "Guides",
+      "Guidelines": "Guidelines",
       "Advanced": "Advanced",
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
