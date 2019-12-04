@@ -51,7 +51,37 @@ A component that was imported from Bit has a `package.json` file in the root fol
 
 ### Propagation
 
-By default, each component will only have only the most specific rule applied to it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule.  
+By default, each component will only have only the most specific rule applied to it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule. You can add the propagate config to tell Bit to "climb" up the overrides tree. Bit will then do a deep-merge on the content in the overrides.
+
+```js
+"overrides": { 
+  "*": {                           // define global override rules
+    "dependencies": {...},
+    "peerDependencies": {...}, 
+  }, 
+  "forms/*": {                     // define a more specific rule for components in the "forms" namespace.
+    "dependencies": {...},
+    "peerDependencies": {...}, 
+    "propagate": true              // anotate that these rules should merge with '*'
+  }, 
+    "forms/date-input": {          // define very specific rules for the "date-input" components.
+      "dependencies": {...},
+      "peerDependencies": {...},
+      "propagate": true            // anotate that these rules should merge with 'forms/*'
+  },
+  "helpers/*" {                    // all components in "helpers/" should have their own override rules and not propagate
+      "dependencies": {...},
+      "peerDependencies": {...}
+  },
+  "buttons/primary": {             // specific component overrides without propagation
+      "dependencies": {...},
+      "peerDependencies": {...}
+  }
+}
+```
+
+This way you can have a general config for all your react components (*), configure d3-scale for all charts (charts/*), have all charts get the react configs from * (by using propagate), and then also control very specific components (charts/pie) with propagation to get the stuff from charts and *.
+
 
 ### Exclusion
 
