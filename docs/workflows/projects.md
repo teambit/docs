@@ -64,7 +64,7 @@ Bit lets teams gradually build a component collection by curating components fro
 
 ## How it Works
 
-1. A developer form a project to identify components that are suitable for reuse
+1. A developer from a project to identify components that are suitable for reuse
 1. The project's developer track the local source code as a component
 1. The component is published with a specific version
 1. Any project that needs the component installs it just like any other npm package
