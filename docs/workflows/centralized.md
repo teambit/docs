@@ -19,15 +19,15 @@ Dependability is, by far, the most crucial problem. Teams aim to be independent 
 
 ### Usability
 
-Writing good components is hard. As a developer, you are now the consumer of the infrastructure team. If the shared component exposes 30 mandatory parameters, when all you need is a simple button with no icon, you are likely to develop your own component and not rely on the shared one. 
+Writing good components is hard. As a developer, you are now the consumer of the infrastructure team. If the shared component exposes 30 mandatory parameters, when all you need is a simple button with no icon, you are likely to develop your own component and not rely on the shared one.  
 
 ### Granularity
 
-Infrastructure teams tend to create a single package (e.g. npm package)  that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle. 
+Infrastructure teams tend to create a single package (e.g. npm package)  that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle.  
 
 ## Benefits
 
-Bit simplifies the process of sharing components for both the library maintainers and the library consumers: 
+Bit simplifies the process of sharing components for both the library maintainers and the library consumers:
 
 ### For Maintainers
 
