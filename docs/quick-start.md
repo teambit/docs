@@ -3,43 +3,37 @@ id: quick-start
 title: Quick Start
 ---
 
-Bit is an [open-source](https://github.com/teambit/bit) tool for components collaboration.
+<p style="font-size: 1.5em">Bit is the shortest way to reuse atomic components between projects</p>
 
-This guide will teach you how to start with Bit and run a simple workflow for sharing components.  
+Bit is an [open-source](https://github.com/teambit/bit) cli tool for sharing components across projects and repositories. Bit removes the burden by automating the creation of separate package for each component. Use Bit to turn a component inside an application into a standalone reusable package.  
+You can setup your own server for sharing components or you can use the [bit.dev](https://bit.dev) cloud hosting solution for private and public components sharing with advanced features such as components CI and showcase.
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
-
-## What does Bit do?
-
-Bit wraps your code in shareable components that are used across multiple projects. You can get the source code to your local project and modify it or install Bit components as NPM packages.  
-Bit is working in the Javascript ecosystem. Although it is technically possible to share any code, Bit is geared towards working in Javascript.  
-
-Think about it this way: without Bit, if you want to share your code between projects, you need to create a separate repo (or a package in your monorepo) for the files, push the code to github (or similar), setup configuration for the project, create a package.json for the package, install all package dependencies, compile and publish the code to NPM.
-Then you go to all your projects that need the component and run `npm install <the new package>`.  
-Bit saves you the above process by making the package available and published directly from your project.
-All is let for you is to build your apps, be it React, Vue or other, and the code goes into the application using Webpack just like any other `node_modules` package in your project.
 
 Key Features:  
 
 - Extract a component for sharing directly from an existing project.
-- Build and test each component separately from the rest of the app.
-- Change the source code of the received components inside your project.  
+- Build and test each component separately from the rest of the application.
+- Change the source code of a shared components from any consuming project.  
 - Get changes in components on top of local changes.
 - Contribute back changes made to components directly from your project.
-- Auto-generated package.json for each component. Reduces overhead.  
+- Let Bit auto-generate package.json for each component
 - Version each component individually.
 - Automated component versioning according to changes in the dependency graph chain.
 - Works alongside with Git, NPM and Yarn.
-
-Bit is provided as a CLI tool. Bit is distributed so the same tool manages the developer’s workspace (client) and the centralized server for sharing components.  
-You can setup your own server for sharing components or you can use the [bit.dev](https://bit.dev) cloud hosting solution for private and public components sharing with advanced features such as components CI and showcase.
 
 <div class="learn-more">
 
 - [How bit works](/docs/how-bit-works)
 - Suggested [workflows](/docs/workflows/workflows) when using Bit
+- Setup your own [Bit server](/docs/bit-server)
+- Check out [bit.dev functionality](/docs/bit-dev)
 
 </div>
+
+<hr>
+
+This guide will teach you how to start with Bit and run a simple workflow for sharing components.  
 
 ## Setup
 
@@ -64,9 +58,7 @@ You now have a collection. You can see the export command that you will use late
 
 <div class="learn-more">
 
-- Check out [bit.dev functionality](/docs/bit-dev)
 - Find other [authentication methods](/docs/setup-authentication)
-- Setup your own [Bit server](/docs/bit-server)
 
 </div>
 

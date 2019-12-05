@@ -33,7 +33,7 @@ You can utilize Bit however you want, depending on the state of your team. So wh
 
 - How many projects need component sharing?
 - How similar are the projects that need to share components? e.g., are they all based on the same CLI with the same configuration?
-- Is there a centralized repository for shared components? 
+- Is there a centralized repository for shared components?  
 - Is there a dedicated team that builds the shared components?
 - Is Continuous Integration (CI) in place for the projects and the shared components?
 - What is Git workflow in place on the projects' repositories and the shared components' repository?
