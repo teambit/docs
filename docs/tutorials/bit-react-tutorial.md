@@ -2,8 +2,7 @@
 id: bit-react-tutorial
 title: Bit for React
 ---
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" height="128">
+<img src="../../img/react.svg" height="128">
 
 ## Overview
 

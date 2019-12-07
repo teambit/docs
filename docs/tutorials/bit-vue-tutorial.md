@@ -2,8 +2,7 @@
 id: bit-vue-tutorial
 title: Bit for Vue
 ---
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/512px-Vue.js_Logo_2.svg.png" height="100"/>
+<img src="../../img/vue.svg" height="128">
 
 ## Overview
 
