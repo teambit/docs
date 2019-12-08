@@ -41,6 +41,8 @@ Through bit.dev, the components are not only put on display but can also be dire
 
 Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.
 
+*Learn more:* [How is bit.dev different from Storybook?](https://blog.bitsrc.io/how-is-bit-dev-different-from-storybook-892b373733bd)
+
 ## Can I share Python, PHP or Java code with Bit?  
 
 It is technically possible to share non javascript code using Bit. However, Bit best fits the **Javascript ecosystem** code, i.e. node, UI frameworks with Javascript and Typescript. The list of compilers supported in Bit for generating build assets are generating JS code.
