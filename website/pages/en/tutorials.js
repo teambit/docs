@@ -6,6 +6,38 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
+class HomeSplash extends React.Component {
+  render() {
+    const {siteConfig, language = ''} = this.props;
+    const {baseUrl, docsUrl} = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+    const langPart = `${language ? `${language}/` : ''}`;
+    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
+
+    const SplashContainer = props => (
+      <div className="homeContainer">
+        <div className="homeSplashFade">
+          <div className="wrapper homeWrapper">{props.children}</div>
+        </div>
+      </div>
+    );
+
+    const ProjectTitle = () => (
+      <h2 className="projectTitle">
+        Tutorials
+        <small>Select the tutorial that matches your framework</small>
+      </h2>
+    );
+
+    return (
+      <SplashContainer>
+        <div className="inner">
+          <ProjectTitle />
+        </div>
+      </SplashContainer>
+    );
+  }
+}
 class Tutorials extends React.Component {
   render() {
     const {config: siteConfig, language = ''} = this.props;
@@ -13,9 +45,10 @@ class Tutorials extends React.Component {
 
     const Block = props => (
       <Container
-        padding={['bottom', 'top']}
+        padding={[ 'top', 'bottom']}
         id={props.id}
-        background={props.background}>
+        background={props.background}
+        wrapper="true">
         <GridBlock
           align="center"
           contents={props.children}
@@ -29,18 +62,18 @@ class Tutorials extends React.Component {
         imageAlt: `${name}-logo`,
         imageLink: `${baseUrl}docs/tutorials/bit-${name.toLowerCase()}-tutorial`,
         imageAlign: 'top',
-        title: name,
+        title: name
     });
 
     const Features = () => (
-            <Block layout="fourColumn">
-                {['React', 'Vue', 'Angular', 'Nodejs'].map(feature)}
-            </Block>
-    )
-
+      <Block layout="fourColumn">
+          {['React', 'Vue', 'Angular', 'Nodejs'].map(feature)}
+      </Block>
+    );
     return (
       <div>
-        {/* <HomeSplash siteConfig={siteConfig} language={language} /> */}
+        <HomeSplash siteConfig={siteConfig} language={language} />
+        {/* <ProjectTitle/> */}
         <div className="mainContainer">
           <Features />
         </div>
