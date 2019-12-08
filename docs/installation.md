@@ -7,7 +7,7 @@ Check if bit is installed using:
 
 ```bash
 $bit --version
-14.6.0
+14.7.0
 ```
 
 ## Install via NPM / Yarn
@@ -32,7 +32,7 @@ brew install bit
 Or download Bit executable and copy the bit executable to a directory in your path, or any directory that will be added to your path:
 
 ```sh
-curl -Lo bit https://github.com/teambit/bit/releases/download/v14.6.0/bit-bin-macos 
+curl -Lo bit https://github.com/teambit/bit/releases/download/v14.7.0/bit-bin-macos  
 chmod +x bit
 sudo cp bit /usr/local/bin/  
 rm bit
@@ -40,7 +40,7 @@ rm bit
 
 ## Windows
 
-Download Bit executable Windows `.exe` file from [here](https://github.com/teambit/bit/releases/download/v14.6.0/bit-bin-win.exe). Rename it to `bit.exe` and add it to your `PATH`:
+Download Bit executable Windows `.exe` file from [here](https://github.com/teambit/bit/releases/download/v14.7.0/bit-bin-win.exe). Rename it to `bit.exe` and add it to your `PATH`:
 
 ```sh
 set PATH=%PATH%;C:\bit\
@@ -77,7 +77,7 @@ sudo yum install bit
 Or download Bit executable and copy it to a directory in your path, or any directory that will be added to your path:
 
 ```sh
-curl -Lo bit https://github.com/teambit/bit/releases/download/v14.6.0/bit-bin-linux
+curl -Lo bit https://github.com/teambit/bit/releases/download/v14.7.0/bit-bin-linux
 chmod +x bit
 sudo cp bit /usr/local/bin/  
 rm bit

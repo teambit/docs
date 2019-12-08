@@ -8,6 +8,8 @@ This tools are useful when you need to analyze and debug issues with components.
 
 ## Status
 
+### View Components status
+
 Displays the status of all the components currently under work. You will see the new, modified and staged components. Components that are exported and components that have been imported but not modified are not visible on the bit status command, so use [`bit list`](#list);
 
 ```bash
@@ -28,7 +30,11 @@ staged components
      > moon/sun... ok
 ```
 
-You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses)
+You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses).  
+
+### View untracked files
+
+The `status` command also shows files that are untracked in the components. You will get notified on all the files that are imported in the component and are not part of any Bit component.  
 
 ## List
 
