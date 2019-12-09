@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Docs', // Title for your website.
-  tagline: 'Components Collaboration Platform',
+  title: 'Bit - Components Collaboration', // Title for your website.
+  tagline: 'The shortest way to reuse atomic UI components between projects',
   url: 'https://bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
