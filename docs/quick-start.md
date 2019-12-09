@@ -5,10 +5,9 @@ title: Quick Start
 
 <p style="font-size: 1.5em">Bit is the shortest way to reuse atomic components between projects</p>
 
-Bit is an [open-source](https://github.com/teambit/bit) cli tool for sharing components across projects and repositories. 
-Use Bit to turn a component inside an application into a standalone reusable package.  
-Increase the project's resilience by consuming only the components the application needs.
-You can set up your own server for sharing components or you can use the [bit.dev](https://bit.dev) cloud hosting for private and public components sharing with advanced features such as components CI and components showcase.
+Bit is an [open-source](https://github.com/teambit/bit) cli tool for sharing components across projects and repositories.  
+Use Bit to turn a component inside an application into a standalone reusable package and share it with other projects.  
+You can set up your own server for components collaboration, or use the [bit.dev cloud](https://bit.dev) hosting for private and public components sharing.
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
 
