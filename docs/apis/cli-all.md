@@ -85,6 +85,30 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 `bit config`  
 
+### set 
+**Usage**: set \<key\> \<val\>  
+
+**Description**: set a global configuration  
+
+
+### del 
+**Usage**: del \<key\>  
+
+**Description**: delete given key from global configuration  
+
+
+### get 
+**Usage**: get \<key\>  
+
+**Description**: get a global configuration  
+
+
+### list 
+**Usage**: list  
+
+**Description**: list all configuration(s)  
+
+
 ---  
 
 ## deprecate  
@@ -239,7 +263,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--default-directory <default-directory>`|`--d`|set up default directory to import components into|
 |`--package-manager <package-manager>`|`--p`|set up package manager (npm or yarn)|
 |`--force`|`--f`|force workspace initialization without clearing local objects|
-|`--interactive`|`--I`|EXPERIMENTAL. start an interactive process|
+|`--skip-interactive`|`--N`|do not start the interactive process|
 
 ---  
 
@@ -359,6 +383,18 @@ Commands that are marked as workspace only must be executed inside a workspace. 
   https://docs.bit.dev/docs/bit-server#working-with-remote-scopes  
 
 `bit remote`  
+
+### add 
+**Usage**: add \<url\>  
+
+**Description**: add a tracked bit remote  
+
+
+### del 
+**Usage**: del \<name\>  
+
+**Description**: remove a tracked bit remote  
+
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
