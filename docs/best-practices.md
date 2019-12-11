@@ -64,15 +64,9 @@ It is recommended that all such files resides under the same [namespace](#use-na
 
 ## Handling Assets
 
-Components may require using assets from your projects, such as images, graphics such as SVG files, or fonts.  
+Components may require using assets from your projects, such as images, graphics, or fonts.  
 
-One possible option is to publish those assets [on a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them via their full path URL.  
-Alternatively, you can include them in your project as part of the components. You may include assets inside a component that exposes them as reusable assets. For example, you can have a logo component that also includes the logo image or SVG.  
-
-It is also possible to include the assets in their own components and reuse them, among other components.  
-Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`.  
-
-Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:  
+You can define assets component that do not require a compiler. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`. Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:  
 
 ```json  
 "overrides": {
@@ -84,7 +78,20 @@ Then, in the package.json, you can specify that all components under the `assets
 }
 ```
 
-Now, the assets are not compiled, but the files are available as components to be used in other components.  
+### Images  
+
+There are multiple ways to handle images and fonts:
+
+1) Publish the assets to [a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them in the components via full path URL.  
+1) Include the assets files in the components that use them and share the component, or wrap the asset in a dedicated component and include the image and publish it.  
+1) Share the image as component and import it. See [this example](https://bit.dev/bit/examples/kitty?example=5df107a635c5d500126d8a8b).  
+
+### SVGs
+
+SVGs are in fact plain html. A good approach for handling SVGs is described in [this article](https://open.nytimes.com/flexible-icons-with-react-svg-973f310e6382).  
+
+It is also possible to include the assets in their own components and reuse them, among other components.  
+Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation.  
 
 ## Handling Styles  
 
