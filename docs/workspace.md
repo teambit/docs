@@ -87,7 +87,7 @@ When Bit calculates the dependency graph for an authored component, it uses the 
 
 ### Modules Resolution
 
-Bit also uses the [`resolveModules`] workspace configuration to resolve modules locations. This configuration has two options:  
+Bit also uses the [`resolveModules`](/docs/conf-bit-json#resolvemodules) workspace configuration to resolve modules locations. This configuration has two options:  
 
 ```json
 "resolveModules": {
@@ -176,8 +176,15 @@ Here is an example of an imported component package.json:
 
 A Bit component has two types of [dependencies](/docs/dependencies): regular NPM packages and Bit components.  
 
-When importing a component Bit generates for each component that has dependencies a `node_modules` folder. Bit uses the preferred package manager defined in workspace configuration to install the packages.  
-You can skip installing the components by using:  
+When importing a component Bit generates for each component that has dependencies a `node_modules` folder.
+
+Bit uses the [preferred package manager](/docs/conf-bit-json#packagemanager) defined in workspace configuration to install the packages. You can pass additional arguments to the package manager by specifying them in the [arguments configuration](/docs/conf-bit-json#packagemanagerargs) passing twice double dashes to the command that executes the package manager such as: 
+
+```bash
+bit import foo -- --no-package-lock
+```
+
+You can skip installing the components altogether by using:  
 
 ```bash
 bit import username.foo/bar --skip-npm-install
