@@ -68,7 +68,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://blog.bitsrc.io/" target="_blank" rel="noreferrer noopener">Blog</a>
+            <a href="https://blog.bit.dev/" target="_blank" rel="noreferrer noopener">Blog</a>
             <a href={this.props.config.repoUrl} target="_blank" rel="noreferrer noopener">
               <img src={GITHUB_LOGO} width="24" height="24"/>
             </a>
