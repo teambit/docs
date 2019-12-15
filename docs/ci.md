@@ -198,7 +198,7 @@ npm run bit-build
 
 ## Common Errors
 
-### 'package not found' when importing a component
+### 'package not found' (404) when importing a component
 
 NPM or Yarn throws 'package not found' when importing a component. This is likely because the component has a dependency on a @bit component. Make sure [npmrc is configured](#bit-installed-components).
 
