@@ -3,26 +3,39 @@ id: quick-start
 title: Quick Start
 ---
 
-<p style="font-size: 1.5em">Bit is the shortest way to reuse atomic components between projects</p>
-
-Bit is an [open-source](https://github.com/teambit/bit) cli tool for sharing components across projects and repositories.  
-Use Bit to turn a component inside an application into a standalone reusable package and share it with other projects.  
-You can set up your own server for components collaboration, or use the [bit.dev cloud](https://bit.dev) hosting for private and public components sharing.
+<p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components </p>
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
 
-Key Features:
+Bit is an [open-source](https://github.com/teambit/bit) cli tool for collaborating on isolated components across projects and repositories.  
+Use Bit to distribute discrete components from a design library or a project into a standalone reusable package and utilize it across applications.  
+You can set up your own server for components collaboration, or use the [bit.dev cloud](#bitdev-cloud-%f0%9f%8c%a9%ef%b8%8f) hosting for private and public components sharing.
 
-- Extract a component for sharing directly from an existing project.
-- Validate the component's independence by building and testing each component separately from the rest of the application.
-- Change the source code of shared components from any project that utilizes it.
+Bit facilitates the process of collaborating on UI components. Team members can share, maintain, and synchronize isolated components from different projects.  
+
+Bit allows teams to:
+
+- Increase code reusability
+- Increase design and development efficiency
+- Retain UI and UX consistency
+- Increase project's stability
+
+Key Features:  
+
+- Extract a component for sharing directly from an existing library or project.
+- Validate the component's independence by building and testing each component separately from the rest of the project.
+- Change the source code of shared components from any application that utilizes it.
 - Get published changes in components on top of local modifications.
-- Contribute back changes made to components directly from your project.
-- Let Bit auto-generate npm package for each component.
-- Distribute small atomic components instead of a bloated package.
+- Contribute back changes made to components directly from the consuming applications.
+- Automatically wrap each component as an npm package.
+- Distribute discrete components instead of a single massive package.
 - Automate component versioning according to changes in its dependencies.
 - Use with leading frameworks and tools: React, Vue, Angular, Mocha, Jest.  
 - Works alongside Git, NPM, and Yarn.
+
+Bit is working with Javascript and Javascript frameworks:  
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/images/js_logos.png">
 
 <div class="learn-more">
 
