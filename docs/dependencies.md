@@ -224,17 +224,34 @@ For Bit to be able to resolve the `@/utils` path, we need to configure it as an 
 
 ## Common Isolation Errors
 
-Here are some common errors and their resolution when trying to isolate a component.  
+Here are some common errors and their resolution when trying to isolate a component. Run `bit status` to check the status of components dependency resolution.  
 
-> **TIP**
->
-> To validate a dependency issue is resolved, rerun `bit status`.
+### Untracked Dependencies
+
+When a component is importing local files (i.e. files with relative paths), Bit is attempting to find the components where those files exist. If the file is not yet tracked by any other components, Bit notifies about an untracked dependency.  
+There are two options on handling those files:  
+
+- Add the file(s) as dependency to the same component.  
+- Add the file(s) as new components.  
+
+The decision between those two options is mostly contextual. Files that are shared between multiple components should reside as a separate component. Files that are local to the component, such as local styles, should be part of the same component.  
+
+To add a file to the component run:  
+
+```bash
+bit add <filename> --id <component id>
+```
+
+To add files as new component, use the [`bit add`](/docs/apis/cli#add) command. Bit automatically detects that the component was created and shows the updated status.  
 
 ### Missing package dependencies
 
-This error mainly occur on two distinct isolation issues. It may be that some of the project's package dependencies are not installed, or that you are using Custom Module Definition, or `NODE_PATH` environment variable in your project and Bit is unaware of that.
+This error may occur in the following cases:  
 
-As described [above](#package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit will prompt you to install the missing package dependencies.  
+- Some of the project's package dependencies are not installed
+- The project is using a Custom Module Definition, or `NODE_PATH` environment variable in your project and Bit is unaware of that.
+
+As described [above](#package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit prompts to install the missing package dependencies.  
 Use your package manager of choice to resolve the issue.
 
 ```sh
@@ -255,14 +272,9 @@ To resolve this issue you will need to refactor the `import` or `require` statem
 require ('@bit/<owner>.<collection>.<namespace>.<component-name>')
 ```
 
-### Missing Components
-
-This issue happens if some (or all) of your project component dependencies are missing. To resolve it you need to either run `bit import` or `npm install` (depends how your project depends on the component).
-
 ### Non-existing Dependency Files
 
-When Bit tracks files in your project, it evaluates their dependency tree. If one of the files in the component's dependency tree is not found within your project, Bit will throw this isolation error. To resolve this issue, open the file, and ensure that the `import` or `require` statement points to the correct file.  
-If you encounter this issue, this indicates that there's a high probability that this is because an error within your project that affects your project's stability.
+When Bit tracks files in your project, it evaluates their dependency tree. If one of the files in the component's dependency tree is not found within your project, Bit throws this isolation error. To resolve this issue, open the file, and ensure that the `import` or `require` statement points to the correct file.  
 
 ### Missing Links
 
