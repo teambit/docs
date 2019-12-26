@@ -143,7 +143,7 @@ To revert all staged versions in the workspace, use the `--all` flag, without sp
 bit untag --all
 ```
 
-## Auto tagging
+## Automatic dependents tagging
 
 Bit manages dependencies between Bit components by storing the full dependency graph of the components. When Bit tags a component, it also tags any other Bit components that exist in the local scope and depend on it. The dependent components are always tagged with a `patch` version, regardless of base component increment.  
 
