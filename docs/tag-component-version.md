@@ -89,7 +89,7 @@ bit tag --scope --patch  # Increment all components in the workspace with a patc
 
 ### Dependencies resolution
 
-When tagging Bit recalculates dependencies versions, as described here: /docs/add-and-isolate-components#dependencies. If an error occurs, such as the package not found, the tagging is canceled.  
+When tagging versions, Bit recalculates dependencies as described [here](/docs/add-and-isolate-components#dependencies). If an error occurs, such as the package not found, the tagging is canceled.  
 
 To tag the component even though it has missing dependencies, use the `ignore missing dependencies` flag:
 
