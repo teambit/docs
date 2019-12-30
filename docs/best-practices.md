@@ -11,17 +11,16 @@ Components should have a [sole responsibility](https://en.wikipedia.org/wiki/Sin
 When tracking files as components, include all files related to that functionality and that are only relevant to this functionality.  
 Each component should include the code, styling, unit tests, documentation, and usage examples, such as storybook stories.
 
-## Minimize component dependencies
+## Ensure Singleton Objects
 
-When creating component, evaluate which dependencies are needed by the component, and which are provided by the consuming project. Any packages that are expected to be in the consuming project should not be a dependency of the component, but rather should be defined as a peerDependency.  
-The peerDependencies version should also be as relaxed as possible, e.g. `"react": ">=16.9.0"`. This will cover a wide range of versions used in the consuming project. If the peerDependency version range does not cover the range installed in the consuming project, the package is installed with multiple versions. Framework libraries such as React or Angular cannot run when multiple instances of their runtime libraries and will err if multiple instances are found. 
-
+Some libraries need to be singleton in a project. For example, you cannot have more than one instance of framework libraries during run time such as React or Angular. To ensure the libraries are singletons, and assuming the containing project has those libraries, we should define them as peerDependencies for our component.  
+The peerDependencies version should also be as relaxed as possible, e.g. `"react": ">=16.9.0"`. This will cover a wide range of versions used in the consuming project. If the peerDependency version range does not cover the range installed in the consuming project, the package is installed with multiple versions.  
 There are two methods to define peerDependencies for Bit components:  
 
 - Define the dependency in the authoring project. Bit [dependency algorithm](/docs/dependencies#dependencies) takes the package as peer dependency.
 - Provide [override rules](/docs/overrides) for setting the packages as peer dependencies.
 
-You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has.  
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has and verify the dependencies are marked as peers.   
 
 ## Use Namespaces
 
