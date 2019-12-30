@@ -36,12 +36,12 @@ $ bit tag hello/world
 added components:  hello/world@0.0.1
 ```
 
-You can tag a single version by specifying its id:  
+You can tag a specific version by specifying its version number:  
 
 ```bash
-$ bit tag hello/world
+$ bit tag hello/world 1.0.0
 1 components tagged | 1 added, 0 changed, 0 auto-tagged
-added components:  hello/world@0.0.1
+added components:  hello/world@1.0.0
 ```
 
 You can also tag all the components in the scope that are new or modified using the `--all` option.  
