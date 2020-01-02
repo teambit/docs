@@ -88,7 +88,7 @@ Each container is limited to:
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
 
-## Automated dependency management
+## Version bumping Pull Requests
 
 BitdevBot is a Github bot ensuring projects contain the latest versions of the components, helping project developers keep their repositories up-to-date, and help maintainers of shared libraries track the adoption of components.  
 Bit.dev provides organizations the ability to integrate with Github for upgrading components in consuming projects. The BitdevBot tracks collections of components and a set of Github repositories. When a component maintainer exports a new version of a component, the Bot creates PRs for upgrading the components in all connected repositories to their latest exported version.  
@@ -97,3 +97,5 @@ Bit.dev provides organizations the ability to integrate with Github for upgradin
 
 The automated dependency management let component consumers get a simplified process in their projects. Instead of checking for updates and creating PRs for the components, they get a ready-made PR with all their updates. The PRs are acting as push notifications when changes occur. If the repository is associated with a CI / CD process, the PR triggers a CI process, so the user can know upfront if the update causes an app break.  
 Library maintainers can track the adoption of new components and their updates and communicate with the project owners if they did not apply the changes in their projects.  
+
+> Version bumping pull requests are only available for bit.dev organizations
