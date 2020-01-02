@@ -40,8 +40,8 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>bit.dev</h5>
-            <a href='https://bit.dev/explore'>
-              Explore 
+            <a href='https://bit.dev'>
+              bit.dev 
             </a>
             <a href='https://bit.dev/legals/terms'>
               Terms and Privacy 
@@ -56,9 +56,6 @@ class Footer extends React.Component {
             <a href="https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg">
               Slack
             </a>
-            <a href="https://gitter.im/bit-src/Bit">
-              Gitter
-            </a>            
             <a
               href="https://twitter.com/bitdev_"
               target="_blank"

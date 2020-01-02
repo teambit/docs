@@ -13,7 +13,7 @@ You will be notified of it the first time you run a Bit command on a new install
 
 ## Why?
 
-Most actions using Bit are done locally, and not all errors are reported back to Bit’s [issue tracking](https://github.com/teambit/bit/issues), or to the [community Gitter channel](https://gitter.im/bit-src/Bit). As a result, it is hard to understand what are the outstanding issues in Bit, and which parts of the system require more maintenance. Additionally, Bit tracks some usage metrics to better understand how developers are using the system, in order to help prioritize new features and areas which require additional work on the developer experience.
+Most actions using Bit are done locally, and not all errors are reported back to Bit. As a result, it is hard to understand what are the outstanding issues in Bit, and which parts of the system require more maintenance. Additionally, Bit tracks some usage metrics to better understand how developers are using the system, in order to help prioritize new features and areas which require additional work on the developer experience.
 
 ## What?
 

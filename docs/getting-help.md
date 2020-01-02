@@ -17,7 +17,7 @@ In case you have discovered an issue with Bit, or want to request a feature or i
 
 For any question, discussion or just to say 'hi':
 
-* [Gitter Chat Channel](https://gitter.im/bit-src/Bit)
+* [Join our slack workspace](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)
 * [discourse Discussion Board](https://discourse.bit.dev)
 
 ## General Support and Inquiries
