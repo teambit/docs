@@ -13,10 +13,6 @@ In order to use an extension, just [import](/docs/apis/cli-all#import) it from [
 bit import bit.extensions/commands/pack --extension
 ```
 
-## Storage
-
-Imported extensions are stored in `.bit/components/extensions` directory.
-
 ## Configuration and options
 
 Extensions' configuration and options are part of the [bit config](/docs/conf-bit-json.html#extensions--object).
@@ -98,3 +94,7 @@ bit.loadExtension(extensionName, extensionFilePath, extensionConfig)
     console.log(err);
   });
 ```
+
+## Storage
+
+Imported extensions are stored in `.bit/components/extensions` directory.
