@@ -90,8 +90,8 @@ The component explorer is using metadata on the component:  tags, language, fram
 
 ## Version bumping Pull Requests
 
-BitdevBot is a Github bot ensuring projects contain the latest versions of the components, helping project developers keep their repositories up-to-date, and help maintainers of shared libraries track the adoption of components.  
-Bit.dev provides organizations the ability to integrate with Github for upgrading components in consuming projects. The BitdevBot tracks collections of components and a set of Github repositories. When a component maintainer exports a new version of a component, the Bot creates PRs for upgrading the components in all connected repositories to their latest exported version.  
+Bit.dev provides organizations the ability to integrate with Github for bumping versions of components in consuming projects, helping project developers keep their repositories up-to-date, and help maintainers of shared libraries track the adoption of components.  
+BitdevBot is a Github bot ensuring projects contain the latest versions of the components. The BitdevBot tracks collections of components and a set of Github repositories. When a component maintainer exports a new version of a component, the Bot creates PRs for upgrading the components in all connected repositories to their latest exported version.  
 
 ![Github Integration](https://storage.googleapis.com/static.bit.dev/docs/images/github-integration.png)
 
