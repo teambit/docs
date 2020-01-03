@@ -3,8 +3,8 @@ id: view
 title: Viewing
 ---
 
-Bit provides a set of tools to view the state of the workspace and of the components
-This tools are useful when you need to analyze and debug issues with components.  
+Bit provides a set of tools to view the state of the workspace and of the components.
+These tools are useful when you need to analyze and debug issues with components.  
 
 ## Status
 
