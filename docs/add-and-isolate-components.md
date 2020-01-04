@@ -2,7 +2,6 @@
 id: add-and-isolate-components
 title: Tracking 
 ---
-
 ## Tracking Components
 
 Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit.  
@@ -17,13 +16,13 @@ It is essential to understand that each source file is tracked only inside a sin
 
 The [bit add](/docs/apis/cli-all#add) command is used to track sets of files as components. This is the first step of the component isolation process. Bit then creates a dependency graph for all tracked components. With this data, Bit creates an Isolated Component Environment for each component. In turn, this allows Bit to recreate a working environment for a component in any project.
 
+> Bit is using static code analysis, so there is no support for dynamic imports. 
+
 Apart from [defining the component's file](#track-a-component) and set component's [spec files](#track-a-component-with-testspec-files), `bit add` can track [many components at once](#track-multiple-components-with-test-files-in-a-parallel-directory-tree). You can also determine a component's [entry point](#define-an-entry-point), decide the [component's ID](#component-id) and [namespace](#set-a-components-namespace).  
 For more advance cases of tracking many components from the same project with all the above features, read about Bit's [tracking DSL](#tracking-dsl).
 
 Additionally, `bit add` is used to manage the already tracked files of components. For example [adding new files to existing components](#adding-a-file-to-a-component), [removing tracked files from components](#removing-files-from-components), and [renaming tracked files](#moving-and-renaming-files).  
 
-> **Custom Module Definition**
->
 > If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
 
 #### Track a single component

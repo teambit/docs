@@ -95,6 +95,8 @@ The following diagram describes the packages (i.e. node_modules) resolution flow
 
 A component can depend on other files, e.g. `import ./utils.js`. To isolate such components, we need to track these files as well. This is because the component must have these files around if we want to use it in another project.  
 
+> Bit is using static code analysis, so only static imports are supported. 
+
 When Bit encounters a file that needs to be tracked, it will try to check if the file is already tracked in another component. In this case, Bit will make the other component a dependency of this component.  If The file is not tracked Bit will warn about `untracked file dependencies` when checking the component's status.
 
 In this example, we try to track the hello-world.js file.  
