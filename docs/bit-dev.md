@@ -1,7 +1,7 @@
 ---
 id: bit-dev
-title: bit.dev Overview
-sidebar_label: Overview
+title: bit.dev Features
+sidebar_label: Features
 ---
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
@@ -88,7 +88,7 @@ Each container is limited to:
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
 
-## Version bumping Pull Requests
+## PRs for component changes
 
 Bit.dev provides organizations the ability to integrate with Github for bumping versions of components in consuming projects, helping project developers keep their repositories up-to-date, and help maintainers of shared libraries track the adoption of components.  
 BitdevBot is a Github bot ensuring projects contain the latest versions of the components. The BitdevBot tracks collections of components and a set of Github repositories. When a component maintainer exports a new version of a component, the Bot creates PRs for upgrading the components in all connected repositories to their latest exported version.  

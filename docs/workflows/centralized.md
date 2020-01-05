@@ -57,4 +57,4 @@ Projects developers can benefit from retaining their existing workflow of using 
 1. Project's developer submit a request or an issue on the component to the library maintainer, with their suggested change
 1. Library maintainer reviews the change, build and test the components locally.
 1. Library maintainers embed the change into the component and publish a new version of the component and any components that depend on it.
-1. Project developers upgrade the components in their projects as per their timelines and test their projects.
+1. Project developers upgrade the components in their projects as per their timelines and test their projects. You can use the bit.dev components changes [automatic creation of PRs](/docs/bit-dev#prs-for-component-changes) to keep all project in Github synced with the latest versions of components.
