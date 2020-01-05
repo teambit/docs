@@ -41,7 +41,7 @@ const siteConfig = {
     { doc: 'quick-start', label: 'Docs' },
     { href: '/tutorials', label: 'Tutorials' },
     { doc: 'workflows/workflows', label: 'Workflows' },
-    { href: "/docs/getting-help", label: "Support" },
+    { href: "https://bit.dev/support", label: "Support" },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 
