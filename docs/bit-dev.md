@@ -1,7 +1,7 @@
 ---
 id: bit-dev
-title: bit.dev Features
-sidebar_label: Features
+title: bit.dev Functionality
+sidebar_label: Functionality
 ---
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
