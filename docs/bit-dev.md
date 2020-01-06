@@ -10,10 +10,6 @@ Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requ
 
 > Unlike bit-cli tool that is open-sourced, bit.dev server is proprietary and owned by Bit.
 
-bit.dev server is using the following IP addresses:  
-104.154.235.126:22  
-35.184.176.52:443  
-
 Bit.dev server provides these functions:  
 
 ## Remote Scopes Hosting
