@@ -6,13 +6,32 @@ sidebar_label: Functionality
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
 
-![Bit.dev](https://storage.googleapis.com/static.bit.dev/docs/images/bit.dev.png)
+<div style="margin: auto; width: 90%; padding: 30px;">
+<a href="#remote-scopes-hosting">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.png" alt="remote hosting" width="250" height="200">
+</a>
+<a href="##package-registry">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.png" alt="Packages registry" width="250" height="200">
+</a>
+<a href="#component-playground">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-playground.png" alt="Component playground" width="250" height="200">
+</a>
+<a href="#component-ci">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-ci.png" alt="Component CI" width="250" height="200">
+</a>
+<a href="#component-explorer">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-explorer.png" alt="Component Explorer" width="250" height="200">
+</a>
+<a href="#prs-for-component-changes">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.png" alt="component changes PRs" width="250" height="200">
+</a>
+</div>
 
 > Unlike bit-cli tool that is open-sourced, bit.dev server is proprietary and owned by Bit.
 
 Bit.dev server provides these functions:  
 
-## Remote Scopes Hosting
+## Remote collections hosting
 
 The primary goal of bit.dev is to be a SaaS service for hosting remote scopes.  
 Bit.dev is managing scopes in **collections**. The collection contains additional information on top of the scope:  
