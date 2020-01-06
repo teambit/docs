@@ -79,7 +79,7 @@ Each container is limited to:
 - 2GB RAM
 - 0.5 CPU core
 
-## Components Explorer
+## Component Explorer
 
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
