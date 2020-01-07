@@ -100,6 +100,8 @@ Each container is limited to:
 
 ## Component Explorer
 
+![component explorer](https://storage.googleapis.com/bit-docs/component-discovery-bit-react-gif.gif)
+
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
 
