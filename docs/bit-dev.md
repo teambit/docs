@@ -59,7 +59,7 @@ Collection's members are assigned with 3 possible roles:
 | View Components* | Yes | Yes | Yes |
 | Import Components* | Yes | Yes | Yes |
 | Install Components * | Yes| Yes | Yes |
-| Export Components | Yes| No | No |
+| Export Components | Yes| Yes | No |
 | Manage members | Yes | No | No |
 | Edit collection's information | Yes | No | No |
 
