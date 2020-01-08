@@ -129,4 +129,4 @@ To avoid backward references as suggested in the [best practices](/docs/best-pra
 
 ## Handling Assets and Styles
 
-Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) and [styles](/docs/best-practices#handling-styles).
