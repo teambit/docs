@@ -5,7 +5,7 @@ title: Quick Start
 
 <p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components </p>
 
-![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick_start.png)
+![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick-start.svg)
 
 Bit is an [open-source](https://github.com/teambit/bit) cli tool for collaborating on isolated components across projects and repositories.  
 Use Bit to distribute discrete components from a design library or a project into a standalone reusable package and utilize it across applications.  
