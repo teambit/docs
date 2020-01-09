@@ -6,6 +6,10 @@ sidebar_label: Functionality
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
 
+> Unlike bit-cli tool that is open-sourced, bit.dev server is proprietary and owned by Bit.
+
+Bit.dev server provides these functions:  
+
 <div style="margin: auto; width: 90%; padding: 30px;">
 <a href="#remote-scopes-hosting">
     <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200">
@@ -26,10 +30,6 @@ Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requ
     <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200">
 </a>
 </div>
-
-> Unlike bit-cli tool that is open-sourced, bit.dev server is proprietary and owned by Bit.
-
-Bit.dev server provides these functions:  
 
 ## Remote collections hosting
 
@@ -62,6 +62,7 @@ Collection's members are assigned with 3 possible roles:
 | Export Components | Yes| Yes | No |
 | Manage members | Yes | No | No |
 | Edit collection's information | Yes | No | No |
+| Define integrations | Yes | No | No |
 
 > *Viewing, importing and installing is available for all users for public collections.  
 
