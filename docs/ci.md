@@ -144,7 +144,7 @@ Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/article
 
 ### Azure pipelines
 
-Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/npm-authenticate?view=azure-devops) to setup the `.npmrc` configuration in your pipeline. 
+Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/npm-authenticate?view=azure-devops) to setup the `.npmrc` configuration in your pipeline.  
 
 ## Bit imported components
 

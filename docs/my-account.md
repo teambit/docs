@@ -55,3 +55,28 @@ Reactivating a subscription will renew the monthly subscription fee. If the acco
 
 If there is an issue charging your payment method, the account will retain a 60 days grace period, in which all account members will still have access to premium features and private code components.
 If we could not resolve the issue by the end of the grace period, access to premium features and private collections is removed from the organization account.
+
+## Managing collections
+
+### Transfer collections
+
+Here are the steps to transfer collections that were created on personal account to an organizations account (or between different owners or collections).  
+
+Make sure you have both collections defined on bit.dev and that you have writing permissions to the new collection, and at least viewing permissions to the old collection.  
+
+```bash
+# create and empty directory and initialize it with a bit scope
+$ mkdir <collection-dir> # create an empty directory
+$ cd <collection-dir>
+$ bit init
+successfully initialized a bit workspace.
+
+# import all components from the old collection to the local scope
+$ bit import "<old-owner>.<old-collection-name>/*"
+successfully imported x components
+
+# Export all components to the new scope rewiring all their dependencies to the new collection
+$bit export <new-owner>.<new-collection> --set-current-scope --rewire --include-dependencies --all
+# bit requests for approval
+exported 4 components to scope <new-owner>.<new-collection>
+```
