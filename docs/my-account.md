@@ -65,13 +65,13 @@ Here are the steps to transfer collections that were created on personal account
 Make sure you have both collections defined on bit.dev and that you have writing permissions to the new collection, and at least viewing permissions to the old collection.  
 
 ```bash
-# create and empty directory and initialize it with a bit scope
+# Create and empty directory and initialize it with a bit scope
 $ mkdir <collection-dir> # create an empty directory
 $ cd <collection-dir>
 $ bit init
 successfully initialized a bit workspace.
 
-# import all components from the old collection to the local scope
+# Import all components from the old collection to the local scope
 $ bit import "<old-owner>.<old-collection-name>/*"
 successfully imported x components
 
