@@ -62,6 +62,8 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--all`|`-a`|all components|
 |`--verbose`|`-v`|showing verbose output for inspection|
 |`--skip-npm-install`|`   `|do not install packages of the imported components|
+|`--ignore-package-json`|`   `|do not generate package.json for the imported component(s). (it automatically enables skip-npm-install and save-dependencies-as-components flags)|
+|`--conf [path]`|`   `|write the configuration file (bit.json) and the envs configuration files (use --conf without path to write to the default dir)|
 |`--ignore-dist`|`   `|do not write dist files (when exist)|
 
 ---  
@@ -315,11 +317,15 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 ## log  
 
-**Workspace only**: yes  
+**Workspace only**: no  
 **Description**: show components(s) tag history.  
   https://docs.bit.dev/docs/view#log  
 
 `bit log <id>`  
+
+| **Option** | **Option alias** | **Description**|  
+|---|:-----:|---|
+|`--remote`|`-r`|show log of a remote component|
 
 ---  
 
