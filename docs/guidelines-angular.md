@@ -125,7 +125,7 @@ You can run `bit show` to view the components dependencies before tagging and tr
 
 ## Use Typescript Path Mappings for aliases
 
-To avoid backward references as suggested in the [best practices](/docs/best-practices.html#prefer-absolute-paths-and-paths-aliases), use absolute paths for imports and define [typescript path mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) in the angular project to resolve relative paths.  
+To avoid backward references as suggested in the [best practices](/docs/best-practices#components-paths), use absolute paths for imports and define [typescript path mapping](https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping) in the angular project to resolve relative paths.  
 
 ## Handling Assets and Styles
 

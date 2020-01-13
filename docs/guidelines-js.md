@@ -48,7 +48,7 @@ bit import bit.envs/testers/mocha --testers
 
 ## Use Path aliases
 
-To avoid backward references as suggested in the [best practices](/docs/best-practices.html#prefer-absolute-paths-and-paths-aliases), use absolute paths for imports. Use the following according to your environment needs:  
+To avoid backward references as suggested in the [best practices](/docs/best-practices#components-paths), use absolute paths for imports. Use the following according to your environment needs:  
 
 - [Webpack resolve](https://webpack.js.org/configuration/resolve/)
 - [tsconfig resolving](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
