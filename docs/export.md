@@ -14,21 +14,29 @@ Only components that are tagged can be exported. The tagged version is exported 
 ## Remote Scopes
 
 You can store components in any number of remote scopes.  
+When running `bit export` with no arguments, Bit attempts exporting to the original scope (the one you imported the component ). So, if you imported a component from a collection where you have no write access on, it will throw authentication error.  
 
 To export all staged components to a single scope or collection, specify a remote collection as a destination:
 
 ```bash
 $ bit export user.my-collection
-2 components were exported to Collection user/my-collection
+2 components were exported to Collection owner/my-collection
 ```
 
-Bit exports all staged components to the `user/my-scope` scope.
+Bit exports all staged components to the `owner/my-scope` scope.
 
 To export specific components to a collection add the component ID to the export command:
 
 ```bash
 $ bit export bit.movie-app hello/world
 component hello/world was exported to Collection bit/movie-app
+```
+
+You can also use wildcards to export multiple components:  
+
+```bash
+bit export owner.my-collection owner.my-collection/*
+# depending on your OS, you may need to wrap the component path with quotes
 ```
 
 ## Ejecting components
@@ -55,7 +63,7 @@ EXPERIMENTAL
 When a component is exported, you specify the remote scope to export:  
 
 ```bash
-bit export user.my-scope my-component
+bit export owner.my-scope my-component
 ```
 
 For a component that is exported for the first time, Bit uses the [defaultScope](/docs/conf-bit-json#defaultscope_) configuration, if exists, to export to that scope.  
@@ -71,7 +79,7 @@ You can see the scope of the component when running `bit list`. The scope is sho
 You can export the same component to additional scopes which are different from the primary scope by specifying:  
 
 ```bash
-bit export user.other-scope my-component
+bit export owner.other-scope my-component
 ```
 
 > When component is exported to a scope which is different from the primary scope, the component remains in staging mode. Only when exported to the primary scope, it will become exported.  
@@ -81,7 +89,7 @@ You can change the component primary scope when exporting to another scope by us
 When exporting to another scope, you can also export with it all the components that are dependencies of this components with a single command:  
 
 ```bash
-bit export user.other-scope my-component --include-dependencies
+bit export owner.other-scope my-component --include-dependencies
 ```
 
 All the components that are dependencies, are also exported to the other scope. However, the component still points to the components on their original scope as the dependencies. E.g.  
@@ -91,7 +99,7 @@ If you run `bit export scope2.compA --include-dependencies`, 2 components are cr
 `scope2.compA` and `scope2.compB`. However, `scope2.compA` still has `scope1.compB` as its dependency. To change scope2.compA to have `scope2.compB` as its dependency run:  
 
 ```bash
-bit export user.other-scope my-component --include-dependencies --rewire
+bit export owner.other-scope my-component --include-dependencies --rewire
 ```
 
 Now in scope2 you have `scope2.compA` that depends on `scope2.compB`.  
