@@ -12,7 +12,7 @@ Each collection has an internal cache for its dependencies. But this does not me
 To remove a component from a remote Collection, specify the full component ID.
 
 ```bash
-$ bit remove username.your-collection/foo/bar
+$ bit remove username.your-collection/foo/bar --remote
 successfully removed components:
 username.your-collection/foo/bar
 ```
