@@ -2,7 +2,7 @@
 id: centralized
 title: Centralized Library
 ---
-![Centralized library workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_central.png)
+![Centralized library workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-centralized.svg)
 This workflow is suggested for organizations that have:
 
 - A centralized repository for shared UI components already in place

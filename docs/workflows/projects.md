@@ -2,7 +2,7 @@
 id: projects
 title: Ad-hoc Sharing
 ---
-![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_projects.png)
+![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-projects.svg)
 
 This workflow is useful for teams that:
 
