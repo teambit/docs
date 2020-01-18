@@ -4,13 +4,9 @@ title: bit.dev Account
 sidebar_label: Account
 ---
 
-## Profile Page
+## User settings
 
-To view the profile page, log-in and click on your avatar at the top right page corner. Then click on the profile name.
-
-## Change User Settings
-
-Click on the avatar and select settings. From the settings page you can:  
+To view the profile page, log-in and click on your avatar at the top right page corner. Then click on the profile name. Select the settings page where you can: 
 
 - Change the avatar
 - Update password
@@ -23,14 +19,12 @@ Click on the avatar and select settings. From the settings page you can:
 - Delete your account
   > Deleting your account is possible only if you are not an admin on any organization.
 
-## Change Organization Settings
+## Organization settings
 
-To view an organization, select the organization from the avatar's drop-down list.  
-
-An organization's admin can:  
+To view an organization, select the organization from the avatar's drop-down list. An organization's admin can:  
 
 - Click on the edit button to change the organization's image, name, homepage, or description.  
-- Click on the Settings button to edit the organization's members and billing.  
+- Click on the Settings button to edit the organization's members, billing and integrations.  
 
 ## Organization Billing  
 
@@ -56,7 +50,35 @@ Reactivating a subscription will renew the monthly subscription fee. If the acco
 If there is an issue charging your payment method, the account will retain a 60 days grace period, in which all account members will still have access to premium features and private code components.
 If we could not resolve the issue by the end of the grace period, access to premium features and private collections is removed from the organization account.
 
-## Managing collections
+## Collections management
+
+Change the settings of the collections by clicking the settings on the collection page. You can access the collection page via the url: `bit.dev/<owner>/<collection>`. Then click the settings button. To make modifications to the collection you need to have admin privileges.  
+
+### Collection's settings
+
+On the collection page you can edit the collection's description or access the settings page to:  
+
+- Change the collection's license.
+- Change the collection's visibility (public / private).
+- Delete the collection from bit.dev.
+- Manage the users that can access the collection and change their permissions.
+
+### Users and Roles
+
+Use the permission tab of the collection to add, remove, and change permissions for users for the collection.  
+Collection's members are assigned with 3 possible roles:  
+
+| Role | Admin | Developer | Viewer |
+|---|---|---|---|
+| View Components* | Yes | Yes | Yes |
+| Import Components* | Yes | Yes | Yes |
+| Install Components * | Yes| Yes | Yes |
+| Export Components | Yes| Yes | No |
+| Manage members | Yes | No | No |
+| Edit collection's information | Yes | No | No |
+| Define integrations | Yes | No | No |
+
+> *Viewing, importing and installing is available for all users for public collections.  
 
 ### Transfer collections
 

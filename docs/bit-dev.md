@@ -34,37 +34,19 @@ Bit.dev server provides these functions:
 ## Remote collections hosting
 
 The primary goal of bit.dev is to be a SaaS service for hosting remote scopes.  
-Bit.dev is managing scopes in **collections**. The collection contains additional information on top of the scope:  
+Bit.dev is managing scopes in **collections** and determines the permissions users have for these collections:  
 
-- **Collection name** - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  
-- **Visibility** - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
-- **License** - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
+- A **public** collection is is visible for all users.  
+- A **private** collection is limited to the privileged users in the organization that owns the collection.
 
-In addition, Bit provides security controls for collections, so only authorized users may access them.  
-
-### Permissions for Collections
-
-bit.dev provides a secured and reliable hub for sharing both public and private code. There are few cases where dependencies between components that are hosted in different collections and owners may harm reliability to provide with working components and not exposing private code.  
-To ensure this does not happen, bit.dev enforces the following rules on components exported to multiple collections:
+Bit also ensures that code in private collections is not exposed via public collections and places the following restrictions on using components across collections:  
 
 - Components in public collections cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in public collections.  
-- Components in private collection cannot depend on components in other organizations: Dependencies in private collections may depend on public collections or on private collections that belong to the same account (personal or organization).  
+- Components in private collections cannot depend on components of different owners (users or organizations). Components in private collections may depend on public or private collections that belong to the same owner.  
 
-### Users and Roles
+In addition, for each collection Bit maintains licensing information for the components (such as MIT or GPL).  
 
-Collection's members are assigned with 3 possible roles:  
-
-| Role | Admin | Developer | Viewer |
-|---|---|---|---|
-| View Components* | Yes | Yes | Yes |
-| Import Components* | Yes | Yes | Yes |
-| Install Components * | Yes| Yes | Yes |
-| Export Components | Yes| Yes | No |
-| Manage members | Yes | No | No |
-| Edit collection's information | Yes | No | No |
-| Define integrations | Yes | No | No |
-
-> *Viewing, importing and installing is available for all users for public collections.  
+Learn more about [users and collections management](/docs/my-account).
 
 ## Package Registry
 
@@ -106,7 +88,7 @@ Each container is limited to:
 Bit.dev components explorer allows searching across all the remote collections that the user has access to,  such as the public collections and the user’s or organization's components.  
 The component explorer is using metadata on the component:  tags, language, framework, and size for advanced searching capabilities.  
 
-## Component changes PRs
+## Component Changes PRs
 
 Bit.dev provides organizations the ability to integrate with Github for bumping versions of components in consuming projects, helping project developers keep their repositories up-to-date, and help maintainers of shared libraries track the adoption of components.  
 BitdevBot is a Github bot ensuring projects contain the latest versions of the components. The BitdevBot tracks collections of components and a set of Github repositories. When a component maintainer exports a new version of a component, the Bot creates PRs for upgrading the components in all connected repositories to their latest exported version.  
