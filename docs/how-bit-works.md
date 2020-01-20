@@ -25,7 +25,7 @@ A component in Bit is made of 3 parts:
 - Dependency graph
 - Tools & Configuration
 
-![Bit component](https://storage.googleapis.com/static.bit.dev/docs/images/component-full.png)
+![Bit component](https://storage.googleapis.com/static.bit.dev/docs/images/component.svg)
 
 From these parts, only the first one is mandatory. Dependencies and tools are optional but are instrumental when sharing components between projects.  
 
