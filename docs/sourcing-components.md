@@ -7,7 +7,7 @@ title: Importing
 
 To use a component in a workspace, the component needs to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Bit provides some shortcut commands to make the work more fluent.  
 
-![import](https://storage.googleapis.com/static.bit.dev/docs/images/import.png)
+![import](https://storage.googleapis.com/static.bit.dev/docs/images/import.svg)
 
 Making further changes to imported components is possible for the options detailed [here](/docs/workspace#imported-components).
 
