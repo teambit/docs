@@ -63,7 +63,7 @@ Bit is a cli-tool for working with components. Bit stores components in two form
 - Inside a **scope**, Bit stores the semantic representation of Bit components as objects with all their history and relationships.  
 - Inside the **workspace**, Bit stores the file representation of a single version of the component.  
 
-![Components Management](https://storage.googleapis.com/static.bit.dev/docs/images/scope-workspace.png)
+![Components Management](https://storage.googleapis.com/static.bit.dev/docs/images/scope-workspace.svg)
 
 ### Workspace
 
