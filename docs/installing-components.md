@@ -7,7 +7,7 @@ Bit supports CommonJS API for consuming components as packages.
 
 To install components with npm or yarn we first need to configure `@bit` as a [scoped registry](https://docs.npmjs.com/misc/scope#associating-a-scope-with-a-registry). Bit does it by default as part of the `bit login` process.
 
-To configure the registry manully, use the `npm config` command.
+To configure the registry manually, use the `npm config` command.
 
 ```bash
 npm config set '@bit:registry' https://node.bit.dev
