@@ -18,9 +18,7 @@ Bit is a collaboration tool that spans across people and projects. As any code-c
 ## Benefits of using a Bit workflow
 
 It is typical for organizations that develop UI products to evolve in a certain way:
-
-![teams](https://storage.googleapis.com/static.bit.dev/docs/images/workflows_teams.png)
-
+![teams](https://storage.googleapis.com/static.bit.dev/docs/images/workflows_teams.svg)
 1. Initially, the whole team is working on a single product.
 1. Later on, different products evolve, and usually, a team is assigned to each project.
 1. At a later stage, the team is aiming to standardize their work and form a centralized UI component library providing the necessary building blocks to be used by the projects.
