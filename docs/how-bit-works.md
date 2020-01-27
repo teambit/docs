@@ -90,3 +90,9 @@ Remote scope is a scope that resides on a server. It is also called a **bare sco
 A remote scope is used for sharing components, so it is in fact a place where components are exported to and imported from.  
 
 A user can set up a [Bit Server](/docs/bit-server) that holds remote scopes for sharing components between Bit workspaces. Alternatively, users can use [bit.dev](/docs/bit-dev) for storing remote scopes of components.  
+
+### Transitions
+
+The diagram below highlights the main commands that move components between the local workspace, the map index (`.bitmap` file), the local scope (`.git/.bit`) and the remote scope:  
+
+![commands overview](https://storage.googleapis.com/static.bit.dev/docs/images/commands_overview.svg)
