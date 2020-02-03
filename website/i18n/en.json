@@ -193,20 +193,20 @@
     "links": {
       "Docs": "Docs",
       "Tutorials": "Tutorials",
+      "Guidelines": "Guidelines",
       "Workflows": "Workflows",
-      "Support": "Support",
       "Github": "Github"
     },
     "categories": {
       "Introduction": "Introduction",
       "Basics": "Basics",
       "Components": "Components",
-      "Guidelines": "Guidelines",
       "Advanced": "Advanced",
       "bit.dev": "bit.dev",
       "Extending Bit": "Extending Bit",
       "Reference": "Reference",
       "Tutorials": "Tutorials",
+      "Guides": "Guides",
       "Workflows": "Workflows"
     }
   },

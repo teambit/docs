@@ -24,13 +24,6 @@
       "sourcing-components",
       "view"
     ],
-    "Guidelines":[
-        "react-guidelines",
-        "angular-guidelines",
-        "vue-guidelines",
-        "js-guidelines",
-        "ts-guidelines"
-    ],
     "Advanced": [
       "ci",
       "bit-server",
@@ -62,6 +55,15 @@
       "tutorials/bit-vue-tutorial",
       "tutorials/bit-nodejs-tutorial"
     ]
+  },
+  "guides": {
+    "Guides":[
+      "react-guidelines",
+      "angular-guidelines",
+      "vue-guidelines",
+      "js-guidelines",
+      "ts-guidelines"
+  ]
   },
   "workflows": {
     "Workflows": [
