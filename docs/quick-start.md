@@ -113,7 +113,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
 
 ## Track
 
-To start tracking components in Bit, use the `add` command. Once the componet has its files, Bit can identify and verify that all the dependencies of the component exist, and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component in isolation.
+To start tracking components in Bit, use the `add` command. Once the component has its files, Bit can identify and verify that all the dependencies of the component exist, and all files are tracked. Bit can also associate the component with utilities--such as a compiler or a tester--and start building and testing the component in isolation.
 
 ### Add Files
 
