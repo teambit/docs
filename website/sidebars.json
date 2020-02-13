@@ -2,16 +2,18 @@
   "docs": {
     "Introduction": [
       "quick-start",
+      "installation",
       "how-bit-works",
+      "best-practices",
       "faq"
     ],
-    "Basics": [
-        "installation",
+    "Guides": [
         "workspace",
-        "best-practices",
         "dependencies",
-        "overrides"
-    ],
+        "overrides",
+        "ci",
+        "bit-server"
+      ],
     "Components": [
       "add-and-isolate-components",
       "building-components",
@@ -24,16 +26,18 @@
       "sourcing-components",
       "view"
     ],
-    "Advanced": [
-      "ci",
-      "bit-server",
-      "conf-analytics"
-    ],
     "bit.dev": [
         "bit-dev",
         "my-account",
         "setup-authentication",
         "bitsrc-security"
+    ],
+    "Reference": [
+      "conf-config",
+      "conf-bit-json",
+      "apis/cli-all",
+      "conf-analytics"
+
     ],
     "Extending Bit": [
       "ext-concepts",
@@ -41,12 +45,8 @@
       "ext-developing-extensions",
       "ext-compiling",
       "ext-testing"
-  ],
-    "Reference": [
-        "conf-config",
-        "conf-bit-json",
-        "apis/cli-all"
-    ]
+  ]
+
   },
   "tutorials": {
     "Tutorials": [
@@ -56,8 +56,8 @@
       "tutorials/bit-nodejs-tutorial"
     ]
   },
-  "guides": {
-    "Guides":[
+  "frameworks": {
+    "Frameworks":[
       "react-guidelines",
       "angular-guidelines",
       "vue-guidelines",

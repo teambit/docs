@@ -193,20 +193,19 @@
     "links": {
       "Docs": "Docs",
       "Tutorials": "Tutorials",
-      "Guidelines": "Guidelines",
+      "Frameworks": "Frameworks",
       "Workflows": "Workflows",
       "Github": "Github"
     },
     "categories": {
       "Introduction": "Introduction",
-      "Basics": "Basics",
-      "Components": "Components",
-      "Advanced": "Advanced",
-      "bit.dev": "bit.dev",
-      "Extending Bit": "Extending Bit",
-      "Reference": "Reference",
-      "Tutorials": "Tutorials",
       "Guides": "Guides",
+      "Components": "Components",
+      "bit.dev": "bit.dev",
+      "Reference": "Reference",
+      "Extending Bit": "Extending Bit",
+      "Tutorials": "Tutorials",
+      "Frameworks": "Frameworks",
       "Workflows": "Workflows"
     }
   },
