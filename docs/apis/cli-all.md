@@ -193,6 +193,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--include-dependencies`|`-d`|EXPERIMENTAL. include the component's dependencies as part of the export to the remote scope|
 |`--set-current-scope`|`-s`|EXPERIMENTAL. ensure the component's remote scope is set according to the target location|
 |`--rewire`|`-r`|EXPERIMENTAL. when exporting to a different scope, replace import/require statements in the source code to the new scope|
+|`--all-versions`|`   `|export not only staged versions but all of them|
 |`--force`|`-f`|force changing a component remote without asking for a confirmation|
 
 ---  
