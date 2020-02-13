@@ -4,11 +4,11 @@
       "quick-start",
       "installation",
       "how-bit-works",
+      "workspace",
       "best-practices",
       "faq"
     ],
     "Guides": [
-        "workspace",
         "dependencies",
         "overrides",
         "ci",
