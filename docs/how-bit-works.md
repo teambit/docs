@@ -58,16 +58,16 @@ The most common tools linked to components are:
 
 ### Component id
 
-Each component has a unique id. We use the Component id when installing the component, importing it, or utilizing it in the project. 
-A full ID of a component comprises from the collection name, namespaces, and the short Id: 
+Each component has a unique id. We use the Component id when installing the component, importing it, or utilizing it in the project.  
+A full ID of a component comprises from the collection name, namespaces, and the short Id:  
 `owner.collection/namespace/namespace/short-id`;
-Using namespaces allows organizing components in the same way we organize files inside folders. 
-However, the above name is not usable when installing the components with package managers (Yarn, NPM). Then, the name translates to: 
-`@registry-name.owner.collection.namespace.namespace.short-id`. For components stored on bit.dev, the registry name is always @bit. 
-To use the component in the code, you should import as follow: 
+Using namespaces allows organizing components in the same way we organize files inside folders.  
+However, the above name is not usable when installing the components with package managers (Yarn, NPM). Then, the name translates to:  
+`@registry-name.owner.collection.namespace.namespace.short-id`. For components stored on bit.dev, the registry name is always @bit.  
+To use the component in the code, you should import as follow:  
 
 ```bash
-import { something } from '@bit/owner.collection/namespace/namespace/short-id';
+import { something } from '@bit/owner.collection.namespace.namespace.short-id';
 ```
 
 ### Main file
