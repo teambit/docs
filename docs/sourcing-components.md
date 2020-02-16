@@ -3,13 +3,26 @@ id: sourcing-components
 title: Importing 
 ---
 
-## Importing Components
 
-To use a component in a workspace, the component needs to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Bit provides some shortcut commands to make the work more fluent.  
+## Using an imported component
+
+Using a component in a workspace requires the component to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). Imported components reside in the default directory defined in the [workspaced configuration](/docs/conf-bit-json#componentsdefaultdirectory).  Bit retrieves the component with all its dependencies and creates a package.json and node_modules directory. Check [here](/docs/workspace#imported-components) for details on the exact structure of imported component.  
+
+To use the component in the code, use an import or require command that references the full name of the component:  
+
+```js
+import { something } from '@bit/owner.collection.namespace.namespace.short-id';
+```
+
+> Do not reference the directory of the imported code directly. Bit handles linking from the package reference to the actual code. 
+
+Once importing a component, you can make changes to the code. If the component is associated with a compiler, you need to run [`bit build`](/docs/building-components) to generate the compiler. 
+
+Subject to your privileges, you may export the component back to the remote scope. When exporting the component,  you can use the [`bit export --eject`](/docs/export#ejecting-components) command, so the component goes back to node_moduels.  
+
+Bit provides some shortcut commands to make the work more fluent.  
 
 ![import](https://storage.googleapis.com/static.bit.dev/docs/images/import.svg)
-
-Making further changes to imported components is possible for the options detailed [here](/docs/workspace#imported-components).
 
 ## Initial Component Import
 

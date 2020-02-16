@@ -41,7 +41,7 @@
 
 /docs/import-component                  /docs/sourcing-components
 /docs/install-component    /docs/installing-components#configuring-bit-registry
-/docs/use-import-component              /docs/sourcing-components
+/docs/use-import-component              /docs/sourcing-components#using-an-imported-component
 /docs/use-install-component             /docs/installing-components#use-installed-component
 
 /docs/cli-add.html 	 		 /docs/apis/cli-all#add
