@@ -39,7 +39,7 @@
 /whybit/for-teams.html            /docs/workflows/workflows
 /whybit/for-libs.html            /docs/workflows/workflows
 
-/docs/import-component                  /docs/sourcing-components
+/docs/import-component                  /docs/workspace#initializing-workspace
 /docs/install-component    /docs/installing-components#configuring-bit-registry
 /docs/use-import-component              /docs/sourcing-components#using-an-imported-component
 /docs/use-install-component             /docs/installing-components#use-installed-component

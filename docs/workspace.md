@@ -3,11 +3,11 @@ id: workspace
 title: Bit Workspace
 ---
 
-## Bit Workspace
-
 Working in Bit revolves around workspaces. A workspace contains information about all the components information and provide the functionality to author, export, import, and install components. It is customary to make each VCS repository a single workspace.  
 
 ![Bit Workspace](https://storage.googleapis.com/static.bit.dev/docs/images/workspace.svg)
+
+## Initializing Workspace
 
 Initialize Bit workspace by running [`bit init`](/docs/apis/cli-all#init) command. The folder in which the workspace was initialized, is set as the workspace root.
 
