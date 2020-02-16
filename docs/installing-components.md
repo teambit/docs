@@ -3,6 +3,26 @@ id: installing-components
 title: Installing
 ---
 
+## Use installed component
+
+To use a component, you can use the `bit install`  command or a package manager installation: 
+
+```bash
+npm install @bit/owner.collection.namespace.namespace.comp-id
+or
+yarn add @bit/owner.collection.namespace.namespace.comp-id
+```
+
+Once installing the component, the component resides in the  `node_modules` directory.  
+
+To use the component in the code, import the code as follow:  
+
+```bash
+import { something } from '@bit/owner.collection.namespace.namespace.comp-id';
+```
+
+If you want to modify the code of the component, you should [import](/docs/modifying-sourced-components) the component into your workspace. After modifying the component and re-exporting the change, you can revert to the pacakge mode by using the [`bit eject`](/docs/apis/cli-all#eject) command.  
+
 ## Configuring bit registry
 
 Bit supports CommonJS API for consuming components as packages.
@@ -21,22 +41,7 @@ To install private components use npm login. Use your Bit credentials to login.
 npm login --registry=https://node.bit.dev --scope=@bit
 ```
 
-## Package names
-
-Package naming convention includes the Bit owner, Collection name and the component ID (including namespaces).  
-For example:
-
-```bash
-yarn add <owner>.<collection>.<component-ID>
-```
-
-After installing the component as a package, import/require it in the following format:
-
-```js
-import component from '@bit/<owner>.<collection>.<component-ID>';
-```
-
-## Installing Components
+## Installing all Components
 
 To install dependencies for all the imported components use:
 
