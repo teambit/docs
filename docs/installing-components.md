@@ -31,7 +31,7 @@ yarn add <owner>.<collection>.<component-ID>
 After installing the component as a package, import/require it in the following format:
 
 ```js
-import component from '@bit.<owner>.<collection>.<component-ID>';
+import component from '@bit/<owner>.<collection>.<component-ID>';
 ```
 
 ## Installing Components
