@@ -349,7 +349,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 ## logout  
 
-**Workspace only**: yes  
+**Workspace only**: no  
 **Description**: log the CLI out of Bit  
 
 `bit logout`  
