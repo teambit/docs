@@ -38,7 +38,7 @@ Charging occurs at the monthly anniversary of the subscription (e.g., on the 17t
 
 Members added to the organization are granted access immediately to the organization's features, according to the plan.  
 Members removed from the organization revoke their access and support immediately when deleted.  
-Charging is according to the number of the actual number of members on the day of subscription's charge.  
+Charging is calculated according to the actual number of members on the day of subscription's charge.  
 
 ### Canceling a Paid Subscription
 
