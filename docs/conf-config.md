@@ -60,6 +60,10 @@ By default, analytics data is sent as anonymous data. Set the value to `false` t
 
 Send anonymous errors data to Bit. Defaulted to false.
 
+### log_level  
+
+Log errors that are output. Values are:  error (least verbose), warn, info, http, verbose, debug, silly (most verbose). The default level is debug.
+
 ## Local Configuration
 
 ### git_path
