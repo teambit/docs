@@ -26,30 +26,6 @@ To view an organization, select the organization from the avatar's drop-down lis
 - Click on the edit button to change the organization's image, name, homepage, or description.  
 - Click on the Settings button to edit the organization's members, billing and integrations.  
 
-## Organization Billing  
-
-[Click here to see bit.dev plans](https://bit.dev/pricing).
-
-### Charging
-
-Charging occurs at the monthly anniversary of the subscription (e.g., on the 17th of every month).  
-
-### Adding and Removing Members
-
-Members added to the organization are granted access immediately to the organization's features, according to the plan.  
-Members removed from the organization revoke their access and support immediately when deleted.  
-Charging is calculated according to the actual number of members on the day of subscription's charge.  
-
-### Canceling a Paid Subscription
-
-Canceling a subscription takes effect at the end of the billing period. Canceling a plan does not delete the private collections. However, they are no longer accessible.  
-Reactivating a subscription will renew the monthly subscription fee. If the account had private collections, you would regain access to them immediately.
-
-### Charging Issues
-
-If there is an issue charging your payment method, the account will retain a 60 days grace period, in which all account members will still have access to premium features and private code components.
-If we could not resolve the issue by the end of the grace period, access to premium features and private collections is removed from the organization account.
-
 ## Collections management
 
 Change the settings of the collections by clicking the settings on the collection page. You can access the collection page via the url: `bit.dev/<owner>/<collection>`. Then click the settings button. To make modifications to the collection you need to have admin privileges.  
