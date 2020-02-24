@@ -48,7 +48,7 @@ Collection's members are assigned with 3 possible roles:
 |---|---|---|---|
 | View Components* | Yes | Yes | Yes |
 | Import Components* | Yes | Yes | Yes |
-| Install Components * | Yes| Yes | Yes |
+| Install Components* | Yes| Yes | Yes |
 | Export Components | Yes| Yes | No |
 | Manage members | Yes | No | No |
 | Edit collection's information | Yes | No | No |
@@ -74,7 +74,7 @@ $ bit import "<old-owner>.<old-collection-name>/*"
 successfully imported x components
 
 # Export all components to the new scope rewiring all their dependencies to the new collection
-$bit export <new-owner>.<new-collection> --set-current-scope --rewire --include-dependencies --all
+$ bit export <new-owner>.<new-collection> --set-current-scope --rewire --include-dependencies --all
 # bit requests for approval
 exported 4 components to scope <new-owner>.<new-collection>
 ```
