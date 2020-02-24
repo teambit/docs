@@ -62,29 +62,15 @@ npm install bit-bin -g
 
 If you are not using Nodejs 8.12 and above, see reference to other [installation methods](/docs/installation).
 
-### Create account and collection
-
-To share components between different projects, you need to store the components in a centralized scope.  
-You can use [bit.dev](https://bit.dev) cloud hosting to share components, or you can use your server.  
-To host components on bit dev [create an account](https://bit.dev/signup) and [run bit login](/docs/apis/cli-all#login).  
-
-Enter a name for your collection and click on create.  
-You now have a collection. You can see the export command that you will use later to export components to this collection.  
-
-<div class="learn-more">
-
-- Find other [authentication methods](/docs/setup-authentication)
-
-</div>
-
 ### Initialize Bit workspace
 
 To share components from a project, you should initialize Bit in that project:
 
 ```bash
-cd project-directory
 bit init
 ```
+
+<img src="https://storage.googleapis.com/static.bit.dev/docs/gifs/bit-init.gif"/>
 
 Bit components should be small and only hold the component's relevant files. However, it is common that the components are importing from the framework you are using, such as React or Vue, or that they contain project-specific dependencies such as Storybook. To make sure you exclude those dependencies inside the Bit component, we need to configure them as peerDependencies.
 
@@ -97,7 +83,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
  "react": ">=16.9.0",
  "react-dom": ">=16.9.0",
  "styles-components": ">=4.0.0",
- "@storybook/react": >="5.2.0"
+ "@storybook/react": ">=5.2.0"
 }
 ```
 
@@ -203,19 +189,34 @@ $ bit tag --all 1.0.0
 added components: components/button@1.0.0, components/login@1.0.0, components/logo@1.0.0
 ```
 
-### Export components
+### Create remote scope
 
-Now that our components are tracked and versioned, export (publish) them to a remote collection. Collections host and organize your components. Each component can be quickly discovered and consumed in any other project and application.  
-Make sure you have a free account on [bit.dev](https://bit.dev) and a collection.  
-You now need to authenticate the CLI with the bit.dev account.  
-Run `bit login` to open a login page in the browser and authenticate.
+To share components between different projects, you need to store the components in a remote scope.
+
+To setup your own Bit server follow the instructions [here](/docs/bit-server).
+
+Alternatively, you can use [bit.dev](https://bit.dev) cloud hosting to share components. To share components via bit.dev server.
+
+- [Create an account](https://bit.dev/signup) on bit.dev
+- Follow the steps on bit.dev to create a collection. On your newly created collection page you can see the export command that you will later use to export the components.  
+
+[Run bit login](/docs/apis/cli-all#login) to your own server or to bit.dev (if you are already logged in the browser, bit login will automatically log in to that account).
 
 ```bash
 $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-Now you’re all set to [publish the components](/docs/export).  
+You now have a collection. On bit.dev you can see the export command that you will use later to export components to this collection.  
+
+<div class="learn-more">
+
+- Find other [authentication methods](/docs/setup-authentication) to bit.dev
+
+</div>
+
+### Export components
+
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
 ```bash
@@ -225,7 +226,7 @@ exported 3 components to collection user-name.collection-name
 
 Head over to your [bit.dev](https://bit.dev/) collection. All the components are exported. Try creating and saving examples for your components, which Bit will also show as previews in the collection’s page.
 
-## Install
+## Install component
 
 Once exported, the component is now available for consumption by other developers in one of two ways: install or import.
 
