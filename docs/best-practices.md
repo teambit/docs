@@ -198,7 +198,7 @@ Changing the configuration works according to [overriding rules](/docs/overrides
 
 To change the configuration for the compiler add it to the package.json for the workspace or under the overrides. Under the `env` key change the compiler to be as follow:  
 
-```bash
+```json
 "bit.envs/compilers/react-typescript": {
     "rawConfig": {
         "tsconfig": {
