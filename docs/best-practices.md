@@ -174,21 +174,42 @@ However, it is unlikely that the component can be really usable across projects,
 
 ## Compiling and testing components
 
-The code usually requires compilation tasks to make it distributable and executable. The same goes for the components in a project. When we take components out of the context of a project, Bit needs to know how to make them usable. Component Environments handle these tasks.
+Typically, the component code needs to be transpiled to work in the browser. Inside a project, the building tools are responsible for the compilation / transpilation. 
+Bit compiler is associated with a component (or a set of components) and is running the compilation tasks according to the framework (e.g., React, Vue) and language flavor (e.g., vanilla Javascript, Typescript, Flow) used.  
 
-It is generally recommended to transpile your code and not to bundle it. Bundled code forces too many restrictions on its consumers. It forces them to include the entire bundle as a single block, dependencies included. Transpiled code gives the consumer more flexibility. It allows dependency tree management features like tree-shaking and code-splitting.
+Most of Bit compilers generate the following:  
+
+- JS syntax ES2015 (ES6)
+- Module system as [ES Modules](https://flaviocopes.com/es-modules/)
+
+Typically, projects tooling is doing two things:  
+
+- Transpiles code in the source code folder (very often this is called `src`) with tools such as babel or Typescript
+- Bundles the code into chunks using tools like webpack or rollup. The bundlers bundle the source code, assets, and packages code, that is already compiled.  
+
+The Bit compiler generates code that the hosting project can bundle without the need to compile it. The ES Module format lets the bundler analyze the code and apply optimization techniques such as code splitting for creating smaller chunks and tree shaking to eliminate unused code.  
+
+However, there are cases where the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
 
 ### Changing Compiler Configuration
 
-Bit compilers provide some default configuration. If you need to change the configuration of a compiler, here are the recommended steps to follow:  
+Some compilers, such as Typescript and React Typescript, are supporting changing the configuration. Otherwise, you need to [fork the compiler](/docs/building-components#where-is-the-code-compiled) and change the code.  
+Changing the configuration works according to [overriding rules](/docs/overrides#overriding-rules).  
 
-1) Create a new directory and an empty workspace in it
-2) Import the compiler you want to modify, but without the --compiler flag
-3) Modify the .babelrc file of the compiler to fit your needs
-4) Tag and export the new version of the component to your own scope
+To change the configuration for the compiler add it to the package.json for the workspace or under the overrides. Under the `env` key change the compiler to be as follow:  
 
-Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
-Run bit status to see that all components properly built.  
+```bash
+"bit.envs/compilers/react-typescript": {
+    "rawConfig": {
+        "tsconfig": {
+            "compilerOptions": {
+                "target": "ES5",
+                "module": "CommonJS"
+            }
+        }
+    }
+}
+```
 
 ## Working with VCS (git)
 

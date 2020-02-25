@@ -24,7 +24,7 @@ the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
 ```
 
-See [full collection of officially maintained compilers](https://bit.dev/bit/envs).
+See [full collection of officially maintained compilers](https://bit.dev/bit/envs). Issues regarding any of the compilers can bre [reported here](https://github.com/teambit/envs).
 
 ## Building a component
 
@@ -41,7 +41,14 @@ dist/foo/bar.js.map
 >
 > It's possible to set `dist` target and entry by editing [bit config](/docs/conf-bit-json.html).
 
-## Compilers maintained by bit.dev
+## Forking a compiler
 
-Here is a [full list of compilers](https://bit.dev/bit/envs) maintained by the [bit.dev](https://bit.dev) team.    
-Issues regarding any of the compilers can bre [reported here](https://github.com/teambit/bit.envs).
+Bit compilers provide some default configuration. If you need to change the configuration of a compiler, here are the recommended steps to follow:  
+
+1) Create a new directory and an empty workspace in it
+2) Import the compiler you want to modify, but without the --compiler flag
+3) Modify the .babelrc file of the compiler to fit your needs
+4) Tag and export the new version of the component to your own scope
+
+Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
+Run bit status to see that all components properly built. 

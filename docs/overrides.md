@@ -17,7 +17,7 @@ The overriding function has 2 parts:
 
 You can override the component configuration in one of two places:  
 
-- In workspace configuration - override will be applied on all components exported and imported inside the workspace.  
+- In workspace configuration - override will be applied on all authored and imported components inside the workspace.  
 - In an imported component's `package.json` file - applied on that specific component
 
 ### `overrides` in workspace configuration
