@@ -99,3 +99,5 @@ The automated dependency management let component consumers get a simplified pro
 Library maintainers can track the adoption of new components and their updates and communicate with the project owners if they did not apply the changes in their projects.  
 
 > Version bumping pull requests are only available for bit.dev organizations
+
+Read more about the [PRs integration](https://blog.bitsrc.io/announcing-auto-github-prs-for-component-version-bumping-74e7768bcd8a)
