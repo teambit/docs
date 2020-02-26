@@ -3,10 +3,10 @@ id: ci
 title: CI & Deployment
 ---
 
-If you want to deploy a project using bit components on CI or on a deployment server you need to handle 2 cases:  
+The CI process here is supporting two different use cases:  
 
-- Deploy a project with **installed** @bit components
-- Deploy a project with **imported** Bit components
+- If you want to only install components on the CI using NPM or Yarn, follow the steps bellow to [get a token](#get-a-bit-token), and [configure .npmrc on CI](#config-npmrc-on-ci).
+- If you want to run Bit commands on server, such as import or build, follow the steps above and also the steps to [run bit commands](#run-bit-commands).
 
 ## Get a Bit token
 
@@ -22,7 +22,7 @@ bit config get user.token
 
 Set the token as an environment parameter on your server named BIT_TOKEN.  
 
-## Bit installed components
+## Config npmrc on CI
 
 Bit components are stored on the bit registry located in `https://node.bit.dev`.  
 
@@ -146,9 +146,9 @@ Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/article
 
 Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/npm-authenticate?view=azure-devops) to setup the `.npmrc` configuration in your pipeline.  
 
-## Bit imported components
+## Run Bit commands
 
-When using Bit imported components, there are multiple ways to run CI:  
+When using Bit on CI to import components, there are multiple ways to run CI:  
 
 |Committed Items in VCS | Action to perform on CI |
 |---|---|
