@@ -21,7 +21,7 @@ To use the component in the code, import the code as follow:
 import { something } from '@bit/owner.collection.namespace.namespace.comp-id';
 ```
 
-If you want to modify the code of the component, you should [import](/docs/modifying-sourced-components) the component into your workspace. After modifying the component and re-exporting the change, you can revert to the pacakge mode by using the [`bit eject`](/docs/apis/cli-all#eject) command.  
+If you want to modify the code of the component, you should [import](/docs/modifying-sourced-components) the component into your workspace. After modifying the component and re-exporting the change, you can revert to the package mode by using the [`bit eject`](/docs/apis/cli-all#eject) command.  
 
 ## Configuring bit registry
 
@@ -32,7 +32,7 @@ To install components with npm or yarn we first need to configure `@bit` as a [s
 To configure the registry manually, use the `npm config` command.
 
 ```bash
-npm config set '@bit:registry' https://node.bit.dev
+npm config set @bit:registry https://node.bit.dev
 ```
 
 To install private components use npm login. Use your Bit credentials to login.
