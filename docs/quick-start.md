@@ -235,7 +235,7 @@ You can now use Npm or Yarn to install the components. The component will be ins
 If using NPM or Yarn, NPM should configure Bit as a scoped registry (Bit automatically configure it when doing bit login):
 
 ```bash
-npm config set '@bit:registry' https://node.bit.dev
+npm config set @bit:registry https://node.bit.dev
 ```
 
 Then install components with your favorite package manager using the install command on the component’s page. [Example](https://bit.dev/mui-org/material-ui/button):
