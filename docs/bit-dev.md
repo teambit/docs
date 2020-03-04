@@ -11,10 +11,10 @@ Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requ
 Bit.dev server provides these functions:  
 
 <div style="margin: auto; width: 90%; padding: 30px;">
-<a href="#remote-scopes-hosting">
+<a href="#remote-collections-hosting">
     <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200">
 </a>
-<a href="##package-registry">
+<a href="#package-registry">
     <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.svg" alt="Packages registry" width="250" height="200">
 </a>
 <a href="#component-playground">
@@ -50,8 +50,9 @@ Learn more about [users and collections management](/docs/my-account).
 
 ## Package Registry
 
-Bit.dev also manages a package registry for all components that are exported to bit.dev collections. Any component exported to bit.dev can be [installed](/docs/installing-components) using package managers (NPM or Yarn).  
-All components in the Bit.dev registry are available with the `@bit` prefix. The full name of the component is in the format of `npm i @bit/<owner>.<collection-name>.<component-name>`.  
+All the components that are exported to bit.dev are stored in the Bit package registry. The components are available as npm packages tht can be [installed](/docs/installing-components) using package managers (NPM or Yarn).  
+The bit.dev package registry is secured according to the collections permissions, so the only way to publish components to it, is by using the bit export command.  
+The components in the Bit.dev registry are available with the `@bit` prefix. The full name of the component is in the format of `npm i @bit/<owner>.<collection-name>.<component-name>`.  
 
 ## Component Playground
 
