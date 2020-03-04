@@ -57,3 +57,28 @@ Read [here](/docs/best-practices#state-managers) for suggestion on how to share 
 ## Handling Assets and Styles
 
 Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
+
+## Server Side Rendering
+
+When using SSR framework like Nextjs with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like: 
+
+```bash
+SyntaxError: Cannot use import statement outside a module
+SyntaxError: Unexpected identifier
+```
+
+The React typescript compiler should be compiled as "CommonJS". You should use the [overriding](/docs/overrides) option to include the following in the compiler options:  
+
+This is because Node is not supporting ES Modules format. To do so, you need to override the compiler Typescript options to include:  
+
+```json
+"bit.envs/compilers/react-typescript@[version]": {
+    "rawConfig": {
+        "tsconfig": {
+            "compilerOptions": {
+              "module": "CommonJS"
+            },
+        }
+    }
+}
+```
