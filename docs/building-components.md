@@ -3,20 +3,17 @@ id: building-components
 title: Building
 ---
 
-Each component has a build task defined. Bit uses it to compile a component in a workspace.
+## Understanding build
 
-## Basics of Building Components
-
-A component contains source code. Sometimes source code requires a compilation process to be usable. Bit compiles source code using a unique components called Compilers. A Compiler is a component that takes another component’s code and uses other build tools to compile it.
-
-### Where is the code compiled?
-
-Bit builds components in an [isolated component environment](/docs/ext-concepts.html#what-is-an-isolated-component-environment). Bit does it to ensure true isolation of components. If a build process works, Bit can reproduce it anywhere.
+Most modern frameworks require a compilation or transpilation project to transform the source code into executable code that can run in multiple browsers or Nodejs.  
+Bit transpiles the code using a special component called a compiler. The compiler uses tools specific to the project to result in plain JS code. The underlying tools vary according to the specific framework (Angular, React) or the specific language flavor (ES6, Typescript, Flow). The internal implementation of each compiler varies according to the specific input it uses.  
+Bit is building the code in isolation. Creating an isolated component environment for a component allows Bit to run the build tasks outside the context of a project, thus increasing the chance that the component is completely decoupled from any project and can work independently in other projects.  
+The isolation directory is called "capsule". Bit creates the capsule in a directory under the temp directory and performs the build task in this directory. The compiler returns the compiled files to Bit that stores with the component.  
+The officially maintained compilers are stored in the [bit/envs](https://bit.dev/bit/envs) collection. Issues regarding any of the compilers can be [reported here](https://github.com/teambit/envs).
 
 ## Defining a Compiler
 
-Every component can have a compiler. Bit uses a global compiler configuration for a workspace. Bit propagate the global configuration to each component tracks in that workspace.  
-Configured a global compiler with the `--compiler` flag when importing a compiler component.
+To define a compiler to your workspace, you should import the compiler using the following command:  
 
 ```bash
 $ bit import bit.envs/compilers/babel --compiler
@@ -24,31 +21,121 @@ the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
 ```
 
-See [full collection of officially maintained compilers](https://bit.dev/bit/envs). Issues regarding any of the compilers can bre [reported here](https://github.com/teambit/envs).
+The above command updates the compiler stored in the workspace configuration file under the `env` key:  
 
-## Building a component
-
-Use [bit build](/docs/apis/cli-all#build) to build components that have a compiler:
-
-```bash
-$ bit build foo/bar
-foo/bar
-dist/foo/bar.js
-dist/foo/bar.js.map
+```json
+"env": {
+      "compiler": {
+        "bit.envs/compilers/react-typescript": "3.1.5"
+      }
 ```
 
-> **Set dist target and entry**
->
-> It's possible to set `dist` target and entry by editing [bit config](/docs/conf-bit-json.html).
+For compilers that get parameters, you can extend this entry to contain additional variables. Check the compilers documentation for more details:  
+
+```json
+"env": {
+      "compiler": {
+        "bit.envs/compilers/react-typescript": {
+          "rawConfig": {
+            "tsconfig": {
+              "compilerOptions": {
+                "target": "ES5",
+                "module": "CommonJS"
+              }
+            }
+          }
+        }
+      }
+```
+
+Bit uses the default compiler for newly authored components. When importing components, the compiler is attached to the component. You can see the compiler of the authored component by looking at its package.json file or by running the `bit show` command.  
+
+You can also use the [overrides](/docs/overrides) configuration to change the compiler to specific components or a set of components (by using a namespace or glob pattern).  
+
+```json
+"overrides": {
+        "utils/*": {
+          "env": {
+            "compiler": {
+              "bit.envs/compilers/react-typescript": {
+                "rawConfig": {
+                  "tsconfig": {
+                    "compilerOptions": {
+                      "target": "ES5",
+                      "module": "CommonJS"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+```
+
+Bit does not enforce attaching a compiler to a component, and a specific code may not require a compiler. Such as pure CSS code used for global variables or code already written in ES5. To remove a compiler from a set of components, use the overrides option:  
+
+```json
+"overrides": {
+        "styles/*": {
+          "env": {
+            "compiler": "-"
+        }
+      },
+```
+
+## Compiled code
+
+Bit stores the compiled code according to the [dist configuration](/docs/conf-bit-json#dist) parameter.  
+
+The dist location differs for [imported](/docs/workspace#build-directory) and [authored](/docs/workspace#build-files) components.  
+
+## Debugging compilation
+
+Debugging differs for compilers that use the capsule and for those that do not.  
+
+### Capsule compilers
+
+During the compilation process, the Bit compiler generates a full environment for the component and may add some configuration files that are required for the compilation, such as `tsconfig.json` when compiler Typescript code.  
+If you want to see the generated code, you can precede the build command with a `DEBUG=true` flag. When running the build, it displays a message specifying the location of the development folder.  
+
+### Non capsule compilers
+
+In order to debug your compiler, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
+Next, head over to the compiler's code, and add the following lines:
+
+```js
+const vinylFile = require('vinyl-file');
+const file = vinylFile.readSync('first/file/path');
+const file2 = vinylFile.readSync('second/file/path');
+
+compile([file,file2],'/tmp');
+```
+
+These lines load all the component files (here we have just two files as an example) as [vinyl files](https://github.com/sindresorhus/vinyl-file), and invoke the `compile` function with the files and a dist path. Now you can run this file and debug as you would any other code file.
 
 ## Forking a compiler
 
 Bit compilers provide some default configuration. If you need to change the configuration of a compiler, here are the recommended steps to follow:  
 
-1) Create a new directory and an empty workspace in it
-2) Import the compiler you want to modify, but without the --compiler flag
-3) Modify the .babelrc file of the compiler to fit your needs
-4) Tag and export the new version of the component to your own scope
+### Fork an existing compiler
 
-Now, in your project configuration (`package.json` or `bit.json`), change the default compiler to be the new component.  
-Run bit status to see that all components properly built. 
+- Create a new directory and an empty workspace in it
+- Import the compiler you want to modify but without the --compiler flag
+- Modify the compiler code or configuration to fit your needs
+
+To test your compiler from your local code, by setting the [bit workspace configuration](/docs/conf-bit-json.html) env compiler to point to the local file:  
+
+```json
+"env": {
+      "compiler": {
+        "bit.envs/compilers/test@0.0.1": {
+          "options": {
+            "file": "../../path-to-my-compiler-file"
+          }
+        }
+      }
+    }
+```
+
+Once done, you can export the new version of the component to a scope and use it in other projects.  
