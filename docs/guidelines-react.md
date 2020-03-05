@@ -60,7 +60,7 @@ Refer to the general guidelines on how to [handle assets](/docs/best-practices#h
 
 ## Server Side Rendering
 
-When using SSR framework like Nextjs with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like: 
+When using SSR framework like Nextjs with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like:  
 
 ```bash
 SyntaxError: Cannot use import statement outside a module
