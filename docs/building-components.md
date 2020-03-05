@@ -99,6 +99,8 @@ Debugging differs for compilers that use the capsule and for those that do not.
 During the compilation process, the Bit compiler generates a full environment for the component and may add some configuration files that are required for the compilation, such as `tsconfig.json` when compiler Typescript code.  
 If you want to see the generated code, you can precede the build command with a `DEBUG=true` flag. When running the build, it displays a message specifying the location of the development folder.  
 
+![debug](https://storage.googleapis.com/static.bit.dev/docs/gifs/build-debug.gif)
+
 ### Non capsule compilers
 
 In order to debug your compiler, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
