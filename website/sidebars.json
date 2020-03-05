@@ -5,10 +5,9 @@
       "installation",
       "how-bit-works",
       "workspace",
-      "best-practices",
       "faq"
     ],
-    "Guides": [
+    "Advanced": [
         "dependencies",
         "overrides",
         "ci",
@@ -56,20 +55,19 @@
       "tutorials/bit-nodejs-tutorial"
     ]
   },
-  "frameworks": {
+  "guides": {
     "Frameworks":[
+      "best-practices",
       "react-guidelines",
       "angular-guidelines",
       "vue-guidelines",
       "js-guidelines",
       "ts-guidelines"
+  ],
+  "Workflows": [
+    "workflows/workflows",
+    "workflows/projects",
+    "workflows/centralized"
   ]
-  },
-  "workflows": {
-    "Workflows": [
-      "workflows/workflows",
-      "workflows/projects",
-      "workflows/centralized"
-    ]
   }
 }

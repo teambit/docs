@@ -193,13 +193,12 @@
     "links": {
       "Docs": "Docs",
       "Tutorials": "Tutorials",
-      "Frameworks": "Frameworks",
-      "Workflows": "Workflows",
+      "Guides": "Guides",
       "Github": "Github"
     },
     "categories": {
       "Introduction": "Introduction",
-      "Guides": "Guides",
+      "Advanced": "Advanced",
       "Components": "Components",
       "bit.dev": "bit.dev",
       "Reference": "Reference",
