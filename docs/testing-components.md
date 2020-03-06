@@ -11,7 +11,7 @@ A component can contain test files. Bit executes them using test runners. Bit te
 
 ### Where are the tests being executed?
 
-Bit tests components in an [isolated component environment](/docs/ext-concepts.html#what-is-an-isolated-component-environment). Bit does it to ensure true isolation of components. If a test process works, Bit can reproduce it anywhere.
+Bit tests components in an [isolated component environment](/docs/how-bit-works#component-isolation). Bit does it to ensure true isolation of components. If a test process works, Bit can reproduce it anywhere.
 
 ## Defining a Tester
 

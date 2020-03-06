@@ -7,19 +7,19 @@ Components are the building blocks of modern web architectures. Encapsulated and
 
 The major frontend frameworks - React, Vue, and Angular - all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the Web Components standard.
 
-Bit leverages component to make them not only reusable inside an application but provides an ecosystem for sharing components between applications and across repositories. 
+Bit leverages component to make them not only reusable inside an application but provides an ecosystem for sharing components between applications and across repositories.  
 
-Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in making the component reusable across projects. 
+Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in making the component reusable across projects.  
 
 ## Bit Component
 
-A Bit component is a reusable piece of code, such as 
+A Bit component is a reusable piece of code, such as  
 
 - A react, Vue or Angular component
-- Shared stylesheet (e.g., CSS, SCSS) or stylesheets 
+- Shared stylesheet (e.g., CSS, SCSS) or stylesheets  
 - Utility function used by the application.
 
-For each component Bit stores three elements: 
+For each component Bit stores three elements:  
 
 - The source code (including code itself, testing and documentation)
 - Dependency graph
@@ -27,16 +27,16 @@ For each component Bit stores three elements:
 
 ![Bit component](https://storage.googleapis.com/static.bit.dev/docs/images/component.svg)
 
-### Source Code
+### Source code
 
-A component starts its Bit journey by specifying the source files. 
+A component starts its Bit journey by specifying the source files.  
 Typically, the component’s content is not just the source code itself and can include additional files that are related, such as the styling files, assets (images, fonts), test code, documentation.  
 Bit maps the set of files to a component, with a particular file as the entry point for the component. Bit marks the entry point file as `main`.  
 
-### Dependency Graph
+### Dependency graph
 
 When adding sources to a Bit component, Bit analyzes all the dependencies it includes (i.e., import and require statements in the code).
-Bit then creates a model of all the dependencies of the component. 
+Bit then creates a model of all the dependencies of the component.  
 The dependencies include the following:  
 
 - NPM packages installed as node_modules
@@ -48,13 +48,30 @@ The dependency graph makes a component self-contained and allows moving the comp
 
 ### Tools and Configuration
 
-Bit links each component with a set of tools and configurations. The tools are dedicated components that can take the component source code and its dependency graph and generate some desired result. 
-The most common tools linked to components are: 
+Bit links each component with a set of tools and configurations. The tools are dedicated components that can take the component source code and its dependency graph and generate some desired result.  
+The most common tools linked to components are:  
 
- - **Compiler**: compiles or transpiles the original files and generate built artifacts. The artifacts are consumable by applications or other components. Compilers are specific for frameworks and usually also for flavors of the framework, as they contain the configuration required to run them.  
-- **Tester**: An extension that runs the tests associated with the component and returns status.  
+-**Compiler**: compiles or transpiles the original files and generate built artifacts. The artifacts are consumable by applications or other components. Compilers are specific for frameworks and usually also for flavors of the framework, as they contain the configuration required to run them.  
+-**Tester**: An extension that runs the tests associated with the component and returns status.  
 
-## Component Characteristics
+## Component Isolation
+
+Components let you split your code into independent, reusable pieces, and think about each piece in isolation. Bit manages each component separately to ensure its independence and reusability.  
+Wrapping each component in a detached environment reduces the risk of component misbehaving when moved between different projects and applications.  
+For each component, Bit builds a context disconnected from the rest of the project. Inside this context, Bit creates a full environment required for building, testing and rendering the component.  
+
+![capsule](https://storage.googleapis.com/static.bit.dev/docs/gifs/tree-capsule.gif)
+A component context is similar works in a way a separate repo for an NPM package looks like:  
+
+- The source of only of the component (these are the files tracked in the component)
+- The NPM packages required by the component
+- Additional Bit components utilized by this component
+- Package.json pointing to the component files
+- Environment configurations required for processing the component. Such as `tsconfig.json` file for Typescript based component or `.babelrc` for babel based components.  
+
+All the information about the component is encapsuled as part of the component data. A component imported into a new project comes bundled with all the configuration data needed.  
+
+## Component characteristics
 
 ### Component id
 
@@ -76,7 +93,7 @@ Each component has a main file, which is an entry point to the component. The ma
 
 ### Versions
 
-Bit components are versioned using [Semantic Versioning](https://semver.org). Creating a new version of a component is done by tagging it with a new version. Bit then snapshots all the component's files and dependencies. New versions of components are shareable to remote scopes using the bit export command. 
+Bit components are versioned using [Semantic Versioning](https://semver.org). Creating a new version of a component is done by tagging it with a new version. Bit then snapshots all the component's files and dependencies. New versions of components are shareable to remote scopes using the bit export command.  
 
 ## Components Management
 
@@ -118,7 +135,7 @@ A remote scope is used for sharing components, so it is, in fact, a place where 
 
 A user can set up a [Bit Server](/docs/bit-server) that holds remote scopes for sharing components between Bit workspaces. Alternatively, users can use [bit.dev](/docs/bit-dev) for storing remote scopes of components.  
 
-## Component transitions
+## Component lifecycle
 
 The diagram below highlights the main commands that move components between the local workspace, the map index (`.bitmap` file), the local scope (`.git/.bit`) and the remote scope:  
 

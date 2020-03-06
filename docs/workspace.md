@@ -108,7 +108,7 @@ Authored components use the compiler and tester defined in the [workspace's env 
 
 ### Build files
 
-When building an authored component, the build files reside inside the [dist folder](/docs/conf-bit-json#dist) configured inside the workspace.  
+When building an authored component, the build files reside inside the [dist folder](/docs/conf-bit-json#dist) configured inside the workspace relatively to the workspace root directory. By default this will be `<workspace root>/dist` for all components. Inside this folder, the generated path is relative to the component path in the project.  
 
 ## Imported Components
 
@@ -202,15 +202,15 @@ Bit generates a folder structure for the component source code in the minimal st
 
 ### Build Directory
 
-By default, Bit imports the build files when importing components. You can skip importing the build files by running:  
+By default, Bit imports the built artifacts when importing components and places them under the `dist` folder of the component.  
+
+To skip importing the build files and build them locally run:  
 
 ```bash
 bit import username.foo/bar --ignore-dist
 ```
 
-The build directory format depends on the compiler used for building the files.  
-
-## Workspace Statuses
+## Workspace statuses
 
 The `bit status` [command](/docs/apis/cli-all#status) displays the state of the tracked components in your project's workspace.
 

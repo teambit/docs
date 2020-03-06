@@ -222,7 +222,7 @@ $ bit tag --all 0.9.6 --message "initial component version"
 added components:  accordion@0.9.6, badge@0.9.6, ...
 ```
 
-You might have noticed that during the tagging process Bit ran the build task we have defined. Bit runs all components' extensions during the tagging process. It does that in order to validate that it is able to recreate all components in an [isolated environment](/docs/ext-concepts.html#what-is-an-isolated-component-environment) and run all tasks (build and test, for example). Bit fails the versioning process if it is unable to isolate a component.
+You might have noticed that during the tagging process Bit ran the build task we have defined. Bit runs all components' extensions during the tagging process. It does that in order to validate that it is able to recreate all components in an [isolated environment](/docs/how-bit-works#component-isolation) and run all tasks (build and test, for example). Bit fails the versioning process if it is unable to isolate a component.
 
 ### Creating a Collection and Sharing Components
 

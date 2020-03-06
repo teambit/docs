@@ -3,7 +3,7 @@ id: ext-concepts
 title: Extending Bit
 ---
 
-Bit's extension system allows you to add custom actions during a component's lifecycle, and invoke custom commands on a bit component, in its [isolated environment](#what-is-an-isolated-component-environment).
+Bit's extension system allows you to add custom actions during a component's lifecycle, and invoke custom commands on a bit component, in its [isolated environment](/docs/how-bit-works#component-isolation).
 
 ## Why?
 
@@ -13,34 +13,9 @@ During our work on bit, we've realized there are many actions performed on a com
 
 An *Extension* is simply a code component that can perform actions on isolated components (during the component's lifecycle, or by invoking it as a command). It can add additional functionality, such as [packing a component](https://bit.dev/bitsrc/extensions/npm/pack).
 
-## What is an isolated component environment?
-
-Creating an isolated component environment for a component allows Bit to run tasks such as test/build outside the context of a project, thus ensuring a component is completely decoupled from any project.
-
-When you manually copy and paste a piece of functionality from one project to another, you can't ignore the fact that the piece of functionality lives within the project, and thus has its own context. That context can be defined by the packages it uses, other files it requires, etc. In order to make the few lines of code usable on another project, one will need to provide all the missing dependencies.
-
-Bit solves most of the problem - all the dependencies and external files are calculated when a component is being tracked and tagged.
-
-So this means that if we are to take all the dependencies, and put them in a single place for the tracked Bit component to use, we can create an **isolated component environment** outside the context of *any* project.
-
-The main benefit behind complete component isolation is the ability to validate that Bit can recreate the entire component environment on any other project, without affecting its functionality. 
-In addition, Running extensions on components, without a project, allows actions such as building, testing, generating docs and even bundling individual components and publishing them to external package managers.
-
-### How does it work?
-
-When creating an *isolated component environment*, Bit imports the component to a separate directory, along with its dependencies. This creates a clean environment in which Bit can perform actions on the component without the 'noise' of the rest of the project.
-
-### Isolated component environment and extensions
-
-[Extensions](#what-is-an-extension) can utilize the *isolated component environment* for their own needs. Just imagine how many custom actions require an *isolated component environment* - pack, publish, lint...
-
-Want to learn how? head over to the [extensions development](/docs/ext-developing-extensions.html#creating-an-isolated-environment) section.
-
-
 ## How to use an extension?
 
 If you want to learn how to use and consume extensions, head over [here](/docs/ext-using-extensions.html).
-
 
 ## How does it work?
 
@@ -48,7 +23,7 @@ Now that we know what is an extension, let's dive deeper...
 
 ### Extension as a command
 
-Some extensions are actually custom Bit commands. Those are useful when there's a need to run a command on a component, in an [isolated environment](#what-is-an-isolated-component-environment). 
+Some extensions are actually custom Bit commands. Those are useful when there's a need to run a command on a component, in an [isolated environment](/docs/how-bit-works#component-isolation).  
 For example, Let's say we want to pack a component as an npm package - We can create a `pack` extension that defines a Bit command, and then use it as follows:
 
 ```bash
