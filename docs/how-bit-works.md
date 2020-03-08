@@ -139,9 +139,13 @@ A user can set up a [Bit Server](/docs/bit-server) that holds remote scopes for 
 
 Here is a bird-eye view of a component life cycle:  
 
+### Producing components
+
 -**Track**: A component is initiated inside a workspace by specifying the files that comprise the component. In this workspace, this is an _authored_ component.  
 -**Version**: Tagging a version seals the contents of the files and the metadata under this version. If the component has a compiler, Bit builds the component and seals the built artifacts as well (think of it as similar to a git commit and npm publish at the same time).  
 -**Export**: Exporting g the component creates a unique ID for the component. The unique id is the remote scope name and the local component name, including any namespaces. The export command sends a copy of the files and metadata to the remote server.  
+
+### Consuming components
 
 Once residing on a remote scope, the component is available for consumption by other workspaces.  The ways to consume the component are by installing it or by importing it.  
 
