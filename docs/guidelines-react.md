@@ -82,3 +82,16 @@ This is because Node is not supporting ES Modules format. To do so, you need to 
     }
 }
 ```
+
+## Testing with CRA
+
+If you are using CRA (Create React App) with Jest, and you are installing Bit components (using NPM/Yarn/bit install), the component resides under `node_modules`. The format of the component is using ES Modules (i.e. `import` syntax). In CRA, Jest is instructed not to attempt to compile modules under the `node_modules` folder. 
+
+If you want to tell Jest NOT to ignore Bit components but without the need to eject CRA, you can change the scripts section in the pacakge.json as follow: 
+
+```json
+"test:raw": "react-scripts test",
+"test": "yarn test:raw -- --transformIgnorePatterns \"node_modules/(?!(@bit)/)\"",
+```
+
+The CLI parameters is the only way  to override a parameter in Jest with no ejection. Now running `yarn test` or `npm test` runs and excludes the components under `node_modules/@bit`.
