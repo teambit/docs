@@ -385,7 +385,7 @@ You get a message that the `@react/core` and `@react/common` are peer dependenci
 
 Here is what happened:
 
-- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project.  
+- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project).  
 - The `.bitmap` file was modified to include the reference to the component
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
