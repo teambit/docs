@@ -23,7 +23,7 @@ When tracking a component, Bit verifies that it can resolve all dependencies. Bi
 When tracking components in Bit, these rules apply:  
 
 - Bit tracks each file inside a single component
-- All the files belong to the same component should reside under a single directory. Check [here] for explanation. Expel this restriction using the `--something` flag during `bit add`. (starting version 15)
+- All the files belong to the same component should reside under a single directory. Check [here] for explanation. Expel this restriction using the `--allow-files` flag during `bit add`. (starting version 15)
 Each component is assigned with a full component id based on its target remote scope and its name. (starting version 15)
 - Referencing files tracked by other components is with the component name. Referencing components by relative paths such as `../..component/file` errs. Expel this restriction by using the `--allow-relative` flag during add(starting version 15)
 - Do not track package.json files as they collide with the Bit auto-generated package files.  
@@ -85,36 +85,18 @@ bit add src/foo.js --id foo/bar
 
 To explicitly remove files from the component, [exclude the files](#excluding-files).  
 
-When moving and renaming files, Bit cannot always identify the changes. To ensure Bit tracks moved files use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
-
-To move a file to a new location:  
+When moving and renaming files, Bit cannot always identify the changes. To ensure Bit tracks moved files use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv):  
 
 ```bash
-bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
-```
+# Move file to a new location
+bit move src/foo/bar/index.js src/components/new/location/index.js
 
-To rename a file, use `bit move` from the old to the new file name:
-
-```bash
+# Rename a file
 bit move src/foo/bar/index.js src/foo/bar/new-name.js
-```
 
-To Move a file/directory that's part of a tracked component to a new location:  
-
-```bash
+# Move a folder that's part of a tracked component to a new location
 bit move src/foo src/components/new/location/foo
-```
 
-To move a file that's part of a tracked component:
-
-```bash
-bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
-```
-
-To move a directory that's part of a tracked component:
-
-```bash
-bit move src/foo src/components/new/location/foo
 ```
 
 ## Untracking components
