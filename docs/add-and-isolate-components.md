@@ -37,7 +37,7 @@ Here are some recommendations on how to track components:
 - Plan and arrange components in [namespaces](/docs/best-practices#use-namespaces) according to their functionality, similar to the way you would arrange them in folders in a project.
 - Ensure all component files are located in a single folder.  
 - Review the package.json in your original projects to ensure proper definition of dependencies.  
-- If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
+- If you are using path aliases in your `import` statements, make sure you define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
 
 ### Component id
 
@@ -96,7 +96,6 @@ bit move src/foo/bar/index.js src/foo/bar/new-name.js
 
 # Move a folder that's part of a tracked component to a new location
 bit move src/foo src/components/new/location/foo
-
 ```
 
 ## Untracking components
