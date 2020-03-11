@@ -2,588 +2,126 @@
 id: add-and-isolate-components
 title: Tracking 
 ---
+
 ## Tracking Components
 
-Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit.  
-Bit analyzes the source files to build the component's [dependencies](/docs/dependencies).  
-Once a component is tracked, it is added to the [components map](/docs/workspace#components-map) in the workspace.  
+Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit. The [bit add](/docs/apis/cli-all#add) command is used to track sets of files as components and start the component isolation process. it analyzes the source files to build the component's [dependencies](/docs/dependencies).  Tracking a component adds it to the [components map](/docs/workspace#components-map) in the workspace. The component is considered an "authored" component.  
 
-When tracking a component Bit verifies that it can resolve all dependencies. Bit reports any errors during the tracking process. The [`bit status`](/docs/apis/cli-all#status) command can be used at any time to verify the proper classification of the component.  
+### Tracking process
 
-It is essential to understand that each source file is tracked only inside a single component in Bit. Therefore, files shared between multiple components should be tracked as stand-alone components that are required by other components.
+When tracking a component Bit does the follow:  
+Calculate all the files to be included in the component.  
 
-### Tracking Files
+- Exclude the following files:  `package.json`, `bit.json`, `node_modules`, `yarn.lock`, `package-lock.json`, `.gitignore`, `.bit.map.json` and `.bitmap` and files ignored in the `.gitignore` file, if available.
+- Calculate the ID of the component.
+- Calculate the entry point of the component and build the dependency graph for both external dependencies (npm packages) as described [here](/docs/dependencies) and internal Bit components.
 
-The [bit add](/docs/apis/cli-all#add) command is used to track sets of files as components. This is the first step of the component isolation process. Bit then creates a dependency graph for all tracked components. With this data, Bit creates an Isolated Component Environment for each component. In turn, this allows Bit to recreate a working environment for a component in any project.
+When tracking a component, Bit verifies that it can resolve all dependencies. Bit reports any errors during the tracking process. The [`bit status`](/docs/apis/cli-all#status) command also shows any errors during the tracking of a component.  
 
-> Bit is using static code analysis, so there is no support for dynamic imports. 
+### Tracking rules
 
-Apart from [defining the component's file](#track-a-component) and set component's [spec files](#track-a-component-with-testspec-files), `bit add` can track [many components at once](#track-multiple-components-with-test-files-in-a-parallel-directory-tree). You can also determine a component's [entry point](#define-an-entry-point), decide the [component's ID](#component-id) and [namespace](#set-a-components-namespace).  
-For more advance cases of tracking many components from the same project with all the above features, read about Bit's [tracking DSL](#tracking-dsl).
+When tracking components in Bit, these rules apply:  
 
-Additionally, `bit add` is used to manage the already tracked files of components. For example [adding new files to existing components](#adding-a-file-to-a-component), [removing tracked files from components](#removing-files-from-components), and [renaming tracked files](#moving-and-renaming-files).  
+- Bit tracks each file inside a single component
+- All the files belong to the same component should reside under a single directory. Check [here] for explanation. Expel this restriction using the `--something` flag during `bit add`. (starting version 15)
+Each component is assigned with a full component id based on its target remote scope and its name. (starting version 15)
+- Referencing files tracked by other components is with the component name. Referencing components by relative paths such as `../..component/file` errs. Expel this restriction by using the `--allow-relative` flag during add(starting version 15)
+- Do not track package.json files as they collide with the Bit auto-generated package files.  
 
-> If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
+### Tracking Best Practices
 
-#### Track a single component
+Here are some recommendations on how to track components:  
 
-The simplest component to track, is one that doesn’t require any external package or file. Here’s an example `hello-world` component that contains two files.
+- Specify a scope default name in the workspace configuration, so all components are available to be consumed with this Id
+- Start tracking components bottom-up, so all components that are shared by other components are [tracked first](/docs/best-practices#publish-shared-files-as-bit-components).  
+- Plan and arrange components in [namespaces](/docs/best-practices#use-namespaces) according to their functionality, similar to the way you would arrange them in folders in a project.
+- Ensure all component files are located in a single folder.  
+- Review the package.json in your original projects to ensure proper definition of dependencies.  
+- If you are using any sort of Custom Module Definition feature in your project, to use absolute paths in your `import` statements, you'll need to define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
 
-```bash
-.
-├── package.json
-└── src
-    ├── hello-world.js
-    └── index.js
-```
+### Component id
 
-`index.js`
+Each component has a unique identifier. The unique identifier is compound as follow: `<remote scope>/<namespace(s)>/<local name>`.  
+The remote scope is part of the workspace configuration.  
+Set namespaces with the `--namespace` flag or by specifying the full path in the component name such as `--id space/space/name`.
+Bit sets by default the component name to the folder name. To change it, specify a different name with the `--id name` when adding the component.  
 
-```js
-export {default} from './hello-world';
-```
+## Adding files
 
-`hello-world.js`
+To track a single component, use the `bit add` command and specify the path to the folder of the component.  
+![add single](https://storage.googleapis.com/static.bit.dev/docs/gifs/add.gif)
 
-```js
-export default function hello(world) {
-    return `hello ${world}`;
-}
-```
-
-To track `hello-world`, we use [bit add](/docs/apis/cli-all#add), list the files that compose it and set an `ID` for it.
-
-```bash{1}
-$ bit add src/hello-world.js src/index.js --id hello/world
-tracking component hello/world:
-    added src/hello-world.js
-    added src/index.js
-```
-
-To verify Bit can isolate the component, we use [bit status](/docs/apis/cli-all#status).
-
-```bash{3}
-$ bit status
-new components
-     > hello/world... ok
-```
-
-An `ok` status for a component status means that Bit can isolate the tracked component.
-
-#### Track many components
-
-Bit can track many components from structured directory trees using a single command. Bit does it by supporting glob patterns. Bit resolves an the [glob pattern and creates a set of `add` commands](#tracking-dsl). Let’s use a basic example to show how it works:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── components
-        ├── button
-        │   ├── Button.js
-        │   ├── Button.spec.js
-        │   └── index.js
-        ├── login
-        │   ├── Login.js
-        │   ├── Login.spec.js
-        │   └── index.js
-        └── logo
-            ├── Logo.js
-            ├── Logo.spec.js
-            └── index.js
-```
-
-We can track all the components in the `components` directory with a single command.
-
-```bash
-bit add src/components/* --namespace user
-```
-
-Use [bit status](/docs/apis/cli-all#status) to verify the components' dependency graphs.
-
-```bash{2,3,4}
-new components
-     > user/signup... ok
-     > user/login... ok
-     > user/profile... ok
-```
-
-#### Track a component with test/spec files
-
-You can classify files as test files. This allows bit to execute component tests and keep the test results. Test results function as quality certificate and documentation for the component. Test-files’ dependencies as `devDependencies`.
-
-To track files as test-file, use `--tests` feature of the [bit add](/docs/apis/cli-all#add) command. For example:
-
-```bash{3}
-.
-├── specs
-    └── hello-world.spec.js
-└── src
-    ├── hello-world.js
-    └── index.js
-```
-
-We set a test file for example with the `--tests` flag.
-
-```bash
-bit add src/hello-world src/index.js --tests specs/hello-world.spec.js --id hello/world
-```
-
-The component hello/world now has a test file. We can tell Bit to run its tests:
-
-```bash
-bit test hello/world
-```
-
-#### Track multiple components with test files
-
-So far, we've talked about test files being nested along with the component implementation, but it's also common for a project to have total separation between implementation and testing - usually it's manifested as a `src` directory and a `test` directory:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-├── src
-|   └── components
-|       ├── button
-|       │   ├── Button.js
-|       │   └── index.js
-|       ├── login
-|       │   ├── Login.js
-|       │   └── index.js
-|       └── logo
-|           ├── Logo.js
-|           └── index.js
-└── test
-    └── components
-        ├── Button.spec.js
-        ├── Login.spec.js
-        └── Logo.spec.js
-```
-
-Here's how to track these components with their matching test files, using [glob pattern](#glob-patterns):
-
-```bash
-bit add src/components/* --tests test/components/{PARENT}.spec.js
-```
-
-**Literal translation**: for each directory in `src/components`, look for a matching test file inside `test/components` - its name should the same as each component's directory name + a `spec.js` suffix.
+To track multiple components, use the `bit add` command and specify the root folder. Bit adds each folder as a separate component.  
+![add multiple](https://storage.googleapis.com/static.bit.dev/docs/gifs/add-multiple.gif)
 
 ### Component entry point
 
-Bit looks for `index.*` files and set them as entry points for components. A component that contains many files and no `index.js` file needs to be set with an entry point manually. Use `--main` feature of the [bit add](/docs/apis/cli-all#add) command. Here's an example directory tree of a project with a single component that does not have an index file.
+The entry point file is the file that is set as the main entry when compiling the file. You can specify the main file using the `--main` flag on the bit add command. If the main file was not specified, Bit is trying to determine the main file as follow:  
 
-```bash
-.
-├── package.json
-└── src
-    ├── hello-world
-    │   ├── hello-world.js
-    |   ├── second-file.js
-    └── utils
-        └── noop.js
-```
+- If the component has only one file, it will be the main file
+- If the component has a file named index with a valid extension like js, ts, tsx etc.  
+- If the component has a file named similarly to the component folder name with a valid extension as above.
 
-We set an entry point (main file) for example with the `--main` flag.
+### Test files
 
-```bash
-bit add src/hello-world --main src/hello-world/hello-world.js
-```
+You can specify the test files of the component, by preceding their name with the `--tests` flag. Tests files are marked as such.
 
-### Component ID
+### Excluding files
 
-Each component has a unique ID. We use the component ID when installing and importing components in projects. We can set an ID , or let Bit resolve and define it.  
-A component ID may contain a set of nested namespaces. For example, a component ID can be button(without any namespace), `ui\button` or even `ui\forms\button`. This all depends on how we want to organize components and naming conventions.
-
-Set a specific ID for a component by adding the `--id` flag when tracking a new component:
-
-```bash
-$ bit add src/utils/noop.js --id whatever/you/want
-tracking component whatever/you/want:
-    added src/utils/noop.js
-```
-
-> **Grouping using the `--id` option**
->
-> When we use the `--id` option, Bit assumes all the files added belong to one component with that ID. This means specifying an id groups files into one component.
-
-#### Automatic component ID
-
-Unless specified otherwise, Bit will define the component's name as the tracked directory name or the tracked file name.
-
-Let's take this project as an example:
-
-```bash
-.
-├── package.json
-└── src
-    ├── hello-world
-    │   ├── hello-world.js
-    │   └── index.js
-    └── utils
-        └── noop.js
-```
-
-If you track the file `noop.js` under the `utils` directory with [bit add](/docs/apis/cli-all#add) without specifying an ID, Bit will automatically resolve the id as follows:
-
-```bash
-$ bit add src/utils/noop.js
-tracking component noop:
-    added src/utils/noop.js
-```
-
-Bit would resolve the ID of the component to `noop` - seeing as `noop` is the added file name.
-
-Now, let's track the `hello-world` directory:
-
-```bash
-$ bit add src/hello-world
-tracking component hello-world:
-    added src/hello-world/hello-world.js
-    added src/hello-world/index.js
-```
-
-This time the component name is `hello-world` - that's the name of the tracked directory, and not a specific file.
-
-To see the defined component Ids, check out [bit status](/docs/apis/cli-all#status).
-
-```bash
-$ bit status
-new components
-     > noop... ok
-     > hello-world... ok
-```
-
-### Namespaces
-
-To specify a component's namespaces(s), use the `--namespace` option.  
-Set a namespace for a component:
-
-```bash
-$ bit add src/utils/noop.js --namespace foo
-tracking component foo/noop:
-    added src/utils/noop.js
-```
-
-Or nest namespaces within each other:
-
-```bash
-$ bit add src/utils/noop.js --namespace foo/bar
-tracking component foo/bar/noop:
-    added src/utils/noop.js
-```
-
-#### Set a namespace for multiple components
-
-Bit can set the same namespace for many components at once using the same `add` command.  
-The following example tracks two components and puts them in the same namespace.
-
-```bash
-$ bit add src/utils/noop.js src/utils/is-string.js --namespace foo
-tracking 2 new components
-```
-
-We can use our DSL to set dynamic namespaces according to the parent directory. Let’s take the following directory tree as an example:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    ├── ui
-    │   ├── button.js
-    │   └── login.js
-    └── utils
-        ├── is-string.js
-        └── pad-left.js
-```
-
-The project has two directories. Each directory contains two components. We can track all components and set their namespaces with a single command:
-
-```bash
-$ bit add src/*/*.js --namespace {PARENT}
-tracking 4 new components
-```
-
-The components created are: `ui/button`, `ui/login`, `utils/is-string`, `utils/pad-left`. Each component's namespace is its directory name.
-
-### Ignore files  
-
-If we use glob patterns, we may want to exclude some files that may get tracked. For this we use `--exclude`.
+Bit tracks all files in the component. To ignore certain files by explicit name or by a pattern use the `--exclude` flag and specify the pattern:  
 
 ```bash
 bit add src/component/* --namespace user --exclude bad-file.js
 ```
 
-> **Files excluded by default**
->
-> `package.json`, `bit.json`, `node_modules`, `yarn.lock`, `package-lock.json`, `.gitignore`, `.bit.map.json` and `.bitmap` excluded by default. Bit also ignores files according to `.gitignore` file, if available.
+### Manage component's files
 
-### Tracking DSL
-
-Bit provides tools for tracking many components at once across complex directory trees.
-
-Tracking components in complex directory trees one by one is not practical. Bit solves this problem with glob patterns and DSL in its `add` command.
-
-#### Glob Patterns
-
-Glob patterns are wildcards whose main usage is describing an 'any' relationship using asterisks (`*`). Read more [here](https://en.wikipedia.org/wiki/Glob_(programming)).
-
-For example, to track all items in a directory, we'd use this command:
+When a folder is tracked by Bit, Bit detects any changes to the files such as adding or removing files and updates the component's tracked files accordingly.  
+To explicitly add files to the component, use the component's id:  
 
 ```bash
-bit add src/components/*
+bit add src/foo.js --id foo/bar
 ```
 
-#### DSL
+To explicitly remove files from the component, [exclude the files](#excluding-files).  
 
-DSL stands for Domain Specific Language. It's defined by Bit, and used for dynamically matching the main file, tests files or namespaces.
+When moving and renaming files, Bit cannot always identify the changes. To ensure Bit tracks moved files use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
 
-The following variables are available in the DSL.
-
-- **FILE_NAME** represents each of the component's file names.
-- **PARENT** represents each of the component's file parent directory names.
-- **MAIN_FILE** represents the component's main file name.
-
-#### Track all subdirectories and files as components
-
-Let's take a basic React app as an example:
+To move a file to a new location:  
 
 ```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── components
-        ├── button
-        │   ├── Button.js
-        │   ├── Button.spec.js
-        │   └── index.js
-        ├── login
-        │   ├── Login.js
-        │   ├── Login.spec.js
-        │   └── index.js
-        └── logo
-            ├── Logo.js
-            ├── Logo.spec.js
-            └── index.js
+bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
 ```
 
-We can track all these components with a single command, by using a glob pattern.
+To rename a file, use `bit move` from the old to the new file name:
 
 ```bash
-bit add src/components/*
+bit move src/foo/bar/index.js src/foo/bar/new-name.js
 ```
 
-Bit will go over each directory or file directly under the `components` directory and add it as a component.
-To add only the directories, excluding `js` files will usually do the trick. Use the `--exclude` option with a glob pattern for that:
+To Move a file/directory that's part of a tracked component to a new location:  
 
 ```bash
-bit add src/components/* --exclude src/components/*.js
+bit move src/foo src/components/new/location/foo
 ```
 
-#### Track all sub-subdirectories as components
-
-A more complex (but very common) case would be tracking components deeper inside the directory hierarchy. Let's expand out React app:
+To move a file that's part of a tracked component:
 
 ```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    ├── utils
-    │   ├── left-pad
-    │   │   ├── left-pad.js
-    │   │   ├── left-pad.spec.js
-    │   │   └── index.js
-    │   └── is-string
-    │       ├── is-string.js
-    │       ├── is-string.spec.js
-    │       └── index.js
-    └── components
-        ├── button
-        │   ├── Button.js
-        │   ├── Button.spec.js
-        │   └── index.js
-        ├── login
-        │   ├── Login.js
-        │   ├── Login.spec.js
-        │   └── index.js
-        └── logo
-            ├── Logo.js
-            ├── Logo.spec.js
-            └── index.js
+bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
 ```
 
-We want to track all subdirectories of `utils` and `components`.
+To move a directory that's part of a tracked component:
 
 ```bash
-bit add src/*/* --exclude src/*/*.js
+bit move src/foo src/components/new/location/foo
 ```
-
-#### Track a component with multiple test files
-
-To add a component and mark multiple files as test files, first identify the test files' naming convention - they could be named, for example, `{NAME}.spec.js`, `{NAME}.test.js` or `{NAME}-test.js`. We can leverage those conventions using glob patterns.
-Let's take a look at the `button-list` component:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── components
-        └── button-list
-            ├── ButtonList.js
-            ├── ButtonList.spec.js
-            ├── Button.js
-            ├── Button.spec.js
-            └── index.js  
-```
-
-We can track the entire directory as a component, and look for `.spec.js` files as test files.
-
-```bash
-bit add src/components/button-list --tests src/components/button-list/*.spec.js
-```
-
-#### Track multiple components with non-default main file
-
-When you track a component, Bit needs to know which one of its files is the main file. In case it's not the default (`index.js`), you need to specify it by using the `--main` option.
-For more info about setting the component's main file manually, [see here](/docs/add-and-isolate-components.html#defining-an-entry-point).
-
-When you add multiple components with a non-default main file, it's not possible to specify a different main file name for each component.
-Instead, use glob patterns and DSL in order to set a dynamic name that fits all the components.
-
-In the following example, each component's main file takes after its directory name.
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── components
-        ├── button
-        │   ├── button.js
-        │   ├── second-file.js
-        ├── login
-        │   ├── login.js
-        │   ├── second-file.js
-        └── logo
-            ├── logo.js
-            └── second-file.js
-```
-
-Tracking these component is done as follows:
-
-```bash
-bit add src/components/* --main src/components/{PARENT}/{PARENT}.js
-```
-
-**Literal translation**: for each parent directory inside `src/components`, the main file's name is the same as the parent directory's name + a `js` suffix.
-
-Now let's add another complexity - each of the implementation files has a matching test file:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── components
-        ├── button
-        │   ├── button.js
-        │   ├── second-file.js
-        │   ├── second-file.spec.js
-        │   ├── button.spec.js
-        ├── login
-        │   ├── login.js
-        │   ├── second-file.js
-        │   ├── second-file.spec.js
-        │   ├── login.spec.js
-        └── logo
-            ├── logo.js
-            ├── second-file.js
-            ├── second-file.spec.js
-            └── logo.spec.js
-```
-
-Tracking these components with their test files is done as follows:
-
-```bash
-bit add src/components/* --main src/components/{PARENT}/{PARENT}.js --tests src/components/{PARENT}/{FILE_NAME}.spec.js
-```
-
-**Literal translation**: for each parent directory inside `src/components`, the main file's name is the same as the parent directory's name + a `js` suffix, and the test file's name should match one of the implementation file names + a `spec.js` suffix.
-
-#### Track multiple components all in the same directory, with test files
-
-Sometimes multiple components can be in the same directory. Its a common scenario to find a directory with multiple components, where each component consists of an implementation file and a test file:
-
-```bash
-.
-├── App.js
-├── App.test.js
-├── favicon.ico
-├── index.js
-└── src
-    └── utils
-        ├── leftPad.js
-        ├── leftPad.test.js
-        ├── curry.js
-        ├── curry.test.js
-        ├── isString.js
-        ├── isString.test.js
-        ├── toSlug.js
-        ├── toSlug.test.js
-        ├── toCamelCase.js
-        └── toCamelCase.test.js
-```
-
-Tracking the components in this directory is done as follows:
-
-```bash
-bit add src/utils/*.js --tests src/utils/{MAIN_FILE}.test.js --namespace utils
-```
-
-**Literal translation**: add a component for each `js` file in `src/utils` directory, and match a test file in the same path, with the name the same as the component's implementation file, only with a `test.js` suffix.
-
-To see all tracked components with their matched test files, use [bit status](/docs/apis/cli-all#status) or [bit show](/docs/apis/cli-all#show).
-
-```bash
-$ bit status
-new components
-    > utils/left-pad... ok
-    > utils/curry... ok
-    > utils/is-string... ok
-    > utils/to-slug.. ok
-    > utils/to-camel-case.. ok
-```
-
-#### Track multiple components and setting the namespace dynamically according to parent directory
-
-It's also possible to use the `{PARENT}` DSL when setting a namespace for components using the `--namespace` option.
 
 ## Untracking components
 
 Adding component action can be reverted using the [bit untrack](/docs/apis/cli-all#untrack) command. You can only untrack new components. A component that is already tagged or exported, and imported components can be only [removed](/docs/removing-components).  
 
-To remove a single component: 
+To untrack a single component:  
 
 ```bash
 bit untrack hello/world
@@ -601,85 +139,6 @@ To track all the newly added component use the `--all` flag:
 bit untrack --all
 ```
 
-## Manage Components Files
+## Tracking components in different directories
 
-We use `bit add` to remove, add, move and rename files in and between components.
-
-[bit add](/docs/apis/cli-all#add) is a unique command since we use it several times during a component's lifecycle. We use this command to do many operations on the files of the component.
-
-### Adding a file to a component
-
-To append a file to the component, we use `bit add` and specify the component ID we want to append the file too. For example, let's  append a file named `foo.js` to the existing component `foo/bar`:
-
-```bash
-bit add src/foo.js --id foo/bar
-```
-
-### Removing files from components
-
-When deleting a file (that's part of a component) from the filesystem, Bit detect and handles it. So no further action needed. However, if we want to remove a file from a component without deleting it, we need to tell Bit to exclude it.  
-Exclude files from existing components with the `--exclude` feature of the `bit add` command.  
-Let's take a look at the following directory tree:
-
-```bash
-.
-├── package.json
-└── src
-    └── hello-world
-        ├── hello-world.js
-        └── index.js
-```
-
-Add the `hello-world` directory as a component:
-
-```bash
-$ bit add src/hello-world
-tracking component src/hello-world:
-    added src/hello-world/hello-world.js
-    added src/hello-world/index.js
-```
-
-Now exclude `index.js` from the component:
-
-```bash
-$ bit add src/hello-world --id src/hello-world --exclude src/hello-world/index.js
-tracking component src/hello-world:
-    added src/hello-world/hello-world.js
-```
-
-### Moving and Renaming files
-
-When moving and renaming files, Bit won’t always track the changes. To ensure Bit tracks these changes use [bit move](/docs/apis/cli-all#move), This command is similar to [git mv](https://git-scm.com/docs/git-mv).
-
-To move a file:
-
-```bash
-bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
-```
-
-To rename a file, use `bit move` from the old to the new file name.
-
-```bash
-bit move src/foo/bar/index.js src/foo/bar/new-name.js
-```
-
-Moves a file/directory that's part of a tracked component to a new location.
-This command will update the [.bitmap file](/docs/workspace#components-map) accordingly.
-
-```bash
-bit move src/foo src/components/new/location/foo
-```
-
-Move a file that's part of a tracked component:
-
-```bash
-bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
-```
-
-Move a directory that's part of a tracked component:
-
-```bash
-bit move src/foo src/components/new/location/foo
-```
-
-You can also use `move` to rename files within a component.
+Previous versions of Bit supported tracking components that had their files spread across different folders. E.g. the source code was located under `src/components` and the tests under `src/tests/`. Starting version 15 this is considered an anti pattern. However, for backward compatibility this option is still supported. To create a component with files from various location, use the `--allow-files` when initiating the component.  
