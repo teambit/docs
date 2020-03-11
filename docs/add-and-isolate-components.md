@@ -7,7 +7,7 @@ title: Tracking
 
 Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit. The [bit add](/docs/apis/cli-all#add) command is used to track sets of files as components and start the component isolation process. it analyzes the source files to build the component's [dependencies](/docs/dependencies).  Tracking a component adds it to the [components map](/docs/workspace#components-map) in the workspace. The component is considered an "authored" component.  
 
-### Tracking process
+### Process
 
 When tracking a component Bit does the follow:  
 Calculate all the files to be included in the component.  
@@ -18,7 +18,7 @@ Calculate all the files to be included in the component.
 
 When tracking a component, Bit verifies that it can resolve all dependencies. Bit reports any errors during the tracking process. The [`bit status`](/docs/apis/cli-all#status) command also shows any errors during the tracking of a component.  
 
-### Tracking rules
+### Rules
 
 When tracking components in Bit, these rules apply:  
 
@@ -28,7 +28,7 @@ Each component is assigned with a full component id based on its target remote s
 - Referencing files tracked by other components is with the component name. Referencing components by relative paths such as `../..component/file` errs. Expel this restriction by using the `--allow-relative` flag during add(starting version 15)
 - Do not track package.json files as they collide with the Bit auto-generated package files.  
 
-### Tracking Best Practices
+### Best Practices
 
 Here are some recommendations on how to track components:  
 
@@ -46,7 +46,7 @@ The remote scope is part of the workspace configuration.
 Set namespaces with the `--namespace` flag or by specifying the full path in the component name such as `--id space/space/name`.
 Bit sets by default the component name to the folder name. To change it, specify a different name with the `--id name` when adding the component.  
 
-## Adding files
+## Tracking files
 
 To track a single component, use the `bit add` command and specify the path to the folder of the component.  
 ![add single](https://storage.googleapis.com/static.bit.dev/docs/gifs/add.gif)
@@ -65,14 +65,6 @@ The entry point file is the file that is set as the main entry when compiling th
 ### Test files
 
 You can specify the test files of the component, by preceding their name with the `--tests` flag. Tests files are marked as such.
-
-### Excluding files
-
-Bit tracks all files in the component. To ignore certain files by explicit name or by a pattern use the `--exclude` flag and specify the pattern:  
-
-```bash
-bit add src/component/* --namespace user --exclude bad-file.js
-```
 
 ### Manage component's files
 
@@ -120,6 +112,12 @@ To track all the newly added component use the `--all` flag:
 bit untrack --all
 ```
 
-## Tracking components in different directories
+## Tracking files across directories
 
 Previous versions of Bit supported tracking components that had their files spread across different folders. E.g. the source code was located under `src/components` and the tests under `src/tests/`. Starting version 15 this is considered an anti pattern. However, for backward compatibility this option is still supported. To create a component with files from various location, use the `--allow-files` when initiating the component.  
+
+When working with allow-files, it is also possible to exclude files not to be tracked by Bit. In directory only mode, this option is no longer available. To exclude files, specify the `--exclude` flag on the add command following by a file name, file names or file patterns.
+
+```bash
+bit add src/component/* --namespace user --exclude bad-file.js
+```
