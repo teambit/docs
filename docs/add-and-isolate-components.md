@@ -49,9 +49,19 @@ Bit sets by default the component name to the folder name. To change it, specify
 ## Tracking files
 
 To track a single component, use the `bit add` command and specify the path to the folder of the component.  
+
+```bash
+bit add src/components/button
+```
+
 ![add single](https://storage.googleapis.com/static.bit.dev/docs/gifs/add.gif)
 
-To track multiple components, use the `bit add` command and specify the root folder. Bit adds each folder as a separate component.  
+To track multiple components, use the `bit add` command and specify the root folder and `/*`. Bit adds each folder as a separate component.  
+
+```bash
+bit add src/components/*
+```
+
 ![add multiple](https://storage.googleapis.com/static.bit.dev/docs/gifs/add-multiple.gif)
 
 ### Component entry point
