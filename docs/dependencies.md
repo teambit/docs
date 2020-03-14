@@ -4,8 +4,6 @@ title: Components Dependencies
 sidebar_label: Dependencies
 ---
 
-## Dependencies
-
 A key feature of Bit is the ability to automatically create a dependency graph, based on the component's source code.  
 Javascript can rely on two types of dependencies using a require or import statements:  
 
@@ -14,7 +12,7 @@ Javascript can rely on two types of dependencies using a require or import state
 
 For each component, Bit builds a **dependency graph** by analyzing all the dependencies. When a new version of component is tagged, Bit saves the dependency graph together with the component sources. The dependency graph is used to generate a `package.json` file for each component when the component is installed or imported.  
 
-### Package Dependencies
+## Package Dependencies
 
 Here's an example for a component with a package dependency:
 
@@ -91,7 +89,7 @@ The following diagram describes the packages (i.e. node_modules) resolution flow
 
 ![Package Resolution Flow](https://storage.googleapis.com/static.bit.dev/docs/images/package_resolution.png)
 
-### File Dependencies
+## File Dependencies
 
 A component can depend on other files, e.g. `import ./utils.js`. To isolate such components, we need to track these files as well. This is because the component must have these files around if we want to use it in another project.  
 
@@ -179,7 +177,7 @@ The following diagram describes the flow to resolve dependency for relative file
 
 ![Package Resolution Flow](https://storage.googleapis.com/static.bit.dev/docs/images/file_resolution.png)
 
-### Overriding Dependencies
+## Overriding Dependencies
 
 It is possible to change the component's dependencies, by using the [overrides](/docs/overrides) option in Bit. Overrides can be used for the following:  
 
@@ -187,7 +185,7 @@ It is possible to change the component's dependencies, by using the [overrides](
 - Remove dependencies that are in the code, but we want to be provided by the consuming project, such as generic styles
 - Change dependency classification from dependencies to peerDependencies, so they will be provided in the consuming project and not by the component. This is sometimes required for frameworks packages such as react and angular that needs to exist only once in the project, or to reduce the bundle size.
 
-### Custom Paths
+## Custom Paths
 
 Some projects use a custom aliases to resolve relative paths. Some common examples are:  
 
