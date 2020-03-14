@@ -54,7 +54,7 @@ failed running yarn install at /Users/user/devenv/example-npm-error/components/u
 error An unexpected error occurred: "https://registry.yarnpkg.com/@bit%2fbit.utils.string.pad-left: Not found".
 ```
 
-This should be solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see bellow), but there are few ways to resolve the issue:  
+The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see bellow), but the main methods are:  
 
 - Define `.npmrc` in the project.
 - Generate .npmrc file for the CI user
@@ -148,7 +148,7 @@ Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pi
 
 ## Run Bit commands
 
-When using Bit on CI to import components, there are multiple ways to run CI:  
+You can run the CI when importing Bit components in multiple ways:  
 
 |Committed Items in VCS | Action to perform on CI |
 |---|---|

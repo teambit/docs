@@ -62,7 +62,7 @@ successfully imported 2 components
 
 Bit notifies on any new versions found for the components that exist in the local workspace.
 
-Running `bit status` also shows that there are pending changes for the component:  
+Running `bit status` also shows pending changes for the component:  
 
 ```bash
 $ bit status
@@ -107,7 +107,7 @@ modified components
     > foo ... ok
 ```
 
-There are two options for handling the changes:  
+The two options for handling the changes are:  
 
 ### Checkout
 
@@ -147,7 +147,7 @@ updated src/foo/index.js
 CONFLICT src/foo/foo.js automatic merge failed. please fix conflicts manually and then tag the results.
 ```
 
-If it cannot resolve the conflict, it needs user's guidance.  There are three possible options:
+If it cannot resolve the conflict, it needs user's guidance to select one of three possible options:
 
 - `--theirs` - the remote version overrides the local modifications.
 - `--ours` - the local implementation overrides the remote changes.

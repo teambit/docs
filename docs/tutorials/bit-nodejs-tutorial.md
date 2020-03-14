@@ -140,7 +140,7 @@ new components
 ...
 ```
 
-The output of the command tells us that Bit is unable to model most of the tracked files as components. According to Bit, there are some required files that it has not tracked. For example, we can look at the content of `source/add.js` and see that it requires `src/internal/_curry2.js`.
+The output of the command tells us that Bit is unable to model most of the tracked files as components. According to Bit, some required files were not tracked. For example, we can look at the content of `source/add.js` and see that it requires `src/internal/_curry2.js`.
 
 ```javascript
 import _curry2 from './internal/_curry2';
@@ -177,7 +177,7 @@ new components
 
 The project we are now sharing components from is using [Babel](https://babeljs.io) to transpile its ES6 syntax down to ES5. This is to make the project distributable and executable.  
 You can add extensions to components to handle such tasks. More specifically, Bit uses a [build environment](/docs/building-components.html) to transpile code.  
-There is already an extension designed for transpiling React components. Run this command to configure it:
+Run the extension for transpiling React components: 
 
 ```bash
 $ bit import bit.envs/compilers/babel --compiler

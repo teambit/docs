@@ -399,9 +399,12 @@ $ npm update
 
 ## Bit CI Automation
 
-There are two tasks that you can automate in order for this workflow to be fully implemented in your CI cycle.
+You can automate one of two tasks in order for this workflow to be fully implemented in your CI cycle:  
 
-### Exporting Components During Build
+- Exporting the components from the CI.
+- Installing components during CI.
+
+### Exporting Components from CI
 
 To automate the process of publishing new versions during CI, authenticate the CI server and add a step to your CI server that publishes components. To do that, first authenticate the CI server.
 

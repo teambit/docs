@@ -15,7 +15,7 @@ Each component should include the code, styling, unit tests, documentation, and 
 
 Some libraries need to be singleton in a project. For example, you cannot have more than one instance of framework libraries during run time such as React or Angular. To ensure the libraries are singletons, and assuming the containing project has those libraries, we should define them as peerDependencies for our component.  
 The peerDependencies version should also be as relaxed as possible, e.g. `"react": ">=16.9.0"`. This will cover a wide range of versions used in the consuming project. If the peerDependency version range does not cover the range installed in the consuming project, the package is installed with multiple versions.  
-There are two methods to define peerDependencies for Bit components:  
+Two methods to define peerDependencies for Bit components:  
 
 - Define the dependency in the authoring project. Bit [dependency algorithm](/docs/dependencies#dependencies) takes the package as peer dependency.
 - Provide [override rules](/docs/overrides) for setting the packages as peer dependencies.
@@ -79,7 +79,7 @@ You can define assets component that do not require a compiler. To simplify remo
 
 ### Images  
 
-There are multiple ways to handle images and fonts:
+Multiple ways to handle images and fonts:
 
 1) Publish the assets to [a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them in the components via full path URL.  
 1) Include the assets files in the components that use them and share the component, or wrap the asset in a dedicated component and include the image and publish it.  
@@ -189,7 +189,7 @@ Typically, projects tooling is doing two things:
 
 The Bit compiler generates code that the hosting project can bundle without the need to compile it. The ES Module format lets the bundler analyze the code and apply optimization techniques such as code splitting for creating smaller chunks and tree shaking to eliminate unused code.  
 
-However, there are cases where the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
+However, in certain cases the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
 
 ### Changing Compiler Configuration
 

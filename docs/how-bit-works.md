@@ -131,7 +131,7 @@ The workspace has:
 - Workspace configuration - contains information about the project that contains the Bit components such as the package manager used for installing it, the compilers and testers used by the components, and the components code location. The [workspace configuration](/docs/workspace) is stored under the bit section in the `package.json` or as a separate `bit.json` file at the workspace root.
 - Components index - defines the files that comprise each component. Bit stores the index in the `.bitmap` file at the workspace root.
 
-Inside a workspace, there are two types of components:  
+Inside a workspace two types of components exist:  
 
 - [Authored components](/docs/workspace#authored-components)
 - [Imported components](/docs/workspace#imported-components)

@@ -53,7 +53,7 @@ Projects developers can benefit from retaining their existing workflow of using 
 1. Projects developers access the collection on bit.dev to locate the components they need and install them using npm or yarn
 1. If a change is required in a project, the project's developer is importing the component into their project.  
    1. The project developer is making a change in the component and tests it inside their project.
-   1. If there is a new version of the component, the project developers get the changes on top of their local changes
+   1. If a new version of the component exists, the project developers get the changes on top of their local changes
 1. Project's developer submit a request or an issue on the component to the library maintainer, with their suggested change
 1. Library maintainer reviews the change, build and test the components locally.
 1. Library maintainers embed the change into the component and publish a new version of the component and any components that depend on it.

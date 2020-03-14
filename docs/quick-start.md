@@ -131,7 +131,7 @@ Use `bit status` to verify that the component was tracked, and no files are miss
 
 ### Add compiler
 
-There are two ways to use Bit components in another project:
+Bit components are consumable in other projects in one of two ways:
 
 - Import the source code and embed it into the consuming project.
 - Install built artifacts (e.g., dist directory) that are consumed by the project as an NPM package.

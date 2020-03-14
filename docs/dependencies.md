@@ -7,7 +7,7 @@ sidebar_label: Dependencies
 ## Dependencies
 
 A key feature of Bit is the ability to automatically create a dependency graph, based on the component's source code.  
-There are two types of dependencies that a javascript can rely on, using a require or import statements:  
+Javascript can rely on two types of dependencies using a require or import statements:  
 
 - Packages that are installed as node_modules
 - Files and directories from inside the project, or referenced in decorators (e.g. in Angular)
@@ -133,7 +133,7 @@ new components
        untracked file dependencies: src/utils/noop.js
 ```
 
-Bit has read the `require` statement for `src/utils/noop.js`. However, Bit does not track the file. So Bit is unable to isolate the `hello/world` component. There are two ways to resolve this isolation issue:
+Bit has identified the `require` statement for `src/utils/noop.js`, but the file is not yet contained in any component. Therefore, Bit cannot isolate the `hello/world` component. To resolve the isolation problem you can:
 
 - Add the untracked file dependency to the existing component
 - Track the file as a new component
@@ -166,7 +166,7 @@ tracking component utils/noop:
     added src/utils/noop.js
 ```
 
-The result is a new component, which is now a dependency of the `hello/world` component. There is no need to explicitly tell Bit that there is a new component. Bit identifies that the file is tracked as a new component and resolves the status of the requiring component.
+The result is a new component, which is now a dependency of the `hello/world` component. No need to explicitly tell Bit that about a new component. Bit identifies that the file is tracked as a new component and resolves the status of the requiring component.
 
 ```bash
 › bit status
@@ -222,7 +222,7 @@ For Bit to be able to resolve the `@/utils` path, we need to configure it as an 
 }
 ```
 
-> It is highly recommended to use custom paths instead of backward references (i.e. `../../my-file.js`). Using custom paths makes the component more portable between environments, as there is no need to reproduce the full directory structure, and Bit can simply redirect the paths to another location.
+> It is highly recommended to use custom paths instead of backward references (i.e. `../../my-file.js`). Using custom paths makes the component more portable between environments, and avoids the need to reproduce the full directory structure, and Bit can simply redirect the paths to another location.
 
 ## Common Isolation Errors
 
@@ -231,7 +231,7 @@ Here are some common errors and their resolution when trying to isolate a compon
 ### Untracked Dependencies
 
 When a component is importing local files (i.e. files with relative paths), Bit is attempting to find the components where those files exist. If the file is not yet tracked by any other components, Bit notifies about an untracked dependency.  
-There are two options on handling those files:  
+Handling these files can be in one of two manners:  
 
 - Add the file(s) as dependency to the same component.  
 - Add the file(s) as new components.  
