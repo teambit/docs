@@ -3,11 +3,11 @@ id: how-bit-works
 title: How bit Works?
 ---
 
+Bit is the component collaboration platform. Bit leverages component reusability by providing an ecosystem for sharing components between applications and across repositories.  
+
 Components are the building blocks of modern web architectures. Encapsulated and reusable components with focused and well-defined APIs let developers build more robust software applications more quickly.
 
-The major frontend frameworks - React, Vue, and Angular - all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the Web Components standard.
-
-Bit leverages component to make them not only reusable inside an application but provides an ecosystem for sharing components between applications and across repositories.  
+The major frontend frameworks - React, Vue, and Angular - all share the concept of using component-based architecture to compose state-of-the-art applications. Even browsers themselves are backing components as an inherent feature by supporting the Web Components standard.  
 
 Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in making the component reusable across projects.  
 
