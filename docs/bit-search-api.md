@@ -1,14 +1,14 @@
 Learn how to integrate [bit.dev](https://bit.dev)'s component search API.
 
 - [Search components](#search-components)
-   - [Simple search request](#simple-search-request)
-   - [Using filters](#using-filters)
-   - [Pagination](#pagination)
-   - [Search response format](#search-response-format)
+  - [Simple search request](#simple-search-request)
+  - [Using filters](#using-filters)
+  - [Pagination](#pagination)
+  - [Search response format](#search-response-format)
 - [Get aggregated component data](#get-aggregated-component-data)
-   - [Simple aggregation request](#simple-aggregation-request)
-   - [Aggregation request with search parameters](#aggregation-request-with-search-parameters)
-   - [Aggregation response format](#aggregation-response-format)
+  - [Simple aggregation request](#simple-aggregation-request)
+  - [Aggregation request with search parameters](#aggregation-request-with-search-parameters)
+  - [Aggregation response format](#aggregation-response-format)
 
 
 The Search API helps you find the components you want. For example, you can find all components that performe a specific functionality by specifying this functionality in the search query, or find all components with a specific dependency or size range by using the search filters. The results are sorted by their relevance and quality.
@@ -387,7 +387,7 @@ The aggregation response payload includes a 'total' property indicating the tota
 | aggName  | string | the name of the 'bucket' or category of the aggregation. It can be a dependency, a label, or a specific size
 | numComponents | number | the number of components in this 'bucket' or category
 
-For example, the following result for the size aggregation indicates that there are 2 components in the size category 26,000 bytes.
+For example, the following result for the size aggregation indicates that 2 components in the size category exist with 26,000 bytes.
 ```json
 {
     "aggName": 26000,

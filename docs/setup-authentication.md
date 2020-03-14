@@ -99,7 +99,7 @@ bit config set user.email mickey@example.com
 
 ## Authentication issues
 
-There are several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message.
+Several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message:
 
 ### Timeout after a long hang time
 
@@ -139,7 +139,7 @@ It may be that you do not have permissions to access the Collection in question.
 
 ### SSH keys issues
 
-There are several configuration issues that may occur if you hit any permission issues when working with SSH keys and remote collections.
+Several configuration issues may occur if you hit any permission issues when working with SSH keys and remote collections.
 
 **If the SSH connection is not established due to issues with SSH keys, Bit will fail to authenticate.**
 

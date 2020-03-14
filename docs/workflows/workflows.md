@@ -40,7 +40,7 @@ You can utilize Bit however you want, depending on the state of your team. So wh
 
 There are two main workflows you can use to share UI components with Bit:
 
-- A workflow to use when there is a [**centralized component library**](/docs/workflows/centralized) that multiple projects would like to use.
+- A workflow to use when multiple projects would like to share a [**centralized component library**](/docs/workflows/centralized).
 - A workflow for [**ad-hoc components sharing**](/docs/workflows/projects) between projects, which helps gradually build a component library
 
 You can mix and match specific features from each workflow or design your own.

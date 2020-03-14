@@ -5,7 +5,7 @@ title: Bit Workflows
 
 A Bit Workflow is a  recommendation for how to use Bit to accomplish work in a consistent and productive manner. But not every organization is the same or works in the same way. Bit offers flexibility in managing components by enabling different workflows that can fit many organizations.  
 
-There are some questions worth asking when selecting the Bit workflow:
+Some questions worth asking when selecting the Bit workflow:
 
 - How many projects need component sharing?  
 - How similar are the projects that need to share components? e.g., are they all based on the same CLI with the same configuration?
@@ -55,16 +55,16 @@ The consumed components are included in the consuming project as if they were in
 - Modify the code.
 - Tag and export the component. Components that depend on the changed components also get a new version.  
 
-For the time being, Bit does not have a PR-like flow to suggest changes to the component. There are a few options on how to bypass this change:  
+For the time being, Bit does not have a PR-like flow to suggest changes to the component. You can bypass this limitation by:  
 
-- Build a separate collection for staged components. Component consumers can suggest changes to components in this collection. The shared library maintainers will merge the changes from the staging collection into the components on their local workspace, review the difference, and reject or submit them back to the primary collection.  
-- Make the changes in the local workspace and generate a patch file with the changes or manually perform the adjustment and submit it to the shared library's repository.
+- Building a separate collection for staged components. Component consumers can suggest changes to components in this collection. The shared library maintainers will merge the changes from the staging collection into the components on their local workspace, review the difference, and reject or submit them back to the primary collection.  
+- Making the changes in the local workspace and generate a patch file with the changes or manually perform the adjustment and submit it to the shared library's repository.
 
 > We are aware that this is a sub-optimal flow, and we are working on a new feature of supporting changes to components.
 
 ### Versioning Components
 
-There are two main options on managing versions for shared libraries:  
+The two main options on managing versions for shared libraries are:  
 
 - Retain all components on a single release. The version is updated if any component changed.  
 - Version each component individually, and only update when a component changed. Semver standards can be used to denote the type of the change made (fix, feature or breaking change)
@@ -84,7 +84,7 @@ The evaluation of these options highly depends on the organizational support, as
 
 ![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow_projects.png)
 
-This workflow is useful when there is no library of shared components, and still, there is some functionality you want to share between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
+This workflow is useful when no library of shared components exists, and still, you want to share functionality between your projects. Without Bit, you would extract shared functionality to a separate repo, or use a mono-repo, and publish it as an NPM package to a package registry. Then, the projects consume the package using NPM (or Yarn). Bit simplifies the process.
 
 ### Benefits
 
@@ -126,4 +126,4 @@ The benefits you can get from this workflow:
 
 ### Managing Components in Projects
 
-In Bit there are some differences in the way [authored components](/docs/workspace#authored-components) are used in the project when compared to [imported components](/docs/workspace#imported-components). If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from a relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.
+Bit differs how [authored components](/docs/workspace#authored-components) and [imported components](/docs/workspace#imported-components) are used in projects. If you want all the projects to be on par with regards to the way the components are used (i.e., used as import form package and not from a relative source file), you can [eject](/docs/export#ejecting-components) the component in the original project. Now, the component is visible in exactly the same way in all the projects.

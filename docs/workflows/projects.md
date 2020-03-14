@@ -20,12 +20,12 @@ The company is likely to assess one of the following options:
 
 Copy-pasting code is the most naive option. Take the code and copy it into your project. Obviously, this is far from being the best possible option.
 First, copying the code is not enough. You need to identify any dependencies the code has. The code may depend on 3rd party code (namely NPM packages) or internal code that you need to isolate from the project.
-Also, the source code itself might not fit very well into your project. Maybe there is some plugin or transpiler used in the other project that does not exist in your project?
+Also, the source code itself might not fit very well into your project. Some plugin or transpiler used in the other project that does not exist in your project?
 But worse of all, copied code is dead code. You do not receive any changes or bug fixes from the original project.
 
 ### Option 2 - Create a Package from a separate Repository
 
-The standard way to share code in a maintainable manner is, of course, to publish it as a package. Packages do not come for free. There are some steps to take before you can share code as a package:
+The standard way to share code in a maintainable manner is, of course, to publish it as a package. Packages do not come for free. Some steps to take before sharing code as a package are:
 
 - Extract the code it to its own repository
 - Configure the build tools

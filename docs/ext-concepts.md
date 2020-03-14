@@ -7,7 +7,7 @@ Bit's extension system allows you to add custom actions during a component's lif
 
 ## Why?
 
-During our work on bit, we've realized there are many actions performed on a component that are not (or should not be) an inherent part of Bit's code. Those include actions integrating with external tools, such as packing and publishing a component to npm, or parsing its documentation, as well as actions that are just user-specific.
+During our work on bit, we've realized that many actions performed on a component are not (or should not be) an inherent part of Bit's code. Those include actions integrating with external tools, such as packing and publishing a component to npm, or parsing its documentation, as well as actions that are just user-specific.
 
 ## What is an Extension?
 

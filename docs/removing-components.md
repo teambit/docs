@@ -47,7 +47,7 @@ Bit triggers a warning when trying to remove modified components. Use the `--for
 
 ### Effects of deleting components from a workspace
 
-Other components in the workspace may depend on removed components. Meaning that removing these dependencies affects dependent components. There are several cases which may occur when deleting a local component:
+Other components in the workspace may depend on removed components. Meaning that removing these dependencies affects dependent components. Several cases may occur when deleting a local component:
 
 * A *new* component that depends on a *removed component* is not affected. This is because Bit did not isolate the component.
 * A *staged* component that depends on a *removed component* causes Bit to stop the remove command. To force it, we use the `--force` flag.

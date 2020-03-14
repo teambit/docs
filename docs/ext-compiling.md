@@ -39,7 +39,7 @@ As we've gained experience in developing compilers for bit components, we've not
 ## Dependencies
 
 When a compiler is imported to the workspace, its [dependencies](/docs/add-and-isolate-components#component-dependencies) are installed as well.
-You should make sure bit recognizes the compiler's dependencies, so it will later install them properly. A `require`/`import` statement is enough for bit, but there are two edge-cases where you should add `require` statements:
+You should make sure bit recognizes the compiler's dependencies, so it will later install them properly. A `require`/`import` statement is enough for bit, except for two edge-cases where you should add `require` statements:
 
 * Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with [babel plugins and presets](https://babeljs.io/docs/plugins/). [Here's a good example](https://bit.dev/bit/envs/compilers/babel/~code#compilers/babel/index.js).
 * Sometimes the tools you use require [peer dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/). There may not be `require` statements for those dependencies, so just make sure to add them if needed, if you want those to be installed.

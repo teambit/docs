@@ -71,12 +71,12 @@ If an error caused data corruption, you could reset the component's storage by r
 bit init --reset
 ```
 
-Inside a workspace, there are two types of components:  
+Inside a workspace the two types of components are:  
 
 - Authored components
 - Imported components
 
-Although there are lots of similarities between authored and imported components, there are some key differences worth noticing.
+Although authored and imported components are similar in many ways, some key differences exist and worth noticing.
 
 ## Authored Components
 
@@ -223,7 +223,7 @@ Listed here are all possible component states.
 
 ### Nothing to tag or export
 
-This means there are no components with pending changes - either there are no files tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
+No components have pending changes. Either no files are tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
 
 ```bash
 $ bit status
@@ -345,7 +345,7 @@ Bit's log files are stored in:
 - For Mac/Linux - `~/Library/Caches/Bit/logs`.
 - For Windows - `%LOCALAPPDATA%/Bit/logs`. If `%LOCALAPPDATA%` is not defined, user profile directory will be used instead of `%LOCALAPPDATA%`. Further fallback options are available [here](https://github.com/sindresorhus/os-homedir/blob/master/index.js).
 
-There are three different log types:
+The three different log types in Bit are:
 
 - Debug log - `debug.log`.
 - Exceptions log - `exceptions.log`.

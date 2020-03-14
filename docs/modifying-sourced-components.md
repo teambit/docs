@@ -26,7 +26,7 @@ $ bit export bit.utils
 
 ## Keep local changes
 
-In some cases we want to change a component and keep the modifications local. This can be because there are specific customizations required for that specific instance of a component. With Bit we can do that by importing components, make the changes, and track all files using Git.  
+In some cases we want to change a component and keep the modifications local. For instance, when a specific customizations is required locally. With Bit we can do that by importing components, make the changes, and track all files using Git.  
 Bit still allows fetching remote changes for these components. We can even merge the changes to the modified component.
 
 ## Replace component with a package
