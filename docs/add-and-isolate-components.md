@@ -5,7 +5,7 @@ title: Tracking
 
 ## Tracking Components
 
-Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit. The [bit add](/docs/apis/cli-all#add) command is used to track sets of files as components and start the component isolation process. it analyzes the source files to build the component's [dependencies](/docs/dependencies).  Tracking a component adds it to the [components map](/docs/workspace#components-map) in the workspace. The component is considered an "authored" component.  
+Tracking is the step that converts a set of source files in a repository into a component that is semantically understood by Bit. The [bit add](/docs/apis/cli-all#add) command defines sets of files as components and start the component isolation process. The command analyzes the source files to build the component's [dependencies](/docs/dependencies). Tracking a component adds it to the [components map](/docs/workspace#components-map) in the workspace. The component is considered an "authored" component inside this workspace.  
 
 ### Process
 
@@ -122,12 +122,32 @@ To track all the newly added component use the `--all` flag:
 bit untrack --all
 ```
 
-## Tracking files across directories
+## Tracking cross folders components  
 
-Previous versions of Bit supported tracking components that had their files spread across different folders. E.g. the source code was located under `src/components` and the tests under `src/tests/`. Starting version 15 this is considered an anti pattern. However, for backward compatibility this option is still supported. To create a component with files from various location, use the `--allow-files` when initiating the component.  
+Previous versions of Bit supported tracking components that had their files located across different folders, i.e. a structure similar to:  
+
+```bash
+├── components
+│   ├── Button.style.tsx
+│   └── Button.tsx
+├── stories
+│   └── Button.stories.tsx
+└── tests
+    ├── Button.spec.tsx
+```
+
+Tracking files across folders is still supported, but requires using a dedicated flag: `--allow-files`.  
 
 When working with allow-files, it is also possible to exclude files not to be tracked by Bit. In directory only mode, this option is no longer available. To exclude files, specify the `--exclude` flag on the add command following by a file name, file names or file patterns.
 
 ```bash
 bit add src/component/* --namespace user --exclude bad-file.js
 ```
+
+To help moving all of the component's files to a single directory, Bit has a dedicated version of the move command:  
+
+```bash
+bit move <component id> <component folder> --component
+```
+
+The command above "collects" all the component's files and locates them in the provided folder. It is important to note that the command is not fixing relative paths, if exist, between the files.  
