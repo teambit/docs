@@ -32,6 +32,16 @@ To import a component for the first time, i.e. component not yet exists in the w
 bit import bit.examples/foo
 ```
 
+You can import multiple components at once using glob patterns:  
+
+```bash
+# Imports all components in the remote collection
+bit import "<owner>.<collection>/*"
+
+# Imports all component under the namespace in a remote collection
+bit import "<owner>.<collection>/<namespace>/*"
+```
+
 You can also specify a specific version to be imported:  
 
 ```bash
