@@ -372,7 +372,6 @@ After the confirmation message that the workspace was initialized, run the follo
 
 ```bash
 $ bit import <username>.react-tutorial/product-list
-bit import bit.react-tutorial/product-list
 successfully imported one component
 - added <username>.react-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
 ```

@@ -427,7 +427,6 @@ After the confirmation message that the workspace was initialized, run the follo
 
 ```bash
 $ bit import <username>.angular-tutorial/product-list
-bit import bit.angular-tutorial/product-list
 successfully imported one component
 - added bit.angular-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
 ```

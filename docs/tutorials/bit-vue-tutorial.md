@@ -374,7 +374,6 @@ After the confirmation message that the workspace was initialized, run the follo
 
 ```bash
 $ bit import <username>.vue-tutorial/product-list
-bit import <username>.vue-tutorial/product-list
 successfully imported one component
 - added <username>.vue-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
 ```
