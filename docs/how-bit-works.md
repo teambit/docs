@@ -11,13 +11,42 @@ The major frontend frameworks - React, Vue, and Angular - all share the concept 
 
 Bit adds a semantic layer on top of repositories that maps files into components. This extra layer provides Bit with robust capabilities in making the component reusable across projects.  
 
-## Bit Component
+## Understanding Bit Components
 
 A Bit component is a reusable piece of code, such as  
 
 - A react, Vue or Angular component
 - Shared stylesheet (e.g., CSS, SCSS) or stylesheets  
 - Utility function used by the application.
+
+The exact boundaries of the component are a design decision. It is possible to package a whole library as a single Bit component or split each functional piece as a separate component.  
+
+In a bird-eye view, code options can boil down to these:
+
+```js
+// All components packaged as a single Bit component
+import {Text, Card, Button} from '@bit/collection.library'
+
+//Each component packaged as a Bit component
+import { Text } from '@bit/collection.text'
+import { Card } from '@bit/collection.card'
+import { Button } from '@bit/collection.button'
+```
+
+![discrete components](https://static.bit.dev/homepage-bit/example-008.png)
+
+While the first option is possible with Bit, Bit is geared towards working with the second option, where each UI component is a Bit component. When working with smaller discrete components, each one versioned on its own; you can enjoy a broad set of benefits:  
+
+- The consumer of the components gets a smaller bundle size, as they only get the component they need.  
+- Each component is versioned separately, so the version numbers can reflect the changes made in the component using semver conventions (patch, minor, major).
+- The consumer is not bound to consume a single version of all the components, so if a particular component is faulty, they can retain an older version of it, while advancing other components.
+- Shorter release cycles for each component, as there is no need to "wait" on changes for the whole library.  
+- When local changes are required, it is simpler to get the source code of just one component and fix it or change it locally, rather than the full library.
+- Bit provides a smart tagging mechanism. Making changes to a component triggers an optional version bumping to all components that depend on it.  
+
+[Releasing design systems series by Nathan Curtis](https://medium.com/eightshapes-llc/releasing-design-systems-57fca91a23f6) further enhances smaller components benefits.  
+
+## Structure
 
 For each component Bit stores three elements:  
 
@@ -54,7 +83,7 @@ The most common tools linked to components are:
 -**Compiler**: compiles or transpiles the original files and generate built artifacts. The artifacts are consumable by applications or other components. Compilers are specific for frameworks and usually also for flavors of the framework, as they contain the configuration required to run them.  
 -**Tester**: An extension that runs the tests associated with the component and returns status.  
 
-## Component lifecycle
+## Lifecycle
 
 Here is a bird-eye view of a component life cycle:  
 
@@ -72,7 +101,7 @@ Once residing on a remote scope, the component is available for consumption by o
 -**Import**: Bit import adds the component to the [workspace components folder](https://docs.bit.dev/docs/conf-bit-json#componentsdefaultdirectory) and tracks its modifications. On an import, you can see that the package.json points to a local file: `"@bit/user.collection.tabs": "file:./components/tabs"`. Code modifications are tracked and can be exported as a new version.
 -**Eject**:  If a new version is exported, it is possible to revert to an installed component. In this case, the package.json is updated back to `"@bit/user.collection.tabs": "0.0.3"`
 
-## Component Isolation
+## Isolation
 
 Components let you split your code into independent, reusable pieces, and think about each piece in isolation. Bit manages each component separately to ensure its independence and reusability.  
 Wrapping each component in a detached environment reduces the risk of component misbehaving when moved between different projects and applications.  
@@ -89,7 +118,7 @@ A component context is similar works in a way a separate repo for an NPM package
 
 All the information about the component is encapsuled as part of the component data. A component imported into a new project comes bundled with all the configuration data needed.  
 
-## Component characteristics
+## Characteristics
 
 ### Component id
 
