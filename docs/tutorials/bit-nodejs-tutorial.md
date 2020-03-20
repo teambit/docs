@@ -60,7 +60,7 @@ $ npm install
 Bit tracks sets of files as components. When tracking components, it's important to understand the project's file structure. Before we dive deeper, here's a short description of the project we'll share components from.
 
 * `source/*` is a directory that contains all components in the library. Each component is implemented in its own file. Some components require each other.
-* `src/internal/*` contain internal files that contain utility functions and data for the components.
+* `source/internal/*` contain internal files that contain utility functions and data for the components.
 
 For this tutorial, we will skip Ramda's test files.
 
@@ -140,7 +140,7 @@ new components
 ...
 ```
 
-The output of the command tells us that Bit is unable to model most of the tracked files as components. According to Bit, some required files were not tracked. For example, we can look at the content of `source/add.js` and see that it requires `src/internal/_curry2.js`.
+The output of the command tells us that Bit is unable to model most of the tracked files as components. According to Bit, some required files were not tracked. For example, we can look at the content of `source/add.js` and see that it requires `source/internal/_curry2.js`.
 
 ```javascript
 import _curry2 from './internal/_curry2';
