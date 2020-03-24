@@ -1,6 +1,6 @@
 ---
 id: building-components
-title: Building
+title: Compiling
 ---
 
 ## Understanding build
