@@ -68,6 +68,7 @@ const siteConfig = {
 
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap',
+    '/css/code-block-buttons.css'
 
   ],
   fonts: {
@@ -113,7 +114,10 @@ const siteConfig = {
     'https://buttons.github.io/buttons.js', {
       src: '/js/mixpanel.js',
       async: true
-    }
+    },
+    'https://buttons.github.io/buttons.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+  '/js/code-block-buttons.js',
   
 ],
 
