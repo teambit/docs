@@ -67,7 +67,8 @@
   "Workflows": [
     "workflows/workflows",
     "workflows/projects",
-    "workflows/centralized"
+    "workflows/centralized",
+    "workflows/microfrontends"
   ]
   }
 }

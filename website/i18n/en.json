@@ -180,6 +180,9 @@
       "workflows/centralized": {
         "title": "Centralized Library"
       },
+      "workflows/microfrontends": {
+        "title": "Micro Frontends"
+      },
       "workflows/projects": {
         "title": "Ad-hoc Sharing"
       },
