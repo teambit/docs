@@ -19,6 +19,8 @@ Bit is a collaboration tool that spans across people and projects. As any code-c
 
 Some structures are common for organizations that develop UI applications: 
 
+![workflow teams](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-teams.svg)
+
 1. A single frontend team exists, working on a single product. This structure is common for businesses in their initial stage.  
 1. The company is growing and develop a set of separate products.  Multiple teams exist, each one responsible for its own product.  
 1. Teams want to remain independent, but standardize on their UIs and UX across the projects, and create a centralized team providing a centralized UI component library shared between all application.
