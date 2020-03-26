@@ -18,7 +18,7 @@ When tracking a component Bit does the follow:
 - Verify that all required files are tracked inside a component (this component or another one).
 - Verify that each file is only tracked by a single component (a file cannot be tracked by multiple components).
 
->starting upcoming version, the rules bellow will also apply, so we suggest tracking components according to them to avoid future problems:  
+>Starting upcoming version, the rules bellow will also apply, so we suggest tracking components according to them to avoid future problems:  
 
 - All the files belong to the same component should reside under a single directory. 
 - Referencing files tracked by other components is with the component name only and not by relative paths or aliases.  
