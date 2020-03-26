@@ -132,10 +132,11 @@ Now, we will track the product-list component from the Vue tutorial project. The
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. In Vue, a component is typically a single file so we can directly add this file. We also tell Bit to track the file under the id `product-list`
 
 ```bash
-$ bit add src/components/productList.vue --id product-list
+$ bit add src/components/ProductList --id product-list --main src/components/ProductList/ProductList.vue
 tracking component product-list:
-tracking component product-list:
-added src/components/productList.vue
+added src/components/ProductList/ProductList.vue
+added src/components/ProductList/Readme.MD
+added src/components/ProductList/products.js
 ```
 
 When creating new components, you need to make sure that Bit properly tracks all of the files required for the component. Bit can analyze the component for you and verify that all files are included. You can do that by checking the status of the component:
@@ -144,27 +145,8 @@ Our component is using `src/assets/products.js` - Bit will identify it and alert
 
 ```bash
 $ bit status
-> product-list ...  issues found  
-       untracked file dependencies (use "bit add <file>" to track untracked files as components): 
-          src/components/ProductList.vue -> src/assets/products.js
-```
-
-You will need to add the missing file to the component. In our case, this file is only used by this component so we will add it to the component. If this file was shared between components, we should track it as a new component.
-
-```bash
-$bit add src/assets/products.js --id product-list
-tracking component product-list:
-added src/assets/products.js
-added src/components/productList.vue
-```
-
-Check the status again:
-
-```bash
-$ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
-
      > product-list ... ok
 ```
 
@@ -176,13 +158,13 @@ So far, we have provided Bit with the source file of the component. But in order
 
 Bit has a large collection of compilers that are open source and maintained by the Bit team. In addition, the community has created compilers that you can use by searching [Bit collections](https://bit.dev/).
 
-To build the vue component, you'll need the [Vue compiler](https://bit.dev/bit/envs/bundlers/vue).
+To build the vue component, you'll need the [Vue compiler](https://bit.dev/bit/envs/compilers/vue).
 Install the compiler and run this command inside the Vue tutorial repository:
 
 ```bash
-$bit import bit.envs/bundlers/vue --compiler
+$ bit import bit.envs/compilers/vue --compiler
 the following component environments were installed
-- bit.envs/bundlers/vue@2.6.10
+- bit.envs/compilers/vue@0.0.7
 ```
 
 > The version may vary slightly when you run the tutorial
@@ -192,7 +174,7 @@ You can check the `package.json` and verify that the compiler is installed by lo
 
 ```json
      "env": {
-      "compiler": "bit.envs/bundlers/vue@2.6.10"
+      "compiler": "bit.envs/compilers/vue@0.0.7"
     },
 ```
 
@@ -208,7 +190,24 @@ Bit build is taking place in an **isolated environment** to make sure the proces
 To build your component, run this command inside your Vue project:  
 
 ```bash
-bit build
+$ bit build
+⠅⡘ isolating component - product-list
+⠧  Building for development as library (commonjs,umd,umd-min)...
+...
+  File                            Size                  Gzipped
+
+  dist/product-list.umd.min.js    64.74 KiB             8.88 KiB
+  dist/product-list.umd.js        64.74 KiB             8.88 KiB
+  dist/product-list.common.js     64.35 KiB             8.76 KiB
+
+  Images and other types of assets omitted.
+
+✔ isolating component - product-list
+product-list
+bit/tutorials/bit-vue-tutorial/dist/demo.html
+bit/tutorials/bit-vue-tutorial/dist/product-list.umd.js
+bit/tutorials/bit-vue-tutorial/dist/product-list.common.js
+bit/tutorials/bit-vue-tutorial/dist/product-list.umd.min.js
 ```
 
 This results in the component name (product-list) followed by a list of file names. Those are the built files of the component.
@@ -251,7 +250,7 @@ $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo at: https://bit.dev/bit/vue-tutorial
+The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo at: https://bit.dev/learn-bit/vue-tutorial/product-list
 
 At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
@@ -442,23 +441,10 @@ The app is not yet changed. That's because the Bit components are compiled by th
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
 ```bash
-successfully installed the bit.envs/bundlers/Vue@2.5.2 compiler
+successfully installed the bit.envs/compilers/Vue@0.0.7 compiler
 ```
 
 That will be followed by a successful compilation of the main file.
-
-In order to compile the application, we need to enhance the bit webpack configuration to properly work with symlinks.  
-Add a new file `vue.config.js` with the following configuration:  
-
-```js
-module.exports = {
-    configureWebpack: {
-        resolve: {
-            symlinks: false // support npm link
-        },
-    }
-}
-```
 
 Run the `my-new-app` again and you'll now see the changed component with the view button.
 
@@ -502,7 +488,7 @@ $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
 
-Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground.
+Head to the component page on [bit.dev](https://bit.dev/learn-bit/vue-tutorial/product-list). Here you can see that the component has a new version. The changes are also visible on the component playground.
 
 ## Get Component Updates
 

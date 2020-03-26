@@ -15,49 +15,23 @@ Vue playground was tested on vue 2 and vue-cli 3. Bit should be compliant with p
 
 ## Vue Compiler
 
-Each Bit component is linked with a compiler. The Bit compiler is transpiling or bundling the source code to build files that can run in another project.  
-The officially supported vue Compiler can be found [here](https://bit.dev/bit/envs/bundlers/vue).  
+The Bit vue compiler can be found [here](https://bit.dev/bit/envs/compilers/vue).  
+The compiler is generating a [Vue library](https://cli.vuejs.org/guide/build-targets.html#library). The pacakge.json reference the compiled files as follow:  
+
+- The main file is pointing to a commonjs format.  
+- The browser entry is pointing to the UMD format.  
+
 To install it in your project run:  
 
 ```bash
-$bit import bit.envs/bundlers/vue --compiler
+$bit import bit.envs/compilers/vue --compiler
 the following component environments were installed
-- bit.envs/bundlers/vue@2.6.10
+- bit.envs/compilers/vue@0.0.7
 ```
-
-The compiler is based on the Vue webpack configuration. Check out the exact configuration [here](https://bit.dev/bit/envs/bundlers/vue/~code#webpack.config.js).
-
-## Using Vue SFC in target projects
-
-Note that this compiler is in fact a bundler, as it uses Vue webpack to separate the vue SFC (Single File Component ) format into separate JS and CSS files and then bundles them. If you want to include the component into your Vue project that will compile and bundle it, or if you are using SSR (such as Nuxt.js), you should import the SFC itself as follow:  
-
-```js
-import MyComp from '@bit/username.collection.component/sfc' //Note the SFC at the end.
-```
-
-Learn more about this in [Vue documentation](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html)
-
-## Use symlinks false in target project
-
-When importing components, Bit is using symlinks to point to the component location (similar to npm link). In order to compile the application, you need to enhance the bit webpack configuration to properly work with symlinks.  
-
-If you do not have a webpack configuration in your project, add a new file `vue.config.js` with the following configuration:  
-
-```js
-module.exports = {
-    configureWebpack: {
-        resolve: {
-            symlinks: false // support npm link
-        },
-    }
-}
-```
-
-If you already have a configuration, you just need to add the relevant key in the proper place. This tells Vue webpack to retain the symlinks.
 
 ## Vue Tester
 
-Each Bit component may be linked with a tester that will run the unit tests of the compiler. vue testers are still WIP.  
+Each Bit component may be linked with a tester that will run the unit tests of the compiler. Vue testers are still WIP.  
 
 ## Sharing Components with VueX
 
