@@ -39,8 +39,11 @@ This process assumes each micro-frontend team already has their code repository 
 
 1. Each team creates itself a collection of components for them to publish components to, and others to consume.
 1. Different micro frontends teams can search and consume components from other collections in their organization using a package manager. Making it a dependency of their frontend.
-1. Teams can get updates when new versions for components are available by connecting their tools to the collections they consume from by several methods:
-  - Pull Request to their git repositories.
-  - Slack notification to a team chat.
-  - Webhooks to automate any other tool.
+1. Teams can link their code repositories to the specific collection in bit.dev, so they are aware of new versions of the components used in the applications.  
 1. Once a component was changed, consumers can build and deploy a new version for their micro-frontend, as needed.
+
+Bit.dev offers three methods for getting notification on updated components:
+
+- Link the GitHub repository that consumes the components. With each new vesion, Bit.dev creates a PR for updating the component version.  
+- Receive a notification on a slack channel, and perform the update manually
+- Bit.dev triggers a webhook with the information on the modified component. Use the webhook to create an automation for updating the repository.
