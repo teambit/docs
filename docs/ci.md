@@ -136,6 +136,23 @@ In `.gitlab-ci.yml` run the script that [generates the file for the user](#gener
 
 Add the BIT_TOKEN as [environment variable](https://docs.gitlab.com/ee/ci/variables/)
 
+### GitHub actions
+
+Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in GitHub.
+
+In the GitHub workflow file create a step before npm install section:
+
+```bash 
+- name: init bit.dev
+  run: |
+    echo "Adding bit.dev to npm registry"
+    npm config set @bit:registry https://node.bit.dev
+    npm config set //node.bit.dev/:_authToken ${BIT_TOKEN}
+    echo "Completed adding bit.dev to npm registry"
+  env:
+    BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+```
+
 ### Heroku
 
 To generate npmrc before installing dependencies, run a pre build script as described [here](https://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps).
