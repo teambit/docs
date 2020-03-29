@@ -47,7 +47,7 @@ Projects developers can benefit from retaining their existing workflow of using 
 - Increasing control in the project. Consumers are not committed to a single version of all the components and instead can mix and match the versions they need of each component.
 - Creating a smaller CI footprint as only projects that are affected by changes in the components may be built when a component has changed instead of the whole library.
 
-## How does it work
+## How does it work?
 
 1. Library maintainers are publishing components from the shared library with documentation.
 1. Projects developers access the collection on bit.dev to locate the components they need and install them using npm or yarn

@@ -62,7 +62,7 @@ Bit lets teams gradually build a component collection by curating components fro
 - Local modifications for components in consuming projects can be kept and still merged with incoming updates.
 - Components can be installed using npm / yarn, so they fit the normal workflow of projects’ developers.
 
-## How does it Work
+## How does it Work?
 
 1. A developer from a project to identify components that are suitable for reuse
 1. The project's developer track the local source code as a component
