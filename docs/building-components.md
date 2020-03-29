@@ -90,6 +90,25 @@ Bit stores the compiled code according to the [dist configuration](/docs/conf-bi
 
 The dist location differs for [imported](/docs/workspace#build-directory) and [authored](/docs/workspace#build-files) components.  
 
+Some compilers, such as Typescript and React Typescript, are supporting changing the configuration. Otherwise, you need to [fork the compiler](/docs/building-components#where-is-the-code-compiled) and change the code.  
+Changing the configuration works according to [overriding rules](/docs/overrides#overriding-rules).  
+
+To change the configuration for the compiler add it to the package.json for the workspace or under the overrides. Under the `env` key change the compiler to be as follow:  
+
+```json
+"bit.envs/compilers/react-typescript": {
+    "rawConfig": {
+        "tsconfig": {
+            "compilerOptions": {
+                "target": "ES5",
+                "module": "CommonJS"
+            }
+        }
+    }
+}
+```
+
+
 ## Debugging compilation
 
 Debugging differs for compilers that use the capsule and for those that do not.  

@@ -54,7 +54,7 @@ Namespaces are also useful in specifying overriding rules for specific component
 }
 ```
 
-## Publish Shared Files As Bit Components
+## Publish shared files  
 
 If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.  
 
@@ -190,26 +190,6 @@ Typically, projects tooling is doing two things:
 The Bit compiler generates code that the hosting project can bundle without the need to compile it. The ES Module format lets the bundler analyze the code and apply optimization techniques such as code splitting for creating smaller chunks and tree shaking to eliminate unused code.  
 
 However, in certain cases the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
-
-### Changing Compiler Configuration
-
-Some compilers, such as Typescript and React Typescript, are supporting changing the configuration. Otherwise, you need to [fork the compiler](/docs/building-components#where-is-the-code-compiled) and change the code.  
-Changing the configuration works according to [overriding rules](/docs/overrides#overriding-rules).  
-
-To change the configuration for the compiler add it to the package.json for the workspace or under the overrides. Under the `env` key change the compiler to be as follow:  
-
-```json
-"bit.envs/compilers/react-typescript": {
-    "rawConfig": {
-        "tsconfig": {
-            "compilerOptions": {
-                "target": "ES5",
-                "module": "CommonJS"
-            }
-        }
-    }
-}
-```
 
 ## Working with VCS (git)
 
