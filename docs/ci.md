@@ -136,11 +136,12 @@ In `.gitlab-ci.yml` run the script that [generates the file for the user](#gener
 
 Add the BIT_TOKEN as [environment variable](https://docs.gitlab.com/ee/ci/variables/)
 
-### Github actions
+### GitHub actions
 
-Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in Github.
+Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in GitHub.
 
-In the Github workflow file create a step before npm install section:
+In the GitHub workflow file create a step before npm install section:
+
 ```bash 
 - name: init bit.dev
   run: |
