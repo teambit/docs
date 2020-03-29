@@ -18,7 +18,7 @@ Deploying a complete micro-frontend for a piece of the application can be very u
 As an example, the *User Management Team* wants to share a `userAvatar` component showing some information (such as if the user is online), so other teams can use the `userAvatar` inside the different parts of their applications.  
 One possible solution is to implement `userAvatar` as a separate project and package it as a dedicated NPM package published to a registry. This option is useful for a small number of medium-sized components but can incur high costs for a large amount of smaller components shared by each team.
 
-## Benefits of using Bit for sharing components between frontends
+## Benefits
 
 Micro-frontend business-oriented teams can use Bit to deploy components that are business-specific and encompass the dedicated business logic.
 
