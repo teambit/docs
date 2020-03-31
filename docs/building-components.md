@@ -11,6 +11,24 @@ Bit is building the code in isolation. Creating an isolated component environmen
 The isolation directory is called "capsule". Bit creates the capsule in a directory under the temp directory and performs the build task in this directory. The compiler returns the compiled files to Bit that stores with the component.  
 The officially maintained compilers are stored in the [bit/envs](https://bit.dev/bit/envs) collection. Issues regarding any of the compilers can be [reported here](https://github.com/teambit/envs).
 
+### Target platform
+
+Typically, the component code needs to be transpiled to work in the browser. Inside a project, the building tools are responsible for the compilation / transpilation.  
+
+Most of Bit compilers generate the following:  
+
+- JS syntax ES2015 (ES6)
+- Module system as [ES Modules](https://flaviocopes.com/es-modules/)
+
+Typically, projects tooling is doing two things:  
+
+- Transpiles code in the source code folder (very often this is called `src`) with tools such as babel or Typescript
+- Bundles the code into chunks using tools like webpack or rollup. The bundlers bundle the source code, assets, and packages code, that is already compiled.  
+
+The Bit compiler generates code that the hosting project can bundle without the need to compile it. The ES Module format lets the bundler analyze the code and apply optimization techniques such as code splitting for creating smaller chunks and tree shaking to eliminate unused code.  
+
+However, in certain cases the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
+
 ## Defining a Compiler
 
 To define a compiler to your workspace, you should import the compiler using the following command:  

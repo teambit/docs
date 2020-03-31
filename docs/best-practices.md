@@ -5,6 +5,8 @@ title: Best Practices
 
 Below you can find some guidelines that can help make Bit an efficient tool in your organization:  
 
+Check out the [Reusable components styleguide](https://github.com/Tallyb/reusable-components-styleguide) to learn how to make your components more robust for sharing.
+
 ## Component Completeness
 
 Components should have a [sole responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle). In other words, a component represents a clear and meaningful functionality.  
@@ -20,7 +22,7 @@ Two methods to define peerDependencies for Bit components:
 - Define the dependency in the authoring project. Bit [dependency algorithm](/docs/dependencies#dependencies) takes the package as peer dependency.
 - Provide [override rules](/docs/overrides) for setting the packages as peer dependencies.
 
-You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has and verify the dependencies are marked as peers.   
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has and verify the dependencies are marked as peers.  
 
 ## Use Namespaces
 
@@ -172,25 +174,6 @@ To make encapsulation easy, it is better to use micro-state, that follow the [Si
 For example, Current-User can be a shared component that has both UI and a state. The component can export a state, a Context class, a Redux reducer or a Mobx observable.  
 However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects.  
 
-## Compiling and testing components
-
-Typically, the component code needs to be transpiled to work in the browser. Inside a project, the building tools are responsible for the compilation / transpilation. 
-Bit compiler is associated with a component (or a set of components) and is running the compilation tasks according to the framework (e.g., React, Vue) and language flavor (e.g., vanilla Javascript, Typescript, Flow) used.  
-
-Most of Bit compilers generate the following:  
-
-- JS syntax ES2015 (ES6)
-- Module system as [ES Modules](https://flaviocopes.com/es-modules/)
-
-Typically, projects tooling is doing two things:  
-
-- Transpiles code in the source code folder (very often this is called `src`) with tools such as babel or Typescript
-- Bundles the code into chunks using tools like webpack or rollup. The bundlers bundle the source code, assets, and packages code, that is already compiled.  
-
-The Bit compiler generates code that the hosting project can bundle without the need to compile it. The ES Module format lets the bundler analyze the code and apply optimization techniques such as code splitting for creating smaller chunks and tree shaking to eliminate unused code.  
-
-However, in certain cases the defaults mentioned above are unsuitable. For example, if the code is rendered on the server, using Node (up to version 12). Node cannot import the ES Modules format code and require the format to be in CommonJS. If the code is loaded directly from a CDN (using a script tag), it needs to be in UMD format. To support older browsers (read: IE6), you may want to transpile to ES5 and not to ES6.  
-
 ## Working with VCS (git)
 
 It is recommended to commit the following to your VCS (e.g., git) from your [workspace](/docs/workspace):  
@@ -200,18 +183,6 @@ It is recommended to commit the following to your VCS (e.g., git) from your [wor
 - Optionally, you can commit imported components, but you can also restore them from the server. However, any changes made to local components after they are imported and are not re-exported to the server should be committed.  
 
 The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default, it is created under the `git` folder, so they are gitignored.  
-
-## Prefer Using Package Managers
-
-Unless you need to change components, prefer installing components using package managers. This simplifies a project's structure by fetching the code in its distributed form. Treating components as any other external package simplifies a project's build process as well.
-
-## Prefer Ejecting Sourced Components
-
-Sourcing a component should be temporary. Use this feature for modification purposes. After the modification, tag a new version, share and eject it from the project. Ejecting a component removes the source code from a project, replacing it with a node module.
-
-## Defer From Ejecting Local Components
-
-Ejecting components from their source project is tempting. Ejecting a component from its project complicates the project's maintenance. It turns the component into a dependency and not an integral part of the project. Use `bit import` to sync these components with remote changes.
 
 ## Build Components for Discovery
 
