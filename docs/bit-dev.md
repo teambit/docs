@@ -29,6 +29,9 @@ Bit.dev server provides these functions:
 <a href="#component-changes-prs">
     <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200">
 </a>
+<a href="#integrations-and-notifications">
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/integrations.svg" alt="Integrations and notifications" width="250" height="200">
+</a>
 </div>
 
 ## Remote collections hosting
@@ -99,6 +102,18 @@ BitdevBot is a Github bot ensuring projects contain the latest versions of the c
 The automated dependency management let component consumers get a simplified process in their projects. Instead of checking for updates and creating PRs for the components, they get a ready-made PR with all their updates. The PRs are acting as push notifications when changes occur. If the repository is associated with a CI / CD process, the PR triggers a CI process, so the user can know upfront if the update causes an app break.  
 Library maintainers can track the adoption of new components and their updates and communicate with the project owners if they did not apply the changes in their projects.  
 
-> Version bumping pull requests are only available for bit.dev organizations
+> Components PRs are available for bit.dev organization accounts only.
 
 Read more about the [PRs integration](https://blog.bitsrc.io/announcing-auto-github-prs-for-component-version-bumping-74e7768bcd8a)
+
+## Integrations and notifications
+
+Bit.dev lets you get notified and trigger additional activities when changes are made in the component collections. Bit.dev integrations are triggered when components are:  
+
+- Exported to the collection (`bit export <collection name>`)
+- Imported from the collection (`bit import <collection name>`)
+- Removed from the collection (`bit remove --remote <component full id>`)
+
+On each of this actions, a slack message can be sent to a designated channel, or a webhook can be triggered to a specific URL. Webhooks can include a token in their header.  
+
+> Integration and notifications are available for Bit.dev organization accounts only.
