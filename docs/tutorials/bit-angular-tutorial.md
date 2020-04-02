@@ -10,6 +10,8 @@ title: Bit for Angular
 Bit lets you share and sync components between different projects and applications.  
 In this tutorial, we'll share an Angular component between two projects.
 
+This tutorial supports Angular 9. Check the repository readme for other versions. 
+
 ### Prior Knowledge
 
 This tutorial assumes that you are familiar with:
@@ -241,7 +243,7 @@ $ bit export <username>.angular-tutorial
 exported 1 components to scope <username>.angular-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/angular-tutorial`. You can also visit the component created for this demo on: https://bit.dev/bit/angular-tutorial
+The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/angular-tutorial`. You can also visit the component created for this demo on: https://bit.dev/learn-bit/angular-tutorial
 
 At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
@@ -306,7 +308,7 @@ The `app.module.ts` should look like this:
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ProductListModule } from '@bit/bit.angular-tutorial.product-list';
+import { ProductListModule } from '@bit/<username>.angular-tutorial.product-list';
 
 @NgModule({
     declarations: [
@@ -330,7 +332,7 @@ Modify the `app.component.html` and replace its contents with:
 
 **Save the example**
 
-In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/angular-tutorial/product-list).
+In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/learn-bit/angular-tutorial/product-list).
 
 On the component's page, you can also see the different commands available for installing this component using yarn or npm. You can copy the npm command; we are going to use it very soon. 
 
@@ -428,7 +430,7 @@ After the confirmation message that the workspace was initialized, run the follo
 ```bash
 $ bit import <username>.angular-tutorial/product-list
 successfully imported one component
-- added bit.angular-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
+- added learn-bit.angular-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
 ```
 
 > Notifications on missing core dependencies are ok. You should already have those packages in your project. 
