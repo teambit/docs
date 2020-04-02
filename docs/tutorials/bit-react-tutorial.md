@@ -466,7 +466,7 @@ modified components
      > product-list ... ok
 ```
 
-Tag and export the component as a new version. By default this is a semver `patch` version: 
+Tag and export the component as a new version. By default this is a semver `patch` version:  
 
 ```bash
 $ bit tag product-list
@@ -486,7 +486,7 @@ $ bit export <username>.react-tutorial
 exported 1 components to scope <username>.react-tutorial
 ```
 
-Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground.
+Head to the component page on [bit.dev](https://bit.dev/). Here you can see that the component has a new version. The changes are also visible on the component playground. You can see an example [here](https://bit.dev/learn-bit/react-tutorial/product-list?version=0.0.2)
 
 ## Get Component Updates
 
