@@ -201,8 +201,8 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Advanced": "Advanced",
       "Components": "Components",
+      "Advanced": "Advanced",
       "bit.dev": "bit.dev",
       "Reference": "Reference",
       "Extending Bit": "Extending Bit",
