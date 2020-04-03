@@ -4,19 +4,14 @@ title: Angular Guidelines
 sidebar_label: Angular
 ---
 
-> **Angular support is in public beta.**  
-> Everything should work fine, but please do share any issues and feedback: support@bit.dev
-
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds Angular specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
-
-Angular sharing was tested on Angular 8 version and requires Node 10.9+ which is Angular 8 pre requisite. Bit should be compliant with prior versions that are ng-packagr compliant.
 
 *Note: Try the [Bit for Angular tutorial](https://docs.bit.dev/docs/tutorials/bit-angular-tutorial)*.
 
 ## Angular Compiler
 
 Each Bit component is linked with a compiler. The Bit compiler is compiling or transpiling the source code to build files that can run in another project.
-The officially supported Angular Compiler can be found [here](https://bit.dev/bit/envs/compilers/angular). This compiler is based on the [ng-packagr project](https://github.com/ng-packagr/ng-packagr), the same project used by Angular CLI to build Angular libs. The compiler is compiling the Angular typescript to AOT (Ahead of Time) code. The build results are in the Angular Package Format (APF), for smooth importing into any Angular project.
+The officially supported Angular Compiler can be found [here](https://bit.dev/bit/envs/compilers/angular). This compiler is based on the [ng-packagr project](https://github.com/ng-packagr/ng-packagr), the same project used by Angular CLI to build Angular libs. The compiler is compiling the Angular typescript to AOT (Ahead of Time) code. The build results are in the Angular Package Format (APF), for smooth importing into any Angular project. Angular compiler should be compliant with versions 8 and 9 of Angular. 
 
 To install the Angular compiler run:  
 
@@ -69,20 +64,15 @@ And the related HTML:
 The template above is using the *ngFor directive. You probably know that `*ngFor` is an Angular directive defined in Angular `CommonModule`. In your project's app's Module you probably declared `CommonModule` as an `import` of the App Module. However, you cannot assume that the consuming project already has this Module in its imports section. Declaring the component in a dedicated HeroModule makes it more shareable. You don't have to rely on the consuming project to import certain modules. Angular's modules system is ensuring that only a single instance is created.  
 The ngModule provides the compilation context for any Angular entity. Having a component outside the NgModule is missing the context as the compiler can't compile. The compilation will be impacted by the imported project/module which may lead to ambiguous results. Wrapping all your exported entities in an ngModule simplify its isolation and also makes sure that the compilation is correct.
 
-## Specify the module.ts file as the Component Entry Point
+## Component Entry point
 
-When creating a bit component that has the module as the entry point, it should be added with the `--main` option.  
-Adding your component should be done as follow:  
-
-```bash
-bit add src/app/my-comp  --main src/app/my-comp/my-comp.module.ts
-```
-
-If your components have a consistent structure, you can add multiple ngModules as bit components by using the [Bit DSL](/docs/add-and-isolate-components.html#tracking-dsl), by specifying this command:  
+The component entry point should follow the [ngPackagr guidelines for entry points](https://github.com/ng-packagr/ng-packagr/blob/master/docs/entry-file.md). The component entry point, e.g. `public_api.ts` file should be marked as the main file of the component: 
 
 ```bash
-bit add src/app/components/*/ --main 'src/app/components/{PARENT}/{PARENT}.module.ts'
+bit add src/app/my-comp  --main src/app/my-comp/public_api.ts
 ```
+
+If your component contains multiple exports, such as a module and a service, an entry point file is mandatory, otherwise an error like `'default' is not exported by <file name>` might be thrown.
 
 ## Share Independent Units as a Single Bit Component
 
