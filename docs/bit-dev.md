@@ -114,6 +114,8 @@ Bit.dev lets you get notified and trigger additional activities when changes are
 - Imported from the collection (`bit import <collection name>`)
 - Removed from the collection (`bit remove --remote <component full id>`)
 
-On each of this actions, a slack message can be sent to a designated channel, or a webhook can be triggered to a specific URL. Webhooks can include a token in their header.  
+On each of this actions, a **Slack** message can be sent to a designated channel, or a **Webhook** can be triggered to a specific URL. Webhooks can include a token in their header.  
 
 > Integration and notifications are available for Bit.dev organization accounts only.
+
+Read more about the [Slack integration](https://blog.bitsrc.io/optimizing-collaboration-between-distributed-front-end-teams-82ba14ce21f9).
