@@ -11,6 +11,11 @@ Working in Bit revolves around workspaces. A workspace contains information abou
 
 Initialize Bit workspace by running [`bit init`](/docs/apis/cli-all#init) command. The folder in which the workspace was initialized, is set as the workspace root.
 
+```shell
+$ cd project-directory
+$ bit init
+```
+
 Initializing Bit workspace adds the following resources to a project:  
 
 - workspace configuration (bit config)
