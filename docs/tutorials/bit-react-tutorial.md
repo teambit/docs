@@ -29,7 +29,7 @@ To run this tutorial, clone and setup the React tutorial project: https://github
 ```bash
 git clone https://github.com/teambit/bit-react-tutorial
 cd bit-react-tutorial
-yarn 
+yarn
 ```
 
 ### What Will You Learn?
@@ -236,7 +236,7 @@ $ bit export <username>.react-tutorial
 exported 1 components to scope <username>.react-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/react-tutorial`. You can also visit the component created for this demo on: https://bit.dev/bit/react-tutorial
+The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/react-tutorial`. You can also visit the component created for this demo on: https://bit.dev/learn-bit/react-tutorial
 
 At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
@@ -283,7 +283,7 @@ import './styles.css';
 
 **Save the example**
 
-In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/bit/react-tutorial/product-list).
+In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/lean-bit/react-tutorial/product-list).
 
 On the component's page, you can also see the different commands available for installing this component using yarn or npm. You can copy the yarn command; we are going to use it very soon. 
 

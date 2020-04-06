@@ -253,7 +253,7 @@ Use Bit’s playground to create and save examples for components.
 ### Using the Playground
 
 To see the component playground, click on any of the component cards. For this example, we'll use the `badge` component. Find it and click on the card. In the component page, scroll to see the full view of the component playground.  
- 
+
 The playground runs a [create-react-app](https://github.com/facebook/create-react-app) dev server, so all you need to do to create an example is write React code and CRA will render it. If you need to add any dependencies to the example code (component or package), simply `import` them: the playground will install them.
 
 Copy the example code from here to the playground of the `badge` component (fix the `import` statements according to your collection name):
