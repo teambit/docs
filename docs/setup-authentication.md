@@ -97,6 +97,17 @@ bit config set user.name "mickey mouse"
 bit config set user.email mickey@example.com
 ```
 
+## Authenticate without Installing bit CLI
+
+It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
+To do that run the following command:  
+
+```bash
+npm login --registry=https://node.bit.dev --scope=@bit
+```
+
+After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.  
+
 ## Authentication issues
 
 Several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message:
