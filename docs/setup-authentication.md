@@ -85,6 +85,17 @@ Follow the steps below to generate SSH keys:
 
 A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev).
 
+## Authenticate without Installing bit CLI
+
+It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
+To do that run the following command:  
+
+```bash
+npm login --registry=https://node.bit.dev --scope=@bit
+```
+
+After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.  
+
 ## Configure local Bit client
 
 To set your username and email in Bit, use the [bit config command](/docs/apis/cli-all#config).
@@ -96,17 +107,6 @@ To set your username and email in Bit, use the [bit config command](/docs/apis/c
 bit config set user.name "mickey mouse"
 bit config set user.email mickey@example.com
 ```
-
-## Authenticate without Installing bit CLI
-
-It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
-To do that run the following command:  
-
-```bash
-npm login --registry=https://node.bit.dev --scope=@bit
-```
-
-After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.  
 
 ## Authentication issues
 
