@@ -33,11 +33,13 @@ Package registries and tools like NPM and Yarn help to manage distributable arti
 
 ## Is Bit the same as Storybook?
 
+Storybook is a wonderful tool for visually developing and documenting components. 
+
 Storybook is a fantastic aid tool for visually developing components in simulated isolation and creating visual documentation for components based on their stories.
 
-Bit facilitates a full lifecycle of components development. Bit tracks changes to the components, package them for distribution, merge code changes, track versions, and showcase them on a cloud hub.  
+Bit is how you (and your team) can create, manage and collaborate on components in your applications. It facilitates the full lifecycle of component development: Bit tracks changes to the components, packages them for distribution, merges code changes, tracks versions, and showcases them on a cloud hub.  
 
-Through bit.dev, the components are not only put on display but can also be directly consumed.  
+Through bit.dev, the components are not only put on display but can be directly managed and consumed.  
 
 Storybook and Bit can live separately or side by side. For example, Bit can be used to isolate, build, test, and publish multiple components from a repository. Storybook can provide the visual development environment for the component prototyping to create examples that leverage the component discovery experience in bit.dev.
 
