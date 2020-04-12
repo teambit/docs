@@ -29,6 +29,67 @@ the following component environments were installed
 - bit.envs/compilers/vue@0.0.7
 ```
 
+## Styling components
+
+This technique is useful when you want to create a customized theme based on some standard UI library. The example is using Bootstrap, but the same method can apply to other UI libraries (Bulma, Element, etc.)
+In the authoring environment (such as the design library), create CSS files customized to your needs.  
+For example, you can create customized colors:  
+
+```css
+# styles/variables.scss
+$primary:                    #42a17d;
+$secondary:                  #434352;
+```
+
+Create a global css file that contains the global styles: 
+
+```css
+# styles/global.scss
+@import url('https://fonts.googleapis.com/css?family=Comic+Neue:100,300,400,500,600,700&display=swap');
+font-family: 'Comic Neue', cursive;
+@import "~bootstrap/scss/_variables.scss";
+@import "./variables.scss";
+```
+
+> Note that partials (files starting with `_`) are included with the actual name, including the `_`.  
+
+Create an index file that imports the global variables: 
+
+```js
+//styles/index.js
+export * from './global.scss';
+```
+
+Add the files as a Bit component:  
+
+```bash
+bit add styles/index.js styles/global.scss styles/variables.scss --main styles/index.js --id styles
+```
+
+The command above creates a component called styles with all the different styles included in it.  
+
+Next, tag and export your component. Let's assume we exported to a user called "me" and to a collection called "my".  
+
+To include all the styles in your consuming application, import the component in your main.js:  
+
+```js
+//main.js
+import "@bit/me.my.styles";
+```
+
+To use a variable in one of the components in the consuming application: 
+
+```html
+<style lang="scss">
+@import "~@bit/me.my.styles/variables";
+#app {
+  background: $primary;
+}
+</style>
+```
+
+You canso Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) and [styles](/docs/best-practices#handling-styles) for more information.
+
 ## Vue Tester
 
 Each Bit component may be linked with a tester that will run the unit tests of the compiler. Vue testers are still WIP.  
@@ -36,7 +97,3 @@ Each Bit component may be linked with a tester that will run the unit tests of t
 ## Sharing Components with VueX
 
 Read [here](/docs/best-practices#state-managers) for suggestion on how to share components that use state managers.  
-
-## Handling Assets and Styles
-
-Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
