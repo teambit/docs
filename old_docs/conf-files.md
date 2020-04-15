@@ -52,7 +52,7 @@ During the versioning process, Bit saves the current component configuration as 
 Components in a project usually require the same build/test configuration and tooling. The various default pipelines for build and test are defined in the `env` parameter of the workspace configuration.
 When we set a [build](/docs/building-components.html) or [test](/docs/testing-components.html) environment Bit sets them as default for the components tracked in the workspace. You can open your `package.json` file after setting a compiler and see the result.
 
-```sh
+```shell
 $ bit import bit.envs/compilers/babel
 $ cat package.json
 ...
@@ -111,7 +111,7 @@ Bit uses component configuration to create an environment for imported component
 
 To see a component's configuration, import a component, locate its `package.json`, and in it the `bit` key. For example, run the `import` command and print the `package.json`:
 
-```bash
+```shell
 $ bit import bit.utils/array/diff
 $ cat components/array/diff/package.json
 {

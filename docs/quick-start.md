@@ -56,7 +56,7 @@ This guide will teach you how to start with Bit and run a simple workflow for sh
 
 If you are using node 8.12 and above, you can use NPM or Yarn to install bit:
 
-```bash
+```shell
 npm install bit-bin -g
 ```
 
@@ -66,7 +66,7 @@ If you are not using Nodejs 8.12 and above, see reference to other [installation
 
 To share components from a project, you should initialize Bit in that project:
 
-```bash
+```shell
 bit init
 ```
 
@@ -106,13 +106,13 @@ To start tracking components in Bit, use the `add` command. Once the component h
 Start tracking components in the project. A good candidate for tracking is a component that is clearly defined and isolated.  
 Use the `bit add` command to track a component:
 
-```bash
+```shell
 bit add src/components/my-component.ts --id my-component
 ```
 
 You can track multiple components at once:
 
-```bash
+```shell
 bit add src/components/*
 ```
 
@@ -138,7 +138,7 @@ Bit components are consumable in other projects in one of two ways:
 
 To build the component and create build artifacts, you need to define a compiler for the components you share from your project. A compiler is also a component itself, so we use the `bit import` command to import it into our project:
 
-```bash
+```shell
 $ bit import bit.envs/compilers/babel --compiler
 the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
@@ -157,7 +157,7 @@ the following component environments were installed
 If you [track test files](/docs/add-and-isolate-components#track-a-component-with-testspec-files) for your components, you can define a testing framework Bit will use to run them.
 A bit tester, like a compiler, is a tool provided as a component:
 
-```bash
+```shell
 $ bit import bit.envs/testers/mocha --tester
 the following component environments were installed
 - bit.envs/testers/mocha@0.0.7
@@ -183,7 +183,7 @@ Bit locks the state of the component's files and its dependency graph. The tagge
 When tagging components, Bit first runs the build and test tasks for the components.  
 You can use the `--all` flag to tag all the components that changed in the workspace.
 
-```bash
+```shell
 $ bit tag --all 1.0.0
 3 components tagged | 3 added, 0 changed, 0 auto-tagged
 added components: components/button@1.0.0, components/login@1.0.0, components/logo@1.0.0
@@ -202,7 +202,7 @@ Alternatively, you can use [bit.dev](https://bit.dev) cloud hosting to share com
 
 [Run bit login](/docs/apis/cli-all#login) to your own server or to bit.dev (if you are already logged in the browser, bit login will automatically log in to that account).
 
-```bash
+```shell
 $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
@@ -219,7 +219,7 @@ You now have a collection. On bit.dev you can see the export command that you wi
 
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
-```bash
+```shell
 $ bit export user-name.collection-name
 exported 3 components to collection user-name.collection-name
 ```
@@ -234,13 +234,13 @@ You can now use Npm or Yarn to install the components. The component will be ins
 
 If using NPM or Yarn, NPM should configure Bit as a scoped registry (Bit automatically configure it when doing bit login):
 
-```bash
+```shell
 npm config set @bit:registry https://node.bit.dev
 ```
 
 Then install components with your favorite package manager using the install command on the component’s page. [Example](https://bit.dev/mui-org/material-ui/button):
 
-```bash
+```shell
 npm i @bit/mui-org.material-ui.button
 ```
 
@@ -261,7 +261,7 @@ The updated component can now be tagged and re-exported so that other consumers 
 Because Bit isolates components and decouples them from the repository, you can develop Bit components from any repository in your codebase.  
 To develop a component from the [consuming repository](/docs/sourcing-components) use the `bit import` command:
 
-```bash
+```shell
 bit import mui-org.material-ui/button
  ```
 
@@ -290,7 +290,7 @@ When a component is updated with a new version in the collection, every reposito
 
 With Bit, when a component is imported and modified inside a project, it still receives modifications made to the original component. Updates can be obtained in the original project as well as any project that imported the component. This helps teams sync changes when developing components from different projects.
 
-```bash
+```shell
 bit import mui-org.material-ui/button
 bit checkout mui-org.material-ui/button --interactive-merge
  ```

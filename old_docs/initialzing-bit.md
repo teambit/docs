@@ -7,7 +7,7 @@ Initializing Bit on a repository allows you to track and share components.
 
 Initialize a Bit workspace on a project by running the [bit init](/docs/apis/cli-all#init) command a project’s root directory.
 
-```bash
+```shell
 cd project-root
 bit init
 ```
@@ -18,7 +18,7 @@ Initializing Bit adds resources to a project: [bit config](#bit-config), [.bitma
 
 If an error caused data corruption, add the `--reset` flag to `bit init`.
 
-```bash
+```shell
 bit init --reset
 ```
 
@@ -30,7 +30,7 @@ The local storage stores Bit objects (components, versions, etc.). Bit manages i
 
 To force Bit not to nest the local storage in `.git`, use the `--standalone` flag:
 
-```bash
+```shell
 bit init --standalone
 ```
 

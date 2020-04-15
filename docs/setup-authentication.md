@@ -22,7 +22,7 @@ Use [bit login](/docs/apis/cli-all#login) to generate an authentication token fo
 
 To authenticate your Bit client, run the following command:
 
-```bash
+```shell
 $ bit login
 Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
@@ -33,7 +33,7 @@ The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account
 
 bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:  
 
-```bash
+```shell
 bit login --machine-name=ci_server
 ```
 
@@ -90,7 +90,7 @@ A new item is added to the SSH key list. This means that you are now connected v
 It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
 To do that run the following command:  
 
-```bash
+```shell
 npm login --registry=https://node.bit.dev --scope=@bit
 ```
 
@@ -103,7 +103,7 @@ To set your username and email in Bit, use the [bit config command](/docs/apis/c
 - If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
 - If no configuration values are defined for Bit, it falls back to read the values from `git config`.
 
-```bash
+```shell
 bit config set user.name "mickey mouse"
 bit config set user.email mickey@example.com
 ```
@@ -119,7 +119,7 @@ To see if that's the case, try and connect to the Bit remote server directly. If
 
 Make sure you have telnet installed, and run the following command. If you get the response bellow, you have access to your account with SSH.  
 
-```sh
+```shell
 $ telnet hub.bit.dev 22
 Trying 104.154.25.145...
 Connected to hub.bit.dev.
@@ -167,7 +167,7 @@ Check for the location of the private SSH key that is either configured to your 
 Check if the SSH agent process is running correctly, and you key is configured.  
 Run these command to start the process and add the correct private key.
 
-```bash
+```shell
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 ```

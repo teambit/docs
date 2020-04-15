@@ -37,7 +37,7 @@ You can see the final result [here](https://bit.dev/digiaonline/react-foundation
 
 The first step is to [install bit](/docs/installation.html). For this example we'll be using [brew](https://brew.sh)- ([see additional installation methods](/docs/installation.html)). After installing Bit, create your Bit account using the `bit login` command.
 
-```bash
+```shell
 $ brew install bit
 $ bit login
 ```
@@ -50,7 +50,7 @@ $ bit login
 
 Now that you have Bit installed and authenticated, clone the [React Foundation](https://github.com/digiaonline/react-foundation) library from GitHub and install its dependencies.
 
-```bash
+```shell
 $ git clone git@github.com:digiaonline/react-foundation.git
 $ cd react-foundation
 $ npm install
@@ -65,7 +65,7 @@ Bit tracks sets of files as components. When tracking components, it's important
 * `test/components` is a directory containing a spec file for each component. All files have the same naming convention of `<component-name>-spec.js`.
 * `test/utils-spec.js` is a small module containing some utility functions for running tests.
 
-```bash
+```shell
 ├── package.json
 ├── src
 │   ├── components
@@ -88,7 +88,7 @@ Now that you are familiar with the project, use Bit to turn it into a component 
 
 To start using Bit in this project, you first need to initialize a Bit workspace. In the root directory of the project run the [init](/docs/apis/cli-all#init) command:
 
-```bash
+```shell
 $ bit init
 successfully initialized a bit workspace.
 ```
@@ -101,7 +101,7 @@ In addition, there's a hidden directory that stores all of Bit's objects and dat
 
 You should be committing your progress with Bit to an SCM (git). The only files that Bit requires you to commit are `.bitmap` and the modified `package.json` file. These files keep Bit in sync with Git so it can track and manage changes to components. The additional `bit` hidden directory is not meant to be committed.
 
-```bash
+```shell
 $ git add .bitmap
 $ git commit -am "initialized an emtpy bit workspace"
 [master a4eddaa] bit initialized for project
@@ -115,7 +115,7 @@ Now that you have a Bit workspace, you can start creating Bit components. For th
 
 In this library, every component is a file. Run the `bit add` command to mark each file as a separated component and mark its test files.
 
-```bash
+```shell
 $ bit add src/components/* -t 'test/components/{FILE_NAME}-spec.js'
 tracking 24 new components
 ```
@@ -131,7 +131,7 @@ We'll break down this `add` command syntax:
 
 After tracking all components in the project, the next step is to see if Bit is able to model components from them. To confirm the status of all components in a workspace, run the [status](/docs/apis/cli-all#status) command:
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -159,7 +159,7 @@ Bit traverses all tracked files to form a dependency graph for each component. A
 
 Run these commands to track the additional files:
 
-```bash
+```shell
 $ bit add src/enums.js  --namespace internal
 tracking component internal/enums:
 added src/enums.js
@@ -177,7 +177,7 @@ added test/utils-spec.js
 
 Now Bit can traverse every dependency graph in its entirety and model all components. Run `bit status` to confirm:
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -194,7 +194,7 @@ The project we are now sharing components from is using [Babel](https://babeljs.
 To do the same for the individual components, you can add extensions to components to handle such tasks. More specifically, Bit uses a [build extension](/docs/building-components.html) to transpile code.  
 There is already an [extension](https://bit.dev/bit/envs/compilers/react) designed for transpiling React components. Run this command to configure it:
 
-```bash
+```shell
 $ bit import bit.envs/compilers/react --compiler
 the following component environments were installed
 - bit.envs/compilers/react@0.0.14
@@ -216,7 +216,7 @@ This command not only installs the `compilers/react` extension, but it also sets
 
 Now we can tag the tracked components with a version. This locks each component's dependency graph and state in an immutable package. Run this command to version all components:
 
-```bash
+```shell
 $ bit tag --all 0.9.6 --message "initial component version"
 26 components tagged | 26 added, 0 changed, 0 auto-tagged
 added components:  accordion@0.9.6, badge@0.9.6, ...
@@ -229,7 +229,7 @@ You might have noticed that during the tagging process Bit ran the build task we
 Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a collection](https://bit.dev/~create-collection).  
 Now that you have a collection, run this command:
 
-```bash
+```shell
 $ bit export <account-name>.<collection-name>
 exported 26 components to scope <account-name>.<collection-name>
 ```
@@ -296,7 +296,7 @@ All components exported to Bit are available to install using any node package m
 
 Create a new project directory and install the `badge` component with npm:  
 
-```bash
+```shell
 $ cd ..
 $ mkdir test-install
 $ cd test-install
@@ -313,7 +313,7 @@ A key part of the workflow of using Bit as a component monorepo is the ability t
 
 Let's assume that we are working as a developer that has no familiarity with Bit and see how we can propose a modification for a component without any interaction with Bit. First, create a new feature branch to manage the change.
 
-```bash
+```shell
 $ cd ../react-foundation
 $ git checkout -b update-component
 Switched to a new branch 'update-component'
@@ -321,7 +321,7 @@ Switched to a new branch 'update-component'
 
 Open and edit `src/components/top-bar.js`. Now make a modification to one of the comments in the file and commit the change.
 
-```bash
+```shell
 $ open src/components/top-bar.js
 # modify a comment, and save changes
 $ git commit -am 'update comment in top-bar'
@@ -333,7 +333,7 @@ Now you have a branch with a modification to a component. In a distributed Git w
 
 With a change on another branch, head back to the `master` branch and merge changes.
 
-```bash
+```shell
 $ git checkout master
 Switched to branch 'master'
 $ git merge update-component
@@ -341,7 +341,7 @@ $ git merge update-component
 
 Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote collection. This is similar to performing a `git pull` before merging.
 
-```bash
+```shell
 $ bit import
 successfully imported 26 components
 - up to date <account-name>.<collection-name>/accordion
@@ -351,7 +351,7 @@ successfully imported 26 components
 
 All components are in-sync, so you can continue with the process of versioning their changes. Start by figuring out how the modification to `src/components/top-bar.js` is reflected in the components.
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -369,7 +369,7 @@ We also see that Bit notifies us that `responsive` will also be tagged with a ne
 
 Trigger the entire versioning process by tagging a new version:
 
-```bash
+```shell
 $ bit tag --all --patch --message 'update top-bar comments'
 2 components tagged | 0 added, 1 changed, 1 auto-tagged
 changed components:  <account-name>.<collection-name>/top-bar@0.9.7
@@ -378,14 +378,14 @@ auto-tagged components (as a result of tagging their dependencies):  <account-na
 
 Now publish both updated components:
 
-```bash
+```shell
 $ bit export <account-name>.<collection-name>
 exported 2 components to scope <account-name>.<collection-name>
 ```
 
 Commit the changes to `.bitmap` back to the code repository.
 
-```bash
+```shell
 $ git commit -am 'update top-bar'
 ```
 
@@ -393,7 +393,7 @@ $ git commit -am 'update top-bar'
 
 If a project depends on components that have been updated, run `npm updated` to have your package manager install the updated dependencies.
 
-```bash
+```shell
 $ npm update
 ```
 
@@ -412,7 +412,7 @@ To automate the process of publishing new versions during CI, authenticate the C
 2. [Create an SSH key pair and upload to the account's SSH keys](/docs/setup-authentication.html#authenticate-bit-using-ssh-key-pair).
 3. Run these commands to configure the Bit client for export:
 
-```bash
+```shell
 bit config set analytics_reporting <true/false>
 bit config set error_reporting <true/false>
 bit config set user.name <your name here>
@@ -422,7 +422,7 @@ bit config set ssh_key_file <location of the private SSH key>
 
 Once the server is configured with the correct account, add these steps to your CI to export all modified components from the code repository (after the code has been cloned to the server):
 
-```bash
+```shell
 bit init
 bit import
 bit tag --all <--patch,--minor,--major>
@@ -440,7 +440,7 @@ To install Bit components in your application during CI, you need to configure t
 2. The token will be available for you in your `~/.npmrc` file.
 3. Set a secret to your CI environment variable called `BIT_NODE_TOKEN`. This step differs from one CI to another. Consult your CI provider’s documentation to understand how to do it. An abstract way of configuring the client is running this command:
 
-```bash
+```shell
 $ echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
 $ echo "//node.bit.dev/:_authToken={$BIT_NODE_TOKEN}" >> ~/.npmrc
 ```

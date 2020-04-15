@@ -13,7 +13,7 @@ Let’s merge the local and remote changes of `string/contains`:
 
 Fetch remote changes with `bit import` (as explained [here](/docs/updating-sourced-components.html)):
 
-```bash
+```shell
 $ bit import
 successfully imported 2 components
 - up to date bit.example/string/is-string
@@ -22,7 +22,7 @@ successfully imported 2 components
 
 A new version is available for `string/contains`. `bit status` shows this as well:
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -38,7 +38,7 @@ modified components
 
 In this case, we have also local modifications made to `string/contains`. To start the merge process, we need to checkout the latest version:
 
-```bash
+```shell
 $ bit checkout 1.0.1 string/contains
 successfully switched bit.example/string/contains to version 1.0.1
 
@@ -49,7 +49,7 @@ auto-merged src/contains/contains.js
 
 Bit uses `git merge` to auto-merge the both versions.
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -67,7 +67,7 @@ When Git can’t resolve a conflict between components, you need to resolve the 
 
 Let's go back to the previous example. This time the versions cannot be auto-merged:
 
-```bash
+```shell
 bit checkout 1.0.5 user.checkout/string/pad-left
 automatic merge has failed for component user.checkout/string/pad-left.
 please use "--manual" to manually merge changes or use "--theirs / --ours" to choose one of the conflicted versions
@@ -75,7 +75,7 @@ please use "--manual" to manually merge changes or use "--theirs / --ours" to ch
 
 The first two options are straightforward. It's a decision between keeping our local modifications or use the incoming changes. let’s resolve the conflict using `--manual` option.
 
-```bash
+```shell
 $ bit checkout 1.0.5 bit.example/string/pad-left --manual
 
 successfully run npm install at /Users/user/Bit/test/src/pad-left
@@ -90,7 +90,7 @@ CONFLICT src/pad-left/pad-left.js automatic merge failed. please fix conflicts m
 To resolve the conflicts within the specified file, Bit will open the merge tool configured in Git.  
 Once we resolve the merge, we can run `bit status` and see the result:
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -103,7 +103,7 @@ modified components
 We may encounter a merge conflict, if we tagged a new version and exported it. Let's resolve such conflict.  
 The example shows a sourced component `pad-left`, tagged as `1.0.5`. It also has a remote version of `1.0.5`. Trying to import the remote version to merge the changes between them won't work. Bit cannot import a version that already exists:
 
-```bash
+```shell
 $ bit import
 error: merge conflict occurred while importing the component bit.example/string/pad-left. conflict version(s): 1.0.5
 to resolve it and merge your local and remote changes, please do the following:
@@ -114,7 +114,7 @@ to resolve it and merge your local and remote changes, please do the following:
 
 To resolve the conflict, `untag` the component’s local version.
 
-```bash
+```shell
 $ bit untag bit.example/string/pad-left 1.0.5
 1 component(s) were untagged:
 bit.example/string/pad-left. version(s): 1.0.5
@@ -122,7 +122,7 @@ bit.example/string/pad-left. version(s): 1.0.5
 
 Next, `import` the remote version.
 
-```bash
+```shell
 $ bit import
 successfully imported one component
 - updated bit.example/string/pad-left new versions: 1.0.5
@@ -130,7 +130,7 @@ successfully imported one component
 
 Next, `checkout` the component’s latest version to the project's workspace. Resovle merge conflicts as they occur.
 
-```bash
+```shell
 $ bit checkout 1.0.5 string/pad-left
 successfully switched bit.example/string/pad-left to version 1.0.5
 
@@ -141,7 +141,7 @@ auto-merged src/pad-left/pad-left.js
 
 Now `tag` a new version for the component.
 
-```bash
+```shell
 $ bit tag --all
 ```
 

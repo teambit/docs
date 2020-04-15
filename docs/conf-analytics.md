@@ -23,7 +23,7 @@ Error messages and commands may contain private information such as the name of 
 
 > If you want to unmask information, as this would help to better triage issues, you can do it by simply changing the default value of the `anonymous_reporting` configuration to `false`:
 >
-> ```bash
+> ```shell
 > bit config set anonymous_reporting false
 > ```
 
@@ -64,7 +64,7 @@ Bit’s detailed analytics are accessible only to Bit’s current maintainers. [
 
 Bit analytics helps us maintainers and leaving it on is appreciated. By default, Bit *does not* track your usage and errors. However, if you have opted-in and wish to opt out of Bit analytics, you can unset the `analytics_reporting` and `error_reporting` configuration variables:
 
-```bash
+```shell
 bit config set analytics_reporting false
 bit config set error_reporting false
 ```

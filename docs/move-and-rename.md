@@ -15,12 +15,12 @@ Instead of renaming a component, you can [deprecate](/docs/apis/cli-all#deprecat
 
 First, deprecate the component:
 
-```bash
+```shell
 $ bit deprecate exampleuser.utils/string/pad-left
 ```
 
 Then, copy all the files to a new location and add a new component.
 
-```bash
+```shell
 $ bit add src/utils/pad-left-rename/pad-left.js --id string/pad-left-rename
 ```

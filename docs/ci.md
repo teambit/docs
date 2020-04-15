@@ -16,7 +16,7 @@ If you are using an existing user's token, follow the steps described [here](/do
 
 Login with the CI user to get the user's token:  
 
-```bash
+```shell
 bit config get user.token
 ```
 
@@ -41,7 +41,7 @@ When trying to install a @bit component on a CI or deployment server (CircleCI, 
 
 **NPM**
 
-```bash
+```shell
 failed running npm install at /Users/user/devenv/example-npm-error/components/utils/string/pad-left
 npm ERR! code E404
 npm ERR! 404 Not Found: @bit/bit.utils.string.pad-left@0.0.1
@@ -49,7 +49,7 @@ npm ERR! 404 Not Found: @bit/bit.utils.string.pad-left@0.0.1
 
 **Yarn**
 
-```bash
+```shell
 failed running yarn install at /Users/user/devenv/example-npm-error/components/utils/string/pad-left
 error An unexpected error occurred: "https://registry.yarnpkg.com/@bit%2fbit.utils.string.pad-left: Not found".
 ```
@@ -64,7 +64,7 @@ The error is solved by making sure that one of the `.npmrc` files has the config
 
 You can add a `.npmrc` in your project with the following:  
 
-```bash
+```shell
 @bit:registry=https://node.bit.dev
 //node.bit.dev/:_authToken=${BIT_TOKEN}
 always-auth=true
@@ -78,7 +78,7 @@ However, this will result that every time you will run npm install in a project 
 
 You can define the BIT_TOKEN in your shell environment parameter, yby running following command, or adding it to the shell configuration:  
 
-```bash
+```shell
 export BIT_TOKEN=$(bit config get user.token)
 ```
 
@@ -88,7 +88,7 @@ export BIT_TOKEN=$(bit config get user.token)
 
 To generate the file dynamically, you need to run the following script (e.g. create a `bit_npm.sh` script):  
 
-```bash
+```shell
 echo "Adding bit.dev to npm registry"
 echo "always-auth=true" >> ~/.npmrc
 echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
@@ -124,8 +124,7 @@ First, add the following to `now.json`:
 
 Then, create a secret with the contents of your `~/.npmrc`.
 
-```sh
-now secrets add my-app-npmrc "$(cat ~/.npmrc)"
+```shellnow secrets add my-app-npmrc "$(cat ~/.npmrc)"
 ```
 
 Note that `my-app-npmrc` is the name of the secret and can be named anything you wish.
@@ -142,7 +141,7 @@ Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-a
 
 In the GitHub workflow file create a step before npm install section:
 
-```bash 
+```shell 
 - name: init bit.dev
   run: |
     echo "Adding bit.dev to npm registry"
@@ -179,7 +178,7 @@ If you need to run a bit command (import or build) you need to install bit-cli o
 
 According to the CI or deployment server, you can install it globally or locally in the project. To install locally on the project, simply add it as a development dependency in your project:  
 
-```bash
+```shell
 npm install -D bit-bin
 ```
 
@@ -187,7 +186,7 @@ npm install -D bit-bin
 
 To configure bit on the server, you need to run the following commands:  
 
-```bash
+```shell
 bit config set analytics_reporting false
 bit config set error_reporting false
 bit config set user.token ${BIT_TOKEN}
@@ -199,19 +198,19 @@ You can do it by committing a `bit-ci.sh` file at the root of your project. Make
 
 To run bit build add an npm script in your package.json:  
 
-```bash
+```shell
 "bit-build": "bit build",
 ```
 
 or  
 
-```bash
+```shell
 "bit-import": "bit import",
 ```
 
 Run the relevant bit command `npm run bit-build` or `npm run bit-import`  before running the project build. For example:
 
-```bash
+```shell
 ./bit-ci.sh
 npm run bit-build
 ...rest of your project build

@@ -12,7 +12,7 @@ Bit supports several methods of documenting components.
 Use a markdown file with the documentation for each component. Bit renders the markdown file contents alongside the component as its documentation.  
 The markdown file should be tracked as part of the component. Use the bit add command we can append a file to a tracked component:
 
-```bash
+```shell
 bit add docs/login.md --id login
 ```
 

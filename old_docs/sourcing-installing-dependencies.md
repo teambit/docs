@@ -7,7 +7,7 @@ Most components have external dependencies and those can be installed in differe
 
 Components can have dependencies - [external packages](/docs/adding-package-dependencies.html) or [other bit components](/docs/adding-file-dependencies.html).
 
-```bash
+```shell
 $ bit install
 ```
 
@@ -59,7 +59,7 @@ The links bit adds to the `node_modules` directory can be overrun by package man
 
 If bit's links were overrun, you can explicitly run [bit link](/docs/apis/cli-all#link) in order to recreate the link.
 
-```bash
+```shell
 $ bit link
 ```
 

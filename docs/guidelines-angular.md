@@ -15,7 +15,7 @@ The officially supported Angular Compiler can be found [here](https://bit.dev/bi
 
 To install the Angular compiler run:  
 
-```bash
+```shell
 $ bit import bit.envs/compilers/angular --compiler
 the following component environments were installed
 - bit.envs/compilers/angular@0.1.2
@@ -68,7 +68,7 @@ The ngModule provides the compilation context for any Angular entity. Having a c
 
 The component entry point should follow the [ngPackagr guidelines for entry points](https://github.com/ng-packagr/ng-packagr/blob/master/docs/entry-file.md). The component entry point, e.g. `public_api.ts` file should be marked as the main file of the component: 
 
-```bash
+```shell
 bit add src/app/my-comp  --main src/app/my-comp/public_api.ts
 ```
 

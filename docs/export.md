@@ -18,7 +18,7 @@ When running `bit export` with no arguments, Bit attempts exporting to the origi
 
 To export all staged components to a single scope or collection, specify a remote collection as a destination:
 
-```bash
+```shell
 $ bit export user.my-collection
 2 components were exported to Collection owner/my-collection
 ```
@@ -27,14 +27,14 @@ Bit exports all staged components to the `owner/my-scope` scope.
 
 To export specific components to a collection add the component ID to the export command:
 
-```bash
+```shell
 $ bit export bit.movie-app hello/world
 component hello/world was exported to Collection bit/movie-app
 ```
 
 You can also use wildcards to export multiple components:  
 
-```bash
+```shell
 bit export owner.my-collection owner.my-collection/*
 # depending on your OS, you may need to wrap the component path with quotes
 ```
@@ -45,14 +45,14 @@ Components exported to Bit are consumable with package managers. Bit allows ejec
 
 To eject a component on export, use [bit export](/docs/apis/cli-all#export) with the `--eject` option:
 
-```bash
+```shell
 $ bit export bit.movie-app --eject
 2 components were exported to Collection bit/movie-app
 ```
 
 To eject a component after export, use [bit eject](/docs/apis/cli-all#eject) command:  
 
-```bash
+```shell
 bit eject hello/world
 ```
 
@@ -62,7 +62,7 @@ EXPERIMENTAL
 
 When a component is exported, you specify the remote scope to export:  
 
-```bash
+```shell
 bit export owner.my-scope my-component
 ```
 
@@ -78,7 +78,7 @@ You can see the scope of the component when running `bit list`. The scope is sho
 
 You can export the same component to additional scopes which are different from the primary scope by specifying:  
 
-```bash
+```shell
 bit export owner.other-scope my-component
 ```
 
@@ -88,7 +88,7 @@ You can change the component primary scope when exporting to another scope by us
 
 When exporting to another scope, you can also export with it all the components that are dependencies of this components with a single command:  
 
-```bash
+```shell
 bit export owner.other-scope my-component --include-dependencies
 ```
 
@@ -98,7 +98,7 @@ All the components that are dependencies, are also exported to the other scope. 
 If you run `bit export scope2.compA --include-dependencies`, 2 components are created in scope2:  
 `scope2.compA` and `scope2.compB`. However, `scope2.compA` still has `scope1.compB` as its dependency. To change scope2.compA to have `scope2.compB` as its dependency run:  
 
-```bash
+```shell
 bit export owner.other-scope my-component --include-dependencies --rewire
 ```
 

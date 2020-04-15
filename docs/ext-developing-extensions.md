@@ -292,7 +292,7 @@ The log will be written into [extensions.log file](/docs/handling-errors#bit-log
 Each extension will get a different logger instance, which contains the extension name as a label. This means you can alter your logger instance without worrying about affecting other extensions.
 Each line in the log file will have the extension name as a prefix:
 
-```bash
+```shell
 [extension-name]: log message.
 ```
 

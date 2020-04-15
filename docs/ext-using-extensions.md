@@ -9,7 +9,7 @@ Using [extensions](/docs/ext-concepts.html) is fairly straightforward. Let's lea
 
 In order to use an extension, just [import](/docs/apis/cli-all#import) it from [bit.dev](https://bit.dev/) or another remote Collection:
 
-```bash
+```shell
 bit import bit.extensions/commands/pack --extension
 ```
 

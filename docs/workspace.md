@@ -66,13 +66,13 @@ The information in the component storage should not be submitted to the VCS as B
 
 To force Bit not to nest the local storage in `.git`, use the `--standalone` flag:
 
-```bash
+```shell
 bit init --standalone
 ```
 
 If an error caused data corruption, you could reset the component's storage by running:
 
-```bash
+```shell
 bit init --reset
 ```
 
@@ -127,7 +127,7 @@ When a component is imported, Bit places it inside the folder defined in workspa
 
 You can override the location for a specific component during the import statement:  
 
-```bash
+```shell
 bit import username.foo/bar --path /path/to/folder
 ```
 
@@ -142,13 +142,13 @@ When generating the file, Bit also adds any information defined in the workspace
 
 You may instruct Bit to skip writing the `package.json` for a file by specifying it during the import command:  
 
-```bash
+```shell
 bit import username.foo/bar --ignore-package-json
 ```
 
 You can also specify that the Bit writes the configuration to a `bit.json` file by specifying a `--conf` option. Add a path to determine the location of the `bit.json` file.  
 
-```bash
+```shell
 bit import username.foo/bar --path /path/to/conf
 ```
 
@@ -185,13 +185,13 @@ When importing a component Bit generates for each component that has dependencie
 
 Bit uses the [preferred package manager](/docs/conf-bit-json#packagemanager) defined in workspace configuration to install the packages. You can pass additional arguments to the package manager by specifying them in the [arguments configuration](/docs/conf-bit-json#packagemanagerargs) passing twice double dashes to the command that executes the package manager such as: 
 
-```bash
+```shell
 bit import foo -- --no-package-lock
 ```
 
 You can skip installing the components altogether by using:  
 
-```bash
+```shell
 bit import username.foo/bar --skip-npm-install
 ```
 
@@ -211,7 +211,7 @@ By default, Bit imports the built artifacts when importing components and places
 
 To skip importing the build files and build them locally run:  
 
-```bash
+```shell
 bit import username.foo/bar --ignore-dist
 ```
 
@@ -230,7 +230,7 @@ Listed here are all possible component states.
 
 No components have pending changes. Either no files are tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
 
-```bash
+```shell
 $ bit status
 nothing to tag or export
 ```
@@ -242,7 +242,7 @@ Components that have been tracked, but not yet tagged.
 Bit tries to to validate if a *new component* can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
-```bash
+```shell
 $ bit status
 new components
   (use "bit tag --all [version]" to lock a version with all your changes)
@@ -256,7 +256,7 @@ All tagged components that are ready to be [exported](/docs/apis/cli-all#export)
 
 Staged component are fully isolated by Bit.
 
-```bash
+```shell
 $ bit status
 staged components
   (use "bit export <remote_collection> to push these components to a remote Collection")
@@ -274,7 +274,7 @@ Modified components are meant to be tagged and set as a new version.
 Bit tries to to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
-```bash
+```shell
 $ bit status
 modified components
   (use "bit tag --all [version]" to lock a version with all your changes)
@@ -287,7 +287,7 @@ modified components
 
 Components with newer versions fetched by `bit import` and available to use. Use [bit checkout](/docs/apis/cli-all#checkout) to start using the newer version.
 
-```bash
+```shell
 $ bit status
 pending updates
   (use "bit checkout [version] [component_id]" to merge changes)
@@ -301,7 +301,7 @@ pending updates
 
 A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove`.
 
-```bash
+```shell
 $ bit status
 deleted components
   these components were deleted from your project.
@@ -314,7 +314,7 @@ deleted components
 
 Component (not in state new) whose at least one of its dependencies is in modified state.  
 
-```bash
+```shell
 $ bit status
 components pending to be tagged automatically (when their dependencies are tagged)
   > string/index ... ok
@@ -326,7 +326,7 @@ components pending to be tagged automatically (when their dependencies are tagge
 
 `bit doctor` is a self diagnosis and healing tool for Bit workspaces. Run:
 
-```sh
+```shell
 bit doctor
 ```
 
@@ -337,7 +337,7 @@ Use this file when opening an issue to the [project repository](https://github.c
 
 Note, before submitting the output you can open it an validate that no sensitive information is submitted. You can clear such information from the file.
 
-```sh
+```shell
 bit doctor --save doctor-results
 ```
 
@@ -363,6 +363,6 @@ The log files are actually [winston logs](https://github.com/winstonjs/winston),
 
 If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the [clear cache command](/docs/apis/cli-all#clear-cache):
 
-```bash
+```shell
 bit clear-cache
 ```

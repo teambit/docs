@@ -30,7 +30,7 @@ This tutorial is based on Angular 8. You need to verify that you have:
 
 To run this tutorial, clone and setup the Angular tutorial project: https://github.com/teambit/bit-angular-tutorial
 
-```bash
+```shell
 $ git clone https://github.com/teambit/bit-angular-tutorial
 $ cd bit-angular-tutorial
 $ npm install
@@ -72,7 +72,7 @@ When you are logged into bit.dev you can create a **collection**. A collection i
 
 Install Bit CLI on your computer using npm:
 
-```bash
+```shell
 $ npm install bit-bin -g
 ```  
 
@@ -80,7 +80,7 @@ Visit [Install Bit](/docs/installing-bit.html) for other installation methods.
 
 If you have Bit installed, verify the installation by running the command:
 
-```bash
+```shell
 $ bit --version
 ```
 
@@ -88,7 +88,7 @@ $ bit --version
 
 Authenticate Bit to your bit.dev account. From the command line run:
 
-```bash
+```shell
 $ bit login
 ```
 
@@ -96,7 +96,7 @@ This will open your browser where you can log into your account. If you are alre
 
 As part of the login process, Bit sets up your local configuration. You can see your configuration by typing:
 
-```bash
+```shell
 $ bit config
 ```
 
@@ -106,7 +106,7 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 
 Switch to the Angular tutorial project directory, and run the Bit initialization command:
 
-```bash
+```shell
 $ bit init
 successfully initialized a bit workspace.
 ```
@@ -137,7 +137,7 @@ To track the product list component, we will need to tell Bit about the componen
 
 For Angular components we also need to specify the component entry point, which in most cases will be the file containing the ngModule. In this case it is the `product-list.module.ts` file. Run the following command:
 
-```bash
+```shell
 $ bit add src/app/product-list  --main src/app/product-list/product-list.module.ts
 tracking component product-list:
 added src/app/product-list/product-list.component.css
@@ -149,7 +149,7 @@ added src/app/product-list/products.ts
 
 When creating new components, you need to make sure that you have properly added all of the files required for the component. Bit can analyze the component for you and verify that all of files are included. You can do that by checking the status of the component:
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -171,7 +171,7 @@ For building the Angular component, you'll need the [Angular compiler](https://b
 
 Install the compiler and run this command inside the Angular tutorial repository:
 
-```bash
+```shell
 $ bit import bit.envs/compilers/angular --compiler 
 the following component environments were installed
 - bit.envs/compilers/angular@0.1.2
@@ -199,7 +199,7 @@ Right now the component lives inside your project and may consume some dependenc
 Bit build is taking place in an **isolated environment** to make sure the process will also succeed on the cloud or in any other project.
 To build your component, run this command inside your Angular project: 
 
-```bash
+```shell
 $ bit build
 ```
 
@@ -211,7 +211,7 @@ With the component properly built, it is now time to share it with the world.
 Components are versioned according to semver standards.
 To tag your component with a version, run the following command:
 
-```bash
+```shell
 $ bit tag --all 0.0.1
 1 component(s) tagged
 (use "bit export [collection]" to push these components to a remote")
@@ -226,7 +226,7 @@ This command tags all the components that are currently staged in Bit. In our ca
 
 You can check the component status (`bit status`) and you'll find the following:
 
-```bash
+```shell
 $ bit status
 staged components
 (use "bit export <remote_scope> to push these components to a remote scope")
@@ -238,7 +238,7 @@ The important thing to notice here is that the component is considered `staged`.
 
 To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as  `<username>.<collection>`:
 
-```bash
+```shell
 $ bit export <username>.angular-tutorial
 exported 1 components to scope <username>.angular-tutorial
 ```
@@ -247,7 +247,7 @@ The component is now visible in your collection on bit.dev. You can access it in
 
 At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
-```bash
+```shell
 $ bit status
 nothing to tag or export
 ```
@@ -283,19 +283,19 @@ The project is automatically recognized as an Angular project.
 
 We will modify the `app.module.ts` file to import our product-list module. Change this line:
 
-```typescript=
+```typescript
 import ProductList from '@bit/<username>.angular-tutorial.product-list';
 ```
 
 to this line:
 
-```typescript=
+```typescript
 import {ProductListModule} from '@bit/<username>.angular-tutorial.product-list';
 ```
 
 Add the module to the Module's `imports` section:
 
-```typescript=
+```typescript
     imports: [
         BrowserModule,
         ProductListModule
@@ -344,13 +344,13 @@ You are now going to create another angular application and use the product-list
 
 If you already have the Angular-cli installed globally you can just run
 
-```bash
+```shell
 $ ng new my-new-app
 ```
 
 If you do not have the angular-cli installed globally and you do not want to install it, you can use [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) to install it temporarily:
 
-```bash
+```shell
 $ npx --package @angular/cli ng new my-new-app
 ```
 
@@ -364,13 +364,13 @@ The component is stored in the Bit registry, so the full path to the component w
 
 Run the install command using npm:
 
-```bash
+```shell
 $ npm install @bit/<username>.angular-tutorial.product-list --save
 ```
 
 The component is now added to your `package.json`: 
 
-```bash
+```shell
 "@bit/<username>.angular-tutorial.product-list": "0.0.1"
 ```
 
@@ -387,7 +387,7 @@ import { ProductListModule } from '@bit/<username>.angular-tutorial.product-list
 
 Add the `ProductListModule` in your app module imports section: 
 
-```typescript=
+```typescript
     imports: [
         BrowserModule,
         ProductListModule
@@ -403,7 +403,7 @@ All that's left now is to add the product-list component to the app html file. Y
 
 Last, but not least, run your application using Angular CLI:
 
-```bash
+```shell
 $ npm run start
 ```
 
@@ -421,13 +421,13 @@ Up until now, the product-list component was only installed (in its built form) 
 
 In order to import the component, initiate the `my-new-app` workspace as a Bit workspace: 
 
-```bash=
+```shell
 $ bit init
 ```
 
 After the confirmation message that the workspace was initialized, run the following command:
 
-```bash
+```shell
 $ bit import <username>.angular-tutorial/product-list
 successfully imported one component
 - added learn-bit.angular-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
@@ -456,7 +456,7 @@ Start your application to make sure it still works. As you'll see, no changes ar
 Let's modify the product-list component.
 Change `components/product-list/product-list.component.ts` to include the following method:
 
-```typescript=
+```typescript
 view() {
     window.alert('The product has been viewed!');
  }
@@ -478,14 +478,14 @@ Change the css to include a margin on the `button`:
 
 Run the Angular application:
 
-```bash
+```shell
  $ npm run start
 ```
 
 The app is not yet changed. That's because the Bit components are compiled by the bit compiler. 
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
-```bash
+```shell
 successfully installed the bit.envs/compilers/angular@0.1.2 compiler
 ```
 
@@ -498,13 +498,13 @@ Your angular project will refresh and you'll now see the changed component with 
 ### Export the Changes
 Next, export the changes done to the component back to [bit.dev](https://bit.dev/). 
 
-```bash
+```shell
 $ bit status
 ```
 
 The product-list component was modified:
 
-```bash
+```shell
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
@@ -514,7 +514,7 @@ modified components
 
 Tag and export the component as a new version. By default this is a semver `patch` version: 
 
-```bash
+```shell
 $ bit tag product-list
 1 component(s) tagged
 (use "bit export [collection]" to push these components to a remote")
@@ -527,7 +527,7 @@ changed components
 
 Export it back to the collection:
 
-```bash
+```shell
 $ bit export <username>.angular-tutorial
 exported 1 components to scope <username>.angular-tutorial
 ```
@@ -544,7 +544,7 @@ Run `bit import` to see if any components were changed (similar to doing git pul
 
 We will see that the product-list component was changed and a new version exists: 
 
-```bash
+```shell
 $ bit import
 successfully imported one component
 - updated <username>.angular-tutorial/product-list new versions: 0.0.2
@@ -553,7 +553,7 @@ successfully imported one component
 The component is downloaded but is not yet changed. 
 Check the workspace status, you will get the following: 
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -567,7 +567,7 @@ pending updates
 
 Merge the changes done to the component to your project. The structure of the command is `bit checkout <version> <component>`. So you run:
 
-```bash
+```shell
 $ bit checkout 0.0.2 product-list
 successfully switched <username>.angular-tutorial/product-list to version 0.0.2
 updated src/app/product-list/product-list.component.css
@@ -581,7 +581,7 @@ Bit performs a git merge. The code from the updated component is now merged into
 
 Run the application again to see it working properly with the updated component: 
 
-```bash
+```shell
 $ npm run start
 ```
 

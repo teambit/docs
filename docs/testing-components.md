@@ -18,7 +18,7 @@ Bit tests components in an [isolated component environment](/docs/how-bit-works#
 Every component can have a tester. Bit uses a global tester configuration for a workspace. Bit propagate the global configuration to each component tracks in that workspace.  
 Configured a global tester with the `--tester` flag when importing a compiler component.
 
-```bash
+```shell
 $ bit import bit.envs/testers/mocha --tester
 the following component environments were installed
 - bit.envs/testers/mocha@0.0.7
@@ -28,7 +28,7 @@ the following component environments were installed
 
 We mark component's test files by using the `--tests` option for `bit add`:
 
-```bash
+```shell
 bit add src/foo.js --tests test/foo-test.js
 ```
 
@@ -38,7 +38,7 @@ For more details about marking files as test files, see [here](/docs/add-and-iso
 
 Use [bit test](/docs/apis/cli-all#test) to test components that have a tester and test files:
 
-```bash
+```shell
 $ bit test foo/bar
 foo/bar
 tests passed

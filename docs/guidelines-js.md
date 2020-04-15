@@ -15,7 +15,7 @@ The guide is appropriate to use with components that are not library specific. T
 To transpile ES6+ code use the [Babel compiler](https://bit.dev/bit/envs/compilers/babel).  
 If you need babel version 6, you can revert to the compiler's v6.0.1.  
 
-```bash
+```shell
 bit import bit.envs/compilers/babel --compiler
 ```
 
@@ -42,7 +42,7 @@ You can use the following testers for plain vanilla code:
 
 To use those testers run:  
 
-```bash
+```shell
 bit import bit.envs/testers/mocha --testers
 ```
 

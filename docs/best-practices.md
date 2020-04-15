@@ -30,7 +30,7 @@ You can use namespaces inside a collection to group related components. Namespac
 
 To track a component under a namespace, add the namespace with a slash on the component's id:  
 
-```bash
+```shell
 $bit add src/utils/my-util.js --id utils/my-utils
 tracking component utils/my-utils:
 added src/utils/my-util.js
@@ -40,7 +40,7 @@ You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to
 
 Specifying a namespace lets you perform actions on multiple components at once:  
 
-```bash
+```shell
 bit tag "utils/*"
 ```
 

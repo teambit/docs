@@ -26,7 +26,7 @@ Now that we know what is an extension, let's dive deeper...
 Some extensions are actually custom Bit commands. Those are useful when there's a need to run a command on a component, in an [isolated environment](/docs/how-bit-works#component-isolation).  
 For example, Let's say we want to pack a component as an npm package - We can create a `pack` extension that defines a Bit command, and then use it as follows:
 
-```bash
+```shell
 bit pack foo/bar
 ```
 

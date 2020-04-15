@@ -23,7 +23,7 @@ The practices described bellow are aimed to work best with this Bit team compile
 
 To install the React Typescript compiler run:  
 
-```bash
+```shell
 $ bit import bit.envs/compilers/react-typescript --compiler
 the following component environments were installed
 - bit.envs/react@0.1.3
@@ -62,7 +62,7 @@ Refer to the general guidelines on how to [handle assets](/docs/best-practices#h
 
 When using SSR framework like Nextjs with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like:  
 
-```bash
+```shell
 SyntaxError: Cannot use import statement outside a module
 SyntaxError: Unexpected identifier
 ```

@@ -13,7 +13,7 @@ There are two types of dependencies, packages and components. We can manage both
 To update a component dependency we need to fetch the new version of the dependency, and have it available in the project's workspace. Bit detects changes to component versions in a workspace, and change dependency trees accordingly. A change in a component's dependency tree makes Bit mark the component as `modified`. `modified` components can tagged and exported as a new version. In this case, the change in the version will be of an up-to-date dependency.  
 Let's see this in action:
 
-```bash
+```shell
 $ bit import bit.example/string/contains # fetch updated version of a component dependency
 successfully imported 1 component
 - updated bit.example/string/contains new versions: 1.0.1
@@ -38,13 +38,13 @@ Tasks like changing a package version or moving a package from `dependency` to a
 
 By default Bit hides the component's `package.json` file. This is to reduce a component's footprint in a project. So the first step of managing dependencies is to have the `package.json` visible for editing. To make the `package.json` visible append `--conf` flag to the `import` command.
 
-```bash
+```shell
 $ bit import <component ID> --conf
 ```
 
 It's possible to append a specific location to which Bit writes the `package.json` file
 
-```bash
+```shell
 $ bit import <component ID> --conf src/random/folder
 ```
 
@@ -54,7 +54,7 @@ To change a version of a package dependency we need to edit the `package.json` o
 First of all, we need to make the component's `package.json` visible. Afterwards change it as needed. Bit tracks changes in the `package.json`, and reflects them as changes in the component. We can then version and export the modified component.  
 Let's follow a simple example:
 
-```bash
+```shell
 $ bit import <component ID> --conf   # fetches the package.json
 $ vim <path to package.json>  # edit package.json
 $ bit status # to see that Bit registered the change
@@ -72,7 +72,7 @@ Bit determines the type of a package dependency [according to how a component us
 The same flow for changing a component version works for this case as well. But unlike it, the change should be moving the package from the `dependencies` list to `peerDependencis`, and vice-versa.  
 Let's follow a simple example:
 
-```bash
+```shell
 $ bit import <component ID> --conf   # fetches the package.json
 $ vim <path to package.json>  # edit package.json
 $ bit status # to see that Bit registered the change

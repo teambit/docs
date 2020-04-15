@@ -12,7 +12,7 @@ The guide is appropriate to use with components that are not library specific. T
 
 To compile typescript code use the [Typescript compiler](https://bit.dev/bit/envs/compilers/typescript).
 
-```bash
+```shell
 bit import bit.envs/compilers/typescript --compiler
 ```
 
@@ -39,7 +39,7 @@ You can use the following testers for plain vanilla code:
 
 To use those testers run:  
 
-```bash
+```shell
 bit import bit.envs/testers/mocha --testers
 ```
 

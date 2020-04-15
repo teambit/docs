@@ -7,7 +7,7 @@ title: CLI Reference
 
 Tracks any set of files as a single or multiple components.
 
-```bash
+```shell
 bit add|a <files> [-i|--id <id>] [-m|--main <main file name>] [-t|--tests <tests>] [-n|--namespace <namespace>] [-e|--exclude <files to exclude>] [-o|--override]
 ```
 
@@ -15,7 +15,7 @@ bit add|a <files> [-i|--id <id>] [-m|--main <main file name>] [-t|--tests <tests
 
 You can track a component based on a single file.
 
-```bash
+```shell
 bit add src/foo/bar.js
 ```
 
@@ -26,7 +26,7 @@ By default, the file name becomes the component name, so the new component's id 
 
 You can track a component based on a whole directory
 
-```bash
+```shell
 bit add src/foo/
 ```
 
@@ -44,7 +44,7 @@ When tracking a component with multiple files, you can specify a custom main fil
 - There is no `index` file - which means bit has no way of determining which file is the main one.
 - You just want to have the last say ;)
 
-```bash
+```shell
 bit add src/foo/ --main bar.js
 ```
 
@@ -54,7 +54,7 @@ This will create a component with the id `foo`, with `bar.js` as the main file (
 
 You can start tracking multiple components at once using a file list - Just mention multiple files with spaces as a separator.
 
-```bash
+```shell
 bit add src/foo/bar.js src/utils/connect.js
 ```
 
@@ -64,7 +64,7 @@ This will create two components: `bar` and `connect`.
 
 You can track files from different places under the same component, by specifying a file list, and the `--id` flag, which specifies a component id.
 
-```bash
+```shell
 bit add src/one/foo.js src/two/bar.js --id name --main src/one/foo.js
 ```
 
@@ -78,7 +78,7 @@ This will create a single component with the id `name` and the files `bar.js` an
 
 You can just override bit's default naming behavior by specifying the `--id` flag.
 
-```bash
+```shell
 bit add src/foo/bar.js --id whatever
 ```
 
@@ -86,7 +86,7 @@ This will create a component with the id `whatever`, instead of `bar`.
 
 You can also specify a namespace.
 
-```bash
+```shell
 bit add src/foo/bar.js --id yeah/whatever
 ```
 
@@ -97,7 +97,7 @@ This will create a component with the id `yeah/whatever`, which is composed of t
 Forgot to add a file to a component? No worries, just add it a late phase.
 Let's say you've got a component whose id is `foo/bar`, with two files: `index.js` and `bar.js`. Now you've got a new file - `new.js`.
 
-```bash
+```shell
 bit add src/foo/new.js --id foo/bar
 ```
 
@@ -117,7 +117,7 @@ This will create two components: `jaja/bar`, `jaja/hi`.
 
 You can use [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to track a single directory as multiple components.
 
-```bash
+```shell
 bit add src/foo/*
 ```
 
@@ -131,14 +131,14 @@ This will create as many components as there are files inside the directory, all
 
 You can use [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to track a each sub-directory as a component.
 
-```bash
+```shell
 bit add src/**/
 ```
 
 This will create a component for each of src's sub-directories (and files).
 For example, let's say this is our file structure:
 
-```bash
+```shell
 └───src
     └───one
         └───index.js
@@ -159,7 +159,7 @@ What happens if the main file in each component has the component/directory name
 
 For example, let's say this is our file structure:
 
-```bash
+```shell
 └───src
     └───one
         └───one.js
@@ -175,7 +175,7 @@ If we'll just track each sub-directory as a component (`bit add src/**/`), bit w
 
 Fortunately enough, you can use our [DSL](https://en.wikipedia.org/wiki/Domain-specific_language), which supports `PARENT` and `FILE_NAME`.
 
-```bash
+```shell
 bit add src/**/ --main '{PARENT}.js'
 ```
 
@@ -185,14 +185,14 @@ This will look for a main file with the same name as the parent directory. The c
 
 You can track multiple components for each sub-directory.
 
-```bash
+```shell
 bit add src/**/*
 ```
 
 This will create a component for each of the files in `src` and in its sub-directories.
 For example, let's say this is our file structure:
 
-```bash
+```shell
 └───src
     └───one
         └───first.js
@@ -208,7 +208,7 @@ The components created will be: `first`, `second`, `third`, `fourth`.
 
 You can specify which files are the test files, so bit can later test the component.
 
-```bash
+```shell
 bit add src/foo/bar.js --tests 'src/foo/bar.spec.js'
 ```
 
@@ -216,7 +216,7 @@ This will create a component with the id `bar`, with two files: `bar.js` as the 
 
 Now, let's say this is our file structure:
 
-```bash
+```shell
 └───src
     └───foo
         └───bar.js
@@ -228,7 +228,7 @@ Now, let's say this is our file structure:
 
 You can specify a whole directory of test files.
 
-```bash
+```shell
 bit add src/foo --tests 'src/foo/tests/*'
 ```
 
@@ -236,7 +236,7 @@ bit add src/foo --tests 'src/foo/tests/*'
 
 Now this is a common one: your code is under `src` directory, and your tests are under `tests` directory:
 
-```bash
+```shell
 └───src
     └───utils
         └───left-pad.js
@@ -255,7 +255,7 @@ Now this is a common one: your code is under `src` directory, and your tests are
 
 Fortunately enough, you can use our [DSL](https://en.wikipedia.org/wiki/Domain-specific_language), which supports `PARENT` and `FILE_NAME`.
 
-```bash
+```shell
 bit add src/**/* --tests 'tests/{PARENT}/{FILE_NAME}.spec.js'
 ```
 
@@ -268,25 +268,25 @@ In order to do that, just use the `--exclude` flag, and exclude whatever you (do
 
 You can exclude a single file.
 
-```bash
+```shell
 bit add src/foo --exclude dont-want.js
 ```
 
 You can exclude a whole directory.
 
-```bash
+```shell
 bit add src/** --exclude src/utils
 ```
 
 You can exclude using [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
 
-```bash
+```shell
 bit add src/**/* --exclude src/**/*.jpg
 ```
 
 You can exclude using a comma-separated-list.
 
-```bash
+```shell
 bit add src/foo --exclude 'dont-want.js,thumb.jpg'
 ```
 
@@ -303,7 +303,7 @@ If not specified, the id will be as follows:
 - When adding a file: *file_name*
 - When adding a directory: *dir_name*
 
-```bash
+```shell
 bit add src/foo/bar.js --id moon/sun/earth
 ```
 
@@ -314,13 +314,13 @@ Will create a component: `moon/sun/earth`.
 Main implementation/index file name.
 If not specified, bit will look for an `index` file.
 
-```bash
+```shell
 bit add src/foo --main bar.js
 ```
 
 You can also use our [DSL](https://en.wikipedia.org/wiki/Domain-specific_language), which supports `PARENT` and `FILE_NAME`.
 
-```bash
+```shell
 bit add src/**/ --main 'src/{PARENT}/{PARENT}.js'
 ```
 
@@ -330,25 +330,25 @@ Specify a test file, test files directory, or tests path using our [DSL](https:/
 
 Track a component with a test file.
 
-```bash
+```shell
 bit add src/foo/bar.js --tests src/foo/bar.specs.js
 ```
 
 Track a component with a directory of test files
 
-```bash
+```shell
 bit add src/foo --tests src/foo/tests/*
 ```
 
 Track a component with a test file from another directory
 
-```bash
+```shell
 bit add src/foo/bar.js --tests "test/{FILE_NAME}.spec.js"
 ```
 
 Track a component with test files from a parallel directory tree
 
-```bash
+```shell
 bit add src/foo/bar.js --tests "test/{PARENT}/{FILE_NAME}.spec.js"
 ```
 
@@ -357,7 +357,7 @@ bit add src/foo/bar.js --tests "test/{PARENT}/{FILE_NAME}.spec.js"
 Component(s) namespace(s). Used mainly when adding multiple components of the same namespace(s).
 You can specify one namespace or multiple ones, separated by a `/` (e.g `namespace1/namespace2`).
 
-```bash
+```shell
 bit add src/foo/bar.js src/second/other.js --namespace moon
 ```
 
@@ -369,25 +369,25 @@ Exclude files, directories and patterns.
 
 You can exclude a single file.
 
-```bash
+```shell
 bit add src/foo --exclude dont-want.js
 ```
 
 You can exclude a whole directory.
 
-```bash
+```shell
 bit add src/** --exclude src/utils
 ```
 
 You can exclude using [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
 
-```bash
+```shell
 bit add src/**/* --exclude src/**/*.jpg
 ```
 
 You can exclude using a comma-separated-list.
 
-```bash
+```shell
 bit add src/foo --exclude 'dont-want.js,thumb.jpg'
 ```
 
@@ -395,7 +395,7 @@ bit add src/foo --exclude 'dont-want.js,thumb.jpg'
 
 override existing component if exists (default = false)
 
-```bash
+```shell
 bit add src/foo/bar.js --override
 ```
 
@@ -403,19 +403,19 @@ bit add src/foo/bar.js --override
 
 Builds a component (or all the project's components) with the configured compiler (in [bit config](/docs/conf-bit-json.html)).
 
-```bash
+```shell
 bit build [-v|--verbose] [-c|--no-cache] [id]
 ```
 
 Build a single component by specifying a component id:
 
-```bash
+```shell
 bit build foo/bar
 ```
 
 Build all components by not specifying a component id:
 
-```bash
+```shell
 bit build
 ```
 
@@ -425,7 +425,7 @@ bit build
 
 Shows npm verbose output for inspection.
 
-```bash
+```shell
 bit build foo/bar --verbose
 ```
 
@@ -433,7 +433,7 @@ bit build foo/bar --verbose
 
 Ignore component dist cache when building component
 
-```bash
+```shell
 bit build --no-cache
 ```
 
@@ -441,7 +441,7 @@ bit build --no-cache
 
 Switch version for components, or restore working component files.
 
-```bash
+```shell
 bit checkout|c [-i|--interactive-merge] [-o|--ours] [-t|--theirs] [-m|--manual] [-r|--reset] [-a|--all] [-v|--verbose] [--skip-npm-install] [--ignore-dist] <version> <component id> <latest>
 ```
 
@@ -460,7 +460,7 @@ Options:
 
 In case a sourced component has a newer version then the one you use in your project, and you want to test it locally before you decide to update.
 
-```bash
+```shell
 $ bit import foo/bar # this will fetch all objects of the component, including newer versions
 $ bit checkout 0.0.3 foo/bar # to replace the working tree of the component
 ```
@@ -469,7 +469,7 @@ $ bit checkout 0.0.3 foo/bar # to replace the working tree of the component
 
 You can list a number of components together in order to use the same version for all of them.
 
-```bash
+```shell
 bit checkout 0.0.3 foo/bar sun/moon
 ```
 
@@ -477,7 +477,7 @@ bit checkout 0.0.3 foo/bar sun/moon
 
 As a quick way to checkout the latest version of a component to the workspace, add the `latest` argument.
 
-```bash
+```shell
 $ bit checkout latest foo/bar
 ```
 
@@ -485,7 +485,7 @@ $ bit checkout latest foo/bar
 
 Use the `--all` to checkout all components in their latest version.
 
-```bash
+```shell
 bit checkout latest --all
 ```
 
@@ -493,7 +493,7 @@ bit checkout latest --all
 
 Revert all changes to `foo/bar` the version `1.0.0`
 
-```bash
+```shell
 bit checkout 1.0.0 foo/bar --reset
 ```
 
@@ -503,7 +503,7 @@ bit checkout 1.0.0 foo/bar --reset
 
 Prompt interactive steps to resolve all conflicts.
 
-```bash
+```shell
 bit checkout --interactive-merge <component_id>
 ```
 
@@ -511,7 +511,7 @@ bit checkout --interactive-merge <component_id>
 
 Triggers the `merge` command to resolve the conflict with the `--ours` flag.
 
-```bash
+```shell
 bit checkout --ours <component_id>
 ```
 
@@ -519,7 +519,7 @@ bit checkout --ours <component_id>
 
 Triggers the `merge` command to resolve the conflict with the `--their` flag.
 
-```bash
+```shell
 bit checkout --theirs <component_id>
 ```
 
@@ -527,7 +527,7 @@ bit checkout --theirs <component_id>
 
 Triggers the `merge` command to resolve the conflict with the `--manual` flag.
 
-```bash
+```shell
 bit checkout --manual <component_id>
 ```
 
@@ -535,7 +535,7 @@ bit checkout --manual <component_id>
 
 Do not install package dependencies of a component when doing a checkout.
 
-```bash
+```shell
 bit checkout --skip-npm-install <component_id>
 ```
 
@@ -543,7 +543,7 @@ bit checkout --skip-npm-install <component_id>
 
 Ignore distribution files of a component when doing a checkout.
 
-```bash
+```shell
 bit checkout --ignore-dist <component_id>
 ```
 
@@ -551,7 +551,7 @@ bit checkout --ignore-dist <component_id>
 
 Checkout all components
 
-```bash
+```shell
 bit checkout latest --all
 ```
 
@@ -559,11 +559,11 @@ bit checkout latest --all
 
 Clears bit's cache from current working machine
 
-```bash
+```shell
 bit clear-cache|cc
 ```
 
-```bash
+```shell
 bit cc
 ```
 
@@ -571,19 +571,19 @@ bit cc
 
 Manages your global Bit configuration.
 
-```bash
+```shell
 bit config [list] | [get <key>] | [del <key>] | [set <key> <val>]
 ```
 
 **List all configurations**
 
-```bash
+```shell
 bit config list
 ```
 
 **Get a specific configuration value**
 
-```bash
+```shell
 bit config get user.name
 ```
 
@@ -591,13 +591,13 @@ Will return your [bit.dev](https://bit.dev) username.
 
 **Set a configuration value**
 
-```bash
+```shell
 bit config set user.name myUserName
 ```
 
 **Delete a configuration value**
 
-```bash
+```shell
 bit config del user.name
 ```
 
@@ -605,19 +605,19 @@ bit config del user.name
 
 Marks a local/remote component as deprecated
 
-```bash
+```shell
 bit deprecate|d [-r|--remote] <ids...>
 ```
 
 **Mark a local component as deprecated**
 
-```bash
+```shell
 bit deprecate foo/bar
 ```
 
 **Mark a remote component as deprecated**
 
-```bash
+```shell
 bit deprecate full.collection-name/foo/bar --remote
 ```
 
@@ -627,7 +627,7 @@ bit deprecate full.collection-name/foo/bar --remote
 
 Deprecate a component from a remote Collection.
 
-```bash
+```shell
 bit deprecate full.collection-name/foo/bar --remote
 ```
 
@@ -635,7 +635,7 @@ bit deprecate full.collection-name/foo/bar --remote
 
 Shows difference between components files.
 
-```bash
+```shell
 bit diff <component IDs> [version]
 ```
 
@@ -643,25 +643,25 @@ bit diff <component IDs> [version]
 
 Runs `diff` for all components in local Collection. Comparing local state in the working tree to the component objets in the Collection.
 
-```bash
+```shell
 bit diff
 ```
 
 **Compare the specified components against their modified states**
 
-```bash
+```shell
 bit diff bit.example/string/pad-left
 ```
 
 **Compare the specified version to used or modified files**
 
-```bash
+```shell
 bit diff bit.example/string/pad-left 1.0.0
 ```
 
 **Compare between two specific versions of a component**
 
-```bash
+```shell
 bit diff bit.example/string/pad-left 1.0.0 2.0.0
 ```
 
@@ -669,7 +669,7 @@ bit diff bit.example/string/pad-left 1.0.0 2.0.0
 
 Diagnose a bit workspace.
 
-```bash
+```shell
 bit doctor [-j|--json] [-s|--save] [--list]
 ```
 
@@ -677,7 +677,7 @@ bit doctor [-j|--json] [-s|--save] [--list]
 
 In case you have an error in any of your commands, run a full diagnosis on the workspace. If any issues are found, a set of instructions to resolve them are presented.
 
-```bash
+```shell
 bit doctor
 ```
 
@@ -685,7 +685,7 @@ bit doctor
 
 Bundle all the workspace alongside Bit's logs and state and prepare it to send to the maintainers for debug.
 
-```bash
+```shell
 bit doctor --save doctor-output
 ```
 
@@ -693,7 +693,7 @@ bit doctor --save doctor-output
 
 Remove components from the local scope and install them by the NPM client.
 
-```bash
+```shell
 bit eject|E <ids...>
 ```
 
@@ -701,7 +701,7 @@ bit eject|E <ids...>
 
 If you used `bit import` to source a component, and want to replace it with its node module:
 
-```bash
+```shell
 bit eject bit/utils/array/sort
 ```
 
@@ -717,25 +717,25 @@ print the results in JSON format
 
 export components to a remote scope.
 
-```bash
+```shell
 bit export [remote] [id...]
 ```
 
 **Export all staged components to the same Collection**
 
-```bash
+```shell
 bit export scope-name
 ```
 
 **Export a specific component to a Collection**
 
-```bash
+```shell
 bit export scope-name component-id
 ```
 
 **Export multiple to a Collection**
 
-```bash
+```shell
 bit export scope-name component-id component-id2
 ```
 
@@ -743,7 +743,7 @@ bit export scope-name component-id component-id2
 
 Replaces the exported components from the local scope with the corresponding packages
 
-```sh
+```shell
 bit export bit.examples string/pad-left --eject
 ```
 
@@ -778,7 +778,7 @@ when exporting to a different scope, replace import/require statements in the so
 
 > Must have graphviz installed on your machine: [Read instructions](https://graphviz.gitlab.io/download/)
 
-```bash
+```shell
 bit graph <component> [-i --image <image>] [-r | --remote] [--all-versions] [--layout <name>]
 ```
 
@@ -802,7 +802,7 @@ Display all components versions not only latest
 
 Imports a component to your project from a remote Collection.
 
-```bash
+```shell
 bit import|i [-t|--tester]  [-c|--compiler] [-x|--extension] [-e|--environment]  [-p|--path <directory>] [-o|--objects] [-d|--display-dependencies] [-O|--override] [-v|--verbose] [--json] [--dist] [--conf] [--ignore-package-json]  [--skip-npm-install] [-m|--merge] [ids...] 
 ```
 
@@ -811,25 +811,25 @@ bit import|i [-t|--tester]  [-c|--compiler] [-x|--extension] [-e|--environment] 
 When importing a component, it will be imported to the default location listed in the [bit config](/docs/conf-bit-json.html).
 Component is imported without its [environments](/docs/ext-concepts.html#extensions-vs-environments) by default.
 
-```bash
+```shell
 bit import username.foo/bar
 ```
 
 In order to import a component to a specific location, use the `--path` flag:
 
-```bash
+```shell
 bit import username.foo/bar --path src/foo
 ```
 
 In order to import a component with its environments, use the `--environment` flag:
 
-```bash
+```shell
 bit import username.foo/bar --environment
 ```
 
 In order to import a component's specific version, use the `@` sign:
 
-```bash
+```shell
 bit import username.foo/bar@1.0.4
 ```
 
@@ -846,7 +846,7 @@ bit import bit.utils/array/*  # import entire namespace
 
 The [bit config](/docs/conf-bit-json.html) contains a list of the project's sourced components. In order to import all of their updated objects (similar to running `git fetch`) at once.
 
-```bash
+```shell
 bit import
 ```
 
@@ -854,7 +854,7 @@ bit import
 
 The [bit config](/docs/conf-bit-json.html) contains the project's [environments](/docs/ext-concepts.html#extensions-vs-environments) ([compiler](/docs/building-components.html) and [tester](/docs/testing-components.html)). In order to import those, don't specify a specific component, and use the `--environment` flag:
 
-```bash
+```shell
 bit import --environment
 ```
 
@@ -862,7 +862,7 @@ bit import --environment
 
 In order to import and set a new [environment](/docs/ext-concepts.html#extensions-vs-environments) for your project's components, use the `--tester` and `--compiler` flags:
 
-```bash
+```shell
 $ bit import bit.envs/compilers/babel --compiler
 $ bit import bit.envs/testers/mocha --tester
 ```
@@ -871,7 +871,7 @@ $ bit import bit.envs/testers/mocha --tester
 
 In order to import a new [extension](/docs/ext-concepts.html#what-is-an-extension) for your project, use the `--extension` flag:
 
-```bash
+```shell
 bit import bit.extensions/commands/pack --extension
 ```
 
@@ -879,7 +879,7 @@ bit import bit.extensions/commands/pack --extension
 
 In order to pass extra arguments to an npm client, place the arguments after `--`.
 
-```bash
+```shell
 bit import -- --production --no-optional
 ```
 
@@ -889,7 +889,7 @@ bit import -- --production --no-optional
 
 Import a tester [environment](/docs/ext-concepts.html#extensions-vs-environments) component
 
-```bash
+```shell
 bit import bit.envs/testers/mocha --tester
 ```
 
@@ -897,7 +897,7 @@ bit import bit.envs/testers/mocha --tester
 
 Show a more verbose output when possible.
 
-```bash
+```shell
 bit import username.foo/bar --verbose
 ```
 
@@ -905,7 +905,7 @@ bit import username.foo/bar --verbose
 
 Return the output as JSON
 
-```bash
+```shell
 bit import username.foo/bar --json
 ```
 
@@ -913,7 +913,7 @@ bit import username.foo/bar --json
 
 Import a compiler [environment](/docs/ext-concepts.html#extensions-vs-environments) component.
 
-```bash
+```shell
 bit import bit.envs/compilers/babel --compiler
 ```
 
@@ -921,7 +921,7 @@ bit import bit.envs/compilers/babel --compiler
 
 Install development [environment](/docs/ext-concepts.html#extensions-vs-environments) dependencies (compiler and tester), or import a component AND its environments.
 
-```bash
+```shell
 bit import -e
 bit import username.foo/bar --environment
 ```
@@ -930,7 +930,7 @@ bit import username.foo/bar --environment
 
 Import components into a specific directory.
 
-```bash
+```shell
 bit import username.foo/bar --path src/foo
 ```
 
@@ -938,7 +938,7 @@ bit import username.foo/bar --path src/foo
 
 Display the imported dependencies
 
-```bash
+```shell
 bit import username.foo/bar --display-dependencies
 ```
 
@@ -946,7 +946,7 @@ bit import username.foo/bar --display-dependencies
 
 Ignore local changes (import a component's new version even though it was changed locally).
 
-```bash
+```shell
 bit import username.foo/bar --override
 ```
 
@@ -954,7 +954,7 @@ bit import username.foo/bar --override
 
 Write dist files (when exist) to the configured directory
 
-```bash
+```shell
 bit import username.foo/bar --dist
 ```
 
@@ -962,7 +962,7 @@ bit import username.foo/bar --dist
 
 Write the component configuration to another file (`bit.json`).
 
-```bash
+```shell
 bit import username.foo/bar --conf
 ```
 
@@ -970,7 +970,7 @@ bit import username.foo/bar --conf
 
 Do not generate package.json for the imported component(s).
 
-```bash
+```shell
 bit import username.foo/bar --ignore-package-json
 ```
 
@@ -978,7 +978,7 @@ bit import username.foo/bar --ignore-package-json
 
 Import an extension components.
 
-```bash
+```shell
 bit import bit.extensions/commands/pack --extension
 ```
 
@@ -986,7 +986,7 @@ bit import bit.extensions/commands/pack --extension
 
 Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates  Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files.  
 
-```bash
+```shell
 bit init [-b|--bare] [-s|--shared <group-name>] [-T|--standalone] [--reset] [--reset-hard] [-c|--compiler] [-t|--tester] [-p|--package-manager] [-d|--default-directory]
 ```
 
@@ -998,7 +998,7 @@ and create the needed directories.
 
 Initializes an empty bit bare Collection.
 
-```bash
+```shell
 bit init --bare
 ```
 
@@ -1006,7 +1006,7 @@ bit init --bare
 
 Adds group write permissions to a Scope properly.
 
-```bash
+```shell
 bit init --shared group-name
 ```
 
@@ -1014,7 +1014,7 @@ bit init --shared group-name
 
 Creates the [component store](/docs/initializing-bit.html#component-store) outside the `.git` directory.
 
-```bash
+```shell
 bit init --standalone
 ```
 
@@ -1022,7 +1022,7 @@ bit init --standalone
 
 Resets Bit to its initial state. Use this in case you have any corrupted data.
 
-```bash
+```shell
 bit init --reset
 ```
 
@@ -1032,7 +1032,7 @@ Removes Bit completely from a local workspace. Use this in case you want to comp
 
 This will delete `.bitmap`, `bit.json` and `.bit`.
 
-```bash
+```shell
 bit init --reset-hard
 ```
 
@@ -1040,7 +1040,7 @@ bit init --reset-hard
 
 Specifies default compiler to used in the workspace
 
-```bash
+```shell
 bit init --compiler @bit/bit.envs.compilers.react-typescript
 ```
 
@@ -1048,21 +1048,21 @@ bit init --compiler @bit/bit.envs.compilers.react-typescript
 
 Specifies default tester to use in the workspace
 
-```bash
+```shell
 bit init --tester @bit/bit.envs.testers.jest
 ```
 
 **--package-manager `<npm | yarn>`**
 Specifies the default package manager to use when installing components. 
 
-```bash
+```shell
 bit init --package-manager yarn  
 ```
 
 **--default-directory `<directory name>`**
 Specifies up the default directory to which components will be imported. 
 
-```bash
+```shell
 bit init --default-directory src/imports
 ```
 
@@ -1072,13 +1072,13 @@ Installs all dependencies for all the sourced components (or for a specific one)
 
 Install all component package dependencies.
 
-```bash
+```shell
 bit install [-v|--verbose] [id]
 ```
 
 **Install dependencies for all the sourced components**
 
-```bash
+```shell
 bit install
 ```
 
@@ -1086,7 +1086,7 @@ This will install all the dependencies for the sourced components.
 
 **Install dependencies for a specific component**
 
-```bash
+```shell
 bit install foo/bar
 ```
 
@@ -1096,7 +1096,7 @@ This will install all the dependencies for a specific component.
 
 In order to pass extra arguments to an npm client, place the arguments after `--`.
   
-```bash
+```shell
 bit import -- --production --no-optional
 ```
 **Options**
@@ -1105,7 +1105,7 @@ bit import -- --production --no-optional
 
 Shows a more verbose output when possible.
 
-```bash
+```shell
 bit install --verbose
 ```
 
@@ -1113,11 +1113,11 @@ bit install --verbose
 
 Generates links to the components in the project's `node_modules`, thus allowing you to import a component using an absolute path. Also generates links to sourced components when they're used as dependencies for other components.
 
-```bash
+```shell
 bit link|b
 ```
 
-```bash
+```shell
 bit link
 ```
 
@@ -1127,25 +1127,25 @@ For more info, see the [Linking components section](/docs/importing-components.h
 
 Shows a list of all available components in a local workspace or a remote Collection.
 
-```bash
+```shell
 bit list|ls [-ids|--ids <ids...>] [-r|--raw] [-s|--scope] [-o|--outdated] [-j|--json] [Collection]
 ```
 
 **List all components in local workspace**
 
-```bash
+```shell
 bit list
 ```
 
 **List all components in a remote Collection**
 
-```bash
+```shell
 bit list [Collection name]
 ```
 
 **Show the local and remote versions of all local components**
 
-```bash
+```shell
 bit list --outdated
 ```
 
@@ -1155,7 +1155,7 @@ bit list --outdated
 
 Show only the specified ids (comma-separated list)
 
-```bash
+```shell
 bit ls username.foo --ids 'bar,foo'
 ```
 
@@ -1163,7 +1163,7 @@ bit ls username.foo --ids 'bar,foo'
 
 Shows raw output (more detailed, less pretty).
 
-```bash
+```shell
 bit ls --raw
 ```
 
@@ -1171,7 +1171,7 @@ bit ls --raw
 
 Shows the local and remote versions of all local components.
 
-```bash
+```shell
 bit ls --outdated
 ```
 
@@ -1179,7 +1179,7 @@ bit ls --outdated
 
 Shows the output in JSON format.
 
-```bash
+```shell
 bit ls --json
 ```
 
@@ -1187,11 +1187,11 @@ bit ls --json
 
 Shows the component's [tag](/docs/apis/cli-all#tag) history.
 
-```bash
+```shell
 bit log <id>
 ```
 
-```bash
+```shell
 bit log foo/bar
 ```
 
@@ -1199,7 +1199,7 @@ bit log foo/bar
 
 Log the CLI into Bit.
 
-```bash
+```shell
 bit login |[-p|--port] <port_id> | --npmrc-path | --skip-registry-config | --suppress-browser-launch
 ```
 
@@ -1207,7 +1207,7 @@ bit login |[-p|--port] <port_id> | --npmrc-path | --skip-registry-config | --sup
 
 Open an authentication session to a remote, and configure your default `.npmrc` file with `@bit` as a scoped registry.
 
-```bash
+```shell
 $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
@@ -1216,26 +1216,26 @@ Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=htt
 
 Open an authentication session to a remote using a different port.
 
-```bash
+```shell
 $ bit login --port 8086
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8086...
 ```
 
 **Do not open a browser for login**
 
-```bash
+```shell
 $ bit login --suppress-browser-launch
 ```
 
 **Do not configure @bit to .npmrc**
 
-```bash
+```shell
 $ bit login --skip-registry-config
 ```
 
 **Configure scoped registry to a non-default .npmrc file**
 
-```bash
+```shell
 $ bit login --npmrc-path ~/my-configuation
 ```
 
@@ -1243,7 +1243,7 @@ $ bit login --npmrc-path ~/my-configuation
 
 **-p, --port**
 
-```bash
+```shell
 $ bit login --port 8086
 ```
 
@@ -1252,13 +1252,13 @@ $ bit login --port 8086
 
 Log the CLI out of Bit.
 
-```bash
+```shell
 bit logout
 ```
 
 **Logout from an account**
 
-```bash
+```shell
 $ bit logout
 succsesfully loged out
 
@@ -1267,25 +1267,25 @@ succsesfully loged out
 
 Join two development histories of a component together.
 
-```bash
+```shell
 bit merge [-o|--ours] | [-t|--theirs] | [-m|--manual] <version> <component_ids>
 ```
 
 **Choose local file modifications to resolve a merge conflict**
 
-```bash
+```shell
 bit merge --ours 0.0.1 foo/bar
 ```
 
 **Choose remote file modifications to resolve a merge conflict**
 
-```bash
+```shell
 bit merge --their 0.0.1 foo/bar
 ```
 
 **Set all conflicted modifications of a file to resolve manually**
 
-```bash
+```shell
 bit merge --manual 0.0.1 foo/bar
 ```
 
@@ -1293,19 +1293,19 @@ bit merge --manual 0.0.1 foo/bar
 
 **-o, --ours**
 
-```bash
+```shell
 bit merge --ours 0.0.1 foo/bar
 ```
 
 **-t, --theirs**
 
-```bash
+```shell
 bit merge --theirs 0.0.1 foo/bar
 ```
 
 **-m, --manual**
 
-```bash
+```shell
 bit merge --manual 0.0.1 foo/bar
 ```
 
@@ -1315,19 +1315,19 @@ bit merge --manual 0.0.1 foo/bar
 Moves a file/directory that's part of a tracked component to a new location.
 This command will update the [.bitmap file](/docs/initializing-bit.html#bitmap) accordingly.
 
-```bash
+```shell
 bit move|mv <from> <to>
 ```
 
 **Move a file that's part of a tracked component**
 
-```bash
+```shell
 bit move src/foo/bar/index.js src/components/new/location/new-file-name.js
 ```
 
 **Move a directory that's part of a tracked component**
 
-```bash
+```shell
 bit move src/foo src/components/new/location/foo
 ```
 
@@ -1335,7 +1335,7 @@ bit move src/foo src/components/new/location/foo
 
 Similar to Git, you can also use `move` to rename files within a component.
 
-```bash
+```shell
 $ bit move <oldDirName> <newDirName>
 $ bit move <oldFileName> <newFileName>
 ```
@@ -1344,13 +1344,13 @@ $ bit move <oldFileName> <newFileName>
 
 Displays, adds and removes remote Collections.
 
-```bash
+```shell
 bit remote [add <url>] | [rm <name>] [-g|--global]
 ```
 
 **Display existing remote Collections**
 
-```bash
+```shell
 bit remote
 ```
 
@@ -1358,13 +1358,13 @@ bit remote
 
 Add a remote to the local workspace.
 
-```bash
+```shell
 bit remote add <url>
 ```
 
 Or add a remote globally
 
-```bash
+```shell
 bit remote add <url> --global
 ```
 
@@ -1372,7 +1372,7 @@ Remote name will be the remote Collection name.
 
 **Remove a remote (from local workspace/global config).**
 
-```bash
+```shell
 bit remote rm <collection-name>
 ```
 
@@ -1380,7 +1380,7 @@ bit remote rm <collection-name>
 
 Removes a component - will delete a specific component and all of its versions. Use this with care. If a component has other components depending on it within the same scope, you will be required to change them so they will not use it (or use the --force flag).
 
-```bash
+```shell
 bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|--track] <ids...>
 ```
 
@@ -1388,7 +1388,7 @@ bit remove|rm [-r|--remote] [-f|--force] [-d|--delete-files] [-s|--silent] [-t|-
 
 In order to remove a component from a [remote Scope](/docs/export.html#create-a-remote-scope), just specify the [full component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) and add the remote flag `--remote`.
 
-```bash
+```shell
 bit remove username.your-scope/foo/bar --remote
 ```
 
@@ -1402,7 +1402,7 @@ What happens in case you're trying to remove a component that's already being us
 
 - When both components are in the same Scope, Bit will prevent you from removing, unless you use the `--force` flag.
 
-```bash
+```shell
 bit remove username.your-scope/foo/bar --force
 ```
 
@@ -1412,7 +1412,7 @@ bit remove username.your-scope/foo/bar --force
 
 In order to remove a component from your [local Collection](/docs/concepts#collection), just specify the [local component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) (meaning - just namespace and name).
 
-```bash
+```shell
 bit remove foo/bar
 ```
 
@@ -1424,7 +1424,7 @@ What happens when other components in your local Scope depend on the removed com
 - If a [new](/docs/workspace#workspace-statuses) component depends on the removed component, removal will go on as planned.
 - If a [staged](/docs/workspace#workspace-statuses) component depends on the removed component, Bit will prevent you from removing, unless you use the `--force` flag.
 
-```bash
+```shell
 bit remove foo/bar --force
 ```
 
@@ -1432,7 +1432,7 @@ bit remove foo/bar --force
 
 When you try to remove a [modified](/docs/workspace#workspace-statuses) component from your local Scope, Bit will prevent you from doing it, unless you use the `--force` flag.
 
-```bash
+```shell
 bit remove foo/bar --force
 ```
 
@@ -1445,13 +1445,13 @@ bit remove foo/bar --force
 Removing a [staged](/docs/workspace#workspace-statuses) component will remove and untrack it (meaning - it will be removed from the [.bitmap file](/docs/initializing-bit.html#bitmap)). 
 If you want Bit to also delete the component files, use the `--delete-files` flag:
 
-```bash
+```shell
 bit remove foo/bar --delete-files
 ```
 
 If, on the other hand, you want to keep tracking it as a [new](/docs/workspace#workspace-statuses) component, use the `--track` flag:
 
-```bash
+```shell
 bit remove foo/bar --track
 ```
 
@@ -1463,7 +1463,7 @@ bit remove foo/bar --track
 
 Accept the `remove` prompt, without using `--force`.
 
-```bash
+```shell
 bit remove foo/bar --silent
 ```
 
@@ -1473,7 +1473,7 @@ bit remove foo/bar --silent
 
 Remove the component from a remote Scope.
 
-```bash
+```shell
 bit remove foo/bar --remote
 ```
 
@@ -1481,7 +1481,7 @@ bit remove foo/bar --remote
 
 Force remove a component, even if Bit prevents it by default.
 
-```bash
+```shell
 bit remove foo/bar --force
 ```
 
@@ -1489,7 +1489,7 @@ bit remove foo/bar --force
 
 Delete the component's files when removing a staged component that hasn't been exported yet.
 
-```bash
+```shell
 bit remove foo/bar --delete-files
 ```
 
@@ -1497,7 +1497,7 @@ bit remove foo/bar --delete-files
 
 Keep tracking the component
 
-```bash
+```shell
 bit remove foo/bar --track
 ```
 
@@ -1505,7 +1505,7 @@ bit remove foo/bar --track
 
 Skip remove confirmation
 
-```bash
+```shell
 bit remove foo/bar --silent
 ```
 
@@ -1513,11 +1513,11 @@ bit remove foo/bar --silent
 
 Shows component overview.
 
-```bash
+```shell
 bit show [-j|--json] [-r|--remote] [-v|--versions <version>] [-o|--outdated] [-c|--compare]
 ```
 
-```bash
+```shell
 bit show foo/bar
 ```
 
@@ -1527,7 +1527,7 @@ bit show foo/bar
 
 Displays a json output.
 
-```bash
+```shell
 bit show foo/bar --json
 ```
 
@@ -1535,7 +1535,7 @@ bit show foo/bar --json
 
 Shows the component overview for a specific version.
 
-```bash
+```shell
 bit show foo/bar --versions 4.3.1
 ```
 
@@ -1543,7 +1543,7 @@ bit show foo/bar --versions 4.3.1
 
 Shows the component's latest version from the remote Collection (if exists).
 
-```bash
+```shell
 bit show foo/bar --outdated
 ```
 
@@ -1551,7 +1551,7 @@ bit show foo/bar --outdated
 
 Compares the component's current file system version to its latest tagged version.
 
-```bash
+```shell
 bit show foo/bar --compare
 ```
 
@@ -1565,17 +1565,17 @@ Does not display components that have already been exported, and components that
 >
 > You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses.html)
 
-```bash
+```shell
 bit status|s [-j, --json]
 ```
 
-```bash
+```shell
 bit status
 ```
 
 Output will be:
 
-```bash
+```shell
 new components
      > foo/bar... ok
 
@@ -1591,7 +1591,7 @@ staged components
 
 Locks the version of a 'new' or 'modified' component(s). Component's status will then be 'staged'. Read about [versioning components](/docs/tag-component-version).
 
-```bash
+```shell
 bit tag|t [id] [version] [-m|--message <message>] [-a|--all] [-s|--scope <collection-name>] [-p|--patch] [-mi|--minor] [-ma|--major] [-f|--force] [-v|--verbose] [-i|--ignore-unresolved-dependencies] [--skip-tests]
 ```
 
@@ -1601,7 +1601,7 @@ bit tag|t [id] [version] [-m|--message <message>] [-a|--all] [-s|--scope <collec
 
 Log message describing the user changes.
 
-```bash
+```shell
 bit tag foo/bar --message 'changed something, but I wont tell you what...'
 ```
 
@@ -1609,7 +1609,7 @@ bit tag foo/bar --message 'changed something, but I wont tell you what...'
 
 Tag all new and modified components
 
-```bash
+```shell
 bit tag -all
 ```
 
@@ -1617,7 +1617,7 @@ bit tag -all
 
 Tag all components of the specified Collection.
 
-```bash
+```shell
 bit tag --scope foo
 ```
 
@@ -1625,7 +1625,7 @@ bit tag --scope foo
 
 Increments the patch version number (even though that's the default behavior, so that's practically redundant).
 
-```bash  
+```shell  
 bit tag foo/bar --patch
 ```
 
@@ -1633,7 +1633,7 @@ bit tag foo/bar --patch
 
 Increments the minor version number.
 
-```bash  
+```shell  
 bit tag foo/bar --minor
 ```
 
@@ -1641,7 +1641,7 @@ bit tag foo/bar --minor
 
 Increments the major version number.
 
-```bash  
+```shell  
 bit tag foo/bar --major
 ```
 
@@ -1649,7 +1649,7 @@ bit tag foo/bar --major
 
 Force tagging even if tests are failing or component hasn't changed.
 
-```bash
+```shell
 bit tag foo/bar --force
 ```
 
@@ -1657,7 +1657,7 @@ bit tag foo/bar --force
 
 Display test results when tagging.
 
-```bash
+```shell
 bit tag foo/bar --verbose
 ```
 
@@ -1665,7 +1665,7 @@ bit tag foo/bar --verbose
 
 Ignore missing package and file dependencies.
 
-```bash
+```shell
 bit tag foo/bar --ignore-unresolved-dependencies
 ```
 
@@ -1673,7 +1673,7 @@ bit tag foo/bar --ignore-unresolved-dependencies
 
 Skip testing components when tagging a new version.
 
-```bash
+```shell
 bit tag --skip-tests
 ```
 
@@ -1681,7 +1681,7 @@ bit tag --skip-tests
 
 Skip tagging dependencies of the tagged components
 
-```bash
+```shell
 bit tag --skip-auto-tag
 ```
 
@@ -1689,19 +1689,19 @@ bit tag --skip-auto-tag
 
 Runs the tests of the specified component(s) using the configured tester.
 
-```bash
+```shell
 bit test|t [-a|--all] [--fork-level] [-v|--verbose] [--include-unmodified] [id]
 ```
 
 **Run tests on all your project's components**
 
-```bash
+```shell
 bit test
 ```
 
 **Run tests on a specific component**
 
-```bash
+```shell
 bit test foo/bar
 ```
 
@@ -1711,7 +1711,7 @@ bit test foo/bar
 
 Shows npm verbose output for inspection.
 
-```bash
+```shell
 bit test foo/bar --verbose
 ```
 
@@ -1719,7 +1719,7 @@ bit test foo/bar --verbose
 
 Test all components in the workspace, including components with no modifications.
 
-```bash
+```shell
 bit test --include-unmodified
 ```
 
@@ -1727,7 +1727,7 @@ bit test --include-unmodified
 
 Reverts tagging of a component(s) - Removes a staged version(s).
 
-```bash
+```shell
 bit untag [id] [version] [-a|--all] [-f|--force]
 ```
 
@@ -1735,14 +1735,14 @@ bit untag [id] [version] [-a|--all] [-f|--force]
 
 Specify a component id.
 
-```bash
+```shell
 bit untag foo/bar
 ```
 
 This will untag all the staged versions of the component.
 You can also specify a specific version to tag.
 
-```bash
+```shell
 bit untag foo/bar 1.0.2
 ```
 
@@ -1750,7 +1750,7 @@ bit untag foo/bar 1.0.2
 
 Specify the `--all` option and a specific version.
 
-```bash
+```shell
 bit untag --all 0.0.4
 ```
 
@@ -1760,7 +1760,7 @@ This will untag all the staged `0.0.4` versions for all the components in the wo
 
 Specify the `--all` option without any further arguments in order to untag all the staged versions for all the components in the workspace.
 
-```bash
+```shell
 bit untag --all
 ```
 
@@ -1770,13 +1770,13 @@ bit untag --all
 
 Untag all the staged versions for all staged components.
 
-```bash
+```shell
 bit untag --all
 ```
 
 Or untag a specific staged version for all staged components.
 
-```bash
+```shell
 bit untag --all 0.0.4
 ```
 
@@ -1784,19 +1784,19 @@ bit untag --all 0.0.4
 
 Untracks a new (not yet tagged) component.
 
-```bash
+```shell
 bit untrack|u [-a|--all] [ids...]
 ```
 
 **Untrack a specific newly-added component**
 
-```bash
+```shell
 bit untrack foo/bar
 ```
 
 **Untrack all newly-added components**
 
-```bash
+```shell
 bit untrack --all
 ```
 
@@ -1804,12 +1804,12 @@ bit untrack --all
 
 Watchs components and perform `build` on changes.
 
-```bash
+```shell
 bit watch|w [-v|--verbose]
 ```
 
 **Build component upon local modifications**
 
-```bash
+```shell
 bit watch
 ```

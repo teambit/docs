@@ -23,7 +23,7 @@ The compiler is generating a [Vue library](https://cli.vuejs.org/guide/build-tar
 
 To install it in your project run:  
 
-```bash
+```shell
 $bit import bit.envs/compilers/vue --compiler
 the following component environments were installed
 - bit.envs/compilers/vue@0.0.7
@@ -62,7 +62,7 @@ export * from './global.scss';
 
 Add the files as a Bit component:  
 
-```bash
+```shell
 bit add styles/index.js styles/global.scss styles/variables.scss --main styles/index.js --id styles
 ```
 

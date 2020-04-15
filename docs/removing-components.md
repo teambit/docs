@@ -11,7 +11,7 @@ Each collection has an internal cache for its dependencies. But this does not me
 
 To remove a component from a remote Collection, specify the full component ID.
 
-```bash
+```shell
 $ bit remove username.your-collection/foo/bar --remote
 successfully removed components:
 username.your-collection/foo/bar
@@ -37,7 +37,7 @@ This is what happens if we remove `left-pad`:
 
 Removing a local component has no ripple effects. This is only relevant to the consuming project. To do so  specify the component ID to remove.
 
-```bash
+```shell
 $ bit remove foo/bar
 successfully removed components:
 foo/bar
@@ -57,7 +57,7 @@ Other components in the workspace may depend on removed components. Meaning that
 
 To deprecate a component in a remote Collection, specify the full component ID and use the `--remote` option.
 
-```bash
+```shell
 $ bit deprecate username.your-collection/foo/bar --remote
 deprecated components: username.your-collection/foo/bar
 ```
@@ -66,7 +66,7 @@ deprecated components: username.your-collection/foo/bar
 
 To deprecate a component in a workspace, specify the component ID.
 
-```bash
+```shell
 $ bit deprecate foo/bar
 deprecated components: foo/bar
 ```

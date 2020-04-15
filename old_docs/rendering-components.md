@@ -87,7 +87,7 @@ import HeroButton from '@bit/bit.movie-app.components.hero-button';
 
 **For an imported component** - [import](/docs/updating-sourced-components.html) the component:
 
-```bash
+```shell
 bit import bit.movie-app/components/hero-button
 ```
 
@@ -103,7 +103,7 @@ Open your IDE and set the compiler id in your component’s `package.json` file:
 **For an authored component** - an authored component is a component which is a part of a full project.
 [Import the compiler](/docs/building-components.html#defining-a-default-compiler-for-your-project) to your project.
 
-```bash
+```shell
 bit import bit.envs/bundlers/webpack -c
 ```
 

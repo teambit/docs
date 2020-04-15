@@ -20,7 +20,7 @@ A Bit server is a host server that hosts one or more bare scopes. That is, scope
 - [Install bit on your server](/docs/installation.html)
 - Create Bit Bare scope:
 
-```bash
+```shell
 su bit
 mkdir /opt/bit
 cd /opt/bit
@@ -50,7 +50,7 @@ It is up for the server deployment to decide on the relevant policy.
 
 To work with the remote scope do the following:  
 
-```bash
+```shell
 mkdir my-project
 cd my-project
 bit init
@@ -61,7 +61,7 @@ bit remote add ssh://bit-username@bit-server:/opt/bit/first-scope
 
 To export components to the remote scope:
 
-```bash
+```shell
 bit export first-scope
 ```
 
@@ -69,7 +69,7 @@ bit export first-scope
 
 to import components stored on the remote scope run:
 
-```bash
+```shell
 bit import first-scope.component-name
 ```
 
@@ -79,7 +79,7 @@ If you have components that depend on components from other scopes, you need to 
 
 Make scope A aware of scope B by adding a scope B as a remote scope in scope A. In scope A run:  
 
-```bash
+```shell
 # If they are on the same machine:
 bit remote add file:///your-scope-a-directory
 ```

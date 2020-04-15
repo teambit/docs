@@ -28,13 +28,13 @@ Bit provides some shortcut commands to make the work more fluent.
 
 To import a component for the first time, i.e. component not yet exists in the workspace, you need to specify the component id:  
 
-```bash
+```shell
 bit import bit.examples/foo
 ```
 
 You can import multiple components at once using glob patterns:  
 
-```bash
+```shell
 # Imports all components in the remote collection
 bit import "<owner>.<collection>/*"
 
@@ -44,7 +44,7 @@ bit import "<owner>.<collection>/<namespace>/*"
 
 You can also specify a specific version to be imported:  
 
-```bash
+```shell
 bit import bit.examples/foo@0.0.11
 ```
 
@@ -63,7 +63,7 @@ At this point the source code of the component exists in the workspace. Running 
 
 If a new version is added on the remote scope, you can import it into the local scope by running:  
 
-```bash
+```shell
 $ bit import
 successfully imported 2 components
 - up to date bit.example/foo
@@ -74,7 +74,7 @@ Bit notifies on any new versions found for the components that exist in the loca
 
 Running `bit status` also shows pending changes for the component:  
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -85,7 +85,7 @@ pending updates
 
 When importing specific component (or components) by their ids, Bit fetches the changes and also checks out the component's code into the workspace. Bit updates the index with the version of the newly fetched component. To fetch only the changes but without checking out the component into the workspace use:  
 
-```bash
+```shell
 bit import foo --objects
 ```
 
@@ -93,7 +93,7 @@ bit import foo --objects
 
 Bit behaves slightly differently when importing changes for a component that was modified locally:  
 
-```bash
+```shell
 $ bit status
 modified components
   > baz... ok
@@ -103,7 +103,7 @@ modified components
 
 When running `bit import` with the component id, Bit imports the changes into the scope, but stops before checking out the component into the workspace. The component now exists in two parallel statues: modified, due to the local changes and pending updates, due to the incoming version:
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -123,7 +123,7 @@ The two options for handling the changes are:
 
 running [`bit checkout`](/docs/apis/cli-all#checkout) checks the latest version (or a version that was specified as the component's version) in the workspace. Bit uses git diff to merge with existing changes. In case of conflicts, Bit notifies and let merge the changes:  
 
-```bash
+```shell
 $ bit checkout 1.0.1 foo
 successfully switched bit.example/foo to version 1.0.1
 
@@ -138,7 +138,7 @@ The component is now on the version that was checked out with the local changes 
 
 Running [`bit merge`](/docs/apis/cli-all#merge) gets the changes from the remote into the component's version that exists in our workspace.
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -148,7 +148,7 @@ modified components
 
 Bit uses [`git merge-file`](https://git-scm.com/docs/git-merge-file) to attempt merging the changes between versions. When trying to merge, conflicts may occur:
 
-```bash
+```shell
 $ bit checkout 1.0.5 bit.example/foo --manual
 successfully run npm install at /Users/user/Bit/test/src/foo
 successfully switched bit.example/foo to version 1.0.5
@@ -167,7 +167,7 @@ If it cannot resolve the conflict, it needs user's guidance to select one of thr
 
 Once we resolve the merge, we can run `bit status` and see the result:
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -180,7 +180,7 @@ modified components
 We may encounter a merge conflict, if we tagged a new version and exported it. Let's resolve such conflict.  
 The example shows a sourced component `foo`, tagged as `1.0.5`. It also has a remote version of `1.0.5`. Trying to import the remote version to merge the changes between them won't work. Bit cannot import a version that already exists:
 
-```bash
+```shell
 $ bit import
 error: merge conflict occurred while importing the component bit.example/string/pad-left. conflict version(s): 1.0.5
 to resolve it and merge your local and remote changes, please do the following:
@@ -191,7 +191,7 @@ to resolve it and merge your local and remote changes, please do the following:
 
 To resolve the conflict, `untag` the component’s local version.
 
-```bash
+```shell
 $ bit untag bit.example/foo 1.0.5
 1 component(s) were untagged:
 bit.example/foo. version(s): 1.0.5
@@ -199,7 +199,7 @@ bit.example/foo. version(s): 1.0.5
 
 Next, `import` the remote version.
 
-```bash
+```shell
 $ bit import
 successfully imported one component
 - updated bit.example/foo new versions: 1.0.5
@@ -207,7 +207,7 @@ successfully imported one component
 
 Next, `checkout` the component’s latest version to the project's workspace. Resolve merge conflicts as they occur.
 
-```bash
+```shell
 $ bit checkout 1.0.5 foo
 successfully switched bit.example/foo to version 1.0.5
 
@@ -218,7 +218,7 @@ auto-merged src/foo/foo.js
 
 Now `tag` a new version for the component.
 
-```bash
+```shell
 bit tag --all
 ```
 

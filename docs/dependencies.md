@@ -16,7 +16,7 @@ For each component, Bit builds a **dependency graph** by analyzing all the depen
 
 Here's an example for a component with a package dependency:
 
-```bash
+```shell
 .
 ├── node_modules
 |   └── left-pad
@@ -56,7 +56,7 @@ In this example, the package `left-pad` is in the project's `node_modules` direc
 
 we track the `hello/world` component:  
 
-```bash
+```shell
 $ bit add src/hello-world.js src/index.js --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -68,7 +68,7 @@ If no package version found in the `package.json` file, Bit resolves it from the
 
 We can see that Bit has resolved the dependency by using [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency:  
 
-```bash
+```shell
 $ bit show hello/world
 ┌───────────────────┬─────────────────────────────────────────────────────────────────────┐
 │        ID         │                            hello/world                              │
@@ -116,7 +116,7 @@ export default function hello(world) {
 export default () => {};
 ```
 
-```bash
+```shell
 $ bit add src/index.js src/hello-world --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -124,7 +124,7 @@ tracking component hello/world:
 
 When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
-```bash{3,4}
+```shell{3,4}
 $ bit status
 new components
      > hello/world... missing dependencies
@@ -140,7 +140,7 @@ The decision on the approach to take is based on the context of the file. If thi
 
 To **add the file to an existing component**, we should run `bit add` pointing to the Id of the component to which we want to add the file:  
 
-```bash
+```shell
 $ bit add src/utils/noop.js --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -150,7 +150,7 @@ tracking component hello/world:
 
 When running [bit status](/docs/apis/cli-all#status) we see that Bit can isolate the component:
 
-```bash
+```shell
 $ bit status
 new components
     > component/hello-world... ok
@@ -158,7 +158,7 @@ new components
 
 To **track the file as a new component** we can run `bit add` with the new component.
 
-```bash
+```shell
 $ bit add src/utils/noop.js --namespace utils
 tracking component utils/noop:
     added src/utils/noop.js
@@ -166,7 +166,7 @@ tracking component utils/noop:
 
 The result is a new component, which is now a dependency of the `hello/world` component. No need to explicitly tell Bit that about a new component. Bit identifies that the file is tracked as a new component and resolves the status of the requiring component.
 
-```bash
+```shell
 › bit status
 new components
      > hello/world... ok
@@ -198,7 +198,7 @@ Some projects use a custom aliases to resolve relative paths. Some common exampl
 When using Custom Module Definition, your code requires files using absolute paths. Bit assumes that requiring absolute paths means that you require a package and not a file. This is why Bit triggers a `missing package dependency` warning.  
 Let's use this example, and update it to use custom module resolution.
 
-```bash
+```shell
 .
 ├── package.json
 └── src

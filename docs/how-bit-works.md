@@ -130,7 +130,7 @@ However, the above name is not usable when installing the components with packag
 `@registry-name.owner.collection.namespace.namespace.short-id`. For components stored on bit.dev, the registry name is always @bit.  
 To use the component in the code, you should import as follow:  
 
-```bash
+```shell
 import { something } from '@bit/owner.collection.namespace.namespace.short-id';
 ```
 

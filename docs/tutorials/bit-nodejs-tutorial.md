@@ -35,7 +35,7 @@ You can see the [final result](https://bit.dev/ramda/ramda).
 
 The first step is to [install bit](/docs/installation.html). For this example we'll be using [brew](https://brew.sh)- ([see additional installation methods](/docs/installation.html)). After installing Bit, create your Bit account using the `bit login` command.
 
-```bash
+```shell
 $ brew install bit
 $ bit login
 ```
@@ -48,7 +48,7 @@ $ bit login
 
 Now that you have Bit installed and authenticated, clone the [RamdaJS](https://github.com/ramda/ramda) project and install its dependencies. For this example, we'll checkout a specific version of Ramda.
 
-```bash
+```shell
 $ git clone git@github.com:ramda/ramda.git
 $ cd ramda
 $ git checkout v0.26.1
@@ -64,7 +64,7 @@ Bit tracks sets of files as components. When tracking components, it's important
 
 For this tutorial, we will skip Ramda's test files.
 
-```bash
+```shell
 .
 ├── package.json
 ├── source
@@ -82,7 +82,7 @@ Now that you are familiar with the project, use Bit to turn it into a component 
 
 To start using Bit in this project, you first need to initialize a Bit workspace. In the root directory of the project run the [init](/docs/apis/cli-all#init) command:
 
-```bash
+```shell
 $ bit init
 successfully initialized a bit workspace.
 ```
@@ -95,7 +95,7 @@ In addition, there's a hidden directory that stores all of Bit's objects and dat
 
 You should be committing your progress with Bit to an SCM (git). The only files that Bit requires you to commit are `.bitmap` and the modified `package.json` file. These files keep Bit in sync with Git so it can track and manage changes to components. The additional `bit` hidden directory is not meant to be committed.
 
-```bash
+```shell
 $ git add .bitmap
 $ git commit -am "initialized an emtpy bit workspace"
 [master a4eddaa] bit initialized for project
@@ -109,7 +109,7 @@ Now that you have a Bit workspace, you can start creating Bit components. For th
 
 In this library, every component is a file. Run the `bit add` command to mark each file as a separate component.
 
-```bash
+```shell
 $ bit add source/*.js
 tracking 256 new components
 ```
@@ -122,7 +122,7 @@ tracking 256 new components
 
 After tracking all components in the project, the next step is to see if Bit is able to model components from them. To confirm the status of all components in a workspace, run the [status](/docs/apis/cli-all#status) command:
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -150,7 +150,7 @@ import _curry2 from './internal/_curry2';
 Bit traverses all tracked files to form a dependency graph for each component. All of a component’s files should be tracked by Bit. When a file Bit tracks requires an untracked file, Bit asks that you track the untracked file as well. [Learn more](/docs/add-and-isolate-components) about the ins and outs of handling component dependencies.  
 Run this command to track the additional files:
 
-```bash
+```shell
 $ bit add source/internal/*.js --namespace internal
 tracking 74 new components
 ```
@@ -163,7 +163,7 @@ tracking 74 new components
 
 Now Bit can traverse every dependency graph in its entirety and model all components. Run `bit status` to confirm:
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -179,7 +179,7 @@ The project we are now sharing components from is using [Babel](https://babeljs.
 You can add extensions to components to handle such tasks. More specifically, Bit uses a [build environment](/docs/building-components.html) to transpile code.  
 Run the extension for transpiling React components: 
 
-```bash
+```shell
 $ bit import bit.envs/compilers/babel --compiler
 the following component environments were installed
 - bit.envs/compilers/babel@0.0.20
@@ -203,7 +203,7 @@ This command not only installs the `compilers/babel` extension, but it also sets
 
 Now we can tag the tracked components with a version. This locks each component's dependency graph and state in an immutable package. Run this command to version all components:
 
-```bash
+```shell
 $ bit tag --all 0.9.6 --message "initial component version"
 330 components tagged | 330 added, 0 changed, 0 auto-tagged
 added components:  t@0.9.6, f@0.9.6, __@0.9.6, add@0.9.6, ...
@@ -216,7 +216,7 @@ You might have noticed that during the tagging process Bit ran the build task we
 Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a collection](https://bit.dev/~create-collection).  
 Now that you have a collection, run this command:
 
-```bash
+```shell
 $ bit export <account-name>.<collection-name>
 exported 26 components to scope <account-name>.<collection-name>
 ```
@@ -240,7 +240,7 @@ The collection page itself is rather simple. You can filter components according
 All components exported to Bit are available to install using any node package manager, such as npm/yarn. If you already ran `bit login` on your computer, Bit has already configured your package manager to be able to fetch components as packages.  
 Create a new project directory and install the `add` component with npm:
 
-```bash
+```shell
 $ cd ..
 $ mkdir test-install
 $ cd test-install
@@ -257,14 +257,14 @@ A key part of the workflow of using Bit as a component monorepo is the ability t
 
 Let's assume that we are working as a developer that has no familiarity with Bit and see how we can propose a modification for a component without any interaction with Bit. First, create a new feature branch to manage the change.
 
-```bash
+```shell
 $ git checkout -b update-component
 Switched to a new branch 'update-component'
 ```
 
 Open and edit `source/internal/_curry2.js`. Now make a modification to one of the comments in the file and commit the change.
 
-```bash
+```shell
 $ open source/internal/_curry2.js
 # modify a comment, and save changes
 $ git commit -am 'update comment in internal/_curry2'
@@ -276,7 +276,7 @@ Now you have a branch with a modification to a component. In a distributed Git w
 
 With a change on another branch, head back to the `master` branch and merge changes.
 
-```bash
+```shell
 $ git checkout master
 Switched to branch 'master'
 $ git merge update-component
@@ -284,14 +284,14 @@ $ git merge update-component
 
 Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote collection. This is similar to performing a `git pull` before merging.
 
-```bash
+```shell
 $ bit import
 successfully imported ...
 ```
 
 All components are in-sync, so you can continue with the process of versioning their changes. Start by figuring out how the modification to `source/internal/_curry2.js` is reflected in the components.
 
-```bash
+```shell
 $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -307,7 +307,7 @@ Bit notices a diff in the contents of the tracked files of the `_curry2` compone
 We also see that Bit notifies us that many other components will also be tagged with a new version. This is because they depend on `_curry2`. When you tag `_curry2`, Bit automatically tags the dependent components. The diff between their versions is an updated dependency graph that contains the new version of `_curry2`.  
 Trigger the entire versioning process by tagging a new version:
 
-```bash
+```shell
 $ bit tag --all --patch --message 'update_curry2 comments'
 2 components tagged | 0 added, 1 changed, 40 auto-tagged
 changed components:  <account-name>.<collection-name>/_curry2@0.9.7
@@ -316,14 +316,14 @@ auto-tagged components (as a result of tagging their dependencies):  <account-na
 
 Now publish both updated components:
 
-```bash
+```shell
 $ bit export <account-name>.<collection-name>
 exported 40 components to scope <account-name>.<collection-name>
 ```
 
 Commit the changes to `.bitmap` back to the code repository.
 
-```bash
+```shell
 $ git commit -am 'update _curry2'
 ```
 
@@ -331,7 +331,7 @@ $ git commit -am 'update _curry2'
 
 If a project depends on components that have been updated, run `npm updated` to have your package manager install the updated dependencies.
 
-```bash
+```shell
 $ npm update
 ```
 
@@ -347,7 +347,7 @@ To automate the process of publishing new versions during CI, authenticate the C
 2. [Create an SSH key pair and upload to the account's SSH keys](/docs/setup-authentication.html#authenticate-bit-using-ssh-key-pair).
 3. Run these commands to configure the Bit client for export:
 
-```bash
+```shell
 bit config set analytics_reporting <true/false>
 bit config set error_reporting <true/false>
 bit config set user.name <your name here>
@@ -357,7 +357,7 @@ bit config set ssh_key_file <location of the private SSH key>
 
 Once the server is configured with the correct account, add these steps to your CI to export all modified components from the code repository (after the code has been cloned to the server):
 
-```bash
+```shell
 bit init
 bit import
 bit tag --all <--patch,--minor,--major>

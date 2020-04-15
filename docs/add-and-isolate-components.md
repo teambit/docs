@@ -46,15 +46,14 @@ Bit sets by default the component name to the folder name. To change it, specify
 
 To track a single component, use the `bit add` command and specify the path to the folder or files of the component. (See comment above regarding tracking files in different folders).
 
-```bash
-bit add src/components/button
+```shell$ bit add src/components/button
 ```
 
 ![add single](https://storage.googleapis.com/static.bit.dev/docs/gifs/add.gif)
 
 To track multiple components, use the `bit add` command and specify the root folder and `/*`. Bit adds each folder as a separate component.  
 
-```bash
+```shell
 bit add src/components/*
 ```
 
@@ -77,7 +76,7 @@ You can specify the test files of the component, by preceding their name with th
 When a folder is tracked by Bit, Bit detects any changes to the files such as adding or removing files and updates the component's tracked files accordingly.  
 To explicitly add files to the component, use the component's id:  
 
-```bash
+```shell
 bit add src/foo.js --id foo/bar
 ```
 
@@ -86,7 +85,7 @@ Use the `--exclude` flag to mark files located in the folder but are not part of
 
 When moving and renaming files outside the component folder, Bit cannot always identify the changes. To ensure Bit tracks moved files use [bit move](/docs/apis/cli-all#move). The command is similar to [git mv](https://git-scm.com/docs/git-mv):  
 
-```bash
+```shell
 # Move file to a new location
 bit move src/foo/bar/index.js src/components/new/location/index.js
 
@@ -103,19 +102,18 @@ Adding component action can be reverted using the [bit untrack](/docs/apis/cli-a
 
 To untrack a single component:  
 
-```bash
-bit untrack hello/world
+```shellbit untrack hello/world
 ```
 
 You can also untrack multiple components by specifying their ids:  
 
-```bash
+```shell
 bit untrack foo/bar foo/baz
 ```
 
 To track all the newly added component use the `--all` flag:  
 
-```bash
+```shell
 bit untrack --all
 ```
 
@@ -135,7 +133,7 @@ The decision between those two options is mostly contextual. Files that are shar
 
 To add a file to the component run:  
 
-```bash
+```shell
 bit add <filename> --id <component id>
 ```
 
@@ -151,8 +149,7 @@ This error may occur in the following cases:
 As described [above](#package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit prompts to install the missing package dependencies.  
 Use your package manager of choice to resolve the issue.
 
-```sh
-npm install
+```shellnpm install
 ```
 
 Alternatively, Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [custom paths resolution](#custom-paths).

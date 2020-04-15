@@ -9,7 +9,7 @@ When we import a component using Bit, it downloads the source code of the compon
 
 For example, if we import and component and then change, we can run `bit status` and see that the component is `modified`.
 
-```bash
+```shell
 $ bit status
 modified components
   > string/pad-left... ok
@@ -19,7 +19,7 @@ modified components
 
 Sharing a modified version of a sourced component is like sharing any modified component. First we need to tag a new version and see that it is isolated. Afterwards we run `bit export` to share the new version.
 
-```bash
+```shell
 $ bit tag string/left-pad
 $ bit export bit.utils
 ```
@@ -35,13 +35,13 @@ It's possible to replace a sourced component with its corresponding node package
 
 To eject a component a component on export:
 
-```bash
+```shell
 bit export bit.examples string/left-pad --eject
 ```
 
 To eject a component after export:
 
-```bash
+```shell
 bit eject string/left-pad
 ```
 

@@ -12,7 +12,7 @@ The update process is a combination of two steps. The first step is to fetch all
 
 Checking for remote changes is not a mandatory step. You can run a quick test to see if there are newer versions for all sourced components. To do this, we run the `bit list` command, with the `--outdated` flag.
 
-```bash
+```shell
 bit list --outdated
 ```
 
@@ -20,7 +20,7 @@ bit list --outdated
 
 To fetch updated versions of all sourced components, run the `bit import` command.
 
-```bash
+```shell
 $ bit import
 successfully imported 2 components
 - up to date bit.example/string/is-string
@@ -29,7 +29,7 @@ successfully imported 2 components
 
 You can also fetch the updated version of a specific component:
 
-```bash
+```shell
 $ bit import bit.example/string/contains
 successfully imported 1 components
 - updated bit.example/string/contains new versions: 1.0.1
@@ -39,7 +39,7 @@ successfully imported 1 components
 
 Use `bit status` to list all pending local updates of all sourced components.
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -53,7 +53,7 @@ pending updates
 We can checkout fetched versions into the workspace. Using `bit checkout`, we tell Bit to switch the component's version in the workspace. If other components depend on a sourced component, updating its version updates their dependency tree.  
 For example:
 
-```bash
+```shell
 $ bit checkout 1.0.1 string/contains
 successfully switched bit.example/string/contains to version 1.0.1
 
@@ -68,7 +68,7 @@ Now `string/contains`'s version in the workspace is `1.0.1`. Bit also updates th
 
 Bit supports comparing between versions of components:
 
-```bash
+```shell
 $ bit diff bit.example/string/contains
 ```
 

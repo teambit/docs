@@ -20,7 +20,7 @@ There are two dependencies a component may have, [Package Dependencies](#package
 Components can `import` external packages. Bit resolves those dependencies.  
 Here's an example for a component with a package dependency:
 
-```bash
+```shell
 .
 ├── node_modules
 |   └── left-pad
@@ -59,7 +59,7 @@ export default function hello(world) {
 In this example, the package `left-pad` is in the project's `node_modules` directory. The package version range is in the project's `package.json` file. The file `hello-world.js` requires the package `left-pad`.   
 Let's track the `hello/world` component and follow Bit's steps to resolve dependencies.
 
-```bash
+```shell
 $ bit add src/hello-world.js src/index.js --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -71,7 +71,7 @@ If no package version found in the `package.json` file, Bit resolves it from the
 
 Verify Bit has resolved all dependencies using [bit status](/docs/apis/cli-all#status).
 
-```bash{3}
+```shell{3}
 $ bit status
 new components
      > component/hello-world... ok
@@ -79,7 +79,7 @@ new components
 
 Use [bit show](/docs/apis/cli-all#show) to check which version Bit has resolved for each package dependency.
 
-```bash
+```shell
 $ bit show hello/world
 ┌───────────────────┬─────────────────────────────────────────────────────────────────────┐
 │        ID         │                            hello/world                              │
@@ -98,7 +98,7 @@ $ bit show hello/world
 
 In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag).
 
-```bash{3,4}
+```shell{3,4}
 $ bit status
 new components
      > hello/world... missing dependencies
@@ -138,7 +138,7 @@ Bit recognizes these files by reading the `import` and `require` statements. Onc
 
 If we encounter an `untracked file dependencies` error, we need to resolve it to isolate the component. First, let's view this example:
 
-```bash
+```shell
 .
 ├── package.json
 └── src
@@ -174,7 +174,7 @@ export default () => {};
 
 Let's track the `hello/world` component:
 
-```bash
+```shell
 $ bit add src/index.js src/hello-world --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -183,7 +183,7 @@ tracking component hello/world:
 
 When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
-```bash{3,4}
+```shell{3,4}
 $ bit status
 new components
      > hello/world... missing dependencies
@@ -198,7 +198,7 @@ There are two ways to resolve this isolation issue.
 We can add untracked file dependencies to an existing component.  
 Let's continue the flow from the [previous section](#untracked-file-dependencies) and append `src/utils/noop.js` to the component. Rerun `bit add`. Track the selected file and set the `--id` to the preexisting component.
 
-```bash
+```shell
 $ bit add src/utils/noop.js --id hello/world
 tracking component hello/world:
     added src/hello-world.js
@@ -208,7 +208,7 @@ tracking component hello/world:
 
 Rerun [bit status](/docs/apis/cli-all#status) and see that Bit can isolate the component.
 
-```bash
+```shell
 $ bit status
 new components
     > component/hello-world... ok
@@ -219,7 +219,7 @@ new components
 We can choose to create a new component from an untracked file dependency. To do this, we need to track the untracked files as a new component. This resolves the missing file dependency issue. Bit then creates a dependency relationship for components with file dependencies between them.  
 Let’s try resolving the prior untracked file dependency, but this time by adding a new component.
 
-```bash
+```shell
 $ bit add src/utils/noop.js --namespace utils
 tracking component utils/noop:
     added src/utils/noop.js
@@ -227,7 +227,7 @@ tracking component utils/noop:
 
 The result is a new component, which is now a dependency of the `hello/world` component.
 
-```bash
+```shell
 › bit status
 new components
      > hello/world... ok
@@ -248,7 +248,7 @@ Some examples for common frameworks that allow Custom Module Definition:
 When using Custom Module Definition, your code requires files using absolute paths. Bit assumes that requiring absolute paths means that you require a package and not a file. This is why Bit triggers a `missing package dependency` warning.  
 Let's use this example, and update it to use custom module resolution.
 
-```bash
+```shell
 .
 ├── package.json
 └── src
@@ -284,7 +284,7 @@ export default () => {};
 
 Now we track the component using this command:
 
-```bash
+```shell
 $ bit add src/index.js src/hello-world --id hello/world
 tracking component hello/world:
     added src/hello-world.js

@@ -18,6 +18,7 @@ window.addEventListener('load', function() {
   
     function addButtons(codeBlockSelector, btn) {
       document.querySelectorAll(codeBlockSelector).forEach(function(code) {
+
         code.parentNode.appendChild(btn.cloneNode(true));
       });
     }
@@ -32,7 +33,8 @@ window.addEventListener('load', function() {
   
     const clipboard = new ClipboardJS('.btnClipboard', {
       target: function(trigger) {
-        return trigger.parentNode.querySelector('code');
+        let el = trigger.parentNode.querySelector('code');
+        return el.classList.contains('language-shell') ? el.querySelector('.bash') : el;
       },
     });
   

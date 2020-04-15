@@ -33,7 +33,7 @@ However, in certain cases the defaults mentioned above are unsuitable. For examp
 
 To define a compiler to your workspace, you should import the compiler using the following command:  
 
-```bash
+```shell
 $ bit import bit.envs/compilers/babel --compiler
 the following component environments were installed
 - bit.envs/compilers/babel@0.0.7

@@ -18,7 +18,7 @@ Defines the path the ssh key files that will be used to log into Bit cloud. If n
 
 The email of the user that will be saved on the component history when a component is tagged. During bit init, the git `user.email` configuration on the machine, if exists, will be copied to the bit `user.email`.  
 
-```bash
+```shell
 bit config set user.email "me@bit.dev"
 ```
 

@@ -13,8 +13,7 @@ Bit has tools to help you troubleshoot common errors during setup and usage of B
 
 Starting from version `14.1.0` Bit features a self diagnosis and healing tool call `bit doctor`. Run this command in case you encounter blocking issues in your workspace.
 
-```sh
-bit doctor
+```shellbit doctor
 ```
 
 The output is a list of all diagnosis that Bit currently implements. If any of the checks has failed, Bit suggests a fix for it.
@@ -24,7 +23,7 @@ Use this file when opening an issue to the [project repository](https://github.c
 
 Note, before submitting the output you can open it an validate that no sensitive information is submitted. You can clear such information from the file.
 
-```sh
+```shell
 bit doctor --save doctor-results
 ```
 
@@ -50,6 +49,6 @@ The log files are actually [winston logs](https://github.com/winstonjs/winston),
 
 If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the [clear cache command](/docs/apis/cli-all#clear-cache):
 
-```bash
+```shell
 bit clear-cache
 ```

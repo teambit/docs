@@ -105,12 +105,16 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'rainbow',
   },
+
+  // siteConfig.js
+  //usePrism: ['shell-session', 'bash', 'js', 'jsx', 'json'],
 
   gaTrackingId: 'UA-89811062-2',
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
+    
     'https://buttons.github.io/buttons.js', {
       src: '/js/mixpanel.js',
       async: true

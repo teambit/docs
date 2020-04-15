@@ -26,7 +26,7 @@ You need to verify that you have:
 
 To run this tutorial, clone and setup the Vue tutorial project: https://github.com/teambit/bit-vue-tutorial
 
-```bash
+```shell
 git clone https://github.com/teambit/bit-vue-tutorial
 cd bit-vue-tutorial
 npm install
@@ -68,7 +68,7 @@ When you are logged into bit.dev you can create a **collection**. A collection i
 
 Install Bit CLI on your computer using npm:
 
-```bash
+```shell
 npm install bit-bin -g
 ```  
 
@@ -76,7 +76,7 @@ Visit [Install Bit](/docs/installing-bit.html) for other installation methods.
 
 If you have Bit installed, verify the installation by running the command:
 
-```bash
+```shell
 bit --version
 ```
 
@@ -84,7 +84,7 @@ bit --version
 
 Authenticate Bit to your bit.dev account. From the command line run:
 
-```bash
+```shell
 bit login
 ```
 
@@ -92,7 +92,7 @@ This will open your browser where you can log into your account. If you are alre
 
 As part of the login process, Bit sets up your local configuration. You can see your configuration by typing:
 
-```bash
+```shell
 bit config
 ```
 
@@ -102,7 +102,7 @@ In addition, Bit adds the npm registry used by Bit to your `npmrc` configuration
 
 Switch to the Vue tutorial project directory and run the Bit initialization command:
 
-```bash
+```shell
 $ bit init
 successfully initialized a bit workspace.
 ```
@@ -131,7 +131,7 @@ Now, we will track the product-list component from the Vue tutorial project. The
 
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. In Vue, a component is typically a single file so we can directly add this file. We also tell Bit to track the file under the id `product-list`
 
-```bash
+```shell
 $ bit add src/components/ProductList --id product-list --main src/components/ProductList/ProductList.vue
 tracking component product-list:
 added src/components/ProductList/ProductList.vue
@@ -143,7 +143,7 @@ When creating new components, you need to make sure that Bit properly tracks all
 
 Our component is using `src/assets/products.js` - Bit will identify it and alert us:  
 
-```bash
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -161,7 +161,7 @@ Bit has a large collection of compilers that are open source and maintained by t
 To build the vue component, you'll need the [Vue compiler](https://bit.dev/bit/envs/compilers/vue).
 Install the compiler and run this command inside the Vue tutorial repository:
 
-```bash
+```shell
 $ bit import bit.envs/compilers/vue --compiler
 the following component environments were installed
 - bit.envs/compilers/vue@0.0.7
@@ -189,7 +189,7 @@ Right now the component lives inside your project and may consume some dependenc
 Bit build is taking place in an **isolated environment** to make sure the process will also succeed on the cloud or in any other project.
 To build your component, run this command inside your Vue project:  
 
-```bash
+```shell
 $ bit build
 ⠅⡘ isolating component - product-list
 ⠧  Building for development as library (commonjs,umd,umd-min)...
@@ -218,7 +218,7 @@ With the component properly built, it is now time to share it with the world.
 Components are versioned according to semver standards.
 To tag your component with a version, run the following command:
 
-```bash
+```shell
 $ bit tag --all 0.0.1
 1 component(s) tagged
 (use "bit export [collection]" to push these components to a remote")
@@ -233,7 +233,7 @@ This command tags all the components that are currently staged in Bit. In our ca
 
 You can check the component status (`bit status`) and you'll find the following:
 
-```bash
+```shell
 $ bit status
 staged components
 (use "bit export <remote_scope> to push these components to a remote scope")
@@ -245,7 +245,7 @@ The important thing to notice here is that the component is considered `staged`.
 
 To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as  `<username>.<collection>`:
 
-```bash
+```shell
 $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
@@ -254,14 +254,14 @@ The component is now visible in your collection on bit.dev. You can access it in
 
 At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
-```bash
+```shell
 $ bit status
 nothing to tag or export
 ```
 
 If you want to see all the components you have you can run:
 
-```bash
+```shell
 $ bit list
 ```
 
@@ -291,13 +291,13 @@ On the component's page, you can also see the different commands available for i
 
 You are now going to create another Vue application and use the product-list component. The fastest way to do that is use the Vue CLI (version 3) to generate a new Application. Switch to a new directory.  
 
-```bash
+```shell
 npx @vue/cli create my-new-vue
 ```
 
 If you already have vue-cli installed globally you can run: 
 
-```bash
+```shell
 vue create my-new-vue
 ```
 
@@ -312,13 +312,13 @@ The component is stored in the Bit registry, so the full path to the component w
 
 Run the install command using npm:
 
-```bash
+```shell
 npm install @bit/<username>.vue-tutorial.product-list --save
 ```
 
 The component is now added to your `package.json`: 
 
-```bash
+```shell
 "@bit/<username>.vue-tutorial.product-list": "0.0.1"
 ```
 
@@ -348,7 +348,7 @@ export default {
 
 Last but not least, run your application using Vue CLI:
 
-```bash
+```shell
 npm run serve
 ```
 
@@ -365,13 +365,13 @@ Up until now, the product-list component was only installed (in its built form) 
 
 In order to import the component, initiate the `my-new-app` workspace as a Bit workspace:
 
-```bash
+```shell
 bit init
 ```
 
 After the confirmation message that the workspace was initialized, run the following command:
 
-```bash
+```shell
 $ bit import <username>.vue-tutorial/product-list
 successfully imported one component
 - added <username>.vue-tutorial/product-list new versions: 0.0.1, currently used version 0.0.1
@@ -433,14 +433,14 @@ Change the template to include the new button:
 
 Run the Vue application:
 
-```bash
+```shell
 npm run serve
 ```
 
 The app is not yet changed. That's because the Bit components are compiled by the bit compiler.
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
-```bash
+```shell
 successfully installed the bit.envs/compilers/Vue@0.0.7 compiler
 ```
 
@@ -454,13 +454,13 @@ Run the `my-new-app` again and you'll now see the changed component with the vie
 
 Next, export the changes done to the component back to [bit.dev](https://bit.dev/).
 
-```bash
+```shell
 bit status
 ```
 
 The product-list component was modified:
 
-```bash
+```shell
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
@@ -470,7 +470,7 @@ modified components
 
 Tag and export the component as a new version. By default this is a semver `patch` version: 
 
-```bash
+```shell
 $ bit tag product-list
 1 component(s) tagged
 (use "bit export [collection]" to push these components to a remote")
@@ -483,7 +483,7 @@ changed components
 
 Export it back to the collection:
 
-```bash
+```shell
 $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
@@ -500,7 +500,7 @@ Run `bit import` to see if any components were changed (similar to doing git pul
 
 We will see that the product-list component was changed and a new version exists:
 
-```bash
+```shell
 $ bit import
 successfully imported one component
 - updated <username>.vue-tutorial/product-list new versions: 0.0.2
@@ -509,7 +509,7 @@ successfully imported one component
 The component is downloaded but is not yet changed.
 Check the workspace status, you will get the following:
 
-```bash
+```shell
 $ bit status
 pending updates
 (use "bit checkout [version] [component_id]" to merge changes)
@@ -523,7 +523,7 @@ pending updates
 
 Merge the changes done to the component to your project. The structure of the command is `bit checkout <version> <component>`. So you run:
 
-```bash
+```shell
 $ bit checkout 0.0.2 product-list
 successfully switched <username>.vue-tutorial/product-list to version 0.0.2
 updated src/assets/products.js
@@ -534,7 +534,7 @@ Bit performs a git merge. The code from the updated component is now merged into
 
 Run the application again to see it is working properly with the updated component:
 
-```bash
+```shell
 npm run serve
 ```
 

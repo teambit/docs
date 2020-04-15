@@ -12,13 +12,13 @@ These tools are useful when you need to analyze and debug issues with components
 
 Displays the status of all the components currently under work. You will see the new, modified and staged components. Components that are exported and components that have been imported but not modified are not visible on the bit status command, so use [`bit list`](#list);
 
-```bash
+```shell
 bit status
 ```
 
 Output will be:
 
-```bash
+```shell
 new components
      > foo/bar... ok
 
@@ -42,13 +42,13 @@ The list command display the components in the local workspace or in remote scop
 
 To list all components in local workspace:
 
-```bash
+```shell
 bit list
 ```
 
 To list all components in a remote Collection:
 
-```bash
+```shell
 bit list my-collection
 ```
 
@@ -56,7 +56,7 @@ bit list my-collection
 
 You can compare the component version in the local scope against the remote scope, and also view which version of the component can be checked out using the `outdated` flag.  
 
-```bash
+```shell
 $bit list --outdated
   ┌────────────────────────────────────────────────────────────┬───────┬───────┬───────┐
   │ component ID                                               │ local │ used  │ remot │
@@ -74,7 +74,7 @@ $bit list --outdated
 
 The show command is useful to see the specific details of each component:  
 
-```bash
+```shell
 $ bit show navbar
 ╔══════════════════╤════════════════════════════════════════════════════╗
 ║ Id               │ navbar@0.0.2                                       ║
@@ -99,7 +99,7 @@ $ bit show navbar
 
 The log command shows the versions history of a component:
 
-```bash
+```shell
 $ bit log navbar
 tag 0.0.2
 author: Tally Barak <tally@bit.dev>

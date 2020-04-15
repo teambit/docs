@@ -7,7 +7,7 @@ title: Installing
 
 To use a component, you can use the `bit install`  command or a package manager installation: 
 
-```bash
+```shell
 npm install @bit/owner.collection.namespace.namespace.comp-id
 or
 yarn add @bit/owner.collection.namespace.namespace.comp-id
@@ -31,13 +31,13 @@ To install components with npm or yarn we first need to configure `@bit` as a [s
 
 To configure the registry manually, use the `npm config` command.
 
-```bash
+```shell
 npm config set @bit:registry https://node.bit.dev
 ```
 
 To install private components use npm login. Use your Bit credentials to login.
 
-```bash
+```shell
 npm login --registry=https://node.bit.dev --scope=@bit
 ```
 
@@ -45,7 +45,7 @@ npm login --registry=https://node.bit.dev --scope=@bit
 
 To install dependencies for all the imported components use:
 
-```bash
+```shell
 bit install
 ```
 
@@ -53,12 +53,12 @@ Add the `--verbose` flag to get detailed output.
 
 You can also install dependencies for a specific component:
 
-```bash
+```shell
 bit install foo/bar
 ```
 
 If you need to pass extra arguments to npm or yarn, use double dash `--`, and after it add the additional arguments:  
 
-```bash
+```shell
 bit import -- --production --no-optional
 ```

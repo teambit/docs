@@ -16,7 +16,7 @@ Listed here are all possible component states.
 
 This means there are no components with pending changes - either there are no files tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
 
-```bash
+```shell
 $ bit status
 nothing to tag or export
 ```
@@ -28,7 +28,7 @@ Components that have been tracked, but not yet tagged.
 Bit tries to to validate if a *new component* can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
-```bash
+```shell
 $ bit status
 new components
   (use "bit tag --all [version]" to lock a version with all your changes)
@@ -42,7 +42,7 @@ All tagged components that are ready to be [exported](/docs/apis/cli-all#export)
 
 Staged component are fully isolated by Bit.
 
-```bash
+```shell
 $ bit status
 staged components
   (use "bit export <remote_collection> to push these components to a remote Collection")
@@ -60,7 +60,7 @@ Modified components are meant to be tagged and set as a new version.
 Bit tries to to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
-```bash
+```shell
 $ bit status
 modified components
   (use "bit tag --all [version]" to lock a version with all your changes)
@@ -77,7 +77,7 @@ Components with newer versions fetched by `bit import` and available to use.
 >
 > To start using the newer version, use [bit checkout](/docs/apis/cli-all#checkout).
 
-```bash
+```shell
 $ bit status
 pending updates
   (use "bit checkout [version] [component_id]" to merge changes)
@@ -91,7 +91,7 @@ pending updates
 
 A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove`.
 
-```bash
+```shell
 $ bit status
 deleted components
   these components were deleted from your project.
@@ -104,7 +104,7 @@ deleted components
 
 Components whose component dependencies have been modified, and will be tagged automatically once the modified component is tagged.
 
-```bash
+```shell
 $ bit status
 components pending to be tagged automatically (when their dependencies are tagged)
   > string/index ... ok
