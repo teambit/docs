@@ -124,7 +124,7 @@ tracking component hello/world:
 
 When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
-```shell{3,4}
+```shell
 $ bit status
 new components
      > hello/world... missing dependencies
@@ -213,10 +213,12 @@ In the `hello-world.js` file we may import the `noop.js` file as follow: `import
 For Bit to be able to resolve the `@/utils` path, we need to configure it as an resolve alias path. In order to do that we should configure the [Bit configuration](/docs/conf-bit-json#resolvemodules) to point to the module resolution path as bellow:
 
 ```json
-"resolveModules": {
+{
+  "resolveModules": {
     "aliases": {
         "@": "src"
     }
+  }
 }
 ```
 

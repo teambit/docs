@@ -46,7 +46,8 @@ Bit sets by default the component name to the folder name. To change it, specify
 
 To track a single component, use the `bit add` command and specify the path to the folder or files of the component. (See comment above regarding tracking files in different folders).
 
-```shell$ bit add src/components/button
+```shell
+$ bit add src/components/button
 ```
 
 ![add single](https://storage.googleapis.com/static.bit.dev/docs/gifs/add.gif)
@@ -102,7 +103,8 @@ Adding component action can be reverted using the [bit untrack](/docs/apis/cli-a
 
 To untrack a single component:  
 
-```shellbit untrack hello/world
+```shell
+bit untrack hello/world
 ```
 
 You can also untrack multiple components by specifying their ids:  
@@ -149,7 +151,8 @@ This error may occur in the following cases:
 As described [above](#package-dependencies), Bit has different strategies to determine a package dependency version. If all of them fail, Bit prompts to install the missing package dependencies.  
 Use your package manager of choice to resolve the issue.
 
-```shellnpm install
+```shell
+npm install
 ```
 
 Alternatively, Bit issues a `missing package dependency` error for tracked components, in a project, that have file dependencies to absolute paths, using Custom Module Definition feature. See here how to configure Bit with your project's [custom paths resolution](#custom-paths).

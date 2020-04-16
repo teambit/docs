@@ -1625,7 +1625,7 @@ bit tag --scope foo
 
 Increments the patch version number (even though that's the default behavior, so that's practically redundant).
 
-```shell  
+```shell
 bit tag foo/bar --patch
 ```
 
@@ -1633,7 +1633,7 @@ bit tag foo/bar --patch
 
 Increments the minor version number.
 
-```shell  
+```shell
 bit tag foo/bar --minor
 ```
 
@@ -1641,7 +1641,7 @@ bit tag foo/bar --minor
 
 Increments the major version number.
 
-```shell  
+```shell
 bit tag foo/bar --major
 ```
 

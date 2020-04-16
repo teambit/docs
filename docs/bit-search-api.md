@@ -29,18 +29,20 @@ The search request parameters are:
 | offset? | number | for pagination. The offset from the first result. E.g. offset: 10 will return all results from the 10th position|
 | limit? | number | the maximum number of results to return |
 
-
 ### Simple search request
 
 The simplest search request only requires specifying the query string.
 
 ***Request***
+
 ```json
 {
     "queryString": "hero button"
 }
 ```
+
 ***Response***
+
 ```json
 {
     "code": 200,

@@ -41,16 +41,18 @@ You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to
 Specifying a namespace lets you perform actions on multiple components at once:  
 
 ```shell
-bit tag "utils/*"
+$ bit tag "utils/*"
 ```
 
 Namespaces are also useful in specifying overriding rules for specific components. For example, you can override a compiler for all components under the `utils/*` namespace:
 
 ```json  
-"overrides": {
-    "utils/*": {
-        "env": {
-            "compiler": "@bit.envs/compilers/typescript@3.0.34"
+{
+    "overrides": {
+        "utils/*": {
+            "env": {
+                "compiler": "@bit.envs/compilers/typescript@3.0.34"
+            }
         }
     }
 }
@@ -70,10 +72,12 @@ Components may require using assets from your projects, such as images, graphics
 You can define assets component that do not require a compiler. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`. Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:  
 
 ```json  
-"overrides": {
-    "assets/*": {
-        "env": {
-            "compiler": "-"
+{
+    "overrides": {
+        "assets/*": {
+            "env": {
+                "compiler": "-"
+            }
         }
     }
 }
@@ -106,11 +110,13 @@ The style files are targeted to be eventually processed by the containing projec
 
 The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow:  
 
-```json  
-"overrides": {
-    "styles/*": {
-        "env": {
-            "compiler": "-"
+```json
+{
+    "overrides": {
+        "styles/*": {
+            "env": {
+                "compiler": "-"
+            }
         }
     }
 }

@@ -124,7 +124,8 @@ First, add the following to `now.json`:
 
 Then, create a secret with the contents of your `~/.npmrc`.
 
-```shellnow secrets add my-app-npmrc "$(cat ~/.npmrc)"
+```shell
+now secrets add my-app-npmrc "$(cat ~/.npmrc)"
 ```
 
 Note that `my-app-npmrc` is the name of the secret and can be named anything you wish.
@@ -141,7 +142,7 @@ Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-a
 
 In the GitHub workflow file create a step before npm install section:
 
-```shell 
+```shell
 - name: init bit.dev
   run: |
     echo "Adding bit.dev to npm registry"

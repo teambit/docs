@@ -116,8 +116,10 @@ The environment utilities, i.e. compiler and tester, that are used by default fo
 The default compiler for building all components. This will be set automatically if a compiler is imported into bit workspace using the `--compiler` option. 
 
 ```json
-"env": {
+{
+  "env": {
     "compiler": "bit.envs/compilers/react@0.0.3",
+  }
 }
 ```
 
@@ -125,12 +127,14 @@ Specify `none` to bypass tester configuration.
 For testing purposes you can point to a local compiler file as follow: 
 
 ```json
-"compiler": {
+{
+  "compiler": {
     "meta": {
-        "options": {
-        "file": "me/myproject/compiler.js"
-        }
+      "options": {
+      "file": "me/myproject/compiler.js"
+      }
     }
+  }
 }
 ```
 
@@ -142,8 +146,10 @@ For testing purposes you can point to a local compiler file as follow:
 The default tester for building all components.
 
 ```json
-"env": {
+{
+  "env": {
     "tester": "none"
+  }
 }
 ```
 
@@ -151,12 +157,14 @@ Specify `none` to bypass tester configuration.
 For testing purposes you can point to a local compiler file as follow: 
 
 ```json
-"tester": {
+{
+  "tester": {
     "meta": {
         "options": {
         "file": "me/myproject/tester.js"
         }
     }
+  }
 }
 ```
 

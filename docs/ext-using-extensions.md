@@ -18,13 +18,15 @@ bit import bit.extensions/commands/pack --extension
 Extensions' configuration and options are part of the [bit config](/docs/conf-bit-json.html#extensions--object).
 
 ```json
-"extensions": {
-        "ext-docs-parser": {
-            "rawConfig": {},
-            "options": {
-                "core": true
-            }
+{
+  "extensions": {
+    "ext-docs-parser": {
+        "rawConfig": {},
+        "options": {
+            "core": true
         }
+    }
+}
 ```
 
 ### Options
@@ -43,7 +45,7 @@ Contains all the configuration the extension needs. Unlike the system [options](
 
 You can also load an extension programmatically:
 
-```javascript
+```typescript
 loadExtension: async (
    extensionName: string,
    extensionFilePath: string,
@@ -54,20 +56,20 @@ loadExtension: async (
 
 `loadExtension` returns an instance of `Extension`:
 
-```json
+```typescript
 {
-    name: string,
-    loaded: boolean,
-    disabled: boolean,
-    filePath: string,
-    registeredHooksActions: RegisteredHooksActions,
-    newHooks: string[],
-    commands: Commands,
-    rawConfig: Object,
-    options: Object,
-    dynamicConfig: Object,
-    script: Function, // Store the required plugin
-    api
+  name: string,
+  loaded: boolean,
+  disabled: boolean,
+  filePath: string,
+  registeredHooksActions: RegisteredHooksActions,
+  newHooks: string[],
+  commands: Commands,
+  rawConfig: Object,
+  options: Object,
+  dynamicConfig: Object,
+  script: Function, // Store the required plugin
+  api
 }
 ```
 

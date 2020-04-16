@@ -13,7 +13,8 @@ Bit has tools to help you troubleshoot common errors during setup and usage of B
 
 Starting from version `14.1.0` Bit features a self diagnosis and healing tool call `bit doctor`. Run this command in case you encounter blocking issues in your workspace.
 
-```shellbit doctor
+```shell
+bit doctor
 ```
 
 The output is a list of all diagnosis that Bit currently implements. If any of the checks has failed, Bit suggests a fix for it.

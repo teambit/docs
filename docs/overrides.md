@@ -28,12 +28,12 @@ The overrides are defined as a set of patterns that are applied on all the compo
 
 ```json
 {
-    "bit" : {
-        "overrides" : {
-            "utils/is-string" : {...options},
-            "utils/*" : {...options}
-        }
-    }
+"bit" : {
+  "overrides" : {
+    "utils/is-string" : {...options},
+    "utils/*" : {...options}
+  }
+}
 }
 ```
 
@@ -43,9 +43,9 @@ A component that was imported from Bit has a `package.json` file in the root fol
 
 ```json
 {
-    "bit" : {
-        "overrides" : {}
-    }
+  "bit" : {
+    "overrides" : {}
+  }
 }
 ```
 
@@ -88,11 +88,13 @@ This way you can have a general config for all your react components (*), config
 Inside each rule you may specify a pattern or an array of patterns that will define the components that are excluded from the rule. E.g. this rule is applied on all components, except for those that are under the `bar` namespace.  
 
 ```json
-"overrides": {
+{
+  "overrides": {
     "*": {
     "exclude": "bar/*",
     }
-};
+  }
+}
 ```
 
 ### Overrides precedence
@@ -118,15 +120,17 @@ You can use override to perform the following changes:
 Use the `env` key under overridesto set Bit tools, such as compiler and tester, you need to specify the path to the collection of the compiler and a specific version.  
 
 ```json
-"env": {
+{
+  "env": {
     "compiler": "bit.envs/compilers/react@0.0.3",
-},
-"overrides": {
+  },
+  "overrides": {
     "utils/*": {
-        "env": {
-            "compiler": "bit.envs/compilers/babel@1.0.0"
-        }
+      "env": {
+        "compiler": "bit.envs/compilers/babel@1.0.0"
+      }
     }
+  }
 }
 ```
 
@@ -135,33 +139,37 @@ In this example, all components will use the react compiler, while the component
 For testing purposes, you can also specify a local file name to be the root of the compiler or tester:  
 
 ```json
-"compiler": {
+{
+  "compiler": {
     "meta": {
-        "options": {
-            "file": "me/project/compiler.js"
-        }
+      "options": {
+        "file": "me/project/compiler.js"
+      }
     }
+  }
 }
 ```
 
 You may specify a specific version of the tool, or you may use a special annotation. Use "+" to specify Bit to use the workspace's tool for a set of components. Use "-" to specify Bit to remove the compiler for specific components. Such as:  
 
 ```json
-"env": {
+{
+  "env": {
     "compiler": "bit.envs/compilers/react@0.0.3",
     "tester": "bit.envs/testers/jest@0.0.3",
-},
-"overrides": {
+  },
+  "overrides": {
     "utils/*": {
-        "env": {
-            "compiler": "-"
-        }
+      "env": {
+        "compiler": "-"
+      }
     },
     "utils/snippets/*": {
-        "env": {
-            "compiler": "+"
-        }
+      "env": {
+          "compiler": "+"
+      }
     }
+  }
 }
 ```
 
@@ -179,21 +187,21 @@ Here is an example of specifying dependencies:
 
 ```json
 {
-    "overrides" : {
-        "*": {
-            "dependencies" : {
-                "lodash" : "2.3.1",  # Resolve the package to specific version
-            },
-            "devDependencies" : {
-                "debug": "^4.0.0", # Add as devDep with version that matches
-                "@bit.utils/is-string" : "+" # Add as devDep according to version in package.json or latest
-            },
-            "peerDependencies" : {
-                "chalk" : "-", # Remove the package from peerDependencies
-                "react-dom": "+" # Add as peer according to project's version or latest if not exist
-            }
-        }
+  "overrides" : {
+    "*": {
+      "dependencies" : {
+        "lodash" : "2.3.1",  # Resolve the package to specific version
+      },
+      "devDependencies" : {
+        "debug": "^4.0.0", # Add as devDep with version that matches
+        "@bit.utils/is-string" : "+" # Add as devDep according to version in package.json or latest
+      },
+      "peerDependencies" : {
+        "chalk" : "-", # Remove the package from peerDependencies
+        "react-dom": "+" # Add as peer according to project's version or latest if not exist
+      }
     }
+  }
 }
 ```
 
@@ -213,12 +221,14 @@ require('../comp2')
 
 ```json
 // config  
-"overrides": {
+{
+  "overrides": {
     "comp1": {
-        "dependencies": {
-            "file://comp2.js": "-"
-        }
+      "dependencies": {
+        "file://comp2.js": "-"
+      }
     }
+  }
 }
 ```
 
@@ -234,13 +244,15 @@ require('../utils/unique')
 ```
 
 ```json
-// config  
-"overrides": {
+// config
+{
+  "overrides": {
     "comp1": {
-        "dependencies": {
-            "file://utils/*": "-"
-        }
+      "dependencies": {
+        "file://utils/*": "-"
+      }
     }
+  }
 }
 ```
 

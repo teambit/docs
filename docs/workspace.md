@@ -27,25 +27,27 @@ Initializing Bit workspace adds the following resources to a project:
 The Bit config resides inside the project's `package.json` (if one exists) or in a `bit.json` file. The Bit config contains general information about the project.  Here is an example:
 
 ```json
-"bit": {
+{
+  "bit": {
     "env": {
-        "compiler": "bit.envs/compilers/react@6.0.0"
+      "compiler": "bit.envs/compilers/react@6.0.0"
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm",
     "overrides": {
-        "utils/sort-array": {
-            "env": {
-                "compiler": "bit.envs/compilers/babel@6.0.0"
-            }
-        },
-        "ui/*": {
-            "peerDependencies": {
-                "react": "16.8.6",
-                "react-dom": "16.8.6"
-            }
+      "utils/sort-array": {
+        "env": {
+          "compiler": "bit.envs/compilers/babel@6.0.0"
         }
+      },
+      "ui/*": {
+        "peerDependencies": {
+          "react": "16.8.6",
+          "react-dom": "16.8.6"
+        }
+      }
     }
+  }
 }
 ```
 
@@ -95,10 +97,12 @@ When Bit calculates the dependency graph for an authored component, it uses the 
 Bit also uses the [`resolveModules`](/docs/conf-bit-json#resolvemodules) workspace configuration to resolve modules locations. This configuration has two options:  
 
 ```json
-"resolveModules": {
-  "modulesDirectories": ["src"],
-  "aliases": {
-    "@": "someDir"
+{
+  "resolveModules": {
+    "modulesDirectories": ["src"],
+    "aliases": {
+      "@": "someDir"
+    }
   }
 }
 ```
@@ -156,24 +160,24 @@ Here is an example of an imported component package.json:
 
 ```json
 {
-    "name": "@bit/bit.utils.array.diff",
-    "version": "1.0.0",
-    "homepage": "https://bit.dev/bit/utils/array/diff",
-    "main": "dist/src/array/diff.js",
-    "dependencies": {},
-    "devDependencies": {
-        "chai": "^4.1.2"
-    },
-    "peerDependencies": {},
-    "componentRootFolder": "components/array/diff",
-    "license": "SEE LICENSE IN LICENSE",
-    "bit": {
-        "env": {
-            "compiler": "bit.envs/compilers/flow@0.0.10",
-            "tester": "bit.envs/testers/mocha@0.0.5"
-        },
-        "overrides": {}
-    }
+  "name": "@bit/bit.utils.array.diff",
+  "version": "1.0.0",
+  "homepage": "https://bit.dev/bit/utils/array/diff",
+  "main": "dist/src/array/diff.js",
+  "dependencies": {},
+  "devDependencies": {
+      "chai": "^4.1.2"
+  },
+  "peerDependencies": {},
+  "componentRootFolder": "components/array/diff",
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+      "env": {
+          "compiler": "bit.envs/compilers/flow@0.0.10",
+          "tester": "bit.envs/testers/mocha@0.0.5"
+      },
+      "overrides": {}
+  }
 }
 ```
 

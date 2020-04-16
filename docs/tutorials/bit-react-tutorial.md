@@ -116,11 +116,14 @@ Now two other changes happen:
 - A new section, `bit`, has been added to your `package.json` file with the following defaults for your project:
 
 ```json
-"bit": {
-  "env": {},
-  "componentsDefaultDirectory": "components/{name}",
-  "packageManager": "yarn"
+{
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "yarn"
+  }
 }
+
 ```
 
 > In an actual project, these changes should be committed to your version control tool system.
@@ -133,7 +136,7 @@ Now, we will track the product-list component from the React tutorial project. T
 
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. As all the files are located under the product-list directory, the simplest way is to add all the files in the directory to your component. Bit will create a component named after the directory name.
 
-```shell-session
+```shell
 $ bit add src/components/product-list
 tracking component product-list:
 added src/components/product-list/index.js
@@ -143,7 +146,7 @@ added src/components/product-list/products.js
 
 When creating new components, you need to make sure that you have properly added all of the files required for the component. Bit can analyze the component for you and verify that all files are included. You can do that by checking the status of the component:
 
-```shell-session
+```shell
 $ bit status
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
@@ -176,9 +179,11 @@ The React compiler is now set as the default compiler for the Bit workspace insi
 You can check the `package.json` and verify that the compiler is installed by locating the following entry in the Bit section:
 
 ```json
-     "env": {
-      "compiler": "bit.envs/compilers/react@1.0.2"
-    },
+{
+  "env": {
+    "compiler": "bit.envs/compilers/react@1.0.2"
+  },
+}
 ```
 
 ### Build the React Component
@@ -324,7 +329,7 @@ Now you can use the component in your code, just like any other import.
 Add it as a module to the top level app module and use it on the app page.
 We will make the same changes in the code as we did on the playground in the application:
 
-```javascriptx
+```javascript
 // App.js
 import ProductList from '@bit/<username>.react-tutorial.product-list';
 function App() {
@@ -389,7 +394,9 @@ Here is what happened:
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
 ```json
-"@bit/<username>.react-tutorial.product-list": "file:./components/product-list"
+{
+  "@bit/<username>.react-tutorial.product-list": "file:./components/product-list"
+}
 ```
 
 Start your application to make sure it still works. As you'll see, no changes are required: Bit takes care of everything.
@@ -399,7 +406,7 @@ Start your application to make sure it still works. As you'll see, no changes ar
 Let's modify the product-list component.
 Change the `components/product-list/index.js` to include the following method:
 
-```javascriptx
+```javascript
 view() {
     window.alert('The product has been viewed!');
  }
@@ -407,7 +414,7 @@ view() {
 
 Change the `getProduct` function in `components/product-list/index.js` to include the new button:
 
-```javascriptx
+```javascript
 getProduct(product, index) {
         return (
             <div key={index}>

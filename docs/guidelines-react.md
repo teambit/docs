@@ -40,9 +40,11 @@ React libraries, such as `react` and `react-dom`, should be singletons during ru
 You should also make sure that the version specified in the peerDependencies is as relaxed as possible. So if you are using React 16 you can specify the dependencies for React as follow:  
 
 ```json
-"peerDependencies": {
-  "react": "^16.9.0",
-  "react-dom": "^16.9.0"
+{
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
 }
 ```
 
@@ -72,7 +74,8 @@ The React typescript compiler should be compiled as "CommonJS". You should use t
 This is because Node is not supporting ES Modules format. To do so, you need to override the compiler Typescript options to include:  
 
 ```json
-"bit.envs/compilers/react-typescript@[version]": {
+{
+  "bit.envs/compilers/react-typescript@[version]": {
     "rawConfig": {
         "tsconfig": {
             "compilerOptions": {
@@ -80,6 +83,7 @@ This is because Node is not supporting ES Modules format. To do so, you need to 
             },
         }
     }
+  }
 }
 ```
 
@@ -90,8 +94,10 @@ If you are using CRA (Create React App) with Jest, and you are installing Bit co
 If you want to tell Jest NOT to ignore Bit components but without the need to eject CRA, you can change the scripts section in the pacakge.json as follow: 
 
 ```json
-"test:raw": "react-scripts test",
-"test": "yarn test:raw -- --transformIgnorePatterns \"node_modules/(?!(@bit)/)\"",
+{
+  "test:raw": "react-scripts test",
+  "test": "yarn test:raw -- --transformIgnorePatterns \"node_modules/(?!(@bit)/)\"",
+}
 ```
 
 The CLI parameters is the only way  to override a parameter in Jest with no ejection. Now running `yarn test` or `npm test` runs and excludes the components under `node_modules/@bit`.

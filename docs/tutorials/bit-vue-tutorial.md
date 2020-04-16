@@ -114,10 +114,12 @@ Notice two other changes have happened:
 - A new section, `bit`, has been added to your `package.json` file with the following defaults for your project:
 
 ```json
-"bit": {
-  "env": {},
-  "componentsDefaultDirectory": "components/{name}",
-  "packageManager": "npm"
+{
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }
 ```
 
@@ -173,9 +175,11 @@ The Vue compiler is now set as the default compiler for the Bit workspace inside
 You can check the `package.json` and verify that the compiler is installed by locating the following entry in the Bit section:
 
 ```json
-     "env": {
-      "compiler": "bit.envs/compilers/vue@0.0.7"
-    },
+{
+ "env": {
+    "compiler": "bit.envs/compilers/vue@0.0.7"
+  },
+}
 ```
 
 ### Build the Vue Component
@@ -387,7 +391,9 @@ Here is what happened:
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
 ```json
-"@bit/<username>.vue-tutorial.product-list": "file:./components/product-list"
+{
+  "@bit/<username>.vue-tutorial.product-list": "file:./components/product-list"
+}
 ```
 
 Start your application to make sure it still works. As you'll see, no changes are required: Bit takes care of everything.

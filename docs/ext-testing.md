@@ -34,7 +34,7 @@ As you can see, it all happens in the `run` function.
 
 The function returns the test results object (or a promise that will return it), which should be in the following `json` format:
 
-```json
+```javascript
 {
     tests,
     stats: {
@@ -51,7 +51,7 @@ An array of test results, one for each test case.
 
 Each item in the array represents one test result object:
 
-```json
+```javascript
 {
     title,
     pass,
@@ -80,7 +80,7 @@ Both are `Date` objects.
 An array of general failures. Here will be failures that don't belong to a specific test case. For example, test tool general failure, or before/after hook failure.
 Each item in the array will represents one failure object:
 
-```json
+```javascript
 {
     title,
     err: {

@@ -71,7 +71,7 @@ If no package version found in the `package.json` file, Bit resolves it from the
 
 Verify Bit has resolved all dependencies using [bit status](/docs/apis/cli-all#status).
 
-```shell{3}
+```shell
 $ bit status
 new components
      > component/hello-world... ok
@@ -98,7 +98,7 @@ $ bit show hello/world
 
 In some cases, Bit prompts the message 'missing package dependencies' when running [bit status](/docs/apis/cli-all#status) or [bit tag](/docs/apis/cli-all#tag).
 
-```shell{3,4}
+```shell
 $ bit status
 new components
      > hello/world... missing dependencies
@@ -183,7 +183,7 @@ tracking component hello/world:
 
 When running [bit status](/docs/apis/cli-all#status), an `untracked file dependencies` warning appears.
 
-```shell{3,4}
+```shell
 $ bit status
 new components
      > hello/world... missing dependencies

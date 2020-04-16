@@ -42,28 +42,33 @@ the following component environments were installed
 The above command updates the compiler stored in the workspace configuration file under the `env` key:  
 
 ```json
-"env": {
-      "compiler": {
-        "bit.envs/compilers/react-typescript": "3.1.5"
-      }
+{
+  "env": {
+    "compiler": {
+      "bit.envs/compilers/react-typescript": "3.1.5"
+    }
+}
 ```
 
 For compilers that get parameters, you can extend this entry to contain additional variables. Check the compilers documentation for more details:  
 
 ```json
-"env": {
-      "compiler": {
-        "bit.envs/compilers/react-typescript": {
-          "rawConfig": {
-            "tsconfig": {
-              "compilerOptions": {
-                "target": "ES5",
-                "module": "CommonJS"
-              }
+{
+  "env": {
+    "compiler": {
+      "bit.envs/compilers/react-typescript": {
+        "rawConfig": {
+          "tsconfig": {
+            "compilerOptions": {
+              "target": "ES5",
+              "module": "CommonJS"
             }
           }
         }
       }
+    }
+  }
+}
 ```
 
 Bit uses the default compiler for newly authored components. When importing components, the compiler is attached to the component. You can see the compiler of the authored component by looking at its package.json file or by running the `bit show` command.  
@@ -71,35 +76,39 @@ Bit uses the default compiler for newly authored components. When importing comp
 You can also use the [overrides](/docs/overrides) configuration to change the compiler to specific components or a set of components (by using a namespace or glob pattern).  
 
 ```json
-"overrides": {
-        "utils/*": {
-          "env": {
-            "compiler": {
-              "bit.envs/compilers/react-typescript": {
-                "rawConfig": {
-                  "tsconfig": {
-                    "compilerOptions": {
-                      "target": "ES5",
-                      "module": "CommonJS"
-                    }
-                  }
+{  
+  "overrides": {
+    "utils/*": {
+      "env": {
+        "compiler": {
+          "bit.envs/compilers/react-typescript": {
+            "rawConfig": {
+              "tsconfig": {
+                "compilerOptions": {
+                  "target": "ES5",
+                  "module": "CommonJS"
                 }
               }
             }
           }
         }
       }
+    }
+  }
+}
 ```
 
 Bit does not enforce attaching a compiler to a component, and a specific code may not require a compiler. Such as pure CSS code used for global variables or code already written in ES5. To remove a compiler from a set of components, use the overrides option:  
 
 ```json
-"overrides": {
-        "styles/*": {
-          "env": {
-            "compiler": "-"
-        }
-      },
+{
+  "overrides": {
+    "styles/*": {
+      "env": {
+        "compiler": "-"
+    }
+  },
+}
 ```
 
 ## Compiled code
@@ -114,6 +123,7 @@ Changing the configuration works according to [overriding rules](/docs/overrides
 To change the configuration for the compiler add it to the package.json for the workspace or under the overrides. Under the `env` key change the compiler to be as follow:  
 
 ```json
+{
 "bit.envs/compilers/react-typescript": {
     "rawConfig": {
         "tsconfig": {
@@ -123,9 +133,9 @@ To change the configuration for the compiler add it to the package.json for the 
             }
         }
     }
+  }
 }
 ```
-
 
 ## Debugging compilation
 
@@ -166,15 +176,17 @@ Bit compilers provide some default configuration. If you need to change the conf
 To test your compiler from your local code, by setting the [bit workspace configuration](/docs/conf-bit-json.html) env compiler to point to the local file:  
 
 ```json
-"env": {
-      "compiler": {
-        "bit.envs/compilers/test@0.0.1": {
-          "options": {
-            "file": "../../path-to-my-compiler-file"
-          }
+{
+  "env": {
+    "compiler": {
+      "bit.envs/compilers/test@0.0.1": {
+        "options": {
+          "file": "../../path-to-my-compiler-file"
         }
       }
     }
+  }
+}
 ```
 
 Once done, you can export the new version of the component to a scope and use it in other projects.  
