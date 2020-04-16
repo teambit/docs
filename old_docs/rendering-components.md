@@ -17,7 +17,7 @@ See an example of a rendered component [here](https://bit.dev/bit/movie-app/comp
 
 Some [JSDocs](http://usejsdoc.org/about-getting-started.html#adding-documentation-comments-to-your-code) annotations needs to be added to your component, for example:
 
-```js
+```javascript
 /**
 * @render react
 * @name Hero
@@ -73,13 +73,13 @@ Support for relative dependencies will be added in the near future.
 For example, let’s take a look at our [movie-app repository](https://github.com/teambit/movie-app), and its corresponding [components](https://bit.dev/bit/movie-app/). The **Hero** component depends on the **HeroButton** component.
 When you consume the **HeroButton** component relatively, it will be bundled along with the **Hero** component:
 
-```js
+```javascript
 import HeroButton from '../hero-button';
 ```
 
 However, when you consume the **HeroButton** component from the package manager, the **Hero** component will be bundled without it, which is easier to use and maintain:
 
-```js
+```javascript
 import HeroButton from '@bit/bit.movie-app.components.hero-button';
 ```
 
@@ -93,7 +93,7 @@ bit import bit.movie-app/components/hero-button
 
 Open your IDE and set the compiler id in your component’s `package.json` file:
 
-```js
+```javascript
 "env": {
     "compiler": "bit.envs/bundlers/webpack@0.0.6",
     "tester": "bit.envs/testers/karma-mocha-react@0.0.18"
@@ -111,7 +111,7 @@ bit import bit.envs/bundlers/webpack -c
 
 If your component exports more than one render function, for example:
 
-```js
+```javascript
 export default () => <div>Main component</div>; 
 
 export const Secondary = () => <div>secondary mon</div>;
@@ -120,7 +120,7 @@ export const Secondary = () => <div>secondary mon</div>;
 You can use each function name in the `@example` to render it. If you use `export default` as well, you will need to define the `@name` JSDoc annotation, to set a name to it, to be rendered in the playground.  
 So if we take the previous example, this is how we would add the right anontations to have a working playgroud with both render functions.
 
-```js
+```javascript
 /**
  * @render react
  * @name Main

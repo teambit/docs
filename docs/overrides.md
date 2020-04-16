@@ -53,7 +53,7 @@ A component that was imported from Bit has a `package.json` file in the root fol
 
 By default, each component will only have only the most specific rule applied to it. If you want another rule to be applied in addition to other rules, you should specify `propagate: true` for the rule. You can add the propagate config to tell Bit to "climb" up the overrides tree. Bit will then do a deep-merge on the content in the overrides.
 
-```js
+```javascript
 "overrides": { 
   "*": {                           // define global override rules
     "dependencies": {...},
@@ -206,7 +206,7 @@ You may specify a specific version of the package, or you may use a special anno
 You can instruct Bit to ignore files that are required as dependencies inside a component.  
 To override a certain file, just add it as follow:  
 
-```js
+```javascript
 // comp1.js
 require('../comp2')
 ```
@@ -226,7 +226,7 @@ This ignores this file. In the component that consumes this project, you need to
 
 You can also ignore multiple files in a single rule:  
 
-```js
+```javascript
 // comp1.js
 require('../utils/sort')
 require('../utils/get')

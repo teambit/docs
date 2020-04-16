@@ -23,7 +23,7 @@ The exact boundaries of the component are a design decision. It is possible to p
 
 In a bird-eye view, code options can boil down to these:
 
-```js
+```javascript
 // All components packaged as a single Bit component
 import {Text, Card, Button} from '@bit/collection.library'
 

@@ -67,8 +67,7 @@ const siteConfig = {
   /* Custom fonts for website */
 
   stylesheets: [
-    'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap',
-    '/css/code-block-buttons.css'
+    'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap'
 
   ],
   fonts: {
@@ -105,11 +104,8 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'rainbow',
+    theme: 'atom-one-light',
   },
-
-  // siteConfig.js
-  //usePrism: ['shell-session', 'bash', 'js', 'jsx', 'json'],
 
   gaTrackingId: 'UA-89811062-2',
   // Add custom scripts here that would be placed in <script> tags.

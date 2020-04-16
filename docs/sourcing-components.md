@@ -10,7 +10,7 @@ Using a component in a workspace requires the component to be fetched into the [
 
 To use the component in the code, use an import or require command that references the full name of the component:  
 
-```js
+```javascript
 import { something } from '@bit/owner.collection.namespace.namespace.short-id';
 ```
 

@@ -32,13 +32,13 @@ Here's an example for a component with a package dependency:
 
 `index.js`
 
-```js
+```javascript
 export {default} from './hello-world';
 ```
 
 `hello-world.js`
 
-```js{1}
+```javascript{1}
 import leftPad from 'left-pad';
 
 export default function hello(world) {
@@ -48,7 +48,7 @@ export default function hello(world) {
 
 `package.json`
 
-```js{3}
+```javascript{3}
 {
   "dependencies": {
     "left-pad": "^2.1.0"
@@ -112,7 +112,7 @@ Bit prompts the `missing package dependencies` if it is unable to resolve all pa
 Some peer dependencies are not explicitly required by tracked files, so Bit does not log them as `peerDepedndencies`. To work around this issue we use [overrides](/docs/conf-bit-json.html#overrides) to force them as such.  
 For this example, we'll assume that a project has react components, so we need to add `react-dom` as a peer dependency. Open the [workspace configuration](/docs/conf-files.html#workspace-configuration) and locate `bit`. Now add the `overrides` section as follows:
 
-```js
+```javascript
 "bit": {
     "overrides": {
         "ui/*": {
@@ -151,13 +151,13 @@ If we encounter an `untracked file dependencies` error, we need to resolve it to
 
 `index.js`
 
-```js
+```javascript
 export {default} from './hello-world';
 ```
 
 `hello-world.js`
 
-```js{1}
+```javascript{1}
 import noop from '../utils/noop';
 
 export default function hello(world) {
@@ -168,7 +168,7 @@ export default function hello(world) {
 
 `noop.js`
 
-```js
+```javascript
 export default () => {};
 ```
 
@@ -261,13 +261,13 @@ Let's use this example, and update it to use custom module resolution.
 
 `index.js`
 
-```js
+```javascript
 export {default} from './hello-world';
 ```
 
 `hello-world.js`
 
-```js{1}
+```javascript{1}
 import noop from '@/utils/noop';
 
 export default function hello(world) {
@@ -278,7 +278,7 @@ export default function hello(world) {
 
 `noop.js`
 
-```js
+```javascript
 export default () => {};
 ```
 
@@ -293,7 +293,7 @@ tracking component hello/world:
 
 The output of `bit status` notifies on a missing package dependency for `@/utils/noop`. This is not a package. To resolve this issue, we need to edit the project's `bit` object and configure the following `resovleModules` configuration:
 
-```js
+```javascript
 "resolveModules": {
     "aliases": {
         "@": "src"

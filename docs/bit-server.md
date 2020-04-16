@@ -96,7 +96,7 @@ Another option is to define a resolve function that resolves the scopes. The fun
 
 The function gets the destination scope name (the destination from to get the dependency) and source scope name (the scope that has the dependent) as parameters. It should return a valid url of the destination, e.g: `file:///tmp/my-scope-name`. The example bellow is code taken from bit.dev:  
 
-```js
+```javascript
 // /app/resolver.js
 const http = require('http');
 module.exports = (dst, src) => new Promise((resolve, reject) =>

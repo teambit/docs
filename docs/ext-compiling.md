@@ -9,7 +9,7 @@ Bit uses compilers, which are environments - a special kind of [extension](/docs
 
 The compiler interface you should adhere to is pretty simple:
 
-```js
+```javascript
 function compile(files, distPath) { 
     // Your code here...
 

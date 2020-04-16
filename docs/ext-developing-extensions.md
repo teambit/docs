@@ -18,7 +18,7 @@ For a component to be a valid extension, it has to implement the extension inter
 This function allows us to add additional dynamic configuration for the extension.
 It's invoked before [init](#init) and receives a config object (the [extension's configuration](/docs/ext-concepts.html#configuration) as specified in [Bit's configuration](/docs/conf-bit-json.html#extensions--object)). It returns a new config object which is then passed on to [init](#init).
 
-```js
+```javascript
 const getDynamicConfig = ({ rawConfig }) => {
      return Object.assign({}, rawConfig, { dynamicConfigKey: 'dynamicConfigVal' })
 };
@@ -28,7 +28,7 @@ const getDynamicConfig = ({ rawConfig }) => {
 
 The `init` function is in charge of initializing the extension. It receives a config object (the [extension's configuration](/docs/ext-concepts.html#configuration) as specified in [Bit's configuration](/docs/conf-bit-json.html#extensions--object)), a [dynamicConfig object](#getDynamicConfig), and an api object, which exposes [Bit's extensions API](#bits-extensions-api).
 
-```js
+```javascript
 const init = ({ rawConfig, dynamicConfig, api} ) => {
   // Init code here...
 };
@@ -56,7 +56,7 @@ The function creates the isolated environment directory, and returns an `isolate
 Isolates the component from the Scope in the isolated environment directory.
 `isolateOpts` is an object with the following available values:
 
-```js
+```javascript
 IsolateOptions = {
   writeToPath: ?string, // Path to write the component to (default to the isolatedEnv path)
   writeBitDependencies: ?boolean, // Write bit dependencies as package dependencies in package.json
@@ -85,7 +85,7 @@ Delete the isolated environment directory.
 
 For example, let's take a look at an npm pack action that uses the `createIsolatedEnv` function.
 
-```js{5,7,14}
+```javascript{5,7,14}
 function packAction([componentId, ScopePath], { json, outDir, override }){
   let isolatePath;
   logger.debug(`packing component ${componentId}`);  
@@ -130,7 +130,7 @@ The `Command` object contains:
 
 Here is an example of a `Command` object:
 
-```js
+```javascript
 const packCommand = {
   name: 'plugin-pack <componentId> [ScopePath]',
   description: 'Create tar for npm publish',
@@ -157,13 +157,13 @@ If you want to develop an extension that [registers an action to a hook](/docs/e
   * `name` (string) - the action name (used mostly for logging / error handling)
   * `run` (function) - the actual function to run
 
-```js
+```javascript
 api.registerActionToHook('pre-tag', {name: 'myPreTagAction', run: preTagAction});
 ```
 
 The actual hook action (that's the function that's sent to `registerActionToHook` in the `run` argument) might return a promise or a regular value, and it expects two arguments:
 
-```js
+```javascript
 args = {
       componentObjects,
       ScopePath,
@@ -205,7 +205,7 @@ These are [Bit's core hooks](/docs/ext-concepts.html#bits-core-hooks) - any exte
 
 Example:
 
-```js{3}
+```javascript{3}
 const Pack = {
   init: (rawConfig, dynamicConfig, api) => {
     api.registerActionToHook('pre-tag', {name: 'myPreTagAction', run: preTagAction});
@@ -251,7 +251,7 @@ Naturally, the new hook should also be triggered at some point. This is done by 
 
 Let's see what registering a new hook and triggering it looks like:
 
-```js{10,11,19}
+```javascript{10,11,19}
 const triggerHook;
 
 const Pack = {
@@ -298,7 +298,7 @@ Each line in the log file will have the extension name as a prefix:
 
 Let's take a look at a usage example:
 
-```js{11,12,17,18}
+```javascript{11,12,17,18}
 const logger;
 const loader;
 

@@ -149,7 +149,7 @@ This is the recommended method. If the component receives its state and actions 
 Most state managers support this, and only provide a thin state injector on top of the component.
 For example:
 
-```js
+```javascript
 @connect(state => ({ isLoggedIn: state.data.profile.user }), { Logout })
 class UserAvatar extends React.component{
     ...

@@ -143,7 +143,7 @@ If you want to see the generated code, you can precede the build command with a 
 In order to debug your compiler, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
 Next, head over to the compiler's code, and add the following lines:
 
-```js
+```javascript
 const vinylFile = require('vinyl-file');
 const file = vinylFile.readSync('first/file/path');
 const file2 = vinylFile.readSync('second/file/path');

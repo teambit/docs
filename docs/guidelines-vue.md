@@ -55,7 +55,7 @@ font-family: 'Comic Neue', cursive;
 
 Create an index file that imports the global variables: 
 
-```js
+```javascript
 //styles/index.js
 export * from './global.scss';
 ```
@@ -72,7 +72,7 @@ Next, tag and export your component. Let's assume we exported to a user called "
 
 To include all the styles in your consuming application, import the component in your main.js:  
 
-```js
+```javascript
 //main.js
 import "@bit/me.my.styles";
 ```

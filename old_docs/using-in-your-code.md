@@ -8,13 +8,13 @@ title: Using Bit Components in Your Code
 Any installed component in your workspace (whether it has been sourced or installed using a package manager) can be imported/required as any package, by using the `@bit` suffix.
 
 This is how it looks:
-```js
+```javascript
 import component from '@bit.<owner>.<collection>.<namespace>.<component-name>';
 ```
 
 For example, we can consume [string/left-pad](https://bit.dev/bit/utils/string/left-pad) after it's been installed as follows:
 
-```js
+```javascript
 import padLeft from '@bit/bit.utils.string.left-pad';
 ```
 
@@ -51,7 +51,7 @@ Better yet, you can just add `bit link` as a [postinstall script](https://docs.n
 
 It's really common to require other files from the same project using relative paths, as shown in the example component [string/left-pad](https://bit.dev/bit/utils/string/left-pad/~code).
 
-```js
+```javascript
 import isString from '../is-string';
 ```
 
@@ -63,7 +63,7 @@ To make sure [string/is-string](https://bit.dev/bit/utils/validation/is-string) 
 
 `is-string.js`
 
-```js
+```javascript
 module.exports = require('@bit/bit.examples.string.is-string');
 ```
 

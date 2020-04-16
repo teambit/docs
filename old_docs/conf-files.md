@@ -20,7 +20,7 @@ The first step in any Bit project is to create the base config by running `bit i
 After running the command, Bit generates the **workspace configuration**. If your project has a `package.json` file, open it to locate the `bit` key, otherwise, Bit generates a `bit.json` file to manage the configuration.  
 Here's the base `bit` workspace configuration:
 
-```js
+```javascript
 "bit": {
     "env": {},
     "componentsDefaultDirectory": "components/{name}",

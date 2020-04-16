@@ -277,7 +277,7 @@ You can improve it a bit by adding a new file named `styles.css` with the follow
 
 Import `styles.css` into the `index.js` file in the playground: 
 
-```js
+```javascript
 import './styles.css';
 ```
 
@@ -324,7 +324,7 @@ Now you can use the component in your code, just like any other import.
 Add it as a module to the top level app module and use it on the app page.
 We will make the same changes in the code as we did on the playground in the application:
 
-```jsx
+```javascriptx
 // App.js
 import ProductList from '@bit/<username>.react-tutorial.product-list';
 function App() {
@@ -399,7 +399,7 @@ Start your application to make sure it still works. As you'll see, no changes ar
 Let's modify the product-list component.
 Change the `components/product-list/index.js` to include the following method:
 
-```jsx
+```javascriptx
 view() {
     window.alert('The product has been viewed!');
  }
@@ -407,7 +407,7 @@ view() {
 
 Change the `getProduct` function in `components/product-list/index.js` to include the new button:
 
-```jsx
+```javascriptx
 getProduct(product, index) {
         return (
             <div key={index}>

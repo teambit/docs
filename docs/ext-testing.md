@@ -9,7 +9,7 @@ Bit uses testers, which are environments - a special kind of [extension](/docs/e
 
 The tester interface you should adhere to is pretty simple:
 
-```js
+```javascript
 function run(specFile) {
     // Your code here...
 
@@ -137,7 +137,7 @@ First, as with any component, [track](/docs/apis/cli-all#add), [tag](/docs/apis/
 In order to debug your tester, first [import it](/docs/apis/cli-all#import) as you would any other component (e.g not as an environment).
 Next, head over to the tester's code, and add the following line:
 
-```js
+```javascript
 run('spec/file/path');
 ```
 

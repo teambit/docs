@@ -24,7 +24,7 @@ The Markdown file can have any name, not only `README.md`.
 
 Here is an example for the usage of JSDocs in a component with the [rendered result](https://bit.dev/bit/utils/array/diff).
 
-```js
+```javascript
 /** @flow */
 
 /**
@@ -47,7 +47,7 @@ export default function diff(firstArray: any[], secondArray: any[]): any[] {
 
 Another method of documenting components is to use a JSDocs comment block to write the docs. It's possible to use markdown format in the documentation block.
 
-```js
+```javascript
 /** @flow */
 
 /**
@@ -66,7 +66,7 @@ Another method of documenting components is to use a JSDocs comment block to wri
  *
  * ## example
  *
- * ```js
+ * ```javascript
  *  diff([1,2,3], [1,2,3,4,5]) // => [4,5]
  * ```
  */

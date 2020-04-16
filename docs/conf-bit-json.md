@@ -63,7 +63,7 @@ Configure custom module resolution for Bit components. This is similar to Webpac
 - `modulesDirectories: []` - Add additional paths to resolve components from.
 - `aliases` - Sets an alias for a directory.
 
-```js
+```javascript
 "resolveModules": {
   "modulesDirectories": ["src"],
   "aliases": {

@@ -149,7 +149,7 @@ Bit manages dependencies between Bit components by storing the full dependency g
 
 Let's say we have 2 components: A `navbar` and a `main-menu`. The `navbar` is importing the `mainmenu` component as follow:  
 
-```js
+```javascript
 import MainMenu from '../main-menu/main-menu';
 ```
 

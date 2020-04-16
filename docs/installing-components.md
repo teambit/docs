@@ -17,7 +17,7 @@ Once installing the component, the component resides in the  `node_modules` dire
 
 To use the component in the code, import the code as follow:  
 
-```js
+```javascript
 import { something } from '@bit/owner.collection.namespace.namespace.comp-id';
 ```
 

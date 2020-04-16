@@ -28,13 +28,13 @@ Here's an example for a component with a package dependency:
 
 `index.js`
 
-```js
+```javascript
 export {default} from './hello-world';
 ```
 
 `hello-world.js`
 
-```js
+```javascript
 import leftPad from 'left-pad';
 
 export default function hello(world) {
@@ -101,7 +101,7 @@ In this example, we try to track the hello-world.js file.
 
 `hello-world.js`
 
-```js
+```javascript
 import noop from '../utils/noop';
 
 export default function hello(world) {
@@ -112,7 +112,7 @@ export default function hello(world) {
 
 `noop.js`
 
-```js
+```javascript
 export default () => {};
 ```
 

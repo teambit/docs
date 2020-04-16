@@ -28,7 +28,7 @@ By default, Bit would try to use Yarn to leverage [Yarn Workspaces](https://yarn
 As components have separate `package.json` files, [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces) is ideal for the installation of component dependencies.  
 To configure Bit to use Yarn for dependencies installation, configure the following in your project's [bit](/docs/conf-bit-json.html#packagemanager--string) config.
 
-```js{2}
+```javascript{2}
 {
   "packageManager": "yarn"
 }
@@ -39,7 +39,7 @@ To configure Bit to use Yarn for dependencies installation, configure the follow
 Dependencies can be configured to be installed with NPM.  
 To configure Bit to use NPM for dependencies installation, configure the following in your project's [bit](/docs/conf-bit-json.html#packagemanager--string) config.
 
-```js{2}
+```javascript{2}
 {
   "packageManager": "npm"
 }
@@ -69,7 +69,7 @@ You can choose to install all component dependencies as sourced components (and 
 
 To configure Bit to source component dependencies, configure the following in your project's [bit](/docs/conf-bit-json.html#savedependenciesascomponents--bool) config.
 
-```js{2}
+```javascript{2}
 {
   "saveDependenciesAsComponents": "true"
 }

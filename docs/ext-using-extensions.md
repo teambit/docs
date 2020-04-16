@@ -43,7 +43,7 @@ Contains all the configuration the extension needs. Unlike the system [options](
 
 You can also load an extension programmatically:
 
-```js
+```javascript
 loadExtension: async (
    extensionName: string,
    extensionFilePath: string,
@@ -73,7 +73,7 @@ loadExtension: async (
 
 Here's an example:
 
-```js
+```javascript
 const bit = require('bit-bin');
 
 const extensionName = 'bit-npm-pack';
