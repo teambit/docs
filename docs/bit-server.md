@@ -70,7 +70,7 @@ bit export first-scope
 to import components stored on the remote scope run:
 
 ```shell
-bit import first-scope.component-name
+bit import first-scope/component-name
 ```
 
 ### Resolve between scopes
