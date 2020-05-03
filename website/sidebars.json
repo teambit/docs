@@ -28,9 +28,7 @@
   "bit.dev": [
         "bit-dev",
         "my-account",
-        "setup-authentication",
-        "bitsrc-security"
-    ],
+        "setup-authentication"    ],
     "Reference": [
       "conf-config",
       "conf-bit-json",

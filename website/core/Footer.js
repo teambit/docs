@@ -46,10 +46,10 @@ class Footer extends React.Component {
             <a href='https://bit.dev/support'>
               Support 
             </a>
-            <a href='https://bit.dev/legals/terms'>
+            <a href='https://stg.bit.dev/resources/terms'>
               Terms and Privacy 
             </a>
-            <a href={this.docUrl('bitdev-sla')}>
+            <a href='https://stg.bit.dev/resources/sla'>
               SLA
             </a>
           </div>
