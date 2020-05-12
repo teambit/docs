@@ -6,7 +6,9 @@ sidebar_label: React
 
 Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds React specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
-*Note: Try the [Bit for React tutorial](https://docs.bit.dev/docs/tutorials/bit-react-tutorial).*
+Note: 
+- See [guidlines for designing reusable components](https://github.com/teambit/reusable-components-styleguide).
+- See [Bit for React tutorial](https://docs.bit.dev/docs/tutorials/bit-react-tutorial).
 
 ## React Compiler
 
