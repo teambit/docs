@@ -18,7 +18,7 @@ import { something } from '@bit/owner.collection.namespace.namespace.short-id';
 
 Once importing a component, you can make changes to the code. If the component is associated with a compiler, you need to run [`bit build`](/docs/building-components) to generate the compiler. 
 
-Subject to your privileges, you may export the component back to the remote scope. When exporting the component,  you can use the [`bit export --eject`](/docs/export#ejecting-components) command, so the component goes back to node_moduels.  
+Subject to your privileges, you may export the component back to the remote scope. When exporting the component,  you can use the [`bit export --eject`](/docs/export#ejecting-components) command, so the component goes back to node_modules.  
 
 Bit provides some shortcut commands to make the work more fluent.  
 
