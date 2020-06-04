@@ -206,7 +206,7 @@ This results in the component name (product-list) followed by a list of file nam
 ### Export Component
 
 With the component properly built, it is now time to share it with the world.  
-Components are versioned according to semver standards.
+Components are versioned according to SemVer standards.
 To tag your component with a version, run the following command:
 
 ```shell
@@ -473,7 +473,7 @@ modified components
      > product-list ... ok
 ```
 
-Tag and export the component as a new version. By default this is a semver `patch` version:  
+Tag and export the component as a new version. By default this is a SemVer `patch` version:  
 
 ```shell
 $ bit tag product-list
