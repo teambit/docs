@@ -11,6 +11,7 @@ The CI process here is supporting two different use cases:
 ### Examples
 
 - [Bit with GitHub Actions](https://github.com/teambit/bit-with-github-actions)
+- [Bit with Azure DevOps](https://github.com/teambit/bit-with-azure-devops)
 
 ## Get a Bit token
 
