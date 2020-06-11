@@ -8,6 +8,10 @@ The CI process here is supporting two different use cases:
 - If you want to only install components on the CI using NPM or Yarn, follow the steps bellow to [get a token](#get-a-bit-token), and [configure .npmrc on CI](#config-npmrc-on-ci).
 - If you want to run Bit commands on server, such as import or build, follow the steps above and also the steps to [run bit commands](#run-bit-commands).
 
+### Examples
+
+- [Bit with GitHub Actions](https://github.com/teambit/bit-with-github-actions)
+
 ## Get a Bit token
 
 The first thing to do is get a Bit token that has has access to all the collections that have the components to be installed.  
