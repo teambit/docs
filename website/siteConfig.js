@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Bit - Docs', // Title for your website.
-  tagline: 'The shortest way to reuse atomic UI components between projects',
+  title: 'Documentation', // Title for your website.
+  tagline: "An extensible engine for component-driven development",
   url: 'https://bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,9 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'quick-start', label: 'Docs' },
-    { href: '/tutorials', label: 'Tutorials' },
-    { doc: 'best-practices', label: 'Guides' },
+    { doc: 'basics/introduction', label: 'Docs' },
+    { href: 'https://blog.bitsrc.io/tagged/bit', label: 'Blog' },
+    { href: 'https://bit.dev/support', label: 'Help' },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 

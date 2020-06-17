@@ -3,206 +3,63 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "The shortest way to reuse atomic UI components between projects",
+    "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "add-and-isolate-components": {
-        "title": "Tracking"
+      "basics/concepts": {
+        "title": "Concepts"
       },
-      "apis/cli-all": {
-        "title": "CLI Commands"
-      },
-      "best-practices": {
-        "title": "Best Practices"
-      },
-      "bit-dev": {
-        "title": "bit.dev Functionality",
-        "sidebar_label": "Functionality"
-      },
-      "bit-search-api": {
-        "title": "bit-search-api"
-      },
-      "bit-server": {
-        "title": "Bit Server"
-      },
-      "bitdev-search-api": {
-        "title": "Seach API"
-      },
-      "building-components": {
-        "title": "Compiling"
-      },
-      "ci": {
-        "title": "CI & Deployment"
-      },
-      "conf-analytics": {
-        "title": "Usage Analytics"
-      },
-      "conf-bit-json": {
-        "title": "Workspace Configuration"
-      },
-      "conf-config": {
-        "title": "Bit Client Configuration"
-      },
-      "dependencies": {
-        "title": "Components Dependencies",
-        "sidebar_label": "Dependencies"
-      },
-      "documenting-components": {
-        "title": "Documenting"
-      },
-      "export": {
-        "title": "Exporting"
-      },
-      "ext-compiling": {
-        "title": "Build a compiler"
-      },
-      "ext-concepts": {
-        "title": "Extending Bit"
-      },
-      "ext-developing-extensions": {
-        "title": "Developing Extensions"
-      },
-      "ext-testing": {
-        "title": "Build a tester"
-      },
-      "ext-using-extensions": {
-        "title": "Using Extensions"
-      },
-      "faq": {
+      "basics/faq": {
         "title": "FAQ"
       },
-      "getting-help": {
-        "title": "Getting Help"
+      "basics/introduction": {
+        "title": "Introduction"
       },
-      "angular-guidelines": {
-        "title": "Angular Guidelines",
-        "sidebar_label": "Angular"
+      "cli-reference/bit-tag": {
+        "title": "Bit Tag"
       },
-      "js-guidelines": {
-        "title": "Javascript Guidelines",
-        "sidebar_label": "Javascript"
+      "extensions/api-reference": {
+        "title": "API Reference"
       },
-      "react-guidelines": {
-        "title": "React Guidelines",
-        "sidebar_label": "React"
+      "extensions/build-your-own": {
+        "title": "Build Your Own"
       },
-      "ts-guidelines": {
-        "title": "Typescript Guide",
-        "sidebar_label": "Typescript"
+      "extensions/publish-extensions": {
+        "title": "Publish Extensions"
       },
-      "vue-guidelines": {
-        "title": "Vue Guidelines",
-        "sidebar_label": "Vue"
+      "frequent-tasks/configuring-bit": {
+        "title": "Configuring Bit"
       },
-      "how-bit-works": {
-        "title": "How bit Works?"
+      "frequent-tasks/versioning-components": {
+        "title": "Versioning Components"
       },
-      "installation": {
-        "title": "Installation"
+      "getting-started/angular": {
+        "title": "Angular"
       },
-      "installing-components": {
-        "title": "Installing"
+      "getting-started/multiple-frameworks": {
+        "title": "Multiple Frameworks"
       },
-      "modifying-sourced-components": {
-        "title": "Modifying Imported Components"
+      "getting-started/node": {
+        "title": "Node"
       },
-      "move-and-rename": {
-        "title": "Modifying File Structure and Renaming Components"
+      "getting-started/react": {
+        "title": "React"
       },
-      "my-account": {
-        "title": "bit.dev Account",
-        "sidebar_label": "Account"
-      },
-      "overrides": {
-        "title": "Overriding Configuration",
-        "sidebar_label": "Overrides"
-      },
-      "quick-start": {
-        "title": "Quick Start"
-      },
-      "removing-components": {
-        "title": "Removing & Deprecating"
-      },
-      "setup-authentication": {
-        "title": "bit.dev Authentication",
-        "sidebar_label": "Authentication"
-      },
-      "sourcing-components": {
-        "title": "Importing"
-      },
-      "tag-component-version": {
-        "title": "Versioning"
-      },
-      "testing-components": {
-        "title": "Testing"
-      },
-      "tutorials/bit-angular-tutorial": {
-        "title": "Bit for Angular"
-      },
-      "tutorials/bit-nodejs-tutorial": {
-        "title": "Bit for NodeJS"
-      },
-      "tutorials/bit-react-library-tutorial": {
-        "title": "Bit for React Component Library"
-      },
-      "tutorials/bit-react-tutorial": {
-        "title": "Bit for React"
-      },
-      "tutorials/bit-vue-tutorial": {
-        "title": "Bit for Vue"
-      },
-      "view": {
-        "title": "Viewing"
-      },
-      "what-is-bit": {
-        "title": "What is Bit?"
-      },
-      "whybit/for-libs": {
-        "title": "Bit for Libraries"
-      },
-      "whybit/for-teams": {
-        "title": "Bit for Teams"
-      },
-      "whybit/bit-tools": {
-        "title": "Bit and Other Tools"
-      },
-      "whybit/why-bit": {
-        "title": "Bit Benefits"
-      },
-      "workflows": {
-        "title": "Bit Workflows"
-      },
-      "workflows/centralized": {
-        "title": "Centralized Library"
-      },
-      "workflows/microfrontends": {
-        "title": "Micro Frontends"
-      },
-      "workflows/projects": {
-        "title": "Ad-hoc Sharing"
-      },
-      "workflows/workflows": {
-        "title": "Bit Workflows"
-      },
-      "workspace": {
-        "title": "Bit Workspace"
+      "getting-started/vue": {
+        "title": "Vue"
       }
     },
     "links": {
       "Docs": "Docs",
-      "Tutorials": "Tutorials",
-      "Guides": "Guides",
+      "Blog": "Blog",
+      "Help": "Help",
       "Github": "Github"
     },
     "categories": {
-      "Introduction": "Introduction",
-      "Components": "Components",
-      "Advanced": "Advanced",
-      "bit.dev": "bit.dev",
-      "Reference": "Reference",
-      "Extending Bit": "Extending Bit",
-      "Tutorials": "Tutorials",
-      "Frameworks": "Frameworks",
-      "Workflows": "Workflows"
+      "Basics": "Basics",
+      "Getting Started": "Getting Started",
+      "Frequent Tasks": "Frequent Tasks",
+      "Bit CLI Command Reference": "Bit CLI Command Reference",
+      "Extensions": "Extensions"
     }
   },
   "pages-strings": {

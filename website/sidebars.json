@@ -1,72 +1,28 @@
 {
   "docs": {
-    "Introduction": [
-      "quick-start",
-      "installation",
-      "how-bit-works",
-      "workspace",
-      "faq"
+    "Basics": [
+      "basics/introduction",
+      "basics/concepts",
+      "basics/faq"
     ],
-    "Components": [
-      "add-and-isolate-components",
-      "building-components",
-      "testing-components",
-      "tag-component-version",
-      "documenting-components",
-      "export",
-      "removing-components",
-      "installing-components",
-      "sourcing-components",
-      "view"
+    "Getting Started": [
+      "getting-started/react",
+      "getting-started/angular",
+      "getting-started/vue",
+      "getting-started/multiple-frameworks",
+      "getting-started/node"
     ],
-    "Advanced": [
-      "dependencies",
-      "overrides",
-      "ci",
-      "bit-server"
+    "Frequent Tasks": [
+      "frequent-tasks/configuring-bit",
+      "frequent-tasks/versioning-components"
     ],
-  "bit.dev": [
-        "bit-dev",
-        "my-account",
-        "setup-authentication"    ],
-    "Reference": [
-      "conf-config",
-      "conf-bit-json",
-      "apis/cli-all",
-      "conf-analytics"
-
+    "Bit CLI Command Reference": [
+      "cli-reference/bit tag"
     ],
-    "Extending Bit": [
-      "ext-concepts",
-      "ext-using-extensions",
-      "ext-developing-extensions",
-      "ext-compiling",
-      "ext-testing"
-  ]
-
-  },
-  "tutorials": {
-    "Tutorials": [
-      "tutorials/bit-react-tutorial",
-      "tutorials/bit-angular-tutorial",
-      "tutorials/bit-vue-tutorial",
-      "tutorials/bit-nodejs-tutorial"
+    "Extensions": [
+      "extensions/api-reference",
+      "extensions/build-your-own",
+      "extensions/publish-extensions"
     ]
-  },
-  "guides": {
-    "Frameworks":[
-      "best-practices",
-      "react-guidelines",
-      "angular-guidelines",
-      "vue-guidelines",
-      "js-guidelines",
-      "ts-guidelines"
-  ],
-  "Workflows": [
-    "workflows/workflows",
-    "workflows/projects",
-    "workflows/centralized",
-    "workflows/microfrontends"
-  ]
   }
 }

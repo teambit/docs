@@ -3,7 +3,9 @@ id: quick-start
 title: Quick Start
 ---
 
-<p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components </p>
+<p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components
+
+</p>
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick-start.svg)
 
