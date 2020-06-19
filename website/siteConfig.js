@@ -92,7 +92,7 @@ const siteConfig = {
     ]
   },
 
-  editUrl: 'https://github.com/teambit/docs/edit/master/docs/',
+  editUrl: 'https://github.com/teambit/docs/tree/new-docs/docs/',
 
   algolia: {
     apiKey: '563802eec701896d912fda3505a903ae',

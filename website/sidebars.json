@@ -2,7 +2,6 @@
   "docs": {
     "Basics": [
       "basics/introduction",
-      "basics/concepts",
       "basics/faq"
     ],
     "Getting Started": [
@@ -16,13 +15,19 @@
       "frequent-tasks/configuring-bit",
       "frequent-tasks/versioning-components"
     ],
-    "Bit CLI Command Reference": [
-      "cli-reference/bit tag"
+    "CLI Command Reference": [
+      "cli-reference/bit-tag"
     ],
     "Extensions": [
       "extensions/api-reference",
       "extensions/build-your-own",
       "extensions/publish-extensions"
+    ],
+    "Concepts": [
+      "concepts/workspace",
+      "concepts/scope",
+      "concepts/component",
+      "concepts/capsule"
     ]
   }
 }

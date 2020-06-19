@@ -17,6 +17,18 @@
       "cli-reference/bit-tag": {
         "title": "Bit Tag"
       },
+      "concepts/capsule": {
+        "title": "Capsule"
+      },
+      "concepts/component": {
+        "title": "Component"
+      },
+      "concepts/scope": {
+        "title": "Scope"
+      },
+      "concepts/workspace": {
+        "title": "Workspace"
+      },
       "extensions/api-reference": {
         "title": "API Reference"
       },
@@ -58,8 +70,9 @@
       "Basics": "Basics",
       "Getting Started": "Getting Started",
       "Frequent Tasks": "Frequent Tasks",
-      "Bit CLI Command Reference": "Bit CLI Command Reference",
-      "Extensions": "Extensions"
+      "CLI Command Reference": "CLI Command Reference",
+      "Extensions": "Extensions",
+      "Concepts": "Concepts"
     }
   },
   "pages-strings": {
