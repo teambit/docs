@@ -1,33 +1,40 @@
 {
   "docs": {
+    "Overview": [
+      "overview/introduction",
+      "overview/why-components",
+      "overview/use-cases"
+    ],
+    "Tutorials": [
+      "tutorials/react-design-system",
+      "tutorials/react-application"
+    ],
+    "For Developers": [
+      "developers/getting-started",
+      "developers/everyday-commands",
+      "developers/manage-components",
+      "developers/workspace-ui",
+      "developers/component-documentation"
+      ],
+    "For Maintiners": [
+      "maintainers/setting-up-workspace",
+      "maintainers/workspace-configuration",
+      "maintainers/component-configuration",
+      "maintainers/composing-environment",
+      "maintainers/deployment-and-ci"
+    ],
     "Basics": [
-      "basics/introduction",
-      "basics/faq"
+      "basics/workspace",
+      "basics/components",
+      "basics/environments",
+      "basics/scopes"
     ],
-    "Getting Started": [
-      "getting-started/react",
-      "getting-started/angular",
-      "getting-started/vue",
-      "getting-started/multiple-frameworks",
-      "getting-started/node"
-    ],
-    "Frequent Tasks": [
-      "frequent-tasks/configuring-bit",
-      "frequent-tasks/versioning-components"
-    ],
-    "CLI Command Reference": [
-      "cli-reference/bit-tag"
-    ],
-    "Extensions": [
-      "extensions/api-reference",
-      "extensions/build-your-own",
-      "extensions/publish-extensions"
-    ],
-    "Concepts": [
-      "concepts/workspace",
-      "concepts/scope",
-      "concepts/component",
-      "concepts/capsule"
+    "Refernces": [
+      "references/cli",
+      "references/bit-dev",
+      "references/self-host",
+      "references/usage-analytics",
+      "references/authentication"
     ]
   }
 }

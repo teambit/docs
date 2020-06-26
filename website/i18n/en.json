@@ -5,59 +5,77 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "basics/concepts": {
-        "title": "Concepts"
+      "basics/components": {
+        "title": "Components"
       },
-      "basics/faq": {
-        "title": "FAQ"
+      "basics/environments": {
+        "title": "Environments"
       },
-      "basics/introduction": {
-        "title": "Introduction"
+      "basics/scopes": {
+        "title": "Scopes"
       },
-      "cli-reference/bit-tag": {
-        "title": "Bit Tag"
-      },
-      "concepts/capsule": {
-        "title": "Capsule"
-      },
-      "concepts/component": {
-        "title": "Component"
-      },
-      "concepts/scope": {
-        "title": "Scope"
-      },
-      "concepts/workspace": {
+      "basics/workspace": {
         "title": "Workspace"
       },
-      "extensions/api-reference": {
-        "title": "API Reference"
+      "developers/component-documentation": {
+        "title": "Documenting Components"
       },
-      "extensions/build-your-own": {
-        "title": "Build Your Own"
+      "developers/everyday-commands": {
+        "title": "Everyday Commands"
       },
-      "extensions/publish-extensions": {
-        "title": "Publish Extensions"
+      "developers/getting-started": {
+        "title": "Getting Started for Developers"
       },
-      "frequent-tasks/configuring-bit": {
-        "title": "Configuring Bit"
+      "developers/manage-components": {
+        "title": "Manage Components"
       },
-      "frequent-tasks/versioning-components": {
-        "title": "Versioning Components"
+      "developers/workspace-ui": {
+        "title": "Workspace UI"
       },
-      "getting-started/angular": {
-        "title": "Angular"
+      "maintainers/component-configuration": {
+        "title": "Configuring Components"
       },
-      "getting-started/multiple-frameworks": {
-        "title": "Multiple Frameworks"
+      "maintainers/composing-environment": {
+        "title": "Composing Environments"
       },
-      "getting-started/node": {
-        "title": "Node"
+      "maintainers/deployment-and-ci": {
+        "title": "CI & Deployment"
       },
-      "getting-started/react": {
-        "title": "React"
+      "maintainers/setting-up-workspace": {
+        "title": "Setting up a Workspace"
       },
-      "getting-started/vue": {
-        "title": "Vue"
+      "maintainers/workspace-configuration": {
+        "title": "Configuring Workspaces"
+      },
+      "overview/introduction": {
+        "title": "Introduction"
+      },
+      "overview/use-cases": {
+        "title": "Use Cases"
+      },
+      "overview/why-components": {
+        "title": "Why Components?"
+      },
+      "references/authentication": {
+        "title": "Authentication"
+      },
+      "references/bit-dev": {
+        "title": "bit.dev"
+      },
+      "references/cli": {
+        "title": "CLI"
+      },
+      "references/self-host": {
+        "title": "Self Hosted Server"
+      },
+      "references/usage-analytics": {
+        "title": "Usage Analytics"
+      },
+      "tutorials/react-application": {
+        "title": "React Application"
+      },
+      "tutorials/react-design-system": {
+        "title": "Design System with React"
       }
     },
     "links": {
@@ -67,12 +85,12 @@
       "Github": "Github"
     },
     "categories": {
+      "Overview": "Overview",
+      "Tutorials": "Tutorials",
+      "For Developers": "For Developers",
+      "For Maintiners": "For Maintiners",
       "Basics": "Basics",
-      "Getting Started": "Getting Started",
-      "Frequent Tasks": "Frequent Tasks",
-      "CLI Command Reference": "CLI Command Reference",
-      "Extensions": "Extensions",
-      "Concepts": "Concepts"
+      "Refernces": "Refernces"
     }
   },
   "pages-strings": {
