@@ -3,7 +3,7 @@
     "Overview": [
       "overview/introduction",
       "overview/why-components",
-      "overview/use-cases"
+      "overview/installation"
     ],
     "Tutorials": [
       "tutorials/react-design-system",
@@ -18,10 +18,11 @@
       ],
     "For Maintiners": [
       "maintainers/setting-up-workspace",
-      "maintainers/workspace-configuration",
-      "maintainers/component-configuration",
+      "maintainers/understand-configuration",
       "maintainers/composing-environment",
-      "maintainers/deployment-and-ci"
+      "maintainers/compilation-targets",
+      "maintainers/deployment-and-ci",
+      "maintainers/connect-your-registry"
     ],
     "Basics": [
       "basics/workspace",
@@ -31,9 +32,11 @@
     ],
     "Refernces": [
       "references/cli",
+      "references/core-workspace-extensions",
       "references/bit-dev",
       "references/self-host",
       "references/usage-analytics",
+      "references/client-config",
       "references/authentication"
     ]
   }

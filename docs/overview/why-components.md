@@ -14,32 +14,28 @@ Bit adds a semantic layer on top of repositories that maps files into components
 - key part of all modern web frameworks
 - components are not just for "design systems", they can be used to reuse functionality
 
-### benefits of bit in a repo
+## Why reusing components is critical
 
-- turn any workspace to a monorepo of components
-- atomic changes
-- component-first workflow
-- consistent way of building and testing
-- can still have keep your app(s)
+Creating a good quality UI demands thoroughness and accuracy in covering every possible use case. As simple as a component looks, it requires strong attention to detail and takes iterative cycles for devs, designers, and products to make it right. If we are not reusing components, we are duplicating all these efforts behind it. when teams are not reusing components, the UI and behavior across products may be inconsistent and confuse our customers. And it is simply a pain to do any brand UI update across all experiences.
+Reusing components is crucial to solving these issues:
 
-### Why not per-component-project
+- It shortens time to market for products. A component “just works,” so developers can focus on high-level business logic. Research suggests that reusing components can save up to 40–81% of engineering time.
+- It’s faster to resolve defects, as we will fix the shared component instead of dealing with dozens.
+- UI experience will always be consistent across flows.
 
-- drawbacks of current monorepo tools
-- ...
+## Components are not just simple UI primitives
 
-## Bit can help
+Components can be more than a UI atom. Components can be put together to form a larger widget, which can be pieced together to form a whole page. Therefore in Cx, people can share a component as small as a button, to a widget like a credit card form, to a checkout page, and even flow.
+Sharing product pages and flows encourages people to work more openly and efficiently. It also helps teams and higher leadership gain insights into the current product portfolio. Our vision is to have open, easy access to every product page.
 
-Bit provides tools to give you the benefits of a monorepo without the drawbacks of sub-projects.
+- **UI primitives** like buttons, and text
+- **UI Widgets** like forms, search inputs and date pickers
+- **Connected components** service-connected UI like a credit-card input form that is linked to a payment service
+- **Page** a full page in a product.
+- **Web flow** - a reuseable flow like signup-form, phone-number-confirmation
+- **Data** - componetn that provides data to UI from various APIs
 
-- Workspace designed around managing of inner-connected components.
-- Get an automated overview of how your components progresses over time.
-- Pre-configured build, test and lint setups for React, Angular, Stencil, Vue and utility functions.
-- Local development server with live-rendering for components.
-- Individual component versioning and publishing.
-- Component example management and Storybook integration.
-- Browsing component's dependency graph.
-- Building and testing dependent components when a dependency is modified.
-- Separate utility and styles from component implementation.
+
 
 use these features to:
 

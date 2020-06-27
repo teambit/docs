@@ -32,20 +32,26 @@
       "developers/workspace-ui": {
         "title": "Workspace UI"
       },
-      "maintainers/component-configuration": {
-        "title": "Configuring Components"
+      "maintainers/compilation-targets": {
+        "title": "Component compilation"
       },
       "maintainers/composing-environment": {
         "title": "Composing Environments"
+      },
+      "maintainers/connect-your-registry": {
+        "title": "Connect to your registry"
       },
       "maintainers/deployment-and-ci": {
         "title": "CI & Deployment"
       },
       "maintainers/setting-up-workspace": {
-        "title": "Setting up a Workspace"
+        "title": "Setting up a new project"
       },
-      "maintainers/workspace-configuration": {
-        "title": "Configuring Workspaces"
+      "maintainers/understand-configuration": {
+        "title": "Understand configuration"
+      },
+      "overview/installation": {
+        "title": "Installation"
       },
       "overview/introduction": {
         "title": "Introduction"
@@ -64,6 +70,12 @@
       },
       "references/cli": {
         "title": "CLI"
+      },
+      "references/client-config": {
+        "title": "Bit Client Configuration"
+      },
+      "references/core-workspace-extensions": {
+        "title": "Core extensions"
       },
       "references/self-host": {
         "title": "Self Hosted Server"
