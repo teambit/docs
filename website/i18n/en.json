@@ -5,89 +5,113 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "basics/components": {
-        "title": "Components"
+      "2-quick-start/start-with-react": {
+        "title": "Start with React"
       },
-      "basics/environments": {
-        "title": "Environments"
+      "2-quick-start/start-with-angular": {
+        "title": "Start with Angular"
       },
-      "basics/scopes": {
-        "title": "Scopes"
+      "2-quick-start/start-with-vue": {
+        "title": "Start with Vue"
       },
-      "basics/workspace": {
-        "title": "Workspace"
+      "2-quick-start/start-with-stencil": {
+        "title": "Start with Stencil"
       },
-      "developers/component-documentation": {
-        "title": "Documenting Components"
+      "2-quick-start/start-from-existing-project": {
+        "title": "Start from Existing Project"
       },
-      "developers/everyday-commands": {
-        "title": "Everyday Commands"
+      "4-reusing-components/0-overview": {
+        "title": "4-reusing-components/0-overview"
       },
-      "developers/getting-started": {
-        "title": "Getting Started for Developers"
+      "4-reusing-components/individual-component-versioning": {
+        "title": "Individual Component Versioning"
       },
-      "developers/manage-components": {
-        "title": "Manage Components"
+      "4-reusing-components/publishing-components": {
+        "title": "Publishing Components"
       },
-      "developers/workspace-ui": {
-        "title": "Workspace UI"
+      "4-reusing-components/host-on-bit-dev": {
+        "title": "Host Scopes on Bit.dev"
       },
-      "maintainers/compilation-targets": {
-        "title": "Component compilation"
+      "4-reusing-components/use-your-package-registry": {
+        "title": "Use your Package Registry"
       },
-      "maintainers/composing-environment": {
-        "title": "Composing Environments"
+      "4-reusing-components/host-your-own-scope": {
+        "title": "Host your own Scope"
       },
-      "maintainers/connect-your-registry": {
-        "title": "Connect to your registry"
+      "4-reusing-components/delete-and-deprecate": {
+        "title": "Delete and Deprecate"
       },
-      "maintainers/deployment-and-ci": {
-        "title": "CI & Deployment"
+      "4-reusing-components/vendor-components": {
+        "title": "Vendor Components"
       },
-      "maintainers/setting-up-workspace": {
-        "title": "Setting up a new project"
+      "5-advanced-guides/building-a-component-design-system": {
+        "title": "Building a Component Design System"
       },
-      "maintainers/understand-configuration": {
-        "title": "Understand configuration"
+      "5-advanced-guides/build-an-app": {
+        "title": "Building a Frontend Application"
       },
-      "overview/installation": {
-        "title": "Installation"
+      "5-advanced-guides/component-scoping-architecture": {
+        "title": "Component Scoping Architecture"
       },
-      "overview/introduction": {
-        "title": "Introduction"
+      "5-advanced-guides/compose-your-own-environment": {
+        "title": "Compose your own Environment"
       },
-      "overview/use-cases": {
-        "title": "Use Cases"
+      "5-advanced-guides/workflow-automation": {
+        "title": "Workflow Automation"
       },
-      "overview/why-components": {
-        "title": "Why Components?"
+      "5-advanced-guides/bundling-components-as-frontends": {
+        "title": "Bundling Components as Frontends"
       },
-      "references/authentication": {
-        "title": "Authentication"
+      "6-extending-bit/overview": {
+        "title": "Overview"
       },
-      "references/bit-dev": {
-        "title": "bit.dev"
+      "6-extending-bit/get-started": {
+        "title": "Get Started with Extensions"
       },
-      "references/cli": {
-        "title": "CLI"
+      "6-extending-bit/anatomy": {
+        "title": "Extension Anatomy"
       },
-      "references/client-config": {
+      "7-common/client-config": {
         "title": "Bit Client Configuration"
       },
-      "references/core-workspace-extensions": {
-        "title": "Core extensions"
-      },
-      "references/self-host": {
-        "title": "Self Hosted Server"
-      },
-      "references/usage-analytics": {
+      "7-common/usage-analytics": {
         "title": "Usage Analytics"
       },
-      "tutorials/react-application": {
-        "title": "React Application"
+      "getting-started/workspace": {
+        "title": "Workspace"
       },
-      "tutorials/react-design-system": {
-        "title": "Design System with React"
+      "getting-started/scope": {
+        "title": "Scope"
+      },
+      "getting-started/component": {
+        "title": "Component"
+      },
+      "getting-started/development-environment": {
+        "title": "Development Environment"
+      },
+      "getting-started/compositions": {
+        "title": "Compositions"
+      },
+      "getting-started/documenting-components": {
+        "title": "Documenting Components"
+      },
+      "getting-started/managing-components-in-a-workspace": {
+        "title": "Managing Components in a Workspace"
+      },
+      "getting-started/component-dependencies-and-isolation": {
+        "title": "Component Dependencies and Isolation"
+      },
+      "introduction/quick-start": {
+        "title": "Quick Start"
+      },
+      "introduction/introduction": {
+        "title": "Introduction"
+      },
+      "introduction/installation": {
+        "title": "Installation"
+      },
+      "introduction/why-components": {
+        "title": "Why Components?"
       }
     },
     "links": {
@@ -97,12 +121,12 @@
       "Github": "Github"
     },
     "categories": {
-      "Overview": "Overview",
-      "Tutorials": "Tutorials",
-      "For Developers": "For Developers",
-      "For Maintiners": "For Maintiners",
-      "Basics": "Basics",
-      "Refernces": "Refernces"
+      "Introduction": "Introduction",
+      "Getting Started": "Getting Started",
+      "Reusing Components": "Reusing Components",
+      "Advanced Guides": "Advanced Guides",
+      "Extending Bit": "Extending Bit",
+      "common": "common"
     }
   },
   "pages-strings": {

@@ -1,43 +1,47 @@
 {
   "docs": {
-    "Overview": [
-      "overview/introduction",
-      "overview/why-components",
-      "overview/installation"
+    "Introduction": [
+      "introduction/quick-start",
+      "introduction/introduction",
+      "introduction/installation",
+      "introduction/why-components"
     ],
-    "Tutorials": [
-      "tutorials/react-design-system",
-      "tutorials/react-application"
-    ],
-    "For Developers": [
-      "developers/getting-started",
-      "developers/everyday-commands",
-      "developers/manage-components",
-      "developers/workspace-ui",
-      "developers/component-documentation"
+    "Getting Started": [
+      "getting-started/workspace",
+      "getting-started/scope",
+      "getting-started/component",
+      "getting-started/development-environment",
+      "getting-started/compositions",
+      "getting-started/documenting-components",
+      "getting-started/managing-components-in-a-workspace",
+      "getting-started/component-dependencies-and-isolation"
       ],
-    "For Maintiners": [
-      "maintainers/setting-up-workspace",
-      "maintainers/understand-configuration",
-      "maintainers/composing-environment",
-      "maintainers/compilation-targets",
-      "maintainers/deployment-and-ci",
-      "maintainers/connect-your-registry"
+    "Reusing Components": [
+      "reusing-components/overview",
+      "reusing-components/individual-component-versioning",
+      "reusing-components/publishing-components",
+      "reusing-components/host-on-bit-dev",
+      "reusing-components/use-your-package-registry",
+      "reusing-components/host-your-own-scope",
+      "reusing-components/delete-and-deprecate",
+      "reusing-components/vendor-components"
     ],
-    "Basics": [
-      "basics/workspace",
-      "basics/components",
-      "basics/environments",
-      "basics/scopes"
+    "Advanced Guides": [
+      "advanced-guides/building-a-component-design-system",
+      "advanced-guides/build-an-app",
+      "advanced-guides/component-scoping-architecture",
+      "advanced-guides/compose-your-own-environment",
+      "advanced-guides/workflow-automation",
+      "advanced-guides/bundling-components-as-frontends"
     ],
-    "Refernces": [
-      "references/cli",
-      "references/core-workspace-extensions",
-      "references/bit-dev",
-      "references/self-host",
-      "references/usage-analytics",
-      "references/client-config",
-      "references/authentication"
+    "Extending Bit": [
+      "extending-bit/overview",
+      "extending-bit/get-started",
+      "extending-bit/anatomy"
+    ],
+    "common": [
+      "common/usage-analytics",
+      "common/client-config"
     ]
   }
 }
