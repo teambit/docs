@@ -40,7 +40,8 @@
       "advanced-guides/compose-your-own-environment",
       "advanced-guides/workflow-automation",
       "advanced-guides/bundling-components-as-frontends",
-      "reusing-components/host-your-own-scope"
+      "advanced-guides/host-your-own-scope",
+      "advanced-guides/styling"
     ],
     "Extending Bit": [
       "extending-bit/overview",
