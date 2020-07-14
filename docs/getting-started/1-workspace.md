@@ -1,6 +1,6 @@
 ---
 id: workspace
-title: Workspace
+title: Setting a Workspace
 ---
 
 A **Workspace** is where your components are implemented. Each component in a workspace is handled as a separate module as each component has its own configuration, dependency graph and versioning. This means that a workspace with Bit components acts like a monorepo of projects, where each project is a component.

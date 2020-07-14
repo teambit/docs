@@ -1,6 +1,6 @@
 ---
 id: scope
-title: Scope
+title: Component Scopes
 ---
 
 When you create component you always consider its context. Take for example an application that manages a movie streaming. This application can have several "types" of **card components**:

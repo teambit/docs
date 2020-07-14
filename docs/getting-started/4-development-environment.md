@@ -1,6 +1,6 @@
 ---
 id: development-environment
-title: Development Environment
+title: Component Development Environment
 ---
 
 Component Environments define all operations on components. It is very beneficial for you to use environments as a method to standardize component development in the company. For example, how components are structured, their runtime framework versions, tests and lint rules.
