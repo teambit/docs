@@ -1,6 +1,6 @@
 ---
 id: documenting-components
-title: Documenting Components
+title: Documentation
 ---
 
 Documentation is an essential part of code. When creating reusable components, it is especially important, as other developers need the documentation to properly use the components in their projects. It is an integral part of each Bit component. With tools like TypeScript and PropTypes your code practically documents itself. Harness these capabilities with Bit to create automated documentation pages for each of your components.

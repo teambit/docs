@@ -1,6 +1,6 @@
 ---
 id: component-dependencies-and-isolation
-title: Component Dependencies and Isolation
+title: Dependencies and Isolation
 ---
 
 To properly isolate components in a workspace you need to define the dependency graph for each individual component. This task is mostly automated in Bit, as it creates a dependency graph based on the component's source code. For each component, Bit builds a **dependency graph** by analyzing all the dependencies imported by their files.

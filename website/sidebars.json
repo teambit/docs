@@ -17,12 +17,9 @@
       "getting-started/component-dependencies-and-isolation"
       ],
     "Reusing Components": [
-      "reusing-components/overview",
       "reusing-components/individual-component-versioning",
       "reusing-components/publishing-components",
-      "reusing-components/host-on-bit-dev",
-      "reusing-components/use-your-package-registry",
-      "reusing-components/host-your-own-scope",
+      "reusing-components/consume-components",
       "reusing-components/delete-and-deprecate",
       "reusing-components/vendor-components"
     ],
@@ -32,7 +29,8 @@
       "advanced-guides/component-scoping-architecture",
       "advanced-guides/compose-your-own-environment",
       "advanced-guides/workflow-automation",
-      "advanced-guides/bundling-components-as-frontends"
+      "advanced-guides/bundling-components-as-frontends",
+      "reusing-components/host-your-own-scope"
     ],
     "Extending Bit": [
       "extending-bit/overview",

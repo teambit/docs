@@ -23,6 +23,9 @@
       "advanced-guides/bundling-components-as-frontends": {
         "title": "Bundling Components as Frontends"
       },
+      "advanced-guides/host-your-own-scope": {
+        "title": "Host your own Scope"
+      },
       "common/client-config": {
         "title": "Bit Client Configuration"
       },
@@ -42,25 +45,25 @@
         "title": "Workspace"
       },
       "getting-started/scope": {
-        "title": "Scope"
+        "title": "Scopes"
       },
       "getting-started/component": {
-        "title": "Component"
+        "title": "Components"
       },
       "getting-started/development-environment": {
-        "title": "Development Environment"
+        "title": "Environments"
       },
       "getting-started/compositions": {
         "title": "Compositions"
       },
       "getting-started/documenting-components": {
-        "title": "Documenting Components"
+        "title": "Documentation"
       },
       "getting-started/managing-components-in-a-workspace": {
-        "title": "Managing Components in a Workspace"
+        "title": "Everyday Commands"
       },
       "getting-started/component-dependencies-and-isolation": {
-        "title": "Component Dependencies and Isolation"
+        "title": "Dependencies and Isolation"
       },
       "introduction/quick-start": {
         "title": "Quick Start"
@@ -89,23 +92,17 @@
       "quick-start/start-from-existing-project": {
         "title": "Start from Existing Project"
       },
-      "reusing-components/0-overview": {
-        "title": "reusing-components/0-overview"
-      },
       "reusing-components/individual-component-versioning": {
-        "title": "Individual Component Versioning"
+        "title": "Versioning"
       },
       "reusing-components/publishing-components": {
-        "title": "Publishing Components"
-      },
-      "reusing-components/host-on-bit-dev": {
-        "title": "Host Scopes on Bit.dev"
+        "title": "Exporting"
       },
       "reusing-components/use-your-package-registry": {
-        "title": "Use your Package Registry"
+        "title": "Component Registry"
       },
-      "reusing-components/host-your-own-scope": {
-        "title": "Host your own Scope"
+      "reusing-components/consume-components": {
+        "title": "Consuming Components"
       },
       "reusing-components/delete-and-deprecate": {
         "title": "Delete and Deprecate"

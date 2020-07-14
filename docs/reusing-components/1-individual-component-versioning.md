@@ -1,6 +1,6 @@
 ---
 id: individual-component-versioning
-title: Individual Component Versioning
+title: Versioning
 ---
 
 To allow developers compose modular modern web application you can use Bit to version single components. This way you provide granular control over the composition of web applications. The advantages of per-component versioning are:

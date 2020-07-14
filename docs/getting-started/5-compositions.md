@@ -1,6 +1,6 @@
 ---
 id: compositions
-title: Component Compositions
+title: Compositions
 ---
 
 When you implement a component its important to keep a list of compositions of the component in various cases. This helps you understand how the code modifications are affecting the rendered outcome.

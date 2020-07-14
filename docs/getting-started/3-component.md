@@ -1,6 +1,6 @@
 ---
 id: component
-title: Bit Components
+title: Components
 ---
 
 A Bit component is a reusable piece of code, such as

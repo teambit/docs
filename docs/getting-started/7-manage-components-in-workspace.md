@@ -1,6 +1,6 @@
 ---
 id: managing-components-in-a-workspace
-title: Managing Components in a Workspace
+title: Everyday Commands
 ---
 
 TODO - intro

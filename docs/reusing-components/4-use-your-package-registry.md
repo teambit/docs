@@ -1,6 +1,6 @@
 ---
 id: use-your-package-registry
-title: Use your Package Registry
+title: Component Registry
 ---
 
 hello

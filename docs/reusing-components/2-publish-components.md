@@ -1,6 +1,6 @@
 ---
 id: publishing-components
-title: Publishing Components
+title: Exporting
 ---
 
 // TODO - is this "advanced"? do we want people to use Bit without sharing components? (only as a devtool)
