@@ -5,77 +5,38 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "2-quick-start/start-with-react": {
-        "title": "Start with React"
-      },
-      "2-quick-start/start-with-angular": {
-        "title": "Start with Angular"
-      },
-      "2-quick-start/start-with-vue": {
-        "title": "Start with Vue"
-      },
-      "2-quick-start/start-with-stencil": {
-        "title": "Start with Stencil"
-      },
-      "2-quick-start/start-from-existing-project": {
-        "title": "Start from Existing Project"
-      },
-      "4-reusing-components/0-overview": {
-        "title": "4-reusing-components/0-overview"
-      },
-      "4-reusing-components/individual-component-versioning": {
-        "title": "Individual Component Versioning"
-      },
-      "4-reusing-components/publishing-components": {
-        "title": "Publishing Components"
-      },
-      "4-reusing-components/host-on-bit-dev": {
-        "title": "Host Scopes on Bit.dev"
-      },
-      "4-reusing-components/use-your-package-registry": {
-        "title": "Use your Package Registry"
-      },
-      "4-reusing-components/host-your-own-scope": {
-        "title": "Host your own Scope"
-      },
-      "4-reusing-components/delete-and-deprecate": {
-        "title": "Delete and Deprecate"
-      },
-      "4-reusing-components/vendor-components": {
-        "title": "Vendor Components"
-      },
-      "5-advanced-guides/building-a-component-design-system": {
+      "advanced-guides/building-a-component-design-system": {
         "title": "Building a Component Design System"
       },
-      "5-advanced-guides/build-an-app": {
+      "advanced-guides/build-an-app": {
         "title": "Building a Frontend Application"
       },
-      "5-advanced-guides/component-scoping-architecture": {
+      "advanced-guides/component-scoping-architecture": {
         "title": "Component Scoping Architecture"
       },
-      "5-advanced-guides/compose-your-own-environment": {
+      "advanced-guides/compose-your-own-environment": {
         "title": "Compose your own Environment"
       },
-      "5-advanced-guides/workflow-automation": {
+      "advanced-guides/workflow-automation": {
         "title": "Workflow Automation"
       },
-      "5-advanced-guides/bundling-components-as-frontends": {
+      "advanced-guides/bundling-components-as-frontends": {
         "title": "Bundling Components as Frontends"
       },
-      "6-extending-bit/overview": {
-        "title": "Overview"
-      },
-      "6-extending-bit/get-started": {
-        "title": "Get Started with Extensions"
-      },
-      "6-extending-bit/anatomy": {
-        "title": "Extension Anatomy"
-      },
-      "7-common/client-config": {
+      "common/client-config": {
         "title": "Bit Client Configuration"
       },
-      "7-common/usage-analytics": {
+      "common/usage-analytics": {
         "title": "Usage Analytics"
+      },
+      "extending-bit/overview": {
+        "title": "Overview"
+      },
+      "extending-bit/get-started": {
+        "title": "Get Started with Extensions"
+      },
+      "extending-bit/anatomy": {
+        "title": "Extension Anatomy"
       },
       "getting-started/workspace": {
         "title": "Workspace"
@@ -112,6 +73,45 @@
       },
       "introduction/why-components": {
         "title": "Why Components?"
+      },
+      "quick-start/start-with-react": {
+        "title": "Start with React"
+      },
+      "quick-start/start-with-angular": {
+        "title": "Start with Angular"
+      },
+      "quick-start/start-with-vue": {
+        "title": "Start with Vue"
+      },
+      "quick-start/start-with-stencil": {
+        "title": "Start with Stencil"
+      },
+      "quick-start/start-from-existing-project": {
+        "title": "Start from Existing Project"
+      },
+      "reusing-components/0-overview": {
+        "title": "reusing-components/0-overview"
+      },
+      "reusing-components/individual-component-versioning": {
+        "title": "Individual Component Versioning"
+      },
+      "reusing-components/publishing-components": {
+        "title": "Publishing Components"
+      },
+      "reusing-components/host-on-bit-dev": {
+        "title": "Host Scopes on Bit.dev"
+      },
+      "reusing-components/use-your-package-registry": {
+        "title": "Use your Package Registry"
+      },
+      "reusing-components/host-your-own-scope": {
+        "title": "Host your own Scope"
+      },
+      "reusing-components/delete-and-deprecate": {
+        "title": "Delete and Deprecate"
+      },
+      "reusing-components/vendor-components": {
+        "title": "Vendor Components"
       }
     },
     "links": {
