@@ -45,3 +45,7 @@ Some projects might keep components that are related to different scopes. Use th
     }
 }
 ```
+
+## Changing component's scope
+
+TODO

@@ -22,7 +22,7 @@ import { Button } from '@bit/base-ui.button'
 // A composed components
 import { CardGallery } from '@bit/gallery.cards'
 
-// A widjet components containing a business functionality
+// A data-connected component
 import { InvoiceList } from '@bit/billing.invoice-list'
 
 // A page implemented as a component

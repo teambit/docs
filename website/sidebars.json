@@ -16,6 +16,16 @@
       "getting-started/managing-components-in-a-workspace",
       "getting-started/component-dependencies-and-isolation"
       ],
+    "Workflow Automation": [
+        "workflow-automation/standard-workflow",
+        "workflow-automation/compiling",
+        "workflow-automation/testing",
+        "workflow-automation/linting",
+        "workflow-automation/bundling",
+        "workflow-automation/dev-server",
+        "workflow-automation/templates",
+        "workflow-automation/extending-workflow"
+      ],
     "Reusing Components": [
       "reusing-components/individual-component-versioning",
       "reusing-components/publishing-components",

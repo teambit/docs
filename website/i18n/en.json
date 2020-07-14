@@ -26,6 +26,9 @@
       "advanced-guides/host-your-own-scope": {
         "title": "Host your own Scope"
       },
+      "advanced-guides/8-scope-caching": {
+        "title": "advanced-guides/8-scope-caching"
+      },
       "common/client-config": {
         "title": "Bit Client Configuration"
       },
@@ -77,6 +80,9 @@
       "introduction/why-components": {
         "title": "Why Components?"
       },
+      "introduction/4-developing-components-in-isolation": {
+        "title": "introduction/4-developing-components-in-isolation"
+      },
       "quick-start/start-with-react": {
         "title": "Start with React"
       },
@@ -109,6 +115,30 @@
       },
       "reusing-components/vendor-components": {
         "title": "Vendor Components"
+      },
+      "workflow-automation/standard-workflow": {
+        "title": "Overview"
+      },
+      "workflow-automation/compiling": {
+        "title": "Compiling"
+      },
+      "workflow-automation/linting": {
+        "title": "Linting"
+      },
+      "workflow-automation/testing": {
+        "title": "Testing"
+      },
+      "workflow-automation/bundling": {
+        "title": "Bundling"
+      },
+      "workflow-automation/dev-server": {
+        "title": "DevServer"
+      },
+      "workflow-automation/extending-workflow": {
+        "title": "Extending further"
+      },
+      "workflow-automation/templates": {
+        "title": "Templates"
       }
     },
     "links": {
@@ -120,6 +150,7 @@
     "categories": {
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
+      "Workflow Automation": "Workflow Automation",
       "Reusing Components": "Reusing Components",
       "Advanced Guides": "Advanced Guides",
       "Extending Bit": "Extending Bit",
