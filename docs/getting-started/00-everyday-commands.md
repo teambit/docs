@@ -1,5 +1,5 @@
 ---
-id: managing-components-in-a-workspace
+id: everyday-commands
 title: Everyday Commands
 ---
 
@@ -39,7 +39,7 @@ $ bit run test
 
 ## Use component
 
-```typescript
+```javascript
 import { component } from "@my-scope/componnet";
 ```
 

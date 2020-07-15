@@ -3,4 +3,5 @@ id: consume-components
 title: Consuming Components
 ---
 
-hi
+- bit install
+- `import {}...`

@@ -1,5 +1,5 @@
 ---
-id: individual-component-versioning
+id: versioning
 title: Versioning
 ---
 
@@ -101,7 +101,7 @@ Bit manages dependencies between Bit components by storing the full dependency g
 
 Let's say we have 2 components: A `navbar` and a `main-menu`. The `navbar` is importing the `main-menu` component as follow:
 
-```typescript
+```javascript
 import MainMenu from '../main-menu/main-menu';
 ```
 

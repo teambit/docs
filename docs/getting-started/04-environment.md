@@ -1,9 +1,19 @@
 ---
-id: development-environment
+id: environment
 title: Environments
 ---
 
-Component Environments define all operations and configurations of components. It is very beneficial for you to use environments as a method to standardize component development in the company. For example, how components are structured, their runtime framework versions, tests and lint rules.
+```sh
+$ bit build
+$ bit test
+$ bit start
+$ bit create card
+$ bit ci
+```
+
+Wouldn't it be nice that regardless of a project setup, framework and configuration, all development workflow operations will be standardize? You will be able to jump right in to any project and just *know* how to start a dev server, *know* how to run build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
+
+Bit uses **Environments** as a way to define a base development environments for components and projects. Environments define how a component is built, tested and published.
 
 ## Set default environment for a workspace
 

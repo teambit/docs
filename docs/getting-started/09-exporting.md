@@ -1,9 +1,7 @@
 ---
-id: publishing-components
+id: exporting
 title: Exporting
 ---
-
-// TODO - is this "advanced"? do we want people to use Bit without sharing components? (only as a devtool)
 
 By publishing components to remotes other developers can utilize your components in their projects. This is beneficial for several reasons:
 

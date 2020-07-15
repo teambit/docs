@@ -13,7 +13,7 @@ The exact boundaries of the component are a design decision. It is possible to p
 
 In a bird-eye view, code options can boil down to these:
 
-```typescript
+```javascript
 // Atomic, presentational components
 import { Text } from '@bit/base-ui.text'
 import { Card } from '@bit/base-ui.card'
@@ -39,7 +39,7 @@ $ bit create account/login-form
 
 ## Anatomy
 
-All component files should be in the same directory, including test files and other internal assets. A React component with a default template may contain the following files:
+All component files should be in the same directory, including component's code, stylings, tests, documentation, and testing snapshots. If your components is using sub-components, i.e., components that you can only use within the context of the parent component (List and ListItem or a component and its styled component), it make sense to include them in the same directory.
 
 ```sh
 account/login-form           # root directory for storing all component files
@@ -50,7 +50,7 @@ account/login-form           # root directory for storing all component files
 └── login-form.tsx           # implementation
 ```
 
-You can add as many internal files and sub-directories as required. This is just a boilerplate for newly created components.
+This creates a directory structure that is easily consumable by placing all the related files together.
 
 ## Component ID
 
@@ -67,7 +67,7 @@ Valid modules name are less flexible than component ID and only support a single
 
 For example, for when the scope defined in a workspace is `acme.base-ui`.
 
-```typescript
+```javascript
 // Importing a component that uses a namespace as part of its ID
 import { TextArea } from '@acme.base-ui/form-elements.text-area'
 
@@ -108,3 +108,49 @@ Similar to the `workspace.json` file, the `component.json` file is configured wi
 ```json
 // TODO - snippet with comments
 ```
+
+## Component dependency graph
+
+Bit creates a dependency graph for each component by parsing it's code and using the dependency policies as defined for the [workspace](LINK). Each time you use `import`, Bit finds the imported module and then decides what's the actual imported module, its version and if it is a runtime, development or a peer dependency.
+
+### See component dependency graph
+
+You can browse a component dependency graph using Bit's local dev server, when choosing the 'dependencies' tab or run the following command:
+
+```sh
+$ show button
+# TODO output
+```
+
+### Parsing import statements
+
+Each of the implementation files of the component may contain several `import` statements. Each of the imported modules differs from one another and affects the component's dependency graph.
+
+```javascript
+// Module installed from a public registry
+import LeftPad from 'left-pad';
+
+// Other component in the workspace
+import { default } from '@acme.base-ui/button';
+
+// Internal file of the component
+import { default } from './user-service/client'
+```
+
+1. Modules installed from registries are marked as **dependencies**. Their version is set according to the workspace dependency resolution extension and the policies defined in your `workspace.json` file.
+1. Other components from the workspace are marked as **dependencies** as well. Their version is set according to their current version in the workspace (see [versioning](LINK) for additional details).
+1. Internal files are not registered as dependencies as they are a part of the implementation of the component. However, if any internal file has more dependencies - they will be registered as ones.
+
+This means that the component dependency graph depends on it's implementation. So to add or remove a dependency you should modify the component's implementation.
+
+### Types of dependencies
+
+There are three types of dependencies. When Bit registers a new dependency for a component, it sets its type as well.
+
+- **Development dependencies** are all dependencies of the test, documentation and composition files.
+- **Runtime dependencies** are all dependencies of the component's implementation.
+- **Peer dependencies** are defined for each component by its configured environment and the workspace dependency policy.
+
+### Dependency policies
+
+TODO

@@ -3,14 +3,9 @@ id: standard-workflow
 title: Overview
 ---
 
-```sh
-$ bit build
-$ bit test
-$ bit start
-$ bit ci
-```
+Environments define all operations and configurations of components. It is very beneficial for you to use environments as a method to standardize component development in the company. For example, how components are structured, their runtime framework versions, tests and lint rules. They are used to automate your development workflow.
 
-Wouldn't it be nice that regardless of a project setup, framework and configuration, all development workflow operations will be standardize? You will be able to jump right in to any project and just *know* how to start a dev server, *know* how to run build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
+There are several key features in Environments that allow for workflow automation.
 
 ## Standard operations
 
@@ -30,14 +25,4 @@ This helps to standardize and create company-wide best practices for component d
 
 ## Component isolation
 
-A critical task of an environment is to isolate each component from your workspace and run the operation without the context of your project. This helps you understand if your component is isolated, as any globals or other variables not defined as part of the API or configuration of the component, they will not be available when you either `build` or `test` your code - so these tasks will fail. Using the isolated runs Bit helps you understand how well decoupled is your codebase.
-
-Component isolation has two cases, a lightweight isolation designed to be fast when working locally with Bit and a more resource intensive isolation to run during CI on remote machines.
-
-### In memory isolation
-
-TODO
-
-### File system isolation
-
-TODO
+A critical task of an environment is to run operations on components to make sure that nothing in the context of the project affects its functionality. This helps you understand if your component is isolated, as any globals or other variables not defined as part of the API or configuration of the component, they will not be available when you either `build` or `test` your code - so these tasks will fail. Using the isolated runs Bit helps you understand how well decoupled is your codebase.

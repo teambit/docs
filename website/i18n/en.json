@@ -17,17 +17,17 @@
       "advanced-guides/compose-your-own-environment": {
         "title": "Compose your own Environment"
       },
-      "advanced-guides/workflow-automation": {
-        "title": "Workflow Automation"
-      },
-      "advanced-guides/bundling-components-as-frontends": {
-        "title": "Bundling Components as Frontends"
+      "advanced-guides/use-your-package-registry": {
+        "title": "Component Registry"
       },
       "advanced-guides/host-your-own-scope": {
         "title": "Host your own Scope"
       },
       "advanced-guides/8-scope-caching": {
         "title": "advanced-guides/8-scope-caching"
+      },
+      "advanced-guides/styling": {
+        "title": "Styling Components"
       },
       "common/client-config": {
         "title": "Bit Client Configuration"
@@ -44,6 +44,9 @@
       "extending-bit/anatomy": {
         "title": "Extension Anatomy"
       },
+      "getting-started/everyday-commands": {
+        "title": "Everyday Commands"
+      },
       "getting-started/workspace": {
         "title": "Workspace"
       },
@@ -53,20 +56,32 @@
       "getting-started/component": {
         "title": "Components"
       },
-      "getting-started/development-environment": {
+      "getting-started/environment": {
         "title": "Environments"
       },
       "getting-started/compositions": {
         "title": "Compositions"
       },
-      "getting-started/documenting-components": {
+      "getting-started/documentation": {
         "title": "Documentation"
       },
-      "getting-started/managing-components-in-a-workspace": {
-        "title": "Everyday Commands"
+      "getting-started/isolation": {
+        "title": "Isolation"
       },
-      "getting-started/component-dependencies-and-isolation": {
-        "title": "Dependencies and Isolation"
+      "getting-started/versioning": {
+        "title": "Versioning"
+      },
+      "getting-started/exporting": {
+        "title": "Exporting"
+      },
+      "getting-started/consume-components": {
+        "title": "Consuming Components"
+      },
+      "getting-started/vendor-components": {
+        "title": "Vendor Components"
+      },
+      "getting-started/delete-and-deprecate": {
+        "title": "Delete and Deprecate"
       },
       "introduction/quick-start": {
         "title": "Quick Start"
@@ -97,24 +112,6 @@
       },
       "quick-start/start-from-existing-project": {
         "title": "Start from Existing Project"
-      },
-      "reusing-components/individual-component-versioning": {
-        "title": "Versioning"
-      },
-      "reusing-components/publishing-components": {
-        "title": "Exporting"
-      },
-      "reusing-components/use-your-package-registry": {
-        "title": "Component Registry"
-      },
-      "reusing-components/consume-components": {
-        "title": "Consuming Components"
-      },
-      "reusing-components/delete-and-deprecate": {
-        "title": "Delete and Deprecate"
-      },
-      "reusing-components/vendor-components": {
-        "title": "Vendor Components"
       },
       "workflow-automation/standard-workflow": {
         "title": "Overview"
@@ -151,7 +148,6 @@
       "Introduction": "Introduction",
       "Getting Started": "Getting Started",
       "Workflow Automation": "Workflow Automation",
-      "Reusing Components": "Reusing Components",
       "Advanced Guides": "Advanced Guides",
       "Extending Bit": "Extending Bit",
       "common": "common"

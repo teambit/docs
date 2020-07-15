@@ -7,14 +7,19 @@
       "introduction/why-components"
     ],
     "Getting Started": [
+      "getting-started/everyday-commands",
       "getting-started/workspace",
       "getting-started/scope",
       "getting-started/component",
-      "getting-started/development-environment",
+      "getting-started/environment",
       "getting-started/compositions",
-      "getting-started/documenting-components",
-      "getting-started/managing-components-in-a-workspace",
-      "getting-started/component-dependencies-and-isolation"
+      "getting-started/documentation",
+      "getting-started/isolation",
+      "getting-started/versioning",
+      "getting-started/exporting",
+      "getting-started/consume-components",
+      "getting-started/vendor-components",
+      "getting-started/delete-and-deprecate"
       ],
     "Workflow Automation": [
         "workflow-automation/standard-workflow",
@@ -26,21 +31,14 @@
         "workflow-automation/templates",
         "workflow-automation/extending-workflow"
       ],
-    "Reusing Components": [
-      "reusing-components/individual-component-versioning",
-      "reusing-components/publishing-components",
-      "reusing-components/consume-components",
-      "reusing-components/delete-and-deprecate",
-      "reusing-components/vendor-components"
-    ],
     "Advanced Guides": [
       "advanced-guides/building-a-component-design-system",
       "advanced-guides/build-an-app",
       "advanced-guides/component-scoping-architecture",
       "advanced-guides/compose-your-own-environment",
       "advanced-guides/workflow-automation",
-      "advanced-guides/bundling-components-as-frontends",
       "advanced-guides/host-your-own-scope",
+      "advanced-guides/use-your-package-registry",
       "advanced-guides/styling"
     ],
     "Extending Bit": [
