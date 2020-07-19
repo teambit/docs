@@ -86,7 +86,7 @@ background: $headerLinksColor;
 background-color: $headerBackgroundColor;
 min-height: 56px;
 padding: 10px;
-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
   & header {
     background-color: $secondaryColor;
   }
