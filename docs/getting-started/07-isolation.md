@@ -57,8 +57,8 @@ type LocationProps = {
 
 // Don't
 type LocationProps = {
-  isLeft: string,
-  isTop: string,
+  isLeft: boolean,
+  isTop: boolean,
 }
 ```
 

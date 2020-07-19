@@ -83,20 +83,11 @@
       "getting-started/delete-and-deprecate": {
         "title": "Delete and Deprecate"
       },
-      "introduction/quick-start": {
-        "title": "Quick Start"
-      },
       "introduction/introduction": {
         "title": "Introduction"
       },
-      "introduction/installation": {
-        "title": "Installation"
-      },
-      "introduction/why-components": {
-        "title": "Why Components?"
-      },
-      "introduction/4-developing-components-in-isolation": {
-        "title": "introduction/4-developing-components-in-isolation"
+      "introduction/quick-start": {
+        "title": "Quick Start"
       },
       "quick-start/start-with-react": {
         "title": "Start with React"
@@ -112,6 +103,12 @@
       },
       "quick-start/start-from-existing-project": {
         "title": "Start from Existing Project"
+      },
+      "TBD/installation": {
+        "title": "Installation"
+      },
+      "TBD/why-components": {
+        "title": "Why Components?"
       },
       "workflow-automation/standard-workflow": {
         "title": "Overview"
@@ -150,7 +147,8 @@
       "Workflow Automation": "Workflow Automation",
       "Advanced Guides": "Advanced Guides",
       "Extending Bit": "Extending Bit",
-      "common": "common"
+      "common": "common",
+      "TBD": "TBD"
     }
   },
   "pages-strings": {

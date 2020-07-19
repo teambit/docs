@@ -1,8 +1,8 @@
 {
   "docs": {
     "Introduction": [
-      "introduction/quick-start",
       "introduction/introduction",
+      "introduction/quick-start",
       "introduction/installation",
       "introduction/why-components"
     ],
@@ -49,6 +49,10 @@
     "common": [
       "common/usage-analytics",
       "common/client-config"
+    ],
+    "TBD": [
+      "TBD/installation",
+      "TBD/why-components"
     ]
   }
 }
