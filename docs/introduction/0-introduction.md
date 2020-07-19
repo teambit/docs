@@ -6,10 +6,9 @@ title: Introduction
 
 Component-driven development (CDD) is a widely accepted methodology that centers the frontend development process around independent components. Apps are built bottom up, starting from elementary components (usually, a design system) all the way up to more elaborate compositions that make up the largest components: pages and apps.
 
-__Bit simplifies component-driven development.__ It manages the entire process of publishing an independent component from a repository to a curated collection of components. It standardizes and automates component workflows and build pipelines. That includes components generation, testing, linting, documentation, and every other common task. And best of all, it is completely customizable.
+__Bit simplifies component-driven development.__ It manages the entire process of publishing independent components, from a repository to a curated collection of components. It standardizes and automates component workflows and build pipelines. That includes components generation, testing, linting, documentation, and every other common task. And best of all, it is completely customizable.
 
 Use Bit to distribute and maintain your design system, UI widgets, pages and features.
-
 
 Bit features:
 
