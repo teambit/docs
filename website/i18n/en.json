@@ -44,50 +44,71 @@
       "extending-bit/anatomy": {
         "title": "Extension Anatomy"
       },
-      "getting-started/everyday-commands": {
-        "title": "Everyday Commands"
-      },
-      "getting-started/workspace": {
-        "title": "Workspace"
-      },
-      "getting-started/scope": {
-        "title": "Scopes"
-      },
-      "getting-started/component": {
-        "title": "Components"
-      },
-      "getting-started/environment": {
-        "title": "Environments"
-      },
-      "getting-started/compositions": {
-        "title": "Compositions"
-      },
-      "getting-started/documentation": {
-        "title": "Documentation"
-      },
-      "getting-started/isolation": {
-        "title": "Isolation"
-      },
-      "getting-started/versioning": {
-        "title": "Versioning"
-      },
-      "getting-started/exporting": {
-        "title": "Exporting"
-      },
-      "getting-started/consume-components": {
-        "title": "Consuming Components"
-      },
-      "getting-started/vendor-components": {
-        "title": "Vendor Components"
-      },
-      "getting-started/delete-and-deprecate": {
-        "title": "Delete and Deprecate"
-      },
-      "introduction/introduction": {
+      "getting-started/introduction": {
         "title": "Introduction"
       },
-      "introduction/quick-start": {
+      "getting-started/quick-start": {
         "title": "Quick Start"
+      },
+      "guides/create-new-component": {
+        "title": "Create a new component"
+      },
+      "guides/create-new-workspace": {
+        "title": "Create a new Bit workspace"
+      },
+      "guides/customize-component-configuration": {
+        "title": "Customize a component configurations"
+      },
+      "guides/customize-workspace": {
+        "title": "Customize a Bit workspace"
+      },
+      "guides/export-components-to-remote-scope": {
+        "title": "Export components to a remote scope"
+      },
+      "guides/import-component": {
+        "title": "Import/install components"
+      },
+      "guides/remove-or-move-component": {
+        "title": "Remove or move a component"
+      },
+      "main-concepts/everyday-commands": {
+        "title": "Everyday Commands"
+      },
+      "main-concepts/workspace": {
+        "title": "Workspace"
+      },
+      "main-concepts/scope": {
+        "title": "Scopes"
+      },
+      "main-concepts/component": {
+        "title": "Components"
+      },
+      "main-concepts/environment": {
+        "title": "Environments"
+      },
+      "main-concepts/compositions": {
+        "title": "Compositions"
+      },
+      "main-concepts/documentation": {
+        "title": "Documentation"
+      },
+      "main-concepts/isolation": {
+        "title": "Isolation"
+      },
+      "main-concepts/versioning": {
+        "title": "Versioning"
+      },
+      "main-concepts/exporting": {
+        "title": "Exporting"
+      },
+      "main-concepts/consume-components": {
+        "title": "Consuming Components"
+      },
+      "main-concepts/vendor-components": {
+        "title": "Vendor Components"
+      },
+      "main-concepts/delete-and-deprecate": {
+        "title": "Delete and Deprecate"
       },
       "quick-start/start-with-react": {
         "title": "Start with React"
@@ -142,8 +163,9 @@
       "Github": "Github"
     },
     "categories": {
-      "Introduction": "Introduction",
       "Getting Started": "Getting Started",
+      "Guides": "Guides",
+      "Main Concepts": "Main Concepts",
       "Workflow Automation": "Workflow Automation",
       "Advanced Guides": "Advanced Guides",
       "Extending Bit": "Extending Bit",

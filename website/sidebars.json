@@ -1,25 +1,32 @@
 {
   "docs": {
-    "Introduction": [
-      "introduction/introduction",
-      "introduction/quick-start",
-      "introduction/installation",
-      "introduction/why-components"
-    ],
     "Getting Started": [
-      "getting-started/everyday-commands",
-      "getting-started/workspace",
-      "getting-started/scope",
-      "getting-started/component",
-      "getting-started/environment",
-      "getting-started/compositions",
-      "getting-started/documentation",
-      "getting-started/isolation",
-      "getting-started/versioning",
-      "getting-started/exporting",
-      "getting-started/consume-components",
-      "getting-started/vendor-components",
-      "getting-started/delete-and-deprecate"
+      "getting-started/introduction",
+      "getting-started/quick-start"
+    ],
+    "Guides": [
+      "guides/create-new-workspace",
+      "guides/customize-workspace",
+      "guides/create-new-component",
+      "guides/customize-component-configuration",
+      "guides/remove-or-move-component",
+      "guides/export-components-to-remote-scope",
+      "guides/import-component"
+    ],
+    "Main Concepts": [
+      "main-concepts/everyday-commands",
+      "main-concepts/workspace",
+      "main-concepts/scope",
+      "main-concepts/component",
+      "main-concepts/environment",
+      "main-concepts/compositions",
+      "main-concepts/documentation",
+      "main-concepts/isolation",
+      "main-concepts/versioning",
+      "main-concepts/exporting",
+      "main-concepts/consume-components",
+      "main-concepts/vendor-components",
+      "main-concepts/delete-and-deprecate"
       ],
     "Workflow Automation": [
         "workflow-automation/standard-workflow",

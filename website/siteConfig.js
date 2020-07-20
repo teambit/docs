@@ -38,13 +38,13 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc:  'introduction/introduction', label: 'Docs' },
+    { doc:  'getting-started/introduction', label: 'Docs' },
     { href: 'https://blog.bitsrc.io/tagged/bit', label: 'Blog' },
     { href: 'https://bit.dev/support', label: 'Help' },
     { href: "https://github.com/teambit/bit", label: "Github" }
   ],
 
-  docsSideNavCollapsible: false,
+  docsSideNavCollapsible: true,
   // If you have users set above, you add it here:
   users,
 
