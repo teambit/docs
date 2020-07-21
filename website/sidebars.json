@@ -5,10 +5,9 @@
       "getting-started/quick-start"
     ],
     "Guides": [
-      "guides/create-new-workspace",
-      "guides/customize-workspace",
+      "guides/set-up-workspace",
       "guides/create-new-component",
-      "guides/customize-component-configuration",
+      "guides/customize-component-dependencies",
       "guides/remove-or-move-component",
       "guides/export-components-to-remote-scope",
       "guides/import-component"

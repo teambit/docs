@@ -53,14 +53,8 @@
       "guides/create-new-component": {
         "title": "Create a new component"
       },
-      "guides/create-new-workspace": {
-        "title": "Create a new Bit workspace"
-      },
-      "guides/customize-component-configuration": {
-        "title": "Customize a component configurations"
-      },
-      "guides/customize-workspace": {
-        "title": "Customize a Bit workspace"
+      "guides/customize-component-dependencies": {
+        "title": "Customize component dependencies"
       },
       "guides/export-components-to-remote-scope": {
         "title": "Export components to a remote scope"
@@ -70,6 +64,9 @@
       },
       "guides/remove-or-move-component": {
         "title": "Remove or move a component"
+      },
+      "guides/set-up-workspace": {
+        "title": "Set up a Bit workspace"
       },
       "main-concepts/everyday-commands": {
         "title": "Everyday Commands"
