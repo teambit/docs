@@ -50,7 +50,7 @@ export default function () {
 
 This is one of many ways to extend and customize your workspace UI.
 
-4. __The compositions section__, as well as the compositions tab, exhibit the component in different contexts and variations. These example code are place in the `*.compositions.tsx` file and exported using named exports.
+4. __The compositions section__, as well as the compositions tab, exhibit the component in different contexts and variations. These example code are placed in the `*.compositions.tsx` file and exported using named exports.
 
 For example:
 
@@ -102,6 +102,6 @@ Button.defaultProps = {
 
 export default Button;
 ```
-This above code will produce the following table:
+The above code will produce the following table:
 
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595377690/props_screenshot_vuv0px.png)
