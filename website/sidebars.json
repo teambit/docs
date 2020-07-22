@@ -25,7 +25,8 @@
       "main-concepts/exporting",
       "main-concepts/consume-components",
       "main-concepts/vendor-components",
-      "main-concepts/delete-and-deprecate"
+      "main-concepts/delete-and-deprecate",
+      "main-concepts/workspace-ui"
       ],
     "Workflow Automation": [
         "workflow-automation/standard-workflow",

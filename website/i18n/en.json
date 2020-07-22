@@ -107,6 +107,9 @@
       "main-concepts/delete-and-deprecate": {
         "title": "Delete and Deprecate"
       },
+      "main-concepts/workspace-ui": {
+        "title": "Workspace UI"
+      },
       "quick-start/start-with-react": {
         "title": "Start with React"
       },
