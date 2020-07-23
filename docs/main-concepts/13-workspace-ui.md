@@ -3,7 +3,7 @@ id: workspace-ui
 title: Workspace UI
 ---
 
-The workspace UI displays all components tracked in the Bit workspace. It is a development tool that enables you to examine your components in different contexts and variations. 
+The workspace UI displays all components tracked by the Bit workspace. It is a development tool that enables you to examine your components in different contexts and variations. 
 
 There's much overlap between the local workspace UI and the remotely-hosted ['Scope UI'](#), as they both present components, documentation and compositions, however, they do not share a purpose. The former is a "component workshop", a platform to write component-first code, while the latter serves as a component gallery.
 
