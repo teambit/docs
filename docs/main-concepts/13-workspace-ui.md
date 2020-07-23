@@ -3,56 +3,25 @@ id: workspace-ui
 title: Workspace UI
 ---
 
-The workspace UI presents all your workspace tracked components. It serves two main purposes:
+The workspace UI displays all components tracked in the Bit workspace. It is a development tool that enables you to examine your components in different contexts and variations. 
 
-1. It is a development tool as it enables you to examine you components (in your local dev environment) in different contexts and variations.
+There's much overlap between the local workspace UI and the remotely-hosted ['Scope UI'](#), as they both present components, documentation and compositions, however, they do not share a purpose. The former is a "component workshop", a platform to write component-first code, while the latter serves as a component gallery.
 
-2. When published to a remote server (e.g, Bit), it serves as a catalog for shared components with documentation and compositions showcasing each component's usage.
 
-![](https://res.cloudinary.com/blog-assets/image/upload/v1595374309/workspace_ui_spxnr9.png)
+## Features
 
-### Mapping components to the workspace UI
+### A dynamic component navigator
+* The workspace sidebar displays all tracked components in a human-friendly manner. Components are categorized according to their [namespace](#) which represents a category of functions or business concerns.
 
-A quick reminder - this is a standard component directory structure:
+* The component navigator uses the VSCode language to notify of changes, errors, and other important updates happening to components in the  component tree. For example, the 'E' letter will appear to the right of a component name, in case of an error. 
 
-```
-|-- components
-    |-- button
-        |-- button.tsx
-        |-- button.module.scss
-        |-- button.spec.js
-        |-- button.compositions.tsx
-        |-- button.docs.tsx
-        |-- index.ts
-```
+### A single platform for all environments
+* Design systems often include more than a single implementation of their UI components. The workspace UI displays all components in a single place, regardless of their framework or environment. Bit does that by using iframes to display components running on different servers, for different environments.
 
-1. __The sidebar navigation__ displays all tracked components grouped under their set namespace. In the screenshot above all components are under the "ui" namespace.
+### Component compositions with no configurations
+[component compositions](#) are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations. Writing a composition does not require any configuration at all. Simply import and use the component in the component's `*.compositions.tsx` file and export it as a named export (the name of the export will be used for the composition name).
 
-2. __The abstract and tags__, located under the component title are set in the `*.doc.tsx` file using the 'abstract' and 'tags' variables. For example:
-
-```javascript
-export const abstract = "An imperfect button"
-
-export const tags = ["react", "typescript", "button"]
-```
-
-3. __A slot for a custom component__ positioned right below the division line and above the 'compositions' section, is occupied by an optional component that is placed in the `*.doc.tsx` file and exported as 'default'.
-
-For example:
-
-```jsx
-export default function () {
-    return (
-        <div>This is a custom segment.</div>
-    )
-}
-```
-
-This is one of many ways to extend and customize your workspace UI.
-
-4. __The compositions section__, as well as the compositions tab, exhibit the component in different contexts and variations. These example code are placed in the `*.compositions.tsx` file and exported using named exports.
-
-For example:
+For example, to create compositions for a Button component:
 
 ```jsx
 import React from 'react';
@@ -61,7 +30,7 @@ import Button from './button';
 
 export const PrimaryButton = () => {
      return(
-         <Button variant='primary' onClick={() => alert('Clicked!')}>Primary Button</Button>
+         <Button variant='primary'>Primary Button</Button>
      );
 };
 
@@ -71,8 +40,11 @@ export const SecondaryButton = () => {
     );
 };
 ```
+Two compositions will appear in the workspace, the 'Primary Button' and the 'Secondary Button'.
 
-5. __The properties__ section displays the different props the component receives. This table of props is extracted from the components code.
+### Documentation written in code, not in markdown
+
+* To ensure the documentation is faithful to the code, Bit generates the docs from the code itself using [react-docgen](https://github.com/reactjs/react-docgen). At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions.
 
 For example:
 
@@ -105,3 +77,27 @@ export default Button;
 The above code will produce the following table:
 
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595377690/props_screenshot_vuv0px.png)
+
+* The _abstract_ and _tags_, located under the component title are set in the component's `*.doc.tsx` file using the 'abstract' and 'tags' variables. Setting these attributes using code means you can generate them in any way you choose.
+
+For example, to set them manually:
+
+```javascript
+export const abstract = "An imperfect button"
+
+export const tags = ["react", "typescript", "button"]
+```
+
+Bit.dev uses both attributes in the Scope UI search engine. 
+
+* The documentation can be extended using the optional slot for a custom component (positioned above the 'compositions' section). The component should be written in the component's`*.doc.tsx` file and exported as default. 
+
+For example:
+
+```jsx
+export default function () {
+    return (
+        <div>This is a custom segment.</div>
+    )
+}
+```
