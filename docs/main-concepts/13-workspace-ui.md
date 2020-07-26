@@ -53,7 +53,7 @@ import React, {ButtonHTMLAttributes} from 'react'
 import styles from './button.module.scss'
 
 
-export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     /** Choose between primary and secondary styling. */
     variant : 'primary' | 'secondary';
 }
@@ -78,7 +78,7 @@ The above code will produce the following table:
 
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595377690/props_screenshot_vuv0px.png)
 
-* The _abstract_ and _tags_, located under the component title are set in the component's `*.doc.tsx` file using the 'abstract' and 'tags' variables. Setting these attributes using code means you can generate them in any way you choose.
+* The _abstract_ and _tags_, located under the component title are set automatically by Bit but can be overridden by using the 'abstract' and 'tags' variables, in the component's `*.doc.tsx` file. Setting these attributes using code means you can generate them in any way you choose.
 
 For example, to set them manually:
 

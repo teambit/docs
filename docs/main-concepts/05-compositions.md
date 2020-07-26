@@ -3,40 +3,54 @@ id: compositions
 title: Compositions
 ---
 
-Components may appear in different states or forms across many applications. It's important to keep track on them as the various use cases for components, as you can use them as a reference when you create new, or update existing components.
+Compositions are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations.
 
-When you implement a component its important to keep a list of compositions of the component in various cases. This helps you understand how the code modifications are affecting the rendered outcome.
+* In the [Scope UI](#), compositions play an essential part of a (published) component's documentation. They demonstrate potential behaviors and use cases for that component. 
+
+* In the [Workspace UI](./13-workspace-ui.md), when creating or modifying a component, compositions are used to validate that a component looks and behaves as expected, in different scenarios.
+
+* In automated testings, compositions are used as test samples.
 
 > This document uses React code as snippets.
 
-## Basic composition
-
-Component compositions are fully compatible with [CSF](https://storybook.js.org/docs/formats/component-story-format/).
-
-```javascript
-import React from "react";
-import { CopyBox } from "./copy-box";
-
-export const BasicBox = () => {
-  return (
-    <CopyBox>
-        here is some text for you to copy
-    </CopyBox>
-  );
-};
-```
-
-The named export defines `copy-box`s composition name.
-
 ## Creating compositions
 
-Compositions are managed per component in a dedicated set of files - `*.compositions.tsx`. Make sure to create a new file to keep the compositions in the component directory.
+_Component compositions are fully compatible with [CSF](https://storybook.js.org/docs/formats/component-story-format/)._
+
+Writing a composition does not require any configuration. Simply import the component to the component's `*.compositions.tsx` file, use it to build a composition and export the new component (a.k.a, the composition) with a named export. 
+
+The name of the export will be converted from PascalCase/camelCase and used for the composition name (e.g, `"CompositionName" --> "Composition name"`).
+
+__For example__, we'll create two compositions, 'Primary button' and 'Secondary button', that demonstrate two uses of the 'Button' component:
+
+First, we'll create a new composition file in the component's directory:
 
 ```sh
 $ touch path/to/component/directory/<component-name>.compositions.tsx
 ```
+Then, we'll import the component and  use it to create the compositions:
 
-Then just write any React code that exports JSX elements. Bit treats each element as a composition.
+```javascript
+import React from "react";
+import { Button } from "./button";
+
+export const PrimaryButton = () => {
+  return (
+    <Button variant="primary">
+        Click Me
+    </Button>
+  );
+};
+
+
+export const SecondaryButton = () => {
+  return (
+    <Button variant="secondary">
+        Click Me
+    </Button>
+  );
+};
+```
 
 ## Setting canvas size for compositions
 
@@ -48,13 +62,11 @@ Some components should be mobile friendly, look different in some sizes... need 
 
 ## Loading compositions
 
-Environments automatically detect all composition files of each component and use it to automatically load compositions to the workspace web UI.
+["Environments"](main-concepts/04-environment.md) automatically detects the composition file for each component and use it to load its compositions to the workspace UI.
 
 ## Viewing component compositions
 
-To see component compositions rendered for each component start the local development server for the workspace, browse to a specific component and choose the **compositions** tab.
-
-There you will see the full list of compositions implemented for each component with additional information on them.
+To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and choose the **compositions** tab. There, you will see the full list of compositions available for that component with additional component meta-data. 
 
 ## Standardize testing using component compositions
 
