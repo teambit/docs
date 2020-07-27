@@ -5,11 +5,11 @@ title: Compositions
 
 Compositions are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations.
 
-* In the [Scope UI](#), compositions play an essential part of a (published) component's documentation. They demonstrate potential behaviors and use cases for that component. 
+* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace]() and in remote component-sharing platforms like [Bit.dev](https://bit.dev).
 
-* In the [Workspace UI](./13-workspace-ui.md), when creating or modifying a component, compositions are used to validate that a component looks and behaves as expected, in different scenarios.
+* When creating or modifying a component in Bit's workspace, compositions serve as a way to validate that a component looks and behaves as expected, in different scenarios. Use Bit's [Workspcae UI]() to see them render in "controlled environments".
 
-* In automated testings, compositions are used as test samples.
+* Compositions can be used as test samples, in automated testings.
 
 > This document uses React code as snippets.
 

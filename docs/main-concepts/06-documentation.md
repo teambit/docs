@@ -3,75 +3,127 @@ id: documentation
 title: Documentation
 ---
 
-Maintaining documentation alongside as part of the codebase can be a tedious task. Some parts of the documentation, like propTypes and APIs may change often, while other, like description and best practices remain constant. Bit takes care of the grunt work by keeping a base documentation template based on the comments in your source code, propTypes declarations, and JSDocs.
+Documentation is the path to fame. It is what turns a good component to a useful component. 
 
-## Comments and propTypes
+Bit presents the components' docs both in the local Workspace UI and in the remote Scope UI. 
 
-Bit picks up all JSDocs and propTypes and displays them in a table.
+Bit offers a variety of ways to customize the documentation, with different courses pertaining to different parts of the docs.
 
-```javascript
+### The anatomy of a documentation, from top to bottom:
+
+* __Title__: The component's name, read from the code (and parsed from PascalCase/camelCase).
+* __Abstract__: The component description. 
+* __Tags__: Keywords that describe and categorize the component. 
+* __Custom JSX__: A slot for a custom JSX component.
+* __Playground__: A real-time playable examples of code.
+* __Compositions__: Instances of the component in different contexts and variations.  
+* __Properties table__: A table showing the name, type, default value and description of the component's props.
+
+## Customizing the documentation
+
+### Abstract
+
+### Tags
+
+### Custom JSX
+The custom JSX slot, placed below the component's meta-data, allows you to extend the documentation with your own custom component.
+
+For example, let's say we need a "Guidelines" section for our Button component. This section will talk about the correct usage of a component, in terms of UX.
+
+We'll first create a `<component>.docs.jsx` file in the Button component's directory:
+```sh
+$ thouch ./path/to/component/folder/<component>.docs.tsx
+```
+
+In this file, we'll create a React component and `export default` it, like so:
+
+```tsx
 import React from 'react'
-import PropTypes from 'prop-types'
-/**
- * General component description in JSDoc format. Markdown is *supported*.
- */
-export default class Button extends React.Component {
-  static propTypes = {
-    /** Description of prop "foo". */
-    foo: PropTypes.number,
-    /** Description of prop "baz". */
-    baz: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  }
-  static defaultProps = {
-    foo: 42
-  }
 
-  render() {
-    /* ... */
-  }
+export default function () {
+    const style = {
+      // some styling...
+    }
+    return (
+        <div style={style}>
+            <p >Guidelines</p>
+            <ul>
+                <li>
+                    Place buttons where users expect to find them. Do not force users to "hunt for buttons".
+                </li>
+                // more list items...
+            </ul>
+        </div>
+    )
+}
+```
+And, that's it. No further configurations are needed.
+
+The code above will show up like so:
+![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
+
+
+### Playground
+
+### Compositions
+
+###  Properties Table
+
+To ensure the documentation is faithful to the code, Bit generates the properties table from the code itself using react-docgen. At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the functional run-time code itself.
+
+### TypeScript + JSDocs:
+```tsx
+export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
+    /** Choose between primary and secondary styling. */
+    variant?: 'primary' | 'secondary';
+}
+
+
+export const Button = ({children, variant, ...rest} : IButton) => {
+    return (
+        <button className={styles[variant]} {...rest}>
+            {children}
+        </button>
+    )
+}
+
+Button.defaultProps = {
+    variant: 'primary'
 }
 ```
 
-## Usage examples
+A few things to note here:
 
-Bit will look for any `*.compositions` files in the component and display all [compositions](LINK) in a gallery.
+* JSDocs comments written directly above the type definitions, will show up as prop description in the properties table.
 
-```javascript
-import React from "react";
-import { CopyBox } from "./copy-box";
+* Inherited props, often received by extending React's out-of-the-box types, will not show up in the documentation unless they are explicitly defined. For example, in the code snippet above, a Button component extends a native HTML button attributes (`ButtonHTMLAttributes<HTMLButtonElement>`) but none of these attributes will appear in the props table (for example: `disabled`,`onclick`, etc.)
 
-export const BasicBox = () => {
-  return (
-    <CopyBox>
-        here is some text for you to copy
-    </CopyBox>
-  );
-};
 
-export const LargeBox = () => {
-  return (
-    <CopyBox size="large">
-        here is some text for you to copy
-    </CopyBox>
-  );
-};
-```
+*  Conflicts between parts of the code that is parsed to the properties table, will be resolved one way or the other.
+For example:
+```tsx
+export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
+    variant: 'primary' | 'secondary';
+}
 
-## Public methods
-
-By default, any methods your components have are considered to be private and are not published. Mark your public methods with JSDoc `@public` tag to get them published in the docs:
-
-```javascript
-/**
- * Insert text at cursor position.
- *
- * @param {string} text
- * @public
- */
-insertAtCursor(text) {
-  // ...
+export const Button = ({children, variant = 'primary', ...rest} : IButton) => {
+    return (
+        <button className={styles[variant]} {...rest}>
+            {children}
+        </button>
+    )
 }
 ```
+The above code shows 'variant' as a 'required' prop (since that is the default). However, the 'variant' prop receives a default value, making it 'optional'. The properties table will ignore TS and show the prop as 'optional'. 
+
+
+![](https://res.cloudinary.com/blog-assets/image/upload/v1595377690/props_screenshot_vuv0px.png)
+
+### TypeScript + JSDocs:
+
+
+
+
 
 ## Defining custom documentation
 
@@ -119,20 +171,4 @@ export default () => {
     </Section>
   );
 };
-```
-
-### Component abstract description
-
-A component's abstract description is fetched by default from parsing the component's JSDocs. To change it you can either modify your JSDocs annotation in the code or adding this line to the component's `docs` file.
-
-```javascript
-export const abstract = 'Your description goes here'
-```
-
-### Adding labels to a component
-
-To improve component discoverability and filtering you can set labels for components. Bit will use these labels as part of the component documentation as well as their metadata.
-
-```javascript
-export const labels = ['react', 'ui-component', 'label list'];
 ```
