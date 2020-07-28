@@ -5,11 +5,11 @@ title: Documentation
 
 Documentation is the path to fame. It is what turns a good component to a useful component. 
 
-Bit presents the components' docs both in the local Workspace UI and in the remote Scope UI. 
+Bit presents the components' documentation both in the local Workspace UI, under the 'overview' tab, and in the remote Scope UI. 
 
-Bit offers a variety of ways to customize the documentation, with different courses pertaining to different parts of the docs.
+Bit offers a variety of ways to customize the documentation, with different courses pertaining to different parts of the documentation.
 
-### The anatomy of a documentation, from top to bottom:
+## The anatomy of a documentation (top to bottom):
 
 * __Title__: The component's name, read from the code (and parsed from PascalCase/camelCase).
 * __Abstract__: The component description. 
@@ -19,20 +19,33 @@ Bit offers a variety of ways to customize the documentation, with different cour
 * __Compositions__: Instances of the component in different contexts and variations.  
 * __Properties table__: A table showing the name, type, default value and description of the component's props.
 
-## Customizing the documentation
+### Abstract & Tags
+* The _abstract_ and _tags_, located under the component title are set using the `abstract` and `tags` variables, in the component's `*.doc.tsx` file. Setting these attributes using code means you can generate them in any way you choose.
 
-### Abstract
+For example:
 
-### Tags
+Let's first create the `*.doc.tsx` file in the component's directory
+
+```sh
+$ touch ./path/to/component/folder/<component>.docs.tsx
+```
+
+Then, set the abstract and tags variables and export them.
+
+```javascript
+export const abstract = "An imperfect button"
+
+export const tags = ["react", "typescript", "button"]
+```
 
 ### Custom JSX
 The custom JSX slot, placed below the component's meta-data, allows you to extend the documentation with your own custom component.
 
-For example, let's say we need a "Guidelines" section for our Button component. This section will talk about the correct usage of a component, in terms of UX.
+For example, let's create a 'Guidelines' section for our 'Button' component documentation:
 
-We'll first create a `<component>.docs.jsx` file in the Button component's directory:
+We'll first create a `*.doc.tsx` file in the 'Button' component directory:
 ```sh
-$ thouch ./path/to/component/folder/<component>.docs.tsx
+$ touch ./path/to/component/folder/button.docs.tsx
 ```
 
 In this file, we'll create a React component and `export default` it, like so:
@@ -59,17 +72,48 @@ export default function () {
 ```
 And, that's it. No further configurations are needed.
 
-The code above will show up like so:
+The code above will be rendered like so:
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
 
-
+[Learn more about Compositions here.]()
 ### Playground
 
 ### Compositions
+Compositions are examples or instances of a component. They demonstrate potential behaviors and use cases for that component. Compositions are no more than standard components, located in the `<component>.compositions.tsx` directory.
+
+For example, let's create two simple compositions for a 'Button' component:
+
+```sh
+$ touch ./path/to/component/folder/button.compositions.tsx
+```
+We'll then import the 'Button' component and use it to create the compositions:
+
+```tsx
+import React from "react";
+import { Button } from "./button";
+
+export const PrimaryButton = () => {
+  return (
+    <Button variant="primary">
+        Click Me
+    </Button>
+  );
+};
+
+
+export const SecondaryButton = () => {
+  return (
+    <Button variant="secondary">
+        Click Me
+    </Button>
+  );
+};
+```
+
 
 ###  Properties Table
 
-To ensure the documentation is faithful to the code, Bit generates the properties table from the code itself using react-docgen. At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the functional run-time code itself.
+To ensure the documentation is faithful to the code, Bit generates the properties table from the code itself using [react-docgen](https://github.com/reactjs/react-docgen). At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the functional run-time code itself.
 
 ### TypeScript + JSDocs:
 ```tsx
@@ -99,7 +143,7 @@ A few things to note here:
 * Inherited props, often received by extending React's out-of-the-box types, will not show up in the documentation unless they are explicitly defined. For example, in the code snippet above, a Button component extends a native HTML button attributes (`ButtonHTMLAttributes<HTMLButtonElement>`) but none of these attributes will appear in the props table (for example: `disabled`,`onclick`, etc.)
 
 
-*  Conflicts between parts of the code that is parsed to the properties table, will be resolved one way or the other.
+*  Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
 For example:
 ```tsx
 export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
@@ -119,56 +163,5 @@ The above code shows 'variant' as a 'required' prop (since that is the default).
 
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595377690/props_screenshot_vuv0px.png)
 
-### TypeScript + JSDocs:
+### prop-types + JSDocs:
 
-
-
-
-
-## Defining custom documentation
-
-If you want to override and add features on top of the automatically generated documentation from the add a documentation file.
-
-```sh
-$ thouch ./path/to/component/folder/<component>.docs.tsx
-```
-
-This is a basic React component Bit uses to compose with the automated documentation. It supports several features:
-
-### Adding your own documentation to a component
-
-Any content used by the `default` export is rendered as the component's description.
-
-```javascript
-import React from 'react';
-
-export default () => {
-  return (
-    <h1>New title in component overview</h1>
-    <p>And some additional free-form text</p>
-  );
-};
-```
-
-Bit comes with many components you can use for your template:
-
-```javascript
-import React from 'react';
-import { Paragraph } from '@bit/bit.test-scope.ui.paragraph';
-import { Section } from '@bit/bit.test-scope.ui.section';
-import { LinkedHeading } from '@bit/bit.test-scope.ui.linked-heading';
-
-export default () => {
-  return (
-    <Section>
-      <LinkedHeading link='overview'>Summary</LinkedHeading>
-      <Paragraph>
-        Links are used as navigational elements and can be used on their own or inline with text. 
-        They provide a lightweight option for navigation but like other interactive elements, too 
-        many links will clutter a page and make it difficult for users to identify their next steps. 
-        This is especially true for inline links, which should be used sparingly.
-      </Paragraph>
-    </Section>
-  );
-};
-```
