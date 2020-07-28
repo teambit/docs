@@ -51,7 +51,7 @@ export const SecondaryButton = () => {
   );
 };
 ```
-
+![](https://res.cloudinary.com/blog-assets/image/upload/v1595938174/Screen_Shot_2020-07-28_at_15.09.05_sningi.png)
 ## Setting canvas size for compositions
 
 Some components should be mobile friendly, look different in some sizes... need to make sure compositions are mocked to fit various sizes.
