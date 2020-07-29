@@ -15,8 +15,8 @@ Bit offers a variety of ways to customize the documentation, with different cour
 * __Abstract__: The component description. 
 * __Tags__: Keywords that describe and categorize the component. 
 * __Custom JSX__: A slot for a custom JSX component.
-* __Playground__: A real-time playable examples of code.
-* __Compositions__: Instances of the component in different contexts and variations.  
+* __Compositions__: Instances of the component in different contexts and variations.
+* __Examples__: Instructions and playable examples of code, that function as a tutorial for a component.
 * __Properties table__: A table showing the name, type, default value and description of the component's props.
 
 ### Abstract & Tags
@@ -76,7 +76,6 @@ The code above will be rendered like so:
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
 
 [Learn more about Compositions here.]()
-### Playground
 
 ### Compositions
 Compositions are examples or instances of a component. They demonstrate potential behaviors and use cases for that component. Compositions are no more than standard components, located in the `<component>.compositions.tsx` directory.
@@ -109,7 +108,43 @@ export const SecondaryButton = () => {
   );
 };
 ```
+### Examples
 
+Examples are verbal descriptions and playable code that instruct on how a component should be used.
+
+Examples are set using the `examples` variable in the `<component>.docs.tsx` file.
+
+The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
+
+* __scope__: An _object_ with all relevant imports.
+* __title__: A _string_ for the example title.
+* __Description__: A _string_ for the example description.
+* __Code__: A _string_ (template literal) for the example code.
+
+For example, let's create an example for a 'Card' component:
+```sh
+$ touch ./path/to/component/folder/card.docs.tsx
+```
+Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
+
+```jsx
+import React from 'react'
+import {Card} from './card'
+
+export const examples = [
+  {
+    scope: {
+      Card
+    },
+    title: "Simple Card",
+    description: "Use 'fullWidth' for small screens" ,
+    code: `<Card size='fullWidth'>                
+                <p>When do two functions fight?</p>
+                <p>- When they have arguments</p>
+            </Card>`
+    }
+];
+```
 
 ###  Properties Table
 

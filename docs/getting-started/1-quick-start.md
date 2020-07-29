@@ -3,7 +3,11 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to build a full stack application out of common frameworks and libraries using component driven development and modern technologies.
+In this tutorial you will use Bit to create an app, bottom up, from elementary components to full (component) pages. 
+
+The components you'll create will be independent and shareable. You'll export them to a remote scope to make them available for other projects.
+
+You will also import and use a component from a remote scope.
 
 ## Install Bit
 
