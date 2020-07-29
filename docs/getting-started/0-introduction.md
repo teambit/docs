@@ -16,6 +16,7 @@ Bit simplifies component-driven development. It manages the entire process of pu
 
 Use Bit to distribute and maintain your design system, UI widgets, pages and features.
 
+
 ## Workspace UI
 
 All your components managed in a single place. See test results, rendered stories, dependency graph insights and documentation in the a dedicated development environment, for each component.

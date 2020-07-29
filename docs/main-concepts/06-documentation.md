@@ -3,7 +3,7 @@ id: documentation
 title: Documentation
 ---
 
-Documentation is the path to fame. It is what turns a good component to a useful component. 
+Documentation is the path to fame. It  what turns a component from just 'good' to 'useful'. 
 
 Bit presents the components' documentation both in the local Workspace UI, under the 'overview' tab, and in the remote Scope UI. 
 
