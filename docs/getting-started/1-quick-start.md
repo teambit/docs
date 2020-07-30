@@ -3,11 +3,11 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to create an app, bottom up, from elementary components to full (component) pages, and finally to a single app component. 
+In this tutorial you will use Bit to create an app, bottom up, from "atoms" to "molecules", all the way to an app component. 
 
 The components you'll create will be independent and shareable. You'll make them available for other projects by sharing them to a remote scope.
 
-Last, but definitely not least, you will import and reuse a component from a remote scope.
+Lastly, you will import and and integrate a component from a remote scope into your own project.
 
 ## Install Bit
 
@@ -15,7 +15,7 @@ Last, but definitely not least, you will import and reuse a component from a rem
 $ npm install bit-bin@15.0.0-beta --global
 ```
 
-## Create a new workspace
+## Initialize a new workspace
 
 ```sh
 $ mkdir bad-jokes-app
@@ -23,35 +23,81 @@ $ cd bad-jokes-app
 $ bit init --harmony
 ```
 
-This will initialize a Bit workspace, with two new important additions to notice:
+This will initialize a Bit workspace, with two new additions worth noticing:
 
 - A `workspace.json` file to manage the entire workspace configurations. 
 
 - A `components` directory for all soon-to-be-tracked components.
 
-## Run the local dev server
-Now that you've set up a Bit workspace, run Bit's local server to see your workspace UI.
+## Run Bit's local dev server to see the workspace UI
+Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI]().
+
+The workspace UI displays all your tracked components with their [compositions](), [documentation](), [examples]() and more.
 
 ```sh
 $ bit start
 ```
 
-## Configure your development environment
+## Configure your workspace
 
-Bit automates your development workflow using Environments.... TODO
+Bit automates your development workflow using [Environments](). These are pre-configured development environments that manage common tasks like creating, testing and publishing a component.  
 
-To configure your project to use react:
+Well set the name and scope of our workspace and configure it to use Bit's environment for React:
 
-1. Open `workspace.json` file.
-2. Locate the `@teambit/worksapce` entry and add:
+1. Open the `workspace.json` file.
+2. Locate the `@teambit/worksapce` entry and add your project name and [scope](). A scope is a "bucket" for components that share a purpose or a business concern.
+2. To set React's environment to handle _all_ components in this workspace we'll set the selector under the `@teambit/variance` entry to `'*'`. 
+- If we were creating another group of components that should be handled by a different environment, we would place them under a single directory and set a more specific selector to override the previous one (e.g, `'/serverless-functions/*'`)
 
 ```json
-TODO
+**/{
+  "$schema": "",
+
+  "@teambit/workspace": {
+
+    "name": "bad-jokes",
+  
+    "defaultScope": "teambit.bad-jokes",
+
+    "defaultDirectory": "components",
+
+    "components": [
+      {
+        "defaultScope": "ui",
+        "directory": "base"
+      },
+      {
+        "defaultScope": "extensions",
+        "directory": "extensions"
+      }
+    ]
+  },
+
+  "@teambit/dependency-resolver": {
+
+    "strictPeerDependencies": true,
+
+    "extraArgs": []
+  },
+
+  "@teambit/variants": {
+
+    "extensions/*": {
+
+    },
+    "*": {
+      "@teambit/envs": {
+        "env": "@teambit/react",
+        "config": {}
+      }
+    }
+  }
+}
 ```
 
 ## Add a component
 
-Components in a Bit workspace must have all their files in the same directory:
+To follow best practice, each component handled by a Bit workspace, must have all its files under the same directory:
 
 ```sh
 $ mkdir components/ui/button
@@ -70,20 +116,20 @@ $ touch components/ui/button/button.tsx
 $ touch components/ui/button/button.module.scss
 ```
 
-Inside your `index.ts` file, export everything from you `button.tsx` file:
+Use the `index.ts` file to export everything from the `button.tsx` file:
 
 ```js
 export * from './button';
 ```
 
-Add the following code to `components/base/button/button.tsx`
+Add the following lines to `components/ui/button/button.tsx`
 
 ```tsx
 import React, {ButtonHTMLAttributes} from 'react'
 import styles from './button.module.scss'
 
 
-export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     /** Choose between primary and secondary styling. */
     variant?: 'primary' | 'secondary';
 }
@@ -143,7 +189,7 @@ Add the following lines to `components/base/button/button.module.scss`
   }
 ```
 
-To have the component managed by Bit, you need to use the following command:
+To track a component by Bit, use:
 
 ```sh
 $ bit add components/ui/button
