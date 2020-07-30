@@ -3,7 +3,7 @@ id: documentation
 title: Documentation
 ---
 
-Documentation is the path to fame. It  what turns a component from just 'good' to 'useful'. 
+Documentation is the path to fame. It  what turns a component from 'good' to 'useful'. 
 
 Bit presents the components' documentation both in the local Workspace UI, under the 'overview' tab, and in the remote Scope UI. 
 
@@ -41,7 +41,7 @@ export const tags = ["react", "typescript", "button"]
 ### Custom JSX
 The custom JSX slot, placed below the component's meta-data, allows you to extend the documentation with your own custom component.
 
-For example, let's create a 'Guidelines' section for our 'Button' component documentation:
+For example, let's create a 'Guidelines' section for a 'Button' component documentation:
 
 We'll first create a `*.doc.tsx` file in the 'Button' component directory:
 ```sh
@@ -70,15 +70,13 @@ export default function () {
     )
 }
 ```
-And, that's it. No further configurations are needed.
-
 The code above will be rendered like so:
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
 
 [Learn more about Compositions here.]()
 
 ### Compositions
-Compositions are examples or instances of a component. They demonstrate potential behaviors and use cases for that component. Compositions are no more than standard components, located in the `<component>.compositions.tsx` directory.
+Compositions are examples or instances of a component. They demonstrate potential use cases and behaviors for that component. Compositions are no more than standard components, located in the `<component>.compositions.tsx` directory.
 
 For example, let's create two simple compositions for a 'Button' component:
 

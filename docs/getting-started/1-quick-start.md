@@ -3,32 +3,34 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to create an app, bottom up, from elementary components to full (component) pages. 
+In this tutorial you will use Bit to create an app, bottom up, from elementary components to full (component) pages, and finally to a single app component. 
 
-The components you'll create will be independent and shareable. You'll export them to a remote scope to make them available for other projects.
+The components you'll create will be independent and shareable. You'll make them available for other projects by sharing them to a remote scope.
 
-You will also import and use a component from a remote scope.
+Last, but definitely not least, you will import and reuse a component from a remote scope.
 
 ## Install Bit
 
-TODO
+```sh
+$ npm install bit-bin@15.0.0-beta --global
+```
 
 ## Create a new workspace
 
 ```sh
-$ mkdir todos-react
-$ cd todos-react
+$ mkdir bad-jokes-app
+$ cd bad-jokes-app
 $ bit init --harmony
 ```
 
-The command creates the Bit workspace which is constructed of:
+This will initialize a Bit workspace, with two new important additions to notice:
 
-- `workspace.json` file.
-- `components` directory.
+- A `workspace.json` file to manage the entire workspace configurations. 
+
+- A `components` directory for all soon-to-be-tracked components.
 
 ## Run the local dev server
-
-Now that the workspace is setup, run Bit development server locally.
+Now that you've set up a Bit workspace, run Bit's local server to see your workspace UI.
 
 ```sh
 $ bit start
@@ -49,50 +51,102 @@ TODO
 
 ## Add a component
 
-> When we get `bit create` we'll refactor this part
-
-Components in a Bit workspace must have all their implementation files in the same directory. So to create your first component, add a new directory:
+Components in a Bit workspace must have all their files in the same directory:
 
 ```sh
-$ mkdir components/base
-$ mkdir components/base/button
+$ mkdir components/ui/button
 ```
 
 Bit uses a strict standard for Barrel files, so the first file we'll create is the index file for the component:
 
 ```sh
-$ touch components/base/button/index.ts
+$ touch components/ui/button/index.ts
 ```
 
 Once you have your Barrel file, create the main implementation file for the component.
 
 ```sh
-$ touch components/base/button/button.tsx
-$ touch components/base/button/button.module.scss
+$ touch components/ui/button/button.tsx
+$ touch components/ui/button/button.module.scss
 ```
 
-Add the following line to `components/base/button/index.ts`
+Inside your `index.ts` file, export everything from you `button.tsx` file:
 
 ```js
 export * from './button';
 ```
 
-Add the following lines to `components/base/button/button.tsx`
+Add the following code to `components/base/button/button.tsx`
 
-```js
-// TODO - button impl
+```tsx
+import React, {ButtonHTMLAttributes} from 'react'
+import styles from './button.module.scss'
+
+
+export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
+    /** Choose between primary and secondary styling. */
+    variant?: 'primary' | 'secondary';
+}
+
+
+export const Button = ({children, variant = 'primary', ...rest} : IButton) => {
+    return (
+        <button className={styles[variant]} {...rest}>
+            {children}
+        </button>
+    )
+}
 ```
 
 Add the following lines to `components/base/button/button.module.scss`
 
-```js
-// TODO - button styles
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+.primary {
+    border: solid 7px #ab3636;
+    background-color: #ab3636;
+      &:hover {
+        border-color: #8b1b1b;
+        background-color: #8b1b1b;
+      }
+  }
+  
+  .secondary {
+    border: solid 7px #363eab;
+    background-color: #363eab;
+      &:hover {
+        border-color: #434cc5;
+        background-color: #434cc5;
+      }
+  }
+
+  .base {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    transition: background-color 0.5s, border 0.5s;
+      &:active {
+        border-color: #313131;
+        background-color: #fff;
+        color: #000;
+      }
+      &:disabled{
+        border-color: #a5a5a5;
+        background-color: #a5a5a5;
+    }
+  }
 ```
 
 To have the component managed by Bit, you need to use the following command:
 
 ```sh
-$ bit add components/base/button
+$ bit add components/ui/button
 ```
 
 Now browse to the local development server at [http://localhost:300](http://localhost:3000) to see that the component is managed by Bit.
