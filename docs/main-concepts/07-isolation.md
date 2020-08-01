@@ -130,9 +130,8 @@ class UserAvatar extends React.component{
 }
 ```
 
-#### Decouple data and layout
-
-Separate presentational and container components. In most cases the data is specific to the consuming application. Component producers should provide presentational component only with APIs to get the data from a wrapping component that is managing data and state.
+#### Decouple logic and presentation
+Make use of custom hooks to handle logic and data-fetching. Decoupling UI from logic not only makes your UI more reusable but also, potentially, does the same for your logic. In case of class components, use "[container components](https://medium.com/@learnreact/container-components-c0e67432e005)" to handle logic and present it by using "dumb" UI components. 
 
 ```javascript
 //container component

@@ -95,8 +95,10 @@ Well set the name and scope of our workspace and configure it to use Bit's envir
 }
 ```
 
-## Add a component
+## Add two UI components
+A component in Bit is more than a set of its implementation site. It has everything
 
+### A 'Button' component
 To follow best practice, each component handled by a Bit workspace, must have all its files under the same directory:
 
 ```sh
@@ -201,7 +203,10 @@ Now browse to the local development server at [http://localhost:300](http://loca
 >
 > Learn more about the component overview and it's features.
 
-## Adding compositions to a component
+### A 'Card' component
+
+
+### Add compositions to a component
 
 Use Compositions to render the component in isolation and test is in various cases.
 
@@ -239,11 +244,11 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 >
 > Learn more about component compositions
 
-## Add tests
+### Add tests
 
 TODO - need to get tests working in Bit.... should also utilize compositions for testing and write about it
 
-## Edit component documentation
+### Customize documentation
 
 // TODO explain about docs template, automation and overrides
 
@@ -257,7 +262,55 @@ TODO - need to get tests working in Bit.... should also utilize compositions for
 >
 > Learn more about component documentation
 
-## Add a page component
+## Add a React hook
+
+Add a react hook to handle the data fetching for...
+
+Create...
+
+```sh
+$ mkdir -p hooks/use-get-joke
+$ touch hooks/use-get-joke/use-get-joke.ts
+```
+
+Add this....
+
+```ts
+import {useState, useEffect} from 'react';
+
+export const useGetJokes = () : [() => Promise<void>, string[], boolean, string] =>{
+
+    const [joke, setJoke] = useState(['']);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
+    const endpoint = 'https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=racist&type=single';
+
+    const getJoke = async () => {
+          setIsLoading(true);
+        try {
+            let res = await fetch(endpoint);
+            let data = await res.json();
+            const dataArr = data.joke.split('\n');
+            setJoke(dataArr);
+            if (error) setError('');
+            setIsLoading(false);
+        }
+        catch (err) {
+            setError(err.message);
+            setIsLoading(false);
+        }      
+      }
+    
+      useEffect(() => {
+        getJoke();
+    }, [])
+
+    return [getJoke, joke, isLoading, error]
+}
+```
+### Add live examples (for instructions)
+
+## Compose an app
 
 In a component driven development each part of an application is a component....
 TODO
@@ -266,7 +319,7 @@ TODO
 1. create a new component called `homepage` (including compositions)
 1. add files, docs...
 
-### Use a component
+### Import tracked components
 
 - note about absolute imports for components
 - have `homepage` import `button`
@@ -277,21 +330,6 @@ TODO
 1. explain all componetns are connected via deps
 1. modify button
 1. show that hompage is marked as modified
-
-## Add react hook
-
-1. add directory for hooks
-1. create hook
-1. connect hook to homepage
-
-## Compose an application
-
-write that apps are compositions
-
-1. add `apps` directory
-1. add variant
-1. configure react to bundle components in the apps folder
-1. add "marketing" app.
 
 ## Version components
 
