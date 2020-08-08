@@ -2,6 +2,8 @@
 id: documentation
 title: Documentation
 ---
+## Introduction
+
 The documentation is presented in the local [Workspace UI](), and in the remote [Scope UI]() (e.g, on Bit.dev). 
 
 The documentation pages are generated using templates. These templates are determined by the different [environment(s)]() that are set for different types of components. That ensures each component type gets documented in the way that suits its purpose and technology (e.g, a doc template for React UI components and another template for serverless node functions).
@@ -156,20 +158,27 @@ The custom JSX slot gives you the freedom to extend the documentation page as yo
 For example, let's create a 'Guidelines' section for a 'Button' component documentation:
 
 ```tsx
-import React from 'react'
-
 export default function () {
-    const style = {
-      // some styling...
+    const wrapper = {
+      border: '1px solid #e0ddd8',
+      borderRadius: '5px',
+      padding: '25px',
+      marginBottom: '25px'
     }
     return (
-        <div style={style}>
-            <p >Guidelines</p>
-            <ul>
+        <div style={wrapper}>
+            <p style={{fontWeight: 700}}>Guidelines</p>
+            <br/>
+            <ul style={{listStyleType: 'circle', paddingLeft: "25px"}} >
                 <li>
                     Place buttons where users expect to find them. Do not force users to "hunt for buttons".
                 </li>
-                // more list items...
+                <li>
+                    Do not use generic labels for your buttons. Use verbs that clearly explain the button's function.
+                </li>
+                <li>
+                    Size buttons in proportion to their importance
+                </li>
             </ul>
         </div>
     )
