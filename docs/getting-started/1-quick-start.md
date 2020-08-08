@@ -22,11 +22,11 @@ $ cd bad-jokes
 $ bit init --harmony
 ```
 
-This will initialize a Bit workspace in our (soon-to-be) "bad-jokes" app directory.
+This will initialize a Bit workspace in our new "bad-jokes" app directory.
 
-To important things to note are the new:
+Two important things to note here are the new:
 
-- `workspace.json` file that manages the entire workspace configurations (component environment, package manager, etc.)
+- `workspace.jsonc` file that manages the entire workspace configuration.
 
 - `components` directory for all soon-to-be-tracked components.
 
@@ -41,8 +41,9 @@ The workspace UI displays all components tracked by your (Bit) workspace. It is 
 $ bit start
 ```
 
-## Configure our Bit workspace
-To configure our workspace we'll edit the `workspace.jsonc` file. Note that all entries starting with `@teambit/` refer to extensions built by Bit.
+## Workspace configurations
+To set our workspace configurations, we'll open the `workspace.jsonc` file. 
+>Note that all entries starting with `@teambit/` refer to extensions built by Bit.
 
 We will configure the following:
 * __Workspace name__ -  `"name": "bad-jokes"`
@@ -242,7 +243,7 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 ### Review the documentation
 > TODO
 
-#### Override the component's meta-data
+### Override the component's meta-data
 
 The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. 
 To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.
