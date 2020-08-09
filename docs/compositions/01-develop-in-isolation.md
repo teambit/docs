@@ -5,9 +5,9 @@ title: Develop in Isolation
 
 Compositions are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations.
 
-* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace]() and in remote component-sharing platforms like [Bit.dev](https://bit.dev).
+* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](TODO) and in remote component-sharing platforms like [Bit.dev](https://bit.dev).
 
-* When creating or modifying a component in Bit's workspace, compositions serve as a way to validate that a component looks and behaves as expected, in different scenarios. Use Bit's [Workspcae UI]() to see them render in "controlled environments".
+* When creating or modifying a component in Bit's workspace, compositions serve as a way to validate that a component looks and behaves as expected, in different scenarios. Use Bit's [Workspcae UI](TODO) to see them render in "controlled environments".
 
 * Compositions can be used as test samples, in automated testings.
 

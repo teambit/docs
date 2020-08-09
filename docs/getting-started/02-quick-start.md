@@ -3,11 +3,9 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to create an app, bottom up, from "atoms" to "molecules", all the way to an app component. 
+In this tutorial you will use Bit to build an app, bottom up, using independent components. These component's will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import  and integrate a component from a remote scope into your own project.
 
-The components you'll create will be independent and shareable. You'll make them available for other projects by sharing them to a remote scope.
-
-Lastly, you will import and and integrate a component from a remote scope into your own project.
+This is by no means a "quick start" as it covers all the main tools, concepts and methodologies used by Bit.
 
 ## Install Bit
 
@@ -15,76 +13,54 @@ Lastly, you will import and and integrate a component from a remote scope into y
 $ npm install bit-bin@15.0.0-beta --global
 ```
 
-## Initialize a new workspace
+## Initialize a new Bit workspace
+
+Bit is a composition of "extensions" or "extension components". These are components that handle some part of a component life-cycle. The "workspace" extension is unique, as it orchestrates all other extensions. Naturally, this will be our starting point.
 
 ```sh
-$ mkdir bad-jokes-app
-$ cd bad-jokes-app
+$ mkdir bad-jokes
+$ cd bad-jokes
 $ bit init --harmony
 ```
 
-This will initialize a Bit workspace, with two new additions worth noticing:
+This will initialize a Bit workspace in our new "bad-jokes" app directory. Two important things to note here are the new:
 
-- A `workspace.json` file to manage the entire workspace configurations. 
-
-- A `components` directory for all soon-to-be-tracked components.
+* `workspace.jsonc` file that manages the entire workspace configuration.
+* `components` directory for all soon-to-be-tracked components.
 
 ## Run Bit's local dev server to see the workspace UI
-Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI]().
 
-The workspace UI displays all your tracked components with their [compositions](), [documentation](), [examples]() and more.
+Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI](TODO).
+
+The workspace UI displays all components tracked by your (Bit) workspace. It is a development tool that enables you to examine your components in different contexts and variations, and browse through their documentation. The workspace UI is part of the workspace extension.
 
 ```sh
 $ bit start
 ```
 
-## Configure your workspace
+## Workspace configurations
 
-Bit automates your development workflow using [Environments](). These are pre-configured development environments that manage common tasks like creating, testing and publishing a component.  
+To set our workspace configurations, we'll open the `workspace.jsonc` file. 
+>Note that all entries starting with `@teambit/` refer to extensions built by Bit.
 
-Well set the name and scope of our workspace and configure it to use Bit's environment for React:
+We will configure the following:
 
-1. Open the `workspace.json` file.
-2. Locate the `@teambit/worksapce` entry and add your project name and [scope](). A scope is a "bucket" for components that share a purpose or a business concern.
-2. To set React's environment to handle _all_ components in this workspace we'll set the selector under the `@teambit/variance` entry to `'*'`. 
-- If we were creating another group of components that should be handled by a different environment, we would place them under a single directory and set a more specific selector to override the previous one (e.g, `'/serverless-functions/*'`)
+* __Workspace name__ -  `"name": "bad-jokes"`
+* __Scope name__ (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](TODO), either locally or on a server, is the storehouse for all tagged or "committed" components.
+* __Component Environment__ - `"@teambit/envs": {"env": "@teambit/react"}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
 
 ```json
-**/{
+{
   "$schema": "",
-
   "@teambit/workspace": {
-
     "name": "bad-jokes",
-  
     "defaultScope": "teambit.bad-jokes",
-
-    "defaultDirectory": "components",
-
-    "components": [
-      {
-        "defaultScope": "ui",
-        "directory": "base"
-      },
-      {
-        "defaultScope": "extensions",
-        "directory": "extensions"
-      }
-    ]
+    "defaultDirectory": "components"
   },
-
   "@teambit/dependency-resolver": {
-
     "strictPeerDependencies": true,
-
-    "extraArgs": []
   },
-
   "@teambit/variants": {
-
-    "extensions/*": {
-
-    },
     "*": {
       "@teambit/envs": {
         "env": "@teambit/react",
@@ -95,11 +71,9 @@ Well set the name and scope of our workspace and configure it to use Bit's envir
 }
 ```
 
-## Add two UI components
-A component in Bit is more than a set of its implementation site. It has everything
+## Add a new UI component
 
-### A 'Button' component
-To follow best practice, each component handled by a Bit workspace, must have all its files under the same directory:
+A [component](TODO) is more than its set of implementation files. It has everything it needs to be used as an independent piece of software. Each component handled by a Bit workspace, must have all its files under the same directory:
 
 ```sh
 $ mkdir components/ui/button
@@ -109,6 +83,12 @@ Bit uses a strict standard for Barrel files, so the first file we'll create is t
 
 ```sh
 $ touch components/ui/button/index.ts
+```
+
+Export all (future) variables and types:
+
+```js
+export * from './button`
 ```
 
 Once you have your Barrel file, create the main implementation file for the component.
@@ -130,12 +110,10 @@ Add the following lines to `components/ui/button/button.tsx`
 import React, {ButtonHTMLAttributes} from 'react'
 import styles from './button.module.scss'
 
-
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     /** Choose between primary and secondary styling. */
     variant?: 'primary' | 'secondary';
 }
-
 
 export const Button = ({children, variant = 'primary', ...rest} : IButton) => {
     return (
@@ -191,6 +169,8 @@ Add the following lines to `components/base/button/button.module.scss`
   }
 ```
 
+### Track the Component
+
 To track a component by Bit, use:
 
 ```sh
@@ -203,35 +183,36 @@ Now browse to the local development server at [http://localhost:300](http://loca
 >
 > Learn more about the component overview and it's features.
 
-### A 'Card' component
+### Add compositions
 
-
-### Add compositions to a component
-
-Use Compositions to render the component in isolation and test is in various cases.
-
-Create the `compositions` file as part of the component:
+Use Compositions to render the component in isolation and test is in various cases. Create the `compositions` file as part of the component:
 
 ```sh
-$ touch components/base/button/button.composition.tsx
+$ touch components/ui/button/button.composition.tsx
 ```
 
-Add the following lines to `components/base/button/button.composition.tsx`
+Add the following lines to `components/ui/button/button.composition.tsx`
 
-```javascript
-import { button } from './index.ts'
-import React from "react";
+```tsx
+import React from 'react';
+import {Button} from './button';
 
-export const SimpleButton = () => {
-  return (
-    <button></button>
-  );
+export const PrimaryButton = () => {
+     return(
+         <Button variant='primary' onClick={() => alert('Clicked!')}>Primary Button</Button>
+     );
 };
 
-export const LargeButton = () => {
-  return (
-    <button size="large"></button>
-  );
+export const SecondaryButton = () => {
+    return(
+        <Button variant='secondary'>Secondary Button</Button>
+    );
+};
+
+export const DisabledButton = () => {
+    return(
+        <Button disabled variant='primary'>Disabled Button</Button>
+    );
 };
 ```
 
@@ -240,29 +221,61 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 1. Each named export is a composition.
 1. Composition name is a prettified version of the export name.
 
-> **Compositions**
->
-> Learn more about component compositions
-
 ### Add tests
 
-TODO - need to get tests working in Bit.... should also utilize compositions for testing and write about it
+> TODO - need to get tests working in Bit.... should also utilize compositions for testing and write about it
 
-### Customize documentation
+### Review the documentation
 
-// TODO explain about docs template, automation and overrides
+> TODO
 
-1. add docs file
-1. add labels
-1. edit abstract
-1. add examples (playground)
-1. default export
+### Override the component's meta-data
 
-> **Documentation**
->
-> Learn more about component documentation
+The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.
 
-## Add a React hook
+For example:
+
+```js
+export const abstract = "An imperfect button"
+
+export const tags = ["react", "typescript", "button"]
+```
+
+#### Extend the documentation with a custom component
+
+The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc` file, and export it as `default`.
+
+For example, let's create a 'Guidelines' section for a 'Button' component documentation:
+
+```js
+export default function () {
+    const wrapper = {
+      border: '1px solid #e0ddd8',
+      borderRadius: '5px',
+      padding: '25px',
+      marginBottom: '25px'
+    }
+    return (
+        <div style={wrapper}>
+            <p style={{fontWeight: 700}}>Guidelines</p>
+            <br/>
+            <ul style={{listStyleType: 'circle', paddingLeft: "25px"}} >
+                <li>
+                    Place buttons where users expect to find them. Do not force users to "hunt for buttons".
+                </li>
+                <li>
+                    Do not use generic labels for your buttons. Use verbs that clearly explain the button's function.
+                </li>
+                <li>
+                    Size buttons in proportion to their importance
+                </li>
+            </ul>
+        </div>
+    )
+}
+```
+
+## Add a new React hook
 
 Add a react hook to handle the data fetching for...
 
@@ -298,9 +311,8 @@ export const useGetJokes = () : [() => Promise<void>, string[], boolean, string]
         catch (err) {
             setError(err.message);
             setIsLoading(false);
-        }      
+        }
       }
-    
       useEffect(() => {
         getJoke();
     }, [])
@@ -308,28 +320,72 @@ export const useGetJokes = () : [() => Promise<void>, string[], boolean, string]
     return [getJoke, joke, isLoading, error]
 }
 ```
-### Add live examples (for instructions)
+
+### Track the component
+
+> TODO.
+
+### Review the documentation
+
+> TODO
+
+### Add live examples
+
+Examples are descriptions and playable code that instruct on how a component should be used. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.
+
+The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
+
+* __scope__: An _object_ with all relevant imports.
+* __title__: A _string_ for the example title.
+* __Description__: A _string_ for the example description.
+* __Code__: A _string_ (template literal) for the example code.
+
+For example, let's create an example for a 'Card' component:
+
+```sh
+$ touch ./path/to/component/folder/card.docs.tsx
+```
+
+Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
+
+```tsx
+export const examples = [
+    {
+      scope: {
+        useGetJokes
+      },
+      title: "Using useGetJokes",
+      description: "This hook uses a jokes api. It returns the data-fetching function (getJoke), the data (joke), the state of the 'getJoke' function and an error message (or an empty string)." ,
+      code: `() => {
+        const [getJoke, joke, isLoading, error] = useGetJokes();
+        return (
+            <div>
+                <div>
+                    {error || joke.map(line => <p>{line}</p>)}
+                </div>
+                <div>
+                    <button disabled={isLoading} onClick={getJoke}>
+                        {isLoading ? 'loading...' : "fetch a joke"}
+                    </button>
+                </div>
+            </div>
+        )
+    }`
+      }
+  ];
+```
 
 ## Compose an app
 
-In a component driven development each part of an application is a component....
-TODO
-
-1. add new directory
-1. create a new component called `homepage` (including compositions)
-1. add files, docs...
+> TODO basic files and set up
 
 ### Import tracked components
 
-- note about absolute imports for components
-- have `homepage` import `button`
-- update `compositions`
+### Add a composition
 
-## Get affected components
-
-1. explain all componetns are connected via deps
-1. modify button
-1. show that hompage is marked as modified
+* note about absolute imports for components
+* have `homepage` import `button`
+* update `compositions`
 
 ## Version components
 

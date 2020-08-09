@@ -3,9 +3,9 @@ id: automated-docs
 title: Automated Docs
 ---
 
-The documentation is presented in the local [Workspace UI](), and in the remote [Scope UI]() (e.g, on Bit.dev).
+The documentation is presented in the local [Workspace UI](TODO), and in the remote [Scope UI](TODO) (e.g, on Bit.dev).
 
-The documentation pages are generated using templates. These templates are determined by the different [environment(s)]() that are set for different types of components. That ensures each component type gets documented in the way that suits its purpose and technology (e.g, a doc template for React UI components and another template for serverless node functions).
+The documentation pages are generated using templates. These templates are determined by the different [environment(s)](TODO) that are set for different types of components. That ensures each component type gets documented in the way that suits its purpose and technology (e.g, a doc template for React UI components and another template for serverless node functions).
 
 In addition to that, Bit exposes a simple API for ad hoc customization.
 
@@ -127,4 +127,103 @@ export const SecondaryButton = () => {
     </Button>
   );
 };
+```
+
+### Overriding and extending the documentation
+
+Use the `doc` file to override the component's meta-properties and extend the documentation page with a custom component.
+
+We'll start by creating a `doc` file under the component directory.
+
+```sh
+$ touch ./path/to/component/folder/<component>.docs.tsx
+```
+
+#### Override 'abstract' and 'tags'
+
+The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.
+
+```js
+export const abstract = "An imperfect button"
+
+export const tags = ["react", "typescript", "button"]
+```
+
+#### Embed your own custom component
+
+The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc` file, and export it as `default`
+
+For example, let's create a 'Guidelines' section for a 'Button' component documentation:
+
+```tsx
+export default function () {
+    const wrapper = {
+      border: '1px solid #e0ddd8',
+      borderRadius: '5px',
+      padding: '25px',
+      marginBottom: '25px'
+    }
+    return (
+        <div style={wrapper}>
+            <p style={{fontWeight: 700}}>Guidelines</p>
+            <br/>
+            <ul style={{listStyleType: 'circle', paddingLeft: "25px"}} >
+                <li>
+                    Place buttons where users expect to find them. Do not force users to "hunt for buttons".
+                </li>
+                <li>
+                    Do not use generic labels for your buttons. Use verbs that clearly explain the button's function.
+                </li>
+                <li>
+                    Size buttons in proportion to their importance
+                </li>
+            </ul>
+        </div>
+    )
+}
+```
+
+The code above will be rendered like so:
+![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
+
+[Learn more about Compositions here.](TODO)
+
+### Adding examples -  instructions with playable code
+
+Examples are descriptions and playable code that instruct on how a component should be used.
+
+Examples are set using the `examples` variable in the `<component>.docs.tsx` file.
+
+The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
+
+* __scope__: An _object_ with all relevant imports.
+* __title__: A _string_ for the example title.
+* __Description__: A _string_ for the example description.
+* __Code__: A _string_ (template literal) for the example code.
+
+For example, let's create an example for a 'Card' component:
+
+```sh
+$ touch ./path/to/component/folder/card.docs.tsx
+```
+
+Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
+
+```jsx
+import React from 'react'
+import {Card} from './card'
+
+export const examples = [
+  {
+    scope: {
+      Card
+    },
+    title: "Simple Card",
+    description: "Use 'fullWidth' for small screens" ,
+    code: `<Card size='fullWidth'>
+                <p>When do two functions fight?</p>
+                <p>- When they have arguments</p>
+            </Card>`
+    }
+];
 ```
