@@ -97,10 +97,11 @@ box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
 .toc .toggleNav .navGroup .navGroupCategoryTitle {
   font-size: 14px;
   line-height: 1em;
+  font-weight: 600;
 }
 
 .toc .toggleNav ul li a {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.2em;
 }
 
