@@ -2,7 +2,8 @@
   "docs": {
     "Getting Started": [
       "getting-started/introduction",
-      "getting-started/quick-start"
+      "getting-started/quick-start",
+      "getting-started/why-components"
     ],
     "Guides": [
       "guides/installation",
