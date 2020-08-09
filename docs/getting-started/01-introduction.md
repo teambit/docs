@@ -2,24 +2,26 @@
 id: introduction
 title: Introduction
 ---
-## Bit is an extensible toolchain for component-driven development
+
+Bit makes life easier for JavaScript developers who build their applications with components. If you’re looking to develop publish individual components from a repository to curated collections and use them to compose more applications, you came to the right place! Bit help you develop your applications faster, more modular and consistent. Use Bit to distribute and maintain your design system, UI widgets, pages and features.
 
 ### Background
+
 Component-driven development (CDD) is a widely accepted methodology that centers the frontend development process around independent components. Apps are built bottom up, starting from elementary components (usually, a design system) all the way to more elaborate compositions that make up the largest components: pages and apps.
 
 // add benefits of CDD
+
 ### The problem
+
 The CDD methodology has no standard implementations and tools. It's constantly being re-thought by developers struggling to establish a stable and optimized workflow that takes into consideration their business goals, organizational structure, stack of technologies and the available tools on the market.
 
 ### The solution
-Bit simplifies component-driven development. It is a highly customizable and extendible tool, embedded with best practice for CDD. 
 
-It manages the entire process of creating and sharing independent components, from multiple repositories to a single curated collection. 
+Bit simplifies component-driven development. It is a highly customizable and extendible tool, embedded with best practice for CDD.
+
+It manages the entire process of creating and sharing independent components, from multiple repositories to a single curated collection.
 
 It standardizes and automates component testing, linting, documentation, compiling, bundling and every other task in the life-cycle of an independent component.
-
----------
-
 
 ## Workspace UI
 
