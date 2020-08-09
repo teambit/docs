@@ -5,29 +5,80 @@
       "getting-started/quick-start"
     ],
     "Guides": [
-      "guides/set-up-workspace",
-      "guides/create-new-component",
-      "guides/customize-component-dependencies",
-      "guides/remove-or-move-component",
-      "guides/export-components-to-remote-scope",
-      "guides/import-component"
+      "guides/installation",
+      "guides/using-bit-dev",
+      "guides/authentication",
+      "guides/everyday-commands",
+      "guides/build-design-system",
+      "guides/build-application",
+      "guides/scoping-components",
+      "guides/ci",
+      "guides/customize-workflow",
+      "guides/publish-to-own-registry",
+      "guides/host-your-own-scope"
     ],
-    "Main Concepts": [
-      "main-concepts/everyday-commands",
-      "main-concepts/workspace",
-      "main-concepts/scope",
-      "main-concepts/component",
-      "main-concepts/environment",
-      "main-concepts/compositions",
-      "main-concepts/documentation",
-      "main-concepts/isolation",
-      "main-concepts/versioning",
-      "main-concepts/exporting",
-      "main-concepts/consume-components",
-      "main-concepts/vendor-components",
-      "main-concepts/delete-and-deprecate",
-      "main-concepts/workspace-ui"
-      ],
+    "Workspace": [
+      "workspace/overview",
+      "workspace/workspace-ui",
+      "workspace/workspace-json",
+      "workspace/dependency-resolution",
+      "workspace/variants",
+      "workspace/extend"
+    ],
+    "Scope": [
+      "scope/overview",
+      "scope/scope-ui",
+      "scope/dependency-cache",
+      "scope/scope-json",
+      "scope/extend-scope"
+    ],
+    "Component": [
+      "component/overview",
+      "component/anatomy",
+      "component/id-and-module-name",
+      "component/component-json",
+      "component/dependencies",
+      "component/isolation"
+    ],
+    "Environment": [
+      "environment/overview",
+      "environment/node",
+      "environment/react",
+      "environment/angular",
+      "environment/vuew",
+      "environment/stencil",
+      "environment/composing-environments",
+      "environment/new-environments"
+    ],
+    "Documentation": [
+      "documentation/automated-docs",
+      "documentation/using-templates",
+      "documentation/customized-templates"
+    ],
+    "Compositions": [
+      "compositions/develop-in-isolation",
+      "compositions/docs-and-preview",
+      "compositions/testing"
+    ],
+    "Versioning": [
+      "versioning/overview",
+      "versioning/history",
+      "versioning/build-pipe"
+    ],
+    "Exporting": [
+      "exporting/orginizing-components",
+      "exporting/forking"
+    ],
+    "consuming": [
+      "consuming/installing",
+      "consuming/vendor-components",
+      "consuming/local-modifications"
+    ],
+    "Refactoring": [
+      "refactor/deprecate",
+      "refactor/delete",
+      "refactor/rename"
+    ],
     "Workflow Automation": [
         "workflow-automation/standard-workflow",
         "workflow-automation/compiling",
@@ -38,16 +89,6 @@
         "workflow-automation/templates",
         "workflow-automation/extending-workflow"
       ],
-    "Advanced Guides": [
-      "advanced-guides/building-a-component-design-system",
-      "advanced-guides/build-an-app",
-      "advanced-guides/component-scoping-architecture",
-      "advanced-guides/compose-your-own-environment",
-      "advanced-guides/workflow-automation",
-      "advanced-guides/host-your-own-scope",
-      "advanced-guides/use-your-package-registry",
-      "advanced-guides/styling"
-    ],
     "Extending Bit": [
       "extending-bit/overview",
       "extending-bit/get-started",
@@ -56,10 +97,6 @@
     "common": [
       "common/usage-analytics",
       "common/client-config"
-    ],
-    "TBD": [
-      "TBD/installation",
-      "TBD/why-components"
     ]
   }
 }

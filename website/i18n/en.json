@@ -5,35 +5,86 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "advanced-guides/building-a-component-design-system": {
-        "title": "Building a Component Design System"
-      },
-      "advanced-guides/build-an-app": {
-        "title": "Building a Frontend Application"
-      },
-      "advanced-guides/component-scoping-architecture": {
-        "title": "Component Scoping Architecture"
-      },
-      "advanced-guides/compose-your-own-environment": {
-        "title": "Compose your own Environment"
-      },
-      "advanced-guides/use-your-package-registry": {
-        "title": "Component Registry"
-      },
-      "advanced-guides/host-your-own-scope": {
-        "title": "Host your own Scope"
-      },
-      "advanced-guides/8-scope-caching": {
-        "title": "advanced-guides/8-scope-caching"
-      },
-      "advanced-guides/styling": {
-        "title": "Styling Components"
-      },
       "common/client-config": {
         "title": "Bit Client Configuration"
       },
       "common/usage-analytics": {
         "title": "Usage Analytics"
+      },
+      "component/overview": {
+        "title": "Overview"
+      },
+      "component/anatomy": {
+        "title": "Anatomy"
+      },
+      "component/id-and-module-name": {
+        "title": "ID and Module Name"
+      },
+      "component/component-json": {
+        "title": "Configuration"
+      },
+      "component/dependencies": {
+        "title": "Dependencies"
+      },
+      "component/isolation": {
+        "title": "Isolation"
+      },
+      "compositions/develop-in-isolation": {
+        "title": "Develop in Isolation"
+      },
+      "compositions/docs-and-preview": {
+        "title": "Docs and Preview"
+      },
+      "compositions/testing": {
+        "title": "Testing"
+      },
+      "consuming/installing": {
+        "title": "Installing with Package Managers"
+      },
+      "consuming/vendor-components": {
+        "title": "Vendor Components"
+      },
+      "consuming/local-modifications": {
+        "title": "Local Modifications"
+      },
+      "documentation/automated-docs": {
+        "title": "Automated Docs"
+      },
+      "documentation/using-templates": {
+        "title": "Using Templates"
+      },
+      "documentation/customized-templates": {
+        "title": "Customized Templates"
+      },
+      "environment/overview": {
+        "title": "Overview"
+      },
+      "environment/node": {
+        "title": "Node"
+      },
+      "environment/react": {
+        "title": "React"
+      },
+      "environment/angular": {
+        "title": "Angular"
+      },
+      "environment/vue": {
+        "title": "Vue"
+      },
+      "environment/stencil": {
+        "title": "Stencil"
+      },
+      "environment/composing-environments": {
+        "title": "Composing Environments"
+      },
+      "environment/new-environments": {
+        "title": "Build New Environments"
+      },
+      "exporting/organizing-components": {
+        "title": "Organizing Components"
+      },
+      "exporting/forking": {
+        "title": "Forking"
       },
       "extending-bit/overview": {
         "title": "Overview"
@@ -50,65 +101,41 @@
       "getting-started/quick-start": {
         "title": "Tutorial"
       },
-      "guides/create-new-component": {
-        "title": "Create a new component"
+      "getting-started/why-components": {
+        "title": "Why Components?"
       },
-      "guides/customize-component-dependencies": {
-        "title": "Customize component dependencies"
+      "guides/installation": {
+        "title": "Installation"
       },
-      "guides/export-components-to-remote-scope": {
-        "title": "Export components to a remote scope"
+      "guides/using-bit-dev": {
+        "title": "Using Bit.dev"
       },
-      "guides/import-component": {
-        "title": "Import/install components"
+      "guides/authentication": {
+        "title": "Authentication"
       },
-      "guides/remove-or-move-component": {
-        "title": "Remove or move a component"
-      },
-      "guides/set-up-workspace": {
-        "title": "Set up a Bit workspace"
-      },
-      "main-concepts/everyday-commands": {
+      "guides/everyday-commands": {
         "title": "Everyday Commands"
       },
-      "main-concepts/workspace": {
-        "title": "Workspace"
+      "guides/build-design-system": {
+        "title": "Build a Design System"
       },
-      "main-concepts/scope": {
-        "title": "Scopes"
+      "guides/build-application": {
+        "title": "Build Application"
       },
-      "main-concepts/component": {
-        "title": "Components"
+      "guides/scoping-components": {
+        "title": "Scope Architecture"
       },
-      "main-concepts/environment": {
-        "title": "Environments"
+      "guides/ci": {
+        "title": "CI & Deployment"
       },
-      "main-concepts/compositions": {
-        "title": "Compositions"
+      "guides/customize-workflow": {
+        "title": "Customize Workflow"
       },
-      "main-concepts/documentation": {
-        "title": "Documentation"
+      "guides/publish-to-own-registry": {
+        "title": "Connect to Package Registry"
       },
-      "main-concepts/isolation": {
-        "title": "Isolation"
-      },
-      "main-concepts/versioning": {
-        "title": "Versioning"
-      },
-      "main-concepts/exporting": {
-        "title": "Exporting"
-      },
-      "main-concepts/consume-components": {
-        "title": "Consuming Components"
-      },
-      "main-concepts/vendor-components": {
-        "title": "Vendor Components"
-      },
-      "main-concepts/delete-and-deprecate": {
-        "title": "Delete and Deprecate"
-      },
-      "main-concepts/workspace-ui": {
-        "title": "Workspace UI"
+      "guides/host-your-own-scope": {
+        "title": "Self Host Bit Scope"
       },
       "quick-start/start-with-react": {
         "title": "Start with React"
@@ -125,23 +152,50 @@
       "quick-start/start-from-existing-project": {
         "title": "Start from Existing Project"
       },
-      "TBD/installation": {
-        "title": "Installation"
+      "refactor/deprecate": {
+        "title": "Deprecate Components"
       },
-      "TBD/why-components": {
-        "title": "Why Components?"
+      "refactor/delete": {
+        "title": "Delete Components"
       },
-      "workflow-automation/standard-workflow": {
+      "refactor/rename": {
+        "title": "Rename Components"
+      },
+      "scope/overview": {
         "title": "Overview"
+      },
+      "scope/scope-ui": {
+        "title": "Scope UI"
+      },
+      "scope/dependency-cache": {
+        "title": "Dependency Cache"
+      },
+      "scope/scope-json": {
+        "title": "Scope Configuration"
+      },
+      "scope/extend-scope": {
+        "title": "Extend Scope"
+      },
+      "versioning/independent-component-versioning": {
+        "title": "Independent Component Versioning"
+      },
+      "versioning/component-history": {
+        "title": "Component History"
+      },
+      "versioning/build-pipe": {
+        "title": "Build Pipeline"
+      },
+      "workflow-automation/standardize-workflow": {
+        "title": "Standardize Workflow"
       },
       "workflow-automation/compiling": {
         "title": "Compiling"
       },
-      "workflow-automation/linting": {
-        "title": "Linting"
-      },
       "workflow-automation/testing": {
         "title": "Testing"
+      },
+      "workflow-automation/linting": {
+        "title": "Linting"
       },
       "workflow-automation/bundling": {
         "title": "Bundling"
@@ -149,11 +203,29 @@
       "workflow-automation/dev-server": {
         "title": "DevServer"
       },
+      "workflow-automation/templates": {
+        "title": "Templates"
+      },
       "workflow-automation/extending-workflow": {
         "title": "Extending further"
       },
-      "workflow-automation/templates": {
-        "title": "Templates"
+      "workspace/overview": {
+        "title": "Overview"
+      },
+      "workspace/workspace-ui": {
+        "title": "Workspace UI"
+      },
+      "workspace/workspace-json": {
+        "title": "Workspace Configuration"
+      },
+      "workspace/dependency-resolution": {
+        "title": "Dependency Resolution"
+      },
+      "workspace/variants": {
+        "title": "Variants"
+      },
+      "workspace/extend": {
+        "title": "Extend"
       }
     },
     "links": {
@@ -165,12 +237,19 @@
     "categories": {
       "Getting Started": "Getting Started",
       "Guides": "Guides",
-      "Main Concepts": "Main Concepts",
+      "Workspace": "Workspace",
+      "Scope": "Scope",
+      "Component": "Component",
+      "Environment": "Environment",
+      "Documentation": "Documentation",
+      "Compositions": "Compositions",
+      "Versioning": "Versioning",
+      "Exporting": "Exporting",
+      "consuming": "consuming",
+      "Refactoring": "Refactoring",
       "Workflow Automation": "Workflow Automation",
-      "Advanced Guides": "Advanced Guides",
       "Extending Bit": "Extending Bit",
-      "common": "common",
-      "TBD": "TBD"
+      "common": "common"
     }
   },
   "pages-strings": {
