@@ -215,6 +215,9 @@
       "workspace/workspace-ui": {
         "title": "Workspace UI"
       },
+      "workspace/statuses": {
+        "title": "Workspace Statuses"
+      },
       "workspace/workspace-json": {
         "title": "Workspace Configuration"
       },

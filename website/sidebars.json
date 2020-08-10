@@ -21,6 +21,7 @@
     "Workspace": [
       "workspace/overview",
       "workspace/workspace-ui",
+      "workspace/statuses",
       "workspace/workspace-json",
       "workspace/dependency-resolution",
       "workspace/variants",
