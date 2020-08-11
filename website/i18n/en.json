@@ -216,13 +216,13 @@
         "title": "Workspace UI"
       },
       "workspace/statuses": {
-        "title": "Workspace Statuses"
+        "title": "Component States"
       },
       "workspace/workspace-json": {
         "title": "Workspace Configuration"
       },
-      "workspace/dependency-resolution": {
-        "title": "Dependency Resolution"
+      "workspace/dependencies": {
+        "title": "Dependencies"
       },
       "workspace/variants": {
         "title": "Variants"

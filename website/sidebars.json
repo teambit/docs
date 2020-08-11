@@ -23,7 +23,7 @@
       "workspace/workspace-ui",
       "workspace/statuses",
       "workspace/workspace-json",
-      "workspace/dependency-resolution",
+      "workspace/dependencies",
       "workspace/variants",
       "workspace/extend"
     ],

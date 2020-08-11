@@ -1,16 +1,21 @@
 ---
 id: statuses
-title: Workspace Statuses
+title: Component States
 ---
 
-The `bit status` [command](/docs/apis/cli-all#status) displays the state of the tracked components in your project's workspace.
+Bit displays the state of the tracked components in your project's workspace.
 
-Knowing the state of the workspace's components is always important - which components are staged, modified or have missing dependencies, for example.
-It's important to note that we're talking about **the state of components with pending changes** - meaning, components that are pending export - they could be tracked and before their first export, or modified after export.
+Knowing the state of the workspace's components is always important - which components are staged, modified or have missing dependencies, for example. A component may have more than one state. A state that is derived from its code status (such as modified) and a state derived from its dependencies (e.g. pending to be tagged).
 
-A component may exist in more than one state. A state that is derived from its code status (such as modified) and a state derived from its dependencies (e.g. pending to be tagged).
+> TODO - Diagram
 
-Listed here are all possible component states.
+## Get component state
+
+Bit shows the state of each component in the workspace' component list using annotations and icons. You can also get this data with running the `bit status` command in the terminal.
+
+> This document uses the terminology used as part of the terminal outputs.
+
+## States
 
 ### Nothing to tag or export
 

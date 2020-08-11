@@ -36,6 +36,8 @@ By treating each component as a module Bit helps you build isolated components t
 
 > TODO - diagram
 
+As each component is its own isolated module with dependencies and configuration, Bit supports managing components with vastly different tech-stacks in the same workspace. For example, you can have both Stencil and React components and have them depend on one another.
+
 ## Initializing Workspace
 
 Initialize Bit workspace by running bit init command. The folder in which the workspace was initialized, is set as the workspace root.
@@ -88,7 +90,7 @@ The workspace's scope contains information about Bit components, such as source 
 >
 > Bit scopes implement a distributed storage system, similar to Git. This means that all data stored locally is what get's pushed to the remote server. Read more about it [here](TODO).
 
-### Tracking workspace contents with Git
+## Bit workspace and Git
 
 Make sure to track the following files with your SCM:
 
