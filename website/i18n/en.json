@@ -170,11 +170,11 @@
       "scope/dependency-cache": {
         "title": "Dependency Cache"
       },
-      "scope/scope-json": {
-        "title": "Scope Configuration"
+      "scope/04-scope-json": {
+        "title": "scope/04-scope-json"
       },
-      "scope/extend-scope": {
-        "title": "Extend Scope"
+      "scope/05-extend": {
+        "title": "scope/05-extend"
       },
       "versioning/independent-component-versioning": {
         "title": "Independent Component Versioning"
@@ -227,8 +227,8 @@
       "workspace/variants": {
         "title": "Variants"
       },
-      "workspace/extend": {
-        "title": "Extend"
+      "workspace/07-extend": {
+        "title": "workspace/07-extend"
       }
     },
     "links": {
