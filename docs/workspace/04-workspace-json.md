@@ -3,7 +3,7 @@ id: workspace-json
 title: Workspace Configuration
 ---
 
-The `workspace.json` file defines a set of configuration that control the entire process of managing components using a set of Extensions (plugins). Each extension is responsible for a specific task and managed as a component.
+The `workspace.json` file defines a set of extensions that control the entire workspace and component management. Each extension is responsible for a specific task and managed as a component.
 
 ## Base configurations
 
