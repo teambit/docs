@@ -3,7 +3,7 @@ id: variants
 title: Variants
 ---
 
-As projects grow so does the complexity of its components and structure. If you find yourself wanting to define a different set of configuration according to to the directory structure of your project, use the `@teambit.core/variants` extension. Each `variant` is a glob-pattern to match directories to which you can set a specific configuration.
+As a project grows so does the complexity of its components and structure. If you find yourself wanting to define a different set of configuration according to to the directory structure of your project, use the `@teambit.core/variants` extension. Each `variant` is a glob-pattern to match directories to which you can set a specific configuration.
 
 ```json
 {
@@ -20,7 +20,7 @@ Think about each `variant` as it's own pesodu-workspace where all components tha
 
 ## Default variant
 
-It is strongly recommended to keep a `*` (wildcard) variant to have default configurations for components. This way you can be very flexible with how you create directories in the workspace and will not be required to set them in the `workspace.json` file.  
+It is strongly recommended to keep a `*` (wildcard) variant to have default configurations for components. This way you can be very flexible with how you create directories in the workspace and will not be required to set them in the `workspace.json` file.
 
 ## Managing multiple variants
 

@@ -3,7 +3,7 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to build an app, bottom up, using independent components. These component's will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import  and integrate a component from a remote scope into your own project.
+In this tutorial you will use Bit to build an app, bottom up, using independent components. These component's will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
 
 This is by no means a "quick start" as it covers all the main tools, concepts and methodologies used by Bit.
 
@@ -25,8 +25,8 @@ $ bit init --harmony
 
 This will initialize a Bit workspace in our new "bad-jokes" app directory. Two important things to note here are the new:
 
-* `workspace.jsonc` file that manages the entire workspace configuration.
-* `components` directory for all soon-to-be-tracked components.
+- `workspace.jsonc` file that manages the entire workspace configuration.
+- `components` directory for all soon-to-be-tracked components.
 
 ## Run Bit's local dev server to see the workspace UI
 
@@ -40,14 +40,15 @@ $ bit start
 
 ## Workspace configurations
 
-To set our workspace configurations, we'll open the `workspace.jsonc` file. 
->Note that all entries starting with `@teambit/` refer to extensions built by Bit.
+To set our workspace configurations, we'll open the `workspace.jsonc` file.
+
+> Note that all entries starting with `@teambit/` refer to extensions built by Bit.
 
 We will configure the following:
 
-* __Workspace name__ -  `"name": "bad-jokes"`
-* __Scope name__ (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](TODO), either locally or on a server, is the storehouse for all tagged or "committed" components.
-* __Component Environment__ - `"@teambit/envs": {"env": "@teambit/react"}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
+- **Workspace name** - `"name": "bad-jokes"`
+- **Scope name** (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](TODO), either locally or on a server, is the storehouse for all tagged or "committed" components.
+- **Component Environment** - `"@teambit/envs": {"env": "@teambit/react"}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
 
 ```json
 {
@@ -58,7 +59,7 @@ We will configure the following:
     "defaultDirectory": "components"
   },
   "@teambit/dependency-resolver": {
-    "strictPeerDependencies": true,
+    "strictPeerDependencies": true
   },
   "@teambit/variants": {
     "*": {
@@ -101,72 +102,92 @@ $ touch components/ui/button/button.module.scss
 Use the `index.ts` file to export everything from the `button.tsx` file:
 
 ```js
-export * from './button';
+export * from "./button";
 ```
 
 Add the following lines to `components/ui/button/button.tsx`
 
 ```tsx
-import React, {ButtonHTMLAttributes} from 'react'
-import styles from './button.module.scss'
+import React, { ButtonHTMLAttributes } from "react";
+import styles from "./button.module.scss";
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-    /** Choose between primary and secondary styling. */
-    variant?: 'primary' | 'secondary';
+  /** Choose between primary and secondary styling. */
+  variant?: "primary" | "secondary";
 }
 
-export const Button = ({children, variant = 'primary', ...rest} : IButton) => {
-    return (
-        <button className={styles[variant]} {...rest}>
-            {children}
-        </button>
-    )
-}
+export const Button = ({ children, variant = "primary", ...rest }: IButton) => {
+  return (
+    <button className={styles[variant]} {...rest}>
+      {children}
+    </button>
+  );
+};
 ```
 
 Add the following lines to `components/base/button/button.module.scss`
 
 ```scss
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 
 .primary {
-    border: solid 7px #ab3636;
-    background-color: #ab3636;
-      &:hover {
-        border-color: #8b1b1b;
-        background-color: #8b1b1b;
-      }
+  border: solid 7px #ab3636;
+  background-color: #ab3636;
+  &:hover {
+    border-color: #8b1b1b;
+    background-color: #8b1b1b;
   }
-  
-  .secondary {
-    border: solid 7px #363eab;
-    background-color: #363eab;
-      &:hover {
-        border-color: #434cc5;
-        background-color: #434cc5;
-      }
-  }
+}
 
-  .base {
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 10px;
-    color: #fff;
-    font-size: 16px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    outline: none;
-    transition: background-color 0.5s, border 0.5s;
-      &:active {
-        border-color: #313131;
-        background-color: #fff;
-        color: #000;
-      }
-      &:disabled{
-        border-color: #a5a5a5;
-        background-color: #a5a5a5;
-    }
+.secondary {
+  border: solid 7px #363eab;
+  background-color: #363eab;
+  &:hover {
+    border-color: #434cc5;
+    background-color: #434cc5;
   }
+}
+
+.base {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none;
+  transition: background-color 0.5s, border 0.5s;
+  &:active {
+    border-color: #313131;
+    background-color: #fff;
+    color: #000;
+  }
+  &:disabled {
+    border-color: #a5a5a5;
+    background-color: #a5a5a5;
+  }
+}
+```
+
+### Install dependencies
+
+The above button component uses the 'classnames' library. To install it, use `bit install`:
+
+```bash
+$ bit install classnames
+```
+
+Bit will make sure to register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry:
+
+```json
+  "@teambit/dependency-resolver": {
+    "packageManager": "@teambit/pnpm",
+    "strictPeerDependencies": true,
+    "policy": {
+      "dependencies": {
+        "classnames": "^2.2.6"
+      },
 ```
 
 ### Track the Component
@@ -194,25 +215,27 @@ $ touch components/ui/button/button.composition.tsx
 Add the following lines to `components/ui/button/button.composition.tsx`
 
 ```tsx
-import React from 'react';
-import {Button} from './button';
+import React from "react";
+import { Button } from "./button";
 
 export const PrimaryButton = () => {
-     return(
-         <Button variant='primary' onClick={() => alert('Clicked!')}>Primary Button</Button>
-     );
+  return (
+    <Button variant="primary" onClick={() => alert("Clicked!")}>
+      Primary Button
+    </Button>
+  );
 };
 
 export const SecondaryButton = () => {
-    return(
-        <Button variant='secondary'>Secondary Button</Button>
-    );
+  return <Button variant="secondary">Secondary Button</Button>;
 };
 
 export const DisabledButton = () => {
-    return(
-        <Button disabled variant='primary'>Disabled Button</Button>
-    );
+  return (
+    <Button disabled variant="primary">
+      Disabled Button
+    </Button>
+  );
 };
 ```
 
@@ -223,7 +246,41 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 
 ### Add tests
 
-> TODO - need to get tests working in Bit.... should also utilize compositions for testing and write about it
+As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as the default test runner, so we don't need to worry about setting it up.
+
+To simplify our UI testing, we'll also make use of react-testing-library. We'll start by installing it as a dev dependency:
+
+```bash
+$ bit install --save-dev @testing-library/react
+```
+
+Let's start by creating our test file (in the button component directory)
+
+```bash
+$ touch button.spec.js
+```
+
+And place a simple test to validate that it renders:
+
+```jsx
+import React from "react";
+import { render } from "@testing-library/react";
+import { Button } from "./button";
+
+test("button renders", () => {
+  const { getByText } = render(<Button>test button</Button>);
+  const testButton = getByText(/test button/i);
+  expect(testButton).toBeInTheDocument();
+});
+```
+
+Our tests will run whenever we [tag]() the relevant component. If a test fails, the tagging action we be aborted.
+
+We can also run the tests manually:
+
+```bash
+$ bit test
+```
 
 ### Review the documentation
 
@@ -236,9 +293,9 @@ The 'abstract' and 'tags' define the component description and related categorie
 For example:
 
 ```js
-export const abstract = "An imperfect button"
+export const abstract = "An imperfect button";
 
-export const tags = ["react", "typescript", "button"]
+export const tags = ["react", "typescript", "button"];
 ```
 
 #### Extend the documentation with a custom component
@@ -248,30 +305,30 @@ The custom JSX slot gives you the freedom to extend the documentation page as yo
 For example, let's create a 'Guidelines' section for a 'Button' component documentation:
 
 ```js
-export default function () {
-    const wrapper = {
-      border: '1px solid #e0ddd8',
-      borderRadius: '5px',
-      padding: '25px',
-      marginBottom: '25px'
-    }
-    return (
-        <div style={wrapper}>
-            <p style={{fontWeight: 700}}>Guidelines</p>
-            <br/>
-            <ul style={{listStyleType: 'circle', paddingLeft: "25px"}} >
-                <li>
-                    Place buttons where users expect to find them. Do not force users to "hunt for buttons".
-                </li>
-                <li>
-                    Do not use generic labels for your buttons. Use verbs that clearly explain the button's function.
-                </li>
-                <li>
-                    Size buttons in proportion to their importance
-                </li>
-            </ul>
-        </div>
-    )
+export default function() {
+  const wrapper = {
+    border: "1px solid #e0ddd8",
+    borderRadius: "5px",
+    padding: "25px",
+    marginBottom: "25px"
+  };
+  return (
+    <div style={wrapper}>
+      <p style={{ fontWeight: 700 }}>Guidelines</p>
+      <br />
+      <ul style={{ listStyleType: "circle", paddingLeft: "25px" }}>
+        <li>
+          Place buttons where users expect to find them. Do not force users to
+          "hunt for buttons".
+        </li>
+        <li>
+          Do not use generic labels for your buttons. Use verbs that clearly
+          explain the button's function.
+        </li>
+        <li>Size buttons in proportion to their importance</li>
+      </ul>
+    </div>
+  );
 }
 ```
 
@@ -289,36 +346,40 @@ $ touch hooks/use-get-joke/use-get-joke.ts
 Add this....
 
 ```ts
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
-export const useGetJokes = () : [() => Promise<void>, string[], boolean, string] =>{
+export const useGetJokes = (): [
+  () => Promise<void>,
+  string[],
+  boolean,
+  string
+] => {
+  const [joke, setJoke] = useState([""]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const endpoint =
+    "https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=racist&type=single";
 
-    const [joke, setJoke] = useState(['']);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState('');
-    const endpoint = 'https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=racist&type=single';
+  const getJoke = async () => {
+    setIsLoading(true);
+    try {
+      let res = await fetch(endpoint);
+      let data = await res.json();
+      const dataArr = data.joke.split("\n");
+      setJoke(dataArr);
+      if (error) setError("");
+      setIsLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+    }
+  };
+  useEffect(() => {
+    getJoke();
+  }, []);
 
-    const getJoke = async () => {
-          setIsLoading(true);
-        try {
-            let res = await fetch(endpoint);
-            let data = await res.json();
-            const dataArr = data.joke.split('\n');
-            setJoke(dataArr);
-            if (error) setError('');
-            setIsLoading(false);
-        }
-        catch (err) {
-            setError(err.message);
-            setIsLoading(false);
-        }
-      }
-      useEffect(() => {
-        getJoke();
-    }, [])
-
-    return [getJoke, joke, isLoading, error]
-}
+  return [getJoke, joke, isLoading, error];
+};
 ```
 
 ### Track the component
@@ -335,10 +396,10 @@ Examples are descriptions and playable code that instruct on how a component sho
 
 The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
 
-* __scope__: An _object_ with all relevant imports.
-* __title__: A _string_ for the example title.
-* __Description__: A _string_ for the example description.
-* __Code__: A _string_ (template literal) for the example code.
+- **scope**: An _object_ with all relevant imports.
+- **title**: A _string_ for the example title.
+- **Description**: A _string_ for the example description.
+- **Code**: A _string_ (template literal) for the example code.
 
 For example, let's create an example for a 'Card' component:
 
@@ -350,13 +411,14 @@ Inside that file, we'll import the 'Card' component and set the `examples` varia
 
 ```tsx
 export const examples = [
-    {
-      scope: {
-        useGetJokes
-      },
-      title: "Using useGetJokes",
-      description: "This hook uses a jokes api. It returns the data-fetching function (getJoke), the data (joke), the state of the 'getJoke' function and an error message (or an empty string)." ,
-      code: `() => {
+  {
+    scope: {
+      useGetJokes
+    },
+    title: "Using useGetJokes",
+    description:
+      "This hook uses a jokes api. It returns the data-fetching function (getJoke), the data (joke), the state of the 'getJoke' function and an error message (or an empty string).",
+    code: `() => {
         const [getJoke, joke, isLoading, error] = useGetJokes();
         return (
             <div>
@@ -371,8 +433,8 @@ export const examples = [
             </div>
         )
     }`
-      }
-  ];
+  }
+];
 ```
 
 ## Compose an app
@@ -383,9 +445,9 @@ export const examples = [
 
 ### Add a composition
 
-* note about absolute imports for components
-* have `homepage` import `button`
-* update `compositions`
+- note about absolute imports for components
+- have `homepage` import `button`
+- update `compositions`
 
 ## Version components
 

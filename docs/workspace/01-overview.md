@@ -3,6 +3,8 @@ id: overview
 title: Overview
 ---
 
+The Bit workspace is another one of Bit's core extensions. You can think of it as the orchestrator of all other extensions (environments, package managers, dependency-resolver, etc.).
+
 Consider this project directory structure:
 
 ```sh
