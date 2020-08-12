@@ -3,30 +3,30 @@ id: overview
 title: Overview
 ---
 
-A Bit component is a reusable piece of code, such as
+A Bit component is an independent and isolated module containing:
 
-- A react, Vue or Angular component
-- Shared stylesheet (e.g., CSS, SCSS) or stylesheets
-- Utility function used by the application.
+- A JavaScript flavored implementation of a component (React, Angular, Vue, Node...)
+- Assets (e.g., CSS, SASS).
+- Tests.
+- [Dependencies](TODO).
+- [Documentation](TODO).
+- [Compositions](TODO).
+- [Environment](TODO).
 
-The exact boundaries of the component are a design decision. It is possible to package a whole library as a single Bit component or split each functional piece as a separate component.
-
-In a bird-eye view, code options can boil down to these:
+In a bird-eye view, components can boil down to these:
 
 ```javascript
-// Atomic, presentational components
-import { Text } from '@bit/base-ui.text'
-import { Card } from '@bit/base-ui.card'
-import { Button } from '@bit/base-ui.button'
+import { Card } from '@acme/base-ui.card'  // Atomic, presentational components
 
-// A composed components
-import { CardGallery } from '@bit/gallery.cards'
+import { CardGallery } from '@acme/gallery.card-gallery' // A composed components
 
-// A data-connected component
-import { InvoiceList } from '@bit/billing.invoice-list'
+import { InvoiceList } from '@acme/billing.invoice-list' // A data-connected component
 
-// A page implemented as a component
-import { HomePage } from '@bit/marketing-site.pages'
+import { HomePage } from '@acme/marketing-site.pages' // A page implemented as a component
+
+import { StandardizePath } from '@acme/modules.StandardizePath' // Utilities and helpers
+
+import { DarkMode } from '@acme/base-ui.themes.dark-mode' // Shared styles and themes
 ```
 
 ## Create a new component
