@@ -42,13 +42,13 @@ font-size: 1em;
 }
 
 p {
-margin-bottom: 1em;
-line-height: 2em;
+margin-bottom: 0.8em;
+line-height: 1.8em;
 font-size: 15px;
 }
 
 li {
-line-height: 1.8em;
+line-height: 1.5em;
 }
 
 a {
