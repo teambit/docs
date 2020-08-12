@@ -36,11 +36,10 @@
     ],
     "Component": [
       "component/overview",
-      "component/anatomy",
-      "component/id-and-module-name",
       "component/component-json",
       "component/dependencies",
-      "component/isolation"
+      "component/isolation",
+      "component/versioning"
     ],
     "Environment": [
       "environment/overview",
