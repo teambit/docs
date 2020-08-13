@@ -3,6 +3,8 @@ id: component-json
 title: Configuration
 ---
 
+In a Bit workspace each component has its own configuration. However, maintaining configurations for each component can be a lot of work, so Bit calculates configuration for each component using the extensions you define for the workspace.
+
 ## Component configuration
 
 Alongside the code and dependency graph, Bit keeps configuration for each component. It is derived from the workspace configuration so you can control a set of similar components from a single configuration source. To see the actual configuration applied on a component use the `bit show` command.
