@@ -13,7 +13,7 @@ Component-driven development (CDD) is a widely accepted methodology that centers
 
 ### The problem
 
-The CDD methodology has no standard implementations and tools. It's constantly being re-thought by developers struggling to establish a stable and optimized workflow that takes into consideration their business goals, organizational structure, stack of technologies and the available tools on the market.
+The CDD methodology has no standard implementation and tools. It's constantly being re-thought by developers struggling to establish a stable and optimized workflow that takes into consideration their business goals, organizational structure, stack of technologies and the available tools on the market.
 
 ### The solution
 

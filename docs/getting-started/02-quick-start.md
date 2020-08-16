@@ -63,10 +63,7 @@ We will configure the following:
   },
   "@teambit/variants": {
     "*": {
-      "@teambit/envs": {
-        "env": "@teambit/react",
-        "config": {}
-      }
+      "@teambit/react": {}
     }
   }
 }
@@ -178,7 +175,7 @@ The above button component uses the 'classnames' library. To install it, use `bi
 $ bit install classnames
 ```
 
-Bit will make sure to register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry:
+Bit will make sure to register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry (a Bit workspace has no `package.json` file)
 
 ```json
   "@teambit/dependency-resolver": {
@@ -248,11 +245,13 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 
 As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as the default test runner, so we don't need to worry about setting it up.
 
-To simplify our UI testing, we'll also make use of react-testing-library. We'll start by installing it as a dev dependency:
+To simplify our UI testing, we'll also make use of the following libraries:
 
 ```bash
-$ bit install --save-dev @testing-library/react
+$ bit install @testing-library/react @testing-library/jest-dom 
 ```
+
+Notice how we didn't set these packages as Dev Dependencies. Bit determines that by analyzing the way they are used in this workspace. 
 
 Let's start by creating our test file (in the button component directory)
 
@@ -263,6 +262,7 @@ $ touch button.spec.js
 And place a simple test to validate that it renders:
 
 ```jsx
+import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { render } from "@testing-library/react";
 import { Button } from "./button";
@@ -363,8 +363,8 @@ export const useGetJokes = (): [
   const getJoke = async () => {
     setIsLoading(true);
     try {
-      let res = await fetch(endpoint);
-      let data = await res.json();
+      const res = await fetch(endpoint);
+      const data = await res.json();
       const dataArr = data.joke.split("\n");
       setJoke(dataArr);
       if (error) setError("");
@@ -444,10 +444,25 @@ export const examples = [
 ### Import tracked components
 
 ### Add a composition
+Our app component, "jokes-viewer", is structured like so:
 
-- note about absolute imports for components
-- have `homepage` import `button`
-- update `compositions`
+```sh
+├── components
+  ├── apps
+    ├── jokes-viewer
+       ├── jokes-viewer.tsx
+       ├── jokes-viewer.module.scss
+       ├── jokes-viewer.spec.jsx
+       └──  index.ts
+```
+
+Bit creates a link in the workspace `node_modules` directory, to each tracked component. We'll use this when referencing between components. For example, in our `jokes-viewer.tsx` file we'll import the "button" UI component and "getJokes" hook, like so:
+
+```tsx
+import {Button} from '@teambit/bad-jokes.ui.button';
+import {useGetJokes} from '@teambit/bad-jokes.hooks.use-get-jokes'
+```
+
 
 ## Version components
 
