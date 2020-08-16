@@ -37,6 +37,7 @@
     "Component": [
       "component/overview",
       "component/component-json",
+      "component/runtime-environment",
       "component/dependencies",
       "component/isolation",
       "component/versioning"
