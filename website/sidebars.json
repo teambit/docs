@@ -64,6 +64,7 @@
     ],
     "Versioning": [
       "versioning/overview",
+      "versioning/tracking-changes",
       "versioning/history",
       "versioning/build-pipe"
     ],
