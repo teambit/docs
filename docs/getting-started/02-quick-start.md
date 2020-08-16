@@ -198,7 +198,7 @@ To track a component by Bit, use:
 $ bit add components/ui/button
 ```
 
-Now browse to the local development server at [http://localhost:300](http://localhost:3000) to see that the component is managed by Bit.
+Now browse to the local development server at [http://localhost:3000](http://localhost:3000) to see that the component is managed by Bit.
 
 > **Component Overview**
 >
