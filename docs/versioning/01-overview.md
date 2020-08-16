@@ -1,9 +1,9 @@
 ---
-id: versioning
-title: Independent Versioning
+id: overview
+title: Overview
 ---
 
-Tagging a component creates an immutable version of the component using the `bit tag` command. This version can then be [exported](TODO).  
+Tagging a component creates an immutable version of the component. This version can then be [exported](TODO).  
 A version contain the source code, configuration and all dependencies required to make a component usable. It is set according to the semantic versioning specs (MAJOR.MINOR.PATCH). By default, tagging a component without specifying a version bumps a patch version.
 
 When tagging Bit performs the actions for each component:
@@ -67,6 +67,6 @@ Versioning by component “legalizes” the adoption and modifications of compon
 
 Versioning single components enable greater development velocity and improve on the performance of the application built.
 
-* **Performance** — When an application only adds and uses the components it really needs, it reduces bundle-size. As a result, less code is parsed in the browser and execution time improves.
-* **Stability** — A single-versioned library forces adopting teams to constantly introduce wide changes to their application. SemVer’ed components increase stability by safely introducing incremental updates scoped to specific UIs.
-* **Dev velocity** — Team speed is increased when adopting shared components. When there’s an update needed, they can choose to ask for it.
+- **Performance** — When an application only adds and uses the components it really needs, it reduces bundle-size. As a result, less code is parsed in the browser and execution time improves.
+- **Stability** — A single-versioned library forces adopting teams to constantly introduce wide changes to their application. SemVer’ed components increase stability by safely introducing incremental updates scoped to specific UIs.
+- **Dev velocity** — Team speed is increased when adopting shared components. When there’s an update needed, they can choose to ask for it.
