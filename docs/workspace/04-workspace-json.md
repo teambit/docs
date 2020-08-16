@@ -3,7 +3,11 @@ id: workspace-json
 title: Workspace Configuration
 ---
 
-The `workspace.json` file defines a set of configuration that control the entire process of managing components using a set of Extensions (plugins). Each extension is responsible for a specific task and managed as a component.
+The `workspace.json` file defines a set of extensions that control the entire workspace and component management. Each extension is responsible for a specific task.
+
+## Configuration structure
+
+Bit is configured using a composition of extensions that can communicate with each other. This means that when you configure the `workspace.json` file you essentially compose these extensions. As each extension connects itself to the specific APIs in Bit, the configuration structure is simply a list of extensions.
 
 ## Base configurations
 
@@ -29,10 +33,7 @@ A basic `workspace.json` may look like this:
     },
     "@teambit/variants": {
         "*": {
-            "@teambit/envs": {
-                "env": "@teambit/react",
-                "config": { }
-            }
+            "@teambit/react": {}
         }
     }
 }

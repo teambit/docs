@@ -1,6 +1,6 @@
 ---
-id: independent-component-versioning
-title: Independent Component Versioning
+id: tracking-changes
+title: Tracking Changes
 ---
 
 To allow developers compose modular modern web application you can use Bit to version single components. This way you provide granular control over the composition of web applications. The advantages of per-component versioning are:

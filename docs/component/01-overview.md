@@ -118,7 +118,7 @@ import { StandardizePath } from '@acme/modules.StandardizePath'
 import { DarkMode } from '@acme/base-ui.themes.dark-mode'
 ```
 
-## Additional component features
+## Bit component features
 
 Managing components using Bit gives you more features to use for your implementation. All features are implemented as part of the Environment configured for the component. This means you can add new features for components by [composing and extending environments](TODO).
 

@@ -45,6 +45,15 @@ Policies are managed as part of the `dependency-resolver` extension as follows:
 
 When using this policy Bit does not add the dependency for each component. Instead only if a component imports the package, the version policy is applied.
 
+### Runtime, Dev and Peer dependencies
+
+Some libraries may be runtime dependencies for components but required as `devSependencies` for others. This pretty much depends in which of the component files the library was required. `dependency-resolver` understands this, and by design applies the dependency type according to how you import it in each component.  
+For example, a `*.specs.ts` or `*.docs.tsx` file that requires `lodash.get` will get the library as a `devDependency`, while another component may require the same library by it's main implementation file - so `dependnecy-resolver` would apply it as a `dependnecy`.
+
+However, `peerDependencies` are still supported by the `policy`, so when a library is configured as such, it will be a `peerDependency` for any component that might require it.
+
+> If the same library is imported by a test file and an implementation file, it will be applied as a `dependency`.
+
 ## Dependency installation
 
 By default all dependencies are installed to the root `node_modules` directory. This way it makes sure all components use the same exact dependency when they import a library or a module. However, in some cases where there might be collisions, Bit may create additional `node_modules` directories deeper in the workspace hierarchy. So it can have multiple versions of the same library, in case a component(s) specifically requires a different version of a library.
