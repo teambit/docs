@@ -33,10 +33,7 @@ A basic `workspace.json` may look like this:
     },
     "@teambit/variants": {
         "*": {
-            "@teambit/envs": {
-                "env": "@teambit/react",
-                "config": { }
-            }
+            "@teambit/react": {}
         }
     }
 }

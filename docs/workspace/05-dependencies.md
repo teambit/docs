@@ -47,7 +47,7 @@ When using this policy Bit does not add the dependency for each component. Inste
 
 ### Runtime, Dev and Peer dependencies
 
-Some libraries may be runtime dependencies for components but required as dev-dependencies for others. This pretty much depends in which of the component files the library was required. `dependency-resolver` understands this, and by design applies the dependency type according to how you import it in each component.  
+Some libraries may be runtime dependencies for components but required as `devSependencies` for others. This pretty much depends in which of the component files the library was required. `dependency-resolver` understands this, and by design applies the dependency type according to how you import it in each component.  
 For example, a `*.specs.ts` or `*.docs.tsx` file that requires `lodash.get` will get the library as a `devDependency`, while another component may require the same library by it's main implementation file - so `dependnecy-resolver` would apply it as a `dependnecy`.
 
 However, `peerDependencies` are still supported by the `policy`, so when a library is configured as such, it will be a `peerDependency` for any component that might require it.
