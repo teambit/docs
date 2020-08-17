@@ -196,9 +196,9 @@ $ bit add components/ui/button
 
 Now browse to the local development server at [http://localhost:3000](http://localhost:3000) to see that the component is managed by Bit.
 
-> **Component Overview**
->
-> Learn more about the component overview and it's features.
+### Review the documentation
+
+Bit automates component documentation by parsing your code and creating docs using a pre-defined template. When you track a component, Bit automatically adds it to the workspace UI application. The component's main overview page contains its documentation.
 
 ### Add compositions
 
@@ -278,13 +278,9 @@ We can also run the tests manually:
 $ bit test
 ```
 
-### Review the documentation
+### Use documentation template
 
-> TODO
-
-### Override the component's meta-data
-
-The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.  
+The `abstract` and `tags` define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.  
 For example:
 
 ```js
@@ -376,31 +372,35 @@ export const useGetJokes = (): [
 };
 ```
 
-### Track the component
+### Track hook component
 
-> TODO.
+To have the component be managed by Bit, track its root directory.
 
-### Review the documentation
+```sh
+$ bit add hooks/use-get-joke --namespace hooks
+```
 
-> TODO
+> **Review the documentation**
+>
+> As with any other component, Bit automatically document your hook. Head over to the component page on the workspace UI to review it.
 
 ### Add live examples
 
 Examples are descriptions and playable code that instruct on how a component should be used. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.  
 The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
 
-- `scope` - An _object_ with all relevant imports.
-- `title` - A _string_ for the example title.
-- `description` - A _string_ for the example description.
-- `code` - A _string_ (template literal) for the example code.
+- `scope` - An `object` with all relevant imports.
+- `title` - A `string` for the example title.
+- `description` - A `string` for the example description.
+- `code` - A `string` (template literal) for the example code.
 
-For example, let's create an example for a 'Card' component:
+Let's create an example for the `Card` component:
 
 ```sh
 $ touch ./path/to/component/folder/card.docs.tsx
 ```
 
-Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
+Inside that file, we'll import `Card` and set the `examples` variable with a single object.
 
 ```tsx
 export const examples = [
