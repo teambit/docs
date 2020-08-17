@@ -34,14 +34,6 @@
       "scope/scope-json",
       "scope/extend"
     ],
-    "Component": [
-      "component/overview",
-      "component/component-json",
-      "component/runtime-environment",
-      "component/dependencies",
-      "component/isolation",
-      "component/versioning"
-    ],
     "Environment": [
       "environment/overview",
       "environment/node",
@@ -51,6 +43,14 @@
       "environment/stencil",
       "environment/composing-environments",
       "environment/new-environments"
+    ],
+    "Component": [
+      "component/overview",
+      "component/component-json",
+      "component/runtime-environment",
+      "component/dependencies",
+      "component/isolation",
+      "component/versioning"
     ],
     "Documentation": [
       "documentation/automated-docs",

@@ -13,7 +13,7 @@ $ bit ci
 
 Wouldn't it be nice that regardless of a project setup, framework and configuration, all development workflow operations will be standardize? You will be able to jump right in to any project and just *know* how to start a dev server, *know* how to run build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
 
-Bit uses **Environments** as a way to define a base development environments for components and projects. Environments define how a component is built, tested and published.
+Bit uses **Environments** as a way to define development environments for components and projects. Environments define how a component is built, tested and published.
 
 ## Set default environment for a workspace
 
@@ -57,19 +57,7 @@ Use the environment configuration object to set specifics for components. When a
 
 ### Set framework version for component
 
-Components can be implemented using a verity of frameworks like React, Angular or Vue. Each of these frameworks has has different runtime requirements and versions. It's the job of the environment to define all runtime requirements for components and let you override and configure it to your needs.
-
-You can define the specific runtime version of your framework for the workspace.
-
-```json
-{
-    "@teambit.environments/react": {
-        "version": "16.0.0"
-    }
-}
-```
-
-In addition to that, any other runtime requirements are handled by the environment, per your configuration. For example, a React environment would define `react` and `react-dom` as `peerDependencies`, and if you decide to use TypeScript it would add `@types/react` and `types/react-dom`. All this according to your pre-selected version of React.
+> TODO - compose
 
 ## Building, testing and linting components
 
@@ -104,9 +92,7 @@ Bit updates `workspace.json` and either create a new variant or update your vari
 {
     "@teambit.core/variants": {
         "components/generics-ui": {
-            "extensions": {
-                "@teambit.environments/stencil": {}
-            }
+            "@teambit.environments/stencil": {}
         }
     }
 }
