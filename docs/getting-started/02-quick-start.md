@@ -10,7 +10,7 @@ This is by no means a "quick start" as it covers all the main tools, concepts an
 ## Install Bit
 
 ```sh
-$ npm install bit-bin@15.0.0-beta --global
+$ npm install bit-bin --global
 ```
 
 ## Initialize a new Bit workspace
@@ -30,8 +30,7 @@ This will initialize a Bit workspace in our new "bad-jokes" app directory. Two i
 
 ## Run Bit's local dev server to see the workspace UI
 
-Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI](TODO).
-
+Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI](TODO).  
 The workspace UI displays all components tracked by your (Bit) workspace. It is a development tool that enables you to examine your components in different contexts and variations, and browse through their documentation. The workspace UI is part of the workspace extension.
 
 ```sh
@@ -48,7 +47,7 @@ We will configure the following:
 
 - **Workspace name** - `"name": "bad-jokes"`
 - **Scope name** (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](TODO), either locally or on a server, is the storehouse for all tagged or "committed" components.
-- **Component Environment** - `"@teambit/envs": {"env": "@teambit/react"}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
+- **Component Environment** - `"@teambit/react": {}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
 
 ```json
 {
@@ -86,7 +85,7 @@ $ touch components/ui/button/index.ts
 Export all (future) variables and types:
 
 ```js
-export * from './button`
+export * from './button'
 ```
 
 Once you have your Barrel file, create the main implementation file for the component.
@@ -99,14 +98,14 @@ $ touch components/ui/button/button.module.scss
 Use the `index.ts` file to export everything from the `button.tsx` file:
 
 ```js
-export * from "./button";
+export * from './button';
 ```
 
 Add the following lines to `components/ui/button/button.tsx`
 
 ```tsx
-import React, { ButtonHTMLAttributes } from "react";
-import styles from "./button.module.scss";
+import React, { ButtonHTMLAttributes } from 'react';
+import styles from './button.module.scss';
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Choose between primary and secondary styling. */
@@ -169,7 +168,7 @@ Add the following lines to `components/base/button/button.module.scss`
 
 ### Install dependencies
 
-The above button component uses the 'classnames' library. To install it, use `bit install`:
+The above button component uses the `classnames` library. To install it, use `bit install`:
 
 ```bash
 $ bit install classnames
@@ -243,16 +242,14 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 
 ### Add tests
 
-As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as the default test runner, so we don't need to worry about setting it up.
-
+As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as the default test runner, so we don't need to worry about setting it up.  
 To simplify our UI testing, we'll also make use of the following libraries:
 
 ```bash
-$ bit install @testing-library/react @testing-library/jest-dom 
+$ bit install @testing-library/react @testing-library/jest-dom
 ```
 
-Notice how we didn't set these packages as Dev Dependencies. Bit determines that by analyzing the way they are used in this workspace. 
-
+Notice how we didn't set these packages as Dev Dependencies. Bit determines that by analyzing the way they are used in this workspace.  
 Let's start by creating our test file (in the button component directory)
 
 ```bash
@@ -274,8 +271,7 @@ test("button renders", () => {
 });
 ```
 
-Our tests will run whenever we [tag]() the relevant component. If a test fails, the tagging action we be aborted.
-
+Our tests will run whenever we [tag](TODO) the relevant component. If a test fails, the tagging action we be aborted.  
 We can also run the tests manually:
 
 ```bash
@@ -288,8 +284,7 @@ $ bit test
 
 ### Override the component's meta-data
 
-The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.
-
+The 'abstract' and 'tags' define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.  
 For example:
 
 ```js
@@ -300,11 +295,10 @@ export const tags = ["react", "typescript", "button"];
 
 #### Extend the documentation with a custom component
 
-The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc` file, and export it as `default`.
+The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc` file, and export it as `default`.  
+For example, let's create a 'Guidelines' section for a `Button` component documentation:
 
-For example, let's create a 'Guidelines' section for a 'Button' component documentation:
-
-```js
+```tsx
 export default function() {
   const wrapper = {
     border: "1px solid #e0ddd8",
@@ -392,14 +386,13 @@ export const useGetJokes = (): [
 
 ### Add live examples
 
-Examples are descriptions and playable code that instruct on how a component should be used. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.
-
+Examples are descriptions and playable code that instruct on how a component should be used. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.  
 The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
 
-- **scope**: An _object_ with all relevant imports.
-- **title**: A _string_ for the example title.
-- **Description**: A _string_ for the example description.
-- **Code**: A _string_ (template literal) for the example code.
+- `scope` - An _object_ with all relevant imports.
+- `title` - A _string_ for the example title.
+- `description` - A _string_ for the example description.
+- `code` - A _string_ (template literal) for the example code.
 
 For example, let's create an example for a 'Card' component:
 
@@ -444,6 +437,7 @@ export const examples = [
 ### Import tracked components
 
 ### Add a composition
+
 Our app component, "jokes-viewer", is structured like so:
 
 ```sh
@@ -462,7 +456,6 @@ Bit creates a link in the workspace `node_modules` directory, to each tracked co
 import {Button} from '@teambit/bad-jokes.ui.button';
 import {useGetJokes} from '@teambit/bad-jokes.hooks.use-get-jokes'
 ```
-
 
 ## Version components
 
