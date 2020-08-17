@@ -124,46 +124,51 @@ export const Button = ({ children, variant = "primary", ...rest }: IButton) => {
 Add the following lines to `components/base/button/button.module.scss`
 
 ```scss
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
-
-.primary {
-  border: solid 7px #ab3636;
-  background-color: #ab3636;
-  &:hover {
-    border-color: #8b1b1b;
-    background-color: #8b1b1b;
-  }
-}
-
-.secondary {
-  border: solid 7px #363eab;
-  background-color: #363eab;
-  &:hover {
-    border-color: #434cc5;
-    background-color: #434cc5;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
 .base {
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   padding: 10px;
   color: #fff;
   font-size: 16px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   outline: none;
   transition: background-color 0.5s, border 0.5s;
-  &:active {
-    border-color: #313131;
-    background-color: #fff;
-    color: #000;
+    &:active {
+      border-color: #313131;
+      background-color: #fff;
+      color: #000;
+    }
+    &:disabled{
+      border-color: #a5a5a5;
+      background-color: #a5a5a5;
+      &:hover {
+        border-color: #a5a5a5;
+        background-color: #a5a5a5;
+      }
   }
-  &:disabled {
-    border-color: #a5a5a5;
-    background-color: #a5a5a5;
-  }
+
 }
+
+.primary {
+    border: solid 7px #ab3636;
+    background-color: #ab3636;
+      &:hover {
+        border-color: #8b1b1b;
+        background-color: #8b1b1b;
+      }
+  }
+  
+  .secondary {
+    border: solid 7px #363eab;
+    background-color: #363eab;
+      &:hover {
+        border-color: #434cc5;
+        background-color: #434cc5;
+      }
+  }
 ```
 
 ### Install dependencies
@@ -280,7 +285,7 @@ $ bit test
 
 ### Review the documentation
 
-> TODO
+Start your Bit server (`bit start`) and look for 
 
 ### Override the component's meta-data
 
@@ -431,14 +436,7 @@ export const examples = [
 ```
 
 ## Compose an app
-
-> TODO basic files and set up
-
-### Import tracked components
-
-### Add a composition
-
-Our app component, "jokes-viewer", is structured like so:
+This will be our (app) component structure:
 
 ```sh
 ├── components
@@ -449,13 +447,63 @@ Our app component, "jokes-viewer", is structured like so:
        ├── jokes-viewer.spec.jsx
        └──  index.ts
 ```
-
+### Import tracked components
 Bit creates a link in the workspace `node_modules` directory, to each tracked component. We'll use this when referencing between components. For example, in our `jokes-viewer.tsx` file we'll import the "button" UI component and "getJokes" hook, like so:
 
 ```tsx
 import {Button} from '@teambit/bad-jokes.ui.button';
 import {useGetJokes} from '@teambit/bad-jokes.hooks.use-get-jokes'
 ```
+
+We'll use them like so:
+
+```tsx
+/** Retrieves and displays bad jokes */
+export const BadJokesViewer = () => {
+
+    const [getJoke, joke, isLoading, error] = useGetJokes();
+
+    return (
+        <div className={styles.badJokesViewer}>
+            <div className={styles.contentWrapper}>
+                {error || joke.map(line => <p>{line}</p>)}
+            </div>
+            <div>
+                <Button disabled={isLoading} onClick={getJoke}>
+                    {isLoading ? 'loading...' : "another one, please"}
+                </Button>
+            </div>
+        </div>
+    )
+}
+```
+All that's left is to style the component. In the `jokes-viewer.module.scss`:
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.badJokesViewer {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: solid 7px #41403E;
+    padding: 25px;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    max-width: 400px;
+    transition: box-shadow 0.5s;
+        &:hover {
+            box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+          }        
+  }
+
+.contentWrapper{
+    margin-bottom: 50px;
+}
+```
+
+### Add a composition
+
+Our app component, "jokes-viewer", is structured like so:
 
 ## Version components
 
