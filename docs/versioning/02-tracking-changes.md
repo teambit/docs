@@ -3,19 +3,6 @@ id: tracking-changes
 title: Tracking Changes
 ---
 
-To allow developers compose modular modern web application you can use Bit to version single components. This way you provide granular control over the composition of web applications. The advantages of per-component versioning are:
-
-1. Meaningful updates.
-1. Avoiding redundant dependency conflicts.
-1. Continuous releases, hotfixes, and rollbacks.
-1. Mix and match UI composition.
-1. Retaining team independence.
-1. Performance, stability, and dev velocity.
-
-[Additional read on the subject of individual component versioning](https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2).
-
-## Track changes
-
 Once a component has been created or modified you can tell Bit to generate a change-file for the workspace, describing the next version for each component. As part of the process, Bit will validate that the component is properly isolated and is able to pass its build and test tasks.
 
 ```sh
@@ -45,6 +32,8 @@ bit tag --version 1.2.3
 ```
 
 ### Setting a pre-release version
+
+> **THIS FEATURE IS NOT YET IMPLEMENTED**
 
 A pre-release version aims to define an unstable version of a component. Meaning that before you publish `1.0.0` you can publish `1.0.0-alpha.1`. This way consumers will know to which version the upcoming changes will be published to.
 
