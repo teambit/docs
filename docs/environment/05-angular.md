@@ -1,6 +1,0 @@
----
-id: angular
-title: Angular
----
-
-

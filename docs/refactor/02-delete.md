@@ -50,21 +50,3 @@ This is what happens if we remove `left-pad`:
 * `login` that also depends on `left-pad` is not affected by the removal of `left-pad`. This is because scopes keep a cache of external dependencies.
 * It is still possible to source `login` to another consumer project, as the cache works for Bit.
 * Installing `login` using npm fails because npm tries to install `left-pad` from its original scope.
-
-## Deprecate a component in a remote scope
-
-To deprecate a component in a remote scope, specify the full component ID and use the `--remote` option.
-
-```shell
-$ bit deprecate username.your-scope/foo/bar --remote
-deprecated components: username.your-scope/foo/bar
-```
-
-## Deprecating a component in a workspace
-
-To deprecate a component in a workspace, specify the component ID.
-
-```shell
-$ bit deprecate foo/bar
-deprecated components: foo/bar
-```

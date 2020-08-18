@@ -1,6 +1,0 @@
----
-id: stencil
-title: Stencil
----
-
-

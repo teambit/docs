@@ -10,12 +10,12 @@
       "guides/using-bit-dev",
       "guides/authentication",
       "guides/everyday-commands",
-      "guides/build-design-system",
-      "guides/build-application",
-      "guides/scoping-components",
+      "guides/build-design-systemX",
+      "guides/build-applicationX",
+      "guides/scoping-componentsX",
       "guides/ci",
-      "guides/customize-workflow",
-      "guides/publish-to-own-registry",
+      "guides/customize-workflowX",
+      "guides/publish-to-own-registryX",
       "guides/host-your-own-scope"
     ],
     "Workspace": [
@@ -36,21 +36,16 @@
     ],
     "Environment": [
       "environment/overview",
-      "environment/node",
-      "environment/react",
-      "environment/angular",
-      "environment/vuew",
-      "environment/stencil",
+      "environment/base",
+      "environment/services",
       "environment/composing-environments",
-      "environment/new-environments"
+      "environment/new-environmentsX"
     ],
     "Component": [
       "component/overview",
       "component/component-json",
-      "component/runtime-environment",
       "component/dependencies",
-      "component/isolation",
-      "component/versioning"
+      "component/isolation"
     ],
     "Documentation": [
       "documentation/automated-docs",
@@ -70,17 +65,18 @@
     ],
     "Exporting": [
       "exporting/orginizing-components",
-      "exporting/forking"
+      "exporting/setting-remotesX"
     ],
     "consuming": [
       "consuming/installing",
       "consuming/vendor-components",
-      "consuming/local-modifications"
+      "consuming/local-modificationsX"
     ],
     "Refactoring": [
       "refactor/deprecate",
       "refactor/delete",
-      "refactor/rename"
+      "refactor/renameX",
+      "refactor/forkX"
     ],
     "Workflow Automation": [
         "workflow-automation/standard-workflow",

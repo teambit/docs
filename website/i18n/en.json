@@ -23,9 +23,6 @@
       "component/isolation": {
         "title": "Isolation"
       },
-      "component/05-versioning": {
-        "title": "component/05-versioning"
-      },
       "compositions/develop-in-isolation": {
         "title": "Develop in Isolation"
       },
@@ -56,20 +53,11 @@
       "environment/overview": {
         "title": "Overview"
       },
-      "environment/node": {
-        "title": "Node"
+      "environment/base": {
+        "title": "Base Environments"
       },
-      "environment/react": {
-        "title": "React"
-      },
-      "environment/angular": {
-        "title": "Angular"
-      },
-      "environment/vue": {
-        "title": "Vue"
-      },
-      "environment/stencil": {
-        "title": "Stencil"
+      "environment/services": {
+        "title": "Services"
       },
       "environment/composing-environments": {
         "title": "Composing Environments"
@@ -80,8 +68,8 @@
       "exporting/organizing-components": {
         "title": "Organizing Components"
       },
-      "exporting/forking": {
-        "title": "Forking"
+      "exporting/02-setting-remotes": {
+        "title": "exporting/02-setting-remotes"
       },
       "extending-bit/overview": {
         "title": "Overview"
@@ -158,6 +146,9 @@
       "refactor/rename": {
         "title": "Rename Components"
       },
+      "refactor/forking": {
+        "title": "Forking"
+      },
       "scope/overview": {
         "title": "Overview"
       },
@@ -165,7 +156,7 @@
         "title": "Scope UI"
       },
       "scope/dependency-cache": {
-        "title": "Dependency Cache"
+        "title": "External Components"
       },
       "scope/04-scope-json": {
         "title": "scope/04-scope-json"
@@ -173,14 +164,17 @@
       "scope/05-extend": {
         "title": "scope/05-extend"
       },
-      "versioning/independent-component-versioning": {
-        "title": "Independent Component Versioning"
+      "versioning/overview": {
+        "title": "Overview"
       },
-      "versioning/component-history": {
-        "title": "Component History"
+      "versioning/tracking-changes": {
+        "title": "Tracking Changes"
       },
-      "versioning/build-pipe": {
-        "title": "Build Pipeline"
+      "versioning/03-component-history": {
+        "title": "versioning/03-component-history"
+      },
+      "versioning/04-build-pipe": {
+        "title": "versioning/04-build-pipe"
       },
       "workflow-automation/standardize-workflow": {
         "title": "Standardize Workflow"
@@ -239,8 +233,8 @@
       "Guides": "Guides",
       "Workspace": "Workspace",
       "Scope": "Scope",
-      "Component": "Component",
       "Environment": "Environment",
+      "Component": "Component",
       "Documentation": "Documentation",
       "Compositions": "Compositions",
       "Versioning": "Versioning",

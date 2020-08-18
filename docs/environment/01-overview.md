@@ -7,7 +7,7 @@ title: Overview
 $ bit build
 $ bit test
 $ bit start
-$ bit create card
+$ bit create <component>
 $ bit ci
 ```
 
@@ -15,87 +15,37 @@ Wouldn't it be nice that regardless of a project setup, framework and configurat
 
 Bit uses **Environments** as a way to define development environments for components and projects. Environments define how a component is built, tested and published.
 
-## Set default environment for a workspace
+## Set an environment for components
 
-Use the `bit use` to configure an environment for your workspace:
+> Refactor when `bit use` is implemented.
 
-```sh
-$ bit use @teambit.core/workspace --workspace
-```
-
-This adds the following configuration snippet to the `workspace.json`.
+Bit configures workspace components according to the `variant` they are in.  
+For example:
 
 ```json
 {
-    "@teambit.core/workspace": {
-        "extensions": {
-            "@teambit.environments/react": {}
-        }
+  "@teambit/variants": {
+    "components": {
+      "@teambit/react": {}
+    },
+    "helpers": {
+      "@teambit/node": {}
     }
+  }
 }
 ```
 
-Now components in the workspace will have `@teambit.environments/react` defined as their environment by default.
+This way we set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
 
-## Configuring an environment
+## Component environments
 
-Use the environment configuration object to set specifics for components. When applied, these configurations will be attached to the component, alongside the environment itself. This means that you can modify the configuration for each variant and component.
-
-```json
-{
-    "@teambit.core/workspace": {
-        "extensions": {
-            "@teambit.environments/react": {
-                "config": {
-                    "engine": "typescript"
-                }
-            }
-        }
-    }
-}
-```
-
-### Set framework version for component
-
-> TODO - compose
-
-## Building, testing and linting components
-
-Each environments in the workspace registers itself to specific lifecycle commands in Bit. For example: `build`, `test` and `lint`. Whenever you trigger any of these commands, and environments that is hooked to the event will be triggered. Each triggered environment will then gather all components that are registered for it and run the requested operation.
-
-```sh
-# TODO - add list of all triggers?
-```
-
-Regardless of the framework and workspace, all components are being build and tested just the same, make it easier for you to collaborate with other developers on components.
-
-## Using component templates
-
-An important lifecycle operation the environment can register is the `bit create` command. This way you can define and use templates when adding implementing new components in the workspace.
-
-```sh
-$ bit create ...
-# TODO - i don't think we have proper syntax atm...
-```
+You may think about an environment as a set of `scripts` in a `package.json` file in the sense that it provides pre-defined operations to run on your code. The main difference is that environments are composed programmatically with Bit. They can extend features in the [workspace UI](TODO) as well as integrate the component's build, test and lint operations to Bit's commands.  
+Environments in Bit work like components you compose together to form a functionality. For example, the `@teambit/react` environment comes with its own set of defaults for building and developing React components. It does not require any configuration files from the workspace, as like any component, it encapsulates a complete functionality and does not bound to external assets from the workspace (similar to how you'd prefer building a component that gets its state via an API instead of accessing a global variable).
 
 ## Multiple environments in a workspace
 
-If your workspace contains components from various frameworks you can use the `variant` extension and set different environments for components according to their location in the workspace. You can set an environment for a variant with this command:
+While a component may have a single environment you many have several components, each with its own environment in the same workspace. This means that you can keep component with React, Angular and Vue environments in the same workspace and not care about setting different configurations and processes for each. Just have an environment defined, and run the required operation. Bit's [workspace UI](TODO) even renders components from multiple environments.
 
-```sh
-$ bit use @teambit.environments/stencil --variant components/generics-ui
-```
+## Component isolation
 
-Bit updates `workspace.json` and either create a new variant or update your variant with the environment to apply.
-
-```json
-{
-    "@teambit.core/variants": {
-        "components/generics-ui": {
-            "@teambit.environments/stencil": {}
-        }
-    }
-}
-```
-
-By creating more variants, each with its own environment, you can set a multi-framework workspace. This means that if you have multiple environments, a single command like `bit build` triggers a build process for all components, regardless of their framework.
+## Runtime

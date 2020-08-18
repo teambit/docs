@@ -1,6 +1,0 @@
----
-id: vue
-title: Vue
----
-
-
