@@ -3,13 +3,15 @@ id: services
 title: Services
 ---
 
-Each environments is composed by a set of services, where each service is responsible for a specific part in the component development lifecycle.
+Each environment composes together different [services](TODO) to extend components' functionality and integrate to operations and features in Bit.  
 
-## Develop
+## Icon
+
+## Documentation
+
+## DevServer
 
 ## Compile
-
-## Run
 
 ## Bundle
 

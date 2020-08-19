@@ -3,7 +3,7 @@ id: workspace-ui
 title: Workspace UI
 ---
 
-Bit's workspace comes with a user interface and playground for all components. Use this as your component development environment. The **workspace UI** enables you to build and maintain components and provide an interactive showcase with documentation portal.
+Bit's workspace comes with a user interface and playground for all components. Use this as your component development environment. The **workspace UI** enables you to build and maintain components and provide an interactive showcase with the documentation portal.
 
 As Bit components are independent modules, you can build components in isolation without worrying about specific dependencies and requirements.
 
@@ -21,9 +21,9 @@ The web application is served from `http://localhost:3000`.
 
 ## Component showcase
 
-Discoverability is a key feature of Bit's workspace. When initialized you are greeted with a gallery view of all components. This helps understanding which components are available for you to use in your project.  
+Discoverability is a crucial feature of Bit's workspace. When initialized, you are greeted with a gallery view of all components. This helps in understanding which components are available for you to use in your project. 
 
-Bit's showcase is dynamic and get's updated whenever a new component is added or an existing component is modified. Each component is annotated according to [its state](TODO) and test results, so you get a clear indication for how your code modifications has affected the component.
+Bit's showcase is dynamic and get's updated whenever a new component is added, or an existing component is modified. Each component is annotated according to [its state](TODO) and test results, so you get a clear indication for how your code modifications have affected the component.
 
 ## Component local dev-server
 
@@ -41,4 +41,4 @@ Each component has it's own local dev-server it renders when you browse it, the 
 
 > **A single platform for all environments**
 >
->The workspace interacts with each component's environment to get its rendering and run other operations. This means that you can maintain components with different environments in the same workspace. The same workspace can host React, Angular and Stencil components and still keep a single web application for you to interact with and see the components. No need for complicated setups with several running local servers. Bit hides this complexity from you.
+> The workspace interacts with each component's environment to get its rendering and run other operations. This means that you can maintain components with different environments in the same workspace. The same workspace can host React, Angular, and Stencil components while still keeping a single web application for you to interact with and see the components. No need for complicated setups with several running local servers. Bit hides this complexity from you.

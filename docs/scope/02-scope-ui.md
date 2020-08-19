@@ -15,8 +15,8 @@ To start the scope UI server run the following command:
 $ bit start scope # The server will start at `http://localhost:3000`.
 ```
 
-> While this UI is most useful when running on a remote scope, because your local workspace has a scope as a storage, you can run this command locally and see how your storage is managed.
+> While this UI is most useful when running on a remote scope, because your local workspace has a scope as storage, you can run this command locally and see how your storage is managed.
 
 ## Rendering isolated components
 
-The Bit scope UI is similar to how the workspace UI operates. It integrates with the component environment to render all component features. This means that everything that you have been working on locally will work just the same on the remote server.
+The Bit scope UI is similar to how the workspace UI operates. It integrates with the component environment to render all component features. This means that everything you have been working on locally will work on the remote server.

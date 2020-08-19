@@ -11,23 +11,22 @@ $ bit create <component>
 $ bit ci
 ```
 
-Wouldn't it be nice that regardless of a project setup, framework and configuration, all development workflow operations will be standardize? You will be able to jump right in to any project and just *know* how to start a dev server, *know* how to run build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
+Wouldn't it be nice that regardless of project setup, framework, and configuration, all development workflow operations will be standardized? You will be able to jump right into any project and just *know* how to start a dev server, *know* how to build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
 
-Bit uses **Environments** as a way to define development environments for components and projects. Environments define how a component is built, tested and published.
+Bit uses **Environments** to manage the development of components within a Bit [workspace](TODO).
 
-## Set an environment for components
+## How to use Environments?
 
 > Refactor when `bit use` is implemented.
 
-Bit configures workspace components according to the `variant` they are in.  
-For example:
+Adding an environment to a workspace can be done with the following configuration, using `variants`:
 
 ```json
 {
   "@teambit/variants": {
     "components": {
-      "@teambit/react": {}
-    },
+       "@teambit/react": {}
+      },
     "helpers": {
       "@teambit/node": {}
     }
@@ -35,17 +34,37 @@ For example:
 }
 ```
 
-This way we set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
+This way, we set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
 
-## Component environments
+### Multiple environments in a workspace
 
-You may think about an environment as a set of `scripts` in a `package.json` file in the sense that it provides pre-defined operations to run on your code. The main difference is that environments are composed programmatically with Bit. They can extend features in the [workspace UI](TODO) as well as integrate the component's build, test and lint operations to Bit's commands.  
-Environments in Bit work like components you compose together to form a functionality. For example, the `@teambit/react` environment comes with its own set of defaults for building and developing React components. It does not require any configuration files from the workspace, as like any component, it encapsulates a complete functionality and does not bound to external assets from the workspace (similar to how you'd prefer building a component that gets its state via an API instead of accessing a global variable).
+While a component may have a single environment, you may have several components, each with its own environment in the same workspace. Just have an environment defined and run the required operation. Bit's [workspace UI](TODO) even renders components from multiple environments. Even when you have multiple types of components, you only manage a single process for Bit's dev-server, while Bit does all the heavy-lifting of managing different environments.
 
-## Multiple environments in a workspace
+## How environments work?
 
-While a component may have a single environment you many have several components, each with its own environment in the same workspace. This means that you can keep component with React, Angular and Vue environments in the same workspace and not care about setting different configurations and processes for each. Just have an environment defined, and run the required operation. Bit's [workspace UI](TODO) even renders components from multiple environments.
+Each environment is an [aspect](TODO) which implements cross-cutting functions to run on components. Such functions include:
 
-## Component isolation
+- Compilation.
+- Testing.
+- Linting.
+- Documentation.
+- DevServer and rendering.
+- CI pipeline.
 
-## Runtime
+Bit has a set of [**slots**](TODO), where each of them is an integration point environment hooks itself to so it can execute a function.  
+Using this approach Bit runs as different implementation of each function, as defined by a component's environment. When Bit requires to run any operation on a set of components, it executes the functions each environment registers for their components.
+
+## Manage component's runtime
+
+Bit tries to use the minimal amount of processes when running components. Usually this means a process for sets of components, according to their environments.  
+Each environment defines **runtime requirements** for the components. These requirements are the component's `peerDependencies`, which are configured by the environment. This way you don't need to handle `peerDependencies` for each workspace or project. This is a part of the environment definition for the frameworks you use.
+
+[Learn more about using runtimes.](TODO)
+
+## Zero configuration
+
+Each environment encapsulate it's configurations. It gives you the same zero-config approach you get when using tools like [`react-scripts`](https://www.npmjs.com/package/react-scripts) in a Bit workspace.
+
+> **Composition, not configuration**
+>
+> You can modify and extend any environment by creating a new one that composes the environment and changes its behaviors programatically. [Learn more](TODO).

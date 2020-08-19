@@ -7,7 +7,7 @@ The `workspace.json` file defines a set of extensions that control the entire wo
 
 ## Configuration structure
 
-Bit is configured using a composition of extensions that can communicate with each other. This means that when you configure the `workspace.json` file you essentially compose these extensions. As each extension connects itself to the specific APIs in Bit, the configuration structure is simply a list of extensions.
+Bit is configured using a composition of extensions that can communicate with each other. This means that when you configure the `workspace.json` file, you essentially compose these extensions. As each extension connects itself to the specific APIs in Bit, the configuration structure is simply a list of extensions.
 
 ## Base configurations
 
@@ -15,27 +15,27 @@ A basic `workspace.json` may look like this:
 
 ```json
 {
-    "@teambit.core/workspace": {
-        "name": "my-application",
-        "description": "lorem ipsum",
-        "defaultScope": "acme.base-ui",
-        "defaultDirectory": "components",
-    },
-    "@teambit/dependency-resolver": {
-        "packageManager": "@teambit/pnpm",
-        "policy": {
-            "dependencies": {
-                "@types/classnames": "^2.2.10",
-                "classnames": "^2.2.6",
-                "lodash": "^4.17.19",
-            }
-        }
-    },
-    "@teambit/variants": {
-        "*": {
-            "@teambit/react": {}
-        }
+  "@teambit.core/workspace": {
+    "name": "my-application",
+    "description": "lorem ipsum",
+    "defaultScope": "acme.base-ui",
+    "defaultDirectory": "components",
+  },
+  "@teambit/dependency-resolver": {
+    "packageManager": "@teambit/pnpm",
+    "policy": {
+      "dependencies": {
+      "@types/classnames": "^2.2.10",
+      "classnames": "^2.2.6",
+      "lodash": "^4.17.19",
+      }
     }
+  },
+  "@teambit/variants": {
+    "*": {
+      "@teambit/react": {}
+    }
+  }
 }
 ```
 
@@ -49,12 +49,12 @@ See the full APIs and configuration for `@teambit.core/workspace` [here](TODO).
 
 ### `@teambit/dependency-resolver`
 
-For Bit to parse and define dependencies for components it needs to use the dependency-resolver extension. It defines which package manager to use when installing dependencies as well as policies for dependency-versions. Moreover, this extension is used to parse all `import` statements between components to define their dependency graphs and understand if they are properly isolated. You can read more about how to handle dependencies and dependency resolution in a workspace [here](TODO).
+For Bit to parse and define dependencies for components, it needs to use the dependency-resolver extension. It defines which package manager to use when installing dependencies as well as policies for dependency-versions. Moreover, this extension is used to parse all `import` statements between components to define their dependency graphs and understand if they are properly isolated. You can read more about how to handle dependencies and dependency resolution in a workspace [here](TODO).
 
 See the full APIs and configuration for `@teambit/dependency-resolver` [here](TODO).
 
 ### `@teambit/variants`
 
-Bit lets you keep parallel set of configurations according to the location of components in the workspace directory tree. Variants used to build the entire monorepo with an alternate set of dependencies and configurations. You can read more about how to define and use `variants` to design a workspace for your requirements [here](TODO).
+Bit lets you keep a parallel set of configurations according to the components' location in the workspace directory tree. Variants used to build the entire monorepo with an alternate set of dependencies and configurations. You can read more about defining and using `variants` to design a workspace for your requirements [here](TODO).
 
 See the full APIs and configuration for `@teambit/variants` [here](TODO).
