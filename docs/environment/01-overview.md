@@ -13,13 +13,13 @@ $ bit ci
 
 Wouldn't it be nice that regardless of project setup, framework, and configuration, all development workflow operations will be standardized? You will be able to jump right into any project and just *know* how to start a dev server, *know* how to build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
 
-Bit uses **Environments** to manage the development of components within a Bit [workspace](TODO).
+Bit uses **Environments** to manage support in different JavaScript frameworks for components within a Bit [workspace](TODO).
 
 ## How to use Environments?
 
 > Refactor when `bit use` is implemented.
 
-Adding an environment to a workspace can be done with the following configuration, using `variants`:
+Adding an environment to a workspace can be done with the following configuration:
 
 ```json
 {
@@ -34,15 +34,15 @@ Adding an environment to a workspace can be done with the following configuratio
 }
 ```
 
-This way, we set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
+Using `variants` you set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
 
-### Multiple environments in a workspace
-
-While a component may have a single environment, you may have several components, each with its own environment in the same workspace. Just have an environment defined and run the required operation. Bit's [workspace UI](TODO) even renders components from multiple environments. Even when you have multiple types of components, you only manage a single process for Bit's dev-server, while Bit does all the heavy-lifting of managing different environments.
+> **Multiple environments in a workspace**
+>
+> While a component may have a single environment, a workspace can manage multiple environments defined for different sets of components.
 
 ## How environments work?
 
-Each environment is an [aspect](TODO) which implements cross-cutting functions to run on components. Such functions include:
+Environments implement cross-cutting functions to run as tasks during the component's lifecycle. Such functions include:
 
 - Compilation.
 - Testing.
@@ -51,15 +51,14 @@ Each environment is an [aspect](TODO) which implements cross-cutting functions t
 - DevServer and rendering.
 - CI pipeline.
 
-Bit has a set of [**slots**](TODO), where each of them is an integration point environment hooks itself to so it can execute a function.  
-Using this approach Bit runs as different implementation of each function, as defined by a component's environment. When Bit requires to run any operation on a set of components, it executes the functions each environment registers for their components.
+An environment registers itself to any number of integration points Bit has, so it can "tell" Bit what to execute on each component, when required.  
+This means that when you only need to handle the implementation and code of your components, as the environment takes care of the rest. No need to add complicated configurations or scripts to your project. By adding a new environment, or replacing one with another, all your workflow and components would align to the new implementation.
 
 ## Manage component's runtime
 
-Bit tries to use the minimal amount of processes when running components. Usually this means a process for sets of components, according to their environments.  
-Each environment defines **runtime requirements** for the components. These requirements are the component's `peerDependencies`, which are configured by the environment. This way you don't need to handle `peerDependencies` for each workspace or project. This is a part of the environment definition for the frameworks you use.
+Environments provide tools to install and manage peer dependencies for your development environment. It does so by defining **runtime requirements** and ensuring they are available whenever any function is executed for a component. In most cases runtime requirements will be the framework (React, Angular, Vue...) and the supported version range, however they can also be libraries that needs have a single instance installed (for example - `styled-components`).
 
-[Learn more about using runtimes.](TODO)
+[Learn more about using and configuring runtimes.](TODO)
 
 ## Zero configuration
 
