@@ -59,6 +59,9 @@
       "environment/services": {
         "title": "Services"
       },
+      "environment/04-runtime": {
+        "title": "environment/04-runtime"
+      },
       "environment/composing-environments": {
         "title": "Composing Environments"
       },
@@ -88,6 +91,9 @@
       },
       "getting-started/why-components": {
         "title": "Why Components?"
+      },
+      "getting-started/future-intro": {
+        "title": "getting-started/future-intro"
       },
       "guides/installation": {
         "title": "Installation"

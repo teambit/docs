@@ -3,9 +3,10 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial you will use Bit to build an app, bottom up, using independent components. These component's will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
+In this tutorial, you will use Bit to build an app, bottom-up, using independent components. These components will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
 
-This is by no means a "quick start" as it covers all the main tools, concepts and methodologies used by Bit.
+This is, by no means, a "quick start" as it covers all the main tools, concepts, and methodologies used by Bit.
+
 
 ## Install Bit
 
@@ -247,8 +248,9 @@ Head over to the [compositions tab](https://localhost:3000/base/button/~composit
 
 ### Add tests
 
-As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as the default test runner, so we don't need to worry about setting it up.  
+As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as a test runner (which means we don't need to worry about setting it up).  
 To simplify our UI testing, we'll also make use of the following libraries:
+
 
 ```bash
 $ bit install @testing-library/react @testing-library/jest-dom
@@ -276,7 +278,7 @@ test("button renders", () => {
 });
 ```
 
-Our tests will run whenever we [tag](TODO) the relevant component. If a test fails, the tagging action we be aborted.  
+Our tests will run whenever we [tag](TODO) the relevant component. If a test fails, the tagging action will be aborted.  
 We can also run the tests manually:
 
 ```bash
@@ -379,19 +381,17 @@ export const useGetJokes = (): [
 
 ### Track hook component
 
-To have the component be managed by Bit, track its root directory.
-
 ```sh
 $ bit add hooks/use-get-joke --namespace hooks
 ```
 
 > **Review the documentation**
 >
-> As with any other component, Bit automatically document your hook. Head over to the component page on the workspace UI to review it.
+> As with any other component, Bit automatically documents your hook. Head over to the component page on the workspace UI to review it.
 
 ### Add live examples
 
-Examples are descriptions and playable code that instruct on how a component should be used. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.  
+Examples are descriptions and playable code that instruct on how to use a component. Examples are set using the `examples` variable in the `<component>.docs.tsx` file.  
 The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
 
 - `scope` - An `object` with all relevant imports.
@@ -400,6 +400,7 @@ The `examples` variable receives an array of objects, each representing a single
 - `code` - A `string` (template literal) for the example code.
 
 Let's create an example for the `Card` component:
+
 
 ```sh
 $ touch ./path/to/component/folder/card.docs.tsx
@@ -448,7 +449,7 @@ This will be our (app) component structure:
        └──  index.ts
 ```
 ### Import tracked components
-Bit creates a link in the workspace `node_modules` directory, to each tracked component. We'll use this when referencing between components. For example, in our `jokes-viewer.tsx` file we'll import the "button" UI component and "getJokes" hook, like so:
+Bit links tracked components to the`node_modules` directory. We'll use these links when referencing components. For example, in our `jokes-viewer.tsx` file we'll import the "button" UI component and "getJokes" hook, like so:
 
 ```tsx
 import {Button} from '@teambit/bad-jokes.ui.button';
