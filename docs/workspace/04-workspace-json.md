@@ -3,22 +3,13 @@ id: workspace-json
 title: Workspace Configuration
 ---
 
-The `workspace.json` file defines a set of extensions that control the entire workspace and component management. Each extension is responsible for a specific task.
-
-## Configuration structure
-
-Bit is configured using a composition of extensions that can communicate with each other. This means that when you configure the `workspace.json` file, you essentially compose these extensions. As each extension connects itself to the specific APIs in Bit, the configuration structure is simply a list of extensions.
-
-## Base configurations
-
 A basic `workspace.json` may look like this:
 
 ```json
 {
-  "@teambit.core/workspace": {
+  "@teambit/workspace": {
     "name": "my-application",
     "description": "lorem ipsum",
-    "defaultScope": "acme.base-ui",
     "defaultDirectory": "components",
   },
   "@teambit/dependency-resolver": {
@@ -33,15 +24,27 @@ A basic `workspace.json` may look like this:
   },
   "@teambit/variants": {
     "*": {
-      "@teambit/react": {}
+      "@teambit/react": {},
+      "scope": "acme.base-ui",
     }
   }
 }
 ```
 
-There are three base extensions composed in this configuration scheme.
+This configuration is composed by different extensions ([aspects](TODO)) of Bit, where each of them handles a set of cross-cutting functions that handle different functionalities of the component monorepo.  
+Bit workspace manages a list of join-points each of the composed aspects can register and implement a specific functionality. For example:
 
-### `@teambit.core/workspace`
+- Adding CLI commands.
+- Controlling component `package.json`.
+- Integrate to the workspace-UI.
+
+Each aspect you compose to the `workspace.json` file can extend and implement different functions for Bit to execute when running commands and flow.
+
+## Base aspects
+
+There are several core aspects that deal with the component monorepo management.
+
+### `@teambit/workspace`
 
 This is the base extension that defines the basics for the workspace and the web UI. It also supports setting default values for components, like their [scope](TODO) and the default directory for new components.
 

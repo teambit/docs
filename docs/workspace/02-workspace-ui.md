@@ -21,7 +21,7 @@ The web application is served from `http://localhost:3000`.
 
 ## Component showcase
 
-Discoverability is a crucial feature of Bit's workspace. When initialized, you are greeted with a gallery view of all components. This helps in understanding which components are available for you to use in your project. 
+Discoverability is a crucial feature of Bit's workspace. When initialized, you are greeted with a gallery view of all components. This helps in understanding which components are available for you to use in your project.
 
 Bit's showcase is dynamic and get's updated whenever a new component is added, or an existing component is modified. Each component is annotated according to [its state](TODO) and test results, so you get a clear indication for how your code modifications have affected the component.
 
@@ -36,9 +36,3 @@ Each component has it's own local dev-server it renders when you browse it, the 
 * **Overview** - Renders a documentation page for each component. [Learn more](TODO).
 * **Compositions** - All isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](TODO).
 * **History** - Complete version history and changelog for the component. [Learn more](TODO).
-* **Tests** - Summary of component's test results. [Learn more](TODO). **NOT YET IMPLEMENTED**
-* **Dependency graph** - Isolated dependency graph of the component. [Learn more](TODO). **NOT YET IMPLEMENTED**
-
-> **A single platform for all environments**
->
-> The workspace interacts with each component's environment to get its rendering and run other operations. This means that you can maintain components with different environments in the same workspace. The same workspace can host React, Angular, and Stencil components while still keeping a single web application for you to interact with and see the components. No need for complicated setups with several running local servers. Bit hides this complexity from you.

@@ -29,14 +29,14 @@ This is a **Bit Workspace**. It is focused on composing applications with compon
 
 ## Components as workspace modules
 
-Each component is the workspace is managed as a module. It has its configuration, dependency graph, and versioning. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
-When you need to `import` a component by another one, you use the absolute name of the module to require.
-
-Treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
+Each component is the workspace is managed as a module. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
+By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
 
 > TODO - diagram
 
-As each component is an isolated module with dependencies and configuration, Bit supports managing components with vastly different tech-stacks in the same workspace. For example, you can have both Stencil and React components and have them depend on one another.
+### Multiple types of module
+
+Instead of using the same build configuration for all components in a project, when treating components as separate workspace modules you can have different builds for components. For example, a utility function can be built with a different configuration than a web component. Moreover, it allows you to gradually refactor components from one technology to the other (transition to TypeScript, one component at a time). Learn more about it [here](TODO).
 
 ## Initializing Workspace
 

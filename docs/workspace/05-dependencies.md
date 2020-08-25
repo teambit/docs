@@ -3,33 +3,30 @@ id: dependencies
 title: Dependencies
 ---
 
-Even though each component in your workspace is its module, Bit does not require you to keep a `package.json` file for each component and manually define its dependencies. Instead, Bit determines each component's Dependencies using the version policies imposed by the workspace combined with specific `import` statements in each component. Dependencies can be either external packages or other components implemented in the workspace.
+Dependency management for components in a workspace is managed for each component individually using the `@teambit.bit/dependency-resolver` aspect. It handles the component dependency graph, which in turn is split into three main areas:
 
-## Supported package managers
+- Dependency resolution.
+- Dependency policies.
+- Installation of dependencies in a workspace.
 
-To install javascript libraries, Bit uses existing package managers. The `dependency-resolver` extension configures which package manager to apply for the workspace.
+In a Bit workspace you may have up to hundreds of components. Manually handling each dependency graph (`package.json`) is a very tedious and time consuming task. `dependency-resolver` allows a more automated way of doing so.
 
-> **Only pnpm is supported**
->
-> When more are integrated - add considerations to each pm.
+## Dependency resolution
 
-## Add a dependency
+`dpendency-resolver` parses your component's code and finds all `import` statements to other modules. It then resolves each statement to figure out if it's for another component or a library. It checks the version as well, and creates a dependency graph for the component.  
+You can see the result `package.json` file in the component's module directory on the workspace root `node_modules`.
 
-To add a package to the workspace, use the `bit install` command. Bit then sets the package to the workspace dependency policy and install the library with the configured package manager.
+> Read more about this process and component dependencies [here](TODO).
 
-```sh
-$ bit install lodash.get
-```
+### Workspace dependency graph
 
-> **Not yet implemented**
->
-> Sadly, we are required to manually edit the 'policy' and run `bit install`.
+When all import statements parsed, Bit create a complete dependency graph for the workspace. The main benefit you get from it is Bit's ability to calculate how a modified component affects other components in the workspace.  
+A key feature this allows is to mark all dependents of a modified components, as modified as well. This helps you understand how a single change can affect the entire workspace as Bit rebuild and can even test all affected components. Additionally, when you upgrade an external library, you get a list of all affected components.
 
 ## Dependency policies
 
-With Bit you set policies to be applied for components. For example, instead of adding a specific package as a dependency, you annotate that when a component requires a library, `dependency-resolver` would use its policy to determine it's version.
-
-Policies are managed as part of the `dependency-resolver` extension as follows:
+Dependency policies define the acceptable versions for external libraries and dependencies the workspace allows. `dependency-resolver` uses these policies when installing dependencies.  
+Whenever you use the `bit install <library>` command, Bit adds the library to the workspace' policy as follows:
 
 ```json
 {
@@ -43,44 +40,61 @@ Policies are managed as part of the `dependency-resolver` extension as follows:
 }
 ```
 
-When using this policy Bit does not add the dependency for each component. Instead, only if a component imports the package, the version policy is applied.
+### Runtime and Dev dependencies
 
-### Runtime, Dev and Peer dependencies
-
-Some libraries may be runtime dependencies for components but required as `devDependencies` for others. This pretty much depends on which of the component files the library was required. `dependency-resolver` understands this. By design, it applies the dependency type according to how you import it in each component.  
-For example, a `*.specs.ts` or `*.docs.tsx` file that requires `lodash.get` will get the library as a `devDependency`. In contrast, another component may require the same library by its main implementation file - so `dependency-resolver` would apply it as a `dependency`.
-
-However, `peerDependencies` are still supported by the `policy`, so when a library is configured as such, it will be a `peerDependency` for any component that might require it.
+A library may be a dependency for one component but a dev-dependency for another. When `dependency-resolver` parses an import statement it keeps a not about the file that use the library. It then uses the file type convention to determine the type of dependency. Meaning that when you use a library in a test file, that library will be a `devDependency` for the component.
 
 > If the same library is imported by a test file and an implementation file, it will be applied as a `dependency`.
 
+### Peer dependencies
+
+Peer dependencies are a special type of dependency that would only ever come up if you were publishing your own package. Having a peer dependency means that your package needs a dependency that is the same exact dependency as the person installing your package. This is useful for packages like `react` that need to have a single copy of `react-dom` that is also used by the person installing it.
+In Bit you set each component to be published. This means that some libraries should be set as `peerDependencies`. This is handled by the [component environment's runtimes feature](TODO), not by the `dependency-resolver` aspect.
+
 ## Dependency installation
 
-By default, all dependencies are installed to the root `node_modules` directory. This way, it makes sure all components use the same dependency when they import a library or a module. However, in some cases where there might be collisions, Bit may create additional `node_modules` directories deeper in the workspace hierarchy. So it can have multiple versions of the same library, in case a component(s) specifically requires a different version of a library.
+In most cases dependencies are installed to the root `node_modules` directory. This way all components use the same dependency when they import a library or a module.
+
+### Multiple library versions
+
+If required, you can defined nested policies using [variants](TODO) and define different versions for the same library to be used by different sets of components. It does it by creating `node_modules` directories in deeper parts of your workspace directory tree, according to your configuration.
+
+```json
+{
+  "@teambit.core/variants": {
+    "components/ui": {
+      "@teambit/dependency-resolver": {
+        "policy": {
+          "dependencies": {
+            "lodash.get": "1.0.0"
+          }
+        }
+      }
+    },
+    "components/helpers": {
+      "@teambit/dependency-resolver": {
+        "policy": {
+          "dependencies": {
+            "lodash.get": "2.0.0"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+In this example, components in `component/ui` directory will use `lodash.get@1.0.0` and components in `compoennts/helpers` use `lodash.get@2.0.0`.
 
 ### Install all workspace dependencies
 
-When installing all dependencies for the workspace, Bit takes into account each component's dependency graph and aggregates them to form a graph for the entire workspace. It then communicates this graph to the pre-configured package manager for installation.
-
-To install all dependencies:
+When installing all dependencies for the workspace, Bit takes into account each component's dependency graph and aggregates them to form a graph for the entire workspace. It then uses a package manager to handle installation.
 
 ```sh
 $ bit install
 ```
 
-### Update workspace dependencies and policies
+### Supported package managers
 
-> **Note yet implemented
->
-> need to update once available with a simple command.
-
-## Workspace dependency resolution
-
-To remove the need to manage a `package.json` for each component, Bit parses your component's code and finds all `import` statements. It then takes this as an input and combines the workspace policies and all workspace components to calculate which version of a library or component is required to create the dependency graph. This data is then stored as part of the component itself.
-
-> Read more about this process and component dependencies [here](TODO).
-
-### Affected components
-
-As Bit calculates each component's dependency graph, a side-effect of it is the ability to know which components in your workspace are affected by a code modification of a component. This means that you get a "splash-zone" like effect on each change of a component.  
-Bit uses this behavior to mark all affected components as modified due to changes in their dependencies. This helps you understand how a single change can affect the entire workspace as Bit rebuild and can even test all affected components.
+To install javascript libraries, Bit uses existing package managers. The `dependency-resolver` extension configures which package manager to apply for the workspace.  
+At the moment Bit only supports [PNPM](TODO). PNPM is the only option that solves the NPM doppelgangers problem and phantom dependencies. In a complex monorepo, this issues sometimes cause a lot of trouble, so PNPM has an important advantage in this regard.
