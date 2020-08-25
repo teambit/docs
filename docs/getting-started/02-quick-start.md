@@ -409,6 +409,8 @@ $ touch ./path/to/component/folder/card.docs.tsx
 Inside that file, we'll import `Card` and set the `examples` variable with a single object.
 
 ```tsx
+import {useGetJokes} from './use-get-jokes'
+
 export const examples = [
   {
     scope: {
