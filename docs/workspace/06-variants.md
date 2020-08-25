@@ -40,11 +40,11 @@ You can define as many variants as you need in your workspace. By default, Bit f
 ```json
 {
   "@teambit.core/variants": {
-    "components/elements": { ... },
-    "components/elements/forms": { ... },
-    "components/helpers": { ... },
-    "components/pages": { ... },
-    "components/pages/marketing": { ... }
+    "components/elements": { },
+    "components/elements/forms": { },
+    "components/helpers": { },
+    "components/pages": { },
+    "components/pages/marketing": { }
   }
 }
 ```
@@ -58,8 +58,8 @@ For example, by default Bit merges the configurations for components in `compone
 ```json
 {
   "@teambit.core/variants": {
-    "components/elements": { ... },
-    "components/elements/forms": { ... },
+    "components/elements": { },
+    "components/elements/forms": { },
   }
 }
 ```
@@ -69,7 +69,7 @@ You can have a variant opt-out from propagating using the `"propagate": false` o
 ```json
 {
   "@teambit.core/variants": {
-    "components/elements": { ... },
+    "components/elements": { },
     "components/elements/forms": {
       "propagate": false
      },

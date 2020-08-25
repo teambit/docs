@@ -43,10 +43,16 @@ In a why this is similar to having a monorepo composed by pulling many sub-proje
 
 ### Default target scope
 
-You can define a default target scope using the `@teambit/workspace` extension:
+You can define a default target scope using a default `variant` for a workspace:
 
 ```json
-TODO
+{
+  "@teambit.core/variants": {
+    "*": {
+      "scope": "acme.ui",
+    }
+  }
+}
 ```
 
 ### Managing multiple scopes
@@ -54,5 +60,14 @@ TODO
 If you are required to export components to a set of different scopes, you `@teambit/variants` define sets of components with another target scope.
 
 ```json
-TODO
+{
+  "@teambit.core/variants": {
+    "components/elements": {
+      "scope": "acme.elements"
+     },
+    "components/helpers": {
+      "scope": "acme.helpers"
+     }
+  }
+}
 ```
