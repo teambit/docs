@@ -17,8 +17,6 @@ Bit uses **Environments** to manage support in different JavaScript frameworks f
 
 ## How to use Environments?
 
-> Refactor when `bit use` is implemented.
-
 Adding an environment to a workspace can be done with the following configuration:
 
 ```json
@@ -56,9 +54,9 @@ This means that when you only need to handle the implementation and code of your
 
 ## Manage component's runtime
 
-Environments provide tools to install and manage peer dependencies for your development environment. It does so by defining **runtime requirements** and ensuring they are available whenever any function is executed for a component. In most cases runtime requirements will be the framework (React, Angular, Vue...) and the supported version range, however they can also be libraries that needs have a single instance installed (for example - `styled-components`).
+Environments provide tools to install and manage peer dependencies for your development environment. It does so by defining **runtime requirements** and ensuring they are available whenever any function is executed for a component. In most cases runtime requirements will be the framework (React, Angular, Vue...) and the supported version range, however they can also be libraries that needs have a single instance installed (for example - `styled-components`, `react` or `react-dom`).
 
-[Learn more about using and configuring runtimes.](TODO)
+[Learn more about using runtimes when composing environments.](TODO)
 
 ## Zero configuration
 

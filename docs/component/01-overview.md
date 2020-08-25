@@ -14,7 +14,26 @@ account/login-form           # root directory for storing all component files
 └── login-form.tsx           # implementation
 ```
 
-Each component in a Bit workspace must be contained within a single directory, including component's implementation, stylings, tests and documentation. Bit applies configurations and dependency policies for each component as defined in `workspace.json`.
+Each component in a Bit workspace must be contained within a single directory, including implementation, stylings, tests and documentation. Bit applies configurations and dependency policies for each component as defined in `workspace.json`.
+
+## Different types of components
+
+In a bird-eye view, components can boil down to these:
+
+```javascript
+// Atomic, presentational components
+import { Card } from '@acme/base-ui.card'
+// A composed components
+import { CardGallery } from '@acme/gallery.card-gallery'
+// A data-connected component
+import { InvoiceList } from '@acme/billing.invoice-list'
+// A page implemented as a component
+import { HomePage } from '@acme/marketing-site.pages'
+// Utilities and helpers
+import { StandardizePath } from '@acme/modules.StandardizePath'
+// Shared styles and themes
+import { DarkMode } from '@acme/base-ui.themes.dark-mode'
+```
 
 ## Supported frameworks
 
@@ -48,13 +67,13 @@ Open your `workspace.json` and configure a specific [variant](TODO) to use an [e
 
 Aside from making sure all component files are in the same directory and making sure a component has a [barrel file](TODO), Bit does not impose any rules. A component may have nested directories with more files, it may contain just a single file, it may only keep a shared style without any JS-specific functionality, etc.
 
-> **The following section will be re-written when `bit create` is implemented**
-
-So to add a new component to your workspace simply create a new directory and the required files for your implementation.
+So to add a new component to your workspace simply create a new directory and the required files for your implementation. If you need additional files like `scss` etc, create them as well.
 
 ```sh
-$ mkdir ./components/base/button
-$ touch ./components/base/button/index.ts ./components/base/button/button.tsx ./components/base/button/bottun.specs.tsx
+$ mkdir ./components/base/button                   # root compoennt directory
+$ touch ./components/base/button/index.ts          # barrel file
+$ touch ./components/base/button/button.tsx        # component implementation
+$ touch ./components/base/button/bottun.specs.tsx  # tests
 ```
 
 Once the files are in place, use `bit add` command for Bit to track these files as a component.
@@ -62,8 +81,6 @@ Once the files are in place, use `bit add` command for Bit to track these files 
 ```sh
 $ bit add ./components/base/button
 ```
-
-Bit then applies the configuration as defined in the `worksapce.json` file.
 
 ### Component ID
 
@@ -97,25 +114,6 @@ import { Button } from '@design-system/form-elemens.button'
 
 // Don't use relativ import statements
 import { Button } from '../../form-elements/button'
-```
-
-## Different types of components
-
-In a bird-eye view, components can boil down to these:
-
-```javascript
-// Atomic, presentational components
-import { Card } from '@acme/base-ui.card'
-// A composed components
-import { CardGallery } from '@acme/gallery.card-gallery'
-// A data-connected component
-import { InvoiceList } from '@acme/billing.invoice-list'
-// A page implemented as a component
-import { HomePage } from '@acme/marketing-site.pages'
-// Utilities and helpers
-import { StandardizePath } from '@acme/modules.StandardizePath'
-// Shared styles and themes
-import { DarkMode } from '@acme/base-ui.themes.dark-mode'
 ```
 
 ## Bit component features

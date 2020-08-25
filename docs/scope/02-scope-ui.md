@@ -12,7 +12,8 @@ Scope UI is used as a showcase and discovery portal for the components stored in
 To start the scope UI server run the following command:
 
 ```sh
-$ bit start scope # The server will start at `http://localhost:3000`.
+$ bit start scope
+# The server will start at `http://localhost:3000`.
 ```
 
 > While this UI is most useful when running on a remote scope, because your local workspace has a scope as storage, you can run this command locally and see how your storage is managed.

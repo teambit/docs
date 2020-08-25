@@ -40,3 +40,7 @@ The type of file that imports a dependency determines the type of dependency in 
 
 The version for the dependency is defined using the dependency policy configured in the `workpsace.json`. So aligning dependency versions for the same library can be as simple as updating the root of the workspace.  
 When `component-a` imports `component-b` from the same workspace, the version is set according to the specific version of `component-b` as available in the workspace (more about individual component versions [here](TODO)).
+
+### Peer dependencies
+
+Peer dependencies are manages as [component runtimes](TODO) as part of the [environment](TODO).
