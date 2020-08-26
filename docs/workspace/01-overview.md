@@ -32,11 +32,17 @@ This is a **Bit Workspace**. It is focused on composing applications with compon
 Each component is the workspace is managed as a module. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
 By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
 
-> TODO - diagram
+```sh
+./node_modules/@acme/button   -> ./components/ui-primitives/button
+./node_modules/@acme/homepage -> ./components/pages/hompage
+...
+```
+
+Each component should be required using an absolute `import` statement using its module name.
 
 ### Multiple types of module
 
-Instead of using the same build configuration for all components in a project, when treating components as separate workspace modules you can have different builds for components. For example, a utility function can be built with a different configuration than a web component. Moreover, it allows you to gradually refactor components from one technology to the other (transition to TypeScript, one component at a time). Learn more about it [here](TODO).
+Instead of using the same build configuration for all components in a project, when treating components as separate workspace modules you can have different builds for components. For example, a utility function can be built with a different configuration than a web component. It allows you to gradually refactor components from one technology to the other (transition to TypeScript, one component at a time). Learn more about it [here](/docs/environment/overview#how-environments-work).
 
 ## Initializing Workspace
 
@@ -57,7 +63,7 @@ Suppose you already have a project with components. In that case, you can initia
 
 When utilizing component-driven development, entire applications can be considered as a composition of components. Instead of treating your entire project as an application, you can decide to develop a component to be an application and have that component composed of various other components in your workspace.
 
-You can follow Bit's [getting-started](TODO) guide to experiment with such a workflow.
+You can follow Bit's [getting-started](/docs/getting-started/quick-start) guide to experiment with such a workflow.
 
 #### Starting with a project templates
 
@@ -75,11 +81,11 @@ When initializing a Bit workspace, you can manage individual components using a 
 
 ### Workspace configuration
 
-The `workspace.json` file is Bit's primary configuration file for a project. Use it to manage and maintain configuration for all components. Read more about it [here](TODO).
+The `workspace.json` file is Bit's primary configuration file for a project. Use it to manage and maintain configuration for all components. Read more about it [here](/docs/component/component-json).
 
 ### Component map
 
-Components are composed of files organized in a directory structure. Unlike traditional monorepo tools, Bit does not limit you to a predefined directory structure. You can create whatever directory structure you see fit.  
+Components are composed of files organized in a directory structure. Unlike other monorepo tools, Bit does not limit you to a predefined directory structure. You can create whatever directory structure you see fit.  
 To keep track of the location of each component in your workspace, Bit uses the `.bitmap` file. Whenever a component is created, moved, or removed, Bit automatically updates this file.
 
 ### Local scope
@@ -88,7 +94,7 @@ The workspace's scope contains information about Bit components, such as source 
 
 > **Distributed storage**
 >
-> Bit scopes implement a distributed storage system, similar to Git. This means that all data stored locally is what gets pushed to the remote server. Read more about it [here](TODO).
+> Bit scopes implement a distributed storage system, similar to Git. This means that all data stored locally is what gets pushed to the remote server. Read more about it [here](/docs/scope/overview).
 
 ## Bit workspace and Git
 

@@ -4,13 +4,13 @@ title: Dependencies
 ---
 
 Each time you use `import` statement in a component, Bit logs it and adds that module to the component's dependency graph. This way Bit helps you manage dependencies for each component.  
-To view the dependency graph for the component view the component on the [workspace UI](TODO) and see it's "dependencies" graph.
+To view the dependency graph for the component view the component on the [workspace UI and see it's "dependencies" graph.
 
 > ADD IMAGE
 
 ## Parsing import statements
 
-[`@teambi/dependency-resolver`](TODO) does static code analysis to find all import statements to other modules in the code. Each of these import statements adds the imported module to the component's dependency graph.
+`@teambi/dependency-resolver` does static code analysis to find all import statements to other modules in the code. Each of these import statements adds the imported module to the component's dependency graph.
 
 ```javascript
 // Other component in the workspace
@@ -39,8 +39,8 @@ The type of file that imports a dependency determines the type of dependency in 
 ### Versions
 
 The version for the dependency is defined using the dependency policy configured in the `workpsace.json`. So aligning dependency versions for the same library can be as simple as updating the root of the workspace.  
-When `component-a` imports `component-b` from the same workspace, the version is set according to the specific version of `component-b` as available in the workspace (more about individual component versions [here](TODO)).
+When `component-a` imports `component-b` from the same workspace, the version is set according to the specific version of `component-b` as available in the workspace (more about individual component versions [here](/docs/versioning/overview)).
 
 ### Peer dependencies
 
-Peer dependencies are manages as [component runtimes](TODO) as part of the [environment](TODO).
+Peer dependencies are manages as [component runtimes](/docs/environment/overview#manage-components-runtime) as part of the [environment](/docs/environment/overview).

@@ -3,9 +3,9 @@ id: automated-docs
 title: Automated Docs
 ---
 
-The documentation is presented in the local [Workspace UI](TODO), and in the remote [Scope UI](TODO) (e.g, on Bit.dev).
+The documentation is presented in the local [Workspace UI](/docs/workspace/workspace-ui), and in the remote [Scope UI](/docs/scope/scope-ui) (e.g, on Bit.dev).
 
-The documentation pages are generated using templates. These templates are determined by the different [environment(s)](TODO) that are set for different types of components. That ensures each component type gets documented in the way that suits its purpose and technology (e.g, a doc template for React UI components and another template for serverless node functions).
+The documentation pages are generated using templates. These templates are determined by the different [environment(s)](/docs/environment/overview) that are set for different types of components. That ensures each component type gets documented in the way that suits its purpose and technology (e.g, a doc template for React UI components and another template for serverless node functions).
 
 In addition to that, Bit exposes a simple API for ad hoc customization.
 
@@ -94,7 +94,7 @@ Button.propTypes = {
 A few things to note here:
 
 * JSDocs comments written directly above the prop type definitions, will show up as prop description in the properties table.
-* Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence. [See the example above](TODO)
+* Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
 
 ### Writing component compositions
 
@@ -186,7 +186,7 @@ export default function () {
 The code above will be rendered like so:
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
 
-[Learn more about Compositions here.](TODO)
+[Learn more about Compositions here.](/docs/compositions/develop-in-isolation)
 
 ### Adding examples -  instructions with playable code
 

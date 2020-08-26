@@ -13,7 +13,7 @@ $ bit ci
 
 Wouldn't it be nice that regardless of project setup, framework, and configuration, all development workflow operations will be standardized? You will be able to jump right into any project and just *know* how to start a dev server, *know* how to build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
 
-Bit uses **Environments** to manage support in different JavaScript frameworks for components within a Bit [workspace](TODO).
+Bit uses **Environments** to manage support in different JavaScript frameworks for components within a Bit [workspace](/docs/workspace/overview).
 
 ## How to use Environments?
 
@@ -32,7 +32,7 @@ Adding an environment to a workspace can be done with the following configuratio
 }
 ```
 
-Using `variants` you set the environment [`@teambit/react`](TODO) for all components in the `components` directory and [`@teambit/node`](TODO) for all components in `helpers`.
+Using `variants` you set the environment `@teambit/react` for all components in the `components` directory and `@teambit/node` for all components in `helpers`.
 
 > **Multiple environments in a workspace**
 >
@@ -64,4 +64,4 @@ Each environment encapsulate it's configurations. It gives you the same zero-con
 
 > **Composition, not configuration**
 >
-> You can modify and extend any environment by creating a new one that composes the environment and changes its behaviors programatically. [Learn more](TODO).
+> You can modify and extend any environment by creating a new one that composes the environment and changes its behaviors programatically. [Learn more](/docs/environment/composing-environments).

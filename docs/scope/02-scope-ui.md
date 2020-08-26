@@ -3,7 +3,7 @@ id: scope-ui
 title: Scope UI
 ---
 
-Scope UI is used as a showcase and discovery portal for the components stored in a remote scope. The scope UI has the same features as the [workspace UI](TODO). Including the ability to browse and interact with all components and explore their documentation.
+Scope UI is used as a showcase and discovery portal for the components stored in a remote scope. The scope UI has the same features as the [workspace UI](/docs/workspace/workspace-ui). Including the ability to browse and interact with all components and explore their documentation.
 
 > TODO - screenshot
 

@@ -38,9 +38,6 @@
       "consuming/vendor-components": {
         "title": "Vendor Components"
       },
-      "consuming/local-modifications": {
-        "title": "Local Modifications"
-      },
       "documentation/automated-docs": {
         "title": "Automated Docs"
       },
@@ -59,9 +56,6 @@
       "environment/services": {
         "title": "Services"
       },
-      "environment/04-runtime": {
-        "title": "environment/04-runtime"
-      },
       "environment/composing-environments": {
         "title": "Composing Environments"
       },
@@ -69,10 +63,13 @@
         "title": "Build New Environments"
       },
       "exporting/organizing-components": {
-        "title": "Organizing Components"
+        "title": "Overview"
       },
-      "exporting/02-setting-remotes": {
-        "title": "exporting/02-setting-remotes"
+      "exporting/02-bit-dev": {
+        "title": "exporting/02-bit-dev"
+      },
+      "exporting/03-setting-remotes": {
+        "title": "exporting/03-setting-remotes"
       },
       "extending-bit/overview": {
         "title": "Overview"
@@ -97,6 +94,12 @@
       },
       "guides/installation": {
         "title": "Installation"
+      },
+      "guides/standardize-workflow": {
+        "title": "Standardize Workflow"
+      },
+      "guides/compiling": {
+        "title": "Compiling"
       },
       "guides/using-bit-dev": {
         "title": "Using Bit.dev"
@@ -182,30 +185,6 @@
       "versioning/04-build-pipe": {
         "title": "versioning/04-build-pipe"
       },
-      "workflow-automation/standardize-workflow": {
-        "title": "Standardize Workflow"
-      },
-      "workflow-automation/compiling": {
-        "title": "Compiling"
-      },
-      "workflow-automation/testing": {
-        "title": "Testing"
-      },
-      "workflow-automation/linting": {
-        "title": "Linting"
-      },
-      "workflow-automation/bundling": {
-        "title": "Bundling"
-      },
-      "workflow-automation/dev-server": {
-        "title": "DevServer"
-      },
-      "workflow-automation/templates": {
-        "title": "Templates"
-      },
-      "workflow-automation/extending-workflow": {
-        "title": "Extending further"
-      },
       "workspace/overview": {
         "title": "Overview"
       },
@@ -245,11 +224,10 @@
       "Compositions": "Compositions",
       "Versioning": "Versioning",
       "Exporting": "Exporting",
-      "consuming": "consuming",
+      "Consuming": "Consuming",
       "Refactoring": "Refactoring",
-      "Workflow Automation": "Workflow Automation",
       "Extending Bit": "Extending Bit",
-      "common": "common"
+      "Common": "Common"
     }
   },
   "pages-strings": {

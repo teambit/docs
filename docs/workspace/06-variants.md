@@ -16,7 +16,7 @@ As a project grows, so does the complexity of its components and structure. If y
 }
 ```
 
-Think about each `variant` as it's own pesodu-workspace where all components in the directory are defined by it share the same configuration. This way, you can have some components defined as React components, while others as Stencil. Moreover, use it to determine which [scope](TODO) to use for which variants.
+Think about each `variant` as it's own pesodu-workspace where all components in the directory are defined by it share the same configuration. This way, you can have some components defined as React components, while others as Stencil. Moreover, use it to determine which [scope](/docs/scope/overview) to use for which variants.
 
 ## Default variant
 

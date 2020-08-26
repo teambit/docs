@@ -3,7 +3,7 @@ id: services
 title: Services
 ---
 
-Each environment composes together different [services](TODO) to extend components' functionality and integrate to operations and features in Bit.  
+Each environment composes together different services to extend components' functionality and integrate to operations and features in Bit.  
 
 Listed below are the most important cross-cutting functions environments implement for components.
 
@@ -17,7 +17,7 @@ Automated documentation for creating component docs. Most docs services utilize 
 
 ## Preview (DevServer)
 
-Local development server for the component. Used when rendering in an isolated component environment for features like [compositions](TODO).
+Local development server for the component. Used when rendering in an isolated component environment for features like [compositions](/docs/compositions/develop-in-isolation).
 
 ## Runtime
 

@@ -23,16 +23,16 @@ The web application is served from `http://localhost:3000`.
 
 Discoverability is a crucial feature of Bit's workspace. When initialized, you are greeted with a gallery view of all components. This helps in understanding which components are available for you to use in your project.
 
-Bit's showcase is dynamic and get's updated whenever a new component is added, or an existing component is modified. Each component is annotated according to [its state](TODO) and test results, so you get a clear indication for how your code modifications have affected the component.
+Bit's showcase is dynamic and get's updated whenever a new component is added, or an existing component is modified. Each component is annotated according to [its state](/docs/workspace/statuses) and test results, so you get a clear indication for how your code modifications have affected the component.
 
 ## Component local dev-server
 
-Each component has it's own local dev-server it renders when you browse it, the output of the local server is rendered in the workspace UI when you choose to view a specific component. The component's development server and features are part of the [component development environment](TODO). The workspace UI communicates with the **environments** to render information about the component.
+Each component has it's own local dev-server it renders when you browse it, the output of the local server is rendered in the workspace UI when you choose to view a specific component. The component's development server and features are part of the [component development environment](/docs/environment/overview). The workspace UI communicates with the **environments** to render information about the component.
 
 > TODO - Diagram
 >
 > this should show that the right-panel is an iFrame that renders the selected component from the component-list.
 
-* **Overview** - Renders a documentation page for each component. [Learn more](TODO).
-* **Compositions** - All isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](TODO).
-* **History** - Complete version history and changelog for the component. [Learn more](TODO).
+* **Overview** - Renders a documentation page for each component. [Learn more](/docs/documentation/automated-docs).
+* **Compositions** - All isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](/docs/compositions/develop-in-isolation).
+* **History** - Complete version history and changelog for the component. [Learn more](/docs/versioning/overview#building-component-history).

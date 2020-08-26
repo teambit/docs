@@ -11,7 +11,7 @@ There are several key features in Environments that allow for workflow automatio
 
 Bit is a plugin system where you can set an extension on to a component, that extension registers itself to various hooks in Bit's commands.
 
-A specialized type of these extensions are [Environments](TODO). Environment has a specific interface to integrate with various commands like `build`, `create`, `ci`, `test` and so on. When you define an environment on a component, the environment then connects the component to Bit's commands.
+A specialized type of these extensions are [Environments](/docs/environment/overview). Environment has a specific interface to integrate with various commands like `build`, `create`, `ci`, `test` and so on. When you define an environment on a component, the environment then connects the component to Bit's commands.
 
 This flexible plugin system allows you to have many components in the same workspace, where each component has a different environment defined. Given that all environments register components to the same commands, you still keep the same experience of using `bit test` and all components are tested with the same configuration and logic as set for them by the environment.
 

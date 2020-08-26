@@ -24,15 +24,15 @@ Each of these extensions registers the component to number of APIs.
 
 ### Environment
 
-The [environment](TODO) controls how to build, test and lint the component. For Bit to run an operation on a component, the component must have an environment defined.
+The [environment](/docs/environment/overview) controls how to build, test and lint the component. For Bit to run an operation on a component, the component must have an environment defined.
 
 ### Dependency resolver
 
-Bit sets the component's dependencies by parsing each components' `import` statements. Then it defines the correct version to set for each library using the workspace' [dependency polity](TODO). Once a library version is found, Bit logs it (and it's type) to the component.
+Bit sets the component's dependencies by parsing each components' `import` statements. Then it defines the correct version to set for each library using the workspace' [dependency polity](/docs/workspace/dependencies#dependency-policies). Once a library version is found, Bit logs it (and it's type) to the component.
 
 ## Configuration using `variants`
 
-We recommend keeping all configuration rules as part of the `workspace.json`. When you want to have detailed control for a component it's best to use a specific [variant](TODO). As Bit calculates the configuration to apply for a component by its most specific `variant`.
+We recommend keeping all configuration rules as part of the `workspace.json`. When you want to have detailed control for a component it's best to use a specific [variant](/docs/workspace/variants). As Bit calculates the configuration to apply for a component by its most specific `variant`.
 
 ```json
 // TODO - config snippet

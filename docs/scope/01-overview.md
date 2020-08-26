@@ -23,7 +23,7 @@ When creating a new workspace Bit creates a local scope in a hidden directory - 
 
 ### Remote scope
 
-Use remote scopes to host your components. Exporting components to remote scopes makes them available for other developers to consume. You can create remote scopes on [your own server](TODO) or manage use [bit.dev as a scope hosting platform](TODO).
+Use remote scopes to host your components. Exporting components to remote scopes makes them available for other developers to consume. You can create remote scopes on [your own server](/docs/guides/host-your-own-scope) or manage use [bit.dev as a scope hosting platform](/docs/guides/using-bit-dev).
 
 By exporting components to scopes, other developers can utilize your components in their projects. This is beneficial for several reasons:
 
@@ -36,7 +36,7 @@ Bit does not force you to keep all components in the same scope, do so when they
 
 ## Workspace remote scopes
 
-As each component is isolated and separated from all other components, you can set which remote scope will be the target remote of a component. The same workspace can have multiple components, each with its own target. 
+As each component is isolated and separated from all other components, you can set which remote scope will be the target remote of a component. The same workspace can have multiple components, each with its own target.  
 In a why this is similar to having a monorepo composed by pulling many sub-projects where each has its own remote.
 
 > Read more about different strategies to organize components in scope [here](TODO).

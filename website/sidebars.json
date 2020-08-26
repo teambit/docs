@@ -64,10 +64,10 @@
       "versioning/build-pipe"
     ],
     "Exporting": [
-      "exporting/orginizing-components",
+      "exporting/organizing-components",
       "exporting/setting-remotesX"
     ],
-    "consuming": [
+    "Consuming": [
       "consuming/installing",
       "consuming/vendor-components",
       "consuming/local-modificationsX"
@@ -78,22 +78,12 @@
       "refactor/renameX",
       "refactor/forkX"
     ],
-    "Workflow Automation": [
-        "workflow-automation/standard-workflow",
-        "workflow-automation/compiling",
-        "workflow-automation/testing",
-        "workflow-automation/linting",
-        "workflow-automation/bundling",
-        "workflow-automation/dev-server",
-        "workflow-automation/templates",
-        "workflow-automation/extending-workflow"
-      ],
     "Extending Bit": [
       "extending-bit/overview",
       "extending-bit/get-started",
       "extending-bit/anatomy"
     ],
-    "common": [
+    "Common": [
       "common/usage-analytics",
       "common/client-config"
     ]

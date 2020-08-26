@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-Tagging a component creates an immutable version of the component. This version can then be [exported](TODO).  
+Tagging a component creates an immutable version of the component. This version can then be [exported](/docs/exporting/organizing-components).  
 A version contain the source code, configuration and all dependencies required to make a component usable. It is set according to the semantic versioning specs (MAJOR.MINOR.PATCH). By default, tagging a component without specifying a version bumps a patch version.
 
 When tagging Bit performs the actions for each component:
@@ -13,8 +13,6 @@ When tagging Bit performs the actions for each component:
 - Setting a version of the component.
 - Automatically tag other components in the workspace that depend on that component.
 
-> Versioned components can be exported to remote scopes for other teams to use. [Learn more](TODO).
-
 ## Versioning and CI
 
 We recommend tagging new versions after a proper PR flow for a code change via Git. Then, when a new code is merged, run the `tag` operation as part of your workspace CI automation.  
@@ -22,7 +20,7 @@ Read more about versioning during CI [here](TODO).
 
 ## Building component history
 
-Bit stores all versions in the [scope](TODO) and links them to the component, essentially chaining together all versions to create a changelog.
+Bit stores all versions in the [scope](/docs/scope/overview) and links them to the component, essentially chaining together all versions to create a changelog.
 
 ![Component history](https://storage.googleapis.com/static.bit.dev/docs/images/component.svg)
 

@@ -31,7 +31,7 @@ This will initialize a Bit workspace in our new "bad-jokes" app directory. Two i
 
 ## Run Bit's local dev server to see the workspace UI
 
-Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI](TODO).  
+Now that you've set up a Bit workspace, run Bit's local server to see the [workspace UI](/docs/workspace/workspace-ui).  
 The workspace UI displays all components tracked by your (Bit) workspace. It is a development tool that enables you to examine your components in different contexts and variations, and browse through their documentation. The workspace UI is part of the workspace extension.
 
 ```sh
@@ -47,8 +47,8 @@ To set our workspace configurations, we'll open the `workspace.jsonc` file.
 We will configure the following:
 
 - **Workspace name** - `"name": "bad-jokes"`
-- **Scope name** (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](TODO), either locally or on a server, is the storehouse for all tagged or "committed" components.
-- **Component Environment** - `"@teambit/react": {}`. This will set the React [environment](TODO) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
+- **Scope name** (prefixed by the author's name) - `"defaultScope: teambit.bad-jokes`. A [scope](/docs/scope/overview), either locally or on a server, is the storehouse for all tagged or "committed" components.
+- **Component Environment** - `"@teambit/react": {}`. This will set the React [environment](/docs/environment/overview) extension to be used as the environment for all our components. It is located under the `@teambit/variants`, an extension that handles configuration by propagation (the `*` selects all components).
 
 ```json
 {
@@ -71,7 +71,7 @@ We will configure the following:
 
 ## Add a new UI component
 
-A [component](TODO) is more than its set of implementation files. It has everything it needs to be used as an independent piece of software. Each component handled by a Bit workspace, must have all its files under the same directory:
+A [component](/docs/component/overview) is more than its set of implementation files. It has everything it needs to be used as an independent piece of software. Each component handled by a Bit workspace, must have all its files under the same directory:
 
 ```sh
 $ mkdir components/ui/button
@@ -200,7 +200,7 @@ To track a component by Bit, use:
 $ bit add components/ui/button
 ```
 
-Now browse to the local development server at [http://localhost:3000](http://localhost:3000) to see that the component is managed by Bit.
+Now browse to the local development server at [http://localhost:3000]() to see that the component is managed by Bit.
 
 ### Review the documentation
 
@@ -278,7 +278,7 @@ test("button renders", () => {
 });
 ```
 
-Our tests will run whenever we [tag](TODO) the relevant component. If a test fails, the tagging action will be aborted.  
+Our tests will run whenever we [tag](/docs/versioning/tracking-changes) the relevant component. If a test fails, the tagging action will be aborted.  
 We can also run the tests manually:
 
 ```bash

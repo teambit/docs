@@ -54,7 +54,7 @@ The code above will be rendered like so
 
 ![](https://res.cloudinary.com/blog-assets/image/upload/v1595893358/Screen_Shot_2020-07-28_at_2.39.53_jcccrz.png)
 
-[Learn more about Compositions here.](TODO)
+[Learn more about Compositions here.](/docs/compositions/develop-in-isolation)
 
 ### Adding examples -  instructions with playable code
 

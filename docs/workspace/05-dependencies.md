@@ -16,7 +16,7 @@ In a Bit workspace you may have up to hundreds of components. Manually handling 
 `dpendency-resolver` parses your component's code and finds all `import` statements to other modules. It then resolves each statement to figure out if it's for another component or a library. It checks the version as well, and creates a dependency graph for the component.  
 You can see the result `package.json` file in the component's module directory on the workspace root `node_modules`.
 
-> Read more about this process and component dependencies [here](TODO).
+> Read more about this process and component dependencies [here](/docs/component/dependencies).
 
 ### Workspace dependency graph
 
@@ -49,7 +49,7 @@ A library may be a dependency for one component but a dev-dependency for another
 ### Peer dependencies
 
 Peer dependencies are a special type of dependency that would only ever come up if you were publishing your own package. Having a peer dependency means that your package needs a dependency that is the same exact dependency as the person installing your package. This is useful for packages like `react` that need to have a single copy of `react-dom` that is also used by the person installing it.
-In Bit you set each component to be published. This means that some libraries should be set as `peerDependencies`. This is handled by the [component environment's runtimes feature](TODO), not by the `dependency-resolver` aspect.
+In Bit you set each component to be published. This means that some libraries should be set as `peerDependencies`. This is handled by the [component environment's runtimes feature](/docs/environment/overview#manage-components-runtime), not by the `dependency-resolver` aspect.
 
 ## Dependency installation
 
@@ -57,7 +57,7 @@ In most cases dependencies are installed to the root `node_modules` directory. T
 
 ### Multiple library versions
 
-If required, you can defined nested policies using [variants](TODO) and define different versions for the same library to be used by different sets of components. It does it by creating `node_modules` directories in deeper parts of your workspace directory tree, according to your configuration.
+If required, you can defined nested policies using [variants](/docs/workspace/variants) and define different versions for the same library to be used by different sets of components. It does it by creating `node_modules` directories in deeper parts of your workspace directory tree, according to your configuration.
 
 ```json
 {
@@ -97,4 +97,4 @@ $ bit install
 ### Supported package managers
 
 To install javascript libraries, Bit uses existing package managers. The `dependency-resolver` extension configures which package manager to apply for the workspace.  
-At the moment Bit only supports [PNPM](TODO). PNPM is the only option that solves the NPM doppelgangers problem and phantom dependencies. In a complex monorepo, this issues sometimes cause a lot of trouble, so PNPM has an important advantage in this regard.
+At the moment Bit only supports [PNPM](https://pnpm.js.org). PNPM is the only option that solves the NPM doppelgangers problem and phantom dependencies. In a complex monorepo, this issues sometimes cause a lot of trouble, so PNPM has an important advantage in this regard.
