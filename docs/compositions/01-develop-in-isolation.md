@@ -68,7 +68,7 @@ Some components should be mobile friendly, look different in some sizes... need 
 
 ## Viewing component compositions
 
-To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and choose the **compositions** tab. There, you will see the full list of compositions available for that component with additional component meta-data. 
+To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and choose the **compositions** tab. There, you will see the full list of compositions available for that component with additional component meta-data.
 
 ## Standardize testing using component compositions
 
@@ -80,14 +80,8 @@ When using UI testing frameworks like Jest that support DOM rendering you can us
 
 ## Compositions and storybook
 
-Storybook is a tool designed for managing stories for design systems as a single project and not optimized for individual components. While you can use the storybook extension for Bit (**not yet available**) instead of compositions, compositions are more efficient when managing individual components:
+Storybook is a tool designed for managing stories for design systems as a single project and not optimized for individual components. While you can use the storybook extension for Bit (**currently in development**) instead of compositions, compositions are more efficient when managing individual components:
 
 * Use the same configuration pipeline and environments.
 * They are rendered using the same build pipelines as the components would during CI.
 * They do not require a separate process to render components.
-
-To render component stories as compositions use the storybook extension:
-
-```json
-// TODO - snippet
-```

@@ -7,8 +7,6 @@ Bit displays the state of the tracked components in your project's workspace.
 
 Knowing the state of the workspace's components is always essential - which components are staged, modified, or have missing dependencies, for example. A component may have more than one state. A state derived from its code status (such as modified) and a state derived from its dependencies (e.g., pending to be tagged).
 
-> TODO - Diagram
-
 ## Get component state
 
 Bit shows the state of each component in the workspace' component list using annotations and icons. You can also get this data by running the `bit status` command in the terminal.

@@ -35,7 +35,16 @@ Bit sets the component's dependencies by parsing each components' `import` state
 We recommend keeping all configuration rules as part of the `workspace.json`. When you want to have detailed control for a component it's best to use a specific [variant](/docs/workspace/variants). As Bit calculates the configuration to apply for a component by its most specific `variant`.
 
 ```json
-// TODO - config snippet
+{
+  "@teambit.core/variants": {
+    // default configuration for all components
+    "*": { },
+    // configuration to be applied for components in `components/elements`
+    "components/elements": { },
+    // even more fine control for components in `components/elements/forms`
+    "components/elements/forms": { },
+  }
+}
 ```
 
 ### Override `workspace.json` configuration

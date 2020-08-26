@@ -34,8 +34,3 @@ Sharing product pages and flows encourages people to work more openly and effici
 - **Page** a full page in a product.
 - **Web flow** - a reusable flow like signup-form, phone-number-confirmation
 - **Data** - component that provides data to UI from various APIs
-
-## Scaling your company
-
-- code sharing
-- enforce organization standards...
