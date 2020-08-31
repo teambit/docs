@@ -108,4 +108,3 @@ On each of this actions, a **Slack** message can be sent to a designated channel
 > Integration and notifications are available for Bit.dev organization accounts only.
 
 Read more about the [Slack integration](https://blog.bitsrc.io/optimizing-collaboration-between-distributed-front-end-teams-82ba14ce21f9).
-

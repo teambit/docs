@@ -6,6 +6,7 @@
       "getting-started/why-components"
     ],
     "Guides": [
+      "guides/how-bit-works",
       "guides/installation",
       "guides/using-bit-dev",
       "guides/authentication",
@@ -85,7 +86,8 @@
     ],
     "Common": [
       "common/usage-analytics",
-      "common/client-config"
+      "common/client-config",
+      "common/errors"
     ]
   }
 }

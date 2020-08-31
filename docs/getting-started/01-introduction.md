@@ -13,7 +13,7 @@ Bit makes life easier for JavaScript developers who build their applications wit
 - **Standardize component development:** From scaffolding new components to setting lint, build and test configuration - use Bit to set base configurations for all your components.
 - **Component changelog:** Each component is versioned individually and has its own changelog so you can keep track on their changes.
 
-## Scaling your company
+## Scaling your development
 
 As developers we are tasked with building innovative solutions for our products. When we don't have an efficient way of sharing code we already implemented we are locked in an endless cycle of re-implementing the same functionality we built before. With the introduction of component-based frameworks like React, Angular and Vue our code has become more modular and the components we design can work in many apps and use cases. However they are implemented in rigid code repositories that don't allow us to reuse an already implemented piece of code.
 

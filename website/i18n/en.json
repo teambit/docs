@@ -8,6 +8,9 @@
       "common/client-config": {
         "title": "Bit Client Configuration"
       },
+      "common/errors": {
+        "title": "Errors and Troubleshooting"
+      },
       "common/usage-analytics": {
         "title": "Usage Analytics"
       },
@@ -91,6 +94,9 @@
       },
       "getting-started/future-intro": {
         "title": "getting-started/future-intro"
+      },
+      "guides/how-bit-works": {
+        "title": "How Bit Works?"
       },
       "guides/installation": {
         "title": "Installation"
