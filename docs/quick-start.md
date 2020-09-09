@@ -7,6 +7,8 @@ title: Quick Start
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick-start.svg)
 
+**[> Watch Video Demo](https://www.youtube.com/watch?v=E5lgoz6-nfs&lc=UgxK6L53Vny5S1zvIDh4AaABAg&feature=em-comments)**
+
 Bit is an [open-source](https://github.com/teambit/bit) cli tool for collaborating on isolated components across projects and repositories.  
 Use Bit to distribute discrete components from a design library or a project into a standalone reusable package and utilize it across applications.  
 You can set up your own server for components collaboration, or use the [bit.dev cloud](#bitdev-cloud-%f0%9f%8c%a9%ef%b8%8f) hosting for private and public components sharing.
