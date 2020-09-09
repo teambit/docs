@@ -121,13 +121,13 @@ When building an authored component, the build files reside inside the [dist fol
 
 ## Imported Components
 
-Imported components are components that are added to the workspace using  `bit import` from a remote scope. Note, that when installing the component using a package manager (NPM, Yarn), the components are considered regular `node_modules` packages and not as imported components.
+Imported components are components that are added to the workspace using  `bit import` from a remote scope (not to be confused with [`Installed Components`](/docs.bit.dev/docs/installing-components#use-installed-component), which are fetched using bit/npm install as regular `node_modules` packages and then imported as a module into your code).
 
-Imported component's structure is different from the authored component. For each imported component, Bit generates a package-like structure. The built structure is similar to a package structure in a mono-repo, with Bit automating the definition.  
+An Imported component's structure is different from that of an authored component. For each imported component, Bit generates a package-like structure. The built structure is similar to a package structure in a mono-repo, with Bit automating the definition.  
 
 ### Component Directory  
 
-When a component is imported, Bit places it inside the folder defined in workspace configuration [`componentsdefaultdirectory`](/docs/conf-bit-json#componentsdefaultdirectory). It is defaulted to `components/<folder name>`.  
+When a component is imported, Bit places it inside the folder defined in workspace configuration [`componentsdefaultdirectory`](/docs/conf-bit-json#componentsdefaultdirectory). The default for this is `components/<folder name>`.  
 
 You can override the location for a specific component during the import statement:  
 
@@ -137,7 +137,7 @@ bit import username.foo/bar --path /path/to/folder
 
 ### Package.json
 
-For each imported component, Bit generates a `package.json` file, in the component's root directory. The package.json is generated based on the component information.  
+For each imported component, Bit generates a `package.json` file in the component's root directory. The package.json is generated based on the component information.  
 
 Bit generates the `package.json` to include the `name` and `version` defined in the component. The `main` property points to the generated main file of the component.  
 You can add any other properties to the `package.json` file.  
@@ -150,7 +150,7 @@ You may instruct Bit to skip writing the `package.json` for a file by specifying
 bit import username.foo/bar --ignore-package-json
 ```
 
-You can also specify that the Bit writes the configuration to a `bit.json` file by specifying a `--conf` option. Add a path to determine the location of the `bit.json` file.  
+You can also specify that the Bit write the configuration to a `bit.json` file by specifying a `--conf` option. Add a path to determine the location of the `bit.json` file.  
 
 ```shell
 bit import username.foo/bar --path /path/to/conf
@@ -185,9 +185,9 @@ Here is an example of an imported component package.json:
 
 A Bit component has two types of [dependencies](/docs/dependencies): regular NPM packages and Bit components.  
 
-When importing a component Bit generates for each component that has dependencies a `node_modules` folder.
+When importing a component Bit generates a `node_modules` folder for each component that has dependencies.
 
-Bit uses the [preferred package manager](/docs/conf-bit-json#packagemanager) defined in workspace configuration to install the packages. You can pass additional arguments to the package manager by specifying them in the [arguments configuration](/docs/conf-bit-json#packagemanagerargs) passing twice double dashes to the command that executes the package manager such as: 
+Bit uses the [preferred package manager](/docs/conf-bit-json#packagemanager) defined in your workspace configuration to install the packages. You can pass additional arguments to the package manager by specifying them in the [arguments configuration](/docs/conf-bit-json#packagemanagerargs) passing double dashes twice to the command that executes the package manager, such as: 
 
 ```shell
 bit import foo -- --no-package-lock
@@ -201,7 +201,7 @@ bit import username.foo/bar --skip-npm-install
 
 Also, Bit does not install components when skipping the generation of `package.json`.  
 
-To permanently skip installing packages, set to true the [saveDependenciesAsComponents](/docs/conf-bit-json#savedependenciesascomponents) workspace configuration.  
+To permanently skip installing packages, set the [saveDependenciesAsComponents](/docs/conf-bit-json#savedependenciesascomponents) workspace configuration to true.  
 
 If the Bit components' dependencies are not installed using package manager, Bit imports them into the workspace. Bit places the dependencies in the directory specified in the [`dependenciesDirectory`](https://docs.bit.dev/docs/conf-bit-json#dependenciesdirectory) option in the configuration.  The default directory is `components/.dependencies`.  
 
@@ -228,11 +228,11 @@ It's important to note that we're talking about **the state of components with p
 
 A component may exist in more than one state. A state that is derived from its code status (such as modified) and a state derived from its dependencies (e.g. pending to be tagged).
 
-Listed here are all possible component states.
+The following is a list of all possible component states:
 
 ### Nothing to tag or export
 
-No components have pending changes. Either no files are tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
+No components have pending changes. Either no files are tracked in the workspace, or the tracked components are all exported or sourced, with no pending changes.
 
 ```shell
 $ bit status
@@ -272,7 +272,7 @@ staged components
 
 ### Modified components
 
-Components that have already been staged, exported or sourced, and then modified - meaning there's at least one tagged version, and untagged changes on top of it.
+Components that have already been staged, exported or sourced, and then modified - meaning there's at least one tagged version, with untagged changes on top of it.
 Modified components are meant to be tagged and set as a new version.
 
 Bit tries to to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any).  
@@ -316,7 +316,7 @@ deleted components
 
 ### Component pending to be tagged automatically
 
-Component (not in state new) whose at least one of its dependencies is in modified state.  
+Component (not in state 'new') for whom at least one of its dependencies is in 'modified' state.  
 
 ```shell
 $ bit status
@@ -334,12 +334,12 @@ components pending to be tagged automatically (when their dependencies are tagge
 bit doctor
 ```
 
-The output is a list of all diagnosis that Bit currently implements. If any of the checks has failed, Bit suggests a fix for it.
+The output is a list of all diagnoses that Bit currently implements. If any of the checks has failed, Bit suggests a fix for it.
 
-At some cases the maintainers will need additional workspace information in order to debug an issue. Doctor is capable of saving the most important data and logs from the workspace in a shareable format.  
+In some cases the maintainers will need additional workspace information in order to debug an issue. Doctor is capable of saving the most important data and logs from the workspace in a shareable format.  
 Use this file when opening an issue to the [project repository](https://github.com/teambit/bit).
 
-Note, before submitting the output you can open it an validate that no sensitive information is submitted. You can clear such information from the file.
+Note, before submitting the output you can open it and validate that no sensitive information is being submitted. You can clear such information from the file.
 
 ```shell
 bit doctor --save doctor-results
@@ -347,12 +347,12 @@ bit doctor --save doctor-results
 
 ### Logs
 
-Some errors and additional information are document in Bit's log files but not displayed in the console output. If you're having problems, it's worth checking the log files.
+Some errors and additional information are documented in Bit's log files but not displayed in the console output. If you're having problems, it's worth checking these log files.
 
 Bit's log files are stored in:
 
 - For Mac/Linux - `~/Library/Caches/Bit/logs`.
-- For Windows - `%LOCALAPPDATA%/Bit/logs`. If `%LOCALAPPDATA%` is not defined, user profile directory will be used instead of `%LOCALAPPDATA%`. Further fallback options are available [here](https://github.com/sindresorhus/os-homedir/blob/master/index.js).
+- For Windows - `%LOCALAPPDATA%/Bit/logs`. If `%LOCALAPPDATA%` is not defined, the user profile directory will be used instead of `%LOCALAPPDATA%`. Further fallback options are available [here](https://github.com/sindresorhus/os-homedir/blob/master/index.js).
 
 The three different log types in Bit are:
 
@@ -360,12 +360,12 @@ The three different log types in Bit are:
 - Exceptions log - `exceptions.log`.
 - Extensions log - `extensions.log`  
 
-Each log file's size can be maximum 10MB, and there can be maximum 10 log files of each type. They will be numbered as follows: `debug.log`, `debug1.log`, `debug2.log`, etc.
+Each log file's size can be a maximum of 10MB, and there can be maximum 10 log files of each type. They will be numbered as follows: `debug.log`, `debug1.log`, `debug2.log`, etc.
 The log files are actually [winston logs](https://github.com/winstonjs/winston), and are [tailable](https://github.com/winstonjs/winston/blob/master/docs/transports.md).
 
 ### Cache
 
-If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the [clear cache command](/docs/apis/cli-all#clear-cache):
+If errors occur, it is worth trying to clear Bit's cache in case it became corrupted. You can clear it using the [clear cache command](/docs/apis/cli-all#clear-cache):
 
 ```shell
 bit clear-cache
