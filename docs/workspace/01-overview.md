@@ -29,7 +29,7 @@ This is a **Bit Workspace**. It is focused on composing applications with compon
 
 ## Components as workspace modules
 
-Each component is the workspace is managed as a module. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
+Each component in the workspace is managed as a module. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
 By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
 
 ```sh
