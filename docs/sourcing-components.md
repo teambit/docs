@@ -14,7 +14,7 @@ To use the component in the code, use an import or require command that referenc
 import { something } from '@bit/owner.collection.namespace.namespace.short-id';
 ```
 
-> Do not reference the directory of the imported code directly. Bit handles linking from the package reference to the actual code. 
+> Even though the component code is now local, do not reference the directory of the imported code directly but instead still import from node modules. Bit handles linking from the package reference to the actual code. 
 
 Once importing a component, you can make changes to the code. If the component is associated with a compiler, you need to run [`bit build`](/docs/building-components) to generate the compiler. 
 
