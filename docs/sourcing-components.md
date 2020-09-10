@@ -6,7 +6,7 @@ title: Importing
 
 ## Using an imported component
 
-Using a component in a workspace requires the component to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). This is done via the `bit install [component]` command. Imported components reside in the default directory defined in the [workspaced configuration](/docs/conf-bit-json#componentsdefaultdirectory).  Bit retrieves the component with all its dependencies and creates a package.json and node_modules directory. Check [here](/docs/workspace#imported-components) for details on the exact structure of imported component.  
+Using a component in a workspace requires the component to be fetched into the [local scope](/docs/how-bit-works#scope) and a specific version checked out into the [workspace](/docs/how-bit-works#workspace). This is done via the `bit import [component]` command. Imported components reside in the default directory defined in the [workspaced configuration](/docs/conf-bit-json#componentsdefaultdirectory).  Bit retrieves the component with all its dependencies and creates a package.json and node_modules directory. Check [here](/docs/workspace#imported-components) for details on the exact structure of imported component.  
 
 To use the component in the code, use an import or require command that references the full name of the component:  
 
