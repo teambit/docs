@@ -75,6 +75,6 @@ successfully imported x components
 
 # Export all components to the new scope rewiring all their dependencies to the new collection
 $ bit export <new-owner>.<new-collection> --set-current-scope --rewire --include-dependencies --all
-# bit requests for approval
-exported 4 components to scope <new-owner>.<new-collection>
+# bit requests approval
+exported x components to scope <new-owner>.<new-collection>
 ```
