@@ -63,7 +63,7 @@ Here are the steps to transfer collections that were created on personal account
 Make sure you have both collections defined on bit.dev and that you have writing permissions to the new collection, and at least viewing permissions to the old collection.  
 
 ```shell
-# Create and empty directory and initialize it with a bit scope
+# Create an empty directory and initialize it with a bit scope
 $ mkdir <collection-dir> # create an empty directory
 $ cd <collection-dir>
 $ bit init
