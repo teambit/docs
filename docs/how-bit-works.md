@@ -80,8 +80,8 @@ The dependency graph makes a component self-contained and allows for moving the 
 Bit links each component with a set of tools and configurations. The tools are dedicated components that can take the component source code and its dependency graph and generate some desired result.  
 The most common tools linked to components are:  
 
--**Compiler**: compiles or transpiles the original files and generates built artifacts. The artifacts are consumable by applications or other components. Compilers are specific to frameworks and usually even to flavors of the framework, as they contain the configuration required to run them.  
--**Tester**: An extension that runs the tests associated with the component and returns a status.  
+- **Compiler**: compiles or transpiles the original files and generates built artifacts. The artifacts are consumable by applications or other components. Compilers are specific to frameworks and usually even to flavors of the framework, as they contain the configuration required to run them.  
+- **Tester**: An extension that runs the tests associated with the component and returns a status.  
 
 ## Lifecycle
 
@@ -89,17 +89,17 @@ Here is a bird's-eye view of a component life cycle:
 
 ### Producing components
 
--**Track**: A component is initiated inside a workspace by specifying the files that comprise the component. In this workspace, this is an _authored_ component.  
--**Version**: Tagging a version seals the contents of the files and the metadata under this version. If the component has a compiler, Bit builds the component and seals the built artifacts as well (think of it as similar to a git commit and npm publish at the same time).  
--**Export**: Exporting the component creates a unique ID for the component. The unique id is the remote scope name and the local component name, including any namespaces. The export command sends a copy of the files and metadata to the remote server.  
+- **Track**: A component is initiated inside a workspace by specifying the files that comprise the component. In this workspace, this is an _authored_ component.  
+- **Version**: Tagging a version seals the contents of the files and the metadata under this version. If the component has a compiler, Bit builds the component and seals the built artifacts as well (think of it as similar to a git commit and npm publish at the same time).  
+- **Export**: Exporting the component creates a unique ID for the component. The unique id is the remote scope name and the local component name, including any namespaces. The export command sends a copy of the files and metadata to the remote server.  
 
 ### Consuming components
 
 Once residing on a remote scope, the component is available for consumption by other workspaces.  The ways to consume the component are by either installing it or importing it.  
 
--**Install**: Bit install adds the package as a regular NPM package to the node_modules folder. When installing a component (bit install / npm install / yarn add), the component is added to the package.json, pointing to the installed version: `"@bit/user.collection.tabs": "0.0.2"`. Changes to the code of an installed component are not saved.  
--**Import**: Bit import adds the component to the [workspace components folder](https://docs.bit.dev/docs/conf-bit-json#componentsdefaultdirectory) and tracks its modifications. On an import, you can see that the package.json points to a local file: `"@bit/user.collection.tabs": "file:./components/tabs"`. Code modifications are tracked and can be exported as a new version.
--**Eject**:  If a new version is exported, it is possible to revert to an installed component. In this case, the package.json is updated back to `"@bit/user.collection.tabs": "0.0.3"`
+- **Install**: Bit install adds the package as a regular NPM package to the node_modules folder. When installing a component (bit install / npm install / yarn add), the component is added to the package.json, pointing to the installed version: `"@bit/user.collection.tabs": "0.0.2"`. Changes to the code of an installed component are not saved.  
+- **Import**: Bit import adds the component to the [workspace components folder](https://docs.bit.dev/docs/conf-bit-json#componentsdefaultdirectory) and tracks its modifications. On an import, you can see that the package.json points to a local file: `"@bit/user.collection.tabs": "file:./components/tabs"`. Code modifications are tracked and can be exported as a new version.
+- **Eject**: If a new version is exported, it is possible to revert to an installed component. In this case, the package.json is updated back to `"@bit/user.collection.tabs": "0.0.3"`
 
 ## Isolation
 
