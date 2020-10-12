@@ -97,7 +97,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
 - Read about how Bit [generates dependencies](/docs/dependencies).
 - Understand how Bit [overriding rules](/docs/overrides) are working.
 - The [Best Practices](/docs/best-practices) section has some very useful information on working with Bit.
-- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines), [Javascript](/docs/guidelines-js) or [Typescript](/docs/guideline-ts).
+- Check out framework-specific guides for [React](/docs/react-guidelines), [Angular](/docs/angular-guidelines), [Vue](/docs/vue-guidelines), [Javascript](/docs/js-guidelines) or [Typescript](/docs/td-guideline).
 
 </div>
 
