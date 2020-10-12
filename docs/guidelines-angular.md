@@ -66,7 +66,7 @@ The ngModule provides the compilation context for any Angular entity. Having a c
 
 ## Component Entry point
 
-The component entry point should follow the [ngPackagr guidelines for entry points](https://github.com/ng-packagr/ng-packagr/blob/master/docs/entry-file.md). The component entry point, e.g. `public_api.ts` file should be marked as the main file of the component: 
+The component entry point should follow the [ngPackage guidelines for entry points](https://github.com/ng-packagr/ng-packagr/blob/master/docs/entry-file.md). The component entry point, e.g. `public_api.ts` file should be marked as the main file of the component: 
 
 ```shell
 bit add src/app/my-comp  --main src/app/my-comp/public_api.ts
