@@ -29,7 +29,7 @@ The [`bit status`](/docs/apis/cli-all#status) command also shows any errors duri
 
 Here are some recommendations on how to track components:  
 
-- Track each component as a single folder. Folder components lets bit track the whole folder, and you can make changes to the files in the component while Bit is still trackign them. 
+- Track each component as a single folder. Folder components lets bit track the whole folder, and you can make changes to the files in the component while Bit is still tracking them. 
 - Start tracking components bottom-up, so all components that are shared by other components are [tracked first](/docs/best-practices#publish-shared-files-as-bit-components).  
 - Plan and arrange components in [namespaces](/docs/best-practices#use-namespaces) according to their functionality, similar to the way you would arrange them in folders in a project.
 - Ensure all component files are located in a single folder.  
