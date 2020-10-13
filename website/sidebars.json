@@ -40,7 +40,8 @@
       "environment/base",
       "environment/services",
       "environment/composing-environments",
-      "environment/new-environmentsX"
+      "environment/new-environmentsX",
+      "environment/react"
     ],
     "Component": [
       "component/overview",
