@@ -28,7 +28,7 @@ This will create a new `bad jokes` directory and initialize a Bit [workspace](/d
 
 ### Workspace configurations
 
-To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json (apart from variants - see the variants section of the code snippet below) is an [aspect](TODO), or extension, of Bit. Each of which you can configure to fit your setup by applying a setup object to it.
+To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json (apart from [variants](/docs/workspace/variants)) is an [aspect](TODO), or extension, of Bit, each of which you can configure to fit your setup by applying a setup object to it.
 
 Configure the following (you can simply copy>paste this example):
 
