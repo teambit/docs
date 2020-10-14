@@ -3,7 +3,7 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial, you will use Bit to build an app, bottom-up, using independent components. These components will be managed by a Bit workspace and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
+In this tutorial, you will use Bit to build an app, bottom-up, using independent components. These components will be managed by a Bit [workspace](/docs/workspace/overview) and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
 
 ## Install Bit
 
@@ -13,36 +13,37 @@ $ npm install @teambit/bit --global
 
 ## Initialize a new Bit workspace
 
-Create a new Bit workspace by using the `bit init` command:
+Create a new Bit [workspace](/docs/workspace/overview) by using the `bit init` command:
 
 ```sh
-$ mkdir bad-jokes
+$ mkdir bad-jokes 
 $ cd bad-jokes
 $ bit init --harmony
 ```
 
-This will initialize a Bit workspace in our new `bad-jokes` directory. This commands creates two new assets for your project:
+This will create a new `bad jokes` directory and initialize a Bit [workspace](/docs/workspace/overview) in that directory. These commands create two new assets for your project:
 
-- `workspace.jsonc` the workspace' main configuration file..
-- `components` is the root directory for all your components..
+- `workspace.jsonc` - the workspace's main configuration file. Always only one per workspace.
+- `components` directory - the root directory for all your components. 
 
 ### Workspace configurations
 
-To set our workspace configurations, we'll open the `workspace.jsonc` file. All root-level entries are different [aspects](TODO) (extensions) of Bit which you can configure to fit your setup.  
+To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json (apart from [variants](/docs/workspace/variants)) is an [aspect](TODO), or extension, of Bit, each of which you can configure to fit your setup by applying a setup object to it.
+
 Configure the following (you can simply copy>paste this example):
 
 ```json
 {
   /** 
-  * the 'teambit.bit/worksapce' aspect control the workspace defaults and its metadata.
+  * the 'teambit.bit/workspace' aspect controls the workspace defaults and its metadata.
   */
   "teambit.bit/workspace": {
     /**
-    * workspcae name
+    * workspace name
     */
     "name": "bad-jokes",
     /**
-    * project logo. optional.
+    * project logo (optional)
     */
     "icon": "https://image.flaticon.com/icons/svg/185/185034.svg",
     /**
@@ -51,15 +52,15 @@ Configure the following (you can simply copy>paste this example):
     "defaultScope": "teambit.bad-jokes",
   },
   /**
-  * main configuration for bit's component dependency resolution.
+  * main configuration for Bit's component dependency resolution.
   **/
   "teambit.bit/dependency-resolver": {
     /**
-    * package manger for Bit to use
+    * package manager for Bit to use
     */
     "packageManager": "teambit.bit/pnpm",
     /**
-     * dependency policy allows to configure dependencies quickly and efficiently.
+     * dependency policy allows configuration of dependencies quickly and efficiently.
      * it helps to automate and manage dependency configuration for components.
     **/
     "policy": {
@@ -91,11 +92,11 @@ Configure the following (you can simply copy>paste this example):
     **/
     "components/modules": {
       /**
-      * configure the react environment for all components in the `components/modules` directory.
+      * configure the node environment for all components in the `components/modules` directory.
       **/
       "teambit.bit/node": {},
       /**
-       * these components has different scope
+       * these components have a different default scope
        **/
       "defaultScope": "teambit.toolbox"
     }
@@ -103,28 +104,32 @@ Configure the following (you can simply copy>paste this example):
 }
 ```
 
-## Start dev server
+## Start the dev server
 
-The [workspace UI](/docs/workspace/workspace-ui) displays all components in the workspace. It is a development tool that enables you to examine your components in different contexts and variations, and browse through their documentation. Start dev server and workspace UI:
+The [workspace UI](/docs/workspace/workspace-ui) displays all components in the [workspace](/docs/workspace/overview). It is a local development tool that enables you to examine your components in different contexts and variations, and browse through their documentation. Start the dev server and workspace UI:
 
 ```sh
 $ bit start
 ```
 
+> Note: the local workspace UI is a one-to-one representation of how your components will look when exported to the Bit server.
+
 ## Add a new UI component
 
-A [component](/docs/component/overview) is more than its set of implementation files. It has everything it needs to be used as an independent piece of software. Each component handled by a Bit workspace, must have all its files under the same directory:
+A [component](/docs/component/overview) in Bit is more than its set of code and styling implementation files. It has everything it needs to be used as an independent piece of software - module declaration, test files, [documentation files](/docs/documentation/automated-docs), etc. 
+
+> Each component in a Bit workspace must have all its files under the same folder inside the components directory.
 
 ```sh
-$ mkdir components/ui/button
+$ mkdir components/react/ui/button
 ```
 
 Now create the following files:
 
 ```sh
-$ touch components/ui/button/index.ts
-$ touch components/ui/button/button.tsx
-$ touch components/ui/button/button.module.scss
+$ touch components/react/ui/button/index.ts
+$ touch components/react/ui/button/button.tsx
+$ touch components/react/ui/button/button.module.scss
 ```
 
 And implement the component as follows:
@@ -212,7 +217,7 @@ The above button component uses the `classnames` library. To install it, use `bi
 $ bit install classnames
 ```
 
-Bit will make sure to register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry (a Bit workspace has no `package.json` file)
+Bit will make sure to automatically register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry (a Bit workspace has no `package.json` file). Check the `workspace.jsonc` file to make sure the `dependency-resolver` section now looks like this:
 
 ```json
   "@teambit.bit/dependency-resolver": {
@@ -226,21 +231,25 @@ Bit will make sure to register this package in the workspace configurations file
 
 ### Track the Component
 
-To track a component by Bit, use:
+Now browse to the local development server you spun up above at [http://localhost:3000](). You will see that the workspace UI is... still empty.
+
+This is because in order for Bit to be able to track a component's files, you need to tell Bit where that component's root directory is, i.e. by adding the root directory to Bit's tracking process:
 
 ```sh
-$ bit add components/ui/button
+$ bit add components/react/ui/button
 ```
 
-Now browse to the local development server at [http://localhost:3000]() to see that the component is managed by Bit.
+Now browse to the local development server again to see that the `button` component is now managed by Bit and displayed in the workspace UI.
 
 ### Review the documentation
 
-Bit automates component documentation by parsing your code and creating docs using a pre-defined template. When you track a component, Bit automatically adds it to the workspace UI application. The component's main overview page contains its documentation.
+Bit automates component documentation by parsing your code and creating docs using a pre-defined template. The `button` component's main overview page contains its documentation.
+
+> In the [Documentation](/docs/documentation/automated-docs) section we will see how to configure and override the default parsing templates.
 
 ### Add compositions
 
-Use Compositions to render the component in isolation and test is in various cases. Create the `compositions` file as part of the component:
+Use [Compositions](docs/compositions/develop-in-isolation) to render the component in isolation and test it with various scenarios. Create the `compositions` file as part of the component:
 
 ```sh
 $ touch components/ui/button/button.composition.tsx
@@ -273,21 +282,22 @@ export const DisabledButton = () => {
 };
 ```
 
-Head over to the [compositions tab](https://localhost:3000/base/button/~compositions) to see all component compositions.
+Head over to the [compositions tab](https://localhost:3000/base/button/~compositions) to see all of the `button` compositions we just created.
 
 1. Each named export is a composition.
-1. Composition name is a prettified version of the export name.
+1. Composition display name is a prettified version of the export name.
 
 ### Add tests
 
-As you recall, our Bit workspace uses the `@teambit/react` environment extension. This environment is pre-configured to use Jest as a test runner (which means we don't need to worry about setting it up).  
+If you take another look at the configuration we added to the workspace.jsonc above, you will see under 'variants' that our Bit workspace uses the `@teambit/react` [Environment](/docs/environment/overview) extension. This environment is pre-configured to use Jest as a test runner by default (which means we don't need to worry about setting it up).  
 To simplify our UI testing, we'll also make use of the following libraries:
 
 ```bash
 $ bit install @testing-library/react @testing-library/jest-dom
 ```
 
-Notice how we didn't set these packages as Dev Dependencies. Bit determines that by analyzing the way they are used in this workspace.  
+Notice how we didn't set these packages as Dev Dependencies. Bit determines that for us by analyzing the way they are used in this workspace - in this case they are only used in test files, so Bit knows to add them as dev dependencies.
+
 Let's start by creating our test file (in the button component directory)
 
 ```bash
@@ -309,16 +319,28 @@ test("button renders", () => {
 });
 ```
 
-Our tests will run whenever we [tag](/docs/versioning/tracking-changes) the relevant component. If a test fails, the tagging action will be aborted.  
+Bit runs a component's tests whenever we [tag](/docs/versioning/tracking-changes) the relevant component. If a test fails, the tagging action will be aborted.
 We can also run the tests manually:
 
 ```bash
+# in the component root directory
 $ bit test
 ```
 
 ### Use documentation template
 
-The `abstract` and `tags` define the component description and related categories. Both are generated automatically by Bit. To override Bit's auto-generated data, use the `abstract` and `tags` variables, in the component's `*.doc.tsx` file.  
+The base default documentation template contains the following sections:
+
+`abstract` - sub-title below the component name
+
+`tags` - tags for your component, to categorize and assist with discoverability
+
+`custom` section - see below
+
+
+The `abstract` and `tags` sections are by default automatically generated by Bit from the component id and code. 
+To override Bit's auto-generated data, Bit looks for a `*.doc.tsx` in the component directory. In that file you can add your own overrides for `abstract` and `tag`.
+
 For example:
 
 ```js
@@ -329,7 +351,7 @@ export const tags = ["react", "typescript", "button"];
 
 #### Extend the documentation with a custom component
 
-The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc` file, and export it as `default`.  
+The custom JSX slot gives you the freedom to extend the documentation page as you like. To use it, create a regular React component in the `doc.tsx` file, and export it as `default`.  
 For example, let's create a 'Guidelines' section for a `Button` component documentation:
 
 ```tsx
@@ -366,9 +388,9 @@ Add a react hook to handle the data fetching for bad-jokes.
 In Bit, even hooks managed as components. So we start by creating the component directory and files:
 
 ```sh
-$ mkdir -p hooks/use-get-joke
-$ touch hooks/use-get-joke/index.ts
-$ touch hooks/use-get-joke/use-get-joke.ts
+$ mkdir -p components/react/hooks/use-get-jokes
+$ touch components/react/hooks/use-get-jokes/index.ts
+$ touch components/react/hooks/use-get-jokes/use-get-jokes.ts
 ```
 
 And implement as follows:
@@ -425,7 +447,7 @@ export const useGetJokes = (): [
 ### Track hook component
 
 ```sh
-$ bit add hooks/use-get-joke --namespace hooks
+$ bit add hooks/use-get-jokes --namespace hooks
 ```
 
 > **Review the documentation**
@@ -483,7 +505,8 @@ export const examples = [
 
 ## Compose an app
 
-This will be our (app) component structure:
+We will compose a component which will essentially be a fully fledged app composed of some of the smaller components we've dealt with up to now.
+This will be our app component structure:
 
 ```sh
 ├── components
@@ -497,14 +520,18 @@ This will be our (app) component structure:
 
 ### Import tracked components
 
-Bit links tracked components to the`node_modules` directory. We'll use these links when referencing components. For example, in our `jokes-viewer.tsx` file we'll import the "button" UI component and "getJokes" hook, like so:
+As the components we want to use are still only local (we haven't exported them to Bit), we need to somehow import them to our app component.
+
+To this end, Bit links tracked components to the`node_modules` directory, even before they have been exported. So as soon as you track a component, it becomes available as a package from node modules - e.g. to access the button and hooks components we created above you would do the following:
 
 ```tsx
 import {Button} from '@teambit/bad-jokes.ui.button';
 import {useGetJokes} from '@teambit/bad-jokes.hooks.use-get-jokes'
 ```
 
-We'll use them like so:
+> With Bit we always use these links to reference Bit components, rather than relative paths, as this ensures package isolation and no reliance on specific file structure.
+
+We'll use them like so (copy to the `jokes-viewer.tsx` file):
 
 ```tsx
 /** Retrieves and displays bad jokes */
