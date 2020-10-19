@@ -11,11 +11,11 @@ This workflow is suggested for organizations that have:
 
 ## Challenge of centralized library
 
-Introducing a design system inside an organization can bring tremendous value for reducing the amount of code and increasing the effectiveness of the development teams. However, those benefits come with a price tag that should be considered:  
+Introducing a design system inside an organization can bring tremendous value for reducing the amount of code and increasing the effectiveness of the development teams. However, these benefits come with a price tag that should be considered:  
 
-### Dependability
+### External Dependence
 
-Dependability is, by far, the most crucial problem. Teams aim to be independent and deliver fast. Being dependent on the schedule and priorities of other teams can reduce this pace. If your deadline is on Thursday, but the infra team has other priorities than making this fix to your component, it is your problem.
+Dependence on other teams is, by far, the most crucial problem. Teams aim to be independent and deliver fast. Being dependent on the schedule and priorities of other teams can reduce this pace. If your deadline is on Thursday, but the infra team has other priorities than making this fix to your component, it is your problem.
 
 ### Usability
 
@@ -23,7 +23,7 @@ Writing good components is hard. As a developer, you are now the consumer of the
 
 ### Granularity
 
-Infrastructure teams tend to create a single package (e.g. npm package)  that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle.  
+Infrastructure teams tend to create a single package (e.g. npm package) that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle and the infrastructure team themselves are forced to create new versions of the entire library when only one component has changed.  
 
 ## Benefits
 
@@ -31,18 +31,19 @@ Bit simplifies the process of sharing components for both the library maintainer
 
 ### For Maintainers
 
-- Bit automates the packaging of each component with higher granularity without adding the overhead in maintaining separate packages.
-- Bit automatically version components that were altered based on changes in their dependencies
-- Building components locally without the project context shorten the feedback loop on the way components behave on other projects.
-- Publishing components to bit.dev increase components adoption by making them visible to all teams
+- Bit automates the packaging of each component with higher granularity without adding the overhead in maintaining separate packages
+- Bit automatically versions components that were altered based on changes in their dependencies
+- Building components locally without the project context shorten the feedback loop on the way components impact other projects
+- Publishing components to bit.dev increases component adoption by making them visible to all teams
+- This visibility also enables designers and product managers to monitor the end product and produce targeted feedback per component 
 - Bit helps to control who is making changes to the components
   
 ### For Projects
 
-Projects developers can benefit from retaining their existing workflow of using NPM for getting components. Getting smaller discrete components that are required by each project is useful for:  
+Projects developers can benefit from retaining their existing workflow of using NPM for fetching components. Using smaller, discrete components that are required by each project is useful for:  
 
 - Reducing the bundle size of the application. Only the components they need are included.
-- Reducing the bundle size and build time by Including only 3rd party libraries that are relevant to components actually used in the project.
+- This is a double (and often more) saving - the bundle will also only include the 3rd party libraries that are relevant to components actually used in the project, not those required by the entire component library.
 - Increasing the project stability by reducing the frequency of changes received for the package. Smaller packages mean that the project only gets the changes that affect the components they use.
 - Increasing control in the project. Consumers are not committed to a single version of all the components and instead can mix and match the versions they need of each component.
 - Creating a smaller CI footprint as only projects that are affected by changes in the components may be built when a component has changed instead of the whole library.
