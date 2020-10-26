@@ -4,9 +4,9 @@ title: Using Bit.dev
 ---
 
 
-Bit.dev is a cloud service provided by Bit. Accessing bit.dev requires registering a user account. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
+Bit.dev is a cloud service provided by Bit. Accessing bit.dev requires registering a user account. To export and import components from a local workspace to the account, the developer must login to their account from the local workspace.  
 
-Bit.dev provides these functions:  
+Bit.dev provides the following functions:  
 
 <div style="margin: auto; width: 90%; padding: 30px;">
 <a href="#remote-collections-hosting">
@@ -32,15 +32,15 @@ Bit.dev provides these functions:
 ## Remote collections hosting
 
 The primary goal of bit.dev is to be a SaaS service for hosting remote scopes.  
-Bit.dev is managing scopes in **collections** and determines the permissions users have for these collections:  
+Bit.dev manages scopes in **collections** and determines the permissions users have for these collections:  
 
-- A **public** collection is is visible for all users.  
-- A **private** collection is limited to the privileged users in the organization that owns the collection.
+- A **public** collection is is visible to all users.  
+- A **private** collection is limited to the privileged users who are members of the organization which owns the collection.
 
 Bit also ensures that code in private collections is not exposed via public collections and places the following restrictions on using components across collections:  
 
-- Components in public collections cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in public collections.  
-- Components in private collections cannot depend on components of different owners (users or organizations). Components in private collections may depend on public or private collections that belong to the same owner.  
+- Components in public collections cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in private collections.  
+- Components in private collections cannot depend on components of different owners (users or organizations). Components in private collections may depend on public collections or other private collections that belong to the same owner.  
 
 In addition, for each collection Bit maintains licensing information for the components (such as MIT or GPL).  
 
@@ -48,9 +48,10 @@ Learn more about [users and collections management](/docs/my-account).
 
 ## Package Registry
 
-All the components that are exported to bit.dev are stored in the Bit package registry. The components are available as npm packages that can be [installed](/docs/installing-components) using package managers (NPM or Yarn).  
-The bit.dev package registry is secured according to the collections permissions, so the only way to publish components to it, is by using the bit export command.  
-The components in the Bit.dev registry are available with the `@bit` prefix. The full name of the component is in the format of `npm i @<owner>/<collection-name>.<component-name>`.  
+All components that are exported to bit.dev are stored in the Bit package registry. The components are available as npm packages that can be [installed](/docs/installing-components) using a package manager (NPM or Yarn).  
+The bit.dev package registry is secured according to the collections permissions, so the only way to publish components to it is by using the bit export command.  
+The components from the Bit.dev registry are available with the `@bit` prefix. The full name of the component is in the format of `npm i @bit/<owner>.<collection-name>.<component-name>`.  
+TODO [Custom @prefix? How?]
 
 ## Component CI
 

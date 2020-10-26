@@ -5,6 +5,9 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
+      "common/barrel-file": {
+        "title": "common/barrel-file"
+      },
       "common/client-config": {
         "title": "Bit Client Configuration"
       },
