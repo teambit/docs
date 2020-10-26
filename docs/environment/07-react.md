@@ -155,40 +155,67 @@ const harmonyReactEnv = react.compose([
     react.overrideDevServerConfig(webpackConfig)
 ]);
 ```
+> The override methods will extend React's default configuration files with the new configuration files they receive. In case of a conflict between the default and the new configuration, the former will be overridden by the latter.
 
-### Available Override Functions
+### Available Override Methods
 
 #### overrideTsConfig
 ```ts
 ReactMain.overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer
 ```
-
-Example
-
-
-#### overrideDevServerConfig
-```ts
-ReactMain.overrideDevServerConfig(config: Configuration): EnvTransformer
-```
+This method overrides the default TypeScript configuration JSON ([tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)) using the configuration JSON it .
 
 #### overridePreviewConfig
 ```ts
 ReactMain.overridePreviewConfig(config: Configuration): EnvTransformer
 ```
+This method receives a Webpack configuration JSON ([webpack.config](https://webpack.js.org/configuration/)) as a parameter. It overrides the Webpack configurations for components rendered in the workspace UI (these are components that are managed by the workspace).
+
+#### overrideDevServerConfig
+```ts
+ReactMain.overrideDevServerConfig(config: Configuration): EnvTransformer
+```
+This method receives a Webpack configuration JSON ([webpack.config](https://webpack.js.org/configuration/)) as a parameter. It overrides the Webpack configurations for the overview section in the workspace UI (that does not include the rendering of components managed by the workspace)
 
 #### overrideJestConfig
 ```ts
 ReactMain.overrideJestConfig(jestConfigPath: string): EnvTransformer
 ```
+This method receives a relative path (as a string) to a Jest configuration file ([jest.config](https://jestjs.io/docs/en/configuration)). It overrides the default configurations for the Jest test runner.
 
 #### overrideBuildPipe
 ```ts
 ReactMain.overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
+This method receives an array of Bit tasks. It  overrides the build pipeline of a component (initiated on a `bbit tag` command).
 
 #### overrideDependencies
 ```ts
 ReactMain.overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer
+```
+This method receives a Bit dependency-policy JSON. It overrides the default dependency policy for each component.
+
+Each key-value pair in a dependency-policy JSON signifies the package and the version to be used. It also uses the '-' notation to signify a module should not be defined as a dependency of a certain type (dev, peer or standard)
+
+For example:
+
+```json
+{
+      dependencies: {
+        react: '-',
+      },
+      devDependencies: {
+        '@types/react': '16.9.43',
+        '@types/jest': '~26.0.9',
+        '@types/mocha': '-',
+        '@types/react-router-dom': '^5.1.5',
+      },
+      peerDependencies: {
+        react: '^16.13.1' || this.config.reactVersion,
+        'react-dom': '^16.13.1',
+      },
+    };
+  }
 ```
 
 #### overridePackageJsonProps
