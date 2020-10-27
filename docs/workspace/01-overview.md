@@ -25,11 +25,17 @@ $ tree my-web-app
 
 No configuration or complicated folder structures, only a set of neatly organized components.
 
-This is a **Bit Workspace**. At it's most basic it's just a zone on your machine where you can use Bit to manage your components. But built into a Bit Workspace is functionality which fosters a wonderful development experience and component building process, which provides ultimate productivity and granular control over your components, their development environments and ultimately their look and feel.
+This is a **Bit Workspace**. At it's most basic it's just a zone on your machine where you can use Bit to manage your components. But built into a Bit Workspace is functionality which enables you to control, configure and track your components in a way you simply couldnt do without encapsulating each component as its own entity.
 
-While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system, you can then manage each component as a separate module - with it's own versioning, build and CI, all the while keeping the actual files in a structured repo or mono repo (Bit is entirely agnostic to how you choose to store and track your code repo). That way Bit works seamlessly with your source control, while providing ultimate, fine control over the individual components the repo contains.
+First things first - the workspace is where you separate your code/repo structure from your component management. Here you tell Bit where a component resides, and from then on Bit will manage that component as a self-enclosed identity. You keep your existing repo structure, and Bit manages the mapping from file structure to Bit components.
 
-Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its building blocks and composing pages, data-flows, forms, and applications using components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
+The workspace's configuration file is then where a lot of the magic happens. Via the workspace you can control how your Bit components will behave. You can set the development environment - compilation, transpiling, linting, testing and much more. You can manage dependencies, for the entire workspace (e.g. if you want to ensure that React is always a peer dependency, even if someone forgot to add that) or per component. All of these, at any level of granularity - component, namespace, or just the entire workspace - that you require. 
+
+## Get the most out of a Bit Workspace
+
+While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system for instance, you can then manage each component as a separate module - with it's own versioning, build and CI, and much more; all the while keeping the existing file structure of your repo or mono repo (Bit is entirely agnostic to how you organise and track your code). That way Bit works seamlessly with your source control, while providing entirely isolated control over the individual components the repo contains.
+
+Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its most basic building blocks (buttons, text inputs, etc) and then successively composing pages, data-flows, forms, and applications using your components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
 
 ## Components as workspace modules
 
@@ -37,7 +43,7 @@ Each component in the workspace is managed as a standalone module. In the proces
 
 ### Multiple types of module
 
-Instead of using the same build configuration for all components in a project, via the workspace you can configure the development and build environment for components as groups or even individual components. For example you can group all react components and apply a specific React environment on them. And then in a sister directory have youe Angular components with their own Angular environment. All sitting on the same Workspace.
+Instead of using the same build configuration for all components in a project, via the workspace you can configure the development and build environment for components as groups or even individual components. For example you can group all react components and apply a specific React environment on them. And then in a sister directory have your Angular components with their own Angular environment, or node components... you get the picture. All sitting on the same Workspace and even in the same repo.
 
 Learn more about it [here](/docs/environment/overview#how-environments-work).
 
