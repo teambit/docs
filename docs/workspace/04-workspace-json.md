@@ -31,7 +31,7 @@ A basic `workspace.json` may look like this:
 }
 ```
 
-This configuration is composed by different extensions ([aspects](TODO)) of Bit, where each of them handles a set of cross-cutting functions that handle different functionalities of the component monorepo.  
+This configuration is composed of different extensions ([aspects](TODO)) of Bit as top-level entities in the json, and a configuration for that extension. Each extension  handles a set of cross-cutting functions that handle different functionalities of the component monorepo.
 Bit workspace manages a list of join-points each of the composed aspects can register and implement a specific functionality. For example:
 
 - Adding CLI commands.
@@ -58,6 +58,6 @@ See the full APIs and configuration for `@teambit/dependency-resolver` [here](TO
 
 ### `@teambit/variants`
 
-Bit lets you keep a parallel set of configurations according to the components' location in the workspace directory tree. Variants used to build the entire monorepo with an alternate set of dependencies and configurations. You can read more about defining and using `variants` to design a workspace for your requirements [here](/docs/workspace/variants).
+Bit lets you keep a parallel set of configurations and overrides according to the components' location in the workspace directory tree. This way you can, for instance, set a specific react environment for components under a "react" directory (or whatever directory name you choose), and a separate node environment for components under a "node directory.  You can read more about defining and using `variants` to design a workspace for your requirements [here](/docs/workspace/variants).
 
 See the full APIs and configuration for `@teambit/variants` [here](TODO).

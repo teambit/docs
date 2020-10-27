@@ -109,9 +109,6 @@ Make sure to track the following files with your SCM:
 You should not track the workspace scope with Git.
 
 
-While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
-By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
-
 Examples of Bit's linking function:
 ```sh
 ./node_modules/@acme/button   -> ./components/ui-primitives/button
@@ -119,4 +116,7 @@ Examples of Bit's linking function:
 ...
 ```
 
-Each component should be consumed using an absolute `import` statement using its module name.
+
+While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory. Each component should be consumed using an absolute `import` statement from its node_modules package using its module name (and not via a relative import). This ensures both that you're using a fully compiled and isolated version of the component's code, and that you dont need to retrace your steps to convert relative imports to node_modules imports once you've completed your development work.
+ 
+By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.

@@ -5,19 +5,21 @@ title: Component States
 
 Bit displays the state of the tracked components in your project's workspace.
 
-Knowing the state of the workspace's components is always essential - which components are staged, modified, or have missing dependencies, for example. A component may have more than one state. A state derived from its code status (such as modified) and a state derived from its dependencies (e.g., pending to be tagged).
+Knowing the state of the workspace's components during the development process can be essential - which components are staged, modified or have missing dependencies, for example. A component may have more than one state. A state derived from its code status (such as modified) and a state derived from its dependencies (e.g. pending to be tagged).
 
 ## Get component state
 
 Bit shows the state of each component in the workspace' component list using annotations and icons. You can also get this data by running the `bit status` command in the terminal.
 
-> This document uses the terminology used as part of the terminal outputs.
+> TODO image of the icons and where they are in the UI
+
+> This document  the terminology used as part of the terminal outputs.
 
 ## States
 
-### Nothing to tag or export
+#### Nothing to tag or export
 
-No components have pending changes. Either no files are tracked in the workspace, or the tracked components are exported or sourced, with no pending changes.
+No components have pending changes. Either no files are tracked in the workspace, or the tracked components have no pending changes.
 
 ```shell
 $ bit status
@@ -42,8 +44,9 @@ new components
 ### Staged components
 
 All tagged components that are ready to be [exported](/docs/apis/cli-all#export) and shared to a remote Collection.
+In Git status terms, the equivalent would be changes which have been committed but not pushed to the server.
 
-Staged components are fully isolated by Bit.
+Staged components have been verified by Bit as fully isolated.
 
 ```shell
 $ bit status
@@ -88,7 +91,7 @@ pending updates
 
 ### Deleted components
 
-A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove`.
+A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove <component-id>`.
 
 ```shell
 $ bit status
@@ -101,7 +104,7 @@ deleted components
 
 ### Component pending to be tagged automatically
 
-Component (not in state new) whose at least one of its dependencies is in modified state. 
+Component (not in state new) for whom at least one of its dependencies is in `modified` state. 
 
 ```shell
 $ bit status
