@@ -3,11 +3,11 @@ id: overview
 title: Overview
 ---
 
-At its most basic, a Bit scope is a virtual storage of your components. It allows you to save the individual versions of each of your components, which you can access when needed.
+At its most basic, a Bit scope is a virtual storage and server of Bit components. It stores the individual versions of components, which you can access when needed.
 
 ## Distributed development
 
-As with most other distributed version control systems, every Bit scope is a full-fledged scope with a complete history and full version tracking abilities. Bit gives developers a local copy of the full development history for each component, and changes are copied from one such scope to another.
+As with most other distributed version control systems, every Bit scope is a full-fledged scope with a complete history and full version tracking abilities. Bit gives developers a local copy of the full development history for each component, which the local scope manages, and changes are copied from one such scope to another when exporting and importing components.
 
 > **Where Bit and Git differ...**
 >
@@ -19,7 +19,7 @@ When creating a new workspace Bit creates a local scope in a hidden directory - 
 
 > **`.git/bit/` directory**
 >
-> The scope is placed here so that the contents of the scope will not be tracked by Git, but managed alongside the repository.
+> The scope is placed here so that the contents of the scope will **not** be tracked by Git, but managed alongside the repository.
 
 ### Remote scope
 
