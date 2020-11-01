@@ -3,7 +3,16 @@ id: quick-start
 title: Tutorial
 ---
 
-In this tutorial, you will use Bit to build an app, bottom-up, using independent components. These components will be managed by a Bit [workspace](/docs/workspace/overview) and shared to a remote scope on Bit.dev. You will then import and integrate a component from a remote scope into your own project.
+In this tutorial, you will learn how to build a truly modular application where each of its building block is completely independent, reusable, and shareable. 
+
+What we’ll cover:
+* How to initialize a new Bit workspace and run the Workspace UI -  your graphic tool for developing and reviewing components in isolation
+* How to use an extensible pre-configured development environment 
+* How to manage multiple components using just a few rules that cascade from the most general to a single component
+* How to document a component
+* How to manually and programmatically test components using Bit compositions and popular testing libraries (provided by the pre-configured environment)
+* How to publish a component to a scope on Bit.dev
+* How to import a component from Bit.dev and integrate it into your own project
 
 ## Install Bit
 
@@ -12,6 +21,7 @@ $ npm install @teambit/bit --global
 ```
 
 ## Initialize a new Bit workspace
+A workspace is a development environment for independent components. It manages each component's information as well as provides the functionality to author, export, import and install components.
 
 Create a new Bit [workspace](/docs/workspace/overview) by using the `bit init` command:
 
@@ -24,11 +34,18 @@ $ bit init --harmony
 This will create a new `bad jokes` directory and initialize a Bit [workspace](/docs/workspace/overview) in that directory. These commands create two new assets for your project:
 
 - `workspace.jsonc` - the workspace's main configuration file. Always only one per workspace.
-- `components` directory - the root directory for all your components. 
 
 ### Workspace configurations
 
 To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json (apart from [variants](/docs/workspace/variants)) is an [aspect](TODO), or extension, of Bit, each of which you can configure to fit your setup by applying a setup object to it.
+
+- 
+
+### Workspace configurations
+
+To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json is an [aspect](TODO), or extension, of Bit, each of which you can configure to fit your setup by applying a setup object to it.
+
+A single Bit workspace can use multiple development environments. In the example below, two environments are used: React for components in the `components/react` directory, and Node for components in the `components/modules` directory. As mentioned earlier, these configurations are determined by the specificity of their selectors, where the more specific overrides the more general. 
 
 Configure the following (you can simply copy>paste this example):
 

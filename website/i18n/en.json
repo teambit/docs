@@ -68,6 +68,9 @@
       "environment/new-environments": {
         "title": "Build New Environments"
       },
+      "environment/react": {
+        "title": "React"
+      },
       "exporting/organizing-components": {
         "title": "Overview"
       },
