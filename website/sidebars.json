@@ -1,94 +1,128 @@
 {
   "docs": {
-    "Getting Started": [
+    "Bit Basics": [
       "getting-started/what-is-bit",
-      "getting-started/quick-start",
-      "getting-started/why-components"
+      "getting-started/hello-world",
+      "getting-started/install-bit",
+      "getting-started/set-up-workspace",
+      "getting-started/choose-dev-env",
+      "getting-started/add-components",
+      "getting-started/lint",
+      "getting-started/compile",
+      "getting-started/test",
+      "getting-started/version",
+      "getting-started/export-to-scope",
+      "getting-started/import-install-components",
+      "getting-started/remove-deprecate-components",
+      "getting-started/ci-cd"
     ],
-    "Guides": [
-      "guides/how-bit-works",
-      "guides/installation",
-      "guides/using-bit-dev",
-      "guides/authentication",
-      "guides/everyday-commands",
-      "guides/build-design-systemX",
-      "guides/build-applicationX",
-      "guides/scoping-componentsX",
-      "guides/ci",
-      "guides/customize-workflowX",
-      "guides/publish-to-own-registryX",
-      "guides/host-your-own-scope"
+    "Tutorials": [
+      "tutorials/build-modular-react-app"
     ],
     "Workspace": [
       "workspace/overview",
-      "workspace/workspace-ui",
-      "workspace/statuses",
-      "workspace/workspace-json",
-      "workspace/dependencies",
-      "workspace/variants",
-      "workspace/extend"
+      "workspace/configurations",
+      "workspace/component-status"
     ],
-    "Scope": [
+    "Workspace UI": [
+      "workspace-ui/overview",
+      "workspace-ui/extending-workspace-ui"
+    ],
+    "Bit Components": [
+      "bit-components/overview",
+      "bit-components/compositions"
+    ],
+    "Environments": [
+      "environments/overview",
+      "environments/build-environment",
+      "environments/environment-services",
+      "environments/environment-handlers"
+    ],
+    "Scopes": [
       "scope/overview",
-      "scope/scope-ui",
-      "scope/dependency-cache",
-      "scope/scope-json",
-      "scope/extend"
+      "scope/local-scope",
+      "scope/remote-scope",
+      "scope/self-host-bit-scope"
     ],
-    "Environment": [
-      "environment/overview",
-      "environment/base",
-      "environment/services",
-      "environment/composing-environments",
-      "environment/new-environmentsX",
-      "environment/react"
-    ],
-    "Component": [
-      "component/overview",
-      "component/component-json",
-      "component/dependencies",
-      "component/isolation"
+    "Dependencies": [
+      "dependencies/overview",
+      "dependencies/dependency-graph",
+      "dependencies/dependency-resolver"
     ],
     "Documentation": [
-      "documentation/automated-docs",
-      "documentation/using-templates",
-      "documentation/customized-templates"
+      "documentation/overview"
     ],
     "Compositions": [
-      "compositions/develop-in-isolation",
-      "compositions/docs-and-preview",
-      "compositions/testing"
+      "compositions/overview"
     ],
-    "Versioning": [
-      "versioning/overview",
-      "versioning/tracking-changes",
-      "versioning/history",
-      "versioning/build-pipe"
+    "Testing": [
+      "testing/overview",
+      "testing/run-tests",
+      "testing/tests-ui",
+      "testing/config-vscode",
+      "testing/build-tester",
+      "testing/add-tester-to-pipeline"
     ],
-    "Exporting": [
-      "exporting/organizing-components",
-      "exporting/setting-remotesX"
+    "Compiling": [
+      "compiling/overview"
     ],
-    "Consuming": [
-      "consuming/installing",
-      "consuming/vendor-components",
-      "consuming/local-modificationsX"
+    "Build Pipeline": [
+      "build-pipeline/overview",
+      "build-pipeline/override-pipeline",
+      "build-pipeline/create-build-task"
     ],
-    "Refactoring": [
-      "refactor/deprecate",
-      "refactor/delete",
-      "refactor/renameX",
-      "refactor/forkX"
+    "Linting": [
+      "linting/overview"
     ],
-    "Extending Bit": [
-      "extending-bit/overview",
-      "extending-bit/get-started",
-      "extending-bit/anatomy"
+    "packages": [
+      "packages/overview",
+      "packages/publish-to-npm"
     ],
-    "Common": [
-      "common/usage-analytics",
-      "common/client-config",
-      "common/errors"
+    "React": [
+      "react/overview",
+      "react/using-react",
+      "react/extending-react"
+    ],
+    "Angular": [
+      "angular/overview"
+    ],
+    "NodeJS": [
+      "nodejs/overview"
+    ],
+    "Extensions": [
+      "extensions/overview",
+      "extensions/create-extension"
+    ],
+    "Aspects": [
+      "aspects/overview",
+      "aspects/workspace-config-api",
+      "aspects/runtimes",
+      "aspects/slots",
+      "aspects/create-aspect"
+    ],
+    "Preview": [
+      "preview/overview"
+    ],
+    "Development Server": [
+      "development-server/overview",
+      "development-server/create-extension"
+    ],
+    "CLI": [
+      "cli/overview",
+      "cli/cheat-sheet",
+      "cli/extending-cli"
+    ],
+    "Authentication": [
+      "authentication/overview"
+    ],
+    "Usage Analytics": [
+      "usage-analytics/overview"
+    ],
+    "Troubleshooting": [
+      "troubleshooting/troubleshooting"
+    ],
+    "FAQs": [
+      "faq/faq"
     ]
   }
 }

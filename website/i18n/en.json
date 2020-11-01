@@ -5,218 +5,425 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "common/barrel-file": {
-        "title": "common/barrel-file"
-      },
-      "common/client-config": {
-        "title": "Bit Client Configuration"
-      },
-      "common/errors": {
-        "title": "Errors and Troubleshooting"
-      },
-      "common/usage-analytics": {
-        "title": "Usage Analytics"
-      },
-      "component/overview": {
+      "angular/overview": {
         "title": "Overview"
       },
-      "component/component-json": {
-        "title": "Configuration"
-      },
-      "component/dependencies": {
-        "title": "Dependencies"
-      },
-      "component/isolation": {
-        "title": "Isolation"
-      },
-      "compositions/develop-in-isolation": {
-        "title": "Develop in Isolation"
-      },
-      "compositions/docs-and-preview": {
-        "title": "Docs and Preview"
-      },
-      "compositions/testing": {
-        "title": "Testing"
-      },
-      "consuming/installing": {
-        "title": "Installing with Package Managers"
-      },
-      "consuming/vendor-components": {
-        "title": "Vendor Components"
-      },
-      "documentation/automated-docs": {
-        "title": "Automated Docs"
-      },
-      "documentation/using-templates": {
-        "title": "Using Templates"
-      },
-      "documentation/customized-templates": {
-        "title": "Customized Templates"
-      },
-      "environment/overview": {
+      "aspects/overview": {
         "title": "Overview"
       },
-      "environment/base": {
-        "title": "Base Environments"
+      "aspects/workspace-config-api": {
+        "title": "Workspace Config API"
       },
-      "environment/services": {
-        "title": "Services"
+      "aspects/runtimes": {
+        "title": "Runtimes"
       },
-      "environment/composing-environments": {
-        "title": "Composing Environments"
+      "aspects/slots": {
+        "title": "Slots"
       },
-      "environment/new-environments": {
-        "title": "Build New Environments"
+      "aspects/create-aspect": {
+        "title": "Create an Aspect"
       },
-      "environment/react": {
-        "title": "React"
-      },
-      "exporting/organizing-components": {
+      "authentication/overview": {
         "title": "Overview"
       },
-      "exporting/02-bit-dev": {
-        "title": "exporting/02-bit-dev"
-      },
-      "exporting/03-setting-remotes": {
-        "title": "exporting/03-setting-remotes"
-      },
-      "extending-bit/overview": {
+      "bit-components/overview": {
         "title": "Overview"
       },
-      "extending-bit/get-started": {
-        "title": "Get Started with Extensions"
+      "bit-components/compositions": {
+        "title": "Compositions"
       },
-      "extending-bit/anatomy": {
-        "title": "Extension Anatomy"
+      "build-pipeline/overview": {
+        "title": "Overview"
+      },
+      "build-pipeline/override-pipeline": {
+        "title": "Override the Default Pipeline"
+      },
+      "build-pipeline/create-build-task": {
+        "title": "Create a Build Task"
+      },
+      "cli/overview": {
+        "title": "Overview"
+      },
+      "cli/cheat-sheet": {
+        "title": "Cheat Sheet"
+      },
+      "cli/extending-cli": {
+        "title": "Extending Bit's CLI"
+      },
+      "compiling/overview": {
+        "title": "Overview"
+      },
+      "compositions/overview": {
+        "title": "Overview"
+      },
+      "dependencies/overview": {
+        "title": "Overview"
+      },
+      "dependencies/02-dependency-graph": {
+        "title": "dependencies/02-dependency-graph"
+      },
+      "dependencies/03-dependency-resolver": {
+        "title": "dependencies/03-dependency-resolver"
+      },
+      "development-server/overview": {
+        "title": "Overview"
+      },
+      "development-server/create-extension": {
+        "title": "Create an Extension"
+      },
+      "documentation/overview": {
+        "title": "Overview"
+      },
+      "environments/overview": {
+        "title": "Overview"
+      },
+      "environments/build-environment": {
+        "title": "Build Your Environment"
+      },
+      "environments/environment-services": {
+        "title": "Environment Services"
+      },
+      "environments/environment-handlers": {
+        "title": "Environment Handlers"
+      },
+      "extensions/overview": {
+        "title": "Overview"
+      },
+      "extensions/create-extension": {
+        "title": "Create an Extension"
+      },
+      "faq/faq": {
+        "title": "FAQs"
       },
       "getting-started/what-is-bit": {
         "title": "What is Bit?"
       },
-      "getting-started/quick-start": {
-        "title": "Tutorial"
+      "getting-started/hello-world": {
+        "title": "Hello World (Quick Tutorial)"
       },
-      "getting-started/why-components": {
-        "title": "Why Components?"
+      "getting-started/install-bit": {
+        "title": "Install Bit"
+      },
+      "getting-started/set-up-workspace": {
+        "title": "Set Up a Workspace"
+      },
+      "getting-started/choose-dev-env": {
+        "title": "Choose a Development Environment"
+      },
+      "getting-started/add-components": {
+        "title": "Create/Add Components"
+      },
+      "getting-started/lint": {
+        "title": "Lint"
+      },
+      "getting-started/compile": {
+        "title": "Compile"
+      },
+      "getting-started/test": {
+        "title": "Test"
+      },
+      "getting-started/version": {
+        "title": "Version"
+      },
+      "getting-started/export-to-scope": {
+        "title": "Export to a Remote Scope"
+      },
+      "getting-started/import-install-components": {
+        "title": "Import/Install Components"
+      },
+      "getting-started/remove-deprecate-components": {
+        "title": "Remove/Deprecate Components"
+      },
+      "getting-started/ci-cd": {
+        "title": "Add to CI/CD"
       },
       "getting-started/future-intro": {
         "title": "getting-started/future-intro"
       },
-      "guides/how-bit-works": {
+      "getting-started/why-components": {
+        "title": "Why Components?"
+      },
+      "linting/overview": {
+        "title": "Overview"
+      },
+      "nodejs/overview": {
+        "title": "Overview"
+      },
+      "packages/overview": {
+        "title": "Overview"
+      },
+      "packages/publish-to-npm": {
+        "title": "Publish to NPM"
+      },
+      "preview/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/common/barrel-file": {
+        "title": "previous-structure/common/barrel-file"
+      },
+      "previous-structure/common/client-config": {
+        "title": "Bit Client Configuration"
+      },
+      "previous-structure/common/errors": {
+        "title": "Errors and Troubleshooting"
+      },
+      "previous-structure/common/usage-analytics": {
+        "title": "Usage Analytics"
+      },
+      "previous-structure/component/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/component/component-json": {
+        "title": "Configuration"
+      },
+      "previous-structure/component/dependencies": {
+        "title": "Dependencies"
+      },
+      "previous-structure/component/isolation": {
+        "title": "Isolation"
+      },
+      "previous-structure/compositions/develop-in-isolation": {
+        "title": "Develop in Isolation"
+      },
+      "previous-structure/compositions/docs-and-preview": {
+        "title": "Docs and Preview"
+      },
+      "previous-structure/compositions/testing": {
+        "title": "Testing"
+      },
+      "previous-structure/consuming/installing": {
+        "title": "Installing with Package Managers"
+      },
+      "previous-structure/consuming/vendor-components": {
+        "title": "Vendor Components"
+      },
+      "previous-structure/documentation/automated-docs": {
+        "title": "Automated Docs"
+      },
+      "previous-structure/documentation/using-templates": {
+        "title": "Using Templates"
+      },
+      "previous-structure/documentation/customized-templates": {
+        "title": "Customized Templates"
+      },
+      "previous-structure/environment/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/environment/base": {
+        "title": "Base Environments"
+      },
+      "previous-structure/environment/services": {
+        "title": "Services"
+      },
+      "previous-structure/environment/composing-environments": {
+        "title": "Composing Environments"
+      },
+      "previous-structure/environment/new-environments": {
+        "title": "Build New Environments"
+      },
+      "previous-structure/environment/react": {
+        "title": "React"
+      },
+      "previous-structure/exporting/organizing-components": {
+        "title": "Overview"
+      },
+      "previous-structure/exporting/02-bit-dev": {
+        "title": "previous-structure/exporting/02-bit-dev"
+      },
+      "previous-structure/exporting/03-setting-remotes": {
+        "title": "previous-structure/exporting/03-setting-remotes"
+      },
+      "previous-structure/extending-bit/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/extending-bit/get-started": {
+        "title": "Get Started with Extensions"
+      },
+      "previous-structure/extending-bit/anatomy": {
+        "title": "Extension Anatomy"
+      },
+      "previous-structure/guides/how-bit-works": {
         "title": "How Bit Works?"
       },
-      "guides/installation": {
+      "previous-structure/guides/installation": {
         "title": "Installation"
       },
-      "guides/standardize-workflow": {
+      "previous-structure/guides/standardize-workflow": {
         "title": "Standardize Workflow"
       },
-      "guides/compiling": {
+      "previous-structure/guides/compiling": {
         "title": "Compiling"
       },
-      "guides/using-bit-dev": {
+      "previous-structure/guides/using-bit-dev": {
         "title": "Using Bit.dev"
       },
-      "guides/authentication": {
+      "previous-structure/guides/authentication": {
         "title": "Authentication"
       },
-      "guides/everyday-commands": {
+      "previous-structure/guides/everyday-commands": {
         "title": "Everyday Commands"
       },
-      "guides/build-design-system": {
+      "previous-structure/guides/build-design-system": {
         "title": "Build a Design System"
       },
-      "guides/build-application": {
+      "previous-structure/guides/build-application": {
         "title": "Build Application"
       },
-      "guides/scoping-components": {
+      "previous-structure/guides/scoping-components": {
         "title": "Scope Architecture"
       },
-      "guides/ci": {
+      "previous-structure/guides/ci": {
         "title": "CI & Deployment"
       },
-      "guides/customize-workflow": {
+      "previous-structure/guides/customize-workflow": {
         "title": "Customize Workflow"
       },
-      "guides/publish-to-own-registry": {
+      "previous-structure/guides/publish-to-own-registry": {
         "title": "Connect to Package Registry"
       },
-      "guides/host-your-own-scope": {
+      "previous-structure/guides/host-your-own-scope": {
         "title": "Self Host Bit Scope"
       },
-      "quick-start/start-with-react": {
+      "previous-structure/quick-start/start-with-react": {
         "title": "Start with React"
       },
-      "quick-start/start-with-angular": {
+      "previous-structure/quick-start/start-with-angular": {
         "title": "Start with Angular"
       },
-      "quick-start/start-with-vue": {
+      "previous-structure/quick-start/start-with-vue": {
         "title": "Start with Vue"
       },
-      "quick-start/start-with-stencil": {
+      "previous-structure/quick-start/start-with-stencil": {
         "title": "Start with Stencil"
       },
-      "quick-start/start-from-existing-project": {
+      "previous-structure/quick-start/start-from-existing-project": {
         "title": "Start from Existing Project"
       },
-      "refactor/deprecate": {
+      "previous-structure/refactor/deprecate": {
         "title": "Deprecate Components"
       },
-      "refactor/delete": {
+      "previous-structure/refactor/delete": {
         "title": "Delete Components"
       },
-      "refactor/rename": {
+      "previous-structure/refactor/rename": {
         "title": "Rename Components"
       },
-      "refactor/forking": {
+      "previous-structure/refactor/forking": {
         "title": "Forking"
+      },
+      "previous-structure/scope/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/scope/scope-ui": {
+        "title": "Scope UI"
+      },
+      "previous-structure/scope/dependency-cache": {
+        "title": "External Components"
+      },
+      "previous-structure/scope/04-scope-json": {
+        "title": "previous-structure/scope/04-scope-json"
+      },
+      "previous-structure/scope/05-extend": {
+        "title": "previous-structure/scope/05-extend"
+      },
+      "previous-structure/tutorials/quick-start": {
+        "title": "Tutorial"
+      },
+      "previous-structure/versioning/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/versioning/tracking-changes": {
+        "title": "Tracking Changes"
+      },
+      "previous-structure/versioning/03-component-history": {
+        "title": "previous-structure/versioning/03-component-history"
+      },
+      "previous-structure/versioning/04-build-pipe": {
+        "title": "previous-structure/versioning/04-build-pipe"
+      },
+      "previous-structure/workspace/overview": {
+        "title": "Overview"
+      },
+      "previous-structure/workspace/workspace-ui": {
+        "title": "Workspace UI"
+      },
+      "previous-structure/workspace/statuses": {
+        "title": "Component States"
+      },
+      "previous-structure/workspace/workspace-json": {
+        "title": "Workspace Configuration"
+      },
+      "previous-structure/workspace/dependencies": {
+        "title": "Dependencies"
+      },
+      "previous-structure/workspace/variants": {
+        "title": "Variants"
+      },
+      "previous-structure/workspace/07-extend": {
+        "title": "previous-structure/workspace/07-extend"
+      },
+      "react/overview": {
+        "title": "Overview"
+      },
+      "react/using-react": {
+        "title": "Using React"
+      },
+      "react/extending-react": {
+        "title": "Extending React"
       },
       "scope/overview": {
         "title": "Overview"
       },
-      "scope/scope-ui": {
-        "title": "Scope UI"
+      "scope/local-scope": {
+        "title": "Local Scope"
       },
-      "scope/dependency-cache": {
-        "title": "External Components"
+      "scope/remote-scope": {
+        "title": "Remote Scope"
       },
-      "scope/04-scope-json": {
-        "title": "scope/04-scope-json"
+      "scope/self-host-bit-scope": {
+        "title": "Self Hosting a Bit Scope"
       },
-      "scope/05-extend": {
-        "title": "scope/05-extend"
-      },
-      "versioning/overview": {
+      "testing/overview": {
         "title": "Overview"
       },
-      "versioning/tracking-changes": {
-        "title": "Tracking Changes"
+      "testing/run-tests": {
+        "title": "Run Tests"
       },
-      "versioning/03-component-history": {
-        "title": "versioning/03-component-history"
+      "testing/tests-ui": {
+        "title": "Tests UI"
       },
-      "versioning/04-build-pipe": {
-        "title": "versioning/04-build-pipe"
+      "testing/config-vscode": {
+        "title": "Configure VSCode"
+      },
+      "testing/build-tester": {
+        "title": "Build Your Own Tester"
+      },
+      "testing/add-tester-to-pipeline": {
+        "title": "Add a Tester to the Build Pipeline"
+      },
+      "troubleshooting/troubleshooting": {
+        "title": "Troubleshooting"
+      },
+      "tutorials/build-modular-react-app": {
+        "title": "Build a Modular React App"
+      },
+      "usage-analytics/overview": {
+        "title": "Overview"
+      },
+      "workspace-ui/overview": {
+        "title": "Overview"
+      },
+      "workspace-ui/extending-workspace-ui": {
+        "title": "Extending the Workspace UI"
       },
       "workspace/overview": {
         "title": "Overview"
       },
-      "workspace/workspace-ui": {
-        "title": "Workspace UI"
+      "workspace/configurations": {
+        "title": "Configurations"
       },
-      "workspace/statuses": {
-        "title": "Component States"
-      },
-      "workspace/workspace-json": {
-        "title": "Workspace Configuration"
-      },
-      "workspace/dependencies": {
-        "title": "Dependencies"
-      },
-      "workspace/variants": {
-        "title": "Variants"
-      },
-      "workspace/07-extend": {
-        "title": "workspace/07-extend"
+      "workspace/03-component-status": {
+        "title": "workspace/03-component-status"
       }
     },
     "links": {
@@ -226,20 +433,33 @@
       "Github": "Github"
     },
     "categories": {
-      "Getting Started": "Getting Started",
-      "Guides": "Guides",
+      "Bit Basics": "Bit Basics",
+      "Tutorials": "Tutorials",
       "Workspace": "Workspace",
-      "Scope": "Scope",
-      "Environment": "Environment",
-      "Component": "Component",
+      "Workspace UI": "Workspace UI",
+      "Bit Components": "Bit Components",
+      "Environments": "Environments",
+      "Scopes": "Scopes",
+      "Dependencies": "Dependencies",
       "Documentation": "Documentation",
       "Compositions": "Compositions",
-      "Versioning": "Versioning",
-      "Exporting": "Exporting",
-      "Consuming": "Consuming",
-      "Refactoring": "Refactoring",
-      "Extending Bit": "Extending Bit",
-      "Common": "Common"
+      "Testing": "Testing",
+      "Compiling": "Compiling",
+      "Build Pipeline": "Build Pipeline",
+      "Linting": "Linting",
+      "packages": "packages",
+      "React": "React",
+      "Angular": "Angular",
+      "NodeJS": "NodeJS",
+      "Extensions": "Extensions",
+      "Aspects": "Aspects",
+      "Preview": "Preview",
+      "Development Server": "Development Server",
+      "CLI": "CLI",
+      "Authentication": "Authentication",
+      "usage-analytics": "usage-analytics",
+      "Troubleshooting": "Troubleshooting",
+      "FAQs": "FAQs"
     }
   },
   "pages-strings": {
