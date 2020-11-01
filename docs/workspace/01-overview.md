@@ -25,24 +25,27 @@ $ tree my-web-app
 
 No configuration or complicated folder structures, only a set of neatly organized components.
 
-This is a **Bit Workspace**. It is focused on composing applications with components. We recommend breaking down your frontend application to its building blocks and composing pages, data-flows, forms, and applications using APIs. Components can be implemented in React, Angular, Vue, Stencil, and Node.
+This is a **Bit Workspace**. At it's most basic it's just a zone on your machine where you can use Bit to manage your components. But built into a Bit Workspace is functionality which enables you to control, configure and track your components in a way you simply couldnt do without encapsulating each component as its own entity.
+
+First things first - the workspace is where you separate your code/repo structure from your component management. Here you tell Bit where a component resides, and from then on Bit will manage that component as a self-enclosed identity. You keep your existing repo structure, and Bit manages the mapping from file structure to Bit components.
+
+The workspace's configuration file is then where a lot of the magic happens. Via the workspace you can control how your Bit components will behave. You can set the development environment - compilation, transpiling, linting, testing and much more. You can manage dependencies, for the entire workspace (e.g. if you want to ensure that React is always a peer dependency, even if someone forgot to add that) or per component. All of these, at any level of granularity - component, namespace, or just the entire workspace - that you require. 
+
+## Get the most out of a Bit Workspace
+
+While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system for instance, you can then manage each component as a separate module - with it's own versioning, build and CI, and much more; all the while keeping the existing file structure of your repo or mono repo (Bit is entirely agnostic to how you organise and track your code). That way Bit works seamlessly with your source control, while providing entirely isolated control over the individual components the repo contains.
+
+Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its most basic building blocks (buttons, text inputs, etc) and then successively composing pages, data-flows, forms, and applications using your components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
 
 ## Components as workspace modules
 
-Each component in the workspace is managed as a module. While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory.  
-By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.
-
-```sh
-./node_modules/@acme/button   -> ./components/ui-primitives/button
-./node_modules/@acme/homepage -> ./components/pages/hompage
-...
-```
-
-Each component should be required using an absolute `import` statement using its module name.
+Each component in the workspace is managed as a standalone module. In the process of telling Bit to track each commponent, Bit builds a mapping between the component files and their 'physical' location in the workspace, so that Bit can from then on manage the component's code as a single, self-enclosed entity. 
 
 ### Multiple types of module
 
-Instead of using the same build configuration for all components in a project, when treating components as separate workspace modules you can have different builds for components. For example, a utility function can be built with a different configuration than a web component. It allows you to gradually refactor components from one technology to the other (transition to TypeScript, one component at a time). Learn more about it [here](/docs/environment/overview#how-environments-work).
+Instead of using the same build configuration for all components in a project, via the workspace you can configure the development and build environment for components as groups or even individual components. For example you can group all react components and apply a specific React environment on them. And then in a sister directory have your Angular components with their own Angular environment, or node components... you get the picture. All sitting on the same Workspace and even in the same repo.
+
+Learn more about it [here](/docs/environment/overview#how-environments-work).
 
 ## Initializing Workspace
 
@@ -104,3 +107,16 @@ Make sure to track the following files with your SCM:
 - `worksapce.json`
 
 You should not track the workspace scope with Git.
+
+
+Examples of Bit's linking function:
+```sh
+./node_modules/@acme/button   -> ./components/ui-primitives/button
+./node_modules/@acme/homepage -> ./components/pages/hompage
+...
+```
+
+
+While the component's source code is a part of your workspace, Bit keeps the compiled module in the `node_modules` directory. Each component should be consumed using an absolute `import` statement from its node_modules package using its module name (and not via a relative import). This ensures both that you're using a fully compiled and isolated version of the component's code, and that you dont need to retrace your steps to convert relative imports to node_modules imports once you've completed your development work.
+ 
+By treating each component as a module Bit helps you build isolated components that interact with each other using only their APIs.

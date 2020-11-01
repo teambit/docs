@@ -14,7 +14,6 @@ What we’ll cover:
 * How to publish a component to a scope on Bit.dev
 * How to import a component from Bit.dev and integrate it into your own project
 
-
 ## Install Bit
 
 ```sh
@@ -35,6 +34,11 @@ $ bit init --harmony
 This will create a new `bad jokes` directory and initialize a Bit [workspace](/docs/workspace/overview) in that directory. These commands create two new assets for your project:
 
 - `workspace.jsonc` - the workspace's main configuration file. Always only one per workspace.
+
+### Workspace configurations
+
+To set our [workspace](/docs/workspace/overview) configurations, we'll open the `workspace.jsonc` file. Any root-level entry in this json (apart from [variants](/docs/workspace/variants)) is an [aspect](TODO), or extension, of Bit, each of which you can configure to fit your setup by applying a setup object to it.
+
 - 
 
 ### Workspace configurations

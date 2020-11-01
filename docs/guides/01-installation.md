@@ -82,4 +82,4 @@ $ sudo cp bit /usr/local/bin/
 $ rm bit
 ```
 
-If you are experiencing issues when using an old version of Bit, please try installing the latest one according to your installation method from above.
+If you are experiencing issues when using an old version of Bit, please try installing the latest version according to your chosen installation method from above.
