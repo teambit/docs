@@ -1,6 +1,6 @@
 ---
-id: introduction
-title: Introduction
+id: what-is-bit
+title: What is Bit?
 ---
 
 Bit makes life easier for JavaScript developers who build their applications with components. If you’re looking to develop and publish individual components from a repository to curated collections and use them to compose more applications, you came to the right place! Bit helps you develop your applications faster, with greater modularity and consistentency. Use Bit to distribute and maintain your design system, UI widgets, pages and features.
