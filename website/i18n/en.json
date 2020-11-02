@@ -26,11 +26,65 @@
       "authentication/overview": {
         "title": "Overview"
       },
+      "bit-basics/what-is-bit": {
+        "title": "What is Bit?"
+      },
+      "bit-basics/hello-world": {
+        "title": "Hello World (Quick Tutorial)"
+      },
+      "bit-basics/install-bit": {
+        "title": "Install Bit"
+      },
+      "bit-basics/set-up-workspace": {
+        "title": "Set Up a Workspace"
+      },
+      "bit-basics/choose-dev-env": {
+        "title": "Choose a Development Environment"
+      },
+      "bit-basics/add-components": {
+        "title": "Create/Add Components"
+      },
+      "bit-basics/lint": {
+        "title": "Lint"
+      },
+      "bit-basics/compile": {
+        "title": "Compile"
+      },
+      "bit-basics/test": {
+        "title": "Test"
+      },
+      "bit-basics/version": {
+        "title": "Version"
+      },
+      "bit-basics/export-to-scope": {
+        "title": "Export to a Remote Scope"
+      },
+      "bit-basics/import-install-components": {
+        "title": "Import/Install Components"
+      },
+      "bit-basics/remove-deprecate-components": {
+        "title": "Remove/Deprecate Components"
+      },
+      "bit-basics/ci-cd": {
+        "title": "Add to CI/CD"
+      },
+      "bit-basics/future-intro": {
+        "title": "bit-basics/future-intro"
+      },
+      "bit-basics/why-components": {
+        "title": "Why Components?"
+      },
       "bit-components/overview": {
         "title": "Overview"
       },
+      "bit-components/why-components": {
+        "title": "Why Components?"
+      },
       "bit-components/compositions": {
         "title": "Compositions"
+      },
+      "bit-components/04-import-components": {
+        "title": "bit-components/04-import-components"
       },
       "build-pipeline/overview": {
         "title": "Overview"
@@ -56,6 +110,9 @@
       "compositions/overview": {
         "title": "Overview"
       },
+      "compositions/02-testing": {
+        "title": "compositions/02-testing"
+      },
       "dependencies/overview": {
         "title": "Overview"
       },
@@ -74,6 +131,9 @@
       "documentation/overview": {
         "title": "Overview"
       },
+      "documentation/documenting-react": {
+        "title": "Documenting React"
+      },
       "environments/overview": {
         "title": "Overview"
       },
@@ -86,6 +146,9 @@
       "environments/environment-handlers": {
         "title": "Environment Handlers"
       },
+      "environments/05-extend-environment": {
+        "title": "environments/05-extend-environment"
+      },
       "extensions/overview": {
         "title": "Overview"
       },
@@ -95,54 +158,6 @@
       "faq/faq": {
         "title": "FAQs"
       },
-      "getting-started/what-is-bit": {
-        "title": "What is Bit?"
-      },
-      "getting-started/hello-world": {
-        "title": "Hello World (Quick Tutorial)"
-      },
-      "getting-started/install-bit": {
-        "title": "Install Bit"
-      },
-      "getting-started/set-up-workspace": {
-        "title": "Set Up a Workspace"
-      },
-      "getting-started/choose-dev-env": {
-        "title": "Choose a Development Environment"
-      },
-      "getting-started/add-components": {
-        "title": "Create/Add Components"
-      },
-      "getting-started/lint": {
-        "title": "Lint"
-      },
-      "getting-started/compile": {
-        "title": "Compile"
-      },
-      "getting-started/test": {
-        "title": "Test"
-      },
-      "getting-started/version": {
-        "title": "Version"
-      },
-      "getting-started/export-to-scope": {
-        "title": "Export to a Remote Scope"
-      },
-      "getting-started/import-install-components": {
-        "title": "Import/Install Components"
-      },
-      "getting-started/remove-deprecate-components": {
-        "title": "Remove/Deprecate Components"
-      },
-      "getting-started/ci-cd": {
-        "title": "Add to CI/CD"
-      },
-      "getting-started/future-intro": {
-        "title": "getting-started/future-intro"
-      },
-      "getting-started/why-components": {
-        "title": "Why Components?"
-      },
       "linting/overview": {
         "title": "Overview"
       },
@@ -151,6 +166,9 @@
       },
       "packages/overview": {
         "title": "Overview"
+      },
+      "packages/install-packages": {
+        "title": "Installing Packages"
       },
       "packages/publish-to-npm": {
         "title": "Publish to NPM"
@@ -410,6 +428,9 @@
       "usage-analytics/overview": {
         "title": "Overview"
       },
+      "variants/overview": {
+        "title": "Overview"
+      },
       "workspace-ui/overview": {
         "title": "Overview"
       },
@@ -422,8 +443,8 @@
       "workspace/configurations": {
         "title": "Configurations"
       },
-      "workspace/03-component-status": {
-        "title": "workspace/03-component-status"
+      "workspace/component-status": {
+        "title": "Component Status"
       }
     },
     "links": {
@@ -440,6 +461,7 @@
       "Bit Components": "Bit Components",
       "Environments": "Environments",
       "Scopes": "Scopes",
+      "Bit CLI": "Bit CLI",
       "Dependencies": "Dependencies",
       "Documentation": "Documentation",
       "Compositions": "Compositions",
@@ -447,7 +469,8 @@
       "Compiling": "Compiling",
       "Build Pipeline": "Build Pipeline",
       "Linting": "Linting",
-      "packages": "packages",
+      "Variants": "Variants",
+      "Packages": "Packages",
       "React": "React",
       "Angular": "Angular",
       "NodeJS": "NodeJS",
@@ -455,9 +478,8 @@
       "Aspects": "Aspects",
       "Preview": "Preview",
       "Development Server": "Development Server",
-      "CLI": "CLI",
       "Authentication": "Authentication",
-      "usage-analytics": "usage-analytics",
+      "Usage Analytics": "Usage Analytics",
       "Troubleshooting": "Troubleshooting",
       "FAQs": "FAQs"
     }

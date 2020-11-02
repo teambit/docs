@@ -1,20 +1,20 @@
 {
   "docs": {
     "Bit Basics": [
-      "getting-started/what-is-bit",
-      "getting-started/hello-world",
-      "getting-started/install-bit",
-      "getting-started/set-up-workspace",
-      "getting-started/choose-dev-env",
-      "getting-started/add-components",
-      "getting-started/lint",
-      "getting-started/compile",
-      "getting-started/test",
-      "getting-started/version",
-      "getting-started/export-to-scope",
-      "getting-started/import-install-components",
-      "getting-started/remove-deprecate-components",
-      "getting-started/ci-cd"
+      "bit-basics/what-is-bit",
+      "bit-basics/hello-world",
+      "bit-basics/install-bit",
+      "bit-basics/set-up-workspace",
+      "bit-basics/choose-dev-env",
+      "bit-basics/add-components",
+      "bit-basics/lint",
+      "bit-basics/compile",
+      "bit-basics/test",
+      "bit-basics/version",
+      "bit-basics/export-to-scope",
+      "bit-basics/import-install-components",
+      "bit-basics/remove-deprecate-components",
+      "bit-basics/ci-cd"
     ],
     "Tutorials": [
       "tutorials/build-modular-react-app"
@@ -30,7 +30,9 @@
     ],
     "Bit Components": [
       "bit-components/overview",
-      "bit-components/compositions"
+      "bit-components/why-components",
+      "bit-components/compositions",
+      "bit-components/import-components"
     ],
     "Environments": [
       "environments/overview",
@@ -44,13 +46,19 @@
       "scope/remote-scope",
       "scope/self-host-bit-scope"
     ],
+    "Bit CLI": [
+      "cli/overview",
+      "cli/cheat-sheet",
+      "cli/extending-cli"
+    ],
     "Dependencies": [
       "dependencies/overview",
       "dependencies/dependency-graph",
       "dependencies/dependency-resolver"
     ],
     "Documentation": [
-      "documentation/overview"
+      "documentation/overview",
+      "documentation/documenting-react"
     ],
     "Compositions": [
       "compositions/overview"
@@ -74,8 +82,12 @@
     "Linting": [
       "linting/overview"
     ],
-    "packages": [
+    "Variants": [
+      "variants/overview"
+    ],
+    "Packages": [
       "packages/overview",
+      "packages/install-packages",
       "packages/publish-to-npm"
     ],
     "React": [
@@ -106,11 +118,6 @@
     "Development Server": [
       "development-server/overview",
       "development-server/create-extension"
-    ],
-    "CLI": [
-      "cli/overview",
-      "cli/cheat-sheet",
-      "cli/extending-cli"
     ],
     "Authentication": [
       "authentication/overview"

@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc:  'getting-started/what-is-bit', label: 'Docs' },
+    { doc:  'bit-basics/what-is-bit', label: 'Docs' },
     { href: 'https://blog.bitsrc.io/tagged/bit', label: 'Blog' },
     { href: 'https://bit.dev/support', label: 'Help' },
     { href: "https://github.com/teambit/bit", label: "Github" }
@@ -92,7 +92,7 @@ const siteConfig = {
     ]
   },
 
-  editUrl: 'https://github.com/teambit/docs/tree/new-docs/docs/',
+  editUrl: 'https://github.com/teambit/docs/tree/harmony-stg/docs/',
 
   algolia: {
     apiKey: '563802eec701896d912fda3505a903ae',
