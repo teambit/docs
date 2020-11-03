@@ -53,7 +53,7 @@ Initialize Bit workspace by running `bit init` command. The folder in which the 
 
 ```sh
 $ bit init
-Initiazlied an empty Bit worksapce
+Initialized an empty Bit worksapce
 ```
 
 ### Integrate with existing project
