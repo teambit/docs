@@ -11,7 +11,7 @@ Let's start. First choose a directory to be your workspace root, and then run th
 
 ```sh
 $ bit init
-Initialized an empty Bit worksapce
+Initialized an empty Bit workspace
 ```
 
 That's it, you've initialized your Bit workspace. You'll notice that you now have two files which are used to manage Bit components in the workspace.
@@ -22,5 +22,8 @@ That's it, you've initialized your Bit workspace. You'll notice that you now hav
 The configuration json is where you'll manage general configurations for the workspace. E.g. default scope for exporting to, dependencies, environments, etc. (we'll cover all of those in the next few steps).
 
 The component map is an auto-generated mapping between the Bit components your tracking in the workspace and their physical location on the file system. It's essentially how we disconnect the Bit component from its location in your repo.
+
+> At this stage, even if there are files and components inside your workspace, they still won't be recognised by Bit as you haven't told Bit to track them yet. That's
+> coming in the following steps.
 
 Now let's start using the newly generated `workspace.json`.
