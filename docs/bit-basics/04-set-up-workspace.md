@@ -3,8 +3,6 @@ id: set-up-workspace
 title: Set Up a Workspace
 ---
 
-# Set up a Bit Workspace
-
 A Bit workspace is a place where you want Bit to work its magic. Once you create a workspace, wherever you choose in your filesystem, you can start working with Bit. The directory you choose to set up your workspace will become the workspace root, any code within which can now be managed by Bit.
 
 Let's start. First choose a directory to be your workspace root, and then run the following command:

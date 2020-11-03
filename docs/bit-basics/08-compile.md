@@ -15,5 +15,5 @@ $ bit compile
   STATUS        COMPONENT ID
 ✔ SUCCESS       primitives/button
 
-✔ 1\1 components compiled successefully.
+✔ 1\1 components compiled successfully.
 ```
