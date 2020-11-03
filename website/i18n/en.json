@@ -27,10 +27,10 @@
         "title": "Overview"
       },
       "bit-basics/what-is-bit": {
-        "title": "What is Bit?"
+        "title": "Why Bit?"
       },
-      "bit-basics/hello-world": {
-        "title": "Hello World (Quick Tutorial)"
+      "bit-basics/getting-started": {
+        "title": "Getting Started"
       },
       "bit-basics/install-bit": {
         "title": "Install Bit"

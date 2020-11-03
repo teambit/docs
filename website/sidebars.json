@@ -2,7 +2,7 @@
   "docs": {
     "Bit Basics": [
       "bit-basics/what-is-bit",
-      "bit-basics/hello-world",
+      "bit-basics/getting-started",
       "bit-basics/install-bit",
       "bit-basics/set-up-workspace",
       "bit-basics/choose-dev-env",
