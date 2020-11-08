@@ -3,6 +3,8 @@ id: add-components
 title: Create/Add Components
 ---
 
+---->>> TODO MISSING AFTER THIS "CONTROL DEPENDENCIES" NEED TO ADD
+
 A Bit component is a JavaScript module that is completely independent and context-agnostic. It can "travel freely" from your local environment to a remote Bit scope and to other repositories. 
 
 A Bit component can be consumed either as a mutable component, to be developed in a Bit workspace, or as a standard node package. 

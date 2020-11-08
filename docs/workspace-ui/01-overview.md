@@ -3,13 +3,37 @@ id: overview
 title: Overview
 ---
 
-Bit's workspace comes with a feature-rich interface which we call **workspace UI**. We're constantly adding features (and if you want to invest in it you can even add features yourself), but the basic features are component Overview with documentation and examples playground, testing view, and compositions. Each has their own section in these docs, so here we'll just say that the place you'll actually see all of those features' outputs is the workspace UI.
+Bit enhances your development experience with a rich visual UI for components (i.e. "Workspace UI").  
+This visual interface is how you can view and manage every part of your component development workflow in real time.
 
-This UI exists both locally, so that you can use it as your local development and debugging portal, and also on the server. What you see locally is 1:1 what you'll see when you export the components so you can focus your efforts on local development and be sure that the final product will be exactly what you see in your dev environment.
+Through this UI you can can track the exact status of every component in your project at any given moment, in a visual way.  
+While you develop your components, Bit's UI will provide an exact picture of every part of your components' development:  
 
-> TODO - Image
+* **Explore and browse all components in your project**
+-->> TODO ADD VISUAL
+* **Explore the applied environments and configurations** for every component  
+-->> TODO ADD VISUAL
+* **Browse  each component's version history** and see its changelog  
+-->> TODO ADD VISUAL
+* **View each component's documentation** which can be later shared to the cloud  
+-->> TODO ADD VISUAL
+* **View live (hot-reloading) visual examples** for each component  
+-->> TODO ADD VISUAL
+* **View and control each component's dependency graph** (both dependencies and dependents)  
+-->> TODO ADD VISUAL
+* **Run and view the tests** of each component in isolation, and see the results change live as you code!  
+-->> TODO ADD VISUAL
+* **Run and view the build** process for each component  
+-->> TODO ADD VISUAL
+* Publish and install the component from Bit.dev or a different package registry  
 
-## Initializing the workspace UI
+Bit's workspace UI is 100% modular and composed of Bit components (extensions etc).  
+As such, you can extend, add, remove or replace any part of the UI to fit your development needs.  
+Yes, this means you can fully customize and create your own ultimate component development experience!  
+
+This UI exists both locally, so that you can use it as your local development and debugging portal, and also on the server. What you see locally is 1:1 what you'll see when you export the components to Bit.dev, so you can focus your efforts on local development and be sure that the final product will be exactly what you see in your dev environment.  
+
+## Initializing the workspace UI  
 
 You can run the workspace UI in any Bit workspace that has components. Open your terminal in the root directory of the workspace and run the following command:
 
@@ -23,11 +47,11 @@ The web application is served from `http://localhost:3000` (if port 3000 is unav
 
 Discoverability is a crucial feature of Bit's workspace. When the workspace UI is initialized, you are greeted with a gallery view of all components. 
 
-> If a component doesnt appear here, it means that even though its code maybe in the directory, you havent told bit to track it yet - i.e. you havent run `Bit add <component-name>` for that component.
+> If a component doesn't appear here, it means that even though its code maybe in the directory, you haven't told bit to track it yet - i.e. you haven run `Bit add <component-name>` for that component.
 
 This showcase is dynamic and gets updated whenever a new component is added, or an existing component is modified. Each component is annotated according to [its state](/docs/workspace/statuses) and test results, so you get a clear indication of how your code modifications have affected the component, in near real time.
 
-## Component local dev-server
+## Local component dev-server
 
 Each component has it's own local dev-server it renders when you browse it, the output of the local server is rendered in the workspace UI when you choose to view a specific component. The component's development server and features are part of the [component development environment](/docs/environment/overview). The workspace UI communicates with the **environments** to render information about the component.
 
@@ -35,8 +59,8 @@ Each component has it's own local dev-server it renders when you browse it, the 
 >
 > this should show that the right-panel is an iFrame that renders the selected component from the component-list.
 
-* **Overview** - Renders a documentation page for each component. [Learn more](/docs/documentation/automated-docs).
-* **Compositions** - An isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](/docs/compositions/develop-in-isolation).
+* **Overview** - Renders a documentation page for each component. [Learn more](/docs/documentation/automated-docs).  
+* **Compositions** - An isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](/docs/compositions/develop-in-isolation).  
 * **History** - Complete version history and changelog for the component. [Learn more](/docs/versioning/overview#building-component-history).
 * **Testing** - List of all the tests written for the component, including results and their logs. [Learn more](/docs/testing/correct-link-here)
 * **Configuration** - Configuration of the environment that the component was developed under [Learn more](/docs/testing/correct-link-here)

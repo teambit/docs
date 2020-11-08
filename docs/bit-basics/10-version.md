@@ -3,6 +3,9 @@ id: version
 title: Version
 ---
 
+--- TODO NO GOOD NEEDS A DO OVER.. ITS MOSTLY THEROETICAL STUFF WRITTEN BEFORE TAGGING WAS POSSIBLE. IT NEEDS TO HAVE RELAVANT AND USEFUL CONTENT FOR WORKING WITH VERSIONING IN BIT
+
+
 Tagging a component creates an immutable version of the component. This version can then be [exported](/docs/exporting/organizing-components).  
 A version contain the source code, configuration and all dependencies required to make a component usable. It is set according to the semantic versioning specs (MAJOR.MINOR.PATCH). By default, tagging a component without specifying a version bumps a patch version.
 
