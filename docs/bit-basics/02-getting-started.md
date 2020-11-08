@@ -3,7 +3,7 @@ id: getting-started
 title: Getting Started
 ---
 
------->>>> WE SHOULD CHANGE "BIT BASISCS" TO "GETTING STARTED"
+------>>>> WE SHOULD CHANGE "BIT BASISCS" TO "GETTING STARTED"  
 ------>>>> WE SHOULD REMOVE THIS SECTION ALTOGETHER
 
 
