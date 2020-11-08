@@ -17,7 +17,7 @@ $ bbit init --harmony
 Initialized an empty Bit workspace
 ```
 
-You'll notice the following been generated:
+You'll notice the following have been generated:
 
 1. `workspace.jsonc` - The Workspace configuration file (mentioned above).
 2. `.bitmap` - An auto-generated mapping between tracked components in the workspace and their physical location on the file system.
