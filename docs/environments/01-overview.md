@@ -3,11 +3,6 @@ id: overview
 title: Overview
 ---
 
----
-id: overview
-title: Overview
----
-
 ```sh
 $ bit build
 $ bit test

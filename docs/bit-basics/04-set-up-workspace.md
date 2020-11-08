@@ -3,25 +3,32 @@ id: set-up-workspace
 title: Set Up a Workspace
 ---
 
-A Bit workspace is a place where you want Bit to work its magic. Once you create a workspace, wherever you choose in your filesystem, you can start working with Bit. The directory you choose to set up your workspace will become the workspace root, any code within which can now be managed by Bit.
+A [Bit Workspace](/docs/workspace/overview) brings together the simplicity of a monolithic project with the endless possibilities offered by a distributed network of independent components. It lets you create and manage independent components in one single place by offering two essential features: 
 
-Let's start. First choose a directory to be your workspace root, and then run the following command:
+1. __A workspace configuration file__ to set rules and policies for the workspace itself but also for each component managed by it. Configurations are set for components in a CSS-like cascading way, from the most universal selector (all components) to the very specific one (a single component). This allows you to configure dependencies, environments, scopes, and so on, for each component, in a clear and efficient manner.
 
-```sh
-$ bit init
+2. [__A Workspace UI__](/docs/workspace-ui/overview), to assist you in developing and examining components as isolated and independent building blocks.
+  
+
+To get started, choose a directory for your workspace, and run the following command:
+
+```shell
+$ bbit init --harmony
 Initialized an empty Bit workspace
 ```
 
-That's it, you've initialized your Bit workspace. You'll notice that you now have two files which are used to manage Bit components in the workspace.
+You'll notice the following been generated:
 
-1. Workspace configuration - `workspace.json`
-1. Component map - `.bitmap`
+1. `workspace.jsonc` - The Workspace configuration file (mentioned above).
+2. `.bitmap` - An auto-generated mapping between tracked components in the workspace and their physical location on the file system.
+3. `.bit` (directory) - Your local scope, where all your 'tagged' (built & committed) components are stored
 
-The configuration json is where you'll manage general configurations for the workspace. E.g. default scope for exporting to, dependencies, environments, etc. (we'll cover all of those in the next few steps).
 
-The component map is an auto-generated mapping between the Bit components your tracking in the workspace and their physical location on the file system. It's essentially how we disconnect the Bit component from its location in your repo.
+To run the [Workspace UI](/docs/workspace-ui/overview) (with no components to display), run the following command:
 
-> At this stage, even if there are files and components inside your workspace, they still won't be recognised by Bit as you haven't told Bit to track them yet. That's
-> coming in the following steps.
+```shell
+$ bbit start
+```
+This will open-up your browser on `localhost:3000` and display your workspace in its current status.
 
-Now let's start using the newly generated `workspace.json`.
+> At this stage, components inside your workspace will not be recognized as you have not started to track them yet. That's coming in the following steps.
