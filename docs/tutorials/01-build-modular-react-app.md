@@ -3,6 +3,9 @@ id: build-modular-react-app
 title: Build a Modular React App
 ---
 
+------>>>> TODO MISSING CONTENT NEEEDS EDITING + COMPLETION + ADD VISUALS (GRAPH, CHANGELOG, COMPOSITIONS, EXAMPLES, TESTS RESULTS, BUILDS, EXPORT TO BIT.DEV ETC)  
+
+
 In this tutorial, you will learn how to build a truly modular application where each of its building block is completely independent, reusable, and shareable. 
 
 What we’ll cover:
@@ -12,7 +15,7 @@ What we’ll cover:
 * How to document a component
 * How to manually and programmatically test components using Bit compositions and popular testing libraries (provided by the pre-configured environment)
 * How to publish a component to a scope on Bit.dev
-* How to import a component from Bit.dev and integrate it into your own project
+* How to import a component from Bit.dev and integrate it into a new project
 
 ## Install Bit
 
