@@ -3,10 +3,13 @@ id: what-is-bit
 title: What is Bit?
 ---
 
-Bit makes life easier for JavaScript developers who build their applications with components. If you’re looking to develop and publish individual components from a repository to curated collections and use them to compose more applications, you came to the right place! Bit helps you develop your applications faster, with greater modularity and consistentency. Use Bit to distribute and maintain your design system, UI widgets, pages and features.
+Bit makes life easier for JavaScript developers who build their applications with components. If you’re looking to develop and publish individual components from a repository to curated collections, use them to compose more applications, with visibility to stake holders and design teams... then you've come to the right place!  
+
+Bit helps you develop your applications faster, with greater modularity and consistentency. Use Bit to distribute and maintain your design system, UI widgets, pages and features.
 
 - **Component centric workspace:** In a single workspace Bit manages all components as separate modules. Each component has its own history and configuration.
 - **Individual component publishing:** Publish each component separately so your consumers can use the specific components they need instead of a large library of components.
+- **Designer <-> Developer Collaboration**  
 - **Smart dependency graph:** Inside a Bit repository all components are connected using a single dependency graph. This means that whenever you modify a single component you can see the potential downstream effects without publishing or running any scripts.
 - **Development server for your components:** Render, test or document each component on its own development server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) per type of component, without requiring you to manage multiple processes.
 - **Fast and incremental builds:** Bit builds your project according to your dependency graph. So if you only work on a few components, only the relevant parts of the graph are built saving time and resources.
