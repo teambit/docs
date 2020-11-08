@@ -10,6 +10,7 @@ Through this UI you can can track the exact status of every component in your pr
 While you develop your components, Bit's UI will provide an exact picture of every part of your components' development:  
 
 * **Explore and browse all components in your project**
+-->> TODO ADD VISUAL
 * **Explore the applied environments and configurations** for every component  
 -->> TODO ADD VISUAL
 * **Browse  each component's version history** and see its changelog  
