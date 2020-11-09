@@ -10,7 +10,7 @@ Refactoring code often causes components to become obsolete or irrelevant. This 
 Removing a local component has no ripple effects. This is only relevant to the consuming project. To do so  specify the component ID to remove.
 
 ```shell
-$ bit remove foo/bar
+$ bbit remove foo/bar
 successfully removed components:
 foo/bar
 ```
@@ -30,7 +30,7 @@ Other components in the workspace may depend on removed components. Meaning that
 To remove a component from a remote scope, specify the full component ID.
 
 ```shell
-$ bit remove username.your-scope/foo/bar --remote
+$ bbit remove username.your-scope/foo/bar --remote
 successfully removed components:
 username.your-scope/foo/bar
 ```
@@ -51,13 +51,13 @@ This is what happens if we remove `left-pad`:
 * It is still possible to source `login` to another consumer project, as the cache works for Bit.
 * Installing `login` using npm fails because npm tries to install `left-pad` from its original scope.
 
-## Deprecate a component in a remote collection
+## Deprecate a component in a remote scope
 
-To deprecate a component in a remote Collection, specify the full component ID and use the `--remote` option.
+To deprecate a component in a remote Scope, specify the full component ID and use the `--remote` option.
 
 ```shell
-$ bit deprecate username.your-collection/foo/bar --remote
-deprecated components: username.your-collection/foo/bar
+$ bbit deprecate username.your-scope/foo/bar --remote
+deprecated components: username.your-scope/foo/bar
 ```
 
 ## Deprecating a component in a workspace
@@ -65,6 +65,6 @@ deprecated components: username.your-collection/foo/bar
 To deprecate a component in a workspace, specify the component ID.
 
 ```shell
-$ bit deprecate foo/bar
+$ bbit deprecate foo/bar
 deprecated components: foo/bar
 ```

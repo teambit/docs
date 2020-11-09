@@ -92,7 +92,7 @@ Overview.labels = ['react', 'typescript', 'button'];
 
 Examples are descriptions and playable code that instruct on how to use a component. 
 
-The `examples` variable receives an array of objects, each representing a single example and each contains the following data (keys):
+The `examples` variable receives an array of objects, each representing a single example with the following properties:
 
 - `scope` - An `object` with all relevant imports.
 - `title` - A `string` for the example title.
