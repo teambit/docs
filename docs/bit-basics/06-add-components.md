@@ -21,6 +21,8 @@ A Bit component contains the following elements:
 > The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page. 
 
 
+## Create a UI Component
+
 Let's create a UI 'Button' component:
 
 ```sh
@@ -164,7 +166,7 @@ $ bit add components/react/ui/button
 
 The 'Button' component should now appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component. 
 
-### Add compositions
+### Add compositions (render components in isolation)
 
 To examine our Button's look and behavior, let's create 'compositions' - these are different instances or usages of that component. 
 
