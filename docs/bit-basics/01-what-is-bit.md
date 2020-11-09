@@ -1,6 +1,6 @@
 ---
-id: Why Bit?
-title: Why Bit?
+id: what-is-bit
+title: What is Bit?
 ---
 
 Bit is the **component platform for the modern web**.  
