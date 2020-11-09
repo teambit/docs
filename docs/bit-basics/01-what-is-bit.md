@@ -76,7 +76,7 @@ Bit connects frontend teams by using components as services in a similar way to 
 
 Bit consist of *two core ingredients*:  
 
-*An [open source tool]*(https://github.com/teambit/bit) that enhances your project with a workspace that allows you to enjoy a simple monolith-like development experience, while building a fully distributed and modular application where every component is developed, documented, published, and released in a fully decoupled way.  
+*An [open source tool](https://github.com/teambit/bit)* that enhances your project with a workspace that allows you to enjoy a simple monolith-like development experience, while building a fully distributed and modular application where every component is developed, documented, published, and released in a fully decoupled way.  
 
 *A secured enterprise-grade cloud platform* where developers can collaborate on components, host scopes, share and integrate each other’s components, manage updates, and build together.  
 
@@ -86,24 +86,37 @@ Among Bit’s key features you will find:
 
 ![bit-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/harmony-workspace-1.png)  
 
-- **Individual component publishing:** Publish each component separately so your consumers can use the specific components they need instead of a large library of components.  
 
-- **Component dependency graph:** Inside a Bit repository all components are connected using a single dependency graph. This means that whenever you modify a single component you can see the propagating downstream effects without publishing or running any scripts. And though the Bit.dev cloud, you can scale this process to all impacted applications in your organization.
 
-![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png)  
-
-- **Development server for your components:** Render, test or document each component on its own development server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) per type of component, without requiring that you manage multiple processes.  
+- **Component development server:** Render, test or document each component on its own development server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) per type of component, without requiring that you manage multiple processes.  
 
 ![component-dev-server](https://storage.googleapis.com/static.bit.dev/harmony-docs/Workspace-Grid%20(1).png)  
 
-- **Fast and incremental builds:** Bit builds your project according to your dependency graph. So if you only work on a few components, only the relevant parts of the graph are actually built, reducing up to 95% on build time and resources.Yes, it’s a better way to build the modern web.
+- **Component dependency graphs:** Inside a Bit repository all components are connected using a single dependency graph. This means that whenever you modify a single component you can see the propagating downstream effects without publishing or running any scripts. And though the Bit.dev cloud, you can scale this process to all impacted applications in your organization.
+
+![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png) 
+
+- **Propagating component builds:** Bit builds your project according to your dependency graph. So if you only work on a few components, only the relevant parts of the graph are actually built, reducing up to 95% on build time and resources. Yes, it’s a better way to build the modern web.
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
 
-- **Standardize component development:** From scaffolding new components to setting lint, build and test configurations - use Bit to set base configurations for all your components.  
+- **Isolated component testing**: Test each component in complete isolation using predefined and customizable test environments, which can also be added into your pipelines. See tests running live on every change as you code, to create bulletproof independent components.  
+
+![component-tests](https://storage.googleapis.com/static.bit.dev/harmony-docs/Tests.png)  
+
+- **Seamless component publishing:** Publish all components in your workspace as individual packages each component separately so your consumers can use the specific components they need instead of a large library of components.  
+
+- **Component documentation and compositions**: Make documentation an integral part of how you build components, using customizable and reusable templates that turn your code into beautiful docs. And, render and add visual compositions of components to see and learn how it works in different contexts and with its different dependencies or dependants. All with live hot reloading.
+
+
+![docs-and-compositions](https://storage.googleapis.com/static.bit.dev/harmony-docs/Compositions%20(1).png)  
+
+
+- **Standard dev endv and build pipelines** From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components.  
 
 - **Component changelog:** Each component is versioned individually and has its own changelog so you can keep track of changes easily and quickly.
 
+![component-history](https://storage.googleapis.com/static.bit.dev/harmony-docs/History.png) 
 
 To learn more about Bit’s core concepts such as [Workspace](), [Scope](), [Environment](), or [Compositions](), feel free to explore the docs and learn more. Or, try the [Hello World!]() 5 min tutorial to get started hands-on.
 
