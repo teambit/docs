@@ -25,7 +25,7 @@ Popular use-cases for Bit are:
 * **[Standardization and Consistency](#standardization-and-consistency)**  
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
 * **[Scaling Web Development](#scaling-web-development)**  
-* **[Core Reuse](#code-reuse)**
+* **[Code Reuse](#code-reuse)**
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
 
