@@ -16,13 +16,3 @@ $ bbit --version
 $ npm install @teambit/bit --global
 $ yarn global add @teambit/bit
 ```
-
-## MacOS
-
-Install with Homebrew:
-
-To install Bit with [Homebrew](https://brew.sh) run:
-
-```shell
-$ brew install @teambit/bit
-```
