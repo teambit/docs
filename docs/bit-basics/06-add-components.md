@@ -3,8 +3,6 @@ id: add-components
 title: Create/Add Components
 ---
 
----->>> TODO MISSING AFTER THIS "CONTROL DEPENDENCIES" NEED TO ADD
-
 A Bit component is a JavaScript module that is completely independent and context-agnostic. It can "travel freely" from your local environment to a remote Bit scope and to other repositories. 
 
 A Bit component can be consumed either as a mutable component, to be developed in a Bit workspace, or as a standard node package. 
@@ -17,13 +15,13 @@ A Bit component contains the following elements:
 * Component version history
 * Dependency graph
 * Documentation
-* Information regarding the [environment](/docs/environments/overview) it needs
-* 'Compositions': various instances of that component as it's being used in different contexts and variations
+* Details regarding the [environment](/docs/environments/overview) it needs
+* Compositions (various instances of that component as it's being used in different contexts and variations)
 
 > The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page. 
 
 
-Let's create a UI 'button' component:
+Let's create a UI 'Button' component:
 
 ```sh
 $ mkdir components/react/ui/button
@@ -127,17 +125,19 @@ Button.defaultProps = {
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> A Bit component should have an entry file (index.ts) and all its files under the same directory.
+> A Bit component must have an entry file (index.ts) with all its files under the same directory.
 
 ### Install dependencies
 
-The above button component uses the `classnames` library. To install it, run the following command:
+Our 'Button' component uses the `classnames` module. To install it, run the following command:
 
 ```bash
 $ bbit install classnames
 ```
 
-Bit will make sure to automatically register this package in the workspace configurations file (`workspace.jsonc`), under the `dependency-resolver` entry (a Bit workspace has no `package.json` file). Check the `workspace.jsonc` file to make sure the `dependency-resolver` section now looks like this:
+Bit will make sure to automatically register this package in the workspace configurations file (`workspace.jsonc`). Notice how a Bit workspace does not use a `package.json` file to manage its dependencies. 
+
+Check the `workspace.jsonc` file to make sure the [`dependency-resolver`](/docs/dependencies/overview) section now looks as the snippet below:
 
 ```json
   "@teambit.bit/dependency-resolver": {
@@ -148,20 +148,29 @@ Bit will make sure to automatically register this package in the workspace confi
         "classnames": "^2.2.6"
       },
 ```
+As you recall from the ['Set up a workspace'](docs/bit-basics/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
 
-### Track the Component
+To select a more limited set of components use the ['variants'](docs/variants/overview) field.
 
-If you head over to the Workspace UI [http://localhost:3000]() you will see the Button component is not displayed. That is because Bit is not tracking it yet. 
+### Track the component
 
-To start tracking the Button component:
+Our 'Button' component does not show up in our Workspace UI yet as it is not tracked by Bit.
+
+To start tracking it:
 
 ```sh
 $ bit add components/react/ui/button
 ```
 
-The Button component should now appear in the Workspace UI navigation bar with an "N" to its right, to signify a new component. 
+The 'Button' component should now appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component. 
 
-To examine our Button, let's create 'compositions' - instances of that component. It will be rendered in its own isolated environment and displayed in the workspace UI.
+### Add compositions
+
+To examine our Button's look and behavior, let's create 'compositions' - these are different instances or usages of that component. 
+
+Each composition will be rendered in its own isolated environment and displayed in the workspace UI.
+
+Rendering components in an isolated environment gives us a clear understanding of their behavior as they are guaranteed to be un-effected by their context. In addition to that, compositions play a crucial role in the documentation of a component as they demonstrate the various ways of which that component can be used.
 
 We'll start by creating a new 'compositions' file 
 
@@ -169,7 +178,7 @@ We'll start by creating a new 'compositions' file
 $ touch components/ui/button/button.composition.tsx
 ```
 
-And add the following lines to `components/ui/button/button.composition.tsx`
+Then, add the following lines to `components/ui/button/button.composition.tsx`
 
 ```tsx
 import React from "react";
@@ -196,4 +205,4 @@ export const DisabledButton = () => {
 };
 ```
 
-Head over to the [compositions tab](https://localhost:3000/base/button/~compositions) to see all of the `button` compositions we just created.
+Head over to the 'compositions' tab to see the various `Button` compositions being rendered.

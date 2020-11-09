@@ -3,9 +3,6 @@ id: what-is-bit
 title: Why Bit?
 ---
 
------->>>> THE TITLE "BIT BASICS" NEEDS TO CHANGE INTO "GETTING STARTED"  
------->>>> WE SHOULD CHANGE THE NAME OF THIS SECTION ("WHY BIT?") TO "INTRODUCTION". YONI WILL RE-WRITE THE CONTENT.
-
 Bit makes life easier for JavaScript developers who build their applications with components. If you’re looking to develop and publish individual components from a single repository to curated collections and use them to compose more applications, you came to the right place! Bit helps you develop your applications faster, with greater modularity and consistency. Use Bit to distribute and maintain your design system, UI widgets, pages and features.
 
 - **Component centric workspace:** In a single workspace Bit manages all components as separate modules. Each component has its own history and configuration.

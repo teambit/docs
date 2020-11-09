@@ -2,15 +2,14 @@
   "docs": {
     "Bit Basics": [
       "bit-basics/what-is-bit",
-      "bit-basics/getting-started",
       "bit-basics/install-bit",
       "bit-basics/set-up-workspace",
       "bit-basics/choose-dev-env",
       "bit-basics/add-components",
+      "bit-basics/document",
       "bit-basics/lint",
       "bit-basics/compile",
       "bit-basics/test",
-      "bit-basics/version",
       "bit-basics/export-to-scope",
       "bit-basics/import-install-components",
       "bit-basics/remove-deprecate-components",

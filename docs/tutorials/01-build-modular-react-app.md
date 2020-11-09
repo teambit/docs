@@ -3,9 +3,6 @@ id: build-modular-react-app
 title: Build a Modular React App
 ---
 
------->>>> TODO MISSING CONTENT NEEEDS EDITING + COMPLETION + ADD VISUALS (GRAPH, CHANGELOG, COMPOSITIONS, EXAMPLES, TESTS RESULTS, BUILDS, EXPORT TO BIT.DEV ETC)  
-
-
 In this tutorial, you will learn how to build a truly modular application where each of its building block is completely independent, reusable, and shareable. 
 
 What we’ll cover:

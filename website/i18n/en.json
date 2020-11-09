@@ -44,17 +44,14 @@
       "bit-basics/add-components": {
         "title": "Create/Add Components"
       },
-      "bit-basics/lint": {
-        "title": "Lint"
+      "bit-basics/07-lint": {
+        "title": "bit-basics/07-lint"
       },
       "bit-basics/compile": {
         "title": "Compile"
       },
       "bit-basics/test": {
         "title": "Test"
-      },
-      "bit-basics/version": {
-        "title": "Version"
       },
       "bit-basics/export-to-scope": {
         "title": "Export to a Remote Scope"
@@ -67,6 +64,9 @@
       },
       "bit-basics/ci-cd": {
         "title": "Add to CI/CD"
+      },
+      "bit-basics/document": {
+        "title": "Document"
       },
       "bit-basics/future-intro": {
         "title": "bit-basics/future-intro"
