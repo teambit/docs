@@ -15,9 +15,6 @@
       "bit-basics/remove-deprecate-components",
       "bit-basics/ci-cd"
     ],
-    "Tutorials": [
-      "tutorials/build-modular-react-app"
-    ],
     "Workspace": [
       "workspace/overview",
       "workspace/configurations",
