@@ -87,6 +87,11 @@ Among Bit’s key features you will find:
 ![bit-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/harmony-workspace-1.png)  
 
 
+- **Component dev environments:** TODO
+
+
+- **Scopes:** TODO
+
 
 - **Component development server:** Render, test or document each component on its own development server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) per type of component, without requiring that you manage multiple processes.  
 
@@ -104,7 +109,7 @@ Among Bit’s key features you will find:
 
 ![component-tests](https://storage.googleapis.com/static.bit.dev/harmony-docs/Tests.png)  
 
-- **Seamless component publishing:** Publish all components in your workspace as individual packages each component separately so your consumers can use the specific components they need instead of a large library of components.  
+- **Component publishing:** Publish all components in your workspace as individual packages each component separately so your consumers can use the specific components they need instead of a large library of components.  
 
 - **Component documentation and compositions**: Make documentation an integral part of how you build components, using customizable and reusable templates that turn your code into beautiful docs. And, render and add visual compositions of components to see and learn how it works in different contexts and with its different dependencies or dependants. All with live hot reloading.
 
