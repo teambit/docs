@@ -4,19 +4,19 @@ title: What is Bit?
 ---
 
 
-Bit is the **component platform for the modern web**.  
+Bit is the **component platform for the modern web**. 
 
-With Bit, you can *speed up and improve the process of web development*, while building more performant, consistent and resilient web applications.  
+It helps you build modular apps with components. With Bit, you can *speed up* and *scale* the process of web development, delivering more performant, consistent and resilient web applications.  
 
-Bit allows you to build fully distributed and modular applications, while enjoying a simple yet powerful monolithic development experience. Each component of the application is independently developed, built, tested, versioned, published, and released to production.  
+Bit allows you to build fully modular applications in a dsitribued way, while enjoying a simple and holistic development experience (with a "monolith-like" feeling). Each component of the application is independently developed, built, tested, versioned, published, and released to production.  
 
-Every single component written in a Bit-enhanced project can be instantly exported, shared, and integrated into new applications built by other teams using different technology stacks.  
+Every single component written in a Bit-enhanced project can be instantly exported, shared, and integrated into new applications built by other teams.
 
 All the different components and all relationships between components are managed in Bit’s workspace, creating a smooth and harmonized experience that enhances every step of the development workflow and allows the composition of highly scalable and performant projects.  
 
 Bit helps teams *scale their web development process together*. Different product teams can become autonomous to develop and ship features in their own codebases and decoupled pipelines, while everyone can share and integrate up to 100% of their components with others. Building web applications together becomes an efficient, fast, and well standardized process.  
 
-*Bit is used by thousands of teams*, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
+**Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
 
 Popular use-cases for Bit are:
 
