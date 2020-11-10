@@ -7,7 +7,13 @@ Once you start building your project with Bit, it essentially becomes part of on
 
 In addition to that, components can be installed as standard node packages, either in a Bit workspace or even in a non-Bit project.
 
-## Import components
+## Bit Import components
+
+It's important to be clear on terminology here - when we say Bit import of a component, we don't mean importing it as a node_module dependency for a component via the line `import {x} from 'component-name'`. 
+
+Instead we mean a Bit import which vendors the code into your workspace so that you can work on and debug the source code files of the component. This can be useful in a number of scenarios, from forking a component down to IDE debugging of a potential issue and creating a local fix (which you can then notify the component maintainers about).  
+
+When you make any changes to an imported component and compile those changes, the compiled output is linked as a node_module - in fact, as soon as you import the component Bit automatically creates a node_module for consuming it. But in this case you are consuming the local version of the component, including any changes you might make to it.
 
 ### Import a single component
 A single component is imported using its ID. A component ID has the following pattern: 
@@ -38,12 +44,12 @@ $ bbit import bbit import teambit.bad-jokes/ui-primitives/*
 
 ### Import latest versions of components in a workspace
 
-To get the latest versions of every component in our workspace, we'll run:
+To get the latest versions of every imported component in our workspace, we'll run:
 
 ```shell
 $ bbit import
 ```
-> Component updates are only possible for components stored in your local scope (these are either imported or 'tagged' components)
+> Component updates are only possible for components stored in your local scope (these are either imported or 'tagged' components) 
 ### Change the configurations of an imported component
 Imported components expose their configurations in the `component.json` file. Its configuration structure is quite  similar to the workplace's.
 
