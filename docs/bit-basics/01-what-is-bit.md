@@ -45,7 +45,7 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 
 ![Design system](https://i.ibb.co/XDwLKrw/Scope-bitdev.png)
 
-*Design systems* are how great teams keep their UI consistent across multiple pages and applications. Modern design systems are built with components, which are used as shared building blocks to ensure consistency. Bit is a perfect way to construct a design system from independent components which are developed, built, and published by custom regulated standards. Bit.dev is the most effective platform for teams to distribute, discover, use, and collaborate on their component-driven design system. Instead of a cumbersome monolithic and often irrelevant library, Bit provides a collaborative and scalable ecosystem where everyone can share and discover components, get and suggest changes, ensure consistency, and build together. For example, whenever there’s a new version of a component, a single push of a button can send the update as an automated PR to every impacted repository in the organization. And, a developer that uses one of your components in their own application, can suggest changes back to you without having to dive into your repository or making a complex PR to your project. Super cool, right? And, it’s also a great way for developers to include more people, like designers, in their web development process - directly over code, and in a visual way. Try it out for yourself.
+*Design systems* are how great teams keep their UI consistent across multiple pages and applications. Modern design systems are built with components, which are used as shared building blocks to ensure consistency. Bit is a perfect way to construct a design system from independent components which are developed, built, and published by custom regulated standards. Bit.dev is the most effective platform for teams to distribute, discover, use, and collaborate on their component-driven design system. Instead of a cumbersome monolithic and often irrelevant library, Bit provides a collaborative and scalable ecosystem where everyone can share and discover components, get and suggest changes, ensure consistency, and build together. For example, whenever there’s a new version of a component, a single push of a button can send the update as an automated PR to every impacted repository in the organization. And, a developer that uses one of your components in their own application, can suggest changes back to you without having to dive into your repository or making a complex PR to your project. Super cool, right? And, it’s also a great way for developers to include more people, like designers, in their web development process - directly over code, and in a visual way. 
 
 #### Micro Frontends  
 
@@ -99,6 +99,7 @@ Bit’s workspace turns your project into a smart “monorepo” where component
 
 Bit lets you develop multiple components in the same workspace, while completely decoupling their development environments from each other. Each component is developed in its own environment, so it can be built, tested, versioned, published etc completely independently. These environments are fully reusable, customizable, and extensible, so you can easily choose and standardize the way components are developed in your own applications.
 
+![component-dev-environments](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-11-10%20at%202.56.23%20PM.png)  
 
 #### Scopes 
 
@@ -141,6 +142,7 @@ Make documentation an integral part of how you build components, using customiza
 ![docs-and-compositions](https://storage.googleapis.com/static.bit.dev/harmony-docs/Compositions%20(1).png)  
 
 #### Reusable build pipelines  
+
 From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
 
 #### Component changelog    
@@ -153,11 +155,15 @@ Each component is versioned individually and has its own changelog so you can ke
 
 ### Cloud platform key features
 
-Enjoy a secured enterprise-grade cloud platform to easily scale development to multiple projects and teams, with a single hub to share, discover, and collaborate on all your components. 
+Bit.dev is your collaborative ecosystem to share components as a team and build applications together while keeping all components in perfect sync.
+
+Enjoy a secured enterprise-grade cloud platform to easily scale development to multiple projects and teams, with a single hub to share, collaborate, and integrate components with each other.
 
 #### Hosting for components
 
-TODO
+Host all your components on Bit’s cloud platform to allow streamlined collaboration and integration between different teams and projects.
+
+Host your component Scopes on the cloud, to enjoy advanced features such as role-based permissions, component search, and a built-in package registry to install your components. Have all your components in one place, available for your entire team to share together.
 
 #### Documentation and discovery
 
@@ -168,20 +174,20 @@ As you create components, Bit helps you create stunning customized documentation
 ![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-11%20at%204.02.54%20PM.png)  
 
 
-#### Package registry
+#### Built-in package registry
 
 Every component can be independently installed as a package via a built-in registry 
 that supports installation via the npm, pnpm, and yarn clients. This means you now have your components hosted, documented and ready to install - all in one place.
 
 
-#### Updates and collaboration
+#### Component updates and automated cross-project PRs
 
-TODO
+Bit.dev manages updates for all components hosted on the platform. Everyone can easily collaborate on shared components, suggest updates right from their local projects, and create a thriving ecosystem of shared components in your organization. Bit.dev even integrates to GitHub/GitLab so it “knows” exactly which components are used in which projects, to send automated PRs that help make sure all projects and teams will get all relevant updates. And, it integrates with Slack and more tools to help your team smoothly work together. 
+
+![bitdev-integrations-slack-github](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-11-10%20at%204.43.00%20PM.png)  
 
 #### RIPPLE CI: Modular Propagating Builds for The Modern Web (*Coming Soon*)
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
-
-
