@@ -8,7 +8,7 @@ Bit is the **component platform for the modern web**.
 
 It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.
 
-Bit allows you to build fully modular applications in a dsitribued way, while enjoying a simple and holistic development experience. Each component of the application is independently developed, built, tested, versioned, published, and even integrated into new applications built by other teams.
+Bit allows you to build fully modular applications in a distributed way, while enjoying a simple and holistic development experience. Each component of the application is independently developed, built, tested, versioned, published, and even integrated into new applications built by other teams.
 
 All the different components and all relationships between components are managed in Bit’s workspace, creating a smooth and harmonized experience that enhances every step of the development workflow and allows the composition of highly scalable and performant projects.
 
@@ -16,7 +16,7 @@ Bit helps teams *scale their web development process together*. It makes teams a
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
 
-Popular use cases:
+**What Bit can do for you**:
 
 * **[UI Design Systems](#ui-design-system)**  
 * **[Micro Front-Ends](#micro-frontends)**  
@@ -24,6 +24,12 @@ Popular use cases:
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
 * **[Scaling Web Development](#scaling-web-development)**  
 * **[Code Reuse](#code-reuse)**
+
+**Core features**:
+
+* **[Extensible dev tools](#extensible-development-tools)**
+* **[Cloud Platform](#cloud-platform-key-features)**  
+
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
 
@@ -56,6 +62,8 @@ Independent components and decoupled codebases means independent teams and auton
 
 Conway’s law suggests a clear symmetry between a codebase architectural style and the way that codebase is built by people working together. Building applications with independent components means developers create and deliver features independently. It means they are completely decoupled from anything that has the potential to become a blocker to their own progress. That naturally translates to faster delivery but that also reduces frustration, as each developer enjoys complete autonomy and full mastery over their own scope.
 
+![Autonomous-Teams](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.22.04%20PM.png)  
+
 #### Scaling Web Development
 
 As developers we are tasked with building innovative solutions for our products. When we don't have an efficient way of isolating and sharing code we've already implemented we are locked in an endless cycle of re-implementing the same functionality we built before and then maintaining it in multiple code bases. With the introduction of component-based frameworks like React, Angular and Vue our code has become more modular and the components we design can work in multiple apps and use cases. However they are implemented in rigid code repositories that don't allow us to easily reuse an already implemented piece of code.
@@ -76,48 +84,100 @@ Bit connects frontend teams by using components as services in a similar way to 
 
 The [Bit.dev cloud platform](https://bit.dev/) is an enterprise-grade solution for developers to share and collaborate on components, continuously integrate with changes with each other, and make sure that all applications are always up to date with the latest versions.
 
-Among Bit’s key features you will find:  
+### Extensible development tools
 
-- **Component workspace:** Bit’s workspace turns your project into a smart “monorepo” where components are fully decoupled from each other during every step of their development, build, test, and publish process. Bit will ensure each component is completely independent, while helping you manage and synchronize all components in your project with an effortless and holistic developer experience. It is a bedrock for truly modular and harmonized development.
+A rich and fully extensible toolset for modular application development.
+
+#### Component workspace
+
+Bit’s workspace turns your project into a smart “monorepo” where components are fully decoupled from each other during every step of their development, build, test, and publish process. Bit will ensure each component is completely independent, while helping you manage and synchronize all components in your project with an effortless and holistic developer experience. It is a bedrock for truly modular and harmonized development.
 
 ![bit-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/harmony-workspace-1.png)  
 
+#### Component dev environments
 
-- **Component dev environments:** Bit lets you develop multiple components in the same workspace, while completely decoupling their development environments from each other. Each component is developed in its own environment, so it can be built, tested, versioned, published etc completely independently. These environments are fully reusable, customizable, and extensible, so you can easily choose and standardize the way components are developed in your own applications.
+Bit lets you develop multiple components in the same workspace, while completely decoupling their development environments from each other. Each component is developed in its own environment, so it can be built, tested, versioned, published etc completely independently. These environments are fully reusable, customizable, and extensible, so you can easily choose and standardize the way components are developed in your own applications.
 
 
-- **Scopes:** A “Scope” is a lightweight component server that provides a rich API for accessing, persisting and versioning components. Scopes host and organize your components so that they can be easily managed, exposed, and integrated into new environments.  
+#### Scopes 
 
-- **Component development server:** Bit comes with a powerful dev server for components, that lets you render, test and document each component on its own server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) for different types of components, without requiring that you manage multiple processes.  
+A “Scope” is a lightweight component server that provides a rich API for accessing, persisting and versioning components. Scopes host and organize your components so that they can be easily managed, exposed, and integrated into new environments.  
+
+#### Component development server  
+
+Bit comes with a powerful dev server for components, that lets you render, test and document each component on its own server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) for different types of components, without requiring that you manage multiple processes.  
 
 ![component-dev-server](https://storage.googleapis.com/static.bit.dev/harmony-docs/Workspace-Grid%20(1).png)  
 
-- **Component dependency graphs:** Bit is smart, it tracks and “knows” about the relationships between all components in your workspace. When you make a change, Bit “knows” which other components are impacted by the change, and helps you safely propagate the change to all impacted components while making sure they will still pass their build and tests. You can easily view and manage each component’s dependency graph, or the entire graph of your project, right in your local development UI.
+#### Component dependency graphs  
+
+Bit is smart, it tracks and “knows” about the relationships between all components in your workspace. When you make a change, Bit “knows” which other components are impacted by the change, and helps you safely propagate the change to all impacted components while making sure they will still pass their build and tests. You can easily view and manage each component’s dependency graph, or the entire graph of your project, right in your local development UI.
 
 ![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png) 
 
-- **Propagating modular builds:** When you make a change in your project, Bit “knows” exactly which components are impacted by that change. It uses this information to rebuild and retest only the components impacted by the change, and infinitely propagates this process to all impacted dependents. The result? X30 (!) faster build times and surgical ability to pin-poin the impact of changes on the graph. 
+#### Propagating incremental builds  
+
+ When you make a change in your project, Bit “knows” exactly which components are impacted by that change. It uses this information to rebuild and retest only the components impacted by the change, and infinitely propagates this process to all impacted dependents. The result? X30 (!) faster build times and surgical ability to pin-poin the impact of changes on the graph. 
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
 
 > **COMING SOON: RIPPLE CI -> PROPAGATE CHANGES TO ALL APPLICATIONS**: Ripple CI is a new way to build web applications. It extends the propagation of your build process on the component graph, to all impacted. Meaning, you can now safely deliver a new version of any component to all impacted projects in your organization - with a click of a button. Want to learn more? [let us know](https://bit.dev/contact-sales).
 
+#### Isolated builds and testing
 
-- **Isolated component testing**: Test each component in complete isolation using predefined and customizable test environments, which can also be added into your pipelines. See tests running live on every change as you code, to create bulletproof independent components.  
+Build and test each component in complete isolation using predefined and customizable test environments, which can also be added into your pipelines. See builds and tests running live on every change as you code, to create bulletproof independent components that run anywhere.  
 
 ![component-tests](https://storage.googleapis.com/static.bit.dev/harmony-docs/Tests.png)  
 
-- **Component publishing:** Enjoy 100% reusability for all components as a seamless side effect of your development workflow. Publish independent components in your workspace as individual packages without having to split your project, define complex configurations, or do anything else but simply developing your components in Bit’s workspace. 
+#### Component publishing
+ 
+Enjoy 100% reusability for all components as a seamless side effect of your development workflow. Publish independent components in your workspace as individual packages without having to split your project, define complex configurations, or do anything else but simply developing your components in Bit’s workspace. 
 
-- **Customizable documentation templates**: Make documentation an integral part of how you build components, using customizable and reusable templates that turn your code into beautiful docs. And, render and add visual compositions of components to see and learn how it works in different contexts and with its different dependencies or dependants. All with live hot reloading. When done, place your docs on [Bit.dev](https://bit.dev/ for everyone else to discover and enjoy!
+#### Customizable documentation templates
+ 
+Make documentation an integral part of how you build components, using customizable and reusable templates that turn your code into beautiful docs. And, render and add visual compositions of components to see and learn how it works in different contexts and with its different dependencies or dependants. All with live hot reloading. When done, place your docs on [Bit.dev](https://bit.dev/ for everyone else to discover and enjoy!
 
 ![docs-and-compositions](https://storage.googleapis.com/static.bit.dev/harmony-docs/Compositions%20(1).png)  
 
-- **Reusable build pipelines** From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
+#### Reusable build pipelines  
+From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
 
-- **Component changelog:** Each component is versioned individually and has its own changelog so you can keep track of changes easily and quickly. View each component’s history, travel between versions, to easily learn what changed, by who, and when.
+#### Component changelog    
+
+Each component is versioned individually and has its own changelog so you can keep track of changes easily and quickly. View each component’s history, travel between versions, to easily learn what changed, by who, and when.
 
 ![component-history](https://storage.googleapis.com/static.bit.dev/harmony-docs/History.png) 
 
-To learn more about Bit’s core concepts such as [Workspace](), [Scope](), [Environment](), or [Compositions](), feel free to explore the docs and learn more. Or, try the [Hello World!]() 5 min tutorial to get started hands-on.
+> To learn more about Bit’s core concepts such as [Workspace](), [Scope](), [Environment](), or [Compositions](), feel free to explore the docs and learn more. Or, try the [Hello World!]() 5 min tutorial to get started hands-on.
+
+### Cloud platform key features
+
+TODO
+
+#### Hosting for components
+
+TODO
+
+#### Documentation and discovery
+
+TODO
+
+![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-11%20at%204.02.54%20PM.png)  
+
+
+#### Package registry
+
+TODO
+
+#### Updates and collaboration
+
+TODO
+
+#### Component builds
+
+TODO
+
+![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
+
+
 
