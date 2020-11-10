@@ -8,13 +8,11 @@ Bit is the **component platform for the modern web**.
 
 It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.
 
-Bit allows you to build fully modular applications in a dsitribued way, while enjoying a simple and holistic development experience (with a "monolith-like" feeling). Each component of the application is independently developed, built, tested, versioned, published, and released to production.  
+Bit allows you to build fully modular applications in a dsitribued way, while enjoying a simple and holistic development experience. Each component of the application is independently developed, built, tested, versioned, published, and even integrated into new applications built by other teams.
 
-Every single component written in a Bit-enhanced project can be instantly exported, shared, and integrated into new applications built by other teams.
+All the different components and all relationships between components are managed in Bit’s workspace, creating a smooth and harmonized experience that enhances every step of the development workflow and allows the composition of highly scalable and performant projects.
 
-All the different components and all relationships between components are managed in Bit’s workspace, creating a smooth and harmonized experience that enhances every step of the development workflow and allows the composition of highly scalable and performant projects.  
-
-Bit helps teams *scale their web development process together*. Different product teams can become autonomous to develop and ship features in their own codebases and decoupled pipelines, while everyone can share and integrate up to 100% of their components with others. Building web applications together becomes an efficient, fast, and well standardized process.  
+Bit helps teams *scale their web development process together*. It makes teams autonomous to develop and deliver features, working in their own decoupled codebases and releasing through their own decoupled pipelines. At the same time, all teams can easily share components and smoothly integrate with each other. This makes the development of web applications together becomes an efficient, fast, and very scalable process.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
 
