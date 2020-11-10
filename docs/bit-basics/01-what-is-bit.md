@@ -16,7 +16,7 @@ Bit helps teams *scale their web development process together*. It makes teams a
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
 
-**What Bit can do for you**:
+**What can Bit do for you?**:
 
 * **[UI Design Systems](#ui-design-system)**  
 * **[Micro Front-Ends](#micro-frontends)**  
@@ -29,7 +29,6 @@ Bit helps teams *scale their web development process together*. It makes teams a
 
 * **[Extensible dev tools](#extensible-development-tools)**
 * **[Cloud Platform](#cloud-platform-key-features)**  
-
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
 
