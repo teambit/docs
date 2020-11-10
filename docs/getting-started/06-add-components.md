@@ -168,19 +168,6 @@ The 'Button' component will now appear in the Workspace UI navigation bar with a
 > * It determines the component entry point and its dependency graph
 > * It creates a package in the node_modules directory 
 
-### Referencing to local components
-To keep your components independent never use relative paths to reference one component to another.
-#### Don't
-Don't reference to a component directory
- ```js
- import { Button } from '../button'`
-```
-#### Do
-Always reference to its node module name
-```js
-import { Button } from '@my-scope/button'
-```
-
 ### Add compositions (render components in isolation)
 
 To examine our Button's look and behavior, let's create 'compositions' - these are different instances or usages of that component. 
@@ -225,3 +212,16 @@ export const DisabledButton = () => {
 Head over to the 'compositions' tab to see the various `Button` compositions being rendered.
 
 ![Button Compositions](/img/compositions.png)
+
+### Referencing to local components
+To keep your components independent never use relative paths to reference one component to another.
+#### Don't
+Don't reference to a component directory
+ ```js
+ import { Button } from '../button'`
+```
+#### Do
+Always reference to its node module name
+```js
+import { Button } from '@my-scope/button'
+```
