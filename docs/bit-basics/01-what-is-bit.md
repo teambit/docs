@@ -4,7 +4,7 @@ title: What is Bit?
 ---
 
 
-### Bit is the **component platform for the modern web**. 
+### Bit is the component platform for the modern web. 
 
 It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.
 
@@ -117,21 +117,27 @@ Bit is smart, it tracks and “knows” about the relationships between all comp
 
 ![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png) 
 
-#### Propagating incremental builds  
-
- When you make a change in your project, Bit “knows” exactly which components are impacted by that change. It uses this information to rebuild and retest only the components impacted by the change, and infinitely propagates this process to all impacted dependents. The result? X30 (!) faster build times and surgical ability to pin-poin the impact of changes on the graph. 
-
-![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
-
-> **COMING SOON: RIPPLE CI -> PROPAGATE CHANGES TO ALL APPLICATIONS**: Ripple CI is a new way to build web applications. It extends the propagation of your build process on the component graph, to all impacted. Meaning, you can now safely deliver a new version of any component to all impacted projects in your organization - with a click of a button. Want to learn more? [let us know](https://bit.dev/contact-sales).
-
 #### Isolated builds and testing
 
 Build and test each component in complete isolation using predefined and customizable test environments, which can also be added into your pipelines. See builds and tests running live on every change as you code, to create bulletproof independent components that run anywhere.  
 
 ![component-tests](https://storage.googleapis.com/static.bit.dev/harmony-docs/Tests.png)  
 
-#### Component publishing
+#### Reusable and customizable build pipelines  
+
+From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
+
+![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
+
+#### Propagating incremental builds  
+
+ When you make a change in your project, Bit “knows” exactly which components are impacted by that change. It uses this information to rebuild and retest only the components impacted by the change, and infinitely propagates this process to all impacted dependents. The result? X30 (!) faster build times and surgical ability to pin-poin the impact of changes on the graph. 
+
+![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
+
+> **COMING SOON: RIPPLE CI -> PROPAGATE CHANGES TO ALL APPLICATIONS**: Ripple CI is a new way to build web applications. It extends the propagation of your build process on the component graph, to all impacted. Meaning, you can now safely deliver a new version of any component to all impacted projects in your organization - with a click of a button. Want to learn more? [let us know](https://bit.dev/contact-sales).
+
+#### Independent component publishing
  
 Enjoy 100% reusability for all components as a seamless side effect of your development workflow. Publish independent components in your workspace as individual packages without having to split your project, define complex configurations, or do anything else but simply developing your components in Bit’s workspace. 
 
@@ -141,11 +147,7 @@ Make documentation an integral part of how you build components, using customiza
 
 ![docs-and-compositions](https://storage.googleapis.com/static.bit.dev/harmony-docs/Compositions%20(1).png)  
 
-#### Reusable build pipelines  
-
-From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
-
-#### Component changelog    
+#### Component changelog and version history  
 
 Each component is versioned individually and has its own changelog so you can keep track of changes easily and quickly. View each component’s history, travel between versions, to easily learn what changed, by who, and when.
 
@@ -159,13 +161,13 @@ Bit.dev is your collaborative ecosystem to share components as a team and build 
 
 Enjoy a secured enterprise-grade cloud platform to easily scale development to multiple projects and teams, with a single hub to share, collaborate, and integrate components with each other.
 
-#### Hosting for components
+#### Secured cloud hosting for components
 
 Host all your components on Bit’s cloud platform to allow streamlined collaboration and integration between different teams and projects.
 
 Host your component Scopes on the cloud, to enjoy advanced features such as role-based permissions, component search, and a built-in package registry to install your components. Have all your components in one place, available for your entire team to share together.
 
-#### Documentation and discovery
+#### Effortless documentation and discovery
 
 No more creating and maintaining additional documentation websites. As Bit makes it easy for many developers to share and collaborate on many components.
 
@@ -173,14 +175,16 @@ As you create components, Bit helps you create stunning customized documentation
 
 ![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-11%20at%204.02.54%20PM.png)  
 
+#### Team management  
 
-#### Built-in package registry
+Easily manage and scale your organization on Bit.div with advanced features like assigning team ownerships over scopes, roll-based permissions, SSO and more. The platform is trusted by global teams that build together at first-class scale.  
+
+#### Built-in package registry  
 
 Every component can be independently installed as a package via a built-in registry 
 that supports installation via the npm, pnpm, and yarn clients. This means you now have your components hosted, documented and ready to install - all in one place.
 
-
-#### Component updates and automated cross-project PRs
+#### Managed updates and automated GitHub/GitLab PRs  
 
 Bit.dev manages updates for all components hosted on the platform. Everyone can easily collaborate on shared components, suggest updates right from their local projects, and create a thriving ecosystem of shared components in your organization. Bit.dev even integrates to GitHub/GitLab so it “knows” exactly which components are used in which projects, to send automated PRs that help make sure all projects and teams will get all relevant updates. And, it integrates with Slack and more tools to help your team smoothly work together. 
 
@@ -191,6 +195,3 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
-
-
-
