@@ -15,8 +15,8 @@ There are several ways to trigger the **compile** step defined in the Component 
 
 Bit's local dev server compiles each component that you modify. This happens on every "save" operation for a file you edit.
 
-```sh
-$ bit start
+```shell
+$ bbit start
 ENVIRONMENT NAME        URL                      STATUS
 react              http://localhost:3101         Running
 node               http://localhost:3102         Running
@@ -32,7 +32,7 @@ Waiting for component changes... (10:17:20)
 You can manually trigger component compilation using the `bit compile` command.
 
 ```sh
-$ bit compile
+$ bbit compile
 
   STATUS        COMPONENT ID
 ✔ SUCCESS       primitives/button
@@ -45,7 +45,7 @@ $ bit compile
 Alongside the local dev server, Bit features a watch mode that runs differnet opertaions for modified components. Component compilation is one of these tasks.
 
 ```sh
-$ bit watch
+$ bbit watch
 ```
 
 ## Component `dist` outputs

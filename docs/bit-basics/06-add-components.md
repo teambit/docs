@@ -14,13 +14,13 @@ A Bit component can be consumed either as a mutable component, to be developed i
 
 Let's create a UI 'Button' component:
 
-```sh
-$ mkdir components/react/ui/button
+```shell
+$ mkdir -p components/react/ui/button
 ```
 
 Now create the following files:
 
-```sh
+```shell
 $ touch components/react/ui/button/index.ts
 $ touch components/react/ui/button/button.tsx
 $ touch components/react/ui/button/button.module.scss
@@ -49,6 +49,9 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'primary' | 'secondary';
 }
 
+/** 
+ *  A simple button component.
+*/
 export function Button({ children, variant, ...rest }: IButton) {
   return (
     <button className={cs(styles.base, styles[variant])} {...rest}>
@@ -126,6 +129,8 @@ Our 'Button' component uses the `classnames` module. To install it, run the foll
 $ bbit install classnames
 ```
 
+> Please install React as well (`bbit install react`) - this is a temporary inconvenience that will be resolved in the next few days.
+
 Bit will make sure to automatically register this package in the workspace configurations file (`workspace.jsonc`). Notice how a Bit workspace does not use a `package.json` file to manage its dependencies. 
 
 Check the `workspace.jsonc` file to make sure the [`dependency-resolver`](/docs/dependencies/overview) section now looks as the snippet below:
@@ -149,11 +154,18 @@ Our 'Button' component does not show up in our Workspace UI yet as it is not tra
 
 To start tracking it:
 
-```sh
-$ bit add components/react/ui/button
+```shell
+$ bbit add components/react/ui/button
 ```
 
-The 'Button' component should now appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component. 
+The 'Button' component will now appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component. (If that fails, please restart your Workspace UI by stopping the dev server and starting it again - `bbit start`)
+
+![New Component](/img/new_component.png)
+
+> #### What happens when Bit starts tracking a component?
+> * It determines which files should be be included in that component (see the result inside the .bitmap file)
+> * It determines a component ID
+> * It determines the component entry point and its dependency graph (see the result inside the node_modules directory)
 
 ### Add compositions (render components in isolation)
 
@@ -165,8 +177,8 @@ Rendering components in an isolated environment gives us a clear understanding o
 
 We'll start by creating a new 'compositions' file 
 
-```sh
-$ touch components/ui/button/button.composition.tsx
+```shell
+$ touch components/react/ui/button/button.composition.tsx
 ```
 
 Then, add the following lines to `components/ui/button/button.composition.tsx`
@@ -197,3 +209,5 @@ export const DisabledButton = () => {
 ```
 
 Head over to the 'compositions' tab to see the various `Button` compositions being rendered.
+
+![Button Compositions](/img/compositions.png)

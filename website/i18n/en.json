@@ -53,6 +53,9 @@
       "bit-basics/test": {
         "title": "Test"
       },
+      "bit-basics/version": {
+        "title": "Version"
+      },
       "bit-basics/export-to-scope": {
         "title": "Export to a Remote Scope"
       },
@@ -455,7 +458,6 @@
     },
     "categories": {
       "Bit Basics": "Bit Basics",
-      "Tutorials": "Tutorials",
       "Workspace": "Workspace",
       "Workspace UI": "Workspace UI",
       "Bit Components": "Bit Components",

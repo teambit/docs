@@ -10,6 +10,7 @@
       "bit-basics/lint",
       "bit-basics/compile",
       "bit-basics/test",
+      "bit-basics/version",
       "bit-basics/export-to-scope",
       "bit-basics/import-install-components",
       "bit-basics/remove-deprecate-components",
