@@ -144,7 +144,7 @@ Check the `workspace.jsonc` file to make sure the [`dependency-resolver`](/docs/
         "classnames": "^2.2.6"
       },
 ```
-As you recall from the ['Set up a workspace'](docs/bit-basics/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
+As you recall from the ['Set up a workspace'](docs/getting-started/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
 
 To select a more limited set of components use the ['variants'](docs/variants/overview) field.
 

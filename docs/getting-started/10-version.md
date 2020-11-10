@@ -3,8 +3,7 @@ id: version
 title: Version
 ---
 
-When we version or 'tag' a component, we "commit" changes and prepare it to be exported to a remote scope. This process usually also includes compiling and testing the tagged component.
-
+When we version or 'tag' a component, we "commit" changes and prepare it to be exported to a remote scope. This process usually also includes compiling and testing.
 ## Using the 'tag' command
 
 ### Tag a component
@@ -48,7 +47,7 @@ $ bbit list
 ### Actions executed by the 'tag' command
 
 #### 1. Runs the environment's 'build pipeline' 
-The 'build pipeline' is a series of tasks defined by the environment. In our case, we've set all our components to [use the React environment](bit-basics/choose-dev-env) which has, as a default, two tasks in its build pipeline:
+The 'build pipeline' is a series of tasks defined by the environment. In our case, we've set all our components to [use the React environment](getting-started/choose-dev-env) which has, as a default, two tasks in its build pipeline:
 1. Compile (using the React environment compiler)
 2. Test (using the React environment tester)
 

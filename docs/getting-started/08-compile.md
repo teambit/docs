@@ -7,7 +7,7 @@ You now have an environment configured for your workspace and a tracked componen
 
 ## Workspace component compilation
 
-In a Bit workspace, each component is a separate module and needs to be compiled for other components in the workspace to use it. This is one of the jobs that the environment that you [chose earlier](/docs/bit-basics/choose-dev-env) will do for you. All environment defines how your components gets compiled; both in terms of which compiler is used and its configuration.
+In a Bit workspace, each component is a separate module and needs to be compiled for other components in the workspace to use it. This is one of the jobs that the environment that you [chose earlier](/docs/getting-started/choose-dev-env) will do for you. All environment defines how your components gets compiled; both in terms of which compiler is used and its configuration.
 
 There are several ways to trigger the **compile** step defined in the Component Development Environment.
 

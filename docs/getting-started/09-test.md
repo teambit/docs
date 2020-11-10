@@ -3,7 +3,7 @@ id: test
 title: Test
 ---
 
-In the ['Choose a development environment'](/docs/bit-basics/choose-dev-env) step we've set all our components to use the [React environment](/docs/react/overview). As you recall, an environment bundles together various services needed to develop, run and maintain an independent component. One of these services is 'testing'.
+In the ['Choose a development environment'](/docs/getting-started/choose-dev-env) step we've set all our components to use the [React environment](/docs/react/overview). As you recall, an environment bundles together various services needed to develop, run and maintain an independent component. One of these services is 'testing'.
 
 The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
 

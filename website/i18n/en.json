@@ -26,57 +26,6 @@
       "authentication/overview": {
         "title": "Overview"
       },
-      "bit-basics/what-is-bit": {
-        "title": "What is Bit?"
-      },
-      "bit-basics/getting-started": {
-        "title": "Getting Started"
-      },
-      "bit-basics/install-bit": {
-        "title": "Install Bit"
-      },
-      "bit-basics/set-up-workspace": {
-        "title": "Set Up a Workspace"
-      },
-      "bit-basics/choose-dev-env": {
-        "title": "Choose a Development Environment"
-      },
-      "bit-basics/add-components": {
-        "title": "Create/Add Components"
-      },
-      "bit-basics/07-lint": {
-        "title": "bit-basics/07-lint"
-      },
-      "bit-basics/compile": {
-        "title": "Compile"
-      },
-      "bit-basics/test": {
-        "title": "Test"
-      },
-      "bit-basics/version": {
-        "title": "Version"
-      },
-      "bit-basics/export-to-scope": {
-        "title": "Export to a Remote Scope"
-      },
-      "bit-basics/import-install-components": {
-        "title": "Import/Install Components"
-      },
-      "bit-basics/remove-deprecate-components": {
-        "title": "Remove/Deprecate Components"
-      },
-      "bit-basics/ci-cd": {
-        "title": "Add to CI/CD"
-      },
-      "bit-basics/document": {
-        "title": "Document"
-      },
-      "bit-basics/future-intro": {
-        "title": "bit-basics/future-intro"
-      },
-      "bit-basics/why-components": {
-        "title": "Why Components?"
-      },
       "bit-components/overview": {
         "title": "Overview"
       },
@@ -160,6 +109,57 @@
       },
       "faq/faq": {
         "title": "FAQs"
+      },
+      "getting-started/what-is-bit": {
+        "title": "What is Bit?"
+      },
+      "getting-started/getting-started": {
+        "title": "Getting Started"
+      },
+      "getting-started/install-bit": {
+        "title": "Install Bit"
+      },
+      "getting-started/set-up-workspace": {
+        "title": "Set Up a Workspace"
+      },
+      "getting-started/choose-dev-env": {
+        "title": "Choose a Development Environment"
+      },
+      "getting-started/add-components": {
+        "title": "Create/Add Components"
+      },
+      "getting-started/07-lint": {
+        "title": "getting-started/07-lint"
+      },
+      "getting-started/compile": {
+        "title": "Compile"
+      },
+      "getting-started/test": {
+        "title": "Test"
+      },
+      "getting-started/version": {
+        "title": "Version"
+      },
+      "getting-started/export-to-scope": {
+        "title": "Export to a Remote Scope"
+      },
+      "getting-started/import-install-components": {
+        "title": "Import/Install Components"
+      },
+      "getting-started/remove-deprecate-components": {
+        "title": "Remove/Deprecate Components"
+      },
+      "getting-started/ci-cd": {
+        "title": "Add to CI/CD"
+      },
+      "getting-started/document": {
+        "title": "Document"
+      },
+      "getting-started/future-intro": {
+        "title": "getting-started/future-intro"
+      },
+      "getting-started/why-components": {
+        "title": "Why Components?"
       },
       "linting/overview": {
         "title": "Overview"
@@ -457,7 +457,7 @@
       "Github": "Github"
     },
     "categories": {
-      "Bit Basics": "Bit Basics",
+      "Getting Started": "Getting Started",
       "Workspace": "Workspace",
       "Workspace UI": "Workspace UI",
       "Bit Components": "Bit Components",
