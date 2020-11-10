@@ -16,6 +16,12 @@ Bit helps teams *scale their web development process together*. It makes teams a
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
 
+**Core features**:
+
+* **[Extensible Dev Tools](#extensible-development-tools)**
+* **[Component Cloud Platform](#cloud-platform-key-features)**  
+
+
 **What can Bit do for you?**:
 
 * **[UI Design Systems](#ui-design-system)**  
@@ -25,10 +31,6 @@ Bit helps teams *scale their web development process together*. It makes teams a
 * **[Scaling Web Development](#scaling-web-development)**  
 * **[Code Reuse](#code-reuse)**
 
-**Core features**:
-
-* **[Extensible dev tools](#extensible-development-tools)**
-* **[Cloud Platform](#cloud-platform-key-features)**  
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
 
@@ -151,7 +153,7 @@ Each component is versioned individually and has its own changelog so you can ke
 
 ### Cloud platform key features
 
-TODO
+Enjoy a secured enterprise-grade cloud platform to easily scale development to multiple projects and teams, with a single hub to share, discover, and collaborate on all your components. 
 
 #### Hosting for components
 
@@ -159,24 +161,27 @@ TODO
 
 #### Documentation and discovery
 
-TODO
+No more creating and maintaining additional documentation websites. As Bit makes it easy for many developers to share and collaborate on many components.
+
+As you create components, Bit helps you create stunning customized documentation which can be uploaded to the cloud for everyone to discover and enjoy. Advanced features like *component search* or *context filters* help you easily find the best and right components in seconds and introduce them into any new project.
 
 ![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-11%20at%204.02.54%20PM.png)  
 
 
 #### Package registry
 
-TODO
+Every component can be independently installed as a package via a built-in registry 
+that supports installation via the npm, pnpm, and yarn clients. This means you now have your components hosted, documented and ready to install - all in one place.
+
 
 #### Updates and collaboration
 
 TODO
 
-#### Component builds
+#### RIPPLE CI: Modular Propagating Builds for The Modern Web (*Coming Soon*)
 
-TODO
+Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
-
 
 
