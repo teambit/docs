@@ -3,17 +3,40 @@ id: compile
 title: Compile
 ---
 
-You now have an environment configured for your workspace and a tracked component.
+Compilation is another service provided by a Bit environment. It is a crucial step in making a component an independent module, both for external use but also when used internally, by our local workspace. 
 
-## Workspace component compilation
+When Bit starts tracking a component, a new directory is created for it inside the `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
 
-In a Bit workspace, each component is a separate module and needs to be compiled for other components in the workspace to use it. This is one of the jobs that the environment that you [chose earlier](/docs/getting-started/choose-dev-env) will do for you. All environment defines how your components gets compiled; both in terms of which compiler is used and its configuration.
+for example:
 
-There are several ways to trigger the **compile** step defined in the Component Development Environment.
+```sh
+├── node_modules
+    ├── @my-org
+        ├── react.ui.button
+          ├── dist
+              ├── index.js
+              ├── index.js.map
+              ├── button.js
+              ├── button.js.map
+          ├── ...
+```
+
+The above operation makes it possible to use components as standard node modules, right from the get-go.
+
+For example:
+```js
+import { Button } from '@my-org/react.ui.button'
+```
+
+In this tutorial, we are using the React environment which uses TypeScript as its default compiler. To extend or customize its configurations, [see here](/docs/react/extending-react). 
+
+
+
+## Bit processes that use the compiler
 
 ### Local dev server
 
-Bit's local dev server compiles each component that you modify. This happens on every "save" operation for a file you edit.
+Bit's local dev server (that also runs the Workspace UI) compiles component on each modification. This happens on every "save" operation for a file you edit.
 
 ```shell
 $ bbit start
@@ -47,11 +70,3 @@ Alongside the local dev server, Bit features a watch mode that runs differnet op
 ```sh
 $ bbit watch
 ```
-
-## Component `dist` outputs
-
-Bit generate a `dist` directory for each component in the root `node_modules` directory of your project. Each directory is named per the component's name. This is so when you `import { ... } from <component>` in a Bit workspace you can use the component module name, as generated in `node_modules` instead of relative paths.
-
-## Multiple component types
-
-It's possible to have several environments configured in your workpsace, one for each set of components. This allows you to define speciifc compilation steps for React components that differ from Node components. By defining a different environments you can better control each component's configuration

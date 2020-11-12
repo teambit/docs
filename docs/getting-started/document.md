@@ -2,7 +2,7 @@
 id: document
 title: Document
 ---
-For a component to be truly usable as an independent building block, it must have its own documentation.
+For a component to be usable as an independent building block, it must have its own documentation.
 
 Bit automates component documentation by parsing its code and displaying it in a template provided by the Environment in use. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
 
@@ -14,15 +14,15 @@ Our component's documentation already displays a 'Properties' table, detailing t
 
 The documentation template provided by the React environment can be customized in two ways:
 
-1. Using it's API for ad-hoc modifications. This is done to add custom components or to override a section in just a specific documentation.
-2. Creating a new React environment by extending this one and overriding its documentation template.
+1. Using its API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation.
+2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template.
 
 This tutorial will only cover using the docs API for ad-hoc modifications. To learn how to extend and override the documentation template, [see here](docs/react/overview).
 
 
 ### Create a doc file
 
-Create a doc file in the 'Button' component directory. The name should follow this patterns: `<component>.docs.tsx`.
+Create a doc file in the 'Button' component directory. The name should follow this pattern: `<component>.docs.tsx`.
 
 For example:
 
@@ -32,7 +32,7 @@ $ touch button.docs.tsx
 ```
 
 ### Add a custom section (component)
-Let's say we  want to add a 'guidelines' section to explain how our button should be used, UX-wise. We'll create our own section using UI components provided by Bit. This will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
+Let's say we  want to add a 'guidelines' section to explain how our button should be used UX-wise. We'll create our own section using UI components provided by Bit. This will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
 
 We'll start by installing the needed components:
 
