@@ -62,7 +62,7 @@ Bit's versioning follows the common semantic structure of [major].[minor].[patch
 #### 3. Tags all components that are dependant on this component
 Bit makes sure to run the tagging process on every component affected by the modified (versioned) component. As mentioned earlier, that process also includes compiling and testing. This way we know immediately when another component breaks due to that change.
 
-To see an illustration of the dependencies in your workspace or scope, take a look at the 'Dependencies' tab (in the Workspace UI/ Remote Scope)
+To see a diagram of the dependencies in your workspace or scope, take a look at the 'Dependencies' tab (in the Workspace UI/ Remote Scope)
 
 ![Dependencies](/img/depdendencies_ui.png)
 
