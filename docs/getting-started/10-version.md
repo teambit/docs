@@ -60,7 +60,7 @@ If any of the build pipeline's tasks fail, the tagging is aborted.
 Bit's versioning follows the common semantic structure of [major].[minor].[patch]. As a default, if a version number was not included in the tag command, Bit will bump the patch number.
 
 #### 3. Tags all components that are dependant on this component
-Bit makes sure to run the tagging process on every component affected by the modified (versioned) component. As mentioned earlier, that process also includes compiling and testing. This way we know immediately when another component breaks due to that change.
+Bit makes sure to run the tagging process on every component affected by the modified (versioned) component. As mentioned earlier, that process also includes compiling and testing. This process let's us know immediately when another component breaks due to that change.
 
 To see a diagram of the dependencies in your workspace or scope, take a look at the 'Dependencies' tab (in the Workspace UI/ Remote Scope)
 
