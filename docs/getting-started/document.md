@@ -4,9 +4,9 @@ title: Document
 ---
 For a component to be usable as an independent building block, it must have its own documentation.
 
-Bit automates component documentation by parsing its code and displaying it in a template provided by the Environment in use. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
+Bit automates component documentation by parsing its code and displaying the output in a template provided by the Environment used by that component. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
 
-In this section we'll focus on the documentation template provided by the React environment. To see the auto-generated docs of our previously-created 'Button' component, head over to the 'Overview' tab in the Workspace UI. 
+In this section we'll focus on the documentation template provided by the default React environment. To see the auto-generated docs of our previously-created 'Button' component, head over to the 'Overview' tab in the Workspace UI. 
 
 Our component's documentation already displays a 'Properties' table, detailing the different props it receives. It also shows its title and abstract.
 
@@ -15,14 +15,14 @@ Our component's documentation already displays a 'Properties' table, detailing t
 The documentation template provided by the React environment can be customized in two ways:
 
 1. Using its API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation.
-2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template.
+2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template (advanced).
 
 This tutorial will only cover using the docs API for ad-hoc modifications. To learn how to extend and override the documentation template, [see here](docs/react/overview).
 
 
-### Create a doc file
+### Create a docs file
 
-Create a doc file in the 'Button' component directory. The name should follow this pattern: `<component>.docs.tsx`.
+Create a docs file in the 'Button' component directory. The name should follow this pattern: `<component>.docs.tsx` (or ts/js/jsx).
 
 For example:
 
@@ -32,9 +32,9 @@ $ touch button.docs.tsx
 ```
 
 ### Add a custom section (component)
-Let's say we  want to add a 'guidelines' section to explain how our button should be used UX-wise. We'll create our own section using UI components provided by Bit. This will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
+Let's say we  want to add a 'guidelines' section to explain how our button should be used UX-wise. In this example we'll create our own section using UI components provided by Bit in order will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
 
-We'll start by installing the needed components:
+We'll start by installing the necessary components:
 
 ```shell
 $ bbit install @teambit/documenter.ui.section @teambit/documenter.theme.theme-contex @teambit/documenter.ui.linked-heading @teambit/documenter.ui.list @teambit/documenter.ui.separator
@@ -60,7 +60,7 @@ export default function Overview() {
           <List spacing="lg">
             {[
               `Place buttons where expect to find them. Do not force users to "hunt for buttons".`,
-              `Do not use generic for your buttons. Use verbs that clearly explain the button's function.`,
+              `Do not use generic names for your buttons. Use verbs that clearly explain the button's function.`,
               `Size buttons in proportion to their importance.`,
             ]}
           </List>
@@ -74,7 +74,7 @@ export default function Overview() {
 
 Head over to the Workspace UI to see our new section.
 ### Override the 'abstract' property
-The abstract property is automatically parsed from the code. To override it:
+By default the abstract property is automatically parsed from the code. To override it:
 
 ```tsx
 Overview.abstract = 'An imperfect button.';
