@@ -123,9 +123,9 @@ Build and test each component in complete isolation using predefined and customi
 
 ![component-tests](https://storage.googleapis.com/static.bit.dev/harmony-docs/Tests.png)  
 
-#### Reusable and customizable build pipelines  
+#### Extensible and reusable build pipelines  
 
-From scaffolding new components to setting lint, build and test configurations - use Bit to set common configurations for all your components. Bit helps you embed best practices as part of the component development environment and have it integrated as part of their Bit-workflow. It helps to automate these workflows so that every component will have to successfully go through these pipelines.
+Build helps you standardize the build pipline of all your components. Define jobs in a pipeline according to your best standards and make sure that all components are released through the same steps. Bit will even help you automate these workflows so that all components will go through these pipeline every time their builds will run.
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
 
