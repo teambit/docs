@@ -26,6 +26,11 @@ $ touch components/react/ui/button/button.tsx
 $ touch components/react/ui/button/button.module.scss
 ```
 
+If it's not already present in your workspace, add the following too:
+```shell
+$ touch types/scss.d.ts
+```
+
 And implement the component as follows:
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -116,6 +121,16 @@ Button.defaultProps = {
     background-color: #5159cf;
   }
 }
+```
+
+
+<!--scss.d.ts (if needed)-->
+```javascript
+declare module '*.scss' {
+  const content: { [className: string]: string };
+  export = content;
+}
+
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
