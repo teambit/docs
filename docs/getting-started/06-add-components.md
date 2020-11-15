@@ -165,12 +165,12 @@ To select a more limited set of components for a rule or policy, use the ['varia
 
 ### Track the component
 
-If you return for a second to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component still does not show up in our Workspace UI yet; this is because it is not yet tracked by Bit.
+If you return for to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component does not show up in our Workspace UI yet; this is because it is not yet tracked by Bit.
 
-To start tracking it:
+To start tracking it, we'll tun the following command (we'll also group it under the namespace 'react-ui')
 
 ```shell
-$ bbit add components/react/ui/button
+$ bbit add components/react/ui/button -n react-ui
 ```
 
 The 'Button' component will now appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component. (If that doesn't appear, please restart your Workspace UI by stopping the dev server and starting it again - `bbit start`)

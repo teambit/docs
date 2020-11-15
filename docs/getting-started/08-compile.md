@@ -12,7 +12,7 @@ for example:
 ```sh
 ├── node_modules
     ├── @my-org
-        ├── react.ui.button
+        ├── react-ui.button
           ├── dist
               ├── index.js
               ├── index.js.map
@@ -25,7 +25,7 @@ The above operation makes it possible to use components as standard node modules
 
 For example:
 ```js
-import { Button } from '@my-org/react.ui.button'
+import { Button } from '@my-org/react-ui.button'
 ```
 
 In this tutorial, we are using the React environment which uses TypeScript as its default compiler. To extend or customize its configurations, [see here](/docs/react/extending-react). 
@@ -65,7 +65,7 @@ $ bbit compile
 
 ### Compile in `watch` mode
 
-Alongside the local dev server, Bit features a watch mode that runs differnet opertaions for modified components. Component compilation is one of these tasks.
+Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component compilation is one of these tasks.
 
 ```sh
 $ bbit watch

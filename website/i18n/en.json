@@ -158,6 +158,9 @@
       "getting-started/future-intro": {
         "title": "getting-started/future-intro"
       },
+      "getting-started/manage-dependencies": {
+        "title": "Manage Dependencies"
+      },
       "getting-started/why-components": {
         "title": "Why Components?"
       },

@@ -13,6 +13,7 @@
       "getting-started/version",
       "getting-started/export-to-scope",
       "getting-started/import-install-components",
+      "getting-started/manage-dependencies",
       "getting-started/remove-deprecate-components",
       "getting-started/ci-cd"
     ],
