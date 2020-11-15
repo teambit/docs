@@ -120,7 +120,7 @@ Run your workspace UI (`bbit start`) and head over to the 'Dependencies' tab of 
 
 ![Dependency Graph Diagram](/img/deps-notification-box.png)
 
-A different look at our 'Notification Box' dependencies will be by running the following command, to see the output in our terminal:
+To examine dependencies which are external packages, as well as Bit components, we'll use the `bbit show` command:
 
 ```shell
 $ bbit show react-ui/notification-box
@@ -146,9 +146,10 @@ And scroll to the 'dependencies' section:
   │ dependencies     │ react-dom@^16.13.1 (package)                          │
   └──────────────────┴───────────────────────────────────────────────────────┘
   ```
-The above output includes packages, as well as Bit components. as mentioned above, these dependencies are also integrated from the environment in use (in this case - React) and the workspace configurations.
+As mentioned above, these dependencies are also integrated from the environment in use (in this case - React) and the workspace configurations.
 
-As mentioned in the [Version](/docs/getting-started/version#2-sets-a-new-version-for-the-tagged-component) section, Bit uses its generated dependency graphs to test, build and version components affected by a change made to their dependencies. To see that in action, let's tag our component and then change the 'Button' component it is dependent on:
+
+As mentioned in the [Version](/docs/getting-started/version#2-sets-a-new-version-for-the-tagged-component) section, Bit uses its generated dependency graphs to test, build and version components affected by a change made to their dependencies. To see that in action, let's change the 'Button' component the 'Notification Box' is dependent on:
 
 ```shell
 $ bbit tag --persist react-ui/notification-box
