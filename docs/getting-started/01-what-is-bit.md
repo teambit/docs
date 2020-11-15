@@ -3,33 +3,29 @@ id: what-is-bit
 title: What is Bit?
 ---
 
+### Bit is the component platform for the modern web.   
 
-### Bit is the component platform for the modern web. 
+It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.  
 
-It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.
+Bit helps you build modular applications in a distributed workflow, while enjoying a simple and holistic development experience. Each component is independently developed, built, tested, documented, published, and even integrated into new applications. All components are composed and managed together in harmony.
 
-Bit allows you to build fully modular applications in a distributed way, while enjoying a simple and holistic development experience. Each component of the application is independently developed, built, tested, versioned, published, and even integrated into new applications built by other teams.
+Bit’s cloud platform helps teams collaborate on components and build together. It helps teams share and collaborate on components, and continuously integrate with each other. It gives each team the ability to develop and ship components autonomously, while giving the organization tools to standardize and scale development with components across teams and projects.  
 
-All the different components and all relationships between components are managed in Bit’s workspace, creating a smooth and harmonized experience that enhances every step of the development workflow and allows the composition of highly scalable and performant projects.
+**Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
-Bit helps teams *scale their web development process together*. It makes teams autonomous to develop and deliver features, working in their own decoupled codebases and releasing through their own decoupled pipelines. At the same time, all teams can easily share components and smoothly integrate with each other. This makes the development of web applications together becomes an efficient, fast, and very scalable process.  
-
-**Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too. 
-
-**Core features**:
+**Core features**:  
 
 * **[Extensible Dev Tools](#extensible-development-tools)**
 * **[Component Cloud Platform](#cloud-platform-key-features)**  
 
+**What can Bit do for you?**:  
 
-**What can Bit do for you?**:
-
-* **[UI Design Systems](#ui-design-system)**  
+* **[UI Design Systems (Shared Components)](#ui-design-system)**  
 * **[Micro Front-Ends](#micro-frontends)**  
 * **[Standardization and Consistency](#standardization-and-consistency)**  
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
 * **[Scaling Web Development](#scaling-web-development)**  
-* **[Code Reuse](#code-reuse)**
+* **[Component Reuse](#component-reuse)**  
 
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
@@ -74,9 +70,9 @@ Bit solves the problem of sharing and managing components between different proj
 Bit connects frontend teams by using components as services in a similar way to how microservices architecture has done so for backend teams.
 
 
-#### Code Reuse  
+#### Component Reuse  
 
-*Code reuse* is a great way to speed software delivery, reduce effort on redundant code and maintenance, eliminate bugs and mistakes, and make sure more resources are focused on innovation. Components are by design modular, and therefor can and should be reused. Bit turns 100% of your components reusable as a seamless part of your workflow! Every single component you create becomes a fully reusable asset that can be very easily published, documented, and reused in new projects. No repository splitting, no complex configs, no overhead. Thanks to Bit.dev, code reuse can be infinitely scaled while making sure everything is always easily discoverable, and can be found and used one click away. And, using advanced features like ‘bit import’, it becomes easier than ever to quickly evolve and adjust components right from any new context.
+*Component reuse* is a great way to speed software delivery, reduce effort on redundant code and maintenance, eliminate bugs and mistakes, and make sure more resources are focused on innovation. Components are by design modular, and therefor can and should be reused. Bit turns 100% of your components reusable as a seamless part of your workflow! Every single component you create becomes a fully reusable asset that can be very easily published, documented, and reused in new projects. No repository splitting, no complex configs, no overhead. Thanks to Bit.dev, code reuse can be infinitely scaled while making sure everything is always easily discoverable, and can be found and used one click away. And, using advanced features like ‘bit import’, it becomes easier than ever to quickly evolve and adjust components right from any new context.
 
 
 ## Core Features
@@ -193,3 +189,5 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 #### RIPPLE CI: Modular Propagating Builds for The Modern Web (*Coming Soon*)
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
+
