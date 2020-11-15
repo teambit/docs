@@ -5,7 +5,7 @@ title: What is Bit?
 
 ### Bit is the component platform for the modern web.   
 
-It helps you build modular apps with components, and *speed up* and *scale* this process to many teams building many consistent and performant applications.  
+It helps you build modular applications with components, and to scale this process to many teams building highly consistent and performant applications together.  
 
 Bit helps you build modular applications in a distributed workflow, while enjoying a simple and holistic development experience. Each component is independently developed, built, tested, documented, published, and even integrated into new applications. All components are composed and managed together in harmony.
 
@@ -120,14 +120,21 @@ Build helps you standardize the build pipeline of all your components. Define jo
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-builds.png)  
 
+#### Component Dependency Graphs  
 
-#### Propagating Builds  
+Bit is smart, it tracks and “knows” about the relationships between all components in your workspace. When you make a change, Bit “knows” which other components are impacted by the change, and helps you safely propagate the change to all impacted components while making sure they will still pass their build and tests. You can easily view and manage each component’s dependency graph, or the entire graph of your project, right in your local development UI.
+
+![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png)   
+
+
+#### Incrementally Propagating Builds
 
  When you make a change in your project, Bit “knows” exactly which components are impacted by that change. It uses this information to rebuild and retest only the components impacted by the change, and infinitely propagates this process to all impacted dependents. The result? X30 (!) faster build times and surgical ability to pin-poin the impact of changes on the graph. 
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
 
 > **COMING SOON: RIPPLE CI -> PROPAGATE CHANGES TO ALL APPLICATIONS**: Ripple CI is a new way to build web applications. It extends the propagation of your build process on the component graph, to all impacted. Meaning, you can now safely deliver a new version of any component to all impacted projects in your organization - with a click of a button. Want to learn more? [let us know](https://bit.dev/contact-sales).  
+
 
 #### Component Changelog and Version History  
 
@@ -139,13 +146,6 @@ Each component is versioned individually and has its own changelog so you can ke
 #### Independent Component Publishing
  
 Enjoy 100% reusability for all components as a seamless side effect of your development workflow. Publish independent components in your workspace as individual packages without having to split your project, define complex configurations, or do anything else but simply developing your components in Bit’s workspace.  
-
-
-#### Component Dependency Graphs  
-
-Bit is smart, it tracks and “knows” about the relationships between all components in your workspace. When you make a change, Bit “knows” which other components are impacted by the change, and helps you safely propagate the change to all impacted components while making sure they will still pass their build and tests. You can easily view and manage each component’s dependency graph, or the entire graph of your project, right in your local development UI.
-
-![component-dependencies](https://storage.googleapis.com/static.bit.dev/harmony-docs/Dependencies%20(1).png)   
 
 
 #### Component Development Server  
