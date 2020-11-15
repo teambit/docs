@@ -153,6 +153,8 @@ Each component is versioned individually and has its own changelog so you can ke
 
 ### Cloud platform key features
 
+![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Scope-bitdev.png) 
+
 Bit.dev is your collaborative ecosystem to share components as a team and build applications together while keeping all components in perfect sync.
 
 Enjoy a secured enterprise-grade cloud platform to easily scale development to multiple projects and teams, with a single hub to share, collaborate, and integrate components with each other.
