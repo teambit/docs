@@ -3,7 +3,7 @@ id: testing-components
 title: Testing
 ---
 
-Bit can run tests for components with a test task defined.
+Bit can run tests for components which have a test task defined.
 
 ## Basics of testing Components
 
