@@ -39,7 +39,8 @@ the following component environments were installed
 - bit.envs/compilers/babel@0.0.7
 ```
 
-The above command updates the compiler stored in the workspace configuration file under the `env` key:  
+The above command updates the compiler stored in the workspace configuration file under the `env` key: 
+(note: if you are using package.json to set bit configs, make sure the following and any other bit configs are inside the 'bit' section of the package.json)
 
 ```json
 {
