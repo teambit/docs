@@ -10,12 +10,17 @@ A [Bit Workspace](/docs/workspace/overview) brings together the simplicity of a 
 2. [__A Workspace UI__](/docs/workspace-ui/overview), to assist you in developing and examining components as isolated and independent building blocks.
   
 
-To get started, choose a directory for your workspace, and run the following command:
+To get started, clone a simple ['getting-started'](https://github.com/teambit/getting-started-harmony) project and initialize a new Bit workspace inside it:
 
 ```shell
+$ git clone https://github.com/teambit/getting-started-harmony.git
+$ cd getting-started-harmony
+
 $ bbit init --harmony
 Initialized an empty Bit workspace
 ```
+* Tip: Explore the ['end-result' branch](https://github.com/teambit/getting-started-harmony/tree/end-result) to see this workspace in its "final stage", after all steps in this tutorial have been followed.
+
 
 You'll notice the following have been generated:
 

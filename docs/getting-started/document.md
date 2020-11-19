@@ -34,7 +34,7 @@ $ touch button.docs.tsx
 ### Add a custom section (component)
 Let's say we  want to add a 'guidelines' section to explain how our button should be used UX-wise. In this example we'll create our own section using UI components provided by Bit in order will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
 
-We'll start by installing the necessary components:
+We'll start by installing the necessary components (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
 
 ```shell
 $ bbit install @teambit/documenter.ui.section @teambit/documenter.theme.theme-contex @teambit/documenter.ui.linked-heading @teambit/documenter.ui.list @teambit/documenter.ui.separator

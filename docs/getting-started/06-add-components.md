@@ -5,14 +5,14 @@ title: Create/Add Components
 
 A Bit component is a JavaScript module that is completely independent and context-agnostic. It can "travel freely" from your local environment to a remote Bit scope and to other repositories. Each Bit component "carries" with it all the information it needs to function as an isolated building block: its code, history, documentation and its various configurations.
 
-A Bit component can be consumed either as a mutable component, to be worked on in a Bit workspace, or as a standard node package dependency - we'll cover the options in detail [later](/docs/getting-started/import-install-components).
+A Bit component can be consumed either as a mutable component, to be worked on in a Bit workspace, or as a standard node package.
 
 > The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page. 
 
 
 ## Create a UI Component
 
-Let's create a UI 'Button' component:
+Let's create a UI 'Button' component (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
 
 ```shell
 $ mkdir -p components/react/ui/button
@@ -183,7 +183,7 @@ The 'Button' component will now appear in the Workspace UI navigation bar with a
 > * It determines the component entry point and its dependency graph
 > * It creates a package in the node_modules directory 
 
-### Add compositions (render component examples in isolation)
+### Add compositions (render component instances in isolation)
 
 To examine our Button's look and behavior, let's create 'compositions' - these are different instances or usages of that component. 
 
@@ -191,7 +191,7 @@ Each composition will be rendered in its own isolated environment and displayed 
 
 Rendering components in an isolated environment gives us a clear understanding of their behavior as they are guaranteed to be un-effected by their context. In addition to that, compositions play a crucial role in the documentation of a component as they demonstrate the various ways in which that component can be used.
 
-We'll start by creating a new 'compositions' file 
+We'll start by creating a new 'compositions' file (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
 
 ```shell
 $ touch components/react/ui/button/button.composition.tsx
@@ -229,16 +229,3 @@ export const DisabledButton = () => {
 Head over to the 'compositions' tab to see the various `Button` compositions being rendered.
 
 ![Button Compositions](/img/compositions.png)
-
-### Referencing local components
-To keep your components independent never use relative paths to reference one component to another - all tracked Bit components have a linked node_modules package to reference to.
-#### Don't
-Don't reference to a component directory
- ```js
- import { Button } from '../button'`
-```
-#### Do
-Always reference to its node module name
-```js
-import { Button } from '@my-scope/button'
-```
