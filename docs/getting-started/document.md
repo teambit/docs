@@ -2,7 +2,7 @@
 id: document
 title: Document
 ---
-For a component to be usable as an independent building block, it must have its own documentation.
+For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.
 
 Bit automates component documentation by parsing its code and displaying the output in a template provided by the Environment used by that component. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
 

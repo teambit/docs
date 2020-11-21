@@ -10,21 +10,21 @@ Through this UI you can can track the exact status of every component in your pr
 While you develop your components, Bit's UI will provide an exact picture of every part of your components' development:  
 
 * **Explore and browse all components in your project**
--->> TODO ADD VISUAL
+
 * **Explore the applied environments and configurations** for every component  
--->> TODO ADD VISUAL
+
 * **Browse  each component's version history** and see its changelog  
--->> TODO ADD VISUAL
+
 * **View each component's documentation** which can be later shared to the cloud  
--->> TODO ADD VISUAL
+
 * **View live (hot-reloading) visual examples** for each component  
--->> TODO ADD VISUAL
+
 * **View and control each component's dependency graph** (both dependencies and dependents)  
--->> TODO ADD VISUAL
+
 * **Run and view the tests** of each component in isolation, and see the results change live as you code!  
--->> TODO ADD VISUAL
+
 * **Run and view the build** process for each component  
--->> TODO ADD VISUAL
+
 * Publish and install the component from Bit.dev or a different package registry  
 
 Bit's workspace UI is 100% modular and composed of Bit components (extensions etc).  

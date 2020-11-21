@@ -3,19 +3,36 @@ id: export-to-scope
 title: Export to a Remote Scope
 ---
 
-Now that you have a versioned component you're ready to export it. Exporting components require you to set up a remote Scope. The remote scope is the component collection where your components are arranged - for instance for your Design System components you will most likely have a remote scope called 'Design System', to which you will export any UI primitives.
+A scope is where the "release versions" of independent components are stored. Scopes are used both locally and remotely:
+* __Local scopes__ store "staged" components that are ready to be exported from the local environment to a remote scope. You'll find your local scope in the `.bit` or  `.git/.bit` directory inside your workspace directory.
+* [__Remote scopes__](/docs/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are made available to be used by other repositories.
 
-> Only versioned (tagged) components can be exported to a remote scope.
+A single server may host multiple scopes. Each of these scopes groups together components that are related to each other by function or purpose. Each scope naturally corresponds to a specific team of developers (and even non-developers).
+
+So far, we've tracked a component and tagged it. As mentioned earlier, the tagging process prepares the component to be exported to a remote scope by running the [build pipeline](/docs/getting-started/version#1-runs-the-environments-build-pipeline) on it and storing it in the local scope with a new version number.
 
 ## Setting up your remote Bit Scope
+To set a remote scope for your soon-to-be exported components, use the `workspace.jsonc` configuration file.
 
-Component publishing works hand-in-hand with how you use Scopes to organize components in a workspace. Bit uses the `defaultScope` defined in the `workspace.jsonc` file for defining the target remote Scope for each component.  
-Before you can export components, you need to make sure you created remote Scopes that correlate with the scoping configured for your components.
+For example:
 
+```json
+{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  "teambit.workspace/workspace": {
+    "name": "getting-started-harmony",
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    "defaultScope": "my-org.my-scope"
+  },
+```
+The `defaultScope` field suggests it can be overridden. To learn about setting different scopes for different sets of components in your workspace, [see here.](TODO)
 ### Scope on bit.dev
 
-If you are using [bit.dev](https://bit.dev) to host your components, [create a scope](https://bit.dev/~create-collection) for each of the scopes defined in your workspace.
+To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection)  (or "collection") for each scope set in your workspace
 
+
+
+![Scope type](/img/scope_type.png)
 ### On premise Scopes
 
 <!-- here we should link to another doc that talks about self-hosting. -->
@@ -24,16 +41,15 @@ If you are self-hosting a Bit server, you need to ensure you create a Bit server
 
 ## Export all staged components to a remote scope
 
-Run the `bit export` command to have Bit publish all versioned components.
+Run the `bit export` command to have Bit publish all versioned components. In our case it is only the previously tagged 'Button' component.
 
 ```sh
-$ bit export
-2 components were exported to scope owner.my-collection
+$ bbit export
 ```
 
 ## Post export operations
 
-The export process updates your workspace' `.bitmap` file with. Make sure to commit these changes to Git.
+The export process updates your workspace' `.bitmap` file. Make sure to commit these changes to Git.
 
 ```sh
 git commit -am 'updated .bitmap file after a successful export'

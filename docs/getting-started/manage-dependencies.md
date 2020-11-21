@@ -173,4 +173,5 @@ $ bbit list
   └──────────────────────────────────────────────────────────────────────┴─────────┴─────────┘
 ```
  
-
+### Manage external dependencies (packages)
+[See here](/docs/dependencies/overview)

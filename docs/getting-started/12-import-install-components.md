@@ -66,17 +66,12 @@ $ yarn i @teambit/bad-jokes.ui-primitives.app-bar
 ```
 
 ## Using local/remote components
-To keep components independent never use relative paths to reference one component to another.
+Bit does not allow the use of relative paths to reference one component to another. This is done in order to keep components independent and context-agnostic.
 
 Tracked components, locally tagged components and imported components should all be `imported` / `required` into other components using their node module name. 
 
-#### Don't
-Don't reference to a component directory
- ```js
- import { Button } from '../button'`
-```
-#### Do
-Always reference to its node module name
+For example: 
+
 ```js
 import { Button } from '@my-scope/button'
 ```
