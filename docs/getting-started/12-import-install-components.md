@@ -66,7 +66,7 @@ $ yarn i @teambit/bad-jokes.ui-primitives.app-bar
 ```
 
 ## Using local/remote components
-Bit does not allow the use of relative paths to reference one component to another. This is done in order to keep components independent and context-agnostic.
+Bit does not allow referencing one component to another, using relative paths. This is done in order to keep components independent and context-agnostic.
 
 Tracked components, locally tagged components and imported components should all be `imported` / `required` into other components using their node module name. 
 

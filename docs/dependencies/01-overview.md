@@ -75,6 +75,71 @@ To do this, you would remove the dependency from the regular dependencies list a
 
 Advanced information: Peer dependencies are handled by the [component environment's runtimes feature](/docs/environment/overview#manage-components-runtime), not by the `dependency-resolver` aspect.
 
+### Set a dependency policy on a limited set of components
+
+By setting the dependency policy under the `variants` field, we make sure to affect only a selected set of components and override any conflicting policies cascading from a more general dependency policy (set on a less specific set of components). To learn how to select components using `variants`, [see here](docs/variants/overview).
+
+The following example demonstrates an overriding of the workspace-level dependency policy by the more specific set of components, selected using their namespace 'react-ui' (all components using the namespace 'react-ui' will use version 1.0.0 of "classnames" instead of version "2.0.0", set as the default for all components in the workspace):
+
+```json
+{
+  "teambit.workspace/workspace": {
+    "name": "my-workspace"
+  },
+  "teambit.dependencies/dependency-resolver": {
+    "policy": {
+      "dependencies": {
+        "classnames": "2.0.0"
+      }
+    }
+  },
+  "teambit.workspace/variants": {
+    "extensions": {
+      "{react-ui}": {
+        "classnames": "1.0.0"
+      }
+    }
+  }
+}
+```
+
+
+### "Forcibly" add dependencies to a component
+When setting dependency policies on a [specific set of components](/docs/dependencies/overview#set-a-dependency-policy-on-a-limited-set-of-components), the specified modules will be registered as dependencies of these selected components. That is true even if the specified modules were not recognized as dependencies in the [dependency resolution process](/docs/dependencies/overview#dependency-resolution).
+
+For example, the following configuration will add `classnames@2.2.6` as a dependency of every component under the `components/react/ui` directory.
+
+```json
+{
+  "teambit.workspace/variants": {
+    "components/react/ui": {
+      "teambit.dependencies/dependency-resolver": {
+        "policy": {
+          "dependencies": {
+            "classnames": "2.2.6"
+          }
+        }
+      }
+    }
+  }
+```
+
+In contrast, the following configuration will only set the version of the `classnames` module to `2.2.6` __if__ that module already appears as one of the dependencies of a component.
+
+```json
+{
+  "teambit.workspace/workspace": {
+    "name": "my-workspace",
+    "defaultScope": "my-scope"
+  },
+    "teambit.dependencies/dependency-resolver": {
+      "policy": {
+        "dependencies": {
+          "classnames": "2.2.6"
+        }
+      }
+    }
+```
 ## Dependency installation
 
 In most cases dependencies are installed to the root `node_modules` directory. This way all components in the workspace use the same dependency when they import a library or a module.
