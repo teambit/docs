@@ -48,6 +48,9 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 
 #### Micro Frontends  
 
+##### Read -> “[How We Build Micro Frontends](https://blog.bitsrc.io/how-we-build-micro-front-ends-d3eeeac0acfc)”  
+
+
 ![Micro Frontends](https://i.ibb.co/fn8krfn/homepage-components-micro-frontends.png)
 
 *Micro frontends* are a philosophy of how software should be built, and how teams and organizations should work together. Bit is the most production-ready and scalable way to build Micro Frontends, driven by modern components. Each team can autonomously build features in their own codebase, compose their components into any application, constantly release incremental upgrades through their own independent build pipeline, and at the same time easily expose 100% of their components for everyone else in the organization to discover and integrate into new projects. Need an example? Take a look at how the [homepage of Bit.dev](https://bit.dev) is composed of components built in different repos, by different teams who own different scopes, and all integrated together to create every page on the website. To learn more how we build component-driven Micro Frontends read this post: “[How We Build Micro Frontends](https://blog.bitsrc.io/how-we-build-micro-front-ends-d3eeeac0acfc)”.
@@ -213,3 +216,5 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 #### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
+
