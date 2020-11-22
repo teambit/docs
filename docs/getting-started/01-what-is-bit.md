@@ -5,7 +5,7 @@ title: What is Bit?
 
 ### Bit is the component platform for the modern web.   
 
-It helps you build modular applications with components, and to scale this process to many teams building highly consistent and performant applications together.  
+It **helps you build modular applications with components, together**, and to scale this process to many teams building highly consistent and performant applications together.  
 
 Bit helps you build modular applications in a distributed workflow, while enjoying a simple and holistic development experience. Each component is independently developed, built, tested, documented, published, and even integrated into new applications. All components are composed and managed together in harmony.
 
