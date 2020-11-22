@@ -42,7 +42,7 @@ Npm and yarn do not check `.npmrc` per package.
 
 When working locally, bit login sets the registry pointer in the user's `.npmrc` file, so any installation is resolved from this location.  
 
-When trying to install a @bit component on a CI or deployment server (CircleCI, Travis, ZEIT Now, Netlify, Gitlab etc.), server that does not have the `.npmrc` configuration, you may encounter errors like these:  
+When trying to install a @bit component on a CI or deployment server (CircleCI, Travis, ZEIT Now, Netlify, Gitlab etc.) that does not have the `.npmrc` configuration, you may encounter errors like these:  
 
 **NPM**
 
@@ -59,7 +59,7 @@ failed running yarn install at /Users/user/devenv/example-npm-error/components/u
 error An unexpected error occurred: "https://registry.yarnpkg.com/@bit%2fbit.utils.string.pad-left: Not found".
 ```
 
-The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see bellow), but the main methods are:  
+The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see below), but the main methods are:  
 
 - Define `.npmrc` in the project.
 - Generate .npmrc file for the CI user
@@ -77,11 +77,11 @@ always-auth=true
 
 > the always-auth=true is required when using Yarn. It is not required for npm.  
 
-Define the BIT_TOKEN as a secret global variableon the server.
+Define the BIT_TOKEN as a secret global variable on the server.
 
-However, this will result that every time you will run npm install in a project that has this `npmrc` configuration, it will look first in this configuration. If the token is not set on the local machine, it will err.  
+However, this will result that every time you will run npm install in a project that has this `npmrc` configuration, it will look first in this configuration. If the token is not set on the local machine, it will give an error.  
 
-You can define the BIT_TOKEN in your shell environment parameter, yby running following command, or adding it to the shell configuration:  
+You can define the BIT_TOKEN in your shell environment parameter, by running following command, or adding it to the shell configuration:  
 
 ```shell
 export BIT_TOKEN=$(bit config get user.token)
@@ -137,15 +137,15 @@ Note that `my-app-npmrc` is the name of the secret and can be named anything you
 
 ### Gitlab
 
-In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as initial step, before running npm install.  
+In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as an initial step before running npm install.  
 
-Add the BIT_TOKEN as [environment variable](https://docs.gitlab.com/ee/ci/variables/)
+Add the BIT_TOKEN as an [environment variable](https://docs.gitlab.com/ee/ci/variables/)
 
 ### GitHub actions
 
 Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in GitHub.
 
-In the GitHub workflow file create a step before npm install section:
+In the GitHub workflow file, create a step before the npm install section:
 
 ```shell
 - name: init bit.dev
@@ -160,9 +160,9 @@ In the GitHub workflow file create a step before npm install section:
 
 ### Heroku
 
-To generate npmrc before installing dependencies, run a pre build script as described [here](https://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps).
+To generate the `.npmrc` before installing dependencies, run a pre-build script as described [here](https://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps).
 
-Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/articles/config-vars#managing-config-vars)
+Add the BIT_TOKEN as an [environment variable](https://devcenter.heroku.com/articles/config-vars#managing-config-vars)
 
 ### Azure pipelines
 
@@ -180,9 +180,9 @@ You can run the CI when importing Bit components in multiple ways:
 
 ### Install bit-cli
 
-If you need to run a bit command (import or build) you need to install bit-cli on the CI machine.  
+If you need to run a bit command (import or build) you need to install the bit-cli on the CI machine.  
 
-According to the CI or deployment server, you can install it globally or locally in the project. To install locally on the project, simply add it as a development dependency in your project:  
+You can install it globally or locally in the project, according to the CI or deployment server. To install locally on the project, simply add it as a development dependency in your project:  
 
 ```shell
 npm install -D bit-bin
@@ -198,7 +198,7 @@ bit config set error_reporting false
 bit config set user.token ${BIT_TOKEN}
 ```
 
-You can do it by committing a `bit-ci.sh` file at the root of your project. Make sure the config file has execution permissions by running `chmod +x ./bit-ci.sh`.  
+This can be done by committing a `bit-ci.sh` file at the root of your project. Make sure the config file has execution permissions by running `chmod +x ./bit-ci.sh`.  
 
 ### Run Bit command
 
@@ -233,5 +233,5 @@ NPM or Yarn throws 'package not found' when importing a component. This is likel
 Possible reasons:  
 
 - npmrc is not properly [configured](#bit-installed-components)
-- You do not have the right permissions on the Collection that the components are hosted in, and unable to access its components. Make sure you have at least read permissions to the collection that host the components.  
-- Yarn does not send authentication token when installing packages from a `yarn.lock` file. This is a [known issue](https://github.com/yarnpkg/yarn/issues/4451). Make suer `always-auth` is [configured in `.npmrc`](#bit-installed-components).
+- You do not have the right permissions on the Collection that the components are hosted in, and are therefore unable to access its components. Make sure you have at least read permissions for the collection that host the components.  
+- Yarn does not send an authentication token when installing packages from a `yarn.lock` file. This is a [known issue](https://github.com/yarnpkg/yarn/issues/4451). Make sure `always-auth` is [configured in `.npmrc`](#bit-installed-components).
