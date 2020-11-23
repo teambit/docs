@@ -5,11 +5,11 @@ title: What is Bit?
 
 ### Bit is the component platform for the modern web.  
 
-Bit helps you **build modular applications in a fast, scalable, and consistent way**.  It also helps you scale this process to many teams building consistent and performant applications together.  
+Bit helps you **build modular applications in a fast, scalable, and consistent way**.  It helps you scale this process to many teams building consistent and performant applications together.  
 
-Bit allows you to develop modular applications in a fully decoupled way, while enjoying a simple and holistic development experience. Each component is independently developed, built, tested, documented, published, and integrated into your applications. All components and the relationships between them are composed and managed together in harmony.  
+With Bit it becomes simple to develop applications with components in a fully modular and decoupled way, while enjoying a smooth and holistic development experience. Each component is independently developed, built, tested, documented, published, and integrated into your applications. All components and the relationships between them are managed and composed together in harmony.  
 
-Bit’s cloud platform helps teams collaborate on components and build together. It helps teams share and collaborate on components, and continuously integrate with each other. It gives each team the ability to develop and ship components autonomously, while giving the organization tools to standardize and scale development with components across teams and projects.  
+Bit’s cloud platform helps teams collaborate on components and build together. It helps teams share and collaborate on components, continuously integrate with each other, and easily scale development with shared components. It gives each team the ability to develop and release components autonomously, while giving the organization tools to standardize and collaborate on development with components across teams and projects.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
