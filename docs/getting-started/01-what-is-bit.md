@@ -20,8 +20,10 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 **What can Bit do for you?**:  
 
-* **[UI Design Systems (Shared Components)](#ui-design-system)**  
+* **[Design Systems and Shared Components](#ui-design-system)**  
 * **[Micro Front-Ends](#micro-frontends)**  
+* **[Developer Designer Collaboration](#developer-designer-collaboration)**
+* **[Sharing Code Between Teams](#sharing-code-between-teams)**
 * **[Standardization and Consistency](#standardization-and-consistency)**  
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
 * **[Scaling Web Development](#scaling-web-development)**  
@@ -54,6 +56,29 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 ![Micro Frontends](https://i.ibb.co/fn8krfn/homepage-components-micro-frontends.png)
 
 *Micro frontends* are a philosophy of how software should be built, and how teams and organizations should work together. Bit is the most production-ready and scalable way to build Micro Frontends, driven by modern components. Each team can autonomously build features in their own codebase, compose their components into any application, constantly release incremental upgrades through their own independent build pipeline, and at the same time easily expose 100% of their components for everyone else in the organization to discover and integrate into new projects. Need an example? Take a look at how the [homepage of Bit.dev](https://bit.dev) is composed of components built in different repos, by different teams who own different scopes, and all integrated together to create every page on the website. To learn more how we build component-driven Micro Frontends read this post: “[How We Build Micro Frontends](https://blog.bitsrc.io/how-we-build-micro-front-ends-d3eeeac0acfc)”.
+
+#### Developer Designer Collaboration
+
+Bit is a very effective way to bridge the gap between design and development. Unlike legacy tools, it helps developers include designers (and other people) in the development process.  
+
+![Developer Designer Collaboration](https://storage.googleapis.com/static.bit.dev/harmony-docs/Overview-bitdev.png)
+
+Bit makes it easy for developers to include designers, product managers, and business stakeholders in the development process of web applications. Everyone can easily discover, see, and collaborate on components in a visual way, together, and directly over code.
+
+Bit makes it easy to document components in a visual way, while rendering the isolated visual of every component’s version with different examples and compositions. 
+
+When a developer implements a component, the designer can instantly see how it looks in the code and what will the user get in production. When there’s a change to a component, the designer can easily monitor and ensure that all visual changes are according to design guidelines. And, designers can play with all components hands-on, try different things, save examples for developers to implement, and become active partners in the development process. 
+
+Bit also plays beautifully with tools like Zeplin and components designed in tools like Figma or Sketch. Together, it brings designers and developers closer than ever before possible.
+
+
+#### Sharing Code Between Teams
+
+Bit is a very effective way to share code between teams.  
+
+With Bit, each team can easily create and publish components from their own independent codebase. Via the component cloud, all teams can share and discover each other’s components, and quickly integrate them into different projects. Advanced features make this process more collaborative, so it becomes very easy to suggest feedback and changes to shared code, build together, and stay in sync.
+
+The ease of publishing alongside the ease of discovery and reuse make Bit a highly scalable solution for sharing code between teams. Bit can be used to share UI components, but also any other form of reusable code units like Hooks or even Node modules, util functions, serverless functions and more. 
 
 
 #### Standardization and Consistency  
