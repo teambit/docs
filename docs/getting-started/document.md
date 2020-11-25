@@ -6,7 +6,7 @@ For a component to be usable as an independent building block, not only by machi
 
 Bit automates component documentation by parsing its code and displaying the output in a template provided by the Environment used by that component. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
 
-In this section we'll focus on the documentation template provided by the default React environment. To see the auto-generated docs of our previously-created 'Button' component, head over to the 'Overview' tab in the Workspace UI. 
+In this section we'll focus on the documentation template provided by the default React environment. To see the auto-generated docs of our [previously-created 'Button' component](/docs/getting-started/add-components), head over to the 'Overview' tab in the Workspace UI. 
 
 Our component's documentation already displays a 'Properties' table, detailing the different props it receives. It also shows its title and abstract.
 
@@ -15,7 +15,7 @@ Our component's documentation already displays a 'Properties' table, detailing t
 The documentation template provided by the React environment can be customized in two ways:
 
 1. Using its API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation.
-2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template (advanced).
+2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template.
 
 This tutorial will only cover using the docs API for ad-hoc modifications. To learn how to extend and override the documentation template, [see here](docs/react/overview).
 
@@ -32,7 +32,7 @@ $ touch button.docs.tsx
 ```
 
 ### Add a custom section (component)
-Let's say we  want to add a 'guidelines' section to explain how our button should be used UX-wise. In this example we'll create our own section using UI components provided by Bit in order will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
+Let's say we  want to add a 'guidelines' section to explain how our button should be used for an optimized user experience. In this example we'll create our own section using UI components provided by Bit. These components will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
 
 We'll start by installing the necessary components (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
 

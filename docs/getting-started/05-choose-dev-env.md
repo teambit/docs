@@ -22,6 +22,8 @@ We'll choose the [React environment](/docs/react/overview) by un-commenting `"te
   }
 ```
 
+> Please install React as well (`bbit install react`) - this is a temporary inconvenience that will be resolved in the next few days.
+
 A single workspace may use multiple environments to handle its different types of components. The above section demonstrates how to apply the React environment to all components in the workspace, using the `*` selector, inside the [variants](docs/variants/overview) field.
 
 To learn more about the React environment -  how to use it and extend it, [see here](http://localhost:3000/docs/react/overview)

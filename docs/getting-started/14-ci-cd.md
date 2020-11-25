@@ -3,235 +3,127 @@ id: ci-cd
 title: Add to CI/CD
 ---
 
-The CI process here is supporting two different use cases:  
+Bit integrates into your CI/CD pipeline to achieve the following:
 
-- If you want to only install components on the CI using NPM or Yarn, follow the steps bellow to [get a token](#get-a-bit-token), and [configure .npmrc on CI](#config-npmrc-on-ci).
-- If you want to run Bit commands on server, such as import or build, follow the steps above and also the steps to [run bit commands](#run-bit-commands).
+1. Install Bit components from Bit.dev or self-hosted Bit servers
 
-### Examples
+2. Version and export components to remote scopes. These are components that are 'soft-tagged' (i.e, pending to be versioned).
 
-- [Bit with GitHub Actions](https://github.com/teambit/bit-with-github-actions)
-- [Bit with Azure DevOps](https://github.com/teambit/bit-with-azure-devops)
+> Components in local workspaces should only be 'soft-tagged'. That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned. The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository). This enables collaboration on components before they are tagged and exported.
+  
+3. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process (for example, to bundle and deploy the 'App' component). To learn how to extend an environment with your own 'build task', [see here]().
 
-## Get a Bit token
 
-The first thing to do is get a Bit token that has has access to all the collections that have the components to be installed.  
-You can create a dedicated user such as `dev@company.com` for the deployment, or use an existing user's token.
-If you are using an existing user's token, follow the steps described [here](/docs/setup-authentication#additional-tokens) to generate a token that does not expire on local logins.  
+## Setting up the CI with Github Actions
 
-Login with the CI user to get the user's token:  
+### 1. Create a new [Github](https://github.com) repository
 
-```shell
-bit config get user.token
-```
+You can also follow along with this [example project.](https://github.com/teambit/harmony-with-github-actions)
 
-Set the token as an environment parameter on your server named BIT_TOKEN.  
+### 2. Set the user authentication token as a secret repository variable
 
-## Config npmrc on CI
+To perform [Bit.dev](https://bit.dev) operations from the CI runner, use the authentication key of a registered Bit.dev user. It is advisable to create a user solely for that purpose.
 
-Bit components are stored on the bit registry located in `https://node.bit.dev`.  
-
-When installing @bit component with npm or yarn, they will try to install the components starting with `@bit` by resolving the @bit registry. This configuration is stored in an `.npmrc` configuration file. Npm and yarn respect the following file locations:  
-
-- per-project config file (`/path/to/my/project/.npmrc`)
-- per-user config file (`~/.npmrc`)
-- global config file (`$PREFIX/etc/npmrc`)
-- npm builtin config file (`/path/to/npm/npmrc`)
-
-Npm and yarn do not check `.npmrc` per package.
-
-When working locally, bit login sets the registry pointer in the user's `.npmrc` file, so any installation is resolved from this location.  
-
-When trying to install a @bit component on a CI or deployment server (CircleCI, Travis, ZEIT Now, Netlify, Gitlab etc.), server that does not have the `.npmrc` configuration, you may encounter errors like these:  
-
-**NPM**
+To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `$ bbit login`)
 
 ```shell
-failed running npm install at /Users/user/devenv/example-npm-error/components/utils/string/pad-left
-npm ERR! code E404
-npm ERR! 404 Not Found: @bit/bit.utils.string.pad-left@0.0.1
+$ bbit config
+
+analytics_id                  ******************
+analytics_reporting           false
+registry                      https://node.bit.dev
+anonymous_reporting           false
+error_reporting               false
+analytics_domain              https://analytics.bit.dev/
+hub_domain_login              https://bit.dev/bit-login
+hub_domain                    hub.bit.dev
+user.token                    xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+```
+Create a new [secret variable](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) in your Github repository. Name it `BIT_TOKEN` and set the value of it to the `user.token` value.
+
+### 3. Create a new Github workflow
+
+Create a new `tag-and-export.yml` file in your remote repository `./.github/workflows` directory:
+
+For example:
+
+```sh
+your-repository-name/.github/workflows/tag-and-export.yml
+```
+### 4. Name your workflow and set the triggering events
+
+```yaml
+name: Tag and Export Components
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 ```
 
-**Yarn**
+### 5. Set up the right environment for the CI runner
 
-```shell
-failed running yarn install at /Users/user/devenv/example-npm-error/components/utils/string/pad-left
-error An unexpected error occurred: "https://registry.yarnpkg.com/@bit%2fbit.utils.string.pad-left: Not found".
+That includes installing Bit globally. In addition to that, make sure to set `BIT_TOKEN` as an environment variable (to use later on).
+
+```yaml
+jobs:
+  tag-and-export:
+    runs-on: ubuntu-latest
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install latest version of bit 
+      run: npm i -g @teambit/bit
 ```
 
-The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see bellow), but the main methods are:  
+### 6. Disable any type of analytics reporting and set the user authentication token
 
-- Define `.npmrc` in the project.
-- Generate .npmrc file for the CI user
-- Extend `.npmrc` configuration with vendor's tools  
-
-### Add `.npmrc` to the project
-
-You can add a `.npmrc` in your project with the following:  
-
-```shell
-@bit:registry=https://node.bit.dev
-//node.bit.dev/:_authToken=${BIT_TOKEN}
-always-auth=true
+```yaml
+- name: Set up bit config
+      run: |
+          bbit config set analytics_reporting false
+          bbit config set anonymous_reporting false
+          bbit config set user.token $BIT_TOKEN
 ```
 
-> the always-auth=true is required when using Yarn. It is not required for npm.  
+### 7. Add steps to tag and export the pending components
+1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged).
+2. __Hard-tag__ all components pending to be versioned. These are components that were 'soft-tagged' by a workspace in a local repository (the source of the 'push' or pull-request that triggered the CI).
+3. __Export__ all tagged components.
+4. Use `bbit doctor` to produce a diagnosis, in case any of these steps fail
 
-Define the BIT_TOKEN as a secret global variableon the server.
-
-However, this will result that every time you will run npm install in a project that has this `npmrc` configuration, it will look first in this configuration. If the token is not set on the local machine, it will err.  
-
-You can define the BIT_TOKEN in your shell environment parameter, yby running following command, or adding it to the shell configuration:  
-
-```shell
-export BIT_TOKEN=$(bit config get user.token)
+```yaml
+- name: Install packages using bit
+  run: bbit install
+- name: Hard-tag pending components
+  run: bbit tag --persist
+- name: Export components
+  run: bbit export
+- name: Run diagnosis if any previous step fails
+  if: ${{ failure() }}
+  run: bbit doctor
 ```
+> __Where is the 'test' and 'build'?__ 
+> 
+> The `tag` command runs the 'build pipeline' before versioning a component. This pipeline includes building and testing. if any of these tasks fails, the versioning process will be aborted.
 
-### Generate `.npmrc` on server
+### 8. Commit the modified .bitmap file
 
-> The file should be generated before running npm install, and the server should read it  
+The previously soft-tagged components are no longer registered as pending to be versioned. Instead, they are registered with a new bumped version. All these changes happen in the `.bitmap` file. These changes need to be committed back to the repository.
 
-To generate the file dynamically, you need to run the following script (e.g. create a `bit_npm.sh` script):  
-
-```shell
-echo "Adding bit.dev to npm registry"
-echo "always-auth=true" >> ~/.npmrc
-echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
-echo "//node.bit.dev/:_authToken={$BIT_TOKEN}" >> ~/.npmrc
-echo "Completed adding bit.dev to npm registry"
-```
-
-> the always-auth=true is required when using Yarn. It is not required for npm.  
-
-### Netlify
-
-On Netlify, [you cannot generate the file dynamically](https://community.netlify.com/t/common-issue-using-private-npm-modules-on-netlify/795/11), and you should [add `.npmrc` file in your project](#define-npmrc-in-the-project).  
-
-Add the BIT_TOKEN as [environment variable](https://www.netlify.com/docs/continuous-deployment/#environment-variables)
-
-### ZEIT Now
-
-On ZEIT Now, use the `now.json` configuration file to add an [environment variable](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets) containing the contents of your `~/.npmrc` file.
-
-First, add the following to `now.json`:  
-
-```json
-{
-  "name": "my-app",
-  "version": 2,
-  "build": {
-    "env": {
-      "NPM_RC": "@my-app-npmrc"
-    }
-  }
-}
-```
-
-Then, create a secret with the contents of your `~/.npmrc`.
-
-```shell
-now secrets add my-app-npmrc "$(cat ~/.npmrc)"
-```
-
-Note that `my-app-npmrc` is the name of the secret and can be named anything you wish.
-
-### Gitlab
-
-In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as initial step, before running npm install.  
-
-Add the BIT_TOKEN as [environment variable](https://docs.gitlab.com/ee/ci/variables/)
-
-### GitHub actions
-
-Add the BIT_TOKEN as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) in GitHub.
-
-In the GitHub workflow file create a step before npm install section:
-
-```shell
-- name: init bit.dev
+```yaml
+- name: Commit changes made to .bitmap
   run: |
-    echo "Adding bit.dev to npm registry"
-    npm config set @bit:registry https://node.bit.dev
-    npm config set //node.bit.dev/:_authToken ${BIT_TOKEN}
-    echo "Completed adding bit.dev to npm registry"
-  env:
-    BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+    git config --global user.name '${{ github.actor }}'
+    git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+    git add .bitmap
+    git commit -m "update .bitmap with new component versions (automated)."
+    git push
 ```
-
-### Heroku
-
-To generate npmrc before installing dependencies, run a pre build script as described [here](https://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps).
-
-Add the BIT_TOKEN as [environment variable](https://devcenter.heroku.com/articles/config-vars#managing-config-vars)
-
-### Azure pipelines
-
-Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/npm-authenticate?view=azure-devops) to setup the `.npmrc` configuration in your pipeline.  
-
-## Run Bit commands
-
-You can run the CI when importing Bit components in multiple ways:  
-
-|Committed Items in VCS | Action to perform on CI |
-|---|---|
-| .bitmap file only, but no components source code | Bit import. Component is imported with built artifacts. |
-| .bitmap and components source code without built artifacts | Bit import & Bit build. Component will be built from source code |
-| Components source and built artifacts | No need to run build command |
-
-### Install bit-cli
-
-If you need to run a bit command (import or build) you need to install bit-cli on the CI machine.  
-
-According to the CI or deployment server, you can install it globally or locally in the project. To install locally on the project, simply add it as a development dependency in your project:  
-
-```shell
-npm install -D bit-bin
-```
-
-### Configure bit-cli
-
-To configure bit on the server, you need to run the following commands:  
-
-```shell
-bit config set analytics_reporting false
-bit config set error_reporting false
-bit config set user.token ${BIT_TOKEN}
-```
-
-You can do it by committing a `bit-ci.sh` file at the root of your project. Make sure the config file has execution permissions by running `chmod +x ./bit-ci.sh`.  
-
-### Run Bit command
-
-To run bit build add an npm script in your package.json:  
-
-```shell
-"bit-build": "bit build",
-```
-
-or  
-
-```shell
-"bit-import": "bit import",
-```
-
-Run the relevant bit command `npm run bit-build` or `npm run bit-import`  before running the project build. For example:
-
-```shell
-./bit-ci.sh
-npm run bit-build
-...rest of your project build
-```
-
-## Common Errors
-
-### 'package not found' (404) when importing a component
-
-NPM or Yarn throws 'package not found' when importing a component. This is likely because the component has a dependency on a @bit component. Make sure [npmrc is configured](#bit-installed-components).
-
-### Unauthorized (401) when installing a component
-
-Possible reasons:  
-
-- npmrc is not properly [configured](#bit-installed-components)
-- You do not have the right permissions on the Collection that the components are hosted in, and unable to access its components. Make sure you have at least read permissions to the collection that host the components.  
-- Yarn does not send authentication token when installing packages from a `yarn.lock` file. This is a [known issue](https://github.com/yarnpkg/yarn/issues/4451). Make suer `always-auth` is [configured in `.npmrc`](#bit-installed-components).

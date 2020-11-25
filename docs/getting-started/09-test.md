@@ -12,13 +12,18 @@ We'll be testing our previously created 'Button' component. To simplify our UI t
 ```shell
 $ bbit install @testing-library/react
 ```
+> Please install the following, as well:
+> ```shell
+> $ bbit install @babel/runtime react-dom
+>```
+> This is a temporary inconvenience that will be resolved in the next few days.
 
 Notice how we didn't set this package as a 'dev dependency'. Bit determines that for us by analyzing the way it is used. In this case, it is only used by a test file (which will not be used in production).
 
 Let's start by creating our test file (in the button component directory)
 
 ```shell
-$ touch button.spec.js
+$ touch button.spec.jsx
 ```
 
 And place a simple test to validate that it renders:
@@ -37,13 +42,15 @@ describe('Button', () => {
 });
 ```
 
-Bit runs a component's tests whenever it is [tagged](/docs/versioning/tracking-changes). If a test fails, the tagging action will be aborted (and changes will not persist in the local scope).
-
-We can also run the tests manually:
+Bit runs a component's tests whenever it is [tagged](/docs/versioning/tracking-changes). If a test fails, the tagging action will be aborted.
+We can also run tests manually:
 
 ```shell
-// in the component root directory
+// to run tests for all components
 $ bbit test
+
+// to run tests for a specific component (in this case, 'button')
+$ bbit test react-ui/button
 ```
 
 Test results are not only available in the terminal but are also shown in the 'Tests' tab, both in the Workspace UI and in the remote scope.

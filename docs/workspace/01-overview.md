@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-A Bit workspace enables __a single repository__ to [author](/docs/getting-started/add-components), [export](/docs/getting-started/export-to-scope), [import](/docs/getting-started/import-install-components) and [manage](/docs/getting-started/manage-dependencies) completely __independent components__.
+A Bit workspace enables __a single repository__ to [author](/docs/getting-started/add-components), [export](/docs/getting-started/export-to-scope), [import](/docs/getting-started/import-install-components) and [manage](/docs/getting-started/manage-dependencies) multiple __independent components__.
 
 To initialize a new workspace, run the following command in the root directory of your project:
 

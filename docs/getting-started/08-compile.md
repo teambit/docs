@@ -3,7 +3,7 @@ id: compile
 title: Compile
 ---
 
-Compilation is another service provided by a Bit environment. It is a crucial step in making a component an independent module, both for external use but also when used internally, by our local workspace. 
+Compilation is another service provided by a Bit environment. It is a crucial step in making a component an independent module, both for external use but also to use internally, by our local workspace. 
 
 When Bit starts tracking a component, a new directory is created for it inside the `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
 
@@ -52,15 +52,14 @@ Waiting for component changes... (10:17:20)
 
 ### Manual compilation
 
-You can manually trigger component compilation using the `bit compile` command.
+You can manually trigger component compilation using the `bbit compile` command.
 
-```sh
+```shell
+// to compile all components in the workspace
 $ bbit compile
 
-  STATUS        COMPONENT ID
-✔ SUCCESS       primitives/button
-
-✔ 1\1 components compiled successfully.
+// to compile  specific component (in this case, the 'button' component)
+$ bbit compile react-ui/button
 ```
 
 ### Compile in `watch` mode

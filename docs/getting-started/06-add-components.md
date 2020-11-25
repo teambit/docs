@@ -144,8 +144,6 @@ Our 'Button' component uses the `classnames` module. To install it, run the foll
 $ bbit install classnames
 ```
 
-> Please install React as well (`bbit install react`) - this is a temporary inconvenience that will be resolved in the next few days.
-
 Bit will make sure to automatically register this package in the workspace configurations file (`workspace.jsonc`). Notice how a Bit workspace does not use a `package.json` file to manage its dependencies. 
 
 Check the `workspace.jsonc` file to make sure the [`dependency-resolver`](/docs/dependencies/overview) section now contains the snippet below:
@@ -161,13 +159,13 @@ Check the `workspace.jsonc` file to make sure the [`dependency-resolver`](/docs/
 ```
 As you recall from the ['Set up a workspace'](docs/getting-started/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
 
-To select a more limited set of components for a rule or policy, use the ['variants'](docs/variants/overview) section.
+To select a more limited set of components for a rule or policy, use the ['variants'](docs/variants/overview) field.
 
 ### Track the component
 
-If you return for to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component does not show up in our Workspace UI yet; this is because it is not yet tracked by Bit.
+If you return to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component does not show up yet; this is because it is not yet tracked by Bit.
 
-To start tracking it, we'll tun the following command (we'll also group it under the namespace 'react-ui')
+To start tracking it, we'll run the following command (we'll also group it under the namespace 'react-ui')
 
 ```shell
 $ bbit add components/react/ui/button -n react-ui

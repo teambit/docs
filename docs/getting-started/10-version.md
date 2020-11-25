@@ -8,12 +8,17 @@ When we version or 'tag' a component, we "commit" changes and prepare it to be e
 
 ### Tag a component
 
-We'll version (tag) our previously-created 'Button' component by running the following:
+We'll version (tag) our [previously-created 'Button'](/docs/getting-started/add-components) component by running the following:
 
 ```shell
+// hard-tag
 $ bbit tag --persist button 1.0.0
 ```
-> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' (without the `--persist` flag) to __propose__ a new version and let your CI set a new version with the committed changes (using 'hard tag')
+> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to __propose__ a new version and let your [CI](/docs/getting-started/ci-cd) set a new version with the committed changes (using 'hard tag')
+>```shell
+>// soft-tag
+>$ bbit tag button
+>```
 
 To tag all components in the workspace (and bump the patch number of each component version):
 
@@ -24,7 +29,11 @@ $ bbit tag --persist --all
 To untag our 'Button' component we'll run the following:
 
 ```shell
+// to completely remove a version from the local scope
 $ bbit untag --persisted button
+
+// to undo a 'soft-tag'
+$ bbit untag
 ```
 > The above example uses 'hard un-tag' to completely remove this version from the local scope. It is usually preferable to only __propose__ the un-tagging (by removing the `--persisted` flag) and have your CI execute the 'hard un-tagging', to completely remove that component version.
 
@@ -63,7 +72,4 @@ Bit's versioning follows the common semantic structure of [major].[minor].[patch
 Bit makes sure to run the tagging process on every component affected by the modified (versioned) component. As mentioned earlier, that process also includes compiling and testing. This process let's us know immediately when another component breaks due to that change.
 
 To see a diagram of the dependencies in your workspace or scope, take a look at the 'Dependencies' tab (in the Workspace UI/ Remote Scope)
-
-![Dependencies](/img/depdendencies_ui.png)
-
 #### 4. Locks any further changes to that version and stores it in the local scope
