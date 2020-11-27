@@ -5,7 +5,7 @@ title: Installing Packages
 
 ## Use installed component
 
-To use a component, you can use the `bit install` command or a package manager installation:
+To use a component, you can use the `bbit install` command or a package manager installation:
 
 ```shell
 npm install @bit/owner.collection.namespace.namespace.comp-id
@@ -25,22 +25,20 @@ If you want to modify the code of the component, you should [import](/docs/modif
 
 ## Configuring bit registry
 
-> TODO - update when per-account registry's available
-
 Bit supports CommonJS API for consuming components as packages.
 
-To install components with npm or yarn we first need to configure `@bit` as a [scoped registry](https://docs.npmjs.com/misc/scope#associating-a-scope-with-a-registry). Bit does it by default as part of the `bit login` process.
+To install components with npm or yarn we first need to configure the scope owner name as a [scoped registry](https://docs.npmjs.com/misc/scope#associating-a-scope-with-a-registry) (for example `@my-org`). Bit does it by default as part of the `bit login` process.
 
 To configure the registry manually, use the `npm config` command.
 
 ```shell
-npm config set @bit:registry https://node.bit.dev
+npm config set @scope-owner:registry https://node.bit.dev
 ```
 
 To install private components use npm login. Use your Bit credentials to login.
 
 ```shell
-npm login --registry=https://node.bit.dev --scope=@bit
+npm login --registry=https://node.bit.dev --scope=@scope-owner
 ```
 
 ## Installing all Components
@@ -48,7 +46,7 @@ npm login --registry=https://node.bit.dev --scope=@bit
 To install dependencies for all the imported components use:
 
 ```shell
-bit install
+bbit install
 ```
 
 Add the `--verbose` flag to get detailed output.  
@@ -56,11 +54,11 @@ Add the `--verbose` flag to get detailed output.
 You can also install dependencies for a specific component:
 
 ```shell
-bit install foo/bar
+bbit install foo/bar
 ```
 
 If you need to pass extra arguments to npm or yarn, use double dash `--`, and after it add the additional arguments:  
 
 ```shell
-bit import -- --production --no-optional
+bbit import -- --production --no-optional
 ```
