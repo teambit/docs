@@ -7,6 +7,8 @@ title: What is Bit?
 
 Bit helps you **build modular applications in a fast, scalable, and consistent way**.  It helps you scale this process to many teams building consistent and performant applications together.  
 
+With Bit, organizations can distribute web development into autonomous teams which build decoupled features in decoupled codebases, while being able to easily and constantly collaborate and integrate with each other.  
+
 Bit’s modular workspace helps developers build in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” experience.  
 
 Bit’s cloud platform helps teams collaborate on components and build together. It helps teams share and collaborate on components, continuously integrate with each other, and easily scale development with shared components. It gives each team the ability to develop and release components autonomously, while giving the organization tools to standardize and collaborate on development with components across teams and projects.  
