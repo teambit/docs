@@ -9,7 +9,7 @@ Bit helps you build **modular applications** in a **fast, scalable, and consiste
 
 Bit’s workspace helps developers build in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” experience.  
 
-Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams which build decoupled apps/features in decoupled codebases, while being able to easily share, collaborate, and integrate with each other. It gives each team the ability to develop and release components autonomously, while giving them tools to standardize and collaborate on components across teams and projects.  
+Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams that build apps/features in decoupled codebases. All teams can easily share components, collaborate, and integrate with each other. Each team can develop and release components autonomously, while the organization gets tools to standardize and collaborate on components across teams and projects.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
