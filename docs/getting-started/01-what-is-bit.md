@@ -3,9 +3,11 @@ id: what-is-bit
 title: What is Bit?
 ---
 
-### Bit is the component platform for the modern web.  
+### Build modular applications in a fast, scalable, and consistent way. 
 
-Bit helps you build **modular applications** in a **fast, scalable, and consistent** way. It is a **standard infrastructure for components**, that helps you scale the development process to many teams building consistent and performant applications together. 
+Bit is a rich and extensible toolset for building independent components and composing component-driven applications. It is a standard infrastructure for components, that helps you easily scale to many teams building consistent and performant applications together. 
+
+*How?*
 
 Bit’s workspace helps developers build in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” experience.  
 
@@ -241,5 +243,7 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 #### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
+
 
 
