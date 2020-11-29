@@ -5,13 +5,11 @@ title: What is Bit?
 
 ### Bit is the component platform for the modern web.  
 
-Bit helps you build **modular applications** in a **fast, scalable, and consistent** way. It is a **standard infrastructure for components**, that helps you scale the development process to many teams building consistent and performant applications together.
+Bit helps you build **modular applications** in a **fast, scalable, and consistent** way. It is a **standard infrastructure for components**, that helps you scale the development process to many teams building consistent and performant applications together. 
 
-With Bit, organizations can distribute web development into autonomous teams which build decoupled features in decoupled codebases, while being able to easily and constantly collaborate and integrate with each other.  
+Bit’s workspace helps developers build in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” experience.  
 
-Bit’s modular workspace helps developers build in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” experience.  
-
-Bit’s cloud platform helps teams collaborate on components and build together. It helps teams share and collaborate on components, continuously integrate with each other, and easily scale development with shared components. It gives each team the ability to develop and release components autonomously, while giving the organization tools to standardize and collaborate on development with components across teams and projects.  
+Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams which build decoupled apps/features in decoupled codebases, while being able to easily share, collaborate, and integrate with each other. It gives each team the ability to develop and release components autonomously, while giving them tools to standardize and collaborate on components across teams and projects.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
