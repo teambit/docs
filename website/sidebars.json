@@ -20,23 +20,26 @@
     "Workspace": [
       "workspace/overview",
       "workspace/configurations",
+      "workspace/cascading-rules",
+      "workspace/workspace-ui",
+      "workspace/extending-workspace-ui",
       "workspace/component-status"
     ],
     "Workspace UI": [
       "workspace-ui/overview",
       "workspace-ui/extending-workspace-ui"
     ],
-    "Bit Components": [
-      "bit-components/overview",
-      "bit-components/why-components",
-      "bit-components/compositions",
-      "bit-components/import-components"
-    ],
     "Environments": [
       "environments/overview",
       "environments/build-environment",
       "environments/environment-services",
       "environments/environment-handlers"
+    ],
+    "Bit Components": [
+      "bit-components/overview",
+      "bit-components/why-components",
+      "bit-components/compositions",
+      "bit-components/import-components"
     ],
     "Scopes": [
       "scope/overview",
@@ -51,8 +54,9 @@
     ],
     "Dependencies": [
       "dependencies/overview",
-      "dependencies/dependency-graph",
-      "dependencies/dependency-resolver"
+      "dependencies/dependency-resolution",
+      "dependencies/dependency-policies",
+      "dependencies/dependency-installation"
     ],
     "Documentation": [
       "documentation/overview",
@@ -79,9 +83,6 @@
     ],
     "Linting": [
       "linting/overview"
-    ],
-    "Variants": [
-      "variants/overview"
     ],
     "Packages": [
       "packages/overview",

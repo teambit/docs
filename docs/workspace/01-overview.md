@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-A Bit workspace enables __a single repository__ to [author](/docs/getting-started/add-components), [export](/docs/getting-started/export-to-scope), [import](/docs/getting-started/import-install-components) and [manage](/docs/getting-started/manage-dependencies) multiple __independent components__.
+A Bit workspace enables a single repository to [author](/docs/getting-started/add-components), [export](/docs/getting-started/export-to-scope), [import](/docs/getting-started/import-install-components) and [manage](/docs/getting-started/manage-dependencies) multiple independent components.
 
 To initialize a new workspace, run the following command in the root directory of your project:
 
@@ -14,7 +14,7 @@ $ bbit init
 
 A workspace is made of the following parts:
 
-1. __Workspace configurations__ (the `workspace.jsonc` file). This is where rules and policies are set for the workspace itself but also for each component managed by it. These rules include component dependencies, development environments (compilers, testers, linters, etc.), scopes, and so on. [Learn more about it here](/docs/dependencies/overview).
+1. [__Workspace configurations__](/docs/workspace/configurations) (the `workspace.jsonc` file). This is where rules and policies are set for the workspace itself but also for each component managed by it. These rules include component dependencies, development environments (compilers, testers, linters, etc.), scopes, and so on.
 
 2. __Files-to-component mapping__ (the `.bitmap` file). This is where Bit maps files to separate units, separate components. This process happens once a component is tracked by Bit (`bbit add path/to/component`). This mapping will also include the following information:
     * The component entry point (usually, the `index.js/ts` file).

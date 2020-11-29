@@ -29,7 +29,7 @@ To get the authentication token, run the following command (in your local termin
 ```shell
 $ bbit config
 
-analytics_id                  ******************
+analytics_id                  xxxxxxxxxxxxx
 analytics_reporting           false
 registry                      https://node.bit.dev
 anonymous_reporting           false
@@ -94,10 +94,9 @@ jobs:
 ```
 
 ### 7. Add steps to tag and export the pending components
-1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged).
+1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged). To instal packages using only NPM or Yarn, [see here](/docs/packages/install-packages).
 2. __Hard-tag__ all components pending to be versioned. These are components that were 'soft-tagged' by a workspace in a local repository (the source of the 'push' or pull-request that triggered the CI).
-3. __Export__ all tagged components.
-4. Use `bbit doctor` to produce a diagnosis, in case any of these steps fail
+3. __Export__ all tagged components. To publish components to NPM, [see here](/docs/packages/publish-to-npm).
 
 ```yaml
 - name: Install packages using bit
@@ -106,9 +105,6 @@ jobs:
   run: bbit tag --persist
 - name: Export components
   run: bbit export
-- name: Run diagnosis if any previous step fails
-  if: ${{ failure() }}
-  run: bbit doctor
 ```
 > __Where is the 'test' and 'build'?__ 
 > 

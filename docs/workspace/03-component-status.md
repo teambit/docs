@@ -11,10 +11,6 @@ Knowing the state of the workspace's components during the development process c
 
 Bit shows the state of each component in the workspace' component list using annotations and icons. You can also get this data by running the `bit status` command in the terminal.
 
-> TODO image of the icons and where they are in the UI
-
-> This document  the terminology used as part of the terminal outputs.
-
 ## States
 
 #### Nothing to tag or export

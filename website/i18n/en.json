@@ -68,11 +68,14 @@
       "dependencies/overview": {
         "title": "Overview"
       },
-      "dependencies/02-dependency-graph": {
-        "title": "dependencies/02-dependency-graph"
+      "dependencies/dependency-resolution": {
+        "title": "Dependency Resolution"
       },
-      "dependencies/03-dependency-resolver": {
-        "title": "dependencies/03-dependency-resolver"
+      "dependencies/dependency-policies": {
+        "title": "Dependency Policies"
+      },
+      "dependencies/dependency-installation": {
+        "title": "Dependency Installation"
       },
       "development-server/overview": {
         "title": "Overview"
@@ -434,14 +437,8 @@
       "usage-analytics/overview": {
         "title": "Overview"
       },
-      "variants/overview": {
-        "title": "Overview"
-      },
-      "workspace-ui/overview": {
-        "title": "Overview"
-      },
-      "workspace-ui/extending-workspace-ui": {
-        "title": "Extending the Workspace UI"
+      "variants/01-overview": {
+        "title": "variants/01-overview"
       },
       "workspace/overview": {
         "title": "Overview"
@@ -449,8 +446,17 @@
       "workspace/configurations": {
         "title": "Configurations"
       },
+      "workspace/extending-workspace-ui": {
+        "title": "Extending the Workspace UI"
+      },
       "workspace/component-status": {
         "title": "Component Status"
+      },
+      "workspace/cascading-rules": {
+        "title": "Cascading Rules and Settings (variants)"
+      },
+      "workspace/workspace-ui": {
+        "title": "Workspace UI"
       }
     },
     "links": {
@@ -463,8 +469,8 @@
       "Getting Started": "Getting Started",
       "Workspace": "Workspace",
       "Workspace UI": "Workspace UI",
-      "Bit Components": "Bit Components",
       "Environments": "Environments",
+      "Bit Components": "Bit Components",
       "Scopes": "Scopes",
       "Bit CLI": "Bit CLI",
       "Dependencies": "Dependencies",
@@ -474,7 +480,6 @@
       "Compiling": "Compiling",
       "Build Pipeline": "Build Pipeline",
       "Linting": "Linting",
-      "Variants": "Variants",
       "Packages": "Packages",
       "React": "React",
       "Angular": "Angular",

@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-The build pipeline is an orchestrator of tasks that act on Bit components in order to test them, analyze them or produce additional artifacts out of them (for example, testing, compiling and bundling). You can think of it as an 'environment-specific CI/CD workflow for components' that can be run locally and remotely.
+The build pipeline is an orchestrator of 'build tasks'. These orchestrated tasks act on Bit components in order to test them, analyze them or produce additional artifacts out of them (for example, testing, compiling and bundling). You can think of it as an 'environment-specific CI/CD workflow for components' that can run both locally and remotely.
 
 This (changeable) series of tasks is run on two events:
  * `bbit build`

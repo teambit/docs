@@ -135,7 +135,7 @@ This method receives a relative path (as a string) to a Jest configuration file 
 ```ts
 ReactMain.overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bbit tag` or `bbit build` command). To create your own Build Task, [see here](docs/build-pipeline/create-build-task).
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bbit tag` or `bbit build` command). To create your own Build Task, [see here](/docs/build-pipeline/create-build-task).
 
 #### overrideDependencies
 ```ts

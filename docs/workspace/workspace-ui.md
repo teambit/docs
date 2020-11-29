@@ -1,6 +1,6 @@
 ---
-id: overview
-title: Overview
+id: workspace-ui
+title: Workspace UI
 ---
 
 Bit enhances your development experience with a rich visual UI for components (i.e. "Workspace UI").  
@@ -54,10 +54,6 @@ This showcase is dynamic and gets updated whenever a new component is added, or 
 ## Local component dev-server
 
 Each component has it's own local dev-server it renders when you browse it, the output of the local server is rendered in the workspace UI when you choose to view a specific component. The component's development server and features are part of the [component development environment](/docs/environment/overview). The workspace UI communicates with the **environments** to render information about the component.
-
-> TODO - Diagram
->
-> this should show that the right-panel is an iFrame that renders the selected component from the component-list.
 
 * **Overview** - Renders a documentation page for each component. [Learn more](/docs/documentation/automated-docs).  
 * **Compositions** - An isolated rendering environment for the component used for testing the code in different compositions and scenarios. [Learn more](/docs/compositions/develop-in-isolation).  
