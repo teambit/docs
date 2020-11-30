@@ -22,14 +22,14 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 **What can Bit do for you?**:  
 
-* **[Design Systems and Shared Components](#ui-design-system)**  
+* **[Design Systems & Shared Components](#ui-design-system)**  
 * **[Micro Front-Ends](#micro-frontends)**  
+* **[Infinite Component Reuse](#component-reuse)**  
 * **[Developer Designer Collaboration](#developer-designer-collaboration)**
 * **[Sharing Code Between Teams](#sharing-code-between-teams)**
 * **[Standardization and Consistency](#standardization-and-consistency)**  
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
 * **[Scaling Web Development](#scaling-web-development)**  
-* **[Component Reuse](#component-reuse)**  
 
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
