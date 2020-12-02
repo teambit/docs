@@ -65,6 +65,8 @@ Bit covers all aspects of building a multi-project monorepo, and even provides a
 
 * **Auto detecting changes and bumping impacted components** - When you make a change to a component,  Bit automatically detects which other components depend on the changed component, and “knows” to build only the impacted graph of dependent components - with infinite propagation. Building changes across many components in your project becomes a blazing fast yet surprisingly simple task that is mostly automated.  
 
+* **Isolated incremental component testing** - Each component is tested in isolation using a test environment which is also a reusable module. As you code you can view the test results reload in Bit’s UI, to know exactly if the component breaks or not. As you test the component, via ‘bit test’ or by releasing a new version etc, Bit will detect and test all impacted components up the dpandats graph, to make sure your changes will not break any other component.  
+
 * **Component symlinking** lets ‘bit install’ build components that depend on other components that did not yet been tagged with a matching version.  
 
 * **Modular bulk publishing** - Every component developed in a Bit monorepo is, by design, ready to be published as a standalone package. Bit strips aways all the overhead of configuring each component’s ‘package.json’ and other setup files. All you have to do is run ‘bit tag’ so that Bit will auto tag all changed components with a version bump (supporting semver rules), and then bulk publish changes to all impacted components. Each component published to the bit.dev cloud platform will be available to find and install, with every part of the local UI view available on the cloud as auto-updating documentation, including API reference, examples, compositions, dependency graphs, test results, code and more. 
@@ -278,7 +280,4 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 ### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
-
-
-
 
