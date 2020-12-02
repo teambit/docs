@@ -16,11 +16,6 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
 
-**Core features**:  
-
-* **[Extensible Dev Tools](#extensible-development-tools)**
-* **[Component Cloud Platform](#cloud-platform-key-features)**  
-
 **What can Bit do for you?**:  
 
 * **[Design Systems & Shared Components](#ui-design-system)**  
@@ -31,7 +26,12 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 * **[Infinite Component Reuse](#component-reuse)**  
 * **[Standardization and Consistency](#standardization-and-consistency)**  
 * **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
-* **[Scaling Web Development](#scaling-web-development)**  
+* **[Scaling Web Development](#scaling-web-development)**   
+
+**Core features**:  
+
+* **[Extensible Dev Tools](#extensible-development-tools)**
+* **[Component Cloud Platform](#cloud-platform-key-features)**  
 
 
 > **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
@@ -295,4 +295,3 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 ### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
-
