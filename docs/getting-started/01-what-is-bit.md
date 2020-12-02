@@ -9,7 +9,7 @@ Bit is a rich and extensible toolset for building independent components and com
 
 *How?*
 
-Bit’s workspace helps developers build projects in a modular way, so each component is independently developed, tested, built, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience.  
+Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build projects in a modular way, so each component is independently developed, tested, built, rendered, limited, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.
 
 Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams that build apps/features in decoupled codebases. All teams can easily share components, collaborate, and integrate with each other. Each team can develop and release components autonomously, and get tools to standardize and manage components across teams and projects.  
 
@@ -24,6 +24,7 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 **What can Bit do for you?**:  
 
 * **[Design Systems & Shared Components](#ui-design-system)**  
+* **[Component Monorepo](#component-monorepo)**
 * **[Micro Front-Ends](#micro-frontends)**  
 * **[Developer Designer Collaboration](#developer-designer-collaboration)**
 * **[Sharing Code Between Teams](#sharing-code-between-teams)**
@@ -49,6 +50,35 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 
 
 *Design systems* are how great teams keep their UI consistent across multiple pages and applications. Modern design systems are built with components, which are used as shared building blocks to ensure consistency. Bit is a perfect way to construct a design system from independent components which are developed, built, and published by custom regulated standards. Bit.dev is the most effective platform for teams to distribute, discover, use, and collaborate on their component-driven design system. Instead of a cumbersome monolithic and often irrelevant library, Bit provides a collaborative and scalable ecosystem where everyone can share and discover components, get and suggest changes, ensure consistency, and build together. For example, whenever there’s a new version of a component, a single push of a button can send the update as an automated PR to every impacted repository in the organization. And, a developer that uses one of your components in their own application, can suggest changes back to you without having to dive into your repository or making a complex PR to your project. Super cool, right? And, it’s also a great way for developers to include more people, like designers, in their web development process - directly over code, and in a visual way. 
+
+### Component Monorepo
+
+Bit helps you build a modular and scalable multi-component monorepo. It provides a fully decoupled and modular way to develop, built, test, lint, publish etc many components in one project, while keeping a simple and holistic developer experience.  
+
+![Component-monorepo](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-monorepo.png)  
+
+Bit covers all aspects of building a multi-project monorepo, and even provides a beautiful UI where you can easily master and navigate the development of your modular project. Key features include:
+
+* **Seperated, reusable, customizable dev environments** -  Reusable and customizable modules that configures and “bundles” together different services needed throughout the life-cycle of an independent component such as compiling, bundling, testing, linting, documenting, and more.  
+
+* **Decoupled, incremental, propagating builds** - Bit only build changes to impacted components on the graph. Each change propagates infinitely to all impacted components on the graph. Nothing else but the impacted components is built. Every impacted component is built in isolation to ensure its fully safe to deploy changes.  
+
+* **Auto detecting changes and bumping impacted components** - When you make a change to a component,  Bit automatically detects which other components depend on the changed component, and “knows” to build only the impacted graph of dependent components - with infinite propagation. Building changes across many components in your project becomes a blazing fast yet surprisingly simple task that is mostly automated.  
+
+* **Component symlinking** lets ‘bit install’ build components that depend on other components that did not yet been tagged with a matching version.  
+
+* **Modular bulk publishing** - Every component developed in a Bit monorepo is, by design, ready to be published as a standalone package. Bit strips aways all the overhead of configuring each component’s ‘package.json’ and other setup files. All you have to do is run ‘bit tag’ so that Bit will auto tag all changed components with a version bump (supporting semver rules), and then bulk publish changes to all impacted components. Each component published to the bit.dev cloud platform will be available to find and install, with every part of the local UI view available on the cloud as auto-updating documentation, including API reference, examples, compositions, dependency graphs, test results, code and more. 
+
+* **Component changelogs and history** - Every component has its own changelog and version history so it’s very easy to view and learn about changes in Bit’s UI or on the cloud.
+
+* **Component docs and examples** - Every component is documented using reusable and customizable templates, and Bit automates much of the work for you. Working with MDX? No problem, Bit supports almost any format you’d like to use to create beautiful docs.
+
+* **Compositions rendered in isolation** - Every component is rendered in full isolation, literally outside of the project, and these visuals (which hot-reload as you code) become a part of each component’s documentation when developing locally, and in the cloud.
+
+* **Component build pipelines** - You can pipe build jobs in a reusable pipeline that can be applied to all components in a project or in all of your team’s projects, in order to easily standardize the development and release process of your web applications. For example, company “Acme” can define “Acme Release Pipeline” with specific configurations which will standardize how all components in Acme will be tested, built and released. 
+
+* **Extend, replace, or customize anything** - Bit is 100% modular. Every part of Bit is a reusable, extensible, and customizable module. Including everything - dev environments, build environments, the UI, docs templates, the workspace, build pipelines, everything. You can easily and quickly change, remove, add, or replace any part of Bit, your toolchain, or workflow. You can even add features to the workspace UI to enrich your experience. It’s just a matter of composing a few components.
+
 
 ### Micro Frontends  
 
@@ -136,7 +166,13 @@ Bit comes with a powerful dev server for components, that lets you render, test 
 
 ### Component Dev Environments
 
-Bit lets you develop multiple components in the same workspace, while completely decoupling their development environments from each other. Each component is developed in decoupled environment, so it can be developed completely independently. These environments are fully reusable, customizable, and extensible, so you can easily choose and standardize the way components are developed in your own applications.
+A Bit Environment is a component that configures and “bundles” together different services needed throughout the life-cycle of an independent component. These services include compiling, bundling, testing, linting, documenting, and more.
+
+Bit environments make it possible to build and deliver independent components without the overhead of setting up a development environment to support that. Environments are also used to ensure consistency by standardizing the environment setup for independent components, developed across various (decoupled) projects.
+
+Bit provides a number of environments to choose from. Each environment is completely customizable and extendible (once you create your own custom environment, it can be shared with others like any other component). 
+
+
 
 ![component-dev-environments](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-11-10%20at%202.56.23%20PM.png)  
 
@@ -242,3 +278,7 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 ### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
+
+
+
