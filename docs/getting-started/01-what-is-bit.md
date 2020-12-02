@@ -49,7 +49,31 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 ![Design system](https://storage.googleapis.com/static.bit.dev/harmony-docs/bit-design-system.jpeg)  
 
 
-*Design systems* are how great teams keep their UI consistent across multiple pages and applications. Modern design systems are built with components, which are used as shared building blocks to ensure consistency. Bit is a perfect way to construct a design system from independent components which are developed, built, and published by custom regulated standards. Bit.dev is the most effective platform for teams to distribute, discover, use, and collaborate on their component-driven design system. Instead of a cumbersome monolithic and often irrelevant library, Bit provides a collaborative and scalable ecosystem where everyone can share and discover components, get and suggest changes, ensure consistency, and build together. For example, whenever there’s a new version of a component, a single push of a button can send the update as an automated PR to every impacted repository in the organization. And, a developer that uses one of your components in their own application, can suggest changes back to you without having to dive into your repository or making a complex PR to your project. Super cool, right? And, it’s also a great way for developers to include more people, like designers, in their web development process - directly over code, and in a visual way. 
+*Design systems* are how great teams keep their UI consistent across multiple pages and applications. Modern design systems are built with components, which are used as shared building blocks to ensure consistency. Bit is a perfect way for teams to distribute, discover, use, and collaborate on their component-driven design system. And, it’s also a great way for developers to include more people, like designers, in their web development process.  
+
+* **Collaborative component ecosystem** - Bit is how teams work together to build a thriving, collaborative, and beautiful component ecosystem for all developers. Everyone can develop components in their own applications, share components with each other via the component cloud, discover and use other people’s components, easily suggest feedback and changes, and enjoy an harmonic balance between innovation, delivery, and consistency.  
+
+* **Ensure consistency in design and code** - Bit helps you standardize the development of components and visualize all UI changes in real time to help you ensure every component and every change will meet both your team’s design and development release criteria.  
+
+* **Universal hub for components** - All your components are hosted, shared, and exposed on the component cloud. Every team can own and expose its own components, while easily finding and consuming components exposed by other teams, all in one secured and manageable place.  
+
+* **Develop independent components** - Bit provides the richest and most powerful component development toolset available in the world, to help your build independent reusable components which can be quickly integrated and used in new projects and new environments.  
+
+* **Distribute independent components** - Bit makes it easy to publish many components from any project, as independently versioned packages. Don’t install (or be forced to update) entire libraries just to gain access to a few APIs.  
+
+
+* **Incremental component updates** - With Bit you only get updates to components you actually use, and don’t have to update a whole library for no reason. And, Bit auto-detects which components are impacted by every change, so it helps you easily and safely adopt changes into your project without breaking anything. Staying updated made simple and painless.
+
+* **Component usage analytics** - In the component cloud you can learn which projects and which teams  adopted which updates to what components. Learn the exact status of every component in every app, and gain actionable insights on your entire UI development.  
+
+* **Scalable discovery and documentation** - Bit turns documentation into a native and almost seamless part of creating components. It combines auto-generated API reference, MDX and other formats, visual examples, rendered compositions and many other doc features to create the richest and most simple to consume docs for every component. When you publish to the component cloud, all these docs are hosted in the cloud as a part of every component. **No extra tools or websites required**.
+
+* **Automated GitHub updates** - Bit.dev offers a GitHub integration, so that when a new component version is released, Bit automates the creation of pull-requests in every impacted GitHub repository, with all relevant information such as build results etc already included in the PR. And, at any moment, you can view who merged which PRs into which projects.
+
+* **Automated Slack updates** - Bit.dev offers a GitHub integration, so that when a new component version is released, Slack notifications will be sent to all relevant people whose projects are impacted by the change. Nudging is now automated!
+
+* **Developer-designer handshake** - Bit visualizes the code of your UI component to designers, and helps them learn exactly how every component looks and behaves as seen by users, at any given moment in time, and in every version. When a new version is released, simply ask designers to review the change - they will be able to see exactly what components are impacted by the change, how each of them will look, and give feedback. You can even [automate this process](https://blog.bitsrc.io/introducing-bit-dev-webhooks-78dade77c6da) to create tasks for designers to review every component change before its published. 
+
 
 ### Component Monorepo
 
