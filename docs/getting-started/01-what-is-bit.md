@@ -61,6 +61,8 @@ Bit covers all aspects of building a multi-project monorepo, and even provides a
 
 * **Seperated, reusable, customizable dev environments** -  Reusable and customizable modules that configures and “bundles” together different services needed throughout the life-cycle of an independent component such as compiling, bundling, testing, linting, documenting, and more.  
 
+* **Mastery of the component graph**  -  Bit defines, manages, and helps you leverage the relationship between all components in your project. At any time, you can visit the dependencies tab in Bit’s UI to learn exactly which components depend on other components. It uses this information to allow incremental propagating builds and tests, bulk publishing based on automated change detection, and more powerful features.
+
 * **Decoupled, incremental, propagating builds** - Bit only build changes to impacted components on the graph. Each change propagates infinitely to all impacted components on the graph. Nothing else but the impacted components is built. Every impacted component is built in isolation to ensure its fully safe to deploy changes.  
 
 * **Auto detecting changes and bumping impacted components** - When you make a change to a component,  Bit automatically detects which other components depend on the changed component, and “knows” to build only the impacted graph of dependent components - with infinite propagation. Building changes across many components in your project becomes a blazing fast yet surprisingly simple task that is mostly automated.  
@@ -293,3 +295,4 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 ### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
