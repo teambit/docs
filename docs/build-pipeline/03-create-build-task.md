@@ -5,26 +5,37 @@ title: Create a Build Task
 
 Customized build tasks are another way to tailor a Bit environment to your own specific needs.
 
-The example below shows a customized task that is built as part of an environment extension (go through the tabs to see it used by the customized environment).
-<!--DOCUSAURUS_CODE_TABS-->
-<!--print-component-id.ts-->
-```ts
-import { BuildTask, BuildContext, BuiltTaskResult, ComponentResult } from '@teambit/builder';
+The example task below, shown as it is used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be stored in the component tagged version.
 
-export class PrintComponentId implements BuildTask {
-  readonly aspectId = 'extensions/customized-react-env';
-  readonly name = 'print-component-id';
+> Information returned by a build task will only persist if the build-pipeline was triggered by the `bbit tag --persist` command (that generates a new component version).
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--print-cmp-name-task.ts-->
+```ts
+import {
+  BuildTask,
+  BuildContext,
+  BuiltTaskResult,
+  ComponentResult,
+} from "@teambit/builder";
+
+export class PrintCmpNameTask implements BuildTask {
+  constructor(readonly aspectId: string, readonly name: string) {}
 
   async execute(context: BuildContext): Promise<BuiltTaskResult> {
     const componentsResults: ComponentResult[] = [];
-    context.capsuleNetwork.seedersCapsules.forEach(capsule => {
+    context.capsuleNetwork.seedersCapsules.forEach((capsule) => {
 
-      console.log('This is the current component ID:', capsule.component.id);
-      componentsResults.push({ component: capsule.component, metadata: { addedInfo: 'new-info' } });
+      console.log(`The current component name is: ${capsule.component.id.name}`)
+  
+      componentsResults.push({
+        component: capsule.component,
+        metadata: { customProp: capsule.component.id.name}
+      });
     });
     return {
       componentsResults
-    }
+    };
   }
 }
 ```
@@ -32,38 +43,96 @@ export class PrintComponentId implements BuildTask {
 <!--customized-react.extension.ts-->
 
 ```ts
-import { BuilderMain } from '@teambit/builder';
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
-import { PrintComponentId } from './print-component-id.ts';
+import { PrintCmpNameTask } from './print-cmp-name-task';
 
-export class CustomizedReactExtension {
+export class CustomReact {
   constructor(private react: ReactMain) {}
-
   static dependencies: any = [EnvsAspect, ReactAspect];
+  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+    const reactPipe = react.env.getBuildPipe();
+    const tasks = [...reactPipe, new PrintCompTask('extensions/custom-react', 'helloWorldTask')];
 
-  static async provider([envs, react, builder]: [EnvsMain, ReactMain, BuilderMain]) {
-    const reactDefaultPipe = react.env.getBuildPipe();
-    const tasks = [...reactDefaultPipe, new PrintComponentId()];
-    const customizedReactEnv = react.compose([
+    const customReactEnv = react.compose([
       react.overrideBuildPipe(tasks)
     ]);
 
-    envs.registerEnv(harmonyReactEnv);
-    return new CustomizedReactExtension(react);
+    envs.registerEnv(customReactEnv);
+    return new CustomReact(react);
   }
 }
 ```
-<!--index.ts-->
-```ts
-import { CustomizedReactExtension } from './customized-react.extension';
-
-export { CustomizedReactExtension };
-export default CustomizedReactExtension;
-```
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+## A build task anatomy
+*  __aspectId__ <br />
+  `aspectId: string`<br />
+  The component ID of the environment using this task.
+
+* __name__ <br />
+`name: string` <br />
+A name for this task (alphanumerical characters only).
+
+* __location__ <br />
+`location?: 'start' | 'end'` <br />
+The section of the build-pipeline to which to append this task.
+* __dependencies__ <br />
+`dependencies?: string[]` <br />
+An list of tasks that must be completed before this task gets executed. <br />
+For example `dependencies = ['@teambit/preview']`.
+
+* __execute__ (method) <br />
+`execute(context: BuildContext): Promise<BuiltTaskResult>` <br />
+  This method gets executed by Bit.
+  * __context__ (argument) <br />
+    The context of the build pipeline. Use this object (provided by the build pipeline) to get information regarding all components handled by the build pipeline. <br /><br />
+    For example, `context.capsuleNetwork.seedersCapsules` are models representing isolated instances of components handled by the build pipeline. These isolated instances are independent projects, generated in your local filesystem (by the build pipeline).
+
+  * __return__ <br />
+  A build task returns an object with the following attributes:
+
+    * __componentsResults__
+
+      * __component__ <br />
+        `component: Component` <br />
+        An instance of the component handled by the task (see the above task example).
+
+      * __metadata__ <br />
+        `metadata?: { [key: string]: Serializable }` <br />
+        Component metadata generated during the build task.
+      
+      * __errors__ <br />
+        `errors?: Array<Error | string>` <br />
+        Build task errors. A task returning errors will abort the build pipeline and log the returned errors. 
+
+      * __warnings__ <br />
+        `warnings?: string[]` <br />
+        warnings generated throughout the build task.
+
+      * __startTime__ <br />
+        `startTime?: number` <br />
+        A timestamp (in milliseconds) of when the task started
+      
+      * __endTime__ <br />
+        `endTime?: number` <br />
+        A timestamp (in milliseconds) of when the task ended
+        
+
+
+
 
 ## Positioning a build task in the pipeline
 ### Override the entire build pipeline
 
 ### Append to the start, middle or end of the pipeline
+
+
+---
+
+build task returns build task results. this should include whether the process was successful and new data generated by the task (for example the 'preview' task return data regarding the the produced artifacts (css, html, js).) these results are stored in the component model (if tagged).
+
+Component results:
+
+- Artifacts (optional) - the information regarding the produced artifacts
+- 

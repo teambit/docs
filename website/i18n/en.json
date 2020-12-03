@@ -5,9 +5,6 @@
     "previous": "Previous",
     "tagline": "An extensible engine for component-driven development",
     "docs": {
-      "angular/overview": {
-        "title": "Overview"
-      },
       "aspects/overview": {
         "title": "Overview"
       },
@@ -58,12 +55,6 @@
       },
       "compiling/overview": {
         "title": "Overview"
-      },
-      "compositions/overview": {
-        "title": "Overview"
-      },
-      "compositions/02-testing": {
-        "title": "compositions/02-testing"
       },
       "dependencies/overview": {
         "title": "Overview"
@@ -437,9 +428,6 @@
       "usage-analytics/overview": {
         "title": "Overview"
       },
-      "variants/01-overview": {
-        "title": "variants/01-overview"
-      },
       "workspace/overview": {
         "title": "Overview"
       },
@@ -475,14 +463,12 @@
       "Bit CLI": "Bit CLI",
       "Dependencies": "Dependencies",
       "Documentation": "Documentation",
-      "Compositions": "Compositions",
       "Testing": "Testing",
       "Compiling": "Compiling",
       "Build Pipeline": "Build Pipeline",
       "Linting": "Linting",
       "Packages": "Packages",
       "React": "React",
-      "Angular": "Angular",
       "NodeJS": "NodeJS",
       "Extensions": "Extensions",
       "Aspects": "Aspects",
