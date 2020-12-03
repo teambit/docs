@@ -79,9 +79,13 @@ Developer teams will enjoy a shared infrastructure that lets them scale web deve
 
 Bit helps you build a modular and scalable multi-component monorepo. It provides a fully decoupled and modular way to develop, built, test, lint, publish etc many components in one project, while keeping a simple and holistic developer experience.  
 
-![Component-monorepo](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-monorepo.png)  
+![Component-monorepo-2](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-monorepo.png)  
 
-Bit covers all aspects of building a multi-project monorepo, and even provides a beautiful UI where you can easily master and navigate the development of your modular project. Key features include:
+
+Bit covers all aspects of building a multi-project monorepo, and even provides a beautiful UI where you can easily master and navigate the development of your modular project. 
+
+
+Key features include:
 
 * **Seperated, reusable, customizable dev environments** -  Reusable and customizable modules that configures and “bundles” together different services needed throughout the life-cycle of an independent component such as compiling, bundling, testing, linting, documenting, and more.  
 
@@ -195,7 +199,7 @@ A rich and fully extensible toolset for modular application development.
 
 Bit’s workspace turns your project into a smart “monorepo” where components are fully decoupled from each other during every step of their development, build, test, and publish process. Bit will ensure each component is completely independent, while helping you manage and synchronize all components in your project with an effortless and holistic developer experience. It is a bedrock for truly modular and harmonized development.
 
-![bit-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/harmony-workspace-1.png)   
+![Component-monorepo-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/monorepo-components-bit.png)  
 
 
 ### Component Development Server  
