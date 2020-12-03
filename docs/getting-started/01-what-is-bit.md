@@ -3,7 +3,7 @@ id: what-is-bit
 title: What is Bit?
 ---
 
-### Build modular applications in a fast, scalable, and consistent way. 
+## Build modular applications in a fast, scalable, and consistent way. 
 
 Bit is a rich and extensible toolset for building independent components and composing component-driven applications. It is a standard infrastructure for components, that helps you easily scale to many teams building consistent and performant applications together. 
 
