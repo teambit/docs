@@ -2,12 +2,100 @@
 id: create-build-task
 title: Create a Build Task
 ---
+The example task below, shown being used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be logged and/or stored in the component tagged version. [See a demo project here](https://github.com/teambit/harmony-build-examples).
 
-Customized build tasks are another way to tailor a Bit environment to your own specific needs.
+> Information returned by a build task will only persist if the build-pipeline was triggered by the 'hard-tag' command (`bbit tag <component-id> --persist`).
 
-The example task below, shown as it is used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be stored in the component tagged version.
+<!--DOCUSAURUS_CODE_TABS-->
+<!--print-cmp-name-task.ts-->
+```ts
+import {
+  BuildTask,
+  BuildContext,
+  BuiltTaskResult,
+  ComponentResult,
+} from "@teambit/builder";
 
-> Information returned by a build task will only persist if the build-pipeline was triggered by the `bbit tag --persist` command (that generates a new component version).
+// A task is an implementation of 'BuildTask' provided by the 'builder' aspect
+export class PrintCmpNameTask implements BuildTask {
+
+  // The constructor leaves these properties up to the hands of the environment using this task
+  constructor(readonly aspectId: string, readonly name: string) {}
+
+  // This is where the task logic is placed. It will be executed by the build pipeline
+  async execute(context: BuildContext): Promise<BuiltTaskResult> {
+    const componentsResults: ComponentResult[] = [];
+
+    // Go through every isolated component instance
+    context.capsuleNetwork.seedersCapsules.forEach((capsule) => {
+
+      console.log(`The current component name is: ${capsule.component.id.name}`)
+
+      componentsResults.push({
+        component: capsule.component,
+        metadata: { customProp: capsule.component.id.name}
+      });
+    });
+    return {
+      // An array of component objects, enriched with additional data produced by the task
+      componentsResults
+    };
+  }
+}
+```
+
+<!--customized-react.extension.ts-->
+
+```ts
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
+
+// Import the task (in reality, it should be an independent component)
+import { PrintCmpNameTask } from './print-cmp-name-task';
+
+export class CustomReact {
+  constructor(private react: ReactMain) {}
+
+  static dependencies: any = [EnvsAspect, ReactAspect];
+
+  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+
+    // Get the environment's default build pipeline
+    const reactPipe = react.env.getBuildPipe();
+
+    // Add the custom task to the end of the build tasks sequence.
+    // Provide the task with the component ID of the extension using it.
+    // Provide the ask with a name.
+    const tasks = [...reactPipe, new PrintCompTask('extensions/custom-react', 'PrintCmpNameTask')];
+
+    // Create a new environment by merging these configurations with the env's default ones
+    const customReactEnv = react.compose([
+      react.overrideBuildPipe(tasks)
+    ]);
+
+    // register the extension as an environment
+    envs.registerEnv(customReactEnv);
+    return new CustomReact(react);
+  }
+}
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+
+## Positioning a build task in the pipeline
+
+A build task is positioned in the build pipeline sequence either by overriding the entire *customizable* pipeline or, by registering it to a location in the pipeline using the designated builder slot.
+### Override the build pipeline sequence
+This methodology leaves the task completely agnostic as to its position in the build pipeline. Instead, the task position is determined by the environment.
+
+See the example above.
+
+### Append to the start or end of the pipeline, in relation to other tasks
+This methodology lets the task itself determine its position in the build pipeline sequence.
+
+It places the task at the start or end of the build pipeline sequence, and lists all other tasks needed to run successfully before it is executed.
+
+Example:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--print-cmp-name-task.ts-->
@@ -20,14 +108,21 @@ import {
 } from "@teambit/builder";
 
 export class PrintCmpNameTask implements BuildTask {
+
   constructor(readonly aspectId: string, readonly name: string) {}
+
+  // Place the task at the end of the build pipeline
+  location: 'end';
+
+  // Run this task only after the '@teambit/preview' task is completed successfully
+  dependencies: ['@teambit/preview'];
 
   async execute(context: BuildContext): Promise<BuiltTaskResult> {
     const componentsResults: ComponentResult[] = [];
     context.capsuleNetwork.seedersCapsules.forEach((capsule) => {
 
       console.log(`The current component name is: ${capsule.component.id.name}`)
-  
+
       componentsResults.push({
         component: capsule.component,
         metadata: { customProp: capsule.component.id.name}
@@ -45,17 +140,22 @@ export class PrintCmpNameTask implements BuildTask {
 ```ts
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
+
+// Import the task (in reality, it should be an independent component)
 import { PrintCmpNameTask } from './print-cmp-name-task';
 
 export class CustomReact {
   constructor(private react: ReactMain) {}
+
   static dependencies: any = [EnvsAspect, ReactAspect];
+
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const reactPipe = react.env.getBuildPipe();
-    const tasks = [...reactPipe, new PrintCompTask('extensions/custom-react', 'helloWorldTask')];
+
+    // Register this task using the registration slot, made available by the 'builder'.
+    // Here, the environment has no say in the positioning of the task
+    builder.registerBuildTasks([new ExampleTask('extensions/custom-react', 'PrintCmpNameTask')]);
 
     const customReactEnv = react.compose([
-      react.overrideBuildPipe(tasks)
     ]);
 
     envs.registerEnv(customReactEnv);
@@ -65,6 +165,7 @@ export class CustomReact {
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+
 ## A build task anatomy
 *  __aspectId__ <br />
   `aspectId: string`<br />
@@ -72,67 +173,96 @@ export class CustomReact {
 
 * __name__ <br />
 `name: string` <br />
-A name for this task (alphanumerical characters only).
+A name for this task. Only alphanumerical characters are allowed. PascalCase should be used as a convention.
 
 * __location__ <br />
 `location?: 'start' | 'end'` <br />
 The section of the build-pipeline to which to append this task.
+
 * __dependencies__ <br />
 `dependencies?: string[]` <br />
 An list of tasks that must be completed before this task gets executed. <br />
 For example `dependencies = ['@teambit/preview']`.
 
-* __execute__ (method) <br />
+* __execute__ <br />
 `execute(context: BuildContext): Promise<BuiltTaskResult>` <br />
-  This method gets executed by Bit.
+  The execute method is where all the task logic is placed.
   * __context__ (argument) <br />
+  `context: BuildContext` <br />
     The context of the build pipeline. Use this object (provided by the build pipeline) to get information regarding all components handled by the build pipeline. <br /><br />
     For example, `context.capsuleNetwork.seedersCapsules` are models representing isolated instances of components handled by the build pipeline. These isolated instances are independent projects, generated in your local filesystem (by the build pipeline).
 
   * __return__ <br />
-  A build task returns an object with the following attributes:
+  `Promise<BuiltTaskResult>` <br />
+  A `context` method returns an object with data regarding the build task process, additional data regarding the components handled by the task and, if available, data regarding the different artifacts generated by this task.<br /> This data will only persist (saved in the component metadata), if the build pipeline was executed using 'hard-tag' (`bbit tag <component-id> --persist`). <br />
+  The returned object has the following attributes:
 
-    * __componentsResults__
+      * __componentsResults__ <br />
+        `componentsResults: ComponentResult[]`
+        An array of objects, each containing an instance of an object handled the task and additional information regarding the process and the component itself.
+        * __component__ <br />
+          `component: Component` <br />
+          An instance of the component handled by the task (see the above task example).
 
-      * __component__ <br />
-        `component: Component` <br />
-        An instance of the component handled by the task (see the above task example).
-
-      * __metadata__ <br />
-        `metadata?: { [key: string]: Serializable }` <br />
-        Component metadata generated during the build task.
-      
-      * __errors__ <br />
-        `errors?: Array<Error | string>` <br />
-        Build task errors. A task returning errors will abort the build pipeline and log the returned errors. 
-
-      * __warnings__ <br />
-        `warnings?: string[]` <br />
-        warnings generated throughout the build task.
-
-      * __startTime__ <br />
-        `startTime?: number` <br />
-        A timestamp (in milliseconds) of when the task started
-      
-      * __endTime__ <br />
-        `endTime?: number` <br />
-        A timestamp (in milliseconds) of when the task ended
+        * __metadata__ <br />
+          `metadata?: { [key: string]: Serializable }` <br />
+          Component metadata generated during the build task.
         
+        * __errors__ <br />
+          `errors?: Array<Error | string>` <br />
+          Build task errors. A task returning errors will abort the build pipeline and log the returned errors. 
 
+        * __warnings__ <br />
+          `warnings?: string[]` <br />
+          warnings generated throughout the build task.
 
+        * __startTime__ <br />
+          `startTime?: number` <br />
+          A timestamp (in milliseconds) of when the task started
+        
+        * __endTime__ <br />
+          `endTime?: number` <br />
+          A timestamp (in milliseconds) of when the task ended
+      * __artifacts__ <br />
+        `artifacts?: ArtifactDefinition[]` <br />
+        An array of artifact definitions to generate after a successful build
+        * __name__ <br />
+        `name: string` <br />
+        The name of the artifact. <br />
+        For example, a project might utilize two different artifacts for the same typescript compiler, one that generates ES5 files and another for ES6. This prop helps to distinguish between the two.
+        * __generatedBy__ <br />
+        `generatedBy?: string;` <br />
+        Id of the component that generated this artifact.
 
+        * __description__ <br />
+        `description?: string` <br />
+        A description of the artifact. <br />
 
-## Positioning a build task in the pipeline
-### Override the entire build pipeline
+        * __globPatterns__ <br />
+        `globPatterns: string[]` <br />
+        Glob patterns of files to include upon artifact creation. Minimatch is used to match the patterns. <br />
+        For example, `['*.ts', '!foo.ts']` matches all ts files but ignores `foo.ts`.
 
-### Append to the start, middle or end of the pipeline
+        * __rootDir__ <br />
+        `rootDir?: string` <br />
+        Defines the root directory of the artifacts in the capsule file system. The rootDir must be unique for every artifact, otherwise data might be overridden.
 
+        * __dirPrefix__ <br />
+        `dirPrefix?: string` <br />
+        Adds a directory prefix for all artifact files.
 
----
+        * __context__ <br />
+        `context?: 'component' | 'env'` <br />
+        Determine the context of the artifact. The default artifact context is `component`. `env` is useful when the same file is generated for all components, for example, a "preview" task may create the same webpack file for all components of that env.
 
-build task returns build task results. this should include whether the process was successful and new data generated by the task (for example the 'preview' task return data regarding the the produced artifacts (css, html, js).) these results are stored in the component model (if tagged).
+        * __storageResolver__ <br />
+        `storageResolver?: string` <br />
+        Used to replace the location of the stored artifacts. The default resolver persists artifacts on scope (that's not recommended for large files).
 
-Component results:
+* __preBuild__  (advanced) <br />
+  `preBuild?(context: BuildContext): Promise<void>` <br />
+  Runs before the build pipeline has started. This method should only be used when preparations are needed to be done on all environments before the build starts.
 
-- Artifacts (optional) - the information regarding the produced artifacts
-- 
+* __postBuild__ (advanced) <br />
+`postBuild?(context: BuildContext, tasksResults: TaskResultsList): Promise<void>` <br />
+  Runs after the dependencies were completed for all environments.
