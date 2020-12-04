@@ -10,8 +10,10 @@ Bit integrates into your CI/CD pipeline to achieve the following:
 2. Version and export components to remote scopes. These are components that are 'soft-tagged' (i.e, pending to be versioned).
 
 > Components in local workspaces should only be 'soft-tagged'. That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned. The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository). This enables collaboration on components before they are tagged and exported.
-  
-3. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process (for example, to bundle and deploy the 'App' component). To learn how to extend an environment with your own 'build task', [see here]().
+
+3. Publish components (as packages) to NPM or other registries (learn more, [here](/docs/packages/publish-to-npm))
+
+4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process (for example, to bundle and deploy the 'App' component). To learn how to extend an environment with your own 'build task', [see here]().
 
 
 ## Setting up the CI with Github Actions
@@ -94,9 +96,9 @@ jobs:
 ```
 
 ### 7. Add steps to tag and export the pending components
-1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged). To instal packages using only NPM or Yarn, [see here](/docs/packages/install-packages).
+1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged). 
 2. __Hard-tag__ all components pending to be versioned. These are components that were 'soft-tagged' by a workspace in a local repository (the source of the 'push' or pull-request that triggered the CI).
-3. __Export__ all tagged components. To publish components to NPM, [see here](/docs/packages/publish-to-npm).
+3. __Export__ all tagged components.
 
 ```yaml
 - name: Install packages using bit

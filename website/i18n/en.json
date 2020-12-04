@@ -35,14 +35,14 @@
       "bit-components/04-import-components": {
         "title": "bit-components/04-import-components"
       },
+      "bit-components/workspace-vs-scope": {
+        "title": "Workspace vs Scope"
+      },
       "build-pipeline/overview": {
         "title": "Overview"
       },
-      "build-pipeline/override-pipeline": {
-        "title": "Override the Default Pipeline"
-      },
       "build-pipeline/create-build-task": {
-        "title": "Create a Build Task"
+        "title": "Create a Custom Build Task"
       },
       "cli/overview": {
         "title": "Overview"
@@ -84,7 +84,7 @@
         "title": "Overview"
       },
       "environments/build-environment": {
-        "title": "Build Your Environment"
+        "title": "Creating an Environment"
       },
       "environments/environment-services": {
         "title": "Environment Services"
@@ -94,6 +94,9 @@
       },
       "environments/05-extend-environment": {
         "title": "environments/05-extend-environment"
+      },
+      "environments/choose-an-environment": {
+        "title": "Choosing Environments"
       },
       "extensions/overview": {
         "title": "Overview"

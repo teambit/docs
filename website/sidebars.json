@@ -31,6 +31,7 @@
     ],
     "Environments": [
       "environments/overview",
+      "environments/choose-an-environment",
       "environments/build-environment",
       "environments/environment-services",
       "environments/environment-handlers"
@@ -39,7 +40,7 @@
       "bit-components/overview",
       "bit-components/compositions",
       "bit-components/import-components",
-      "bit-components/why-components"
+      "bit-components/workspace-vs-scope"
     ],
     "Scopes": [
       "scope/overview",
@@ -75,7 +76,6 @@
     ],
     "Build Pipeline": [
       "build-pipeline/overview",
-      "build-pipeline/override-pipeline",
       "build-pipeline/create-build-task"
     ],
     "Linting": [

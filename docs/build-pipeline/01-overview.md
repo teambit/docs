@@ -13,9 +13,7 @@ Commands that trigger the build pipeline:
  * `bbit tag --persist` - will run the build pipeline before creating a new (committed) component version. The output data will persist.
 
 
-To create a custom build task, [see here](/docs/build-pipeline/create-build-task).
-
-To override an environment default build pipeline, [see here](/docs/build-pipeline/override-pipeline).
+####  To create a new task or override an environment default build pipeline [see here](/docs/build-pipeline/create-build-task).
 
 > The build pipeline has a few pre-configured "core" tasks that cannot be overridden using the environments API. Among these tasks are the ['preview'](TODO) task and ['package (pkg)'](TODO) task.
 

@@ -1,6 +1,6 @@
 ---
 id: build-environment
-title: Build Your Environment
+title: Creating an Environment
 ---
 
 
