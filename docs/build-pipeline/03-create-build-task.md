@@ -140,6 +140,7 @@ export class PrintCmpNameTask implements BuildTask {
 ```ts
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
+import { BuilderMain } from "@teambit/builder";
 
 // Import the task (in reality, it should be an independent component)
 import { PrintCmpNameTask } from './print-cmp-name-task';
@@ -149,14 +150,14 @@ export class CustomReact {
 
   static dependencies: any = [EnvsAspect, ReactAspect];
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+  // Inject the builder 
+  static async provider([envs, react, builder]: [EnvsMain, ReactMain, BuilderMain]) {
 
     // Register this task using the registration slot, made available by the 'builder'.
     // Here, the environment has no say in the positioning of the task
     builder.registerBuildTasks([new ExampleTask('extensions/custom-react', 'PrintCmpNameTask')]);
 
-    const customReactEnv = react.compose([
-    ]);
+    const customReactEnv = react.compose([]);
 
     envs.registerEnv(customReactEnv);
     return new CustomReact(react);
