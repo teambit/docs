@@ -22,9 +22,7 @@ A workspace is made of the following parts:
     * Whether this component is pending to be versioned by the CI.
     * Whether this component is authored by this workspace or imported to it.
 
-3. __Local scope__ (the `.bit` or `.git/.bit` directory). This is where versioned or tagged components (either authored or imported) are stored. Components are stored with all the information they need to become completely independent. That includes their source code but also, data regarding their history, dependencies, their development environment, and so on. The local scope serves two main functions:
-    1. It is where components are "staged" before they are exported to a remote scope.
-    2. It enables the workspace to recognize whether a component has been modified by comparing the immutable version stored in the local scope to the component files tracked by the workspace.
+3. [__Local scope__](/docs/scope/overview#local-scope) (the `.bit` or `.git/.bit` directory). This is where versioned or tagged components (either authored or imported) are stored.
 
 4. __Component packages__ (located in the `node_modules/@scope-name` directory). This is where the distributable, compiled, code of a component is placed. Components in the workspace refer to each other only via their packages. This is crucial to keeping each component independent and context-agnostic.
 > Component packages should never be modified directly. Modification should should only be done using the workspace configuration file.

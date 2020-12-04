@@ -395,14 +395,14 @@
       "scope/overview": {
         "title": "Overview"
       },
-      "scope/local-scope": {
-        "title": "Local Scope"
-      },
       "scope/remote-scope": {
         "title": "Remote Scope"
       },
       "scope/self-host-bit-scope": {
         "title": "Self Hosting a Bit Scope"
+      },
+      "scope/scope-ui": {
+        "title": "Scope UI"
       },
       "testing/overview": {
         "title": "Overview"

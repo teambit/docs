@@ -44,8 +44,8 @@
     ],
     "Scopes": [
       "scope/overview",
-      "scope/local-scope",
       "scope/remote-scope",
+      "scope/scope-ui",
       "scope/self-host-bit-scope"
     ],
     "Bit CLI": [
