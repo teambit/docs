@@ -12,9 +12,9 @@ When `dependency_resolver` sees a variants dependency, it creates a new `node_mo
 
 ```json
 {
-  "@teambit.core/variants": {
+  "@teambit.workspace/variants": {
     "components/ui": {
-      "@teambit/dependency-resolver": {
+      "teambit.dependencies/dependency-resolver": {
         "policy": {
           "dependencies": {
             "lodash.get": "1.0.0"
@@ -23,7 +23,7 @@ When `dependency_resolver` sees a variants dependency, it creates a new `node_mo
       }
     },
     "components/helpers": {
-      "@teambit/dependency-resolver": {
+      "teambit.dependencies/dependency-resolver": {
         "policy": {
           "dependencies": {
             "lodash.get": "2.0.0"
@@ -41,8 +41,8 @@ In this example, components in `component/ui` directory will use `lodash.get@1.0
 
 When installing all dependencies for the workspace, Bit takes into account each component's dependency graph and aggregates them to form a graph for the entire workspace. It then uses a package manager to handle installation.
 
-```sh
-$ bit install
+```shell
+$ bbit install
 ```
 
 ### Supported package managers

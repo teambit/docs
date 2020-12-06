@@ -39,7 +39,26 @@ To select using a directory path, use the relative path to the components' commo
 This option is recommended as it decouples your components' configurations from the file structure. It handles components using fundamental definitions that pertain to function and purpose. For example:
 ```json
 "teambit.workspace/variants": {
-    "{utility-functions}": {
+    "{utility-functions/*}": {
+        "teambit.harmony/node": {}
+    },
+}
+```
+### Selecting multiple sets of components
+
+Multiple directory paths:
+```json
+"teambit.workspace/variants": {
+    "components/utils,components/react-ui": {
+        "teambit.harmony/node": {}
+    },
+}
+```
+
+Multiple namespaces:
+```json
+"teambit.workspace/variants": {
+    "{utility-functions/*},{react-ui/*}": {
         "teambit.harmony/node": {}
     },
 }

@@ -69,7 +69,7 @@ The following example demonstrates an overriding of the workspace-level dependen
   },
   "teambit.workspace/variants": {
     "extensions": {
-      "{react-ui}": {
+      "{react-ui/*}": {
         "classnames": "1.0.0"
       }
     }

@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-A Bit component is an independent and isolated module.
+A Bit component is a super set of a node package.
 
 ```sh
 account/login-form           # root directory for storing all component files

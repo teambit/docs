@@ -3,65 +3,48 @@ id: overview
 title: Overview
 ---
 
-```sh
-$ bit build
-$ bit test
-$ bit start
-$ bit create <component>
-$ bit ci
+A Bit Environment is a single component that takes care of the entire development setup needed to author and deliver independent components. It does so by configuring and "bundling" together different services for component development.
+
+Environments are also used to ensure consistency by standardizing the environment setup for independent components, developed across different decoupled repositories. 
+
+Bit provides a number of environments to choose from. Each environment is completely customizable and extendible. Once you've created your own custom environment, you can share it with others like any other component.
+
+It's important to note that a single workspace may use multiple environments to handle different types of components.
+
+Learn how to use one or more environments in your workspace, [here](/docs/environments/choose-an-environment)
+
+## Services used by Environments
+"Environment services" enable "foreign" tools and services to integrate into Bit's component life-cycle features. 
+
+For example, the 'Tester' service enables the React environment (`@teambit.react/react`) to set 'Jest' as the default test runner for its components. That will, for example, make the `bbit test` command execute Jest, it will print out its results , save the generate logs and will even display them in the Workspace and Scope UIs. 
+### Compiler, Tester and Linter
+Three services that run the environment's selected compiler (e.g, TypeScript), test runner (r.g, Jest) and linter (e.g, ESLint) in a Bit workspace. That includes making them executable from Bit's CLI and various Bit processes (for example, 'tagging').
+### Documentation
+Sets the template for the auto-generated component documentation, as well as the API for customizing the docs.
+### Build pipeline (CI)
+Sets the sequence of build tasks to run before a component gets tagged with a new version.
+### DevServer
+Runs the bundler and sets its configurations for the live component previews in development (seen in the workspace UI).
+### Preview
+Runs the bundler and sets its configurations for component "production" previews for tagged versions (seen in the remote scope as well as in the workspace UI, for previous component versions).
+### Package
+Generates node module packages for components, with the properties set by the environment.
+## Setting default dependencies for components
+The environment also sets the default dependencies (as well as their version and type) for each component handled by it. That includes peer dependencies used for runtime (e.g, `react-dom`) and dev dependencies (e.g, `@types/react`).
+## Environments CLI reference
+```shell
+// run the build pipeline
+$ bbit build
+
+// run the dev server
+$ bbit start
+
+// run all tests
+$ bbit test
+
+// compile all components
+$ bbit compile
+
+// get lint results
+$ bbit lint
 ```
-
-Wouldn't it be nice that regardless of project setup, framework, and configuration, all development workflow operations will be standardized? You will be able to jump right into any project and just *know* how to start a dev server, *know* how to build and test, so you can just focus on writing the lines of code required to complete your task as efficiently as possible?
-
-Bit uses **Environments** to manage support in different JavaScript frameworks for components within a Bit [workspace](/docs/workspace/overview).
-
-## How to use Environments?
-
-Adding an environment to a workspace can be done with the following configuration:
-
-```json
-{
-  "@teambit/variants": {
-    "components": {
-       "@teambit/react": {}
-      },
-    "helpers": {
-      "@teambit/node": {}
-    }
-  }
-}
-```
-
-Using `variants` you set the environment `@teambit/react` for all components in the `components` directory and `@teambit/node` for all components in `helpers`.
-
-> **Multiple environments in a workspace**
->
-> While a component may have a single environment, a workspace can manage multiple environments defined for different sets of components.
-
-## How environments work?
-
-Environments implement cross-cutting functions to run as tasks during the component's lifecycle. Such functions include:
-
-- Compilation.
-- Testing.
-- Linting.
-- Documentation.
-- DevServer and rendering.
-- CI pipeline.
-
-An environment registers itself to any number of integration points Bit has, so it can "tell" Bit what to execute on each component, when required.  
-This means that when you only need to handle the implementation and code of your components, as the environment takes care of the rest. No need to add complicated configurations or scripts to your project. By adding a new environment, or replacing one with another, all your workflow and components would align to the new implementation.
-
-## Manage component's runtime
-
-Environments provide tools to install and manage peer dependencies for your development environment. It does so by defining **runtime requirements** and ensuring they are available whenever any function is executed for a component. In most cases runtime requirements will be the framework (React, Angular, Vue...) and the supported version range, however they can also be libraries that needs have a single instance installed (for example - `styled-components`, `react` or `react-dom`).
-
-[Learn more about using runtimes when composing environments.](TODO)
-
-## Zero configuration
-
-Each environment encapsulate it's configurations. It gives you the same zero-config approach you get when using tools like [`react-scripts`](https://www.npmjs.com/package/react-scripts) in a Bit workspace.
-
-> **Composition, not configuration**
->
-> You can modify and extend any environment by creating a new one that composes the environment and changes its behaviors programatically. [Learn more](/docs/environment/composing-environments).
