@@ -395,8 +395,8 @@
       "scope/overview": {
         "title": "Overview"
       },
-      "scope/remote-scope": {
-        "title": "Remote Scope"
+      "scope/set-up-remote-scope": {
+        "title": "Setting Up a Remote Scope"
       },
       "scope/self-host-bit-scope": {
         "title": "Self Hosting a Bit Scope"

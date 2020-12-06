@@ -114,7 +114,7 @@ export class PrintCmpNameTask implements BuildTask {
   constructor(readonly aspectId: string, readonly name: string) {}
 
   // Place the task at the end of the build pipeline
-  location: 'end';
+  readonly location =  'end';
 
   // Run this task only after the '@teambit/preview' task is completed successfully
   dependencies: ['@teambit/preview'];

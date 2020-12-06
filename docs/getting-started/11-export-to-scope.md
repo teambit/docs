@@ -3,7 +3,7 @@ id: export-to-scope
 title: Export to a Remote Scope
 ---
 
-A scope is where the "release versions" of independent components are stored. Scopes are used both locally and remotely:
+A scope is where the release versions of independent components are stored. Scopes are used both locally and remotely:
 * __Local scopes__ store "staged" components that are ready to be exported from the local environment to a remote scope. You'll find your local scope in the `.bit` or  `.git/bit` directory inside your workspace directory.
 * [__Remote scopes__](/docs/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are available to be used by other repositories.
 

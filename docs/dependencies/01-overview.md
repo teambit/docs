@@ -3,11 +3,12 @@ id: overview
 title: Overview
 ---
 
-Dependency management for components in a workspace is managed for each component individually using the `@teambit.bit/dependency-resolver` aspect. It handles the component dependency graph, which in turn is split into three main areas:
+Managing the dependencies of every component in a Bit workspace is quite a tedious and time-consuming task. To address that, a Bit workspace uses the `@teambit.dependencies/dependency-resolver` aspect. 
 
-- Dependency resolution.
-- Dependency policies.
-- Installation of dependencies in a workspace.
+The 'dependency-resolver' simplifies dependency management by providing the following features:
 
-In a Bit workspace you may have tens or even hundreds of components. Manually handling each dependency graph (`package.json`) is a very tedious and time-consuming task. `dependency-resolver` allows a more automated way of doing so by grabbing the dependencies directly from the code, and the configuration you supply to dependency-resolver in workspace.json provides you fine control over how it does this.
+1. [Dependency resolution](/docs/dependencies/dependency-resolution): A service that auto-generates the entire workspace dependency graph. This is done by parsing the `import` \ `require` statements in a component's files. The dependency-resolver uses each component's environment configurations to determine if a dependency is of type 'dependency', 'devDependency' or 'peerDependency'. For example, a module used by a `.spec.jsx` file of a component using the React environment will be determined as a `devDependency`.
 
+2. [Dependency policies](/docs/dependencies/dependency-policies): An API for the workspace configurations. This API allows us to determine which versions should be used for every dependency in the generated dependency graph. When used in combination with `@teambit.workspace/variant` it allows us to define, in a CSS-like way, different dependency policies for different sets of components. In addition, this combination enables us to add new dependencies that were not already included in the auto-generated dependency graph.
+
+3. [Dependency installation](/docs/dependencies/dependency-installation): The 'dependency-resolver' directs the [package manager](/docs/packages/overview) to install the right packages at the right place in the workspace file structure. That includes installing multiple versions of the same package when different groups of components are set to use different versions.

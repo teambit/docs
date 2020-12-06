@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-The build pipeline is an orchestrator of 'build tasks'. These orchestrated tasks make up a CI workflow that is environment-specific. That means different components using different environments will go through different workflows. 
+The build pipeline is an orchestrator of 'build tasks'. These orchestrated tasks are defined by the environment. That makes the build pipeline an environment-specific CI, that affects only those components handled by the corresponding environment.
 
 The build pipeline runs on your local environment and remotely, on a CI server of your choice.
 

@@ -7,7 +7,7 @@ Whenever you use the `bit install <library>` command, Bit adds the library to th
 
 ```json
 {
-  "@teambit/dependency-resolver": {
+  "@teambit.dependenciess/dependency-resolver": {
     "policy": {
       "dependencies": {
         "lodash.get": "1.0.0"

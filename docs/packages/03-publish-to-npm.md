@@ -71,7 +71,7 @@ Publish a staged component that has not yet been published:
 $ bbit publish <componentId> --allow-staged
 ```
 
-To package a component without publishing:
+To check if the publishing process will be done successfully (without publishing):
 ```shell
 $ bbit publish <componentId> --dry-run
 ```
