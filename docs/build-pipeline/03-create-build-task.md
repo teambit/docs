@@ -93,9 +93,7 @@ This methodology leaves the task completely agnostic as to its position in the b
 See the example above.
 
 ### Append to the start or end of the pipeline, in relation to other tasks
-This methodology lets the task itself determine its position in the build pipeline sequence.
-
-It places the task at the start or end of the build pipeline sequence, and lists all other tasks needed to run successfully before it is executed.
+This methodology places the task at the start or end of the build pipeline sequence, and lists all other tasks needed to run successfully before it is executed.
 
 Example:
 
@@ -117,7 +115,7 @@ export class PrintCmpNameTask implements BuildTask {
   readonly location =  'end';
 
   // Run this task only after the '@teambit/preview' task is completed successfully
-  dependencies: ['@teambit/preview'];
+  readonly dependencies = ['@teambit/preview'];
 
   async execute(context: BuildContext): Promise<BuiltTaskResult> {
     const componentsResults: ComponentResult[] = [];
