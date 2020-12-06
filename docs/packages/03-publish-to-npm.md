@@ -3,9 +3,11 @@ id: publish-to-npm
 title: Publish to NPM
 ---
 
+Components are published to the [bit.dev platform](https://bit.dev/) to allow scalable collaboration and enjoy designated features. In addition, some people would like to publish their components to other registrieus such as NPN.
 A component can be published to NPM either by using the `publish` command or as an automated step in the versioning process (when a component is 'tagged').
 
-Publishing requires setting your `workspace.jsonc` configuration file with the name of the NPM scope and other properties. Components will not be published if the registry information is missing (either npm scope name or the details of another registry).
+Publishing requires setting your `workspace.jsonc` configuration file with the name of the NPM scope and other properties. Components will not be published if the registry information is missing (either npm scope name or the details of another registry).  
+
 ## Publishing configurations
 > The publishing configurations (`teambit.pkg`) must be set under the 'variant' field and cannot be set at the workspace-level.
 
