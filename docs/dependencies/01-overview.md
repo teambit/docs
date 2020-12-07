@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-Managing the dependencies of every component in a Bit workspace is quite a tedious and time-consuming task. To address that, a Bit workspace uses the `@teambit.dependencies/dependency-resolver` aspect. 
+Managing the dependencies of every component in a Bit workspace can become quite a tedious task. To address that, a Bit workspace uses the `@teambit.dependencies/dependency-resolver` aspect. 
 
 The 'dependency-resolver' simplifies dependency management by providing the following features:
 
