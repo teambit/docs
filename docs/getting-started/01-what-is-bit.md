@@ -9,7 +9,7 @@ Bit is a rich and extensible toolset for building independent components and com
 
 *How?*
 
-Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build projects in a modular way, so each component is independently developed, tested, built, rendered, limited, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.
+Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build projects in a modular way, so each component is independently developed, tested, built, rendered, linted, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.
 
 Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams that build apps/features in decoupled codebases. All teams can easily share components, collaborate, and integrate with each other. Each team can develop and release components autonomously, and get tools to standardize and manage components across teams and projects.  
 
