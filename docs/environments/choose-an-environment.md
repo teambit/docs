@@ -3,12 +3,48 @@ id: choose-an-environment
 title: Choosing Environments
 ---
 
-## choosing....
+An environment can either be one of Bit's out-of-the-box environments or a custom environment extension (usually imported from [Bit.dev](https://bit.dev)).
 
+Environments are set in the `workspace.jsonc` configuration file, __using their component ID__ (not their module name). 
 
-### React
+## Using an environment
+### Setting a default environment for the workspace
+Environments can only be configured using the `teambit.workspace/variants` workspace API. That means the `teambit.workspace/workspace` cannot be utilized to set an environment as the default for all components. To achieve a similar result, select all components using the `*` wildcard.
 
+For example:
+
+```json
+{
+    "teambit.workspace/variants": {
+        "*": {
+            "teambit.react/react": { }
+        }
+    }
+}
+```
+
+> Notice how an environment is not explicitly defined as an environment. This is true for all types of extensions and aspects.
+### Setting multiple environments
+A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/docs/workspace/cascading-rules)
+
+For example, to set the Node and React environments on two sets of components (selected by their directory):
+
+```json
+{
+  "teambit.workspace/variants": {
+      "components/ui": {
+        "teambit.react/react": {}
+      },
+      "components/utils": {
+        "teambit.harmony/node": {}
+      }
+  }
+}
+```
+## Bit's out-of-the-box environments
+
+### [React](/docs/react/overview)
 ### React Native
+### [Node](/docs/nodejs/overview)
 
-### Node
-
+### Aspect Environment (for Bit extensions and aspects)

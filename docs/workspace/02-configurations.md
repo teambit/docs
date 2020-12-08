@@ -5,13 +5,13 @@ title: Configurations
 
 The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
 
-The workspace configuration JSON reflects the way Bit is designed and built - that is,  using "extension components". Each of these extensions exposes a workspace configuration API. That means, your "workspace configurations" are set across multiple extensions.
+The workspace configuration JSON reflects the way Bit is designed and built - that is,  using "extension components". __Each of these extensions exposes a workspace configuration API__. That means, your "workspace configurations" are set across multiple extensions.
 
 As you will see, the names of these JSON fields, each representing an extensions, follow Bit's component name pattern `<scope-owner>.<scope-name>/<component-name>`, for example: `teambit.workspace/variants`.
 
-__Examine a demo workspace configuration file, [here](https://github.com/teambit/bad-jokes-workspace/blob/main/workspace.jsonc).__
+Examine a demo workspace configuration file, [here](https://github.com/teambit/bad-jokes-workspace/blob/main/workspace.jsonc).
 
-## Main configuration fields:
+## Main workspace config APIs
 ### teambit.workspace/workspace
 `teambit.workspace/workspace` receives configurations for the workspace itself, as well as default values for components managed by the workspace.
 

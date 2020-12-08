@@ -86,9 +86,6 @@
       "environments/build-environment": {
         "title": "Creating an Environment"
       },
-      "environments/environment-services": {
-        "title": "Environment Services"
-      },
       "environments/environment-handlers": {
         "title": "Environment Handlers"
       },

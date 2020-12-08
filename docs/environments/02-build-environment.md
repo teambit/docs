@@ -2,19 +2,19 @@
 id: build-environment
 title: Creating an Environment
 ---
+A new environment can be built "on top of" an existing environment or entirely from scratch as a new [Aspect](TODO).
+
+## Create an environment extension
 
 
-An environment can either extend another environment or get built from scratch.
+### Bit's out-of-the-box "core" environments
 
-## Extend and customize an environment
-
-Select one of Bit's he environments to customize and extend it:
 
 * [React](/docs/react/extending-react)
 * Node
-* React Native (coming soon)
-* Angular (coming soon)
-* Vue (coming soon)
+* React Native 
+
+
 
 ## Create an environment from scratch
 
