@@ -33,7 +33,8 @@
       "environments/overview",
       "environments/choose-an-environment",
       "environments/build-environment",
-      "environments/environment-handlers"
+      "environments/environment-services",
+      "environments/service-handlers"
     ],
     "Bit Components": [
       "bit-components/overview",

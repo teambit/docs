@@ -86,14 +86,17 @@
       "environments/build-environment": {
         "title": "Creating an Environment"
       },
-      "environments/environment-handlers": {
-        "title": "Environment Handlers"
-      },
       "environments/05-extend-environment": {
         "title": "environments/05-extend-environment"
       },
       "environments/choose-an-environment": {
         "title": "Choosing Environments"
+      },
+      "environments/environment-services": {
+        "title": "Environment Services"
+      },
+      "environments/service-handlers": {
+        "title": "Service Handlers"
       },
       "extensions/overview": {
         "title": "Overview"

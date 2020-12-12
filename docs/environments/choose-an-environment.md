@@ -23,7 +23,7 @@ For example:
 }
 ```
 
-> Notice how an environment is not explicitly defined as an environment. This is true for all types of extensions and aspects.
+> Notice how an environment is not explicitly defined as an environment. That is true for all types of extensions and aspects.
 ### Setting multiple environments
 A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/docs/workspace/cascading-rules)
 
