@@ -8,13 +8,12 @@ title: Creating an Environment
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
 
 
-
-An environment extension uses two Bit aspects, the 'base environment' and the 'environments' aspect.
-* The __"base environment"__ (e.g, `@teambit/react`) is used to override its default configurations. Each override method, or "environment transformer", corresponds to a Bit aspect used by the environment (e.g, the TypeScript aspect). Using an 'environment transformer' will add new configurations to its corresponding Bit aspect and will override any conflicting ones.<br /> The full list of available 'environment transformers' can be seen in the specific environment's documentation (see: React, React Native, Node).
+An environment extension uses the following aspects to extend an existing environment, and to register itself as an environment:
+* The __"base" environment__ (e.g, `@teambit/react`) is extended and customized using its override methods. Each override method, or "environment transformer", corresponds to a Bit aspect used by the environment (e.g, the TypeScript aspect). Using an 'environment transformer' will add new configurations to the relevant Bit aspect and will override any conflicting ones.<br /> The full list of available 'environment transformers' can be seen in the specific environment's documentation (see: React, React Native, Node).
 
 * The __environments aspect__ (`@teambit/envs`) is used to: 
   1. Register the new environment using its [slot](TODO)
-  2. Override a ["service handler"](TODO). This is done to replace a Bit Aspect used by an environment service (for example, to set the "compiler" service handler to use Babel instead of TypeScript. See an example, here). 
+  2. Override a ["service handler"](TODO). This is done to replace a Bit Aspect used by an environment service. For example, to set the "compiler" service handler to use Babel instead of TypeScript (see an example, [here](/docs/environments/build-environment#override-a-service-handler)). 
 
 ### Override a Bit aspect configurations
 
@@ -126,6 +125,7 @@ export default CustomReactExtension;
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+> Notice how the Babel aspect is also injected into the provider method.
 ### Bit's out-of-the-box "core" environments
 Choose one of the following Bit environments to extend and customize it.
 
