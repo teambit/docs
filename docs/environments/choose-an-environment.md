@@ -3,12 +3,24 @@ id: choose-an-environment
 title: Choosing Environments
 ---
 
+Environments are set in the `workspace.jsonc` configuration file, __using their component ID__ (not their module name).  
+
 An environment can either be one of Bit's out-of-the-box environments or a custom environment extension (usually imported from [Bit.dev](https://bit.dev)).
 
-Environments are set in the `workspace.jsonc` configuration file, __using their component ID__ (not their module name). 
+You can use one of Bit's default "out-of-the-box" environments, create your own environment extensions, or use 3rd party extensions shared by the community on [Bit.dev](https://bit.dev)).  
 
-## Using an environment
-### Setting a default environment for the workspace
+## Choosing a default environment  
+
+Bit currently provides the following environments out of the box. Just picj and start using any of them in your workspace.
+
+### [React](/docs/react/using-react)
+### [Node](/docs/nodejs/using-node)
+### [React Native](/docs/react-native/using-react-native)
+
+## Using an environment  
+
+### Setting a default environment for the workspace  
+
 Environments can only be configured using the `teambit.workspace/variants` workspace API. That means the `teambit.workspace/workspace` cannot be utilized to set an environment as the default for all components. To achieve a similar result, select all components using the `*` wildcard.
 
 For example:
@@ -41,10 +53,5 @@ For example, to set the Node and React environments on two sets of components (s
   }
 }
 ```
-## Bit's out-of-the-box environments
-
-### [React](/docs/react/overview)
-### React Native
-### [Node](/docs/nodejs/overview)
 
 ### Aspect Environment (for Bit extensions and aspects)
