@@ -11,7 +11,7 @@ You can use one of Bit's default "out-of-the-box" environments, create your own 
 
 ## Choosing an environment  
 
-Bit currently provides the following environments out of the box. Just pick one and start using any of them in your workspace.
+Bit currently provides the following core environments out of the box. Just pick one and start using any of them in your workspace.
 
 ### [React](/docs/react/using-react)
 ### [Node](/docs/nodejs/using-node)
