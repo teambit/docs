@@ -1,6 +1,6 @@
 ---
 id: documenting-react
-title: Documenting React
+title: Documenting Components
 ---
 
 ### The anatomy of a default React documentation

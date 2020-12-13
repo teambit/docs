@@ -5,9 +5,24 @@ title: Creating an Environment
 
 > Environments can be built as new [Bit Aspects](TODO) or as extensions of existing environments. This tutorial will only cover the latter.
 ## Create an environment extension
-An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
+An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention. 
 
+To use an extension, track it (`$ bbit add path/to/component`) and use its component ID in the `workspace.jsonc` configuration file. For example:
 
+```json
+{
+  "teambit.workspace/workspace": {
+    "name": "my-workspace",
+    "icon": "https://image.flaticon.com/icons/svg/185/185034.svg",
+    "defaultScope": "my-org.my-extensions"
+  },
+  "teambit.workspace/variants": {
+    "*": {
+        "my-org.my-extensions/react": {}
+        }
+    }
+}
+```
 An environment extension uses the following aspects to extend an existing environment, and to register itself as an environment:
 * The __"base" environment__ (e.g, `@teambit/react`) is extended and customized using its override methods. Each override method, or "environment transformer", corresponds to a Bit aspect used by the environment (e.g, the TypeScript aspect). Using an 'environment transformer' will add new configurations to the relevant Bit aspect and will override any conflicting ones.<br /> The full list of available 'environment transformers' can be seen in the specific environment's documentation (see: React, React Native, Node).
 
@@ -15,7 +30,7 @@ An environment extension uses the following aspects to extend an existing enviro
   1. Register the new environment using its [slot](TODO)
   2. Override a ["service handler"](TODO). This is done to replace a Bit Aspect used by an environment service. For example, to set the "compiler" service handler to use Babel instead of TypeScript (see an example, [here](/docs/environments/build-environment#override-a-service-handler)). 
 
-### Override a Bit aspect configurations
+### Override the config for a Bit aspect used by the environment
 
 The example below is of a React environment extension. This new environment overrides React's DevServer configuration by setting a new Webpack configuration file.
 
@@ -23,7 +38,7 @@ The example below is of a React environment extension. This new environment over
 <!--custom-react.extension-->
 ```tsx
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/environments';
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
 // Import from the React aspect to extend it and override its DevServer config
 import { ReactAspect, ReactMain } from '@teambit/react';
 
@@ -74,7 +89,7 @@ The example below is of a React environment extension. This new environment over
 <!--custom-react.extension-->
 ```tsx
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/environments';
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
 // Import from the React aspect to extend it and override its DevServer config
 import { ReactAspect, ReactMain } from '@teambit/react';
 // Import the Babel aspect to configure it and set it as the new compiler

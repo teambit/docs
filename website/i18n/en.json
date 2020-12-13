@@ -77,17 +77,11 @@
       "documentation/overview": {
         "title": "Overview"
       },
-      "documentation/documenting-react": {
-        "title": "Documenting React"
-      },
       "environments/overview": {
         "title": "Overview"
       },
       "environments/build-environment": {
         "title": "Creating an Environment"
-      },
-      "environments/05-extend-environment": {
-        "title": "environments/05-extend-environment"
       },
       "environments/choose-an-environment": {
         "title": "Choosing Environments"
@@ -391,6 +385,9 @@
       },
       "react/extending-react": {
         "title": "Extending React"
+      },
+      "react/documenting-react": {
+        "title": "Documenting Components"
       },
       "scope/overview": {
         "title": "Overview"

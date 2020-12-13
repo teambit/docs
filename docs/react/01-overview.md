@@ -3,53 +3,54 @@ id: overview
 title: Overview
 ---
 
-React is an implementation of the Environments aspect. It is a one-stop-shop for React components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of React components, managed by Bit. Among these events are: linting, compiling, testing, bundling and more.
+The React environment is an implementation of the Environments aspect. It is a one-stop-shop for React components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of React components, managed in a Bit workspace. Think of it as a 'create-react-app' for independent React components.
 
 The React aspect spares you the overhead of setting up your own React environment and creates a standardized and shareable development environment for you and your team.
 
-## React's default setup
 
-- Test runner: Jest
-- Compiler: TypeScript
-- Bundler: Webpack: configured to support JSX/TSX, SASS/CSS (incl. CSS modules)
 
-## Workspace configurations
+## Default configurations
 
-The React aspect can be configured via the workspace.json, on two levels:
+### Tester
+* Uses Jest as a test runner
+* Test files: `*.spec.*` and `*.test.*`
+* `@testing-library/react` pre-configured
 
-1. __root__ sets the default configurations for the entire workspace
-2. __teambit.bit/variants__ sets the configurations to a limited set of components, selected by their common directory
+### Compiler
+* Uses two compilers:
+  * TypeScript for `*.ts`, `*.js`, `*.jsx`, `*.tsx`
+  * Babel (with MDX-loader) for `*.md`, `*.mdx`
 
+### Bundler (for 'Preview' and 'DevServer')
+Uses Webpack. 
+
+Includes the following file types:
+
+`*.web.mjs`, `*.mjs`, `*.js`, `*.ts`, `*.tsx`, `*.jsx`, `*.mdx`, `*.md`, `*.(module.)css`, `*.(module.)scss`, `*.(module.)sass`, `*.(module.)less`
+
+### Default dependencies (for components handled by the environment)
 
 ```json
 {
-  'teambit.bit/workspace': {
-    name: 'a-ws-using-react',
-    icon: 'https://domain.com/my-ws-icon.svg',
-    defaultScope: 'my-org.my-scope',
-  },
-  'teambit.bit/react': {
-    compiler: 'babel',
-    tester: 'mocha',
-    reactVersion: '^16.13.1',
-  },
-  'teambit.bit/variants': {
-    'components/react/ui-primitives': {
-      'teambit.bit/react': {
-        compiler: 'ts',
-        tester: 'jest',
-      },
+    'dependencies': {
+      'react': '-'
     },
-  },
-  'teambit.bit/dependency-resolver': {
-    packageManager: 'teambit.bit/pnpm',
-    policy: {
-      peerDependencies: {
-        react: '^16.13.1',
-        '@babel/runtime': '^7.11.2',
-        'react-dom': '^16.13.1',
-      },
+    'devDependencies': {
+      'core-js': '^3.6.5',
+      '@types/react': '16.9.43',
+      '@types/jest': '~26.0.9',
+      '@types/mocha': '-',
+      '@types/react-router-dom': '^5.1.5'
     },
-  },
-};
+    'peerDependencies': {
+      'react': '^16.13.1',
+      'react-dom': '^16.13.1'
+    }
+  }
 ```
+> The `-` sign indicates a dependency is removed by the environment. 'react' is configured as a peer dependency instead of a (runtime) dependency. 
+
+### Development files
+The React environment treats the following files as development files: `*.doc.*`, `*.spec.*`, `*.test.*`, `*.composition.*`, `*.compositions.*`.
+
+Dependencies of development files will be recognized and registered as development dependencies (`devDependencies`).

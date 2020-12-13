@@ -89,6 +89,7 @@
     "React": [
       "react/overview",
       "react/using-react",
+      "react/documenting-react",
       "react/extending-react"
     ],
     "NodeJS": [
