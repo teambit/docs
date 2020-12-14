@@ -145,7 +145,7 @@ export class CustomReact {
     const reactPipe = react.env.getBuildPipe();
 
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...reactPipe, new PrintCompTask()];
+    const tasks = [...reactPipe, new CustomTask()];
 
     const newReactEnv = react.compose([
       react.overrideBuildPipe(tasks)

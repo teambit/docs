@@ -28,9 +28,9 @@ export class NodeExtension {
 
 // ...
 
-  static async provider([envs, Node]: [EnvsMain, NodeMain]) {
-    const newNodeEnv = Node.compose([
-      Node.overrideTsConfig(tsconfig)
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const newNodeEnv = node.compose([
+      node.overrideTsConfig(tsconfig)
     ]);
 
 
@@ -58,7 +58,7 @@ export class NodeExtension {
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
-      Node.overridePreviewConfig(webpackConfig)
+      node.overridePreviewConfig(webpackConfig)
     ]);
 
 
@@ -86,7 +86,7 @@ export class NodeExtension {
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
-      Node.overrideDevServerConfig(webpackConfig)
+      node.overrideDevServerConfig(webpackConfig)
     ]);
 
 
@@ -112,7 +112,7 @@ export class NodeExtension {
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
-      Node.overrideJestConfig(require.resolve('./jest/jest.config'))
+      node.overrideJestConfig(require.resolve('./jest/jest.config'))
     ]);
 
 
