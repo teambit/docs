@@ -77,6 +77,9 @@
       "documentation/overview": {
         "title": "Overview"
       },
+      "documentation/using-docs-api": {
+        "title": "Using the Docs API"
+      },
       "environments/overview": {
         "title": "Overview"
       },
@@ -158,8 +161,14 @@
       "linting/overview": {
         "title": "Overview"
       },
+      "nodejs/extending-node": {
+        "title": "Extending Node"
+      },
       "nodejs/overview": {
         "title": "Overview"
+      },
+      "nodejs/using-node": {
+        "title": "Using Node"
       },
       "packages/overview": {
         "title": "Overview"
@@ -377,6 +386,15 @@
       "previous-structure/workspace/07-extend": {
         "title": "previous-structure/workspace/07-extend"
       },
+      "react-native/extending-react-native": {
+        "title": "Extending React Native"
+      },
+      "react-native/overview": {
+        "title": "Overview"
+      },
+      "react-native/using-react-native": {
+        "title": "Using React Native"
+      },
       "react/overview": {
         "title": "Overview"
       },
@@ -385,9 +403,6 @@
       },
       "react/extending-react": {
         "title": "Extending React"
-      },
-      "react/documenting-react": {
-        "title": "Documenting Components"
       },
       "scope/overview": {
         "title": "Overview"
@@ -470,6 +485,7 @@
       "Packages": "Packages",
       "React": "React",
       "NodeJS": "NodeJS",
+      "React Native": "React Native",
       "Extensions": "Extensions",
       "Aspects": "Aspects",
       "Preview": "Preview",

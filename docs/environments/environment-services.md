@@ -8,8 +8,12 @@ To become a "one-stop-shop" for components, an environment "bundles" together di
 For example, the 'Tester' service (`@teambit.defender/tester`) enables the React environment (`@teambit.react/react`) to set 'Jest' (`teambit.defender/jest`) as the default test runner for its components. This will enable Jest to get executed on the `bbit test` command, to run before a component is tagged, to output results using Bit's logger, and even to display the generated logs in the Workspace and Scope UIs (just to name a few examples).
 
 ![React env using setting using Jest with the tester service](/img/react_env_ex.png)
-### Compiler, Tester and Linter
-Three services that run the environment's selected compiler (for example, TypeScript), test runner (for example, Jest) and linter (for example, ESLint) in a Bit workspace. That includes making them executable from Bit's CLI and various Bit processes (for example, the 'tagging' process).
+### Compiler
+Rus the environment's selected compiler  (for example, TypeScript).
+### Tester
+Rus the environment's selected test runner (for example, Jest)
+### Linter
+Rus the environment's selected linter (for example, ESLint)
 ### Documentation
 Sets the template for the auto-generated component documentation, as well as the API for customizing the docs.
 ### Build pipeline (CI)

@@ -3,13 +3,15 @@ id: service-handlers
 title: Service Handlers
 ---
 
-Service handlers are methods used in a Bit environment to configure different Environment Services to use a Bit aspect or a set configurations. For example, the React environment uses the service handler `getCompiler()` to configure the Compiler service to run the TypeScript aspect.
+Service handlers configure different Environment Services to use the environment's selected Bit aspects and configurations. A service handler is a method implemented by an environment class.
+
+For example, the React environment uses the service handler `getCompiler()` to configure the Compiler service to run the TypeScript aspect.
 
 Environment services run on various events. Whenever a service runs, it executes its corresponding service handler which consequently runs the configured aspect (in the previous example, that would be TypeScript). 
 
 Different components in a Bit workspace may use different environments. That means environment services need to execute their corresponding service handlers in the specific environment applied on the component currently being processed. 
 
-For example, if *component A* uses the Node environment then the Compiler Service processing it will execute the Service Handler (in that case, `getCompiler`) found in the Node environment.
+For example, if *component A* uses the Node environment then the Compiler service processing that component, will execute the Service Handler (in that case, `getCompiler`) found in the Node environment.
 
 ## List of service handlers
 
@@ -199,3 +201,30 @@ export class ReactEnv implements Environment {
 }
 ```
 > The `-` sign removes a dependency. In the example above, 'react' is removed from the list of (runtime) `dependencies` and added to the list of `peerDependencies`.
+
+### getBuildPipe
+```ts
+getBuildPipe(...args : any[]): BuildTask[]
+```
+Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks. Learn more about it [here](/docs/build-pipeline/overview).
+
+For example:
+
+```ts
+export class ReactEnv implements Environment {
+
+    constructor(
+        // ...
+
+        // The Compiler aspect
+        private compiler: CompilerMain,
+
+        // The Tester aspect
+        private tester: TesterMain
+    ){}
+
+    getBuildPipe(): BuildTask[] {
+        return [this.compiler.createTask('StencilCompiler', this.getCompiler()), this.tester.task];
+    }
+}
+```

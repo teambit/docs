@@ -141,11 +141,11 @@ export default CustomReactExtension;
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 > Notice how the Babel aspect is also injected into the provider method.
-### Bit's out-of-the-box "core" environments
+### Bit's out-of-the-box "base" environments
 Choose one of the following Bit environments to extend and customize it.
 
-* [React](/docs/react/extending-react)
-* Node
-* React Native 
+#### [React](/docs/react/extending-react)
+#### [NodeJS](/docs/react/extending-node)
+### [React Native](/docs/react/extending-react-native) 
 
 

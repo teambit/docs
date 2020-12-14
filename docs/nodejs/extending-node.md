@@ -1,14 +1,14 @@
 ---
-id: extending-react
-title: Extending React
+id: extending-node
+title: Extending Node
 ---
 
-Use the React environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent React components authored in various decoupled workspaces.
+Use the Node environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent Node components authored in various decoupled workspaces.
 
-This page lists React's Environment Transformers. These are the 'override' methods that allow to add or override React's default configurations.
+This page lists Node's Environment Transformers. These are the 'override' methods that allow to add or override Node's default configurations.
 __To learn how to create a new environment extension, [see here](/docs/environments/build-environment).__
 ## Environment transformers
-React's environment transformers enable merging new configurations for different [Bit aspects used by the React environment](/docs/environments/environment-services).
+Node's environment transformers enable merging new configurations for different [Bit aspects used by the Node environment](/docs/environments/environment-services).
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
 ### overrideTsConfig
@@ -24,13 +24,13 @@ For example:
 
 const tsconfig = require('./typescript/tsconfig.json');
 
-export class ReactExtension {
+export class NodeExtension {
 
 // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overrideTsConfig(tsconfig)
+  static async provider([envs, Node]: [EnvsMain, NodeMain]) {
+    const newNodeEnv = Node.compose([
+      Node.overrideTsConfig(tsconfig)
     ]);
 
 
@@ -52,13 +52,13 @@ For example:
 
 const webpackConfig = require('./webpack/webpack.config');
 
-export class ReactExtension {
+export class NodeExtension {
 
 // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overridePreviewConfig(webpackConfig)
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const newNodeEnv = node.compose([
+      Node.overridePreviewConfig(webpackConfig)
     ]);
 
 
@@ -80,13 +80,13 @@ For example:
 
 const webpackConfig = require('./webpack/webpack.config');
 
-export class ReactExtension {
+export class NodeExtension {
 
 // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overrideDevServerConfig(webpackConfig)
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const newNodeEnv = node.compose([
+      Node.overrideDevServerConfig(webpackConfig)
     ]);
 
 
@@ -106,13 +106,13 @@ For example:
 ```ts
 // ...
 
-export class ReactExtension {
+export class NodeExtension {
 
 // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overrideJestConfig(require.resolve('./jest/jest.config'))
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const newNodeEnv = node.compose([
+      Node.overrideJestConfig(require.resolve('./jest/jest.config'))
     ]);
 
 
@@ -135,20 +135,20 @@ For example:
 // Import the task
 import { CustomTask } from './custom.task';
 
-export class CustomReact {
+export class CustomNode {
 
   // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
 
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
-    const reactPipe = react.env.getBuildPipe();
+    const nodePipe = node.env.getBuildPipe();
 
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...reactPipe, new PrintCompTask()];
+    const tasks = [...nodePipe, new CustomTask()];
 
-    const newReactEnv = react.compose([
-      react.overrideBuildPipe(tasks)
+    const newNodeEnv = node.compose([
+      node.overrideBuildPipe(tasks)
     ]);
 
     // ...
@@ -171,30 +171,19 @@ For example:
 // ...
 
 const newDependencies = {
-      dependencies: {
-        react: '-',
-      },
       devDependencies: {
-        '@types/react': '16.9.43',
         '@types/jest': '~26.0.9',
-        '@types/mocha': '-',
-        '@types/react-router-dom': '^5.1.5',
       },
-      peerDependencies: {
-        react: '^16.13.1' || this.config.reactVersion,
-        'react-dom': '^16.13.1',
-      },
-    };
-}
+    }
 
-export class CustomReact {
+export class CustomNode {
 
   // ...
 
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
 
-    const newReactEnv = react.compose([
-      react.overrideDependencies(newDependencies)
+    const newNodeEnv = node.compose([
+      node.overrideDependencies(newDependencies)
     ]);
 
     // ...
@@ -202,7 +191,7 @@ export class CustomReact {
   }
 }
 ```
-> The above example shows the 'react' library being removed as a (runtime) dependency and added as a peer dependency.
+> The above example shows the 'Node' library being removed as a (runtime) dependency and added as a peer dependency.
 ### overridePackageJsonProps
 ```ts
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
@@ -219,14 +208,14 @@ const newPackageProps = {
       types: '{main}.ts',
     }
 
-export class CustomReact {
+export class CustomNode {
 
   // ...
   
-  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
 
-    const newReactEnv = react.compose([
-      react.overridePackageJsonProps(newPackageProps)
+    const newNodeEnv = node.compose([
+      node.overridePackageJsonProps(newPackageProps)
     ]);
 
     // ...

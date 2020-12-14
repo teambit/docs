@@ -42,7 +42,7 @@ To set React to compile MDX components (so that they can be shared as a distribu
 
  ### React Version
 
-The React environment is set to use version `^16.13.1`. To use a different version set the `reactVersion` property with a new version.
+The React environment is set to use version `^16.13.1`. To use a different version set the `reactVersion` property with a new version number.
 
 ```json
 {

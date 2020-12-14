@@ -17,8 +17,6 @@ Bit currently provides the following core environments out of the box. Just pick
 ### [Node](/docs/nodejs/using-node)
 ### [React Native](/docs/react-native/using-react-native)
 
-Or, [create your own environment](https://bit-harmony-stg.netlify.app/docs/environments/build-environment).
-
 ## Using an environment  
 
 ### Setting a default environment for the workspace  
@@ -56,5 +54,3 @@ For example, to set the Node and React environments on two sets of components (s
   }
 }
 ```
-
-### Aspect Environment (for Bit extensions and aspects)

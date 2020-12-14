@@ -61,7 +61,7 @@
     ],
     "Documentation": [
       "documentation/overview",
-      "documentation/documenting-react"
+      "documentation/using-docs-api"
     ],
     "Testing": [
       "testing/overview",
@@ -89,11 +89,17 @@
     "React": [
       "react/overview",
       "react/using-react",
-      "react/documenting-react",
       "react/extending-react"
     ],
     "NodeJS": [
-      "nodejs/overview"
+      "nodejs/overview",
+      "nodejs/using-node",
+      "nodejs/extending-node"
+    ],
+    "React Native": [
+      "react-native/overview",
+      "react-native/using-react-native",
+      "react-native/extending-react-native"
     ],
     "Extensions": [
       "extensions/overview",

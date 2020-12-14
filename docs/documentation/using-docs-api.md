@@ -1,6 +1,6 @@
 ---
-id: documenting-react
-title: Documenting Components
+id: using-docs-api
+title: Using the Docs API
 ---
 
 ### The anatomy of a default React documentation
