@@ -34,9 +34,10 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 * **[Component Cloud Platform](#cloud-platform-key-features)**  
 
 
-> **Tip 1**: Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
+> Bit adds no runtime dependencies to your code, and does not affect how you implement components.
 
-> **Tip 2**: Bit is 100% modular and extensible. In fact, Bit is built 100% out of Bit components. This means you can extend, change, replace or customize it to do anything you like.
+> Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
+
 
 ## Popular Use Cases
 
