@@ -61,7 +61,8 @@
     ],
     "Documentation": [
       "documentation/overview",
-      "documentation/using-docs-api"
+      "documentation/using-docs-api",
+      "documentation/properties-table"
     ],
     "Testing": [
       "testing/overview",

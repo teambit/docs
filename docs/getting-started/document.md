@@ -4,7 +4,7 @@ title: Document
 ---
 For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.
 
-Bit automates component documentation by parsing its code and displaying the output in a template provided by the Environment used by that component. The generated documentation is displayed both in the local Workspace UI and in the remote Scope.
+Bit automates component documentation by parsing its code and displaying the output in a template provided by the Environment used by that component. The generated documentation is displayed both in the local Workspace UI and in the remote Scope UI.
 
 In this section we'll focus on the documentation template provided by the default React environment. To see the auto-generated docs of our [previously-created 'Button' component](/docs/getting-started/add-components), head over to the 'Overview' tab in the Workspace UI. 
 
@@ -22,70 +22,56 @@ This tutorial will only cover using the docs API for ad-hoc modifications. To le
 
 ### Create a docs file
 
-Create a docs file in the 'Button' component directory. The name should follow this pattern: `<component>.docs.tsx` (or ts/js/jsx).
+Create a docs file in the 'Button' component directory. The doc file could either be a T/JSX file or an [MDX file](https://mdxjs.com/).
+
+MDX gives us the best of both worlds, the simplicity of writing markdown with the endless possibilities of coding, or more specificity - JSX.
+
+MDX written in the documentation is themed using Bit's [documenter design system](https://bit.dev/teambit/documenter).
+
+The filename should follow this pattern: `<component>.docs.mdx` (or .js/.ts/.jsx/.tsx).
 
 For example:
 
 ```shell
 // in the 'Button' component directory
-$ touch button.docs.tsx
+$ touch button.docs.mdx
 ```
 
 ### Add a custom section (component)
-Let's say we  want to add a 'guidelines' section to explain how our button should be used for an optimized user experience. In this example we'll create our own section using UI components provided by Bit. These components will help us maintain a look and feel that is consistent with the rest of the documentation template and the workspace UI.
+Let's say we  want to add a 'guidelines' section to explain how our button should be used for an optimized user experience. In this example we'll simply write down MDX in the `button.docs.mdx` file. As you recall, this can be a combination of standard markdown with JSX.
 
-We'll start by installing the necessary components (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
+MDX elements are themed using the [documenter design system](https://bit.dev/teambit/documenter).
 
-```shell
-$ bbit install @teambit/documenter.ui.section @teambit/documenter.theme.theme-contex @teambit/documenter.ui.linked-heading @teambit/documenter.ui.list @teambit/documenter.ui.separator
-```
 
-We'll then create a component named 'Overview', and place our content inside (the component should be exported as default):
-
-```tsx
-import React from 'react';
-import { Button } from './button';
-import { Section } from '@teambit/documenter.ui.section';
-import { ThemeContext } from '@teambit/documenter.theme.theme-context';
-import { LinkedHeading } from '@teambit/documenter.ui.linked-heading';
-import { List } from '@teambit/documenter.ui.list';
+```md
 import { Separator } from '@teambit/documenter.ui.separator';
 
-export default function Overview() {
-  return (
-    <ThemeContext> 
-      <>
-        <Section>
-          <LinkedHeading link="guidelines">Guidelines</LinkedHeading>
-          <List spacing="lg">
-            {[
-              `Place buttons where expect to find them. Do not force users to "hunt for buttons".`,
-              `Do not use generic names for your buttons. Use verbs that clearly explain the button's function.`,
-              `Size buttons in proportion to their importance.`,
-            ]}
-          </List>
-        </Section>
-        <Separator />
-      </>
-    </ThemeContext>
-  );
-};
+* Place buttons where expect to find them. Do not force users to "hunt for buttons"
+* Do not use generic names for your buttons. Use verbs that clearly explain the button's function.
+* Size buttons in proportion to their importance.
+
+<Separator />
 ```
+> Notice how 'react' was not imported. This is done automatically by default.
 
 Head over to the Workspace UI to see our new section.
-### Override the 'abstract' property
-By default the abstract property is automatically parsed from the code. To override it:
+### Override the 'description'/'abstract' property
+By default the abstract property is automatically parsed from the code. To override it, insert the following in the MDX [front matter](https://github.com/cuttlebelle/website/blob/master/content/documentation/what-is-frontmatter.md):
 
-```tsx
-Overview.abstract = 'An imperfect button.';
+```mdx
+---
+description: 'An imperfect button.'
+---
 ```
 
-### Override the 'tags' property
+### Override the 'labels' property
 
-'Tags' are also auto-generated. To override them:
+'Labels' are also auto-generated. To override them, insert the following in the MDX [front matter](https://github.com/cuttlebelle/website/blob/master/content/documentation/what-is-frontmatter.md):
 
-```tsx
-Overview.labels = ['react', 'typescript', 'button'];
+```mdx
+---
+labels: ['react', 'typescript', 'button']
+---
 ```
 
 ### Add live examples
@@ -102,7 +88,7 @@ The `examples` variable receives an array of objects, each representing a single
 For example:
 
 ```tsx
-Overview.examples = [
+export const examples = [
   {
     scope: {
       Button,

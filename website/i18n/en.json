@@ -77,6 +77,9 @@
       "documentation/overview": {
         "title": "Overview"
       },
+      "documentation/properties-table": {
+        "title": "Properties Table"
+      },
       "documentation/using-docs-api": {
         "title": "Using the Docs API"
       },
