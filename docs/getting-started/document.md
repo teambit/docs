@@ -46,6 +46,8 @@ MDX elements are themed using the [documenter design system](https://bit.dev/tea
 ```md
 import { Separator } from '@teambit/documenter.ui.separator';
 
+## Guidelines 
+
 * Place buttons where expect to find them. Do not force users to "hunt for buttons"
 * Do not use generic names for your buttons. Use verbs that clearly explain the button's function.
 * Size buttons in proportion to their importance.
