@@ -18,12 +18,12 @@ Peer dependencies assume a single “hosting code”, a single application. A Bi
 
 ## The solution
 
-Set the depedency-resolver to install the peer dependecy in a directory set by the environment. Then, resolve the path to that installed package, to be used by all relevat components.
+Set the depedency-resolver to install the peer dependecy in a directory set by the environment. Then, resolve the path to that installed package, to be used by all relevant components.
 
 >  The new dependency configurations, set by either of the solutions shown below, will be addressed by your Bit workspace but will not affect any non-Bit consuming project. This is due to the fact that a `package.json`, containing valid ‘peerDepedencies’ will still be generated for each component, each generated package.
 
 ### Implementation 1: Extend an environment to add new peer dependencies
-[Extend the environment](/docs/environments/build-environment#create-an-environment-extension) and customize it to set the needed package as a peer dependency of all component managed by it. In addition, set the `resolveFromEnv` property to `true`. This will make sure to use the package provided by the environment.
+[Extend the environment](/docs/environments/build-environment#create-an-environment-extension) and customize its dependencies to set the needed package as a peer dependency of all components managed by it. In addition, set the `resolveFromEnv` property to `true`. This will make sure to use the package provided by the environment.
 
 For example, to set 'enzyme@3.11.0' as a peer dependency of all compomnents managed by the `@temabit.react/react` environment, we'll create an extension and customize it like so:
 
@@ -72,9 +72,9 @@ export default CustomReactExtension;
 
 ### Implementation 2: Set relevant components with a new peer dependency config
 
-1. Select the relevant components (using 'variants') and configure their peer depedencies with the `resolveFromEnv` set to `true`.
+1. Select the relevant components (using 'variants' in the workspace.json) and configure their peer depedencies with the `resolveFromEnv` set to `true`.
 
-2. Select the environment and configure this peer dependency as a standard dependecy (the dependecy-resolver will make sure to install this package at the right to avoid conflicts between mutltiple versions of the same paclage. [See here](/docs/dependencies/dependency-installation) for more information.)
+2. Select the environment and configure the above dependency as a standard dependency (the dependency-resolver will make sure to install this package in the right place to avoid conflicts between multiple versions of the same package. [See here](/docs/dependencies/dependency-installation) for more information.)
 
 For example:
 
