@@ -104,8 +104,11 @@
       "extensions/create-extension": {
         "title": "Create an Extension"
       },
-      "faq/faq": {
-        "title": "FAQs"
+      "faq/multiple-peer-dep-versions": {
+        "title": "Handling mutltiple versions of the same peer dependency"
+      },
+      "faq/set-runtime-globals": {
+        "title": "How to set runtime globals"
       },
       "getting-started/what-is-bit": {
         "title": "What is Bit?"

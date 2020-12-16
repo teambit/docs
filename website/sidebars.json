@@ -130,7 +130,8 @@
       "troubleshooting/troubleshooting"
     ],
     "FAQs": [
-      "faq/faq"
+      "faq/multiple-peer-dep-versions",
+      "faq/set-runtime-globals"
     ]
   }
 }

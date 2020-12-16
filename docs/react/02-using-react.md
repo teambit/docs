@@ -38,7 +38,7 @@ To set React to compile MDX components (so that they can be shared as a distribu
     }
 }
 ```
- > The above configuration does not affect the compilation of MDX documentation files (`*.doc.ts`). This is always done as part of the bundling process for 'Preview' and 'DevServer'.
+ > The above configuration does not affect the compilation of MDX documentation files (`*.doc.mdx`).
 
  ### React Version
 
@@ -55,3 +55,4 @@ The React environment is set to use version `^16.13.1`. To use a different versi
     }
 }
 ```
+

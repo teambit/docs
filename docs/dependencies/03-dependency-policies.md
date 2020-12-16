@@ -17,7 +17,7 @@ Whenever you use the `bit install <library>` command, Bit adds the library to th
 }
 ```
 
-### Runtime dependencies and Dev dependencies
+## Runtime dependencies and Dev dependencies
 
 Bit also knows to add the dependency according to type of usage. When `dependency-resolver` parses an import statement it keeps a note about the file that's using the library. It then uses the file type convention to determine the type of dependency, meaning that when you use a library in a test file for instance, that library will be added as a `devDependency` for the component.
 
@@ -49,7 +49,9 @@ To do this, you would remove the dependency from the regular dependencies list a
 
 Advanced information: Peer dependencies are handled by the [component environment's runtimes feature](/docs/environment/overview#manage-components-runtime), not by the `dependency-resolver` aspect.
 
-### Set a dependency policy on a limited set of components
+To andle multiple versions of a peer dependecy, [see here](/docs/faq/multiple-peer-dep-versions).
+
+## Set a dependency policy on a limited set of components
 
 By setting the dependency policy under the `variants` field, we make sure to affect only a selected set of components and override any conflicting policies cascading from a more general dependency policy (set on a less specific set of components). To learn how to select components using `variants`, [see here](docs/variants/overview).
 
