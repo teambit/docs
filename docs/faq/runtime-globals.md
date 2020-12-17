@@ -3,7 +3,7 @@ id: set-runtime-globals
 title: How to set runtime globals
 ---
 ## Background
-The JS compilation process often invloves adding polyfills to the output compiled code. These polyfills are required and added only at the compilation phase so as to reduce duplication in the compiled code (which could be the result of importing them into every dependent module).
+The JS compilation process often involves adding polyfills to the output compiled code. These polyfills are required and added only at the compilation phase so as to reduce duplication in the compiled code (which could be the result if we would import them separately into every dependent module).
 
 ## The Problem
 Components authored in Bit workspace are set, as default, to compile without the added polyfills. This is done in order to preserve the same logic that was introduced earlier - that is, to avoid code duplications in the application's compiled code.
