@@ -83,7 +83,7 @@ You can specify a SemVer increment, so Bit tags all the components using that in
 ```shell
 bit tag --all --major          # Increment all modified and new components with a major version.
 bit tag --all --minor          # Increment all modified and new components with a minor version.
-bit tag --scope --patch  # Increment all components with a patch version.
+bit tag --patch  # Increment all components with a patch version.
 bit tag --scope --patch  # Increment all components in the workspace with a patch version.
 ```
 
