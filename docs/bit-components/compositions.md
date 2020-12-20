@@ -85,11 +85,11 @@ PrimaryButton.canvas = {
 
 To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and choose the **compositions** tab. There, you will see the full list of compositions available for that component with additional component meta-data.
 
-## Standardize testing using component compositions
+## Using compositions for automated testings
 
 Component compositions can be used in automated testing as well as manual examinations. To do that, simply import the compositions to run the appropriate tests. 
 
-For example, this snapshot test checks the 'Button' component when set to use the 'primary' prop.
+For example, this snapshot test checks the 'Button' component when the 'variant' prop is set to 'primary' (this is obviously for demonstration purposes only. In real-life, this feature will be used for larger and more complex compositions).
 
 ```jsx
 import React from 'react';
