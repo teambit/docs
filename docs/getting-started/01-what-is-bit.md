@@ -31,7 +31,7 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 **Core features**:  
 
 * **[Open-Source Dev Tools](#open-source-development-tools)**
-* **[Component Cloud](#cloud-platform-key-features)**  
+* **[The Component Cloud](#enterprise-grade-component-cloud)**  
 
 
 > Bit adds no runtime dependencies to your code, and does not affect how you implement components.
@@ -311,7 +311,7 @@ It’s feature rich to meet the needs of global teams and enterprises, providing
 
 ![component-cloud](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-cloud.png)  
 
-### Share and iscover everyone’s components
+### Share and discover everyone’s components
  
 The component cloud is where teams expose and integrate components with each other.  
  
