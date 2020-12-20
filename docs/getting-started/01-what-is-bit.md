@@ -7,7 +7,7 @@ title: What is Bit?
 
 Bit is a rich and extensible toolset for building independent components and composing component-driven applications. It is a standard infrastructure for components, that helps you easily scale to many teams building consistent and performant applications together. 
 
-*How?*
+#### *How?*
 
 Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build projects in a modular way, so each component is independently developed, tested, built, rendered, linted, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.
 
@@ -16,22 +16,20 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
 
 
-**What can Bit do for you?**:  
+### What can Bit do for you?
 
-* **[Design Systems & Shared Components](#ui-design-system)**  
-* **[Component Monorepo](#component-monorepo)**
-* **[Micro Front-Ends](#micro-frontends)**  
-* **[Developer Designer Collaboration](#developer-designer-collaboration)**
-* **[Sharing Code Between Teams](#sharing-code-between-teams)**
-* **[Infinite Component Reuse](#component-reuse)**  
-* **[Standardization and Consistency](#standardization-and-consistency)**  
-* **[Autonomous Teams, Independent Delivery](#autonomous-teams-and-independent-delivery)**
-* **[Scaling Web Development](#scaling-web-development)**   
+#### [Micro Front-Ends](#micro-frontends)  
+#### [Design Systems](#ui-design-system)
+#### [Component Monorepo](#component-monorepo)
+#### [3X Development Speed](#3x-development-speed)
+#### [Sharing and Reusing Components](sharing-and-reusing-components)
 
-**Core features**:  
 
-* **[Open-Source Tools](#open-source-development-tools)**
-* **[The Component Cloud](#enterprise-grade-component-cloud)**  
+### Core Features
+
+#### [Open-Source Tools](#open-source-development-tools)
+
+#### [The Component Cloud](#enterprise-grade-component-cloud)  
 
 
 ## Popular Use Cases
