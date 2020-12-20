@@ -349,7 +349,7 @@ Want to join some of the world’s best teams on the Beta? [Let us know](https:/
 
 ![component-builds](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.03.29%20PM.png)  
 
-## Integrate to GitHub, Slack, and dozens of other tools
+### Integrate to GitHub, Slack, and dozens of other tools
  
  
 #### Automatically send updates as GitHub PRs to all impacted projects
