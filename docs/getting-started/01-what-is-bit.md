@@ -30,18 +30,17 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 **Core features**:  
 
-* **[Open-Source Dev Tools](#open-source-development-tools)**
+* **[Open-Source Tools](#open-source-development-tools)**
 * **[The Component Cloud](#enterprise-grade-component-cloud)**  
-
-
-> Bit adds no runtime dependencies to your code, and does not affect how you implement components.
-
-> Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
 
 
 ## Popular Use Cases
 
 Developer teams will enjoy a shared infrastructure that lets them scale web development together. It increases the speed of delivery, allows teams to easily integrate and collaborate with each other, while keeping them autonomous to constantly build and deliver new features.  
+
+> Bit components can be anything from UI components to Hooks, Widgets, Pages, Features or even Node Modules. You decide what should be componentized first.
+
+> Bit only lives in build time. It does not add runtime dependencies to your code, and does not affect how you implement components.  
 
 ### Micro Frontends  
 
