@@ -192,35 +192,51 @@ Bit connects frontend teams by using components as services in a similar way to 
 
 The [Bit.dev cloud platform](https://bit.dev/) is an enterprise-grade solution for developers to share and collaborate on components, continuously integrate with changes with each other, and make sure that all applications are always up to date with the latest versions.
 
-## Extensible Development Tools
+## Open-Source Development Tools
 
 A rich and fully extensible toolset for modular application development.
 
-### Component Workspace
+### Lego-Like Component Workspace  
+
+* **Dynamically add, import, and export components**
+* **Personalize your workspace and work only what you need**
+* **Auto-define and manage all component dependencies**
+* **Abstract away all painful configurations with the simple ‘workspace.json’**
+* **Enjoy a smooth and holistic dev experience**  
 
 Bit’s workspace turns your project into a smart “monorepo” where components are fully decoupled from each other during every step of their development, build, test, and publish process. Bit will ensure each component is completely independent, while helping you manage and synchronize all components in your project with an effortless and holistic developer experience. It is a bedrock for truly modular and harmonized development.
 
 ![Component-monorepo-workspace](https://storage.googleapis.com/static.bit.dev/harmony-docs/monorepo-components-bit.png)  
 
 
-### Component Development Server  
+### Modular Component Dev Environments  
+ 
+* **Use or create modular per-component dev environments**
+* **Easily apply different environments to components**
+* **Develop, build, test, lint etc each component individually**
+* **Reuse environments across components and projects**  
 
-Bit comes with a powerful dev server for components, that lets you render, test and document each component on its own server. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) for different types of components, without requiring that you manage multiple processes.  
+A Bit Environment is a component that configures and “bundles” together different services needed throughout the life-cycle of an independent component. These services include compiling, bundling, testing, linting, documenting, and more. A single workspace can maintain several types of development environment (Angular, React, Vue, etc) for different types of components, without requiring that you manage multiple processes.  
 
-![component-dev-server](https://storage.googleapis.com/static.bit.dev/harmony-docs/Workspace-Grid%20(1).png)  
-
-
-### Component Dev Environments
-
-A Bit Environment is a component that configures and “bundles” together different services needed throughout the life-cycle of an independent component. These services include compiling, bundling, testing, linting, documenting, and more.
-
-Bit environments make it possible to build and deliver independent components without the overhead of setting up a development environment to support that. Environments are also used to ensure consistency by standardizing the environment setup for independent components, developed across various (decoupled) projects.
-
-Bit provides a number of environments to choose from. Each environment is completely customizable and extendible (once you create your own custom environment, it can be shared with others like any other component). 
-
-
+Bit environments make it possible to build and deliver independent components without the overhead of setting up a development environment to support that. Environments are also used to ensure consistency by standardizing the environment setup for independent components, developed across various projects by different teams.  
 
 ![component-dev-environments](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-11-10%20at%202.56.23%20PM.png)  
+
+### Visual Development UI
+ 
+* **Spawn a visual UI with a powerful dev server and hot reloading**
+* **Render and visualize your components in isolation**
+* **View and edit beautiful component documentations**
+* **Run and view component build and tests results as you code**
+* **Visualize and manage your component dependency graph**
+* **Quickly browse versions and changelogs**
+* **Explore your project’s beautiful component gallery**  
+ 
+Bit makes sure that not only you get an A+ dev experience for modular projects, but also that you enjoy it visually. Open Bit’s powerful UI to visually develop, build, test, manage and render the components in your project with instant feedback as you code. 
+ 
+And, the entire Bit UI is made of components too, so you can customize and extend the UI to include any feature or look any way you like. We do it all the time!
+
+![component-dev-server](https://storage.googleapis.com/static.bit.dev/harmony-docs/Workspace-Grid%20(1).png)  
 
 
 ### Reusable Docs Templates
@@ -324,3 +340,6 @@ Bit.dev manages updates for all components hosted on the platform. Everyone can 
 ### RIPPLE CI (*Coming Soon*) - Component-Driven Builds
 
 Unlike legacy tools built for monolithic applications, **Ripple CI is 100% component-driven**. It only builds changes to specific components and propagates them up the dependency graph of all impacted components, across all impacted applications. It lets teams decouple their releases from each other, and enjoy a X50 faster and much safer continuous integration for independent and paced releases to production. No more fighting over master, no more waiting for versions to bloat, no more breaking applications in production without knowing in advance exactly what’s going to break. Want to join some of the world’s best teams on the Beta list? [Let us know](https://bit.dev/contact-sales).
+
+
+
