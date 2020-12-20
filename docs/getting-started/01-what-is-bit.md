@@ -43,6 +43,26 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 Developer teams will enjoy a shared infrastructure that lets them scale web development together. It increases the speed of delivery, allows teams to easily integrate and collaborate with each other, while keeping them autonomous to constantly build and deliver new features.  
 
+### Micro Frontends  
+
+#### Read -> “[How We Build Micro Frontends](https://blog.bitsrc.io/how-we-build-micro-front-ends-d3eeeac0acfc)”  
+
+![Micro Frontends](https://i.ibb.co/fn8krfn/homepage-components-micro-frontends.png)
+
+*Micro frontends* are a philosophy of how software should be built, and how teams and organizations should work together. Bit is the most production-ready and scalable way to build Micro Frontends, driven by modern components.   
+
+* **Decoupled Codebases** -  Each team can develop components in their own codebase, which is decoupled in every way during development from all other teams’ codebases.  
+
+* **Team API ownerships** - Autonomous teams can own and expose components and features as APIs to all other teams, via Bit’s cloud, so that everyone can continuously integrate.  
+
+* **Build-time integrations** - Teams can easily discover and install each other’s components in their own components, and compose components together to release modular applications.  
+
+* **Incremental upgrades** - Each team can constantly release updates to specific components and easily make sure all impacted components, teams, and applications will get all and only the updates they need, and that incremental builds and test allow the safe release of upgrades.  
+
+* **Independent releases** - Teams no longer have to fight over master or step on each other’s toes, as each component can be built using its own build environments and even build pipelines. All teams can constantly deliver innovation safely and independently to production.  
+
+Need an example? Take a look at how the [homepage of Bit.dev](https://bit.dev) is composed of components built by different teams, in different codebases, released independently, and smoothly integrated together.  
+
 ### UI Design System  
 
 #### Read -> “[How We Build Our Design System](https://blog.bitsrc.io/how-we-build-our-design-system-15713a1f1833)”  
@@ -113,77 +133,46 @@ Key features include:
 * **Extend, replace, or customize anything** - Bit is 100% modular. Every part of Bit is a reusable, extensible, and customizable module. Including everything - dev environments, build environments, the UI, docs templates, the workspace, build pipelines, everything. You can easily and quickly change, remove, add, or replace any part of Bit, your toolchain, or workflow. You can even add features to the workspace UI to enrich your experience. It’s just a matter of composing a few components.
 
 
-### Micro Frontends  
-
-#### Read -> “[How We Build Micro Frontends](https://blog.bitsrc.io/how-we-build-micro-front-ends-d3eeeac0acfc)”  
-
-![Micro Frontends](https://i.ibb.co/fn8krfn/homepage-components-micro-frontends.png)
-
-*Micro frontends* are a philosophy of how software should be built, and how teams and organizations should work together. Bit is the most production-ready and scalable way to build Micro Frontends, driven by modern components.   
-
-* **Decoupled Codebases** -  Each team can develop components in their own codebase, which is decoupled in every way during development from all other teams’ codebases.  
-
-* **Team API ownerships** - Autonomous teams can own and expose components and features as APIs to all other teams, via Bit’s cloud, so that everyone can continuously integrate.  
-
-* **Build-time integrations** - Teams can easily discover and install each other’s components in their own components, and compose components together to release modular applications.  
-
-* **Incremental upgrades** - Each team can constantly release updates to specific components and easily make sure all impacted components, teams, and applications will get all and only the updates they need, and that incremental builds and test allow the safe release of upgrades.  
-
-* **Independent releases** - Teams no longer have to fight over master or step on each other’s toes, as each component can be built using its own build environments and even build pipelines. All teams can constantly deliver innovation safely and independently to production.  
-
-Need an example? Take a look at how the [homepage of Bit.dev](https://bit.dev) is composed of components built by different teams, in different codebases, released independently, and smoothly integrated together.
-
-
-
 ### Developer Designer Collaboration
 
 Bit is a very effective way to bridge the gap between design and development. Unlike legacy tools, it helps developers include designers (and other people) in the development process.  
 
-![Developer Designer Collaboration](https://storage.googleapis.com/static.bit.dev/harmony-docs/Overview-bitdev.png)
+![Developer Designer Collaboration](https://storage.googleapis.com/static.bit.dev/harmony-docs/Overview-bitdev.png)  
 
-Bit makes it easy for developers to include designers, product managers, and business stakeholders in the development process of web applications. Everyone can easily discover, see, and collaborate on components in a visual way, together, and directly over code.
+* **Visualize all components for designers and everyone else** - Bit brings everyone in the team together directly over components. All components implemented by developers become visually available to designers, product managers, marketers and everyone else.  
 
-Bit makes it easy to document components in a visual way, while rendering the isolated visual of every component’s version with different examples and compositions. 
+* **Notify designers and visualize all component changes and new versions** - All changes and new versions to components to components are available to designers to see and track, so they can easily compare changes and ensure a beautiful consistent design.  
 
-When a developer implements a component, the designer can instantly see how it looks in the code and what will the user get in production. When there’s a change to a component, the designer can easily monitor and ensure that all visual changes are according to design guidelines. And, designers can play with all components hands-on, try different things, save examples for developers to implement, and become active partners in the development process. 
+* **Preview and visualize all released changes to components in all projects** - *Ripple CI* lets teams release component changes to all impacted projects. Each change on each impacted component is **visualized in a live preview** during the build process, so that designers can learn exactly how releases impact the visual design of every screen and application. 
 
-Bit also plays beautifully with tools like Zeplin and components designed in tools like Figma or Sketch. Together, it brings designers and developers closer than ever before possible.
+* **Integrate Zeplin, Figma and other tools for UI creation utopia** - Imagine all your design components on Figma and Zeplin connected to the actual component implemented by developers and to the code that runs in production. Every change is updated and compared in code and design. This can be done with Bit, to achieve UI development utopia where designers and developers build together, for real.
 
-### Sharing Code Between Teams
+* **Let designers actively actively participate by editing and saving visual changes** - *Coming soon!*: Enjoy visual editing features to help designers instantly give feedback, suggest changes, and ultimately release changes to code components right from the component cloud.
 
-Bit is a very effective way to share code between teams.  
+### 3X Development Speed
+
+* **Reuse 100% of your components to greatly speed up development** - Each component reused is hours or days of work saved by a developer. Taking components to the cloud will save organizations up to 50% of development time and resources, and focus them on innovation.  
+
+* **Eliminate bugs, mistakes, and inconsistencies in web projects** - Customize, standardize, and reuse development environments, documentation templates, and build pipelines to eliminate up to 90%(!) of all component inconsistencies, bugs, and mistakes in production.  
+
+* **Save 90% time and overhead on integrations between teams and projects** - Every component is available to everyone in the organization on the component cloud. All components can be quickly introduced into different projects by simply importing them into the project’s workspace and integrating them to other components in the workspace. Teams report Bit to save roughly 40% of time spent on their cross-team integrations.  
+
+* **Shorten the feedback loop between developers, designers, and everyone** - Save A LOT of time on designer and developer collaboration through [developer and designer collaboration](###developer-designer-collaboration). Visualize all components, let designers view all components, versions, and changes, and integrate your favorite design tools. Shorten product and feature feedback loops by up to 50% and greatly improve outcome quality.  
+
+* **Ripple CI: Hyper fast modular builds without fighting over master** - Unlike legacy tools, *Ripple CI* does not build an entire monolithic application. Instead, it only builds propagating changes to impacted components making it A LOT faster than anything you’ve known. It incrementally builds changes to components on the graph, so each team can independently and rapidly release changes to their components without stepping on other team’s toes.  
+
+
+* **Reduce time and overhead and remove external tools from your toolchain** - No more external documentation websites, monorep development tools, publishing tools, or different dev and build tools used by different teams for no reason. Bit will let you choose, reuse, and standardize the best tools, and remove any extra tools to build with components.
+
+![Autonomous-Teams](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.22.04%20PM.png)  
+
+### Sharing and Reusing Components 
+
+Bit is a very effective way to share and reuse code between teams.  
 
 With Bit, each team can easily create and publish components from their own independent codebase. Via the component cloud, all teams can share and discover each other’s components, and quickly integrate them into different projects. Advanced features make this process more collaborative, so it becomes very easy to suggest feedback and changes to shared code, build together, and stay in sync.
 
 The ease of publishing alongside the ease of discovery and reuse make Bit a highly scalable solution for sharing code between teams. Bit can be used to share UI components, but also any other form of reusable code units like Hooks or even Node modules, util functions, serverless functions and more. 
-
-
-### Standardization and Consistency  
-
-*Web development standardization and consistency* means that all components will follow the same design patterns, will be developed using the same development environments, tested and built using the same pipelines, and will be documented and published using the same templates. This way an organization can ensure consistency in the development process, and deliver higher quality applications which are more resilient and performant. Bit is the most powerful yet flexible way to achieve standardization for components. It provides features such as customizable and reusable development environments, which ensure all teams create components the same way, yet living room for unavoidable changes when necessary. Customizable and reusable build pipelines ensure all components are built and tested the same way by predefined standards. Fully customizable docs templates ensure all components can easily be published and used by other developers and teams.  And, since Bit is 100% extensible, this is just where your imagination starts.
-
-
-### Autonomous Teams and Independent Delivery
-
-Independent components and decoupled codebases means independent teams and autonomous team delivery.
-
-Conway’s law suggests a clear symmetry between a codebase architectural style and the way that codebase is built by people working together. Building applications with independent components means developers create and deliver features independently. It means they are completely decoupled from anything that has the potential to become a blocker to their own progress. That naturally translates to faster delivery but that also reduces frustration, as each developer enjoys complete autonomy and full mastery over their own scope.
-
-![Autonomous-Teams](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.22.04%20PM.png)  
-
-
-### Scaling Web Development
-
-As developers we are tasked with building innovative solutions for our products. When we don't have an efficient way of isolating and sharing code we've already implemented we are locked in an endless cycle of re-implementing the same functionality we built before and then maintaining it in multiple code bases. With the introduction of component-based frameworks like React, Angular and Vue our code has become more modular and the components we design can work in multiple apps and use cases. However they are implemented in rigid code repositories that don't allow us to easily reuse an already implemented piece of code.
-
-Bit solves the problem of sharing and managing components between different projects so you can focus on building new, exciting and innovative solutions for your product or products. When utilizing Bit you can quickly share each component as a separate module from your project. Other developers can then take your component and use it as part of their components, like they would any other npm/yarn package, to drastically speed up their delivery. Moreover, they can then share their components for you to use.
-
-Bit connects frontend teams by using components as services in a similar way to how microservices architecture has done so for backend teams.
-
-
-### Component Reuse  
-
-*Component reuse* is a great way to speed software delivery, reduce effort on redundant code and maintenance, eliminate bugs and mistakes, and make sure more resources are focused on innovation. Components are by design modular, and therefor can and should be reused. Bit turns 100% of your components reusable as a seamless part of your workflow! Every single component you create becomes a fully reusable asset that can be very easily published, documented, and reused in new projects. No repository splitting, no complex configs, no overhead. Thanks to Bit.dev, code reuse can be infinitely scaled while making sure everything is always easily discoverable, and can be found and used one click away. And, using advanced features like ‘bit import’, it becomes easier than ever to quickly evolve and adjust components right from any new context.
 
 
 ## Core Features
@@ -335,8 +324,7 @@ As components are changed and updated, so will their documentation, and you need
 * **Incrementally build changes to impacted components, nothing else, for x10+ performance**
 * **Preview all changes with live rendering to help ensure design consistency and quality**.
 * **Build and test each impacted component individually to learn exactly what breaks and why**
-* **Fast and fearless; No more fighting over master, no more waiting for bloated versions**
- 
+* **Fast and fearless; No more fighting over master, no more waiting for bloated versions**  
  
 *Ripple CI* is continuous integration for the entire organization. It incrementally builds, tests, and even visually previews changes to components across all your applications simultaneously. This means you can release incremental changes to many teams and projects together.
  
@@ -351,7 +339,6 @@ Want to join some of the world’s best teams on the Beta? [Let us know](https:/
 
 ### Integrate to GitHub, Slack, and dozens of other tools
  
- 
 #### Automatically send updates as GitHub PRs to all impacted projects
  
 Component changes that safely go through Ripple CI can be automatically turned into pull-request which are sent to all impacted projects. Each PR will contain the information from Ripple CI including all impacted components in the project, build and test results for each, and rendered preview to see the change visually. This integration makes it effortless to ensure that all relevant web projects will get and adopt the latest component versions.
@@ -359,7 +346,6 @@ Component changes that safely go through Ripple CI can be automatically turned i
 ![bitdev-integrations-github](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-11-10%20at%204.43.00%20PM.png)  
 
 #### Track components usage, adoption, and status
-
 
 Track and learn exactly which components in which versions are used by which projects by which teams. Make sure every project is up to date with all the latest component versions. Learn which components fail or pass the latest tests in each project. Get valuable and relevant insights on the exact state of all your web projects, to ensure consistency and indulge your brand’s users at every touchpoint.
 
