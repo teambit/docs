@@ -1,15 +1,17 @@
 ---
 id: compositions
-title: Compositions
+title: Compositions (rendering in isolation)
 ---
 
 Compositions are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations.
 
-* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in remote component-sharing platforms like [Bit.dev](https://bit.dev).
+* When authoring or modifying a component, compositions serve as a way to validate that a component looks and behaves as expected. Use Bit's [Workspcae UI](/docs/workspace/workspace-ui) to see them rendered live in isolation.
 
-* When creating or modifying a component in Bit's workspace, compositions serve as a way to validate that a component looks and behaves as expected, in different scenarios. Use Bit's [Workspcae UI](/docs/workspace/workspace-ui) to see them render in "controlled environments".
+* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in [Remote Scopes](docs/scope/overview), hosted on Bit servers (e.g, [Bit.dev](https://bit.dev)
 
 * Compositions can be used as test samples, in automated testings.
+
+Composition are rendered by the [environment](/docs/environments/overview) used by the component.
 
 > This document uses React code as snippets.
 
@@ -21,7 +23,7 @@ Writing a composition does not require any configuration. Simply import the comp
 
 The name of the export will be converted from PascalCase/camelCase and used for the composition name (e.g, `"CompositionName" --> "Composition name"`).
 
-__For example__, we'll create two compositions, 'Primary button' and 'Secondary button', that demonstrate two uses of the 'Button' component:
+__For example__, we'll create two compositions, 'Primary button' and 'Secondary button', each demonstrates a different instance or usage of that component:
 
 First, we'll create a new composition file in the component's directory:
 
@@ -56,10 +58,23 @@ export const SecondaryButton = () => {
 
 ## Setting canvas size for compositions
 
-Some components should be mobile friendly, look different in some sizes... need to make sure compositions are mocked to fit various sizes.
+Compositions reveal a component's behavior in different contexts. That also includes, different screen sizes. To do that simply add the `canvas` property to your compositions.
 
-```javascript
-/// TODO - need to get the proper code snippet.
+For example:
+
+```tsx
+export const PrimaryButton = () => {
+  return (
+    <Button variant="primary">
+        Click Me
+    </Button>
+  );
+};
+
+PrimaryButton.canvas = {
+  "height": 800,
+  "width": 400
+}
 ```
 
 ## Loading compositions
@@ -72,10 +87,22 @@ To explore compositions in your Workspace UI, start the local development server
 
 ## Standardize testing using component compositions
 
-When using UI testing frameworks like Jest that support DOM rendering you can use the component compositions when running your tests. This way whenever you update your code, you use the compositions to see the changes made and later, when running tests, they are preformed on the same compositions you used to implement your code changes.
+Component compositions can be used in automated testing as well as manual examinations. To do that, simply import the compositions to run the appropriate tests. 
 
-```javascript
-// TODO - snippet
+For example, this snapshot test checks the 'Button' component when set to use the 'primary' prop.
+
+```jsx
+import React from 'react';
+import testRenderer from 'react-test-renderer';
+import { PrimaryButton } from './button';
+
+describe('Button', () => {
+  it('renders correctly as "primary"', () => {
+    const component = testRenderer.create(<PrimaryButton>test primary variant</PrimaryButton>);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
 ```
 
 ## Compositions and storybook

@@ -4,5 +4,12 @@
     "cSpell.words": [
         "bitdev",
         "whybit"
+    ],
+    "cSpell.enableFiletypes": [
+        "javascriptreact",
+        "jsonc",
+        "mdx",
+        "typescript",
+        "typescriptreact"
     ]
 }

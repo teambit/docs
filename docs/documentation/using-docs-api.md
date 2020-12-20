@@ -25,7 +25,7 @@ __Using MDX__ (front matter):
 
 ```mdx
 ---
-description: 'my customized title'
+description: my customized title
 ---
 ```
 

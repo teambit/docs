@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-A Bit environment is a reusable development environment encapsulated in a single Bit component. All common dev tasks such as linting, testing, compiling, documenting, and other [services](/docs/environments/environment-services) which are needed in the lifecycle of a component, are provided by the environment.  
+A Bit environment is a reusable development environment encapsulated in a single Bit component. An environment includes linting, testing, compiling, documenting, and other [services](/docs/environments/environment-services) which are needed in the lifecycle of a component, are provided by the environment.
 
 Having just a single component to set up the entire development environment means no time gets wasted on tedious configurations. In addition, a sharable environment makes it easier to maintain consistency in development across multiple components in a workspace and between multiple decoupled Bit workspaces.
 

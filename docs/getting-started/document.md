@@ -62,7 +62,7 @@ By default the abstract property is automatically parsed from the code. To overr
 
 ```mdx
 ---
-description: 'An imperfect button.'
+description: An imperfect button.
 ---
 ```
 

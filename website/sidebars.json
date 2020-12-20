@@ -14,7 +14,6 @@
       "getting-started/export-to-scope",
       "getting-started/import-install-components",
       "getting-started/manage-dependencies",
-      "getting-started/remove-deprecate-components",
       "getting-started/ci-cd"
     ],
     "Workspace": [
@@ -38,9 +37,12 @@
     ],
     "Bit Components": [
       "bit-components/overview",
+      "bit-components/tracking",
       "bit-components/compositions",
-      "bit-components/import-components",
-      "bit-components/workspace-vs-scope"
+      "bit-components/versioning",
+      "bit-components/exporting",
+      "bit-components/inspecting",
+      "bit-components/remove-deprecate-components"
     ],
     "Scopes": [
       "scope/overview",
@@ -101,10 +103,6 @@
       "react-native/overview",
       "react-native/using-react-native",
       "react-native/extending-react-native"
-    ],
-    "Extensions": [
-      "extensions/overview",
-      "extensions/create-extension"
     ],
     "Aspects": [
       "aspects/overview",

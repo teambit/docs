@@ -23,20 +23,35 @@
       "authentication/overview": {
         "title": "Overview"
       },
-      "bit-components/overview": {
-        "title": "Overview"
-      },
       "bit-components/why-components": {
         "title": "Why Components?"
       },
       "bit-components/compositions": {
-        "title": "Compositions"
+        "title": "Compositions (rendering in isolation)"
       },
-      "bit-components/04-import-components": {
-        "title": "bit-components/04-import-components"
+      "bit-components/exporting": {
+        "title": "Exporting"
       },
-      "bit-components/workspace-vs-scope": {
-        "title": "Workspace vs Scope"
+      "bit-components/importing": {
+        "title": "bit-components/importing"
+      },
+      "bit-components/inspecting": {
+        "title": "Inspecting"
+      },
+      "bit-components/installing": {
+        "title": "bit-components/installing"
+      },
+      "bit-components/overview": {
+        "title": "Overview"
+      },
+      "bit-components/remove-deprecate-components": {
+        "title": "Removing and Deprecating"
+      },
+      "bit-components/tracking": {
+        "title": "Tracking"
+      },
+      "bit-components/versioning": {
+        "title": "Versioning"
       },
       "build-pipeline/overview": {
         "title": "Overview"
@@ -98,14 +113,8 @@
       "environments/service-handlers": {
         "title": "Service Handlers"
       },
-      "extensions/overview": {
-        "title": "Overview"
-      },
-      "extensions/create-extension": {
-        "title": "Create an Extension"
-      },
       "faq/multiple-peer-dep-versions": {
-        "title": "Handling mutltiple versions of the same peer dependency"
+        "title": "Handling multiple versions of the same peer dependency"
       },
       "faq/set-runtime-globals": {
         "title": "How to set runtime globals"
@@ -145,9 +154,6 @@
       },
       "getting-started/import-install-components": {
         "title": "Import/Install Components"
-      },
-      "getting-started/remove-deprecate-components": {
-        "title": "Remove/Deprecate Components"
       },
       "getting-started/ci-cd": {
         "title": "Add to CI/CD"
@@ -492,7 +498,6 @@
       "React": "React",
       "NodeJS": "NodeJS",
       "React Native": "React Native",
-      "Extensions": "Extensions",
       "Aspects": "Aspects",
       "Preview": "Preview",
       "Development Server": "Development Server",

@@ -1,6 +1,6 @@
 ---
 id: multiple-peer-dep-versions
-title: Handling mutltiple versions of the same peer dependency
+title: Handling multiple versions of the same peer dependency
 ---
 ## Background
 Node package managers install multiple versions of the same package when modules used by the same application require different versions to function.
@@ -18,14 +18,14 @@ Peer dependencies assume a single “hosting code”, a single application. A Bi
 
 ## The solution
 
-Set the depedency-resolver to install the peer dependecy in a directory set by the environment. Then, resolve the path to that installed package, to be used by all relevant components.
+Configure the dependency-resolver to install the needed peer dependency in a directory set by the environment. Then, for resolve the path to that installed package for each component requiring it.
 
->  The new dependency configurations, set by either of the solutions shown below, will be addressed by your Bit workspace but will not affect any non-Bit consuming project. This is due to the fact that a `package.json`, containing valid ‘peerDepedencies’ will still be generated for each component, each generated package.
+>  The new dependency configurations, set by either of the solutions shown below, will be addressed by your Bit workspace but will not affect any non-Bit consuming project. This is due to the fact that a `package.json`, containing valid ‘peerDependencies’ will still be generated for each component, each generated package.
 
 ### Implementation 1: Extend an environment to add new peer dependencies
 [Extend the environment](/docs/environments/build-environment#create-an-environment-extension) and customize its dependencies to set the needed package as a peer dependency of all components managed by it. In addition, set the `resolveFromEnv` property to `true`. This will make sure to use the package provided by the environment.
 
-For example, to set 'enzyme@3.11.0' as a peer dependency of all compomnents managed by the `@temabit.react/react` environment, we'll create an extension and customize it like so:
+For example, to set 'enzyme@3.11.0' as a peer dependency of all components managed by the `@teambit.react/react` environment, we'll create an extension and customize it like so:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--custom-react.extension-->

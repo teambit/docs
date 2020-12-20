@@ -2,6 +2,7 @@
 id: properties-table
 title: Properties Table
 ---
+> The properties table is only available for the React and React Native environments
 
 To ensure the documentation is faithful to the code, Bit generates the properties table from the code itself using [react-docgen](https://github.com/reactjs/react-docgen). At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the run-time code itself.
 
