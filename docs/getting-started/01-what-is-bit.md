@@ -30,8 +30,8 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 **Core features**:  
 
-* **[Extensible Dev Tools](#extensible-development-tools)**
-* **[Component Cloud Platform](#cloud-platform-key-features)**  
+* **[Open-Source Dev Tools](#open-source-development-tools)**
+* **[Component Cloud](#cloud-platform-key-features)**  
 
 
 > Bit adds no runtime dependencies to your code, and does not affect how you implement components.
@@ -192,7 +192,7 @@ Bit connects frontend teams by using components as services in a similar way to 
 
 The [Bit.dev cloud platform](https://bit.dev/) is an enterprise-grade solution for developers to share and collaborate on components, continuously integrate with changes with each other, and make sure that all applications are always up to date with the latest versions.
 
-## Open-Source Development Tools
+## Open Source Development Tools
 
 A rich and fully extensible toolset for modular application development.
 
@@ -294,7 +294,7 @@ A “Scope” is a lightweight component server that provides a rich API for acc
 > To learn more about Bit’s core concepts such as [Workspace](), [Scope](), [Environment](), or [Compositions](), feel free to explore the docs and learn more. Or, try the [Hello World!]() 5 min tutorial to get started hands-on.
 
 
-## Cloud Platform Key Features
+## Enterprise-Grade Component Cloud
 
 ![component-discovery](https://storage.googleapis.com/static.bit.dev/harmony-docs/Scope-bitdev.png) 
 
@@ -311,7 +311,7 @@ It’s feature rich to meet the needs of global teams and enterprises, providing
 
 ![component-cloud](https://storage.googleapis.com/static.bit.dev/harmony-docs/component-cloud.png)  
 
-### Share and discover everyone’s components
+### Share and iscover everyone’s components
  
 The component cloud is where teams expose and integrate components with each other.  
  
