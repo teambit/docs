@@ -9,7 +9,7 @@ Compositions are examples or instances of a component. They're used to exhibit a
 
 * Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in [Remote Scopes](docs/scope/overview), hosted on Bit servers (e.g, [Bit.dev](https://bit.dev)
 
-* Compositions can be used as test samples, in automated testings.
+* Compositions can be used as test samples in automated testings. These samples can be of different variants of that component or of a larger composition that includes that component. Larger compositions can serve as a way to simulate the behavior of a component in future "real life" widgets, pages and full apps. That can be crucial when delivering components independently as Micro Frontends.
 
 Composition are rendered by the [environment](/docs/environments/overview) used by the component.
 
