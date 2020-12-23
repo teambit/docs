@@ -94,7 +94,7 @@ For example, this snapshot test checks the 'Button' component when the 'variant'
 ```jsx
 import React from 'react';
 import testRenderer from 'react-test-renderer';
-import { PrimaryButton } from './button';
+import { PrimaryButton } from './button.compositions.tsx';
 
 describe('Button', () => {
   it('renders correctly as "primary"', () => {
