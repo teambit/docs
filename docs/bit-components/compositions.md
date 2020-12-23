@@ -7,9 +7,9 @@ Compositions are examples or instances of a component. They're used to exhibit a
 
 * When authoring or modifying a component, compositions serve as a way to validate that a component looks and behaves as expected. Use Bit's [Workspcae UI](/docs/workspace/workspace-ui) to see them rendered live in isolation.
 
-* Compositions play an essential part of the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in [Remote Scopes](docs/scope/overview), hosted on Bit servers (e.g, [Bit.dev](https://bit.dev)
+* Compositions play an essential part in the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in [Remote Scopes](docs/scope/overview), hosted on Bit servers (e.g, [Bit.dev](https://bit.dev))
 
-* Compositions can be used as test samples in automated testings. These samples can be of different variants of that component or of a larger composition that includes that component. Larger compositions can serve as a way to simulate the behavior of a component in future "real life" widgets, pages and full apps. That can be crucial when delivering components independently as Micro Frontends.
+* Compositions can be used as test samples in automated testing. These samples can be of different variants of that component or of a larger composition that includes that component. Larger compositions can serve as a way to simulate the behavior of a component in future "real life" widgets, pages and full apps. That can be crucial when delivering components independently as Micro Frontends.
 
 Composition are rendered by the [environment](/docs/environments/overview) used by the component.
 
@@ -23,7 +23,7 @@ Writing a composition does not require any configuration. Simply import the comp
 
 The name of the export will be converted from PascalCase/camelCase and used for the composition name (e.g, `"CompositionName" --> "Composition name"`).
 
-__For example__, we'll create two compositions, 'Primary button' and 'Secondary button', each demonstrates a different instance or usage of that component:
+__For example__, we'll create two compositions, 'Primary button' and 'Secondary button', each of which demonstrates a different instance or usage of that component:
 
 First, we'll create a new composition file in the component's directory:
 
@@ -79,15 +79,15 @@ PrimaryButton.canvas = {
 
 ## Loading compositions
 
-["Environments"](main-concepts/04-environment.md) automatically detects the composition file for each component and use it to load its compositions to the workspace UI.
+["Environments"](main-concepts/04-environment.md) automatically detect the composition file for each component and use it to load its compositions to the workspace UI.
 
 ## Viewing component compositions
 
-To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and choose the **compositions** tab. There, you will see the full list of compositions available for that component with additional component meta-data.
+To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and select the **compositions** tab. There, you will see the full list of compositions available for that component, along with additional component meta-data.
 
 ## Using compositions for automated testings
 
-Component compositions can be used in automated testing as well as manual examinations. To do that, simply import the compositions to run the appropriate tests. 
+Component compositions can be used in automated testing as well as manual examinations. To do that, simply import the compositions in your test file to run the appropriate tests. 
 
 For example, this snapshot test checks the 'Button' component when the 'variant' prop is set to 'primary' (this is obviously for demonstration purposes only. In real-life, this feature will be used for larger and more complex compositions).
 
@@ -107,8 +107,8 @@ describe('Button', () => {
 
 ## Compositions and storybook
 
-Storybook is a tool designed for managing stories for design systems as a single project and not optimized for individual components. While you can use the storybook extension for Bit (**currently in development**) instead of compositions, compositions are more efficient when managing individual components:
+Storybook is a tool designed for managing stories for design systems as a single project and not optimized for individual components. While you can use the storybook extension for Bit (**currently in development**) instead of or alongside compositions, compositions are more efficient when managing individual components as they:
 
 * Use the same configuration pipeline and environments.
-* They are rendered using the same build pipelines as the components would during CI.
-* They do not require a separate process to render components.
+* Are rendered using the same build pipelines as the components would during CI.
+* Do not require a separate process or configuration to render components.
