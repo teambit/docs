@@ -68,6 +68,12 @@
       "cli/extending-cli": {
         "title": "Extending Bit's CLI"
       },
+      "compiling/add-compiler-to-pipeline": {
+        "title": "Add a Compiler to the Build Pipeline"
+      },
+      "compiling/customize": {
+        "title": "Customizing the Compiler"
+      },
       "compiling/overview": {
         "title": "Overview"
       },
@@ -434,17 +440,11 @@
       "testing/run-tests": {
         "title": "Run Tests"
       },
-      "testing/tests-ui": {
-        "title": "Tests UI"
-      },
-      "testing/config-vscode": {
-        "title": "Configure VSCode"
-      },
-      "testing/build-tester": {
-        "title": "Build Your Own Tester"
-      },
       "testing/add-tester-to-pipeline": {
         "title": "Add a Tester to the Build Pipeline"
+      },
+      "testing/customize-the-tester": {
+        "title": "Customizing the Compiler"
       },
       "troubleshooting/troubleshooting": {
         "title": "Troubleshooting"

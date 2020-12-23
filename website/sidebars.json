@@ -68,14 +68,13 @@
     ],
     "Testing": [
       "testing/overview",
-      "testing/run-tests",
-      "testing/tests-ui",
-      "testing/config-vscode",
-      "testing/build-tester",
+      "testing/customize-the-tester",
       "testing/add-tester-to-pipeline"
     ],
     "Compiling": [
-      "compiling/overview"
+      "compiling/overview",
+      "compiling/customize",
+      "compiling/add-compiler-to-pipeline"
     ],
     "Build Pipeline": [
       "build-pipeline/overview",

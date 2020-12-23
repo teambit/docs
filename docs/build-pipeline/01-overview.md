@@ -2,7 +2,7 @@
 id: overview
 title: Overview
 ---
-The Build Pipeline is responsible for sequencing and executing the Build Tasks set for a component. A component's series of Build Tasks is composed of tasks set by Bit and by its [environment](/docs/environments/overview). It consists of tasks for testing it and generating the needed artifacts for it to become an independent building block (its distributable code, `package.json`, [component preview](todo), etc.)
+The Build Pipeline is an [Environment Service](/docs/environments/environment-services) responsible for sequencing and executing the Build Tasks set for a component. A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/docs/environments/overview). It consists of tasks for testing it and for generating the artifacts needed for it to become an independent building block (its distributable code, `package.json`, [component preview](todo), etc.)
 
 The build process runs before a component gets a new release version and serves as a prerequisite of it. If any task in the build process fails, the tagging process is aborted.
 ## Isolated builds
@@ -16,7 +16,7 @@ When a component "goes through" the build pipeline, all of its dependencies are 
 The build pipeline processes multiple components in parallel to make use of multiple cores in your machine.
 
 ## Environment-specific builds
-Each Bit environment determines its own build pipeline. That means, a single workspace that uses multiple environments, will run a different set of build tasks on different components. This is another Bit feature that allows for seamless transitioning between different development environments, all in the same workspace. It also makes it much easier to [integrate the Build Pipeline in your (remote) CI](/docs/getting-started/ci-cd), as it only requires executing it - all other configurations are already set by the different environments.
+Each Bit environment determines its own build pipeline. That means, a single workspace that uses multiple environments, will run a different set of build tasks on different components. This is another Bit feature that enables seamless transitioning between different development environments, all in the same workspace. It also makes it much easier to [integrate the Build Pipeline in your (remote) CI](/docs/getting-started/ci-cd), as it only requires executing it - all other configurations are already set by the different environments.
 
 Since environments are extensible, so are the build pipelines configured by them. __To create your own Build Task or customize your environment's build pipeline, [see here](/docs/build-pipeline/create-build-task).__
 ## Sequencing the build tasks
