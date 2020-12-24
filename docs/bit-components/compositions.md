@@ -3,13 +3,15 @@ id: compositions
 title: Compositions (rendering in isolation)
 ---
 
-Compositions are examples or instances of a component. They're used to exhibit and test a component in different contexts and variations.
+At face value, Compositions are simply examples or instances of a component; the simplest compositions of a component are it's various variant states - for instance a button in enabled and disabled state.
 
-* When authoring or modifying a component, compositions serve as a way to validate that a component looks and behaves as expected. Use Bit's [Workspcae UI](/docs/workspace/workspace-ui) to see them rendered live in isolation.
+However because each Composition is actually runs by Bit as a wholly isolated, fully formed mini-app, Compositions can be a very powerful tool in not just visualizing but actually fully integrating your component into any context you like, in order to view, verify and illustrate its behaviour in any number of desired scenarios.
 
-* Compositions play an essential part in the component's documentation. They demonstrate potential behaviors and use cases for that component. Compositions are another step in promoting components' discoverability, both in your local [Bit Workspace](/docs/workspace/overview) and in [Remote Scopes](docs/scope/overview), hosted on Bit servers (e.g, [Bit.dev](https://bit.dev))
+* Compositions therefore become live, hot-reloaded integration tests - both visual and functional - for your component.
 
-* Compositions can be used as test samples in automated testing. These samples can be of different variants of that component or of a larger composition that includes that component. Larger compositions can serve as a way to simulate the behavior of a component in future "real life" widgets, pages and full apps. That can be crucial when delivering components independently as Micro Frontends.
+* Hook components up to real-life APIs (we recommend using mock flags), css themes, and interact it with other components to see how it looks and functions in your real-life, integrated scenarios. And see all of these scenarios update live with changes in your code, drastically shortening iteration time and bringing forward discovery of bugs or product design issues before your component is actually integrated into your consuming application.
+
+* Visibility to all levels of stakeholders. From the developer themselves to ensure the component behaves as expected with various real-life implementations (with hot-reloading updates), up through QA, design team and other stakeholders who want visibility into the state and functionality of your components. 
 
 Composition are rendered by the [environment](/docs/environments/overview) used by the component.
 
