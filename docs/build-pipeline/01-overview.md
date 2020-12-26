@@ -3,8 +3,6 @@ id: overview
 title: Overview
 ---
 The Build Pipeline is an [Environment Service](/docs/environments/environment-services) responsible for sequencing and executing the Build Tasks set for a component. A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/docs/environments/overview). It consists of tasks for testing it and for generating the artifacts needed for it to become an independent building block (its distributable code, `package.json`, [component preview](todo), etc.)
-
-The build process runs before a component gets a new release version and serves as a prerequisite of it. If any task in the build process fails, the tagging process is aborted.
 ## Isolated builds
 Components authored in a Bit workspace are created to be completely independent. To address that, the build process starts by creating a component 'capsule' which is an isolated instance of a component, generated in a separate directory in your filesystem. 
 
@@ -21,13 +19,12 @@ Each Bit environment determines its own build pipeline. That means, a single wor
 Since environments are extensible, so are the build pipelines configured by them. __To create your own Build Task or customize your environment's build pipeline, [see here](/docs/build-pipeline/create-build-task).__
 ## Sequencing the build tasks
 The Build Pipeline takes into consideration the following factors when deciding the order of which to execute each task:
-* __Bit "core" tasks__: These are tasks that must exist at the start of the build process. One such task is creating isolated instances ('Bit capsules') of each component.
 * __Location__: A task can be executed either at the start or end of the build pipeline. This can be explicitly [configured by the task itself](docs/build-pipeline/create-build-task#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
 * __Dependencies__: A task can depend on other tasks. That means, it will not get executed before its dependencies are executed successfully. This is [configured by the task itself](docs/build-pipeline/create-build-task#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
 * __An environment's list of build tasks__: This is the array of tasks as it is [defined by an environment](/docs/build-pipeline/create-build-task#override-the-build-pipeline-sequence).
 
 ## Executing the build pipeline
 Commands that trigger the build pipeline: 
- * `bbit build` - will run the build pipeline for the entire workspace. The output data will not persist. (most often used for testing and debugging the build process).
- * `bbit tag` - will run the build pipeline for the component, before registering the component as 'pending to be versioned'. The output data will not persist.
- * `bbit tag --persist` - will run the build pipeline for the component, before creating a new component release version. The output data will persist.
+ * `bbit build` - will run the build pipeline, on your local machine, for the entire workspace. The output data will not persist. - That is most often used for testing and debugging the build process.
+ * `bbit tag --build` - will run the build pipeline on your local machine, before creating a new component release version. The output data will persist.
+ * `bbit export` (after a component has been tagged) - will run the build pipeline, remotely on [bit.dev](https://bit.dev).

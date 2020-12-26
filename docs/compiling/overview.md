@@ -2,11 +2,12 @@
 id: overview
 title: Overview
 ---
-Compilation is a crucial step in making a component an independent module to be used in other repositories as well as internally, by other components in your workspace.
 
-When Bit starts tracking a component, a new directory is created for it inside the `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
+Compilation is a crucial step in making a component an independent module that can be used by other repositories as well as internally, by other components in the same workspace.
 
-for example:
+When Bit starts tracking a component, a new directory is created for it inside the workspace' `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
+
+For example:
 
 ```sh
 ├── node_modules
@@ -20,15 +21,12 @@ for example:
           ├── ...
 ```
 
-The above operation makes it possible to use components as standard node modules, right from the get-go.
+Bit's Compiler is an [Environment Service](/docs/environments/environment-services). The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/docs/environments/overview) that use it as a service. That means, a single workspace may run different compilers for different components, each according to its own environment.
+To customize an environment's compiler, [see here](/docs/environments/environment-services).
 
-For example:
-```js
-import { Button } from '@my-org/react-ui.button'
-```
 ## Running the compiler manually
 
-To manually run the compiler on a specific component use the [component ID](/docs/bit-components/overview#component-id):
+To manually run the compiler on a specific component use its [component ID](/docs/bit-components/overview#component-id):
 
 ```shell
 $ bbit compile <component-id>
@@ -39,7 +37,6 @@ For example:
 ```shell
 $ bbit compile ui-primitives/button
 ```
-> When *manually* running the compiler on a specific component, all of its dependencies will get compiled as well.
 
 To manually run the compiler on the entire workspace:
 
@@ -47,13 +44,37 @@ To manually run the compiler on the entire workspace:
 $ bbit compile
 ```
 
+### Options
+
+#### `--changed` `-c`
+
+Compiles only new or modified components.
+
+```shell
+$ bbit compile --changed
+```
+
+#### `--verbose` `-v`
+
+Outputs data regarding the compilation. For example, the `dist` paths.
+
+```shell
+$ bbit compile --verbose
+```
+
+#### `--json` `-j`
+
+Outputs (to the terminal) the compiled results in a JSON format.
+
+```shell
+$ bbit compile --json
+```
+
 ## Bit processes that use the compiler
-
-
 
 ### Local dev server
 
-Bit's local dev server (that also runs the Workspace UI) compiles component on each modification. This happens on every "save" operation for a file you edit.
+Bit's local dev server (which also runs the Workspace UI) re-compiles components on each modification. This happens whenever a file is 'saved'.
 
 ```shell
 $ bbit start
@@ -67,18 +88,6 @@ Main UI server is running on http://localhost:3000
 Waiting for component changes... (10:17:20)
 ```
 
-### Manual compilation
-
-You can manually trigger component compilation using the `bbit compile` command.
-
-```shell
-// to compile all components in the workspace
-$ bbit compile
-
-// to compile  specific component (in this case, the 'button' component)
-$ bbit compile react-ui/button
-```
-
 ### Compile in `watch` mode
 
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component compilation is one of these tasks.
@@ -87,12 +96,8 @@ Alongside the local dev server, Bit features a watch mode that runs different op
 $ bbit watch
 ```
 
+### Compile in the Build Pipeline
 
-The Compiler is an Environment Service responsible for executing the 
+Compilation is also part of a component's build pipeline. As with any other Build Task, the compilation task also happens in a 'component capsule', which is an isolated instance of a component. When executed as a Build Task, the compiler processes all new or changed dependencies of that component.
 
-
-- The compiler is an environment service...
-
-- two out-of-the-box compiler components: ts babel
-
-- compiler targets..
+When a component's build pipeline is run as part of the tagging of a new release version, the output of the compilation process is stored in the component's new version.

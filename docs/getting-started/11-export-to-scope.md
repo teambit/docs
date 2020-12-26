@@ -31,14 +31,15 @@ The `defaultScope` field suggests it can be overridden. To learn about setting d
 To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection)  (or "collection").
 
 
+<img src="/img/scope_type.png" alt="Choose scope type" width="50%" height="50%">
+> If you are self-hosting a Bit server, you need to ensure you create a Bit server. Please follow [this guide](TODO) for additional details.
 
-![Scope type](/img/scope_type.png)
-### On premise Scopes
-
-<!-- here we should link to another doc that talks about self-hosting. -->
-
-If you are self-hosting a Bit server, you need to ensure you create a Bit server. Please follow [this guide](TODO) for additional details.
-
+## Sign in from your terminal
+After registering to [Bit.dev](https://bit.dev), head over to your terminal and run the login command:
+```shell
+$ bbit login
+```
+This should open up your browser and display a "Signed in successfully" message.
 ## Export all staged components to a remote scope
 
 Run the `bit export` command to have Bit publish all versioned components. In our case it is only the previously tagged 'Button' component.

@@ -71,11 +71,17 @@
       "compiling/add-compiler-to-pipeline": {
         "title": "Add a Compiler to the Build Pipeline"
       },
+      "compiling/babel": {
+        "title": "Babel"
+      },
       "compiling/customize": {
         "title": "Customizing the Compiler"
       },
       "compiling/overview": {
         "title": "Overview"
+      },
+      "compiling/typescript": {
+        "title": "TypeScript"
       },
       "dependencies/overview": {
         "title": "Overview"
@@ -444,7 +450,7 @@
         "title": "Add a Tester to the Build Pipeline"
       },
       "testing/customize-the-tester": {
-        "title": "Customizing the Compiler"
+        "title": "Customizing the Tester"
       },
       "troubleshooting/troubleshooting": {
         "title": "Troubleshooting"

@@ -50,11 +50,7 @@
       "scope/self-host-bit-scope",
       "scope/scope-ui"
     ],
-    "Bit CLI": [
-      "cli/overview",
-      "cli/cheat-sheet",
-      "cli/extending-cli"
-    ],
+    "Bit CLI": ["cli/overview", "cli/cheat-sheet", "cli/extending-cli"],
     "Dependencies": [
       "dependencies/overview",
       "dependencies/dependency-resolution",
@@ -74,30 +70,21 @@
     "Compiling": [
       "compiling/overview",
       "compiling/customize",
-      "compiling/add-compiler-to-pipeline"
+      "compiling/babel",
+      "compiling/typescript"
     ],
     "Build Pipeline": [
       "build-pipeline/overview",
       "build-pipeline/create-build-task"
     ],
-    "Linting": [
-      "linting/overview"
-    ],
+    "Linting": ["linting/overview"],
     "Packages": [
       "packages/overview",
       "packages/install-packages",
       "packages/publish-to-npm"
     ],
-    "React": [
-      "react/overview",
-      "react/using-react",
-      "react/extending-react"
-    ],
-    "NodeJS": [
-      "nodejs/overview",
-      "nodejs/using-node",
-      "nodejs/extending-node"
-    ],
+    "React": ["react/overview", "react/using-react", "react/extending-react"],
+    "NodeJS": ["nodejs/overview", "nodejs/using-node", "nodejs/extending-node"],
     "React Native": [
       "react-native/overview",
       "react-native/using-react-native",
@@ -110,25 +97,14 @@
       "aspects/slots",
       "aspects/create-aspect"
     ],
-    "Preview": [
-      "preview/overview"
-    ],
+    "Preview": ["preview/overview"],
     "Development Server": [
       "development-server/overview",
       "development-server/create-extension"
     ],
-    "Authentication": [
-      "authentication/overview"
-    ],
-    "Usage Analytics": [
-      "usage-analytics/overview"
-    ],
-    "Troubleshooting": [
-      "troubleshooting/troubleshooting"
-    ],
-    "FAQs": [
-      "faq/multiple-peer-dep-versions",
-      "faq/set-runtime-globals"
-    ]
+    "Authentication": ["authentication/overview"],
+    "Usage Analytics": ["usage-analytics/overview"],
+    "Troubleshooting": ["troubleshooting/troubleshooting"],
+    "FAQs": ["faq/multiple-peer-dep-versions", "faq/set-runtime-globals"]
   }
 }
