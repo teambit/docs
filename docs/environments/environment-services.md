@@ -5,47 +5,47 @@ title: Environment Services
 
 To become a "one-stop-shop" for components, an environment "bundles" together different Environment Services provided by various Bit aspect components. These Environment Services enable other Bit aspects to integrate into Bit's component life-cycle features.
 
-For example, the 'Tester' service (`@teambit.defender/tester`) enables the React environment (`@teambit.react/react`) to set 'Jest' (`teambit.defender/jest`) as the default test runner for its components. This will enable Jest to get executed on the `bbit test` command, to run before a component is tagged, to output results using Bit's logger, and even to display the generated logs in the Workspace and Scope UIs (just to name a few examples).
+For example, the 'Tester' service (`@teambit.defender/tester`) enables the React environment (`@teambit.react/react`) to set 'Jest' (`teambit.defender/jest`) as the default test runner for its components. This will enable Jest to be executed on the `bbit test` command, to be run as a pre-tag check, to output results using Bit's logger, and even to display the generated logs in the Workspace and Scope UIs (to name just a few examples).
 
-![React env using setting using Jest with the tester service](/img/react_env_ex.png)
+![React env using Jest with the tester service](/img/react_env_ex.png)
 
 ### Compiler
 
-Rus the environment's selected compiler (for example, TypeScript).
+Runs the environment's selected compiler (for example, TypeScript).
 
 ### Tester
 
-Rus the environment's selected test runner (for example, Jest)
+Runs the environment's selected test runner (for example, Jest)
 
 ### Linter
 
-Rus the environment's selected linter (for example, ESLint)
+Runs the environment's selected linter (for example, ESLint)
 
 ### Documentation
 
-Sets the template for the auto-generated component documentation, as well as the API for customizing the docs.
+Sets the template for the auto-generated component documentation, as well as the API for customizing component docs.
 
 ### Build pipeline (CI)
 
-Sets the sequence of build tasks to run before a component gets tagged with a new version.
+Sets the sequence of build tasks to run before a component is tagged with a new version.
 
 ### DevServer
 
-Bundles all components and runs a server to display them, live (using "hot reloading") in the workspace UI. That includes the 'compositions' as well as the documentation shown in the 'Overview' tab.
+Bundles all components and runs a server to display them, live (using "hot reloading") in the workspace UI. This includes rendering the 'compositions' as well as the documentation shown in the 'Overview' tab.
 
-> Even though different types of components run on different servers (one for each environment) the workspace is explored and navigated through as if it where a single server.
+> Even though different types of components, e.g. React and Node components, run on different servers (one for each environment) the workspace is explored and navigated through as if it where a single server.
 
 ### Preview
 
-Runs the bundler and sets its configurations for component "production" previews for tagged versions (seen in the remote scope as well as in the workspace UI, for previous component versions). That includes the 'compositions' as well as the documentation shown in the 'Overview' tab.
+Runs the bundler and sets its configurations for component "production" previews for tagged versions (seen in the remote scope as well as in the workspace UI, for previous component versions). This includes the 'compositions' as well as the documentation shown in the 'Overview' tab.
 
 ### Package
 
-Generates node module packages for components, with properties set by the environment.
+Generates the node module package for components, with properties set by the environment.
 
 ### Dependencies
 
-Sets the default dependencies (as well as their version and type) for each component handled by it. That includes peer dependencies used for runtime (for example, `react-dom`) and dev dependencies (for example, `@types/react`).
+Sets the default dependencies (as well as their version and type) for each component handled by the environment. That includes peer dependencies used for runtime (for example, `react-dom`) and dev dependencies (for example, `@types/react`).
 
 ### Icon
 
