@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-Bit uses automated tests to help you maintain code in a distributed network of independent components. Changes made to a single component are validated by running tests on the component itself but also, on all components dependent on it, in and across scopes. This ripple effect of unit tests running on all dependent components essentially translates into multiple integration tests for that component (as each dependent component represents a different composition that uses that component).
+Bit empowers your automated tests to help you maintain code in a distributed network of independent components. It does so by running tests on the modified component itself but also, on all components dependent on it, in and across scopes. This ripple effect of unit tests running on all dependent components essentially translates into multiple integration tests for that modified component.
 
 Bit's Tester is an [Environment Service](/docs/environments/environment-services). The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/docs/environments/overview) that use it as a service. That means, a single workspace may run different test runners for different components, each according to its own environment.
 
@@ -101,7 +101,7 @@ $ bbit watch
 
 Testing is also part of a component's build pipeline. As with any other Build Task, the testing task also happens in a 'component capsule', which is an isolated instance of a component. When executed as a Build Task, the tester runs tests for all new or changed dependencies of that component.
 
-When a component's build pipeline is run as part of the tagging of a new release version, the output of the tests is stored in the component's new version.
+When a component's build pipeline is run as part of the tagging of a new release version, the tests output is stored in the component's new version.
 
 ## Tester workspace configurations
 

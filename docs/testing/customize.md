@@ -5,7 +5,7 @@ title: Customizing the Tester
 
 The Tester is an [Environment Service](/docs/environments/environment-services) that enables environments to integrate a specific test runner into various Bit features, processes and events.
 
-For example, the React environment (`@teambit.react/react`) uses the Tester Environment Service to configure the Jest extension component as its test runner. Jest will be used (for components using this environment) when running the `bbit test` command, when Bit's development server re-tests modified components, and when running the build process (just to name a few examples).
+For example, the React environment (`@teambit.react/react`) uses the Tester Environment Service to configure the Jest extension component as its test runner. Jest will be used (for components using this environment) when running the `bbit test` command, when running the build process and will even display its results in the Workspace UI (just to name a few examples).
 
 To customize your environment's test runner, first [create an environment extension](/docs/environments/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 
@@ -81,7 +81,7 @@ The above example overrides the ["transformIgnorePatterns"](https://jestjs.io/do
 
 The new `jest.config.js` file does not replace the default one but merges into it (and therefor only configures the properties to override). Since the "transformIgnorePatterns" property conflicts with the one set by the environment, it replaces it. In cases where there is no conflict between two properties, the override property will simply be added to the default configuration file.
 
-> Do not use the configuration file to set the pattern for your test files. Instead, use the Tester [workspace config API](/docs/testing/overview#patterns).
+> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/docs/testing/overview#patterns).
 
 ### Option #2: Replace the test runner used by the environment
 

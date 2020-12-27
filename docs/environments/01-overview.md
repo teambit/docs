@@ -3,11 +3,13 @@ id: overview
 title: Overview
 ---
 
-A Bit environment is a development environment encapsulated in a single Bit component. An environment includes linting, testing, compiling, documenting, and other [services](/docs/environments/environment-services) which are needed in the lifecycle of a component.
+A Bit environment is a development environment encapsulated in a single Bit component. An environment includes linting, testing, compiling, documenting, and other [services](/docs/environments/environment-services) which are needed in the lifecycle of an independent component.
 
 Having just a single component to set up the entire development environment means no time gets wasted on tedious configurations. In addition, a sharable environment makes it easier to maintain consistency in development across multiple multiple decoupled Bit workspaces.
 
-A single workspace may also use multiple environments to "service" different groups of components. For example, the following configuration sets two different environments, React and Node, on two sets of components in the same workspace:
+A single workspace may also use multiple environments to "service" different groups of components. This gives us the freedom to author, maintain and explore different types of components, all in the same workspace.
+
+For example, the following configuration sets two different environments, React and Node, on two sets of components in the same workspace:
 
 ```json
 {
