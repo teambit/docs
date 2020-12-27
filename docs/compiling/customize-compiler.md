@@ -146,3 +146,65 @@ export default CustomReactExtension;
 #### Multi-Compiler
 
 The Multi-compiler is a Bit extension component that enables the use of multiple compilers in a single environment.
+
+For example:
+
+```typescript
+import { EnvsMain, EnvsAspect } from "@teambit/envs";
+import { ReactAspect, ReactMain } from "@teambit/react";
+// Import the Babel extension component
+import { BabelAspect, BabelMain } from "@teambit.compilation/babel";
+// Import the TypeScript extension component
+import {
+  TypeScriptAspect,
+  TypeScriptMain,
+} from "@teambit.typescript/typescript";
+// Import the multi-compiler extension
+import {
+  MultiCompilerAspect,
+  MultiCompilerMain,
+} from "@teambit.compilation/multi-compiler";
+
+export class CustomReactExtension {
+  constructor(private react: ReactMain) {}
+
+  // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
+  static dependencies: any = [
+    EnvsAspect,
+    ReactAspect,
+    BabelAspect,
+    TypeScriptAspect,
+    MultiCompilerAspect,
+  ];
+
+  static async provider([envs, react, babel, typescript, multiCompiler]: [
+    EnvsMain,
+    ReactMain,
+    BabelMain,
+    TypeScriptMain,
+    MultiCompilerMain
+  ]) {
+    // Create a new composition of compilers
+    const compilers = multiCompiler.createCompiler([
+      createBabelCompiler(),
+      createTsCompiler(),
+    ]);
+
+    // Override the environment's Compiler Service Handler
+    const compilerOverride = envs.override({
+      getCompiler: () => {
+        return compilers;
+      },
+    });
+
+    // Compose all Environment Transformers into a single environment
+    const customReactEnv = react.compose([compilerOverride]);
+
+    envs.registerEnv(customReactEnv);
+
+    return new CustomReactExtension(react);
+  }
+}
+```
+
+> When using multiple compilers, make sure they target exclusive sets of file types. This is done using the compilers' `isFileSupported()` API.
