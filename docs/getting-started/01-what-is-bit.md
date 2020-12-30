@@ -5,7 +5,7 @@ title: What is Bit?
 
 ## Build modular web projects in a fast, scalable, and consistent way. 
 
-Bit is a rich and extensible toolset for building independent components and composing component-driven applications. It is a standard infrastructure for components, that helps you easily scale to many teams building consistent and performant applications together. 
+Bit is a rich and extendable toolset for building independent components and composing component-driven applications. It is a standard infrastructure for components, that helps you easily scale to many teams building consistent and performant applications together. 
 
 #### *How?*
 
@@ -127,7 +127,7 @@ Key features include:
 
 * **Component build pipelines** - You can pipe build jobs in a reusable pipeline that can be applied to all components in a project or in all of your team’s projects, in order to easily standardize the development and release process of your web applications. For example, company “Acme” can define “Acme Release Pipeline” with specific configurations which will standardize how all components in Acme will be tested, built and released. 
 
-* **Extend, replace, or customize anything** - Bit is 100% modular. Every part of Bit is a reusable, extensible, and customizable module. Including everything - dev environments, build environments, the UI, docs templates, the workspace, build pipelines, everything. You can easily and quickly change, remove, add, or replace any part of Bit, your toolchain, or workflow. You can even add features to the workspace UI to enrich your experience. It’s just a matter of composing a few components.
+* **Extend, replace, or customize anything** - Bit is 100% modular. Every part of Bit is a reusable, extendable, and customizable module. Including everything - dev environments, build environments, the UI, docs templates, the workspace, build pipelines, everything. You can easily and quickly change, remove, add, or replace any part of Bit, your toolchain, or workflow. You can even add features to the workspace UI to enrich your experience. It’s just a matter of composing a few components.
 
 
 ### Developer Designer Collaboration
@@ -180,7 +180,7 @@ The [Bit.dev cloud platform](https://bit.dev/) is an enterprise-grade solution f
 
 ## Open Source Development Tools
 
-A rich and fully extensible toolset for modular application development.
+A rich and fully extendable toolset for modular application development.
 
 ### Lego-Like Component Workspace  
 
