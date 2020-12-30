@@ -17,6 +17,9 @@ Whenever you use the `bit install <library>` command, Bit adds the library to th
 }
 ```
 
+> Bit is a build tool and adds no runtime dependencies to your project.
+
+
 ## Runtime dependencies and Dev dependencies
 
 Bit also knows to add the dependency according to type of usage. When `dependency-resolver` parses an import statement it keeps a note about the file that's using the library. It then uses the file type convention to determine the type of dependency, meaning that when you use a library in a test file for instance, that library will be added as a `devDependency` for the component.
