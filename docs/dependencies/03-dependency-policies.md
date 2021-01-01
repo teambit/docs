@@ -24,7 +24,7 @@ Auto-generated policies (like the one seen above) can be manually modified, much
 
 ## Applying policies on all relevant components
 
-A dependency policy set at the root level of the workspace configuration JSON will affect _all_ components that have the configured package as their dependency (i.e., components that have this module listed in their [generated dependency graph](<(/docs/dependencies/dependency-resolutio)>)). Components that do not have this package as a dependency will not be affected.
+A dependency policy set at the root level of the workspace configuration JSON will affect _all_ components that have the configured package as their dependency (i.e., components that have this module listed in their [generated dependency graph](/docs/dependencies/dependency-resolution)). Components that do not have this package as a dependency will not be affected.
 
 For example:
 
