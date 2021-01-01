@@ -14,8 +14,8 @@ You can use one of Bit's default "out-of-the-box" environments, create your own 
 Bit currently provides the following core environments out of the box. Just pick one and start using any of them in your workspace.
 
 ### [React](/docs/react/using-react)
-### [Node](/docs/nodejs/using-node)
 ### [React Native](/docs/react-native/using-react-native)
+### [Node](/docs/nodejs/using-node)
 
 ## Using an environment  
 
