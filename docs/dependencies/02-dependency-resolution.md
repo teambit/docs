@@ -2,11 +2,10 @@
 id: dependency-resolution
 title: Dependency Resolution
 ---
-## Component dependency graph
 
-The 'dependency-resolver' parses all `import`/`require` statements in a component's code. It then determines, for each required module, whether it is external (i.e, a library/imported component) or a module used internally, as part of the component. If a module turns out to be external, it checks its version and adds it to the component dependency graph.
+The 'dependency-resolver' parses all `import`/`require` statements in a component's code. It then determines, for each required module, whether it is external (i.e, a library/imported component) or a module used internally, as part of the component's implementation files. If a module turns out to be external, it checks its version and adds it to the component dependency graph.
 
-External modules can be seen in the component's generated `package.json` (in its package directory, under the workspace `node_module` directory). 
+External modules can be seen in the component's generated `package.json` (in its package directory, under the workspace `node_module` directory).
 
 For example:
 
@@ -39,6 +38,7 @@ For example:
   "private": false
 }
 ```
+
 Internal files can be seen in the `.bitmap` file (located at the workspace root directory):
 
 For example:
@@ -98,11 +98,12 @@ The 'dependency-resolver' uses configurations set by the environment in use to d
 
 For example, for a 'button' component using the `@teambit.react/react` environment:
 
-| Statement                                                | Result         | Explanation   |
-| -----------                                              | -----------    |----------- 
-| `import cs from 'classnames'`                            | dependency     | The module is used by a runtime file (as oppose to dev file) and is not listed by the environment as a `peerDependency`
-| `import React from 'react'`                              | peerDependency | The module 'react' is listed by the environment as a `peerDependency`  |
-| `import { render } from '@testing-library/react'`        | devDependency  | The module is required by `button.spec.jsx`, a file type that is listed as a dev file (from that it follows that the module required is also used for development and not for runtime)
+| Statement                                         | Result         | Explanation                                                                                                                                                                            |
+| ------------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `import cs from 'classnames'`                     | dependency     | The module is used by a runtime file (as oppose to dev file) and is not listed by the environment as a `peerDependency`                                                                |
+| `import React from 'react'`                       | peerDependency | The module 'react' is listed by the environment as a `peerDependency`                                                                                                                  |
+| `import { render } from '@testing-library/react'` | devDependency  | The module is required by `button.spec.jsx`, a file type that is listed as a dev file (from that it follows that the module required is also used for development and not for runtime) |
+
 ## Workspace dependency graph
 
 When all import statements in all components in the workspace have been parsed, Bit creates a complete dependency graph for the workspace. This allows Bit to understand which component in the workspace is affected by a change made to another component and perform the needed actions to handle that (notify of a change in the Workspace UI, test and re-compile affected components, etc.).
