@@ -63,7 +63,7 @@
         "title": "Overview"
       },
       "cli/cheat-sheet": {
-        "title": "Cheat Sheet"
+        "title": "CLI Reference"
       },
       "cli/extending-cli": {
         "title": "Extending Bit's CLI"

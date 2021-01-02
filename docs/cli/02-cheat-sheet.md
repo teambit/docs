@@ -1,6 +1,6 @@
 ---
 id: cheat-sheet
-title: Cheat Sheet
+title: CLI Reference
 ---
 
 ## Initialize a new workspace
@@ -11,70 +11,80 @@ $ bbit init
 
 ## Start Bit development server
 
-```
+```shell
 $ bbit start
 ```
 
 ## Get workspace status
 
-```
+```shell
 $ bbit status
 ```
 
-## Creating a new component
+## Track a component
+
+```shell
+$ bbit add <path/to/component>
+```
+
+## Version a component
+
+```shell
+$ bbit tag <component-id> <new-version-number>
+```
+
+## Export components
 
 From the terminal run the `bbit create` command:
 
-```sh
-$ bbit create <component name>
+```shell
+$ bbit export
 ```
-
-Bit them creates a new component according to the configuration in the `workspace` extension, meaning it'll be in the `directory` location and the component name will be pre-fixed by the `scope` property.
 
 ## Install dependency
 
-```
+```shell
 $ bbit install <dependency name>
 ```
 
 ## Install all dependencies after clone
 
-```
+```shell
 $ bbit install
 ```
 
 ## Build components
 
-```
+```shell
 $ bbit build
 ```
 
 ## Test components
 
-```
+```shell
 $ bbit test
 ```
 
 ## Move component to a different directory
 
-```sh
+```shell
 $ bbit mv <component> <target-dir>
 ```
 
 ## Relink components to the workspace
 
-```sh
+```shell
 $ bbit link
 ```
 
 ## Remove component from a workspace
 
-```sh
+```shell
 $ bbit remove
 ```
 
 ## Get component configuration
 
-```sh
+```shell
 $ bbit eject-conf <component>
 ```

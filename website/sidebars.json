@@ -41,6 +41,7 @@
       "bit-components/compositions",
       "bit-components/versioning",
       "bit-components/exporting",
+      "bit-components/importing",
       "bit-components/inspecting",
       "bit-components/remove-deprecate-components"
     ],
@@ -50,7 +51,7 @@
       "scope/self-host-bit-scope",
       "scope/scope-ui"
     ],
-    "Bit CLI": ["cli/overview", "cli/cheat-sheet", "cli/extending-cli"],
+    "Bit CLI": ["cli/cheat-sheet"],
     "Dependencies": [
       "dependencies/overview",
       "dependencies/dependency-resolution",
@@ -62,17 +63,8 @@
       "documentation/using-docs-api",
       "documentation/properties-table"
     ],
-    "Testing": [
-      "testing/overview",
-      "testing/customize-the-tester",
-      "testing/add-tester-to-pipeline"
-    ],
-    "Compiling": [
-      "compiling/overview",
-      "compiling/customize",
-      "compiling/babel",
-      "compiling/typescript"
-    ],
+    "Testing": ["testing/overview", "testing/customize-the-tester"],
+    "Compiling": ["compiling/overview", "compiling/customize"],
     "Build Pipeline": [
       "build-pipeline/overview",
       "build-pipeline/create-build-task"
