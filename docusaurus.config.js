@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Documentation',
-  tagline: 'Bit',
+  tagline: 'Bit v15 "Harmony"',
   url: 'https://bit-harmony-stg.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'docs-harmony', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'v15 Harmony',
+      title: 'v15 Harmony (beta)',
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
@@ -22,7 +22,6 @@ module.exports = {
           label: 'Docs',
           position: 'right',
         },
-        {href: 'https://blog.bitsrc.io/tagged/bit', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/teambit/bit',
           label: 'GitHub',
@@ -35,7 +34,7 @@ module.exports = {
         },
         {
           href: 'https://docs.bit.dev',
-          label: 'Bit Legacy Docs',
+          label: 'Bit v14',
           position: 'right',
         },
       ],
