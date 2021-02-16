@@ -13,4 +13,4 @@ The 'dependency-resolver' simplifies dependency management by providing the foll
 
 3. [Dependency installation](/docs/dependencies/dependency-installation): The 'dependency-resolver' directs the [package manager](/docs/packages/overview) to install the right packages at the right place in the workspace file structure. That includes installing multiple versions of the same package when different groups of components are set to use different versions.
 
-<img src="/img/dependencies_graph.png" width="80%" >
+<img src="/img/dependencies_graph.png" width="80%" ></img>

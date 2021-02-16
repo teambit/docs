@@ -1,0 +1,21 @@
+{
+  "unversionedId": "environments/build-environment",
+  "id": "environments/build-environment",
+  "isDocsHomePage": false,
+  "title": "Creating an Environment",
+  "description": "Environments can be built as new Bit Aspects or as extensions of existing environments. This tutorial will only cover the latter.",
+  "source": "@site/docs/environments/02-build-environment.md",
+  "slug": "/environments/build-environment",
+  "permalink": "/docs/environments/build-environment",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/02-build-environment.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Choosing Environments",
+    "permalink": "/docs/environments/choose-an-environment"
+  },
+  "next": {
+    "title": "Environment Services",
+    "permalink": "/docs/environments/environment-services"
+  }
+}

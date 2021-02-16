@@ -1,0 +1,21 @@
+{
+  "unversionedId": "scope/self-host-bit-scope",
+  "id": "scope/self-host-bit-scope",
+  "isDocsHomePage": false,
+  "title": "Self Hosting a Bit Scope",
+  "description": "Collaborating between Bit components require setting up a remote server accessible for all collaborators. You may use bit.dev as a remote server or setup your own.",
+  "source": "@site/docs/scope/04-self-host-bit-scope.md",
+  "slug": "/scope/self-host-bit-scope",
+  "permalink": "/docs/scope/self-host-bit-scope",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/04-self-host-bit-scope.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Setting Up a Remote Scope",
+    "permalink": "/docs/scope/set-up-remote-scope"
+  },
+  "next": {
+    "title": "Scope UI",
+    "permalink": "/docs/scope/scope-ui"
+  }
+}

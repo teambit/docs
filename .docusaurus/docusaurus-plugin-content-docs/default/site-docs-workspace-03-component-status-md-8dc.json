@@ -1,0 +1,21 @@
+{
+  "unversionedId": "workspace/component-status",
+  "id": "workspace/component-status",
+  "isDocsHomePage": false,
+  "title": "Component Status",
+  "description": "Bit displays the state of the tracked components in your project's workspace.",
+  "source": "@site/docs/workspace/03-component-status.md",
+  "slug": "/workspace/component-status",
+  "permalink": "/docs/workspace/component-status",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/03-component-status.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Workspace UI",
+    "permalink": "/docs/workspace/workspace-ui"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/environments/overview"
+  }
+}

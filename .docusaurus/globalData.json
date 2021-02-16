@@ -1,0 +1,380 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "getting-started/introduction",
+          "docs": [
+            {
+              "id": "authentication/overview",
+              "path": "/docs/authentication/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "build-pipeline/create-build-task",
+              "path": "/docs/build-pipeline/create-build-task",
+              "sidebar": "docs"
+            },
+            {
+              "id": "build-pipeline/overview",
+              "path": "/docs/build-pipeline/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "cli/cheat-sheet",
+              "path": "/docs/cli/cheat-sheet",
+              "sidebar": "docs"
+            },
+            {
+              "id": "compiling/customize",
+              "path": "/docs/compiling/customize",
+              "sidebar": "docs"
+            },
+            {
+              "id": "compiling/overview",
+              "path": "/docs/compiling/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/exporting",
+              "path": "/docs/components/exporting",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/importing",
+              "path": "/docs/components/importing",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/inspecting",
+              "path": "/docs/components/inspecting",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/installing",
+              "path": "/docs/components/installing"
+            },
+            {
+              "id": "components/overview",
+              "path": "/docs/components/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/remove-deprecate-components",
+              "path": "/docs/components/remove-deprecate-components",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/tracking",
+              "path": "/docs/components/tracking",
+              "sidebar": "docs"
+            },
+            {
+              "id": "components/versioning",
+              "path": "/docs/components/versioning",
+              "sidebar": "docs"
+            },
+            {
+              "id": "compositions/compositions",
+              "path": "/docs/compositions/compositions",
+              "sidebar": "docs"
+            },
+            {
+              "id": "dependencies/dependency-installation",
+              "path": "/docs/dependencies/dependency-installation",
+              "sidebar": "docs"
+            },
+            {
+              "id": "dependencies/dependency-policies",
+              "path": "/docs/dependencies/dependency-policies",
+              "sidebar": "docs"
+            },
+            {
+              "id": "dependencies/dependency-resolution",
+              "path": "/docs/dependencies/dependency-resolution",
+              "sidebar": "docs"
+            },
+            {
+              "id": "dependencies/overview",
+              "path": "/docs/dependencies/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "documenting/overview",
+              "path": "/docs/documenting/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "documenting/properties-table",
+              "path": "/docs/documenting/properties-table",
+              "sidebar": "docs"
+            },
+            {
+              "id": "documenting/using-docs-api",
+              "path": "/docs/documenting/using-docs-api",
+              "sidebar": "docs"
+            },
+            {
+              "id": "environments/build-environment",
+              "path": "/docs/environments/build-environment",
+              "sidebar": "docs"
+            },
+            {
+              "id": "environments/choose-an-environment",
+              "path": "/docs/environments/choose-an-environment",
+              "sidebar": "docs"
+            },
+            {
+              "id": "environments/environment-services",
+              "path": "/docs/environments/environment-services",
+              "sidebar": "docs"
+            },
+            {
+              "id": "environments/overview",
+              "path": "/docs/environments/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "environments/service-handlers",
+              "path": "/docs/environments/service-handlers",
+              "sidebar": "docs"
+            },
+            {
+              "id": "faq/multiple-peer-dep-versions",
+              "path": "/docs/faq/multiple-peer-dep-versions",
+              "sidebar": "docs"
+            },
+            {
+              "id": "faq/set-runtime-globals",
+              "path": "/docs/faq/set-runtime-globals",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/add-components",
+              "path": "/docs/getting-started/add-components",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/bit-account",
+              "path": "/docs/getting-started/bit-account",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/choose-dev-env",
+              "path": "/docs/getting-started/choose-dev-env",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/ci-cd",
+              "path": "/docs/getting-started/ci-cd",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/compile",
+              "path": "/docs/getting-started/compile",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/document",
+              "path": "/docs/getting-started/document",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/export-to-scope",
+              "path": "/docs/getting-started/export-to-scope",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/import-components",
+              "path": "/docs/getting-started/import-components",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/install-bit",
+              "path": "/docs/getting-started/install-bit",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/install-components",
+              "path": "/docs/getting-started/install-components",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/introduction",
+              "path": "/docs/getting-started/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/manage-dependencies",
+              "path": "/docs/getting-started/manage-dependencies",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/render-component",
+              "path": "/docs/getting-started/render-component",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/set-up-workspace",
+              "path": "/docs/getting-started/set-up-workspace",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/set-up-workspace",
+              "path": "/docs/getting-started/set-up-workspace",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/test",
+              "path": "/docs/getting-started/test",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started/version",
+              "path": "/docs/getting-started/version",
+              "sidebar": "docs"
+            },
+            {
+              "id": "nodejs/extending-node",
+              "path": "/docs/nodejs/extending-node",
+              "sidebar": "docs"
+            },
+            {
+              "id": "nodejs/overview",
+              "path": "/docs/nodejs/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "nodejs/using-node",
+              "path": "/docs/nodejs/using-node",
+              "sidebar": "docs"
+            },
+            {
+              "id": "packages/install-packages",
+              "path": "/docs/packages/install-packages",
+              "sidebar": "docs"
+            },
+            {
+              "id": "packages/overview",
+              "path": "/docs/packages/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "packages/publish-to-npm",
+              "path": "/docs/packages/publish-to-npm",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react-native/extending-react-native",
+              "path": "/docs/react-native/extending-react-native",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react-native/overview",
+              "path": "/docs/react-native/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react-native/using-react-native",
+              "path": "/docs/react-native/using-react-native",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react/extending-react",
+              "path": "/docs/react/extending-react",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react/overview",
+              "path": "/docs/react/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "react/using-react",
+              "path": "/docs/react/using-react",
+              "sidebar": "docs"
+            },
+            {
+              "id": "scope/overview",
+              "path": "/docs/scope/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "scope/scope-ui",
+              "path": "/docs/scope/scope-ui",
+              "sidebar": "docs"
+            },
+            {
+              "id": "scope/self-host-bit-scope",
+              "path": "/docs/scope/self-host-bit-scope",
+              "sidebar": "docs"
+            },
+            {
+              "id": "scope/set-up-remote-scope",
+              "path": "/docs/scope/set-up-remote-scope",
+              "sidebar": "docs"
+            },
+            {
+              "id": "testing/add-tester-to-pipeline",
+              "path": "/docs/testing/add-tester-to-pipeline"
+            },
+            {
+              "id": "testing/customize-the-tester",
+              "path": "/docs/testing/customize-the-tester",
+              "sidebar": "docs"
+            },
+            {
+              "id": "testing/overview",
+              "path": "/docs/testing/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "testing/run-tests",
+              "path": "/docs/testing/run-tests"
+            },
+            {
+              "id": "troubleshooting/troubleshooting",
+              "path": "/docs/troubleshooting/troubleshooting",
+              "sidebar": "docs"
+            },
+            {
+              "id": "usage-analytics/overview",
+              "path": "/docs/usage-analytics/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workspace/cascading-rules",
+              "path": "/docs/workspace/cascading-rules",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workspace/component-status",
+              "path": "/docs/workspace/component-status",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workspace/configurations",
+              "path": "/docs/workspace/configurations",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workspace/overview",
+              "path": "/docs/workspace/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workspace/workspace-ui",
+              "path": "/docs/workspace/workspace-ui",
+              "sidebar": "docs"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

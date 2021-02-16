@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/compile",
+  "id": "getting-started/compile",
+  "isDocsHomePage": false,
+  "title": "Compilation",
+  "description": "Most modern frameworks require a compilation or transpilation project to transform the source code into executable code that can run in multiple browsers or Nodejs. Environments manage component compilation/transpilation in Bit; they use other underline tools like Babel, TypeScript Compiler, depending on the specific framework and JavaScript flavor.",
+  "source": "@site/docs/getting-started/10-compile.md",
+  "slug": "/getting-started/compile",
+  "permalink": "/docs/getting-started/compile",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/10-compile.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Add Documentation",
+    "permalink": "/docs/getting-started/document"
+  },
+  "next": {
+    "title": "Testing Components",
+    "permalink": "/docs/getting-started/test"
+  }
+}

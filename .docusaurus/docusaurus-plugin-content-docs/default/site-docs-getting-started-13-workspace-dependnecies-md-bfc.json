@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/manage-dependencies",
+  "id": "getting-started/manage-dependencies",
+  "isDocsHomePage": false,
+  "title": "Dependencies in Workspace",
+  "description": "Bit automatically manages dependencies for each component by running static code analysis. These dependnecies can be packages or other components from the same workspace. By tracking which component depends on which, Bit can help you understand how changes propagate in your workspace.",
+  "source": "@site/docs/getting-started/13-workspace-dependnecies.md",
+  "slug": "/getting-started/manage-dependencies",
+  "permalink": "/docs/getting-started/manage-dependencies",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/13-workspace-dependnecies.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Independent Versioning",
+    "permalink": "/docs/getting-started/version"
+  },
+  "next": {
+    "title": "Export Components",
+    "permalink": "/docs/getting-started/export-to-scope"
+  }
+}

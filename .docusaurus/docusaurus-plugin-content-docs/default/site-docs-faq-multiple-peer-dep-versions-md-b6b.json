@@ -1,0 +1,21 @@
+{
+  "unversionedId": "faq/multiple-peer-dep-versions",
+  "id": "faq/multiple-peer-dep-versions",
+  "isDocsHomePage": false,
+  "title": "Handling multiple versions of the same peer dependency",
+  "description": "Background",
+  "source": "@site/docs/faq/multiple-peer-dep-versions.md",
+  "slug": "/faq/multiple-peer-dep-versions",
+  "permalink": "/docs/faq/multiple-peer-dep-versions",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/faq/multiple-peer-dep-versions.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Troubleshooting",
+    "permalink": "/docs/troubleshooting/troubleshooting"
+  },
+  "next": {
+    "title": "How to set runtime globals",
+    "permalink": "/docs/faq/set-runtime-globals"
+  }
+}

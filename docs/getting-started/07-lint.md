@@ -1,4 +1,0 @@
----
-id: lint
-title: Lint
----

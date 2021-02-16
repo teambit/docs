@@ -1,0 +1,49 @@
+---
+id: render-component
+title: Render in Isolation
+---
+
+Bit uses `compositions` to simulate a component in any potential use case. Each composition is a mini-application you can use to render different instances or usages of a component. 
+
+## Create a Composition
+
+Start by creating a new `compositions` file:
+
+```shell
+$ touch components/react/ui/button/button.composition.tsx
+```
+
+Composition file names must fit these patterns `*.composition.` or `*.compositions.`, then end with of `js/jsx/ts/tsx` extensions.
+
+Then, paste this implementation:
+
+```tsx title="components/ui/button/button.composition.tsx"
+import React from "react";
+import { Button } from "./button";
+
+export const PrimaryButton = () => {
+  return (
+    <Button variant="primary" onClick={() => alert("Clicked!")}>
+      Primary Button
+    </Button>
+  );
+};
+
+export const SecondaryButton = () => {
+  return <Button variant="secondary">Secondary Button</Button>;
+};
+
+export const DisabledButton = () => {
+  return (
+    <Button disabled variant="primary">
+      Disabled Button
+    </Button>
+  );
+};
+```
+
+## Browse Compositions
+
+Head over to the 'compositions' tab to see the various `Button` compositions being rendered. Each exported function is rendered as a separate application.
+
+![Button Compositions](/img/compositions.png)

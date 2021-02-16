@@ -1,0 +1,21 @@
+{
+  "unversionedId": "environments/choose-an-environment",
+  "id": "environments/choose-an-environment",
+  "isDocsHomePage": false,
+  "title": "Choosing Environments",
+  "description": "Environments are set in the workspace.jsonc configuration file, using their component ID (not their module name).",
+  "source": "@site/docs/environments/choose-an-environment.md",
+  "slug": "/environments/choose-an-environment",
+  "permalink": "/docs/environments/choose-an-environment",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/choose-an-environment.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/environments/overview"
+  },
+  "next": {
+    "title": "Creating an Environment",
+    "permalink": "/docs/environments/build-environment"
+  }
+}

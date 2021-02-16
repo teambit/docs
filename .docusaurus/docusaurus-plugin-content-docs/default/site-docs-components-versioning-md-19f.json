@@ -1,0 +1,21 @@
+{
+  "unversionedId": "components/versioning",
+  "id": "components/versioning",
+  "isDocsHomePage": false,
+  "title": "Versioning",
+  "description": "When we version or 'tag' a component, we \"commit\" changes and prepare it to be exported to a remote scope. This process usually also includes compiling and testing.",
+  "source": "@site/docs/components/versioning.md",
+  "slug": "/components/versioning",
+  "permalink": "/docs/components/versioning",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/versioning.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tracking",
+    "permalink": "/docs/components/tracking"
+  },
+  "next": {
+    "title": "Exporting",
+    "permalink": "/docs/components/exporting"
+  }
+}

@@ -31,9 +31,6 @@ In this example, we'll extend the React environment and customize its TypeScript
 > Different environments may expose different Environment Transformers (i.e., 'override' methods) to customize the configurations set on the specific compiler used by them. <br /> <br />
 > For a list of all available Transformers see your environment's documentation.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--custom-react.extension-->
-
 ```typescript
 import { EnvsMain, EnvsAspect } from "@teambit/envs";
 import { ReactAspect, ReactMain } from "@teambit/react";
@@ -59,8 +56,6 @@ export class CustomReactExtension {
 }
 ```
 
-<!--tsconfig.json-->
-
 ```json
 {
   "compilerOptions": {
@@ -69,15 +64,11 @@ export class CustomReactExtension {
 }
 ```
 
-<!--index.ts-->
-
 ```ts
 import { CustomReactExtension } from "./custom-react.extension";
 export { CustomReactExtension };
 export default CustomReactExtension;
 ```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 The above example overrides the ["target"](https://www.typescriptlang.org/tsconfig#target) property for the TypeScript compiler configuration file (`tsconfig.json`) used by the environment.
 
@@ -90,9 +81,6 @@ Environments use Environment Services by implementing a special class of methods
 An environment's compiler can be replaced by overriding its [Compiler Service Handler](/docs/environments/service-handlers#getcompiler) method (`getCompiler()`).
 
 For example, the code below shows a React environment extension that replaces its default compiler, TypeScript, with Babel.
-
-<!--DOCUSAURUS_CODE_TABS-->
-<!--custom-react.extension-->
 
 ```tsx
 import { EnvsMain, EnvsAspect } from "@teambit/envs";
@@ -133,15 +121,11 @@ export class CustomReactExtension {
 }
 ```
 
-<!--index.ts-->
-
 ```ts
 import { CustomReactExtension } from "./custom-react.extension";
 export { CustomReactExtension };
 export default CustomReactExtension;
 ```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 #### Multi-Compiler
 

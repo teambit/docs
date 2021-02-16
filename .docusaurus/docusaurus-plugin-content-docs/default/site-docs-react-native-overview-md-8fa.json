@@ -1,0 +1,21 @@
+{
+  "unversionedId": "react-native/overview",
+  "id": "react-native/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "The React Native environment is an implementation of the Environments aspect. It is a one-stop-shop for React components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of React components, managed in a Bit workspace.",
+  "source": "@site/docs/react-native/overview.md",
+  "slug": "/react-native/overview",
+  "permalink": "/docs/react-native/overview",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react-native/overview.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Extending Node",
+    "permalink": "/docs/nodejs/extending-node"
+  },
+  "next": {
+    "title": "Using React Native",
+    "permalink": "/docs/react-native/using-react-native"
+  }
+}

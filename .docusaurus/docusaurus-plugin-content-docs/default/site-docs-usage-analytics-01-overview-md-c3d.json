@@ -1,0 +1,21 @@
+{
+  "unversionedId": "usage-analytics/overview",
+  "id": "usage-analytics/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "Bit's maintainers use anonymous analytics and error reporting to improve the overall quality of Bit.",
+  "source": "@site/docs/usage-analytics/01-overview.md",
+  "slug": "/usage-analytics/overview",
+  "permalink": "/docs/usage-analytics/overview",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/usage-analytics/01-overview.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/authentication/overview"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/docs/troubleshooting/troubleshooting"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/add-components",
+  "id": "getting-started/add-components",
+  "isDocsHomePage": false,
+  "title": "Create/Add Components",
+  "description": "A Bit component has all the information it needs for it to be independently shareable, consumable and maintainable. That includes its distributable code, development files, history, documentation and various Bit configurations.",
+  "source": "@site/docs/getting-started/07-add-components.mdx",
+  "slug": "/getting-started/add-components",
+  "permalink": "/docs/getting-started/add-components",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/07-add-components.mdx",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Set Development Environment",
+    "permalink": "/docs/getting-started/choose-dev-env"
+  },
+  "next": {
+    "title": "Render in Isolation",
+    "permalink": "/docs/getting-started/render-component"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unversionedId": "compositions/compositions",
+  "id": "compositions/compositions",
+  "isDocsHomePage": false,
+  "title": "Compositions (rendering in isolation)",
+  "description": "Compositions are visual examples or instances of a component, rendered in an isolated development environment. They showcase and test a component in different contexts and variations, such as other components that consume and display that component.",
+  "source": "@site/docs/compositions/compositions.md",
+  "slug": "/compositions/compositions",
+  "permalink": "/docs/compositions/compositions",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/compositions/compositions.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Properties Table",
+    "permalink": "/docs/documenting/properties-table"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/testing/overview"
+  }
+}

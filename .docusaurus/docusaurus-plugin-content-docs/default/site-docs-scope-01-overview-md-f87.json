@@ -1,0 +1,21 @@
+{
+  "unversionedId": "scope/overview",
+  "id": "scope/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "A scope is a storage for components' tagged versions. The 'tagged versions' are the built and \"committed\" versions of a component. Tagged components are completely decoupled from their authoring workspace. That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.",
+  "source": "@site/docs/scope/01-overview.md",
+  "slug": "/scope/overview",
+  "permalink": "/docs/scope/overview",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/01-overview.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Removing and Deprecating",
+    "permalink": "/docs/components/remove-deprecate-components"
+  },
+  "next": {
+    "title": "Setting Up a Remote Scope",
+    "permalink": "/docs/scope/set-up-remote-scope"
+  }
+}

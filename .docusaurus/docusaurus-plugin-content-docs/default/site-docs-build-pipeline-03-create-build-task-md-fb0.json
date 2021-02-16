@@ -1,0 +1,21 @@
+{
+  "unversionedId": "build-pipeline/create-build-task",
+  "id": "build-pipeline/create-build-task",
+  "isDocsHomePage": false,
+  "title": "Create a Custom Build Task",
+  "description": "Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new environment extension or modify an existing one.",
+  "source": "@site/docs/build-pipeline/03-create-build-task.md",
+  "slug": "/build-pipeline/create-build-task",
+  "permalink": "/docs/build-pipeline/create-build-task",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/build-pipeline/03-create-build-task.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/build-pipeline/overview"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/packages/overview"
+  }
+}

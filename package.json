@@ -1,24 +1,38 @@
 {
-  "name": "bit-docs",
-  "version": "1.0.0",
-  "description": "A starter pack for docusarus markdown generator.",
-  "main": "index.js",
+  "name": "docs-harmony",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "build": "cd website && npm run build && cd -",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teambit/docs.git"
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@mdx-js/react": "^1.6.21",
+    "@teambit/bit": "^0.0.228",
+    "clsx": "^1.1.1",
+    "global": "^4.4.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "rehype-truncate": "^1.2.2",
+    "remark-images": "^2.0.0"
   },
-  "keywords": [],
-  "author": "teambit",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/teambit/docs/issues"
-  },
-  "homepage": "https://github.com/teambit/docs#readme",
-  "devDependencies": {
-    "docusaurus-init": "^1.12.0"
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/document",
+  "id": "getting-started/document",
+  "isDocsHomePage": false,
+  "title": "Add Documentation",
+  "description": "For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.",
+  "source": "@site/docs/getting-started/09-document.md",
+  "slug": "/getting-started/document",
+  "permalink": "/docs/getting-started/document",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/09-document.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Render in Isolation",
+    "permalink": "/docs/getting-started/render-component"
+  },
+  "next": {
+    "title": "Compilation",
+    "permalink": "/docs/getting-started/compile"
+  }
+}

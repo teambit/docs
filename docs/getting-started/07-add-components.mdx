@@ -1,0 +1,223 @@
+---
+id: add-components
+title: Create/Add Components
+---
+
+A Bit component has all the information it needs for it to be **independently** shareable, consumable and maintainable. That includes its distributable code, development files, history, documentation and various Bit configurations.
+The vast majority of that information is generated automatically by Bit. 
+
+This section will start our component's journey to independency by creating its implementation files and have them tracked by Bit and handled, as a single component, by the workspace.
+
+> The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page. 
+
+## Create a UI Component
+
+Let's create a UI 'Button' component (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
+
+```shell
+$ mkdir -p components/react/ui/button  # Each Bit component have its own directory.
+```
+
+Now create the following files:
+
+```shell
+$ touch components/react/ui/button/index.ts           # Barrel file to bundle all exported modules.
+$ touch components/react/ui/button/button.tsx         # Component's implementation (can be in multiple files).
+$ touch components/react/ui/button/button.module.scss # Styling.
+```
+
+And implement the component as follows:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="index"
+  values={[
+    {label: 'index.ts', value: 'index'},
+    {label: 'button.tsx', value: 'button'},
+    {label: 'button.module.scss', value: 'scss'},
+  ]
+}>
+<TabItem value="index">
+
+```javascript
+export * from './button';
+```
+
+</TabItem>
+<TabItem value="button">
+
+```javascript
+import React, { ButtonHTMLAttributes } from 'react';
+import styles from './button.module.scss';
+import cs from 'classnames';
+
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * Determines whether button has a primary or secondary type of styling.
+   */
+  variant: 'primary' | 'secondary';
+}
+
+/** 
+ *  A simple button component.
+*/
+export function Button({ children, variant, ...rest }: IButton) {
+  return (
+    <button className={cs(styles.base, styles[variant])} {...rest}>
+      {children}
+    </button>
+  );
+}
+
+Button.defaultProps = {
+  variant: 'primary',
+};
+```
+
+</TabItem>
+<TabItem value="scss">
+
+```scss
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+.base {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-radius 0.5s;
+  &:active {
+    border-color: #313131;
+    background-color: #fff;
+    color: #000;
+  }
+  &:hover{
+    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+  }
+  &:disabled {
+    border-color: #a5a5a5;
+    background-color: #a5a5a5;
+    &:hover {
+      border-color: #a5a5a5;
+      background-color: #a5a5a5;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;;
+    }
+  }
+}
+
+.primary {
+  border: solid 7px #ab3636;
+  background-color: #ab3636;
+  &:hover {
+    border-color: #bb5151;
+    background-color: #bb5151;
+  }
+}
+
+.secondary {
+  border: solid 7px #2b3186;
+  background-color: #2b3186;
+  &:hover {
+    border-color: #5159cf;
+    background-color: #5159cf;
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Add Dependencies
+
+Our `Button` component uses `classnames`; to install it, run the following command:
+
+```bash
+$ bbit install classnames
+```
+
+Check the `workspace.jsonc` file and see that [`dependency-resolver`](/docs/dependencies/overview) section now contains the snippet below:
+
+```json title="workspace.json"
+"@teambit.bit/dependency-resolver": {
+  "packageManager": "@teambit.bit/pnpm",
+  "policy": {
+    "dependencies": {
+      "classnames": "^2.2.6"
+    }
+  }
+}
+```
+
+As you recall from the ['Set up a workspace'](docs/getting-started/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
+
+You can use ['variants'](docs/variants/overview) to define specific policies for subsets of components.
+
+## Track a Component
+
+If you return to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component does not show up yet; this is because it is not tracked by Bit.
+
+To track it we'll run the following command.
+
+```shell
+$ bbit add components/react/ui/button --namespace react/ui # Added component to Bit and set a namespace.
+```
+
+By adding a new component you trigger a process in Bit the does the following:
+
+* Set component unique ID.
+* Map a diretory to a component ID and logs to the `.bitmap` file.
+* Map dependency graph using static code analysis.
+
+### Browse Component Details
+
+Bit handles each tracked component as an isolated module. You can see all the info Bit calculates on the `button` component by running `bbit show react/ui/button`.
+
+```sh title="button component details"
+$ bbit show react/ui/button
+┌───────────────────────────────────┬────────────────────────────────────────────┐
+│ id                                │ my-scope/react/ui/button                   │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ scope                             │ my-scope                                   │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ name                              │ react/ui/button                            │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ env                               │ teambit.harmony/react                      │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ package name                      │ @my-scope/react.ui.button                  │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ main file                         │ index.ts                                   │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ files                             │ button.module.scss                         │
+│                                   │ button.tsx                                 │
+│                                   │ index.ts                                   │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ dev files                         │                                            │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ extensions                        │ teambit.component/dev-files                │
+│                                   │ teambit.compositions/compositions          │
+│                                   │ teambit.pkg/pkg                            │
+│                                   │ teambit.docs/docs                          │
+│                                   │ teambit.dependencies/dependency-resolver   │
+│                                   │ teambit.envs/envs                          │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ dependencies                      │ classnames@2.2.6- (package)                │
+│                                   │ react@16.14.0---- (package)                │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ dev dependencies                  │ @testing-library/react@10.4.9- (package)   │
+│                                   │ @types/jest@~26.0.9----------- (package)   │
+├───────────────────────────────────┼────────────────────────────────────────────┤
+│ peer dependencies                 │                                            │
+└───────────────────────────────────┴────────────────────────────────────────────┘
+```
+
+### See Component in Workspace UI
+
+The `Button` component will now appear in the Workspace UI navigation bar with an `N` to its right, to signify that it is a new component.
+
+![New Component](/img/new_component.png)  

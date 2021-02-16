@@ -1,0 +1,21 @@
+{
+  "unversionedId": "nodejs/using-node",
+  "id": "nodejs/using-node",
+  "isDocsHomePage": false,
+  "title": "Using Node",
+  "description": "To use the Node environment, set it in the workspace.jsonc configuration file. Node can only be configured using the 'variants' config API.",
+  "source": "@site/docs/nodejs/using-node.md",
+  "slug": "/nodejs/using-node",
+  "permalink": "/docs/nodejs/using-node",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/nodejs/using-node.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/nodejs/overview"
+  },
+  "next": {
+    "title": "Extending Node",
+    "permalink": "/docs/nodejs/extending-node"
+  }
+}

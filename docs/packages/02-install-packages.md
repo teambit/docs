@@ -5,23 +5,19 @@ title: Installing Packages
 
 ## Use installed component
 
-To use a component, you can use the `bbit install` command or a package manager installation:
+Components are installed (as standard packages) using the `bit install` command.
 
 ```shell
-npm install @bit/owner.collection.namespace.namespace.comp-id
-or
-yarn add @bit/owner.collection.namespace.namespace.comp-id
+$ bit install @scope-owner/scope-name.namespace.component-id
 ```
 
-Once installing the component, the component resides in the  `node_modules` directory.  
-
-To use the component in the code, import the code as follow:  
+Once installed, the component can be found in the workspace `node_modules` directory and used as any other package/
 
 ```javascript
-import { something } from '@bit/owner.collection.namespace.namespace.comp-id';
+import { ComponentName } from "@scope-owner/scope-name.namespace.component-name";
 ```
 
-If you want to modify the code of the component, you should [import](/docs/modifying-sourced-components) the component into your workspace. After modifying the component and re-exporting the change, you can revert to the package mode by using the [`bit eject`](/docs/apis/cli-all#eject) command.  
+To modify a component, [import](/docs/modifying-sourced-components) it first into your workspace.
 
 ## Configuring bit registry
 
@@ -43,13 +39,13 @@ npm login --registry=https://node.bit.dev --scope=@scope-owner
 
 ## Installing all Components
 
-To install dependencies for all the imported components use:
+To install dependencies for all imported components, use:
 
 ```shell
 bbit install
 ```
 
-Add the `--verbose` flag to get detailed output.  
+Add the `--verbose` flag to get detailed output.
 
 You can also install dependencies for a specific component:
 
@@ -57,7 +53,7 @@ You can also install dependencies for a specific component:
 bbit install foo/bar
 ```
 
-If you need to pass extra arguments to npm or yarn, use double dash `--`, and after it add the additional arguments:  
+If you need to pass extra arguments to npm or yarn, use double dash `--`, and after it add the additional arguments:
 
 ```shell
 bbit import -- --production --no-optional

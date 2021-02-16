@@ -1,0 +1,21 @@
+{
+  "unversionedId": "scope/set-up-remote-scope",
+  "id": "scope/set-up-remote-scope",
+  "isDocsHomePage": false,
+  "title": "Setting Up a Remote Scope",
+  "description": "A remote scope is where the shared release versions of components are stored. Each of these release versions packs in it the workspace configurations relevant to it, as well as artifacts produced by the 'build pipeline'. That means, each component is not only available to be used in other repositories, but it can also be maintained and modified in other workspaces, as it offers all the information needed for it.",
+  "source": "@site/docs/scope/03-set-up-remote-scope.md",
+  "slug": "/scope/set-up-remote-scope",
+  "permalink": "/docs/scope/set-up-remote-scope",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/03-set-up-remote-scope.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/scope/overview"
+  },
+  "next": {
+    "title": "Self Hosting a Bit Scope",
+    "permalink": "/docs/scope/self-host-bit-scope"
+  }
+}

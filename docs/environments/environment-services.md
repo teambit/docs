@@ -35,10 +35,6 @@ Bundles all components and runs a server to display them, live (using "hot reloa
 
 > Even though different types of components, e.g. React and Node components, run on different servers (one for each environment) the workspace is explored and navigated through as if it where a single server.
 
-### Preview
-
-Runs the bundler and sets its configurations for component "production" previews for tagged versions (seen in the remote scope as well as in the workspace UI, for previous component versions). This includes the 'compositions' as well as the documentation shown in the 'Overview' tab.
-
 ### Package
 
 Generates the node module package for components, with properties set by the environment.
@@ -47,6 +43,6 @@ Generates the node module package for components, with properties set by the env
 
 Sets the default dependencies (as well as their version and type) for each component handled by the environment. That includes peer dependencies used for runtime (for example, `react-dom`) and dev dependencies (for example, `@types/react`).
 
-### Icon
+### Bundler
 
-Sets an icon for components handled by the environment. This icon will appear next to the component name in the workspace UI navigation.
+Bundles components (compositions, docs, etc.) using the environment's bundler and bundling configurations. The generated assets are use both in development (when running the development server) and when exploring component's tagged releases (for example, in the scope UI).

@@ -1,0 +1,21 @@
+{
+  "unversionedId": "nodejs/extending-node",
+  "id": "nodejs/extending-node",
+  "isDocsHomePage": false,
+  "title": "Extending Node",
+  "description": "Use the Node environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent Node components authored in various decoupled workspaces.",
+  "source": "@site/docs/nodejs/extending-node.md",
+  "slug": "/nodejs/extending-node",
+  "permalink": "/docs/nodejs/extending-node",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/nodejs/extending-node.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Using Node",
+    "permalink": "/docs/nodejs/using-node"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/react-native/overview"
+  }
+}

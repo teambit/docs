@@ -1,0 +1,21 @@
+{
+  "unversionedId": "documenting/overview",
+  "id": "documenting/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation. The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.",
+  "source": "@site/docs/documenting/01-overview.md",
+  "slug": "/documenting/overview",
+  "permalink": "/docs/documenting/overview",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/documenting/01-overview.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Dependency Installation",
+    "permalink": "/docs/dependencies/dependency-installation"
+  },
+  "next": {
+    "title": "Using the Docs API",
+    "permalink": "/docs/documenting/using-docs-api"
+  }
+}

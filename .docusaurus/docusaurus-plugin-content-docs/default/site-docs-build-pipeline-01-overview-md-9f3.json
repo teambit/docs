@@ -1,0 +1,21 @@
+{
+  "unversionedId": "build-pipeline/overview",
+  "id": "build-pipeline/overview",
+  "isDocsHomePage": false,
+  "title": "Overview",
+  "description": "Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).",
+  "source": "@site/docs/build-pipeline/01-overview.md",
+  "slug": "/build-pipeline/overview",
+  "permalink": "/docs/build-pipeline/overview",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/build-pipeline/01-overview.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Customizing the Compiler",
+    "permalink": "/docs/compiling/customize"
+  },
+  "next": {
+    "title": "Create a Custom Build Task",
+    "permalink": "/docs/build-pipeline/create-build-task"
+  }
+}

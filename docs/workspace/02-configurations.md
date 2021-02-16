@@ -18,19 +18,11 @@ Examine a demo workspace configuration file, [here](https://github.com/teambit/b
 `teambit.workspace/workspace` receives configurations for the workspace itself, as well as default values for components managed by the workspace.
 
 - **name** - the workspace name. <br/>Example: `"name": "my-workspace"`
-
 - **icon** - the workspace icon (displayed in the workspace UI). <br/>Example: `"icon": "https://path/to/icon.svg"`
-
 - **description** - a description of the workspace. <br/>Example: `"description": "a design system for my organization."`
-
 - **defaultScope** - the default scope to all components (when used with bit.dev, specify both owner and scope name) <br/>Example: `"defaultScope": "my-org"."my-scope-name"`
-
-- **defaultOwner** - the default owner of the workspace (relevant only to bit.dev)
-
 - **extensions** - component extensions to apply, by default, on all components.
-
 - **defaultDirectory** - the default directory for components. <br/>Example: `"defaultDirectory": "components\ui"`
-
 - **vendor**
 
 Example:

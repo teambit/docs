@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/choose-dev-env",
+  "id": "getting-started/choose-dev-env",
+  "isDocsHomePage": false,
+  "title": "Set Development Environment",
+  "description": "A Bit Development Environment is a unique type of component that configures and “bundles” together different aspects of a component development workflow. That includes processes such as compiling, testing, linting and even documenting. Environments take direct inspiration from react-scripts (CreateReactApp).",
+  "source": "@site/docs/getting-started/06-choose-dev-env.md",
+  "slug": "/getting-started/choose-dev-env",
+  "permalink": "/docs/getting-started/choose-dev-env",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/06-choose-dev-env.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Set Up a Workspace",
+    "permalink": "/docs/getting-started/set-up-workspace"
+  },
+  "next": {
+    "title": "Create/Add Components",
+    "permalink": "/docs/getting-started/add-components"
+  }
+}

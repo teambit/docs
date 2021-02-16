@@ -1,0 +1,21 @@
+{
+  "unversionedId": "troubleshooting/troubleshooting",
+  "id": "troubleshooting/troubleshooting",
+  "isDocsHomePage": false,
+  "title": "Troubleshooting",
+  "description": "Bit Doctor",
+  "source": "@site/docs/troubleshooting/01-troubleshooting.md",
+  "slug": "/troubleshooting/troubleshooting",
+  "permalink": "/docs/troubleshooting/troubleshooting",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/troubleshooting/01-troubleshooting.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/usage-analytics/overview"
+  },
+  "next": {
+    "title": "Handling multiple versions of the same peer dependency",
+    "permalink": "/docs/faq/multiple-peer-dep-versions"
+  }
+}

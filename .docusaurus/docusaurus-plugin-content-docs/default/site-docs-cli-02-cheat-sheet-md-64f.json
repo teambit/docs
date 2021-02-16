@@ -1,0 +1,21 @@
+{
+  "unversionedId": "cli/cheat-sheet",
+  "id": "cli/cheat-sheet",
+  "isDocsHomePage": false,
+  "title": "CLI Reference",
+  "description": "Initialize a new workspace",
+  "source": "@site/docs/cli/02-cheat-sheet.md",
+  "slug": "/cli/cheat-sheet",
+  "permalink": "/docs/cli/cheat-sheet",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/cli/02-cheat-sheet.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Scope UI",
+    "permalink": "/docs/scope/scope-ui"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/dependencies/overview"
+  }
+}

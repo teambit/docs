@@ -1,0 +1,21 @@
+{
+  "unversionedId": "getting-started/install-components",
+  "id": "getting-started/install-components",
+  "isDocsHomePage": false,
+  "title": "Install Components",
+  "description": "Components exported to Bit can be installed as standard node packages, either in a Bit workspace or even in a non-Bit project.",
+  "source": "@site/docs/getting-started/15-install-components.md",
+  "slug": "/getting-started/install-components",
+  "permalink": "/docs/getting-started/install-components",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/15-install-components.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Export Components",
+    "permalink": "/docs/getting-started/export-to-scope"
+  },
+  "next": {
+    "title": "Import Components",
+    "permalink": "/docs/getting-started/import-components"
+  }
+}

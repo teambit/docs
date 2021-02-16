@@ -1,0 +1,21 @@
+{
+  "unversionedId": "compiling/customize",
+  "id": "compiling/customize",
+  "isDocsHomePage": false,
+  "title": "Customizing the Compiler",
+  "description": "The Compiler is an Environment Service that enables environments to integrate a specific compiler into various Bit features, processes and events.",
+  "source": "@site/docs/compiling/customize-compiler.md",
+  "slug": "/compiling/customize",
+  "permalink": "/docs/compiling/customize",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/compiling/customize-compiler.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/compiling/overview"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/docs/build-pipeline/overview"
+  }
+}

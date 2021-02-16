@@ -1,0 +1,21 @@
+{
+  "unversionedId": "dependencies/dependency-resolution",
+  "id": "dependencies/dependency-resolution",
+  "isDocsHomePage": false,
+  "title": "Dependency Resolution",
+  "description": "The 'dependency-resolver' parses all import/require statements in a component's code. It then determines, for each required module, whether it is external (i.e, a library/imported component) or a module used internally, as part of the component's implementation files. If a module turns out to be external, it checks its version and adds it to the component dependency graph.",
+  "source": "@site/docs/dependencies/02-dependency-resolution.md",
+  "slug": "/dependencies/dependency-resolution",
+  "permalink": "/docs/dependencies/dependency-resolution",
+  "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/dependencies/02-dependency-resolution.md",
+  "version": "current",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/docs/dependencies/overview"
+  },
+  "next": {
+    "title": "Dependency Policies",
+    "permalink": "/docs/dependencies/dependency-policies"
+  }
+}
