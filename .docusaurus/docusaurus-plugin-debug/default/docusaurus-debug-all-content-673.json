@@ -513,7 +513,7 @@
               "source": "@site/docs/authentication/01-overview.md",
               "slug": "/authentication/overview",
               "permalink": "/docs/authentication/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/authentication/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/authentication/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -534,7 +534,7 @@
               "source": "@site/docs/build-pipeline/03-create-build-task.md",
               "slug": "/build-pipeline/create-build-task",
               "permalink": "/docs/build-pipeline/create-build-task",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/build-pipeline/03-create-build-task.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/build-pipeline/03-create-build-task.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -555,7 +555,7 @@
               "source": "@site/docs/build-pipeline/01-overview.md",
               "slug": "/build-pipeline/overview",
               "permalink": "/docs/build-pipeline/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/build-pipeline/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/build-pipeline/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -576,7 +576,7 @@
               "source": "@site/docs/cli/02-cheat-sheet.md",
               "slug": "/cli/cheat-sheet",
               "permalink": "/docs/cli/cheat-sheet",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/cli/02-cheat-sheet.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/cli/02-cheat-sheet.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -597,7 +597,7 @@
               "source": "@site/docs/compiling/customize-compiler.md",
               "slug": "/compiling/customize",
               "permalink": "/docs/compiling/customize",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/compiling/customize-compiler.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/compiling/customize-compiler.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -618,7 +618,7 @@
               "source": "@site/docs/compiling/overview.md",
               "slug": "/compiling/overview",
               "permalink": "/docs/compiling/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/compiling/overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/compiling/overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -639,7 +639,7 @@
               "source": "@site/docs/components/exporting.md",
               "slug": "/components/exporting",
               "permalink": "/docs/components/exporting",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/exporting.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/exporting.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -660,7 +660,7 @@
               "source": "@site/docs/components/importing.md",
               "slug": "/components/importing",
               "permalink": "/docs/components/importing",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/importing.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/importing.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -681,7 +681,7 @@
               "source": "@site/docs/components/inspecting.md",
               "slug": "/components/inspecting",
               "permalink": "/docs/components/inspecting",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/inspecting.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/inspecting.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -702,7 +702,7 @@
               "source": "@site/docs/components/installing.md",
               "slug": "/components/installing",
               "permalink": "/docs/components/installing",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/installing.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/installing.md",
               "version": "current"
             },
             {
@@ -714,7 +714,7 @@
               "source": "@site/docs/components/overview.md",
               "slug": "/components/overview",
               "permalink": "/docs/components/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -735,7 +735,7 @@
               "source": "@site/docs/components/removing-deprecaiting.md",
               "slug": "/components/remove-deprecate-components",
               "permalink": "/docs/components/remove-deprecate-components",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/removing-deprecaiting.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/removing-deprecaiting.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -756,7 +756,7 @@
               "source": "@site/docs/components/tracking.md",
               "slug": "/components/tracking",
               "permalink": "/docs/components/tracking",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/tracking.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/tracking.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -777,7 +777,7 @@
               "source": "@site/docs/components/versioning.md",
               "slug": "/components/versioning",
               "permalink": "/docs/components/versioning",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/components/versioning.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/components/versioning.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -798,7 +798,7 @@
               "source": "@site/docs/compositions/compositions.md",
               "slug": "/compositions/compositions",
               "permalink": "/docs/compositions/compositions",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/compositions/compositions.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/compositions/compositions.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -819,7 +819,7 @@
               "source": "@site/docs/dependencies/04-dependency-installation.md",
               "slug": "/dependencies/dependency-installation",
               "permalink": "/docs/dependencies/dependency-installation",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/dependencies/04-dependency-installation.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/dependencies/04-dependency-installation.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -840,7 +840,7 @@
               "source": "@site/docs/dependencies/03-dependency-policies.md",
               "slug": "/dependencies/dependency-policies",
               "permalink": "/docs/dependencies/dependency-policies",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/dependencies/03-dependency-policies.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/dependencies/03-dependency-policies.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -861,7 +861,7 @@
               "source": "@site/docs/dependencies/02-dependency-resolution.md",
               "slug": "/dependencies/dependency-resolution",
               "permalink": "/docs/dependencies/dependency-resolution",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/dependencies/02-dependency-resolution.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/dependencies/02-dependency-resolution.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -882,7 +882,7 @@
               "source": "@site/docs/dependencies/01-overview.md",
               "slug": "/dependencies/overview",
               "permalink": "/docs/dependencies/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/dependencies/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/dependencies/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -903,7 +903,7 @@
               "source": "@site/docs/documenting/01-overview.md",
               "slug": "/documenting/overview",
               "permalink": "/docs/documenting/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/documenting/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/documenting/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -924,7 +924,7 @@
               "source": "@site/docs/documenting/propeties-table.md",
               "slug": "/documenting/properties-table",
               "permalink": "/docs/documenting/properties-table",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/documenting/propeties-table.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/documenting/propeties-table.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -945,7 +945,7 @@
               "source": "@site/docs/documenting/using-docs-api.md",
               "slug": "/documenting/using-docs-api",
               "permalink": "/docs/documenting/using-docs-api",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/documenting/using-docs-api.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/documenting/using-docs-api.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -966,7 +966,7 @@
               "source": "@site/docs/environments/02-build-environment.md",
               "slug": "/environments/build-environment",
               "permalink": "/docs/environments/build-environment",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/02-build-environment.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/environments/02-build-environment.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -987,7 +987,7 @@
               "source": "@site/docs/environments/choose-an-environment.md",
               "slug": "/environments/choose-an-environment",
               "permalink": "/docs/environments/choose-an-environment",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/choose-an-environment.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/environments/choose-an-environment.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1008,7 +1008,7 @@
               "source": "@site/docs/environments/environment-services.md",
               "slug": "/environments/environment-services",
               "permalink": "/docs/environments/environment-services",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/environment-services.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/environments/environment-services.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1029,7 +1029,7 @@
               "source": "@site/docs/environments/01-overview.md",
               "slug": "/environments/overview",
               "permalink": "/docs/environments/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/environments/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1050,7 +1050,7 @@
               "source": "@site/docs/environments/service-handlers.md",
               "slug": "/environments/service-handlers",
               "permalink": "/docs/environments/service-handlers",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/environments/service-handlers.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/environments/service-handlers.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1071,7 +1071,7 @@
               "source": "@site/docs/faq/multiple-peer-dep-versions.md",
               "slug": "/faq/multiple-peer-dep-versions",
               "permalink": "/docs/faq/multiple-peer-dep-versions",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/faq/multiple-peer-dep-versions.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/faq/multiple-peer-dep-versions.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1092,7 +1092,7 @@
               "source": "@site/docs/faq/runtime-globals.md",
               "slug": "/faq/set-runtime-globals",
               "permalink": "/docs/faq/set-runtime-globals",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/faq/runtime-globals.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/faq/runtime-globals.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1109,7 +1109,7 @@
               "source": "@site/docs/getting-started/07-add-components.mdx",
               "slug": "/getting-started/add-components",
               "permalink": "/docs/getting-started/add-components",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/07-add-components.mdx",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/07-add-components.mdx",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1130,7 +1130,7 @@
               "source": "@site/docs/getting-started/04-bit-account.md",
               "slug": "/getting-started/bit-account",
               "permalink": "/docs/getting-started/bit-account",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/04-bit-account.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/04-bit-account.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1151,7 +1151,7 @@
               "source": "@site/docs/getting-started/06-choose-dev-env.md",
               "slug": "/getting-started/choose-dev-env",
               "permalink": "/docs/getting-started/choose-dev-env",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/06-choose-dev-env.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/06-choose-dev-env.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1172,7 +1172,7 @@
               "source": "@site/docs/getting-started/17-ci-cd.md",
               "slug": "/getting-started/ci-cd",
               "permalink": "/docs/getting-started/ci-cd",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/17-ci-cd.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/17-ci-cd.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1193,7 +1193,7 @@
               "source": "@site/docs/getting-started/10-compile.md",
               "slug": "/getting-started/compile",
               "permalink": "/docs/getting-started/compile",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/10-compile.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/10-compile.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1214,7 +1214,7 @@
               "source": "@site/docs/getting-started/09-document.md",
               "slug": "/getting-started/document",
               "permalink": "/docs/getting-started/document",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/09-document.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/09-document.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1235,7 +1235,7 @@
               "source": "@site/docs/getting-started/14-export-to-scope.md",
               "slug": "/getting-started/export-to-scope",
               "permalink": "/docs/getting-started/export-to-scope",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/14-export-to-scope.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/14-export-to-scope.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1256,7 +1256,7 @@
               "source": "@site/docs/getting-started/16-import-components.md",
               "slug": "/getting-started/import-components",
               "permalink": "/docs/getting-started/import-components",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/16-import-components.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/16-import-components.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1277,7 +1277,7 @@
               "source": "@site/docs/getting-started/03-install-bit.md",
               "slug": "/getting-started/install-bit",
               "permalink": "/docs/getting-started/install-bit",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/03-install-bit.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/03-install-bit.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1298,7 +1298,7 @@
               "source": "@site/docs/getting-started/15-install-components.md",
               "slug": "/getting-started/install-components",
               "permalink": "/docs/getting-started/install-components",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/15-install-components.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/15-install-components.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1319,7 +1319,7 @@
               "source": "@site/docs/getting-started/introduction.md",
               "slug": "/getting-started/introduction",
               "permalink": "/docs/getting-started/introduction",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/introduction.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/introduction.md",
               "version": "current",
               "sidebar": "docs",
               "next": {
@@ -1336,7 +1336,7 @@
               "source": "@site/docs/getting-started/13-workspace-dependnecies.md",
               "slug": "/getting-started/manage-dependencies",
               "permalink": "/docs/getting-started/manage-dependencies",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/13-workspace-dependnecies.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/13-workspace-dependnecies.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1357,7 +1357,7 @@
               "source": "@site/docs/getting-started/08-render-component.mdx",
               "slug": "/getting-started/render-component",
               "permalink": "/docs/getting-started/render-component",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/08-render-component.mdx",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/08-render-component.mdx",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1378,7 +1378,7 @@
               "source": "@site/docs/getting-started/04-set-up-workspace.md",
               "slug": "/getting-started/set-up-workspace",
               "permalink": "/docs/getting-started/set-up-workspace",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/04-set-up-workspace.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/04-set-up-workspace.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1399,7 +1399,7 @@
               "source": "@site/docs/getting-started/05-set-up-workspace.md",
               "slug": "/getting-started/set-up-workspace",
               "permalink": "/docs/getting-started/set-up-workspace",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/05-set-up-workspace.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/05-set-up-workspace.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1420,7 +1420,7 @@
               "source": "@site/docs/getting-started/11-test.md",
               "slug": "/getting-started/test",
               "permalink": "/docs/getting-started/test",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/11-test.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/11-test.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1441,7 +1441,7 @@
               "source": "@site/docs/getting-started/12-version.md",
               "slug": "/getting-started/version",
               "permalink": "/docs/getting-started/version",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/getting-started/12-version.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/getting-started/12-version.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1462,7 +1462,7 @@
               "source": "@site/docs/nodejs/extending-node.md",
               "slug": "/nodejs/extending-node",
               "permalink": "/docs/nodejs/extending-node",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/nodejs/extending-node.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/nodejs/extending-node.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1483,7 +1483,7 @@
               "source": "@site/docs/nodejs/overview.md",
               "slug": "/nodejs/overview",
               "permalink": "/docs/nodejs/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/nodejs/overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/nodejs/overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1504,7 +1504,7 @@
               "source": "@site/docs/nodejs/using-node.md",
               "slug": "/nodejs/using-node",
               "permalink": "/docs/nodejs/using-node",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/nodejs/using-node.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/nodejs/using-node.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1525,7 +1525,7 @@
               "source": "@site/docs/packages/02-install-packages.md",
               "slug": "/packages/install-packages",
               "permalink": "/docs/packages/install-packages",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/packages/02-install-packages.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/packages/02-install-packages.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1546,7 +1546,7 @@
               "source": "@site/docs/packages/01-overview.md",
               "slug": "/packages/overview",
               "permalink": "/docs/packages/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/packages/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/packages/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1567,7 +1567,7 @@
               "source": "@site/docs/packages/03-publish-to-npm.md",
               "slug": "/packages/publish-to-npm",
               "permalink": "/docs/packages/publish-to-npm",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/packages/03-publish-to-npm.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/packages/03-publish-to-npm.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1588,7 +1588,7 @@
               "source": "@site/docs/react-native/extending-react-native.md",
               "slug": "/react-native/extending-react-native",
               "permalink": "/docs/react-native/extending-react-native",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react-native/extending-react-native.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react-native/extending-react-native.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1609,7 +1609,7 @@
               "source": "@site/docs/react-native/overview.md",
               "slug": "/react-native/overview",
               "permalink": "/docs/react-native/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react-native/overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react-native/overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1630,7 +1630,7 @@
               "source": "@site/docs/react-native/using-react-native.md",
               "slug": "/react-native/using-react-native",
               "permalink": "/docs/react-native/using-react-native",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react-native/using-react-native.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react-native/using-react-native.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1651,7 +1651,7 @@
               "source": "@site/docs/react/03-extending-react.md",
               "slug": "/react/extending-react",
               "permalink": "/docs/react/extending-react",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react/03-extending-react.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react/03-extending-react.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1672,7 +1672,7 @@
               "source": "@site/docs/react/01-overview.md",
               "slug": "/react/overview",
               "permalink": "/docs/react/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1693,7 +1693,7 @@
               "source": "@site/docs/react/02-using-react.md",
               "slug": "/react/using-react",
               "permalink": "/docs/react/using-react",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/react/02-using-react.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/react/02-using-react.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1714,7 +1714,7 @@
               "source": "@site/docs/scope/01-overview.md",
               "slug": "/scope/overview",
               "permalink": "/docs/scope/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/scope/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1734,7 +1734,7 @@
               "source": "@site/docs/scope/scope-ui.md",
               "slug": "/scope/scope-ui",
               "permalink": "/docs/scope/scope-ui",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/scope-ui.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/scope/scope-ui.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1755,7 +1755,7 @@
               "source": "@site/docs/scope/04-self-host-bit-scope.md",
               "slug": "/scope/self-host-bit-scope",
               "permalink": "/docs/scope/self-host-bit-scope",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/04-self-host-bit-scope.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/scope/04-self-host-bit-scope.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1776,7 +1776,7 @@
               "source": "@site/docs/scope/03-set-up-remote-scope.md",
               "slug": "/scope/set-up-remote-scope",
               "permalink": "/docs/scope/set-up-remote-scope",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/scope/03-set-up-remote-scope.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/scope/03-set-up-remote-scope.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1797,7 +1797,7 @@
               "source": "@site/docs/testing/06-add-tester-to-pipeline.md",
               "slug": "/testing/add-tester-to-pipeline",
               "permalink": "/docs/testing/add-tester-to-pipeline",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/testing/06-add-tester-to-pipeline.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/testing/06-add-tester-to-pipeline.md",
               "version": "current"
             },
             {
@@ -1809,7 +1809,7 @@
               "source": "@site/docs/testing/customize.md",
               "slug": "/testing/customize-the-tester",
               "permalink": "/docs/testing/customize-the-tester",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/testing/customize.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/testing/customize.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1830,7 +1830,7 @@
               "source": "@site/docs/testing/01-overview.md",
               "slug": "/testing/overview",
               "permalink": "/docs/testing/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/testing/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/testing/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1851,7 +1851,7 @@
               "source": "@site/docs/testing/02-run-tests.md",
               "slug": "/testing/run-tests",
               "permalink": "/docs/testing/run-tests",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/testing/02-run-tests.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/testing/02-run-tests.md",
               "version": "current"
             },
             {
@@ -1863,7 +1863,7 @@
               "source": "@site/docs/troubleshooting/01-troubleshooting.md",
               "slug": "/troubleshooting/troubleshooting",
               "permalink": "/docs/troubleshooting/troubleshooting",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/troubleshooting/01-troubleshooting.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/troubleshooting/01-troubleshooting.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1884,7 +1884,7 @@
               "source": "@site/docs/usage-analytics/01-overview.md",
               "slug": "/usage-analytics/overview",
               "permalink": "/docs/usage-analytics/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/usage-analytics/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/usage-analytics/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1905,7 +1905,7 @@
               "source": "@site/docs/workspace/cascading-rules.md",
               "slug": "/workspace/cascading-rules",
               "permalink": "/docs/workspace/cascading-rules",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/cascading-rules.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/workspace/cascading-rules.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1926,7 +1926,7 @@
               "source": "@site/docs/workspace/03-component-status.md",
               "slug": "/workspace/component-status",
               "permalink": "/docs/workspace/component-status",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/03-component-status.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/workspace/03-component-status.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1947,7 +1947,7 @@
               "source": "@site/docs/workspace/02-configurations.md",
               "slug": "/workspace/configurations",
               "permalink": "/docs/workspace/configurations",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/02-configurations.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/workspace/02-configurations.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1968,7 +1968,7 @@
               "source": "@site/docs/workspace/01-overview.md",
               "slug": "/workspace/overview",
               "permalink": "/docs/workspace/overview",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/01-overview.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/workspace/01-overview.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {
@@ -1989,7 +1989,7 @@
               "source": "@site/docs/workspace/workspace-ui.md",
               "slug": "/workspace/workspace-ui",
               "permalink": "/docs/workspace/workspace-ui",
-              "editUrl": "https://github.com/teambit/docs-harmony/edit/main/docs/workspace/workspace-ui.md",
+              "editUrl": "https://github.com/teambit/docs/edit/harmony/docs/workspace/workspace-ui.md",
               "version": "current",
               "sidebar": "docs",
               "previous": {

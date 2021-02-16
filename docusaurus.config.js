@@ -55,7 +55,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/teambit/docs-harmony/edit/main',
+            'https://github.com/teambit/docs/edit/harmony',
         },
         blog: {
           showReadingTime: true,

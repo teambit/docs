@@ -76,7 +76,7 @@ export default {
       {
         "docs": {
           "sidebarPath": "/Users/eden/Documents/Projects/docs/sidebars.js",
-          "editUrl": "https://github.com/teambit/docs-harmony/edit/main"
+          "editUrl": "https://github.com/teambit/docs/edit/harmony"
         },
         "blog": {
           "showReadingTime": true,
