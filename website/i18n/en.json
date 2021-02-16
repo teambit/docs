@@ -27,12 +27,6 @@
       "bitdev-search-api": {
         "title": "Seach API"
       },
-      "bitdev-sla": {
-        "title": "Service Level Agreement"
-      },
-      "bitsrc-security": {
-        "title": "Security and Data Policy"
-      },
       "building-components": {
         "title": "Compiling"
       },
@@ -194,6 +188,7 @@
       }
     },
     "links": {
+      "V15 Harmony beta!": "V15 Harmony beta!",
       "Docs": "Docs",
       "Tutorials": "Tutorials",
       "Guides": "Guides",
