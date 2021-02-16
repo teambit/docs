@@ -59,12 +59,17 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title="Bit Harmony Docs"
+      description="Bit v15 Harmony Documentation">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          {/* <h1 className="hero__title">{siteConfig.title}</h1> */}
+          {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
+            <h1>Bit v15 "Harmony" Beta Documentation</h1>
+          <div className={styles.description}>
+            <h4>Harmony is how the world's best teams already build modular web apps together.</h4>
+            <h4>Now, in public beta!</h4>
+          </div>
           <div className={styles.buttons}>
             <Link
               className={clsx(
