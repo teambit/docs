@@ -79,3 +79,5 @@ typings/
 
 # vscode history
 .history
+
+/node_modules
