@@ -38,7 +38,10 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+<<<<<<< HEAD
     // { href: 'https://harmony-docs.bit.dev', label: 'V15 Harmony beta!' },
+=======
+>>>>>>> 25223c6f1036b6924539f41a2b6986f9149be4f2
     { doc: 'quick-start', label: 'Docs' },
     { href: '/tutorials', label: 'Tutorials' },
     { doc: 'best-practices', label: 'Guides' },
