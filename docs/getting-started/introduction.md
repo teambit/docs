@@ -3,9 +3,9 @@ id: introduction
 title: Introduction
 ---
 
-## Build modular web applications together in a fast and scalable way.
+## Build modular web applications together, in a fast and scalable way.
 
-**Looking to build Micro Frontends? To free teams to develop and deliver features on their own? To integrate and collaborate on components? Then Harmony is for you.**
+**Bit is the platform for the Modular Web. Looking to build better web applications? Enjoy Micro Frontends? Allow teams to develop and deliver features independently? Make it easy for everyone to continuously integrate and collaborate on components? Then Bit is for you**
 
 Bit helps you build modern web applications in a modular way. With Bit, many teams and developers can easily build a large, modern web application together. Instead of working in one cumbersome monolith, Bit decouples the development of components at every step from writing code to building, testing, and even releasing changes. This means for example that many teams can independently develop and release features to production at the same time, integrating each other's components in build-time, while all teams can share and collaborate on components with each other.  
 
