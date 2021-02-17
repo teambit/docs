@@ -3,11 +3,14 @@ id: set-up-workspace
 title: Set Up a Workspace
 ---
 
-A Bit Workspace offers a user-experience that feels much like working on a monolith.  that hides the complexity of managing individual components and separated modules. Create and manage any number of independent components in a single place using two essential features:
+A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way.
+It does so by offering:
 
-1. __A workspace configuration file__ that sets rules and policies for the workspace and components. Configurations are set for components in a CSS-like cascading way, from the most universal selector (all components) to the very specific one (a single component).
-2. [__A Workspace UI__](/docs/workspace-ui/overview) is a tool designed to assist you in developing and examining components as isolated and independent building blocks. It renders documentation and compositions for each components, runs test and explore components' dependnecy graphs.
-  
+1. **The workspace configuration file** that sets rules and policies for the workspace and components.
+   Configurations are set for components in a CSS-like cascading way, from the most universal selector (all components) to the very specific one (a single component).
+2. [**The Workspace UI**](/docs/workspace-ui/overview) that assists you in authoring and examining components.
+   The Workspace UI displays the component's dependency graph, documentation, examples, configurations, and more.
+
 To get started, clone this simple ['getting-started'](https://github.com/teambit/getting-started-harmony) project and initialize a new Bit workspace for it:
 
 ```shell
@@ -47,30 +50,37 @@ Only components added to Bit are visible on the UI. Right now our worksapce has 
 
 ## Workspace Configuration
 
-Bit workspaces are designed to manage many independent components. Having a configuration file per component will be very complicated task to manage. Instead you can use a single `workspace.jsonc` file to manage all components using cascading rules, as well as some Workspace-specific configuraitons.  
+Bit workspaces are designed to manage many independent components. Having a configuration file per component will be very complicated task to manage. Instead you can use a single `workspace.jsonc` file to manage all components using cascading rules, as well as some Workspace-specific configuraitons.
 
 **You should track and commit the `workspace.jsonc` file to Git**
 
 ```json title="Basic view of a workspace.jsonc"
 {
-  "teambit.workspace/workspace": { // Main workspace configuration section
+  "teambit.workspace/workspace": {
+    // Main workspace configuration section
     "name": "documenter", // Workspace name
     "icon": "https://static.bit.dev/bit-logo.svg", // Icon
-    "defaultScope": "teambit.documenter", // Default scope for components created in the workspace.
+    "defaultScope": "teambit.documenter" // Default scope for components created in the workspace.
   },
-  "teambit.dependencies/dependency-resolver": { // Define dependency-resolution for the workspace
+  "teambit.dependencies/dependency-resolver": {
+    // Define dependency-resolution for the workspace
     "packageManager": "teambit.dependencies/pnpm",
-    "policy": { // dependency definition policy
-      "dependencies": { },
-      "peerDependencies": { }
-    },
+    "policy": {
+      // dependency definition policy
+      "dependencies": {},
+      "peerDependencies": {}
+    }
   },
-  "teambit.workspace/variants": { // Cascading configuration rules for components
-    "*": { // default rules for all components
+  "teambit.workspace/variants": {
+    // Cascading configuration rules for components
+    "*": {
+      // default rules for all components
     },
-    "components/": { // rules to be applied for components nested in 'components' dir
+    "components/": {
+      // rules to be applied for components nested in 'components' dir
     },
-    "[pages]": { // rules to be applied for components nested in 'pages' namespace
+    "[pages]": {
+      // rules to be applied for components nested in 'pages' namespace
     }
   }
 }
@@ -87,14 +97,15 @@ Bit logs this information in the `.bitmap` file.
 
 ```json title=".bitmap file with components"
 {
-    "my-org.bad-jokes/react/primitives/button@1.0.5": { // component name and version
-        "mainFile": "index.ts", // main entry file for the component
-        "rootDir": "ui-primitives/button" // component location on your workspace
-    },
-    "my-org.bad-jokes/react/authentication/login-form@3.6.1": {
-        "mainFile": "index.ts",
-        "rootDir": "components/login-form"
-    },
+  "my-org.bad-jokes/react/primitives/button@1.0.5": {
+    // component name and version
+    "mainFile": "index.ts", // main entry file for the component
+    "rootDir": "ui-primitives/button" // component location on your workspace
+  },
+  "my-org.bad-jokes/react/authentication/login-form@3.6.1": {
+    "mainFile": "index.ts",
+    "rootDir": "components/login-form"
+  }
 }
 ```
 

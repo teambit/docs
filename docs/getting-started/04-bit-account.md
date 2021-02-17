@@ -13,6 +13,7 @@ By default, Bit is connected to [bit.dev](https://bit.dev) as its default hostin
 
 ```shell
 $ bbit login
+
 Your browser has been opened to visit:
 https://bit.dev/bit-login?port=8085&clientId=<my-hashed-id>&responseType=token&deviceName=<my-device>&os=<os>
 ```
