@@ -9,6 +9,18 @@ module.exports = {
   organizationName: 'teambit', // Usually your GitHub org/user name.
   projectName: 'docs-harmony', // Usually your repo name.
   themeConfig: {
+      algolia: {
+      apiKey: 'b6bda1385adb22822c932807a89765b0',
+      indexName: 'BIT_HARMONY',
+
+      // Optional: see doc section bellow
+      contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     navbar: {
       title: 'v15 Harmony (beta)',
       logo: {

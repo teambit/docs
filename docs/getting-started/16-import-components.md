@@ -3,7 +3,7 @@ id: import-components
 title: Import Components
 ---
 
-A Bit workspace can locally clone a complete component, alondside its implementation, configuration and dependencies.
+A Bit workspace can clone into it a complete component. That includes its code, assets, configurations and dependencies.
 
 ## Initialize a Bit Workspace
 
@@ -24,9 +24,9 @@ $ bbit import owner.demo/react/ui/button
 
 Bit runs the following process:
 
-* Fetch component data and keep it in `.git/bit`.
-* Create a directory for the component in the workspace and writes the component's implementation there.
-* Creaet a component-module directoty at the root's `node_modules` directory of the workspace.
+- Fetch component data and keep it in `.git/bit`.
+- Create a directory for the component in the workspace and writes the component's implementation there.
+- Creaet a component-module directoty at the root's `node_modules` directory of the workspace.
 
 ## Use Imported Component
 

@@ -1,223 +1,106 @@
 ---
 id: add-components
-title: Create/Add Components
+title: Add Components
 ---
 
-A Bit component has all the information it needs for it to be **independently** shareable, consumable and maintainable. That includes its distributable code, development files, history, documentation and various Bit configurations.
-The vast majority of that information is generated automatically by Bit. 
+A Bit component has all the information it needs for it to be **independently** shareable, consumable and maintainable.
+That includes its distributable code, development files, history, documentation and various Bit configurations.
+Most of that information is generated automatically by Bit.
 
-This section will start our component's journey to independency by creating its implementation files and have them tracked by Bit and handled, as a single component, by the workspace.
+This section will start our components' journey to independency by tracking them using Bit.
 
-> The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page. 
+> The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page.
 
-## Create a UI Component
+## Add components
 
-Let's create a UI 'Button' component (or clone the ['getting started' repository](https://github.com/teambit/getting-started-harmony) to skip this step)
+Our workspace has 4 components:
 
-```shell
-$ mkdir -p components/react/ui/button  # Each Bit component have its own directory.
-```
+- 1 React hook
+- 2 UI elements
+- 1 Widget
 
-Now create the following files:
-
-```shell
-$ touch components/react/ui/button/index.ts           # Barrel file to bundle all exported modules.
-$ touch components/react/ui/button/button.tsx         # Component's implementation (can be in multiple files).
-$ touch components/react/ui/button/button.module.scss # Styling.
-```
-
-And implement the component as follows:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  defaultValue="index"
-  values={[
-    {label: 'index.ts', value: 'index'},
-    {label: 'button.tsx', value: 'button'},
-    {label: 'button.module.scss', value: 'scss'},
-  ]
-}>
-<TabItem value="index">
-
-```javascript
-export * from './button';
-```
-
-</TabItem>
-<TabItem value="button">
-
-```javascript
-import React, { ButtonHTMLAttributes } from 'react';
-import styles from './button.module.scss';
-import cs from 'classnames';
-
-export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * Determines whether button has a primary or secondary type of styling.
-   */
-  variant: 'primary' | 'secondary';
-}
-
-/** 
- *  A simple button component.
-*/
-export function Button({ children, variant, ...rest }: IButton) {
-  return (
-    <button className={cs(styles.base, styles[variant])} {...rest}>
-      {children}
-    </button>
-  );
-}
-
-Button.defaultProps = {
-  variant: 'primary',
-};
-```
-
-</TabItem>
-<TabItem value="scss">
-
-```scss
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
-
-.base {
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  padding: 10px;
-  color: #fff;
-  font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  outline: none;
-  transition: border-radius 0.5s;
-  &:active {
-    border-color: #313131;
-    background-color: #fff;
-    color: #000;
-  }
-  &:hover{
-    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
-  }
-  &:disabled {
-    border-color: #a5a5a5;
-    background-color: #a5a5a5;
-    &:hover {
-      border-color: #a5a5a5;
-      background-color: #a5a5a5;
-      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;;
-    }
-  }
-}
-
-.primary {
-  border: solid 7px #ab3636;
-  background-color: #ab3636;
-  &:hover {
-    border-color: #bb5151;
-    background-color: #bb5151;
-  }
-}
-
-.secondary {
-  border: solid 7px #2b3186;
-  background-color: #2b3186;
-  &:hover {
-    border-color: #5159cf;
-    background-color: #5159cf;
-  }
-}
-```
-
-</TabItem>
-</Tabs>
-
-## Add Dependencies
-
-Our `Button` component uses `classnames`; to install it, run the following command:
-
-```bash
-$ bbit install classnames
-```
-
-Check the `workspace.jsonc` file and see that [`dependency-resolver`](/docs/dependencies/overview) section now contains the snippet below:
-
-```json title="workspace.json"
-"@teambit.bit/dependency-resolver": {
-  "packageManager": "@teambit.bit/pnpm",
-  "policy": {
-    "dependencies": {
-      "classnames": "^2.2.6"
-    }
-  }
-}
-```
-
-As you recall from the ['Set up a workspace'](docs/getting-started/set-up-workspace) step, rules and policies set on the `workspace.jsonc` file are applied to all relevant components. The above ["policy"](/docs/dependencies/overview#dependency-policies) states that every component with 'classnames' as a dependency will use version 2.X.X.
-
-You can use ['variants'](docs/variants/overview) to define specific policies for subsets of components.
-
-## Track a Component
-
-If you return to your workspace UI (in your browser at `localhost:3000`), you'll notice that our 'Button' component does not show up yet; this is because it is not tracked by Bit.
-
-To track it we'll run the following command.
+Track the React hook with the namespace 'hooks':
 
 ```shell
-$ bbit add components/react/ui/button --namespace react/ui # Added component to Bit and set a namespace.
+$ bbit add components/hooks/use-jokes/ -n hooks
 ```
 
-By adding a new component you trigger a process in Bit the does the following:
+Track the UI elements with the namespace 'ui/elements'. Use the `*` wildcard to select all folders under 'ui-elements'
 
-* Set component unique ID.
-* Map a diretory to a component ID and logs to the `.bitmap` file.
-* Map dependency graph using static code analysis.
-
-### Browse Component Details
-
-Bit handles each tracked component as an isolated module. You can see all the info Bit calculates on the `button` component by running `bbit show react/ui/button`.
-
-```sh title="button component details"
-$ bbit show react/ui/button
-┌───────────────────────────────────┬────────────────────────────────────────────┐
-│ id                                │ my-scope/react/ui/button                   │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ scope                             │ my-scope                                   │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ name                              │ react/ui/button                            │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ env                               │ teambit.harmony/react                      │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ package name                      │ @my-scope/react.ui.button                  │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ main file                         │ index.ts                                   │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ files                             │ button.module.scss                         │
-│                                   │ button.tsx                                 │
-│                                   │ index.ts                                   │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ dev files                         │                                            │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ extensions                        │ teambit.component/dev-files                │
-│                                   │ teambit.compositions/compositions          │
-│                                   │ teambit.pkg/pkg                            │
-│                                   │ teambit.docs/docs                          │
-│                                   │ teambit.dependencies/dependency-resolver   │
-│                                   │ teambit.envs/envs                          │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ dependencies                      │ classnames@2.2.6- (package)                │
-│                                   │ react@16.14.0---- (package)                │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ dev dependencies                  │ @testing-library/react@10.4.9- (package)   │
-│                                   │ @types/jest@~26.0.9----------- (package)   │
-├───────────────────────────────────┼────────────────────────────────────────────┤
-│ peer dependencies                 │                                            │
-└───────────────────────────────────┴────────────────────────────────────────────┘
+```shell
+bbit add components/ui-elements/* -n ui/elements
 ```
 
-### See Component in Workspace UI
+### Resolve an issue found in a component
 
-The `Button` component will now appear in the Workspace UI navigation bar with an `N` to its right, to signify that it is a new component.
+Go back to the Workspace UI (https://localhost:3000) to see the newly tracked components.
 
-![New Component](/img/new_component.png)  
+Our 'button' component is marked with a `1, N` to its right to signify that it is a new component that has 1 issue that needs to be resolved.
+
+![](/img/issue_found.png)
+
+To understand what this issue is, let's check our workspace status:
+
+```shell
+$ bbit status
+```
+
+```shell {7,8}
+new components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+     > hooks/use-jokes ... ok
+     > ui-elements/app-bar ... ok
+     > ui-elements/button ...  issues found
+       missing packages dependencies (make sure you've added it to the package dependencies, and use `bit install` to make sure all package dependencies are installed):
+          button.spec.tsx -> @testing-library/react
+```
+
+The above output informs us that `@testing-library/react`, required by our component's test file, is missing.
+
+### Install dependencies
+
+We'll install `@testing-library/react` using [Dependency Resolver](/docs/dependencies/overview), a Bit extension that handles dependencies in a workspace.
+
+```shell
+$ bbit install @testing-library/react
+```
+
+The new package is now added as to our workspace dependency configuration:
+
+```json title="workspace.jsonc"
+  "teambit.dependencies/dependency-resolver": {
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@testing-library/react": "11.2.5"
+      },
+      "peerDependencies": {}
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true
+  }
+```
+
+:::note
+Our package is listed under `dependencies` even though it is a dev dependency. Dependency Resolver searches for the files requiring each package.
+If all files are dev files (test files, etc.) then a depedency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
+:::
+
+### Add a component that is dependant on other components
+
+Our project has one component left to be tracked: 'tech-jokes-viewer'.
+
+Our 'tech-jokes-viewer' is dependent on 2 other components: 'button' and 'use-jokes'. Each of these tracked components was symlinked by Bit to the workspace `node_modules` directory.
+This enables components to use other components using an absolute path that will not "tie them up" to a specific context.
+
+Before we track 'tech-jokes-viewer', let's change its import paths from `org-demo` to your own username or organization name (since that will be the prefix for the generated component packages required by this component)
+
+```tsx
+// REPLACE 'demo-org' WITH YOUR OWN ORGANIZATION/USERNAME
+import { Button } from '@demo-org/tech-jokes.ui.button';
+import { useJokes } from '@demo-org/tech-jokes.hooks.use-jokes';
+```

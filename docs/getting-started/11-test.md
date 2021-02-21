@@ -3,8 +3,8 @@ id: test
 title: Testing Components
 ---
 
-Tests are a fundamental part of building and maintaining code. One of the services provided by the [React Environment](/docs/react/overview) we use in this toturial is running each component's tests and previewing their results in Bit.  
-Same as [compilation](/docs/getting-started/compile), tests run using different underlined tools. In this case, the default configuration for running tests for React utilizes [Jest](jestjs.io).
+Component testing is another service provided by Bit Environments. Even though each environment implements its testing using different test runners and configurations,
+they all integrate into Bit processes in a similar way, and get executed using the same commands.
 
 The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
 
@@ -13,7 +13,7 @@ The React environment uses Jest as its default test runner. To use a different J
 We'll be testing our previously created 'Button' component. To simplify our UI testing, we'll also make use of 'React Testing Library':
 
 ```shell
-$ bbit install @testing-library/react @babel/runtime react-dom
+$ bbit install @testing-library/react
 ```
 
 Notice how we didn't set this package as a 'dev dependency'. Bit determines that for us by analyzing the way it is used. In this case, it is only used by a test file (which will not be used in production).

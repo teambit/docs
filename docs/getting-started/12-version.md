@@ -3,9 +3,11 @@ id: version
 title: Independent Versioning
 ---
 
-Tagging a component creates a locked version of the component using the `bbit tag` command. This version can then be exported. Component versions are immutable. I.e., they contain the source code and all dependencies required to make a component usable.
+The tagging process creates a locked version of a component that includes its source code as well as its generated artifacts (distributable code, bundled documentation , etc.).
 
-In Bit each component get its own versions. Component versions meet the [semantic versioning](https://semver.org) guidelines, like a package.
+Once a component version has been tagged it reaches full independency and is ready to be exported.
+
+In Bit each component get its own versions. Component versions meet the same [semantic versioning](https://semver.org) guidelines that are adhered to in node packages.
 
 ## Tag a Component
 
@@ -17,7 +19,7 @@ $ bbit tag --persist button 1.0.0 --message "initial version" # Version a specif
 added components:  react/button@1.0.0
 ```
 
-This toturial does not include collaboration workflow for component versioning, so we use the `--persist` option. To learn more about how to collaborate on publishing component versions follow [this link](/docs/getting-started/ci-cd).
+This tutorial does not include collaboration workflow for component versioning, so we use the `--persist` option. To learn more about how to collaborate on publishing component versions follow [this link](/docs/getting-started/ci-cd).
 
 You can run the `bbit status` command to see that the component is now staged to be exported.
 
