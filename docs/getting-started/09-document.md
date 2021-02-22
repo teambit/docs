@@ -1,6 +1,6 @@
 ---
 id: document
-title: Documentation
+title: Document Components
 ---
 
 For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.

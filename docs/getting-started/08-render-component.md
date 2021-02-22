@@ -1,6 +1,6 @@
 ---
 id: render-component
-title: Render in Isolation
+title: Render Isolated Compositions
 ---
 
 'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.

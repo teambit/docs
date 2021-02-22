@@ -1,6 +1,6 @@
 ---
 id: choose-dev-env
-title: Use a Development Environment
+title: Use a Dev Environment
 ---
 
 [A Bit Development Environment](/docs/environments/overview) is a special type of component that configures and “bundles” together the different services required in a component development workflow.

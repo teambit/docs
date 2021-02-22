@@ -1,6 +1,6 @@
 ---
 id: test
-title: Testing Components
+title: Test Components
 ---
 
 Component testing is another service provided by Bit Environments. Even though each environment implements its testing using different test runners and configurations,

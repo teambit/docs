@@ -3,23 +3,21 @@ id: export-to-scope
 title: Export Components
 ---
 
-Exporting components to remote scopes makes them available for other developers to consume. Only components that are tagged can be exported. The tagged version is exported and resides on the remote scope.
+Exporting a component's release version to [a remote scope](/docs/getting-started/bit-account#create-a-remote-scope) makes it available to be used by other Bit workspaces and non-Bit web projects.
 
 ## Export Staged Components
 
-Run the `bit export` command to have Bit publish all versioned components. In our case it is only the previously tagged 'Button' component.
+Run the `bit export` command to have Bit export all versioned components. In our case that will be the 'button', 'app-bar', 'use-jokes' and 'tech-jokes-viewer' components.
 
 ```sh
 $ bbit export
 ```
 
-## Browse Remote Components
-
-Now that we have successfully exported two components head back to [bit.dev](https://bit.dev) and see that the **demo** scope your created has both components exported.
+Head over to `https://bit.dev/<owner-name>/<scope-name>` to see your exported component, or explore a similar [demo scope](https://bit.dev/demo-org/demo-scope).
 
 ## Post Export Operations
 
-When Bit has finished exporting components it updates the `.bitmap` file on the operation. Make sure to track these changes.
+Once the exporting process completes, the `.bitmap` file gets updated to reflect that new state. Make sure to track it with git.
 
 ```sh
 git commit -am 'updated .bitmap file after a successful export'

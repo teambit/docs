@@ -1,6 +1,6 @@
 ---
 id: manage-dependencies
-title: Dependencies in Workspace
+title: Manage Workspace Dependencies
 ---
 
 Bit automatically manages dependencies for each component by running static code analysis.

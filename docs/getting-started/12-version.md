@@ -1,6 +1,6 @@
 ---
 id: version
-title: Independent Versioning
+title: Version Components
 ---
 
 The tagging process creates a locked version of a component that includes its source code as well as its generated artifacts (distributable code, bundled documentation , etc.).
