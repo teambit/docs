@@ -3,13 +3,15 @@ id: introduction
 title: Introduction
 ---
 
-## Bit is the platform for modular web development - Build modular web applications together in a fast, scalable, and fun way.  
+## Build modular web applications together, in a fast and scalable way.
 
-Bit helps you build modern web applications in a modular way. With Bit, many teams and developers can easily build a large, modern web application together. Instead of working in one cumbersome monolith, Bit decouples the development of components at every step from writing code to building, testing, and even releasing changes. This means for example that many teams can independently develop and release features to production at the same time, integrating each other's components in build-time, while all teams can share and collaborate on components with each other.  
+**Looking to build better web applications? Enjoy Micro Frontends? Allow teams to develop and deliver features independently? Make it easy for everyone to continuously integrate and collaborate on components across projects? Standardize development?**
 
-The result is similar to that of what microservices did for the backend: faster, better, and much more scalable development.  
+**Bit is the platform for the Modular Web**. It helps you build modern web applications in a modular way. With Bit, many teams and developers can easily build a large, modern web application together. Instead of working in one cumbersome monolith, Bit splits the development of larger web apps into decoupled scopes of components where  teams can develop, build, test, and release components independently. All teams can easily expose components to each other, and continuously integrate (in build-time! no added run-time complexity!) with each other. Through the cloud, work can smoothly scale to many teams working on many web applications together through components.  
 
-Bit also puts a strong emphasis on **developer experience** - to provide developers with a simple, fun, performant, and even visual experience for developing modern web applications from independent components.
+The result is similar to what microservices did for the backend: faster, better, more independent, and much more scalable development.  
+
+Bit puts a strong emphasis on **DEVELOPER EXPERIENCE** - to provide you with a simple, performant, fun, and even visual toolset for developing modern web apps in a modular way.  
 
 #### How?
 
