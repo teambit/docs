@@ -1,92 +1,78 @@
 ---
 id: document
-title: Add Documentation
+title: Documentation
 ---
 
 For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.
 
-## Docs template
+:::note
+This section discusses the documentation in the 'React', 'React Native', and 'Node' development environments.
+:::
 
-Bit generates a documentation page for each component, you can find it in the component's "overview" tab. The documentation is generated accoridng to a template defined as part of the [Component Development Environment](TODO) applied on your component.
+A component documentation is made of two parts:
 
-The core template features several automated features to streamline the documentation process.
+1. The documentation template (defined by the [component development environment](/docs/environments/overview)).
+   In the case of the 'React' and 'React Native' environments, it will include the auto-generated 'Properties' table (that lists all the component's props), and the manually added docs content.
 
-### Property table
-
-![Properties Table](/img/docs_prop_table.jpg)
-
-The documentation template provided by the React environment can be customized in two ways:
-
-1. Using its API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation.
-2. Creating a new React environment by extending the React environment currently in use, and overriding its documentation template.
-
-### Compositions gallery
-
-A component that has compositions to demo its capabilities features all compositions as a gallery for their consumers.
-
-## Freeform docs using MDX
-
-Bit supports adding MD/MDX files to components, so you can add your own free-form documentation. To add it start by creating a new docs file to the component. For this tutorial we'll use [MDX](https://mdxjs.com/) format, as it allows embedding React in Markdown).
-
-```shell
-$ touch components/react/ui/button/button.docs.mdx
-```
-
-### Adding components to docs
-
-You can write any arbitrary React code to the documentation. For example:
-
-```mdx title="components/react/ui/button/button.docs.mdx"
-import { Separator } from '@teambit/documenter.ui.separator';
-
-## Guidelines 
-
-* Place buttons where expect to find them. Do not force users to "hunt for buttons"
-* Do not use generic names for your buttons. Use verbs that clearly explain the button's function.
-* Size buttons in proportion to their importance.
-
-<Separator />
-```
-
-In this example we used a component that is themed according to Bit's Documenter design system, which is a design system used to document components.
-
-Head over to the Workspace UI to see our new section.
-
-### Bit flavored MD/MDX
-
-There are several template features we can use the MD/MDX formats to override using Markdown Headers. We can use it to manipulate specific parts of the component documentation metadata.
-
-```mdx title="Markdown headers examples"
----
-displayName: silly-button
-description: An imperfect button.
-labels: ['buttons', 'base', 'silly']
----
-```
-
-### Live component playground
-
-MDX allows you to transform any code-block to a playground. Just add `live=true` to any codeblock.
-
-````jsx title="add a live playground with React
-```jsx live=true
-<p> Hello World! </p>
-```
-````
-
-#### Using with external modules/components
-
-The live playground can access the docs file dependencies. To use an external component or module, first import it to the docs file.
+2. The manually added docs content is placed in a `.docs.mdx` or `*.docs.md` file, in the component's directory.
+   It will automatically get integrated in the environment's docs template.
 
 For example:
 
-````jsx title="MDX with imported component"
-
-import { Button } from '@my-org/ui.button';
-
-```jsx live=true
-<Button variant="primary">Click here</Button>
+```shell {4}
+└── tech-jokes-viewer
+    ├── index.tsx
+    ├── button.composition.tsx
+    ├── button.docs.mdx
+    ├── button.module.css
+    └── button.tsx
 ```
+
+## Using the frontmatter API
+
+Bit parses your code to generate metadata for your components. This metadata is presented in the component's documentation and is used by Bit.dev's search engine.  
+To override it, use Bit's frontmatter properties, at the top of your MDX file.
+
+```md
+---
+displayName: Login Form
+description: My customized description
+labels: ['react', 'typescript', 'ui', 'form']
+---
+```
+
+- `displayName` _string_ overrides the component name.
+- `description` _string_ overrides the component description/abstract.
+- `labels` _string[]_ overrides the component labels/tags.
+
+## Using the live playground
+
+To use Bit's live playground add `live` to your codeblock.
+
+````jsx
+```jsx live
+        () => {
+            return <p> Hello World! </p>
+        }
+    ```;
 ````
 
-![Button Overview](/img/button_overview.png)
+## Using the live playground with external modules
+
+The live playground can access the docs file dependencies. To use an external module, first import it to the docs file.
+
+For example:
+
+````jsx
+---
+description: A frontmatter exammple.
+---
+
+import _ from 'lodash';
+
+```jsx live
+    () => {
+        return <p> { _.camelCase('Hello world') } </p>
+    }
+```
+````

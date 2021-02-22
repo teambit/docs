@@ -7,29 +7,22 @@ The tagging process creates a locked version of a component that includes its so
 
 Once a component version has been tagged it reaches full independency and is ready to be exported.
 
-In Bit each component get its own versions. Component versions meet the same [semantic versioning](https://semver.org) guidelines that are adhered to in node packages.
+In Bit, each component gets its own versions. Component versions meet the same [semantic versioning](https://semver.org) guidelines that are adhered to in packages.
 
 ## Tag a Component
 
-We'll version (tag) our [previously-created 'Button'](/docs/getting-started/add-components) component by running the following:
+version (tag) our [previously-created 'Button'](/docs/getting-started/add-components) component by running the following:
+
+To version (tag) all our components at once, we'll run the following:
 
 ```shell
-$ bbit tag --persist button 1.0.0 --message "initial version" # Version a specific component with a specific semver
-1 components tagged | 1 added, 0 changed, 0 auto-tagged
-added components:  react/button@1.0.0
+bbit tag --persist --all 1.0.0 --message "initial version"
 ```
 
-This tutorial does not include collaboration workflow for component versioning, so we use the `--persist` option. To learn more about how to collaborate on publishing component versions follow [this link](/docs/getting-started/ci-cd).
-
-You can run the `bbit status` command to see that the component is now staged to be exported.
-
-```sh
-$ bbit status
-staged components
-(use "bit export <remote_scope> to push these components to a remote scope")
-
-     > react/button. versions: 0.0.1 ... ok
-```
+:::note
+The `--persist` option creates a new release version in your local machine. It is best to avoid it when collaborating with others on a component.
+Learn more about it [here](/docs/getting-started/ci-cd).
+:::
 
 ### Versioning process
 
@@ -58,13 +51,7 @@ Bit run the tagging process on all dependents of a tagged component. It build an
 Versioned components are components Bit set an immutable versions for and staged them to be exported. To list them, run the following:
 
 ```shell
-$ bbit list
-┌────────────────────┬─────────┬─────────┐
-│ component ID       │ local   │ used    │
-│                    │ version │ version │
-├────────────────────┼─────────┼─────────┤
-│ button             │ 1.0.0   │ 1.0.0   │
-└────────────────────┴─────────┴─────────┘
+bbit list
 ```
 
 ### Workspace Versioning Features
@@ -79,8 +66,8 @@ $ bbit tag --persist # Version all modified components with a default (path) sem
 
 ## Untag a component
 
-To untag our 'Button' component we'll run the following:
+To untag a component run the following:
 
 ```shell
-$ bbit untag --persisted button # completely remove a version from the local scope
+$ bbit untag <component-id> # completely remove a version from the local scope
 ```

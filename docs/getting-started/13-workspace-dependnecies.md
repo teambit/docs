@@ -7,57 +7,10 @@ Bit automatically manages dependencies for each component by running static code
 These dependencies can be packages or components that are handled by the same workspace. By tracking which component depends on which,
 Bit can help you understand how changes propagate in your workspace.
 
-## Create Dependent Component
-
-Let's start by tracking the `notification-box` component to Bit and modify it to depend on `button`.
-
-```shell
-$ bbit add components/react/ui/notification-box --namespace react/ui
-```
-
-We'll `import` the `@mowner.demo/react/ui/button` component into `notification-box.tsx` using its node module name (note that your IDE should give you autocomplete suggestion at this point).
-
-```tsx title="components/react/ui/notification-box/notification-box.tsx" {4}
-import React from 'react';
-import cs from 'classnames';
-import styles from './notification-box.module.scss';
-import { Button } from '@mowner/demo.react.ui.button';
-
-export type NotificationBoxProps = {
-  /** The notification box content. */
-  children: any;
-  /** A className for customization */
-  className?: string;
-  /** Determines whether to style the notification box as "floating" */
-  floatEffect?: boolean;
-};
-
-export const NotificationBox = ({
-  className,
-  children,
-  floatEffect = true,
-}: NotificationBoxProps) => {
-  return (
-    <div
-      className={cs(
-        styles.container,
-        floatEffect ? styles.float : null,
-        className
-      )}
-    >
-      {children}
-      <div className={styles.actions}>
-        <Button variant="secondary">Approve</Button>
-        <Button variant="primary">Decline</Button>
-      </div>
-    </div>
-  );
-};
-```
-
 ### Visual Dependency Graph
 
-Run your workspace UI (`bbit start`) and head over to the 'Dependencies' tab of our new 'Notification Box' component. You'll see a diagram of `tech-jokes-viewer` dependency graph.
+As mentioned earlier, our 'tech-jokes-viewer' component depends on two other components in the workspace.
+Head over to the component's 'Dependencies' tab (in the workspace UI), to see a diagram of `tech-jokes-viewer` dependency graph.
 
 <img src="/img/tech-jokes-deps.png" alt="Dependency Graph Diagram" width="70%" height="70%"></img>
 
@@ -65,8 +18,11 @@ Run your workspace UI (`bbit start`) and head over to the 'Dependencies' tab of 
 
 To examine dependencies (packages and Bit components) we'll head over to our terminal and use the `bbit show` command:
 
-```shell {17,18,20}
+```shell
 $ bbit show ui/tech-jokes-viewer
+```
+
+```shell {16,17,19}
 
   ├──────────────┼──────────────────────────────────────────────────────────────┤
   │ dev files    │ tech-jokes-viewer.docs.md (teambit.docs/docs)                │
@@ -83,9 +39,9 @@ $ bbit show ui/tech-jokes-viewer
   │              │ teambit.pipelines/builder                                    │
   ├──────────────┼──────────────────────────────────────────────────────────────┤
   │ dependencies │ @demo-org/tech-jokes.hooks.use-jokes@0.0.1- (component)      │
-  │              │ @demo-org/tech-jokes.ui.button@0.0.1------- (component)      │
+  │              │ @demo-org/tech-jokes.ui.elements.button@0.0.1-(component)    │
   ├──────────────┼──────────────────────────────────────────────────────────────┤
-  │ dev          │ @demo-org/tech-jokes.ui.app-bar@0.0.1- (component)           │
+  │ dev          │ @demo-org/tech-jokes.ui.elemets.app-bar@0.0.1- (component)   │
   │ dependencies │ react@16.14.0------------------------- (package)             │
   │              │ @babel/runtime@^7.11.2---------------- (package)             │
   │              │ @types/react-router-dom@^5.1.5-------- (package)             │
@@ -99,32 +55,29 @@ $ bbit show ui/tech-jokes-viewer
   └──────────────┴──────────────────────────────────────────────────────────────┘
 ```
 
-A few things to notice here:
+:::note
+Notice how 'app-bar' is listed as a dev dependency. That is because it is only used by `tech-jokes-viewer.compositions.tsx` which is a dev file.
+:::
 
-1. use-jokes and button are both dependencies of the tech-jokes-viewer component.
-2. The app-bar is... dev becaus eit used in a composition
+### Auto tag affected components
 
-## Work in Component Monorepo
+Bit uses its generated dependency graphs to recognize which components are affected by a change made to another component.
+Whenever a component is modified and tagged, a ripple effect of auto-tags will occur on every dependent component and its dependent components, as well (all the way down to the last component in that chain).
 
-Bit has a smart management features for components in the same workspace that depend on each other. Before we can demo these capabilities, we start by versioning the `notification-box` component.
+As mentioned earlier, a tag process involves not only a new version but also testing and building the component in its own isolated environment.
+That process is crucial in handling multiple, independent modules as it validates a change to a component did not break other components in unexpected ways.
 
-```shell
-$ bbit tag --persist react-ui/notification-box --message "initial version"
-```
+Modify the `button` to see `tech-jokes-viewer` gets marked as "modified" by affiliation.
 
-### Affected Components
+For example, let's decrease the font size of our button, from `16px` to `15px`.
 
-Bit uses its generated dependency graphs to test and build all components affected by a change in their dependency graph. In this case, when we modify `button` we will see `notification-box` gets marked as "modified" by affiliation.
-
-Add the following styling to the `button` component `.base` class (in its SCSS file):
-
-```scss title="components/ui/tech-jokes-viewer/tech-jokes-viewer.module.scss"
+```scss title="components/ui/elements/button/button.module.scss"
 font: 15px;
 ```
 
 Our Workspace UI already notifies us of that change, and since 'tech-jokes-viewer' is dependent on 'button' both wil be shown as modified:
 
-<img src="/img/button_bbit tag modified.png" alt="Modified component in the Workspace UI" width="50%" height="50%"></img>
+<img src="/img/modified_comps.png" alt="Modified component in the Workspace UI" width="50%" height="50%"></img>
 
 Let's examine this further using the `status` command:
 
@@ -134,28 +87,29 @@ modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
 
-     > ui/button ... ok
+     > ui/elements/button ... ok
 
 
 components pending to be tagged automatically (when their dependencies are tagged)
-     > demo-org.tech-jokes/ui/tech-jokes-viewer ... ok
-bad-jokes-feb (main) $ bbit test ui/button
-testing total of 1 components in workspace 'getting-started'
-testing 1 components with environment teambit.react/react
+     > demo-org.tech-jokes/ui/widgets/tech-jokes-viewer ... ok
 ```
 
-In the above output, Bit notifies us of three important things:
+In the above output, Bit notifies us of two important things:
 
-1. 'Notification Box' is a staged component (it is versioned and ready to be exported to a remote scope)
-2. 'Button' is a modified component (to be 'modified', a component has to first be tagged)
-3. 'Notification Box' will be tagged automatically when its dependencies are tagged
+1. 'button' is a modified component
+2. 'tech-jokes-viewer' will be tagged automatically when its dependencies (in that case, 'button') are tagged.
 
 ### Dependents Auto Versioning
 
 Let's tag our `button` component to save the previous change made to it:
 
-```shell title="Auto-tag process for dependents" {1,8,10}
+```shell title="Auto-tag process for dependents"
 $ bbit tag ui/button --persist --message "decrease font size"
+```
+
+We'll get the following output:
+
+```
 2 component(s) tagged
 (use "bit export [collection]" to push these components to a remote")
 (use "bit untag" to unstage versions)

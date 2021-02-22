@@ -33,6 +33,26 @@ Bit creates the following files when initialized for a project:
 Explore the ['getting-started-result'](https://github.com/teambit/getting-started-result) repository to see the workspace after all steps in this tutorial have been followed.
 :::
 
+## Set a default scope for all components
+
+Scopes help in sorting and organizing components, as well as in reducing naming collisions.
+
+Open the `workspace.jsonc` file and find the line `"defaultScope": "my-org.my-scope"`. Edit it to fit your username/organization name and scope name ('demo-scope').
+
+For example:
+
+```json title="workspace.jsonc"
+{
+  "teambit.workspace/workspace": {
+    "defaultScope": "demo-org.demo-scope"
+  }
+}
+```
+
+:::info
+By using ['Variants'](/docs/workspace/cascading-rules), different components in the same workspace may use different scopes.
+:::
+
 ## Run the Workspace UI
 
 ```shell

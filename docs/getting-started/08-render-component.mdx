@@ -3,47 +3,56 @@ id: render-component
 title: Render in Isolation
 ---
 
-Bit uses `compositions` to simulate a component in any potential use case. Each composition is a mini-application you can use to render different instances or usages of a component. 
+'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
+They serve as a way to run manual and automated integration tests, before such integrations are done by consumers of that component.
 
-## Create a Composition
+Moreover, a component's composition is a way to demonstrate that component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
 
-Start by creating a new `compositions` file:
+Adding compositions to a component is done by creating a file in the component's directory, using the `*.composition.*` pattern.
 
-```shell
-$ touch components/react/ui/button/button.composition.tsx
+For example:
+
+```{3}
+└── tech-jokes-viewer
+    ├── index.tsx
+    ├── tech-jokes-viewer.composition.tsx
+    ├── tech-jokes-viewer.docs.mdx
+    ├── tech-jokes-viewer.module.css
+    └── tech-jokes-viewer.tsx
 ```
 
-Composition file names must fit these patterns `*.composition.` or `*.compositions.`, then end with of `js/jsx/ts/tsx` extensions.
+Each composition is a standard usage of a component (requiring no special syntax) that is exported with a name.
 
-Then, paste this implementation:
+For example, the following is a composition of the 'tech-jokes-viewer' component.
+This composition uses the 'app-bar' component to validate that 'tech-jokes-viewer' behaves as expected and toggles between local and remote jokes, when used as part of these sorts of compositions.
 
-```tsx title="components/ui/button/button.composition.tsx"
-import React from "react";
-import { Button } from "./button";
+```tsx title="tech-jokes-viewer.composition.tsx"
+import React, { useState } from 'react';
+import { AppBar } from '@demo-org/tech-jokes.ui.app-bar';
 
-export const PrimaryButton = () => {
+import { TechJokesViewer } from './tech-jokes-viewer';
+
+export const FullPage = () => {
+  const [isLocal, setIsLocal] = useState(false);
+
+  const menuItems = [
+    { label: 'Explore New Jokes', action: () => setIsLocal(false) },
+    { label: 'Saved Jokes', action: () => setIsLocal(true) },
+  ];
+
   return (
-    <Button variant="primary" onClick={() => alert("Clicked!")}>
-      Primary Button
-    </Button>
-  );
-};
-
-export const SecondaryButton = () => {
-  return <Button variant="secondary">Secondary Button</Button>;
-};
-
-export const DisabledButton = () => {
-  return (
-    <Button disabled variant="primary">
-      Disabled Button
-    </Button>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div>
+        <AppBar items={menuItems} style={{ marginBottom: '25px' }} />
+        <TechJokesViewer local={isLocal} />
+      </div>
+    </div>
   );
 };
 ```
 
-## Browse Compositions
+:::note
+Uncomment the above snippet in your project to see it rendered in your workspace UI.
+:::
 
-Head over to the 'compositions' tab to see the various `Button` compositions being rendered. Each exported function is rendered as a separate application.
-
-![Button Compositions](/img/compositions.png)
+![A n example of a composition](/img/compositions_demo.png)

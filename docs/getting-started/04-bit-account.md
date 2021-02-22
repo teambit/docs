@@ -37,4 +37,4 @@ Head over the the [create scope](https://bit.dev/~create-collection) screen:
 1. Select **Harmony** as "scope type".
 1. Click on "Create".
 
-<img src="/img/scope_type.png" alt="Choose scope type" width="50%" height="50%"></img>
+<img src="/img/create_scope.png" alt="Choose scope type" width="50%" height="50%"></img>

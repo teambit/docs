@@ -9,7 +9,9 @@ Most of that information is generated automatically by Bit.
 
 This section will start our components' journey to independency by tracking them using Bit.
 
-> The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page.
+:::note
+The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page.
+:::
 
 ## Add components
 
@@ -66,7 +68,7 @@ We'll install `@testing-library/react` using [Dependency Resolver](/docs/depende
 $ bbit install @testing-library/react
 ```
 
-The new package is now added as to our workspace dependency configuration:
+The installed package is now added to our workspace dependency configuration:
 
 ```json title="workspace.jsonc"
   "teambit.dependencies/dependency-resolver": {
@@ -76,31 +78,33 @@ The new package is now added as to our workspace dependency configuration:
         "@testing-library/react": "11.2.5"
       },
       "peerDependencies": {}
-    },
-    "packageManagerArgs": [],
-    "devFilePatterns": [
-      "**/*.spec.ts"
-    ],
-    "strictPeerDependencies": true
+    }
   }
 ```
 
 :::note
 Our package is listed under `dependencies` even though it is a dev dependency. Dependency Resolver searches for the files requiring each package.
-If all files are dev files (test files, etc.) then a depedency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
+If all thesefiles are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
 :::
 
 ### Add a component that is dependant on other components
 
 Our project has one component left to be tracked: 'tech-jokes-viewer'.
 
-Our 'tech-jokes-viewer' is dependent on 2 other components: 'button' and 'use-jokes'. Each of these tracked components was symlinked by Bit to the workspace `node_modules` directory.
-This enables components to use other components using an absolute path that will not "tie them up" to a specific context.
+Our 'tech-jokes-viewer' is dependent on 2 other components: 'button' and 'use-jokes'.
+Each of these tracked components has its code compiled by Bit and placed in its own package directory, inside the workspace `node_modules` directory.
+This enables components to use other components, and do so using an absolute path that will not "tie them up" to a specific context.
 
-Before we track 'tech-jokes-viewer', let's change its import paths from `org-demo` to your own username or organization name (since that will be the prefix for the generated component packages required by this component)
+Before we track 'tech-jokes-viewer', let's change its import paths from `org-demo` to your own username or organization name:
 
 ```tsx
 // REPLACE 'demo-org' WITH YOUR OWN ORGANIZATION/USERNAME
-import { Button } from '@demo-org/tech-jokes.ui.button';
-import { useJokes } from '@demo-org/tech-jokes.hooks.use-jokes';
+import { Button } from '@demo-org/demo-scope.ui.elements.button';
+import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
+```
+
+Once the above modification is done, add the component with the namespace 'ui/widgets':
+
+```shell
+$ bit add components/widgets/tech-jokes-viewer/ -n ui/widgets
 ```
