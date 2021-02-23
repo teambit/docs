@@ -24,7 +24,7 @@ Our project has 4 components:
 Track the React hook with the namespace 'hooks':
 
 ```shell
-$ bbit add components/hooks/use-jokes/ -n hooks
+bbit add components/hooks/use-jokes/ -n hooks
 ```
 
 The `use-jokes` component is now tracked by Bit and managed by the workspace. A few things to notice here:
@@ -59,7 +59,7 @@ Our 'button' component is marked with a `1, N` to its right to signify that it i
 To understand what this issue is, let's check our workspace status:
 
 ```shell
-$ bbit status
+bbit status
 ```
 
 ```shell {7,8}
@@ -80,7 +80,7 @@ The above output informs us that `@testing-library/react`, required by our compo
 We'll install `@testing-library/react` using [Dependency Resolver](/docs/dependencies/overview), a Bit extension that handles dependencies in a workspace.
 
 ```shell
-$ bbit install @testing-library/react
+bbit install @testing-library/react
 ```
 
 The installed package is now added to our workspace dependency configuration:
@@ -99,7 +99,7 @@ The installed package is now added to our workspace dependency configuration:
 
 :::note
 Our package is listed under `dependencies` even though it is a dev dependency. Dependency Resolver searches for the files requiring each package.
-If all thesefiles are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
+If all these files are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
 :::
 
 ### Add a component that is dependant on other components
@@ -120,5 +120,9 @@ import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
 Once the above modification is done, add the component with the namespace 'ui/widgets':
 
 ```shell
-$ bit add components/widgets/tech-jokes-viewer/ -n ui/widgets
+bbit add components/widgets/tech-jokes-viewer/ -n ui/widgets
 ```
+
+By now your workspace should look similar to that:
+
+![](/img/ws_getting_started_1.png)

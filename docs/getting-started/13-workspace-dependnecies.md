@@ -12,14 +12,14 @@ Bit can help you understand how changes propagate in your workspace.
 As mentioned earlier, our 'tech-jokes-viewer' component depends on two other components in the workspace.
 Head over to the component's 'Dependencies' tab (in the workspace UI), to see a diagram of `tech-jokes-viewer` dependency graph.
 
-<img src="/img/tech-jokes-deps.png" alt="Dependency Graph Diagram" width="70%" height="70%"></img>
+![](/img/ws_getting_started_dependencies.png)
 
 ### Get Dependencies in Terminal
 
 To examine dependencies (packages and Bit components) we'll head over to our terminal and use the `bbit show` command:
 
 ```shell
-$ bbit show ui/tech-jokes-viewer
+bbit show ui/tech-jokes-viewer
 ```
 
 ```shell {16,17,19}
@@ -77,12 +77,15 @@ font: 15px;
 
 Our Workspace UI already notifies us of that change, and since 'tech-jokes-viewer' is dependent on 'button' both wil be shown as modified:
 
-<img src="/img/modified_comps.png" alt="Modified component in the Workspace UI" width="50%" height="50%"></img>
+![](/img/modified_comps.png)
 
 Let's examine this further using the `status` command:
 
-```shell {2,9}
-$ bbit status
+```shell
+bbit status
+```
+
+```
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
@@ -90,8 +93,17 @@ modified components
      > ui/elements/button ... ok
 
 
+staged components
+(use "bit export <remote_scope> to push these components to a remote scope")
+
+     > hooks/use-jokes. versions: 0.0.1 ... ok
+     > ui/elements/app-bar. versions: 0.0.1 ... ok
+     > ui/elements/button. versions: 0.0.1 ... ok
+     > ui/widgets/tech-jokes-viewer. versions: 0.0.1 ... ok
+
+
 components pending to be tagged automatically (when their dependencies are tagged)
-     > demo-org.tech-jokes/ui/widgets/tech-jokes-viewer ... ok
+     > ui/widgets/tech-jokes-viewer ... ok
 ```
 
 In the above output, Bit notifies us of two important things:
@@ -104,7 +116,7 @@ In the above output, Bit notifies us of two important things:
 Let's tag our `button` component to save the previous change made to it:
 
 ```shell title="Auto-tag process for dependents"
-$ bbit tag ui/button --persist --message "decrease font size"
+bbit tag ui/elements/button --persist --message "decrease font size"
 ```
 
 We'll get the following output:
@@ -126,7 +138,10 @@ As expected, the tag process creates a **ripple effect** where all other compone
 And, if we look at our local scope status, we'll see both component appear there with a new bumped version number:
 
 ```shell
-$ bbit list
+bbit list
+```
+
+```shell
 ┌──────────────────────────────────────────┬─────────┬─────────┐─────────┬─────────┐
 │ component ID                                                 │ local   │ used    │
 │                                                              │ version │ version │

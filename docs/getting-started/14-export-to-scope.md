@@ -10,7 +10,7 @@ Exporting a component's release version to [a remote scope](/docs/getting-starte
 Run the `bit export` command to have Bit export all versioned components. In our case that will be the 'button', 'app-bar', 'use-jokes' and 'tech-jokes-viewer' components.
 
 ```sh
-$ bbit export
+bbit export
 ```
 
 Head over to `https://bit.dev/<owner-name>/<scope-name>` to see your exported component, or explore a similar [demo scope](https://bit.dev/demo-org/demo-scope).

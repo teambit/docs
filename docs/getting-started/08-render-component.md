@@ -28,11 +28,10 @@ This composition uses the 'app-bar' component to validate that 'tech-jokes-viewe
 
 ```tsx title="tech-jokes-viewer.composition.tsx"
 import React, { useState } from 'react';
-import { AppBar } from '@demo-org/tech-jokes.ui.app-bar';
-
+import { AppBar } from '@demo-org/demo-scope.ui.elements.app-bar';
 import { TechJokesViewer } from './tech-jokes-viewer';
 
-export const FullPage = () => {
+export const ToggleBetweenRemoteAndLocalJokes = () => {
   const [isLocal, setIsLocal] = useState(false);
 
   const menuItems = [
@@ -55,4 +54,4 @@ export const FullPage = () => {
 Uncomment the above snippet in your project to see it rendered in your workspace UI.
 :::
 
-![A n example of a composition](/img/compositions_demo.png)
+![A n example of a composition](/img/ws_getting_started_compositions.png)

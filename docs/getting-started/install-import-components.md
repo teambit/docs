@@ -35,6 +35,10 @@ This component will be the twitter-card, used by Bit's marketing team:
 bbit import teambit.evangelist/marketing/twitter-card
 ```
 
+Head back to your workspace UI to explore the new imported component.
+
+![](/img/ws_getting_started_import.png)
+
 To learn more about 'importing' [see here](/docs/components/importing)
 
 ## Install a component package

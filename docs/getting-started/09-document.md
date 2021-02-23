@@ -33,17 +33,19 @@ For example:
 Bit parses your code to generate metadata for your components. This metadata is presented in the component's documentation and is used by Bit.dev's search engine.  
 To override it, use Bit's frontmatter properties, at the top of your MDX file.
 
-```md
----
-displayName: Login Form
-description: My customized description
-labels: ['react', 'typescript', 'ui', 'form']
----
-```
-
 - `displayName` _string_ overrides the component name.
 - `description` _string_ overrides the component description/abstract.
 - `labels` _string[]_ overrides the component labels/tags.
+
+```md
+---
+displayName: Button
+description: An imperfect button.
+labels: ['react', 'typescript', 'button']
+---
+```
+
+![](/img/ws_getting_started_frontmatter.png)
 
 ## Using the live playground
 
@@ -51,10 +53,10 @@ To use Bit's live playground add `live` to your codeblock.
 
 ````jsx
 ```jsx live
-        () => {
-            return <p> Hello World! </p>
-        }
-    ```;
+() => {
+    return <p> Hello World! </p>
+}
+```;
 ````
 
 ## Using the live playground with external modules
@@ -65,14 +67,17 @@ For example:
 
 ````jsx
 ---
-description: A frontmatter exammple.
+description: An imperfect button.
+labels: ['react', 'typescript', 'button']
 ---
 
-import _ from 'lodash';
+import { Button } from './button';
+
+### Using the 'button' component
 
 ```jsx live
-    () => {
-        return <p> { _.camelCase('Hello world') } </p>
-    }
+<Button variant="primary">Click here</Button>
 ```
 ````
+
+![](/img/ws_getting_started_mdx_imports.png)

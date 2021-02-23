@@ -35,7 +35,8 @@ Explore the ['getting-started-result'](https://github.com/teambit/getting-starte
 
 ## Set a default scope for all components
 
-Open the `workspace.jsonc` file and find the line `"defaultScope": "my-org.my-scope"`. Edit it to fit your [username/organization name and scope name](docs/getting-started/bit-account) ('demo-scope').
+Open the `workspace.jsonc` file and find the line `"defaultScope": "my-scope"`.
+Replace it with your username/organization name, and 'demo-scope' as your scope (`<your-username>.demo-scope`)
 
 For example:
 

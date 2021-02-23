@@ -8,37 +8,14 @@ they all integrate into Bit processes in a similar way, and get executed using t
 
 The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
 
-## Add Tests
+## Adding Tests
 
-We'll be testing our previously created 'Button' component. To simplify our UI testing, we'll also make use of 'React Testing Library':
+Tests are added by placing test files inside the component's directory. Test files should be named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`.
 
-```shell
-$ bbit install @testing-library/react
-```
+For example, our 'button' component already has a simple test and since tests are run automatically by the dev server, on `bbit start` and
+on every change, you can already see its test results in the 'Tests' tab.
 
-Notice how we didn't set this package as a 'dev dependency'. Bit determines that for us by analyzing the way it is used. In this case, it is only used by a test file (which will not be used in production).
-
-Let's start by creating our test file (in the button component directory)
-
-```shell
-$ touch components/ui/button/button.spec.jsx
-```
-
-And place a simple test to validate that it renders:
-
-```jsx title="components/ui/button/button.spec.jsx"
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Button } from './button';
-
-describe('Button', () => {
-  it('should render a test button', () => {
-    const { getByText } = render(<Button>test button</Button>);
-    const testButton = getByText(/test button/i);
-    expect(testButton).toBeInTheDocument();
-  });
-});
-```
+![](/img/ws_getting_started_test.png)
 
 ## Running Tests
 
@@ -64,5 +41,5 @@ You can also run tests manually:
 
 ```shell
 $ bbit test # Run tests for all components
-$ bbit test react-ui/button # Run tests for a specific component
+$ bbit test ui/elements/button # Run tests for a specific component
 ```
