@@ -3,11 +3,12 @@ id: version
 title: Version Components
 ---
 
+With Bit, each component gets its own versions. Component versions meet the same [semantic versioning rules](https://semver.org) used in Node packages. This provides [many advanatges](https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2) as different components can be incrementally added, upgraded, and replaced. 
+
 The tagging process creates a locked version of a component that includes its source code as well as its generated artifacts (distributable code, bundled documentation , etc.).
 
-Once a component version has been tagged it reaches full independency and is ready to be exported.
+Once a component version has been tagged it reaches full independency and is ready to be exported.  
 
-In Bit, each component gets its own versions. Component versions meet the same [semantic versioning](https://semver.org) guidelines that are adhered to in packages.
 
 ## Tag a Component
 
