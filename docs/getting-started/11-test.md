@@ -48,5 +48,3 @@ $ bbit test ui/elements/button # Run tests for a specific component
 
 Bit constantly runs the component's tests as you make changes in your code, and you can see the results in the workspace UI. When you tag a new component version, Bit will run the build (compile, test, bundle) for all other components in the workspace that depend on the tagged component - to help you learn about the impact of your changes: [Learn more here](https://harmony-docs.bit.dev/docs/getting-started/manage-dependencies).
 
-
-
