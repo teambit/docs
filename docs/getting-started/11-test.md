@@ -3,7 +3,7 @@ id: test
 title: Test Components
 ---
 
-Component testing is another service provided by Bit Environments. Even though each environment implements its testing using different test runners and configurations,
+**all testers are created equal in Bit**. Component testing is another service provided by Bit Environments. Even though each environment implements its testing using different test runners and configurations,
 they all integrate into Bit processes in a similar way, and get executed using the same commands.
 
 The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
@@ -43,3 +43,10 @@ You can also run tests manually:
 $ bbit test # Run tests for all components
 $ bbit test ui/elements/button # Run tests for a specific component
 ```
+
+## Tag a Version to Auto-Test Dependants  
+
+Bit constantly runs the component's tests as you make changes in your code, and you can see the results in the workspace UI. When you tag a new component version, Bit will run the build (compile, test, bundle) for all other components in the workspace that depend on the tagged component - to help you learn about the impact of your changes: [Learn more here](https://harmony-docs.bit.dev/docs/getting-started/manage-dependencies).
+
+
+
