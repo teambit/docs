@@ -3,7 +3,7 @@ id: manage-dependencies
 title: Manage Workspace Dependencies
 ---
 
-Bit automatically manages dependencies for each component by running static code analysis.
+Bit automatically defines and manages dependencies for each component by running static code analysis.
 These dependencies can be packages or components that are handled by the same workspace. By tracking which component depends on which,
 Bit can help you understand how changes propagate in your workspace.
 
