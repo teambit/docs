@@ -228,8 +228,8 @@ export default CustomReactExtension;
 
 Choose one of the following Bit environments to extend and customize it.
 
-#### [React](/docs/react/extending-react)
+#### -> [React](/docs/react/extending-react)
 
-#### [NodeJS](/docs/react/extending-node)
+#### -> [NodeJS](/docs/react/extending-node)
 
-#### [React Native](/docs/react/extending-react-native)
+#### -> [React Native](/docs/react/extending-react-native)
