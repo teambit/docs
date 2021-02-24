@@ -3,15 +3,20 @@ id: introduction
 title: Introduction
 ---
 
-## Build modular web applications together, in a fast and scalable way.
+## Bit modularizes the development of modern web applications  
 
-**Looking to build better web applications? Enjoy Micro Frontends? Allow teams to develop and deliver features independently? Make it easy for everyone to continuously integrate and collaborate on components across projects? Standardize development?**
+The modern web makes components its first class citizens. Yet many modern web projects are still built in a very monolithic way, where all the different features and developers who build them are tightly coupled to each other.  
 
-**Bit is the platform for the Modular Web**. It helps you build modern web applications in a modular way. With Bit, many teams and developers can easily build a large, modern web application together. Instead of working in one cumbersome monolith, Bit splits the development of larger web apps into decoupled scopes of components where  teams can develop, build, test, and release components independently. All teams can easily expose components to each other, and continuously integrate (in build-time! no added run-time complexity!) with each other. Through the cloud, work can smoothly scale to many teams working on many web applications together through components.  
+Bit lets you split modern web development into scopes of components, which can be independently developed, owned, and updated by different people.  
 
-The result is similar to what microservices did for the backend: faster, better, more independent, and much more scalable development.  
+**Imagine** many teams working together on a large web project, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else. Each team can develop, build, test and release their components autonomously. All teams continuously integrate in build-time and constantly release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components and building many web projects together.  
 
-Bit puts a strong emphasis on **DEVELOPER EXPERIENCE** - to provide you with a simple, performant, fun, and even visual toolset for developing modern web apps in a modular way.  
+Development and delivery becomes **faster**, more **scalable** and **standardized** while you can delight users with new features more frequently, feature bugs can be quickly fixed or replaced, and the experience is consistent at every touchpoint.  
+
+In the words of [Addy Osmani](https://addyosmani.com/first/): 
+
+*“The secret to efficiently building ‘large’ things is generally to avoid building them in the first place. Instead, compose your large thing out of smaller, more focused pieces.”*  
+
 
 #### How?
 
