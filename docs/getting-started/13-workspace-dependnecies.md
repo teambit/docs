@@ -61,7 +61,7 @@ bbit show ui/tech-jokes-viewer
 Notice how 'app-bar' is listed as a dev dependency. That is because it is only used by `tech-jokes-viewer.compositions.tsx` which is a dev file.
 :::
 
-### Auto tag affected components
+### Auto-Tag Dependant Components
 
 Bit uses its generated dependency graphs to recognize which components are affected by a change made to another component.
 Whenever a component is modified and tagged, a ripple effect of auto-tags will occur on every dependent component and its dependent components, as well (all the way down to the last component in that chain).
@@ -113,7 +113,7 @@ In the above output, Bit notifies us of two important things:
 1. 'button' is a modified component
 2. 'tech-jokes-viewer' will be tagged automatically when its dependencies (in that case, 'button') are tagged.
 
-### Dependents Auto Versioning
+### Dependents Auto-Versioning
 
 Let's tag our `button` component to save the previous change made to it:
 
