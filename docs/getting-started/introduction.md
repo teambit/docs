@@ -5,18 +5,19 @@ title: Introduction
 
 ## Bit modularizes the development of modern web applications  
 
-The modern web makes components its first class citizens. Yet many modern web projects are still built in a very monolithic way, where all the different features and developers who build them are tightly coupled to each other.  
+The modern web makes components its first class citizens. Yet many modern web projects are still built in a monolithic way, where different features and the developers who build them are tightly coupled to each other.  
 
-Bit lets you split modern web development into scopes of components, which can be independently developed, owned, and updated by different people.  
+Bit lets you build large web applications through scopes of components, which can be independently developed, owned, and updated independently by different people. Components are continuously integrated together in build-time to build larger modular web applications.
 
-**Imagine** many teams working together on a large web project, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else. Each team can develop, build, test and release their components autonomously. All teams continuously integrate in build-time and constantly release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components and building many web projects together.  
+**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else. Each component is independently developed, built, tested, and made available to consume.
 
-Development and delivery becomes **faster**, more **scalable** and **standardized** while you can delight users with new features more frequently, feature bugs can be quickly fixed or replaced, and the experience is consistent at every touchpoint.  
+All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components to build many web projects together.  
+
+Development and delivery becomes **faster**, more **scalable** and **standardized** while your web apps now delight users with new features more frequently, feature bugs can be quickly fixed or replaced, and the experience is consistent at every touchpoint.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
 *“The secret to efficiently building ‘large’ things is generally to avoid building them in the first place. Instead, compose your large thing out of smaller, more focused pieces.”*  
-
 
 #### How?
 
