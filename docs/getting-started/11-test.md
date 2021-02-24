@@ -3,10 +3,20 @@ id: test
 title: Test Components
 ---
 
-**all testers are created equal in Bit**. Component testing is another service provided by Bit Environments. Even though each environment implements its testing using different test runners and configurations,
-they all integrate into Bit processes in a similar way, and get executed using the same commands.
+Bit makes the most out of your automated tests to help you maintain code in a network of independent components. It does so by:
 
+- **Testing components in isolated environments:**
+  Tests running as part of the build pipeline will test each component in a 'Bit Capsule' which is
+  an isolated instance of a component, generated in a separate directory in your filesystem.
+  That ensures the validity of your tests as each test runs unaffected by code that is not part of the component itself.
+
+- **Automatically testing the dependents of a modified component:**
+  When tagging a component with a new release version, the 'build' and 'tag' processes automatically run on all dependent components, as well.
+  Since testing is part of the build process, tests of all dependents component will run as well, to make sure nothing got broken due to that change.
+
+:::note
 The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
+:::
 
 ## Adding Tests
 
@@ -15,7 +25,7 @@ Tests are added by placing test files inside the component's directory. Test fil
 For example, our 'button' component already has a simple test and since tests are run automatically by the dev server, on `bbit start` and
 on every change, you can already see its test results in the 'Tests' tab.
 
-![](/img/ws_getting_started_test.png)
+<img src="/img/ws_getting_started_test.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
 
 ## Running Tests
 
@@ -24,8 +34,6 @@ There are several ways for running tests when component changed.
 ### `bbit start`
 
 You can see each component's test results in the Workspace UI when running `bbit start`. Just head over to the component's "Tests" tab.
-
-![Test results](/img/test_results_ui.jpg)
 
 ### `bbit test --watch`
 
@@ -43,8 +51,3 @@ You can also run tests manually:
 $ bbit test # Run tests for all components
 $ bbit test ui/elements/button # Run tests for a specific component
 ```
-
-## Tag a Version to Auto-Test Dependants  
-
-Bit constantly runs the component's tests as you make changes in your code, and you can see the results in the workspace UI. When you tag a new component version, Bit will run the build (compile, test, bundle) for all other components in the workspace that depend on the tagged component - to help you learn about the impact of your changes: [Learn more here](https://harmony-docs.bit.dev/docs/getting-started/manage-dependencies).
-

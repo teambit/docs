@@ -45,4 +45,6 @@ Head over the [create scope](https://bit.dev/~create-collection) screen:
 1. Select **Harmony** as "scope type".
 1. Click on "Create".
 
-<img src="/img/create_scope.png" alt="Choose scope type" width="50%" height="50%"></img>
+<div style={{textAlign: 'center'}}>
+    <img src="/img/create_scope.png"  style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', width: '60%', padding: 10, marginTop: 10}}></img>
+</div>

@@ -123,6 +123,8 @@ Once the above modification is done, add the component with the namespace 'ui/wi
 bbit add components/widgets/tech-jokes-viewer/ -n ui/widgets
 ```
 
-By now your workspace should look similar to that:
+Head back to the Workspace UI (https://localhost:3000) to explore the tracked components.
 
-![](/img/ws_getting_started_1.png)
+<div style={{textAlign: 'center'}}>
+  <img src="/img/ws_getting_started_1.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, marginTop: 10, width: '90%'}}></img>
+</div>

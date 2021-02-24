@@ -3,12 +3,11 @@ id: version
 title: Version Components
 ---
 
-With Bit, each component gets its own versions. Component versions meet the same [semantic versioning rules](https://semver.org) used in Node packages. This provides [many advanatges](https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2) as different components can be incrementally added, upgraded, and replaced. 
+With Bit, each component gets its own versions. Component versions meet the same [semantic versioning rules](https://semver.org) used in Node packages. This provides [many advanatges](https://blog.bitsrc.io/versioning-independent-ui-components-why-and-how-7ea60d8be5f2) as different components can be incrementally added, upgraded, and replaced.
 
 The tagging process creates a locked version of a component that includes its source code as well as its generated artifacts (distributable code, bundled documentation , etc.).
 
-Once a component version has been tagged it reaches full independency and is ready to be exported.  
-
+Once a component version has been tagged it reaches full independency and is ready to be exported.
 
 ## Tag a Component
 
@@ -31,10 +30,10 @@ To standardize component build and release pipeline each Environment defines a s
 
 1. Compile.
 2. Test.
-3. Bundle documentation site (the "overview" tab)
+3. Bundle the documentation and compositions.
 
 :::info isolated builds
-Components authored in a Bit workspace are created to be completely portable, and thus independent.
+Components authored in a Bit workspace are created to be completely context-agnostic.
 To address that, the build process starts by creating a component 'capsule' which is an isolated instance
 of a component, generated in a separate directory in your filesystem.
 

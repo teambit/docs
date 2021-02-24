@@ -28,6 +28,10 @@ For example:
     └── button.tsx
 ```
 
+<div style={{textAlign: 'center'}}>
+    <img src="/img/ws_getting_started_docs.png" width="80%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', marginTop: 20}}></img>
+</div>
+
 ## Using the frontmatter API
 
 Bit parses your code to generate metadata for your components. This metadata is presented in the component's documentation and is used by Bit.dev's search engine.  
@@ -45,7 +49,9 @@ labels: ['react', 'typescript', 'button']
 ---
 ```
 
-![](/img/ws_getting_started_frontmatter.png)
+<div style={{textAlign: 'center'}}>
+    <img src="/img/ws_getting_started_frontmatter.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, width: '70%'}}></img>
+</div>
 
 ## Using the live playground
 
@@ -80,4 +86,6 @@ import { Button } from './button';
 ```
 ````
 
-![](/img/ws_getting_started_mdx_imports.png)
+<div style={{textAlign: 'center'}}>
+    <img src="/img/ws_getting_started_mdx_imports.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, width: '90%'}}></img>
+</div>

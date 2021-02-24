@@ -37,7 +37,11 @@ bbit import teambit.evangelist/marketing/twitter-card
 
 Head back to your workspace UI to explore the new imported component.
 
-![](/img/ws_getting_started_import.png)
+<div style={{textAlign: 'center'}}>
+     <img src="/img/ws_getting_started_import.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+</div>
+
+<br />
 
 To learn more about 'importing' [see here](/docs/components/importing)
 

@@ -12,7 +12,9 @@ Bit can help you understand how changes propagate in your workspace.
 As mentioned earlier, our 'tech-jokes-viewer' component depends on two other components in the workspace.
 Head over to the component's 'Dependencies' tab (in the workspace UI), to see a diagram of `tech-jokes-viewer` dependency graph.
 
-![](/img/ws_getting_started_dependencies.png)
+<div style={{textAlign: 'center'}}>
+     <img src="/img/ws_getting_started_dependencies.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+</div>
 
 ### Get Dependencies in Terminal
 
