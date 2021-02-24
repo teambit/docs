@@ -13,7 +13,7 @@ Bit lets you build large web applications through scopes of components, which ca
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components to build many web projects together.  
 
-Development and delivery becomes **faster**, more **scalable** and **standardized** while your web apps now delight users with new features more frequently, feature bugs can be quickly fixed or replaced, and the experience is consistent at every touchpoint.  
+Development and delivery becomes **faster**, more **scalable** and **standardized** while your web apps delight users with new features more frequently, bugs can be quickly fixed or replaced, and their experience remains consistent at every touchpoint.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
