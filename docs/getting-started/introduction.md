@@ -13,7 +13,7 @@ Bit modularizes the development of modern web applications to make it better.
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
-Web applications development becomes **faster**, more **scalable* and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+Web applications development becomes **faster**, more **scalable** and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
