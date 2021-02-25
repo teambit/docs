@@ -3,11 +3,11 @@ id: introduction
 title: Introduction
 ---
 
-## Bit modularizes the development of modern web applications  
+## Develop modular web applications together in a fast and scalable way
 
-The modern web makes components its first class citizens. Yet many modern web projects are still built in a monolithic way, where different features and the developers who build them are tightly coupled to each other.  
+While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other.  
 
-Bit lets you build large web applications through scopes of components, which can be independently developed, owned, and updated independently by different people. Components are continuously integrated together in build-time to build larger modular web applications.
+Bit modularizes the development of modern web applications to make it better.  
 
 **Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else - and everyone can easily find and use components by other teams. Each component is independently developed, built, tested, and made available to consume.
 
