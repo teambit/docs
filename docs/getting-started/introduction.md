@@ -37,11 +37,11 @@ Bit’s cloud platform helps teams collaborate on components and build together.
 
 ### Core Features
 
-**See [Bit.dev hosting vs. self-hosting for enterprises ->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
-
 #### [Open-Source Tools](#open-source-development-tools)
 
 #### [The Component Cloud](#enterprise-grade-component-cloud)
+
+**See [Bit.dev hosting vs. self-hosting for enterprises ->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
 
 ## Popular Use Cases
 
