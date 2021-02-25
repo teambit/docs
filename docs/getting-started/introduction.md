@@ -67,9 +67,8 @@ While we modularize everything we build, some teams choose to start with more fo
 
 #### [Micro Front-Ends](#micro-frontends)
 #### [Design Systems](#ui-design-system)
-#### [Component Monorepo](#component-monorepo)
-#### [10X Development Speed](#3x-development-speed)
-#### [Collaboarting and Reusing Components](sharing-and-reusing-components)
+#### [Development Scale and Speed](#Development-speed)
+#### [Collaborating and Sharing Components](sharing-and-reusing-components)
 
 ### Core Features
 
@@ -119,7 +118,7 @@ Need an example? Take a look at how the [homepage of Bit.dev](https://bit.dev) i
 * **Automated Slack updates** - Bit.dev offers a GitHub integration, so that when a new component version is released, Slack notifications will be sent to all relevant people whose projects are impacted by the change. Nudging is now automated!
 * **Developer-designer handshake** - Bit visualizes the code of your UI component to designers, and helps them learn exactly how every component looks and behaves as seen by users, at any given moment in time, and in every version. When a new version is released, simply ask designers to review the change - they will be able to see exactly what components are impacted by the change, how each of them will look, and give feedback. You can even [automate this process](https://blog.bitsrc.io/introducing-bit-dev-webhooks-78dade77c6da) to create tasks for designers to review every component change before its published.
 
-### Component Monorepo
+#### Component Monorepo
 
 Bit helps you build a modular and scalable multi-component monorepo. It provides a fully decoupled and modular way to develop, built, test, lint, publish etc many components in one project, while keeping a simple and holistic developer experience.
 
@@ -154,7 +153,7 @@ Bit is a very effective way to bridge the gap between design and development. Un
 * **Integrate Zeplin, Figma and other tools for UI creation utopia** - Imagine all your design components on Figma and Zeplin connected to the actual component implemented by developers and to the code that runs in production. Every change is updated and compared in code and design. This can be done with Bit, to achieve UI development utopia where designers and developers build together, for real.
 * **Let designers actively actively participate by editing and saving visual changes** - *Coming soon!*: Enjoy visual editing features to help designers instantly give feedback, suggest changes, and ultimately release changes to code components right from the component cloud.
 
-### 3X Development Speed
+### Development Scale and Speed
 
 * **Reuse 100% of your components to greatly speed up development** - Each component reused is hours or days of work saved by a developer. Taking components to the cloud will save organizations up to 50% of development time and resources, and focus them on innovation.
 * **Eliminate bugs, mistakes, and inconsistencies in web projects** - Customize, standardize, and reuse development environments, documentation templates, and build pipelines to eliminate up to 90%(!) of all component inconsistencies, bugs, and mistakes in production.
@@ -165,7 +164,7 @@ Bit is a very effective way to bridge the gap between design and development. Un
 
 ![Autonomous-Teams](https://storage.googleapis.com/static.bit.dev/harmony-docs/Screen%20Shot%202020-08-10%20at%205.22.04%20PM.png)
 
-### Sharing and Reusing Components
+### Collaborating and Sharing Components
 
 Bit is a very effective way to share and reuse code between teams.
 
@@ -343,4 +342,3 @@ Want to make sure that designers will review every component change? Use Webhook
 ### Join the world’s largest OSS component community (*it’s free*)
 
 Over 100,000 components (!) are hosted on Bit’s cloud platform, many of which are open-source and are shared with the developer community. Discover and share components with people around the world to build amazing things together.
-
