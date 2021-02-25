@@ -13,7 +13,7 @@ Bit modularizes the development of modern web applications and through component
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
-Web application development becomes **faster**, more **scalable* and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+Web application development becomes **faster**, more **scalable** and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations in the world. Join us to build modular web applications together too.  
 
@@ -343,3 +343,4 @@ Want to make sure that designers will review every component change? Use Webhook
 ### Join the world’s largest OSS component community (*it’s free*)
 
 Over 100,000 components (!) are hosted on Bit’s cloud platform, many of which are open-source and are shared with the developer community. Discover and share components with people around the world to build amazing things together.
+
