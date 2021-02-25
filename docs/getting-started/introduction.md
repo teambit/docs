@@ -5,43 +5,77 @@ title: Introduction
 
 ## Develop modular web applications together in a fast and scalable way
 
-While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other.  
+While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.
 
-Bit modularizes the development of modern web applications to make it better.  
+Bit modularizes the development of modern web applications and through components unlocks benefits similar to those of "microservices".  
 
 **Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team autonomously develops their [scope](https://harmony-docs.bit.dev/docs/scope/overview) of components required to deliver service including UI, backend, modules and anything else, and makes it available for others to consume and use. Each component is independently developed, built, and tested in isolation so it can be quickly introduced into new contexts.
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
-Web applications development becomes **faster**, more **scalable** and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+Web applications development becomes **faster**, more **scalable* and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+
+**Bit is used by thousands of teams**, including some of the world’s best tech organizations in the world. Join us to build modular web applications together too.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
 *“The secret to efficiently building ‘large’ things is generally to avoid building them in the first place. Instead, compose your large thing out of smaller, more focused pieces.”*  
 
-#### How?
+#### Developer Experience
 
-Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build projects in a modular way, so each component is independently developed, tested, built, rendered, linted, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.
+Bit is focused on creating a simple, performant, and highly flexible developer experience that makes it easy to scale the development of complex-multi component web projects. 
 
-Bit’s cloud platform helps teams collaborate on components and build together. Organizations can distribute web development into autonomous teams that build apps/features in decoupled codebases. All teams can easily share components, collaborate, and integrate with each other. Each team can develop and release components autonomously, and get tools to standardize and manage components across teams and projects.  
+With over 600 APIs every part of Bit - from dev environments to the UI - can be extended and customized to fit your best experience. And, any extension is a Bit component, so it can be easily integrated and reused in different projects and shared with more people.  
 
-**Bit is used by thousands of teams**, including some of the world’s best tech organizations whose products you use every day. Join us to build better web applications faster together too.  
+Bit is extremely lightweight and leaves nearly 0 footprint on your project. Since everything happens in build-time, not code-changes or runtime dependencies are required. 
 
-### What can Bit do for you?
+#### We build Bit with Bit
+
+We build Bit with Bit. Every part of Bit and even Bit.dev is 100% made of Bit components. Bit makes it easy for us to open-source every component we can regardless of its parent project, so you can learn how we build and view the scopes/teams we work in at our [official TeamBit account](https://bit.dev/teambit). 
+
+### Key Concepts
+
+**Component** -  The word “component” can describe any software module that has a clear and well-defined business functionality. In the world of modern web development, components can be UI primitives, whether simple or “smart” data-connected components, Hooks, entire features like a search bar with buttons and filters, and even a full page. Components can also be used in the backend, as anything from simple utility functions to more complex Node modules.  
+
+While most people find it simpler to start with UI components, you can take a [look here]( to learn how we work with Bit and what’s really possible.  
+
+**Workspace** - Bit’s workspace turns any project into a powerful multi-component monorepo. It helps developers build in a modular way, so each component is independently developed, tested, built, rendered, linted, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.  
+
+**Scope** - Scopes are next-gen, build-time "microservices” (i.e. “Billing”, “Users” or even “Marketing"). Each scope is made of a set of components required to deliver a feature, and can contain UI elements, data-connected components, widgets, hooks, and even backend modules or anything else required to deliver the service. Different scopes can be owned by different teams, giving each team the power to autonomously develop and deliver innovation.  
+
+Here are few examples of the scopes we build:  
+
+- [Evangelist](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
+
+- [Documenter](https://bit.dev/teambit/documenter)- Our component documentation team’s scope is responsible for the component documentation product on Bit.dev. This scope contains all documentation related components on Bit.dev. It empowers them to ship updates and component documentation services to the rest of our team internally and to the community.  
+
+- [MDX Integration Scope](https://bit.dev/teambit/mdx) - A standalone service extending Bit to support the MDX file format from all ends (UI, modules, extensions, etc.) and acts as a service for other teams to consume and build new services and features on top. Thanks to this Scope you can use MDX to create awesome documentation for your components in Bit.  
+
+
+### The Bit.dev Platform
+
+The Bit and Bit.dev model is similar to the Git and Github model. Bit is open source and can be used by any team through a self-hosted Bit scope of components. Bit.dev is a platform that helps organizations scale to many scopes and many teams, inter-connecting them into a single collaboration experience with powerful enterprise-grade features for code discoverability, collaboration, security, and team management. It also features Ripple CI, the world's first component-driven CIbuilt for the modern web, which continuously builds changes on the component graph across all teams and projects in the organization.  
+
+**For enterprises see [Bit.dev enterprise--grade hosting vs. self-hosting->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
+
+
+## What can Bit do for you?
+
+### Common use-cases
+
+While we modularize everything we build, some teams choose to start with more focused use-cases to start their journy torwards modular development. Learn more about how Bit helps thousands of teams succefully build projects that change the way they work.
 
 #### [Micro Front-Ends](#micro-frontends)
 #### [Design Systems](#ui-design-system)
 #### [Component Monorepo](#component-monorepo)
-#### [3X Development Speed](#3x-development-speed)
-#### [Sharing and Reusing Components](sharing-and-reusing-components)
+#### [10X Development Speed](#3x-development-speed)
+#### [Collaboarting and Reusing Components](sharing-and-reusing-components)
 
 ### Core Features
 
 #### [Open-Source Tools](#open-source-development-tools)
 
 #### [The Component Cloud](#enterprise-grade-component-cloud)
-
-**See [Bit.dev hosting vs. self-hosting for enterprises ->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
 
 ## Popular Use Cases
 
