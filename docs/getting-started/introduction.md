@@ -7,9 +7,9 @@ title: Introduction
 
 While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.
 
-Bit modularizes the development of modern web applications and through components unlocks benefits similar to those of "microservices".  
+**Bit modularizes the development of modern web applications**.  
 
-**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team autonomously develops their [scope](https://harmony-docs.bit.dev/docs/scope/overview) of components required to deliver service including UI, backend, modules and anything else, and makes it available for others to consume and use. Each component is independently developed, built, and tested in isolation so it can be quickly introduced into new contexts.
+With Bit many teams can work together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team autonomously develops their [scope](https://harmony-docs.bit.dev/docs/scope/overview) of components required to deliver service including UI, backend, modules and anything else, and makes it available for others to consume and use. Each component is independently developed, built, and tested in isolation so it can be quickly introduced into new contexts.
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
@@ -339,6 +339,7 @@ Integrate Slack to send and receive automated notifications on components you ow
 
 Want to make sure that designers will review every component change? Use Webhooks to connect Bit.dev with Asana or any other tool to streamline and automate your workflow.
 
-### Join the world’s largest OSS component community (*it’s free*)
+### Join the world’s largest OSS component community
 
-Over 100,000 components (!) are hosted on Bit’s cloud platform, many of which are open-source and are shared with the developer community. Discover and share components with people around the world to build amazing things together.
+Over 200,000 developers have joined the component community, creating thousands of open-source components shared with the developer community. Discover and share components with people around the world to build amazing things together.
+
