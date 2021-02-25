@@ -9,7 +9,7 @@ The modern web makes components its first class citizens. Yet many modern web pr
 
 Bit lets you build large web applications through scopes of components, which can be independently developed, owned, and updated independently by different people. Components are continuously integrated together in build-time to build larger modular web applications.
 
-**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else. Each component is independently developed, built, tested, and made available to consume.
+**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else - and everyone can easily find and use components by other teams. Each component is independently developed, built, tested, and made available to consume.
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components to build many web projects together.  
 
