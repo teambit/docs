@@ -9,9 +9,9 @@ While the modern web makes components its first class citizens, many modern web 
 
 **Bit modularizes the development of modern web applications**.  
 
-With Bit many teams can work together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team autonomously develops their [scope](https://harmony-docs.bit.dev/docs/scope/overview) of components required to deliver service including UI, backend, modules and anything else, and makes it available for others to consume and use. Each component is independently developed, built, and tested in isolation so it can be quickly introduced into new contexts.
+With Bit many teams can work together on a large web app, while each team autonomously develops a different a scope of components to build features like “Billing”, “Users”, or even “Marketing”. Each [scope](https://harmony-docs.bit.dev/docs/scope/overview) can contain all components required to deliver a service including UI elements, data-connected components, Hooks, backend modules, and anything else. Each team exposes components in its scope to be used by other teams and features. Each component is independently developed, built, tested, and run in isolation so it can be quickly introduced into new contexts.
 
-All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
+All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are smoothly scaled to many teams building many modular web projects together.  
 
 Web application development becomes **faster**, more **scalable** and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
