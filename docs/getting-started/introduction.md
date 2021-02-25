@@ -9,7 +9,9 @@ While the modern web makes components its first class citizens, many modern web 
 
 **Bit modularizes the development of modern web applications**.  
 
-With Bit many teams can work together on a large web app, while each team autonomously develops a different a scope of components to build features like “Billing”, “Users”, or even “Marketing”. Each [scope](https://harmony-docs.bit.dev/docs/scope/overview) can contain all components required to deliver a service including UI elements, data-connected components, Hooks, backend modules, and anything else. Each team exposes components in its scope to be used by other teams and features. Each component is independently developed, built, tested, and run in isolation so it can be quickly introduced into new contexts.
+With Bit many teams can work together on a large web app, while each team autonomously develops a different a scope of components to build features like “Billing”, “Search”, or even “Marketing”.  
+
+Each [scope](https://harmony-docs.bit.dev/docs/scope/overview) can contain all components required to deliver it including UI elements, data-connected components, React hooks, backend modules, and anything else. Each team exposes components in its scope to be used by other teams and features. Each component is independently developed, built, tested, and run in isolation so it can be quickly introduced into new contexts.  
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are smoothly scaled to many teams building many modular web projects together.  
 
@@ -342,4 +344,3 @@ Want to make sure that designers will review every component change? Use Webhook
 ### Join the world’s largest OSS component community
 
 Over 200,000 developers have joined the component community, creating thousands of open-source components shared with the developer community. Discover and share components with people around the world to build amazing things together.
-
