@@ -17,7 +17,7 @@ To version (tag) all our components at once, we'll run the following:
 bbit tag --persist --all 1.0.0 --message "initial version"
 ```
 
-:::note
+:::info the 'persist' option
 The `--persist` option creates a new release version in your local machine. It is best to avoid it when collaborating with others.
 Learn more about it [here](/docs/getting-started/ci-cd).
 :::
@@ -26,7 +26,9 @@ Learn more about it [here](/docs/getting-started/ci-cd).
 
 #### 1. Execute Build Pipeline
 
-To standardize component build and release pipeline each Environment defines a set of tasks to run when Bit needs to build each component. The default React environment used in this toturial has several tasks. If any of these tasks fail, Bit will fail the build process.
+To standardize component build and release pipeline each Environment defines a set of tasks to run when Bit needs to build each component.
+The default React environment used in this tutorial has several tasks. If any of these tasks fail, the build process will be aborted.
+Learn more about the build pipeline [here](http://localhost:3003/docs/build-pipeline/overview).
 
 1. Compile.
 2. Test.

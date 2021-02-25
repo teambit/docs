@@ -3,8 +3,8 @@ id: add-components
 title: Add Components
 ---
 
-A Bit component has all the information it needs for it to be **independently** shareable, consumable and maintainable.
-That includes its distributable code, development files, history, documentation and various Bit configurations.
+A Bit component is an independent module that can be authored, maintained, shared and consumed **independently**.
+It has all the information it needs to enable such autonomy. That includes its packaged distributable code, development files, history, documentation and various Bit configurations.
 Most of that information is generated automatically by Bit.
 
 This section will start our components' journey to independency by tracking them using Bit.
@@ -27,9 +27,12 @@ Track the React hook with the namespace 'hooks':
 bbit add components/hooks/use-jokes/ -n hooks
 ```
 
-The `use-jokes` component is now tracked by Bit and managed by the workspace. A few things to notice here:
+The `use-jokes` component is now tracked by Bit and managed by the workspace.  
+This has generated the following:
 
-- Bit has generated a **component ID**: `demo-org.demo-scope/hooks/use-jokes`, following the pattern `<owner>.<scope>/<namespaces>/<component-name>`.
+- Bit has mapped this component's files and registered them in the `.bitmap` file. This enables Bit to treat a collection of files as a single unit, a component.
+  In addition to that, it has generated a **component ID**: `demo-org.demo-scope/hooks/use-jokes`, following the pattern:  
+  `<owner>.<scope>/<namespaces>/<component-name>`.
 
 - Bit has generated a package for that component in the workspace `node_modules` directory. That includes compiling the source-code using the [development environment compiler](/docs/compiling/overview).
   The **package name** will be `@demo-org/demo-scope.hooks.use-jokes`, following the pattern `@<owner>/<scope>.<namespaces>.<component-name>`.  

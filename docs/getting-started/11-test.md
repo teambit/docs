@@ -27,27 +27,13 @@ on every change, you can already see its test results in the 'Tests' tab.
 
 <img src="/img/ws_getting_started_test.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
 
-## Running Tests
+:::info test commands
 
-There are several ways for running tests when component changed.
+- `bbit test --watch`
+  Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.
+- `bbit test`
+  Runs all tests.
+- `bbit test <component-id>`
+  Runs tests for a specific component.
 
-### `bbit start`
-
-You can see each component's test results in the Workspace UI when running `bbit start`. Just head over to the component's "Tests" tab.
-
-### `bbit test --watch`
-
-If you choose not to use the Workspace UI, Bit can run tests in `watch` mode, so when a component was modified, Bit will run its tests.
-
-```sh
-$bbit test --watch
-```
-
-### `bbit test`
-
-You can also run tests manually:
-
-```shell
-$ bbit test # Run tests for all components
-$ bbit test ui/elements/button # Run tests for a specific component
-```
+:::

@@ -22,12 +22,12 @@ $ cd getting-started
 $ bbit init --harmony
 ```
 
-Bit creates the following files when initialized for a project:
+Bit creates the following files when initializing a new workspace:
 
 1. `workspace.jsonc` - The Workspace configuration file (mentioned above).
 2. `.bitmap` - An auto-generated mapping between tracked components in the workspace and their physical location on the file system.
    The file-structure of your workspace is entirely up to you.
-3. `.bit` (directory) - Your local scope, where Bit uses as an internal storage (see more about scopes.)
+3. `.bit` (directory) - Your local scope. Where your workspace's component release versions are stored.
 
 :::note
 Explore the ['getting-started-result'](https://github.com/teambit/getting-started-result) repository to see the workspace after all steps in this tutorial have been followed.

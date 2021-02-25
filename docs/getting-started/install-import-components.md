@@ -18,8 +18,8 @@ to have all their data available in your workspace (assets, Bit configurations, 
 - Installed components cannot be maintained and developed by the workspace. They cannot be configured by the `workspace.jsonc` or go through the build and tag processes.
 - Installed components will not be automatically tested, built and tagged when their dependencies are modified (in the workspace).
 
-  :::tip Using the bbit install command
-  When using the `bbit install` command to install all the workspaces's dependencies, the Dependency Resolver extension (in charge of that task) will
+  :::info Using the bbit install command
+  When using the `bbit install` command to install all the workspaces's dependencies, the [Dependency Resolver extension](/docs/dependencies/overview) extension (in charge of that task) will
   make sure to import (and not install) components that should be managed by the workspace (these are components that are listed in the workspace `.bitmap` file).
   Once the components are imported, they will be symlinked to the workspace `node_modules` directory so that they could be used just like any other component/package.
   :::
@@ -43,7 +43,7 @@ Head back to your workspace UI to explore the new imported component.
 
 <br />
 
-To learn more about 'importing' [see here](/docs/components/importing)
+- #### To learn more about 'importing' [see here](/docs/components/importing)
 
 ## Install a component package
 
@@ -56,4 +56,13 @@ This tie the component will be the 'testimonials' component used by Bit's market
 bbit install @teambit/evangelist.marketing.testimonial
 ```
 
-To learn more about installing component packages or any other package, [see here](/docs/packages/install-packages).
+:::info Bit.dev's registry
+The installation process is done by the [Dependency Resolver extension](/docs/dependencies/overview).
+By default, the Dependency Resolver installs packages from Bit.dev's registry.
+The authentication for that is done using your Bit.dev token, listed under `@bit`, in your `.npmrc` file.
+If that token cannot be found in the `.npmrc` file, it will look for it in your global Bit configurations (use the bit config command to output your `user.token` property).
+
+If your npm is configured to use a registry different than npmjs's - the Dependency Resolver will use that configured registry, instead.
+:::
+
+- #### To learn more about installing component packages or any other package, [see here](/docs/dependencies/dependency-installation).

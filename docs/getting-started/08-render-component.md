@@ -54,4 +54,4 @@ export const ToggleBetweenRemoteAndLocalJokes = () => {
 Uncomment the above snippet in your project to see it rendered in your workspace UI.
 :::
 
-![A n example of a composition](/img/ws_getting_started_compositions.png)
+<img src='/img/ws_getting_started_compositions.png' style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>

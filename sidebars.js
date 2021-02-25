@@ -22,7 +22,8 @@ module.exports = {
         'getting-started/document',
         'getting-started/test',
         'getting-started/version',
-        'getting-started/manage-dependencies',
+        'getting-started/explore-dependencies',
+        'getting-started/auto-version-dependents',
         "getting-started/export-to-scope",
         'getting-started/install-import-components',
         'getting-started/ci-cd'
