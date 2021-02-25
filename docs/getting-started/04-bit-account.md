@@ -3,9 +3,9 @@ id: bit-account
 title: Set Up a Bit.dev Account
 ---
 
-Since Bit is completely OSS, Bit components can be hosted on your own server. Even so, for simplicity reasons, this tutorial will use [bit.dev's](https://bit.dev) servers.
+[Bit](https://github.com/teambit/bit) is open source and can be used by one team through a self-hosted Scope (which is like a Repository in the Git model). [Bit.dev](https://bit.dev/) helps the organization scale to any amount of scopes owned by different teams, inter-connecting them into a single enterprise-grade collaboration experience with a lot of powerful features like search, permissions, security, and even a built-in component registry. Through Bit.dev you can also tap into the power of Ripple CI to continuously integrate changes to components across all projects and teams in your organization, and greatly boost development speed and efficiency.
 
-For that, we'll register a new account and create a Scope to host components.
+Let's create a new user account and setup a Scope on Bit.dev!
 
 ## Create a Bit.dev account
 
