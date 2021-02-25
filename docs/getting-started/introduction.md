@@ -13,7 +13,7 @@ Bit modularizes the development of modern web applications and through component
 
 All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
-Web applications development becomes **faster**, more **scalable* and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+Web application development becomes **faster**, more **scalable* and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
 **Bit is used by thousands of teams**, including some of the world’s best tech organizations in the world. Join us to build modular web applications together too.  
 
@@ -35,7 +35,7 @@ We build Bit with Bit. Every part of Bit and even Bit.dev is 100% made of Bit co
 
 ### Key Concepts
 
-**Component** -  The word “component” can describe any software module that has a clear and well-defined business functionality. In the world of modern web development, components can be UI primitives, whether simple or “smart” data-connected components, Hooks, entire features like a search bar with buttons and filters, and even a full page. Components can also be used in the backend, as anything from simple utility functions to more complex Node modules.  
+**Component** -  The word “component” can describe any software component that has a clear and well-defined business functionality. In the world of modern web development, components can be UI primitives, whether simple or “smart” data-connected components, Hooks, entire features like a search bar with buttons and filters, and even a full page. Components can also be used in the backend, as anything from simple utility functions to more complex Node modules.  
 
 While most people find it simpler to start with UI components, you can take a [look here]( to learn how we work with Bit and what’s really possible.  
 
@@ -56,14 +56,14 @@ Here are few examples of the scopes we build:
 
 The Bit and Bit.dev model is similar to the Git and Github model. Bit is open source and can be used by any team through a self-hosted Bit scope of components. Bit.dev is a platform that helps organizations scale to many scopes and many teams, inter-connecting them into a single collaboration experience with powerful enterprise-grade features for code discoverability, collaboration, security, and team management. It also features Ripple CI, the world's first component-driven CIbuilt for the modern web, which continuously builds changes on the component graph across all teams and projects in the organization.  
 
-**For enterprises see [Bit.dev enterprise--grade hosting vs. self-hosting->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
+**For enterprises see [Bit.dev enterprise-grade hosting vs. self-hosting->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
 
 
 ## What can Bit do for you?
 
 ### Common use-cases
 
-While we modularize everything we build, some teams choose to start with more focused use-cases to start their journy torwards modular development. Learn more about how Bit helps thousands of teams succefully build projects that change the way they work.
+While we modularize everything we build, some teams choose to start with more focused use-cases to start their journey towards modular development. Learn more about how Bit helps thousands of teams successfully build projects that change the way they work.
 
 #### [Micro Front-Ends](#micro-frontends)
 #### [Design Systems](#ui-design-system)
