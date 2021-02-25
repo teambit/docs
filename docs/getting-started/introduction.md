@@ -9,11 +9,11 @@ While the modern web makes components its first class citizens, many modern web 
 
 Bit modularizes the development of modern web applications to make it better.  
 
-**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team develops their own [scope](https://harmony-docs.bit.dev/docs/scope/overview) of the components required to deliver their feature or service including UI, backend, modules and anything else - and everyone can easily find and use components by other teams. Each component is independently developed, built, tested, and made available to consume.
+**Imagine** many teams working together on a large web app, while each team owns a different feature like “Billing” or “Users” or even “Marketing”. Each team autonomously develops their [scope](https://harmony-docs.bit.dev/docs/scope/overview) of components required to deliver service including UI, backend, modules and anything else, and makes it available for others to consume and use. Each component is independently developed, built, and tested in isolation so it can be quickly introduced into new contexts.
 
-All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, this process is efficiently scaled to many teams collaborating over components to build many web projects together.  
+All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are efficiently scaled to many teams building many web projects together.  
 
-Development and delivery becomes **faster**, more **scalable** and **standardized** while your web apps delight users with new features more frequently, bugs can be quickly fixed or replaced, and their experience remains consistent at every touchpoint.  
+Web applications development becomes **faster**, more **scalable* and **standardized**. Application users enjoy new features more frequently, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
