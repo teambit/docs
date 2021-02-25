@@ -17,7 +17,7 @@ All teams continuously integrate components in build-time and release fast autom
 
 Web application development becomes **faster**, more **scalable** and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
-**Bit is used by thousands of teams**, including some of the world’s best tech organizations in the world. Join us to build modular web applications together too.  
+**Bit is used by thousands of teams**, including some of the world’s best and largest tech organizations. Join us to build modular web applications together too.  
 
 In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
