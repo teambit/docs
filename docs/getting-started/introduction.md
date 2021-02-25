@@ -21,7 +21,7 @@ In the words of [Addy Osmani](https://addyosmani.com/first/):
 
 *“The secret to efficiently building ‘large’ things is generally to avoid building them in the first place. Instead, compose your large thing out of smaller, more focused pieces.”*  
 
-#### Developer Experience
+### Developer Experience
 
 Bit is focused on creating a simple, performant, and highly flexible developer experience that makes it easy to scale the development of complex-multi component web projects. 
 
@@ -29,7 +29,7 @@ With over 600 APIs every part of Bit - from dev environments to the UI - can be 
 
 Bit is extremely lightweight and leaves nearly 0 footprint on your project. Since everything happens in build-time, not code-changes or runtime dependencies are required. 
 
-#### We build Bit with Bit
+### We build Bit with Bit
 
 We build Bit with Bit. Every part of Bit and even Bit.dev is 100% made of Bit components. Bit makes it easy for us to open-source every component we can regardless of its parent project, so you can learn how we build and view the scopes/teams we work in at our [official TeamBit account](https://bit.dev/teambit). 
 
