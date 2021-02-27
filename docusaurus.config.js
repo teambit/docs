@@ -29,19 +29,19 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/getting-started/introduction',
+          to: '/docs/introduction/why-bit',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
         },
         {
-          href: 'https://github.com/teambit/bit',
-          label: 'GitHub',
+          to: 'docs/open-source/open-source',
+          label: 'Open Source',
           position: 'right',
         },
         {
-          href: 'https://bit.dev/support',
-          label: 'Help',
+          href: 'https://bit.dev',
+          label: 'Bit Cloud',
           position: 'right',
         },
         {
@@ -67,6 +67,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/teambit/docs/edit/harmony',
+          // routeBasePath: '/'
         },
         blog: {
           showReadingTime: true,

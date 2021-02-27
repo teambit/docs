@@ -8,11 +8,20 @@
 
 module.exports = {
   docs: [
+        {
+      type: 'category',
+      label: 'Introduction',
+      items: [
+        'introduction/why-bit',
+        'introduction/try-bit',
+        'introduction/resources',
+        'introduction/community',
+      ],
+    },
     {
       type: 'category',
       label: 'Getting Started',
       items: [
-        'getting-started/introduction',
         'getting-started/install-bit',
         'getting-started/bit-account',
         'getting-started/set-up-workspace',
