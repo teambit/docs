@@ -24,7 +24,7 @@ to have all their data available in your workspace (assets, Bit configurations, 
   Once the components are imported, they will be symlinked to the workspace `node_modules` directory so that they could be used just like any other component/package.
   :::
 
-## Import a components
+## Import a component
 
 Components are imported using their component ID, which can be found in their component page, under the 'Use' drop menu.
 
