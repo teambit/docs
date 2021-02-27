@@ -26,16 +26,17 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
+        href: '/introduction/why-bit'
       },
       items: [
         {
-          to: '/docs/introduction/why-bit',
+          to: '/introduction/why-bit',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
         },
         {
-          to: 'docs/open-source/open-source',
+          to: '/open-source/open-source',
           label: 'Open Source',
           position: 'right',
         },
@@ -67,7 +68,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/teambit/docs/edit/harmony',
-          // routeBasePath: '/'
+          routeBasePath: '/'
         },
         blog: {
           showReadingTime: true,
