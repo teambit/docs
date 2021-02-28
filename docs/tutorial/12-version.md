@@ -9,7 +9,7 @@ The tagging process creates a locked version of a component that includes its so
 
 Once a component version has been tagged it reaches full independency and is ready to be exported.
 
-## Tag a Component
+## Tag All Components
 
 To version (tag) all our components at once, we'll run the following:
 
@@ -17,14 +17,45 @@ To version (tag) all our components at once, we'll run the following:
 bbit tag --persist --all 1.0.0 --message "initial version"
 ```
 
+:::info Tagging a single component
+To tag a single component, remove the `--all` option an specify a component to be tagged.  
+For example:  
+`bbit tag --persist ui/elements/button 1.0.0 --message "initial button version"`
+:::
+
 :::info the 'persist' option
 The `--persist` option creates a new release version in your local machine. It is best to avoid it when collaborating with others.
 Learn more about it [here](/docs/getting-started/ci-cd).
 :::
 
-### Versioning process
+- Learn more about versioning, [here](/components/versioning)
 
-#### 1. Execute Build Pipeline
+## List Versioned Components
+
+Versioned components are components Bit set an immutable versions for and staged them to be exported. To list them, run the following:
+
+```shell
+bbit list
+```
+
+```shell title="The output"
+  ┌──────────────────────────────────────────────────┬─────────┬─────────┐
+  │ component ID                                     │ local   │ used    │
+  │                                                  │ version │ version │
+  ├──────────────────────────────────────────────────┼─────────┼─────────┤
+  │ demo-org.demo-scope/hooks/use-jokes              │ 1.0.0   │ 1.0.0   │
+  ├──────────────────────────────────────────────────┼─────────┼─────────┤
+  │ demo-org.demo-scope/ui/elements/app-bar          │ 1.0.0   │ 1.0.0   │
+  ├──────────────────────────────────────────────────┼─────────┼─────────┤
+  │ demo-org.demo-scope/ui/elements/button           │ 1.0.0   │ 1.0.0   │
+  ├──────────────────────────────────────────────────┼─────────┼─────────┤
+  │ demo-org.demo-scope/ui/widgets/tech-jokes-viewer │ 1.0.0   │ 1.0.0   │
+  └──────────────────────────────────────────────────┴─────────┴─────────┘
+```
+
+## The Versioning Process
+
+### 1. Execute Build Pipeline
 
 To standardize component build and release pipeline each Environment defines a set of tasks to run when Bit needs to build each component.
 The default React environment used in this tutorial has several tasks. If any of these tasks fail, the build process will be aborted.
@@ -45,18 +76,10 @@ isolated will be able to use packages installed in parent directories in your wo
 This will translate into a "false positive" result when testing for dependency-graph issues in a non-isolated location)
 :::
 
-#### 2. Create Immutable Version
+### 2. Create Immutable Version
 
 Each version of a component is immutable and contains the component's implementation, dependency graph, configuration (which Environment is applied) and the build artifacts. When a component is sucessfuly built Bit takes all artifacts and saves them alondside the component's state at that time, sets a semantic version and keeps it in Bit's data store.
 
-#### 3. Auto-tag Dependents
+### 3. Auto-tag Dependents
 
 Bit run the tagging process on all dependents of a tagged component. It build and versions all components, and their depends recursively.
-
-## List Versioned Components
-
-Versioned components are components Bit set an immutable versions for and staged them to be exported. To list them, run the following:
-
-```shell
-bbit list
-```

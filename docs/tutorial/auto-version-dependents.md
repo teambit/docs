@@ -1,6 +1,6 @@
 ---
 id: auto-version-dependents
-title: Auto-Version Dependent Components
+title: Auto-Update Dependent Components
 ---
 
 Bit uses its generated dependency graphs to recognize which components are affected by a change made to another component.

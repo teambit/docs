@@ -1,5 +1,5 @@
 ---
-id: install-components
+id: 15-install-components
 title: Install Components
 ---
 

@@ -15,19 +15,12 @@ title: Resources
 
 ### Podcasts
 
-
 [“The Component Marketplace”](https://www.heavybit.com/library/podcasts/jamstack-radio/ep-59-the-component-marketplace-with-alexander-karan-of-climateclever/) - HeavyBit JAMStack Radio Ep. 59 (Brian Douglas & Alexander Karaan)
-å
-
 
 ### Slide Decks
-
 
 ### Articles
 
 ### Meetups
-
-
-
 
 ...

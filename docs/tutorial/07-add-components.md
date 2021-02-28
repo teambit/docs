@@ -36,7 +36,6 @@ This has generated the following:
 
 - Bit has generated a package for that component in the workspace `node_modules` directory. That includes compiling the source-code using the [development environment compiler](/docs/compiling/overview).
   The **package name** will be `@demo-org/demo-scope.hooks.use-jokes`, following the pattern `@<owner>/<scope>.<namespaces>.<component-name>`.  
-   Component package properties can me modifies, [see here](/docs/packages/overview) to lean more.
 
 :::info
 Components using other components in the same workspace should only use the components' absolute paths, i.e, their package names.

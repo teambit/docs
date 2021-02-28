@@ -27,13 +27,30 @@ on every change, you can already see its test results in the 'Tests' tab.
 
 <img src="/img/ws_getting_started_test.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
 
-:::info test commands
+## Running Tests
 
-- `bbit test --watch`
-  Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.
-- `bbit test`
-  Runs all tests.
-- `bbit test <component-id>`
-  Runs tests for a specific component.
+### Run all tests
 
-:::
+Runs tests on all components in the workspace.  
+`bbit test`
+
+### Run all tests in 'watch mode'
+
+Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.  
+```shell
+bbit test --watch
+```
+
+### Run tests of a specific component
+
+```shell
+bbit test <component-id>
+```
+
+For example:  
+```shell
+bbit test ui/elements/button
+```
+
+:::info processes that involve testing
+In addition the above commands, tests are also run by the dev server (`bbit start`) and by the build pipeline (`bbit build` and `bbit tag`)
