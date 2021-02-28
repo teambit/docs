@@ -11,7 +11,7 @@ Every feature or service we build is a **scope of components**. Each scope of co
 
 We aim to open-source as much code as possible. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we have **over 40 open-source scopes with over 500 open-source components** available to the community on Bit.dev.
 
-#### [Check out our OSS components and learn how we work on bit.dev/teambit ->](https://bit.dev/teambit)
+#### [Check out our OSS components and learn how we work on bit.dev/teambit](https://bit.dev/teambit/)
 
 
 - [Evangelist](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
