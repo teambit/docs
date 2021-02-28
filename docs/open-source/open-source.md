@@ -18,7 +18,6 @@ We aim to open-source as much code as possible. Thanks to Bit, it becomes easier
 
 #### [Check out our OSS and learn how we work ->](https://bit.dev/teambit)
 
-
 Here are some of the scopes we build:  
 
 - [Evangelist (Marketing)](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
@@ -71,7 +70,7 @@ Social
 Stay tuned to see and learn more about all that in one of our talks soon… just [sign up to bit.dev](https://bit.dev/) to get the newsletter ->
 
 
-#### Contribute
+### Contribute
 
 We **welcome contributions** from the community in all shapes and sizes.  
 
