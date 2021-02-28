@@ -16,7 +16,7 @@ We aim to open-source as much code as possible. Thanks to Bit, it becomes easier
 </a>
 
 
-#### [Check out our OSS and learn how we work at Team Bit ->](https://bit.dev/teambit)
+#### [Check out our OSS and learn how we work ->](https://bit.dev/teambit)
 
 
 Here are some of the scopes we build:  
@@ -91,3 +91,5 @@ Have a cool feature idea and want to check if our team wants to collaborate on i
 ### Bit on GitHub
 
 - [Teambit/Bit](https://github.com/teambit/bit)
+
+PRs welcome!
