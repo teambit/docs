@@ -36,6 +36,11 @@ module.exports = {
           position: 'right',
         },
         {
+          href: 'https://bit.dev/support',
+          label: 'Help',
+          position: 'right',
+        },
+        {
           to: '/open-source/open-source',
           label: 'Open Source',
           position: 'right',
