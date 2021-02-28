@@ -3,7 +3,7 @@ id: open-source
 title: Open Source
 ---
 
-At Bit, we build everything with Bit: Starting from open-source projects like Bit itself to the Bit.dev cloud platform and even Ripple CI.  
+At Bit, we build everything with Bit.  
 
 Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
