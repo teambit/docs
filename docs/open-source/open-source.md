@@ -54,7 +54,7 @@ Here are some of the scopes we build:
 
 - [Dependencies](https://bit.dev/teambit/dependencies) - A scope of components responsible for defining and managing dependencies for components, including the Dependency Resolver which auto-generates the dependency graph for components and configures and installs dependencies for components in a Bit workspace. The scope also includes integrations for common package managers like Yarn and pnpm.  
 
-### [And many more scopes of components ->](https://bit.dev/teambit/~collections)
+**[And many more scopes of components ->](https://bit.dev/teambit/~collections)**
 
 **Pssst… we also build proprietary features in scopes too! Here are a few examples of the private scopes we build for the Bit.dev platform:
 
