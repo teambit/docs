@@ -7,7 +7,7 @@ At Bit, we build everything with Bit.
 
 Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
-We aim to open-source as much code as possible. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we havשׂe **over 40 open-source scopes with over 500 open-source components** available to the community on Bit.dev.
+We aim to open-source as much code as possible. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we havשׂe **over 40 open-source scopes with over 500 open-source components** available to the community.
 
 ## We Build Bit with Bit
 
@@ -54,12 +54,40 @@ Here are some of the scopes we build:
 
 - [Dependencies](https://bit.dev/teambit/dependencies) - A scope of components responsible for defining and managing dependencies for components, including the Dependency Resolver which auto-generates the dependency graph for components and configures and installs dependencies for components in a Bit workspace. The scope also includes integrations for common package managers like Yarn and pnpm.  
 
-#### [And many other scopes of components! ->](https://bit.dev/teambit/~collections)
+### [And many more scopes of components ->](https://bit.dev/teambit/~collections)
+
+**Pssst… we also build proprietary features in scopes too! Here are a few examples of the private scopes we build for the Bit.dev platform:
+
+Search
+Ripple CI
+Users
+Organizations
+Authentication
+Storage
+Security
+SEO
+Social
+
+Stay tuned to see and learn more about all that in one of our talks soon… just [sign up to bit.dev](https://bit.dev/) to get the newsletter ->
 
 
 #### Contribute
 
+We **welcome contributions** from the community in all shapes and sizes.  
+
+Bit makes it much easier to contribute to open source for two reasons: First, because it’s much easier to get into the code of a small focused component than to a large project. Scond, because anyone can create new components to extend Bit using over 600 APIs and introduce new features and extensions to develop, build, test, render, or enhance the experience in any way and to enrich any tool from the local workspace to the cloud platform itself.  
+
+There are a few ways to contribute to Bit and its community:  
+
+Just create any new component and export it to bit.dev under any open-source license, making it public to the community to discover and use.  
+
+Import any component from the platform and locally modify or extend it in any way, then export a new version for the component or a brand new component.  
+
+Contribute pull-requests to Bit and its community on GitHub.  
+
+Have a cool feature idea and want to check if our team wants to collaborate on it? [Let us know](https://bit.dev/support).
+
 
 ### Bit on GitHub
 
-
+- [Teambit/Bit](https://github.com/teambit/bit)
