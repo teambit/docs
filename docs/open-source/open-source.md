@@ -20,24 +20,6 @@ We aim to open-source as much code as possible. Thanks to Bit, it becomes easier
 
 - [MDX Integration Scope](https://bit.dev/teambit/mdx) - A standalone service extending Bit to support the MDX file format from all ends (UI, modules, extensions, etc.) and acts as a service for other teams to consume and build new services and features on top. Thanks to this Scope you can use MDX to create awesome documentation for your components in Bit.  
 
-- []() - 
-
-- []() - 
-
-
-- []() - 
-
-- []() - 
-
-
-- []() - 
-
-
-- []() - 
-
-
-- []() - 
-- []() - 
 
 
 #### Contribute
