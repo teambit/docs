@@ -67,7 +67,7 @@ Security
 SEO
 Social
 
-Stay tuned to see and learn more about all that in one of our talks soon… just [sign up to bit.dev](https://bit.dev/) to get the newsletter ->
+Stay tuned to see and learn more about all that in one of our talks soon… just [sign up to bit.dev](https://bit.dev/) to get the newsletter.
 
 
 ### Contribute
