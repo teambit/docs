@@ -7,18 +7,24 @@ At Bit, we build everything with Bit.
 
 Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
-We aim to open-source as much code as possible. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we havשׂe **over 40 open-source scopes with over 500 open-source components** available to the community.
+Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
-## We Build Bit with Bit
+Our entire workflow for building bit goes through Bit: Component development, compilation, testing, packaging, linting and so on. We use 100% of bit's APIs to isolate, compile, test, install dependencies, and so on.  
+
+There’s not a single feature implemented in Bit which was developed in a "mono repo" (i.e. with a package.json, npm and other tools) and not as independently developed and built components.  
+
+**We aim to open-source as much code as possible**. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we havשׂe **over 40 open-source scopes with over 500 open-source components** available to the community.
+
+## Our open source scopes
 
 <a href="https://bit.dev/teambit/~collections">
     <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/teambit-org.png"></img>
 </a>
-
+9:51
 
 #### [Check out our OSS and learn how we work ->](https://bit.dev/teambit)
 
-Here are some of the scopes we build:  
+Here are some of the open source scopes we build:  
 
 - [Evangelist (Marketing)](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
 
@@ -53,9 +59,9 @@ Here are some of the scopes we build:
 
 - [Dependencies](https://bit.dev/teambit/dependencies) - A scope of components responsible for defining and managing dependencies for components, including the Dependency Resolver which auto-generates the dependency graph for components and configures and installs dependencies for components in a Bit workspace. The scope also includes integrations for common package managers like Yarn and pnpm.  
 
-**[And many more scopes of components ->](https://bit.dev/teambit/~collections)**
+**[And many more scopes of components ->](https://bit.dev/teambit/~collections)**  
 
-**Pssst… we also build proprietary features in scopes too! Here are a few examples of the private scopes we build for the Bit.dev platform:
+We also build proprietary features in scopes too! Here are a few examples of the private scopes we build for the Bit.dev platform:
 
 Search
 Ripple CI
@@ -92,3 +98,5 @@ Have a cool feature idea and want to check if our team wants to collaborate on i
 - [Teambit/Bit](https://github.com/teambit/bit)
 
 PRs welcome!
+
+
