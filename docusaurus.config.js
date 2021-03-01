@@ -10,8 +10,8 @@ module.exports = {
   projectName: 'docs-harmony', // Usually your repo name.
   themeConfig: {
       algolia: {
-      apiKey: 'b6bda1385adb22822c932807a89765b0',
-      indexName: 'BIT_HARMONY',
+      apiKey: 'a966eb48e7122721c59de5aac52d269d',
+      indexName: 'harmony',
 
       // Optional: see doc section bellow
       contextualSearch: true,
