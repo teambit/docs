@@ -7,11 +7,9 @@ At Bit, we build everything with Bit.
 
 Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
-Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
-
 Our entire workflow for building bit goes through Bit: Component development, compilation, testing, packaging, linting and so on. We use 100% of bit's APIs to isolate, compile, test, install dependencies, and so on.  
 
-There’s not a single feature implemented in Bit which was developed in a "mono repo" (i.e. with a package.json, npm and other tools) and not as independently developed and built components.  
+There’s not a single feature implemented in Bit which was developed in a "mono repo" (i.e. with a package.json, npm and other tools) - everything is modular components.  
 
 **We aim to open-source as much code as possible**. Thanks to Bit, it becomes easier than ever to open-source specific components or even entire features, even if they live inside a private application. As of today we havשׂe **over 40 open-source scopes with over 500 open-source components** available to the community.
 
@@ -98,5 +96,3 @@ Have a cool feature idea and want to check if our team wants to collaborate on i
 - [Teambit/Bit](https://github.com/teambit/bit)
 
 PRs welcome!
-
-
