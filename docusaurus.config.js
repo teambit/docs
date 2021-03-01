@@ -14,7 +14,7 @@ module.exports = {
       indexName: 'harmony',
 
       // Optional: see doc section bellow
-      contextualSearch: true,
+      contextualSearch: false,
 
       // Optional: Algolia search parameters
       searchParameters: {},
