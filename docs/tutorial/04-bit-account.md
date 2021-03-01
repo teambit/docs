@@ -39,7 +39,7 @@ A single server may host multiple scopes. Each of these scopes groups together c
 Head over the [create scope](https://bit.dev/~create-collection) screen:
 
 1. Choose your account name.
-1. type `demo-scope` as the scope name.
+1. Type `demo-scope` as the scope name.
 1. Select **Harmony** as "scope type".
 1. Click on "Create".
 
