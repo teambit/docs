@@ -20,8 +20,6 @@ There’s not a single feature implemented in Bit which was developed in a "mono
 </a>
 9:51
 
-#### [Check out our OSS and learn how we work ->](https://bit.dev/teambit)
-
 Here are some of the open source scopes we build:  
 
 - [Evangelist (Marketing)](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
@@ -57,7 +55,7 @@ Here are some of the open source scopes we build:
 
 - [Dependencies](https://bit.dev/teambit/dependencies) - A scope of components responsible for defining and managing dependencies for components, including the Dependency Resolver which auto-generates the dependency graph for components and configures and installs dependencies for components in a Bit workspace. The scope also includes integrations for common package managers like Yarn and pnpm.  
 
-**[And many more scopes of components ->](https://bit.dev/teambit/~collections)**  
+#### [Check out our OSS and learn how we work ->](https://bit.dev/teambit)
 
 We also build proprietary features in scopes too! Here are a few examples of the private scopes we build for the Bit.dev platform:
 
