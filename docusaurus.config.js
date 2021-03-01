@@ -12,7 +12,7 @@ module.exports = {
       algolia: {
       apiKey: 'a966eb48e7122721c59de5aac52d269d',
       indexName: 'harmony',
-
+      appId: 'BH4D9OD16A',
       // Optional: see doc section bellow
       contextualSearch: false,
 
