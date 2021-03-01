@@ -3,11 +3,18 @@ id: bit-account
 title: Set Up a Bit.dev Account
 ---
 
-[Bit](https://github.com/teambit/bit) is open source and can be used by one team through a self-hosted Scope (which is like a Repository in the Git model). [Bit.dev](https://bit.dev/) helps the organization scale to any amount of scopes owned by different teams, inter-connecting them into a single enterprise-grade collaboration experience with a lot of powerful features like search, permissions, security, and even a built-in component registry.  
+When working with Bit, we use remote Scopes in order to share and collaborate on components across projects and teams.  
 
-Through Bit.dev you can also tap into the power of Ripple CI to continuously integrate changes to components across all projects and teams in your organization, and greatly boost development speed and efficiency.  
+You can host a Scope of components locally on any server, or use the bit.dev platform (free for OSS and limited private usage). On top of hosting components, Bit.dev offers useful features for discoverability, documentation, collaboration, component registry, team management, security and more.  
 
-Let's create a new user account and setup a Scope on Bit.dev!  
+To keep things simple we'll use Bit.dev for this tutorial. Let's create a new account and set up a Scope on Bit.dev! This Scope will be set as our default scope by bit, for all the components we are about to add to our workspace. Later, we will export our components to the scope we now create.
+
+
+::: Skipping this step
+
+You can skip this step and not sign up to bit.dev - Everything will still work normally and you can continue the tutorial, expect you will later have to sign up and create a scope on bit.dev and then manually configure it as the default scope of components in your workspace before you export. If you sign up and create the scope now, Bit will automate this for you. **We don't recommend skipping this step**.
+
+:::
 
 ## Create a Bit.dev account  
 
