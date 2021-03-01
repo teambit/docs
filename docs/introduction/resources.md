@@ -20,11 +20,9 @@ title: Resources
 
 ### Articles
 
-[How we build Micro Frontends - Microsoft CTO Cookbook](https://devblogs.microsoft.com/startups/building-micro-frontends-with-components/)
+[How we build Micro Frontends](https://devblogs.microsoft.com/startups/building-micro-frontends-with-components/) - Microsoft CTO Cookbook
 
 
 ### Slide Decks
 
 [Bit.dev hosting vs. self-hosting ->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)
-
-
