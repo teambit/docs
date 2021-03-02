@@ -9,17 +9,13 @@ Whenever a component is modified and tagged, a ripple effect of auto-tags will o
 As mentioned earlier, a tag process involves not only a new version but also testing and building the component in its own isolated environment.
 That process is crucial in handling multiple, independent modules as it validates a change to a component did not break other components in unexpected ways.
 
-Modify the `button` to see `tech-jokes-viewer` gets marked as "modified" by affiliation.
+In the 'Import Components' chapter, we imported the 'dots loader' component from a remote scope, and integrated it into our 'button' component.
 
-For example, let's decrease the font size of our button, from `16px` to `15px`.
+Our Workspace UI notifies us that the 'button' was modified (`M`), and since 'tech-jokes-viewer' depends on 'button', it is marked with `D` to inform us of a change to one of its dependencies.
 
-```scss title="components/ui/elements/button/button.module.scss"
-font: 15px;
-```
-
-Our Workspace UI already notifies us of that change, and since 'tech-jokes-viewer' is dependent on 'button' both wil be shown as modified:
-
-![](/img/modified_comps.png)
+<div style={{textAlign: 'center'}}>
+     <img src="/img/modified_components.png" width="50%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 20, marginBottom: 20}}></img>
+</div>
 
 Let's examine this further using the `status` command:
 
@@ -28,21 +24,29 @@ bbit status
 ```
 
 ```
+new components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+     > hooks/use-jokes ... ok
+     > ui/elements/app-bar ... ok
+     > ui/elements/button ... ok
+     > ui/widgets/widgets ... ok
+getting-started-result (main) $ bbit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
 
      > ui/elements/button ... ok
-
+                         
 
 staged components
 (use "bit export <remote_scope> to push these components to a remote scope")
 
-     > hooks/use-jokes. versions: 0.0.1 ... ok
-     > ui/elements/app-bar. versions: 0.0.1 ... ok
-     > ui/elements/button. versions: 0.0.1 ... ok
-     > ui/widgets/tech-jokes-viewer. versions: 0.0.1 ... ok
-
+     > hooks/use-jokes. versions: 1.0.0 ... ok
+     > ui/elements/app-bar. versions: 1.0.0 ... ok
+     > ui/elements/button. versions: 1.0.0 ... ok
+     > ui/widgets/tech-jokes-viewer. versions: 1.0.0 ... ok
+                         
 
 components pending to be tagged automatically (when their dependencies are tagged)
      > ui/widgets/tech-jokes-viewer ... ok
@@ -58,7 +62,7 @@ In the above output, Bit notifies us of two important things:
 Let's tag our `button` component to save the previous change made to it:
 
 ```shell title="Auto-tag process for dependents"
-bbit tag ui/elements/button --persist --message "decrease font size"
+bbit tag ui/elements/button --persist --message "add animated loader"
 ```
 
 As expected two components were tested, the tagged 'button' component, and the auto-tagged 'tech-jokes-viewer'.
@@ -83,9 +87,9 @@ Once the build process is complete, and all tests passed successfully, Bit tags 
 
 changed components
 (components that got a version bump)
-     > demo-org.tech-jokes/ui/button@0.0.2
+     > ui/elements/button@1.0.1
        auto-tagged dependents:
-            demo-org.tech-jokes/ui/tech-jokes-viewer@0.0.2
+            ui/widgets/tech-jokes-viewer@1.0.1
 ```
 
 If we look at our local scope status, we'll see both component appear there with a new bumped version number:
@@ -95,16 +99,18 @@ bbit list
 ```
 
 ```shell
-┌──────────────────────────────────────────┬─────────┬─────────┐─────────┬─────────┐
-│ component ID                                                 │ local   │ used    │
-│                                                              │ version │ version │
-├──────────────────────────────────────────┼─────────┼─────────┤         │         │
-│ demo-org.tech-jokes/hooks/use-jokes                          │ 0.0.1   │ 0.0.1   │
-├──────────────────────────────────────────┼─────────┼─────────┤         │         │
-│ demo-org.tech-jokes/ui/app-bar                               │ 0.0.1   │ 0.0.1   │
-├──────────────────────────────────────────┼─────────┼─────────┤         │         │
-│ demo-org.tech-jokes/ui/button                                │ 0.0.2   │ 0.0.2   │
-├──────────────────────────────────────────┼─────────┼─────────┤         │         │
-│ demo-org.tech-jokes/ui/tech-jokes-viewer                     │ 0.0.2   │ 0.0.2   │
-└──────────────────────────────────────────────────────────────┴─────────┴─────────┘
+  ┌──────────────────────────────────────────┬─────────┬─────────┐
+  │ component ID                             │ local   │ used    │
+  │                                          │ version │ version │
+  ├──────────────────────────────────────────┼─────────┼─────────┤
+  │ hooks/use-jokes                          │ 1.0.0   │ 1.0.0   │
+  ├──────────────────────────────────────────┼─────────┼─────────┤
+  │ teambit.teaching/ui/elements/dots-loader │ 0.0.1   │ 0.0.1   │
+  ├──────────────────────────────────────────┼─────────┼─────────┤
+  │ ui/elements/app-bar                      │ 1.0.0   │ 1.0.0   │
+  ├──────────────────────────────────────────┼─────────┼─────────┤
+  │ ui/elements/button                       │ 1.0.1   │ 1.0.1   │
+  ├──────────────────────────────────────────┼─────────┼─────────┤
+  │ ui/widgets/tech-jokes-viewer             │ 1.0.1   │ 1.0.1   │
+  └──────────────────────────────────────────┴─────────┴─────────┘
 ```

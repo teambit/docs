@@ -12,7 +12,7 @@ The dependency graph diagram does not include packages.
 :::
 
 <div style={{textAlign: 'center'}}>
-     <img src="/img/ws_getting_started_dependencies.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+     <img src="/img/explore_deps_2.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
 </div>
 
 ### Explore Dependencies Using the CLI
