@@ -15,21 +15,27 @@ title: Community
 
 ## On Slack  
 
-<a href="https://www.youtube.com/watch?v=yDjTcBKXKDE&t">
+<a href="https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg">
     <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/communityx3.png"></img>
 </a>
 
-[Join Bit’s Slack Community ->](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)  
-
 ## On GitHub  
 
-[Teambit on GitHub ->](https://github.com/teambit)
+<a href="https://github.com/teambit/bit">
+    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/GitHub-Link.png"></img>
+</a>  
 
-[Teambit/bit ->](https://github.com/teambit/bit)
+
+<a href="https://github.com/teambit">
+    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/teambit-github-link.png"></img>
+</a>
+
 
 ## On Twitter
 
-Follow us on [@bitdev_](https://twitter.com/bitdev_)
+<a href="https://twitter.com/bitdev_">
+    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/Twitter-Link.png"></img>
+</a>
 
 ## On Medium
 
