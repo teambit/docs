@@ -20,7 +20,7 @@ The dependency graph diagram does not include packages.
 To examine dependencies (packages and Bit components) use the `bbit show` command:
 
 ```shell
-bbit show ui/tech-jokes-viewer
+bbit show ui/widgets/tech-jokes-viewer
 ```
 
 ```shell {16,17,19}
@@ -64,5 +64,5 @@ A few things to notice here:
    Different components may use different extensions for their development. Storing this information in the component itself enables it to be maintained anywhere without having to think of all the required tooling.
    These extensions are not added in any way to the final distributable code.
 
-3. Some of the listed dependencies such as `react` and `react-dom`, were not manually installed by us. These dependencies are set by the various extensions used by this component.
+3. Some of the listed dependencies such as  `core-js`, were not manually installed by us. These dependencies are set by the various extensions used by this component.
    In that case, they are configured by the React Environment (`teambit.react/react`).

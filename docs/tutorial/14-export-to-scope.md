@@ -15,6 +15,10 @@ bbit export
 
 Head over to `https://bit.dev/<owner-name>/<scope-name>` to see your exported component, or explore a similar [demo scope](https://bit.dev/demo-org/demo-scope).
 
+<div style={{textAlign: 'center'}}>
+     <img src="/img/export_scrn_shot.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+</div>
+
 ## Post Export Operations
 
 Once the exporting process completes, the `.bitmap` file gets updated to reflect that new state. Make sure to track it with git.
