@@ -12,7 +12,7 @@ Adding compositions to a component is done by creating a file in the component's
 
 For example:
 
-```{3}
+```shell {3}
 └── tech-jokes-viewer
     ├── index.tsx
     ├── tech-jokes-viewer.composition.tsx
@@ -51,7 +51,7 @@ export const ToggleBetweenRemoteAndLocalJokes = () => {
 ```
 
 :::note
-Uncomment the above snippet in your project to see it rendered in your workspace UI.
+Uncomment the above snippet in your project (`tech-jokes-viewer.composition.tsx`) to see it rendered in your workspace UI.
 :::
 
 <img src='/img/ws_getting_started_compositions.png' style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>

@@ -6,14 +6,17 @@ title: Install Bit
 Check if bit is installed using:
 
 ```shell
-$ bbit --version
+bbit --version
 ```
 
 ## Install via NPM / Yarn
 
 > Requires node 12 and above.
 
-```shell
-$ npm install @teambit/bit --global
-$ yarn global add @teambit/bit
+```shell title="Install with NPM"
+npm install @teambit/bit --global
+```
+
+```shell title="Install with Yarn"
+yarn global add @teambit/bit
 ```

@@ -136,6 +136,12 @@ import { Button } from '@demo-org/demo-scope.ui.elements.button';
 import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
 ```
 
+:::danger
+Import paths must consist of valid username/organization and scope name.
+These should be identical to the values set in the `defaultScope` property, in the `workspace.jsonc`.
+:::
+
+
 Once the above modification is done, add the component with the namespace 'ui/widgets':
 
 ```shell

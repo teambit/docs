@@ -17,9 +17,9 @@ It does so by offering:
 To get started, clone this ['getting-started'](https://github.com/teambit/getting-started) project and initialize a new Bit workspace for it:
 
 ```shell
-$ git clone https://github.com/teambit/getting-started.git
-$ cd getting-started
-$ bbit init --harmony
+git clone https://github.com/teambit/getting-started.git bit-getting-started
+cd bit-getting-started
+bbit init --harmony
 ```
 
 Bit creates the following files when initializing a new workspace:
@@ -55,7 +55,7 @@ By using ['Variants'](/docs/workspace/cascading-rules), different components in 
 ## Run the Workspace UI
 
 ```shell
-$ bbit start
+bbit start
 ```
 
 This will open-up your browser on [localhost:3000](http://localhost:3000) (or any other available port) and display your workspace and tracked (added) components (right now, no components are tracked).

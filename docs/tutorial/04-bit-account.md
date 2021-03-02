@@ -21,7 +21,7 @@ If you sign up and create the scope now, Bit will automate this for you. **We do
 By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider. Run the `$ bbit login` command for Bit to open a login/sign-up form for a new personal account.
 
 ```shell
-$ bbit login
+bbit login
 ```
 
 :::note
@@ -34,11 +34,6 @@ Once an account has been created successfully, your terminal will greet you with
 successfully added @bit as a scoped registry at /Users/<account>/.npmrc
 success! logged in as <account name>
 ```
-
-:::note
-Bit.dev supports installing components as packages using npm/yarn/pnpm.
-Bit automatically configures a local `~/.npmrc` file to set your package manager to fetch packages from Bit.dev.
-:::
 
 ## Create a Remote Scope
 

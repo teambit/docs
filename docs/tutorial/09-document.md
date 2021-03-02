@@ -55,7 +55,7 @@ labels: ['react', 'typescript', 'button']
 
 ## Using the live playground
 
-To use Bit's live playground add `live` to your codeblock.
+To use Bit's live playground add `live` to your codeblock. The live playground displays code examples that can be modified straight from the docs.
 
 ````jsx
 ```jsx live

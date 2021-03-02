@@ -39,13 +39,13 @@ import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader';
 In that same file we'll change this:
 
 ```jsx title="button.tsx (old)"
-isLoading ? 'Loading...' : children;
+isLoading ? 'Loading...' : children
 ```
 
 to this:
 
 ```jsx title="button.tsx (new)"
-isLoading ? <DotsLoader /> : children;
+isLoading ? <DotsLoader /> : children
 ```
 
 Head over to the 'Button is loading' composition in the 'button' page to see it rendered.
