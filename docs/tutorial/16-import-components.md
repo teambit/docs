@@ -9,7 +9,7 @@ These could be either private components, maintained by your own organization, o
 
 Components are imported using their component ID, which can be found in their component page, under the 'Use' drop menu.
 
-Let's import the 'dots-loader' component from Bit's 'base-ui' scope.
+Let's import the 'dots-loader' component from Bit's 'teaching' scope.
 
 ```
 bbit import teambit.teaching/ui/elements/dots-loader
