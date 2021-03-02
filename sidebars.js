@@ -41,6 +41,13 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'CLI',
+      items: [
+        "cli/cheat-sheet"
+      ],
+    },
+    {
+      type: 'category',
       label: 'Workspace',
       items: [
         "workspace/overview",
@@ -82,13 +89,6 @@ module.exports = {
         "scope/set-up-remote-scope",
         "scope/self-host-bit-scope",
         "scope/scope-ui"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'CLI',
-      items: [
-        "cli/cheat-sheet"
       ],
     },
     {

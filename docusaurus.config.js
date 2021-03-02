@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Documentation',
   tagline: 'Bit v15 "Harmony"',
-  url: 'https://bit-harmony-stg.netlify.app/',
+  url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

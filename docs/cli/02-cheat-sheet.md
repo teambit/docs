@@ -3,37 +3,37 @@ id: cheat-sheet
 title: CLI Reference
 ---
 
-## Initialize a new workspace
+#### Initialize a new workspace
 
 ```
 $ bbit init
 ```
 
-## Start Bit development server
+#### Start Bit development server
 
 ```shell
 $ bbit start
 ```
 
-## Get workspace status
+#### Get workspace status
 
 ```shell
 $ bbit status
 ```
 
-## Track a component
+#### Track a component
 
 ```shell
 $ bbit add <path/to/component>
 ```
 
-## Version a component
+#### Version a component
 
 ```shell
 $ bbit tag <component-id> <new-version-number>
 ```
 
-## Export components
+#### Export components
 
 From the terminal run the `bbit create` command:
 
@@ -41,49 +41,49 @@ From the terminal run the `bbit create` command:
 $ bbit export
 ```
 
-## Install dependency
+#### Install dependency
 
 ```shell
 $ bbit install <dependency name>
 ```
 
-## Install all dependencies after clone
+#### Install all dependencies after clone
 
 ```shell
 $ bbit install
 ```
 
-## Build components
+#### Build components
 
 ```shell
 $ bbit build
 ```
 
-## Test components
+#### Test components
 
 ```shell
 $ bbit test
 ```
 
-## Move component to a different directory
+#### Move component to a different directory
 
 ```shell
 $ bbit mv <component> <target-dir>
 ```
 
-## Relink components to the workspace
+#### Relink components to the workspace
 
 ```shell
 $ bbit link
 ```
 
-## Remove component from a workspace
+#### Remove component from a workspace
 
 ```shell
 $ bbit remove
 ```
 
-## Get component configuration
+#### Get component configuration
 
 ```shell
 $ bbit eject-conf <component>

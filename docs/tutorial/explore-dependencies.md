@@ -62,7 +62,7 @@ A few things to notice here:
 2. The 'extensions' section lists all dependencies of that component that are Bit extensions.
    These are components that provide component development functionality such as documentation (`teambit.docs/docs`), compositions (`teambit.compositions/compositions`) and even packaging (`teambit.pkg/pkg`).
    Different components may use different extensions for their development. Storing this information in the component itself enables it to be maintained anywhere without having to think of all the required tooling.
-   These extension are not added in any way to the final distributable code.
+   These extensions are not added in any way to the final distributable code.
 
 3. Some of the listed dependencies such as `react` and `react-dom`, were not manually installed by us. These dependencies are set by the various extensions used by this component.
    In that case, they are configured by the React Environment (`teambit.react/react`).

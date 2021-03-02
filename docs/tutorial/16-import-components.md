@@ -12,7 +12,7 @@ Components are imported using their component ID, which can be found in their co
 Let's import the 'dots-loader' component from Bit's 'base-ui' scope.
 
 ```
-bbit import teambit.base-ui/elements/dots-loader
+bbit import teambit.teaching/ui/dots-loader
 ```
 
 Head back to your workspace UI to explore the new imported component.
@@ -33,7 +33,7 @@ Our button shows a 'Loading...' text whenever its `isLoading` prop is set to `tr
 Let's replace that text with the newly imported 'dots loader' component.
 
 ```tsx title="button.tsx"
-import { DotsLoader } from '@teambit/base-ui.elements.dots-loader';
+import { DotsLoader } from '@teambit/teaching.ui.dots-loader';
 ```
 
 In that same file we'll change this:

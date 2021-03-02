@@ -10,10 +10,10 @@ You can host a Scope of components locally on any server, or use the bit.dev pla
 To keep things simple we'll use Bit.dev for this tutorial. Let's create a new account and set up a Scope on Bit.dev! This Scope will be set as our default scope by bit, for all the components we are about to add to our workspace. Later, we will export our components to the scope we now create.
 
 
-::: Skipping this step
-
-You can skip this step and not sign up to bit.dev - Everything will still work normally and you can continue the tutorial, expect you will later have to sign up and create a scope on bit.dev and then manually configure it as the default scope of components in your workspace before you export. If you sign up and create the scope now, Bit will automate this for you. **We don't recommend skipping this step**.
-
+:::info Skipping this step
+You can skip this step and not sign up to bit.dev. Everything will still work normally and you can continue the tutorial, 
+except you will later have to sign up and create a scope on bit.dev and then manually configure it as the default scope of components in your workspace before you export.
+If you sign up and create the scope now, Bit will automate this for you. **We do not recommend skipping this step**.
 :::
 
 ## Create a Bit.dev account  

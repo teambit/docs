@@ -14,18 +14,13 @@ Once a component version has been tagged it reaches full independency and is rea
 To version (tag) all our components at once, we'll run the following:
 
 ```shell
-bbit tag --persist --all 1.0.0 --message "initial version"
+bbit tag --all 1.0.0 --message "initial version"
 ```
 
 :::info Tagging a single component
 To tag a single component, remove the `--all` option an specify a component to be tagged.  
 For example:  
-`bbit tag --persist ui/elements/button 1.0.0 --message "initial button version"`
-:::
-
-:::info the 'persist' option
-The `--persist` option creates a new release version in your local machine. It is best to avoid it when collaborating with others.
-Learn more about it [here](/docs/getting-started/ci-cd).
+`bbit tag ui/elements/button 1.0.0 --message "initial button version"`
 :::
 
 - Learn more about versioning, [here](/components/versioning)

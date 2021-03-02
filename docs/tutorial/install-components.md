@@ -8,7 +8,7 @@ As an example, let's install a component package from the same 'evangelist' scop
 This tie the component will be the 'testimonials' component used by Bit's marketing team:
 
 ```
-bbit install @teambit/evangelist.marketing.testimonial
+bbit install @teambit/ui.test-loader
 ```
 
 :::info Bit.dev's registry
