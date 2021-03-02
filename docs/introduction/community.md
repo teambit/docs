@@ -23,7 +23,7 @@ title: Community
 
 <a href="https://github.com/teambit/bit">
     <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/GitHub-Link.png"></img>
-</a>  
+</a>
 
 
 <a href="https://github.com/teambit">
@@ -34,14 +34,17 @@ title: Community
 ## On Twitter
 
 <a href="https://twitter.com/bitdev_">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/Twitter-Link.png"></img>
+    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/Twitter-Link.png
+"></img>
 </a>
 
 ## On Medium
 
-Join over 2M developers who [read our blog ->](https://blog.bitsrc.io/)
+**Join over 2M developers who [read Bit’s blog](https://blog.bitsrc.io/)**  
 
-And here’s a link to our [Bit articles only ->](https://blog.bitsrc.io/)
+<a href="https://blog.bitsrc.io/">
+    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/bit-blog-link.png"></img>
+</a>
 
 ## On Youtube
 
