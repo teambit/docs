@@ -13,7 +13,7 @@ To keep things simple we'll use Bit.dev for this tutorial. Let's create a new ac
 
 :::info Skipping this step
 
-**We do not recommend skipping this step**. Still, you can choose to skip this step and not sign up to Bit.dev. Everything in your local workspace will still work normally and you can continue the tutorial. But, before you export your components, you will still have to create a remote Scope on Bit.dev or choose to create and host your own remote Scope. Then, you will have to go back and [configuere your remote Scope as the default Scope in your workspace](https://harmony-docs.bit.dev/scope/set-up-remote-scope#configure-remotes-scopes-in-the-workspace). For simplicity we recommend following this step first so Bit can automate everything for you.
+**We do not recommend skipping this step**. Still, you can choose to skip this step and not sign up to Bit.dev. Everything in your local workspace will still work normally and you can continue the tutorial. But, before you can export the components, you will have to create a remote Scope to host them on Bit.dev or host a remote Scope on your own server. Then, you will have to go back and [configuere the remote Scope as the default Scope in your workspace](https://harmony-docs.bit.dev/scope/set-up-remote-scope#configure-remotes-scopes-in-the-workspace). For simplicity reasons we recommend following this step first so Bit can automate everything for you.
 :::
 
 ## Create a Bit.dev account  
