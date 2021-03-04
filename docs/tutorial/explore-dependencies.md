@@ -3,6 +3,8 @@ id: explore-dependencies
 title: Explore Dependencies
 ---
 
+import { Image } from '../../src/components/image';
+
 ### Explore Dependencies Using the Workspace UI
 
 Head over to the component's 'Dependencies' tab in the workspace UI, to see a diagram of the `tech-jokes-viewer` dependency graph. As you'll see, it has two dependencies: 'button' and 'use-jokes'.
@@ -11,9 +13,7 @@ Head over to the component's 'Dependencies' tab in the workspace UI, to see a di
 The dependency graph diagram does not include packages.
 :::
 
-<div style={{textAlign: 'center'}}>
-     <img src="/img/explore_deps_2.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
-</div>
+<Image src="/img/explore_deps_2.png" />
 
 ### Explore Dependencies Using the CLI
 

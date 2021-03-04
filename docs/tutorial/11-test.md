@@ -3,6 +3,8 @@ id: test
 title: Test Components
 ---
 
+import { Image } from '../../src/components/image';
+
 Bit makes the most out of your automated tests to help you maintain code in a network of independent components. It does so by:
 
 - **Testing components in isolated environments:**
@@ -25,7 +27,7 @@ Tests are added by placing test files inside the component's directory. Test fil
 For example, our 'button' component already has a simple test and since tests are run automatically by the dev server, on `bbit start` and
 on every change, you can already see its test results in the 'Tests' tab.
 
-<img src="/img/ws_getting_started_test.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+<Image src="/img/ws_getting_started_test.png" />
 
 ## Running Tests
 

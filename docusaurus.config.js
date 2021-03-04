@@ -8,6 +8,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
   projectName: 'docs-harmony', // Usually your repo name.
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
       algolia: {
       apiKey: '58b48f3589d91aba567e8709de785bdd',

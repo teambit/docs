@@ -3,6 +3,8 @@ id: import-components
 title: Import Components
 ---
 
+import { Image } from '../../src/components/image';
+
 Once you initialize a Bit workspace your project essentially becomes part of one virtual monorepo.
 A vast number of independent components instantly become available for you to use and maintain in your local workspace.
 These could be either private components, maintained by your own organization, or public components maintained by the open-source community.
@@ -17,9 +19,7 @@ bbit import teambit.teaching/ui/elements/dots-loader
 
 Head back to your workspace UI to explore the new imported component.
 
-<div style={{textAlign: 'center'}}>
-     <img src="/img/dots_loader.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
-</div>
+<Image src="/img/dots_loader.png" />
 
 <br />
 

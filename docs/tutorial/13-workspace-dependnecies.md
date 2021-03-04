@@ -3,6 +3,8 @@ id: manage-dependencies
 title: Manage Workspace Dependencies
 ---
 
+import { Image } from '../../src/components/image';
+
 Bit automatically defines and manages each component's dependencies by running static code analysis.
 These dependencies can be packages or components that are handled by the same workspace. By tracking which component depends on which,
 Bit can help you understand how changes propagate in your workspace and which components are affected by each change.  
@@ -12,9 +14,7 @@ Bit can help you understand how changes propagate in your workspace and which co
 As mentioned earlier, our 'tech-jokes-viewer' component depends on two other components in the workspace.
 Head over to the component's 'Dependencies' tab (in the workspace UI), to see a diagram of `tech-jokes-viewer` dependency graph.
 
-<div style={{textAlign: 'center'}}>
-     <img src="/img/ws_getting_started_dependencies.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
-</div>
+<Image src="/img/ws_getting_started_dependencies.png" />
 
 ### Get Dependencies in Terminal
 

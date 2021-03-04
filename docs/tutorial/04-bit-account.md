@@ -2,6 +2,7 @@
 id: bit-account
 title: Set Up a Bit.dev Account
 ---
+import { Image } from '../../src/components/image';
 
 When working with Bit, we use remote Scopes in order to share and collaborate on components across projects and teams.  
 
@@ -47,6 +48,4 @@ Head over the [create scope](https://bit.dev/~create-collection) screen:
 1. Select **Harmony** as "scope type".
 1. Click on "Create".
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/create_scope.png"  style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', width: '60%', padding: 10, marginTop: 10}}></img>
-</div>
+<Image src="/img/create_scope.png" padding={10} width="60%" />

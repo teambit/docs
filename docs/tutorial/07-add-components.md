@@ -3,6 +3,8 @@ id: add-components
 title: Add Components
 ---
 
+import { Image } from '../../src/components/image';
+
 A Bit component is an independent module that can be authored, maintained, shared and consumed **independently**.
 It has all the information it needs to enable such autonomy. That includes its packaged distributable code, development files, history, documentation and various Bit configurations.
 Most of that information is generated automatically by Bit.
@@ -150,6 +152,4 @@ bbit add components/ui/widgets/tech-jokes-viewer/ --namespace ui/widgets
 
 Head back to the Workspace UI (https://localhost:3000) to explore the tracked components.
 
-<div style={{textAlign: 'center'}}>
-  <img src="/img/ws_getting_started_1.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, marginTop: 10, width: '90%'}}></img>
-</div>
+<Image src="/img/ws_getting_started_1.png" padding={10} />

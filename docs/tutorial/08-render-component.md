@@ -2,6 +2,7 @@
 id: render-component
 title: Render Isolated Compositions
 ---
+import { Image } from '../../src/components/image';
 
 'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
 They serve as a way to run manual and automated integration tests, before such integrations are done by consumers of that component.
@@ -54,4 +55,4 @@ export const ToggleBetweenRemoteAndLocalJokes = () => {
 Uncomment the above snippet in your project (`tech-jokes-viewer.composition.tsx`) to see it rendered in your workspace UI.
 :::
 
-<img src='/img/ws_getting_started_compositions.png' style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
+<Image src="/img/ws_getting_started_compositions.png" />

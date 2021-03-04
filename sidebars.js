@@ -195,7 +195,8 @@ module.exports = {
       type: 'category',
       label: 'Troubleshooting',
       items: [
-        "troubleshooting/troubleshooting"
+        "troubleshooting/troubleshooting",
+        "troubleshooting/context-provider"
       ],
     },
     {

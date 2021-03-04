@@ -3,6 +3,8 @@ id: document
 title: Document Components
 ---
 
+import { Image } from '../../src/components/image';
+
 For a component to be usable as an independent building block, not only by machines but also by humans, it must have its own documentation.
 
 :::note
@@ -28,9 +30,7 @@ For example:
     └── button.tsx
 ```
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/ws_getting_started_docs.png" width="80%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', marginTop: 20}}></img>
-</div>
+<Image src="/img/ws_getting_started_docs.png" />
 
 ## Using the frontmatter API
 
@@ -49,9 +49,7 @@ labels: ['react', 'typescript', 'button']
 ---
 ```
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/ws_getting_started_frontmatter.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, width: '70%'}}></img>
-</div>
+<Image src="/img/ws_getting_started_frontmatter.png" width="70%" />
 
 ## Using the live playground
 
@@ -86,6 +84,4 @@ import { Button } from './button';
 ```
 ````
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/ws_getting_started_mdx_imports.png" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)', padding: 10, width: '90%'}}></img>
-</div>
+<Image src="/img/ws_getting_started_mdx_imports.png" />
