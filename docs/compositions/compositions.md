@@ -1,97 +1,119 @@
 ---
 id: compositions
-title: Compositions (rendering in isolation)
+title: Compositions
 ---
+import { Theme } from '@teambit/base-ui.theme.theme-provider'
+import { UserHeroExample } from '../../src/components/user-hero'
+import { UserProfileExample } from '../../src/components/user-profile'
+import { Image } from '../../src/components/image'
 
-[Compositions](https://bit.dev/teambit/compositions) are visual examples or instances of a component, rendered in an isolated development environment. They showcase and test a component in different contexts and variations, such as other components that consume and display that component.
+'Compositions' are, essentially, small apps that exhibit and test a component in different contexts and variations.
+They provide insight into the component's look and behavior in various likely usages.
+They help component maintainers to deliver components that are "true to their promise" and behave as expected when consumed by other web projects.
 
-For example, as you develop _button_ you can view how changes impact dependant _forms_ or _menus_ in your workspace.
+Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments", 
+isolated and un-affected by the rest of their authoring workspace, or by any other code that was not purposefully included.
 
-Features:
 
-- _Render with zero configs_ - Render independent components in an isolated development environment with zero configurations.
+Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers, 
+such as designers and product managers, looking to inspect it.
 
-- _Render in all relevant contexts_ - Render components in the visual context of related and dependant components to learn how changes impact other components during development.
+## Viewing compositions
+To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bbit start`),
+browse to a specific component and select the compositions tab.
+There, you will see the full list of compositions available for that component,along with additional component meta-data.
 
-- _Hot-reloading in workspace UI_ - View and render changes in a live playground as you code.
-- _Compositions as visual documentation_ - Add compositions to your component documentation to create a rich, visual experience that helps people learn how your components look inside actual usage contexts.
+Compositions are also available to be viewed in the remote **Scope UI** (for example, on [Bit.dev](https://bit.dev)).
 
-- _Compositions as testing during CI_ - Use compositions as integration and unit testing while running Ripple CI to track and view the impact of changes on all affected components in your different projects.
-
-- _Developer - Designers collaboration_ - Make visual compositions accessible to designers (and everyone else) to include them in the development and release process of web applications, in a visual way.
-
-Composition are rendered by the [environment](/docs/environments/overview) used by the component.
-
-> This document uses React code as snippets.
+<Image src="/img/mfe_compositions.png" />
 
 ## Creating compositions
+Create a `*.compositions.*` file inside your component's directory. Import the component into the compositions file to use it in a new composition.
+Export that composition (the new component) with a name. The name of that export will be converted from PascalCase/camelCase and used for the composition name (e.g, "CompositionName" --> "Composition name").
 
-_Component compositions are fully compatible with [CSF](https://storybook.js.org/docs/formats/component-story-format/)._
+For example, a composition for a 'user hero' component will looks like so:
 
-Writing a composition does not require any configuration. Simply import the component to the component's `*.compositions.tsx` file, use it to build a composition and export the new component (a.k.a, the composition) with a named export.
-
-The name of the export will be converted from PascalCase/camelCase and used for the composition name (e.g, `"CompositionName" --> "Composition name"`).
-
-**For example**, we'll create two compositions, 'Primary button' and 'Secondary button', each of which demonstrates a different instance or usage of that component:
-
-First, we'll create a new composition file in the component's directory:
-
-```sh
-$ touch path/to/component/directory/<component-name>.compositions.tsx
+```shell title="The 'user hero' component file structure"
+├── user-hero           
+    ├── index.tsx               
+    ├── user-hero.compositions.tsx
+    ├── user-hero.docs.mdx
+    ├── user-hero.spec.tsx
+    └── user-hero.tsx
 ```
 
-Then, we'll import the component and use it to create the compositions:
+```tsx title="example #1: user-hero.compositions.tsx"
+import { Hero } from './user-hero';
 
-```javascript
-import React from 'react';
-import { Button } from './button';
+const profileImage = 'https://storage.googleapis.com/docs-images/jessica.jpg';
 
-export const PrimaryButton = () => {
-  return <Button variant="primary">Click Me</Button>;
-};
-
-export const SecondaryButton = () => {
-  return <Button variant="secondary">Click Me</Button>;
-};
-```
-
-![](https://res.cloudinary.com/blog-assets/image/upload/v1595938174/Screen_Shot_2020-07-28_at_15.09.05_sningi.png)
-
-## Setting canvas size for compositions
-
-Compositions reveal a component's behavior in different contexts. That also includes, different screen sizes. To do that simply add the `canvas` property to your compositions.
-
-For example:
-
-```tsx
-export const PrimaryButton = () => {
-  return <Button variant="primary">Click Me</Button>;
-};
-
-PrimaryButton.canvas = {
-  height: 800,
-  width: 400,
+const UserHero = () => {
+  return (
+    <Hero
+      title="Jessica Pegula"
+      description="Frontend developer and designer."
+      profileImage={profileImage}
+      data-testid="test-hero"
+      userName="jessica"
+    />
+  );
 };
 ```
+<Theme>
+  <UserHeroExample />
+</Theme>
+
+```tsx title="example #2: user-hero.compositions.tsx"
+import { Hero } from './user-hero';
+
+import React, { useEffect } from 'react';
+import { DotsLoader } from '@teambit/base-ui.elements.dots-loader';
+import { Error } from '@teambit/base-ui.input.error';
+import { ScopeList } from '@harmony-mfe/scopes.ui.scopes.scopes-list';
+import { useUser } from '@harmony-mfe/people.ui.hooks.use-user';
+import styles from './user-profile.module.scss';
+
+export const UserHeroWithScopeList = () => {
+  const [getUser, scopes, user, isLoading, error] = useUser();
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  if (isLoading) return <DotsLoader active={isLoading} />;
+  return (
+    <div className={styles.userProfile} >
+      <Hero
+        title={user.title}
+        description={user.description}
+        profileImage={user.image}
+      />
+      {error !== '' ? <Error>{error}</Error> : <ScopeList list={scopes} />}
+    </div>
+  );
+}
+```
+
+<Theme>
+  <UserProfileExample />
+</Theme>
 
 ## Loading compositions
 
-Environments automatically detect the composition file for each component and use it to load its compositions to the workspace UI.
+The [Development Environment](/environments/overview) will automatically detect the composition file for each component
+and use it to load its compositions to the workspace UI.
 
-## Viewing component compositions
+## Using compositions for automated testing
+Compositions are not only a way to manually validate a component behaves as expected. Each composition can and should be used as a test sample for automated tests.
 
-To explore compositions in your Workspace UI, start the local development server for your workspace (`bit start`), browse to a specific component and select the **compositions** tab. There, you will see the full list of compositions available for that component, along with additional component meta-data.
+Import the compositions into your test file to run the appropriate tests.
 
-## Using compositions for automated testings
+For example, a test for a 'button' component may look like so:
 
-Component compositions can be used in automated testing as well as manual examinations. To do that, simply import the compositions in your test file to run the appropriate tests.
-
-For example, this snapshot test checks the 'Button' component when the 'variant' prop is set to 'primary' (this is obviously for demonstration purposes only. In real-life, this feature will be used for larger and more complex compositions).
-
-```jsx
+```tsx {3} title="button.spec.tsx"
 import React from 'react';
 import testRenderer from 'react-test-renderer';
-import { PrimaryButton } from './button.compositions.tsx';
+import { PrimaryButton } from './button.compositions';
 
 describe('Button', () => {
   it('renders correctly as "primary"', () => {
@@ -104,10 +126,16 @@ describe('Button', () => {
 });
 ```
 
+- Learn more about running tests in a Bit workspace, [here](/testing/overview)
+
+## Setting providers for all your compositions
+
+Extend the [React environment](/react/overview/) to customize its list of providers with your own composition providers.
+The extended environment will then wrap every composition with these providers to make sure your themes or mock data are accessible to all of them,
+without you having to repeat that task ever again.
+
 ## Compositions and storybook
 
-Storybook is a tool designed for managing stories for design systems as a single project and not optimized for individual components. While you can use the storybook extension for Bit (**currently in development**) instead of or alongside compositions, compositions are more efficient when managing individual components as they:
+Storybook displays individual components in different states and variations. It is designed to help in authoring and displaying standalone components, each of which is usually part of a design system. In contrast, 'Compositions' is mainly about examining how an independent component looks and behaves when used with other components. These component integrations serve as a way to examine compositions that are likely to be part of real applications, using manual and automated testing.
 
-- Use the same configuration pipeline and environments.
-- Are rendered using the same build pipelines as the components would during CI.
-- Do not require a separate process or configuration to render components.
+If you're looking for a Storybook-like solution, you can find that either in the Storybook extension (currently in development) or by using 'Compositions' for that use-case as well.
