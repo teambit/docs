@@ -2,6 +2,7 @@
 id: overview
 title: Overview
 ---
+import { Image } from '../../src/components/image'
 
 Managing the dependencies of every component in a Bit workspace can become quite a tedious task. To address that, a Bit workspace uses the `@teambit.dependencies/dependency-resolver` extension component.
 
@@ -22,4 +23,5 @@ different dependency policies for different sets of components, and even to add 
 3. [Dependency installation](/docs/dependencies/dependency-installation):
 The 'dependency-resolver' directs the [package manager](/docs/packages/overview) to install the right packages at the right place in the workspace file structure.
 In addition to that, it provide a single `bbit install` command to take care of both installing all package dependencies and importing all component dependencies.
-<img src="/img/dependencies_graph.png" width="80%" ></img>
+
+<Image src="/img/dependencies_graph.png" />
