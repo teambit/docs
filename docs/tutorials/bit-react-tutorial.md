@@ -174,6 +174,7 @@ the following component environments were installed
 ```
 
 > The version may slightly vary when you run the tutorial
+> Note: for react versions <=16.x.x please add the version number @1.0.30, as current versions (2.0.0 and up) are for React 17+. If you get an error about react/jsx-runtime then this is likely the issue.
 
 The React compiler is now set as the default compiler for the Bit workspace inside this repository.
 You can check the `package.json` and verify that the compiler is installed by locating the following entry in the Bit section:
