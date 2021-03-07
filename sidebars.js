@@ -1,19 +1,12 @@
-// module.exports = {
-//   someSidebar: {
-//     GettingStarted: [
-//       'install-bit'
-//     ],
-//   },
-// };
-
 module.exports = {
   docs: [
         {
       type: 'category',
       label: 'Introduction',
       items: [
-        'introduction/why-bit',
+        'introduction/installation',
         'introduction/try-bit',
+        'introduction/why-bit',
         'introduction/resources',
         'introduction/community',
       ],
