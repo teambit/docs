@@ -3,6 +3,8 @@ id: overview
 title: Overview
 ---
 
+**Bit builds components and their dependencies on the component graph**. As you make a change, Bit will build only the related components on the graph that are impacted by the change. This new paradigm of building only components unlocks powerful advantages in terms of **build performance**, **isolating each component's build**, **separation of releases**, and **safety of changes**. Bit also lets you parallel and sequence build tasks for an even more powerful workflow.
+
 Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).
 
 The Build Pipeline is an [Environment Service](/docs/environments/environment-services) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
