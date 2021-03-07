@@ -5,10 +5,13 @@ title: Dependency Policies
 
 Dependency policies define the version and dependency type of each package used by components in the workspace.
 
-Whenever you use the `bbit install <package>` command, Bit adds the latest version of that package, like so:
 
-```json
-// Inside the 'workspace.jsonc' configuration file.
+## Auto-registered dependency version and type
+Dependency policies define the version and dependency type of each package used by components in the workspace.
+When installing a package, the Dependency Resolver registers its version in the dependency configuration (if a version is not specified upon installation,
+it will default to the latest one).
+
+```json title="workspace.jsonc"
 {
   "@teambit.dependencies/dependency-resolver": {
     "policy": {
@@ -20,24 +23,21 @@ Whenever you use the `bbit install <package>` command, Bit adds the latest versi
 }
 ```
 
-Auto-generated policies (like the one seen above) can be manually modified, much like a `package.json`.
+## Apply a policy on all components with the mentioned dependency
 
-## Applying policies on all relevant components
-
-A dependency policy set at the root level of the workspace configuration JSON will affect _all_ components that have the configured package as their dependency (i.e., components that have this module listed in their [generated dependency graph](/docs/dependencies/dependency-resolution)). Components that do not have this package as a dependency will not be affected.
+A dependency policy configured at the root level of the workspace configuration JSON will affect all components that have that package as their dependency (i.e., components that have this module listed in their generated dependency graph).
+__Components that do not have this package as a dependency will not be affected.__
 
 For example:
 
-```json
+```json title="Dependency policies at the root-level of the workspace configuration JSON"
 // Every component that has 'lodash' as a dependency will use version '3.0.0' of it.
 // This policy will not affect any component that does not have 'lodash' as its dependency.
+
 {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
-
   "teambit.workspace/workspace": {
-    "name": "my-workspace-name",
-    "icon": "https://static.bit.dev/bit-logo.svg",
-    "defaultScope": "my-scope"
+    // ...
   },
   "teambit.dependencies/dependency-resolver": {
     "policy": {
@@ -49,7 +49,7 @@ For example:
 }
 ```
 
-## Applying policies on a selected group of components
+## Apply policies on a selected group of components
 
 Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/docs/workspace/cascading-rules) configuration API.
 
@@ -68,14 +68,32 @@ For example, to set the `1.0.0` version of `classnames` as a dependency of all c
   }
 }
 ```
+:::info learn how to use the 'variants' extension
+To learn how to select components using `@teambit.workspace/variants`, [see here](/workspace/cascading-rules).
+:::
 
-> To learn how to select components using `@teambit.workspace/variants`, [see here](docs/variants/overview).
+## Remove a dependency
 
-### Overriding cascading policies
+Dependency policies can also be used to remove a dependency. That's especially useful when a dependency is not defined with the correct dependency type.
+For example, a module can be "moved" from `dependencies` to `peerDependencies` by removing it from `dependencies` and listing it under `peerDependencies`.
 
+```json title="Removing a dependency and setting it as a peer dependency"
+"teambit.dependencies/dependency-resolver": {
+    "policy": {
+      "dependencies": {
+        "enzyme": "-"
+      },
+      "peerDependencies": {
+        "enzyme": "^3.11.0"
+      }
+    }
+```
+
+## Override cascading policies
 Policies set on a specific group of components will override any conflicting policies that have cascaded from more general configurations.
 
-For example, the following configuration will set `classnames` version `1.0.0` on all component using the `react-ui` namespace. This policy will override the workspace-level policy that uses version `2.0.0` of that same package.
+For example, the following configuration will set `classnames` version `1.0.0` on all components using the `react-ui` namespace.
+This policy will override the workspace-level policy that uses version `2.0.0` of that same package.
 
 ```json
 // All components using the namespace 'react-ui' will use version 1.0.0 of "classnames"
@@ -103,64 +121,67 @@ For example, the following configuration will set `classnames` version `1.0.0` o
 }
 ```
 
-### "Forcibly" add dependencies to a component
+## "Forcibly" add dependencies to a component
 
-Dependency policies applied on a selected group of components will "forcibly" add the listed packages to any [selected] component that does not have them [listed already as a dependency](/docs/dependencies/dependency-resolution). This can be useful when a component depends on another module but has no `import`/`require` statement to require that dependency in any of its files (for example, in a Webpack configuration file).
+Dependency policies applied on a selected group of components will "forcibly" add the listed packages to any [selected] component that does not have them already listed as a dependency.
+This can be useful when a component depends on another module but has no `import`/`require` statement to be parsed by the Dependency Resolver (for example, in a Webpack configuration file).
 
-> To understand why `import`/`require` statements are necessary to determine the component dependencies, [see here](/docs/dependencies/dependency-resolution).
-
-## Dependency types
-
-### Dev dependencies
-
-A dependency policy config can only have `dependencies` and `peerDependencies`. A dependency used as a dev dependency is configured under `dependencies` but will be considered as a dev dependency by the [Dependency Resolver](docs/dependencies/dependency-resolution).
-
-The [Dependency Resolver](docs/dependencies/dependency-resolution) looks at the [type of file](/docs/dependencies/dependency-policies#determining-the-file-pattern-of-a-development-file) expressing the `import`/`require` statement to determine whether a dependency is used by a component for runtime (`dependencies`) or for development (`devDependencies`).
-
-For example, let's say a 'Button' React component has a test file, `button.spec.tsx`, that uses the `react-test-renderer` package. This will generate the following policy:
+In the below example, classnames@1.0.0 will be "forcibly" added as a dependency to any component using the react-ui namespace.
 
 ```json
-// workspace.jsonc
+"teambit.workspace/variants": {
+    "teambit.dependencies/dependency-resolver": {
+      "policy": {
+        "{react-ui/*}": {
+          "classnames": "1.0.0"
+        }
+      }
+    }
+  }
+```
+
+## Set dependency types
+
+### Configure specific dependencies as devDependencies
+
+:::caution
+Dependencies can be directly configured as `devDependencies` only by nesting the dependency policies inside [variants](/workspace/cascading-rules).
+:::
+
+```json title="Setting a dependency as dev dependency using variants"
 {
-  "@teambit.dependencies/dependency-resolver": {
-    "policy": {
-      "dependencies": {
-        "react-test-renderer": "17.0.1"
+  "teambit.workspace/variants": {
+    "*": {
+      "teambit.dependencies/dependency-resolver": {
+        "policy": {
+          "devDependencies": {
+            "react-test-renderer": "17.0.1"
+          }
+        }
       }
     }
   }
 }
 ```
 
-Even though the `react-test-renderer` is not explicitly configured as a dev dependency, it will be considered as such by the [Dependency Resolver](docs/dependencies/dependency-resolution). One example of that can be seen in the `package.json` file generated for that 'Button' component:
+### Dependencies resolved as dev dependencies by file pattern
+Dev dependencies are determined by the type of file that uses the dependency.
+If it is a development file (e.g, `doSomething.test.ts`) then the files consumed by it are also considered to be used for development and will therefore be registered as `devDependencies`.
+In cases where a module is consumed by both a runtime file and a development file, the module will be considered as a runtime (regular) dependency.
 
-```json
-// ./node_modules/@my-org/button
+:::info dev dependencies missing from the policies
+`devDependencies` that are set by the Dependency Resolver will not be visible in its policies.
+To validate a dependency is registered as a dev dependency, use the `bbit show <component>` command.
+:::
 
-{
-  "name": "@my-org/button",
-  "main": "dist/index.js",
-  "componentId": {
-    "name": "button",
-    "version": "0.0.1"
-  },
-  "devDependencies": {
-    "react-test-renderer": "17.0.1"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "types": "index.ts",
-  "private": false
-}
-```
+The list of file patterns to be considered as development files is determined by the various Bit extensions.
+For example, the `@teambit.react/react` environment lists all `*.spec.tsx` files as dev files.
+Any component using that environment will have its .spec.tsx files considered as dev files and all these files' dependencies considered as `devDependencies`.
 
-#### Determining the file pattern of a development file
+#### Register file patterns to be considered as dev files
+Set the `devFilePatterns` property to add your own list of file extensions to be considered as development files (and to have all their dependencies considered as `devDependencies`):
 
-The name patterns of development files (i.e, files that should be considered as development files by the Dependency Resolver) can be configured as follow:
-
-```json
+```json title="At the root-level of the workspace configuration JSON"
 {
   "teambit.dependencies/dependency-resolver": {
     "devFilePatterns": [".spec.ts"]
@@ -168,17 +189,17 @@ The name patterns of development files (i.e, files that should be considered as 
 }
 ```
 
-The above example will set the dependency resolver to consider any dependency used by files ending with the `.spec.ts` extension, as a dev dependency.
-
 ### Peer dependencies
+Setting a package as a peer dependency ensures the package manager installs only a single version of that package.
+If that is not possible, if there is no single “agreed upon” version for all components in the workspace then an error will be thrown.
 
-Setting a package as a peer dependency ensures the package manager installs only a single version of that package. If that is not possible, if there is no single “agreed upon” version for all components in the workspace then an error will be thrown.
+This can be crucial when different components communicate with each other using shared objects that are instantiated by an installed package (the dependency).
+If different versions of the same package create different object instances then the “means of communication” is broken. There is no single object to address, no single source of truth.
+This can turn out to be critical when working with modules that are used as “plugins” of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
 
-This can be crucial when different components communicate with each other using shared objects that are instantiated by an installed package (the dependency). If different versions of the same package create different object instances then the “means of communication” is broken. There is no single object to address, no single source of truth. This can turn out to be critical when working with modules that are used as “plugins” of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
+To set a package as a peer dependency, place it under the peerDependencies entry, like so:
 
-To set a package as a peer dependency, place it under the `peerDependencies` entry, like so:
-
-```json
+```json 
 {
   "teambit.bit/dependency-resolver": {
     "policy": {
@@ -191,4 +212,8 @@ To set a package as a peer dependency, place it under the `peerDependencies` ent
 }
 ```
 
-> Peer dependencies are usually used in the context of a single "hosting code". That could be an application or a single component library. Bit may generate multiple "hosts", one for each environment being used, to run components of different types. That could translate into multiple versions of the same peer dependency, one for each environment. To manage multiple versions of a peer dependency [see here](/docs/faq/multiple-peer-dep-versions).
+:::info Handling multiple identical peer dependencies
+Peer dependencies are usually used in the context of a single "hosting code". That could be an application or a single component library.
+Bit may generate multiple "hosts", one for each environment being used, to run components of different types.
+That could translate into multiple versions of the same peer dependency, one for each environment. To manage multiple versions of a peer dependency [see here](/faq/multiple-peer-dep-versions).
+:::
