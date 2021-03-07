@@ -110,3 +110,28 @@ Determines the default scope for the selected components:
     }
 }
 ```
+
+## Eject component configurations (component.json)
+
+A component can have its configuration ejected to stop receiving configurations from various Bit extensions with the exclusion of the `@teambit/workspace.variants` extension.
+
+```shell
+bbit eject-conf <component-id>
+```
+
+This will create a `component.json` file in the component's directory.
+
+Set `propagate` to `false` to disable merging of properties set by 'variants'.
+
+The `component.json` can be configured [directly] much like the `workspace.jsonc`.
+
+```json title="path/to/component/component.json"
+{
+  "componentId": {
+    "name": "component-name",
+    "scope": "owner.scope"
+  },
+  "propagate": false,
+  "extensions": {}
+}
+```

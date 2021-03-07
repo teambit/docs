@@ -98,7 +98,8 @@ module.exports = {
         "dependencies/overview",
         "dependencies/dependency-resolution",
         "dependencies/dependency-policies",
-        "dependencies/dependency-installation"
+        "dependencies/dependency-installation",
+        "dependencies/package-managers"
       ],
     },
     {
