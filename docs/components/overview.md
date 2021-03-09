@@ -80,7 +80,7 @@ For example the component ID `my-org.design-system/components/base/button` will 
 
 ## Component configurations
 
-A component's configurations are set by the `workspace.jsonc` configuration file. These settings include rules and policies regarding its dependencies, the development environment to support it, the properties for its generated package, and so on. [Learn more about it here](/docs/workspace/configurations).
+A component's configurations are set by the `workspace.jsonc` configuration file. These settings include rules and policies regarding its dependencies, the development environment to support it, the properties for its generated package, and so on. [Learn more about it here](/workspace/configurations).
 
 A component can also have its configurations "ejected". That means it will stop inheriting its settings from the `workspace.jsonc` file. Instead, these will be managed using the `component.json` configuration file, located in its directory (this file will only appear after ejecting).
 

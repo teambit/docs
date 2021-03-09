@@ -9,7 +9,7 @@ It does so by offering:
 1. **The workspace configuration file** - a single file that sets rules and policies for the workspace and all its components.
    Configurations are set for components in a CSS-like cascading way, from the most universal selector (all components) to the very specific one (a single component).  
    Each field in the configuration file is a Bit extension component. That means a single workspace configuration is actually a composition of configurations set on various Bit extensions.
-2. [**The Workspace UI**](/docs/workspace-ui/overview) - a graphic interface that assists you in authoring and examining components.
+2. [**The Workspace UI**](/workspace-ui/overview) - a graphic interface that assists you in authoring and examining components.
    The Workspace UI displays the component's dependency graph, documentation, examples, configurations, and more.
 
 ## Clone a demo project and initialize a Bit workspace
@@ -49,7 +49,7 @@ For example:
 ```
 
 :::info
-By using ['Variants'](/docs/workspace/cascading-rules), different components in the same workspace may use different scopes.
+By using ['Variants'](/workspace/cascading-rules), different components in the same workspace may use different scopes.
 :::
 
 ## Run the Workspace UI

@@ -37,7 +37,7 @@ export class ReactEnv implements Environment {
   // ...
 
   getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve("./jest/jest.config");
+    const jestConfig = require.resolve('./jest/jest.config');
     return this.jestAspect.createTester(jestConfig);
   }
 }
@@ -127,7 +127,7 @@ export class ReactEnv implements Environment {
 
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve("./docs")]),
+      entry: context.entry.concat([require.resolve('./docs')]),
     });
     return this.webpack.createDevServer(withDocs, webpackConfig);
   }
@@ -151,7 +151,7 @@ export class ReactEnv implements Environment {
   // ...
 
   getDocsTemplate() {
-    return require.resolve("./docs");
+    return require.resolve('./docs');
   }
 }
 ```
@@ -164,7 +164,7 @@ getPackageJsonProps(...args : any[]): object
 
 Returns an object that defines the `package.json` properties of the packages generated for components handled by this environment. This configuration is used by the Packager service.
 
-Learn more about overriding the `package.json` properties [here](/docs/packages/publish-to-npm#packagejson)
+Learn more about overriding the `package.json` properties [here](/packages/publish-to-npm#packagejson)
 
 ```ts
 export class ReactEnv implements Environment {
@@ -172,8 +172,8 @@ export class ReactEnv implements Environment {
 
   getPackageJsonProps() {
     return {
-      main: "dist/{main}.js",
-      types: "{main}.ts",
+      main: 'dist/{main}.js',
+      types: '{main}.ts',
     };
   }
 }
@@ -198,15 +198,15 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: "-",
+        react: '-',
       },
       devDependencies: {
-        "@types/react": "16.9.43",
-        "@types/jest": "~26.0.9",
+        '@types/react': '16.9.43',
+        '@types/jest': '~26.0.9',
       },
       peerDependencies: {
-        react: "^16.13.1",
-        "react-dom": "^16.13.1",
+        react: '^16.13.1',
+        'react-dom': '^16.13.1',
       },
     };
   }
@@ -221,7 +221,7 @@ export class ReactEnv implements Environment {
 getBuildPipe(...args : any[]): BuildTask[]
 ```
 
-Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks. Learn more about it [here](/docs/build-pipeline/overview).
+Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks. Learn more about it [here](/build-pipeline/overview).
 
 For example:
 
@@ -239,7 +239,7 @@ export class ReactEnv implements Environment {
 
   getBuildPipe(): BuildTask[] {
     return [
-      this.compiler.createTask("StencilCompiler", this.getCompiler()),
+      this.compiler.createTask('StencilCompiler', this.getCompiler()),
       this.tester.task,
     ];
   }

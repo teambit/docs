@@ -8,11 +8,11 @@ import { Image } from '../../src/components/image'
 A scope is where the release versions of independent components are stored. Scopes are used both locally and remotely:
 
 - **Local scopes** store "staged" components that are ready to be exported from the local environment to a remote scope. You'll find your local scope in the `.bit` or `.git/bit` directory inside your workspace directory.
-- [**Remote scopes**](/docs/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are available to be used by other repositories.
+- [**Remote scopes**](/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are available to be used by other repositories.
 
 A single server may host multiple scopes. Each of these scopes groups together components that are related to each other by function or purpose. Each scope naturally corresponds to a specific team of developers (and even non-developers).
 
-So far, we've tracked a component and tagged it. As mentioned earlier, the tagging process prepares the component to be exported to a remote scope by running the [build pipeline](/docs/getting-started/version#1-runs-the-environments-build-pipeline) on it and storing it in the local scope with a new version number.
+So far, we've tracked a component and tagged it. As mentioned earlier, the tagging process prepares the component to be exported to a remote scope by running the [build pipeline](/getting-started/version#1-runs-the-environments-build-pipeline) on it and storing it in the local scope with a new version number.
 
 ## Setting up your remote Bit Scope
 

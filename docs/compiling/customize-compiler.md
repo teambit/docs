@@ -3,11 +3,11 @@ id: customize
 title: Customizing the Compiler
 ---
 
-The Compiler is an [Environment Service](/docs/environments/environment-services) that enables environments to integrate a specific compiler into various Bit features, processes and events.
+The Compiler is an [Environment Service](/environments/environment-services) that enables environments to integrate a specific compiler into various Bit features, processes and events.
 
-For example, the React environment (`@teambit.react/react`) uses the Compiler Environment Service to configure the [TypeScript extension component](/docs/compiling/typescript) as its compiler. The TypeScript compiler will be used (for components using this environment) when running the `bbit compile` command, when Bit's development server re-compiles modified components, and when running the build process (just to name a few examples).
+For example, the React environment (`@teambit.react/react`) uses the Compiler Environment Service to configure the [TypeScript extension component](/compiling/typescript) as its compiler. The TypeScript compiler will be used (for components using this environment) when running the `bbit compile` command, when Bit's development server re-compiles modified components, and when running the build process (just to name a few examples).
 
-To customize your environment's compiler, first [create an environment extension](/docs/environments/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
+To customize your environment's compiler, first [create an environment extension](/environments/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 
 > As an example, we'll extend Bit's out-of-the-box React environment (`@teambit.react/react`).
 
@@ -32,14 +32,14 @@ In this example, we'll extend the React environment and customize its TypeScript
 > For a list of all available Transformers see your environment's documentation.
 
 ```typescript
-import { EnvsMain, EnvsAspect } from "@teambit/envs";
-import { ReactAspect, ReactMain } from "@teambit/react";
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // The new TS configuration for this extension
-  newTsConfig = require("./tsconfig.json");
+  newTsConfig = require('./tsconfig.json');
 
   static dependencies: any = [EnvsAspect, ReactAspect];
 
@@ -65,7 +65,7 @@ export class CustomReactExtension {
 ```
 
 ```ts
-import { CustomReactExtension } from "./custom-react.extension";
+import { CustomReactExtension } from './custom-react.extension';
 export { CustomReactExtension };
 export default CustomReactExtension;
 ```
@@ -76,19 +76,19 @@ The new `tsconfig.json` file does not replace the default one but merges into it
 
 ### Option #2: Replace the compiler used by the environment
 
-Environments use Environment Services by implementing a special class of methods called [Service Handlers](/docs/environments/service-handlers).
+Environments use Environment Services by implementing a special class of methods called [Service Handlers](/environments/service-handlers).
 
-An environment's compiler can be replaced by overriding its [Compiler Service Handler](/docs/environments/service-handlers#getcompiler) method (`getCompiler()`).
+An environment's compiler can be replaced by overriding its [Compiler Service Handler](/environments/service-handlers#getcompiler) method (`getCompiler()`).
 
 For example, the code below shows a React environment extension that replaces its default compiler, TypeScript, with Babel.
 
 ```tsx
-import { EnvsMain, EnvsAspect } from "@teambit/envs";
-import { ReactAspect, ReactMain } from "@teambit/react";
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
 // Import the Babel extension component to configure it and set it as the new compiler
-import { BabelAspect, BabelMain } from "@teambit.compilation/babel";
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
 
-const babelConfig = require("./babel-config");
+const babelConfig = require('./babel-config');
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
@@ -122,7 +122,7 @@ export class CustomReactExtension {
 ```
 
 ```ts
-import { CustomReactExtension } from "./custom-react.extension";
+import { CustomReactExtension } from './custom-react.extension';
 export { CustomReactExtension };
 export default CustomReactExtension;
 ```
@@ -134,20 +134,20 @@ The Multi-compiler is a Bit extension component that enables the use of multiple
 For example:
 
 ```typescript
-import { EnvsMain, EnvsAspect } from "@teambit/envs";
-import { ReactAspect, ReactMain } from "@teambit/react";
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
 // Import the Babel extension component
-import { BabelAspect, BabelMain } from "@teambit.compilation/babel";
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
 // Import the TypeScript extension component
 import {
   TypeScriptAspect,
   TypeScriptMain,
-} from "@teambit.typescript/typescript";
+} from '@teambit.typescript/typescript';
 // Import the multi-compiler extension
 import {
   MultiCompilerAspect,
   MultiCompilerMain,
-} from "@teambit.compilation/multi-compiler";
+} from '@teambit.compilation/multi-compiler';
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}

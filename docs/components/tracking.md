@@ -10,7 +10,7 @@ The tracking process translates sets of files into a single component that is se
 When a component gets tracked, Bit does the following:
 
 - It determines which files should be be included in that component (see the result in the .bitmap file)
-- It determines the [component ID](/docs/bit-components/overview#component-id)
+- It determines the [component ID](/bit-components/overview#component-id)
 - It determines the component entry point and its dependency graph
 - It creates a package in the workspace `node_modules` directory
 - It renders the component in the Workspace UI
@@ -40,7 +40,7 @@ Use the `bbit status` command to check for tracking issues.
 
 #### Add a namespace
 
-Namespaces serve as (abstract) folders that organize components in the Workspace/Remote Scope. In addition to that, namespaces are a way to decouple your components' configurations from the file structure, as they allow you to [handle components using names](/docs/workspace/cascading-rules#selecting-using-a-namespace) that pertain to the function and purpose of a component, instead.
+Namespaces serve as (abstract) folders that organize components in the Workspace/Remote Scope. In addition to that, namespaces are a way to decouple your components' configurations from the file structure, as they allow you to [handle components using names](/workspace/cascading-rules#selecting-using-a-namespace) that pertain to the function and purpose of a component, instead.
 
 To namespace a component us the `--namespace` or `-n` option.
 
@@ -93,6 +93,6 @@ $ bbit untrack <component id>
 ## Best Practices
 
 - Start tracking components bottom-up, so all components that are shared by other components are tracked first.
-- Plan and arrange components in [namespaces](/docs/best-practices#use-namespaces) according to their functionality, similar to the way you would arrange them in folders in a project.
+- Plan and arrange components in [namespaces](/best-practices#use-namespaces) according to their functionality, similar to the way you would arrange them in folders in a project.
 - Review the package.json in your original projects to ensure proper definition of dependencies.
-- If you are using path aliases in your `import` statements, make sure you define Bit's [custom paths resolution](/docs/dependencies#custom-paths) configuration.
+- If you are using path aliases in your `import` statements, make sure you define Bit's [custom paths resolution](/dependencies#custom-paths) configuration.

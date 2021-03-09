@@ -7,9 +7,9 @@ title: Overview
 
 Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).
 
-The Build Pipeline is an [Environment Service](/docs/environments/environment-services) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
+The Build Pipeline is an [Environment Service](/environments/environment-services) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
 
-A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/docs/environments/overview).
+A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/environments/overview).
 
 ## Isolated builds
 
@@ -27,9 +27,9 @@ The build pipeline processes multiple components in parallel to make use of mult
 
 ## Environment-specific builds
 
-Each Bit environment determines its own build pipeline. That means, a single workspace that uses multiple environments will run a different set of build tasks on different components depending on their associated environment. This is another Bit feature that enables seamless transitioning between different development environments, all in the same workspace. It also makes it much easier to [integrate the Build Pipeline in your (remote) CI](/docs/getting-started/ci-cd), as it only requires executing the build step - all other per-component build configurations are already set by the various environments being used.
+Each Bit environment determines its own build pipeline. That means, a single workspace that uses multiple environments will run a different set of build tasks on different components depending on their associated environment. This is another Bit feature that enables seamless transitioning between different development environments, all in the same workspace. It also makes it much easier to [integrate the Build Pipeline in your (remote) CI](/getting-started/ci-cd), as it only requires executing the build step - all other per-component build configurations are already set by the various environments being used.
 
-Since environments are extensible, so are the build pipelines configured by them. **To create your own Build Task or customize your environment's build pipeline, [see here](/docs/build-pipeline/create-build-task).**
+Since environments are extensible, so are the build pipelines configured by them. **To create your own Build Task or customize your environment's build pipeline, [see here](/build-pipeline/create-build-task).**
 
 ## Sequencing the build tasks
 
@@ -37,7 +37,7 @@ The Build Pipeline takes into consideration the following factors when deciding 
 
 - **Location**: A task can be executed either at the start or end of the build pipeline. This can be explicitly [configured by the task itself](docs/build-pipeline/create-build-task#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
 - **Dependencies**: A task can depend on other tasks. That means, it will not get executed before its dependencies are executed successfully. This is [configured by the task itself](docs/build-pipeline/create-build-task#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
-- **An environment's list of build tasks**: This is the array of tasks as it is [defined by an environment](/docs/build-pipeline/create-build-task#override-the-build-pipeline-sequence).
+- **An environment's list of build tasks**: This is the array of tasks as it is [defined by an environment](/build-pipeline/create-build-task#override-the-build-pipeline-sequence).
 
 ## Executing the build pipeline
 

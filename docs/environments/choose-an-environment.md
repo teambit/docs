@@ -47,7 +47,7 @@ Instead, use exclusive namespaces or directories to select and configure each gr
 
 ### Setting multiple environments
 
-A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/docs/workspace/cascading-rules)
+A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/workspace/cascading-rules)
 
 For example, to set the Node and React environments on two sets of components (selected by their directory):
 

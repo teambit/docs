@@ -3,7 +3,7 @@ id: create-build-task
 title: Create a Custom Build Task
 ---
 
-Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new [environment extension](/docs/environments/build-environment) or modify an existing one.
+Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new [environment extension](/environments/build-environment) or modify an existing one.
 
 The example task below, shown being used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be logged and/or stored in the component tagged version. [See a demo project here](https://github.com/teambit/harmony-build-examples).
 

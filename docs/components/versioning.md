@@ -25,7 +25,8 @@ bbit tag ui-primitives/button 1.0.0
 bbit tag <component-id> <new-version> --message "this is the tag message"
 ```
 
-### Tag all components in the workspace 
+### Tag all components in the workspace
+
 Tag all components and bump the patch number of each component version
 
 ```shell
@@ -33,8 +34,8 @@ bbit tag --all
 ```
 
 ### Soft and hard tags: component collaboration
-When collaborating on components it is not advisable to tag a new component release version locally, but instead to have it done by the CI.
 
+When collaborating on components it is not advisable to tag a new component release version locally, but instead to have it done by the CI.
 
 The process:
 
@@ -52,7 +53,7 @@ bbit tag --soft <component-id>
 bbit tag --persist --all
 ```
 
-- __Learn more about adding Bit to your CI, [here](/tutorial/ci-cd)__
+- **Learn more about adding Bit to your CI, [here](/tutorial/ci-cd)**
 
 ### Untag a component
 
@@ -81,7 +82,7 @@ Example output:
   └──────────────────────────────────────────────────────────────────────┴─────────┴─────────┘
 ```
 
-To explore the previous versions of a component in the Workspace/Scope UI, [see here](/docs/bit-components/inspecting#workspacescope-ui).
+To explore the previous versions of a component in the Workspace/Scope UI, [see here](/bit-components/inspecting#workspacescope-ui).
 
 ## Actions executed by the 'tag' command
 
@@ -94,7 +95,7 @@ The 'build pipeline' is a series of tasks defined by the environment. In our cas
 
 If any of the build pipeline's tasks fail, the tagging is aborted.
 
-> As with any other service provided by the environment, the '[build pipeline](/docs/react/extending-react#overridebuildpipe)' can too be extended and customized.
+> As with any other service provided by the environment, the '[build pipeline](/react/extending-react#overridebuildpipe)' can too be extended and customized.
 
 ### 2. Sets a new version for the tagged component
 
@@ -108,8 +109,7 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 
 ### 4. Locks any further changes to that version and stores it in the local scope
 
-
-> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to **propose** a new version and let your [CI](/docs/getting-started/ci-cd) set a new version with the committed changes (using 'hard tag')
+> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to **propose** a new version and let your [CI](/getting-started/ci-cd) set a new version with the committed changes (using 'hard tag')
 >
 > ```shell
 > // soft-tag

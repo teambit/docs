@@ -38,11 +38,11 @@ The three different log types in Bit are:
 - Extensions log - `extensions.log`
 
 Each log file's size can be maximum 10MB, and there can be maximum 10 log files of each type. They will be numbered as follows: `debug.log`, `debug1.log`, `debug2.log`, etc.
-The log files are actually [winston logs](https://github.com/winstonjs/winston), and are [tailable](https://github.com/winstonjs/winston/blob/master/docs/transports.md).
+The log files are actually [winston logs](https://github.com/winstonjs/winston), and are [tailable](https://github.com/winstonjs/winston/blob/master/transports.md).
 
 ### Cache
 
-If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the [clear cache command](/docs/apis/cli-all#clear-cache):
+If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the [clear cache command](/apis/cli-all#clear-cache):
 
 ```shell
 bit clear-cache

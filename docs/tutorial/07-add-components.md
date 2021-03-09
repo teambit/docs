@@ -32,11 +32,12 @@ Track the React hook with the namespace 'hooks':
 bbit add components/hooks/use-jokes/ --namespace hooks
 ```
 
-The `use-jokes` component is now tracked by Bit and managed by the workspace.  
+The `use-jokes` component is now tracked by Bit and managed by the workspace.
 
 Two things have happened that are worth noticing:
 
 #### Files to components
+
 Bit has mapped this component's files and registered them in the `.bitmap` file. This enables Bit to treat a collection of files as a single unit, a component.
 In addition to that, it has generated a component ID, following the pattern:
 `<owner>.<scope>/<namespaces>/<component-name>`.
@@ -53,8 +54,9 @@ Head over to your workspace `.bitmap` file, to see the generated mapping.
 ```
 
 #### Components to packages
-Bit has generated a package for that component in the workspace `node_modules` directory. That includes compiling the source-code using the [development environment compiler](/docs/compiling/overview).
-The **package name** will be `@demo-org/demo-scope.hooks.use-jokes`, following the pattern `@<owner>/<scope>.<namespaces>.<component-name>`.  
+
+Bit has generated a package for that component in the workspace `node_modules` directory. That includes compiling the source-code using the [development environment compiler](/compiling/overview).
+The **package name** will be `@demo-org/demo-scope.hooks.use-jokes`, following the pattern `@<owner>/<scope>.<namespaces>.<component-name>`.
 
 :::note
 Components using other components in the same workspace should only use the components' absolute paths, i.e, their package names.
@@ -98,7 +100,7 @@ The above output informs us that `@testing-library/react`, required by our compo
 
 ### Install dependencies
 
-We'll install `@testing-library/react` using [Dependency Resolver](/docs/dependencies/overview), a Bit extension that handles dependencies in a workspace.
+We'll install `@testing-library/react` using [Dependency Resolver](/dependencies/overview), a Bit extension that handles dependencies in a workspace.
 
 ```shell
 bbit install @testing-library/react
@@ -120,7 +122,7 @@ The installed package is now added to our workspace dependency configuration:
 
 :::note
 Our package is listed under `dependencies` even though it is a dev dependency. Dependency Resolver searches for the files requiring each package.
-If all these files are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/docs/dependencies/dependency-policies).
+If all these files are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/dependencies/dependency-policies).
 :::
 
 ### Add a component that is dependant on other components
@@ -142,7 +144,6 @@ import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
 Import paths must consist of valid username/organization and scope name.
 These should be identical to the values set in the `defaultScope` property, in the `workspace.jsonc`.
 :::
-
 
 Once the above modification is done, add the component with the namespace 'ui/widgets':
 

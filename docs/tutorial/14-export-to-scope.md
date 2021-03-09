@@ -3,7 +3,7 @@ id: export-to-scope
 title: Export Components
 ---
 
-Exporting a component's release version to [a remote scope](/docs/getting-started/bit-account#create-a-remote-scope) makes it available to be used by other Bit workspaces and non-Bit web projects.
+Exporting a component's release version to [a remote scope](/getting-started/bit-account#create-a-remote-scope) makes it available to be used by other Bit workspaces and non-Bit web projects.
 
 ## Export Staged Components
 

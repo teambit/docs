@@ -6,16 +6,21 @@ title: Extending React Native
 Use the React Native environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent React Native components authored in various decoupled workspaces.
 
 This page lists React Native's Environment Transformers. These are the 'override' methods that allow to add or override React Native's default configurations.
-__To learn how to create a new environment extension, [see here](/docs/environments/build-environment).__
+**To learn how to create a new environment extension, [see here](/environments/build-environment).**
+
 ## Environment transformers
-React Native's environment transformers enable merging new configurations for different [Bit aspects used by the React Native environment](/docs/environments/environment-services).
+
+React Native's environment transformers enable merging new configurations for different [Bit aspects used by the React Native environment](/environments/environment-services).
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
+
 ### overrideTsConfig
+
 ```ts
 overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer
 ```
-Overrides the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)) configuration file.
+
+Overrides the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
 
 For example:
 
@@ -40,10 +45,12 @@ export class ReactNativeExtension {
 ```
 
 ### overridePreviewConfig
+
 ```ts
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
-Overrides the Webpack configurations for the [Preview](/docs/environments/environment-services#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+
+Overrides the Webpack configurations for the [Preview](/environments/environment-services#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -68,10 +75,12 @@ export class ReactNativeExtension {
 ```
 
 ### overrideDevServerConfig
+
 ```ts
 overrideDevServerConfig(config: Configuration): EnvTransformer
 ```
-Overrides the Webpack configurations for the [DevServer](/docs/environments/environment-services#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+
+Overrides the Webpack configurations for the [DevServer](/environments/environment-services#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -96,10 +105,12 @@ export class ReactNativeExtension {
 ```
 
 ### overrideJestConfig
+
 ```ts
 overrideJestConfig(jestConfigPath: string): EnvTransformer
 ```
-This method receives a path (as a string) to a configuration file . Overrides the default configurations for the Jest test runner with a new ([jest.config](https://jestjs.io/docs/en/configuration)) configuration file. This is done by passing the *path* to the file as an argument.
+
+This method receives a path (as a string) to a configuration file . Overrides the default configurations for the Jest test runner with a new ([jest.config](https://jestjs.io/en/configuration)) configuration file. This is done by passing the _path_ to the file as an argument.
 
 For example:
 
@@ -122,10 +133,12 @@ export class ReactNativeExtension {
 ```
 
 ### overrideBuildPipe
+
 ```ts
 overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bbit tag` or `bbit build` command). To create your own Build Task, [see here](/docs/build-pipeline/create-build-task).
+
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bbit tag` or `bbit build` command). To create your own Build Task, [see here](/build-pipeline/create-build-task).
 
 For example:
 
@@ -152,15 +165,17 @@ export class CustomReact Native {
     ]);
 
     // ...
-    
+
   }
 }
 ```
 
 ### overrideDependencies
+
 ```ts
 overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer
 ```
+
 This method receives a Bit dependency-policy object. It overrides the default dependency policy for components using this environment.
 
 Each key-value pair in a dependency-policy object signifies the package and the version to be used. It also uses the `-` notation to signify a module should not be defined as a dependency of a certain type (dev, peer or standard).
@@ -198,16 +213,20 @@ export class CustomReactNative {
     ]);
 
     // ...
-    
+
   }
 }
 ```
+
 > The above example shows the 'react-native' library being removed as a (runtime) dependency and added as a peer dependency.
+
 ### overridePackageJsonProps
+
 ```ts
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/docs/packages/publish-to-npm#packagejson).
+
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/packages/publish-to-npm#packagejson).
 
 For example:
 
@@ -215,18 +234,16 @@ For example:
 // ...
 
 const newPackageProps = {
-      main: 'dist/{main}.js',
-      types: '{main}.ts',
-    }
+  main: 'dist/{main}.js',
+  types: '{main}.ts',
+};
 
 export class CustomReactNative {
-
   // ...
-  
-  static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
 
+  static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
     const newReactNative = reactNative.compose([
-      reactNative.overridePackageJsonProps(newPackageProps)
+      reactNative.overridePackageJsonProps(newPackageProps),
     ]);
 
     // ...

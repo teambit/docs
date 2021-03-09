@@ -17,7 +17,7 @@ Bit makes the most out of your automated tests to help you maintain code in a ne
   Since testing is part of the build process, tests of all dependents component will run as well, to make sure nothing got broken due to that change.
 
 :::note
-The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/docs/react/overview).
+The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/react/overview).
 :::
 
 ## Adding Tests
@@ -38,7 +38,8 @@ Runs tests on all components in the workspace.
 
 ### Run all tests in 'watch mode'
 
-Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.  
+Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.
+
 ```shell
 bbit test --watch
 ```
@@ -49,7 +50,8 @@ bbit test --watch
 bbit test <component-id>
 ```
 
-For example:  
+For example:
+
 ```shell
 bbit test ui/elements/button
 ```

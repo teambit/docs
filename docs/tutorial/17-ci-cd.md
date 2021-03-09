@@ -11,7 +11,7 @@ Bit integrates into your CI/CD pipeline to achieve the following:
 
 > Components in local workspaces should only be 'soft-tagged'. That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned. The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository). This enables collaboration on components before they are tagged and exported.
 
-3. Publish components (as packages) to NPM or other registries (learn more, [here](/docs/packages/publish-to-npm))
+3. Publish components (as packages) to NPM or other registries (learn more, [here](/packages/publish-to-npm))
 
 4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process (for example, to bundle and deploy the 'App' component). To learn how to extend an environment with your own 'build task', see here.
 

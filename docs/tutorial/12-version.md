@@ -54,7 +54,7 @@ bbit list
 
 To standardize component build and release pipeline each Environment defines a set of tasks to run when Bit needs to build each component.
 The default React environment used in this tutorial has several tasks. If any of these tasks fail, the build process will be aborted.
-Learn more about the build pipeline [here](http://localhost:3003/docs/build-pipeline/overview).
+Learn more about the build pipeline [here](http://localhost:3003/build-pipeline/overview).
 
 1. Compile.
 2. Test.

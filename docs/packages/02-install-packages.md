@@ -14,10 +14,10 @@ $ bit install @scope-owner/scope-name.namespace.component-id
 Once installed, the component can be found in the workspace `node_modules` directory and used as any other package/
 
 ```javascript
-import { ComponentName } from "@scope-owner/scope-name.namespace.component-name";
+import { ComponentName } from '@scope-owner/scope-name.namespace.component-name';
 ```
 
-To modify a component, [import](/docs/modifying-sourced-components) it first into your workspace.
+To modify a component, [import](/modifying-sourced-components) it first into your workspace.
 
 ## Configuring bit registry
 

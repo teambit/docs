@@ -5,8 +5,8 @@ title: Dependency Policies
 
 Dependency policies define the version and dependency type of each package used by components in the workspace.
 
-
 ## Auto-registered dependency version and type
+
 Dependency policies define the version and dependency type of each package used by components in the workspace.
 When installing a package, the Dependency Resolver registers its version in the dependency configuration (if a version is not specified upon installation,
 it will default to the latest one).
@@ -26,7 +26,7 @@ it will default to the latest one).
 ## Apply a policy on all components with the mentioned dependency
 
 A dependency policy configured at the root level of the workspace configuration JSON will affect all components that have that package as their dependency (i.e., components that have this module listed in their generated dependency graph).
-__Components that do not have this package as a dependency will not be affected.__
+**Components that do not have this package as a dependency will not be affected.**
 
 For example:
 
@@ -51,7 +51,7 @@ For example:
 
 ## Apply policies on a selected group of components
 
-Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/docs/workspace/cascading-rules) configuration API.
+Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/workspace/cascading-rules) configuration API.
 
 For example, to set the `1.0.0` version of `classnames` as a dependency of all components located inside the `./components/react` directory (or any of its sub-directories):
 
@@ -68,6 +68,7 @@ For example, to set the `1.0.0` version of `classnames` as a dependency of all c
   }
 }
 ```
+
 :::info learn how to use the 'variants' extension
 To learn how to select components using `@teambit.workspace/variants`, [see here](/workspace/cascading-rules).
 :::
@@ -90,6 +91,7 @@ For example, a module can be "moved" from `dependencies` to `peerDependencies` b
 ```
 
 ## Override cascading policies
+
 Policies set on a specific group of components will override any conflicting policies that have cascaded from more general configurations.
 
 For example, the following configuration will set `classnames` version `1.0.0` on all components using the `react-ui` namespace.
@@ -165,6 +167,7 @@ Dependencies can be directly configured as `devDependencies` only by nesting the
 ```
 
 ### Dependencies resolved as dev dependencies by file pattern
+
 Dev dependencies are determined by the type of file that uses the dependency.
 If it is a development file (e.g, `doSomething.test.ts`) then the files consumed by it are also considered to be used for development and will therefore be registered as `devDependencies`.
 In cases where a module is consumed by both a runtime file and a development file, the module will be considered as a runtime (regular) dependency.
@@ -179,6 +182,7 @@ For example, the `@teambit.react/react` environment lists all `*.spec.tsx` files
 Any component using that environment will have its .spec.tsx files considered as dev files and all these files' dependencies considered as `devDependencies`.
 
 #### Register file patterns to be considered as dev files
+
 Set the `devFilePatterns` property to add your own list of file extensions to be considered as development files (and to have all their dependencies considered as `devDependencies`):
 
 ```json title="At the root-level of the workspace configuration JSON"
@@ -190,6 +194,7 @@ Set the `devFilePatterns` property to add your own list of file extensions to be
 ```
 
 ### Peer dependencies
+
 Setting a package as a peer dependency ensures the package manager installs only a single version of that package.
 If that is not possible, if there is no single “agreed upon” version for all components in the workspace then an error will be thrown.
 
@@ -199,7 +204,7 @@ This can turn out to be critical when working with modules that are used as “p
 
 To set a package as a peer dependency, place it under the peerDependencies entry, like so:
 
-```json 
+```json
 {
   "teambit.bit/dependency-resolver": {
     "policy": {

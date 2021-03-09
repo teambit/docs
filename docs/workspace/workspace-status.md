@@ -27,7 +27,7 @@ nothing to tag or export
 Components that have been tracked, but not yet tagged.
 
 Bit tries to validate if a _new component_ can be isolated, and will print all isolation issues it finds (if any).
-[Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
+[Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors).
 
 ```shell
 $ bit status
@@ -39,7 +39,7 @@ new components
 
 ### Staged components
 
-All tagged components that are ready to be [exported](/docs/apis/cli-all#export) and shared to a remote Collection.
+All tagged components that are ready to be [exported](/apis/cli-all#export) and shared to a remote Collection.
 In Git status terms, the equivalent would be changes which have been committed but not pushed to the server.
 
 Staged components have been verified by Bit as fully isolated.
@@ -60,7 +60,7 @@ Components that have already been staged exported or sourced, and then modified 
 Modified components are meant to be tagged and set as a new version.
 
 Bit tries to validate if a _modified component_ can be isolated, and will print all isolation issues it finds (if any).
-[Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
+[Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors).
 
 ```shell
 $ bit status
@@ -73,7 +73,7 @@ modified components
 
 ### Pending updates
 
-Components with newer versions fetched by `bit import` and available to use. Use [bit checkout](/docs/apis/cli-all#checkout) to start using the newer version.
+Components with newer versions fetched by `bit import` and available to use. Use [bit checkout](/apis/cli-all#checkout) to start using the newer version.
 
 ```shell
 $ bit status

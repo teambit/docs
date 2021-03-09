@@ -23,9 +23,10 @@ Head back to your workspace UI to explore the new imported component.
 
 <br />
 
-- #### To learn more about 'importing' [see here](/docs/components/importing)
+- #### To learn more about 'importing' [see here](/components/importing)
 
 ## Using the imported component
+
 The imported component is now in our `components` directory but, much like components authored in our workspace,
 it will also have a package generated for it in the `node_modules` directory, and its code compiled and saved in the nested `dist` directory.
 
@@ -39,13 +40,13 @@ import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader';
 In that same file we'll change this:
 
 ```jsx title="button.tsx (old)"
-isLoading ? 'Loading...' : children
+isLoading ? 'Loading...' : children;
 ```
 
 to this:
 
 ```jsx title="button.tsx (new)"
-isLoading ? <DotsLoader /> : children
+isLoading ? <DotsLoader /> : children;
 ```
 
 Head over to the 'Button is loading' composition in the 'button' page to see it rendered.
@@ -53,4 +54,3 @@ Head over to the 'Button is loading' composition in the 'button' page to see it 
 <div style={{textAlign: 'center'}}>
     <img src="/img/button_dots_loader.png" width="90%" style={{boxShadow: '3px 3px 15px 3px rgba(0,0,0,0.20)'}}></img>
 </div>
-

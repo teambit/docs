@@ -4,20 +4,20 @@ title: Overview
 ---
 
 You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
-To export components to bit.dev and to import from private collections you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
+To export components to bit.dev and to import from private collections you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
 
-Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication).  
+Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/bit-server#authentication).
 
-> A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.  
+> A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses:  
+bit.dev server is using the following IP addresses:
 
-- 104.154.235.126:22  
-- 35.184.176.52:443  
+- 104.154.235.126:22
+- 35.184.176.52:443
 
 ## Authenticate with Token
 
-Use [bit login](/docs/apis/cli-all#login) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
+Use [bit login](/apis/cli-all#login) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
 
 To authenticate your Bit client, run the following command:
 
@@ -26,11 +26,11 @@ $ bit login
 Your browser has been opened to visit: https://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/apis/cli-all#config).
+The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/apis/cli-all#config).
 
 ### Additional Tokens
 
-bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:  
+bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:
 
 ```shell
 bit login --machine-name=ci_server
@@ -43,12 +43,12 @@ You can remove tokens, forcing Bit clients to re-authenticate themselves with th
 
 ## Authenticate with SSH
 
-It is also possible to work with SSH key pair to authenticate with bit.dev.  
+It is also possible to work with SSH key pair to authenticate with bit.dev.
 
 Follow the steps described [here](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for generating SSH keys.
 
 If you know how to generate your SSH key, you can skip the next part and move to [authenticate your SSH Key to bit.dev](#upload-public-ssh-key-to-bitsrcio).
-Follow the steps below to generate SSH keys:  
+Follow the steps below to generate SSH keys:
 
 ### Generate SSH key
 
@@ -63,7 +63,7 @@ Follow the steps below to generate SSH keys:
 
 <!--Windows-->
 
-1. Download and start the [puttygen.exe generator](https://winscp.net/eng/docs/ui_puttygen).
+1. Download and start the [puttygen.exe generator](https://winscp.net/eng/ui_puttygen).
 1. In the "Parameters" section choose **SSH2 DSA** and press **Generate**.
 1. Move your mouse on the small screen to generate the key pairs.
 1. Enter a key comment, which identifies the key (useful when you use several SSH keys).
@@ -80,24 +80,24 @@ Follow the steps below to generate SSH keys:
 1. In the ‘SSH Keys’ section, click on ‘new SSH key’.
 1. Type a name for the key. The key name documents the key, and will not affect the behavior of the system.
 1. `Key` - Copy the content of the file that you generated and ends with `.pub`.
-1. Click on ‘Add SSH key’.  
+1. Click on ‘Add SSH key’.
 
 A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev).
 
 ## Authenticate without Installing bit CLI
 
 It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
-To do that run the following command:  
+To do that run the following command:
 
 ```shell
 npm login --registry=https://node.bit.dev --scope=@bit
 ```
 
-After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.  
+After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.
 
 ## Configure local Bit client
 
-To set your username and email in Bit, use the [bit config command](/docs/apis/cli-all#config).
+To set your username and email in Bit, use the [bit config command](/apis/cli-all#config).
 
 - If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
 - If no configuration values are defined for Bit, it falls back to read the values from `git config`.
@@ -116,7 +116,7 @@ Several things you can do if you encountered `fatal: permission to Collection <c
 Bit uses SSH to communicate with remote servers. A long hang time and authentication failure is usually the result of a firewall blocking the relevant port (22).  
 To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](mailto:support@bit.dev).
 
-Make sure you have telnet installed, and run the following command. If you get the response bellow, you have access to your account with SSH.  
+Make sure you have telnet installed, and run the following command. If you get the response bellow, you have access to your account with SSH.
 
 ```shell
 $ telnet hub.bit.dev 22
@@ -153,7 +153,7 @@ Several configuration issues may occur if you hit any permission issues when wor
 
 **If the SSH connection is not established due to issues with SSH keys, Bit will fail to authenticate.**
 
-> *Bit and SSH Agent*
+> _Bit and SSH Agent_
 >
 > In you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
 
@@ -177,4 +177,4 @@ In case you use `bit config ssh_key_file` to point Bit to the location of your p
 
 #### No/Wrong public key uploaded to bit.dev
 
-Check if you are using the right public SSH key for your profile.  
+Check if you are using the right public SSH key for your profile.

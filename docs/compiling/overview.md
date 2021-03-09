@@ -21,12 +21,12 @@ For example:
           ├── ...
 ```
 
-Bit's Compiler is an [Environment Service](/docs/environments/environment-services). The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/docs/environments/overview) that use it as a service. That means, a single workspace may run different compilers for different components, each according to its own environment.
-To customize an environment's compiler, [see here](/docs/environments/environment-services).
+Bit's Compiler is an [Environment Service](/environments/environment-services). The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/environments/overview) that use it as a service. That means, a single workspace may run different compilers for different components, each according to its own environment.
+To customize an environment's compiler, [see here](/environments/environment-services).
 
 ## Running the compiler manually
 
-To manually run the compiler on a specific component use its [component ID](/docs/bit-components/overview#component-id):
+To manually run the compiler on a specific component use its [component ID](/bit-components/overview#component-id):
 
 ```shell
 $ bbit compile <component-id>
