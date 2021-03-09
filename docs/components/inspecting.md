@@ -156,6 +156,8 @@ staged components
      > app-bar. versions: 0.0.1 ... ok
 ```
 
+- Learn more [here](/workspace/workspace-status)
+
 ## List components in the local scope
 
 Lists all components in the local scope. That includes staged components as well as imported components.

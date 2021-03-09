@@ -2,15 +2,20 @@
 id: exporting
 title: Exporting
 ---
+
+import { Image } from '../../src/components/image'
+
 A scope is where the release versions of independent components are stored. Scopes are used both locally and remotely:
-* __Local scopes__ store "staged" components that are ready to be exported from the local environment to a remote scope. You'll find your local scope in the `.bit` or  `.git/bit` directory inside your workspace directory.
-* [__Remote scopes__](/docs/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are available to be used by other repositories.
+
+- **Local scopes** store "staged" components that are ready to be exported from the local environment to a remote scope. You'll find your local scope in the `.bit` or `.git/bit` directory inside your workspace directory.
+- [**Remote scopes**](/docs/scope/remote-scope), either on Bit.dev or other self-hosted Bit servers, store exported components that are available to be used by other repositories.
 
 A single server may host multiple scopes. Each of these scopes groups together components that are related to each other by function or purpose. Each scope naturally corresponds to a specific team of developers (and even non-developers).
 
 So far, we've tracked a component and tagged it. As mentioned earlier, the tagging process prepares the component to be exported to a remote scope by running the [build pipeline](/docs/getting-started/version#1-runs-the-environments-build-pipeline) on it and storing it in the local scope with a new version number.
 
 ## Setting up your remote Bit Scope
+
 To set a remote scope for your soon-to-be exported components, use the `workspace.jsonc` configuration file.
 
 For example:
@@ -24,17 +29,16 @@ For example:
     "defaultScope": "my-org.my-scope"
   },
 ```
+
 The `defaultScope` field suggests it can be overridden. To learn about setting different scopes for different sets of components in your workspace, [see here.](TODO)
+
 ### Scope on bit.dev
 
-To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection)  (or "collection").
+To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection) (or "collection").
 
+<Image src="/img/scope_type.png" alt="create a scope" padding={20} width="60%" />
 
-
-![Scope type](/img/scope_type.png)
 ### On premise Scopes
-
-<!-- here we should link to another doc that talks about self-hosting. -->
 
 If you are self-hosting a Bit server, you need to ensure you create a Bit server. Please follow [this guide](TODO) for additional details.
 

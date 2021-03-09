@@ -1,6 +1,6 @@
 ---
-id: component-status
-title: Component Status
+id: workspace-status
+title: Workspace Status
 ---
 
 Bit displays the state of the tracked components in your project's workspace.
@@ -26,7 +26,7 @@ nothing to tag or export
 
 Components that have been tracked, but not yet tagged.
 
-Bit tries to validate if a *new component* can be isolated, and will print all isolation issues it finds (if any). 
+Bit tries to validate if a _new component_ can be isolated, and will print all isolation issues it finds (if any).
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```shell
@@ -59,7 +59,7 @@ staged components
 Components that have already been staged exported or sourced, and then modified - meaning there's at least one tagged version, and untagged changes on top of it.
 Modified components are meant to be tagged and set as a new version.
 
-Bit tries to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any). 
+Bit tries to validate if a _modified component_ can be isolated, and will print all isolation issues it finds (if any).
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```shell
@@ -100,7 +100,7 @@ deleted components
 
 ### Component pending to be tagged automatically
 
-Component (not in state new) for whom at least one of its dependencies is in `modified` state. 
+Component (not in state new) for whom at least one of its dependencies is in `modified` state.
 
 ```shell
 $ bit status

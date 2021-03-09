@@ -16,7 +16,7 @@ module.exports = {
       label: 'Tutorial',
       items: [
         'tutorial/install-bit',
-        'tutorial/bit-account',
+        'tutorial/create-remote-scope',
         'tutorial/set-up-workspace',
         'tutorial/choose-dev-env',
         'tutorial/add-components',
@@ -47,7 +47,7 @@ module.exports = {
         "workspace/configurations",
         "workspace/cascading-rules",
         "workspace/workspace-ui",
-        "workspace/component-status"
+        "workspace/workspace-status"
       ],
     },
     {
@@ -56,7 +56,7 @@ module.exports = {
       items: [
         "environments/overview",
         "environments/choose-an-environment",
-        "environments/build-environment",
+        "environments/create-environment",
         "environments/environment-services",
         "environments/service-handlers"
       ],
@@ -108,7 +108,7 @@ module.exports = {
       type: 'category',
       label: 'Compositions',
       items: [
-        "compositions/compositions",
+        "compositions/overview",
       ],
     },
     {
@@ -189,17 +189,11 @@ module.exports = {
       type: 'category',
       label: 'Troubleshooting',
       items: [
-        "troubleshooting/troubleshooting",
-        "troubleshooting/context-provider"
+        "troubleshooting/doctor-logs-cache",
+        "troubleshooting/multiple-peer-dep-versions",
+        "troubleshooting/set-runtime-globals",
+        "troubleshooting/components-envs"
       ],
     },
-    {
-      type: 'category',
-      label: 'FAQs',
-      items: [
-        "faq/multiple-peer-dep-versions",
-        "faq/set-runtime-globals"
-      ],
-    }
   ],
 };

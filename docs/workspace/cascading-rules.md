@@ -16,7 +16,8 @@ Configurations set on a specific set of components will:
 
 ### Selecting all components
 
-To select all components in the workspace use the asterisk (`*`) sign. This is especially useful when configuring extensions that can only be used inside the `variants` field (for example, the different environments). For example:
+To select all components in the workspace use the `*` wildcard. This is especially useful when configuring extensions that can only be used inside the `variants` field (for example, the different environments). For example:
+
 ```json
 "teambit.workspace/variants": {
     "*": {
@@ -26,7 +27,9 @@ To select all components in the workspace use the asterisk (`*`) sign. This is e
 ```
 
 ### Selecting using a directory path
+
 To select using a directory path, use the relative path to the components' common directory. For example:
+
 ```json
 "teambit.workspace/variants": {
     "components/utility-functions": {
@@ -36,7 +39,9 @@ To select using a directory path, use the relative path to the components' commo
 ```
 
 ### Selecting using a namespace
-This option is recommended as it decouples your components' configurations from the file structure. It handles components using fundamental definitions that pertain to function and purpose. For example:
+
+This option is recommended as it decouples your components' configurations from the workspace's file structure. It handles components using fundamental definitions that pertain to function and purpose. For example:
+
 ```json
 "teambit.workspace/variants": {
     "{utility-functions/*}": {
@@ -44,9 +49,11 @@ This option is recommended as it decouples your components' configurations from 
     },
 }
 ```
+
 ### Selecting multiple sets of components
 
 Multiple directory paths:
+
 ```json
 "teambit.workspace/variants": {
     "components/utils,components/react-ui": {
@@ -56,6 +63,7 @@ Multiple directory paths:
 ```
 
 Multiple namespaces:
+
 ```json
 "teambit.workspace/variants": {
     "{utility-functions/*},{react-ui/*}": {
@@ -63,23 +71,26 @@ Multiple namespaces:
     },
 }
 ```
+
 ## Variants configurations
+
 ### propagate
+
 Configurations set on one group of components are inherited by its sub-groups (in a CSS-like manner). For example, `components/react/ui` will inherit configurations from `components/react`. To prevent this from happening, set the `propogate` value of the parent group of components to `false`.
+
 ```json
 "teambit.workspace/variants": {
     "components/react": {
         "propagate": false
         }
-    },
-    "components/react/ui": {
-
     }
 }
 ```
 
 ### maxSpecificity
-Determines the number of levels to propagate configurations downwards. For example, the number of levels to go from `components/react` to `components/react/button` is 3. 
+
+Determines the number of levels to propagate configurations downwards. For example, the number of levels to go from `components/react` to `components/react/button` is 3.
+
 ```json
 "teambit.workspace/variants": {
     "components/react": {
@@ -91,8 +102,11 @@ Determines the number of levels to propagate configurations downwards. For examp
     }
 }
 ```
+
 ### exclude
+
 Determines which components to exclude from a selected set.
+
 ```json
 "teambit.workspace/variants": {
     "components/react": {
@@ -101,8 +115,11 @@ Determines which components to exclude from a selected set.
     }
 }
 ```
+
 ### defaultScope
+
 Determines the default scope for the selected components:
+
 ```json
 "teambit.workspace/variants": {
     "components/react": {
@@ -113,7 +130,7 @@ Determines the default scope for the selected components:
 
 ## Eject component configurations (component.json)
 
-A component can have its configuration ejected to stop receiving configurations from various Bit extensions with the exclusion of the `@teambit/workspace.variants` extension.
+A component can have its configuration ejected to stop receiving configurations from various Bit extensions, with the exclusion of the `@teambit/workspace.variants` extension.
 
 ```shell
 bbit eject-conf <component-id>

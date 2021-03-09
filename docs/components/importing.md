@@ -21,26 +21,26 @@ A single component is imported using its ID. A component ID has the following pa
 
 `scope-owner.scope-name/namespace/component-name`
 
-For example, to import the `app-bar` component from the `bad-jokes` scope, owned by `teambit` and namespaced as `ui-primitives`, we'll run the following command:
+For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
 
 ```shell
-$ bbit import teambit.bad-jokes/ui-primitives/app-bar
+$ bbit import teambit.teaching/ui/elements/dots-loader
 ```
 
 To replace the default directory for that component, we'll add the `--path` flag and the preferred directory.
 
 ### Import all components in a scope or namespace
 
-To import all components from the `bad-jokes` scope, we'll replace the namespace and component name with the `*` sign:
+To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
 
 ```shell
-$ bbit import teambit.bad-jokes/*
+$ bbit import teambit.teaching/*
 ```
 
-To limit our import to components under the `ui-primitives` namespace, we'll replace just the component name:
+To limit our import to components under the `ui/elements` namespaces, we'll replace just the component name:
 
 ```shell
-$ bbit import bbit import teambit.bad-jokes/ui-primitives/*
+$ bbit import teambit.teaching/ui/*
 ```
 
 ### Import latest versions of components in a workspace
@@ -66,5 +66,5 @@ Tracked components, locally tagged components and imported components should all
 For example:
 
 ```js
-import { Button } from "@my-scope/button";
+import { Button } from '@my-scope/button';
 ```

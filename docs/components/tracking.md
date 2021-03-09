@@ -3,6 +3,8 @@ id: tracking
 title: Tracking
 ---
 
+import { Image } from '../../src/components/image'
+
 The tracking process translates sets of files into a single component that is semantically understood by Bit. It is the first step in a component's journey to complete independency.
 
 When a component gets tracked, Bit does the following:
@@ -28,9 +30,13 @@ $ bbit add components/react/button
 ```
 
 A tracked component should appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component.
-![New Component](/img/new_component.png)
 
-> Use the `bbit status` command to check for tracking issues.
+<Image src="/img/new_component.png" alt="new component" width="60%" />
+<br />
+
+:::note Check for tracking issues
+Use the `bbit status` command to check for tracking issues.
+:::
 
 #### Add a namespace
 

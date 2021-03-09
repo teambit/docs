@@ -11,7 +11,7 @@ Most of that information is generated automatically by Bit.
 
 This section will start our components' journey to independency by tracking them using Bit.
 
-:::note
+:::note what do we mean by "components"?
 The word “component” is ascribable to any independent feature, whether it is a simple UI primitive, a piece of logic, a data-connected component, or even a full page.
 :::
 
@@ -138,7 +138,7 @@ import { Button } from '@demo-org/demo-scope.ui.elements.button';
 import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
 ```
 
-:::danger
+:::note Use a valid scope
 Import paths must consist of valid username/organization and scope name.
 These should be identical to the values set in the `defaultScope` property, in the `workspace.jsonc`.
 :::

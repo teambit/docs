@@ -49,7 +49,7 @@ labels: ['react', 'typescript', 'button']
 ---
 ```
 
-<Image src="/img/ws_getting_started_frontmatter.png" width="70%" />
+<Image src="/img/ws_getting_started_frontmatter.png" width="70%" padding={20}/>
 
 ## Using the live playground
 
@@ -84,4 +84,4 @@ import { Button } from './button';
 ```
 ````
 
-<Image src="/img/ws_getting_started_mdx_imports.png" />
+<Image src="/img/ws_getting_started_mdx_imports.png" padding={20}/>

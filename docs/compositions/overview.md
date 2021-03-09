@@ -1,6 +1,6 @@
 ---
-id: compositions
-title: Compositions
+id: overview
+title: Overview
 ---
 import { Theme } from '@teambit/base-ui.theme.theme-provider'
 import { UserHeroExample } from '../../src/components/user-hero'

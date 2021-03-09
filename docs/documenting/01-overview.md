@@ -3,7 +3,12 @@ id: overview
 title: Overview
 ---
 
-For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation. The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.
+import { Image } from '../../src/components/image'
+
+For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation.
+The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.
+
+<Image src="/img/ws_getting_started_docs.png" width="60%"/>
 
 ## Environment-specific templates
 

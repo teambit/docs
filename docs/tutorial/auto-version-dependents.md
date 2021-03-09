@@ -37,7 +37,7 @@ modified components
 (use "bit diff" to compare changes)
 
      > ui/elements/button ... ok
-                         
+
 
 staged components
 (use "bit export <remote_scope> to push these components to a remote scope")
@@ -46,7 +46,7 @@ staged components
      > ui/elements/app-bar. versions: 1.0.0 ... ok
      > ui/elements/button. versions: 1.0.0 ... ok
      > ui/widgets/tech-jokes-viewer. versions: 1.0.0 ... ok
-                         
+
 
 components pending to be tagged automatically (when their dependencies are tagged)
      > ui/widgets/tech-jokes-viewer ... ok
@@ -62,7 +62,7 @@ In the above output, Bit notifies us of two important things:
 Let's tag our `button` component to save the previous change made to it:
 
 ```shell title="Auto-tag process for dependents"
-bbit tag ui/elements/button --persist --message "add animated loader"
+bbit tag ui/elements/button --message "add animated loader"
 ```
 
 As expected two components were tested, the tagged 'button' component, and the auto-tagged 'tech-jokes-viewer'.
