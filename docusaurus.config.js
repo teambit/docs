@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Documentation',
-  tagline: 'Bit v15 "Harmony"',
+  tagline: 'Bit Harmony',
   url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -23,7 +23,7 @@ module.exports = {
       //... other Algolia params
     },
     navbar: {
-      title: 'v15 Harmony (beta)',
+      title: 'Harmony Beta',
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
