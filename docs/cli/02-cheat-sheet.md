@@ -54,7 +54,7 @@ Reset the workspace `.bitmap` file and register components as if they were newly
 bbit init --reset-new
 ```
 
-### Bit component workflow
+### Component workflow
 
 #### Track a component
 
@@ -188,6 +188,8 @@ bbit build
 $ bbit test
 ```
 
+### Move or remove components
+
 #### Move component to a different directory
 
 ```shell
@@ -209,6 +211,26 @@ $ bbit link
 ```shell
 $ bbit remove <component-id>
 ```
+
+#### Deprecating a component in a workspace
+
+```shell
+bbit deprecate <component-id>
+```
+
+#### Remove a component from a remote scope
+
+```shell
+bbit remove <component-id> --remote
+```
+
+#### Deprecate a component in a remote scope
+
+```shell
+bbit deprecate <component-id> --remote
+```
+
+### Other
 
 #### Eject component configurations
 

@@ -15,7 +15,7 @@ As such, they run in the environment's Preview runtime and not the Main runtime.
 
 For example, a provider that centers compositions in their rendering page, will look like so:
 
-```tsx
+```tsx title="A composition provider example"
 import React, { ReactNode, ReactElement } from 'react';
 
 const style = {
