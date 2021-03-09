@@ -15,52 +15,61 @@ The 'install' process includes importing components (listed in the workspace `.b
 
 :::note registry authentication
 By default, the Dependency Resolver installs packages from Bit.dev's registry. The authentication for that is done using your Bit.dev token, listed under `@bit`, in your `.npmrc` file.
-If that token cannot be found in the `.npmrc` file, it will look for it in your global Bit configurations (use the `bbit config` command to output your `user.token` property).
+If that token cannot be found in the `.npmrc` file, it will look for it in your global Bit configurations (use the `bit config` command to output your `user.token` property).
 
 If your npm is configured to use a registry different than npmjs's - the Dependency Resolver will use that configured registry, instead.
 :::
 
 ### Install all dependencies listed in the Dependency Resolver configuration
+
 ```shell
-bbit install
+bit install
 ```
+
 ### Install the latest version of a package
+
 ```shell
-bbit install <package>
+bit install <package>
 
 // For example
-bbit install lodash
+bit install lodash
 ```
 
 ### Install a specific version of a package
+
 ```shell
-bbit install <package>@<version>
+bit install <package>@<version>
 
 // For example
-bbit install lodash@1.0.0
+bit install lodash@1.0.0
 ```
 
 ### Install packages that are already listed in the Dependency Resolver policies
+
 When trying to install a specific package that is already listed in the Dependency Resolver policies, an error will be thrown.  
 To override it:
 
 ```shell
-bbit install <package> --update-existing
+bit install <package> --update-existing
 ```
+
 -OR-
+
 ```shell
-bbit install <package> -u
+bit install <package> -u
 ```
 
 ### Install packages without importing components
+
 The 'install' process includes importing components listed in the `.bitmap` file and linking them to the `node_modules` directory.
 To disable importing and install all packages and components as standard packages use:
 
 ```shell
-bbit install --skip-import
+bit install --skip-import
 ```
 
 ## Enforce the installation of a specific package version
+
 The dependency resolver determines the package version that best fits the requirements of most components consuming the same package.
 It then installs it at the root of the workspace to make it available to all components sharing the same package (those that cannot use it will have their dependency installed inside their own directory).
 
@@ -83,6 +92,7 @@ To enforce the installation of the exact version specified in the policy, set th
 ```
 
 ## Set a proxy for outgoing HTTP/HTTPS requests
+
 The package manager can be configured to use a proxy for outgoing network requests.
 
 `proxy` - A URL for a proxy to be used in both HTTP and HTTPS requests.
@@ -103,19 +113,23 @@ The package manager can be configured to use a proxy for outgoing network reques
 #### To get the value for 'proxy'
 
 ```shell
-bbit config get proxy
+bit config get proxy
 ```
 
 #### To get the value for 'https-proxy'
+
 ```shell
 $ bit config get https-proxy
 ```
 
 #### To set a new 'proxy'
+
 ```shell
 $ bit config set proxy <url>
 ```
+
 For example:
+
 ```shell
 $ bit config set proxy http://domain-one.proxy.com:8080
 ```
@@ -127,6 +141,7 @@ $ bit config set https-proxy <url>
 ```
 
 For example:
+
 ```shell
 $ bit config set https-proxy http://domain-one.proxy.com:8080
 ```

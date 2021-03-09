@@ -76,7 +76,7 @@ export default CustomReactExtension;
 We'll then track the new component (with the 'my-extensions' namespace):
 
 ```shell
-bbit add extensions/custom-react -n my-extensions
+bit add extensions/custom-react -n my-extensions
 ```
 
 ### 4. Set the extension component in the workspace config file

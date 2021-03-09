@@ -31,10 +31,10 @@ You can also follow along with this [example project.](https://github.com/teambi
 
 To perform [Bit.dev](https://bit.dev) operations from the CI runner, use the authentication key of a registered Bit.dev user. It is advisable to create a user solely for that purpose.
 
-To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `$ bbit login`)
+To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `$ bit login`)
 
 ```shell
-$ bbit config
+$ bit config
 
 analytics_id                  xxxxxxxxxxxxx
 analytics_reporting           false
@@ -97,9 +97,9 @@ jobs:
 ```yaml
 - name: Set up bit config
       run: |
-          bbit config set analytics_reporting false
-          bbit config set anonymous_reporting false
-          bbit config set user.token $BIT_TOKEN
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
 ```
 
 ### 7. Add steps to tag and export the pending components
@@ -110,11 +110,11 @@ jobs:
 
 ```yaml
 - name: Install packages using bit
-  run: bbit install
+  run: bit install
 - name: Hard-tag pending components
-  run: bbit tag --persist
+  run: bit tag --persist
 - name: Export components
-  run: bbit export
+  run: bit export
 ```
 
 > **Where is the 'test' and 'build'?**

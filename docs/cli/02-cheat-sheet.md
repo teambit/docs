@@ -8,13 +8,13 @@ title: CLI Reference
 #### Get information about available CLI commands
 
 ```
-bbit --help
+bit --help
 ```
 
 #### Get information about a specific CLI command
 
 ```
-bbit <command> --help
+bit <command> --help
 ```
 
 ### Workspace
@@ -22,19 +22,19 @@ bbit <command> --help
 #### Initialize a new workspace
 
 ```
-bbit init --harmony
+bit init --harmony
 ```
 
 #### Start Bit development server / Run the Workspace UI
 
 ```shell
-bbit start
+bit start
 ```
 
 #### Get workspace status
 
 ```shell
-bbit status
+bit status
 ```
 
 #### Reset the workspace - hard
@@ -42,7 +42,7 @@ bbit status
 Deletes all Bit files and directories, including Bit configuration, tracking and locally stored component release versions.
 
 ```shell
-bbit init --reset-hard
+bit init --reset-hard
 ```
 
 #### Reset the workspace - soft
@@ -51,7 +51,7 @@ Removes all locally stored component release versions.
 Reset the workspace `.bitmap` file and register components as if they were newly added.
 
 ```shell
-bbit init --reset-new
+bit init --reset-new
 ```
 
 ### Component workflow
@@ -59,7 +59,7 @@ bbit init --reset-new
 #### Track a component
 
 ```shell
-bbit add <path/to/component>
+bit add <path/to/component>
 ```
 
 #### Track a component and set it with a namespace
@@ -73,7 +73,7 @@ Alias: `-n`
 #### Untrack a component
 
 ```shell
-bbit untrack <component-id>
+bit untrack <component-id>
 ```
 
 #### Get component configuration details
@@ -81,13 +81,13 @@ bbit untrack <component-id>
 That includes its dependencies, package name, environment, etc.
 
 ```shell
-bbit show <component-id>
+bit show <component-id>
 ```
 
 #### Version (tag) a component
 
 ```shell
-$ bbit tag <component-id> <new-version-number>
+$ bit tag <component-id> <new-version-number>
 ```
 
 - Optional: `--message "a note about recent changes"`
@@ -95,19 +95,19 @@ $ bbit tag <component-id> <new-version-number>
 #### Untag a component
 
 ```shell
-bbit untag <component-id>
+bit untag <component-id>
 ```
 
 #### Untag all components
 
 ```shell
-bbit untag --all
+bit untag --all
 ```
 
 #### Export components
 
 ```shell
-$ bbit export
+$ bit export
 ```
 
 ### Dependencies
@@ -115,7 +115,7 @@ $ bbit export
 #### Install a package
 
 ```shell
-$ bbit install <package-name>
+$ bit install <package-name>
 ```
 
 #### Install all dependencies after cloning a workspace
@@ -123,7 +123,7 @@ $ bbit install <package-name>
 This process will install all packages, import all components and [link](/cli/cheat-sheet#relink-components-to-the-workspace) the imported components.
 
 ```shell
-$ bbit install
+$ bit install
 ```
 
 #### Import a component
@@ -131,7 +131,7 @@ $ bbit install
 Import a component from a remote scope. Learn more [here](/components/importing).
 
 ```shell
-bbit import <component-id>
+bit import <component-id>
 ```
 
 #### Import all components
@@ -139,7 +139,7 @@ bbit import <component-id>
 Import all components listed in the workspace `.bitmap` file.
 
 ```shell
-bbit import
+bit import
 ```
 
 #### List all dependencies of a component and the reason for each dependency version
@@ -147,7 +147,7 @@ bbit import
 `EXPERIMENTAL`
 
 ```shell
-bbit dependencies <component-id>
+bit dependencies <component-id>
 ```
 
 ### Component development
@@ -155,37 +155,37 @@ bbit dependencies <component-id>
 #### Compile a component
 
 ```shell
-bbit compile <component-id>
+bit compile <component-id>
 ```
 
 #### Compile all components
 
 ```shell
-bbit compile
+bit compile
 ```
 
 #### Compile all components that were modified since their last compilation
 
 ```shell
-bbit compile --changed
+bit compile --changed
 ```
 
 #### Build a component
 
 ```shell
-bbit build <component-id>
+bit build <component-id>
 ```
 
 #### Build all components
 
 ```shell
-bbit build
+bit build
 ```
 
 #### Test components
 
 ```shell
-$ bbit test
+$ bit test
 ```
 
 ### Move or remove components
@@ -193,7 +193,7 @@ $ bbit test
 #### Move component to a different directory
 
 ```shell
-$ bbit mv <component> <target-dir>
+$ bit mv <component> <target-dir>
 ```
 
 #### Relink components to the workspace
@@ -203,31 +203,31 @@ The linking process happens automatically when a component is tracked.
 There could be cases where the path to a component has been modified and that process needs to be re-run with to address recent changes.
 
 ```shell
-$ bbit link
+$ bit link
 ```
 
 #### Remove a component from the workspace
 
 ```shell
-$ bbit remove <component-id>
+$ bit remove <component-id>
 ```
 
 #### Deprecating a component in a workspace
 
 ```shell
-bbit deprecate <component-id>
+bit deprecate <component-id>
 ```
 
 #### Remove a component from a remote scope
 
 ```shell
-bbit remove <component-id> --remote
+bit remove <component-id> --remote
 ```
 
 #### Deprecate a component in a remote scope
 
 ```shell
-bbit deprecate <component-id> --remote
+bit deprecate <component-id> --remote
 ```
 
 ### Other
@@ -237,5 +237,5 @@ bbit deprecate <component-id> --remote
 Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](http://localhost:3005/workspace/cascading-rules#eject-component-configurations-componentjson).
 
 ```shell
-bbit eject-conf <component>
+bit eject-conf <component>
 ```

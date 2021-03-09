@@ -7,7 +7,7 @@ Build pipelines are determined by the environments in use. That means, in order 
 
 The example task below, shown being used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be logged and/or stored in the component tagged version. [See a demo project here](https://github.com/teambit/harmony-build-examples).
 
-> Information returned by a build task will only persist if the build-pipeline was triggered by the 'hard-tag' command (`bbit tag <component-id>`).
+> Information returned by a build task will only persist if the build-pipeline was triggered by the 'hard-tag' command (`bit tag <component-id>`).
 
 ```ts title="print-cmp-name-task.ts"
 import {

@@ -62,4 +62,4 @@ To learn more about using `@teambit.workspace/variants` to select components, [s
 
 ## Change component scope
 
-In case you want to publish a component to a different scope you will need to modify its configuration. This configuration operation changes the component module name, so you will have to run the `bbit link --rewire` command. This command creates the new component module name in your project's `node_modules`.
+In case you want to publish a component to a different scope you will need to modify its configuration. This configuration operation changes the component module name, so you will have to run the `bit link --rewire` command. This command creates the new component module name in your project's `node_modules`.

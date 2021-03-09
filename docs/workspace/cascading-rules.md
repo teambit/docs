@@ -133,7 +133,7 @@ Determines the default scope for the selected components:
 A component can have its configuration ejected to stop receiving configurations from various Bit extensions, with the exclusion of the `@teambit/workspace.variants` extension.
 
 ```shell
-bbit eject-conf <component-id>
+bit eject-conf <component-id>
 ```
 
 This will create a `component.json` file in the component's directory.

@@ -3,7 +3,7 @@ id: installation-troubleshooting
 title: Installation troubleshooting
 ---
 
-## PATH is missing the installation directory
+## $PATH is missing the installation directory
 
 ### MacOS / Linux
 

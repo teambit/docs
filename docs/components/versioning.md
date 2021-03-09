@@ -10,19 +10,19 @@ When we version or 'tag' a component, we "commit" changes and prepare it to be e
 ### Tag a component
 
 ```shell
-bbit tag <component-id> <new-version>
+bit tag <component-id> <new-version>
 ```
 
 For example:
 
 ```shell
-bbit tag ui-primitives/button 1.0.0
+bit tag ui-primitives/button 1.0.0
 ```
 
 #### Tag a component with a message
 
 ```shell
-bbit tag <component-id> <new-version> --message "this is the tag message"
+bit tag <component-id> <new-version> --message "this is the tag message"
 ```
 
 ### Tag all components in the workspace
@@ -30,7 +30,7 @@ bbit tag <component-id> <new-version> --message "this is the tag message"
 Tag all components and bump the patch number of each component version
 
 ```shell
-bbit tag --all
+bit tag --all
 ```
 
 ### Soft and hard tags: component collaboration
@@ -42,7 +42,7 @@ The process:
 1. Tag a component using the `--soft` option. This will not create a new release version but will update the `.bitmap` file to suggest a new version.
 
 ```shell
-bbit tag --soft <component-id>
+bit tag --soft <component-id>
 ```
 
 2. Commit changes made to the `.bitmap` file (the previous version update suggestion) and push to the remote repository.
@@ -50,7 +50,7 @@ bbit tag --soft <component-id>
 3. Have the CI run the following command to tag all components suggested to be versioned (suggested by the previous 'soft tag')
 
 ```shell
-bbit tag --persist --all
+bit tag --persist --all
 ```
 
 - **Learn more about adding Bit to your CI, [here](/tutorial/ci-cd)**
@@ -60,7 +60,7 @@ bbit tag --persist --all
 To untag our a component run the following:
 
 ```shell
-$ bbit untag <component-id>
+$ bit untag <component-id>
 ```
 
 ### List all 'tagged' components
@@ -68,7 +68,7 @@ $ bbit untag <component-id>
 'tagged' or versioned components are components stored in your local scope.
 
 ```shell
-$ bbit list
+$ bit list
 ```
 
 Example output:
@@ -113,5 +113,5 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 >
 > ```shell
 > // soft-tag
-> $ bbit tag <component-id>
+> $ bit tag <component-id>
 > ```

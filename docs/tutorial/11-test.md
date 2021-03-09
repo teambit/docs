@@ -24,7 +24,7 @@ The React environment uses Jest as its default test runner. To use a different J
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`.
 
-For example, our 'button' component already has a simple test and since tests are run automatically by the dev server, on `bbit start` and
+For example, our 'button' component already has a simple test and since tests are run automatically by the dev server, on `bit start` and
 on every change, you can already see its test results in the 'Tests' tab.
 
 <Image src="/img/ws_getting_started_test.png" />
@@ -34,27 +34,27 @@ on every change, you can already see its test results in the 'Tests' tab.
 ### Run all tests
 
 Runs tests on all components in the workspace.  
-`bbit test`
+`bit test`
 
 ### Run all tests in 'watch mode'
 
 Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.
 
 ```shell
-bbit test --watch
+bit test --watch
 ```
 
 ### Run tests of a specific component
 
 ```shell
-bbit test <component-id>
+bit test <component-id>
 ```
 
 For example:
 
 ```shell
-bbit test ui/elements/button
+bit test ui/elements/button
 ```
 
 :::info processes that involve testing
-In addition the above commands, tests are also run by the dev server (`bbit start`) and by the build pipeline (`bbit build` and `bbit tag`)
+In addition the above commands, tests are also run by the dev server (`bit start`) and by the build pipeline (`bit build` and `bit tag`)

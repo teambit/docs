@@ -12,10 +12,10 @@ You can host a Scope on your own server, or use the bit.dev platform (free for O
 
 ## Create a Bit.dev account
 
-By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider. Run the `$ bbit login` command for Bit to open a login/sign-up form for a new personal account.
+By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider. Run the `$ bit login` command for Bit to open a login/sign-up form for a new personal account.
 
 ```shell
-bbit login
+bit login
 ```
 
 :::note

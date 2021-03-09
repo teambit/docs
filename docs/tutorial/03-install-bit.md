@@ -6,7 +6,7 @@ title: Install Bit
 Check if bit is installed using:
 
 ```shell
-bbit --version
+bit --version
 ```
 
 ## Install via NPM / Yarn

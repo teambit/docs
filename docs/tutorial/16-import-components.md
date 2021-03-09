@@ -14,7 +14,7 @@ Components are imported using their component ID, which can be found in their co
 Let's import the 'dots-loader' component from Bit's 'teaching' scope.
 
 ```
-bbit import teambit.teaching/ui/elements/dots-loader
+bit import teambit.teaching/ui/elements/dots-loader
 ```
 
 Head back to your workspace UI to explore the new imported component.

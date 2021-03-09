@@ -138,7 +138,7 @@ export class NodeExtension {
 overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
 
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bbit tag` or `bbit build` command). To create your own Build Task, [see here](/build-pipeline/create-build-task).
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command). To create your own Build Task, [see here](/build-pipeline/create-build-task).
 
 For example:
 

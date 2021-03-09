@@ -5,7 +5,7 @@ title: Customizing the Compiler
 
 The Compiler is an [Environment Service](/environments/environment-services) that enables environments to integrate a specific compiler into various Bit features, processes and events.
 
-For example, the React environment (`@teambit.react/react`) uses the Compiler Environment Service to configure the [TypeScript extension component](/compiling/typescript) as its compiler. The TypeScript compiler will be used (for components using this environment) when running the `bbit compile` command, when Bit's development server re-compiles modified components, and when running the build process (just to name a few examples).
+For example, the React environment (`@teambit.react/react`) uses the Compiler Environment Service to configure the [TypeScript extension component](/compiling/typescript) as its compiler. The TypeScript compiler will be used (for components using this environment) when running the `bit compile` command, when Bit's development server re-compiles modified components, and when running the build process (just to name a few examples).
 
 To customize your environment's compiler, first [create an environment extension](/environments/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 

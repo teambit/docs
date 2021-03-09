@@ -20,13 +20,13 @@ When a component gets tracked, Bit does the following:
 ### Track a single component
 
 ```shell
-$ bbit add <path to component>
+$ bit add <path to component>
 ```
 
 For example:
 
 ```shell
-$ bbit add components/react/button
+$ bit add components/react/button
 ```
 
 A tracked component should appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component.
@@ -35,7 +35,7 @@ A tracked component should appear in the Workspace UI navigation bar with an "N"
 <br />
 
 :::note Check for tracking issues
-Use the `bbit status` command to check for tracking issues.
+Use the `bit status` command to check for tracking issues.
 :::
 
 #### Add a namespace
@@ -45,19 +45,19 @@ Namespaces serve as (abstract) folders that organize components in the Workspace
 To namespace a component us the `--namespace` or `-n` option.
 
 ```shell
-$ bbit add <path to component> --namespace <name>
+$ bit add <path to component> --namespace <name>
 ```
 
 For example:
 
 ```shell
-$ bbit add components/react/button --namespace react-ui
+$ bit add components/react/button --namespace react-ui
 ```
 
 Namespaces also support nesting. For example:
 
 ```shell
-$ bbit add components/react/button --namespace react/ui
+$ bit add components/react/button --namespace react/ui
 ```
 
 ### Track multiple components
@@ -67,7 +67,7 @@ To track multiple components, set the path to the common directory and use the `
 For example:
 
 ```shell
-$ bbit add path/to/common/path/*
+$ bit add path/to/common/path/*
 ```
 
 ### Set an entry point for a component
@@ -75,19 +75,19 @@ $ bbit add path/to/common/path/*
 The default entry point is `index.ts`/`index.js`. To set a different entry point:
 
 ```shell
-$ bbit add <path to component> --main <entry file>
+$ bit add <path to component> --main <entry file>
 ```
 
 For example
 
 ```shell
-$ bbit add components/react/button --main main.js
+$ bit add components/react/button --main main.js
 ```
 
 ## Untracking components
 
 ```shell
-$ bbit untrack <component id>
+$ bit untrack <component id>
 ```
 
 ## Best Practices

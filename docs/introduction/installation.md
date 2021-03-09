@@ -3,6 +3,8 @@ id: installation
 title: Installation
 ---
 
+Bit requires BVM for installation.
+
 ## 1. Install Bit Version Manager (BVM)
 
 > [BVM](https://github.com/teambit/bvm) manages Bit installations.

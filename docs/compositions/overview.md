@@ -2,6 +2,7 @@
 id: overview
 title: Overview
 ---
+
 import { Theme } from '@teambit/base-ui.theme.theme-provider'
 import { UserHeroExample } from '../../src/components/user-hero'
 import { UserProfileExample } from '../../src/components/user-profile'
@@ -11,15 +12,15 @@ import { Image } from '../../src/components/image'
 They provide insight into the component's look and behavior in various likely usages.
 They help component maintainers to deliver components that are "true to their promise" and behave as expected when consumed by other web projects.
 
-Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments", 
+Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments",
 isolated and un-affected by the rest of their authoring workspace, or by any other code that was not purposefully included.
 
-
-Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers, 
+Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers,
 such as designers and product managers, looking to inspect it.
 
 ## Viewing compositions
-To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bbit start`),
+
+To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bit start`),
 browse to a specific component and select the compositions tab.
 There, you will see the full list of compositions available for that component,along with additional component meta-data.
 
@@ -28,14 +29,15 @@ Compositions are also available to be viewed in the remote **Scope UI** (for exa
 <Image src="/img/mfe_compositions.png" />
 
 ## Creating compositions
+
 Create a `*.compositions.*` file inside your component's directory. Import the component into the compositions file to use it in a new composition.
 Export that composition (the new component) with a name. The name of that export will be converted from PascalCase/camelCase and used for the composition name (e.g, "CompositionName" --> "Composition name").
 
 For example, a composition for a 'user hero' component will looks like so:
 
 ```shell title="The 'user hero' component file structure"
-├── user-hero           
-    ├── index.tsx               
+├── user-hero
+    ├── index.tsx
     ├── user-hero.compositions.tsx
     ├── user-hero.docs.mdx
     ├── user-hero.spec.tsx
@@ -59,6 +61,7 @@ const UserHero = () => {
   );
 };
 ```
+
 <Theme>
   <UserHeroExample />
 </Theme>
@@ -82,7 +85,7 @@ export const UserHeroWithScopeList = () => {
 
   if (isLoading) return <DotsLoader active={isLoading} />;
   return (
-    <div className={styles.userProfile} >
+    <div className={styles.userProfile}>
       <Hero
         title={user.title}
         description={user.description}
@@ -91,7 +94,7 @@ export const UserHeroWithScopeList = () => {
       {error !== '' ? <Error>{error}</Error> : <ScopeList list={scopes} />}
     </div>
   );
-}
+};
 ```
 
 <Theme>
@@ -104,6 +107,7 @@ The [Development Environment](/environments/overview) will automatically detect 
 and use it to load its compositions to the workspace UI.
 
 ## Using compositions for automated testing
+
 Compositions are not only a way to manually validate a component behaves as expected. Each composition can and should be used as a test sample for automated tests.
 
 Import the compositions into your test file to run the appropriate tests.

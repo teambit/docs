@@ -16,19 +16,19 @@ For a demo of tests authored and executed for a component, [see here](/getting-s
 To manually run the tester on a specific component use its [component ID](/bit-components/overview#component-id):
 
 ```shell
-$ bbit test <component-id>
+$ bit test <component-id>
 ```
 
 For example:
 
 ```shell
-$ bbit test ui-primitives/button
+$ bit test ui-primitives/button
 ```
 
 To manually run the tester on the entire workspace:
 
 ```shell
-$ bbit test
+$ bit test
 ```
 
 ### Options
@@ -38,7 +38,7 @@ $ bbit test
 Starts the tester in 'watch mode' (re-tests when changes are made to a component).
 
 ```shell
-$ bbit test --watch
+$ bit test --watch
 ```
 
 #### `--debug` `-d`
@@ -46,7 +46,7 @@ $ bbit test --watch
 Starts the tester in 'debug mode'.
 
 ```shell
-$ bbit test --debug
+$ bit test --debug
 ```
 
 #### `--env` `-e`
@@ -54,10 +54,10 @@ $ bbit test --debug
 Tests all components that use a specific environment.
 
 ```shell
-$ bbit test --env <component-id>
+$ bit test --env <component-id>
 
 // For example
-$ bbit test --env teambit.react/react
+$ bit test --env teambit.react/react
 ```
 
 #### `--scope` `-s`
@@ -65,10 +65,10 @@ $ bbit test --env teambit.react/react
 Tests all components in a specific scope.
 
 ```shell
-$ bbit test --scope <scope-name>
+$ bit test --scope <scope-name>
 
 // For example
-$ bbit test --scope my-org.react-design-system
+$ bit test --scope my-org.react-design-system
 ```
 
 ## Bit processes that use the tester
@@ -78,7 +78,7 @@ $ bbit test --scope my-org.react-design-system
 Bit's local dev server (which also runs the Workspace UI) re-tests components on each modification. This happens whenever a file is 'saved'.
 
 ```shell
-$ bbit start
+$ bit start
 ENVIRONMENT NAME        URL                      STATUS
 react              http://localhost:3101         Running
 node               http://localhost:3102         Running
@@ -94,7 +94,7 @@ Waiting for component changes... (10:17:20)
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component testing is one of these tasks.
 
 ```sh
-$ bbit watch
+$ bit watch
 ```
 
 ### Tests in the Build Pipeline

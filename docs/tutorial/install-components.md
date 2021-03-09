@@ -9,7 +9,7 @@ As an example, let's install a component package from the same 'evangelist' scop
 This tie the component will be the 'testimonials' component used by Bit's marketing team:
 
 ```
-bbit install @teambit/ui.test-loader
+bit install @teambit/ui.test-loader
 ```
 
 :::info Bit.dev's registry
@@ -34,8 +34,8 @@ to have all their data available in your workspace (assets, Bit configurations, 
 - Installed components cannot be maintained and developed by the workspace. They cannot be configured by the `workspace.jsonc` or go through the build and tag processes.
 - Installed components will not be automatically tested, built and tagged when their dependencies are modified (in the workspace).
 
-  :::info Using the bbit install command
-  When using the `bbit install` command to install all the workspaces's dependencies, the [Dependency Resolver extension](/dependencies/overview) extension (in charge of that task) will
+  :::info Using the bit install command
+  When using the `bit install` command to install all the workspaces's dependencies, the [Dependency Resolver extension](/dependencies/overview) extension (in charge of that task) will
   make sure to import (and not install) components that should be managed by the workspace (these are components that are listed in the workspace `.bitmap` file).
   Once the components are imported, they will be symlinked to the workspace `node_modules` directory so that they could be used just like any other component/package.
   :::

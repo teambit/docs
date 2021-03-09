@@ -47,7 +47,7 @@ If you are self-hosting a Bit server, you need to ensure you create a Bit server
 Run the `bit export` command to have Bit publish all versioned components. In our case it is only the previously tagged 'Button' component.
 
 ```sh
-$ bbit export
+$ bit export
 ```
 
 ## Post export operations

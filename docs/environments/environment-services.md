@@ -5,7 +5,7 @@ title: Environment Services
 
 To become a "one-stop-shop" for components, an environment "bundles" together different Environment Services provided by various Bit aspect components. These Environment Services enable other Bit aspects to integrate into Bit's component life-cycle features.
 
-For example, the 'Tester' service (`@teambit.defender/tester`) enables the React environment (`@teambit.react/react`) to set 'Jest' (`teambit.defender/jest`) as the default test runner for its components. This will enable Jest to be executed on the `bbit test` command, to be run as a pre-tag check, to output results using Bit's logger, and even to display the generated logs in the Workspace and Scope UIs (to name just a few examples).
+For example, the 'Tester' service (`@teambit.defender/tester`) enables the React environment (`@teambit.react/react`) to set 'Jest' (`teambit.defender/jest`) as the default test runner for its components. This will enable Jest to be executed on the `bit test` command, to be run as a pre-tag check, to output results using Bit's logger, and even to display the generated logs in the Workspace and Scope UIs (to name just a few examples).
 
 ![React env using Jest with the tester service](/img/react_env_ex.png)
 

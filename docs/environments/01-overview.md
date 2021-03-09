@@ -28,18 +28,18 @@ Bit provides [a number of environments to choose from](/environments/choose-an-e
 
 ## Environments CLI reference
 
-As mentioned above, Bit environments make use of Bit's CLI to execute their different services. That means, `bbit test`, for example, may execute different test runners, depending on the environment in use.
+As mentioned above, Bit environments make use of Bit's CLI to execute their different services. That means, `bit test`, for example, may execute different test runners, depending on the environment in use.
 
 ### Run the Dev Server
 
 ```shell
-bbit start
+bit start
 ```
 
 ### Run the build pipeline
 
 ```shell
-bbit build
+bit build
 ```
 
 - [Learn more](/build-pipeline/overview).
@@ -47,7 +47,7 @@ bbit build
 ### Run all tests
 
 ```shell
-bbit test
+bit test
 ```
 
 - [Learn more](/testing/overview).
@@ -55,7 +55,7 @@ bbit test
 ### Compile all components
 
 ```
-bbit compile
+bit compile
 ```
 
 - [Learn more](/compiling/overview).
@@ -63,5 +63,5 @@ bbit compile
 ### Get lint results
 
 ```
-bbit lint
+bit lint
 ```

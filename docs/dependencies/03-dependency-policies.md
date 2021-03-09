@@ -174,7 +174,7 @@ In cases where a module is consumed by both a runtime file and a development fil
 
 :::info dev dependencies missing from the policies
 `devDependencies` that are set by the Dependency Resolver will not be visible in its policies.
-To validate a dependency is registered as a dev dependency, use the `bbit show <component>` command.
+To validate a dependency is registered as a dev dependency, use the `bit show <component>` command.
 :::
 
 The list of file patterns to be considered as development files is determined by the various Bit extensions.

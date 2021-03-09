@@ -42,7 +42,7 @@ npm login --registry=https://node.bit.dev --scope=@scope-owner
 To install dependencies for all imported components, use:
 
 ```shell
-bbit install
+bit install
 ```
 
 Add the `--verbose` flag to get detailed output.
@@ -50,11 +50,11 @@ Add the `--verbose` flag to get detailed output.
 You can also install dependencies for a specific component:
 
 ```shell
-bbit install foo/bar
+bit install foo/bar
 ```
 
 If you need to pass extra arguments to npm or yarn, use double dash `--`, and after it add the additional arguments:
 
 ```shell
-bbit import -- --production --no-optional
+bit import -- --production --no-optional
 ```

@@ -24,7 +24,7 @@ A single component is imported using its ID. A component ID has the following pa
 For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
 
 ```shell
-$ bbit import teambit.teaching/ui/elements/dots-loader
+$ bit import teambit.teaching/ui/elements/dots-loader
 ```
 
 To replace the default directory for that component, we'll add the `--path` flag and the preferred directory.
@@ -34,13 +34,13 @@ To replace the default directory for that component, we'll add the `--path` flag
 To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
 
 ```shell
-$ bbit import teambit.teaching/*
+$ bit import teambit.teaching/*
 ```
 
 To limit our import to components under the `ui/elements` namespaces, we'll replace just the component name:
 
 ```shell
-$ bbit import teambit.teaching/ui/*
+$ bit import teambit.teaching/ui/*
 ```
 
 ### Import latest versions of components in a workspace
@@ -48,7 +48,7 @@ $ bbit import teambit.teaching/ui/*
 To get the latest versions of every imported component in our workspace, we'll run:
 
 ```shell
-$ bbit import
+$ bit import
 ```
 
 > Component updates are only possible for components stored in your local scope (these are either imported or 'tagged' components)

@@ -20,7 +20,7 @@ Our Workspace UI notifies us that the 'button' was modified (`M`), and since 'te
 Let's examine this further using the `status` command:
 
 ```shell
-bbit status
+bit status
 ```
 
 ```
@@ -31,7 +31,7 @@ new components
      > ui/elements/app-bar ... ok
      > ui/elements/button ... ok
      > ui/widgets/widgets ... ok
-getting-started-result (main) $ bbit status
+getting-started-result (main) $ bit status
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
@@ -62,7 +62,7 @@ In the above output, Bit notifies us of two important things:
 Let's tag our `button` component to save the previous change made to it:
 
 ```shell title="Auto-tag process for dependents"
-bbit tag ui/elements/button --message "add animated loader"
+bit tag ui/elements/button --message "add animated loader"
 ```
 
 As expected two components were tested, the tagged 'button' component, and the auto-tagged 'tech-jokes-viewer'.
@@ -95,7 +95,7 @@ changed components
 If we look at our local scope status, we'll see both component appear there with a new bumped version number:
 
 ```shell
-bbit list
+bit list
 ```
 
 ```shell

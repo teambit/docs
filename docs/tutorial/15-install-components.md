@@ -18,7 +18,7 @@ $ cd my-consumer
 ## Configure Package Manager
 
 To install components we need to ensure your package manager knows to fetch Bit components from the Bit.dev component registry.  
-As part of the iniital `bbit login` process, Bit has created an `~/.npmrc` file and configured it to your account. As Bit.dev sets a dedicated component registry for each account we'll need to configure it for your machine.  
+As part of the iniital `bit login` process, Bit has created an `~/.npmrc` file and configured it to your account. As Bit.dev sets a dedicated component registry for each account we'll need to configure it for your machine.  
 Open the `~/.npmrc` file and add the following line (replace `<account>` with the account name part of the `defaultScope`):
 
 ```sh title="~/.npmrc"

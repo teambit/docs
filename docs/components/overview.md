@@ -87,7 +87,7 @@ A component can also have its configurations "ejected". That means it will stop 
 To eject a component, run the following:
 
 ```shell
-$ bbit eject-conf <component-id>
+$ bit eject-conf <component-id>
 ```
 
 > Ejecting a component's configurations is not recommended! Use the `workspace.jsonc` instead, whenever possible.

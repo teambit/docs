@@ -38,5 +38,5 @@ Variants in Bit are similar to CSS-rules as the more specific selectors override
 Stop Bit server (Ctl + c) and run it again:
 
 ```shell
-bbit start
+bit start
 ```

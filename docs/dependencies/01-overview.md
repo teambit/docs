@@ -23,6 +23,6 @@ The 'dependency-resolver' simplifies dependency management by providing the foll
 
 3. [Dependency installation](/dependencies/dependency-installation):
    The 'dependency-resolver' directs the [package manager](/packages/overview) to install the right packages at the right place in the workspace file structure.
-   In addition to that, it provide a single `bbit install` command to take care of installing all package dependencies and importing all component dependencies.
+   In addition to that, it provide a single `bit install` command to take care of installing all package dependencies and importing all component dependencies.
 
 <Image src="/img/dependencies_graph.png" />

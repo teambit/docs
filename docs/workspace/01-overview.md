@@ -10,7 +10,7 @@ A Bit workspace enables a single repository to [author](/getting-started/add-com
 (Run the following command in the root directory of your project)
 
 ```shell
-bbit init --harmony
+bit init --harmony
 ```
 
 :::info Initializing a Bit workspace in an existing project
@@ -21,7 +21,7 @@ It can also be initialized on an existing project to modularize it and export it
 ## Reset a Bit workspace
 
 ```shell
-bbit init --reset-hard
+bit init --reset-hard
 ```
 
 ## The anatomy of a workspace
@@ -30,7 +30,7 @@ bbit init --reset-hard
    This is where rules and policies are set for the workspace itself but also for each component managed by it.
    These rules include component dependencies, development environments, default scopes, and so on.
 
-2. **Files-to-component mapping** (the `.bitmap` file). This is where Bit maps multiple files to single units, components. This process happens once a component is tracked by Bit (`bbit add path/to/component`). This mapping will also include the following information:
+2. **Files-to-component mapping** (the `.bitmap` file). This is where Bit maps multiple files to single units, components. This process happens once a component is tracked by Bit (`bit add path/to/component`). This mapping will also include the following information:
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
@@ -72,7 +72,7 @@ bbit init --reset-hard
 Se the Workspace UI at https://localhost:3000
 
 ```shell
-bbit start
+bit start
 ```
 
 [Learn more about it here](/workspace-ui/overview).
