@@ -9,7 +9,13 @@ Bit integrates into your CI/CD pipeline to achieve the following:
 
 2. Version and export components to remote scopes. These are components that are 'soft-tagged' (i.e, pending to be versioned).
 
-> Components in local workspaces should only be 'soft-tagged'. That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned. The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository). This enables collaboration on components before they are tagged and exported.
+:::info use soft tags in local workspaces
+Components in local workspaces should only be 'soft-tagged'.
+That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
+The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
+This enables collaboration on components before they are tagged and exported.  
+[**Learn more**](/components/versioning#soft-and-hard-tags-component-collaboration).
+:::
 
 3. Publish components (as packages) to NPM or other registries (learn more, [here](/packages/publish-to-npm))
 
