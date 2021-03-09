@@ -6,49 +6,37 @@ title: Community
 
 ## On Bit.dev  
 
-<a href="https://bit.dev/teambit/~collections">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/teambit-org.png"></img>
-</a> 
 
-#### [Explore our OSS components ->](https://bit.dev/teambit/~collections)  
+- #### [Explore our OSS components](https://bit.dev/teambit/~collections)  
 
 
 ## On Slack  
 
-<a href="https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/communityx3.png"></img>
-</a>
+- #### [Join Slack community](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)  
+
 
 ## On GitHub  
 
-<a href="https://github.com/teambit/bit">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/GitHub-Link.png"></img>
-</a>
+- #### [Bit on GitHub](https://github.com/teambit/bit)  
 
-
-<a href="https://github.com/teambit">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/teambit-github-link.png"></img>
-</a>
+- #### [Team Bit on GitHub](https://github.com/teambit/bit)  
 
 
 ## On Twitter
 
-<a href="https://twitter.com/bitdev_">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/Twitter-Link.png
-"></img>
-</a>
+- #### [@bitdev_ on Twitter](https://twitter.com/bitdev_)  
+
 
 ## On Medium
 
-**Join over 2M developers who [read Bit’s blog](https://blog.bitsrc.io/)**  
+- #### Join 2M developers reading [Bits and Pieces](https://blog.bitsrc.io/)  
 
-<a href="https://blog.bitsrc.io/">
-    <img src="https://storage.googleapis.com/static.bit.dev/harmony-docs/bit-blog-link.png"></img>
-</a>
+- #### [Bit related articles](https://blog.bitsrc.io/tagged/bit)  
+
 
 ## On Youtube
 
-Follow [Bit’s Youtube channel ->](https://www.youtube.com/channel/UCuNkM3qIO79Q3-VrkcDiXfw)
+- #### [Build with Bit on YouTube](https://www.youtube.com/channel/UCuNkM3qIO79Q3-VrkcDiXfw)
 
 
 ## Get the Monthly Newsletter
