@@ -2,6 +2,13 @@
 id: bit-react-tutorial
 title: Bit for React
 ---
+
+---
+
+#### Important: We recommend using Bit's latest beta release - [Bit "Harmony"](https://harmony-docs.bit.dev).
+
+---
+
 <img src="../../img/react.svg" height="128">
 
 ## Overview
@@ -20,9 +27,9 @@ This tutorial assumes that you are familiar with:
 
 ### What Do You Need?
 
-You need to verify that you have:  
+You need to verify that you have:
 
-- Node 8.12+  
+- Node 8.12+
 
 To run this tutorial, clone and setup the React tutorial project: https://github.com/teambit/bit-react-tutorial
 
@@ -34,7 +41,7 @@ yarn
 
 ### What Will You Learn?
 
-In this tutorial you will learn how to:  
+In this tutorial you will learn how to:
 
 - Setup Bit
 - Share a React component from an existing project
@@ -43,19 +50,19 @@ In this tutorial you will learn how to:
 - Modify the React component on the new project
 - Get component updates
 
-## Setup Bit  
+## Setup Bit
 
 First things first, we need to setup Bit.
 
-### Create a Free bit.dev Account  
+### Create a Free bit.dev Account
 
 Head over to [bit.dev](https://bit.dev/) and create your free account. Enter a username and password or use your GitHub account to authenticate.
 **Welcome to Bit!**
 Make sure that you remember your username; you'll need it during this tutorial. Every time you see `<username>`, replace it with your own username.
 
-### Create a Component Collection  
+### Create a Component Collection
 
-When you are logged into bit.dev you can create a **collection**. A collection is a remotely-hosted set of components that are ready to be shared and used across your applications.  
+When you are logged into bit.dev you can create a **collection**. A collection is a remotely-hosted set of components that are ready to be shared and used across your applications.
 
 1. Click the **New** button in the header and choose **Collection**.
 2. Name the new collection `react-tutorial` (or choose a different name, as long as you remember it).
@@ -70,7 +77,7 @@ Install Bit CLI on your computer using npm:
 
 ```shell
 npm install bit-bin -g
-```  
+```
 
 Visit [Install Bit](/docs/installing-bit.html) for other installation methods.
 
@@ -107,7 +114,7 @@ $ bit init --package-manager yarn
 successfully initialized a bit workspace.
 ```
 
-> We are going to use create-react-app, so it is recommended to use yarn. If you do not have Yarn installed, you can safely use npm.  
+> We are going to use create-react-app, so it is recommended to use yarn. If you do not have Yarn installed, you can safely use npm.
 
 Now two other changes happen:
 
@@ -123,7 +130,6 @@ Now two other changes happen:
     "packageManager": "yarn"
   }
 }
-
 ```
 
 > In an actual project, these changes should be committed to your version control tool system.
@@ -132,7 +138,7 @@ Now two other changes happen:
 
 Now, we will track the product-list component from the React tutorial project. The component will be tracked with the id `product-list`.
 
-### Track a New Component  
+### Track a New Component
 
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. As all the files are located under the product-list directory, the simplest way is to add all the files in the directory to your component. Bit will create a component named after the directory name.
 
@@ -160,7 +166,7 @@ new components
 
 So far, we have provided Bit with the source file of the component. But in order to consume the files in other projects, the component needs to be built.
 
->Bit is storing the source code of the component, but the code should still remain in your version control system (VCS) such as your Git repository.
+> Bit is storing the source code of the component, but the code should still remain in your version control system (VCS) such as your Git repository.
 
 Bit has a large collection of compilers that are open source and maintained by the Bit team. In addition, the community has created compilers that you can use by searching [Bit collections](https://bit.dev/).
 
@@ -183,7 +189,7 @@ You can check the `package.json` and verify that the compiler is installed by lo
 {
   "env": {
     "compiler": "bit.envs/compilers/react@1.0.2"
-  },
+  }
 }
 ```
 
@@ -196,7 +202,7 @@ Now that the compiler is installed, build the component. Building the component 
 
 Right now the component lives inside your project and may consume some dependencies from your project.
 Bit build is taking place in an **isolated environment** to make sure the process will also succeed on the cloud or in any other project.
-To build your component, run this command inside your react project: 
+To build your component, run this command inside your react project:
 
 ```shell
 bit build
@@ -235,7 +241,7 @@ staged components
 
 The important thing to notice here is that the component is considered `staged`. That means that it is now ready to be exported.
 
-To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as  `<username>.<collection>`:
+To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as `<username>.<collection>`:
 
 ```shell
 $ bit export <username>.react-tutorial
@@ -271,7 +277,7 @@ The React component is also available on the bit.dev cloud. Go to [`https://bit.
 
 You can also access the page at the following url: `https://bit.dev/<username>/react-tutorial/product-list`
 
-The component playground provides you with a basic React app that already has your components.  
+The component playground provides you with a basic React app that already has your components.
 
 You can improve it a bit by adding a new file named `styles.css` with the following style:
 
@@ -281,7 +287,7 @@ You can improve it a bit by adding a new file named `styles.css` with the follow
 }
 ```
 
-Import `styles.css` into the `index.js` file in the playground: 
+Import `styles.css` into the `index.js` file in the playground:
 
 ```javascript
 import './styles.css';
@@ -291,13 +297,13 @@ import './styles.css';
 
 In few seconds you will see the component rendered in the playground. You can view an example [here](https://bit.dev/lean-bit/react-tutorial/product-list).
 
-On the component's page, you can also see the different commands available for installing this component using yarn or npm. You can copy the yarn command; we are going to use it very soon. 
+On the component's page, you can also see the different commands available for installing this component using yarn or npm. You can copy the yarn command; we are going to use it very soon.
 
 ## Install Component in Another Project
 
 ### Create a New React Application
 
-You are now going to create another react application and use the product-list component. The fastest way to do that is to use the React CLI to generate a new Application. Switch to a new directory. 
+You are now going to create another react application and use the product-list component. The fastest way to do that is to use the React CLI to generate a new Application. Switch to a new directory.
 
 ```shell
 npx create-react-app my-new-app
@@ -305,7 +311,7 @@ npx create-react-app my-new-app
 
 In your terminal, switch to the `my-new-app` directory.
 
-### Install the Component in Your Project  
+### Install the Component in Your Project
 
 Use your favorite package installer (yarn is preferred) to install the component.  
 The component is stored in the Bit registry, so the full path to the component will be: `@bit/<username>.<collection name>.<component name>`
@@ -316,9 +322,9 @@ Run the install command using yarn:
 yarn add @bit/<username>.react-tutorial.product-list --save
 ```
 
-> If you want to use npm, run `npm install` once after the project is created so a package-lock.json will be created and npm will organize dependencies correctly.  
+> If you want to use npm, run `npm install` once after the project is created so a package-lock.json will be created and npm will organize dependencies correctly.
 
-The component is now added to your `package.json`:  
+The component is now added to your `package.json`:
 
 ```shell
 "@bit/<username>.react-tutorial.product-list": "0.0.1"
@@ -336,7 +342,7 @@ import ProductList from '@bit/<username>.react-tutorial.product-list';
 function App() {
   return (
     <div className="App">
-      <ProductList/>
+      <ProductList />
     </div>
   );
 }
@@ -384,13 +390,13 @@ successfully imported one component
 
 > Notifications on missing core dependencies are ok. You should already have those packages in your project.
 
-The command is also available on the component page.  
+The command is also available on the component page.
 
 You get a message that the `@react/core` and `@react/common` are peer dependencies. This is ok, as your `my-new-app` project already contains them.
 
 Here is what happened:
 
-- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project).  
+- A new top-level components folder is created that includes the code of the component, with its compiled code and node_modules (in this case the node_modules are empty, as all of your node_modules are peer dependencies and are taken from the root project).
 - The `.bitmap` file was modified to include the reference to the component
 - The package.json file is modified to point to the files rather than the remote package. Your `package.json` now displays:
 
@@ -434,7 +440,7 @@ getProduct(product, index) {
 Change the css file `components/product-list/product-list.css` to include a margin on the `.btn`:
 
 ```css
-  margin: 4px;
+margin: 4px;
 ```
 
 Run the React application:
@@ -443,7 +449,7 @@ Run the React application:
 yarn start
 ```
 
-The app is not yet changed. That's because the Bit components are compiled by the bit compiler. 
+The app is not yet changed. That's because the Bit components are compiled by the bit compiler.
 In a separate terminal, run the `bit build` command to compile the changes. You should see that the compiler is installed:
 
 ```shell
@@ -454,11 +460,11 @@ That will be followed by a successful compilation of all of the files.
 
 Run the `my-new-app` again and you'll now see the changed component with the view button.
 
-> In a real project, it is recommended to commit those changes to your GitHub repository. 
+> In a real project, it is recommended to commit those changes to your GitHub repository.
 
 ### Export the Changes
 
-Next, export the changes done to the component back to [bit.dev](https://bit.dev/). 
+Next, export the changes done to the component back to [bit.dev](https://bit.dev/).
 
 ```shell
 bit status
@@ -474,7 +480,7 @@ modified components
      > product-list ... ok
 ```
 
-Tag and export the component as a new version. By default this is a SemVer `patch` version:  
+Tag and export the component as a new version. By default this is a SemVer `patch` version:
 
 ```shell
 $ bit tag product-list
@@ -547,6 +553,6 @@ Run the application again to see it is working properly with the updated compone
 yarn start
 ```
 
-That's it. A change was moved between the two projects. Your application is running with an updated component.  
+That's it. A change was moved between the two projects. Your application is running with an updated component.
 
 Happy coding!

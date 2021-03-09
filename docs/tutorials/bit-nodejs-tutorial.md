@@ -3,6 +3,12 @@ id: bit-nodejs-tutorial
 title: Bit for NodeJS
 ---
 
+---
+
+#### Important: We recommend using Bit's latest beta release - [Bit "Harmony"](https://harmony-docs.bit.dev).
+
+---
+
 <img src="../../img/nodejs.svg" height="128">
 
 This tutorial doesn’t assume any existing Bit knowledge and it only takes 15 minutes to complete.
@@ -23,9 +29,9 @@ For this tutorial we use an open source library [RamdaJS](https://github.com/ram
 
 You can see the [final result](https://bit.dev/ramda/ramda).
 
-* All of the components from the library are now individual packages.
-* No changes were made to the library’s structure or code.
-* Components can now be shared and played with in Bit’s hub.
+- All of the components from the library are now individual packages.
+- No changes were made to the library’s structure or code.
+- Components can now be shared and played with in Bit’s hub.
 
 > **Code components are not limited to Node JS**
 >
@@ -42,7 +48,7 @@ $ bit login
 
 > **Logging In**
 >
-> The `bit login` command will enable Bit to authenticate to your account at Bit’s hub.  
+> The `bit login` command will enable Bit to authenticate to your account at Bit’s hub.
 >
 > Apart from authenticating the Bit client with your account, it also configures a local `.npmrc` file with the `@bit` scoped package registry so the component you share can be installed as packages using the npm/yarn clients.
 
@@ -59,8 +65,8 @@ $ npm install
 
 Bit tracks sets of files as components. When tracking components, it's important to understand the project's file structure. Before we dive deeper, here's a short description of the project we'll share components from.
 
-* `source/*` is a directory that contains all components in the library. Each component is implemented in its own file. Some components require each other.
-* `source/internal/*` contain internal files that contain utility functions and data for the components.
+- `source/*` is a directory that contains all components in the library. Each component is implemented in its own file. Some components require each other.
+- `source/internal/*` contain internal files that contain utility functions and data for the components.
 
 For this tutorial, we will skip Ramda's test files.
 
@@ -105,7 +111,7 @@ $ git commit -am "initialized an emtpy bit workspace"
 
 ### Tracking Files as Components
 
-Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/apis/cli-all#add) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.  
+Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/apis/cli-all#add) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.
 
 In this library, every component is a file. Run the `bit add` command to mark each file as a separate component.
 
@@ -177,7 +183,7 @@ new components
 
 The project we are now sharing components from is using [Babel](https://babeljs.io) to transpile its ES6 syntax down to ES5. This is to make the project distributable and executable.  
 You can add extensions to components to handle such tasks. More specifically, Bit uses a [build environment](/docs/building-components.html) to transpile code.  
-Run the extension for transpiling React components: 
+Run the extension for transpiling React components:
 
 ```shell
 $ bit import bit.envs/compilers/babel --compiler

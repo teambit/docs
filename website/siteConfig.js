@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Bit - Docs', // Title for your website.
+  title: 'Docs', // Title for your website.
   tagline: 'The shortest way to reuse atomic UI components between projects',
   url: 'https://bit.dev', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -38,6 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    { href: 'https://harmony-docs.bit.dev', label: 'Try Bit Harmony (beta)'},
     { doc: 'quick-start', label: 'Docs' },
     { href: '/tutorials', label: 'Tutorials' },
     { doc: 'best-practices', label: 'Guides' },
