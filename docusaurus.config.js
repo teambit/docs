@@ -27,11 +27,11 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/introduction/why-bit'
+        href: '/introduction/installation'
       },
       items: [
         {
-          to: '/introduction/why-bit',
+          to: '/introduction/installation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',

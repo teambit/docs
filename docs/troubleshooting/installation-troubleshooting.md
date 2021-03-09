@@ -9,7 +9,7 @@ title: Installation troubleshooting
 
 The error message:
 
-```shell
+```
 global Bit install location was not found in your PATH global variable.
 please run the following command to your bash/zsh profile then re-open the terminal:
 export PATH=$HOME/bin:$PATH
@@ -21,7 +21,7 @@ export PATH=$HOME/bin:$PATH
 
 Run the following command:
 
-```
+```shell
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
 ```
 
