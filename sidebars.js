@@ -150,7 +150,8 @@ module.exports = {
       items: [
         "react/overview",
         "react/using-react",
-        "react/extending-react"
+        "react/extending-react",
+        "react/composition-providers"
       ],
     },  
     {

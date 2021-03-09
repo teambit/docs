@@ -5,16 +5,12 @@ title: Using React
 
 To use the React environment, set it in the `workspace.jsonc` configuration file. React can only be configured using the 'variants' config API.
 
-## Apply React on a group of components
+## Use React as the default environment
 
-The example below shows React being applied on all components in the workspace, using the wildcard character `*`. To use React on a more limited set of components, [see here](/workspace/cascading-rules)
+Apply the React environment on all components in the workspace, using the wildcard character `*`.
 
-```json
+```json title="workspace.jsonc"
 {
-  "teambit.workspace/workspace": {
-    "name": "react-design-system",
-    "icon": "https://image.flaticon.com/icons/svg/185/185034.svg"
-  },
   "teambit.workspace/variants": {
     "*": {
       "teambit.react/react": {}
@@ -23,40 +19,18 @@ The example below shows React being applied on all components in the workspace, 
 }
 ```
 
-## Available config options
+## Use React on a specific group of components
 
-### MDX compiler
+Apply the React environment on a limited set of components. For example, all components inside the components/react-ui directory.
 
-The React environment has built-in support for MDX.
-
-To set React to compile MDX components (so that they can be shared as a distributable code), set the `mdx` property to `true`.
-
-```json
+```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "*": {
-      "teambit.react/react": {
-        "mdx": true
-      }
+    "components/react-ui": {
+      "teambit.react/react": {}
     }
   }
 }
 ```
 
-> The above configuration does not affect the compilation of MDX documentation files (`*.doc.mdx`).
-
-### React Version
-
-The React environment is set to use version `^16.13.1`. To use a different version set the `reactVersion` property with a new version number.
-
-```json
-{
-  "teambit.workspace/variants": {
-    "*": {
-      "teambit.react/react": {
-        "reactVersion": "16.0.0"
-      }
-    }
-  }
-}
-```
+- Learn more about configuring a selected set of components, [here](/workspace/cascading-rules).
