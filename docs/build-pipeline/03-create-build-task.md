@@ -9,10 +9,7 @@ The example task below, shown being used by a customized environment, prints out
 
 > Information returned by a build task will only persist if the build-pipeline was triggered by the 'hard-tag' command (`bbit tag <component-id>`).
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--print-cmp-name-task.ts-->
-
-```ts
+```ts title="print-cmp-name-task.ts"
 import {
   BuildTask,
   BuildContext,
@@ -48,9 +45,7 @@ export class PrintCmpNameTask implements BuildTask {
 }
 ```
 
-<!--customized-react.extension.ts-->
-
-```ts
+```ts title="customized-react.extension.ts"
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
 
@@ -84,8 +79,6 @@ export class CustomReact {
 }
 ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
-
 ## Positioning a build task in the pipeline
 
 A build task is positioned in the build pipeline sequence either by overriding the entire _customizable_ pipeline or, by registering it to a location in the pipeline using the designated builder slot.
@@ -102,10 +95,7 @@ This methodology places the task at the start or end of the build pipeline seque
 
 Example:
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--print-cmp-name-task.ts-->
-
-```ts
+```ts title="print-cmp-name-task.ts"
 import {
   BuildTask,
   BuildContext,
@@ -141,9 +131,7 @@ export class PrintCmpNameTask implements BuildTask {
 }
 ```
 
-<!--customized-react.extension.ts-->
-
-```ts
+```ts title="customized-react.extension.ts"
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
 import { BuilderMain } from '@teambit/builder';
@@ -175,8 +163,6 @@ export class CustomReact {
   }
 }
 ```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## A build task anatomy
 
