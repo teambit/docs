@@ -3,6 +3,8 @@ id: overview
 title: Overview
 ---
 
+import { Image } from '../../src/components/image'
+
 A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/workspace/overview). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
 
 ## Remote scope
@@ -15,7 +17,9 @@ Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit serve
 
 A scope is visually represented by the [Scope UI](TODO) (similarly to the way a workspace UI visually represents your workspace).
 
-![An example of a remote Scope UI](/img/remote_scope_ui.png)
+<Image src="/img/scope_ui.png" />
+
+<br />
 
 To set up a remote scope, [see here](/scope/set-up-remote-scope).
 
