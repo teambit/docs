@@ -48,7 +48,7 @@ setx path "%path%;C:\Users\USER\AppData\Local\.bvm" and re-open your terminal
 Run the following command (replace `<USER>` with your own username):
 
 ```shell
-setx path "%path%;C:\Users\<USER>\AppData\Local\.bvm"
+setx path "%path%;%LocalAppData%\.bvm"
 ```
 
 If you're running VSCODE - restart it (learn why [here](https://github.com/microsoft/vscode/issues/47816)).
