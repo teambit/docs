@@ -3,8 +3,40 @@ id: try-bit
 title: Try Bit
 ---
 
-## Coming soon...
+import { Image } from '../../src/components/image'
 
-In the meanwhile, go over our [Tutorial](/tutorial/install-bit).
+Clone a full Bit workspace and explore it yourself:
 
-You can also clone and explore the end result of that tutorial [here](https://github.com/teambit/getting-started-result).
+1. [Install Bit Harmony](https://harmony-docs.bit.dev/introduction/installation)
+
+2. Clone this demo workspace repo
+
+```shell
+git clone git@github.com:teambit/getting-started-result.git try-bit
+```
+
+3. Go to the workspace directory
+
+```
+cd try-bit
+```
+
+4. Install all workspace dependencies (that will also import all components and link them to your `node_module` directory)
+
+```shell
+bit install
+```
+
+5. Run the development server
+
+```shell
+bit start
+```
+
+6. Go to `https://localhost:3000` to see the Workspace UI
+
+<Image src="/img/tech_jokes.png" />
+
+<br />
+
+- All components in this workspace have been exported to [https://bit.dev/our-org/tech-jokes](https://bit.dev/our-org/tech-jokes).
