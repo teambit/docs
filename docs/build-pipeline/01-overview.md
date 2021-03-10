@@ -44,5 +44,4 @@ The Build Pipeline takes into consideration the following factors when deciding 
 Commands that trigger the build pipeline:
 
 - `bit build` - will run the build pipeline on your local machine, for the entire workspace. The output data will not persist. - That is most often used for testing and debugging the build process.
-- `bit tag --build` - will run the build pipeline on your local machine, before creating a new component release version. The output data will persist.
-- `bit export` (after a component has been tagged) - will run the build pipeline, remotely on [bit.dev](https://bit.dev).
+- `bit tag` - will run the build pipeline on your local machine, before creating a new component release version. The output data will persist.
