@@ -11,7 +11,7 @@ The error message:
 
 ```
 global Bit install location was not found in your PATH global variable.
-please run the following command to your bash/zsh profile then re-open the terminal:
+please add the following command to your bash/zsh profile then re-open the terminal:
 export PATH=$HOME/bin:$PATH
 ```
 
@@ -45,7 +45,7 @@ setx path "%path%;C:\Users\USER\AppData\Local\.bvm" and re-open your terminal
 
 **Solution:**
 
-Run the following command (replace `<USER>` with your own username):
+Run the following command:
 
 ```shell
 setx path "%path%;%LocalAppData%\.bvm"
