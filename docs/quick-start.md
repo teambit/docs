@@ -5,8 +5,6 @@ title: Quick Start
 
 ### Important: Bit's next-generation v15 Harmony is in public beta! [Read new docs ->](https://harmony-docs.bit.dev/introduction/installation)
 
-### Intorudction to Bit (v14 and below)
-
 <p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components </p>
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick-start.svg)
