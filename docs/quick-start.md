@@ -3,17 +3,16 @@ id: quick-start
 title: Quick Start
 ---
 
+### Important: Bit's next-generation v15 Harmony is in public beta! [Read new docs ->](https://harmony-docs.bit.dev/introduction/installation)
+
+### Intorudction to Bit (v14 and below)
+
 <p style="font-size: 1.5em">Bit is the platform for collaboration on atomic components </p>
 
 ![Bit Workflow](https://storage.googleapis.com/static.bit.dev/docs/images/quick-start.svg)
 
 **[> Watch Video Demo](https://www.youtube.com/watch?v=E5lgoz6-nfs&lc=UgxK6L53Vny5S1zvIDh4AaABAg&feature=em-comments)**
 
-
-- ### Important: Bit's next-generation v15 Harmony is in public beta! [Read the new docs ->](https://harmony-docs.bit.dev/introduction/installation)
-
-
-### Intorudction to Bit (v14 and below)
 
 Bit is an [open-source](https://github.com/teambit/bit) cli tool for collaborating on isolated components across projects and repositories.  
 Use Bit to distribute discrete components from a design library or a project into a standalone reusable package and utilize it across applications.  
