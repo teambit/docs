@@ -22,6 +22,11 @@ cd bit-getting-started
 bit init --harmony
 ```
 
+:::info the --harmony option
+The `--harmony` option creates a Bit Harmony workspace. Omitting it will create Bit's legacy workspace.
+Harmony components and Bit legacy components cannot switch workspace.
+:::
+
 Bit creates the following files when initializing a new workspace:
 
 1. `workspace.jsonc` - The Workspace configuration file (mentioned above).

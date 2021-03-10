@@ -18,10 +18,6 @@ By default, Bit is connected to [bit.dev](https://bit.dev) as its default hostin
 bit login
 ```
 
-:::note
-Bit will look for an active session on bit.dev in your machine. If such is found, it will authenticate it automatically.
-:::
-
 Once an account has been created successfully, your terminal will greet you with the following message:
 
 ```sh

@@ -3,20 +3,26 @@ id: install-bit
 title: Install Bit
 ---
 
-Check if bit is installed using:
+Bit requires [BVM](https://github.com/teambit/bvm) for installation.
+
+## 1. Install Bit Version Manager (BVM)
+
+#### Install with NPM
 
 ```shell
-bit --version
+npm i -g @teambit/bvm
 ```
 
-## Install via NPM / Yarn
+#### Install with Yarn
 
-> Requires node 12 and above.
-
-```shell title="Install with NPM"
-npm install @teambit/bit --global
+```shell
+yarn global add @teambit/bvm
 ```
 
-```shell title="Install with Yarn"
-yarn global add @teambit/bit
+## 2. Install Bit (using BVM)
+
+```shell
+bvm install
 ```
+
+### For more information see: [Installation Troubleshooting](/troubleshooting/installation-troubleshooting)

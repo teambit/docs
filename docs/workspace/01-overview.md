@@ -18,6 +18,11 @@ A Bit workspace can be initialized on an empty directory, to create a new modula
 It can also be initialized on an existing project to modularize it and export its components to a remote scope.
 :::
 
+:::info the --harmony option
+The `--harmony` option creates a Bit Harmony workspace. Omitting it will create Bit's legacy workspace.
+Harmony components and Bit legacy components cannot switch workspace.
+:::
+
 ## Reset a Bit workspace
 
 ```shell
