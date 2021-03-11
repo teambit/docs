@@ -7,9 +7,11 @@ title: Why Bit
 
 While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.  
 
-**Bit modularizes the development of modern web applications**.  
+**Bit modularizes the development of modern web applications**.    
+ 
+Instead of building a large web app as a cumbersome monolithic, Bit lets you split its development into decoupled sets of components called “scopes”.  Each scope represents a feature, and its components can be independently developed, built, tested, and released by a different team. Many teams can easily build together, side by side, autonomously developing and continuously integrating components. Through the cloud, this process can be effectively scaled to many teams and web applications built together with the same components.
 
-Web application development becomes **faster**, more **scalable** and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+Web development becomes **faster**, more **scalable** and highly **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
 ### How?  
 
@@ -350,3 +352,6 @@ Want to make sure that designers will review every component change? Use Webhook
 ### Join the world’s largest OSS component community
 
 Over 200,000 developers have joined the component community, creating thousands of open-source components shared with the developer community. Discover and share components with people around the world to build amazing things together.
+
+
+
