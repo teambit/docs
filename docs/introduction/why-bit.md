@@ -5,21 +5,21 @@ title: Why Bit
 
 ## Develop modular web applications together in a fast and scalable way
 
-While the modern web makes components its first class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.  
+While the modern web makes components its first-class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.  
 
-**Bit modularizes the development of modern web applications**.  
+**Bit modularizes the development of modern web applications**.      
 
-Web application development becomes **faster**, more **scalable** and well **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
+With Bit large modern web applications can be composed by different teams building features side by side via scopes of components. Each team can autonomously develop, expose, and integrate components. All components are developed in isolation and can be easily integrated in build time as standalone versioned and updated building blocks. Through the cloud, this process can be effectively scaled to many teams building many web applications together.      
 
-### How?  
+Web development becomes **faster**, more **scalable** and highly **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
-Bit’s workspace enables the distributed development of modular web projects, turning any web project into a “monorepo” where different features can be developed and shipped independently from each other, by different teams working side by side.    
+### How?  
 
-Every feature is a **scope of components**. Each scope of components contains everything its owner team needs in order to deliver : UI components, data-connected components, React hooks, Node modules, and even serverless functions.  
+Bit is a standard infrastructure for component-driven development. It provides an extendable toolchain to develop, build, test, and integrate components in a modular and scalable way.  
 
-All teams expose and share components to each other. Each component is independently developed, built, tested, and run in isolation so it can be quickly adopted into new contexts.  
+Bit’s workspace enables the distributed development of modular web projects, turning any web project into a “monorepo” composed of components. Every feature is a **scope of components**. Each scope of components contains everything its owner team needs in order to deliver: UI components, data-connected components, React hooks, Node modules, and even serverless functions.  
 
-All teams continuously integrate components in build-time and release fast automated updates to each other. Through the cloud, collaboration and integration are smoothly scaled to many teams building many modular web projects together.  
+All teams expose and share components with each other, and can continuously integrate components in build-time while constantly releasing fast automated updates to each other. Through the cloud, collaboration and integration are smoothly scaled to many teams building many modular web projects together.  
 
 **Bit is used by thousands of teams**, including some of the world’s best and largest tech organizations. Join us to build modular web applications together too.  
 
@@ -350,3 +350,6 @@ Want to make sure that designers will review every component change? Use Webhook
 ### Join the world’s largest OSS component community
 
 Over 200,000 developers have joined the component community, creating thousands of open-source components shared with the developer community. Discover and share components with people around the world to build amazing things together.
+
+
+
