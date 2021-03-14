@@ -12,7 +12,7 @@ Clone a full Bit workspace and explore it yourself:
 2. Clone this demo workspace repo
 
 ```shell
-git clone git@github.com:teambit/getting-started-result.git try-bit
+git clone https://github.com/teambit/try-bit.git try-bit
 ```
 
 3. Go to the workspace directory

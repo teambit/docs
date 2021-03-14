@@ -9,11 +9,11 @@ Bit's Tester is an [Environment Service](/environments/environment-services). Th
 
 To customize an environment's tester, [see here](/environments/environment-services).
 
-For a demo of tests authored and executed for a component, [see here](/getting-started/test)
+For a demo of tests authored and executed for a component, [see here](/tutorial/test)
 
 ## Executing the tester manually
 
-To manually run the tester on a specific component use its [component ID](/bit-components/overview#component-id):
+To manually run the tester on a specific component use its [component ID](/components/overview#component-id):
 
 ```shell
 $ bit test <component-id>
