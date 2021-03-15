@@ -4,8 +4,8 @@ module.exports = {
       type: 'category',
       label: 'Introduction',
       items: [
-        'introduction/installation',
         'introduction/getting-started',
+        'introduction/installation',
         'introduction/try-bit',
         'introduction/why-bit',
         'introduction/resources',
