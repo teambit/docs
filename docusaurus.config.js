@@ -27,11 +27,11 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/introduction/installation'
+        href: '/introduction/getting-started'
       },
       items: [
         {
-          to: '/introduction/installation',
+          to: '/introduction/getting-started',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
