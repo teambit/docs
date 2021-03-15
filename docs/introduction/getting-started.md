@@ -3,9 +3,9 @@ id: getting-started
 title: Getting Started
 ---
 
-
-*Public Beta*
 ## Welcome to Harmony!  
+
+*Public Beta* :tada:
 
 Harmony is Bit's next generation. It is a highly extensible and flexible infrastructure for developing modern applications in a modular way. Whether you are building a new modern application, or seek to get more from the components in your existing projects, Harmony will take your development with components to the next level.  
 
