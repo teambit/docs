@@ -34,7 +34,7 @@ There are a few ways for you to get started with Harmony.  
 
 #### [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)  
 
-#### [Open an issue :octocat:](https://github.com/teambit/bit/issues)  
+#### [Open an issue :wrench:](https://github.com/teambit/bit/issues)  
 
 
 ### Learn more
