@@ -198,5 +198,12 @@ module.exports = {
         "troubleshooting/installation-troubleshooting"
       ],
     },
+        {
+      type: 'category',
+      label: 'FAQ',
+      items: [
+        "faq/what-is-bvm",
+      ],
+    }
   ],
 };
