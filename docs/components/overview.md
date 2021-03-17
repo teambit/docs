@@ -3,11 +3,14 @@ id: overview
 title: Overview
 ---
 
-A Bit component is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block. That includes its source code, version history, development environment configurations and documentation.
+A Bit component is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block.
+That includes its source code, version history, development environment configurations and documentation.
 
 A Bit component is authored in a Bit workspace. It is where its configurations are set, where it is rendered in isolation and where it is being compiled and built.
 
-When a component gets 'tagged', its releases version gets stored in the workspace local scope as a completely isolated unit. That means, all its configurations and built artifacts are encapsulated as a single, immutable and transferable object. This object can then be exported and stored in a remote scope, like [Bit.dev](https://bit.dev), where it is made available to other repositories, both as a Bit component but also as a node package.
+When a component gets 'tagged', its release version gets stored in the workspace local scope as a completely isolated unit.
+That means, all its configurations and built artifacts are encapsulated as a single, immutable and transferable object.
+This object can then be exported and stored in a remote scope, hosted on a Bit server like [Bit.dev](https://bit.dev), where it is made available to other web projects, both as a Bit component but also as a node package.
 
 Bit components 'imported' into a Bit workspace, can be modified, versioned and exported again.
 

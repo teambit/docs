@@ -3,7 +3,7 @@ id: versioning
 title: Versioning
 ---
 
-When we version or 'tag' a component, we "commit" changes and prepare it to be exported to a remote scope. This process usually also includes compiling and testing.
+When we version or 'tag' a component, we commit changes and prepare it to be exported to a remote scope. This process most often includes compiling and testing, as well.
 
 ## Version CLI commands
 

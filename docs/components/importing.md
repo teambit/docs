@@ -2,20 +2,17 @@
 id: importing
 title: Importing
 ---
+## Overview
+Importing a component, from a remote scope to your local workspace, allows you to maintain the component in your own workspace and even build, version and export it back to its remote scope with a new bumped version.
 
-Once you start building your project with Bit, it essentially becomes part of one virtual monorepo. A vast and rapidly-growing number of independent components instantly become available for you to use and maintain in your local workspace. These could be either private components, maintained by your own organization, or public components maintained by the open-source community.
+An imported component can have its configurations changed using the (hosting) workspace configuration file, and developed using the Workspace UI and the component dev environment (testing, compiling, etc.).
 
-In addition to that, components can be installed as standard node packages, either in a Bit workspace or even in a non-Bit project.
+Once a component is imported and placed in a directory named `<scope-name>.<component-name>` as a default, it is linked to the `node_modules` directory so that it an be consumed by other components in the workspace using its package name (and not its relative path).
 
-## Bit Import components
+The component's compiled code will be available in the component package `dist` directory.
+Modifying the component's source code will trigger a compilation process that will result in new dist files (learn more about compilation [here](/compiling/overview)).
 
-It's important to be clear on terminology here - when we say Bit import of a component, we don't mean importing it as a node_module dependency for a component via the line `import {x} from 'component-name'`.
-
-Instead we mean a Bit import which vendors the code into your workspace so that you can work on and debug the source code files of the component. This can be useful in a number of scenarios, from forking a component down to IDE debugging of a potential issue and creating a local fix (which you can then notify the component maintainers about).
-
-When you make any changes to an imported component and compile those changes, the compiled output is linked as a node_module - in fact, as soon as you import the component Bit automatically creates a node_module for consuming it. But in this case you are consuming the local version of the component, including any changes you might make to it.
-
-### Import a single component
+## Import a single component
 
 A single component is imported using its ID. A component ID has the following pattern:
 
@@ -24,12 +21,12 @@ A single component is imported using its ID. A component ID has the following pa
 For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
 
 ```shell
-$ bit import teambit.teaching/ui/elements/dots-loader
+bit import teambit.teaching/ui/elements/dots-loader
 ```
 
 To replace the default directory for that component, we'll add the `--path` flag and the preferred directory.
 
-### Import all components in a scope or namespace
+## Import all components in a scope or namespace
 
 To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
 
@@ -43,7 +40,7 @@ To limit our import to components under the `ui/elements` namespaces, we'll repl
 $ bit import teambit.teaching/ui/*
 ```
 
-### Import latest versions of components in a workspace
+## Import the latest versions of components in a workspace
 
 To get the latest versions of every imported component in our workspace, we'll run:
 
@@ -51,11 +48,10 @@ To get the latest versions of every imported component in our workspace, we'll r
 $ bit import
 ```
 
-> Component updates are only possible for components stored in your local scope (these are either imported or 'tagged' components)
-
-### Change the configurations of an imported component
-
-Imported components expose their configurations in the `component.json` file. Its configuration structure is quite similar to the workplace's.
+:::info the workspace component list
+The list of authored/imported components in a workspace can be found using the `bit list` command
+or by exploring the workspace `.bitmap` file.
+:::
 
 ## Using local/remote components
 
@@ -68,3 +64,10 @@ For example:
 ```js
 import { Button } from '@my-scope/button';
 ```
+
+## Change the configurations of an imported component
+
+Imported components can have their configurations modified using the workspace configuration file (`workspace.jsonc`).
+That includes configurations that are set manually but also those set programmatically by other extensions (for example, the environment).
+
+To learn how to stop a component from inheriting configurations from the workspace, [see here](workspace/cascading-rules#eject-component-configurations-componentjson).

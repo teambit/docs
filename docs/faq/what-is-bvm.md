@@ -48,6 +48,11 @@ bvm upgrade
 bvm -v
 ```
 
+#### List all versions of BVM available to be installed
+```shell
+bvm list --remote
+```
+
 #### Get the local and remote versions of Bit and BVM
 Get the local used versions, local latest versions and remote latest versions of Bit and BVM
 ```shell
@@ -87,6 +92,33 @@ $ bitty -v
 If a legacy version of Bit (Bit v14) is installed on your machine,
 BVM will automatically link the latest version to `bbit` (instead of `bit`) to allow you to use both versions in parallel.
 :::
+
+### BVM configurations
+
+#### Get BVM configurations
+
+- `DEFAULT_LINK` -  The default command name to be linked to BVM's latest version.  
+`bit` is linked by default unless a legacy version of Bit is installed. In that case, `bbit` will be linked, instead.
+
+- `BVM_DIR` -  The location for BVM
+
+```shell
+bvm config
+```
+
+#### Set BVM configurations
+
+```shell
+bvm config set <property> <new-value>
+```
+
+For example, to change the default link for Bit, from  `bit` to `bitty`:
+
+```shell
+bvm config set DEFAULT_LINK bitty
+```
+
+
 
 ### Troubleshooting
 
