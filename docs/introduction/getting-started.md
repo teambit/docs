@@ -9,7 +9,7 @@ title: Getting Started
 
 Harmony is Bit's next generation. It is a highly powerful and extensible infrastructure for developing modern applications in a modular way. Whether you are building a new project, or seeking to collaborate on components in your existing projects, Harmony will let you tap into the true power of components.   
 
-Harmony is used as a standard component infrastructure by thousands of teams, including the world's best. It is now available in public beta, so please feel free to start and please don't forget to [share your feedback](https://github.com/teambit/bit/issues)!  
+Harmony is already used as a standard component infrastructure by many teams, including the world's finest. It is now available in public beta, so please feel free to start and please don't forget to [share your feedback](https://github.com/teambit/bit/issues)!  
 
 ### Get started
 
