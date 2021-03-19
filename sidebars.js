@@ -1,12 +1,26 @@
 module.exports = {
+
   community: [
     {
       type: 'category',
       label: 'Community',
       items: [
-        'community/follow-us',
+        'community/talk-to-us',
         'community/resources',
         'community/open-source',
+      ],
+    },
+  ],
+  whyBit: [
+    {
+      type: 'category',
+      label: 'Why Bit',
+      items: [
+        'why-bit/modular-web-apps',
+        'why-bit/what-can-bit-do-for-you',
+        'why-bit/popular-use-cases',
+        'why-bit/open-source-dev-tools',
+        'why-bit/enterprise-grade-component-cloud',
       ],
     },
   ],
@@ -16,7 +30,7 @@ module.exports = {
       label: 'Installation',
       items: [
         'installation/installation',
-        'installation/getting-started',
+        'installation/try-bit',
       ],
     },
     {
@@ -40,13 +54,7 @@ module.exports = {
         'tutorial/ci-cd'
       ],
     },
-    {
-      type: 'category',
-      label: 'CLI',
-      items: [
-        "cli/cheat-sheet"
-      ],
-    },
+    
     {
       type: 'category',
       label: 'Workspace',
@@ -192,6 +200,13 @@ module.exports = {
       label: 'Usage Analytics',
       items: [
         "usage-analytics/overview"
+      ],
+    },
+    {
+      type: 'category',
+      label: 'CLI',
+      items: [
+        "cli/cheat-sheet"
       ],
     },
     {

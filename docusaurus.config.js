@@ -27,7 +27,7 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/installation/installation'
+        href: '/getting-started'
       },
       items: [
         {
@@ -45,10 +45,11 @@ module.exports = {
           label: 'Docs',
           position: 'right',
         },
+        
         {
-          to: '/demo/try-bit',
+          to: '/why-bit/modular-web-apps',
           activeBasePath: 'docs',
-          label: 'Try Bit',
+          label: 'Why Bit',
           position: 'right',
         },
         {
@@ -56,8 +57,8 @@ module.exports = {
           position: 'right', // or 'right'
           items: [
             {
-              label: 'Follow Us',
-              to: '/community/follow-us',
+              label: 'Talk To Us',
+              to: '/community/talk-to-us',
             },
             {
               label: 'resources',

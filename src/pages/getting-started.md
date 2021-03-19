@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+slug: /getting-started
 ---
 
 ## Welcome to Harmony!  
@@ -15,11 +16,11 @@ Harmony is already used as a standard component infrastructure by many teams, in
 
 There are a few ways for you to get started with Harmony.  
 
-#### [Take the Tutorial :feet:](https://harmony-docs.bit.dev/tutorial/install-bit)
+#### [Take the Tutorial :feet:](/tutorial/install-bit)
 
 - Take a hands-on approach with this step-by-step tutorial for building a modular React application with Bit components created in the workspace and imported from external projects. Learn how to install and set up a Bit workspace, add components, add life-full documentation and compositions, define isolated build and test environments, define and explore component dependencies in the workspace, version components and auto-update dependencies, import and export components to remote scopes to be shared across many projects, and more.  
 
-#### [Explore the demo project :crystal_ball:](https://harmony-docs.bit.dev/introduction/try-bit)
+#### [Explore the demo project :crystal_ball:](/demo/try-bit)
 
 - Get a fully functional Bit workspace with independent components developed and managed by Bit, in this project and imported from other projects, where you can explore and experiment with every part of the Bit workspace, development UI, change and manage components, and learn how it works.  
 
@@ -39,15 +40,15 @@ There are a few ways for you to get started with Harmony.  
 
 ### Learn more
 
-#### [Why Bit? :rocket:](https://harmony-docs.bit.dev/introduction/why-bit) 
+#### [Why Bit? :rocket:](/why-bit) 
 
 - Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
 
-#### [Resources :books:](https://harmony-docs.bit.dev/introduction/resources)
+#### [Resources :books:](/community/resources)
 
 - Learn more with the best videos, talks, podcasts, guides, articles, and more about Harmony.  
 
-#### [Communtiy :busts_in_silhouette:](https://harmony-docs.bit.dev/introduction/resources)
+#### [Communtiy :busts_in_silhouette:](/community/resources)
 
 - Join and follow the community on GitHub, Slack, Twitter, and more.
 

@@ -3,6 +3,6 @@ id: install-bit
 title: Install Bit
 ---
 
-import Installation from '../introduction/installation.md'
+import Installation from '../installation/installation.md'
 
 <Installation />
