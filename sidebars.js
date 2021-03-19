@@ -1,15 +1,22 @@
 module.exports = {
+  community: [
+    {
+      type: 'category',
+      label: 'Community',
+      items: [
+        'community/follow-us',
+        'community/resources',
+        'community/open-source',
+      ],
+    },
+  ],
   docs: [
         {
       type: 'category',
-      label: 'Introduction',
+      label: 'Installation',
       items: [
-        'introduction/installation',
-        'introduction/getting-started',
-        'introduction/try-bit',
-        'introduction/why-bit',
-        'introduction/resources',
-        'introduction/community',
+        'installation/installation',
+        'installation/getting-started',
       ],
     },
     {

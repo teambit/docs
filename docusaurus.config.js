@@ -27,33 +27,59 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/introduction/installation'
+        href: '/installation/installation'
       },
       items: [
         {
-          to: '/introduction/installation',
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {to: 'https://docs.bit.dev/',
+              label: 'v14 - Legacy'},
+          ],
+        },
+        {
+          to: '/installation/installation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'right',
         },
         {
+          to: '/demo/try-bit',
+          activeBasePath: 'docs',
+          label: 'Try Bit',
+          position: 'right',
+        },
+        {
+          label: 'Community',
+          position: 'right', // or 'right'
+          items: [
+            {
+              label: 'Follow Us',
+              to: '/community/follow-us',
+            },
+            {
+              label: 'resources',
+              to: '/community/resources',
+            },
+            {
+              label: 'Open Source',
+              to: '/community/open-source',
+            },
+            // ... more items
+          ],
+        },
+        
+        {
           href: 'https://bit.dev/support',
           label: 'Help',
           position: 'right',
         },
-        {
-          to: '/open-source/open-source',
-          label: 'Open Source',
-          position: 'right',
-        },
+        
         {
           href: 'https://bit.dev',
           label: 'Bit Cloud',
-          position: 'right',
-        },
-        {
-          href: 'https://docs.bit.dev',
-          label: 'Bit v14',
           position: 'right',
         },
       ],
@@ -74,7 +100,13 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/teambit/docs/edit/harmony',
-          routeBasePath: '/'
+          routeBasePath: '/',
+          versions: {
+            current: {
+              label: 'v15',
+            }
+          }
+
         },
         blog: {
           showReadingTime: true,

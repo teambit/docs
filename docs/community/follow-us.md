@@ -1,6 +1,6 @@
 ---
-id: community
-title: Community
+id: follow-us
+title: Follow Us
 ---
 
 
