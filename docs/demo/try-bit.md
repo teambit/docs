@@ -5,6 +5,12 @@ title: Try Bit
 
 import { Image } from '../../src/components/image'
 
+Here you can find a demo project that will let you explore around a fully functional Bit workspace. You can [view the project on GitHub here](https://github.com/teambit/try-bit), and play with the tech-jokes widget to enjoy fine humor by opening the Bit workspace UI and then heading over to the "tech-jokes-viewer" component's compositions tab.
+
+#### Want to do it yourself? Try the [getting started tutorial ->](https://harmony-docs.bit.dev/tutorial/install-bit)
+
+### Clone the project and explore the workspace
+
 Clone a full Bit workspace and explore it yourself:
 
 1. [Install Bit Harmony](https://harmony-docs.bit.dev/introduction/installation)

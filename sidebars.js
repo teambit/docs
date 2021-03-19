@@ -78,6 +78,7 @@ module.exports = {
         "components/versioning",
         "components/exporting",
         "components/importing",
+        "components/installing",
         "components/inspecting",
         "components/remove-deprecate-components"
       ],
@@ -148,7 +149,6 @@ module.exports = {
       label: 'Packages',
       items: [
         "packages/overview",
-        "packages/install-packages",
         "packages/publish-to-npm"
       ],
     },
@@ -205,5 +205,12 @@ module.exports = {
         "troubleshooting/installation-troubleshooting"
       ],
     },
+        {
+      type: 'category',
+      label: 'FAQ',
+      items: [
+        "faq/what-is-bvm",
+      ],
+    }
   ],
 };
