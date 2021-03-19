@@ -30,8 +30,8 @@ module.exports = {
       label: 'Installation',
       items: [
         'installation/installation',
-        'installation/try-bit',
       ],
+      "collapsed": false,
     },
     {
       type: 'category',

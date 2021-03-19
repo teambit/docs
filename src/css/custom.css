@@ -28,3 +28,6 @@
   padding-left:  100px;
   max-width: 1500px;
 } */
+.navbar__link--active{
+  color:var(--ifm-color-primary);
+}

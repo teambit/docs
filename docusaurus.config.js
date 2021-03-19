@@ -30,31 +30,30 @@ module.exports = {
         href: '/getting-started'
       },
       items: [
-        {
-          type: 'docsVersionDropdown',
-          position: 'left',
-          dropdownActiveClassDisabled: true,
-          dropdownItemsAfter: [
-            {to: 'https://docs.bit.dev/',
-              label: 'v14 - Legacy'},
-          ],
-        },
+        
         {
           to: '/installation/installation',
-          activeBasePath: 'docs',
+          activeBasePath: '/installation',
           label: 'Docs',
           position: 'right',
         },
         
         {
           to: '/why-bit/modular-web-apps',
-          activeBasePath: 'docs',
+          activeBasePath: 'why-bit',
           label: 'Why Bit',
           position: 'right',
         },
         {
+          label: 'Try Bit',
+          to: '/demo/try-bit',
+          activeBasePath: 'demo',
+          position: 'right',
+        },
+        {
           label: 'Community',
-          position: 'right', // or 'right'
+          position: 'right',
+          activeBasePath: 'community',
           items: [
             {
               label: 'Talk To Us',
@@ -64,6 +63,7 @@ module.exports = {
               label: 'resources',
               to: '/community/resources',
             },
+            
             {
               label: 'Open Source',
               to: '/community/open-source',
@@ -73,21 +73,90 @@ module.exports = {
         },
         
         {
-          href: 'https://bit.dev/support',
-          label: 'Help',
+          type: 'docsVersionDropdown',
           position: 'right',
-        },
-        
-        {
-          href: 'https://bit.dev',
-          label: 'Bit Cloud',
-          position: 'right',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {to: 'https://docs.bit.dev/',
+              label: 'v14 - Legacy'},
+          ],
         },
       ],
     },
     footer: {
       style: 'dark',
       links: [
+      
+       
+        {
+          title: 'Why Bit',
+          items: [
+            {
+              label: 'Modular Web Apps',
+              to: '/why-bit/modular-web-apps',
+            },
+            {
+              label: 'What Can Bit do for you',
+              to: '/why-bit/what-can-bit-do-for-you',
+            },
+            {
+              label: 'Popular Use Cases',
+              to: '/why-bit/popular-use-cases',
+            },
+          ],
+        },
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: '/installation/installation',
+            },
+            {
+              label: 'Try Bit',
+              to: '/installation/try-bit',
+            },
+            {
+              label: 'Demo',
+              to: '/demo/try-bit',
+            },
+            
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Talk to Us',
+              to: '/community/talk-to-us',
+            },
+            {
+              label: 'Resources',
+              to: '/community/resources',
+            },
+            {
+              label: 'Open Source',
+              to: '/community/open-source',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Help',
+              href: 'https://bit.dev/support',
+            },
+            {
+              label: 'Bit Cloud',
+              href: 'https://bit.dev/',
+            },
+            {
+              label: 'Bit Legacy Docs',
+              href: 'https://docs.bit.dev/',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`,
     },
