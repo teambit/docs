@@ -37,40 +37,59 @@ module.exports = {
           label: 'Docs',
           position: 'right',
         },
+        {
+          label: 'Tutorials',
+          to: '/tutorials/react/tech-jokes/install-bit',
+          activeBasePath: 'tutorials',
+          position: 'right',
+        },
+        {
+          label: 'Aspects',
+          to: '/aspects',
+          activeBasePath: 'aspects',
+          position: 'right',
+        },
+        {
+          label: 'CLI',
+          to: '/cli',
+          activeBasePath: 'cli',
+          position: 'right',
+        },
         
-        {
-          to: '/why-bit/modular-web-apps',
-          activeBasePath: 'why-bit',
-          label: 'Why Bit',
-          position: 'right',
-        },
-        {
-          label: 'Try Bit',
-          to: '/demos/try-bit',
-          activeBasePath: 'demo',
-          position: 'right',
-        },
-        {
-          label: 'Community',
-          position: 'right',
-          activeBasePath: 'community',
-          items: [
-            {
-              label: 'Talk To Us',
-              to: '/community/talk-to-us',
-            },
-            {
-              label: 'resources',
-              to: '/community/resources',
-            },
+        
+        // {
+        //   to: '/why-bit/modular-web-apps',
+        //   activeBasePath: 'why-bit',
+        //   label: 'Why Bit',
+        //   position: 'right',
+        // },
+        // {
+        //   label: 'Try Bit',
+        //   to: '/demos/try-bit',
+        //   activeBasePath: 'demo',
+        //   position: 'right',
+        // },
+        // {
+        //   label: 'Community',
+        //   position: 'right',
+        //   activeBasePath: 'community',
+        //   items: [
+        //     {
+        //       label: 'Talk To Us',
+        //       to: '/community/talk-to-us',
+        //     },
+        //     {
+        //       label: 'resources',
+        //       to: '/community/resources',
+        //     },
             
-            {
-              label: 'Open Source',
-              to: '/community/open-source',
-            },
-            // ... more items
-          ],
-        },
+        //     {
+        //       label: 'Open Source',
+        //       to: '/community/open-source',
+        //     },
+        //     // ... more items
+        //   ],
+        // },
         
         {
           type: 'docsVersionDropdown',

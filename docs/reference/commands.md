@@ -1,6 +1,6 @@
 ---
-id: cli-commands
-title: CLI Commands
+id: commands
+title: Commands
 ---
 
 ### Help

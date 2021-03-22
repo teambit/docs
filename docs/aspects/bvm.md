@@ -3,6 +3,9 @@ id: bvm
 title: BVM
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 [BVM](https://github.com/teambit/bvm) is a version manager for Bit.  
 Using BVM makes it easier to install and manage multiple versions of Bit in a single environment.
 
@@ -15,15 +18,27 @@ Using BVM makes it easier to install and manage multiple versions of Bit in a si
 
 ### Install BVM
 
-#### Install with NPM
+<Tabs
+  defaultValue="NPM"
+  values={[
+    {label: 'NPM', value: 'NPM'},
+    {label: 'Yarn', value: 'Yarn'},
+  ]}>
+  <TabItem value="NPM">
+
 ```shell
 npm i -g @teambit/bvm
 ```
 
-#### Install with Yarn
+  </TabItem>
+  <TabItem value="Yarn">
+
 ```shell
 yarn global add @teambit/bvm
 ```
+
+  </TabItem>
+</Tabs>
 
 ### Install Bit
 #### Install Bit's latest version
@@ -124,4 +139,4 @@ bvm config set DEFAULT_LINK bitty
 
 #### PATH is missing the installation directory
 
-- [See here](/troubleshooting/installation-troubleshooting).
+- [Installation Troubleshooting](/getting-started/troubleshooting/installation-troubleshooting).

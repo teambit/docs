@@ -11,92 +11,51 @@ module.exports = {
       ],
     },
   ],
-  // whyBit: [
-  //   {
-  //     type: 'category',
-  //     label: 'Why Bit',
-  //     items: [
-  //       'why-bit/modular-web-apps',
-  //       'why-bit/what-can-bit-do-for-you',
-  //       'why-bit/popular-use-cases',
-  //       'why-bit/open-source-dev-tools',
-  //       'why-bit/enterprise-grade-component-cloud',
-  //     ],
-  //   },
-  // ],
-  docs: [
-   
-    {
-      type: 'category',
-      label: 'Installation',
-      items: [
-        'getting-started/welcome',
-        'getting-started/installation',
-        {
-          type: 'category',
-          label: 'Troubleshooting',
-          items: [
-            "getting-started/troubleshooting/doctor-logs-cache",
-            "getting-started/troubleshooting/multiple-peer-dep-versions",
-            "getting-started/troubleshooting/set-runtime-globals",
-            "getting-started/troubleshooting/components-envs",
-            "getting-started/troubleshooting/installation-troubleshooting"
-          ],
-        },
-      ],
-      "collapsed": false,
-    },
-      {
-        type: 'category',
-        label: 'Why Bit',
-        items: [
-          'why-bit/modular-web-apps',
-          'why-bit/what-can-bit-do-for-you',
-          'why-bit/popular-use-cases',
-          'why-bit/open-source-dev-tools',
-          'why-bit/enterprise-grade-component-cloud',
-        ],
-      },
-      
-
+  tutorials: [
     {
       type: 'category',
       label: 'Tutorial',
       items: [
         {
-          type:'category',
-          label: 'Tech Jokes',
+          type: 'category',
+          label: 'React',
           items: [
-            'tutorials/tech-jokes/install-bit',
-            'tutorials/tech-jokes/create-remote-scope',
-            'tutorials/tech-jokes/set-up-workspace',
-            'tutorials/tech-jokes/choose-dev-env',
-            'tutorials/tech-jokes/add-components',
-            'tutorials/tech-jokes/render-component',
-            'tutorials/tech-jokes/document',
-            'tutorials/tech-jokes/test',
-            'tutorials/tech-jokes/version',
-            'tutorials/tech-jokes/import-components',
-            'tutorials/tech-jokes/explore-dependencies',
-            'tutorials/tech-jokes/auto-version-dependents',
-            "tutorials/tech-jokes/export-to-scope",
-            'tutorials/tech-jokes/install-components',
-            'tutorials/tech-jokes/ci-cd'
+            {
+              type:'category',
+              label: 'Tech Jokes',
+              items: [
+                'tutorials/react/tech-jokes/try-bit',
+                'tutorials/react/tech-jokes/install-bit',
+                'tutorials/react/tech-jokes/create-remote-scope',
+                'tutorials/react/tech-jokes/set-up-workspace',
+                'tutorials/react/tech-jokes/choose-dev-env',
+                'tutorials/react/tech-jokes/add-components',
+                'tutorials/react/tech-jokes/render-component',
+                'tutorials/react/tech-jokes/document',
+                'tutorials/react/tech-jokes/test',
+                'tutorials/react/tech-jokes/version',
+                'tutorials/react/tech-jokes/import-components',
+                'tutorials/react/tech-jokes/explore-dependencies',
+                'tutorials/react/tech-jokes/auto-version-dependents',
+                "tutorials/react/tech-jokes/export-to-scope",
+                'tutorials/react/tech-jokes/install-components',
+                'tutorials/react/tech-jokes/ci-cd'
+              ]
+            }
           ]
         }
       ],
     },
-    {
-      type: 'category',
-      label: 'Demos',
-      items: [
-        'demos/try-bit',
-      ],
-    },
+  ],
+  aspects: [
     {
       type: 'category',
       label: 'Aspects',
       items: [
+        {
+          type: 'doc',
+          id: 'aspects/aspects'
+        },
         {
           type: 'doc',
           id: 'aspects/bvm'
@@ -160,7 +119,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Documentating',
+          label: 'Documenting',
           items: [
             "aspects/documenting/overview",
             "aspects/documenting/using-docs-api",
@@ -236,14 +195,101 @@ module.exports = {
         },
       ]
     },
+  ],
+
+  // whyBit: [
+  //   {
+  //     type: 'category',
+  //     label: 'Why Bit',
+  //     items: [
+  //       'why-bit/modular-web-apps',
+  //       'why-bit/what-can-bit-do-for-you',
+  //       'why-bit/popular-use-cases',
+  //       'why-bit/open-source-dev-tools',
+  //       'why-bit/enterprise-grade-component-cloud',
+  //     ],
+  //   },
+  // ],
+  
+  docs: [
+   
+    {
+      type: 'category',
+      label: 'Getting Started',
+      items: [
+        'getting-started/welcome',
+        'getting-started/installation',
+        'getting-started/initializing-workspace',
+        'getting-started/workspace-ui',
+        'getting-started/workspace-configuration',
+        'getting-started/remote-scope',
+        'getting-started/publishing-components',
+        'getting-started/importing-components',
+        
+      ],
+      "collapsed": false,
+    },
+      // {
+      //   type: 'category',
+      //   label: 'Why Bit',
+      //   items: [
+      //     'why-bit/modular-web-apps',
+      //     'why-bit/what-can-bit-do-for-you',
+      //     'why-bit/popular-use-cases',
+      //     'why-bit/open-source-dev-tools',
+      //     'why-bit/enterprise-grade-component-cloud',
+      //   ],
+      // },
+      
+      {
+        type: 'category',
+        label: 'Essentials',
+        items: [
+          "essentials/what-is-bit",
+          "essentials/advantages-of-bit",
+          
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Building with Bit',
+        items: [
+          "building-with-bit/creating-components",
+          "building-with-bit/styling-components",
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Component Architecture',
+        items: [
+          "component-architecture/thinking-in-components",
+          "component-architecture/composing-components",
+          "component-architecture/naming-components",
+          "component-architecture/organizing-components",
+          "component-architecture/theming-components",
+          // "component-architecture/build-like-google",
+        ],
+      },
+     
 
     {
       type: 'category',
       label: 'Reference',
       items: [
-        "reference/cli-commands",
+        "reference/commands",
         "reference/usage-analytics",
         "reference/authentication"
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Troubleshooting',
+      items: [
+        "troubleshooting/doctor-logs-cache",
+        "troubleshooting/multiple-peer-dep-versions",
+        "troubleshooting/set-runtime-globals",
+        "troubleshooting/components-envs",
+        "troubleshooting/installation-troubleshooting"
       ],
     },
     
