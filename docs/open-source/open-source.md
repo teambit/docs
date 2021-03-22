@@ -5,6 +5,14 @@ title: Open Source
 
 At Bit, we build everything with Bit.  
 
+- Bit was built from 1000s of components including UI, modules, and backend services.  
+
+- Composing a variety of different CLI app, web app and microservices.  
+
+- Bit is 100% consistent without a single duplicated line of code. 
+
+- It is the most extendable product ever built.  
+
 Every feature or service we build is a **scope of components**. Each scope of components contains everything the team needs to deliver this feature: UI components, data-connected components, React hooks, Node modules, and even serverless functions. Our teams expose and share their components to each other and continuously integrate to build products.  
 
 Our entire workflow for building bit goes through Bit: Component development, compilation, testing, packaging, linting and so on. We use 100% of bit's APIs to isolate, compile, test, install dependencies, and so on.  
