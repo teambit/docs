@@ -12,40 +12,36 @@ module.exports = {
     },
   ],
   tutorials: [
+    
     {
       type: 'category',
-      label: 'Tutorial',
+      label: 'React',
       items: [
         {
-          type: 'category',
-          label: 'React',
+          type:'category',
+          label: 'Tech Jokes',
           items: [
-            {
-              type:'category',
-              label: 'Tech Jokes',
-              items: [
-                'tutorials/react/tech-jokes/try-bit',
-                'tutorials/react/tech-jokes/install-bit',
-                'tutorials/react/tech-jokes/create-remote-scope',
-                'tutorials/react/tech-jokes/set-up-workspace',
-                'tutorials/react/tech-jokes/choose-dev-env',
-                'tutorials/react/tech-jokes/add-components',
-                'tutorials/react/tech-jokes/render-component',
-                'tutorials/react/tech-jokes/document',
-                'tutorials/react/tech-jokes/test',
-                'tutorials/react/tech-jokes/version',
-                'tutorials/react/tech-jokes/import-components',
-                'tutorials/react/tech-jokes/explore-dependencies',
-                'tutorials/react/tech-jokes/auto-version-dependents',
-                "tutorials/react/tech-jokes/export-to-scope",
-                'tutorials/react/tech-jokes/install-components',
-                'tutorials/react/tech-jokes/ci-cd'
-              ]
-            }
+            'tutorials/react/tech-jokes/try-bit',
+            'tutorials/react/tech-jokes/install-bit',
+            'tutorials/react/tech-jokes/create-remote-scope',
+            'tutorials/react/tech-jokes/set-up-workspace',
+            'tutorials/react/tech-jokes/choose-dev-env',
+            'tutorials/react/tech-jokes/add-components',
+            'tutorials/react/tech-jokes/render-component',
+            'tutorials/react/tech-jokes/document',
+            'tutorials/react/tech-jokes/test',
+            'tutorials/react/tech-jokes/version',
+            'tutorials/react/tech-jokes/import-components',
+            'tutorials/react/tech-jokes/explore-dependencies',
+            'tutorials/react/tech-jokes/auto-version-dependents',
+            "tutorials/react/tech-jokes/export-to-scope",
+            'tutorials/react/tech-jokes/install-components',
+            'tutorials/react/tech-jokes/ci-cd'
           ]
         }
-      ],
-    },
+      ]
+    }
+      
   ],
   aspects: [
     {
@@ -193,7 +189,8 @@ module.exports = {
             "aspects/react-native/extending-react-native"
           ],
         },
-      ]
+      ],
+      "collapsed": false,
     },
   ],
 
@@ -258,6 +255,10 @@ module.exports = {
           "building-with-bit/creating-components",
           "building-with-bit/styling-components",
         ],
+      },
+      {
+        type: 'doc',
+        id: 'aspects/aspects'
       },
       {
         type: 'category',
