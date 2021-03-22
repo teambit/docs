@@ -46,7 +46,7 @@ module.exports = {
         },
         {
           label: 'Try Bit',
-          to: '/demo/try-bit',
+          to: '/demos/try-bit',
           activeBasePath: 'demo',
           position: 'right',
         },
