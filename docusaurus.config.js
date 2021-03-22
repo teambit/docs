@@ -27,13 +27,13 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/getting-started'
+        href: '/getting-started/welcome'
       },
       items: [
         
         {
           to: '/getting-started/welcome',
-          activeBasePath: '/getting-started',
+          activeBasePath: '/getting-started/welcome',
           label: 'Docs',
           position: 'right',
         },
