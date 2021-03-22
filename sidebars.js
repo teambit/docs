@@ -11,221 +11,242 @@ module.exports = {
       ],
     },
   ],
-  whyBit: [
-    {
-      type: 'category',
-      label: 'Why Bit',
-      items: [
-        'why-bit/modular-web-apps',
-        'why-bit/what-can-bit-do-for-you',
-        'why-bit/popular-use-cases',
-        'why-bit/open-source-dev-tools',
-        'why-bit/enterprise-grade-component-cloud',
-      ],
-    },
-  ],
+  // whyBit: [
+  //   {
+  //     type: 'category',
+  //     label: 'Why Bit',
+  //     items: [
+  //       'why-bit/modular-web-apps',
+  //       'why-bit/what-can-bit-do-for-you',
+  //       'why-bit/popular-use-cases',
+  //       'why-bit/open-source-dev-tools',
+  //       'why-bit/enterprise-grade-component-cloud',
+  //     ],
+  //   },
+  // ],
   docs: [
-        {
+   
+    {
       type: 'category',
       label: 'Installation',
       items: [
-        'installation/installation',
+        'getting-started/welcome',
+        'getting-started/installation',
+        {
+          type: 'category',
+          label: 'Troubleshooting',
+          items: [
+            "getting-started/troubleshooting/doctor-logs-cache",
+            "getting-started/troubleshooting/multiple-peer-dep-versions",
+            "getting-started/troubleshooting/set-runtime-globals",
+            "getting-started/troubleshooting/components-envs",
+            "getting-started/troubleshooting/installation-troubleshooting"
+          ],
+        },
       ],
       "collapsed": false,
     },
+      {
+        type: 'category',
+        label: 'Why Bit',
+        items: [
+          'why-bit/modular-web-apps',
+          'why-bit/what-can-bit-do-for-you',
+          'why-bit/popular-use-cases',
+          'why-bit/open-source-dev-tools',
+          'why-bit/enterprise-grade-component-cloud',
+        ],
+      },
+      
+
     {
       type: 'category',
       label: 'Tutorial',
       items: [
-        'tutorial/install-bit',
-        'tutorial/create-remote-scope',
-        'tutorial/set-up-workspace',
-        'tutorial/choose-dev-env',
-        'tutorial/add-components',
-        'tutorial/render-component',
-        'tutorial/document',
-        'tutorial/test',
-        'tutorial/version',
-        'tutorial/import-components',
-        'tutorial/explore-dependencies',
-        'tutorial/auto-version-dependents',
-        "tutorial/export-to-scope",
-        'tutorial/install-components',
-        'tutorial/ci-cd'
+        {
+          type:'category',
+          label: 'Tech Jokes',
+          items: [
+            'tutorials/tech-jokes/install-bit',
+            'tutorials/tech-jokes/create-remote-scope',
+            'tutorials/tech-jokes/set-up-workspace',
+            'tutorials/tech-jokes/choose-dev-env',
+            'tutorials/tech-jokes/add-components',
+            'tutorials/tech-jokes/render-component',
+            'tutorials/tech-jokes/document',
+            'tutorials/tech-jokes/test',
+            'tutorials/tech-jokes/version',
+            'tutorials/tech-jokes/import-components',
+            'tutorials/tech-jokes/explore-dependencies',
+            'tutorials/tech-jokes/auto-version-dependents',
+            "tutorials/tech-jokes/export-to-scope",
+            'tutorials/tech-jokes/install-components',
+            'tutorials/tech-jokes/ci-cd'
+          ]
+        }
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Demos',
+      items: [
+        'demos/try-bit',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Aspects',
+      items: [
+        {
+          type: 'doc',
+          id: 'aspects/bvm'
+        },
+        {
+          type: 'category',
+          label: 'Workspace',
+          items: [
+            "aspects/workspace/overview",
+            "aspects/workspace/configurations",
+            "aspects/workspace/cascading-rules",
+            "aspects/workspace/workspace-ui",
+            "aspects/workspace/workspace-status"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Environments',
+          items: [
+            "aspects/environments/overview",
+            "aspects/environments/choose-an-environment",
+            "aspects/environments/create-environment",
+            "aspects/environments/environment-services",
+            "aspects/environments/service-handlers"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Components',
+          items: [
+            "aspects/components/overview",
+            "aspects/components/tracking",
+            "aspects/components/versioning",
+            "aspects/components/exporting",
+            "aspects/components/importing",
+            "aspects/components/installing",
+            "aspects/components/inspecting",
+            "aspects/components/remove-deprecate-components"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Scopes',
+          items: [
+            "aspects/scopes/overview",
+            "aspects/scopes/set-up-remote-scope",
+            "aspects/scopes/self-host-bit-scope",
+            "aspects/scopes/scope-ui"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Dependencies',
+          items: [
+            "aspects/dependencies/overview",
+            "aspects/dependencies/dependency-resolution",
+            "aspects/dependencies/dependency-policies",
+            "aspects/dependencies/dependency-installation",
+            "aspects/dependencies/package-managers"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Documentating',
+          items: [
+            "aspects/documenting/overview",
+            "aspects/documenting/using-docs-api",
+            "aspects/documenting/properties-table"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compositions',
+          items: [
+            "aspects/compositions/overview",
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Testing',
+          items: [
+            "aspects/testing/overview",
+            "aspects/testing/customize-the-tester"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compiling',
+          items: [
+            "aspects/compiling/overview",
+            "aspects/compiling/customize"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Build Pipeline',
+          items: [
+            "aspects/build-pipeline/overview",
+            "aspects/build-pipeline/create-build-task"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Packages',
+          items: [
+            "aspects/packages/overview",
+            "aspects/packages/publish-to-npm"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'React',
+          items: [
+            "aspects/react/overview",
+            "aspects/react/using-react",
+            "aspects/react/extending-react",
+            "aspects/react/composition-providers"
+          ],
+        },  
+        {
+          type: 'category',
+          label: 'Node',
+          items: [
+            "aspects/nodejs/overview",
+            "aspects/nodejs/using-node",
+            "aspects/nodejs/extending-node"
+          ],
+        },
+        {
+          type: 'category',
+          label: 'React Native',
+          items: [
+            "aspects/react-native/overview",
+            "aspects/react-native/using-react-native",
+            "aspects/react-native/extending-react-native"
+          ],
+        },
+      ]
+    },
+
+    {
+      type: 'category',
+      label: 'Reference',
+      items: [
+        "reference/cli-commands",
+        "reference/usage-analytics",
+        "reference/authentication"
       ],
     },
     
-    {
-      type: 'category',
-      label: 'Workspace',
-      items: [
-        "workspace/overview",
-        "workspace/configurations",
-        "workspace/cascading-rules",
-        "workspace/workspace-ui",
-        "workspace/workspace-status"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Environments',
-      items: [
-        "environments/overview",
-        "environments/choose-an-environment",
-        "environments/create-environment",
-        "environments/environment-services",
-        "environments/service-handlers"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Components',
-      items: [
-        "components/overview",
-        "components/tracking",
-        "components/versioning",
-        "components/exporting",
-        "components/importing",
-        "components/installing",
-        "components/inspecting",
-        "components/remove-deprecate-components"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Scopes',
-      items: [
-        "scope/overview",
-        "scope/set-up-remote-scope",
-        "scope/self-host-bit-scope",
-        "scope/scope-ui"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Dependencies',
-      items: [
-        "dependencies/overview",
-        "dependencies/dependency-resolution",
-        "dependencies/dependency-policies",
-        "dependencies/dependency-installation",
-        "dependencies/package-managers"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Documentating',
-      items: [
-        "documenting/overview",
-        "documenting/using-docs-api",
-        "documenting/properties-table"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Compositions',
-      items: [
-        "compositions/overview",
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Testing',
-      items: [
-        "testing/overview",
-        "testing/customize-the-tester"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Compiling',
-      items: [
-        "compiling/overview",
-        "compiling/customize"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Build Pipeline',
-      items: [
-        "build-pipeline/overview",
-        "build-pipeline/create-build-task"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Packages',
-      items: [
-        "packages/overview",
-        "packages/publish-to-npm"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'React',
-      items: [
-        "react/overview",
-        "react/using-react",
-        "react/extending-react",
-        "react/composition-providers"
-      ],
-    },  
-    {
-      type: 'category',
-      label: 'Node',
-      items: [
-        "nodejs/overview",
-        "nodejs/using-node",
-        "nodejs/extending-node"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'React Native',
-      items: [
-        "react-native/overview",
-        "react-native/using-react-native",
-        "react-native/extending-react-native"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Authentication',
-      items: [
-        "authentication/overview"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Usage Analytics',
-      items: [
-        "usage-analytics/overview"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'CLI',
-      items: [
-        "cli/cheat-sheet"
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Troubleshooting',
-      items: [
-        "troubleshooting/doctor-logs-cache",
-        "troubleshooting/multiple-peer-dep-versions",
-        "troubleshooting/set-runtime-globals",
-        "troubleshooting/components-envs",
-        "troubleshooting/installation-troubleshooting"
-      ],
-    },
-        {
-      type: 'category',
-      label: 'FAQ',
-      items: [
-        "faq/what-is-bvm",
-      ],
-    }
+        
   ],
 };

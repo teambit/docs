@@ -32,8 +32,8 @@ module.exports = {
       items: [
         
         {
-          to: '/installation/installation',
-          activeBasePath: '/installation',
+          to: '/getting-started/welcome',
+          activeBasePath: '/getting-started',
           label: 'Docs',
           position: 'right',
         },
@@ -110,7 +110,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: '/installation/installation',
+              to: '/getting-started/welcome',
             },
             {
               label: 'Try Bit',
