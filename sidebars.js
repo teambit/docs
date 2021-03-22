@@ -141,8 +141,7 @@ module.exports = {
       type: 'category',
       label: 'Packages',
       items: [
-        "packages/overview",
-        "packages/publish-to-npm"
+        "packages/publish-component-packages"
       ],
     },
     {

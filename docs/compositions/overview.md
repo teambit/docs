@@ -66,6 +66,8 @@ const UserHero = () => {
   <UserHeroExample />
 </Theme>
 
+<br />
+
 ```tsx title="example #2: user-hero.compositions.tsx"
 import { Hero } from './user-hero';
 
