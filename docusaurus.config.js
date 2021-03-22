@@ -35,25 +35,26 @@ module.exports = {
           to: '/getting-started/welcome',
           activeBasePath: '/getting-started/welcome',
           label: 'Docs',
-          position: 'right',
+          position: 'left',
         },
-        {
-          label: 'Tutorials',
-          to: '/tutorials/react/tech-jokes/install-bit',
-          activeBasePath: 'tutorials',
-          position: 'right',
-        },
+        
         {
           label: 'Aspects',
           to: '/aspects',
           activeBasePath: 'aspects',
-          position: 'right',
+          position: 'left',
         },
         {
           label: 'CLI',
           to: '/cli',
           activeBasePath: 'cli',
-          position: 'right',
+          position: 'left',
+        },
+        {
+          label: 'Tutorials',
+          to: '/tutorials/react/tech-jokes/install-bit',
+          activeBasePath: 'tutorials',
+          position: 'left',
         },
         
         

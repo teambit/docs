@@ -8,6 +8,7 @@ Bit requires that every component is in it's own folder. To create a button comp
 ```shell
 mkdir button
 ```
+
 We then need to create the necessary files. 
 
 ```shell

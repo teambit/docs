@@ -48,6 +48,7 @@ module.exports = {
       type: 'category',
       label: 'Aspects',
       items: [
+        
         {
           type: 'doc',
           id: 'aspects/aspects'
