@@ -3,6 +3,8 @@ id: set-up-workspace
 title: Set Up a Workspace
 ---
 
+import FilesBitCreates from '@site/docs/components/workspace/files-bit-creates.md'
+
 A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way.
 It does so by offering:
 
@@ -23,13 +25,7 @@ The `--harmony` option creates a Bit Harmony workspace. Omitting it will create 
 Harmony components and Bit legacy components cannot switch workspace.
 :::
 
-Bit creates the following files when initializing a new workspace:
-
-1. `workspace.jsonc` - The Workspace configuration file (mentioned above).
-2. `.bitmap` - An auto-generated mapping between tracked components in the workspace and their physical location on the file system.
-   The file-structure of your workspace is entirely up to you.
-3. `.bit` (directory) - Your local scope. Where your workspace's component release versions are stored.
-
+<FilesBitCreates/>
 
 ## Set a default scope for all components
 

@@ -3,25 +3,19 @@ id: workspace-configuration
 title: Workspace Configuration
 ---
 
+import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
+
+import DefaultScopeName from '@site/docs/components/workspace/default-scope-name.md'
+
 ## Setting the Default Scope Name
 
-Once you have your account setup on [Bit.dev](https://bit.dev/) and have created a remote scope you will need to set this in your `workspace.jsonc` so that you can add your components to your remote workspace.
+Once you have your account setup on [Bit.dev](https://bit.dev/) and have created a remote scope you will need to set this in your workspace.jsonc so that you can add your components to your remote workspace.
 
-```json
-"defaultScope": "AccountName.ScopeName",
-```
+<DefaultScopeName />
 
 ## Setting the React Environment
 
-**Uncomment** the following lines in your `workspace.jsonc` configuration file, to apply the basic ['React' development environment](/aspects/react/overview) on all components in this workspace.
-
-```json title="workspace.jsonc"
-"teambit.workspace/variants": {
-  "*": {
-    "teambit.react/react": { }
-  }
-}
-```
+<ReactEnvironment />
 
 ### Reset your dev server
 
