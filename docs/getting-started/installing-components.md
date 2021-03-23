@@ -17,22 +17,22 @@ Once you have exported your component you can now install it in your application
 
 <ScopedRegistry />
 
-## Install Dependencies
+<!-- ## Install Dependencies
 
 Install dependencies for all the imported components.
 
 ```shell
 bit install
-```
+``` -->
 
 ## Use your Component
 
 You can now use the component in your app by importing it from your node modules and then using it in your component function.
 
 ```js title="app.js"
-import { Button } from '@YourScopeName/componentScopeName.componentID';
+import { Button } from '@yourUserName/componentScopeName.componentID';
 ```
 
 ```js title="app.js"
-<Button>Click Me</Button>
+<Button text="click me" />
 ```

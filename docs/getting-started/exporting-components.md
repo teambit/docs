@@ -13,6 +13,14 @@ Before exporting our components we need to tag them using the `bit tag` command.
 bit tag --all
 ```
 
+Once the component has finished tagging you should see the following message:
+
+```shell
+new components
+(first version for components)
+     > ui/button@0.0.1
+```
+
 ## Export Components
 
 Once you have tagged your component you can then run the `bit export` command.
@@ -21,10 +29,17 @@ Once you have tagged your component you can then run the `bit export` command.
 bit export
 ```
 
+Once your component has finished exporting you should see the following message:
+
+```shell
+exported the following 1 component(s):
+your-username.demo-scope/ui/button
+```
+
 After exporting go to your [bit.dev](https://bit.dev) account to see your exported component.
 
 Once the exporting process completes, the `.bitmap` file gets updated to reflect that new state. Make sure to track it with git.
 
 ```sh
-git commit -am 'updated .bitmap file after a successful export'
+git commit -am "updated .bitmap file after a successful export"
 ```

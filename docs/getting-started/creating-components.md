@@ -12,14 +12,14 @@ mkdir button
 We then need to create the necessary files. 
 
 ```shell
-touch button/index.ts button.tsx button.composition.tsx
+touch button/index.ts button/button.tsx button/button.composition.tsx button/button.docs.mdx
 ```
 
 ## The Index file
 
 The `index.ts` file is the file that exports the component
 
-```jsx title="index.ts"
+```tsx title="index.ts"
 export { Button }  from './button';
 ```
 
@@ -27,16 +27,18 @@ export { Button }  from './button';
 
 The `button.tsx` file is where we create and export our component
 
-```jsx title="button.tsx"
+```tsx title="button.tsx"
 import React from 'react';
 
 export type ButtonProps = {
-  text?: String
-}
+  text: string;
+};
 
-export function Button({text}) {
-  return <button>{text}</button>;
-}
+export const Button = ({
+  text
+}: ButtonProps) => {
+  return <button>{text}</button>
+};
 ```
 
 ## The Composition file
@@ -44,12 +46,40 @@ export function Button({text}) {
 The `button.composition.tsx` file is needed so that we can visualize our component in our workspace.
 
 
-```jsx title="button.composition.tsx"
+```tsx title="button.composition.tsx"
 import React from 'react';
 import { Button } from './button';
 
 export const BasicButton = () => {
-  return <Button>Click here!</Button>;
+  return <Button text="click me" />;
 };
 ```
 
+## The Docs file
+
+This `button.docs.mdx` file is not needed but is very helpful as adds documentation for your component as well as a live playground.
+
+```mdx title="button.docs.mdx"
+---
+labels: ['react', 'typescript', 'ui', 'button']
+description: 'A Button component.'
+---
+
+import { Button } from './button';
+
+Button example:
+
+// Uncomment out the code below by removing the '//'
+// ```js live
+<Button text="click here"/>
+// ```
+
+```
+
+### Install Dependencies
+
+As we are creating a React component and therefore importing React we will need to install it so we can use it. We can run the `bit install` command to install any needed dependencies.
+
+```shell
+bit install
+```
