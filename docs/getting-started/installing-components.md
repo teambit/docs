@@ -13,9 +13,13 @@ Once you have exported your component you can now install it in your application
 
 <InstallComponents />
 
+:arrow_right: Learn more about the [Installing Components](/building-with-bit/components/installing).
+
 ## Configure your Scoped Registry
 
 <ScopedRegistry />
+
+:arrow_right: Learn more about the [Installing Components](/building-with-bit/components/installing).
 
 <!-- ## Install Dependencies
 

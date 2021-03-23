@@ -13,7 +13,7 @@ import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 <BVMIntro />
 <InstallBVM />
 
-If you would like to learn more about BVM check out the [BVM Aspect](/aspects/bvm).
+:arrow_right: If you would like to learn more about BVM check out the [BVM Aspect](/building-with-bit/bvm).
 
 ## 2. Install Bit
 

@@ -100,171 +100,174 @@ module.exports = {
           
         ],
       },
-      {
-        type: 'category',
-        label: 'Building with Bit',
-        items: [
-          "building-with-bit/install-bit",
-          "building-with-bit/create-remote-scope",
-          "building-with-bit/set-up-workspace",
-          "building-with-bit/choose-dev-env",
-          "building-with-bit/render-component",
-          "building-with-bit/document-components",
-          "building-with-bit/test-components",
-          "building-with-bit/version-components",
-          "building-with-bit/import-components",
-          "building-with-bit/explore-dependencies",
-          "building-with-bit/auto-version-dependents",
-          "building-with-bit/export-to-scope",
-          "building-with-bit/install-components",
-          "building-with-bit/ci-cd",
-        ],
-      },
-      
+      // {
+      //   type: 'category',
+      //   label: 'Building with Bit',
+      //   items: [
+      //     "building-with-bit/install-bit",
+      //     "building-with-bit/create-remote-scope",
+      //     "building-with-bit/set-up-workspace",
+      //     "building-with-bit/choose-dev-env",
+      //     "building-with-bit/render-component",
+      //     "building-with-bit/document-components",
+      //     "building-with-bit/test-components",
+      //     "building-with-bit/version-components",
+      //     "building-with-bit/import-components",
+      //     "building-with-bit/explore-dependencies",
+      //     "building-with-bit/auto-version-dependents",
+      //     "building-with-bit/export-to-scope",
+      //     "building-with-bit/install-components",
+      //     "building-with-bit/ci-cd",
+      //   ],
+      // },
+      // {
+      //   type: 'doc',
+      //   id: 'building-with-bit/aspects'
+      // },
         {
           type: 'category',
-          label: 'Aspects',
+          label: 'Building with Bit',
           items: [
             
             {
               type: 'doc',
-              id: 'aspects/aspects'
+              id: 'building-with-bit/aspects'
             },
             {
               type: 'doc',
-              id: 'aspects/bvm'
+              id: 'building-with-bit/bvm'
             },
             {
               type: 'category',
               label: 'Workspace',
               items: [
-                "aspects/workspace/overview",
-                "aspects/workspace/configurations",
-                "aspects/workspace/cascading-rules",
-                "aspects/workspace/workspace-ui",
-                "aspects/workspace/workspace-status"
+                "building-with-bit/workspace/overview",
+                "building-with-bit/workspace/configurations",
+                "building-with-bit/workspace/cascading-rules",
+                "building-with-bit/workspace/workspace-ui",
+                "building-with-bit/workspace/workspace-status"
               ],
             },
             {
               type: 'category',
               label: 'Environments',
               items: [
-                "aspects/environments/overview",
-                "aspects/environments/choose-an-environment",
-                "aspects/environments/create-environment",
-                "aspects/environments/environment-services",
-                "aspects/environments/service-handlers"
+                "building-with-bit/environments/overview",
+                "building-with-bit/environments/choose-an-environment",
+                "building-with-bit/environments/create-environment",
+                "building-with-bit/environments/environment-services",
+                "building-with-bit/environments/service-handlers"
               ],
             },
             {
               type: 'category',
               label: 'Components',
               items: [
-                "aspects/components/overview",
-                "aspects/components/tracking",
-                "aspects/components/versioning",
-                "aspects/components/exporting",
-                "aspects/components/importing",
-                "aspects/components/installing",
-                "aspects/components/inspecting",
-                "aspects/components/remove-deprecate-components"
+                "building-with-bit/components/overview",
+                "building-with-bit/components/tracking",
+                "building-with-bit/components/versioning",
+                "building-with-bit/components/exporting",
+                "building-with-bit/components/importing",
+                "building-with-bit/components/installing",
+                "building-with-bit/components/inspecting",
+                "building-with-bit/components/remove-deprecate-components"
               ],
             },
             {
               type: 'category',
               label: 'Scopes',
               items: [
-                "aspects/scopes/overview",
-                "aspects/scopes/set-up-remote-scope",
-                "aspects/scopes/self-host-bit-scope",
-                "aspects/scopes/scope-ui"
+                "building-with-bit/scopes/overview",
+                "building-with-bit/scopes/set-up-remote-scope",
+                "building-with-bit/scopes/self-host-bit-scope",
+                "building-with-bit/scopes/scope-ui"
               ],
             },
             {
               type: 'category',
               label: 'Dependencies',
               items: [
-                "aspects/dependencies/overview",
-                "aspects/dependencies/dependency-resolution",
-                "aspects/dependencies/dependency-policies",
-                "aspects/dependencies/dependency-installation",
-                "aspects/dependencies/package-managers"
+                "building-with-bit/dependencies/overview",
+                "building-with-bit/dependencies/dependency-resolution",
+                "building-with-bit/dependencies/dependency-policies",
+                "building-with-bit/dependencies/dependency-installation",
+                "building-with-bit/dependencies/package-managers"
               ],
             },
             {
               type: 'category',
               label: 'Documenting',
               items: [
-                "aspects/documenting/overview",
-                "aspects/documenting/using-docs-api",
-                "aspects/documenting/properties-table"
+                "building-with-bit/documenting/overview",
+                "building-with-bit/documenting/using-docs-api",
+                "building-with-bit/documenting/properties-table"
               ],
             },
             {
               type: 'category',
               label: 'Compositions',
               items: [
-                "aspects/compositions/overview",
+                "building-with-bit/compositions/overview",
               ],
             },
             {
               type: 'category',
               label: 'Testing',
               items: [
-                "aspects/testing/overview",
-                "aspects/testing/customize-the-tester"
+                "building-with-bit/testing/overview",
+                "building-with-bit/testing/customize-the-tester"
               ],
             },
             {
               type: 'category',
               label: 'Compiling',
               items: [
-                "aspects/compiling/overview",
-                "aspects/compiling/customize"
+                "building-with-bit/compiling/overview",
+                "building-with-bit/compiling/customize"
               ],
             },
             {
               type: 'category',
               label: 'Build Pipeline',
               items: [
-                "aspects/build-pipeline/overview",
-                "aspects/build-pipeline/create-build-task"
+                "building-with-bit/build-pipeline/overview",
+                "building-with-bit/build-pipeline/create-build-task"
               ],
             },
             {
               type: 'category',
               label: 'Packages',
               items: [
-                "aspects/packages/overview",
-                "aspects/packages/publish-to-npm"
+                "building-with-bit/packages/overview",
+                "building-with-bit/packages/publish-to-npm"
               ],
             },
             {
               type: 'category',
               label: 'React',
               items: [
-                "aspects/react/overview",
-                "aspects/react/using-react",
-                "aspects/react/extending-react",
-                "aspects/react/composition-providers"
+                "building-with-bit/react/overview",
+                "building-with-bit/react/using-react",
+                "building-with-bit/react/extending-react",
+                "building-with-bit/react/composition-providers"
               ],
             },  
             {
               type: 'category',
               label: 'Node',
               items: [
-                "aspects/nodejs/overview",
-                "aspects/nodejs/using-node",
-                "aspects/nodejs/extending-node"
+                "building-with-bit/nodejs/overview",
+                "building-with-bit/nodejs/using-node",
+                "building-with-bit/nodejs/extending-node"
               ],
             },
             {
               type: 'category',
               label: 'React Native',
               items: [
-                "aspects/react-native/overview",
-                "aspects/react-native/using-react-native",
-                "aspects/react-native/extending-react-native"
+                "building-with-bit/react-native/overview",
+                "building-with-bit/react-native/using-react-native",
+                "building-with-bit/react-native/extending-react-native"
               ],
             },
           ],

@@ -3,6 +3,9 @@ id: exporting-components
 title: Exporting Components
 ---
 
+import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md'
+
+
 Exporting a component to [a remote scope](/getting-started/bit-account#create-a-remote-scope) makes it available to be used by other Bit workspaces or your applications.
 
 ## Tagging Components
@@ -15,11 +18,13 @@ bit tag --all
 
 Once the component has finished tagging you should see the following message:
 
-```shell
+```sh
 new components
 (first version for components)
      > ui/button@0.0.1
 ```
+
+:arrow_right: Learn more about the [Tagging Components](/building-with-bit/components/versioning).
 
 ## Export Components
 
@@ -36,10 +41,10 @@ exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```
 
-After exporting go to your [bit.dev](https://bit.dev) account to see your exported component.
+:arrow_right: Learn more about the [Exporting Components](/building-with-bit/components/exporting).
 
-Once the exporting process completes, the `.bitmap` file gets updated to reflect that new state. Make sure to track it with git.
+In your workspace go to `https://bit.dev/<owner-name>/<scope-name>` to see your exported components.
 
-```sh
-git commit -am "updated .bitmap file after a successful export"
-```
+### Committing your Changes
+
+<GitCommitBitmap />

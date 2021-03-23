@@ -13,6 +13,8 @@ To add your components to the workspace we use the `bit add` command followed by
 bit add button --namespace ui
 ```
 
+:arrow_right: Learn more about [Bit Component Name Spaces](/building-with-bit/components/tracking#add-a-namespace).
+
 When we add a component we will see in the terminal a message saying our component was added and will show the list of files that were added.
 
 ```shell
@@ -38,6 +40,8 @@ Once we have added our component we can then look inside our `.bitmap` file, whi
     "version": "1.0.39"
 }
 ```
+
+:arrow_right: Learn more about [Adding / Tracking Components](/building-with-bit/components/tracking).
 
 ## Show our Component
 
@@ -98,4 +102,6 @@ This will open-up your browser on [localhost:3000](http://localhost:3000), or an
 
 The first time you run the start command it can take a bit of time as it needs to build the whole UI.
 
+:::note
 While your waiting have a look in your node modules folder in your project and we will see your component inside your scope directory which in this case is 'my-scope'.
+:::

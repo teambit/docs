@@ -15,17 +15,25 @@ Harmony is already used as a standard component infrastructure by many teams, in
 
 There are a few ways for you to get started with Harmony.
 
-#### [Follow our Get Started Guide](02-installing-bit)
+#### [Follow our Get Started Guide](/installing-bit)
 
 Want to get started quickly and see how Bit works? This quick guide will take you through installing Bit, initializing a workspace, creating a component, tagging a component, seeing your component in the local workspace, creating a remote scope, configuring your workspace, exporting your component and installing your component in an external app.
 
-#### [Take the Tutorial :feet:](/tutorial/install-bit)
+#### [What is Bit](/essentials/what-is-bit)
+
+Let's explore what Bit is and what the advantages of using Bit are.
+
+#### [Understand how to Build with Bit](/building-with-bit/aspects)
+
+Take a deep dive in to the core of how Bit works and see how you can not just build with Bit but also extend Bit. In this section we cover everything from Component Compositions to Testing as well as Environments, Compiling and Build Pipelines and more.
+
+<!-- #### [Take the Tutorial :feet:](/tutorial/install-bit)
 
 - Take a hands-on approach with this step-by-step tutorial for building a modular React application with Bit components created in the workspace and imported from external projects. Learn how to install and set up a Bit workspace, add components, add life-full documentation and compositions, define isolated build and test environments, define and explore component dependencies in the workspace, version components and auto-update dependencies, import and export components to remote scopes to be shared across many projects, and more.  
 
 #### [Explore the demo project :crystal_ball:](/demo/try-bit)
 
-- Get a fully functional Bit workspace with independent components developed and managed by Bit, in this project and imported from other projects, where you can explore and experiment with every part of the Bit workspace, development UI, change and manage components, and learn how it works.  
+- Get a fully functional Bit workspace with independent components developed and managed by Bit, in this project and imported from other projects, where you can explore and experiment with every part of the Bit workspace, development UI, change and manage components, and learn how it works.   -->
 
 #### Watch Video Guides :tv:  (**Coming soon!**)
 

@@ -39,9 +39,9 @@ module.exports = {
         },
         
         {
-          label: 'Aspects',
-          to: '/aspects',
-          activeBasePath: 'aspects',
+          label: 'Building with Bit',
+          to: '/building-with-bit/aspects',
+          activeBasePath: 'building-with-bit',
           position: 'left',
         },
         {

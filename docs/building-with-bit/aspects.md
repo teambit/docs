@@ -1,7 +1,6 @@
 ---
 id: aspects
 title: Aspects
-slug: /aspects
 ---
 
 What is an aspect

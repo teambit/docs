@@ -15,3 +15,9 @@ A scope is where the release versions of Bit components are stored. [Remote scop
 ## Create a Remote Scope
 
 <CreateRemoteScope />
+
+<br />
+
+:arrow_right: Learn more about [Setting up a Remote Scope](/building-with-bit/scopes/set-up-remote-scope).
+
+:arrow_right: Learn more about [Self Hosting a Bit Scope](/building-with-bit/scopes/self-host-bit-scope).

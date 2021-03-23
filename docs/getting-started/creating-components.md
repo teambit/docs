@@ -5,13 +5,15 @@ title: Creating Components
 
 Bit tracks component folders so everything belonging to that component should live in that folder and should have an `index.ts` as main entry file.
 
-```shell
+:arrow_right: Learn more about [Bit Components](/building-with-bit/components/overview).
+
+```sh
 mkdir button
 ```
 
 We then need to create the necessary files. 
 
-```shell
+```sh
 touch button/index.ts button/button.tsx button/button.composition.tsx button/button.docs.mdx
 ```
 
@@ -41,6 +43,8 @@ export const Button = ({
 };
 ```
 
+:arrow_right: Learn more about [Bit Components](/building-with-bit/components/overview).
+
 ## The Composition file
 
 The `button.composition.tsx` file is needed so that we can visualize our component in our workspace.
@@ -54,6 +58,8 @@ export const BasicButton = () => {
   return <Button text="click me" />;
 };
 ```
+
+:arrow_right: Learn more about [Bit Compositions](/building-with-bit/compositions/overview).
 
 ## The Docs file
 
@@ -75,11 +81,14 @@ Button example:
 // ```
 
 ```
+:arrow_right: Learn more about [Bit Documenting](/building-with-bit/documenting/overview).
 
-### Install Dependencies
+## Install Dependencies
 
-As we are creating a React component and therefore importing React we will need to install it so we can use it. We can run the `bit install` command to install any needed dependencies.
+As we are creating a React component and therefore importing React we will need to install it so we can use it. We can run the `bit install` command to install all needed dependencies.
 
 ```shell
 bit install
 ```
+
+:arrow_right: Learn more about [Bit Dependency Installation](/building-with-bit/dependencies/dependency-installation).
