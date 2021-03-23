@@ -39,6 +39,10 @@ There are a few ways for you to get started with Harmony.  
 
 ### Learn more
 
+#### [How we build Bit with Bit](https://harmony-docs.bit.dev/open-source/open-source)
+
+- Learn how Bit was built from 1000s of components including UI, modules, and backend services, composing a variety of different CLI app, web app and microservices. Bit is 100% consistent without a single duplicated line of code, and is the most extendable product ever built.  
+
 #### [Why Bit? :rocket:](https://harmony-docs.bit.dev/introduction/why-bit) 
 
 - Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
