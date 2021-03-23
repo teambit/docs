@@ -50,47 +50,6 @@ module.exports = {
           activeBasePath: 'cli',
           position: 'left',
         },
-        {
-          label: 'Tutorials',
-          to: '/tutorials/react/tech-jokes/install-bit',
-          activeBasePath: 'tutorials',
-          position: 'left',
-        },
-        
-        
-        // {
-        //   to: '/why-bit/modular-web-apps',
-        //   activeBasePath: 'why-bit',
-        //   label: 'Why Bit',
-        //   position: 'right',
-        // },
-        // {
-        //   label: 'Try Bit',
-        //   to: '/demos/try-bit',
-        //   activeBasePath: 'demo',
-        //   position: 'right',
-        // },
-        // {
-        //   label: 'Community',
-        //   position: 'right',
-        //   activeBasePath: 'community',
-        //   items: [
-        //     {
-        //       label: 'Talk To Us',
-        //       to: '/community/talk-to-us',
-        //     },
-        //     {
-        //       label: 'resources',
-        //       to: '/community/resources',
-        //     },
-            
-        //     {
-        //       label: 'Open Source',
-        //       to: '/community/open-source',
-        //     },
-        //     // ... more items
-        //   ],
-        // },
         
         {
           type: 'docsVersionDropdown',
@@ -107,24 +66,7 @@ module.exports = {
       style: 'dark',
       links: [
       
-       
-        {
-          title: 'Why Bit',
-          items: [
-            {
-              label: 'Modular Web Apps',
-              to: '/why-bit/modular-web-apps',
-            },
-            {
-              label: 'What Can Bit do for you',
-              to: '/why-bit/what-can-bit-do-for-you',
-            },
-            {
-              label: 'Popular Use Cases',
-              to: '/why-bit/popular-use-cases',
-            },
-          ],
-        },
+    
         {
           title: 'Docs',
           items: [
@@ -132,14 +74,14 @@ module.exports = {
               label: 'Getting Started',
               to: '/getting-started/welcome',
             },
-            // {
-            //   label: 'Try Bit',
-            //   to: '/installation/try-bit',
-            // },
-            // {
-            //   label: 'Demo',
-            //   to: '/demo/try-bit',
-            // },
+            {
+              label: 'Building with Bit',
+              to: '/building-with-bit/aspects',
+            },
+            {
+              label: 'What is Bit',
+              to: '/essentials/what-is-bit',
+            },
             
           ],
         },
@@ -174,6 +116,23 @@ module.exports = {
             {
               label: 'Bit Legacy Docs',
               href: 'https://docs.bit.dev/',
+            },
+          ],
+        },
+        {
+          title: 'Follow us',
+          items: [
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/bitdev_',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/c/Bitdev',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/bit-dev/mycompany/',
             },
           ],
         },

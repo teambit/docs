@@ -90,18 +90,7 @@ The show command will show us what bit has created when we added our component.
   └───────────────────┴───────────────────────────────────────────────────────────────────────────────────┘
   ```
 
-## Starting the dev server
-
-The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
-
-```shell
-bit start
-```
-
-This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and tracked (added) components.
-
-The first time you run the start command it can take a bit of time as it needs to build the whole UI.
-
 :::note
-While your waiting have a look in your node modules folder in your project and we will see your component inside your scope directory which in this case is 'my-scope'.
+You may have noticed that the env is set to 'teambit.harmony/node' even though we have created a React Component. We will configure the workspace later.
 :::
+

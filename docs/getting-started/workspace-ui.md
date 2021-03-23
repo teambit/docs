@@ -2,8 +2,21 @@
 id: workspace-ui
 title: Workspace UI
 ---
+## Starting the dev server
 
-Once you have created a component, addded it and started the development server you will be able to see your local workspace on [localhost:3000](http://localhost:3000) or the available port.
+The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
+
+```shell
+bit start
+```
+
+This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and tracked (added) components.
+
+The first time you run the start command it can take a bit of time as it needs to build the whole UI.
+
+:::note
+While your waiting have a look in your node modules folder in your project and we will see your component inside your scope directory which in this case is 'my-scope'.
+:::
 
 Once you click on your component it will take you to the Overview page.
 

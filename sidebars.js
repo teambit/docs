@@ -79,17 +79,7 @@ module.exports = {
       ],
       "collapsed": false,
     },
-      // {
-      //   type: 'category',
-      //   label: 'Why Bit',
-      //   items: [
-      //     'why-bit/modular-web-apps',
-      //     'why-bit/what-can-bit-do-for-you',
-      //     'why-bit/popular-use-cases',
-      //     'why-bit/open-source-dev-tools',
-      //     'why-bit/enterprise-grade-component-cloud',
-      //   ],
-      // },
+
       
       {
         type: 'category',
