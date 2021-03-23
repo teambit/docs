@@ -7,13 +7,17 @@ title: Welcome
 
 *Public Beta* :tada:
 
-Harmony is Bit's next generation. It is a highly powerful and extensible infrastructure for developing modern applications in a modular way. Whether you are building a new project, or seeking to collaborate on components in your existing projects, Harmony will let you tap into the true power of components.   
+Harmony is Bit's next generation. It is a highly powerful and extensible infrastructure for developing modern applications in a modular way. Whether you are building a new project, or seeking to collaborate on components in your existing projects, Harmony will let you tap into the true power of components.
 
 Harmony is already used as a standard component infrastructure by many teams, including the world's finest. It is now available in public beta, so please feel free to start and please don't forget to [share your feedback](https://github.com/teambit/bit/issues)!  
 
 ### Get started
 
-There are a few ways for you to get started with Harmony.  
+There are a few ways for you to get started with Harmony.
+
+#### [Follow our Get Started Guide](02-installing-bit)
+
+Want to get started quickly and see how Bit works? This quick guide will take you through installing Bit, initializing a workspace, creating a component, tagging a component, seeing your component in the local workspace, creating a remote scope, configuring your workspace, exporting your component and installing your component in an external app.
 
 #### [Take the Tutorial :feet:](/tutorial/install-bit)
 
@@ -27,6 +31,7 @@ There are a few ways for you to get started with Harmony.  
 
 - Start with step-by-step video guides to walk you through every step from creating a component to building a full-blown micro-applications architecture that scales and accelerates development, delivery, and innovation. Coming soon!  
 
+Follow our [YouTube Channel](https://www.youtube.com/c/Bitdev) to see videos on Building with Bit.
 
 ### Help and feedback :raising_hand:
 
@@ -39,7 +44,7 @@ There are a few ways for you to get started with Harmony.  
 
 ### Learn more
 
-#### [Why Bit? :rocket:](/why-bit) 
+#### [What is Bit? :rocket:](../essentials/what-is-bit) 
 
 - Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
 

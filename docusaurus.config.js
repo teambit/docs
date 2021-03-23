@@ -132,14 +132,14 @@ module.exports = {
               label: 'Getting Started',
               to: '/getting-started/welcome',
             },
-            {
-              label: 'Try Bit',
-              to: '/installation/try-bit',
-            },
-            {
-              label: 'Demo',
-              to: '/demo/try-bit',
-            },
+            // {
+            //   label: 'Try Bit',
+            //   to: '/installation/try-bit',
+            // },
+            // {
+            //   label: 'Demo',
+            //   to: '/demo/try-bit',
+            // },
             
           ],
         },

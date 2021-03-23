@@ -1,9 +1,9 @@
 ---
-id: creating-a-component
-title: Creating a Component
+id: creating-components
+title: Creating Components
 ---
 
-Bit requires that every component is in it's own folder. To create a button component we need to create a button folder.
+Bit tracks component folders so everything belonging to that component should live in that folder and should have an `index.ts` as main entry file.
 
 ```shell
 mkdir button
@@ -19,7 +19,7 @@ touch button/index.ts button.tsx button.composition.tsx
 
 The `index.ts` file is the file that exports the component
 
-```jsx
+```jsx title="index.ts"
 export { Button }  from './button';
 ```
 
@@ -27,11 +27,15 @@ export { Button }  from './button';
 
 The `button.tsx` file is where we create and export our component
 
-```jsx
+```jsx title="button.tsx"
 import React from 'react';
 
-export function Button() {
-  return <button>click me</button>;
+export type ButtonProps = {
+  text?: String
+}
+
+export function Button({text}) {
+  return <button>{text}</button>;
 }
 ```
 
@@ -40,7 +44,7 @@ export function Button() {
 The `button.composition.tsx` file is needed so that we can visualize our component in our workspace.
 
 
-```jsx
+```jsx title="button.composition.tsx"
 import React from 'react';
 import { Button } from './button';
 
@@ -49,10 +53,3 @@ export const BasicButton = () => {
 };
 ```
 
-### Adding our Components to the Workspace
-
-To add our components to the workspace we use the `bit tag` command.
-
-```shell
-bit tag --all
-```

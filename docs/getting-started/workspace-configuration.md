@@ -3,17 +3,15 @@ id: workspace-configuration
 title: Workspace Configuration
 ---
 
-[A Bit Development Environment](/aspects/environments/overview) is a special type of component that configures and “bundles” together the different services required in a component development workflow.
-That includes processes such as compiling, testing, linting and even documenting. Environments take direct inspiration from `react-scripts` ([CreateReactApp](https://github.com/facebook/create-react-app)).
+## Setting the Default Scope Name
 
-:::note
-The various services used by a Bit environment are provided by different Bit extension components.  
-Learn more about "Environment Services" [here](/aspects/environments/environment-services).
-:::
+Once you have your account setup on [Bit.dev](https://bit.dev/) and have created a remote scope you will need to set this in your `workspace.jsonc` so that you can add your components to your remote workspace.
 
-Bit provides various Environments to start from. Each Environment is [**customizable and extendible**](/aspects/environments/build-environment). Once you create your own environment, it can be shared and used by others just like any other Bit component.
+```json
+"defaultScope": "AccountName.ScopeName",
+```
 
-## Set all components to use the 'React' Environment
+## Setting the React Environment
 
 **Uncomment** the following lines in your `workspace.jsonc` configuration file, to apply the basic ['React' development environment](/aspects/react/overview) on all components in this workspace.
 
@@ -25,15 +23,9 @@ Bit provides various Environments to start from. Each Environment is [**customiz
 }
 ```
 
-
-The snippet above defines a [configuration variant](/aspects/workspace/cascading-rules) with the `*` selector. Variant selectors use glob-patterns to decide on which component to apply a specific configuration. By setting configuration with `*` we ensure `teambit.react/react` is applied by default on all components.
-
-With Variants, different components can be configured in the same workspace with different settings and environments.
-Variants in Bit are similar to CSS-rules as the more specific selectors override rules defined higher up on the hierarchy.
-
 ### Reset your dev server
 
-Stop the Bit server (Ctl/cmd + c) and run it again:
+Any change in the `workspace.jsonc` file requires a restart of the local dev-server. We can stop our server using (Ctl/cmd + c) and run it again using the start command.
 
 ```shell
 bit start

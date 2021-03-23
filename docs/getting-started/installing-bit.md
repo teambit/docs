@@ -1,6 +1,6 @@
 ---
-id: installation
-title: Installation
+id: installing-bit
+title: Installing Bit
 ---
 
 import Tabs from '@theme/Tabs';

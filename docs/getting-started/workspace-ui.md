@@ -1,22 +1,34 @@
 ---
-id: initializing-workspace
-title: Initializing a Workspace
+id: workspace-ui
+title: Workspace UI
 ---
 
-A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. First setup a new Git repo for your project and then initialize the Bit workspace.
+Once you have added a component, tagged it and started the development server you will be able to see your local workspace on `localhost:3000` or the available localhost.
 
-```shell
-bit init --harmony
-```
+## Overview
 
-Bit creates the following files when initializing a new workspace:
+Here you will see an overview of your component complete with a live playground. We can add further documentation to our component by creating a `myComponent.docs.mdx` file.
 
-- `workspace.jsonc` - The Workspace configuration file a single file that sets rules and policies for the workspace and all its components.
-- `.bitmap` - An auto-generated mapping between tracked components in the workspace and their physical location on the file system. The file-structure of your workspace is entirely up to you.
-- `.git/bit` (directory) - Your local scope. Where your workspace's component release versions are stored.
+## Compositions
 
-```shell
-bit start
-```
+Compositions show you how your component is composed. Compositions are created by adding a `myComponent.compositions.tsx` file.
 
-This will open-up your browser on `localhost:3000` (or any other available port) and display your workspace and tracked (added) components (right now, no components are tracked).
+## Tests
+
+If we had written any tests they would appear here. Tests are created by adding a `myComponent.spec.tsx` file.
+
+## Dependencies
+
+This shows you any dependencies that your component has.
+
+## Code 
+
+You can see all the code files your component has and inspect them. You can also see a list of dependencies and dev dependencies your component has. 
+
+## ChangeLog
+
+See the changelog of your component for when you export and create new versions.
+
+## Use
+
+This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager. 

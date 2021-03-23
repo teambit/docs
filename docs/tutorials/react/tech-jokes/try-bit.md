@@ -13,7 +13,7 @@ Here you can find a demo project that will let you explore around a fully functi
 
 Clone a full Bit workspace and explore it yourself:
 
-1. [Install Bit Harmony](https://harmony-docs.bit.dev/getting-started/installation)
+1. [Install Bit Harmony](https://harmony-docs.bit.dev/getting-started/installing-bit)
 
 2. Clone this demo workspace repo
 
