@@ -117,7 +117,9 @@ module.exports = {
       type: 'category',
       label: 'Testing',
       items: [
-        "testing/overview",
+        "testing/add-tests",
+        "testing/running-tests",
+        "testing/testing-dependent-components",
         "testing/customize-the-tester"
       ],
     },
@@ -126,6 +128,7 @@ module.exports = {
       label: 'Compiling',
       items: [
         "compiling/overview",
+        "compiling/compiling-components",
         "compiling/customize"
       ],
     },
