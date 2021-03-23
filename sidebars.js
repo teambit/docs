@@ -43,157 +43,7 @@ module.exports = {
     }
       
   ],
-  aspects: [
-    {
-      type: 'category',
-      label: 'Aspects',
-      items: [
-        
-        {
-          type: 'doc',
-          id: 'aspects/aspects'
-        },
-        {
-          type: 'doc',
-          id: 'aspects/bvm'
-        },
-        {
-          type: 'category',
-          label: 'Workspace',
-          items: [
-            "aspects/workspace/overview",
-            "aspects/workspace/configurations",
-            "aspects/workspace/cascading-rules",
-            "aspects/workspace/workspace-ui",
-            "aspects/workspace/workspace-status"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Environments',
-          items: [
-            "aspects/environments/overview",
-            "aspects/environments/choose-an-environment",
-            "aspects/environments/create-environment",
-            "aspects/environments/environment-services",
-            "aspects/environments/service-handlers"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Components',
-          items: [
-            "aspects/components/overview",
-            "aspects/components/tracking",
-            "aspects/components/versioning",
-            "aspects/components/exporting",
-            "aspects/components/importing",
-            "aspects/components/installing",
-            "aspects/components/inspecting",
-            "aspects/components/remove-deprecate-components"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Scopes',
-          items: [
-            "aspects/scopes/overview",
-            "aspects/scopes/set-up-remote-scope",
-            "aspects/scopes/self-host-bit-scope",
-            "aspects/scopes/scope-ui"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Dependencies',
-          items: [
-            "aspects/dependencies/overview",
-            "aspects/dependencies/dependency-resolution",
-            "aspects/dependencies/dependency-policies",
-            "aspects/dependencies/dependency-installation",
-            "aspects/dependencies/package-managers"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Documenting',
-          items: [
-            "aspects/documenting/overview",
-            "aspects/documenting/using-docs-api",
-            "aspects/documenting/properties-table"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Compositions',
-          items: [
-            "aspects/compositions/overview",
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Testing',
-          items: [
-            "aspects/testing/overview",
-            "aspects/testing/customize-the-tester"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Compiling',
-          items: [
-            "aspects/compiling/overview",
-            "aspects/compiling/customize"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Build Pipeline',
-          items: [
-            "aspects/build-pipeline/overview",
-            "aspects/build-pipeline/create-build-task"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Packages',
-          items: [
-            "aspects/packages/overview",
-            "aspects/packages/publish-to-npm"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'React',
-          items: [
-            "aspects/react/overview",
-            "aspects/react/using-react",
-            "aspects/react/extending-react",
-            "aspects/react/composition-providers"
-          ],
-        },  
-        {
-          type: 'category',
-          label: 'Node',
-          items: [
-            "aspects/nodejs/overview",
-            "aspects/nodejs/using-node",
-            "aspects/nodejs/extending-node"
-          ],
-        },
-        {
-          type: 'category',
-          label: 'React Native',
-          items: [
-            "aspects/react-native/overview",
-            "aspects/react-native/using-react-native",
-            "aspects/react-native/extending-react-native"
-          ],
-        },
-      ],
-      "collapsed": false,
-    },
-  ],
+  
 
   // whyBit: [
   //   {
@@ -270,10 +120,157 @@ module.exports = {
           "building-with-bit/ci-cd",
         ],
       },
-      {
-        type: 'doc',
-        id: 'aspects/aspects'
-      },
+      
+        {
+          type: 'category',
+          label: 'Aspects',
+          items: [
+            
+            {
+              type: 'doc',
+              id: 'aspects/aspects'
+            },
+            {
+              type: 'doc',
+              id: 'aspects/bvm'
+            },
+            {
+              type: 'category',
+              label: 'Workspace',
+              items: [
+                "aspects/workspace/overview",
+                "aspects/workspace/configurations",
+                "aspects/workspace/cascading-rules",
+                "aspects/workspace/workspace-ui",
+                "aspects/workspace/workspace-status"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Environments',
+              items: [
+                "aspects/environments/overview",
+                "aspects/environments/choose-an-environment",
+                "aspects/environments/create-environment",
+                "aspects/environments/environment-services",
+                "aspects/environments/service-handlers"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Components',
+              items: [
+                "aspects/components/overview",
+                "aspects/components/tracking",
+                "aspects/components/versioning",
+                "aspects/components/exporting",
+                "aspects/components/importing",
+                "aspects/components/installing",
+                "aspects/components/inspecting",
+                "aspects/components/remove-deprecate-components"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Scopes',
+              items: [
+                "aspects/scopes/overview",
+                "aspects/scopes/set-up-remote-scope",
+                "aspects/scopes/self-host-bit-scope",
+                "aspects/scopes/scope-ui"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Dependencies',
+              items: [
+                "aspects/dependencies/overview",
+                "aspects/dependencies/dependency-resolution",
+                "aspects/dependencies/dependency-policies",
+                "aspects/dependencies/dependency-installation",
+                "aspects/dependencies/package-managers"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Documenting',
+              items: [
+                "aspects/documenting/overview",
+                "aspects/documenting/using-docs-api",
+                "aspects/documenting/properties-table"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Compositions',
+              items: [
+                "aspects/compositions/overview",
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Testing',
+              items: [
+                "aspects/testing/overview",
+                "aspects/testing/customize-the-tester"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Compiling',
+              items: [
+                "aspects/compiling/overview",
+                "aspects/compiling/customize"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Build Pipeline',
+              items: [
+                "aspects/build-pipeline/overview",
+                "aspects/build-pipeline/create-build-task"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Packages',
+              items: [
+                "aspects/packages/overview",
+                "aspects/packages/publish-to-npm"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'React',
+              items: [
+                "aspects/react/overview",
+                "aspects/react/using-react",
+                "aspects/react/extending-react",
+                "aspects/react/composition-providers"
+              ],
+            },  
+            {
+              type: 'category',
+              label: 'Node',
+              items: [
+                "aspects/nodejs/overview",
+                "aspects/nodejs/using-node",
+                "aspects/nodejs/extending-node"
+              ],
+            },
+            {
+              type: 'category',
+              label: 'React Native',
+              items: [
+                "aspects/react-native/overview",
+                "aspects/react-native/using-react-native",
+                "aspects/react-native/extending-react-native"
+              ],
+            },
+          ],
+          "collapsed": false,
+        },
+      
       {
         type: 'category',
         label: 'Component Architecture',
