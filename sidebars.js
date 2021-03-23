@@ -58,14 +58,19 @@ module.exports = {
   //     ],
   //   },
   // ],
+
+  
+  
   
   docs: [
-   
+    {
+      type: 'doc',
+      id: 'welcome'
+    },
     {
       type: 'category',
       label: 'Getting Started',
       items: [
-        'getting-started/welcome',
         'getting-started/installing-bit',
         'getting-started/initializing-workspace',
         'getting-started/creating-components',

@@ -1,6 +1,7 @@
 ---
 id: welcome
 title: Welcome
+slug: /welcome
 ---
 
 ## Welcome to Harmony!  
