@@ -4,8 +4,8 @@ title: Workspace Configuration
 ---
 
 import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
-
 import DefaultScopeName from '@site/docs/components/workspace/default-scope-name.md'
+import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
 
 ## Setting the Default Scope Name
 
@@ -19,8 +19,4 @@ Once you have your account setup on [Bit.dev](https://bit.dev/) and have created
 
 ### Reset your dev server
 
-Any change in the `workspace.jsonc` file requires a restart of the local dev-server. We can stop our server using (Ctl/cmd + c) and run it again using the start command.
-
-```shell
-bit start
-```
+<ResetDevServer />

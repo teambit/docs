@@ -3,6 +3,9 @@ id: choose-dev-env
 title: Use a Dev Environment
 ---
 
+import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
+
+
 [A Bit Development Environment](/environments/overview) is a special type of component that configures and “bundles” together the different services required in a component development workflow.
 That includes processes such as compiling, testing, linting and even documenting. Environments take direct inspiration from `react-scripts` ([CreateReactApp](https://github.com/facebook/create-react-app)).
 
@@ -25,18 +28,13 @@ Bit provides various Environments to start from. Each Environment is [**customiz
 }
 ```
 
-:::info configuration Variants
+### Configuration Variants
 
 The snippet above defines a [configuration variant](/workspace/cascading-rules) with the `*` selector. Variant selectors use glob-patterns to decide on which component to apply a specific configuration. By setting configuration with `*` we ensure `teambit.react/react` is applied by default on all components.
 
 With Variants, different components can be configured in the same workspace with different settings and environments.
 Variants in Bit are similar to CSS-rules as the more specific selectors override rules defined higher up on the hierarchy.
-:::
 
 ### Reset your dev server
 
-Stop Bit server (Ctl + c) and run it again:
-
-```shell
-bit start
-```
+<ResetDevServer />

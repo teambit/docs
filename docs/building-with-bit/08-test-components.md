@@ -57,4 +57,4 @@ bit test button
 ```
 
 :::info processes that involve testing
-In addition the above commands, tests are also run by the dev server (`bit start`) and by the build pipeline (`bit build` and `bit tag`)
+In addition to the above commands, tests are also run by the dev server (`bit start`) and by the build pipeline (`bit build` and `bit tag`)

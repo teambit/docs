@@ -3,15 +3,15 @@ id: overview
 title: Overview
 ---
 
+import BitInit from '@site/docs/components/commands/bit-init.md'
+
 A Bit workspace enables a single repository to [author](/getting-started/add-components), [export](/getting-started/export-to-scope), [import](/getting-started/import-install-components) and [manage](/getting-started/manage-dependencies) multiple independent components.
 
 ## Initialize a new workspace
 
 (Run the following command in the root directory of your project)
 
-```shell
-bit init --harmony
-```
+<BitInit />
 
 :::info Initializing a Bit workspace in an existing project
 A Bit workspace can be initialized on an empty directory, to create a new modular project from scratch.

@@ -9,7 +9,7 @@ import { Image } from '@site/src/components/image';
 
 In the component's 'Dependencies' tab in the workspace UI, you can see a diagram of the `tech-jokes-viewer` dependency graph. As you'll see, it has two dependencies: 'button' and 'use-jokes'.
 
-:::note
+:::note 
 The dependency graph diagram does not include packages.
 :::
 

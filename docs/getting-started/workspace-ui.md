@@ -3,7 +3,7 @@ id: workspace-ui
 title: Workspace UI
 ---
 
-Once you have added a component, tagged it and started the development server you will be able to see your local workspace on `localhost:3000` or the available localhost.
+Once you have added a component, tagged it and started the development server you will be able to see your local workspace on [localhost:3000](http://localhost:3000) or the available localhost.
 
 ## Overview
 

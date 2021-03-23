@@ -6,9 +6,6 @@ title: Install BVM
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[BVM](/aspects/bvm) is a version manager for Bit.
-Using BVM makes it easier to install and manage multiple versions of Bit in a single environment.
-
 <Tabs
   defaultValue="NPM"
   values={[
@@ -30,3 +27,5 @@ yarn global add @teambit/bvm
 
   </TabItem>
 </Tabs>
+
+You should see a progress bar while BVM is installing and once finished you can use BVM to install Bit.

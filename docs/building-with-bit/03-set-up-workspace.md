@@ -4,6 +4,8 @@ title: Set Up a Workspace
 ---
 
 import FilesBitCreates from '@site/docs/components/workspace/files-bit-creates.md'
+import BitInit from '@site/docs/components/commands/bit-init.md'
+
 
 A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way.
 It does so by offering:
@@ -16,9 +18,7 @@ It does so by offering:
 
 ## Initialize a Bit workspace
 
-```shell
-bit init --harmony
-```
+<BitInit />
 
 :::info the --harmony option
 The `--harmony` option creates a Bit Harmony workspace. Omitting it will create Bit's legacy workspace.
@@ -29,8 +29,7 @@ Harmony components and Bit legacy components cannot switch workspace.
 
 ## Set a default scope for all components
 
-Open the `workspace.jsonc` file and find the line `"defaultScope": "my-scope"`.
-Replace it with your username/organization name, and 'demo-scope' as your scope (`<your-username>.demo-scope`)
+Open the `workspace.jsonc` file and find the line `"defaultScope": "my-scope"`. Replace it with your username/organization name, and 'demo-scope' as your scope (`<your-username>.demo-scope`)
 
 For example:
 

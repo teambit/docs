@@ -11,6 +11,10 @@ A single server may host multiple scopes. Each of these scopes groups together c
 
 You can host a Scope on your own server, or use the bit.dev platform (free for OSS and limited private usage). On top of hosting components, Bit.dev offers useful features for discoverability, documentation, collaboration, component registry, team management, security and more.
 
+## Create a Bit.dev account
+
 <CreateBitAccount />
+
+## Create a Remote Scope
 
 <CreateRemoteScope />

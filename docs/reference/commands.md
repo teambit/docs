@@ -3,6 +3,9 @@ id: commands
 title: Commands
 ---
 
+import BitInit from '@site/docs/components/commands/bit-init.md'
+
+
 ### Help
 
 #### Get information about available CLI commands
@@ -21,9 +24,7 @@ bit <command> --help
 
 #### Initialize a new workspace
 
-```
-bit init --harmony
-```
+<BitInit />
 
 #### Start Bit development server / Run the Workspace UI
 
@@ -87,7 +88,7 @@ bit show <component-id>
 #### Version (tag) a component
 
 ```shell
-$ bit tag <component-id> <new-version-number>
+bit tag <component-id> <new-version-number>
 ```
 
 - Optional: `--message "a note about recent changes"`
@@ -107,7 +108,7 @@ bit untag --all
 #### Export components
 
 ```shell
-$ bit export
+bit export
 ```
 
 ### Dependencies
@@ -115,7 +116,7 @@ $ bit export
 #### Install a package
 
 ```shell
-$ bit install <package-name>
+bit install <package-name>
 ```
 
 #### Install all dependencies after cloning a workspace
@@ -123,7 +124,7 @@ $ bit install <package-name>
 This process will install all packages, import all components and [link](/cli/cheat-sheet#relink-components-to-the-workspace) the imported components.
 
 ```shell
-$ bit install
+bit install
 ```
 
 #### Import a component
@@ -185,7 +186,7 @@ bit build
 #### Test components
 
 ```shell
-$ bit test
+bit test
 ```
 
 ### Move or remove components
@@ -193,7 +194,7 @@ $ bit test
 #### Move component to a different directory
 
 ```shell
-$ bit mv <component> <target-dir>
+bit mv <component> <target-dir>
 ```
 
 #### Relink components to the workspace
@@ -203,13 +204,13 @@ The linking process happens automatically when a component is tracked.
 There could be cases where the path to a component has been modified and that process needs to be re-run with to address recent changes.
 
 ```shell
-$ bit link
+bit link
 ```
 
 #### Remove a component from the workspace
 
 ```shell
-$ bit remove <component-id>
+bit remove <component-id>
 ```
 
 #### Deprecating a component in a workspace

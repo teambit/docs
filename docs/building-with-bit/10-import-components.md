@@ -11,27 +11,29 @@ These could be either private components, maintained by your own organization, o
 
 Components are imported using their component ID, which can be found in their component page, under the 'Use' drop menu.
 
-Let's import the 'dots-loader' component from Bit's 'teaching' scope.
 
 ```shell
 bit import teambit.teaching/ui/elements/dots-loader
 ```
 
-Head back to your workspace UI to explore the new imported component.
+In the workspace UI you can now explore the newly imported component.
 
 <Image src="/img/dots_loader.png" />
 
 <br />
 
-- #### To learn more about 'importing' [see here](/components/importing)
+To learn more about 'importing' [see here](/components/importing)
 
 ## Using the imported component
 
 The imported component is now in our `components` directory but, much like components authored in our workspace,
 it will also have a package generated for it in the `node_modules` directory, and its code compiled and saved in the nested `dist` directory.
 
-Our button shows a 'Loading...' text whenever its `isLoading` prop is set to `true`.
-Let's replace that text with the newly imported 'dots loader' component.
+Example:
+
+We have a Button component which has a 'Loading...' text whenever its `isLoading` prop is set to `true`.
+
+We can replace that text with the newly imported 'dots loader' component.
 
 ```tsx title="button.tsx"
 import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader';

@@ -22,7 +22,7 @@ added button.composition.tsx
 added button.tsx
 ```
 
-Once we have added our component we can then look inside our .bitmap file, which we will find at our project root level, and we can see that our component was added here. 
+Once we have added our component we can then look inside our `.bitmap` file, which we will find at our project root level, and we can see that our component was added here.
 
 ## Show our Component
 
@@ -42,8 +42,8 @@ The start command starts our dev server, compiles our component and watches for 
 bit start
 ```
 
-This will open-up your browser on `localhost:3000` (or any other available port) and display your workspace and tracked (added) components. 
+This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and tracked (added) components.
 
-The first time you run the start command it can take a bit of time as it needs to build the whole UI. 
+The first time you run the start command it can take a bit of time as it needs to build the whole UI.
 
 After running the start command you can go to your node modules folder in your project and we will see your component inside your scope directory which in this case is my-scope.
