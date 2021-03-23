@@ -44,7 +44,7 @@ If we had written any tests they would appear here. Tests are created by adding 
 
 This shows you any dependencies that your component has.
 
-:arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependencies/overview).
+:arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependency-resolver/overview).
 
 ## Code 
 
@@ -54,12 +54,12 @@ You can see all the code files your component has and inspect them. You can also
 
 See the changelog of your component for when you export and create new versions.
 
-:arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/components/inspecting#workspace-ui).
+:arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/component/inspecting#workspace-ui).
 
 ## Use
 
 This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager. 
 
-:arrow_right: Learn more about [Importing Components](/building-with-bit/components/importing).
+:arrow_right: Learn more about [Importing Components](/building-with-bit/component/importing).
 
-:arrow_right: Learn more about [Installing Components](/building-with-bit/components/installing).
+:arrow_right: Learn more about [Installing Components](/building-with-bit/component/installing).

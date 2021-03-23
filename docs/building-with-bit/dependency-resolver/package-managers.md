@@ -6,8 +6,8 @@ title: Package managers
 The Dependency Resolver extension does not replace package managers - it uses them and directs them.
 To choose between 'Yarn' and 'pnpm', set the packageManager property to either of the two:
 
-- [`teambit.dependencies/yarn`](https://bit.dev/teambit/dependencies/yarn)
-- [`teambit.dependencies/pnpm`](https://bit.dev/teambit/dependencies/pnpm)
+- [`teambit.dependencies/yarn`](https://bit.dev/teambit/dependency-resolver/yarn)
+- [`teambit.dependencies/pnpm`](https://bit.dev/teambit/dependency-resolver/pnpm)
 
 ```json title="At the root-level of the workspace configuration JSON (workspace.jsonc)"
 {

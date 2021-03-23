@@ -23,7 +23,7 @@ For example:
 `bit tag ui/elements/button 1.0.0 --message "initial button version"`
 :::
 
-- Learn more about versioning, [here](/components/versioning)
+- Learn more about versioning, [here](/component/versioning)
 
 ## List Versioned Components
 

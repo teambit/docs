@@ -3,11 +3,11 @@ id: customize-the-tester
 title: Customizing the Tester
 ---
 
-The Tester is an [Environment Service](/environments/environment-services) that enables environments to integrate a specific test runner into various Bit features, processes and events.
+The Tester is an [Environment Service](/environment/environment-services) that enables environments to integrate a specific test runner into various Bit features, processes and events.
 
 For example, the React environment (`@teambit.react/react`) uses the Tester Environment Service to configure the Jest extension component as its test runner. Jest will be used (for components using this environment) when running the `bit test` command, when running the build process and will even display its results in the Workspace UI (just to name a few examples).
 
-To customize your environment's test runner, first [create an environment extension](/environments/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
+To customize your environment's test runner, first [create an environment extension](/environment/build-environment). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 
 > As an example, we'll extend Bit's out-of-the-box React environment (`@teambit.react/react`).
 
@@ -85,9 +85,9 @@ The new `jest.config.js` file does not replace the default one but merges into i
 
 ### Option #2: Replace the test runner used by the environment
 
-Environments use Environment Services by implementing a special class of methods called [Service Handlers](/environments/service-handlers).
+Environments use Environment Services by implementing a special class of methods called [Service Handlers](/environment/service-handlers).
 
-An environment's test runner can be replaced by overriding its [Tester Service Handler](/environments/service-handlers#getTester) method (`getTester()`).
+An environment's test runner can be replaced by overriding its [Tester Service Handler](/environment/service-handlers#getTester) method (`getTester()`).
 
 For example, the code below shows a React environment extension that replaces its default compiler, Jest, with Mocha.
 

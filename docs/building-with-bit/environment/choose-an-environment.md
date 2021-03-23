@@ -1,6 +1,6 @@
 ---
 id: choose-an-environment
-title: Choosing Environments
+title: Choosing an Environment
 ---
 
 Environments are set in the `workspace.jsonc` configuration file, **using their component ID** (not their module name).

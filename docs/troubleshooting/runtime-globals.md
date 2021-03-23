@@ -21,7 +21,7 @@ Add the required polyfill as part of the bundling process. This is done by the e
 
 For example, to add `regeneratorRuntime` to the Webpack configurations of the `@teambit.react/react` environment, we'll do the following:
 
-1. Create a new [environment extension](/environments/build-environment).
+1. Create a new [environment extension](/environment/build-environment).
 
 2. In the same directory of the new `*.extension.ts` file, create the file, `regenerator-runtime.js`, to import the polyfills into:
 
@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-Set both environment services, the ['Preview'](/environments/environment-services#preview) and ['DevServer'](/environments/environment-services#devserver), to use the new Webpack configurations (these new configurations will be the result of the merge between the new configurations set in the extension, with the previous configurations).
+Set both environment services, the ['Preview'](/environment/environment-services#preview) and ['DevServer'](/environment/environment-services#devserver), to use the new Webpack configurations (these new configurations will be the result of the merge between the new configurations set in the extension, with the previous configurations).
 
 ```tsx
 // custom-react.extension.ts

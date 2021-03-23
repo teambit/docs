@@ -3,12 +3,12 @@ id: dependency-resolution
 title: Dependency Resolution
 ---
 
-Dependency resolution is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependencies/dependency-resolver).
+Dependency resolution is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependency-resolver/dependency-resolver).
 
 Dependency Resolver parses out all `import` \ `require` statements in the component's files.
 It then determines if these dependencies are packages, components (listed in the workspace `.bitmap` file) or internal implementation files.
 The generated data is integrated with dependency policies that were set by various Bit extensions (mainly,
-[Environment](/environments/overview)) and by the manually configured policies set in the [workspace configuration file](/workspace/configurations) (`workspace.jsonc`).
+[Environment](/environment/overview)) and by the manually configured policies set in the [workspace configuration file](/workspace/configurations) (`workspace.jsonc`).
 
 The result of that process determines the list of dependencies for each component, as well as their dependency-type (`dependencies`, `devDependencies` and `peerDependencies`) and version number.
 

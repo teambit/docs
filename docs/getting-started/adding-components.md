@@ -13,7 +13,7 @@ To add your components to the workspace we use the `bit add` command followed by
 bit add button --namespace ui
 ```
 
-:arrow_right: Learn more about [Bit Component Name Spaces](/building-with-bit/components/tracking#add-a-namespace).
+:arrow_right: Learn more about [Bit Component Name Spaces](/building-with-bit/component/tracking#add-a-namespace).
 
 When we add a component we will see in the terminal a message saying our component was added and will show the list of files that were added.
 
@@ -41,7 +41,7 @@ Once we have added our component we can then look inside our `.bitmap` file, whi
 }
 ```
 
-:arrow_right: Learn more about [Adding / Tracking Components](/building-with-bit/components/tracking).
+:arrow_right: Learn more about [Adding / Tracking Components](/building-with-bit/component/tracking).
 
 ## Show our Component
 

@@ -9,7 +9,7 @@ Components are not only consumed as standard packages but can also be [published
 
 Each component package configurations is determined by its environment and by the `workspace.jsonc` configuration file.
 
-Bit offers two package managers (encapsulated in a "Bit aspect wrapping"): `teambit.dependencies/yarn` and `teambit.dependencies/pnpm`. Package managers are used and directed by the [`@teambit.depndencies/dependency-resolver`](/dependencies/overview) aspect. To configure it to use your package manager of choice, set the package manger (in the `dependency-resolver` field in the `workspace.jsonc` configuration file).
+Bit offers two package managers (encapsulated in a "Bit aspect wrapping"): `teambit.dependencies/yarn` and `teambit.dependencies/pnpm`. Package managers are used and directed by the [`@teambit.depndencies/dependency-resolver`](/dependency-resolver/overview) aspect. To configure it to use your package manager of choice, set the package manger (in the `dependency-resolver` field in the `workspace.jsonc` configuration file).
 
 For example:
 

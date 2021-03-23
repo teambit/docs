@@ -5,9 +5,9 @@ title: Installing
 
 ## Installing component packages in a Bit workspace
 
-Installing component packages (or any other packages), in a Bit workspace, is done only by using the `bit install` command which will use the [Dependency Resolver](/dependencies/overview) extension.
+Installing component packages (or any other packages), in a Bit workspace, is done only by using the `bit install` command which will use the [Dependency Resolver](/dependency-resolver/overview) extension.
 
-#### Learn more about package installation in a Bit workspace, [here](/dependencies/dependency-installation).
+#### Learn more about package installation in a Bit workspace, [here](/dependency-resolver/dependency-installation).
 
 :::caution
 Never use package managers to install packages in a Bit workspace.
@@ -49,7 +49,7 @@ to have all their data available in your workspace (assets, Bit configurations, 
 - Installed components will not be automatically tested, built and tagged when their dependencies are modified (in the workspace).
 
   :::info Using the bit install command
-  When using the `bit install` command to install all the workspaces's dependencies, the [Dependency Resolver extension](/dependencies/overview) extension (in charge of that task) will
+  When using the `bit install` command to install all the workspaces's dependencies, the [Dependency Resolver extension](/dependency-resolver/overview) extension (in charge of that task) will
   make sure to import (and not install) components that should be managed by the workspace (these are components that are listed in the workspace `.bitmap` file).
   Once the components are imported, they will be symlinked to the workspace `node_modules` directory so that they could be used just like any other component/package.
   :::

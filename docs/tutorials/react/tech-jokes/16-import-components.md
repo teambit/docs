@@ -23,7 +23,7 @@ Head back to your workspace UI to explore the new imported component.
 
 <br />
 
-- #### To learn more about 'importing' [see here](/components/importing)
+- #### To learn more about 'importing' [see here](/component/importing)
 
 ## Using the imported component
 

@@ -24,7 +24,7 @@ new components
      > ui/button@0.0.1
 ```
 
-:arrow_right: Learn more about the [Tagging Components](/building-with-bit/components/versioning).
+:arrow_right: Learn more about the [Tagging Components](/building-with-bit/component/versioning).
 
 ## Export Components
 
@@ -41,7 +41,7 @@ exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```
 
-:arrow_right: Learn more about the [Exporting Components](/building-with-bit/components/exporting).
+:arrow_right: Learn more about the [Exporting Components](/building-with-bit/component/exporting).
 
 In your workspace go to `https://bit.dev/<owner-name>/<scope-name>` to see your exported components.
 

@@ -39,15 +39,15 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/components/versioning#soft-and-hard-tags-component-collaboration) by the CI.
+   - Whether this component is [pending to be versioned](/component/versioning#soft-and-hard-tags-component-collaboration) by the CI.
 
      <br />
 
    ```json title="An example .bitmap file"
    {
-     "org.extensions/environments/custom-react@0.0.9": {
+     "org.extensions/environment/custom-react@0.0.9": {
        "mainFile": "index.ts",
-       "rootDir": "cet/environments/dell-react"
+       "rootDir": "cet/environment/dell-react"
      },
      "org.design/base-ui/search-box-with-button@0.0.5": {
        "mainFile": "index.ts",

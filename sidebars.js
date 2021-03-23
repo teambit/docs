@@ -140,48 +140,48 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Environments',
+              label: 'Environment',
               items: [
-                "building-with-bit/environments/overview",
-                "building-with-bit/environments/choose-an-environment",
-                "building-with-bit/environments/create-environment",
-                "building-with-bit/environments/environment-services",
-                "building-with-bit/environments/service-handlers"
+                "building-with-bit/environment/overview",
+                "building-with-bit/environment/choose-an-environment",
+                "building-with-bit/environment/create-environment",
+                "building-with-bit/environment/environment-services",
+                "building-with-bit/environment/service-handlers"
               ],
             },
             {
               type: 'category',
-              label: 'Components',
+              label: 'Component',
               items: [
-                "building-with-bit/components/overview",
-                "building-with-bit/components/tracking",
-                "building-with-bit/components/versioning",
-                "building-with-bit/components/exporting",
-                "building-with-bit/components/importing",
-                "building-with-bit/components/installing",
-                "building-with-bit/components/inspecting",
-                "building-with-bit/components/remove-deprecate-components"
+                "building-with-bit/component/overview",
+                "building-with-bit/component/tracking",
+                "building-with-bit/component/versioning",
+                "building-with-bit/component/exporting",
+                "building-with-bit/component/importing",
+                "building-with-bit/component/installing",
+                "building-with-bit/component/inspecting",
+                "building-with-bit/component/remove-deprecate-components"
               ],
             },
             {
               type: 'category',
-              label: 'Scopes',
+              label: 'Scope',
               items: [
-                "building-with-bit/scopes/overview",
-                "building-with-bit/scopes/set-up-remote-scope",
-                "building-with-bit/scopes/self-host-bit-scope",
-                "building-with-bit/scopes/scope-ui"
+                "building-with-bit/scope/overview",
+                "building-with-bit/scope/set-up-remote-scope",
+                "building-with-bit/scope/self-host-bit-scope",
+                "building-with-bit/scope/scope-ui"
               ],
             },
             {
               type: 'category',
-              label: 'Dependencies',
+              label: 'Dependency Resolver',
               items: [
-                "building-with-bit/dependencies/overview",
-                "building-with-bit/dependencies/dependency-resolution",
-                "building-with-bit/dependencies/dependency-policies",
-                "building-with-bit/dependencies/dependency-installation",
-                "building-with-bit/dependencies/package-managers"
+                "building-with-bit/dependency-resolver/overview",
+                "building-with-bit/dependency-resolver/dependency-resolution",
+                "building-with-bit/dependency-resolver/dependency-policies",
+                "building-with-bit/dependency-resolver/dependency-installation",
+                "building-with-bit/dependency-resolver/package-managers"
               ],
             },
             {
@@ -195,9 +195,9 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Compositions',
+              label: 'Composition',
               items: [
-                "building-with-bit/compositions/overview",
+                "building-with-bit/composition/overview",
               ],
             },
             {
@@ -226,10 +226,10 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Packages',
+              label: 'Package',
               items: [
-                "building-with-bit/packages/overview",
-                "building-with-bit/packages/publish-to-npm"
+                "building-with-bit/package/overview",
+                "building-with-bit/package/publish-to-npm"
               ],
             },
             {

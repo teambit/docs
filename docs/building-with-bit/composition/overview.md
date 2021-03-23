@@ -103,7 +103,7 @@ export const UserHeroWithScopeList = () => {
 
 ## Loading compositions
 
-The [Development Environment](/environments/overview) will automatically detect the composition file for each component
+The [Development Environment](/environment/overview) will automatically detect the composition file for each component
 and use it to load its compositions to the workspace UI.
 
 ## Using compositions for automated testing

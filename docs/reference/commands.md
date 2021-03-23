@@ -129,7 +129,7 @@ bit install
 
 #### Import a component
 
-Import a component from a remote scope. Learn more [here](/components/importing).
+Import a component from a remote scope. Learn more [here](/component/importing).
 
 ```shell
 bit import <component-id>

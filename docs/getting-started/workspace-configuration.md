@@ -19,7 +19,7 @@ Once you have your account setup on [Bit.dev](https://bit.dev/) and have created
 
 <ReactEnvironment />
 
-:arrow_right: Learn more about [Environments](/building-with-bit/environments/overview).
+:arrow_right: Learn more about [Environments](/building-with-bit/environment/overview).
 
 ### Reset your dev server
 

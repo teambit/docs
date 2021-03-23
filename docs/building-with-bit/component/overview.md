@@ -75,7 +75,7 @@ Bit uses these IDs when listing or running operations and commands on components
 Bit creates a package from each component in the workspace' root `node_modules` directory. This package contains the component's transpiled code for other components to import.  
 The package name is defined by the component ID. However, Node supports a single forward slash (`/`) in a module name (to set the module scope). Bit uses the `<scope>` defined for the components as such (with the `/` separator). All other `/` between namespaces (if found) are translated to dots (`.`).
 
-For example the component ID `my-org.design-system/components/base/button` will result in a module called `@my-org/design-system.components.base.button`.
+For example the component ID `my-org.design-system/component/base/button` will result in a module called `@my-org/design-system.components.base.button`.
 
 > Why doesn't Bit keep the same module naming as node?
 >

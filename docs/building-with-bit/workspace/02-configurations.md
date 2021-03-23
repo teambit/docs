@@ -32,7 +32,7 @@ Example:
 }
 ```
 
-### [teambit.dependencies/dependency-resolver](/dependencies/overview)
+### [teambit.dependencies/dependency-resolver](/dependency-resolver/overview)
 
 `teambit.dependencies/dependency-resolver` receives rules and settings for component dependencies and package management. Dependency policies alter and augment the existing dependency graph that was auto-generated.
 
@@ -60,7 +60,7 @@ Example (used at the JSON root-level):
   }
 ```
 
-Learn more about the `dependency-resolver` [here](/dependencies/overview).
+Learn more about the `dependency-resolver` [here](/dependency-resolver/overview).
 
 ### [teambit.workspace/variants](/workspace/cascading-rules)
 

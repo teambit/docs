@@ -5,7 +5,7 @@ title: Creating Components
 
 Bit tracks component folders so everything belonging to that component should live in that folder and should have an `index.ts` as main entry file.
 
-:arrow_right: Learn more about [Bit Components](/building-with-bit/components/overview).
+:arrow_right: Learn more about [Bit Components](/building-with-bit/component/overview).
 
 ```sh
 mkdir button
@@ -43,7 +43,7 @@ export const Button = ({
 };
 ```
 
-:arrow_right: Learn more about [Bit Components](/building-with-bit/components/overview).
+:arrow_right: Learn more about [Bit Components](/building-with-bit/component/overview).
 
 ## The Composition file
 
@@ -91,4 +91,4 @@ As we are creating a React component and therefore importing React we will need 
 bit install
 ```
 
-:arrow_right: Learn more about [Bit Dependency Installation](/building-with-bit/dependencies/dependency-installation).
+:arrow_right: Learn more about [Bit Dependency Installation](/building-with-bit/dependency-resolver/dependency-installation).

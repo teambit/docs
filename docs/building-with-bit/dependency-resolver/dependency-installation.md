@@ -3,7 +3,7 @@ id: dependency-installation
 title: Dependency installation
 ---
 
-Dependency installation is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependencies/dependency-resolver).
+Dependency installation is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependency-resolver/dependency-resolver).
 
 Dependency Resolver directs the package manager to install the right packages at the right place in the workspace file structure.
 

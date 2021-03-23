@@ -5,15 +5,15 @@ title: Overview
 
 Bit makes the most out of your automated testing to help you maintain code in a distributed network of independent components. It does so by running tests on the modified component itself but also, on all components dependent on it, in and across scopes. This ripple effect of unit tests running on all dependent components essentially translates into multiple integration tests for multiple applications.
 
-Bit's Tester is an [Environment Service](/environments/environment-services). The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/environments/overview) that use it as a service. That means, a single workspace may run different test runners for different components, each according to its own environment.
+Bit's Tester is an [Environment Service](/environment/environment-services). The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/environment/overview) that use it as a service. That means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To customize an environment's tester, [see here](/environments/environment-services).
+To customize an environment's tester, [see here](/environment/environment-services).
 
 For a demo of tests authored and executed for a component, [see here](/tutorial/test)
 
 ## Executing the tester manually
 
-To manually run the tester on a specific component use its [component ID](/components/overview#component-id):
+To manually run the tester on a specific component use its [component ID](/component/overview#component-id):
 
 ```shell
 $ bit test <component-id>
