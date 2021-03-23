@@ -266,7 +266,6 @@ module.exports = {
               ],
             },
           ],
-          "collapsed": false,
         },
       
       {
