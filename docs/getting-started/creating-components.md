@@ -58,7 +58,7 @@ export const BasicButton = () => {
 };
 ```
 
-:arrow_right: Learn more about [Bit Compositions](/building-with-bit/compositions/overview).
+:arrow_right: Learn more about [Bit Compositions](/building-with-bit/composition/overview).
 
 ## The Docs file
 

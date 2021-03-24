@@ -19,7 +19,7 @@ Are you ready to go deeper. We have so much more to show you.
 
 ## Essentials
 
-Check out [Essentials](/essentials/what-is.bit) to understand more about What Bit is and it's advantages
+Check out [Essentials](/essentials/what-is-bit) to understand more about What Bit is and it's advantages
 
 ## Building with Bit
 
@@ -33,6 +33,6 @@ Check out [Component Architecture](/component-architecture/thinking-in-component
 
 Check out all of [Bits commands](/reference/commands) in the Reference Chapter
 
-## Tutorials
+<!-- ## Tutorials
 
-Want to see a demo project on how we use React hooks in a Bit. Check out our [Tech Jokes Tutorial](/tutorials/react/tech-jokes/03-install-bit).
+Want to see a demo project on how we use React hooks in a Bit. Check out our [Tech Jokes Tutorial](/tutorials/react/tech-jokes/03-install-bit). -->

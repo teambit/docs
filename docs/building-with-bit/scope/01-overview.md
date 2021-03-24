@@ -5,23 +5,23 @@ title: Overview
 
 import { Image } from '@site/src/components/image'
 
-A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/workspace/overview). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
+A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/building-with-bit/workspace/overview). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
 
 ## Remote scope
 
-A remote scope is a remote collection of Bit components that were ['tagged'](/getting-started/version) and ['exported'](/getting-started/export-to-scope) from one or more [Bit workspaces](/workspace/overview). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
+A remote scope is a remote collection of Bit components that were 'tagged' and 'exported' from one or more [Bit workspaces](/building-with-bit/workspace/overview). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
 
 Each scope, or "collection", groups together components that are related by function or purpose. As such, a single remote scope should be maintained by a single group of stakeholders, developers and even non-developers (designers, product managers, etc.).
 
-Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/scope/self-host-bit-scope). Each Bit server can host multiple scopes.
+Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/building-with-bit/scope/self-host-bit-scope). Each Bit server can host multiple scopes.
 
-A scope is visually represented by the [Scope UI](TODO) (similarly to the way a workspace UI visually represents your workspace).
+A scope is visually represented by the Scope UI (similarly to the way a workspace UI visually represents your workspace).
 
 <Image src="/img/scope_ui.png" />
 
 <br />
 
-To set up a remote scope, [see here](/scope/set-up-remote-scope).
+To set up a remote scope, [see here](/building-with-bit/scope/set-up-remote-scope).
 
 ### Cached dependencies
 

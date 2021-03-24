@@ -37,9 +37,9 @@ When logging into a server, Bit tries logs in using SSH with the following combi
 
 1. Username `token` and Bit token from Bit config as password
 1. SSH key pair from ssh-agent
-1. SSH key pair from the [filename in bit config](/getting-started/ci-cd#2-set-the-user-authentication-token-as-a-secret-repository-variable)
-1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
-1. Anonymous login. This happens only to read operations: username: `anonymous` and password is blank
+2. SSH key pair from the filename in bit config
+3. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
+4. Anonymous login. This happens only to read operations: username: `anonymous` and password is blank
 
 If all the above fail, for write operations, Bit prompts for username and password.
 It is up for the server deployment to decide on the relevant policy.

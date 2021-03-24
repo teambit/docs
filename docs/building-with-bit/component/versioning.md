@@ -53,8 +53,6 @@ bit tag --soft <component-id>
 bit tag --persist --all
 ```
 
-- **Learn more about adding Bit to your CI, [here](/tutorial/ci-cd)**
-
 ### Untag a component
 
 To untag our a component run the following:
@@ -82,20 +80,20 @@ Example output:
   └──────────────────────────────────────────────────────────────────────┴─────────┴─────────┘
 ```
 
-To explore the previous versions of a component in the Workspace/Scope UI, [see here](/bit-components/inspecting#workspacescope-ui).
+
 
 ## Actions executed by the 'tag' command
 
 ### 1. Runs the environment's 'build pipeline'
 
-The 'build pipeline' is a series of tasks defined by the environment. In our case, we've set all our components to [use the React environment](getting-started/choose-dev-env) which has, as a default, two tasks in its build pipeline:
+The 'build pipeline' is a series of tasks defined by the environment. In our case, we've set all our components to use the React environment which has, as a default, two tasks in its build pipeline:
 
 1. Compile (using the React environment compiler)
 2. Test (using the React environment tester)
 
 If any of the build pipeline's tasks fail, the tagging is aborted.
 
-> As with any other service provided by the environment, the '[build pipeline](/react/extending-react#overridebuildpipe)' can too be extended and customized.
+> As with any other service provided by the environment, the '[build pipeline](/building-with-bit/react/extending-react#overridebuildpipe)' can too be extended and customized.
 
 ### 2. Sets a new version for the tagged component
 
@@ -109,7 +107,7 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 
 ### 4. Locks any further changes to that version and stores it in the local scope
 
-> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to **propose** a new version and let your [CI](/getting-started/ci-cd) set a new version with the committed changes (using 'hard tag')
+> The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to **propose** a new version and let your CI set a new version with the committed changes (using 'hard tag')
 >
 > ```shell
 > // soft-tag

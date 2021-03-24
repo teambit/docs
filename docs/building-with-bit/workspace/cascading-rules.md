@@ -3,14 +3,14 @@ id: cascading-rules
 title: Cascading Rules and Settings (variants)
 ---
 
-The `teambit.workspace/variants` extension enables a cascading, CSS-like, selection of components in the [workspace configuration](/workspace/configurations). It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
+The `teambit.workspace/variants` extension enables a cascading, CSS-like, selection of components in the [workspace configuration](/building-with-bit/workspace/configurations). It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
 
 Configurations set on a specific set of components will:
 
 1. Affect only that selected set of components
 2. Inherit policies set on a more general set of components (that includes the workspace default configs)
 3. Override conflicting configurations inherited from more general component selections
-4. Propagate configurations downwards to more specific sub-sets of components ([this behavior can be modified](/workspace/cascading-rules#variants-configurations)).
+4. Propagate configurations downwards to more specific sub-sets of components ([this behavior can be modified](/building-with-bit/workspace/cascading-rules#variants-configurations)).
 
 ## Selecting components
 

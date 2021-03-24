@@ -14,10 +14,10 @@ Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](/components/versioning#soft-and-hard-tags-component-collaboration).
+[**Learn more**](/building-with-bit/component/versioning#soft-and-hard-tags-component-collaboration).
 :::
 
-3. Publish components (as packages) to NPM or other registries (learn more, [here](/packages/publish-to-npm))
+3. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/package/publish-component-packages#publish))
 
 4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process.
 

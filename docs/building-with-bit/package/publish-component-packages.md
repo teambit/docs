@@ -4,13 +4,13 @@ title: Publish Component Packages
 ---
 
 The packing and publishing of component packages is handled by the [PKG Bit extension](https://bit.dev/teambit/pkg/pkg).
-PKG adds its own build task to the [component build pipeline](/build-pipeline/overview), to create component packages and include them as part of the component artifacts (which can later be installed from Bit.dev's registry).
+PKG adds its own build task to the [component build pipeline](/building-with-bit/build-pipeline/overview), to create component packages and include them as part of the component artifacts (which can later be installed from Bit.dev's registry).
 
 The PKG extension can be configured to add and override `package.json` properties and to publish component packages to NPM or a private registry.
 Publishing can be done manually (using the `bit publish` command), or as part of the component build pipeline.
 
 :::info
-The PKG extension can only be configured using the [Variants](/workspace/cascading-rules) extension.
+The PKG extension can only be configured using the [Variants](/building-with-bit/workspace/cascading-rules) extension.
 :::
 
 ## Configurations

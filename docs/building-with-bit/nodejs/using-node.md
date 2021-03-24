@@ -7,7 +7,7 @@ To use the Node environment, set it in the `workspace.jsonc` configuration file.
 
 ## Apply Node on a group of components
 
-The example below shows Node being applied on all components in the workspace, using the wildcard character `*`. To use Node on a more limited set of components, [see here](/workspace/cascading-rules)
+The example below shows Node being applied on all components in the workspace, using the wildcard character `*`. To use Node on a more limited set of components, [see here](/building-with-bit/workspace/cascading-rules)
 
 ```json
 {

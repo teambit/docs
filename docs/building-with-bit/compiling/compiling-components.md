@@ -6,14 +6,14 @@ title: Compiling Components
 
 ## Choosing a Compiler
 
-Bit's Compiler is an [Environment Service](/environments/environment-services).
-The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/environments/overview) that use it as a service.
+Bit's Compiler is an [Environment Service](/building-with-bit/environment/environment-services).
+The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environment/overview) that use it as a service.
 That means, the (specific) compiler is never run directly but only via the Compiler service. That also means, a single workspace may run different compilers for different components, each according to its own environment.
-To customize an environment's compiler, [see here](/environments/environment-services).
+To customize an environment's compiler, [see here](/building-with-bit/environment/environment-services).
 
 ## Running the compiler manually
 
-To manually run the compiler on a specific component use its [component ID](/bit-components/overview#component-id):
+To manually run the compiler on a specific component use its [component ID](/building-with-bit/component/overview#component-id):
 
 ```shell
 $ bit compile <component-id>

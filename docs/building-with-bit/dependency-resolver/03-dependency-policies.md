@@ -51,7 +51,7 @@ For example:
 
 ## Apply policies on a selected group of components
 
-Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/workspace/cascading-rules) configuration API.
+Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/building-with-bit/workspace/cascading-rules) configuration API.
 
 For example, to set the `1.0.0` version of `classnames` as a dependency of all components located inside the `./component/react` directory (or any of its sub-directories):
 
@@ -70,7 +70,7 @@ For example, to set the `1.0.0` version of `classnames` as a dependency of all c
 ```
 
 :::info learn how to use the 'variants' extension
-To learn how to select components using `@teambit.workspace/variants`, [see here](/workspace/cascading-rules).
+To learn how to select components using `@teambit.workspace/variants`, [see here](/building-with-bit/workspace/cascading-rules).
 :::
 
 ## Remove a dependency
@@ -147,7 +147,7 @@ In the below example, classnames@1.0.0 will be "forcibly" added as a dependency 
 ### Configure specific dependencies as devDependencies
 
 :::caution
-Dependencies can be directly configured as `devDependencies` only by nesting the dependency policies inside [variants](/workspace/cascading-rules).
+Dependencies can be directly configured as `devDependencies` only by nesting the dependency policies inside [variants](/building-with-bit/workspace/cascading-rules).
 :::
 
 ```json title="Setting a dependency as dev dependency using variants"
@@ -220,5 +220,5 @@ To set a package as a peer dependency, place it under the peerDependencies entry
 :::info Handling multiple identical peer dependencies
 Peer dependencies are usually used in the context of a single "hosting code". That could be an application or a single component library.
 Bit may generate multiple "hosts", one for each environment being used, to run components of different types.
-That could translate into multiple versions of the same peer dependency, one for each environment. To manage multiple versions of a peer dependency [see here](/faq/multiple-peer-dep-versions).
+That could translate into multiple versions of the same peer dependency, one for each environment.
 :::

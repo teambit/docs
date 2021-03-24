@@ -121,7 +121,7 @@ bit install <package-name>
 
 #### Install all dependencies after cloning a workspace
 
-This process will install all packages, import all components and [link](/cli/cheat-sheet#relink-components-to-the-workspace) the imported components.
+This process will install all packages, import all components and link the imported components.
 
 ```shell
 bit install
@@ -129,7 +129,7 @@ bit install
 
 #### Import a component
 
-Import a component from a remote scope. Learn more [here](/component/importing).
+Import a component from a remote scope. Learn more [here](/building-with-bit/component/importing).
 
 ```shell
 bit import <component-id>
@@ -235,7 +235,7 @@ bit deprecate <component-id> --remote
 
 #### Eject component configurations
 
-Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](http://localhost:3005/workspace/cascading-rules#eject-component-configurations-componentjson).
+Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](/building-with-bit/workspace/cascading-rules#eject-component-configurations-componentjson).
 
 ```shell
 bit eject-conf <component>

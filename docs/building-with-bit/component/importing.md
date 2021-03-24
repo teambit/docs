@@ -10,7 +10,7 @@ An imported component can have its configurations changed using the (hosting) wo
 Once a component is imported and placed in a directory named `<scope-name>.<component-name>` as a default, it is linked to the `node_modules` directory so that it an be consumed by other components in the workspace using its package name (and not its relative path).
 
 The component's compiled code will be available in the component package `dist` directory.
-Modifying the component's source code will trigger a compilation process that will result in new dist files (learn more about compilation [here](/compiling/overview)).
+Modifying the component's source code will trigger a compilation process that will result in new dist files (learn more about compilation [here](/building-with-bit/compiling/overview)).
 
 ## Import a single component
 
@@ -70,4 +70,3 @@ import { Button } from '@my-scope/button';
 Imported components can have their configurations modified using the workspace configuration file (`workspace.jsonc`).
 That includes configurations that are set manually but also those set programmatically by other extensions (for example, the environment).
 
-To learn how to stop a component from inheriting configurations from the workspace, [see here](workspace/cascading-rules#eject-component-configurations-componentjson).

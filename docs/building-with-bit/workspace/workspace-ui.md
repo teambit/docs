@@ -15,26 +15,26 @@ While you develop your components, Bit's UI will provide an exact picture of eve
 
 <Image src="/img/tech_jokes.png" />
 
-#### [Explore the applied environments and configurations for every component](/components/inspecting#configurations)
+#### [Explore the applied environments and configurations for every component](/building-with-bit/component/inspecting#configurations)
 
 <Image src="/img/pkg_config.png" width="60%" />
 
-#### [Browse each component's version history and see its changelog](/components/inspecting#workspacescope-ui)
+#### [Browse each component's version history and see its changelog](/building-with-bit/component/inspecting#workspacescope-ui)
 
 <Image src="/img/log_example.png" width="60%" padding={20} />
 
-#### [View the component's documentation](/documenting/overview)
+#### [View the component's documentation](/building-with-bit/documenting/overview)
 
 <Image src="/img/ws_getting_started_docs.png" width="60%" />
 
-#### [View live (hot-reloading) visual examples for each component](/compositions/overview)
+#### [View live (hot-reloading) visual examples for each component](/building-with-bit/composition/overview)
 
 <Image src="/img/ws_getting_started_compositions.png" />
 
-#### [View the component's dependency graph](/components/inspecting#dependencies)
+#### [View the component's dependency graph](/building-with-bit/component/inspecting#dependencies)
 
 <Image src="/img/explore_deps_2.png" />
 
-#### [Run and view the tests of each component](/testing/running-tests)
+#### [Run and view the tests of each component](/building-with-bit/testing/add-tests)
 
 <Image src="/img/ws_getting_started_test.png" />

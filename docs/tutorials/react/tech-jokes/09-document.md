@@ -13,7 +13,7 @@ This section discusses the documentation in the 'React', 'React Native', and 'No
 
 A component documentation is made of two parts:
 
-1. The documentation template (defined by the [component development environment](/environment/overview)).
+1. The documentation template (defined by the [component development environment](/building-with-bit/environment/overview)).
    In the case of the 'React' and 'React Native' environments, it will include the auto-generated 'Properties' table (that lists all the component's props), and the manually added docs content.
 
 2. The manually added docs content is placed in a `.docs.mdx` or `*.docs.md` file, in the component's directory.

@@ -32,7 +32,7 @@ Example:
 }
 ```
 
-### [teambit.dependencies/dependency-resolver](/dependency-resolver/overview)
+### [teambit.dependencies/dependency-resolver](/building-with-bit/dependency-resolver/overview)
 
 `teambit.dependencies/dependency-resolver` receives rules and settings for component dependencies and package management. Dependency policies alter and augment the existing dependency graph that was auto-generated.
 
@@ -60,9 +60,9 @@ Example (used at the JSON root-level):
   }
 ```
 
-Learn more about the `dependency-resolver` [here](/dependency-resolver/overview).
+Learn more about the `dependency-resolver` [here](/building-with-bit/dependency-resolver/overview).
 
-### [teambit.workspace/variants](/workspace/cascading-rules)
+### [teambit.workspace/variants](/building-with-bit/workspace/cascading-rules)
 
 `teambit.workspace/variants` adds elegancy and simplicity to our workspace configurations by enabling a cascading, CSS-like, setting of rules.
 Groups of components can be selected to have rules and policies applied on them without affecting the rest of the workspace.

@@ -5,7 +5,7 @@ title: Exporting Components
 
 import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md'
 
-Exporting a component to [a remote scope](/getting-started/bit-account#create-a-remote-scope) makes it available to be used by other Bit workspaces or your applications.
+Exporting a component to a remote scope makes it available to be used by other Bit workspaces or your applications.
 
 ## Tagging Components
 

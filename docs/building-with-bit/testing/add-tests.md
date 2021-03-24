@@ -5,7 +5,7 @@ title: Adding Tests
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
 
-For example, the [React environment](/react/overview) runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]` 
+For example, the [React environment](/building-with-bit/react/overview) runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]` 
 
 ```shell {5}
 ├── account/login-form 

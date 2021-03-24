@@ -103,7 +103,7 @@ export const UserHeroWithScopeList = () => {
 
 ## Loading compositions
 
-The [Development Environment](/environment/overview) will automatically detect the composition file for each component
+The [Development Environment](/building-with-bit/environment/overview) will automatically detect the composition file for each component
 and use it to load its compositions to the workspace UI.
 
 ## Using compositions for automated testing
@@ -130,11 +130,11 @@ describe('Button', () => {
 });
 ```
 
-- Learn more about running tests in a Bit workspace, [here](/testing/overview)
+- Learn more about running tests in a Bit workspace, [here](/building-with-bit/testing/add-tests)
 
 ## Setting providers for all your compositions
 
-Extend the [React environment](/react/overview/) to customize its list of providers with your own composition providers.
+Extend the [React environment](/building-with-bit/react/overview/) to customize its list of providers with your own composition providers.
 The extended environment will then wrap every composition with these providers to make sure your themes or mock data are accessible to all of them,
 without you having to repeat that task ever again.
 

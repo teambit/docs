@@ -13,11 +13,11 @@ You can use one of Bit's default "out-of-the-box" environments, create your own 
 
 Bit currently provides the following core environments out of the box. Just pick one and start using any of them in your workspace.
 
-### [React](/react/using-react)
+### [React](/building-with-bit/react/using-react)
 
-### [React Native](/react-native/using-react-native)
+### [React Native](/building-with-bit/react-native/using-react-native)
 
-### [Node](/nodejs/using-node)
+### [Node](/building-with-bit/nodejs/using-node)
 
 ## Using an environment
 
@@ -47,7 +47,7 @@ Instead, use exclusive namespaces or directories to select and configure each gr
 
 ### Setting multiple environments
 
-A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/workspace/cascading-rules)
+A single workspace can use different environments for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using `teambit.workspace/variants`. To learn more about using 'variant' to select components, [see here](/building-with-bit/workspace/cascading-rules)
 
 For example, to set the Node and React environments on two sets of components (selected by their directory):
 

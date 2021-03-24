@@ -16,7 +16,7 @@ Harmony is already used as a standard component infrastructure by many teams, in
 
 There are a few ways for you to get started with Harmony.
 
-#### [Follow our Get Started Guide](/installing-bit)
+#### [Follow our Get Started Guide](/getting-started/installing-bit)
 
 Want to get started quickly and see how Bit works? This quick guide will take you through installing Bit, initializing a workspace, creating a component, tagging a component, seeing your component in the local workspace, creating a remote scope, configuring your workspace, exporting your component and installing your component in an external app.
 

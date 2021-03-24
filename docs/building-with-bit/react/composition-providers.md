@@ -3,14 +3,14 @@ id: composition-providers
 title: Composition providers
 ---
 
-The React environment "wraps" every [composition](/compositions/overview) with an array of providers.
+The React environment "wraps" every [composition](/building-with-bit/composition/overview) with an array of providers.
 These providers can be used to render compositions in a common context such as a theme or data that needs to be globally available.
 
 A Provider is any React component that accepts compositions as children. This component is registered using the `registerProvider`.
 
 :::info
 Providers are part of the component compositions and documentation bundle that is served by the environment's server and rendered by the browser.
-As such, they run in the environment's Preview runtime and not the Main runtime. To learn more about runtime environments, [see here](/environment/create-environment#create-an-environment-extension-with-multiple-runtimes)
+As such, they run in the environment's Preview runtime and not the Main runtime. To learn more about runtime environments, [see here](/building-with-bit/environment/create-environment#create-an-environment-extension-with-multiple-runtimes)
 :::
 
 For example, a provider that centers compositions in their rendering page, will look like so:

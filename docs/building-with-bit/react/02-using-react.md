@@ -33,4 +33,4 @@ Apply the React environment on a limited set of components. For example, all com
 }
 ```
 
-- Learn more about configuring a selected set of components, [here](/workspace/cascading-rules).
+- Learn more about configuring a selected set of components, [here](/building-with-bit/workspace/cascading-rules).

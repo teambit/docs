@@ -7,7 +7,7 @@ To use the React Native environment, set it in the `workspace.jsonc` configurati
 
 ## Apply React Native on a group of components
 
-The example below shows React Native being applied on all components in the workspace, using the wildcard character `*`. To use React Native on a more limited set of components, [see here](/workspace/cascading-rules)
+The example below shows React Native being applied on all components in the workspace, using the wildcard character `*`. To use React Native on a more limited set of components, [see here](/building-with-bit/workspace/cascading-rules)
 
 ```json
 {

@@ -5,7 +5,7 @@ title: Overview
 
 import BitInit from '@site/docs/components/commands/bit-init.md'
 
-A Bit workspace enables a single repository to [author](/getting-started/add-components), [export](/getting-started/export-to-scope), [import](/getting-started/import-install-components) and [manage](/getting-started/manage-dependencies) multiple independent components.
+A Bit workspace enables a single repository to author, export, import and manage multiple independent components.
 
 ## Initialize a new workspace
 
@@ -31,7 +31,7 @@ bit init --reset-hard
 
 ## The anatomy of a workspace
 
-1. [**Workspace configurations**](/workspace/configurations) (the `workspace.jsonc` file).
+1. [**Workspace configurations**](/building-with-bit/workspace/configurations) (the `workspace.jsonc` file).
    This is where rules and policies are set for the workspace itself but also for each component managed by it.
    These rules include component dependencies, development environments, default scopes, and so on.
 
@@ -39,7 +39,7 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/component/versioning#soft-and-hard-tags-component-collaboration) by the CI.
+   - Whether this component is [pending to be versioned](/building-with-bit/component/versioning#soft-and-hard-tags-component-collaboration) by the CI.
 
      <br />
 
@@ -64,7 +64,7 @@ bit init --reset-hard
    }
    ```
 
-3. [**Local scope**](/scope/overview#local-scope) (the `.bit` or `.git/.bit` directory). This is where versioned or tagged components (either authored or imported) are stored.
+3. [**Local scope**](/building-with-bit/scope/overview#local-scope) (the `.bit` or `.git/.bit` directory). This is where versioned or tagged components (either authored or imported) are stored.
 
 4. **Component packages** (located in the `node_modules/@scope-name` directory). This is where the distributable, compiled, code of a component is placed. Components in the workspace refer to each other only via their packages. This is crucial to keeping each component independent and context-agnostic.
 
@@ -80,7 +80,7 @@ Se the Workspace UI at https://localhost:3000
 bit start
 ```
 
-[Learn more about it here](/workspace-ui/overview).
+[Learn more about it here](/building-with-bit/workspace/overview).
 
 ## Get the most out of a Bit Workspace
 

@@ -32,13 +32,13 @@ Here you will see an overview of your component complete with a live playground.
 
 Compositions show you how your component is composed. Compositions are created by adding a `myComponent.compositions.tsx` file.
 
-:arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions/overview).
+:arrow_right: Learn more about [Component Compositions](/building-with-bit/composition/overview).
 
 ## Tests
 
 If we had written any tests they would appear here. Tests are created by adding a `myComponent.spec.tsx` file.
 
-:arrow_right: Learn more about [Component Testing](/building-with-bit/testing/adding-tests).
+:arrow_right: Learn more about [Component Testing](/building-with-bit/testing/add-tests).
 
 ## Dependencies
 

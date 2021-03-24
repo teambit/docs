@@ -164,7 +164,7 @@ getPackageJsonProps(...args : any[]): object
 
 Returns an object that defines the `package.json` properties of the packages generated for components handled by this environment. This configuration is used by the Packager service.
 
-Learn more about overriding the `package.json` properties [here](/packages/publish-to-npm#packagejson)
+Learn more about overriding the `package.json` properties [here](/building-with-bit/package/publish-component-packages#publish)
 
 ```ts
 export class ReactEnv implements Environment {
@@ -221,7 +221,7 @@ export class ReactEnv implements Environment {
 getBuildPipe(...args : any[]): BuildTask[]
 ```
 
-Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks. Learn more about it [here](/build-pipeline/overview).
+Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks. Learn more about it [here](/building-with-bit/build-pipeline/overview).
 
 For example:
 

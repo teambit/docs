@@ -139,4 +139,4 @@ bvm config set DEFAULT_LINK bitty
 
 #### PATH is missing the installation directory
 
-- [Installation Troubleshooting](/getting-started/troubleshooting/installation-troubleshooting).
+- [Installation Troubleshooting](/troubleshooting/installation-troubleshooting).

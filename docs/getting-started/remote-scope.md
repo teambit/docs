@@ -6,7 +6,7 @@ title: Creating a Remote Scope
 import CreateBitAccount from '@site/docs/components/remote-scopes/create-bit-account.md'
 import CreateRemoteScope from '@site/docs/components/remote-scopes/create-remote-scope.md'
 
-A scope is where the release versions of Bit components are stored. [Remote scopes](aspects/scopes/overview#remote-scope), either on [Bit.dev](https://bit.dev) or other self-hosted Bit servers, store exported components that are available to be used by other web projects.
+A scope is where the release versions of Bit components are stored. [Remote scopes](/building-with-bit/scope/overview#remote-scope), either on [Bit.dev](https://bit.dev) or other self-hosted Bit servers, store exported components that are available to be used by other web projects.
 
 ## Create a Bit.dev account
 

@@ -290,7 +290,7 @@ module.exports = {
       items: [
         "reference/commands",
         "reference/usage-analytics",
-        "reference/authentication"
+        // "reference/authentication"
       ],
     },
     {
