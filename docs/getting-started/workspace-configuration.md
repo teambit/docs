@@ -24,4 +24,3 @@ Once you have your account setup on [Bit.dev](https://bit.dev/) and have created
 ### Reset your dev server
 
 <ResetDevServer />
-

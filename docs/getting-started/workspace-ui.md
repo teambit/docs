@@ -46,9 +46,9 @@ This shows you any dependencies that your component has.
 
 :arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependency-resolver/overview).
 
-## Code 
+## Code
 
-You can see all the code files your component has and inspect them. You can also see a list of dependencies and dev dependencies your component has. 
+You can see all the code files your component has and inspect them. You can also see a list of dependencies and dev dependencies your component has.
 
 ## ChangeLog
 
@@ -58,7 +58,7 @@ See the changelog of your component for when you export and create new versions.
 
 ## Use
 
-This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager. 
+This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
 
 :arrow_right: Learn more about [Importing Components](/building-with-bit/component/importing).
 

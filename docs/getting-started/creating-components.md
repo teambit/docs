@@ -11,7 +11,7 @@ Bit tracks component folders so everything belonging to that component should li
 mkdir button
 ```
 
-We then need to create the necessary files. 
+We then need to create the necessary files.
 
 ```sh
 touch button/index.ts button/button.tsx button/button.composition.tsx button/button.docs.mdx
@@ -49,7 +49,6 @@ export const Button = ({
 
 The `button.composition.tsx` file is needed so that we can visualize our component in our workspace.
 
-
 ```tsx title="button.composition.tsx"
 import React from 'react';
 import { Button } from './button';
@@ -79,8 +78,8 @@ Button example:
 // ```js live
 <Button text="click here"/>
 // ```
-
 ```
+
 :arrow_right: Learn more about [Bit Documenting](/building-with-bit/documenting/overview).
 
 ## Install Dependencies
