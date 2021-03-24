@@ -1,34 +1,37 @@
 ---
-id: overview
-title: Overview
+id: running-tests
+title: Running Tests
 ---
 
-Bit makes the most out of your automated testing to help you maintain code in a distributed network of independent components. It does so by running tests on the modified component itself but also, on all components dependent on it, in and across scopes. This ripple effect of unit tests running on all dependent components essentially translates into multiple integration tests for multiple applications.
+import { Image } from '@site/src/components/image';
 
-Bit's Tester is an [Environment Service](/environment/environment-services). The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/environment/overview) that use it as a service. That means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To customize an environment's tester, [see here](/environment/environment-services).
+## Choosing a test runner
 
-For a demo of tests authored and executed for a component, [see here](/tutorial/test)
+Bit's Tester is an [Environment Service](/environments/environment-services). 
+The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/environments/overview) that use it as a service.
+That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
+
+To choose a test runner, choose an environment that uses it or [extend an environment](/testing/customize-the-tester) to have it run your preferred test runner.
 
 ## Executing the tester manually
 
-To manually run the tester on a specific component use its [component ID](/component/overview#component-id):
+To manually run the tester on a specific component use its [component ID](/components/overview#component-id):
 
 ```shell
-$ bit test <component-id>
+bit test <component-id>
 ```
 
 For example:
 
 ```shell
-$ bit test ui-primitives/button
+bit test ui-primitives/button
 ```
 
 To manually run the tester on the entire workspace:
 
 ```shell
-$ bit test
+bit test
 ```
 
 ### Options
@@ -38,7 +41,7 @@ $ bit test
 Starts the tester in 'watch mode' (re-tests when changes are made to a component).
 
 ```shell
-$ bit test --watch
+bit test --watch
 ```
 
 #### `--debug` `-d`
@@ -46,7 +49,7 @@ $ bit test --watch
 Starts the tester in 'debug mode'.
 
 ```shell
-$ bit test --debug
+bit test --debug
 ```
 
 #### `--env` `-e`
@@ -54,21 +57,23 @@ $ bit test --debug
 Tests all components that use a specific environment.
 
 ```shell
-$ bit test --env <component-id>
-
-// For example
-$ bit test --env teambit.react/react
+bit test --env <component-id>
 ```
 
+For example:
+```shell
+bit test --env teambit.react/react
+```
 #### `--scope` `-s`
 
 Tests all components in a specific scope.
 
 ```shell
-$ bit test --scope <scope-name>
-
-// For example
-$ bit test --scope my-org.react-design-system
+bit test --scope <scope-name>
+```
+For example:
+```shell
+bit test --scope my-org.react-design-system
 ```
 
 ## Bit processes that use the tester
@@ -89,12 +94,16 @@ Main UI server is running on http://localhost:3000
 Waiting for component changes... (10:17:20)
 ```
 
+Test results will be shown in the terminal, as well as in the 'Tests' tab.
+
+<Image src="@site/img/ws_getting_started_test.png" />
+
 ### Tests in `watch` mode
 
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component testing is one of these tasks.
 
 ```sh
-$ bit watch
+bit watch
 ```
 
 ### Tests in the Build Pipeline

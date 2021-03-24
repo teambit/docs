@@ -10,16 +10,16 @@ Bit integrates into your CI/CD pipeline to achieve the following:
 2. Version and export components to remote scopes. These are components that are 'soft-tagged' (i.e, pending to be versioned).
 
 :::info use soft tags in local workspaces
-Components in local workspaces should only be 'soft-tagged'.
+Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](/component/versioning#soft-and-hard-tags-component-collaboration).
+[**Learn more**](/components/versioning#soft-and-hard-tags-component-collaboration).
 :::
 
 3. Publish components (as packages) to NPM or other registries (learn more, [here](/packages/publish-to-npm))
 
-4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process (for example, to bundle and deploy the 'App' component). To learn how to extend an environment with your own 'build task', see here.
+4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process.
 
 ## Setting up the CI with Github Actions
 
@@ -73,23 +73,28 @@ on:
 
 ### 5. Set up the right environment for the CI runner
 
-That includes installing Bit globally. In addition to that, make sure to set `BIT_TOKEN` as an environment variable (to use later on).
+That includes installing Bit Version Manager and Bit. In addition to that, make sure to set `BIT_TOKEN` as an environment variable (to use later on).
 
 ```yaml
 jobs:
   tag-and-export:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '--skip-ci')"
     env:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Install latest version of bit
-        run: npm i -g @teambit/bit
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install Bit Version Manager 
+      run: npm i -g @teambit/bvm
+    - name: Install latest Bit version 
+      run: bvm install
+    - name: Add bvm bin folder to PATH
+      run: echo "$HOME/bin" >> $GITHUB_PATH
 ```
 
 ### 6. Disable any type of analytics reporting and set the user authentication token

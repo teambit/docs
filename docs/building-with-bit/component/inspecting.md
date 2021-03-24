@@ -3,6 +3,8 @@ id: inspecting
 title: Inspecting
 ---
 
+import { Image } from '@site/src/components/image'
+
 This page lists different ways to inspect the workspace and its components using Bit's CLI and the Workspace/Scope UI.
 
 ## Get a component's essential info
@@ -91,7 +93,7 @@ The 'Dependencies' tab shows the component's dependencies. That only includes co
 
 For example:
 
-<img src="/img/dependencies_graph.png" width="80%" ></img>
+<Image src="/img/dependencies_graph.png" width="80%" />
 
 #### Configurations
 
@@ -99,7 +101,7 @@ The 'Configuration' tab <img src="/img/config_icon_2.png" width="15rem" ></img> 
 
 For example:
 
-<img src="/img/pkg_config.png" width="70%" ></img>
+<Image src="/img/dots_loader_pkg.png" width="60%" />
 
 ## Log
 
@@ -129,7 +131,7 @@ The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> show a compo
 
 For example:
 
-<img src="/img/log_example.png"></img>
+<Image src="/img/log_example.png" width="80%" padding={20}/>
 
 ## View Components status
 
