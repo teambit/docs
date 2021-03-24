@@ -50,10 +50,9 @@ Follow our [YouTube Channel](https://www.youtube.com/c/Bitdev) to see videos on 
 
 #### [Open an issue :wrench:](https://github.com/teambit/bit/issues)  
 
-
 ### Learn more
 
-#### [What is Bit? :rocket:](../essentials/what-is-bit) 
+#### [What is Bit? :rocket:](../essentials/what-is-bit)
 
 - Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
 
@@ -64,4 +63,3 @@ Follow our [YouTube Channel](https://www.youtube.com/c/Bitdev) to see videos on 
 #### [Communtiy :busts_in_silhouette:](/community/resources)
 
 - Join and follow the community on GitHub, Slack, Twitter, and more.
-

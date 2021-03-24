@@ -93,4 +93,3 @@ The show command will show us what bit has created when we added our component.
 :::note
 You may have noticed that the env is set to 'teambit.harmony/node' even though we have created a React Component. We will configure the workspace later.
 :::
-

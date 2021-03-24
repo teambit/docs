@@ -7,7 +7,7 @@ import InstallComponents from '@site/docs/components/install/install-components.
 
 import ScopedRegistry from '@site/docs/components/install/scoped-registry.md'
 
-Once you have exported your component you can now install it in your applications. Use any existing app or start a new one with `create-react-app`. 
+Once you have exported your component you can now install it in your applications. Use any existing app or start a new one with `create-react-app`.
 
 ## Installing your component
 
