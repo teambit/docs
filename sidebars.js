@@ -209,7 +209,9 @@ module.exports = {
               type: 'category',
               label: 'Testing',
               items: [
-                "building-with-bit/testing/overview",
+                "building-with-bit/testing/add-tests",
+                "building-with-bit/testing/running-tests",
+                "building-with-bit/testing/testing-dependent-components",
                 "building-with-bit/testing/customize-the-tester"
               ],
             },
@@ -218,6 +220,7 @@ module.exports = {
               label: 'Compiling',
               items: [
                 "building-with-bit/compiling/overview",
+                "building-with-bit/compiling/compiling-components",
                 "building-with-bit/compiling/customize"
               ],
             },
@@ -233,8 +236,7 @@ module.exports = {
               type: 'category',
               label: 'Package',
               items: [
-                "building-with-bit/package/overview",
-                "building-with-bit/package/publish-to-npm"
+                "building-with-bit/package/publish-component-packages",
               ],
             },
             {
