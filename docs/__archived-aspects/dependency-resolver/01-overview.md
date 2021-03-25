@@ -17,7 +17,7 @@ The 'dependency-resolver' simplifies dependency management by providing the foll
    It then determines if these dependencies are packages, components or internal implementation files.
    If they are external components or packages, it goes on to determine their version and dependency-type (`dependencies`, `devDependencies`, `peerDependencies`).
 
-2. [Dependency policies](/building-with-bit/dependency-resolver/dependency-policies):
+2. [Dependency policies](/building-with-bit/dependencies):
    An API for the workspace configurations.
    This API allows us to determine which versions should be used for every dependency in the generated dependency graph.
    When used in combination with `@teambit.workspace/variant` it allows to define, in a cascading (CSS-like) way,

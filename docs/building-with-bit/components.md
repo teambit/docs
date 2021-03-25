@@ -285,7 +285,7 @@ The 'build pipeline' is a series of tasks defined by the environment. In our cas
 
 If any of the build pipeline's tasks fail, the tagging is aborted.
 
-> As with any other service provided by the environment, the '[build pipeline](/building-with-bit/react/extending-react#overridebuildpipe)' can too be extended and customized.
+> As with any other service provided by the environment, the '[build pipeline](/building-with-bit/react)' can too be extended and customized.
 
 ### 2. Sets a new version for the tagged component
 
@@ -372,7 +372,7 @@ An imported component can have its configurations changed using the (hosting) wo
 Once a component is imported and placed in a directory named `<scope-name>.<component-name>` as a default, it is linked to the `node_modules` directory so that it an be consumed by other components in the workspace using its package name (and not its relative path).
 
 The component's compiled code will be available in the component package `dist` directory.
-Modifying the component's source code will trigger a compilation process that will result in new dist files (learn more about compilation [here](/building-with-bit/compiling/overview)).
+Modifying the component's source code will trigger a compilation process that will result in new dist files (learn more about compilation [here](/building-with-bit/compiling)).
 
 ## Import a single component
 
@@ -641,7 +641,7 @@ staged components
      > app-bar. versions: 0.0.1 ... ok
 ```
 
-- Learn more [here](/building-with-bit/workspace/workspace-status)
+- Learn more [here](/building-with-bit/workspace)
 
 ## List components in the local scope
 

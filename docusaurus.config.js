@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Bit Harmony',
   url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
-  onBrokenLinks: 'error',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
@@ -44,12 +44,12 @@ module.exports = {
           activeBasePath: 'building-with-bit',
           position: 'left',
         },
-        {
-          label: 'Aspects',
-          to: '/aspects/teambit.pkg/pkg/pkg.docs',
-          activeBasePath: 'aspects',
-          position: 'left',
-        },
+        // {
+        //   label: 'Aspects',
+        //   to: '/aspects/teambit.pkg/pkg/pkg.docs',
+        //   activeBasePath: 'aspects',
+        //   position: 'left',
+        // },
         // {
         //   label: 'CLI',
         //   to: '/cli',
@@ -82,7 +82,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/workspaces',
+              to: '/building-with-bit/workspace',
             },
             {
               label: 'What is Bit',

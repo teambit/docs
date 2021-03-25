@@ -20,13 +20,13 @@ While your waiting have a look in your node modules folder in your project and w
 
 Once you click on your component it will take you to the Overview page.
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/workspace/workspace-ui).
+:arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce).
 
 ## Overview
 
 Here you will see an overview of your component complete with a live playground. We can add further documentation to our component by creating a `myComponent.docs.mdx` file.
 
-:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting/overview).
+:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting).
 
 ## Compositions
 
@@ -54,12 +54,12 @@ You can see all the code files your component has and inspect them. You can also
 
 See the changelog of your component for when you export and create new versions.
 
-:arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/component/inspecting#workspace-ui).
+:arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/components).
 
 ## Use
 
 This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
 
-:arrow_right: Learn more about [Importing Components](/building-with-bit/component/importing).
+:arrow_right: Learn more about [Importing Components](/building-with-bit/components).
 
-:arrow_right: Learn more about [Installing Components](/building-with-bit/component/installing).
+:arrow_right: Learn more about [Installing Components](/building-with-bit/components).

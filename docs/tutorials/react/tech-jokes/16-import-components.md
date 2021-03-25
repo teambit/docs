@@ -23,7 +23,7 @@ Head back to your workspace UI to explore the new imported component.
 
 <br />
 
-- #### To learn more about 'importing' [see here](/building-with-bit/component/importing)
+- #### To learn more about 'importing' [see here](/building-with-bit/components)
 
 ## Using the imported component
 

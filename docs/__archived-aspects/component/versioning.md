@@ -95,7 +95,7 @@ The 'build pipeline' is a series of tasks defined by the environment. In our cas
 
 If any of the build pipeline's tasks fail, the tagging is aborted.
 
-> As with any other service provided by the environment, the '[build pipeline](/building-with-bit/react/extending-react#overridebuildpipe)' can too be extended and customized.
+> As with any other service provided by the environment, the '[build pipeline](/building-with-bit/react)' can too be extended and customized.
 
 ### 2. Sets a new version for the tagged component
 

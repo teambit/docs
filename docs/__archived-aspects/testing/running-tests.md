@@ -14,7 +14,7 @@ Bit's Tester is an [Environment Service](/building-with-bit/environments).
 The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environments) that use it as a service.
 That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing/customize-the-tester) to have it run your preferred test runner.
+To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing) to have it run your preferred test runner.
 
 ## Executing the tester manually
 

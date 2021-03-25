@@ -5,7 +5,7 @@ title: Creating Components
 
 Bit tracks component folders so everything belonging to that component should live in that folder and should have an `index.ts` as main entry file.
 
-:arrow_right: Learn more about [Bit Components](/building-with-bit/component/overview).
+:arrow_right: Learn more about [Bit Components](/building-with-bit/components).
 
 ```sh
 mkdir button
@@ -43,7 +43,7 @@ export const Button = ({
 };
 ```
 
-:arrow_right: Learn more about [Bit Components](/building-with-bit/component/overview).
+:arrow_right: Learn more about [Bit Components](/building-with-bit/components).
 
 ## The Composition file
 
@@ -80,7 +80,7 @@ Button example:
 // ```
 ```
 
-:arrow_right: Learn more about [Bit Documenting](/building-with-bit/documenting/overview).
+:arrow_right: Learn more about [Bit Documenting](/building-with-bit/documenting).
 
 ## Install Dependencies
 

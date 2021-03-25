@@ -59,23 +59,23 @@ module.exports = {
   //   },
   // ],
 
-  aspects: [
-    {
-      type: 'category',
-      label: 'aspects',
-      items: [
-        'aspects/teambit.pkg/pkg/pkg.docs',
-        'aspects/teambit.compositions/compositions/compositions.docs',
-        'aspects/teambit.react/react/react.docs',
-        'aspects/teambit.react/react-native/react-native.docs',
-        'aspects/teambit.envs/envs/envs.docs',
-        'aspects/teambit.dependencies/dependency-resolver/dependency-resolver.docs',
-        'aspects/teambit.generator/generator/generator.docs',
-        'aspects/teambit.compilation/compiler/compiler.docs',
-        // 'aspects/teambit.workspace/workspace/workspace.docs'
-      ]
-    },
-  ],
+  // aspects: [
+  //   {
+  //     type: 'category',
+  //     label: 'aspects',
+  //     items: [
+  //       'aspects/teambit.pkg/pkg/pkg.docs',
+  //       'aspects/teambit.compositions/compositions/compositions.docs',
+  //       'aspects/teambit.react/react/react.docs',
+  //       'aspects/teambit.react/react-native/react-native.docs',
+  //       'aspects/teambit.envs/envs/envs.docs',
+  //       'aspects/teambit.dependencies/dependency-resolver/dependency-resolver.docs',
+  //       'aspects/teambit.generator/generator/generator.docs',
+  //       'aspects/teambit.compilation/compiler/compiler.docs',
+  //       // 'aspects/teambit.workspace/workspace/workspace.docs'
+  //     ]
+  //   },
+  // ],
   
   
   

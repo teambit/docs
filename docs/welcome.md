@@ -24,7 +24,7 @@ Want to get started quickly and see how Bit works? This quick guide will take yo
 
 Let's explore what Bit is and what the advantages of using Bit are.
 
-#### [Understand how to Build with Bit](/building-with-bit/aspects)
+#### [Understand how to Build with Bit](/building-with-bit/workspaces)
 
 Take a deep dive in to the core of how Bit works and see how you can not just build with Bit but also extend Bit. In this section we cover everything from Component Compositions to Testing as well as Environments, Compiling and Build Pipelines and more.
 

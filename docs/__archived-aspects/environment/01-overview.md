@@ -26,7 +26,7 @@ For example, the following configuration sets two different environments, [React
 }
 ```
 
-Bit provides [a number of environments to choose from](/building-with-bit/environment/choose-an-environment). Each environment is completely [customizable and extendible](/building-with-bit/environments). Once you've created your own custom environment, you can share it with others, as you would with any other Bit component.
+Bit provides [a number of environments to choose from](/building-with-bit/environments). Each environment is completely [customizable and extendible](/building-with-bit/environments). Once you've created your own custom environment, you can share it with others, as you would with any other Bit component.
 
 ## Environments CLI reference
 

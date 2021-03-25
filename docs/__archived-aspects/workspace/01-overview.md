@@ -41,7 +41,7 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/building-with-bit/component/versioning#soft-and-hard-tags-component-collaboration) by the CI.
+   - Whether this component is [pending to be versioned](/building-with-bit/components#soft-and-hard-tags-component-collaboration) by the CI.
 
      <br />
 
@@ -82,7 +82,7 @@ Se the Workspace UI at https://localhost:3000
 bit start
 ```
 
-[Learn more about it here](/building-with-bit/workspaces).
+[Learn more about it here](/building-with-bit/workspace).
 
 ## Get the most out of a Bit Workspace
 

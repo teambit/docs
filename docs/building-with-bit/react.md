@@ -374,7 +374,7 @@ A Provider is any React component that accepts compositions as children. This co
 
 :::info
 Providers are part of the component compositions and documentation bundle that is served by the environment's server and rendered by the browser.
-As such, they run in the environment's Preview runtime and not the Main runtime. To learn more about runtime environments, [see here](/building-with-bit/environment/create-environments)
+As such, they run in the environment's Preview runtime and not the Main runtime. To learn more about runtime environments, [see here](/building-with-bit/environments)
 :::
 
 For example, a provider that centers compositions in their rendering page, will look like so:

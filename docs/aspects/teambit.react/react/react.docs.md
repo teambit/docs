@@ -117,7 +117,7 @@ export class ReactExtension {
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [Preview](/docs/environments/environment-services#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the [Preview](/docs/environments) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 

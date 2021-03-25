@@ -39,7 +39,7 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/building-with-bit/component/versioning#soft-and-hard-tags-component-collaboration) by the CI.
+   - Whether this component is [pending to be versioned](/building-with-bit/components#soft-and-hard-tags-component-collaboration) by the CI.
 
      <br />
 
@@ -363,15 +363,15 @@ While you develop your components, Bit's UI will provide an exact picture of eve
 
 <Image src="/img/tech_jokes.png" />
 
-### [Explore the applied environments and configurations for every component](/building-with-bit/component/inspecting#configurations)
+### [Explore the applied environments and configurations for every component](/building-with-bit/componentss)
 
 <Image src="/img/pkg_config.png" width="60%" />
 
-### [Browse each component's version history and see its changelog](/building-with-bit/component/inspecting#workspacescope-ui)
+### [Browse each component's version history and see its changelog](/building-with-bit/components)
 
 <Image src="/img/log_example.png" width="60%" padding={20} />
 
-### [View the component's documentation](/building-with-bit/documenting/overview)
+### [View the component's documentation](/building-with-bit/documenting)
 
 <Image src="/img/ws_getting_started_docs.png" width="60%" />
 
@@ -379,7 +379,7 @@ While you develop your components, Bit's UI will provide an exact picture of eve
 
 <Image src="/img/ws_getting_started_compositions.png" />
 
-### [View the component's dependency graph](/building-with-bit/component/inspecting#dependencies)
+### [View the component's dependency graph](/building-with-bit/components)
 
 <Image src="/img/explore_deps_2.png" />
 
