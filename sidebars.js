@@ -67,6 +67,7 @@ module.exports = {
       type: 'doc',
       id: 'welcome'
     },
+   
     {
       type: 'category',
       label: 'Getting Started',
@@ -83,6 +84,20 @@ module.exports = {
         'getting-started/whats-next',
       ],
       "collapsed": false,
+    },
+    {
+      type: 'category',
+      label: 'test',
+      items: [
+        'aspects/teambit.pkg/pkg/pkg.docs',
+        'aspects/teambit.compositions/compositions/compositions.docs',
+        'aspects/teambit.react/react/react.docs',
+        'aspects/teambit.react/react-native/react-native.docs',
+        'aspects/teambit.envs/envs/envs.docs',
+        'aspects/teambit.dependencies/dependency-resolver/dependency-resolver.docs',
+        'aspects/teambit.generator/generator/generator.docs',
+        // 'aspects/teambit.workspace/workspace/workspace.docs'
+      ]
     },
 
       

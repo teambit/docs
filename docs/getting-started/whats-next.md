@@ -3,6 +3,7 @@ id: whats-next
 title: What's Next?
 ---
 
+
 Well done on making it to the end of the Getting Started section. So far you have:
 
 - [Installed Bit](installing-bit)
