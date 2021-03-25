@@ -40,16 +40,22 @@ module.exports = {
         
         {
           label: 'Building with Bit',
-          to: '/building-with-bit/aspects',
+          to: '/building-with-bit/workspace',
           activeBasePath: 'building-with-bit',
           position: 'left',
         },
         {
-          label: 'CLI',
-          to: '/cli',
-          activeBasePath: 'cli',
+          label: 'Aspects',
+          to: '/aspects/teambit.pkg/pkg/pkg.docs',
+          activeBasePath: 'aspects',
           position: 'left',
         },
+        // {
+        //   label: 'CLI',
+        //   to: '/cli',
+        //   activeBasePath: 'cli',
+        //   position: 'left',
+        // },
         
         {
           type: 'docsVersionDropdown',
@@ -76,7 +82,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/aspects',
+              to: '/building-with-bit/workspaces',
             },
             {
               label: 'What is Bit',

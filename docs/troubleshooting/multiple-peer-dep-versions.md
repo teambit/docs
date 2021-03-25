@@ -27,7 +27,7 @@ Configure the dependency-resolver to install the needed peer dependency in a dir
 
 ### Implementation 1: Extend an environment to add new peer dependencies
 
-[Extend the environment](/building-with-bit/environment/overview) and customize its dependencies to set the needed package as a peer dependency of all components managed by it. In addition, set the `resolveFromEnv` property to `true`. This will make sure to use the package provided by the environment.
+[Extend the environment](/building-with-bit/environments) and customize its dependencies to set the needed package as a peer dependency of all components managed by it. In addition, set the `resolveFromEnv` property to `true`. This will make sure to use the package provided by the environment.
 
 For example, to set 'enzyme@3.11.0' as a peer dependency of all components managed by the `@teambit.react/react` environment, we'll create an extension and customize it like so:
 
@@ -82,7 +82,7 @@ export default CustomReactExtension;
 
 1. Select the relevant components (using 'variants' in the workspace.json) and configure their peer depedencies with the `resolveFromEnv` set to `true`.
 
-2. Select the environment and configure the above dependency as a standard dependency (the dependency-resolver will make sure to install this package in the right place to avoid conflicts between multiple versions of the same package. [See here](/building-with-bit/dependency-resolver/dependency-installation) for more information.)
+2. Select the environment and configure the above dependency as a standard dependency (the dependency-resolver will make sure to install this package in the right place to avoid conflicts between multiple versions of the same package. [See here](/building-with-bit/dependencies) for more information.)
 
 For example:
 

@@ -42,7 +42,7 @@ The log files are actually [winston logs](https://github.com/winstonjs/winston),
 
 ### Cache
 
-If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the clear cache command
+If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the clear cache command.
 
 ```shell
 bit clear-cache

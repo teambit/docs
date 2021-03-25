@@ -19,14 +19,14 @@ In your component workspace click on the **Use** dropdown, select the **Install*
   <TabItem value="NPM">
 
 ```shell
-npm install @YourScopeName/componentScopeName.componentID
+npm install @YourUserName/componentScopeName.componentID
 ```
 
   </TabItem>
   <TabItem value="Yarn">
 
 ```shell
-yarn add @YourScopeName/componentScopeName.componentID
+yarn add @YourUserName/componentScopeName.componentID
 ```
 
   </TabItem>

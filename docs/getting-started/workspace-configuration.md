@@ -13,13 +13,13 @@ Once you have your account setup on [Bit.dev](https://bit.dev/) and have created
 
 <DefaultScopeName />
 
-:arrow_right: Learn more about [workspace Configurations](/building-with-bit/workspace/configurations).
+:arrow_right: Learn more about [workspace Configurations](/building-with-bit/workspace).
 
 ## Setting the React Environment
 
 <ReactEnvironment />
 
-:arrow_right: Learn more about [Environments](/building-with-bit/environment/overview).
+:arrow_right: Learn more about [Environments](/building-with-bit/environments).
 
 ### Reset your dev server
 

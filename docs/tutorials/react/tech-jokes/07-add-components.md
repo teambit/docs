@@ -100,7 +100,7 @@ The above output informs us that `@testing-library/react`, required by our compo
 
 ### Install dependencies
 
-We'll install `@testing-library/react` using [Dependency Resolver](/building-with-bit/dependency-resolver/overview), a Bit extension that handles dependencies in a workspace.
+We'll install `@testing-library/react` using [Dependency Resolver](/building-with-bit/dependencies), a Bit extension that handles dependencies in a workspace.
 
 ```shell
 bit install @testing-library/react

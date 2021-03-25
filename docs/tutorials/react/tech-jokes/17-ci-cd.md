@@ -17,7 +17,7 @@ This enables collaboration on components before they are tagged and exported.
 [**Learn more**](/building-with-bit/component/versioning#soft-and-hard-tags-component-collaboration).
 :::
 
-3. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/package/publish-component-packages#publish))
+3. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/packages))
 
 4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process.
 

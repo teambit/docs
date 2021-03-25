@@ -14,4 +14,4 @@ A Bit Workspace enables you to author and manage multiple independent components
 <FilesBitCreates />
 
 
-:arrow_right: Learn more about [Bit Workspaces](/building-with-bit/workspace/overview).
+:arrow_right: Learn more about [Bit Workspaces](/building-with-bit/workspaces).

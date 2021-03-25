@@ -58,7 +58,7 @@ export const BasicButton = () => {
 };
 ```
 
-:arrow_right: Learn more about [Bit Compositions](/building-with-bit/composition/overview).
+:arrow_right: Learn more about [Bit Compositions](/building-with-bit/compositions).
 
 ## The Docs file
 
@@ -90,4 +90,4 @@ As we are creating a React component and therefore importing React we will need 
 bit install
 ```
 
-:arrow_right: Learn more about [Bit Dependency Installation](/building-with-bit/dependency-resolver/dependency-installation).
+:arrow_right: Learn more about [Bit Dependency Installation](/building-with-bit/dependencies).

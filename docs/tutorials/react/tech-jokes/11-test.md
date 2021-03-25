@@ -17,7 +17,7 @@ Bit makes the most out of your automated tests to help you maintain code in a ne
   Since testing is part of the build process, tests of all dependents component will run as well, to make sure nothing got broken due to that change.
 
 :::note
-The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/building-with-bit/react/overview).
+The React environment uses Jest as its default test runner. To use a different Jest configuration or to use a different test runner, [see here](/building-with-bit/react).
 :::
 
 ## Adding Tests
