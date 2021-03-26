@@ -27,9 +27,21 @@ To use Bit you will need to install it. We can do this using BVM, a version mang
 
 <BVMVersion />
 
-<br />
 
-<LegacyWarning />
+### Upgrading BVM
+
+To upgrade to the latest version of BVM:
+
+<InstallBVM />
+
+### Upgrading Bit
+
+To upgrade to the latest version of Bit:
+
+```sh
+bvm upgrade
+```
+
 
 ## Installing Bit on a Project with a package.json file
 
@@ -46,6 +58,13 @@ If you wish to keep using your current package manager for dependency management
 Using bit install to manage dependencies in your workspace allows for several advanced dependency management features. For example, if some components require a different version of a dependency, Bit will automate the creation of workspaces (using either Yarn2 or PNPM). If you decide not to use Bit, this and similar features will not be supported.
 
 **We recommend using Bit to manage all workspace dependencies.**
+
+<br />
+
+<LegacyWarning />
+
 ## What's next?
 
 Once you have installed Bit and BVM you can then [initialize a workspace](initializing-workspace) so you can manage your components.
+
+

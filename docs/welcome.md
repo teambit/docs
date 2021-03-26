@@ -1,7 +1,7 @@
 ---
 id: welcome
 title: Welcome to Harmony
-slug: /welcome
+slug: /
 ---
 
 
@@ -11,9 +11,10 @@ slug: /welcome
 
 Harmony is already used as a standard component infrastructure by many teams, including the world's finest. It is now available in public beta, so please feel free to start and please don't forget to [share your feedback](https://github.com/teambit/bit/issues)!  -->
 
-## What does Open Beta even mean
+## What does Public Beta mean?
 
-Bit v15 (harmony) is the platform used to build both the UI, backend and middleware of Bit and bit.dev . It is used by different development teams across the world for several months and is used to build production systems.
+Bit v15 (harmony) is the platform used to build both the UI, backend and middleware of Bit and [bit.dev](https://bit.dev) . It is used by different development teams across the world for several months and is used to build production systems.
+
 We decided to name v15 as open beta because there are still major features coming, and until they released we don't feel v15 is complete. Right now not all teams can transition to v15, as support for Angular and Vue is not available.
 
 If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15 as we believe it provides a far better developer experience.

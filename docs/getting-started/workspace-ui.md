@@ -3,7 +3,7 @@ id: workspace-ui
 title: Workspace UI
 ---
 
-To see a component in the workspace you will first need to [create a component](/getting-started/creating-components) and then [add/track a component](/getting-started/adding-components). 
+To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
 ## Starting the dev server
 
@@ -71,4 +71,4 @@ Shows you how to use your component either by importing a component into your wo
 
 ## What's Next?
 
-After Rending the workspace UI you can either create more components, compose components or create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.
+After Rending the workspace UI you can either create more components, [compose components](composing-components) or create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.

@@ -27,7 +27,7 @@ module.exports = {
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',
-        href: '/welcome'
+        href: '/'
       },
       items: [
         
@@ -44,12 +44,12 @@ module.exports = {
           activeBasePath: 'building-with-bit',
           position: 'left',
         },
-        // {
-        //   label: 'Aspects',
-        //   to: '/aspects/bvm',
-        //   activeBasePath: 'aspects',
-        //   position: 'left',
-        // },
+        {
+          label: 'Aspects',
+          to: '/aspects/bvm',
+          activeBasePath: 'aspects',
+          position: 'left',
+        },
         {
           label: 'Resources',
           to: '/resources/podcasts',
@@ -111,20 +111,21 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Rescources',
           items: [
             {
-              label: 'Talk to Us',
-              to: '/community/talk-to-us',
+              label: 'Videos',
+              to: '/resources/videos',
             },
             {
               label: 'Resources',
-              to: '/community/resources',
+              to: '/resources/podcasts',
             },
             {
-              label: 'Open Source',
-              to: '/community/open-source',
+              label: 'Resources',
+              to: '/resources/articles',
             },
+            
           ],
         },
         {
@@ -162,6 +163,11 @@ module.exports = {
           ],
         },
       ],
+      logo: {
+        alt: 'Bit Logo',
+        src: 'src/img/bit-logo.webp',
+        href: 'https://bit.dev',
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`,
     },
   },
