@@ -8,7 +8,7 @@ title: Creating an Environment
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
 
 :::note Extending multiple runtimes
-The \*.extensions.ts pattern should only be used when no other 'runtime' is being extended other than the 'main runtime.'  
+The *.extensions.ts pattern should only be used when no other 'runtime' is being extended other than the 'main runtime.'  
 For more details, see the 'runtime environments' section.
 :::
 
@@ -92,7 +92,7 @@ Our extension component now has a component ID that can be used in our `workspac
   },
   "teambit.workspace/variants": {
     "*": {
-      "my-org.my-extensions/custom-react": {}
+      "my-org.my-extensions/my-extensions/custom-react": {}
     }
   }
 }
