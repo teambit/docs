@@ -5,7 +5,7 @@ title: Exporting Components
 
 import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md'
 
-Exporting a component to a remote scope makes it available to be used by other Bit workspaces or your applications.
+Once you have created your [remote scope](remote-scope) and configured your defaultScope you can then export your components to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.
 
 ## Tagging Components
 
@@ -15,7 +15,7 @@ Before exporting our components we need to tag them using the `bit tag` command.
 bit tag --all
 ```
 
-Once the component has finished tagging you should see the following message:
+When component has finished tagging you should see the following message:
 
 ```sh
 new components
@@ -23,7 +23,7 @@ new components
      > ui/button@0.0.1
 ```
 
-:arrow_right: Learn more about the [Tagging Components](/building-with-bit/components).
+<!-- :arrow_right: Learn more about the [Tagging Components](/building-with-bit/components). -->
 
 ## Export Components
 
@@ -33,17 +33,21 @@ Once you have tagged your component you can then run the `bit export` command.
 bit export
 ```
 
-Once your component has finished exporting you should see the following message:
+When your component has finished exporting you should see the following message:
 
 ```shell
 exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```
 
-:arrow_right: Learn more about the [Exporting Components](/building-with-bit/component/exporting).
+<!-- :arrow_right: Learn more about the [Exporting Components](/building-with-bit/component/exporting). -->
 
-In your workspace go to `https://bit.dev/<owner-name>/<scope-name>` to see your exported components.
+In your workspace go to `https://bit.dev/<user-name>/<scope-name>` to see your exported components.
 
-### Committing your Changes
+## Committing the Bitmap
 
 <GitCommitBitmap />
+
+## What's Next?
+
+After exporting your component to the remote scope you can then [install your component](installing-components) in another Bit workspace or in any other web project.

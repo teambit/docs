@@ -7,19 +7,19 @@ import InstallComponents from '@site/docs/components/install/install-components.
 
 import ScopedRegistry from '@site/docs/components/install/scoped-registry.md'
 
-Once you have exported your component you can now install it in your applications. Use any existing app or start a new one with `create-react-app`.
+Once you have [exported your component](exporting-components) you can now install it in another Bit workspace or any in another web project.
 
 ## Installing your component
 
 <InstallComponents />
 
-:arrow_right: Learn more about the [Installing Components](/building-with-bit/components).
+<!-- :arrow_right: Learn more about the [Installing Components](/building-with-bit/components). -->
 
 ## Configure your Scoped Registry
 
 <ScopedRegistry />
 
-:arrow_right: Learn more about the [Installing Components](/building-with-bit/components).
+<!-- :arrow_right: Learn more about the [Installing Components](/building-with-bit/components). -->
 
 <!-- ## Install Dependencies
 
@@ -31,7 +31,7 @@ bit install
 
 ## Use your Component
 
-You can now use the component in your app by importing it from your node modules and then using it in your component function.
+You can now use the component in your app by importing it from your node modules and then using it in your app or component.
 
 ```js title="app.js"
 import { Button } from '@yourUserName/componentScopeName.componentID';
@@ -40,3 +40,7 @@ import { Button } from '@yourUserName/componentScopeName.componentID';
 ```js title="app.js"
 <Button text="click me" />
 ```
+
+## What's Next?
+
+We have just covered the basics and there is still so much to learn. Now it's time to really think about how you can use Bit to it's full advantage. Learn more about [What Bit is](/docs/essentials/what-is.bit) and the[ Advantages of Bit](/docs/essentials/advantages-of-bit) or Dive deeper into our [Building with Bit](/build/building-with-bit/components/index.html) section and learn how to configure Bit.

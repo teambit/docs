@@ -9,8 +9,3 @@ Once BVM is installed you can install the latest version of Bit using the `bvm i
 bvm install
 ```
 
-Check that Bit is installed
-
-```shell
-bit --version
-```

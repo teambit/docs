@@ -2,64 +2,73 @@
 id: workspace-ui
 title: Workspace UI
 ---
+
+To see a component in the workspace you will first need to [create a component](/getting-started/creating-components) and then [add/track a component](/getting-started/adding-components). 
+
 ## Starting the dev server
 
 The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
 
-```shell
+```sh
 bit start
 ```
 
-This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and tracked (added) components.
+This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and [tracked (added) components](/getting-started/adding-components).
+
+:::note Building the UI
 
 The first time you run the start command it can take a bit of time as it needs to build the whole UI.
-
-:::note
-While your waiting have a look in your node modules folder in your project and we will see your component inside your scope directory which in this case is 'my-scope'.
 :::
 
-Once you click on your component it will take you to the Overview page.
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce).
+<!-- Once you click on your component it will take you to the Overview page. -->
 
-## Overview
+<!-- :arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce). -->
 
-Here you will see an overview of your component complete with a live playground. We can add further documentation to our component by creating a `myComponent.docs.mdx` file.
+## Local Workspace
 
-:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting).
+### Overview
 
-## Compositions
+See an overview of your component complete with a live playground. Documentation of our component is created from the `button.docs.mdx` file.
 
-Compositions show you how your component is composed. Compositions are created by adding a `myComponent.compositions.tsx` file.
+<!-- :arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting). -->
 
-:arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions).
+### Compositions
 
-## Tests
+Compositions show you how your component is composed. Compositions are created from the `buttom.compositions.tsx` file.
 
-If we had written any tests they would appear here. Tests are created by adding a `myComponent.spec.tsx` file.
+<!-- :arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions). -->
 
-:arrow_right: Learn more about [Component Testing](/building-with-bit/testing).
+### Tests
 
-## Dependencies
+See passing or failing tests. Tests are created from the `button.spec.tsx` file.
 
-This shows you any dependencies that your component has.
+<!-- :arrow_right: Learn more about [Component Testing](/building-with-bit/testing). -->
 
-:arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependencies).
+### Dependencies
 
-## Code
+Shows any dependencies that your component has.
 
-You can see all the code files your component has and inspect them. You can also see a list of dependencies and dev dependencies your component has.
+<!-- :arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependencies). -->
 
-## ChangeLog
+### Code
+
+See all the code files your component has and inspect them as well as a list of your component's dependencies and dev dependencies.
+
+### ChangeLog
 
 See the changelog of your component for when you export and create new versions.
 
-:arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/components).
+<!-- :arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/components). -->
 
-## Use
+### Use
 
-This shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
+Shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
 
-:arrow_right: Learn more about [Importing Components](/building-with-bit/components).
+<!-- :arrow_right: Learn more about [Importing Components](/building-with-bit/components).
 
-:arrow_right: Learn more about [Installing Components](/building-with-bit/components).
+:arrow_right: Learn more about [Installing Components](/building-with-bit/components). -->
+
+## What's Next?
+
+After Rending the workspace UI you can either create more components, compose components or create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.

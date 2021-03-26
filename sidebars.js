@@ -11,38 +11,38 @@ module.exports = {
       ],
     },
   ],
-  tutorials: [
+  // tutorials: [
     
-    {
-      type: 'category',
-      label: 'React',
-      items: [
-        {
-          type:'category',
-          label: 'Tech Jokes',
-          items: [
-            'tutorials/react/tech-jokes/try-bit',
-            'tutorials/react/tech-jokes/install-bit',
-            'tutorials/react/tech-jokes/create-remote-scope',
-            'tutorials/react/tech-jokes/set-up-workspace',
-            'tutorials/react/tech-jokes/choose-dev-env',
-            'tutorials/react/tech-jokes/add-components',
-            'tutorials/react/tech-jokes/render-component',
-            'tutorials/react/tech-jokes/document',
-            'tutorials/react/tech-jokes/test',
-            'tutorials/react/tech-jokes/version',
-            'tutorials/react/tech-jokes/import-components',
-            'tutorials/react/tech-jokes/explore-dependencies',
-            'tutorials/react/tech-jokes/auto-version-dependents',
-            "tutorials/react/tech-jokes/export-to-scope",
-            'tutorials/react/tech-jokes/install-components',
-            'tutorials/react/tech-jokes/ci-cd'
-          ]
-        }
-      ]
-    }
+  //   {
+  //     type: 'category',
+  //     label: 'React',
+  //     items: [
+  //       {
+  //         type:'category',
+  //         label: 'Tech Jokes',
+  //         items: [
+  //           'tutorials/react/tech-jokes/try-bit',
+  //           'tutorials/react/tech-jokes/install-bit',
+  //           'tutorials/react/tech-jokes/create-remote-scope',
+  //           'tutorials/react/tech-jokes/set-up-workspace',
+  //           'tutorials/react/tech-jokes/choose-dev-env',
+  //           'tutorials/react/tech-jokes/add-components',
+  //           'tutorials/react/tech-jokes/render-component',
+  //           'tutorials/react/tech-jokes/document',
+  //           'tutorials/react/tech-jokes/test',
+  //           'tutorials/react/tech-jokes/version',
+  //           'tutorials/react/tech-jokes/import-components',
+  //           'tutorials/react/tech-jokes/explore-dependencies',
+  //           'tutorials/react/tech-jokes/auto-version-dependents',
+  //           "tutorials/react/tech-jokes/export-to-scope",
+  //           'tutorials/react/tech-jokes/install-components',
+  //           'tutorials/react/tech-jokes/ci-cd'
+  //         ]
+  //       }
+  //     ]
+  //   }
       
-  ],
+  // ],
   
 
   // whyBit: [
@@ -59,23 +59,24 @@ module.exports = {
   //   },
   // ],
 
-  // aspects: [
-  //   {
-  //     type: 'category',
-  //     label: 'aspects',
-  //     items: [
-  //       'aspects/teambit.pkg/pkg/pkg.docs',
-  //       'aspects/teambit.compositions/compositions/compositions.docs',
-  //       'aspects/teambit.react/react/react.docs',
-  //       'aspects/teambit.react/react-native/react-native.docs',
-  //       'aspects/teambit.envs/envs/envs.docs',
-  //       'aspects/teambit.dependencies/dependency-resolver/dependency-resolver.docs',
-  //       'aspects/teambit.generator/generator/generator.docs',
-  //       'aspects/teambit.compilation/compiler/compiler.docs',
-  //       // 'aspects/teambit.workspace/workspace/workspace.docs'
-  //     ]
-  //   },
-  // ],
+  aspects: [
+    {
+      type: 'category',
+      label: 'aspects',
+      items: [
+        'aspects/bvm'
+        // 'aspects/teambit.pkg/pkg/pkg.docs',
+        // 'aspects/teambit.compositions/compositions/compositions.docs',
+        // 'aspects/teambit.react/react/react.docs',
+        // 'aspects/teambit.react/react-native/react-native.docs',
+        // 'aspects/teambit.envs/envs/envs.docs',
+        // 'aspects/teambit.dependencies/dependency-resolver/dependency-resolver.docs',
+        // 'aspects/teambit.generator/generator/generator.docs',
+        // 'aspects/teambit.compilation/compiler/compiler.docs',
+        // 'aspects/teambit.workspace/workspace/workspace.docs'
+      ]
+    },
+  ],
   
   
   
@@ -95,10 +96,10 @@ module.exports = {
         'getting-started/adding-components',
         'getting-started/workspace-ui',
         'getting-started/remote-scope',
-        'getting-started/workspace-configuration',
         'getting-started/exporting-components',
         'getting-started/installing-components',
         'getting-started/whats-next',
+        'getting-started/upgrading',
       ],
       "collapsed": false,
     },
