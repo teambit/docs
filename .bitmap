@@ -7,6 +7,12 @@
         "mainFile": "index.ts",
         "rootDir": "docs/aspects/teambit.compilation/babel"
     },
+    "builder": {
+        "scope": "teambit.pipelines",
+        "version": "0.0.336",
+        "mainFile": "index.ts",
+        "rootDir": "docs/aspects/teambit.pipelines/builder"
+    },
     "compiler": {
         "scope": "teambit.compilation",
         "version": "0.0.336",

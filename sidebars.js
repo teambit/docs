@@ -86,6 +86,7 @@ module.exports = {
         'aspects/teambit.dependencies/dependency-resolver/dependency-resolver',
         'aspects/teambit.dependencies/yarn/yarn',
         'aspects/teambit.dependencies/pnpm/pnpm',
+        'aspects/teambit.pipelines/builder/builder',
         'aspects/teambit.compilation/compiler/compiler',
         'aspects/teambit.compilation/multi-compiler/multi-compiler',
         'aspects/teambit.compilation/babel/babel',
