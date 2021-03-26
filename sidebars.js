@@ -59,6 +59,18 @@ module.exports = {
   //   },
   // ],
 
+  resources: [
+    {
+      type: 'category',
+      label: 'resources',
+      items: [
+        'resources/videos',
+        'resources/podcasts',
+        'resources/articles'
+      ]
+    },
+  ],
+
   aspects: [
     {
       type: 'category',

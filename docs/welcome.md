@@ -58,7 +58,7 @@ Follow our [YouTube Channel](https://www.youtube.com/c/Bitdev) to see videos on 
 
 - Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
 
-#### [Resources :books:](/community/resources)
+#### [Resources :books:](/resources/podcasts)
 
 - Learn more with the best videos, talks, podcasts, guides, articles, and more about Harmony.  
 

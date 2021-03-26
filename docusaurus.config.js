@@ -52,7 +52,7 @@ module.exports = {
         // },
         {
           label: 'Resources',
-          to: '/community/resources',
+          to: '/resources/podcasts',
           activeBasePath: 'community',
           position: 'left',
         },
