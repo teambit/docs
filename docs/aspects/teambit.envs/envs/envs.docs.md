@@ -111,10 +111,10 @@ For example:
 }
 ```
 
-> <p style={{color: '#c31313'}}>Never use the '*' wildcard in a workspace that uses multiple environments!</p> 
+> <p style={{color: '#c31313'}}>Never use the '*' wildcard in a workspace that uses multiple environments!</p>
 Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment (see an example in the next section).
 <br />
-<br /> 
+<br />
 
 To learn more, see the 'Troubleshooting' section.
 
@@ -141,7 +141,7 @@ For example, to set the Node and React environments on two sets of components (s
 
 ### Extending an environment
 
-> This section goes through the steps of extending the 'main runtime'. 
+> This section goes through the steps of extending the 'main runtime'.
 See the 'Runtime Environment' section to learn how to extend multiple runtime environments.
 
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
@@ -249,7 +249,7 @@ An environment extension uses the following Bit components to extend an existing
 
 #### Override the config for a Bit component used by the environment
 
-> The current Envs API will soon be replaced. 
+> The current Envs API will soon be replaced.
 
 The example below is of a React environment extension. This new environment overrides React's DevServer configuration by setting a new Webpack configuration file.
 
@@ -585,8 +585,8 @@ export class ReactEnv implements Environment {
 }
 ```
 
-> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.  
-> Conflicting properties will be overridden by the properties that are set here.  
+> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.
+> Conflicting properties will be overridden by the properties that are set here.
 > Configurations that are set here may also be overridden, either by the 'pkg aspect' or by workspace configurations set using the 'variants API'.
 
 #### getDependencies
@@ -621,8 +621,8 @@ export class ReactEnv implements Environment {
 }
 ```
 
-> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.  
-> Conflicting properties will be overridden by the properties that are set here.  
+> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.
+> Conflicting properties will be overridden by the properties that are set here.
 > Configurations that are set here may also be overridden, either by the 'Dependency Resolver aspect' or by workspace configurations set using the 'variants API'.
 
 #### getBuildPipe
@@ -656,7 +656,7 @@ export class ReactEnv implements Environment {
 }
 ```
 
-## Extending multiple runtime environments 
+## Extending multiple runtime environments
 
 An environment may operate in multiple runtime environments: 'Main', which runs on the server and 'UI' and 'Preview', which run on the browser.
 Each runtime environment runs all files that are named with its corresponding file pattern.
@@ -733,7 +733,7 @@ ReactExtensionAspect.addRuntime(ReactExtensionPreview);
 
 Node files that run in a node runtime environments and outputs to the terminal.
 
-**Example:**  
+**Example:**
 The React environment TypeScript compiler will be extended in the main runtime.
 
 ```typescript
@@ -780,10 +780,10 @@ JSX files that run in the browser, as part of the Workspace/Scope UI bundle that
 
 `*.preview.runtime.*`
 
-These files are served by the environment's server, as part of the environment's preview bundle (i.e, the component compositions and documentation).  
+These files are served by the environment's server, as part of the environment's preview bundle (i.e, the component compositions and documentation).
 (The 'preview' runtime is rendered in the Workspace/Scope UI using an iframe.)
 
-**Example:**  
+**Example:**
 A new composition provider that will "wrap" every composition using that environment will be added using the preview runtime since it is part of the component compositions (which are being served to the browser by the environment's server).
 
 ```typescript
@@ -831,7 +831,7 @@ For example:
 In the above example, components in the `components/utils` directory are set to use the Node environment.
 Since that selection is more specific than the one done using the `*` wildcard selector, it is expected to override it.
 
-**Understanding the problem:** 
+**Understanding the problem:**
 To select the right configurations for each component, the 'Variants' aspect sorts all workspace configurations, from the most specific to the most general.
 The first configuration set on an aspect (the most specific one) will be the one that is selected for that aspect.
 That means, once Variants encounters configurations for an aspect, it stops looking for additional configurations for that specific aspect.

@@ -137,7 +137,7 @@ For example, to set version `1.0.0` of `classnames` as a dependency of all compo
 
 ### Remove a dependency
 
-Dependency policies can also be used to remove a dependency. That's especially useful when a dependency is not defined with the correct dependency type.  
+Dependency policies can also be used to remove a dependency. That's especially useful when a dependency is not defined with the correct dependency type.
 For example, a module can be "moved" from `dependencies` to `peerDependencies` by removing it from `dependencies` and listing it under `peerDependencies`.
 
 ```json

@@ -14,7 +14,7 @@ The multi-compiler aspect allows the configuration of multiple compilers on a co
 ```ts
 // create a multi compiler instance.
 const compiler = multiCompiler.createCompiler([
-  createBabelCompiler(), 
+  createBabelCompiler(),
   createTsCompiler()
 ]);
 
