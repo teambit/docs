@@ -50,12 +50,25 @@ module.exports = {
           activeBasePath: 'aspects',
           position: 'left',
         },
+        {
+          label: 'Resources',
+          to: '/community/resources',
+          activeBasePath: 'community',
+          position: 'left',
+        },
         // {
         //   label: 'CLI',
         //   to: '/cli',
         //   activeBasePath: 'cli',
         //   position: 'left',
         // },
+
+        {
+          label: 'Help',
+          to: 'https://bit.dev/support',
+          position: 'right',
+        },
+        
         
         {
           type: 'docsVersionDropdown',
@@ -65,6 +78,12 @@ module.exports = {
             {to: 'https://docs.bit.dev/',
               label: 'v14 - Legacy'},
           ],
+        },
+        {
+          href: 'https://github.com/teambit',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
