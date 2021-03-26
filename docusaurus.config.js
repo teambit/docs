@@ -44,12 +44,12 @@ module.exports = {
           activeBasePath: 'building-with-bit',
           position: 'left',
         },
-        {
-          label: 'Aspects',
-          to: '/aspects/bvm',
-          activeBasePath: 'aspects',
-          position: 'left',
-        },
+        // {
+        //   label: 'Aspects',
+        //   to: '/aspects/bvm',
+        //   activeBasePath: 'aspects',
+        //   position: 'left',
+        // },
         {
           label: 'Resources',
           to: '/community/resources',
