@@ -7,6 +7,10 @@ Well done on making it to the end of the Getting Started section. So far you hav
 
 Are you ready to go deeper. We have so much more to show you.
 
+> **Using Bit on pre-existing projects**
+> 
+> If you have components in projects you are actively working on, please refer to [this guide](building-with-bit/pre-existing-components).
+
 ## Essentials
 
 Check out [Essentials](/essentials/what-is-bit) to understand more about What Bit is and it's advantages
