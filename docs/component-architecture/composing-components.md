@@ -1,6 +1,6 @@
 ---
-id: thinking-in-components
-title: Thinking in Components
+id: composing-components
+title: Composing Components
 ---
 
-Thinking in Components
+Composing Components
