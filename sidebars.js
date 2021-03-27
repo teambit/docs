@@ -169,7 +169,6 @@ module.exports = {
         'troubleshooting/doctor-logs-cache',
         'troubleshooting/multiple-peer-dep-versions',
         'troubleshooting/set-runtime-globals',
-        'troubleshooting/installation-troubleshooting'
       ]
     }
   ]
