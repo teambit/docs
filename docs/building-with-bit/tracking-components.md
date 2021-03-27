@@ -1,6 +1,6 @@
 --- 
 id: tracking-components
-title: Tracking Components
+title: Tracking
 --- 
 
 import { Image } from '@site/src/components/image'

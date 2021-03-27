@@ -1,6 +1,6 @@
 --- 
 id: installing-components
-title: Installing Components
+title: Installing
 --- 
 
 Installing component packages (or any other packages), in a Bit workspace, is done only by using the `bit install` command which will use the [Dependency Resolver](/building-with-bit/dependencies) extension.

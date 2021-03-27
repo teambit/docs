@@ -1,6 +1,6 @@
 --- 
 id: versioning-components
-title: Versioning Components
+title: Versioning
 --- 
 
 ## Versioning

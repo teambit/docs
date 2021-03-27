@@ -1,6 +1,6 @@
 --- 
 id: publishing-components
-title: Publishing Components
+title: Publishing
 --- 
 
 The packing and publishing of component packages is handled by the [PKG Bit extension](https://bit.dev/teambit/pkg/pkg).

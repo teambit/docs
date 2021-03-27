@@ -1,6 +1,6 @@
 --- 
 id: compiling-components
-title: Compiling Components
+title: Compiling
 --- 
 
 Compilation is a crucial step in making a component an independent module that can be used by other web projects as well as internally, by other components in the same workspace.

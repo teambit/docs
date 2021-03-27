@@ -1,6 +1,6 @@
 --- 
 id: inspecting-components
-title: Inspecting Components
+title: Inspecting
 --- 
 
 This page lists different ways to inspect the workspace and its components using Bit's CLI and the Workspace/Scope UI.

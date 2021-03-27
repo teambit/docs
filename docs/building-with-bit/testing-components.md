@@ -1,6 +1,6 @@
 --- 
 id: testing-components
-title: Testing Components
+title: Testing
 --- 
 
 import { Image } from '@site/src/components/image';

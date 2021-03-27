@@ -1,6 +1,6 @@
 --- 
 id: importing-components
-title: importing Components
+title: importing
 --- 
 
 Importing a component, from a remote scope to your local workspace, allows you to maintain the component in your own workspace and even build, version and export it back to its remote scope with a new bumped version.

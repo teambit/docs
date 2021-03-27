@@ -1,6 +1,6 @@
 --- 
 id: exporting-components
-title: Exporting Components
+title: Exporting
 --- 
 
 ## Exporting
