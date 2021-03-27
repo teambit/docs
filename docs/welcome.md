@@ -8,7 +8,9 @@ Bit is a platform for building with components and use them to compose apps and 
 
 ## Get started
 
-To get started follow [this guide](/getting-started/installing-bit) and read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems. You can also read about [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
+* To get started follow [this guide](/getting-started/installing-bit) 
+* Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
+* Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
 
 ### Bit v15 - Harmony
 
@@ -16,8 +18,7 @@ To get started follow [this guide](/getting-started/installing-bit) and read [ne
 
 #### Public Beta
 
-Bit v15 **Harmony** is already used as a standard component infrastructure by many teams and is the undeline infrastructure that used to build Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming.  
-If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15 as we believe it provides a far better developer experience.
+Bit v15 **Harmony** is used by many teams and is the undeline infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15.
 
 ## Additional Resources and Support
 
