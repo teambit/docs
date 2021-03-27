@@ -57,11 +57,11 @@ module.exports = {
         //   position: 'left',
         // },
 
-        {
-          label: 'Help',
-          to: 'https://bit.dev/support',
-          position: 'right',
-        },
+        // {
+        //   label: 'Help',
+        //   to: 'https://bit.dev/support',
+        //   position: 'right',
+        // },
         
         
         {
@@ -73,11 +73,19 @@ module.exports = {
               label: 'v14 - Legacy'},
           ],
         },
+        
+        
         {
           href: 'https://github.com/teambit',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
+        },
+        {
+          href: 'https://bit-dev-community.slack.com',
+          className: 'slack-link',
+          'aria-label': 'Slack',
+          position: 'right',
         },
       ],
     },

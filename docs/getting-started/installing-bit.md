@@ -11,7 +11,7 @@ import BVMVersion from '@site/docs/components/install/bvm-version.md'
 
 import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 
-To use Bit you will need to install it. We can do this using BVM, a version manger for Bit.
+To use Bit you will need to install it. You can do this by first installing BVM, a version manger for Bit and then installing Bit.
 
 ## 1. Install BVM
 
@@ -27,13 +27,9 @@ To use Bit you will need to install it. We can do this using BVM, a version mang
 
 <InstallBit />
 
-### PATH is missing the installation directory
-
-
 ## BVM and Bit Versions
 
 <BVMVersion />
-
 
 ### Upgrading BVM
 
@@ -48,7 +44,6 @@ To upgrade to the latest version of Bit:
 ```sh
 bvm upgrade
 ```
-
 
 ## Installing Bit on a Project with a package.json file
 
@@ -73,5 +68,3 @@ Using bit install to manage dependencies in your workspace allows for several ad
 ## What's next?
 
 Once you have installed Bit and BVM you can then [initialize a workspace](initializing-workspace) so you can manage your components.
-
-

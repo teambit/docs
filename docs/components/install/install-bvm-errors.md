@@ -6,8 +6,8 @@ title: Install BVM Errors
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-If you get the following error while installing BVM:
-
+**If you get the following error while installing BVM:
+**
 <Tabs
   defaultValue="MacOSLinux"
   values={[

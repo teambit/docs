@@ -45,20 +45,6 @@ module.exports = {
   // ],
   
 
-  // whyBit: [
-  //   {
-  //     type: 'category',
-  //     label: 'Why Bit',
-  //     items: [
-  //       'why-bit/modular-web-apps',
-  //       'why-bit/what-can-bit-do-for-you',
-  //       'why-bit/popular-use-cases',
-  //       'why-bit/open-source-dev-tools',
-  //       'why-bit/enterprise-grade-component-cloud',
-  //     ],
-  //   },
-  // ],
-
   resources: [
     {
       type: 'category',
@@ -182,7 +168,6 @@ module.exports = {
           "component-architecture/naming-components",
           "component-architecture/organizing-components",
           "component-architecture/theming-components",
-          // "component-architecture/build-like-google",
         ],
       },
      
@@ -193,7 +178,6 @@ module.exports = {
       items: [
         "reference/commands",
         "reference/usage-analytics",
-        // "reference/authentication"
       ],
     },
     {
