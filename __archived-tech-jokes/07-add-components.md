@@ -39,14 +39,17 @@ Two things have happened that are worth noticing:
 #### Files to components
 
 Bit has mapped this component's files and registered them in the `.bitmap` file. This enables Bit to treat a collection of files as a single unit, a component.
-In addition to that, it has generated a component ID, following the pattern:
-`<owner>.<scope>/<namespaces>/<component-name>`.
+
+In addition to that, Bit has generated a component ID, with the pattern
+`<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once a it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
 
 Head over to your workspace `.bitmap` file, to see the generated mapping.
 
 ```
 {
-    "demo-org.demo-scope/hooks/use-jokes": {
+    "hooks/use-jokes": {
+        "scope": "",
+        "version": "",
         "mainFile": "index.ts",
         "rootDir": "components/hooks/use-jokes"
     }

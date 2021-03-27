@@ -106,6 +106,18 @@ Alongside the local dev server, Bit features a watch mode that runs different op
 bit watch
 ```
 
+- __Compile in the workspace__ - Components are compiled in 'watch mode' (on every change) when running Bit's dev server (`bit start`) and on various compilations commands.
+
+
+- __Compile as a build task__ - 
+Components are compiled as part of the component build pipeline (on `bit build` and `bit tag`).
+The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
+Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.
+
+```
+$ bit watch
+```
+
 ### Compile in the Build Pipeline
 
 Compilation is also part of a component's build pipeline. As with any other Build Task, the compilation task also happens in a 'component capsule', which is an isolated instance of a component. When executed as a Build Task, the compiler processes all new or changed dependencies of that component.

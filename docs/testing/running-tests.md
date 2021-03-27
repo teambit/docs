@@ -3,6 +3,7 @@ id: running-tests
 title: Running Tests
 ---
 
+<<<<<<< HEAD:__archived-aspects/testing/running-tests.md
 //TODO building with bit on tests
 
 import { Image } from '@site/src/components/image';
@@ -14,6 +15,18 @@ The type of test runner (Jest, Mocha, etc.) as well as its configurations, are s
 That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
 To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing-components) to have it run your preferred test runner.
+=======
+import { Image } from '../../src/components/image';
+
+
+## Choosing a test runner
+
+Bit's Tester is an [Environment Service](/environments/environment-services). 
+The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/environments/overview) that use it as a service.
+That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
+
+To choose a test runner, choose an environment that uses it or [extend an environment](/testing/customize-the-tester) to have it run your preferred test runner.
+>>>>>>> harmony:docs/testing/running-tests.md
 
 ## Executing the tester manually
 
@@ -59,12 +72,15 @@ Tests all components that use a specific environment.
 
 ```shell
 bit test --env <component-id>
+<<<<<<< HEAD:__archived-aspects/testing/running-tests.md
 ```
 
 For example:
 
 ```shell
 bit test --env teambit.react/react
+=======
+>>>>>>> harmony:docs/testing/running-tests.md
 ```
 
 For example:
@@ -78,9 +94,13 @@ Tests all components in a specific scope.
 ```shell
 bit test --scope <scope-name>
 ```
+<<<<<<< HEAD:__archived-aspects/testing/running-tests.md
 
 For example:
 
+=======
+For example:
+>>>>>>> harmony:docs/testing/running-tests.md
 ```shell
 bit test --scope my-org.react-design-system
 ```
@@ -105,7 +125,11 @@ Waiting for component changes... (10:17:20)
 
 Test results will be shown in the terminal, as well as in the 'Tests' tab.
 
+<<<<<<< HEAD:__archived-aspects/testing/running-tests.md
 <Image src="@site/img/ws_getting_started_test.png" />
+=======
+<Image src="/img/ws_getting_started_test.png" />
+>>>>>>> harmony:docs/testing/running-tests.md
 
 ### Tests in `watch` mode
 
