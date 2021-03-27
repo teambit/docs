@@ -16,8 +16,7 @@ To get started follow [this guide](/getting-started/installing-bit) and read [ne
 
 #### Public Beta
 
-Bit v15 **Harmony** is already used as a standard component infrastructure by many teams and is the undeline infrastructure that used to build Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming.  
-If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15 as we believe it provides a far better developer experience.
+Bit v15 **Harmony** is used by many teams and is the undeline infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15.
 
 ## Additional Resources and Support
 
