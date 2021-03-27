@@ -26,7 +26,7 @@ There are a few ways for you to get started with Harmony.
 
 Want to get started quickly and see how Bit works? This quick guide will take you through installing Bit, initializing a workspace, creating a component, tagging a component, seeing your component in the local workspace, creating a remote scope, configuring your workspace, exporting your component and installing your component in an external app.
 
-#### [Understand how to Build with Bit](/building-with-bit/workspaces)
+#### [Understand how to Build with Bit](/building-with-bit/workspace)
 
 Take a deep dive in to the core of how Bit works and see how you can not just build with Bit but also extend Bit. In this section we cover everything from Component Compositions to Testing as well as Environments, Compiling and Build Pipelines and more.
 

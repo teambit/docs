@@ -9,7 +9,7 @@ import { Image } from '@site/src/components/image';
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
 
-For example, the [React environment](/building-with-bit/react) runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
+For example, the React environment runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
 
 ```shell {5}
 ├── account/login-form
@@ -46,11 +46,11 @@ describe('use-jokes', () => {
 
 ## Choosing a test runner
 
-Bit's Tester is an [Environment Service](/building-with-bit/environments).
-The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environments) that use it as a service.
+Bit's Tester is an Environment Service.
+The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various environments that use it as a service.
 That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing-components) to have it run your preferred test runner.
+To choose a test runner, choose an environment that uses it or extend an environment to have it run your preferred test runner.
 
 ## Executing the tester manually
 

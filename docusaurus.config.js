@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Bit Harmony',
   url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
@@ -32,7 +32,7 @@ module.exports = {
       items: [
         {
           to: '/getting-started/installing-bit',
-          activeBasePath: '/',
+          activeBasePath: '/getting-started',
           label: 'Docs',
           position: 'left'
         },
@@ -45,7 +45,7 @@ module.exports = {
         },
         {
           label: 'Resources',
-          to: '/resources/podcasts',
+          to: '/resources/conference-talks',
           activeBasePath: 'resources',
           position: 'left'
         },

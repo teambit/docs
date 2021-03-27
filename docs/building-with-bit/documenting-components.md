@@ -18,7 +18,7 @@ Using different templates for different types of components (each using a differ
 
 ## Development vs Production
 
-Documentation in development, for authored or modified components, will be shown in the Workspace UI. These docs will be generated using the ['DevServer'](/building-with-bit/environments#devserver) environment service to enable features needed for development, like "hot reloading".
+Documentation in development, for authored or modified components, will be shown in the Workspace UI. These docs will be generated using the 'DevServer' environment service to enable features needed for development, like "hot reloading".
 
 The "production" version of the documentation, for component release versions, will be shown in the Scope UI and in the Workspace UI, for previous tag releases. The "production" version is generated using the 'Preview' service and provides an optimized built.
 

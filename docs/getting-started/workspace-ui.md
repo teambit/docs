@@ -13,7 +13,7 @@ The start command starts our dev server, compiles our component and watches for 
 bit start
 ```
 
-This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace and [tracked (added) components](/getting-started/adding-components).
+This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace with your components.
 
 :::note Building the UI
 

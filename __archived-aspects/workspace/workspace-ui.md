@@ -17,7 +17,7 @@ While you develop your components, Bit's UI will provide an exact picture of eve
 
 <Image src="/img/tech_jokes.png" />
 
-#### [Explore the applied environments and configurations for every component](/building-with-bit/workspaces)
+#### [Explore the applied environments and configurations for every component](/building-with-bit/workspace)
 
 <Image src="/img/pkg_config.png" width="60%" />
 

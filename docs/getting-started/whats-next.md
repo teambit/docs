@@ -13,7 +13,7 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 ## Building with Bit
 
-Check out [Building with Bit](/building-with-bit/workspace), a more in-dept guide on using Bit
+Check out [Building with Bit](/building-with-bit/pre-existing-components), a more in-dept guide on using Bit and how to use Bit with pre-existing components.
 
 <!-- ## Component Architecture
 
