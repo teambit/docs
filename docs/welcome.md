@@ -8,7 +8,9 @@ Bit is a platform for building with components and use them to compose apps and 
 
 ## Get started
 
-To get started follow [this guide](/getting-started/installing-bit) and read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems. You can also read about [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
+* To get started follow [this guide](/getting-started/installing-bit) 
+* Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
+* Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
 
 ### Bit v15 - Harmony
 
