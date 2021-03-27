@@ -5,6 +5,7 @@ title: Installing Bit
 
 import BVMIntro from '@site/docs/components/install/bvm-intro.md'
 import InstallBVM from '@site/docs/components/install/install-bvm.md'
+import InstallBVMErrors from '@site/docs/components/install/install-bvm-errors.md'
 import InstallBit from '@site/docs/components/install/install-bit.md'
 import BVMVersion from '@site/docs/components/install/bvm-version.md'
 
@@ -17,11 +18,17 @@ To use Bit you will need to install it. We can do this using BVM, a version mang
 <BVMIntro />
 <InstallBVM />
 
+<InstallBVMErrors />
+
+
 :arrow_right: Learn more about [BVM](/building-with-bit/bvm) and it's commands.
 
 ## 2. Install Bit
 
 <InstallBit />
+
+### PATH is missing the installation directory
+
 
 ## BVM and Bit Versions
 

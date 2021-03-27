@@ -111,7 +111,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Rescources',
+          title: 'Resources',
           items: [
             {
               label: 'Videos',
@@ -165,7 +165,7 @@ module.exports = {
       ],
       logo: {
         alt: 'Bit Logo',
-        src: 'src/img/bit-logo.webp',
+        src: 'img/logo.svg',
         href: 'https://bit.dev',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`,
