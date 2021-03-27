@@ -14,7 +14,7 @@
 /tutorial/document  /getting-started/creating-components
 /tutorial/test  /getting-started/creating-components
 /tutorial/version  /building-with-bit/versioning-components
-/tutorial/import-components
+/tutorial/import-components building-with-bit/importing-components
 /tutorial/explore-dependencies  /getting-started/workspace-ui
 /tutorial/auto-version-dependents  /building-with-bit/versioning-components
 /tutorial/export-to-scope  /getting-started/exporting-components
@@ -41,7 +41,7 @@
 /components/importing  /building-with-bit/importing-components
 /components/installing  /building-with-bit/installing-components
 /components/inspecting  /building-with-bit/inspecting-components
-/components/remove-deprecate-components
+/components/remove-deprecate-components  /building-with-bit/tracking-components
 
 /scope/overview  /building-with-bit/scopes
 /scope/set-up-remote-scope  /building-with-bit/scopes
@@ -72,7 +72,7 @@
 /build-pipeline/overview  /aspects/builder
 /build-pipeline/create-build-task  /aspects/builder
 
-/packages/publish-component-packages
+/packages/publish-component-packages  /building-with-bit/publishing-components
 /react/overview  /aspects/react
 /react/using-react  /aspects/react
 /react/extending-react  /aspects/react
