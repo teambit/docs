@@ -14,7 +14,7 @@
 /tutorial/document  /getting-started/creating-components
 /tutorial/test  /getting-started/creating-components
 /tutorial/version  /building-with-bit/versioning-components
-/tutorial/import-components building-with-bit/importing-components
+/tutorial/import-components /building-with-bit/importing-components
 /tutorial/explore-dependencies  /getting-started/workspace-ui
 /tutorial/auto-version-dependents  /building-with-bit/versioning-components
 /tutorial/export-to-scope  /getting-started/exporting-components
