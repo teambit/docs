@@ -11,7 +11,7 @@ To explore popular use-cases of remote scopes, [see here](/essentials/what-is-bi
 
 Setting up a remote scope is done in two steps:
 
-1. Create a scope on [Bit.dev](https://bit.dev) (or [self-host](/building-with-bit/scope/self-host-bit-scope) on your own server).
+1. Create a scope on [Bit.dev](https://bit.dev) (or [self-host](/building-with-bit/scopes) on your own server).
 
 2. Configure your workspace to export components to one or more scopes
 

@@ -71,9 +71,9 @@ export class CustomReactExtension {
 <!--index.ts-->
 
 ```ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -82,7 +82,7 @@ export default CustomReactExtension;
 
 1. Select the relevant components (using 'variants' in the workspace.json) and configure their peer depedencies with the `resolveFromEnv` set to `true`.
 
-2. Select the environment and configure the above dependency as a standard dependency (the dependency-resolver will make sure to install this package in the right place to avoid conflicts between multiple versions of the same package. [See here](/building-with-bit/dependencies) for more information.)
+2. Select the environment and configure the above dependency as a standard dependency (the dependency-resolver will make sure to install this package in the right place to avoid conflicts between multiple versions of the same package. [See here](/aspects/dependency-resolver) for more information.)
 
 For example:
 

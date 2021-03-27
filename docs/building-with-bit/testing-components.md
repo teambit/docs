@@ -1,7 +1,7 @@
---- 
+---
 id: testing-components
 title: Testing
---- 
+---
 
 import { Image } from '@site/src/components/image';
 
@@ -9,55 +9,52 @@ import { Image } from '@site/src/components/image';
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
 
-For example, the [React environment](/building-with-bit/react) runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]` 
+For example, the [React environment](/building-with-bit/react) runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
 
 ```shell {5}
-├── account/login-form 
-    ├── index.tsx                
-    ├── use-jokes.compositions.tsx 
-    ├── use-jokes.docs.mdx     
-    ├── use-jokes.spec.tsx      
-    └── use-jokes.tsx          
+├── account/login-form
+    ├── index.tsx
+    ├── use-jokes.compositions.tsx
+    ├── use-jokes.docs.mdx
+    ├── use-jokes.spec.tsx
+    └── use-jokes.tsx
 ```
 
 It is highly recommended to use the component compositions as test samples.
 For example:
 
 ```tsx title="use-jokes.spec.tsx"
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import { RetrieveJokes } from './use-jokes.compositions';
+import React from 'react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
+import { RetrieveJokes } from './use-jokes.compositions'
 
 describe('use-jokes', () => {
   it('should retrieve jokes', async () => {
-    const { getByTestId } = render(<RetrieveJokes />);
-    const fetchJokesBtn = getByTestId('fetch-button');
-    const jokesContainer = getByTestId('jokes-container');
-    fireEvent.click(fetchJokesBtn);
-    await waitFor(() => expect(jokesContainer.innerHTML).toBeTruthy());
-    const jokesContainerSnapshot = jokesContainer.innerHTML;
-    fireEvent.click(fetchJokesBtn);
+    const { getByTestId } = render(<RetrieveJokes />)
+    const fetchJokesBtn = getByTestId('fetch-button')
+    const jokesContainer = getByTestId('jokes-container')
+    fireEvent.click(fetchJokesBtn)
+    await waitFor(() => expect(jokesContainer.innerHTML).toBeTruthy())
+    const jokesContainerSnapshot = jokesContainer.innerHTML
+    fireEvent.click(fetchJokesBtn)
     await waitFor(() =>
       expect(jokesContainer.innerHTML).not.toEqual(jokesContainerSnapshot)
-    );
-  });
-});
-
+    )
+  })
+})
 ```
-
-
 
 ## Choosing a test runner
 
-Bit's Tester is an [Environment Service](/building-with-bit/environments). 
+Bit's Tester is an [Environment Service](/building-with-bit/environments).
 The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environments) that use it as a service.
 That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing) to have it run your preferred test runner.
+To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing-components) to have it run your preferred test runner.
 
 ## Executing the tester manually
 
-To manually run the tester on a specific component use its [component ID](/building-with-bit/components):
+To manually run the tester on a specific component use its component ID
 
 ```shell
 bit test <component-id>
@@ -102,9 +99,11 @@ bit test --env <component-id>
 ```
 
 For example:
+
 ```shell
 bit test --env teambit.react/react
 ```
+
 #### `--scope` `-s`
 
 Tests all components in a specific scope.
@@ -112,7 +111,9 @@ Tests all components in a specific scope.
 ```shell
 bit test --scope <scope-name>
 ```
+
 For example:
+
 ```shell
 bit test --scope my-org.react-design-system
 ```
@@ -223,4 +224,3 @@ modified components
 components pending to be tagged automatically (when their dependencies are tagged)
      > ui/widgets/login-form ... ok
 ```
-

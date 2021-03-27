@@ -146,19 +146,19 @@ For example:
 // ...
 
 // Import the task
-import { CustomTask } from './custom.task';
+import { CustomTask } from './custom.task'
 
 export class CustomReact {
   // ...
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
-    const reactPipe = react.env.getBuildPipe();
+    const reactPipe = react.env.getBuildPipe()
 
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...reactPipe, new CustomTask()];
+    const tasks = [...reactPipe, new CustomTask()]
 
-    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)]);
+    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)])
 
     // ...
   }
@@ -245,7 +245,7 @@ const newDependencies = {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/packages).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
 
 For example:
 
@@ -254,16 +254,16 @@ For example:
 
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
-};
+  types: '{main}.ts'
+}
 
 export class CustomReact {
   // ...
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const newReactEnv = react.compose([
-      react.overridePackageJsonProps(newPackageProps),
-    ]);
+      react.overridePackageJsonProps(newPackageProps)
+    ])
 
     // ...
   }

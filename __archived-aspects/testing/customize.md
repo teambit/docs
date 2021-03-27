@@ -33,25 +33,24 @@ In this example, we'll extend the React environment and customize its test runne
 > Different environments may expose different Environment Transformers (i.e., 'override' methods) to customize the configurations set on the specific test runner used by them. <br /> <br />
 > For a list of all available Transformers see your environment's documentation.
 
-
 ```typescript title="custom-react.extension"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const customReactEnv = react.compose([
       // Override the environment's default Jest configuration by providing the path to its config file.
-      react.overrideJestConfig(require.resolve('./jest.config')),
-    ]);
+      react.overrideJestConfig(require.resolve('./jest.config'))
+    ])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
@@ -60,24 +59,22 @@ export class CustomReactExtension {
 module.exports = {
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
-    '^.+\\.module\\.(css|sass|scss|less)$',
-  ],
-};
+    '^.+\\.module\\.(css|sass|scss|less)$'
+  ]
+}
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
-
-
 
 The above example overrides the ["transformIgnorePatterns"](https://jestjs.io/en/configuration#transformignorepatterns-arraystring) property for Jest's configuration file (`jest.config.js`) used by the environment.
 
 The new `jest.config.js` file does not replace the default one but merges into it (and therefor only configures the properties to override). Since the "transformIgnorePatterns" property conflicts with the one set by the environment, it replaces it. In cases where there is no conflict between two properties, the override property will simply be added to the default configuration file.
 
-> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/building-with-bit/testing#patterns).
+> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/building-with-bit/testing-components#patterns).
 
 ### Option #2: Replace the test runner used by the environment
 
@@ -88,16 +85,16 @@ An environment's test runner can be replaced by overriding its [Tester Service H
 For example, the code below shows a React environment extension that replaces its default compiler, Jest, with Mocha.
 
 ```tsx title="custom-react.extension"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Mocha extension component to configure it and set it as the new test runner
-import { MochaAspect, MochaMain } from '@teambit.defender/mocha';
+import { MochaAspect, MochaMain } from '@teambit.defender/mocha'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, MochaAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, MochaAspect]
 
   static async provider([envs, react, mocha]: [
     EnvsMain,
@@ -105,25 +102,25 @@ export class CustomReactExtension {
     MochaMain
   ]) {
     // Create a new Mocha tester
-    const mochaTestRunner = mocha.createTester({});
+    const mochaTestRunner = mocha.createTester({})
 
     const testerOverride = envs.override({
       getTester: () => {
-        return mochaTestRunner;
-      },
-    });
+        return mochaTestRunner
+      }
+    })
 
-    const customReactEnv = react.compose([testerOverride]);
+    const customReactEnv = react.compose([testerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```

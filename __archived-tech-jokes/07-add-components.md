@@ -100,7 +100,7 @@ The above output informs us that `@testing-library/react`, required by our compo
 
 ### Install dependencies
 
-We'll install `@testing-library/react` using [Dependency Resolver](/building-with-bit/dependencies), a Bit extension that handles dependencies in a workspace.
+We'll install `@testing-library/react` using [Dependency Resolver](/aspects/dependency-resolver), a Bit extension that handles dependencies in a workspace.
 
 ```shell
 bit install @testing-library/react
@@ -122,7 +122,7 @@ The installed package is now added to our workspace dependency configuration:
 
 :::note
 Our package is listed under `dependencies` even though it is a dev dependency. Dependency Resolver searches for the files requiring each package.
-If all these files are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/building-with-bit/dependencies).
+If all these files are dev files (test files, etc.) then a dependency will be considered as a dev dependency even though it is not listed as such. Learn more about it [here](/aspects/dependency-resolver).
 :::
 
 ### Add a component that is dependant on other components
@@ -136,8 +136,8 @@ Before we track 'tech-jokes-viewer', let's change its import paths from `org-dem
 
 ```tsx
 // REPLACE 'demo-org' WITH YOUR OWN ORGANIZATION/USERNAME
-import { Button } from '@demo-org/demo-scope.ui.elements.button';
-import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes';
+import { Button } from '@demo-org/demo-scope.ui.elements.button'
+import { useJokes } from '@demo-org/demo-scope.hooks.use-jokes'
 ```
 
 :::note Use a valid scope

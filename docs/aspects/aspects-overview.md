@@ -1,9 +1,9 @@
---- 
-id: bit-aspects
-title: Bit Aspects
---- 
+---
+id: aspects-overview
+title: Aspects Overview
+---
 
-Aspects are the building blocks of Bit. 
+Aspects are the building blocks of Bit.
 
 Bit is built with Bit, meaning each aspect of the end product is a component doing a task. these are both backend, middleware and frontend. examples for such tasks:
 

@@ -146,19 +146,19 @@ For example:
 // ...
 
 // Import the task
-import { CustomTask } from './custom.task';
+import { CustomTask } from './custom.task'
 
 export class CustomNode {
   // ...
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
-    const nodePipe = node.env.getBuildPipe();
+    const nodePipe = node.env.getBuildPipe()
 
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...nodePipe, new CustomTask()];
+    const tasks = [...nodePipe, new CustomTask()]
 
-    const newNodeEnv = node.compose([node.overrideBuildPipe(tasks)]);
+    const newNodeEnv = node.compose([node.overrideBuildPipe(tasks)])
 
     // ...
   }
@@ -182,17 +182,17 @@ For example:
 
 const newDependencies = {
   devDependencies: {
-    '@types/jest': '~26.0.9',
-  },
-};
+    '@types/jest': '~26.0.9'
+  }
+}
 
 export class CustomNode {
   // ...
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
-      node.overrideDependencies(newDependencies),
-    ]);
+      node.overrideDependencies(newDependencies)
+    ])
 
     // ...
   }
@@ -207,7 +207,7 @@ export class CustomNode {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/packages).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
 
 For example:
 
@@ -216,16 +216,16 @@ For example:
 
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
-};
+  types: '{main}.ts'
+}
 
 export class CustomNode {
   // ...
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
-      node.overridePackageJsonProps(newPackageProps),
-    ]);
+      node.overridePackageJsonProps(newPackageProps)
+    ])
 
     // ...
   }

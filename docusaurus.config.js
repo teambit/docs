@@ -39,7 +39,7 @@ module.exports = {
 
         {
           label: 'Aspects',
-          to: '/aspects/bit-aspects',
+          to: '/aspects/aspects-overview',
           activeBasePath: 'aspects',
           position: 'left'
         },
@@ -110,7 +110,7 @@ module.exports = {
           items: [
             {
               label: 'Videos',
-              to: '/resources/videos'
+              to: '/resources/conference-talks'
             },
             {
               label: 'Podcasts',

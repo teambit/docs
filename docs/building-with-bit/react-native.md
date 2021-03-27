@@ -7,19 +7,20 @@ The React Native environment is an implementation of the Environments aspect. It
 
 The React Native environment spares you the overhead of setting up your own React environment and creates a standardized and shareable development environment for you and your team.
 
-
-
 ## Default configurations
 
 ### Tester
-* Uses Jest as a test runner
-* Test files: `*.spec.*` and `*.test.*`
+
+- Uses Jest as a test runner
+- Test files: `*.spec.*` and `*.test.*`
 
 ### Compiler
+
 TypeScript for `*.ts`, `*.js`, `*.jsx`, `*.tsx`
 
 ### Bundler (for 'Preview' and 'DevServer')
-Uses Webpack. 
+
+Uses Webpack.
 
 Includes the following file types:
 
@@ -45,9 +46,11 @@ Includes the following file types:
   };
 
 ```
-> The `-` sign indicates a dependency is removed by the environment. 'react' is configured as a peer dependency instead of a (runtime) dependency. 
+
+> The `-` sign indicates a dependency is removed by the environment. 'react' is configured as a peer dependency instead of a (runtime) dependency.
 
 ### Development files
+
 The React environment treats the following files as development files: `*.doc.*`, `*.spec.*`, `*.test.*`, `*.composition.*`, `*.compositions.*`.
 
 Dependencies of development files will be recognized and registered as development dependencies (`devDependencies`).
@@ -299,7 +302,7 @@ export class CustomReactNative {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/packages).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
 
 For example:
 
@@ -308,16 +311,16 @@ For example:
 
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
-};
+  types: '{main}.ts'
+}
 
 export class CustomReactNative {
   // ...
 
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
     const newReactNative = reactNative.compose([
-      reactNative.overridePackageJsonProps(newPackageProps),
-    ]);
+      reactNative.overridePackageJsonProps(newPackageProps)
+    ])
 
     // ...
   }

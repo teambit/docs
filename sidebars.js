@@ -1,15 +1,4 @@
 module.exports = {
-  // community: [
-  //   {
-  //     type: 'category',
-  //     label: 'Community',
-  //     items: [
-  //       'community/talk-to-us',
-  //       'community/resources',
-  //       'community/open-source'
-  //     ]
-  //   }
-  // ],
   // tutorials: [
 
   //   {
@@ -59,32 +48,32 @@ module.exports = {
   ],
 
   aspects: [
+    'aspects/aspects-overview',
     {
       type: 'category',
       label: 'aspects',
       items: [
-        'aspects/bit-aspects',
-        'aspects/bvm',
-        'aspects/teambit.generator/generator/generator',
-        'aspects/teambit.pkg/pkg/pkg',
-        'aspects/teambit.compositions/compositions/compositions',
-        'aspects/teambit.mdx/mdx/mdx',
-        'aspects/teambit.preview/preview/preview',
-        'aspects/teambit.workspace/variants/variants',
-        'aspects/teambit.component/component/component',
-        'aspects/teambit.envs/envs/envs',
-        'aspects/teambit.dependencies/dependency-resolver/dependency-resolver',
-        'aspects/teambit.dependencies/yarn/yarn',
-        'aspects/teambit.dependencies/pnpm/pnpm',
+        'aspects/teambit.compilation/babel/babel',
         'aspects/teambit.pipelines/builder/builder',
         'aspects/teambit.compilation/compiler/compiler',
-        'aspects/teambit.compilation/multi-compiler/multi-compiler',
-        'aspects/teambit.compilation/babel/babel',
-        'aspects/teambit.typescript/typescript/typescript',
+        'aspects/teambit.component/component/component',
+        'aspects/teambit.compositions/compositions/compositions',
+        'aspects/teambit.dependencies/dependency-resolver/dependency-resolver',
+        'aspects/teambit.envs/envs/envs',
+        'aspects/teambit.generator/generator/generator',
         'aspects/teambit.harmony/logger/logger',
+        'aspects/teambit.mdx/mdx/mdx',
+        'aspects/teambit.compilation/multi-compiler/multi-compiler',
+        'aspects/teambit.pkg/pkg/pkg',
+        'aspects/teambit.dependencies/pnpm/pnpm',
+        'aspects/teambit.preview/preview/preview',
         'aspects/teambit.react/react/react',
-        'aspects/teambit.react/react-native/react-native'
-      ]
+        'aspects/teambit.react/react-native/react-native',
+        'aspects/teambit.typescript/typescript/typescript',
+        'aspects/teambit.workspace/variants/variants',
+        'aspects/teambit.dependencies/yarn/yarn'
+      ],
+      collapsed: false
     }
   ],
 
@@ -121,9 +110,10 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
+        'building-with-bit/pre-existing-components',
         'building-with-bit/workspace',
         'building-with-bit/scopes',
-        'building-with-bit/environments',
+
         {
           type: 'category',
           label: 'Components',
@@ -141,10 +131,17 @@ module.exports = {
             'building-with-bit/installing-components'
           ]
         },
-        'building-with-bit/build-pipeline',
-        'building-with-bit/react',
-        'building-with-bit/node',
-        'building-with-bit/react-native'
+        {
+          type: 'category',
+          label: 'Environments',
+          items: [
+            'building-with-bit/environments-overview',
+            'building-with-bit/react',
+            'building-with-bit/react-native',
+            'building-with-bit/node',
+            'building-with-bit/build-pipeline'
+          ]
+        }
       ]
     },
 
@@ -162,13 +159,17 @@ module.exports = {
 
     {
       type: 'doc',
-      id: 'aspects/bit-aspects'
+      id: 'aspects/aspects-overview'
     },
 
     {
       type: 'category',
       label: 'Reference',
-      items: ['reference/commands', 'reference/usage-analytics']
+      items: [
+        'reference/using-bvm',
+        'reference/commands',
+        'reference/usage-analytics'
+      ]
     },
     {
       type: 'category',

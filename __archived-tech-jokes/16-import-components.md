@@ -23,7 +23,7 @@ Head back to your workspace UI to explore the new imported component.
 
 <br />
 
-- #### To learn more about 'importing' [see here](/building-with-bit/components)
+- #### To learn more about 'importing' [see here](/building-with-bit/importing-components)
 
 ## Using the imported component
 
@@ -34,19 +34,19 @@ Our button shows a 'Loading...' text whenever its `isLoading` prop is set to `tr
 Let's replace that text with the newly imported 'dots loader' component.
 
 ```tsx title="button.tsx"
-import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader';
+import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader'
 ```
 
 In that same file we'll change this:
 
 ```jsx title="button.tsx (old)"
-isLoading ? 'Loading...' : children;
+isLoading ? 'Loading...' : children
 ```
 
 to this:
 
 ```jsx title="button.tsx (new)"
-isLoading ? <DotsLoader /> : children;
+isLoading ? <DotsLoader /> : children
 ```
 
 Head over to the 'Button is loading' composition in the 'button' page to see it rendered.

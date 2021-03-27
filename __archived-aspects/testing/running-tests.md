@@ -7,18 +7,17 @@ title: Running Tests
 
 import { Image } from '@site/src/components/image';
 
-
 ## Choosing a test runner
 
-Bit's Tester is an [Environment Service](/building-with-bit/environments). 
+Bit's Tester is an [Environment Service](/building-with-bit/environments).
 The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environments) that use it as a service.
 That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
-To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing) to have it run your preferred test runner.
+To choose a test runner, choose an environment that uses it or [extend an environment](/building-with-bit/testing-components) to have it run your preferred test runner.
 
 ## Executing the tester manually
 
-To manually run the tester on a specific component use its [component ID](/building-with-bit/components):
+To manually run the tester on a specific component use its component ID
 
 ```shell
 bit test <component-id>
@@ -63,9 +62,11 @@ bit test --env <component-id>
 ```
 
 For example:
+
 ```shell
 bit test --env teambit.react/react
 ```
+
 #### `--scope` `-s`
 
 Tests all components in a specific scope.
@@ -73,7 +74,9 @@ Tests all components in a specific scope.
 ```shell
 bit test --scope <scope-name>
 ```
+
 For example:
+
 ```shell
 bit test --scope my-org.react-design-system
 ```

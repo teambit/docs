@@ -5,7 +5,6 @@ title: Commands
 
 import BitInit from '@site/docs/components/commands/bit-init.md'
 
-
 ### Help
 
 #### Get information about available CLI commands
@@ -129,7 +128,7 @@ bit install
 
 #### Import a component
 
-Import a component from a remote scope. Learn more [here](/building-with-bit/components).
+Import a component from a remote scope. Learn more [here](/building-with-bit/scopes).
 
 ```shell
 bit import <component-id>

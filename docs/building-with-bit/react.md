@@ -95,7 +95,6 @@ Apply the React environment on a limited set of components. For example, all com
 
 - Learn more about configuring a selected set of components, [here](/building-with-bit/workspace).
 
-
 ## Extending React
 
 Use the React environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent React components authored in various decoupled workspaces.
@@ -241,19 +240,19 @@ For example:
 // ...
 
 // Import the task
-import { CustomTask } from './custom.task';
+import { CustomTask } from './custom.task'
 
 export class CustomReact {
   // ...
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
-    const reactPipe = react.env.getBuildPipe();
+    const reactPipe = react.env.getBuildPipe()
 
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...reactPipe, new CustomTask()];
+    const tasks = [...reactPipe, new CustomTask()]
 
-    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)]);
+    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)])
 
     // ...
   }
@@ -340,7 +339,7 @@ const newDependencies = {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/packages).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
 
 For example:
 
@@ -349,16 +348,16 @@ For example:
 
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
-};
+  types: '{main}.ts'
+}
 
 export class CustomReact {
   // ...
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const newReactEnv = react.compose([
-      react.overridePackageJsonProps(newPackageProps),
-    ]);
+      react.overridePackageJsonProps(newPackageProps)
+    ])
 
     // ...
   }
@@ -380,40 +379,40 @@ As such, they run in the environment's Preview runtime and not the Main runtime.
 For example, a provider that centers compositions in their rendering page, will look like so:
 
 ```tsx title="A composition provider example"
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement } from 'react'
 
 const style = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '100vh',
-};
+  height: '100vh'
+}
 
 export const Center = ({ children }: { children: ReactNode }): ReactElement => {
-  return <div style={style}>{children}</div>;
-};
+  return <div style={style}>{children}</div>
+}
 ```
 
 This provider will be registered using the registerProvider method in the React extension `*.preview.runtime.tsx` file:
 
 ```tsx title="react-with-providers.preview.runtime.tsx"
-import { PreviewRuntime } from '@teambit/preview';
-import { ReactAspect, ReactPreview } from '@teambit/react';
-import { ReactWithProvidersAspect } from './react-with-providers.aspect';
-import { Center } from './composition-providers/center';
+import { PreviewRuntime } from '@teambit/preview'
+import { ReactAspect, ReactPreview } from '@teambit/react'
+import { ReactWithProvidersAspect } from './react-with-providers.aspect'
+import { Center } from './composition-providers/center'
 
 export class ReactWithProvidersPreview {
-  static runtime = PreviewRuntime;
-  static dependencies = [ReactAspect];
+  static runtime = PreviewRuntime
+  static dependencies = [ReactAspect]
 
   static async provider([react]: [ReactPreview]) {
-    react.registerProvider([Center]);
+    react.registerProvider([Center])
 
-    return ReactWithProvidersPreview;
+    return ReactWithProvidersPreview
   }
 }
 
-ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview);
+ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview)
 ```
 
 - See the full demo project [here](https://github.com/teambit/react-env-with-providers).
@@ -448,25 +447,24 @@ In this example, we'll extend the React environment and customize its test runne
 > Different environments may expose different Environment Transformers (i.e., 'override' methods) to customize the configurations set on the specific test runner used by them. <br /> <br />
 > For a list of all available Transformers see your environment's documentation.
 
-
 ```typescript title="custom-react.extension"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const customReactEnv = react.compose([
       // Override the environment's default Jest configuration by providing the path to its config file.
-      react.overrideJestConfig(require.resolve('./jest.config')),
-    ]);
+      react.overrideJestConfig(require.resolve('./jest.config'))
+    ])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
@@ -475,24 +473,22 @@ export class CustomReactExtension {
 module.exports = {
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
-    '^.+\\.module\\.(css|sass|scss|less)$',
-  ],
-};
+    '^.+\\.module\\.(css|sass|scss|less)$'
+  ]
+}
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
-
-
 
 The above example overrides the ["transformIgnorePatterns"](https://jestjs.io/en/configuration#transformignorepatterns-arraystring) property for Jest's configuration file (`jest.config.js`) used by the environment.
 
 The new `jest.config.js` file does not replace the default one but merges into it (and therefor only configures the properties to override). Since the "transformIgnorePatterns" property conflicts with the one set by the environment, it replaces it. In cases where there is no conflict between two properties, the override property will simply be added to the default configuration file.
 
-> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/building-with-bit/testing#patterns).
+> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/building-with-bit/testing-components#patterns).
 
 ### Option #2: Replace the test runner used by the environment
 
@@ -503,16 +499,16 @@ An environment's test runner can be replaced by overriding its [Tester Service H
 For example, the code below shows a React environment extension that replaces its default compiler, Jest, with Mocha.
 
 ```tsx title="custom-react.extension"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Mocha extension component to configure it and set it as the new test runner
-import { MochaAspect, MochaMain } from '@teambit.defender/mocha';
+import { MochaAspect, MochaMain } from '@teambit.defender/mocha'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, MochaAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, MochaAspect]
 
   static async provider([envs, react, mocha]: [
     EnvsMain,
@@ -520,27 +516,27 @@ export class CustomReactExtension {
     MochaMain
   ]) {
     // Create a new Mocha tester
-    const mochaTestRunner = mocha.createTester({});
+    const mochaTestRunner = mocha.createTester({})
 
     const testerOverride = envs.override({
       getTester: () => {
-        return mochaTestRunner;
-      },
-    });
+        return mochaTestRunner
+      }
+    })
 
-    const customReactEnv = react.compose([testerOverride]);
+    const customReactEnv = react.compose([testerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 ## Customize the Compiler
@@ -574,26 +570,26 @@ In this example, we'll extend the React environment and customize its TypeScript
 > For a list of all available Transformers see your environment's documentation.
 
 ```typescript
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // The new TS configuration for this extension
-  newTsConfig = require('./tsconfig.json');
+  newTsConfig = require('./tsconfig.json')
 
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const customReactEnv = react.compose([
       // Override the environment's default TypeScript configuration
-      react.overrideTsConfig(newTsConfig),
-    ]);
+      react.overrideTsConfig(newTsConfig)
+    ])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
@@ -607,9 +603,9 @@ export class CustomReactExtension {
 ```
 
 ```ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 The above example overrides the ["target"](https://www.typescriptlang.org/tsconfig#target) property for the TypeScript compiler configuration file (`tsconfig.json`) used by the environment.
@@ -625,18 +621,18 @@ An environment's compiler can be replaced by overriding its [Compiler Service Ha
 For example, the code below shows a React environment extension that replaces its default compiler, TypeScript, with Babel.
 
 ```tsx
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel extension component to configure it and set it as the new compiler
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 
-const babelConfig = require('./babel-config');
+const babelConfig = require('./babel-config')
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
 
   static async provider([envs, react, babel]: [
     EnvsMain,
@@ -645,28 +641,28 @@ export class CustomReactExtension {
   ]) {
     // Instantiate a new Babel compiler with the 'babelConfig' configurations
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return babelCompiler;
-      },
-    });
+        return babelCompiler
+      }
+    })
 
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 #### Multi-Compiler
@@ -676,20 +672,20 @@ The Multi-compiler is a Bit extension component that enables the use of multiple
 For example:
 
 ```typescript
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel extension component
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 // Import the TypeScript extension component
 import {
   TypeScriptAspect,
-  TypeScriptMain,
-} from '@teambit.typescript/typescript';
+  TypeScriptMain
+} from '@teambit.typescript/typescript'
 // Import the multi-compiler extension
 import {
   MultiCompilerAspect,
-  MultiCompilerMain,
-} from '@teambit.compilation/multi-compiler';
+  MultiCompilerMain
+} from '@teambit.compilation/multi-compiler'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
@@ -700,8 +696,8 @@ export class CustomReactExtension {
     ReactAspect,
     BabelAspect,
     TypeScriptAspect,
-    MultiCompilerAspect,
-  ];
+    MultiCompilerAspect
+  ]
 
   static async provider([envs, react, babel, typescript, multiCompiler]: [
     EnvsMain,
@@ -713,22 +709,22 @@ export class CustomReactExtension {
     // Create a new composition of compilers
     const compilers = multiCompiler.createCompiler([
       createBabelCompiler(),
-      createTsCompiler(),
-    ]);
+      createTsCompiler()
+    ])
 
     // Override the environment's Compiler Service Handler
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return compilers;
-      },
-    });
+        return compilers
+      }
+    })
 
     // Compose all Environment Transformers into a single environment
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```

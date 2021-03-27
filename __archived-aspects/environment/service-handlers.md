@@ -39,8 +39,8 @@ export class ReactEnv implements Environment {
   // ...
 
   getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve('./jest/jest.config');
-    return this.jestAspect.createTester(jestConfig);
+    const jestConfig = require.resolve('./jest/jest.config')
+    return this.jestAspect.createTester(jestConfig)
   }
 }
 ```
@@ -129,9 +129,9 @@ export class ReactEnv implements Environment {
 
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
-    });
-    return this.webpack.createDevServer(withDocs, webpackConfig);
+      entry: context.entry.concat([require.resolve('./docs')])
+    })
+    return this.webpack.createDevServer(withDocs, webpackConfig)
   }
 }
 ```
@@ -153,7 +153,7 @@ export class ReactEnv implements Environment {
   // ...
 
   getDocsTemplate() {
-    return require.resolve('./docs');
+    return require.resolve('./docs')
   }
 }
 ```
@@ -166,7 +166,7 @@ getPackageJsonProps(...args : any[]): object
 
 Returns an object that defines the `package.json` properties of the packages generated for components handled by this environment. This configuration is used by the Packager service.
 
-Learn more about overriding the `package.json` properties [here](/building-with-bit/packages)
+Learn more about overriding the `package.json` properties [here](/building-with-bit/publishing-components)
 
 ```ts
 export class ReactEnv implements Environment {
@@ -175,8 +175,8 @@ export class ReactEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
-    };
+      types: '{main}.ts'
+    }
   }
 }
 ```
@@ -200,17 +200,17 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
-    };
+        'react-dom': '^16.13.1'
+      }
+    }
   }
 }
 ```
@@ -242,8 +242,8 @@ export class ReactEnv implements Environment {
   getBuildPipe(): BuildTask[] {
     return [
       this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task,
-    ];
+      this.tester.task
+    ]
   }
 }
 ```

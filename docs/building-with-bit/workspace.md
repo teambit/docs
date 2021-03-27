@@ -1,7 +1,7 @@
---- 
+---
 id: workspace
 title: Workspace
---- 
+---
 
 import BitInit from '@site/docs/components/commands/bit-init.md'
 
@@ -39,7 +39,7 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/building-with-bit/components) by the CI.
+   - Whether this component is [pending to be versioned](/building-with-bit/versioning-components) by the CI.
 
      <br />
 
@@ -95,7 +95,6 @@ Make sure to track the following files with your SCM:
 
 > You should not track the local scope (`.bit` or `.git/bit`) with Git.
 
-
 ## Configuration
 
 The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
@@ -137,4 +136,3 @@ Learn more about the `dependency-resolver` [here](/aspects/dependency-resolver).
 Groups of components can be selected to have rules and policies applied on them without affecting the rest of the workspace.
 
 Learn more about the `variants` [here](/aspects/variants).
-

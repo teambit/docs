@@ -15,7 +15,7 @@ A remote scope is a remote collection of Bit components that were 'tagged' and '
 
 Each scope, or "collection", groups together components that are related by function or purpose. As such, a single remote scope should be maintained by a single group of stakeholders, developers and even non-developers (designers, product managers, etc.).
 
-Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/building-with-bit/scope/self-host-bit-scope). Each Bit server can host multiple scopes.
+Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/building-with-bit/scopes). Each Bit server can host multiple scopes.
 
 A scope is visually represented by the Scope UI (similarly to the way a workspace UI visually represents your workspace).
 

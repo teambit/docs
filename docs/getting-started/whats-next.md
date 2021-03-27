@@ -21,7 +21,7 @@ Check out [Component Architecture](/component-architecture/thinking-in-component
 
 ## Bit Aspects
 
-Check out [Bit Aspects](/aspects/bit-aspects), to see the moving parts of Bit.
+Check out [Bit Aspects](/aspects/aspects-overview), to see the moving parts of Bit.
 
 ## Resources
 

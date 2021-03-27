@@ -20,7 +20,6 @@ This will open-up your browser on [localhost:3000](http://localhost:3000), or an
 The first time you run the start command it can take a bit of time as it needs to build the whole UI.
 :::
 
-
 <!-- Once you click on your component it will take you to the Overview page. -->
 
 <!-- :arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce). -->
@@ -43,13 +42,13 @@ Compositions show you how your component is composed. Compositions are created f
 
 See passing or failing tests. Tests are created from the `button.spec.tsx` file.
 
-<!-- :arrow_right: Learn more about [Component Testing](/building-with-bit/testing). -->
+<!-- :arrow_right: Learn more about [Component Testing](/building-with-bit/testing-components). -->
 
 ### Dependencies
 
 Shows any dependencies that your component has.
 
-<!-- :arrow_right: Learn more about [Component Dependencies](/building-with-bit/dependencies). -->
+<!-- :arrow_right: Learn more about [Component Dependencies](/aspects/dependency-resolver). -->
 
 ### Code
 
@@ -59,15 +58,13 @@ See all the code files your component has and inspect them as well as a list of 
 
 See the changelog of your component for when you export and create new versions.
 
-<!-- :arrow_right: Learn more about the [Component ChangeLog](/building-with-bit/components). -->
-
 ### Use
 
 Shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
 
-<!-- :arrow_right: Learn more about [Importing Components](/building-with-bit/components).
+<!-- :arrow_right: Learn more about [Importing Components](/building-with-bit/importing-components).
 
-:arrow_right: Learn more about [Installing Components](/building-with-bit/components). -->
+:arrow_right: Learn more about [Installing Components](/building-with-bit/installing-components). -->
 
 ## What's Next?
 

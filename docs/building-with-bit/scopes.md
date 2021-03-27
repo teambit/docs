@@ -1,7 +1,7 @@
---- 
+---
 id: scopes
 title: Scopes
---- 
+---
 
 import { Image } from '@site/src/components/image'
 
@@ -13,12 +13,11 @@ A remote scope is a remote collection of Bit components that were 'tagged' and '
 
 Each scope, or "collection", groups together components that are related by function or purpose. As such, a single remote scope should be maintained by a single group of stakeholders, developers and even non-developers (designers, product managers, etc.).
 
-Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/building-with-bit/scope/self-host-bit-scope). Each Bit server can host multiple scopes.
+Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/building-with-bit/scopes). Each Bit server can host multiple scopes.
 
 A scope is visually represented by the Scope UI (similarly to the way a workspace UI visually represents your workspace).
 
 <Image src="/img/scope_ui.png" />
-
 
 ### Cached dependencies
 
@@ -36,7 +35,6 @@ The local scope serves two main functions:
 - It enables the workspace to recognize whether a component has been modified by comparing the immutable version stored in the local scope to the component files tracked by the workspace.
 
 > The local scope (`.bit` or `.git/.bit`) should not be tracked by Git.
-
 
 ## Setting up a Remote Scope
 
@@ -81,7 +79,6 @@ A single workspace can export components to multiple scopes. To achieve that, us
 ## Change component scope
 
 In case you want to export a component to a different scope you will need to modify its configuration. This configuration operation changes the component module name, so you will have to run the `bit link` command. This command creates the new component module name in your project's `node_modules`.
-
 
 ## Self Hosting a bit Scope
 

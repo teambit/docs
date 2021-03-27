@@ -47,9 +47,9 @@ For example, a composition for a 'user hero' component will looks like so:
 ```
 
 ```tsx title="example #1: user-hero.compositions.tsx"
-import { Hero } from './user-hero';
+import { Hero } from './user-hero'
 
-const profileImage = 'https://storage.googleapis.com/docs-images/jessica.jpg';
+const profileImage = 'https://storage.googleapis.com/docs-images/jessica.jpg'
 
 const UserHero = () => {
   return (
@@ -60,8 +60,8 @@ const UserHero = () => {
       data-testid="test-hero"
       userName="jessica"
     />
-  );
-};
+  )
+}
 ```
 
 <Theme>
@@ -69,23 +69,23 @@ const UserHero = () => {
 </Theme>
 
 ```tsx title="example #2: user-hero.compositions.tsx"
-import { Hero } from './user-hero';
+import { Hero } from './user-hero'
 
-import React, { useEffect } from 'react';
-import { DotsLoader } from '@teambit/base-ui.elements.dots-loader';
-import { Error } from '@teambit/base-ui.input.error';
-import { ScopeList } from '@harmony-mfe/scopes.ui.scopes.scopes-list';
-import { useUser } from '@harmony-mfe/people.ui.hooks.use-user';
-import styles from './user-profile.module.scss';
+import React, { useEffect } from 'react'
+import { DotsLoader } from '@teambit/base-ui.elements.dots-loader'
+import { Error } from '@teambit/base-ui.input.error'
+import { ScopeList } from '@harmony-mfe/scopes.ui.scopes.scopes-list'
+import { useUser } from '@harmony-mfe/people.ui.hooks.use-user'
+import styles from './user-profile.module.scss'
 
 export const UserHeroWithScopeList = () => {
-  const [getUser, scopes, user, isLoading, error] = useUser();
+  const [getUser, scopes, user, isLoading, error] = useUser()
 
   useEffect(() => {
-    getUser();
-  }, []);
+    getUser()
+  }, [])
 
-  if (isLoading) return <DotsLoader active={isLoading} />;
+  if (isLoading) return <DotsLoader active={isLoading} />
   return (
     <div className={styles.userProfile}>
       <Hero
@@ -95,8 +95,8 @@ export const UserHeroWithScopeList = () => {
       />
       {error !== '' ? <Error>{error}</Error> : <ScopeList list={scopes} />}
     </div>
-  );
-};
+  )
+}
 ```
 
 <Theme>
@@ -117,22 +117,22 @@ Import the compositions into your test file to run the appropriate tests.
 For example, a test for a 'button' component may look like so:
 
 ```tsx {3} title="button.spec.tsx"
-import React from 'react';
-import testRenderer from 'react-test-renderer';
-import { PrimaryButton } from './button.compositions';
+import React from 'react'
+import testRenderer from 'react-test-renderer'
+import { PrimaryButton } from './button.compositions'
 
 describe('Button', () => {
   it('renders correctly as "primary"', () => {
     const component = testRenderer.create(
       <PrimaryButton>test primary variant</PrimaryButton>
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    )
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
 ```
 
-- Learn more about running tests in a Bit workspace, [here](/building-with-bit/testing)
+- Learn more about running tests in a Bit workspace, [here](/building-with-bit/testing-components)
 
 ## Setting providers for all your compositions
 

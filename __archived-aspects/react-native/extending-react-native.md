@@ -226,7 +226,7 @@ export class CustomReactNative {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/packages).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
 
 For example:
 
@@ -235,16 +235,16 @@ For example:
 
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
-};
+  types: '{main}.ts'
+}
 
 export class CustomReactNative {
   // ...
 
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
     const newReactNative = reactNative.compose([
-      reactNative.overridePackageJsonProps(newPackageProps),
-    ]);
+      reactNative.overridePackageJsonProps(newPackageProps)
+    ])
 
     // ...
   }

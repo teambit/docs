@@ -3,7 +3,7 @@ id: configurations
 title: Configurations
 ---
 
-//TODO dont need this 
+//TODO dont need this
 // dependency resolver should be part of dependency resolver etc
 
 The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
@@ -35,7 +35,7 @@ Example:
 }
 ```
 
-### [teambit.dependencies/dependency-resolver](/building-with-bit/dependencies)
+### [teambit.dependencies/dependency-resolver](/aspects/dependency-resolver)
 
 `teambit.dependencies/dependency-resolver` receives rules and settings for component dependencies and package management. Dependency policies alter and augment the existing dependency graph that was auto-generated.
 
@@ -63,7 +63,7 @@ Example (used at the JSON root-level):
   }
 ```
 
-Learn more about the `dependency-resolver` [here](/building-with-bit/dependencies).
+Learn more about the `dependency-resolver` [here](/aspects/dependency-resolver).
 
 ### [teambit.workspace/variants](/building-with-bit/workspace)
 

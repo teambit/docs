@@ -14,12 +14,12 @@ Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](/building-with-bit/components#soft-and-hard-tags-component-collaboration).
+[**Learn more**](/building-with-bit/tagging-components).
 :::
 
-3. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/packages))
+1. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/publishing-components))
 
-4. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process.
+2. Run custom tasks that are part of the 'build pipeline'. Build tasks can be executed to perform custom actions as part of the CI/CD process.
 
 ## Setting up the CI with Github Actions
 
@@ -84,17 +84,17 @@ jobs:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: Install Bit Version Manager 
-      run: npm i -g @teambit/bvm
-    - name: Install latest Bit version 
-      run: bvm install
-    - name: Add bvm bin folder to PATH
-      run: echo "$HOME/bin" >> $GITHUB_PATH
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Bit Version Manager
+        run: npm i -g @teambit/bvm
+      - name: Install latest Bit version
+        run: bvm install
+      - name: Add bvm bin folder to PATH
+        run: echo "$HOME/bin" >> $GITHUB_PATH
 ```
 
 ### 6. Disable any type of analytics reporting and set the user authentication token

@@ -1,7 +1,7 @@
---- 
-id: environments
-title: Environments
---- 
+---
+id: environments-overview
+title: Overview
+---
 
 A Bit environment is a development environment encapsulated in a single Bit component. An environment includes linting, testing, compiling, documenting, and other services which are needed in the lifecycle of an independent component.
 

@@ -12,7 +12,7 @@ The tracking process translates sets of files into a single component that is se
 When a component gets tracked, Bit does the following:
 
 - It determines which files should be be included in that component (see the result in the .bitmap file)
-- It determines the [component ID](/building-with-bit/components)
+- It determines the component ID
 - It determines the component entry point and its dependency graph
 - It creates a package in the workspace `node_modules` directory
 - It renders the component in the Workspace UI

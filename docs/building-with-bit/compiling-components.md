@@ -1,7 +1,7 @@
---- 
+---
 id: compiling-components
 title: Compiling
---- 
+---
 
 Compilation is a crucial step in making a component an independent module that can be used by other web projects as well as internally, by other components in the same workspace.
 When Bit starts tracking a component, a new directory is created for it inside the workspace' `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
@@ -20,14 +20,12 @@ For example:
           ├── ...
 ```
 
-- __Compile in the workspace__ - Components are compiled in 'watch mode' (on every change) when running Bit's dev server (`bit start`) and on various compilations commands.
+- **Compile in the workspace** - Components are compiled in 'watch mode' (on every change) when running Bit's dev server (`bit start`) and on various compilations commands.
 
-
-- __Compile as a build task__ - 
-Components are compiled as part of the component build pipeline (on `bit build` and `bit tag`).
-The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
-Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.
-
+- **Compile as a build task** -
+  Components are compiled as part of the component build pipeline (on `bit build` and `bit tag`).
+  The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
+  Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.
 
 ## Choosing a Compiler
 
@@ -38,7 +36,7 @@ To customize an environment's compiler, [see here](/building-with-bit/environmen
 
 ## Running the compiler manually
 
-To manually run the compiler on a specific component use its [component ID](/building-with-bit/components):
+To manually run the compiler on a specific component use its component ID
 
 ```shell
 bit compile <component-id>
