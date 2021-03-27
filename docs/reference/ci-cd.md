@@ -14,7 +14,7 @@ Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](/building-with-bit/tagging-components).
+[**Learn more**](/building-with-bit/exporting-components).
 :::
 
 1. Publish components (as packages) to NPM or other registries (learn more, [here](/building-with-bit/publishing-components))
