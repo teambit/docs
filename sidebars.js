@@ -159,6 +159,7 @@ module.exports = {
       items: [
         'reference/using-bvm',
         'reference/commands',
+        'reference/ci-cd',
         'reference/usage-analytics'
       ]
     },

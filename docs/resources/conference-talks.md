@@ -10,6 +10,9 @@ When it comes to components the easy and fast way is to just build the component
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gJwrRTTb2Qw?start=5185" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+<p data-notist="debbie/H1PyTj">View slide deck for <a href="https://noti.st/debbie/H1PyTj">Building Components in Harmony</a></p>
+
 ## A Component is an App
 
 Alexander Karan takes the Latency2020 audience through the ClimateClever transition to a unique approach that made it easier to understand their entire system. The benefits have gave Climate Clever faster release times, easier bug detection and allowed new developers to contribute production-ready code from day one.

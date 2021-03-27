@@ -1,0 +1,97 @@
+/introduction/getting-started  /getting-started/installing-bit
+/introduction/installation  /getting-started/installing-bit
+/introduction/try-bit  /getting-started/installing-bit
+/introduction/why-bit  /essentials/what-is-bit
+/introduction/resources  /resources/conference-talks
+/introduction/community  /resources/community
+
+/tutorial/install-bit  /getting-started/installing-bit
+/tutorial/create-remote-scope  /getting-started/remote-scope
+/tutorial/set-up-workspace  /getting-started/initializing-workspace
+/tutorial/choose-dev-env  /getting-started/creating-components
+/tutorial/add-components  /getting-started/creating-components
+/tutorial/render-component  /getting-started/workspace-ui
+/tutorial/document  /getting-started/creating-components
+/tutorial/test  /getting-started/creating-components
+/tutorial/version  /building-with-bit/versioning-components
+/tutorial/import-components
+/tutorial/explore-dependencies  /getting-started/workspace-ui
+/tutorial/auto-version-dependents  /building-with-bit/versioning-components
+/tutorial/export-to-scope  /getting-started/exporting-components
+/tutorial/install-components  /getting-started/installing-components
+/tutorial/ci-cd  /reference/ci-cd
+
+/cli/cheat-sheet  /reference/commands
+/workspace/overview  /building-with-bit/workspace
+/workspace/configurations  /aspects/workspace
+/workspace/cascading-rules  /aspects/workspace
+/workspace/workspace-ui  /aspects/workspace
+/workspace/workspace-status  /aspects/workspace
+
+/environments/overview  /building-with-bit/environments
+/environments/choose-an-environment  /building-with-bit/environments
+/environments/create-environment  /aspects/envs
+/environments/environment-services  /aspects/envs
+/environments/service-handlers  /aspects/envs
+
+/components/overview  /aspects/component
+/components/tracking /building-with-bit/tracking-components
+/components/versioning /building-with-bit/removing-components
+/components/exporting /building-with-bit/inspecting-components
+/components/importing  /building-with-bit/importing-components
+/components/installing  /building-with-bit/installing-components
+/components/inspecting  /building-with-bit/inspecting-components
+/components/remove-deprecate-components
+
+/scope/overview  /building-with-bit/scopes
+/scope/set-up-remote-scope  /building-with-bit/scopes
+/scope/self-host-bit-scope  /building-with-bit/scopes
+/scope/scope-ui  /building-with-bit/scopes
+
+/dependencies/overview  /aspects/dependency-resolver
+/dependencies/dependency-resolution  /aspects/dependency-resolver
+/dependencies/dependency-policies  /aspects/dependency-resolver
+/dependencies/dependency-installation  /aspects/dependency-resolver
+/dependencies/package-managers  /aspects/dependency-resolver
+
+/documenting/overview  /building-with-bit/documenting-components
+/documenting/using-docs-api  /building-with-bit/documenting-components
+/documenting/properties-table  /building-with-bit/documenting-components
+
+/compositions/overview  /aspects/compositions
+
+/testing/add-tests /building-with-bit/testing-components
+/testing/running-tests /building-with-bit/testing-components
+/testing/testing-dependent-components /building-with-bit/testing-components
+/testing/customize-the-tester /building-with-bit/testing-components
+
+/compiling/overview  /building-with-bit/compiling-components
+/compiling/compiling-components  /building-with-bit/compiling-components
+/compiling/customize  /aspects/compiler
+
+/build-pipeline/overview  /aspects/builder
+/build-pipeline/create-build-task  /aspects/builder
+
+/packages/publish-component-packages
+/react/overview  /aspects/react
+/react/using-react  /aspects/react
+/react/extending-react  /aspects/react
+/react/composition-providers  /aspects/react
+
+/nodejs/overview  /aspects/node
+/nodejs/using-node  /aspects/node
+/nodejs/extending-node  /aspects/node
+
+/react-native/overview  /aspects/react-native
+/react-native/using-react-native  /aspects/react-native
+/react-native/extending-react-native  /aspects/react-native
+
+/authentication/overview  /
+/usage-analytics/overview  /reference/usage-analytics
+
+/troubleshooting/components-envs  /
+/troubleshooting/installation-troubleshooting  /reference/using-bvm
+
+/faq/what-is-bvm  /reference/using-bvm
+
+/open-source/open-source  /resources/community
