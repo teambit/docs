@@ -1,6 +1,6 @@
 ---
-id: environments-overview
-title: Overview
+id: environments
+title: Environments
 ---
 
 A Bit environment is a development environment encapsulated in a single Bit component. An environment includes linting, testing, compiling, documenting, and other services which are needed in the lifecycle of an independent component.
@@ -15,11 +15,11 @@ You can use one of Bit's default "out-of-the-box" environments, create your own 
 
 Bit currently provides the following core environments out of the box. Just pick one and start using any of them in your workspace.
 
-### [React](/building-with-bit/react/using-react)
+### [React](/aspects/react)
 
-### [React Native](/building-with-bit/react-native/using-react-native)
+### [React Native](/aspects/react-native)
 
-### [Node](/building-with-bit/nodejs/using-node)
+### [Node](/aspects/node)
 
 ## Using an environment
 

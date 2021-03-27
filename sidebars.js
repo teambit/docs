@@ -64,6 +64,7 @@ module.exports = {
         'aspects/teambit.harmony/logger/logger',
         'aspects/teambit.mdx/mdx/mdx',
         'aspects/teambit.compilation/multi-compiler/multi-compiler',
+        'aspects/teambit.harmony/node/node',
         'aspects/teambit.pkg/pkg/pkg',
         'aspects/teambit.dependencies/pnpm/pnpm',
         'aspects/teambit.preview/preview/preview',
@@ -131,17 +132,7 @@ module.exports = {
             'building-with-bit/installing-components'
           ]
         },
-        {
-          type: 'category',
-          label: 'Environments',
-          items: [
-            'building-with-bit/environments-overview',
-            'building-with-bit/react',
-            'building-with-bit/react-native',
-            'building-with-bit/node',
-            'building-with-bit/build-pipeline'
-          ]
-        }
+        'building-with-bit/environments'
       ]
     },
 

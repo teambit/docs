@@ -1,6 +1,6 @@
 ---
 id: node
-title: node
+title: Node
 ---
 
 The Node environment is an implementation of the Environments aspect. It is a one-stop-shop for Node components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of Node components, managed in a Bit workspace.

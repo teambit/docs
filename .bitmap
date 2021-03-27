@@ -67,6 +67,12 @@
         "mainFile": "index.ts",
         "rootDir": "docs/aspects/teambit.compilation/multi-compiler"
     },
+    "node": {
+        "scope": "teambit.harmony",
+        "version": "0.0.337",
+        "mainFile": "index.ts",
+        "rootDir": "docs/aspects/teambit.harmony/node"
+    },
     "pkg": {
         "scope": "teambit.pkg",
         "version": "0.0.336",
