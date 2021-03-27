@@ -3,8 +3,7 @@ id: whats-next
 title: What's Next?
 ---
 
-
-Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [intialized a workspace](initializing-workspace), [created a component](creating-components), [added a component](adding-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
+Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [intialized a workspace](initializing-workspace), [created a component](creating-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
 
 Are you ready to go deeper. We have so much more to show you.
 
@@ -20,9 +19,13 @@ Check out [Building with Bit](/building-with-bit/workspace), a more in-dept guid
 
 Check out [Component Architecture](/component-architecture/thinking-in-components) to learn more about how to think in Components -->
 
+## Bit Aspects
+
+Check out [Bit Aspects](/aspects/bit-aspects), to see the moving parts of Bit.
+
 ## Resources
 
-Checkout our [Resources](/community/resources) section to see talks, videos and podcasts on Bit.
+Checkout our [Resources](/resources/conference-talks) section to see talks, live streams, podcasts and articles on Bit.
 
 ## Bit's Commands
 

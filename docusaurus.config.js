@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'docs-harmony', // Usually your repo name.
   plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
-      algolia: {
+    algolia: {
       apiKey: '58b48f3589d91aba567e8709de785bdd',
       indexName: 'harmony',
       appId: 'BH4D9OD16A',
@@ -18,7 +18,7 @@ module.exports = {
       contextualSearch: false,
 
       // Optional: Algolia search parameters
-      searchParameters: {},
+      searchParameters: {}
 
       //... other Algolia params
     },
@@ -30,25 +30,24 @@ module.exports = {
         href: '/'
       },
       items: [
-        
         {
           to: '/getting-started/installing-bit',
-          activeBasePath: '/docs',
+          activeBasePath: '/',
           label: 'Docs',
-          position: 'left',
+          position: 'left'
         },
-      
+
         {
           label: 'Aspects',
           to: '/aspects/bit-aspects',
           activeBasePath: 'aspects',
-          position: 'left',
+          position: 'left'
         },
         {
           label: 'Resources',
           to: '/resources/podcasts',
-          activeBasePath: 'community',
-          position: 'left',
+          activeBasePath: 'resources',
+          position: 'left'
         },
         // {
         //   label: 'CLI',
@@ -62,116 +61,109 @@ module.exports = {
         //   to: 'https://bit.dev/support',
         //   position: 'right',
         // },
-        
-        
+
         {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: true,
           dropdownItemsAfter: [
-            {to: 'https://docs.bit.dev/',
-              label: 'v14 - Legacy'},
-          ],
+            { to: 'https://docs.bit.dev/', label: 'v14 - Legacy' }
+          ]
         },
-        
-        
+
         {
-          href: 'https://github.com/teambit',
+          href: 'https://github.com/teambit/bit/issues',
           position: 'right',
           className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          'aria-label': 'GitHub repository'
         },
         {
           href: 'https://bit-dev-community.slack.com',
           className: 'slack-link',
           'aria-label': 'Slack',
-          position: 'right',
-        },
-      ],
+          position: 'right'
+        }
+      ]
     },
     footer: {
       style: 'dark',
       links: [
-      
-    
         {
           title: 'Docs',
           items: [
             {
               label: 'Getting Started',
-              to: '/getting-started/installing-bit',
+              to: '/getting-started/installing-bit'
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/workspace',
+              to: '/building-with-bit/workspace'
             },
             {
               label: 'What is Bit',
-              to: '/essentials/what-is-bit',
-            },
-            
-          ],
+              to: '/essentials/what-is-bit'
+            }
+          ]
         },
         {
           title: 'Resources',
           items: [
             {
               label: 'Videos',
-              to: '/resources/videos',
+              to: '/resources/videos'
             },
             {
               label: 'Podcasts',
-              to: '/resources/podcasts',
+              to: '/resources/podcasts'
             },
             {
-              label: 'Articles',
-              to: '/resources/articles',
-            },
-            
-          ],
+              label: 'Live Streams',
+              to: '/resources/live-streams'
+            }
+          ]
         },
         {
           title: 'More',
           items: [
             {
               label: 'Help',
-              href: 'https://bit.dev/support',
+              href: 'https://bit.dev/support'
             },
             {
               label: 'Bit Cloud',
-              href: 'https://bit.dev/',
+              href: 'https://bit.dev/'
             },
             {
               label: 'Bit Legacy Docs',
-              href: 'https://docs.bit.dev/',
-            },
-          ],
+              href: 'https://docs.bit.dev/'
+            }
+          ]
         },
         {
           title: 'Follow us',
           items: [
             {
               label: 'Twitter',
-              href: 'https://twitter.com/bitdev_',
+              href: 'https://twitter.com/bitdev_'
             },
             {
               label: 'YouTube',
-              href: 'https://www.youtube.com/c/Bitdev',
+              href: 'https://www.youtube.com/c/Bitdev'
             },
             {
               label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/bit-dev/mycompany/',
-            },
-          ],
-        },
+              href: 'https://www.linkedin.com/company/bit-dev/mycompany/'
+            }
+          ]
+        }
       ],
       logo: {
         alt: 'Bit Logo',
         src: 'img/logo.svg',
-        href: 'https://bit.dev',
+        href: 'https://bit.dev'
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`,
-    },
+      copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`
+    }
   },
   presets: [
     [
@@ -180,26 +172,24 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/teambit/docs/edit/harmony',
+          editUrl: 'https://github.com/teambit/docs/edit/harmony',
           routeBasePath: '/',
           versions: {
             current: {
-              label: 'v15',
+              label: 'v15'
             }
           }
-
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/facebook/docusaurus/edit/master/website/blog/'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-    ],
-  ],
-};
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      }
+    ]
+  ]
+}

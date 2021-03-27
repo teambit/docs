@@ -4,8 +4,7 @@ title: Welcome to Harmony
 slug: /
 ---
 
-
-*Public Beta* :tada:
+_Public Beta_ :tada:
 
 <!-- Harmony is Bit's next generation. It is a highly powerful and extensible infrastructure for developing modern applications in a modular way. Whether you are building a new project, or seeking to collaborate on components in your existing projects, Harmony will let you tap into the true power of components.
 
@@ -57,11 +56,11 @@ Follow our [YouTube Channel](https://www.youtube.com/c/Bitdev) to see videos on 
 
 #### [What is Bit? :rocket:](../essentials/what-is-bit)
 
-- Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.  
+- Learn more about the motivation behind Bit, the advantages of modular development, and how the world's best teams leverage Bit to accelerate and standardize digital innovation.
 
 #### [Resources :books:](/resources/podcasts)
 
-- Learn more with the best videos, talks, podcasts, guides, articles, and more about Harmony.  
+- Learn more with the best videos, talks, podcasts, guides, articles, and more about Harmony.
 
 #### [Communtiy :busts_in_silhouette:](/community/resources)
 
