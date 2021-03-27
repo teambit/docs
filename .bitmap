@@ -19,6 +19,12 @@
         "mainFile": "index.ts",
         "rootDir": "docs/aspects/teambit.compilation/compiler"
     },
+    "component": {
+        "scope": "teambit.component",
+        "version": "0.0.336",
+        "mainFile": "index.ts",
+        "rootDir": "docs/aspects/teambit.component/component"
+    },
     "compositions": {
         "scope": "teambit.compositions",
         "version": "0.0.336",
@@ -96,6 +102,12 @@
         "version": "0.0.336",
         "mainFile": "index.ts",
         "rootDir": "docs/aspects/teambit.typescript/typescript"
+    },
+    "variants": {
+        "scope": "teambit.workspace",
+        "version": "0.0.324",
+        "mainFile": "index.ts",
+        "rootDir": "docs/aspects/teambit.workspace/variants"
     },
     "yarn": {
         "scope": "teambit.dependencies",

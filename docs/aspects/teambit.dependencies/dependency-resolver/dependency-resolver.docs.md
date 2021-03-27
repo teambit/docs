@@ -115,7 +115,7 @@ For example:
 
 ### Apply policies on a selected group of components
 
-Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](https://bit.dev/workspace/variants) configuration API.
+Dependency policies can be applied on a specific group of components. This is done using the `@teambit.workspace/variants` configuration API.
 
 For example, to set version `1.0.0` of `classnames` as a dependency of all components located inside the `./components/react` directory (or any of its sub-directories):
 
