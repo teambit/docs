@@ -37,16 +37,10 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        
-        {
-          label: 'Building with Bit',
-          to: '/building-with-bit/workspace',
-          activeBasePath: 'building-with-bit',
-          position: 'left',
-        },
+      
         {
           label: 'Aspects',
-          to: '/aspects/bvm',
+          to: '/aspects/bit-aspects',
           activeBasePath: 'aspects',
           position: 'left',
         },
@@ -118,11 +112,11 @@ module.exports = {
               to: '/resources/videos',
             },
             {
-              label: 'Resources',
+              label: 'Podcasts',
               to: '/resources/podcasts',
             },
             {
-              label: 'Resources',
+              label: 'Articles',
               to: '/resources/articles',
             },
             
