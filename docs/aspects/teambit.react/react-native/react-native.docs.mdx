@@ -380,7 +380,7 @@ To use the React Native environment, set it in the `workspace.jsonc` configurati
 
 ## Apply React Native on a group of components
 
-The example below shows React Native being applied on all components in the workspace, using the wildcard character `*`. To use React Native on a more limited set of components, [see here](/building-with-bit/workspace)
+The example below shows React Native being applied on all components in the workspace, using the wildcard character `*`.
 
 ```json
 {
@@ -405,7 +405,7 @@ This page lists React Native's Environment Transformers. These are the 'override
 
 ## Environment transformers
 
-React Native's environment transformers enable merging new configurations for different [Bit aspects used by the React Native environment](/building-with-bit/environments).
+React Native's environment transformers enable merging new configurations for different Bit aspects used by the React Native environment.
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
 
@@ -445,7 +445,7 @@ export class ReactNativeExtension {
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [Preview](/building-with-bit/environments#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -475,7 +475,7 @@ export class ReactNativeExtension {
 overrideDevServerConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [DevServer](/building-with-bit/environments#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the DevServer environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -533,7 +533,7 @@ export class ReactNativeExtension {
 overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
 
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command). To create your own Build Task, [see here](/building-with-bit/build-pipeline).
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command).
 
 For example:
 
@@ -621,7 +621,7 @@ export class CustomReactNative {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment.
 
 For example:
 

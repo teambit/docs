@@ -67,9 +67,9 @@ To be able to determine the order, you can do the following
 
 Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).
 
-The Build Pipeline is an [Environment Service](/building-with-bit/environments) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
+The Build Pipeline is an Environment Service responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
 
-A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/building-with-bit/environments).
+A component's default series of Build Tasks is composed of tasks set by Bit and by its environment.
 
 ## Isolated builds
 
@@ -89,15 +89,15 @@ The build pipeline processes multiple components in parallel to make use of mult
 
 Each Bit environment determines its own build pipeline. That means, a single workspace that uses multiple environments will run a different set of build tasks on different components depending on their associated environment. This is another Bit feature that enables seamless transitioning between different development environments, all in the same workspace. It also makes it much easier to integrate the Build Pipeline in your (remote) CI, as it only requires executing the build step - all other per-component build configurations are already set by the various environments being used.
 
-Since environments are extensible, so are the build pipelines configured by them. **To create your own Build Task or customize your environment's build pipeline, [see here](/building-with-bit/build-pipeline).**
+Since environments are extensible, so are the build pipelines configured by them.
 
 ## Sequencing the build tasks
 
 The Build Pipeline takes into consideration the following factors when deciding the order of which to execute each task:
 
-- **Location**: A task can be executed either at the start or end of the build pipeline. This can be explicitly [configured by the task itself](/building-with-bit/build-pipeline#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
-- **Dependencies**: A task can depend on other tasks. That means, it will not get executed before its dependencies are executed successfully. This is [configured by the task itself](/building-with-bit/build-pipeline#append-to-the-start-or-end-of-the-pipeline-in-relation-to-other-tasks).
-- **An environment's list of build tasks**: This is the array of tasks as it is [defined by an environment](/building-with-bit/build-pipeline#override-the-build-pipeline-sequence).
+- **Location**: A task can be executed either at the start or end of the build pipeline. This can be explicitly configured by the task itself.
+- **Dependencies**: A task can depend on other tasks. That means, it will not get executed before its dependencies are executed successfully. This is configured by the task itself.
+- **An environment's list of build tasks**: This is the array of tasks as it is defined by an environment
 
 ## Executing the build pipeline
 
@@ -106,7 +106,7 @@ Commands that trigger the build pipeline:
 - `bit build` - will run the build pipeline on your local machine, for the entire workspace. The output data will not persist. - That is most often used for testing and debugging the build process.
 - `bit tag` - will run the build pipeline on your local machine, before creating a new component release version. The output data will persist.
 
-Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new [environment extension](/building-with-bit/environments) or modify an existing one.
+Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new environment extension or modify an existing one.
 
 The example task below, shown being used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be logged and/or stored in the component tagged version. [See a demo project here](https://github.com/teambit/harmony-build-examples).
 
@@ -186,7 +186,7 @@ A build task is positioned in the build pipeline sequence either by overriding t
 
 ### Override the build pipeline sequence
 
-This methodology leaves the task completely agnostic as to its position in the build pipeline. Instead, the task position is determined by the environment using the ['getBuildpipe' Environment Handler](/building-with-bit/environments#getbuildpipe).
+This methodology leaves the task completely agnostic as to its position in the build pipeline. Instead, the task position is determined by the environment using the 'getBuildpipe' Environment Handler.
 
 The example above shows the React environment `overrideBuildPipe` method being used to override its default pipeline. This method uses the `getBuildPipe()` Environment Handler, internally.
 

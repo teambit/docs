@@ -99,8 +99,6 @@ export class ReactExtension {
     const newReactEnv = react.compose([
       react.overrideTsConfig(tsconfig)
     ]);
-
-
 }
 
 // ...
@@ -129,8 +127,6 @@ export class ReactExtension {
     const newReactEnv = react.compose([
       react.overridePreviewConfig(webpackConfig)
     ]);
-
-
 }
 
 // ...
@@ -159,8 +155,6 @@ export class ReactExtension {
     const newReactEnv = react.compose([
       react.overrideDevServerConfig(webpackConfig)
     ]);
-
-
 }
 
 // ...
@@ -187,8 +181,6 @@ export class ReactExtension {
     const newReactEnv = react.compose([
       react.overrideJestConfig(require.resolve('./jest/jest.config'))
     ]);
-
-
 }
 
 // ...
@@ -444,18 +436,15 @@ Apply the React environment on a limited set of components. For example, all com
 }
 ```
 
-- Learn more about configuring a selected set of components, [here](/building-with-bit/workspace).
-
 ## Extending React
 
 Use the React environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent React components authored in various decoupled workspaces.
 
 This page lists React's Environment Transformers. These are the 'override' methods that allow to add or override React's default configurations.
-**To learn how to create a new environment extension, [see here](/building-with-bit/environments).**
 
 ## Environment transformers
 
-React's environment transformers enable merging new configurations for different [Bit aspects used by the React environment](/building-with-bit/environments).
+React's environment transformers enable merging new configurations for different Bit aspects used by the React environment
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
 
@@ -495,7 +484,7 @@ export class ReactExtension {
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [Preview](/building-with-bit/environments#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -583,8 +572,7 @@ export class ReactExtension {
 overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
 
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command). To create your own Build Task, [see here](/building-with-bit/build-pipeline).
-
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command).
 For example:
 
 ```ts
@@ -690,7 +678,7 @@ const newDependencies = {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment.
 
 For example:
 
@@ -717,14 +705,14 @@ export class CustomReact {
 
 ## Composition Providers
 
-The React environment "wraps" every [composition](/building-with-bit/compositions) with an array of providers.
+The React environment "wraps" every composition with an array of providers.
 These providers can be used to render compositions in a common context such as a theme or data that needs to be globally available.
 
 A Provider is any React component that accepts compositions as children. This component is registered using the `registerProvider`.
 
 :::info
 Providers are part of the component compositions and documentation bundle that is served by the environment's server and rendered by the browser.
-As such, they run in the environment's Preview runtime and not the Main runtime. To learn more about runtime environments, [see here](/building-with-bit/environments)
+As such, they run in the environment's Preview runtime and not the Main runtime.
 :::
 
 For example, a provider that centers compositions in their rendering page, will look like so:
@@ -770,11 +758,11 @@ ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview)
 
 ## Customizing the Tester
 
-The Tester is an [Environment Service](/building-with-bit/environments) that enables environments to integrate a specific test runner into various Bit features, processes and events.
+The Tester is an Environment Service that enables environments to integrate a specific test runner into various Bit features, processes and events.
 
 For example, the React environment (`@teambit.react/react`) uses the Tester Environment Service to configure the Jest extension component as its test runner. Jest will be used (for components using this environment) when running the `bit test` command, when running the build process and will even display its results in the Workspace UI (just to name a few examples).
 
-To customize your environment's test runner, first [create an environment extension](/building-with-bit/environments). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
+To customize your environment's test runner, first create an environment extension. This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 
 > As an example, we'll extend Bit's out-of-the-box React environment (`@teambit.react/react`).
 
@@ -839,13 +827,13 @@ The above example overrides the ["transformIgnorePatterns"](https://jestjs.io/en
 
 The new `jest.config.js` file does not replace the default one but merges into it (and therefor only configures the properties to override). Since the "transformIgnorePatterns" property conflicts with the one set by the environment, it replaces it. In cases where there is no conflict between two properties, the override property will simply be added to the default configuration file.
 
-> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester [workspace config API](/building-with-bit/testing-components#patterns).
+> Do not use the configuration file to set the pattern for your test files names. Instead, use the Tester workspace config API.
 
 ### Option #2: Replace the test runner used by the environment
 
-Environments use Environment Services by implementing a special class of methods called [Service Handlers](/building-with-bit/environments).
+Environments use Environment Services by implementing a special class of methods called Service Handlers.
 
-An environment's test runner can be replaced by overriding its [Tester Service Handler](/building-with-bit/environments#getTester) method (`getTester()`).
+An environment's test runner can be replaced by overriding its Tester Service Handler method (`getTester()`).
 
 For example, the code below shows a React environment extension that replaces its default compiler, Jest, with Mocha.
 
@@ -892,11 +880,11 @@ export default CustomReactExtension
 
 ## Customize the Compiler
 
-The Compiler is an [Environment Service](/building-with-bit/environments) that enables environments to integrate a specific compiler into various Bit features, processes and events.
+The Compiler is an Environment Service that enables environments to integrate a specific compiler into various Bit features, processes and events.
 
 For example, the React environment (`@teambit.react/react`) uses the Compiler Environment Service to configure the TypeScript extension component as its compiler. The TypeScript compiler will be used (for components using this environment) when running the `bit compile` command, when Bit's development server re-compiles modified components, and when running the build process (just to name a few examples).
 
-To customize your environment's compiler, first [create an environment extension](/building-with-bit/environments). This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
+To customize your environment's compiler, first create an environment extension. This will be a new Bit component the uses an existing environment to extend and customize it to your own needs.
 
 > As an example, we'll extend Bit's out-of-the-box React environment (`@teambit.react/react`).
 
@@ -965,9 +953,9 @@ The new `tsconfig.json` file does not replace the default one but merges into it
 
 ### Option #2: Replace the compiler used by the environment
 
-Environments use Environment Services by implementing a special class of methods called [Service Handlers](/building-with-bit/environments).
+Environments use Environment Services by implementing a special class of methods called Service Handlers
 
-An environment's compiler can be replaced by overriding its [Compiler Service Handler](/building-with-bit/environments#getcompiler) method (`getCompiler()`).
+An environment's compiler can be replaced by overriding its Compiler Service Handler method (`getCompiler()`).
 
 For example, the code below shows a React environment extension that replaces its default compiler, TypeScript, with Babel.
 
