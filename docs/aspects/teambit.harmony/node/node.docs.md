@@ -1,6 +1,7 @@
 ---
 id: node
 title: Node
+slug: /aspects/node
 ---
 
 The Node environment is an implementation of the Environments aspect. It is a one-stop-shop for Node components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of Node components, managed in a Bit workspace.
@@ -48,7 +49,7 @@ To use the Node environment, set it in the `workspace.jsonc` configuration file.
 
 ## Apply Node on a group of components
 
-The example below shows Node being applied on all components in the workspace, using the wildcard character `*`. To use Node on a more limited set of components, [see here](/building-with-bit/workspace)
+The example below shows Node being applied on all components in the workspace, using the wildcard character `*`.
 
 ```json
 {
@@ -69,11 +70,10 @@ The example below shows Node being applied on all components in the workspace, u
 Use the Node environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent Node components authored in various decoupled workspaces.
 
 This page lists Node's Environment Transformers. These are the 'override' methods that allow to add or override Node's default configurations.
-**To learn how to create a new environment extension, [see here](/building-with-bit/environments).**
 
 ## Environment transformers
 
-Node's environment transformers enable merging new configurations for different [Bit aspects used by the Node environment](/building-with-bit/environments).
+Node's environment transformers enable merging new configurations for different Bit aspects used by the Node environment
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
 
@@ -113,7 +113,7 @@ export class NodeExtension {
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [Preview](/building-with-bit/environments#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -143,7 +143,7 @@ export class NodeExtension {
 overrideDevServerConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [DevServer](/building-with-bit/environments#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the 'DevServer' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -201,7 +201,7 @@ export class NodeExtension {
 overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
 ```
 
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command). To create your own Build Task, [see here](/building-with-bit/build-pipeline).
+This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command).
 
 For example:
 
@@ -270,7 +270,7 @@ export class CustomNode {
 overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
 ```
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment. Learn more about setting package properties [here](/building-with-bit/publishing-components).
+Overrides the default properties added to the `package.json` file of every package generated from components using this environment.
 
 For example:
 
