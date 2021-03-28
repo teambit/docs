@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
+You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.
 To export components to bit.dev and to import from private collections you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
 
 Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/bit-server#authentication).
