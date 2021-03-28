@@ -14,11 +14,11 @@ Bit is a platform for building with components and use them to compose apps and 
 
 ### Bit v15 - Harmony
 
-**Harmony** introduces major improvments to Bit and how developers should build their components. At the moment it supports **React**, **React Native** and **NodeJS**. For teams using **Angular** or **Vue**, it is recomended to get started with Bit's v14 release [here](https://doce.bit.dev).
+**Harmony** introduces major improvements to Bit and how developers should build their components. At the moment it supports **React**, **React Native** and **NodeJS**. For teams using **Angular** or **Vue**, it is recommended to get started with Bit's v14 release [here](https://doce.bit.dev).
 
 #### Public Beta
 
-Bit v15 **Harmony** is used by many teams and is the undeline infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS base systems, we urge you to get started with v15.
+Bit v15 **Harmony** is used by many teams and is the underline infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS based systems, we urge you to get started with v15.
 
 ## Additional Resources and Support
 
@@ -28,4 +28,4 @@ Bit v15 **Harmony** is used by many teams and is the undeline infrastructure for
 
 ## Host Components on [bit.dev](https://bit.dev)
 
-While Bit is 100% open souce platform where you can create your own Bit-server, [bit.dev](https://bit.dev) is a cloud service provided by Bit where you can quickly set an account to publish your components. [bit.dev](https://bit.dev) is free for open source components and projects.
+While Bit is a 100% open source platform where you can create your own Bit-server, [bit.dev](https://bit.dev) is a cloud service provided by Bit where you can quickly set an account to publish your components. [bit.dev](https://bit.dev) is free for open source components and projects.
