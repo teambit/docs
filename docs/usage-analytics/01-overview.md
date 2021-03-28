@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-Bit's maintainers use anonymous analytics and error reporting to improve the overall quality of Bit.
+Bit's maintainers use anonymous analytics and error reporting to improve the overall quality of Bit. 
 
 ## Anonymous Aggregate User Behavior Analytics
 
