@@ -3,8 +3,6 @@ id: testing-components
 title: Testing
 ---
 
-import { Image } from '@site/src/components/image';
-
 ## Adding Tests
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
@@ -12,43 +10,36 @@ Tests are added by placing test files inside the component's directory. Test fil
 For example, the React environment runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
 
 ```shell {5}
-├── account/login-form
+├── ui/button
     ├── index.tsx
-    ├── use-jokes.compositions.tsx
-    ├── use-jokes.docs.mdx
-    ├── use-jokes.spec.tsx
-    └── use-jokes.tsx
+    ├── button.compositions.tsx
+    ├── button.docs.mdx
+    ├── button.spec.tsx
+    └── button.tsx
 ```
 
 It is highly recommended to use the component compositions as test samples.
 For example:
 
-```tsx title="use-jokes.spec.tsx"
-import React from 'react'
-import { render, fireEvent, waitFor } from '@testing-library/react'
-import { RetrieveJokes } from './use-jokes.compositions'
+```tsx title="button.tsx"
+import React from 'react';
+import { render } from '@testing-library/react';
+import { expect } from 'chai';
 
+import { BasicButton } from './button.composition';
 describe('use-jokes', () => {
-  it('should retrieve jokes', async () => {
-    const { getByTestId } = render(<RetrieveJokes />)
-    const fetchJokesBtn = getByTestId('fetch-button')
-    const jokesContainer = getByTestId('jokes-container')
-    fireEvent.click(fetchJokesBtn)
-    await waitFor(() => expect(jokesContainer.innerHTML).toBeTruthy())
-    const jokesContainerSnapshot = jokesContainer.innerHTML
-    fireEvent.click(fetchJokesBtn)
-    await waitFor(() =>
-      expect(jokesContainer.innerHTML).not.toEqual(jokesContainerSnapshot)
-    )
-  })
+  it('should render', () => {
+    const { getByText } = render(<BasicButton />);
+    const rendered = getByText('click me');
+
+    expect(rendered).to.exist;
+  });
 })
 ```
 
 ## Choosing a test runner
 
-Bit's Tester is an Environment Service.
-The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various environments that use it as a service.
-That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
+Bit's Tester is an Environment Service. The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various environments that use it as a service. That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
 
 To choose a test runner, choose an environment that uses it or extend an environment to have it run your preferred test runner.
 
@@ -63,7 +54,7 @@ bit test <component-id>
 For example:
 
 ```shell
-bit test ui-primitives/button
+bit test ui/button
 ```
 
 To manually run the tester on the entire workspace:
@@ -124,21 +115,7 @@ bit test --scope my-org.react-design-system
 
 Bit's local dev server (which also runs the Workspace UI) re-tests components on each modification. This happens whenever a file is 'saved'.
 
-```shell
-$ bit start
-ENVIRONMENT NAME        URL                      STATUS
-react              http://localhost:3101         Running
-node               http://localhost:3102         Running
-
-You can now view bad-jokes components in the browser
-Main UI server is running on http://localhost:3000
-
-Waiting for component changes... (10:17:20)
-```
-
-Test results will be shown in the terminal, as well as in the 'Tests' tab.
-
-<Image src="@site/img/ws_getting_started_test.png" />
+Test results will be shown in the terminal, as well as in the 'Tests' tab in your workspace.
 
 ### Tests in `watch` mode
 
@@ -214,13 +191,13 @@ Bit makes the most out of your automated tests to help you maintain code in a ne
 
   For example:
 
-```
+```bash
 modified components
 (use "bit tag --all [version]" to lock a version with all your changes)
 (use "bit diff" to compare changes)
 
-     > ui/elements/button ... ok
+     > ui/button ... ok
 
 components pending to be tagged automatically (when their dependencies are tagged)
-     > ui/widgets/login-form ... ok
+     > ui/card/ ... ok
 ```

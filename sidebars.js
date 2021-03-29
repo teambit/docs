@@ -122,6 +122,7 @@ module.exports = {
             'building-with-bit/tracking-components',
             'building-with-bit/removing-components',
             'building-with-bit/inspecting-components',
+            'building-with-bit/component-compositions',
             'building-with-bit/documenting-components',
             'building-with-bit/testing-components',
             'building-with-bit/compiling-components',
