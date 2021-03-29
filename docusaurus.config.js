@@ -78,7 +78,7 @@ module.exports = {
           'aria-label': 'GitHub repository'
         },
         {
-          href: 'https://bit-dev-community.slack.com',
+          href: 'https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg',
           className: 'slack-link',
           'aria-label': 'Slack',
           position: 'right'
