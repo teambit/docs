@@ -27,7 +27,7 @@ import { render } from '@testing-library/react';
 import { expect } from 'chai';
 
 import { BasicButton } from './button.composition';
-describe('use-jokes', () => {
+describe('button', () => {
   it('should render', () => {
     const { getByText } = render(<BasicButton />);
     const rendered = getByText('click me');
