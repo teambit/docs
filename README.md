@@ -2,7 +2,7 @@
 
 # bit.dev docs
 
-This repo contains the source code and documentation powering [docs-harmony.bit.dev](https://docs.bit.dev/).  
+This repo contains the source code and documentation powering [docs-harmony.bit.dev](https://harmony-docs.bit.dev/).  
 The website is based on [Docusaurus v2](https://docusaurus.io/en/)
 
 ## Getting started
