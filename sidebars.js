@@ -130,7 +130,8 @@ module.exports = {
             'building-with-bit/versioning-components',
             'building-with-bit/importing-components',
             'building-with-bit/installing-components'
-          ]
+          ],
+          collapsed: false
         },
         'building-with-bit/environments'
       ]
@@ -148,10 +149,10 @@ module.exports = {
       ]
     },
 
-    {
-      type: 'doc',
-      id: 'aspects/aspects-overview'
-    },
+    // {
+    //   type: 'doc',
+    //   id: 'aspects/aspects-overview'
+    // },
 
     {
       type: 'category',

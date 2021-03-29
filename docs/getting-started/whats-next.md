@@ -17,15 +17,15 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 ## Building with Bit
 
-Check out [Building with Bit](/building-with-bit/pre-existing-components), a more in-dept guide on using Bit and how to use Bit with pre-existing components.
+Check out [Building with Bit](/building-with-bit/workspace), a more in-dept guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/building-with-bit/pre-existing-components).
 
-<!-- ## Component Architecture
+## Component Architecture
 
-Check out [Component Architecture](/component-architecture/thinking-in-components) to learn more about how to think in Components -->
+Check out [Component Architecture](/component-architecture/thinking-in-components) to learn more about how to think in Components
 
 ## Bit Aspects
 
-Check out [Bit Aspects](/aspects/aspects-overview), to see the moving parts of Bit.
+Check out [Bit Aspects](/aspects/aspects-overview), to see the  the building blocks of Bit. You can implement new Aspects, compose them with Bit's core Aspects and thus extending Bit's core functionality to support advanced features.
 
 ## Resources
 
