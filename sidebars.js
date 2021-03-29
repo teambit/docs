@@ -113,8 +113,8 @@ module.exports = {
       items: [
         'building-with-bit/pre-existing-components',
         'building-with-bit/workspace',
+        'building-with-bit/environments',
         'building-with-bit/scopes',
-
         {
           type: 'category',
           label: 'Components',
@@ -132,7 +132,7 @@ module.exports = {
             'building-with-bit/installing-components'
           ],
         },
-        'building-with-bit/environments'
+        
       ]
     },
 
