@@ -131,7 +131,6 @@ module.exports = {
             'building-with-bit/importing-components',
             'building-with-bit/installing-components'
           ],
-          collapsed: false
         },
         'building-with-bit/environments'
       ]
