@@ -8,7 +8,15 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
   projectName: 'docs-harmony', // Usually your repo name.
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      'docusaurus-plugin-plausible',
+      {
+        domain: 'harmony-docs.bit.dev',
+      },
+    ]
+  ],
   themeConfig: {
     algolia: {
       apiKey: '58b48f3589d91aba567e8709de785bdd',
@@ -22,7 +30,6 @@ module.exports = {
 
       //... other Algolia params
     },
-    scripts: [{src: 'https://plausible.io/js/plausible.js', async: true, defer: true, 'data-domain': 'harmony-docs.bit.dev'}],
     navbar: {
       title: 'Harmony Beta',
       logo: {
