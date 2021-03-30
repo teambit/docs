@@ -1,4 +1,4 @@
-[<img src="https://img.shields.io/badge/Slack-Join%20Bit%20Slack-blueviolet"/>](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)
+[<img src="https://img.shields.io/badge/Slack-Join%20Bit%20Slack-blueviolet"/>](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
 
 # bit.dev docs
 
