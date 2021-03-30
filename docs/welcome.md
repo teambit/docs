@@ -22,7 +22,7 @@ Bit v15 **Harmony** is used by many teams and is the underline infrastructure fo
 
 ## Additional Resources and Support
 
-* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)
+* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
 * [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
 * Find more [resources](resources/conference-talks) and learn about Bit some more.
 
