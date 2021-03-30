@@ -3,9 +3,11 @@ id: composing-components
 title: Composing Components
 ---
 
+import BitTemplates from '@site/docs/components/commands/bit-templates.md'
+
 You can compose components together from other components in your workspace or from components in the cloud.
 
-## Create more Components
+## Creating Components with Bit Create
 
 To create other components you can use `bit create react-component` followed by your component name and if you want it to appear in a specific folder then add the `--namespace` flag followed by the folder name.
 
@@ -24,10 +26,6 @@ my-scope/ui/card at my-scope/ui/card
     index.ts
 ```
 
-:::note creating multiple components
-You can create multiple components by adding more component names after the `create react-component` command.
-:::
-
 ## Install Dependencies
 
 As we had added a test file that includes dependencies for Testing Library and Chai we will need to install them:
@@ -36,34 +34,48 @@ As we had added a test file that includes dependencies for Testing Library and C
 bit install @testing-library/react chai
 ```
 
-## Composing Component
+## Composing Components
 
-We will need to modify the Card component as for now all it does is print out a `<p>` tag. Let's change it to have a div and lets import our Button component inside it.
+When importing a component into another component Bit doesn't allow for relative require/import statements, as this couples your component to a specific directory structure, instead you use the component's package name. In the workspace UI you will see the package name for your component which you can copy to import it.
 
-When importing a component into another component you cannot use a relative path. You must use your componentID. In the workspace UI you will see the package name for your component which you can copy to import it.
-
-
-```js
-import React from 'react';
+```js title="card.tsx"
+import React from 'react'
 import { Button } from '@my-scope/ui.button'
 
-export type CardProps = {
-  text: string;
-};
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Card = ({ text }: CardProps) => {
+export const Card = ({ children, ...rest }: CardProps) => {
   return (
-    <div>
-      <p>{text}</p>
+    <div {...rest}>
       <Button text="hello from button" />
     </div>
   )
-};
+}
 ```
+
+### Your Component in the Workspace
 
 In your workspace UI you will now see your card component rendered with the button component inside it.
 
+### Understanding Component Module Links
 
+Bit creates a module for each component in the workspace. These modules are linked in the node_modules directory and contains it's build output and auto-generated package.json. To see this in your workspace, browse the `node_modules/@my-scope/ui.button` directory.
+
+To import a component as a dependency you must use the module link. This way your component is not coupled to a specific directory structure in the workspace, which makes them transferable between workspaces.
+
+#### Generating module links
+
+To regenerate module-links for components run the `bit link` command.
+
+## Creating multiple components
+
+You can create multiple components by adding more component names after the command command.
+
+```bash
+bit create react-component component1 component2 --namespace design
+```
+
+<BitTemplates />
 
 ## What's Next?
 

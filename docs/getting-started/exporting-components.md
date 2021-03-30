@@ -42,6 +42,8 @@ your-username.demo-scope/ui/button
 
 <!-- :arrow_right: Learn more about the [Exporting Components](/building-with-bit/exporting-components). -->
 
+### See your Component in the Workspace
+
 In your workspace go to `https://bit.dev/<user-name>/<scope-name>` to see your exported components.
 
 ## Committing the Bitmap
