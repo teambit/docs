@@ -8,6 +8,13 @@ import CreateExtensions from '@site/docs/components/extensions/create-extensions
 **Component Development Environment** (or Environment in short) standardize component development and maintanence. **Environment** taketake direct inspiration from `react-scripts`.  
 Each component must have an environment configured, this way Bit "knows" how to build, test, lint and document components.
 
+## Benefits of Environments
+
+* Composing all your tools and prefered configurations to a single module to streamline your development.
+* Share Environments between teams and projects and use semantic versioning to communicate config changes.
+* Maintain a set of environments for different use cases, use them on multiple components in the same workspace simultaniusaly.
+* Extend and customize environments by adding new tools and capabilities to your workflow.
+
 ## Pre-built Environments
 
 Bit has a set of ready-made Environments you can use for building your components.
@@ -74,7 +81,7 @@ Validate it by running `bit env` and see that the extension-component has `teamb
 > bit compile
 > ```
 
-### Use extension in your project
+#### Use extension in your project
 
 Now that you extended an environment with your own configuration you can apply it as the **Component Development Environment** for your components. This is done in the same way as you would set any of Bit's built-in environments:
 
@@ -91,7 +98,7 @@ Now that you extended an environment with your own configuration you can apply i
 }
 ```
 
-### Publish your extension
+#### Publish your extension
 
 An extension works just like any other component in Bit. You can version it with `bit tag` and export to a Bit Scope with the `bit export` command.  
 Once you have an extension exported to a remote Scope you can configure it in any `workspace.jsonc` as if its part of Bit's built-in environments. Reusing extensions like components can help you standardize component development across your organization.
