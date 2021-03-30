@@ -22,6 +22,7 @@ module.exports = {
 
       //... other Algolia params
     },
+    scripts: [{src: 'https://plausible.io/js/plausible.js', async: true, defer: true, 'data-domain': 'harmony-docs.bit.dev'}],
     navbar: {
       title: 'Harmony Beta',
       logo: {
