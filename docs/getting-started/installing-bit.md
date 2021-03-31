@@ -7,7 +7,6 @@ import BVMIntro from '@site/docs/components/install/bvm-intro.md'
 import InstallBVM from '@site/docs/components/install/install-bvm.md'
 import InstallBit from '@site/docs/components/install/install-bit.md'
 import BVMVersion from '@site/docs/components/install/bvm-version.md'
-
 import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 
 To use Bit you will need to install it. You can do this by first installing BVM, a version manger for Bit and then installing Bit.
