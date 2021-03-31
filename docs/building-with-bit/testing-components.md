@@ -19,14 +19,13 @@ For example, the React environment runs tests in files named with the following 
 ```
 
 It is highly recommended to use the component compositions as test samples.
-For example:
 
-```tsx title="button.tsx"
+```tsx {4} title="button.tsx"
 import React from 'react'
 import { render } from '@testing-library/react'
 import { expect } from 'chai'
-
 import { BasicButton } from './button.composition'
+
 describe('button', () => {
   it('should render', () => {
     const { getByText } = render(<BasicButton />)
@@ -139,8 +138,6 @@ The Tester can be configured in the `workspace.jsonc` configuration file.
 
 Determines whether to run the Tester in 'watch mode' when the running the development server.
 
-For example:
-
 ```json
 {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
@@ -158,8 +155,6 @@ For example:
 ### patterns
 
 Determines the file extensions for test files.
-
-For example:
 
 ```json
 {
@@ -188,8 +183,6 @@ Bit makes the most out of your automated tests to help you maintain code in a ne
   When tagging a component with a new release version, the 'build' and 'tag' processes automatically run on all dependent components, as well.
   Since testing is part of the build process, tests of all dependent components run as well, to make sure nothing got broken due to that change.  
   Use the `bit status` command to check the expected ripple effect of modifying a component.
-
-  For example:
 
 ```bash
 modified components

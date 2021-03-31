@@ -3,11 +3,13 @@ id: inspecting-components
 title: Inspecting Components
 ---
 
+import { Image } from '@site/src/components/image'
+
 This page lists different ways to inspect the workspace and its components using Bit's CLI and the Workspace/Scope UI.
 
 ## Get a component's essential info
 
-### Bit CLI
+### Bit Show
 
 The `show` command displays a component's essential information. For example, its dependencies, its dev dependencies, the environment being used by it, etc.
 
@@ -87,7 +89,7 @@ The UI analog is placed in two separate tabs, 'Dependencies' and 'Configurations
 
 #### Dependencies
 
-The 'Dependencies' tab shows the component's dependencies. That only includes components. Other packages will not be displayed.
+The 'Dependencies' tab shows the component's dependencies, which only includes components. Other packages will not be displayed.
 
 For example:
 
@@ -102,8 +104,6 @@ For example:
 <Image src="/img/dots_loader_pkg.png" width="60%" />
 
 ## Log
-
-### Bit CLI
 
 The log command shows the version history of a component:
 
@@ -125,7 +125,7 @@ date: 09/24/2020, 4:48:51 PM
 
 ### Workspace/Scope UI
 
-The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> show a component's version history. The different versions can be explored further by clicking on their links.
+The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> shows a component's version history. The different versions can be explored further by clicking on their links.
 
 For example:
 

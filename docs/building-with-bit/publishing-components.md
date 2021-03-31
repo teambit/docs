@@ -9,7 +9,7 @@ PKG adds its own build task to the component build pipeline, to create component
 The PKG extension can be configured to add and override `package.json` properties and to publish component packages to NPM or a private registry.
 Publishing can be done manually (using the `bit publish` command), or as part of the component build pipeline.
 
-:::info
+:::note
 The PKG extension can only be configured using the [Variants](/aspects/variants) extension.
 :::
 
@@ -19,7 +19,7 @@ The PKG extension can only be configured using the [Variants](/aspects/variants)
 
 Use the `packageJson` property to add or override the default `package.json` for your component packages.
 
-:::caution
+:::note
 Packages with a modified `name` property will not be published to Bit.dev's registry.
 :::
 
@@ -40,7 +40,7 @@ Packages with a modified `name` property will not be published to Bit.dev's regi
 
 ### Publish
 
-:::info
+:::note
 If `publishConfig` or `name` are not set, packages will be published to Bit.dev's registry.
 :::
 

@@ -3,11 +3,7 @@ id: versioning-components
 title: Versioning Components
 ---
 
-## Versioning
-
 When we version or 'tag' a component, we commit changes and prepare it to be exported to a remote scope. This process most often includes compiling and testing, as well.
-
-## Version CLI commands
 
 ### Tag a component
 
@@ -18,7 +14,7 @@ bit tag <component-id> <new-version>
 For example:
 
 ```bash
-bit tag ui-primitives/button 1.0.0
+bit tag ui/button 1.0.0
 ```
 
 #### Tag a component with a message

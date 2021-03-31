@@ -6,12 +6,10 @@ title: Compiling Components
 Compilation is a crucial step in making a component an independent module that can be used by other web projects as well as internally, by other components in the same workspace.
 When Bit starts tracking a component, a new directory is created for it inside the workspace' `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
 
-For example:
-
 ```bash
 ├── node_modules
     ├── @my-org
-        ├── react-ui.button
+        ├── ui.button
           ├── dist
               ├── index.js
               ├── index.js.map
@@ -45,7 +43,7 @@ bit compile <component-id>
 For example:
 
 ```bash
-bit compile ui-primitives/button
+bit compile ui/button
 ```
 
 To manually run the compiler on the entire workspace:
@@ -113,8 +111,8 @@ bit watch
   The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
   Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.
 
-```
-$ bit watch
+```bash
+bit watch
 ```
 
 ### Compile in the Build Pipeline

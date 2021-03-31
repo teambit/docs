@@ -30,27 +30,23 @@ The documentation can be customized in two ways:
 
 2. Creating a new documentation template. This can be done as part of an [environment extension](/building-with-bit/environments) or as part of a new environment aspect.
 
-## Using the Docs API
-
-:::note
-This tutorial discusses the documentation template for React, React Native and NodeJS environments.
-:::
-
 ## Create a documentation file
+
+When using the `bit create` command to create components, a `docs.mdx` file will already be created for you.
 
 To start customizing your documentation, create a documentation file in the component directory.
 Choose between a JSX or an MDX file (to learn about the MDX syntax, [see here](https://mdxjs.com/table-of-components)).
 
 ### MDX doc file
 
-```
-touch path/to/component/directory/component-name.docs.mdx
+```bash
+component-name.docs.mdx
 ```
 
 ### JS doc file
 
-```
-touch path/to/component/directory/component-name.docs.tsx
+```bash
+component-name.docs.tsx
 ```
 
 ## Title / Display Name
@@ -169,15 +165,9 @@ The `examples` variable receives an array of objects, each representing a single
 - **Description**: A _string_ for the example description.
 - **Code**: A _string_ (template literal) for the example code.
 
-For example, let's create an example for a 'Card' component:
+Import the 'Card' component and set the `examples` variable with a single object:
 
-```bash
-$ touch ./path/to/component/folder/card.docs.tsx
-```
-
-Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
-
-```jsx
+```jsx title="card.docs.tsx"
 import React from 'react'
 import { Card } from './card'
 

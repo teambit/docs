@@ -18,9 +18,7 @@ So far, we've tracked a component and tagged it. As mentioned earlier, the taggi
 
 To set a remote scope for your soon-to-be exported components, use the `workspace.jsonc` configuration file.
 
-For example:
-
-```json
+```json title="workspace.jsonc"
 {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   "teambit.workspace/workspace": {
