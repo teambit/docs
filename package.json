@@ -20,6 +20,7 @@
     "@teambit/bit": "^0.0.228",
     "@teambit/documenter.theme.theme-context": "^3.0.8",
     "clsx": "^1.1.1",
+    "docusaurus-plugin-plausible": "^0.0.5",
     "docusaurus-plugin-sass": "^0.1.11",
     "global": "^4.4.0",
     "react": "^16.8.4",

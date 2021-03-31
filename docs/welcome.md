@@ -14,7 +14,7 @@ Bit is a platform for building with components and use them to compose apps and 
 
 ### Bit v15 - Harmony
 
-**Harmony** introduces major improvements to Bit and how developers should build their components. At the moment it supports **React**, **React Native** and **NodeJS**. For teams using **Angular** or **Vue**, it is recommended to get started with Bit's v14 release [here](https://doce.bit.dev).
+**Harmony** introduces major improvements to Bit and how developers should build their components. At the moment it supports **React**, **React Native** and **NodeJS**. For teams using **Angular** or **Vue**, it is recommended to get started with Bit's v14 release [here](https://docs.bit.dev).
 
 #### Public Beta
 
@@ -22,7 +22,7 @@ Bit v15 **Harmony** is used by many teams and is the underline infrastructure fo
 
 ## Additional Resources and Support
 
-* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg)
+* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
 * [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
 * Find more [resources](resources/conference-talks) and learn about Bit some more.
 

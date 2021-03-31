@@ -15,7 +15,7 @@ import BitmapExample from '@site/docs/components/components/bitmap-example.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
-Once you have [initialize a Bit workspace](/getting-started/initializing-workspace) you can then:
+Once you have [initialized a Bit workspace](/getting-started/initializing-workspace) you can:
 
 1. Configure the workspace variant to use the correct environment
 2. Use `bit create` to create an example component and add it to the workspace
