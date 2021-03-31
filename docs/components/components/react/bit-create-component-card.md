@@ -4,7 +4,7 @@ title: Component Card
 ---
 
 ```bash
-bit create react-component card --namespace ui
+bit create react-component ui/card
 ```
 
 ```bash
