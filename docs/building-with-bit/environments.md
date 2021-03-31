@@ -71,10 +71,10 @@ If you extended an environment with your own configuration you can apply it as t
 {
   "teambit.workspace/variants": {
     "movies/pages": {
-      "acme/my-react-exntesion": {}
+      "acme/my-react-extension": {}
     },
     "movies/models": {
-      "acme/my-node-exntesion": {}
+      "acme/my-node-extension": {}
     }
   }
 }
