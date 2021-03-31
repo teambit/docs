@@ -21,7 +21,7 @@ A component documentation is made of two parts:
 
 For example:
 
-```shell {4}
+```bash {4}
 └── tech-jokes-viewer
     ├── index.tsx
     ├── button.composition.tsx
@@ -56,11 +56,11 @@ labels: ['react', 'typescript', 'button']
 To use Bit's live playground add `live` to your codeblock. The live playground displays code examples that can be modified straight from the docs.
 
 ````jsx
-```jsx live
+;```jsx live
 () => {
     return <p> Hello World! </p>
 }
-```;
+```
 ````
 
 ## Using the live playground with external modules

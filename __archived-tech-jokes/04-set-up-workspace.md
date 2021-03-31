@@ -16,7 +16,7 @@ It does so by offering:
 
 To get started, clone this ['getting-started'](https://github.com/teambit/getting-started) project and initialize a new Bit workspace for it:
 
-```shell
+```bash
 git clone https://github.com/teambit/getting-started.git bit-getting-started
 cd bit-getting-started
 bit init --harmony
@@ -59,7 +59,7 @@ By using ['Variants'](/building-with-bit/workspace), different components in the
 
 ## Run the Workspace UI
 
-```shell
+```bash
 bit start
 ```
 

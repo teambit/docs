@@ -1,29 +1,25 @@
---- 
+---
 id: versioning-components
-title: Versioning
---- 
-
-## Versioning
+title: Versioning Components
+---
 
 When we version or 'tag' a component, we commit changes and prepare it to be exported to a remote scope. This process most often includes compiling and testing, as well.
 
-## Version CLI commands
-
 ### Tag a component
 
-```shell
+```bash
 bit tag <component-id> <new-version>
 ```
 
 For example:
 
-```shell
-bit tag ui-primitives/button 1.0.0
+```bash
+bit tag ui/button 1.0.0
 ```
 
 #### Tag a component with a message
 
-```shell
+```bash
 bit tag <component-id> <new-version> --message "this is the tag message"
 ```
 
@@ -31,7 +27,7 @@ bit tag <component-id> <new-version> --message "this is the tag message"
 
 Tag all components and bump the patch number of each component version
 
-```shell
+```bash
 bit tag --all
 ```
 
@@ -43,7 +39,7 @@ The process:
 
 1. Tag a component using the `--soft` option. This will not create a new release version but will update the `.bitmap` file to suggest a new version.
 
-```shell
+```bash
 bit tag --soft <component-id>
 ```
 
@@ -51,7 +47,7 @@ bit tag --soft <component-id>
 
 3. Have the CI run the following command to tag all components suggested to be versioned (suggested by the previous 'soft tag')
 
-```shell
+```bash
 bit tag --persist --all
 ```
 
@@ -59,7 +55,7 @@ bit tag --persist --all
 
 To untag our a component run the following:
 
-```shell
+```bash
 bit untag <component-id>
 ```
 
@@ -67,13 +63,13 @@ bit untag <component-id>
 
 'tagged' or versioned components are components stored in your local scope.
 
-```shell
+```bash
 bit list
 ```
 
 Example output:
 
-```shell
+```bash
   ┌──────────────────────────────────────────────────────────────────────┬─────────┬─────────┐
   │ component ID                                                         │ local   │ used    │
   │                                                                      │ version │ version │
@@ -81,8 +77,6 @@ Example output:
   │ button                                                               │ 1.0.0   │ 1.0.0   │
   └──────────────────────────────────────────────────────────────────────┴─────────┴─────────┘
 ```
-
-
 
 ## Actions executed by the 'tag' command
 
@@ -111,7 +105,7 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 
 > The above example uses the `--persist` flag to perform a 'hard tag'. In most cases, you would not want to commit changes (and later on, export) components directly from your local environment. It is usually preferable to use 'soft tag' to **propose** a new version and let your CI set a new version with the committed changes (using 'hard tag')
 >
-> ```shell
+> ```bash
 > // soft-tag
 > bit tag <component-id>
 > ```

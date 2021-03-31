@@ -40,19 +40,19 @@ Runs tests on all components in the workspace.
 
 Runs tests in 'watch mode' (test on every change). Use it if you choose not to use the Workspace UI.
 
-```shell
+```bash
 bit test --watch
 ```
 
 ### Run tests of a specific component
 
-```shell
+```bash
 bit test <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit test ui/elements/button
 ```
 

@@ -9,7 +9,7 @@ Exporting a component's release version to a remote scope makes it available to 
 
 Run the `bit export` command to have Bit export all versioned components. In our case that will be the 'button', 'app-bar', 'use-jokes' and 'tech-jokes-viewer' components.
 
-```sh
+```bash
 bit export
 ```
 
@@ -23,6 +23,6 @@ Head over to `https://bit.dev/<owner-name>/<scope-name>` to see your exported co
 
 Once the exporting process completes, the `.bitmap` file gets updated to reflect that new state. Make sure to track it with git.
 
-```sh
+```bash
 git commit -am 'updated .bitmap file after a successful export'
 ```

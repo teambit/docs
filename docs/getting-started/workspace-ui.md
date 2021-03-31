@@ -9,7 +9,7 @@ To see a component in the workspace you first need to [create a component](/gett
 
 The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
 
-```sh
+```bash
 bit start
 ```
 
@@ -22,7 +22,7 @@ The first time you run the start command it can take a bit of time as it needs t
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-<!-- :arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce). -->
+:arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce).
 
 ## Local Workspace
 
@@ -30,19 +30,19 @@ The first time you run the start command it can take a bit of time as it needs t
 
 See an overview of your component complete with a live playground. Documentation of our component is created from the `button.docs.mdx` file.
 
-<!-- :arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting). -->
+:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting).
 
 ### Compositions
 
 Compositions show you how your component is composed. Compositions are created from the `buttom.compositions.tsx` file.
 
-<!-- :arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions). -->
+:arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions).
 
 ### Tests
 
 See passing or failing tests. Tests are created from the `button.spec.tsx` file.
 
-<!-- :arrow_right: Learn more about [Component Testing](/building-with-bit/testing-components). -->
+:arrow_right: Learn more about [Component Testing](/building-with-bit/testing-components).
 
 ### Dependencies
 
@@ -62,9 +62,9 @@ See the changelog of your component for when you export and create new versions.
 
 Shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
 
-<!-- :arrow_right: Learn more about [Importing Components](/building-with-bit/importing-components).
+:arrow_right: Learn more about [Importing Components](/building-with-bit/importing-components).
 
-:arrow_right: Learn more about [Installing Components](/building-with-bit/installing-components). -->
+:arrow_right: Learn more about [Installing Components](/building-with-bit/installing-components).
 
 ## What's Next?
 

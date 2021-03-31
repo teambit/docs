@@ -55,7 +55,7 @@ Bit environments make use of Bit's CLI to execute their different services. That
 
 Runs the development serve (that includes running the Workspace UI).
 
-```shell
+```bash
 // run the dev server
 bit start
 ```
@@ -64,16 +64,15 @@ bit start
 
 Runs the build pipeline (without tagging components with a new release version).
 
-```shell
+```bash
 bit build
 ```
-
 
 #### test
 
 Runs all tests.
 
-```shell
+```bash
 bit test
 ```
 
@@ -81,7 +80,7 @@ bit test
 
 Compiles all components.
 
-```shell
+```bash
 bit compile
 ```
 
@@ -89,7 +88,7 @@ bit compile
 
 Get lint results for all components.
 
-```shell
+```bash
 bit lint
 ```
 
@@ -112,9 +111,9 @@ For example:
 ```
 
 > <p style={{color: '#c31313'}}>Never use the '*' wildcard in a workspace that uses multiple environments!</p>
-Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment (see an example in the next section).
-<br />
-<br />
+> Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment (see an example in the next section).
+> <br />
+> <br />
 
 To learn more, see the 'Troubleshooting' section.
 
@@ -142,7 +141,7 @@ For example, to set the Node and React environments on two sets of components (s
 ### Extending an environment
 
 > This section goes through the steps of extending the 'main runtime'.
-See the 'Runtime Environment' section to learn how to extend multiple runtime environments.
+> See the 'Runtime Environment' section to learn how to extend multiple runtime environments.
 
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
 
@@ -161,7 +160,7 @@ To create and use an environment extension:
 
 We'll start by creating a new extension:
 
-```shell
+```bash
 // In the workspace's root directory
 mkdir -p extensions/custom-react
 touch extensions/custom-react/custom-react.extension.ts
@@ -178,26 +177,26 @@ Our files will have the following code (the code below will only extend the `@te
 // custom-react.extension.ts
 
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
 // Import from the React aspect to extend it
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // The 'compose' methods to compose the overrides into a single environment
     const customReactEnv = react.compose([
       // This is were the environment's 'transformers' will be used to customize it
-    ]);
+    ])
 
     // Register this extension as an environment using the "registerEnv" slot (provided by the Environments aspect).
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
@@ -205,16 +204,16 @@ export class CustomReactExtension {
 ```ts
 // index.ts
 
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 #### 3. Track the extension component
 
 We'll then track the new component (with the 'my-extensions' namespace):
 
-```shell
+```bash
 bit add extensions/custom-react -n my-extensions
 ```
 
@@ -288,9 +287,9 @@ export class CustomReactExtension {
 
 ```ts
 // index.ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 > The 'provider' method will be executed by Bit. Its Bit aspects dependencies are set in the `dependencies` variable, and will be injected into the method upon execution.
@@ -303,19 +302,19 @@ The example below is of a React environment extension. This new environment over
 // custom-react.extension.ts
 
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
 // Import from the React aspect to extend it and override its DevServer config
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel aspect to configure it and set it as the new compiler
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 
-const babelConfig = require('./babel/babel-config');
+const babelConfig = require('./babel/babel-config')
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
 
   static async provider([envs, react, babel]: [
     EnvsMain,
@@ -324,32 +323,32 @@ export class CustomReactExtension {
   ]) {
     // Create a new Babel compiler with the 'babelConfig' configurations
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     // Use the 'override' method provided by the 'environments' aspect (not the React aspect)
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return babelCompiler;
-      },
-    });
+        return babelCompiler
+      }
+    })
 
     // Compose the overrides into a single environment
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
     // Register this extension as an environment using the "registerEnv" slot (provided by the 'environments' aspect).
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts
 // index.ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 ## Concepts and tools
@@ -445,8 +444,8 @@ export class ReactEnv implements Environment {
   // ...
 
   getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve('./jest/jest.config');
-    return this.jestAspect.createTester(jestConfig);
+    const jestConfig = require.resolve('./jest/jest.config')
+    return this.jestAspect.createTester(jestConfig)
   }
 }
 ```
@@ -535,9 +534,9 @@ export class ReactEnv implements Environment {
 
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
-    });
-    return this.webpack.createDevServer(withDocs, webpackConfig);
+      entry: context.entry.concat([require.resolve('./docs')])
+    })
+    return this.webpack.createDevServer(withDocs, webpackConfig)
   }
 }
 ```
@@ -559,7 +558,7 @@ export class ReactEnv implements Environment {
   // ...
 
   getDocsTemplate() {
-    return require.resolve('./docs');
+    return require.resolve('./docs')
   }
 }
 ```
@@ -579,8 +578,8 @@ export class ReactEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
-    };
+      types: '{main}.ts'
+    }
   }
 }
 ```
@@ -606,17 +605,17 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
-    };
+        'react-dom': '^16.13.1'
+      }
+    }
   }
 }
 ```
@@ -650,8 +649,8 @@ export class ReactEnv implements Environment {
   getBuildPipe(): BuildTask[] {
     return [
       this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task,
-    ];
+      this.tester.task
+    ]
   }
 }
 ```
@@ -676,7 +675,8 @@ An environment extension that runs on multiple runtimes is called "Aspect" an wi
 Create a `*.aspect.ts` file:
 
 For example:
-```shell
+
+```bash
 touch path/to/extension/env-extension.aspect.ts
 ```
 
@@ -685,17 +685,17 @@ Place the following lines to register your environment as a multiple runtime ext
 ```ts
 // env-extension.aspect.ts
 
-import { Aspect } from '@teambit/harmony';
+import { Aspect } from '@teambit/harmony'
 
 export const ReactWithProvidersAspect = Aspect.create({
   // The ID should be your component's ID
   // Make sure to track your extension component before registering it as an Aspect
-  id: 'my-scope.react-with-providers',
-});
-
+  id: 'my-scope.react-with-providers'
+})
 ```
 
 ### Registering a runtime extension
+
 An aspect is a collection of multiple extensions, each extending a specific runtime.
 
 Register each runtime extension to its corresponding runtime, using the `addRuntime` method.
@@ -705,25 +705,22 @@ For example:
 ```typescript
 // react-extension.preview.ts
 
-import { PreviewRuntime } from '@teambit/preview';
-import { ReactAspect, ReactPreview } from '@teambit/react';
-import { ReactExtensionAspect } from './react-with-providers.aspect';
-
+import { PreviewRuntime } from '@teambit/preview'
+import { ReactAspect, ReactPreview } from '@teambit/react'
+import { ReactExtensionAspect } from './react-with-providers.aspect'
 
 export class ReactExtensionPreview {
-  static runtime = PreviewRuntime;
+  static runtime = PreviewRuntime
 
-  static dependencies = [ReactAspect];
+  static dependencies = [ReactAspect]
 
   static async provider([react]: [ReactPreview]) {
-    return new ReactExtensionPreview();
+    return new ReactExtensionPreview()
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionPreview);
+ReactExtensionAspect.addRuntime(ReactExtensionPreview)
 ```
-
-
 
 ### Runtime environments
 
@@ -739,35 +736,34 @@ The React environment TypeScript compiler will be extended in the main runtime.
 ```typescript
 // react-extension.main.ts
 
-import { MainRuntime } from '@teambit/cli';
-import { EnvsAspect, EnvsMain } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
-import { ReactExtensionAspect } from './react-extension.aspect';
+import { MainRuntime } from '@teambit/cli'
+import { EnvsAspect, EnvsMain } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
+import { ReactExtensionAspect } from './react-extension.aspect'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class ReactExtensionMain {
   constructor(private react: ReactMain, private envs: EnvsMain) {}
 
   icon() {
-    return 'https://static.bit.dev/extensions-icons/react.svg';
+    return 'https://static.bit.dev/extensions-icons/react.svg'
   }
 
-  static runtime = MainRuntime;
+  static runtime = MainRuntime
 
-  static dependencies = [ReactAspect, EnvsAspect];
+  static dependencies = [ReactAspect, EnvsAspect]
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
-    const reactExtension= envs.compose(react, [
+    const reactExtension = envs.compose(react, [
       react.overrideTsConfig(tsconfig)
-    ]);
-    envs.registerEnv(reactExtension);
-    return new ReactWithProvidersMain(react, envs);
+    ])
+    envs.registerEnv(reactExtension)
+    return new ReactWithProvidersMain(react, envs)
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionMain);
-
+ReactExtensionAspect.addRuntime(ReactExtensionMain)
 ```
 
 #### UI
@@ -789,24 +785,24 @@ A new composition provider that will "wrap" every composition using that environ
 ```typescript
 // react-extension.preview.ts
 
-import { PreviewRuntime } from '@teambit/preview';
-import { ReactAspect, ReactPreview } from '@teambit/react';
-import { ReactExtensionAspect } from './react-with-providers.aspect';
-import { Center } from './my-providers/center';
+import { PreviewRuntime } from '@teambit/preview'
+import { ReactAspect, ReactPreview } from '@teambit/react'
+import { ReactExtensionAspect } from './react-with-providers.aspect'
+import { Center } from './my-providers/center'
 
 export class ReactExtensionPreview {
-  static runtime = PreviewRuntime;
+  static runtime = PreviewRuntime
 
-  static dependencies = [ReactAspect];
+  static dependencies = [ReactAspect]
 
   static async provider([react]: [ReactPreview]) {
-    react.registerProvider(Center);
+    react.registerProvider(Center)
 
-    return new ReactExtensionPreview();
+    return new ReactExtensionPreview()
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionPreview);
+ReactExtensionAspect.addRuntime(ReactExtensionPreview)
 ```
 
 ## Troubleshooting
@@ -845,6 +841,7 @@ Remove the `*` general selection and use only specific and exclusive selectors t
 (that means your workspace directories/ namespaces need to be structured in a way that enables complete selection of all components using selectors that are exclusive).
 
 For example:
+
 ```json
 {
   "teambit.workspace/variants": {
@@ -872,12 +869,13 @@ Example:
     "components/utils": {
       "teambit.harmony/node": {},
       "teambit.envs/envs": {
-         "env": "teambit.harmony/node"
-       }
+        "env": "teambit.harmony/node"
+      }
     }
   }
 }
 ```
+
 > Notice how the Node environment was added also as a standalone aspect, to ensure that it is registered as a dependency of the selected components.
 
 ---

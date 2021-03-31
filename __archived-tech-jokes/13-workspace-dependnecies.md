@@ -20,11 +20,11 @@ Head over to the component's 'Dependencies' tab (in the workspace UI), to see a 
 
 To examine dependencies (packages and Bit components) we'll head over to our terminal and use the `bit show` command:
 
-```shell
+```bash
 bit show ui/tech-jokes-viewer
 ```
 
-```shell {16,17,19}
+```bash {16,17,19}
 
   ├──────────────┼──────────────────────────────────────────────────────────────┤
   │ dev files    │ tech-jokes-viewer.docs.md (teambit.docs/docs)                │
@@ -83,7 +83,7 @@ Our Workspace UI already notifies us of that change, and since 'tech-jokes-viewe
 
 Let's examine this further using the `status` command:
 
-```shell
+```bash
 bit status
 ```
 
@@ -117,7 +117,7 @@ In the above output, Bit notifies us of two important things:
 
 Let's tag our `button` component to save the previous change made to it:
 
-```shell title="Auto-tag process for dependents"
+```bash title="Auto-tag process for dependents"
 bit tag ui/elements/button --persist --message "decrease font size"
 ```
 
@@ -139,11 +139,11 @@ As expected, the tag process creates a **ripple effect** where all other compone
 
 And, if we look at our local scope status, we'll see both component appear there with a new bumped version number:
 
-```shell
+```bash
 bit list
 ```
 
-```shell
+```bash
 ┌──────────────────────────────────────────┬─────────┬─────────┐─────────┬─────────┐
 │ component ID                                                 │ local   │ used    │
 │                                                              │ version │ version │

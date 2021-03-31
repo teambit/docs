@@ -2,6 +2,7 @@
 id: render-component
 title: Render Isolated Compositions
 ---
+
 import { Image } from '@site/src/components/image';
 
 'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
@@ -13,7 +14,7 @@ Adding compositions to a component is done by creating a file in the component's
 
 For example:
 
-```shell {3}
+```bash {3}
 └── tech-jokes-viewer
     ├── index.tsx
     ├── tech-jokes-viewer.composition.tsx
@@ -28,17 +29,17 @@ For example, the following is a composition of the 'tech-jokes-viewer' component
 This composition uses the 'app-bar' component to validate that 'tech-jokes-viewer' behaves as expected and toggles between local and remote jokes, when used as part of these sorts of compositions.
 
 ```tsx title="tech-jokes-viewer.composition.tsx"
-import React, { useState } from 'react';
-import { AppBar } from '@demo-org/demo-scope.ui.elements.app-bar';
-import { TechJokesViewer } from './tech-jokes-viewer';
+import React, { useState } from 'react'
+import { AppBar } from '@demo-org/demo-scope.ui.elements.app-bar'
+import { TechJokesViewer } from './tech-jokes-viewer'
 
 export const ToggleBetweenRemoteAndLocalJokes = () => {
-  const [isLocal, setIsLocal] = useState(false);
+  const [isLocal, setIsLocal] = useState(false)
 
   const menuItems = [
     { label: 'Explore New Jokes', action: () => setIsLocal(false) },
-    { label: 'Saved Jokes', action: () => setIsLocal(true) },
-  ];
+    { label: 'Saved Jokes', action: () => setIsLocal(true) }
+  ]
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -47,8 +48,8 @@ export const ToggleBetweenRemoteAndLocalJokes = () => {
         <TechJokesViewer local={isLocal} />
       </div>
     </div>
-  );
-};
+  )
+}
 ```
 
 :::note

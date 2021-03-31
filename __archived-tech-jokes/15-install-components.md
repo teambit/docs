@@ -9,7 +9,7 @@ Components exported to Bit can be installed as standard node packages, either in
 
 For the porpuse of this task, start by creating a new project and set up a Create React App:
 
-```sh
+```bash
 $ cd ..
 $ npx create-react-app my-consumer
 $ cd my-consumer
@@ -21,7 +21,7 @@ To install components we need to ensure your package manager knows to fetch Bit 
 As part of the iniital `bit login` process, Bit has created an `~/.npmrc` file and configured it to your account. As Bit.dev sets a dedicated component registry for each account we'll need to configure it for your machine.  
 Open the `~/.npmrc` file and add the following line (replace `<account>` with the account name part of the `defaultScope`):
 
-```sh title="~/.npmrc"
+```bash title="~/.npmrc"
 @<account>=https://node.bit.dev
 ```
 
@@ -31,7 +31,7 @@ Now that your pacakge manager has your component registry configured, you can in
 
 Head back to your component overview page on bit.dev and copy the **package name**. Use it for this command:
 
-```sh title="different install methods"
+```bash title="different install methods"
 npm install <package name>
 yarn add <package name>
 pnpm install <package name>
@@ -42,7 +42,7 @@ The package manager will keep the installed component in the `node_modules` dire
 To use the component in the code, import the code as follow:
 
 ```js
-import { Something } from '@owner/demo.react.ui.button';
+import { Something } from '@owner/demo.react.ui.button'
 ```
 
 ### Render component
@@ -55,6 +55,6 @@ Past this snippet in the `index.ts` file for the CRA app we just created:
 
 Now start the app and see the button rendred.
 
-```sh
+```bash
 $ yarn start
 ```

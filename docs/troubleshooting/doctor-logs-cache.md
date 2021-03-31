@@ -7,7 +7,7 @@ title: Bit doctor, logs and cache
 
 `bit doctor` is a self diagnosis and healing tool for Bit workspaces. Run:
 
-```shell
+```bash
 bit doctor
 ```
 
@@ -18,7 +18,7 @@ Use this file when opening an issue to the [project repository](https://github.c
 
 Note, before submitting the output you can open it an validate that no sensitive information is submitted. You can clear such information from the file.
 
-```shell
+```bash
 bit doctor --save doctor-results
 ```
 
@@ -44,6 +44,6 @@ The log files are actually [winston logs](https://github.com/winstonjs/winston),
 
 If errors occur, it is worth trying to clear Bit's cache in case it got corrupted. You can clear it using the clear cache command.
 
-```shell
+```bash
 bit clear-cache
 ```

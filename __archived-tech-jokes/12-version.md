@@ -13,7 +13,7 @@ Once a component version has been tagged it reaches full independency and is rea
 
 To version (tag) all our components at once, we'll run the following:
 
-```shell
+```bash
 bit tag --all 1.0.0 --message "initial version"
 ```
 
@@ -29,11 +29,11 @@ For example:
 
 Versioned components are components Bit set an immutable versions for and staged them to be exported. To list them, run the following:
 
-```shell
+```bash
 bit list
 ```
 
-```shell title="The output"
+```bash title="The output"
   ┌──────────────────────────────────────────────────┬─────────┬─────────┐
   │ component ID                                     │ local   │ used    │
   │                                                  │ version │ version │

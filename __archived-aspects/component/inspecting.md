@@ -17,19 +17,19 @@ The `show` command displays a component's essential information. For example, it
 
 Since Bit components are not configured directly but through the various extensions that are used by them (either the extensions' default values or manual configurations in workspace configurations file), it is much easier to review their configurations by using the `show` command than it is by doing so manually.
 
-```shell
+```bash
 $ bit show <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 $ bit show my-org.my-scope/ui-primitives/button
 ```
 
 Example output:
 
-```shell
+```bash
   ┌──────────────┬───────────────────────────────────────────────────────────────┐
   │ id           │ my-org.my-scope/ui-primitives/button@0.0.1                    │
   ├──────────────┼───────────────────────────────────────────────────────────────┤
@@ -111,13 +111,13 @@ For example:
 
 The log command shows the version history of a component:
 
-```shell
+```bash
 $ bit log button
 ```
 
 Example output:
 
-```shell
+```bash
 tag 0.0.2
 author: John Doe <john_doe@my-org-mail.com>
 date: 10/24/2020, 5:49:15 PM
@@ -141,13 +141,13 @@ Displays the status for all tracked and staged (tagged) components. This will no
 
 Command:
 
-```shell
+```bash
 bit status
 ```
 
 Example output:
 
-```shell
+```bash
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
 
@@ -166,7 +166,7 @@ staged components
 
 Lists all components in the local scope. That includes staged components as well as imported components.
 
-```shell
+```bash
 bit list
 ```
 
@@ -174,7 +174,7 @@ bit list
 
 To list all components in a remote scope:
 
-```shell
+```bash
 bit list owner-name.scope-name
 ```
 
@@ -182,6 +182,6 @@ bit list owner-name.scope-name
 
 Displays local and remote versions of components in the local scope.
 
-```shell
+```bash
 $ bit list --outdated
 ```

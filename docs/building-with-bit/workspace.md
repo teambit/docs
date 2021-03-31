@@ -5,16 +5,16 @@ title: Workspace
 
 import BitInit from '@site/docs/components/commands/bit-init.md'
 
-A Bit workspace enables a single repository to author, export, import and manage multiple independent components.
+While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system for instance, you can then manage each component as a separate module - with it's own versioning, build and CI, and much more; all the while keeping the existing file structure of your repo or mono repo (Bit is entirely agnostic to how you organise and track your code). That way Bit works seamlessly with your source control, while providing entirely isolated control over the individual components the repo contains.
+
+Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its most basic building blocks (buttons, text inputs, etc) and then successively composing pages, data-flows, forms, and applications using your components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
 
 ## Initialize a Workspace
-
-(Run the following command in the root directory of your project)
 
 <BitInit />
 
 :::note Initializing a Bit workspace in an existing project
-A Bit workspace can be initialized on an empty directory, to create a new modular project from scratch.
+A Bit workspace can be initialized on an empty directory to create a new modular project from scratch.
 It can also be initialized on an existing project to modularize it and export its components to a remote scope.
 :::
 
@@ -22,12 +22,6 @@ It can also be initialized on an existing project to modularize it and export it
 The `--harmony` option creates a Bit Harmony workspace. Omitting it will create Bit's legacy workspace.
 Harmony components and Bit legacy components cannot switch workspace.
 :::
-
-## Reset a Bit workspace
-
-```shell
-bit init --reset-hard
-```
 
 ## Anatomy of a Workspace
 
@@ -76,15 +70,9 @@ bit init --reset-hard
 
 See the Workspace UI at [localhost:3000](https://localhost:3000)
 
-```shell
+```bash
 bit start
 ```
-
-## Bit Workspace
-
-While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system for instance, you can then manage each component as a separate module - with its own versioning, build and CI, and much more; all the while keeping the existing file structure of your repo or mono repo (Bit is entirely agnostic to how you organise and track your code). That way Bit works seamlessly with your source control, while providing entirely isolated control over the individual components the repo contains.
-
-Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its most basic building blocks (buttons, text inputs, etc) and then successively composing pages, data-flows, forms, and applications using your components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
 
 ## Bit workspace and Git
 
@@ -94,6 +82,12 @@ Make sure to track the following files with your SCM:
 - `worksapce.jsonc`
 
 > You should not track the local scope (`.bit` or `.git/bit`) with Git.
+
+## Reset a Bit workspace
+
+```bash
+bit init --reset-hard
+```
 
 ## Configuration
 

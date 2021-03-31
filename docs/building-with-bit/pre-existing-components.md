@@ -3,7 +3,7 @@ id: pre-existing-components
 title: Pre-existing Components
 ---
 
-Bit can be used on pre-existing projects and components can be added using the `bit add` command.
+Bit can be used on pre-existing projects and components can be added using the `bit add` command. If you would like to [create new components](/getting-started/creating-components) we suggest you use the `bit create` command.
 
 ## Add Pre-existing Components
 
@@ -11,13 +11,15 @@ If you want to add pre-existing components make sure all your component files ar
 
 To add your component to the workspace run the `bit add` command followed by the namespace. The namespace is the the component folder structure you would like to see in your workspace.
 
-```sh
+```bash
 bit add button --namespace ui
 ```
 
 :::note Tip
 You can use -n which is short for --namespace
 :::
+
+Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](building-with-bit/removing-components)
 
 ## Managing Project Dependencies
 

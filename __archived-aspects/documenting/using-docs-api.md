@@ -5,7 +5,6 @@ title: Using the Docs API
 
 //TODO add to building with bit section
 
-
 import { Image } from '@site/src/components/image'
 
 :::note
@@ -44,7 +43,7 @@ displayName: Button
 **Using JS:**
 
 ```js
-export const title = 'my new customized title';
+export const title = 'my new customized title'
 ```
 
 ## Abstract / Description
@@ -62,7 +61,7 @@ description: my customized title
 **Using JS:**
 
 ```js
-export const abstract = 'my new customized title';
+export const abstract = 'my new customized title'
 ```
 
 ## Labels
@@ -82,7 +81,7 @@ labels: ['react', 'typescript', 'ui']
 **Using JS:**
 
 ```js
-export const labels = ['react', 'typescript', 'ui'];
+export const labels = ['react', 'typescript', 'ui']
 ```
 
 <Image src="/img/ws_getting_started_frontmatter.png" width="70%" padding={20}/>
@@ -98,7 +97,7 @@ This can be done by simply writing down MDX in the component's `*.docs.mdx` file
 > Never import React to MDX doc files as it is injected by default.
 
 ```mdx
-import { Card } from './card';
+import { Card } from './card'
 
 ### This is a custom section
 
@@ -116,7 +115,7 @@ Create a function with the name 'Overview' and export it as default:
 
 ```jsx
 export default function Overview() {
-  return <h3>My custom docs section</h3>;
+  return <h3>My custom docs section</h3>
 }
 ```
 
@@ -147,27 +146,27 @@ The `examples` variable receives an array of objects, each representing a single
 
 For example, let's create an example for a 'Card' component:
 
-```shell
+```bash
 $ touch ./path/to/component/folder/card.docs.tsx
 ```
 
 Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
 
 ```jsx
-import React from 'react';
-import { Card } from './card';
+import React from 'react'
+import { Card } from './card'
 
 export const examples = [
   {
     scope: {
-      Card,
+      Card
     },
     title: 'Simple Card',
     description: "Use 'fullWidth' for small screens",
     code: `<Card size='fullWidth'>
                 <p>When do two functions fight?</p>
                 <p>- When they have arguments</p>
-            </Card>`,
-  },
-];
+            </Card>`
+  }
+]
 ```

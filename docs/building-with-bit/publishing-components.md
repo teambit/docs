@@ -1,7 +1,7 @@
---- 
+---
 id: publishing-components
-title: Publishing
---- 
+title: Publishing Components
+---
 
 The packing and publishing of component packages is handled by the PKG Bit extension.
 PKG adds its own build task to the component build pipeline, to create component packages and include them as part of the component artifacts (which can later be installed from Bit.dev's registry).
@@ -9,7 +9,7 @@ PKG adds its own build task to the component build pipeline, to create component
 The PKG extension can be configured to add and override `package.json` properties and to publish component packages to NPM or a private registry.
 Publishing can be done manually (using the `bit publish` command), or as part of the component build pipeline.
 
-:::info
+:::note
 The PKG extension can only be configured using the [Variants](/aspects/variants) extension.
 :::
 
@@ -19,7 +19,7 @@ The PKG extension can only be configured using the [Variants](/aspects/variants)
 
 Use the `packageJson` property to add or override the default `package.json` for your component packages.
 
-:::caution
+:::note
 Packages with a modified `name` property will not be published to Bit.dev's registry.
 :::
 
@@ -40,7 +40,7 @@ Packages with a modified `name` property will not be published to Bit.dev's regi
 
 ### Publish
 
-:::info 
+:::note
 If `publishConfig` or `name` are not set, packages will be published to Bit.dev's registry.
 :::
 
@@ -117,13 +117,13 @@ For example:
 
 Creates a TAR file (to be published to a node package registry):
 
-```shell
+```bash
 $ bit pack <component-id>
 ```
 
 Overrides the existing TAR file (in the same location):
 
-```shell
+```bash
 $ bit pack <component-id> --override
 
 $ bit pack <component-id> -o
@@ -131,7 +131,7 @@ $ bit pack <component-id> -o
 
 Returns the output in a JSON format:
 
-```shell
+```bash
 $ bit pack <component-id> --json
 
 $ bit pack <component-id> -j
@@ -141,19 +141,19 @@ $ bit pack <component-id> -j
 
 Publishes an exported component:
 
-```shell
+```bash
 $ bit publish <componentId>
 ```
 
 Publishes a staged component that has not yet been exported:
 
-```shell
+```bash
 $ bit publish <component-id> --allow-staged
 ```
 
 Checks if the publishing process will be done successfully (without publishing):
 
-```shell
+```bash
 $ bit publish <component-id> --dry-run
 
 $ bit publish <component-id> -d
@@ -161,7 +161,7 @@ $ bit publish <component-id> -d
 
 Returns the output as JSON:
 
-```shell
+```bash
 $ bit publish <component-id> --json
 
 $ bit publish <component-id> --j

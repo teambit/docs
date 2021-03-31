@@ -67,7 +67,7 @@ Both compositions will be in themed (i.e, displayed in a specific context).
 
 First, we'll create a new composition file in the component's directory:
 
-```sh
+```bash
 touch path/to/component/directory/<component-name>.compositions.tsx
 ```
 
@@ -75,9 +75,9 @@ Then, we'll import the component and use it to create the compositions:
 
 ```javascript
 // button.compositions.jsx
-import React from 'react';
-import { IrisTheme } from '@my-organization/design-system/iris-theme';
-import { Button } from './button';
+import React from 'react'
+import { IrisTheme } from '@my-organization/design-system/iris-theme'
+import { Button } from './button'
 
 export const PrimaryButton = () => {
   return (
@@ -86,8 +86,8 @@ export const PrimaryButton = () => {
         Primary
       </Button>
     </IrisTheme>
-  );
-};
+  )
+}
 
 export const SecondaryButton = () => {
   return (
@@ -96,8 +96,8 @@ export const SecondaryButton = () => {
         Secondary
       </Button>
     </IrisTheme>
-  );
-};
+  )
+}
 ```
 
 <div style={{width: 450, display: 'flex', justifyContent: 'space-between'}}>
@@ -123,19 +123,19 @@ For example, the below snapshot test checks the 'Button' component when the 'var
 In addition to simple unit tests, compositions play an important role in integration test as they provide feedback as to how a change to the component may affect potential usages.
 
 ```jsx
-import React from 'react';
-import testRenderer from 'react-test-renderer';
-import { PrimaryButton } from './button.compositions.tsx';
+import React from 'react'
+import testRenderer from 'react-test-renderer'
+import { PrimaryButton } from './button.compositions.tsx'
 
 describe('Button', () => {
   it('renders correctly as "primary"', () => {
     const component = testRenderer.create(
       <PrimaryButton>test primary variant</PrimaryButton>
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    )
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
 ```
 
 ## Setting providers for all your compositions

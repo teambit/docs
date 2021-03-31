@@ -17,7 +17,7 @@ Clone a full Bit workspace and explore it yourself:
 
 2. Clone this demo workspace repo
 
-```shell
+```bash
 git clone https://github.com/teambit/try-bit.git try-bit
 ```
 
@@ -29,13 +29,13 @@ cd try-bit
 
 4. Install all workspace dependencies (that will also import all components and link them to your `node_module` directory)
 
-```shell
+```bash
 bit install
 ```
 
 5. Run the development server
 
-```shell
+```bash
 bit start
 ```
 

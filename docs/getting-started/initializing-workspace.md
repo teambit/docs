@@ -12,7 +12,7 @@ In order to initialize a workspace you will need to first [install Bit](installi
 
 A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. First setup a new Git repo for your project and then initialize the Bit workspace.
 
-```sh
+```bash
 git init
 ```
 

@@ -17,7 +17,7 @@ To customize your environment's compiler, first [create an environment extension
 
 ### Create the environment extension files
 
-```shell
+```bash
 // In the workspace's root directory
 $ mkdir -p extensions/custom-react
 $ touch extensions/custom-react/react.extension.ts
@@ -34,26 +34,26 @@ In this example, we'll extend the React environment and customize its TypeScript
 > For a list of all available Transformers see your environment's documentation.
 
 ```typescript
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // The new TS configuration for this extension
-  newTsConfig = require('./tsconfig.json');
+  newTsConfig = require('./tsconfig.json')
 
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const customReactEnv = react.compose([
       // Override the environment's default TypeScript configuration
-      react.overrideTsConfig(newTsConfig),
-    ]);
+      react.overrideTsConfig(newTsConfig)
+    ])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
@@ -67,9 +67,9 @@ export class CustomReactExtension {
 ```
 
 ```ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 The above example overrides the ["target"](https://www.typescriptlang.org/tsconfig#target) property for the TypeScript compiler configuration file (`tsconfig.json`) used by the environment.
@@ -85,18 +85,18 @@ An environment's compiler can be replaced by overriding its [Compiler Service Ha
 For example, the code below shows a React environment extension that replaces its default compiler, TypeScript, with Babel.
 
 ```tsx
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel extension component to configure it and set it as the new compiler
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 
-const babelConfig = require('./babel-config');
+const babelConfig = require('./babel-config')
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
 
   static async provider([envs, react, babel]: [
     EnvsMain,
@@ -105,28 +105,28 @@ export class CustomReactExtension {
   ]) {
     // Instantiate a new Babel compiler with the 'babelConfig' configurations
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return babelCompiler;
-      },
-    });
+        return babelCompiler
+      }
+    })
 
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 #### Multi-Compiler
@@ -136,20 +136,20 @@ The Multi-compiler is a Bit extension component that enables the use of multiple
 For example:
 
 ```typescript
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel extension component
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 // Import the TypeScript extension component
 import {
   TypeScriptAspect,
-  TypeScriptMain,
-} from '@teambit.typescript/typescript';
+  TypeScriptMain
+} from '@teambit.typescript/typescript'
 // Import the multi-compiler extension
 import {
   MultiCompilerAspect,
-  MultiCompilerMain,
-} from '@teambit.compilation/multi-compiler';
+  MultiCompilerMain
+} from '@teambit.compilation/multi-compiler'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
@@ -160,8 +160,8 @@ export class CustomReactExtension {
     ReactAspect,
     BabelAspect,
     TypeScriptAspect,
-    MultiCompilerAspect,
-  ];
+    MultiCompilerAspect
+  ]
 
   static async provider([envs, react, babel, typescript, multiCompiler]: [
     EnvsMain,
@@ -173,22 +173,22 @@ export class CustomReactExtension {
     // Create a new composition of compilers
     const compilers = multiCompiler.createCompiler([
       createBabelCompiler(),
-      createTsCompiler(),
-    ]);
+      createTsCompiler()
+    ])
 
     // Override the environment's Compiler Service Handler
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return compilers;
-      },
-    });
+        return compilers
+      }
+    })
 
     // Compose all Environment Transformers into a single environment
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```

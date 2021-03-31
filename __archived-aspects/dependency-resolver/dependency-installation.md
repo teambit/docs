@@ -5,7 +5,6 @@ title: Dependency installation
 
 //TODO use dependency.resolver component
 
-
 Dependency installation is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependency-resolver/dependency-resolver).
 
 Dependency Resolver directs the package manager to install the right packages at the right place in the workspace file structure.
@@ -25,13 +24,13 @@ If your npm is configured to use a registry different than npmjs's - the Depende
 
 ### Install all dependencies listed in the Dependency Resolver configuration
 
-```shell
+```bash
 bit install
 ```
 
 ### Install the latest version of a package
 
-```shell
+```bash
 bit install <package>
 
 // For example
@@ -40,7 +39,7 @@ bit install lodash
 
 ### Install a specific version of a package
 
-```shell
+```bash
 bit install <package>@<version>
 
 // For example
@@ -52,13 +51,13 @@ bit install lodash@1.0.0
 When trying to install a specific package that is already listed in the Dependency Resolver policies, an error will be thrown.  
 To override it:
 
-```shell
+```bash
 bit install <package> --update-existing
 ```
 
 -OR-
 
-```shell
+```bash
 bit install <package> -u
 ```
 
@@ -67,7 +66,7 @@ bit install <package> -u
 The 'install' process includes importing components listed in the `.bitmap` file and linking them to the `node_modules` directory.
 To disable importing and install all packages and components as standard packages use:
 
-```shell
+```bash
 bit install --skip-import
 ```
 
@@ -115,36 +114,36 @@ The package manager can be configured to use a proxy for outgoing network reques
 
 #### To get the value for 'proxy'
 
-```shell
+```bash
 bit config get proxy
 ```
 
 #### To get the value for 'https-proxy'
 
-```shell
+```bash
 $ bit config get https-proxy
 ```
 
 #### To set a new 'proxy'
 
-```shell
+```bash
 $ bit config set proxy <url>
 ```
 
 For example:
 
-```shell
+```bash
 $ bit config set proxy http://domain-one.proxy.com:8080
 ```
 
 #### To set a new 'https-proxy'
 
-```shell
+```bash
 $ bit config set https-proxy <url>
 ```
 
 For example:
 
-```shell
+```bash
 $ bit config set https-proxy http://domain-one.proxy.com:8080
 ```

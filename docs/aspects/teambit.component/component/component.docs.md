@@ -1,8 +1,8 @@
---- 
+---
 id: component
 title: Component
 slug: /aspects/component
---- 
+---
 
 A Bit component is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block.
 
@@ -24,7 +24,7 @@ Below is an example of a Bit component file structure. The types of files are de
 - 'Compositions' files (`*.compositions.*`). These are examples of that component - relevant only to UI components.
 - A "barrel" or entry file (`index.ts`).
 
-```sh
+```bash
 ├── account/login-form           # root directory for storing all component files
     ├── index.tsx                # barrel/entry file to export modules
     ├── login-form.composite.tsx # examples of that component being used
@@ -91,7 +91,7 @@ A component can also have its configurations "ejected". That means it will stop 
 
 To eject a component, run the following:
 
-```shell
+```bash
 bit eject-conf <component-id>
 ```
 

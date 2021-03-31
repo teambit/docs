@@ -129,12 +129,13 @@ Determines the default scope for the selected components:
     }
 }
 ```
-<!-- 
+
+<!--
 ## Eject component configurations (component.json)
 
 A component can have its configuration ejected to stop receiving configurations from various Bit extensions, with the exclusion of the `@teambit/workspace.variants` extension.
 
-```shell
+```bash
 bit eject-conf <component-id>
 ```
 
@@ -153,4 +154,7 @@ The `component.json` can be configured [directly] much like the `workspace.jsonc
   "propagate": false,
   "extensions": {}
 } -->
+
+```
+
 ```

@@ -22,7 +22,7 @@ A Bit server is a host server that hosts one or more bare scopes. That is, scope
 - Install bit on your server
 - Create Bit Bare scope:
 
-```shell
+```bash
 su bit
 mkdir /opt/bit
 cd /opt/bit
@@ -39,9 +39,9 @@ When logging into a server, Bit tries logs in using SSH with the following combi
 
 1. Username `token` and Bit token from Bit config as password
 1. SSH key pair from ssh-agent
-2. SSH key pair from the filename in bit config
-3. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
-4. Anonymous login. This happens only to read operations: username: `anonymous` and password is blank
+1. SSH key pair from the filename in bit config
+1. SSH key pair from a default location ( such as ${userHome}/.ssh/id_rsa)
+1. Anonymous login. This happens only to read operations: username: `anonymous` and password is blank
 
 If all the above fail, for write operations, Bit prompts for username and password.
 It is up for the server deployment to decide on the relevant policy.
@@ -52,7 +52,7 @@ It is up for the server deployment to decide on the relevant policy.
 
 To work with the remote scope do the following:
 
-```shell
+```bash
 mkdir my-project
 cd my-project
 bit init
@@ -63,7 +63,7 @@ bit remote add ssh://bit-username@bit-server:/opt/bit/first-scope
 
 To export components to the remote scope:
 
-```shell
+```bash
 bit export first-scope
 ```
 
@@ -71,7 +71,7 @@ bit export first-scope
 
 to import components stored on the remote scope run:
 
-```shell
+```bash
 bit import first-scope/component-name
 ```
 
@@ -81,7 +81,7 @@ If you have components that depend on components from other scopes, you need to 
 
 Make scope A aware of scope B by adding a scope B as a remote scope in scope A. In scope A run:
 
-```shell
+```bash
 # If they are on the same machine:
 bit remote add file:///your-scope-a-directory
 ```
@@ -100,15 +100,15 @@ The function gets the destination scope name (the destination from to get the de
 
 ```javascript
 // /app/resolver.js
-const http = require('http');
+const http = require('http')
 module.exports = (dst, src) =>
   new Promise((resolve, reject) =>
     http.get(
       `http://bit-permissions-service/scopes?src=${src}&dst=${dst}`,
       (res) => {
-        res.setEncoding('utf8');
-        let rawData = '';
-        res.on('data', (chunk) => (rawData += chunk));
+        res.setEncoding('utf8')
+        let rawData = ''
+        res.on('data', (chunk) => (rawData += chunk))
         res.on('end', () =>
           res.statusCode === 200
             ? resolve(`file:///tmp/bithub/${JSON.parse(rawData).payload}`)
@@ -118,12 +118,12 @@ module.exports = (dst, src) =>
                   `unable to export components to ${src} because they have dependencies on components in ${dst}. ` +
                   'bit does not allow setting dependencies between components in private collections managed by different owners.',
                 sourceScope: dst,
-                destinationScope: src,
+                destinationScope: src
               })
-        );
+        )
       }
     )
-  );
+  )
 ```
 
 ## Package registry

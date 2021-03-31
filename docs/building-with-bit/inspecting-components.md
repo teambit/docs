@@ -1,31 +1,33 @@
---- 
+---
 id: inspecting-components
-title: Inspecting
---- 
+title: Inspecting Components
+---
+
+import { Image } from '@site/src/components/image'
 
 This page lists different ways to inspect the workspace and its components using Bit's CLI and the Workspace/Scope UI.
 
 ## Get a component's essential info
 
-### Bit CLI
+### Bit Show
 
 The `show` command displays a component's essential information. For example, its dependencies, its dev dependencies, the environment being used by it, etc.
 
 Since Bit components are not configured directly but through the various extensions that are used by them (either the extensions' default values or manual configurations in workspace configurations file), it is much easier to review their configurations by using the `show` command than it is by doing so manually.
 
-```shell
+```bash
 bit show <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit show my-org.my-scope/ui-primitives/button
 ```
 
 Example output:
 
-```shell
+```bash
   ┌──────────────┬───────────────────────────────────────────────────────────────┐
   │ id           │ my-org.my-scope/ui-primitives/button@0.0.1                    │
   ├──────────────┼───────────────────────────────────────────────────────────────┤
@@ -87,7 +89,7 @@ The UI analog is placed in two separate tabs, 'Dependencies' and 'Configurations
 
 #### Dependencies
 
-The 'Dependencies' tab shows the component's dependencies. That only includes components. Other packages will not be displayed.
+The 'Dependencies' tab shows the component's dependencies, which only includes components. Other packages will not be displayed.
 
 For example:
 
@@ -103,17 +105,15 @@ For example:
 
 ## Log
 
-### Bit CLI
-
 The log command shows the version history of a component:
 
-```shell
+```bash
 bit log button
 ```
 
 Example output:
 
-```shell
+```bash
 tag 0.0.2
 author: John Doe <john_doe@my-org-mail.com>
 date: 10/24/2020, 5:49:15 PM
@@ -125,7 +125,7 @@ date: 09/24/2020, 4:48:51 PM
 
 ### Workspace/Scope UI
 
-The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> show a component's version history. The different versions can be explored further by clicking on their links.
+The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> shows a component's version history. The different versions can be explored further by clicking on their links.
 
 For example:
 
@@ -137,13 +137,13 @@ Displays the status for all tracked and staged (tagged) components. This will no
 
 Command:
 
-```shell
+```bash
 bit status
 ```
 
 Example output:
 
-```shell
+```bash
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
 
@@ -162,7 +162,7 @@ staged components
 
 Lists all components in the local scope. That includes staged components as well as imported components.
 
-```shell
+```bash
 bit list
 ```
 
@@ -170,7 +170,7 @@ bit list
 
 To list all components in a remote scope:
 
-```shell
+```bash
 bit list owner-name.scope-name
 ```
 
@@ -178,6 +178,6 @@ bit list owner-name.scope-name
 
 Displays local and remote versions of components in the local scope.
 
-```shell
+```bash
 bit list --outdated
 ```

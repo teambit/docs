@@ -1,7 +1,7 @@
---- 
+---
 id: importing-components
-title: importing
---- 
+title: importing Components
+---
 
 Importing a component, from a remote scope to your local workspace, allows you to maintain the component in your own workspace and even build, version and export it back to its remote scope with a new bumped version.
 
@@ -18,9 +18,9 @@ A single component is imported using its ID. A component ID has the following pa
 
 `scope-owner.scope-name/namespace/component-name`
 
-For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
+For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`:
 
-```shell
+```bash
 bit import teambit.teaching/ui/elements/dots-loader
 ```
 
@@ -28,27 +28,27 @@ To replace the default directory for that component, we'll add the `--path` flag
 
 ## Import all components in a scope or namespace
 
-To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
+To import all components from the `teaching` scope, replace the namespace and component name with the `*` sign:
 
-```shell
+```bash
 bit import teambit.teaching/*
 ```
 
-To limit our import to components under the `ui/elements` namespaces, we'll replace just the component name:
+To limit our import to components under the `ui/elements` namespaces, replace just the component name:
 
-```shell
+```bash
 bit import teambit.teaching/ui/*
 ```
 
 ## Import the latest versions of components in a workspace
 
-To get the latest versions of every imported component in our workspace, we'll run:
+To get the latest versions of every imported component in our workspace run:
 
-```shell
+```bash
 bit import
 ```
 
-:::info the workspace component list
+:::note the workspace component list
 The list of authored/imported components in a workspace can be found using the `bit list` command
 or by exploring the workspace `.bitmap` file.
 :::
@@ -57,12 +57,12 @@ or by exploring the workspace `.bitmap` file.
 
 Bit does not allow referencing one component to another, using relative paths. This is done in order to keep components independent and context-agnostic.
 
-Tracked components, locally tagged components and imported components should all be `imported` / `required` into other components using their node module name.
+Tracked components, locally tagged components and imported components should all be `imported` / `required` into other components using their node_module name.
 
 For example:
 
 ```js
-import { Button } from '@my-scope/button';
+import { Button } from '@my-scope/button'
 ```
 
 ## Change the configurations of an imported component

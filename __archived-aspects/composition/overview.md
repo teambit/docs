@@ -37,7 +37,7 @@ Export that composition (the new component) with a name. The name of that export
 
 For example, a composition for a 'user hero' component will looks like so:
 
-```shell title="The 'user hero' component file structure"
+```bash title="The 'user hero' component file structure"
 ├── user-hero
     ├── index.tsx
     ├── user-hero.compositions.tsx

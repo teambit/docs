@@ -10,7 +10,7 @@ When Bit starts tracking a component, a new directory is created for it inside t
 
 For example:
 
-```sh
+```bash
 ├── node_modules
     ├── @my-org
         ├── react-ui.button
@@ -22,12 +22,9 @@ For example:
           ├── ...
 ```
 
-- __Compile in the workspace__ - Components are compiled in 'watch mode' (on every change) when running Bit's dev server (`bit start`) and on various compilations commands.
+- **Compile in the workspace** - Components are compiled in 'watch mode' (on every change) when running Bit's dev server (`bit start`) and on various compilations commands.
 
-
-- __Compile as a build task__ - 
-Components are compiled as part of the component build pipeline (on `bit build` and `bit tag`).
-The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
-Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.
-
-
+- **Compile as a build task** -
+  Components are compiled as part of the component build pipeline (on `bit build` and `bit tag`).
+  The compilation task runs on the component's 'capsule' (generated as part of the build process) and not on the workspace.
+  Since the build pipeline runs not only on the modified components but also on all dependents of that component, so does the the compilation process.

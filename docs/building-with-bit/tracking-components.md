@@ -1,11 +1,13 @@
 ---
 id: tracking-components
-title: Tracking
+title: Tracking Components
 ---
 
 import { Image } from '@site/src/components/image'
-
-## Tracking
+import BitCreate from '@site/docs/components/components/react/bit-create-component.md'
+import BitTemplates from '@site/docs/components/commands/bit-templates.md'
+import NameSpaces from '@site/docs/components/components/namespaces.md'
+import BitAdd from '@site/docs/components/components/bit-add.md'
 
 The tracking process translates sets of files into a single component that is semantically understood by Bit. It is the first step in a component's journey to complete independency.
 
@@ -17,17 +19,25 @@ When a component gets tracked, Bit does the following:
 - It creates a package in the workspace `node_modules` directory
 - It renders the component in the Workspace UI
 
+## Using Bit Create
+
+Tracking components is done automatically if you are using `bit create` to create your components.
+
+<BitCreate />
+
+<BitTemplates />
+
+## Pre-existing Components
+
+Components not created with the `bit-create` command will need to be manually added to the workspace using the `bit-add` command.
+
 ### Track a single component
 
-```shell
-bit add <path to component>
-```
+<BitAdd />
 
-For example:
+#### Namespaces
 
-```shell
-bit add components/react/button
-```
+<NameSpaces />
 
 A tracked component should appear in the Workspace UI navigation bar with an "N" to its right, to signify that it is a new component.
 
@@ -38,35 +48,13 @@ A tracked component should appear in the Workspace UI navigation bar with an "N"
 Use the `bit status` command to check for tracking issues.
 :::
 
-#### Add a namespace
-
-Namespaces serve as (abstract) folders that organize components in the Workspace/Remote Scope. In addition to that, namespaces are a way to decouple your components' configurations from the file structure, as they allow you to handle components using names that pertain to the function and purpose of a component, instead.
-
-To namespace a component us the `--namespace` or `-n` option.
-
-```shell
-bit add <path to component> --namespace <name>
-```
-
-For example:
-
-```shell
-bit add components/react/button --namespace react-ui
-```
-
-Namespaces also support nesting. For example:
-
-```shell
-bit add components/react/button --namespace react/ui
-```
-
 ### Track multiple components
 
 To track multiple components, set the path to the common directory and use the `*` wildcard.
 
 For example:
 
-```shell
+```bash
 bit add path/to/common/path/*
 ```
 
@@ -74,19 +62,19 @@ bit add path/to/common/path/*
 
 The default entry point is `index.ts`/`index.js`. To set a different entry point:
 
-```shell
+```bash
 bit add <path to component> --main <entry file>
 ```
 
 For example
 
-```shell
-bit add components/react/button --main main.js
+```bash
+bit add components/ui/button --main main.js
 ```
 
 ## Untracking components
 
-```shell
+```bash
 bit untrack <component id>
 ```
 

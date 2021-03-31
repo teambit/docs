@@ -1,7 +1,7 @@
---- 
+---
 id: component-compositions
 title: Compositions
---- 
+---
 
 'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
 They serve as a way to run manual and automated integration tests, before such integrations are done by consumers of that component.
@@ -12,7 +12,7 @@ Adding compositions to a component is done by creating a file in the component's
 
 For example:
 
-```shell {3}
+```bash {3}
 └── ui/button
     ├── index.tsx
     ├── button.composition.tsx
@@ -24,10 +24,10 @@ Each composition is a standard usage of a component (requiring no special syntax
 For example, the following is a composition of the 'button' component.
 
 ```js
-import React from 'react';
-import { Button } from './button';
+import React from 'react'
+import { Button } from './button'
 
 export const BasicButton = () => {
-  return <Button text="click me" />;
-};
+  return <Button text="click me" />
+}
 ```

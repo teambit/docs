@@ -27,13 +27,13 @@ bit <command> --help
 
 #### Start Bit development server / Run the Workspace UI
 
-```shell
+```bash
 bit start
 ```
 
 #### Get workspace status
 
-```shell
+```bash
 bit status
 ```
 
@@ -41,7 +41,7 @@ bit status
 
 Deletes all Bit files and directories, including Bit configuration, tracking and locally stored component release versions.
 
-```shell
+```bash
 bit init --reset-hard
 ```
 
@@ -50,21 +50,35 @@ bit init --reset-hard
 Removes all locally stored component release versions.
 Reset the workspace `.bitmap` file and register components as if they were newly added.
 
-```shell
+```bash
 bit init --reset-new
 ```
 
 ### Component workflow
 
+#### Create a Component
+
+```bash
+bit create react-component <my-component> --namespace <namespace>
+```
+
+#### See Available Templates
+
+```bash
+bit templates
+```
+
 #### Track a component
 
-```shell
+To add pre-existing components not created with the `bit create` command.
+
+```bash
 bit add <path/to/component>
 ```
 
 #### Track a component and set it with a namespace
 
-```shell
+```bash
 bit add <path/to/component> --namespace <namespace>
 ```
 
@@ -72,7 +86,7 @@ Alias: `-n`
 
 #### Untrack a component
 
-```shell
+```bash
 bit untrack <component-id>
 ```
 
@@ -80,13 +94,13 @@ bit untrack <component-id>
 
 That includes its dependencies, package name, environment, etc.
 
-```shell
+```bash
 bit show <component-id>
 ```
 
 #### Version (tag) a component
 
-```shell
+```bash
 bit tag <component-id> <new-version-number>
 ```
 
@@ -94,19 +108,19 @@ bit tag <component-id> <new-version-number>
 
 #### Untag a component
 
-```shell
+```bash
 bit untag <component-id>
 ```
 
 #### Untag all components
 
-```shell
+```bash
 bit untag --all
 ```
 
 #### Export components
 
-```shell
+```bash
 bit export
 ```
 
@@ -114,7 +128,7 @@ bit export
 
 #### Install a package
 
-```shell
+```bash
 bit install <package-name>
 ```
 
@@ -122,7 +136,7 @@ bit install <package-name>
 
 This process will install all packages, import all components and link the imported components.
 
-```shell
+```bash
 bit install
 ```
 
@@ -130,7 +144,7 @@ bit install
 
 Import a component from a remote scope. Learn more [here](/building-with-bit/scopes).
 
-```shell
+```bash
 bit import <component-id>
 ```
 
@@ -138,7 +152,7 @@ bit import <component-id>
 
 Import all components listed in the workspace `.bitmap` file.
 
-```shell
+```bash
 bit import
 ```
 
@@ -146,7 +160,7 @@ bit import
 
 `EXPERIMENTAL`
 
-```shell
+```bash
 bit dependencies <component-id>
 ```
 
@@ -154,37 +168,37 @@ bit dependencies <component-id>
 
 #### Compile a component
 
-```shell
+```bash
 bit compile <component-id>
 ```
 
 #### Compile all components
 
-```shell
+```bash
 bit compile
 ```
 
 #### Compile all components that were modified since their last compilation
 
-```shell
+```bash
 bit compile --changed
 ```
 
 #### Build a component
 
-```shell
+```bash
 bit build <component-id>
 ```
 
 #### Build all components
 
-```shell
+```bash
 bit build
 ```
 
 #### Test components
 
-```shell
+```bash
 bit test
 ```
 
@@ -192,7 +206,7 @@ bit test
 
 #### Move component to a different directory
 
-```shell
+```bash
 bit mv <component> <target-dir>
 ```
 
@@ -202,31 +216,31 @@ bit mv <component> <target-dir>
 The linking process happens automatically when a component is tracked.
 There could be cases where the path to a component has been modified and that process needs to be re-run with to address recent changes.
 
-```shell
+```bash
 bit link
 ```
 
 #### Remove a component from the workspace
 
-```shell
+```bash
 bit remove <component-id>
 ```
 
 #### Deprecating a component in a workspace
 
-```shell
+```bash
 bit deprecate <component-id>
 ```
 
 #### Remove a component from a remote scope
 
-```shell
+```bash
 bit remove <component-id> --remote
 ```
 
 #### Deprecate a component in a remote scope
 
-```shell
+```bash
 bit deprecate <component-id> --remote
 ```
 
@@ -236,6 +250,6 @@ bit deprecate <component-id> --remote
 
 Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](/building-with-bit/workspace#eject-component-configurations-componentjson).
 
-```shell
+```bash
 bit eject-conf <component>
 ```

@@ -4,12 +4,13 @@ title: Creating an Environment
 ---
 
 //TODO bit create will resolve this dont need it keep for reference
+
 ## Create an environment extension
 
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
 
 :::note Extending multiple runtimes
-The *.extensions.ts pattern should only be used when no other 'runtime' is being extended other than the 'main runtime.'  
+The \*.extensions.ts pattern should only be used when no other 'runtime' is being extended other than the 'main runtime.'  
 For more details, see the 'runtime environments' section.
 :::
 
@@ -26,7 +27,7 @@ To create and use an environment extension:
 
 We'll start by creating a new extension (in the workspace root-directory):
 
-```shell
+```bash
 mkdir -p extensions/custom-react
 touch extensions/custom-react/custom-react.extension.ts
 touch extensions/custom-react/index.ts
@@ -42,41 +43,41 @@ Our files will have the following code (the code below will only extend the `@te
 
 ```tsx title="custom-react.extension.ts"
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
 // Import from the React aspect to extend it
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { ReactAspect, ReactMain } from '@teambit/react'
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // The 'compose' methods to compose the overrides into a single environment
     const customReactEnv = react.compose([
       // This is were the environment's 'transformers' will be used to customize it
-    ]);
+    ])
 
     // Register this extension as an environment using the "registerEnv" slot (provided by the Environments aspect).
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 ### 3. Track the extension component
 
 We'll then track the new component (with the 'my-extensions' namespace):
 
-```shell
+```bash
 bit add extensions/custom-react -n my-extensions
 ```
 
@@ -149,9 +150,9 @@ export class CustomReactExtension {
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 :::info the provider method
@@ -164,19 +165,19 @@ The example below is of a React environment extension. This new environment over
 
 ```tsx title="custom-react.extension.ts"
 // Import from the Environments aspect to register this extension as an environment
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
 // Import from the React aspect to extend it and override its DevServer config
-import { ReactAspect, ReactMain } from '@teambit/react';
+import { ReactAspect, ReactMain } from '@teambit/react'
 // Import the Babel aspect to configure it and set it as the new compiler
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel';
+import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 
-const babelConfig = require('./babel/babel-config');
+const babelConfig = require('./babel/babel-config')
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
   // Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
 
   static async provider([envs, react, babel]: [
     EnvsMain,
@@ -185,31 +186,31 @@ export class CustomReactExtension {
   ]) {
     // Create a new Babel compiler with the 'babelConfig' configurations
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     // Use the 'override' method provided by the 'environments' aspect (not the React aspect)
     const compilerOverride = envs.override({
       getCompiler: () => {
-        return babelCompiler;
-      },
-    });
+        return babelCompiler
+      }
+    })
 
     // Compose the overrides into a single environment
-    const customReactEnv = react.compose([compilerOverride]);
+    const customReactEnv = react.compose([compilerOverride])
 
     // Register this extension as an environment using the "registerEnv" slot (provided by the 'environments' aspect).
-    envs.registerEnv(customReactEnv);
+    envs.registerEnv(customReactEnv)
 
-    return new CustomReactExtension(react);
+    return new CustomReactExtension(react)
   }
 }
 ```
 
 ```ts title="index.ts"
-import { CustomReactExtension } from './custom-react.extension';
-export { CustomReactExtension };
-export default CustomReactExtension;
+import { CustomReactExtension } from './custom-react.extension'
+export { CustomReactExtension }
+export default CustomReactExtension
 ```
 
 :::note
@@ -223,7 +224,7 @@ Each runtime environment runs all files that are named with its corresponding fi
 
 An environment extension that runs on multiple runtimes is called "Aspect" an will have the following file structure:
 
-```shell
+```bash
 |-- env-extension
     |-- env-extension.main.ts
     |-- env-extension.ui.tsx
@@ -235,20 +236,20 @@ An environment extension that runs on multiple runtimes is called "Aspect" an wi
 
 Create a `*.aspect.ts` file.
 
-```shell title="Example"
+```bash title="Example"
 touch path/to/extension/env-extension.aspect.ts
 ```
 
 Place the following lines to register your environment as a multiple runtime extension (a.k.a, an Aspect):
 
 ```ts title="env-extension.aspect.ts"
-import { Aspect } from '@teambit/harmony';
+import { Aspect } from '@teambit/harmony'
 
 export const ReactWithProvidersAspect = Aspect.create({
   // The ID should be your component's ID
   // Make sure to track your extension component before registering it as an Aspect
-  id: 'my-scope.react-with-providers',
-});
+  id: 'my-scope.react-with-providers'
+})
 ```
 
 ## Registering a runtime extension
@@ -258,21 +259,21 @@ An aspect is a collection of multiple extensions, each extending a specific runt
 Register each runtime extension to its corresponding runtime, using the addRuntime method.
 
 ```ts title="react-extension.preview.ts"
-import { PreviewRuntime } from '@teambit/preview';
-import { ReactAspect, ReactPreview } from '@teambit/react';
-import { ReactExtensionAspect } from './react-with-providers.aspect';
+import { PreviewRuntime } from '@teambit/preview'
+import { ReactAspect, ReactPreview } from '@teambit/react'
+import { ReactExtensionAspect } from './react-with-providers.aspect'
 
 export class ReactExtensionPreview {
-  static runtime = PreviewRuntime;
+  static runtime = PreviewRuntime
 
-  static dependencies = [ReactAspect];
+  static dependencies = [ReactAspect]
 
   static async provider([react]: [ReactPreview]) {
-    return new ReactExtensionPreview();
+    return new ReactExtensionPreview()
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionPreview);
+ReactExtensionAspect.addRuntime(ReactExtensionPreview)
 ```
 
 ### Runtime environments
@@ -287,34 +288,34 @@ Node files that run in a node runtime environments and outputs to the terminal.
 The React environment TypeScript compiler will be extended in the main runtime.
 
 ```ts title="react-extension.main.ts"
-import { MainRuntime } from '@teambit/cli';
-import { EnvsAspect, EnvsMain } from '@teambit/envs';
-import { ReactAspect, ReactMain } from '@teambit/react';
-import { ReactExtensionAspect } from './react-extension.aspect';
+import { MainRuntime } from '@teambit/cli'
+import { EnvsAspect, EnvsMain } from '@teambit/envs'
+import { ReactAspect, ReactMain } from '@teambit/react'
+import { ReactExtensionAspect } from './react-extension.aspect'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class ReactExtensionMain {
   constructor(private react: ReactMain, private envs: EnvsMain) {}
 
   icon() {
-    return 'https://static.bit.dev/extensions-icons/react.svg';
+    return 'https://static.bit.dev/extensions-icons/react.svg'
   }
 
-  static runtime = MainRuntime;
+  static runtime = MainRuntime
 
-  static dependencies = [ReactAspect, EnvsAspect];
+  static dependencies = [ReactAspect, EnvsAspect]
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
     const reactExtension = envs.compose(react, [
-      react.overrideTsConfig(tsconfig),
-    ]);
-    envs.registerEnv(reactExtension);
-    return new ReactWithProvidersMain(react, envs);
+      react.overrideTsConfig(tsconfig)
+    ])
+    envs.registerEnv(reactExtension)
+    return new ReactWithProvidersMain(react, envs)
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionMain);
+ReactExtensionAspect.addRuntime(ReactExtensionMain)
 ```
 
 ### UI
@@ -335,22 +336,22 @@ A new composition provider that will "wrap" every composition using that environ
 (which are being served to the browser by the environment's server).
 
 ```ts title="react-extension.preview.ts"
-import { PreviewRuntime } from '@teambit/preview';
-import { ReactAspect, ReactPreview } from '@teambit/react';
-import { ReactExtensionAspect } from './react-with-providers.aspect';
-import { Center } from './my-providers/center';
+import { PreviewRuntime } from '@teambit/preview'
+import { ReactAspect, ReactPreview } from '@teambit/react'
+import { ReactExtensionAspect } from './react-with-providers.aspect'
+import { Center } from './my-providers/center'
 
 export class ReactExtensionPreview {
-  static runtime = PreviewRuntime;
+  static runtime = PreviewRuntime
 
-  static dependencies = [ReactAspect];
+  static dependencies = [ReactAspect]
 
   static async provider([react]: [ReactPreview]) {
-    react.registerProvider(Center);
+    react.registerProvider(Center)
 
-    return new ReactExtensionPreview();
+    return new ReactExtensionPreview()
   }
 }
 
-ReactExtensionAspect.addRuntime(ReactExtensionPreview);
+ReactExtensionAspect.addRuntime(ReactExtensionPreview)
 ```

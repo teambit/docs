@@ -33,6 +33,7 @@ For example:
 ```
 
 The `defaultScope` field suggests it can be overridden. To learn about setting different scopes for different sets of components in your workspace.
+
 ### Scope on bit.dev
 
 To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection) (or "collection").
@@ -41,13 +42,13 @@ To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.d
 
 ### On premise Scopes
 
-If you are self-hosting a Bit server, you need to ensure you create a Bit server. 
+If you are self-hosting a Bit server, you need to ensure you create a Bit server.
 
 ## Export all staged components to a remote scope
 
 Run the `bit export` command to have Bit publish all versioned components. In our case it is only the previously tagged 'Button' component.
 
-```sh
+```bash
 $ bit export
 ```
 
@@ -55,6 +56,6 @@ $ bit export
 
 The export process updates your workspace' `.bitmap` file. Make sure to commit these changes to Git.
 
-```sh
+```bash
 git commit -am 'updated .bitmap file after a successful export'
 ```

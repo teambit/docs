@@ -1,7 +1,7 @@
---- 
+---
 id: documenting-components
-title: Documenting
---- 
+title: Documenting Components
+---
 
 import { Image } from '@site/src/components/image'
 
@@ -30,28 +30,23 @@ The documentation can be customized in two ways:
 
 2. Creating a new documentation template. This can be done as part of an [environment extension](/building-with-bit/environments) or as part of a new environment aspect.
 
-## Using the Docs API
-
-
-:::note
-This tutorial discusses the documentation template for React, React Native and NodeJS environments.
-:::
-
 ## Create a documentation file
+
+When using the `bit create` command to create components, a `docs.mdx` file will already be created for you.
 
 To start customizing your documentation, create a documentation file in the component directory.
 Choose between a JSX or an MDX file (to learn about the MDX syntax, [see here](https://mdxjs.com/table-of-components)).
 
 ### MDX doc file
 
-```
-touch path/to/component/directory/component-name.docs.mdx
+```bash
+component-name.docs.mdx
 ```
 
 ### JS doc file
 
-```
-touch path/to/component/directory/component-name.docs.tsx
+```bash
+component-name.docs.tsx
 ```
 
 ## Title / Display Name
@@ -69,7 +64,7 @@ displayName: Button
 **Using JS:**
 
 ```js
-export const title = 'my new customized title';
+export const title = 'my new customized title'
 ```
 
 ## Abstract / Description
@@ -87,7 +82,7 @@ description: my customized title
 **Using JS:**
 
 ```js
-export const abstract = 'my new customized title';
+export const abstract = 'my new customized title'
 ```
 
 ## Labels
@@ -107,7 +102,7 @@ labels: ['react', 'typescript', 'ui']
 **Using JS:**
 
 ```js
-export const labels = ['react', 'typescript', 'ui'];
+export const labels = ['react', 'typescript', 'ui']
 ```
 
 <Image src="/img/ws_getting_started_frontmatter.png" width="70%" padding={20}/>
@@ -123,7 +118,7 @@ This can be done by simply writing down MDX in the component's `*.docs.mdx` file
 > Never import React to MDX doc files as it is injected by default.
 
 ```mdx
-import { Card } from './card';
+import { Card } from './card'
 
 ### This is a custom section
 
@@ -141,7 +136,7 @@ Create a function with the name 'Overview' and export it as default:
 
 ```jsx
 export default function Overview() {
-  return <h3>My custom docs section</h3>;
+  return <h3>My custom docs section</h3>
 }
 ```
 
@@ -170,31 +165,25 @@ The `examples` variable receives an array of objects, each representing a single
 - **Description**: A _string_ for the example description.
 - **Code**: A _string_ (template literal) for the example code.
 
-For example, let's create an example for a 'Card' component:
+Import the 'Card' component and set the `examples` variable with a single object:
 
-```shell
-$ touch ./path/to/component/folder/card.docs.tsx
-```
-
-Inside that file, we'll import the 'Card' component and set the `examples` variable with a single object.
-
-```jsx
-import React from 'react';
-import { Card } from './card';
+```jsx title="card.docs.tsx"
+import React from 'react'
+import { Card } from './card'
 
 export const examples = [
   {
     scope: {
-      Card,
+      Card
     },
     title: 'Simple Card',
     description: "Use 'fullWidth' for small screens",
     code: `<Card size='fullWidth'>
                 <p>When do two functions fight?</p>
                 <p>- When they have arguments</p>
-            </Card>`,
-  },
-];
+            </Card>`
+  }
+]
 ```
 
 ## Properties Table
@@ -206,42 +195,41 @@ To ensure the documentation is faithful to the code, Bit generates the propertie
 #### TypeScript + JSDocs
 
 ```js
-export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
-    /** Choose between primary and secondary styling. */
-    variant?: 'primary' | 'secondary';
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Choose between primary and secondary styling. */
+  variant?: 'primary' | 'secondary';
 }
 
-
-export const Button = ({children, variant, ...rest} : IButton) => {
-    return (
-        <button className={styles[variant]} {...rest}>
-            {children}
-        </button>
-    )
+export const Button = ({ children, variant, ...rest }: IButton) => {
+  return (
+    <button className={styles[variant]} {...rest}>
+      {children}
+    </button>
+  )
 }
 
 Button.defaultProps = {
-    variant: 'primary'
+  variant: 'primary'
 }
 ```
 
 A few things to note here:
 
-* JSDocs comments written directly above the type definitions, will show up as prop description in the properties table.
-* Inherited props, often received by extending React's out-of-the-box types, will not show up in the documentation unless they are explicitly defined. For example, in the code snippet above, a Button component extends a native HTML button attributes (`ButtonHTMLAttributes<HTMLButtonElement>`) but none of these attributes will appear in the props table (for example: `disabled`,`onclick`, etc.)
-* Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
+- JSDocs comments written directly above the type definitions, will show up as prop description in the properties table.
+- Inherited props, often received by extending React's out-of-the-box types, will not show up in the documentation unless they are explicitly defined. For example, in the code snippet above, a Button component extends a native HTML button attributes (`ButtonHTMLAttributes<HTMLButtonElement>`) but none of these attributes will appear in the props table (for example: `disabled`,`onclick`, etc.)
+- Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
 
 ```js
-export interface IButton extends  ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: 'primary' | 'secondary';
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant: 'primary' | 'secondary';
 }
 
-export const Button = ({children, variant = 'primary', ...rest} : IButton) => {
-    return (
-        <button className={styles[variant]} {...rest}>
-            {children}
-        </button>
-    )
+export const Button = ({ children, variant = 'primary', ...rest }: IButton) => {
+  return (
+    <button className={styles[variant]} {...rest}>
+      {children}
+    </button>
+  )
 }
 ```
 
@@ -252,26 +240,26 @@ The above code shows 'variant' as a 'required' prop (since that is the default).
 #### prop-types + JSDocs
 
 ```js
-export const Button = ({children, variant, ...rest}) => {
-    return (
-        <button className={styles[variant]} {...rest}>
-            {children}
-        </button>
-    )
+export const Button = ({ children, variant, ...rest }) => {
+  return (
+    <button className={styles[variant]} {...rest}>
+      {children}
+    </button>
+  )
 }
 
 Button.defaultProps = {
-    variant: 'primary'
+  variant: 'primary'
 }
 
 Button.propTypes = {
-    /** Choose between primary and secondary styling. */
-    variant: PropTypes.oneOf(['primary', 'secondary']),
-    children: PropTypes.any.isRequired
+  /** Choose between primary and secondary styling. */
+  variant: PropTypes.oneOf(['primary', 'secondary']),
+  children: PropTypes.any.isRequired
 }
 ```
 
 A few things to note here:
 
-* JSDocs comments written directly above the prop type definitions, will show up as prop description in the properties table.
-* Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
+- JSDocs comments written directly above the prop type definitions, will show up as prop description in the properties table.
+- Conflicts between the different parts of the code that is parsed to the properties table, will be resolved one way or the other. So, make sure to keep all parts in coherence.
