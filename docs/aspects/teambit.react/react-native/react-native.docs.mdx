@@ -28,7 +28,7 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-- `reactnative-component` a bsaic React UI component.
+- `reactnative-component` a basic React UI component.
 - `react-hook` a basic React Hook component.
 - `reactnative-extension` boilerplate for customizing configuration.
 
@@ -41,7 +41,7 @@ bit create <template name> [components...]
 ## Runtime (framework) dependencies
 
 Similar to many Frontend frameworks React Native must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-native` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](/aspects/dependency-resolver) and set your prefered dependencies.  
-It is recomended to for you to extend the base React environment and define a semantic version rule to fit your current techstack and guidelines for reuseable React components.
+It is recommended to for you to extend the base React environment and define a semantic version rule to fit your current tech stack and guidelines for reuseable React components.
 
 ## Default Configuration and Services
 
