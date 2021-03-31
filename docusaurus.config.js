@@ -8,7 +8,15 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
   projectName: 'docs-harmony', // Usually your repo name.
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      'docusaurus-plugin-plausible',
+      {
+        domain: 'harmony-docs.bit.dev',
+      },
+    ]
+  ],
   themeConfig: {
     algolia: {
       apiKey: '58b48f3589d91aba567e8709de785bdd',
@@ -78,7 +86,7 @@ module.exports = {
           'aria-label': 'GitHub repository'
         },
         {
-          href: 'https://join.slack.com/t/bit-dev-community/shared_invite/enQtNzM2NzQ3MTQzMTg3LWI2YmFmZjQwMTkxNmFmNTVkYzU2MGI2YjgwMmJlZDdkNWVhOGIzZDFlYjg4MGRmOTM4ODAxNTIxMTMwNWVhMzg',
+          href: 'https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w',
           className: 'slack-link',
           'aria-label': 'Slack',
           position: 'right'

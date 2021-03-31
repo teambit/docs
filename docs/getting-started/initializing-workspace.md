@@ -24,4 +24,4 @@ git init
 
 ## What's Next
 
-Once you have initialized a workspace you can then start [creating components](creating-components).
+Once you have initialized a workspace, you can start [creating components](creating-components).
