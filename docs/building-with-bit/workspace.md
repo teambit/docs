@@ -47,7 +47,7 @@ bit init --reset-hard
    {
      "org.extensions/environment/custom-react@0.0.9": {
        "mainFile": "index.ts",
-       "rootDir": "cet/environment/dell-react"
+       "rootDir": "cet/environment/react"
      },
      "org.design/base-ui/search-box-with-button@0.0.5": {
        "mainFile": "index.ts",
