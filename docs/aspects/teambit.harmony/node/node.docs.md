@@ -8,7 +8,7 @@ labels: ['node', 'environment', 'env', 'aspect', 'extension']
 
 The built-in Node Component Development Environment is a concrete composition of the [Env Aspect](/aspects/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
 
-Node environment is composed out of the base [React Environment](aspects/react) with some specific overrides for dependency management.
+Node environment is composed out of the base [React Environment](/aspects/react) with some specific overrides for dependency management.
 
 ## Use Node environment
 
@@ -28,8 +28,8 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-* `node-component` a bsaic Node component.
-* `node-extension` boilerplate for customizing configuration.
+- `node-component` a basic Node component.
+- `node-extension` boilerplate for customizing configuration.
 
 Use any of these templates with the `bit create` command:
 
@@ -43,31 +43,31 @@ Node, like all over Environments must implement a set of Service Handlers. For e
 
 > Node is a composition of the React environment with some specific modifications. Most of the links here direct to the actual configs in React environment.
 
-| Service     | Aspect     | Base Configuration  |
-| ----------- | ------------- | ----- |
-| Compilation | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json) |
-| Testing | **Jest** | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js) |
-| Linting | **ESLint** | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js) |
-| DevServer | **Webpack** | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts) |
-| Preview (simulation) | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
-| Package | **PKG** | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
-| Bundling | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
-| Documentation | *Core implementation* | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx) |
-| Build pipeline | [Builder](aspects/builder) | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts) |
-| Dependencies | *Core implementation*| [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts) |
-| Component Generator | [Generator](/aspects/generator) | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts) |
+| Service              | Aspect                            | Base Configuration                                                                                                                 |
+| -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Compilation          | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
+| Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
+| Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
+| DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
+| Preview (simulation) | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
+| Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
+| Build pipeline       | [Builder](aspects/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
+| Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts)                                                         |
+| Component Generator  | [Generator](/aspects/generator)   | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts)                                                 |
 
 ## Customize environment
 
-All environments are extendible. You can take any pre-existing environent, and create a component to extend it. That component can then use APIs to:
+All environments are extendible. You can take any pre-existing environment, and create a component to extend it. That component can then use APIs to:
 
-* Override default configurations.
-* Replace composed tools with others (for example - use Babel instead of TypeScript).
-* Add new services and capabilities.
+- Override default configurations.
+- Replace composed tools with others (for example - use Babel instead of TypeScript).
+- Add new services and capabilities.
 
 ### Create an extension
 
-The first step is to create a compoennt that extends React.
+The first step is to create a component that extends React.
 
 import CreateNodeExtension from '@site/docs/components/extensions/create-node-extension.md'
 
@@ -75,24 +75,22 @@ import CreateNodeExtension from '@site/docs/components/extensions/create-node-ex
 
 ### Customize configuration
 
-Node implements a set of APIs you can use to merge you prefered configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
+Node implements a set of APIs you can use to merge you preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
 In case of a conflict, your config will override the default.
 
 ```typescript {4,13} title="Customized TypeScript configuration"
 import { EnvsMain, EnvsAspect } from '@teambit/envs'
 import { NodeAspect, NodeMain } from '@teambit/node'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class MyNodeExtension {
   constructor(private node: NodeMain) {}
 
   static dependencies: any = [EnvsAspect, NodeAspect]
 
-  static async provider([envs, node]: [EnvsMain, ReactNAtiveMain]) {
-    const myNodeEnv = node.compose([
-      node.overrideTsConfig(tsconfig),
-    ])
+  static async provider([envs, node]: [EnvsMain, ReactNativeMain]) {
+    const myNodeEnv = node.compose([node.overrideTsConfig(tsconfig)])
 
     envs.registerEnv(myNodeEnv)
 
@@ -101,7 +99,7 @@ export class MyNodeExtension {
 }
 ```
 
-> To override any specific configuraiton it's recommended to create a config file for the specific tool and import it to any of the **transformers**.
+> To override any specific configuration it's recommended to create a config file for the specific tool and import it to any of the **transformers**.
 
 ### Composing tools and services
 
@@ -123,12 +121,11 @@ import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
 const babelConfig = require('./babel-config')
 
 export class CustomNodeExtension {
-  constructor(private node: ReacNativetMain) {}
+  constructor(private node: ReactNativeMain) {}
 
   static dependencies: any = [EnvsAspect, NodeAspect, BabelAspect]
 
   static async provider([envs, node, babel]: [EnvsMain, NodeMain, BabelMain]) {
-
     const babelCompiler = babel.createCompiler({
       babelTransformOptions: babelConfig
     })
@@ -145,10 +142,12 @@ export class CustomNodeExtension {
   }
 }
 ```
+
 ## Transformers API docs
 
-Use these APIs to customize React environment default configuration with your extention. [React more here](#customizing-configuration).
-#### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
+Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
+
+### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
 Merge the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
 
@@ -287,9 +286,9 @@ export class CustomNode {
 
 ## Service providers API docs
 
-Use these APIs to customize React environment default configuration with your extention. [Read more here](#composing-tools-and-services).
+Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 
-#### `getTester(...args : any[]): Tester`
+### `getTester(...args : any[]): Tester`
 
 Returns a test runner to be used by the Tester service.
 
@@ -303,8 +302,8 @@ export class NodeEnv implements Environment {
   ) {}
   // ...
   getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve('./jest/jest.config');
-    return this.jestAspect.createTester(jestConfig);
+    const jestConfig = require.resolve('./jest/jest.config')
+    return this.jestAspect.createTester(jestConfig)
   }
 }
 ```
@@ -364,9 +363,9 @@ export class NodeEnv implements Environment {
   // ...
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
-    });
-    return this.webpack.createDevServer(withDocs, webpackConfig);
+      entry: context.entry.concat([require.resolve('./docs')])
+    })
+    return this.webpack.createDevServer(withDocs, webpackConfig)
   }
 }
 ```
@@ -383,7 +382,7 @@ For example (see docs files [here](https://github.com/teambit/bit/tree/master/sc
 export class NodeEnv implements Environment {
   // ...
   getDocsTemplate() {
-    return require.resolve('./docs');
+    return require.resolve('./docs')
   }
 }
 ```
@@ -398,8 +397,8 @@ export class NodeEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
-    };
+      types: '{main}.ts'
+    }
   }
 }
 ```
@@ -418,17 +417,17 @@ export class NodeEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
-    };
+        'react-dom': '^16.13.1'
+      }
+    }
   }
 }
 ```
@@ -453,8 +452,8 @@ export class NodeEnv implements Environment {
   getBuildPipe(): BuildTask[] {
     return [
       this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task,
-    ];
+      this.tester.task
+    ]
   }
 }
 ```

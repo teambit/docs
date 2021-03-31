@@ -26,9 +26,9 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-* `react-component` a bsaic React UI component.
-* `react-hook` a basic React Hook component.
-* `react-extension` boilerplate for customizing configuration.
+- `react-component` a bsaic React UI component.
+- `react-hook` a basic React Hook component.
+- `react-extension` boilerplate for customizing configuration.
 
 Use any of these templates with the `bit create` command:
 
@@ -38,38 +38,38 @@ bit create <template name> [components...]
 
 ## Runtime (framework) dependencies
 
-Similar to many Frontend frameworks React must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-dom` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](/aspects/dependency-resolver) and set your prefered dependencies.  
-It is recomended to for you to extend the base React environment and define a semantic version rule to fit your current techstack and guidelines for reuseable React components.
+Similar to many Frontend frameworks React must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-dom` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](/aspects/dependency-resolver) and set your preferred dependencies.  
+It is recommended to for you to extend the base React environment and define a semantic version rule to fit your current tech stack and guidelines for reuseable React components.
 
 ## Development services
 
 React, like all over Environments must implement a set of Service Handlers. For each service, React compose a different tool and config by default.
 
-| Service     | Aspect     | Base Configuration  |
-| ----------- | ------------- | ----- |
-| Compilation | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json) |
-| Testing | **Jest** | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js) |
-| Linting | **ESLint** | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js) |
-| DevServer | **Webpack** | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts) |
-| Preview (simulation) | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
-| Package | **PKG** | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
-| Bundling | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
-| Documentation | *Core implementation* | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx) |
-| Build pipeline | [Builder](aspects/builder) | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts) |
-| Dependencies | *Core implementation*| [Env-dependencies](https://bit.dev/teambit/react/react/~code/react.env.ts) |
-| Component Generator | [Generator](/aspects/generator) | [example template](https://bit.dev/teambit/react/react/~code/templates/react-component.ts) |
+| Service              | Aspect                            | Base Configuration                                                                                                                 |
+| -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Compilation          | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
+| Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
+| Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
+| DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
+| Preview (simulation) | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
+| Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
+| Build pipeline       | [Builder](/aspects/builder)       | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
+| Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                         |
+| Component Generator  | [Generator](/aspects/generator)   | [example template](https://bit.dev/teambit/react/react/~code/templates/react-component.ts)                                         |
 
 ## Customize environment
 
-All environments are extendible. You can take any pre-existing environent, and create a component to extend it. That component can then use APIs to:
+All environments are extendible. You can take any pre-existing environment, and create a component to extend it. That component can then use APIs to:
 
-* Override default configurations.
-* Replace composed tools with others (for example - use Babel instead of TypeScript).
-* Add new services and capabilities.
+- Override default configurations.
+- Replace composed tools with others (for example - use Babel instead of TypeScript).
+- Add new services and capabilities.
 
 ### Create an extension
 
-The first step is to create a compoennt that extends React.
+The first step is to create a component that extends React.
 
 import CreateReactExtension from '@site/docs/components/extensions/create-react-extension.md'
 
@@ -77,14 +77,14 @@ import CreateReactExtension from '@site/docs/components/extensions/create-react-
 
 ### Customize configuration
 
-React implements a set of APIs you can use to merge you prefered configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
+React implements a set of APIs you can use to merge you preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
 In case of a conflict, your config will override the default.
 
 ```typescript {4,13} title="Customized TypeScript configuration"
 import { EnvsMain, EnvsAspect } from '@teambit/envs'
 import { ReactAspect, ReactMain } from '@teambit/react'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class MyReactExtension {
   constructor(private react: ReactMain) {}
@@ -92,9 +92,7 @@ export class MyReactExtension {
   static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const myReactEnv = react.compose([
-      react.overrideTsConfig(tsconfig),
-    ])
+    const myReactEnv = react.compose([react.overrideTsConfig(tsconfig)])
 
     envs.registerEnv(myReactEnv)
 
@@ -103,7 +101,7 @@ export class MyReactExtension {
 }
 ```
 
-> To override any specific configuraiton it's recommended to create a config file for the specific tool and import it to any of the **transformers**.
+> To override any specific configuration it's recommended to create a config file for the specific tool and import it to any of the **transformers**.
 
 ### Composing tools and services
 
@@ -129,8 +127,11 @@ export class CustomReactExtension {
 
   static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
 
-  static async provider([envs, react, babel]: [EnvsMain, ReactMain, BabelMain]) {
-
+  static async provider([envs, react, babel]: [
+    EnvsMain,
+    ReactMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
       babelTransformOptions: babelConfig
     })
@@ -172,7 +173,11 @@ const style = {
   height: '100vh'
 }
 
-export const Center = ({ children }: { children: ReactReact }): ReactElement => {
+export const Center = ({
+  children
+}: {
+  children: ReactReact
+}): ReactElement => {
   return <div style={style}>{children}</div>
 }
 ```
@@ -203,8 +208,9 @@ ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview)
 
 ## Transformers API docs
 
-Use these APIs to customize React environment default configuration with your extention. [React more here](#customizing-configuration).
-#### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
+Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
+
+### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
 Merge the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
 
@@ -343,9 +349,9 @@ export class CustomReact {
 
 ## Service providers API docs
 
-Use these APIs to customize React environment default configuration with your extention. [Read more here](#composing-tools-and-services).
+Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 
-#### `getTester(...args : any[]): Tester`
+### `getTester(...args : any[]): Tester`
 
 Returns a test runner to be used by the Tester service.
 
@@ -359,8 +365,8 @@ export class ReactEnv implements Environment {
   ) {}
   // ...
   getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve('./jest/jest.config');
-    return this.jestAspect.createTester(jestConfig);
+    const jestConfig = require.resolve('./jest/jest.config')
+    return this.jestAspect.createTester(jestConfig)
   }
 }
 ```
@@ -420,9 +426,9 @@ export class ReactEnv implements Environment {
   // ...
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
-    });
-    return this.webpack.createDevServer(withDocs, webpackConfig);
+      entry: context.entry.concat([require.resolve('./docs')])
+    })
+    return this.webpack.createDevServer(withDocs, webpackConfig)
   }
 }
 ```
@@ -439,7 +445,7 @@ For example (see docs files [here](https://github.com/teambit/bit/tree/master/sc
 export class ReactEnv implements Environment {
   // ...
   getDocsTemplate() {
-    return require.resolve('./docs');
+    return require.resolve('./docs')
   }
 }
 ```
@@ -454,8 +460,8 @@ export class ReactEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
-    };
+      types: '{main}.ts'
+    }
   }
 }
 ```
@@ -474,17 +480,17 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
-    };
+        'react-dom': '^16.13.1'
+      }
+    }
   }
 }
 ```
@@ -509,8 +515,8 @@ export class ReactEnv implements Environment {
   getBuildPipe(): BuildTask[] {
     return [
       this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task,
-    ];
+      this.tester.task
+    ]
   }
 }
 ```
