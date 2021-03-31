@@ -3,10 +3,7 @@ id: environments
 title: Environments
 ---
 
-import CreateExtensions from '@site/docs/components/extensions/create-extensions.md'
-
-**Component Development Environment** (or Environment in short) standardize component development and maintanence. **Environment** taketake direct inspiration from `react-scripts`.  
-Each component must have an environment configured, this way Bit "knows" how to build, test, lint and document components.
+**Component Development Environment** (or Environment in short) standardize component development and maintanence. In general it allows you to create components that take direct inspiration from `react-scripts` in how they simplify dev-experience when building components.  
 
 ## Benefits of Environments
 
@@ -28,6 +25,7 @@ These environments offer Bit's support for different frameworks. You can use eit
 
 ## Configure Environment for Components
 
+Each component must have an environment configured, this way Bit "knows" how to build, test, lint and document components.  
 The defaul environment Bit sets for all components is [Node](/aspects/node). We can override it when using the [`teambit.workspace/variants`](/aspects/variants) config in `worksapce.jsonc` file. This is how we can determine different configurations for components according to their location in the workspace.
 
 ```json title="workspace.jsonc"
@@ -65,9 +63,9 @@ Instructions on extending Environments are in each environment documentation.
 * [React Native](/aspects/react-native#customize-environment)
 * [Node](/aspects/node#customize-environment)
 
-#### Use extension in your project
+### Use your environment
 
-If you extended an environment with your own configuration you can apply it as the **Component Development Environment** for your components. This is done in the same way as you would set any of Bit's built-in environments:
+If you extended an environment with your own configuration you can apply it as the **Component Development Environment** for your components. This is done in the same way as you would set any of Bit's built-in environments.
 
 ```json title="workspace.jsonc"
 {
@@ -82,7 +80,7 @@ If you extended an environment with your own configuration you can apply it as t
 }
 ```
 
-#### Publish your extension
+### Publish your extension
 
 An extension works just like any other component in Bit. You can version it with `bit tag` and export to a Bit Scope with the `bit export` command.  
 Once you have an extension exported to a remote Scope you can configure it in any `workspace.jsonc` as if its part of Bit's built-in environments. Reusing extensions like components can help you standardize component development across your organization.
