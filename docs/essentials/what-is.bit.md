@@ -55,7 +55,7 @@ Highly concrete and specialized components can be apps, backend services, micro-
     <img src="/img/single-scope.png" width="100" alt="Scope" />
 </div>
 
-A Scope is a product feature in the organization's "virtual" codebase. Scope hosts closely related and cross-dependent components that implement all cross-cutting concerns of a product aspect. For example, a **User** scope can have a `login-form` frontend component, `authentication'middleware, `user-settings` micro-frontend, and a `user-service` microservice.
+A Scope is a product feature in the organization's "virtual" codebase. Scope hosts closely related and cross-dependent components that implement all cross-cutting concerns of a product aspect. For example, a **User** scope can have a `login-form` frontend component, `authentication` middleware, `user-settings` micro-frontend, and a `user-service` microservice.
 
 All components of a Scope are available as services for other teams, apps, and components. Each scope is owned by a different product team responsible for that functionality.
 
