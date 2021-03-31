@@ -119,6 +119,7 @@ module.exports = {
           type: 'category',
           label: 'Components',
           items: [
+            'building-with-bit/creating-components',
             'building-with-bit/tracking-components',
             'building-with-bit/removing-components',
             'building-with-bit/inspecting-components',
@@ -131,9 +132,8 @@ module.exports = {
             'building-with-bit/versioning-components',
             'building-with-bit/importing-components',
             'building-with-bit/installing-components'
-          ],
-        },
-        
+          ]
+        }
       ]
     },
 
@@ -170,7 +170,7 @@ module.exports = {
       items: [
         'troubleshooting/doctor-logs-cache',
         'troubleshooting/multiple-peer-dep-versions',
-        'troubleshooting/set-runtime-globals',
+        'troubleshooting/set-runtime-globals'
       ]
     }
   ]

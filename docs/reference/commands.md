@@ -56,7 +56,21 @@ bit init --reset-new
 
 ### Component workflow
 
+#### Create a Component
+
+```shell
+bit create react-component <my-component> --namespace <namespace>
+```
+
+#### See Available Templates
+
+```shell
+bit templates
+```
+
 #### Track a component
+
+To add pre-existing components not created with the `bit create` command.
 
 ```shell
 bit add <path/to/component>

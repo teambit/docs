@@ -4,8 +4,8 @@ title: Tracking
 ---
 
 import { Image } from '@site/src/components/image'
-
-## Tracking
+import BitCreate from '@site/docs/components/commands/bit-create.md'
+import BitTemplates from '@site/docs/components/commands/bit-templates.md'
 
 The tracking process translates sets of files into a single component that is semantically understood by Bit. It is the first step in a component's journey to complete independency.
 
@@ -16,6 +16,16 @@ When a component gets tracked, Bit does the following:
 - It determines the component entry point and its dependency graph
 - It creates a package in the workspace `node_modules` directory
 - It renders the component in the Workspace UI
+
+## Using Bit Create
+
+Tracking components is done automatically if you are using `bit create` to create your components.
+
+<BitCreate />
+
+<BitTemplates />
+
+## Pre-existing Components
 
 ### Track a single component
 

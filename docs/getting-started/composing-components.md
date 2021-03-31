@@ -80,3 +80,5 @@ bit create react-component component1 component2 --namespace design
 ## What's Next?
 
 It's time to create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.
+
+Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](building-with-bit/removing-components)

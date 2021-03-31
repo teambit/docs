@@ -5,6 +5,7 @@ title: Creating Components
 
 import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
 import ExampleButton from '@site/docs/components/examples/button.md'
+import BitCreate from '@site/docs/components/commands/bit-create.md'
 import BitTemplates from '@site/docs/components/commands/bit-templates.md'
 
 Once you have [initialize a Bit workspace](/getting-started/initializing-workspace) you can then:
@@ -106,20 +107,12 @@ bit show ui/button
 
 ## Creating more Components
 
-You can use the `bit create` command to create generic components.
-
-```bash
-bit create react-component my-card --namespace ui
-```
-
-You can create multiple components by adding more component names after the command command.
-
-```bash
-bit create react-component component1 component2 --namespace design
-```
+<BitCreate />
 
 <BitTemplates />
 
 ## What's Next?
 
 Once you have created and added your component to the workspace the next step is to [render the Workspace UI](workspace-ui) so you can see the component locally.
+
+Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](building-with-bit/removing-components)
