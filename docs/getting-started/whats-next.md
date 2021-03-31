@@ -8,8 +8,8 @@ Well done on making it to the end of the Getting Started section. So far you hav
 Are you ready to go deeper. We have so much more to show you.
 
 > **Using Bit on pre-existing projects**
-> 
-> If you have components in projects you are actively working on, please refer to [this guide](building-with-bit/pre-existing-components).
+>
+> If you have components in projects you are actively working on, please refer to [this guide](/building-with-bit/pre-existing-components).
 
 ## Essentials
 
@@ -25,7 +25,7 @@ Check out [Component Architecture](/component-architecture/thinking-in-component
 
 ## Bit Aspects
 
-Check out [Bit Aspects](/aspects/aspects-overview), to see the  the building blocks of Bit. You can implement new Aspects, compose them with Bit's core Aspects and thus extending Bit's core functionality to support advanced features.
+Check out [Bit Aspects](/aspects/aspects-overview), to see the the building blocks of Bit. You can implement new Aspects, compose them with Bit's core Aspects and thus extending Bit's core functionality to support advanced features.
 
 ## Resources
 

@@ -38,7 +38,7 @@ bit install @testing-library/react chai
 
 When importing a component into another component Bit doesn't allow for relative require/import statements, as this couples your component to a specific directory structure, instead you use the component's package name. In the workspace UI you will see the package name for your component which you can copy to import it.
 
-```js title="card.tsx"
+```jsx {2} title="card.tsx"
 import React from 'react'
 import { Button } from '@my-scope/ui.button'
 
@@ -47,7 +47,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 export const Card = ({ children, ...rest }: CardProps) => {
   return (
     <div {...rest}>
-      <Button text="hello from button" />
+      <Button>Click here</Button>
     </div>
   )
 }

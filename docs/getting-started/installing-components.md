@@ -13,7 +13,7 @@ Once you have [exported your component](exporting-components) you can now instal
 
 <InstallComponents />
 
-<!-- :arrow_right: Learn more about the [Installing Components](/building-with-bit/installing-components). -->
+:arrow_right: Learn more about [Installing Components](/building-with-bit/installing-components).
 
 ## Configure your Scoped Registry
 
@@ -38,7 +38,7 @@ import { Button } from '@yourUserName/componentScopeName.componentID'
 ```
 
 ```js title="app.js"
-<Button text="click me" />
+<Button>click Here</Button>
 ```
 
 ## What's Next?

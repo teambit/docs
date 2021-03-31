@@ -23,7 +23,7 @@ new components
      > ui/button@0.0.1
 ```
 
-<!-- :arrow_right: Learn more about the [Tagging Components](/building-with-bit/tagging-components). -->
+:arrow_right: Learn more about the [Tagging Components](/building-with-bit/tagging-components).
 
 ## Export Components
 
@@ -40,7 +40,7 @@ exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```
 
-<!-- :arrow_right: Learn more about the [Exporting Components](/building-with-bit/exporting-components). -->
+:arrow_right: Learn more about the [Exporting Components](/building-with-bit/exporting-components).
 
 ### See your Component in the Workspace
 
