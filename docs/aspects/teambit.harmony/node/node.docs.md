@@ -2,247 +2,234 @@
 id: node
 title: Node
 slug: /aspects/node
+description: A Bit development environment for Node Components
+labels: ['node', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The Node environment is an implementation of the Environments aspect. It is a one-stop-shop for Node components in a Bit workspace. It uses various services, provided by other aspects, to handle the life events of Node components, managed in a Bit workspace.
+The built-in Node Component Development Environment is a concrete composition of the [Env Aspect](/aspects/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
 
-The Node environment spares you the overhead of setting up your own Node environment and creates a standardized and shareable development environment for you and your team.
+Node environment is composed out of the base [React Environment](aspects/react) with some specific overrides for dependency management.
 
-## Default configurations
+## Use Node environment
 
-### Tester
+To use this environment for your components, add it to any of the `variants` in your `workspace.jsonc` file as follows:
 
-- Uses Jest as a test runner
-- Test files: `*.spec.*` and `*.test.*`
-
-### Compiler
-
-TypeScript
-
-### Bundler (for 'Preview' and 'DevServer')
-
-Uses Webpack.
-
-Includes the following file types:
-
-`*.web.mjs`, `*.mjs`, `*.js`, `*.ts`, `*.tsx`, `*.jsx`, `*.mdx`, `*.md`, `*.(module.)css`, `*.(module.)scss`, `*.(module.)sass`, `*.(module.)less`
-
-### Default dependencies (for components handled by the environment)
-
-```js
+```json title="workspace.jsonc"
 {
-  devDependencies: {
-    '@types/jest': '~26.0.9',
-    }
-}
-```
-
-### Development files
-
-The Node environment treats the following files as development files: `*.doc.*`, `*.spec.*`, `*.test.*`
-
-Dependencies of development files will be recognized and registered as development dependencies (`devDependencies`).
-
-## Using Node
-
-To use the Node environment, set it in the `workspace.jsonc` configuration file. Node can only be configured using the 'variants' config API.
-
-## Apply Node on a group of components
-
-The example below shows Node being applied on all components in the workspace, using the wildcard character `*`.
-
-```json
-{
-  "teambit.workspace/workspace": {
-    "name": "my-toolbox",
-    "icon": "https://image.flaticon.com/icons/svg/185/185034.svg"
-  },
   "teambit.workspace/variants": {
-    "*": {
+    "[some]/[path]": {
       "teambit.harmony/node": {}
     }
   }
 }
 ```
 
-## Extending Node
+## Create Node components
 
-Use the Node environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent Node components authored in various decoupled workspaces.
+React implements several component templates:
 
-This page lists Node's Environment Transformers. These are the 'override' methods that allow to add or override Node's default configurations.
+* `node-component` a bsaic Node component.
+* `node-extension` boilerplate for customizing configuration.
 
-## Environment transformers
+Use any of these templates with the `bit create` command:
 
-Node's environment transformers enable merging new configurations for different Bit aspects used by the Node environment
-
-The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
-
-### overrideTsConfig
-
-```ts
-overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer
+```sh
+bit create <template name> [components...]
 ```
 
-Overrides the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
+## Default Configuration and Services
 
-For example:
+Node, like all over Environments must implement a set of Service Handlers. For each service, Node compose a different tool and config by default.
+
+> Node is a composition of the React environment with some specific modifications. Most of the links here direct to the actual configs in React environment.
+
+| Service     | Aspect     | Base Configuration  |
+| ----------- | ------------- | ----- |
+| Compilation | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json) |
+| Testing | **Jest** | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js) |
+| Linting | **ESLint** | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js) |
+| DevServer | **Webpack** | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts) |
+| Preview (simulation) | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
+| Package | **PKG** | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
+| Bundling | **Webpack** | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts) |
+| Documentation | *Core implementation* | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx) |
+| Build pipeline | [Builder](aspects/builder) | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts) |
+| Dependencies | *Core implementation*| [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts) |
+
+### Additional services
+
+Each environment may compose additional services as needed to improve developer experience. React environment is no different and allows for the following features:
+
+| Service     | Aspect     | Base Configuration  |
+| ----------- | ------------- | ----- |
+| Component Generator | [Generator](/aspects/generator) | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts) |
+
+### Customizing configuration
+
+To simplify the process of extending the base Node environment we implemented a template for you to start with.  
+This creates a base mock for a customized extension where you can quickly override any of the default configurations for the composed tools and compose different aspects to replace any of the base tools.
+
+#### Create an extension
+
+```shell
+bit create node-extension my-node-extension
+```
+
+This template comprise of several files. In this case our main focus will be the file ends with `*.extension.ts`. It may look similar to this snippet:
+
+```typescript title="my-react-extension.extension.ts"
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { NodeAspect, NodetMain } from '@teambit/node'
+
+export class MyNodeExtension {
+  constructor(private node: NodeMain) {}
+
+  static dependencies: any = [EnvsAspect, NodeAspect]
+
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const myNodeEnv = node.compose([
+      /*
+        Environment customization and trnaformation code goes here
+      */
+    ])
+
+    envs.registerEnv(myNodeEnv)
+
+    return new MyNodeExtension(node)
+  }
+}
+```
+
+#### Using Transformers to customize configuration
+
+Similar to all Environments, Node implements a set of APIs you can use to merge you prefered configuration with its defaults. In case of a conflict, your config will override the default.  
+These APIs are called **transformers** and they all start with the `override` pre-fix. [Available transformers](#transformers-api-docs).
+
+To override any specific configuraiton it's recommended to create a config file for the specific tool and import it to any of the **transformers**. For example:
+
+```typescript {4,13} title="Customized TypeScript configuration"
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { NodeAspect, NodetMain } from '@teambit/node'
+const tsconfig = require('./typescript/tsconfig.json');
+
+export class MyNodeExtension {
+  constructor(private node: NodeMain) {}
+
+  static dependencies: any = [EnvsAspect, NodeAspect]
+
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const myNodeEnv = node.compose([
+      node.overrideTsConfig(tsconfig),
+    ])
+
+    envs.registerEnv(myNodeEnv)
+
+    return new MyNodeExtension(node)
+  }
+}
+```
+
+We urge you to explore the different `override` transformers to define your base configuration for your needs.
+
+## Transformers API docs
+
+Use these APIs to customize React environment default configuration with your extention. [React more here](#customizing-configuration).
+#### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
+
+Merge the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
 
 ```ts
 // ...
-
 const tsconfig = require('./typescript/tsconfig.json');
-
 export class NodeExtension {
-
 // ...
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overrideTsConfig(tsconfig)
     ]);
-
-
 }
-
 // ...
 ```
 
-### overridePreviewConfig
+#### `overridePreviewConfig(config: Configuration): EnvTransformer`
 
-```ts
-overridePreviewConfig(config: Configuration): EnvTransformer
-```
-
-Overrides the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
-
-For example:
+Merge the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 ```ts
 // ...
-
 const webpackConfig = require('./webpack/webpack.config');
-
 export class NodeExtension {
-
 // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overridePreviewConfig(webpackConfig)
     ]);
-
-
 }
-
 // ...
 ```
 
-### overrideDevServerConfig
+#### `overrideDevServerConfig(config: Configuration): EnvTransformer`
 
-```ts
-overrideDevServerConfig(config: Configuration): EnvTransformer
-```
-
-Overrides the Webpack configurations for the 'DevServer' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
-
-For example:
+Merge the Webpack configurations for the 'DevServer' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 ```ts
 // ...
-
 const webpackConfig = require('./webpack/webpack.config');
-
 export class NodeExtension {
-
 // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overrideDevServerConfig(webpackConfig)
     ]);
-
-
 }
-
 // ...
 ```
 
-### overrideJestConfig
-
-```ts
-overrideJestConfig(jestConfigPath: string): EnvTransformer
-```
+#### `overrideJestConfig(jestConfigPath: string): EnvTransformer`
 
 This method receives a path (as a string) to a configuration file . Overrides the default configurations for the Jest test runner with a new ([jest.config](https://jestjs.io/en/configuration)) configuration file. This is done by passing the _path_ to the file as an argument.
 
-For example:
-
 ```ts
 // ...
-
 export class NodeExtension {
-
 // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overrideJestConfig(require.resolve('./jest/jest.config'))
     ]);
-
-
 }
-
 // ...
 ```
 
-### overrideBuildPipe
-
-```ts
-overrideBuildPipe(tasks: BuildTask[]): EnvTransformer
-```
+#### `overrideBuildPipe(tasks: BuildTask[]): EnvTransformer`
 
 This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command).
 
-For example:
-
 ```ts
 // ...
-
 // Import the task
 import { CustomTask } from './custom.task'
-
 export class CustomNode {
   // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
     const nodePipe = node.env.getBuildPipe()
-
     // Add the custom task to the end of the build tasks sequence.
     const tasks = [...nodePipe, new CustomTask()]
-
     const newNodeEnv = node.compose([node.overrideBuildPipe(tasks)])
-
     // ...
   }
 }
 ```
 
-### overrideDependencies
+#### `overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer`
 
-```ts
-overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer
-```
-
-This method receives a Bit dependency-policy object. It overrides the default dependency policy for components using this environment.
-
+This method receives a Bit dependency-policy object. It overrides the default dependency policy for components using this environment.  
 Each key-value pair in a dependency-policy object signifies the package and the version to be used. It also uses the `-` notation to signify a module should not be defined as a dependency of a certain type (dev, peer or standard).
-
-For example:
 
 ```js
 // ...
-
 const newDependencies = {
   devDependencies: {
     '@types/jest': '~26.0.9'
@@ -251,12 +238,10 @@ const newDependencies = {
 
 export class CustomNode {
   // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overrideDependencies(newDependencies)
     ])
-
     // ...
   }
 }
@@ -264,19 +249,12 @@ export class CustomNode {
 
 > The above example shows the 'Node' library being removed as a (runtime) dependency and added as a peer dependency.
 
-### overridePackageJsonProps
-
-```ts
-overridePackageJsonProps(props: PackageJsonProps): EnvTransformer
-```
+#### `overridePackageJsonProps(props: PackageJsonProps): EnvTransformer`
 
 Overrides the default properties added to the `package.json` file of every package generated from components using this environment.
 
-For example:
-
 ```ts
 // ...
-
 const newPackageProps = {
   main: 'dist/{main}.js',
   types: '{main}.ts'
@@ -284,12 +262,10 @@ const newPackageProps = {
 
 export class CustomNode {
   // ...
-
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
     const newNodeEnv = node.compose([
       node.overridePackageJsonProps(newPackageProps)
     ])
-
     // ...
   }
 }
