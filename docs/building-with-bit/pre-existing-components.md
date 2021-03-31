@@ -31,5 +31,5 @@ Using `bit install` to manage dependencies in your workspace allows for several 
 
 ### Using your current package manager
 
-You can keep using your current package manager for dependency management and keep all dependencies in your `package.json` file. In this case, it is important to use `bit link` after you install dependnecies. This is because package managers often delete "unkown" files from `node_modules`, and `bit link` re-creates all component-modules.  
+You can keep using your current package manager for dependency management and keep all dependencies in your `package.json` file. In this case, it is important to use `bit link` after you install dependencies. This is because package managers often delete "unkown" files from `node_modules`, and `bit link` re-creates all component-modules.  
 We recomend adding `bit link` as a `post-install` action on your `package.json` file to simplify dev-experience.
