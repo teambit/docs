@@ -59,31 +59,15 @@ There's no "single-config to rule them all" for component lifecycle, this is why
 
 The first step of creating an environment is creating a new component with the specific extension template. Each of the pre-built environments contains a template for creating extension. You can also head over to each environment's documentation page to learn more about the APIs it allows you to use for customization.
 
-<CreateExtensions />
+Instructions on extending Environments are in each environment documentation.
 
-After you created your extension you need configure it to be a [Bit Aspect](/aspects/aspects-overview). This is because environments are actually aspects that extends Bit's core functionality to support your development workflow. To do this edit your `workspace.jsonc` and set `teambit.harmony/aspect` as the environment applied on the extension you created:
-
-```json title="workspace.jsonc"
-{
-  "teambit.workspace/variants": {
-    "path/to/your/extension": {
-      "teambit.harmony/aspect": {}
-    },
-  }
-}
-```
-
-Validate it by running `bit env` and see that the extension-component has `teambit.harmony/aspect` set as an environment.
-
-> Bit is lacking an automated mechanism for rebuilding extensions on configuration and code changes. You need to run the `compile` command to have Bit rebuild your extension:
->
-> ```sh
-> bit compile
-> ```
+* [React](/aspects/react#customize-environment)
+* [React Native](/aspects/react-native#customize-environment)
+* [Node](/aspects/node#customize-environment)
 
 #### Use extension in your project
 
-Now that you extended an environment with your own configuration you can apply it as the **Component Development Environment** for your components. This is done in the same way as you would set any of Bit's built-in environments:
+If you extended an environment with your own configuration you can apply it as the **Component Development Environment** for your components. This is done in the same way as you would set any of Bit's built-in environments:
 
 ```json title="workspace.jsonc"
 {
