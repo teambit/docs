@@ -33,7 +33,7 @@ To perform [Bit.dev](https://bit.dev) operations from the CI runner, use the aut
 
 To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `$ bit login`)
 
-```shell
+```bash
 $ bit config
 
 analytics_id                  xxxxxxxxxxxxx
@@ -55,7 +55,7 @@ Create a new `tag-and-export.yml` file in your remote repository `./.github/work
 
 For example:
 
-```sh
+```bash
 your-repository-name/.github/workflows/tag-and-export.yml
 ```
 

@@ -1,7 +1,7 @@
---- 
+---
 id: importing-components
-title: importing
---- 
+title: importing Components
+---
 
 Importing a component, from a remote scope to your local workspace, allows you to maintain the component in your own workspace and even build, version and export it back to its remote scope with a new bumped version.
 
@@ -20,7 +20,7 @@ A single component is imported using its ID. A component ID has the following pa
 
 For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
 
-```shell
+```bash
 bit import teambit.teaching/ui/elements/dots-loader
 ```
 
@@ -30,13 +30,13 @@ To replace the default directory for that component, we'll add the `--path` flag
 
 To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
 
-```shell
+```bash
 bit import teambit.teaching/*
 ```
 
 To limit our import to components under the `ui/elements` namespaces, we'll replace just the component name:
 
-```shell
+```bash
 bit import teambit.teaching/ui/*
 ```
 
@@ -44,7 +44,7 @@ bit import teambit.teaching/ui/*
 
 To get the latest versions of every imported component in our workspace, we'll run:
 
-```shell
+```bash
 bit import
 ```
 
@@ -62,7 +62,7 @@ Tracked components, locally tagged components and imported components should all
 For example:
 
 ```js
-import { Button } from '@my-scope/button';
+import { Button } from '@my-scope/button'
 ```
 
 ## Change the configurations of an imported component

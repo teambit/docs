@@ -19,7 +19,7 @@ Bit shows the state of each component in the workspace' component list using ann
 
 No components have pending changes. Either no files are tracked in the workspace, or the tracked components have no pending changes.
 
-```shell
+```bash
 $ bit status
 nothing to tag or export
 ```
@@ -30,8 +30,7 @@ Components that have been tracked, but not yet tagged.
 
 Bit tries to validate if a _new component_ can be isolated, and will print all isolation issues it finds (if any).
 
-
-```shell
+```bash
 $ bit status
 new components
  (use "bit tag --all [version]" to lock a version with all your changes)
@@ -46,7 +45,7 @@ In Git status terms, the equivalent would be changes which have been committed b
 
 Staged components have been verified by Bit as fully isolated.
 
-```shell
+```bash
 $ bit status
 staged components
  (use "bit export <remote_collection> to push these components to a remote Collection")
@@ -63,7 +62,7 @@ Modified components are meant to be tagged and set as a new version.
 
 Bit tries to validate if a _modified component_ can be isolated, and will print all isolation issues it finds (if any).
 
-```shell
+```bash
 $ bit status
 modified components
  (use "bit tag --all [version]" to lock a version with all your changes)
@@ -76,7 +75,7 @@ modified components
 
 Components with newer versions fetched by `bit import` and available to use. Use bit checkout to start using the newer version.
 
-```shell
+```bash
 $ bit status
 pending updates
  (use "bit checkout [version] [component_id]" to merge changes)
@@ -90,7 +89,7 @@ pending updates
 
 A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove <component-id>`.
 
-```shell
+```bash
 $ bit status
 deleted components
  these components were deleted from your project.
@@ -103,7 +102,7 @@ deleted components
 
 Component (not in state new) for whom at least one of its dependencies is in `modified` state.
 
-```shell
+```bash
 $ bit status
 components pending to be tagged automatically (when their dependencies are tagged)
  > string/index ... ok

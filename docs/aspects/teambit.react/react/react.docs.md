@@ -770,7 +770,7 @@ To customize your environment's test runner, first create an environment extensi
 
 ### Create the environment extension files
 
-```shell
+```bash
 // In the workspace's root directory
 $ mkdir -p extensions/custom-react
 $ touch extensions/custom-react/react.extension.ts
@@ -892,7 +892,7 @@ To customize your environment's compiler, first create an environment extension.
 
 ### Create the environment extension files
 
-```shell
+```bash
 // In the workspace's root directory
 $ mkdir -p extensions/custom-react
 $ touch extensions/custom-react/react.extension.ts

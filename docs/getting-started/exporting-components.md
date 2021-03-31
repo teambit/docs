@@ -11,13 +11,13 @@ Once you have created your [remote scope](remote-scope) and configured your defa
 
 Before exporting our components we need to tag them using the `bit tag` command. This will create a new version of your component.
 
-```shell
+```bash
 bit tag --all
 ```
 
 When component has finished tagging you should see the following message:
 
-```sh
+```bash
 new components
 (first version for components)
      > ui/button@0.0.1
@@ -29,13 +29,13 @@ new components
 
 Once you have tagged your component you can then run the `bit export` command.
 
-```sh
+```bash
 bit export
 ```
 
 When your component has finished exporting you should see the following message:
 
-```shell
+```bash
 exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```

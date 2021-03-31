@@ -34,30 +34,27 @@ As mentioned above, Bit environments make use of Bit's CLI to execute their diff
 
 ### Run the Dev Server
 
-```shell
+```bash
 bit start
 ```
 
 ### Run the build pipeline
 
-```shell
+```bash
 bit build
 ```
 
-
 ### Run all tests
 
-```shell
+```bash
 bit test
 ```
-
 
 ### Compile all components
 
 ```
 bit compile
 ```
-
 
 ### Get lint results
 

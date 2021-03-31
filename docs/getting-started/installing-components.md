@@ -25,7 +25,7 @@ Once you have [exported your component](exporting-components) you can now instal
 
 Install dependencies for all the imported components.
 
-```shell
+```bash
 bit install
 ``` -->
 

@@ -69,7 +69,6 @@ The hierarchy in a descending order:
 3. Policies set by the environment (using `getDependencies`)
 4. Bit’s automated dependency detections, and policies set by the Dependency Resolver at the workspace configuration root-level.
 
-
 > Use the `bit dependencies <component-id>` command to understand the calculations and interactions that resolved in the generated dependency graph of a specific component.
 
 ### Select a package manager
@@ -318,7 +317,7 @@ The package manager can be configured to use a proxy for outgoing network reques
 
 To get the value for 'proxy'/'https-proxy':
 
-```shell
+```bash
 bit config get proxy
 
 bit config get https-proxy
@@ -326,7 +325,7 @@ bit config get https-proxy
 
 To set a new 'proxy'/'https-proxy' value:
 
-```shell
+```bash
 bit config set proxy http://domain-one.proxy.com:8080
 
 bit config set https-proxy http://domain-one.proxy.com:8080
@@ -349,13 +348,13 @@ Read about setting a proxy in NPM's global configuration [here](https://docs.npm
 
 ##### Install all dependencies listed in the Dependency Resolver configuration:
 
-```shell
+```bash
 bit install
 ```
 
 ##### Install the latest version of a package:
 
-```shell
+```bash
 bit install <package>
 
 // For example
@@ -364,7 +363,7 @@ bit install lodash
 
 ##### Install a specific version of a package:
 
-```shell
+```bash
 bit install <package>@<version>
 
 // For example
@@ -377,7 +376,7 @@ When trying to install a specific package that is already listed in the Dependen
 
 To override it:
 
-```shell
+```bash
 bit install <package> --update-existing
 
 bit install <package> -u
@@ -388,6 +387,6 @@ bit install <package> -u
 The 'install' process includes importing components listed in the `.bitmap` file and linking them to the `node_modules` directory.
 To disable importing and install all packages and components as standard packages use:
 
-```shell
+```bash
 bit install --skip-import
 ```

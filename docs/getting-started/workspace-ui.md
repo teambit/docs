@@ -9,7 +9,7 @@ To see a component in the workspace you first need to [create a component](/gett
 
 The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
 
-```sh
+```bash
 bit start
 ```
 

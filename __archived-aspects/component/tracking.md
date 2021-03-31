@@ -21,13 +21,13 @@ When a component gets tracked, Bit does the following:
 
 ### Track a single component
 
-```shell
+```bash
 $ bit add <path to component>
 ```
 
 For example:
 
-```shell
+```bash
 $ bit add components/react/button
 ```
 
@@ -46,19 +46,19 @@ Namespaces serve as (abstract) folders that organize components in the Workspace
 
 To namespace a component us the `--namespace` or `-n` option.
 
-```shell
+```bash
 $ bit add <path to component> --namespace <name>
 ```
 
 For example:
 
-```shell
+```bash
 $ bit add components/react/button --namespace react-ui
 ```
 
 Namespaces also support nesting. For example:
 
-```shell
+```bash
 $ bit add components/react/button --namespace react/ui
 ```
 
@@ -68,7 +68,7 @@ To track multiple components, set the path to the common directory and use the `
 
 For example:
 
-```shell
+```bash
 $ bit add path/to/common/path/*
 ```
 
@@ -76,19 +76,19 @@ $ bit add path/to/common/path/*
 
 The default entry point is `index.ts`/`index.js`. To set a different entry point:
 
-```shell
+```bash
 $ bit add <path to component> --main <entry file>
 ```
 
 For example
 
-```shell
+```bash
 $ bit add components/react/button --main main.js
 ```
 
 ## Untracking components
 
-```shell
+```bash
 $ bit untrack <component id>
 ```
 

@@ -19,19 +19,19 @@ To choose a test runner, choose an environment that uses it or [extend an enviro
 
 To manually run the tester on a specific component use its component ID
 
-```shell
+```bash
 bit test <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit test ui-primitives/button
 ```
 
 To manually run the tester on the entire workspace:
 
-```shell
+```bash
 bit test
 ```
 
@@ -41,7 +41,7 @@ bit test
 
 Starts the tester in 'watch mode' (re-tests when changes are made to a component).
 
-```shell
+```bash
 bit test --watch
 ```
 
@@ -49,7 +49,7 @@ bit test --watch
 
 Starts the tester in 'debug mode'.
 
-```shell
+```bash
 bit test --debug
 ```
 
@@ -57,31 +57,33 @@ bit test --debug
 
 Tests all components that use a specific environment.
 
-```shell
+```bash
 bit test --env <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit test --env teambit.react/react
 ```
 
 For example:
-```shell
+
+```bash
 bit test --env teambit.react/react
 ```
+
 #### `--scope` `-s`
 
 Tests all components in a specific scope.
 
-```shell
+```bash
 bit test --scope <scope-name>
 ```
 
 For example:
 
-```shell
+```bash
 bit test --scope my-org.react-design-system
 ```
 
@@ -91,7 +93,7 @@ bit test --scope my-org.react-design-system
 
 Bit's local dev server (which also runs the Workspace UI) re-tests components on each modification. This happens whenever a file is 'saved'.
 
-```shell
+```bash
 $ bit start
 ENVIRONMENT NAME        URL                      STATUS
 react              http://localhost:3101         Running
@@ -111,7 +113,7 @@ Test results will be shown in the terminal, as well as in the 'Tests' tab.
 
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component testing is one of these tasks.
 
-```sh
+```bash
 bit watch
 ```
 

@@ -37,7 +37,7 @@ To upgrade to the latest version of BVM:
 
 To upgrade to the latest version of Bit:
 
-```sh
+```bash
 bvm upgrade
 ```
 

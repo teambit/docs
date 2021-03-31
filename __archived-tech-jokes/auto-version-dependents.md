@@ -19,7 +19,7 @@ Our Workspace UI notifies us that the 'button' was modified (`M`), and since 'te
 
 Let's examine this further using the `status` command:
 
-```shell
+```bash
 bit status
 ```
 
@@ -61,14 +61,14 @@ In the above output, Bit notifies us of two important things:
 
 Let's tag our `button` component to save the previous change made to it:
 
-```shell title="Auto-tag process for dependents"
+```bash title="Auto-tag process for dependents"
 bit tag ui/elements/button --message "add animated loader"
 ```
 
 As expected two components were tested, the tagged 'button' component, and the auto-tagged 'tech-jokes-viewer'.
 Both passed successfully.
 
-```shell
+```bash
  PASS  ../capsules/../demo-org.demo-scope_ui_elements_button@1.0.1/dist/button.spec.js
  PASS  ../capsules/.../demo-org.demo-scope_ui_widgets_tech-jokes-viewer@1.0.1/dist/tech-jokes-viewer.spec.js
 
@@ -94,11 +94,11 @@ changed components
 
 If we look at our local scope status, we'll see both component appear there with a new bumped version number:
 
-```shell
+```bash
 bit list
 ```
 
-```shell
+```bash
   ┌──────────────────────────────────────────┬─────────┬─────────┐
   │ component ID                             │ local   │ used    │
   │                                          │ version │ version │

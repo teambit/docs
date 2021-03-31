@@ -19,11 +19,11 @@ The dependency graph diagram does not include packages.
 
 To examine dependencies (packages and Bit components) use the `bit show` command:
 
-```shell
+```bash
 bit show ui/widgets/tech-jokes-viewer
 ```
 
-```shell {16,17,19}
+```bash {16,17,19}
 
   ├──────────────┼──────────────────────────────────────────────────────────────┤
   │ dev files    │ tech-jokes-viewer.docs.md (teambit.docs/docs)                │

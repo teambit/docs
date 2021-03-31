@@ -9,7 +9,7 @@ Refactoring code often causes components to become obsolete or irrelevant. This 
 
 Removing a local component has no ripple effects. This is only relevant to the consuming project. To do so specify the component ID to remove.
 
-```shell
+```bash
 $ bit remove foo/bar
 successfully removed components:
 foo/bar
@@ -29,7 +29,7 @@ Other components in the workspace may depend on removed components. Meaning that
 
 To remove a component from a remote scope, specify the full component ID.
 
-```shell
+```bash
 $ bit remove username.your-scope/foo/bar --remote
 successfully removed components:
 username.your-scope/foo/bar
@@ -55,7 +55,7 @@ This is what happens if we remove `left-pad`:
 
 To deprecate a component in a remote Scope, specify the full component ID and use the `--remote` option.
 
-```shell
+```bash
 $ bit deprecate username.your-scope/foo/bar --remote
 deprecated components: username.your-scope/foo/bar
 ```
@@ -64,7 +64,7 @@ deprecated components: username.your-scope/foo/bar
 
 To deprecate a component in a workspace, specify the component ID.
 
-```shell
+```bash
 $ bit deprecate foo/bar
 deprecated components: foo/bar
 ```

@@ -28,13 +28,13 @@ If your npm is configured to use a registry different than npmjs's - the Depende
 - To install component packages in a non-Bit project, using npm or Yarn, configure your package manager to use your **scope owner** name
   (Bit username or organization) as a scoped registry:
 
-```shell
+```bash
 npm config set @scope-owner:registry https://node.bit.dev
 ```
 
 - Use npm login to login using your Bit credentials:
 
-```shell
+```bash
 npm login --registry=https://node.bit.dev --scope=@scope-owner
 ```
 

@@ -1,5 +1,5 @@
 ---
-id: bit-create
+id: bit-create-component
 title: Bit Create
 ---
 

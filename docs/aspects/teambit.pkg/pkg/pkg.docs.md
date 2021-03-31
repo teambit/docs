@@ -14,7 +14,6 @@ The PKG aspect handles the configuration, publishing and packing of component pa
 It adds its own build task to the build pipeline, to create component packages and include them in as part of the component artifacts.
 This automation includes generating the package name and other properties according to the component's details.
 
-
 #### Features
 
 - **Efficient `package.json` configuration:** Use the PKG's workspace config API to add or override `package.json` properties to a group of components, all at once.
@@ -125,13 +124,13 @@ For example:
 
 Creates a TAR file (to be published to a node package registry):
 
-```shell
+```bash
 bit pack <component-id>
 ```
 
 Overrides the existing TAR file (in the same location):
 
-```shell
+```bash
 bit pack <component-id> --override
 
 bit pack <component-id> -o
@@ -139,7 +138,7 @@ bit pack <component-id> -o
 
 Returns the output in a JSON format:
 
-```shell
+```bash
 bit pack <component-id> --json
 
 bit pack <component-id> -j
@@ -149,19 +148,19 @@ bit pack <component-id> -j
 
 Publishes an exported component:
 
-```shell
+```bash
 bit publish <componentId>
 ```
 
 Publishes a staged component that has not yet been exported:
 
-```shell
+```bash
 bit publish <component-id> --allow-staged
 ```
 
 Checks if the publishing process will be done successfully (without publishing):
 
-```shell
+```bash
 bit publish <component-id> --dry-run
 
 bit publish <component-id> -d
@@ -169,7 +168,7 @@ bit publish <component-id> -d
 
 Returns the output as JSON:
 
-```shell
+```bash
 bit publish <component-id> --json
 
 bit publish <component-id> --j

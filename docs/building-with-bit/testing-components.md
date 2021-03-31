@@ -1,6 +1,6 @@
 ---
 id: testing-components
-title: Testing
+title: Testing Components
 ---
 
 ## Adding Tests
@@ -9,7 +9,7 @@ Tests are added by placing test files inside the component's directory. Test fil
 
 For example, the React environment runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
 
-```shell {5}
+```bash {5}
 ├── ui/button
     ├── index.tsx
     ├── button.compositions.tsx
@@ -22,18 +22,18 @@ It is highly recommended to use the component compositions as test samples.
 For example:
 
 ```tsx title="button.tsx"
-import React from 'react';
-import { render } from '@testing-library/react';
-import { expect } from 'chai';
+import React from 'react'
+import { render } from '@testing-library/react'
+import { expect } from 'chai'
 
-import { BasicButton } from './button.composition';
+import { BasicButton } from './button.composition'
 describe('button', () => {
   it('should render', () => {
-    const { getByText } = render(<BasicButton />);
-    const rendered = getByText('click me');
+    const { getByText } = render(<BasicButton />)
+    const rendered = getByText('click me')
 
-    expect(rendered).to.exist;
-  });
+    expect(rendered).to.exist
+  })
 })
 ```
 
@@ -47,19 +47,19 @@ To choose a test runner, choose an environment that uses it or extend an environ
 
 To manually run the tester on a specific component use its component ID
 
-```shell
+```bash
 bit test <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit test ui/button
 ```
 
 To manually run the tester on the entire workspace:
 
-```shell
+```bash
 bit test
 ```
 
@@ -69,7 +69,7 @@ bit test
 
 Starts the tester in 'watch mode' (re-tests when changes are made to a component).
 
-```shell
+```bash
 bit test --watch
 ```
 
@@ -77,7 +77,7 @@ bit test --watch
 
 Starts the tester in 'debug mode'.
 
-```shell
+```bash
 bit test --debug
 ```
 
@@ -85,13 +85,13 @@ bit test --debug
 
 Tests all components that use a specific environment.
 
-```shell
+```bash
 bit test --env <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit test --env teambit.react/react
 ```
 
@@ -99,13 +99,13 @@ bit test --env teambit.react/react
 
 Tests all components in a specific scope.
 
-```shell
+```bash
 bit test --scope <scope-name>
 ```
 
 For example:
 
-```shell
+```bash
 bit test --scope my-org.react-design-system
 ```
 
@@ -121,7 +121,7 @@ Test results will be shown in the terminal, as well as in the 'Tests' tab in you
 
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component testing is one of these tasks.
 
-```sh
+```bash
 bit watch
 ```
 

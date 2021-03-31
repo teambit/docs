@@ -40,7 +40,7 @@ Packages with a modified `name` property will not be published to Bit.dev's regi
 
 ### Publish
 
-:::info 
+:::info
 If `publishConfig` or `name` are not set, packages will be published to Bit.dev's registry.
 :::
 
@@ -117,13 +117,13 @@ For example:
 
 Creates a TAR file (to be published to a node package registry):
 
-```shell
+```bash
 $ bit pack <component-id>
 ```
 
 Overrides the existing TAR file (in the same location):
 
-```shell
+```bash
 $ bit pack <component-id> --override
 
 $ bit pack <component-id> -o
@@ -131,7 +131,7 @@ $ bit pack <component-id> -o
 
 Returns the output in a JSON format:
 
-```shell
+```bash
 $ bit pack <component-id> --json
 
 $ bit pack <component-id> -j
@@ -141,19 +141,19 @@ $ bit pack <component-id> -j
 
 Publishes an exported component:
 
-```shell
+```bash
 $ bit publish <componentId>
 ```
 
 Publishes a staged component that has not yet been exported:
 
-```shell
+```bash
 $ bit publish <component-id> --allow-staged
 ```
 
 Checks if the publishing process will be done successfully (without publishing):
 
-```shell
+```bash
 $ bit publish <component-id> --dry-run
 
 $ bit publish <component-id> -d
@@ -161,7 +161,7 @@ $ bit publish <component-id> -d
 
 Returns the output as JSON:
 
-```shell
+```bash
 $ bit publish <component-id> --json
 
 $ bit publish <component-id> --j

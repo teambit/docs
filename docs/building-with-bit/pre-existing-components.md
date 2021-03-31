@@ -11,7 +11,7 @@ If you want to add pre-existing components make sure all your component files ar
 
 To add your component to the workspace run the `bit add` command followed by the namespace. The namespace is the the component folder structure you would like to see in your workspace.
 
-```sh
+```bash
 bit add button --namespace ui
 ```
 

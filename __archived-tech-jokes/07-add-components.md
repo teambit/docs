@@ -28,7 +28,7 @@ Moreover, a component must have an entry file (`index.[ts|js]` is used as the de
 
 Track the React hook with the namespace 'hooks':
 
-```shell
+```bash
 bit add components/hooks/use-jokes/ --namespace hooks
 ```
 
@@ -68,7 +68,7 @@ This is done to enable components to be context-agnostic.
 
 Track the UI elements with the namespace 'ui/elements'. Use the `*` wildcard to select all folders under 'ui-elements'
 
-```shell
+```bash
 bit add components/ui/elements/* --namespace ui/elements
 ```
 
@@ -84,11 +84,11 @@ Our 'button' component is marked with a `1, N` to its right to signify that it i
 
 To understand what this issue is, let's check our workspace status:
 
-```shell
+```bash
 bit status
 ```
 
-```shell {7,8}
+```bash {7,8}
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
 
@@ -105,7 +105,7 @@ The above output informs us that `@testing-library/react`, required by our compo
 
 We'll install `@testing-library/react` using [Dependency Resolver](/aspects/dependency-resolver), a Bit extension that handles dependencies in a workspace.
 
-```shell
+```bash
 bit install @testing-library/react
 ```
 
@@ -150,7 +150,7 @@ These should be identical to the values set in the `defaultScope` property, in t
 
 Once the above modification is done, add the component with the namespace 'ui/widgets':
 
-```shell
+```bash
 bit add components/ui/widgets/tech-jokes-viewer/ --namespace ui/widgets
 ```
 

@@ -27,7 +27,7 @@ Harmony components and Bit legacy components cannot switch workspace.
 
 ## Reset a Bit workspace
 
-```shell
+```bash
 bit init --reset-hard
 ```
 
@@ -78,7 +78,7 @@ bit init --reset-hard
 
 Se the Workspace UI at https://localhost:3000
 
-```shell
+```bash
 bit start
 ```
 

@@ -17,19 +17,19 @@ To customize an environment's compiler, [see here](/building-with-bit/environmen
 
 To manually run the compiler on a specific component use its [component ID](/building-with-bit/compilingcomponents):
 
-```shell
+```bash
 bit compile <component-id>
 ```
 
 For example:
 
-```shell
+```bash
 bit compile ui-primitives/button
 ```
 
 To manually run the compiler on the entire workspace:
 
-```shell
+```bash
 bit compile
 ```
 
@@ -39,7 +39,7 @@ bit compile
 
 Compiles only new or modified components.
 
-```shell
+```bash
 bit compile --changed
 ```
 
@@ -47,7 +47,7 @@ bit compile --changed
 
 Outputs data regarding the compilation. For example, the `dist` paths.
 
-```shell
+```bash
 bit compile --verbose
 ```
 
@@ -55,7 +55,7 @@ bit compile --verbose
 
 Outputs (to the terminal) the compiled results in a JSON format.
 
-```shell
+```bash
 bit compile --json
 ```
 
@@ -65,7 +65,7 @@ bit compile --json
 
 Bit's local dev server (which also runs the Workspace UI) re-compiles components on each modification. This happens whenever a file is 'saved'.
 
-```shell
+```bash
 bit start
 ENVIRONMENT NAME        URL                      STATUS
 react              http://localhost:3101         Running
@@ -81,7 +81,7 @@ Waiting for component changes... (10:17:20)
 
 Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component compilation is one of these tasks.
 
-```sh
+```bash
 bit watch
 ```
 
