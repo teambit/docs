@@ -124,7 +124,7 @@ export class DependencyLinker {
       );
     }
 
-    // We remove the version since it used in order to check if it's core aspects, and the core aspects arrived from aspect loader without versions
+    // We remove the version since it used in order to check if its core aspects, and the core aspects arrived from aspect loader without versions
     const componentIdsWithoutVersions: string[] = [];
     componentDirectoryMap.map((_dir, comp) => {
       componentIdsWithoutVersions.push(comp.id.toString({ ignoreVersion: true }));

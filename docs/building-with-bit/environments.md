@@ -60,7 +60,7 @@ There are several ways you can see which environment is configured for your comp
 
 #### Workspace UI
 
-When you run `bit start` and browse the **component tree** on the left, hover on each component to see it's configured environment.
+When you run `bit start` and browse the **component tree** on the left, hover on each component to see its configured environment.
 
 #### CLI
 

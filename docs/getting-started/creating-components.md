@@ -6,7 +6,7 @@ title: Creating Components
 import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
 import ExampleButton from '@site/docs/components/examples/button.md'
 
-Once you have [initialize a Bit workspace](/getting-started/initializing-workspace) you can then:
+Once you have [initialized a Bit workspace](/getting-started/initializing-workspace) you can:
 
 1. Configure the `teambit.react/react` workspace variant to use the React example component
 2. Use `bit create` to create an example component and add it to the workspace
