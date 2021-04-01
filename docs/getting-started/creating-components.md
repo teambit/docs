@@ -21,7 +21,7 @@ Once you have [initialized a Bit workspace](/getting-started/initializing-worksp
 2. Use `bit create` to create an example component and add it to the workspace
 3. Use `bit install` to install dependencies for test files
 
-Alternatively you can manually create your component files and then use `bit add` to track them.
+Alternatively you can add [pre-existing components](/building-with-bit/pre-existing-components) using the `bit add` command.
 
 ## Setting a React Environment
 
@@ -56,40 +56,49 @@ The following files will have been created for you:
 <BitShow />
 
 ```bash
-  ┌───────────────────┬───────────────────────────────────────────────────────────────────────────────────┐
-  │ id                │ my-scope/ui/button                                                                │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ scope             │ my-scope                                                                          │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ name              │ ui/button                                                                         │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ env               │ teambit.harmony/node                                                              │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ package name      │ @my-scope/ui.button                                                               │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ main file         │ index.ts                                                                          │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ files             │ button.composition.tsx                                                            │
-  │                   │ button.docs.mdx                                                                   │
-  │                   │ button.tsx                                                                        │
-  │                   │ index.ts                                                                          │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ dev files         │ button.docs.mdx (teambit.docs/docs)                                               │
-  │                   │ button.composition.tsx (teambit.compositions/compositions)                        │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ extensions        │ teambit.component/dev-files                                                       │
-  │                   │ teambit.compositions/compositions                                                 │
-  │                   │ teambit.pkg/pkg                                                                   │
-  │                   │ teambit.docs/docs                                                                 │
-  │                   │ teambit.envs/envs                                                                 │
-  │                   │ teambit.dependencies/dependency-resolver                                          │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ dependencies      │                                                                                   │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ dev dependencies  │ @types/jest@26.0.20- (package)                                                    │
-  ├───────────────────┼───────────────────────────────────────────────────────────────────────────────────┤
-  │ peer dependencies │ react@16.13.1- (package)                                                          │
-  └───────────────────┴───────────────────────────────────────────────────────────────────────────────────┘
+  ┌───────────────────────┬────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ id                    │ my-scope/ui/button                                                                                 │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ scope                 │ my-scope                                                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ name                  │ ui/button                                                                                          │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ env                   │ teambit.react/react                                                                                │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ package name          │ @my-scope/ui.button                                                                                │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ main file             │ index.ts                                                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ files                 │ button.composition.tsx                                                                             │
+  │                       │ button.docs.mdx                                                                                    │
+  │                       │ button.spec.tsx                                                                                    │
+  │                       │ button.tsx                                                                                         │
+  │                       │ index.ts                                                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ dev files             │ button.docs.mdx (teambit.docs/docs)                                                                │
+  │                       │ button.spec.tsx (teambit.defender/tester)                                                          │
+  │                       │ button.composition.tsx (teambit.compositions/compositions)                                         │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ extensions            │ teambit.react/react                                                                                │
+  │                       │ teambit.component/dev-files                                                                        │
+  │                       │ teambit.compositions/compositions                                                                  │
+  │                       │ teambit.pkg/pkg                                                                                    │
+  │                       │ teambit.docs/docs                                                                                  │
+  │                       │ teambit.envs/envs                                                                                  │
+  │                       │ teambit.dependencies/dependency-resolver                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ dependencies          │ core-js@3.8.3- (package)                                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ dev dependencies      │ @testing-library/react@11.2.6- (package)                                                           │
+  │                       │ @babel/runtime@7.12.18-------- (package)                                                           │
+  │                       │ @types/react-router-dom@5.1.7- (package)                                                           │
+  │                       │ @types/jest@26.0.20----------- (package)                                                           │
+  │                       │ @types/react@16.9.43---------- (package)                                                           │
+  │                       │ @types/node@12.20.4----------- (package)                                                           │
+  ├───────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ peer dependencies     │ react@16.13.1----- (package)                                                                       │
+  │                       │ react-dom@16.13.1- (package)                                                                       │
+  └───────────────────────┴────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Creating more Components
