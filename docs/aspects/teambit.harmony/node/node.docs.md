@@ -28,8 +28,7 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-- `node-component` a basic Node component.
-- `node-extension` boilerplate for customizing configuration.
+- `node-env` boilerplate for customizing configuration.
 
 Use any of these templates with the `bit create` command:
 
@@ -67,34 +66,68 @@ All environments are extendible. You can take any pre-existing environment, and 
 
 ### Create an extension
 
-The first step is to create a component that extends React.
+The first step is to create a component that extends Node. Use the `node-env` template from React env.
 
-import CreateNodeExtension from '@site/docs/components/extensions/create-node-extension.md'
+```sh
+bit create node-env extensions/custom-node
+```
 
-<CreateNodeExtension />
+After you created your extension you need configure it to be a Bit Aspect. This is because environments are actually aspects that extends Bit's core functionality to support your development workflow. To do this edit your workspace.jsonc and set `teambit.harmony/aspect` as the environment applied on the extension you created:
+
+```json title="add variant for the extension and set the aspect env"
+{
+  //...
+  "teambit.workspace/variants": {
+    //...
+    "extensions/custom-node": {
+      "teambit.harmony/aspect": {}
+    },
+    //...
+  }
+}
+```
+
+Validate it by running `bit env` and see that the extension-component has `teambit.harmony/aspect` set as an environment.
+
+Now that you have a base extension to start from, you can already go ahead and configure it for your components in `workspace.json`:
+
+```json title="edit variants and set the new env"
+{
+  //...
+  "teambit.workspace/variants": {
+    //...
+    "[some]/[variant]": {
+      "[yourscope]/extensions/custom-node": {}
+    },
+    //...
+  }
+}
+```
 
 ### Customize configuration
 
-Node implements a set of APIs you can use to merge you preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
+React implements a set of APIs you can use to merge you preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
 In case of a conflict, your config will override the default.
 
 ```typescript {4,13} title="Customized TypeScript configuration"
-import { EnvsMain, EnvsAspect } from '@teambit/envs'
-import { NodeAspect, NodeMain } from '@teambit/node'
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { NodeAspect, NodeMain } from '@teambit/node';
 
-const tsconfig = require('./typescript/tsconfig.json')
+const tsconfig = require('./typescript/tsconfig.json');
 
-export class MyNodeExtension {
+export class CustomNodeExtension {
   constructor(private node: NodeMain) {}
 
   static dependencies: any = [EnvsAspect, NodeAspect]
 
-  static async provider([envs, node]: [EnvsMain, ReactNativeMain]) {
-    const myNodeEnv = node.compose([node.overrideTsConfig(tsconfig)])
+  static async provider([envs, node]: [EnvsMain, NodeMain]) {
+    const customReactEnv = node.compose([
+      node.overrideTsConfig(tsconfig)
+      ]);
 
-    envs.registerEnv(myNodeEnv)
+    envs.registerEnv(customNodeEnv);
 
-    return new MyReactExtension(node)
+    return new CustomNodeExtension(node);
   }
 }
 ```
@@ -110,35 +143,37 @@ You can override an environment's compiler replacing its Compiler Service Handle
 The below example uses a Service Handler to change compilation service.
 
 1. Import the Babel extension component to configure it and set it as the new compiler
+1. Import your Babel config
 1. Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
 1. Instantiate a new Babel compiler with the 'babelConfig' configurations
+1. use the `compose` Env API to register a new Service Hanlder
 
-```typescript {3,10-12,14-16}
-import { EnvsMain, EnvsAspect } from '@teambit/envs'
-import { NodeAspect, NodeMain } from '@teambit/node'
-import { BabelAspect, BabelMain } from '@teambit.compilation/babel'
+```typescript {3,5,10-13,15-16,19-21}
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { NodeAspect, NodeMain } from '@teambit/node';
+import { BabelAspect, BabelMain } from '@teambit/babel';
 
-const babelConfig = require('./babel-config')
+const babelConfig = require('./babel/babel.config');
 
 export class CustomNodeExtension {
-  constructor(private node: ReactNativeMain) {}
+  constructor(private node: NodeMain) {}
 
-  static dependencies: any = [EnvsAspect, NodeAspect, BabelAspect]
+  static dependencies: any = [EnvsAspect, NodeAspect, BabelAspect];
 
-  static async provider([envs, node, babel]: [EnvsMain, NodeMain, BabelMain]) {
+  static async provider([envs, node, babel]: [
+    EnvsMain, NodeMain, BabelMain ]) {
+
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig
-    })
+      babelTransformOptions: babelConfig,
+    });
 
-    const compilerOverride = envs.override({
-      getCompiler: () => {
-        return babelCompiler
-      }
-    })
+    const customNodeEnv = node.compose([
+      node.overrideCompiler(babelCompiler),
+      node.overrideCompilerTasks([babelCompiler.createTask()]),
+    ]);
 
-    const customNodeEnv = reactNAtive.compose([compilerOverride])
-    envs.registerEnv(customNodeEnv)
-    return new CustomReactExtension(node)
+    envs.registerEnv(customNodeExtension);
+    return new CustomNodeExtension(node);
   }
 }
 ```
