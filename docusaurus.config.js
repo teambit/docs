@@ -39,36 +39,113 @@ module.exports = {
       },
       items: [
         {
-          to: '/getting-started/installing-bit',
           activeBasePath: '/getting-started',
           label: 'Docs',
-          position: 'left'
+          position: 'left',
+          items: [
+            {
+              label: 'Getting Started',
+              to: '/getting-started/installing-bit'
+            },
+            {
+              label: 'Essentials',
+              to: '/essentials/what-is-bit'
+            },
+            {
+              label: 'Building with Bit',
+              to: '/building-with-bit/pre-existing-components'
+            },
+            {
+              label: 'Component Architecture',
+              to: '/component-architecture/thinking-in-components'
+            },
+            {
+              label: 'Bit Commands',
+              to: '/reference/commands'
+            }
+          ]
         },
 
         {
           label: 'Aspects',
           to: '/aspects/aspects-overview',
           activeBasePath: 'aspects',
-          position: 'left'
+          position: 'left',
+          items: [
+            {
+              label: 'Overview',
+              to: '/aspects/overview'
+            },
+            {
+              label: 'Builder',
+              to: '/aspects/builder'
+            },
+            {
+              label: 'Compiler',
+              to: '/aspects/compiler'
+            },
+            {
+              label: 'Envs',
+              to: '/aspects/envs'
+            },
+            {
+              label: 'Dependency Resolver',
+              to: '/aspects/dependency-resolver'
+            },
+            {
+              label: 'Node',
+              to: '/aspects/node'
+            },
+            {
+              label: 'React',
+              to: '/aspects/react'
+            },
+            {
+              label: 'React Native',
+              to: '/aspects/react-native'
+            },
+            {
+              label: 'TypeScript',
+              to: '/aspects/type-script'
+            },
+            {
+              label: 'Variants',
+              to: '/aspects/variants'
+            }
+          ]
         },
         {
           label: 'Resources',
           to: '/resources/conference-talks',
           activeBasePath: 'resources',
-          position: 'left'
+          position: 'left',
+          items: [
+            {
+              label: 'Conference Talks',
+              to: '/resources/conference-talks'
+            },
+            {
+              label: 'Interviews',
+              to: '/resources/interviews'
+            },
+            {
+              label: 'Podcasts',
+              to: '/resources/podcasts'
+            },
+            {
+              label: 'Live Streams',
+              to: '/resources/live-streams'
+            },
+            {
+              label: 'Articles',
+              to: '/resources/articles'
+            },
+            {
+              label: 'Community',
+              to: '/resources/community'
+            }
+          ]
         },
-        // {
-        //   label: 'CLI',
-        //   to: '/cli',
-        //   activeBasePath: 'cli',
-        //   position: 'left',
-        // },
-
-        // {
-        //   label: 'Help',
-        //   to: 'https://bit.dev/support',
-        //   position: 'right',
-        // },
 
         {
           type: 'docsVersionDropdown',
