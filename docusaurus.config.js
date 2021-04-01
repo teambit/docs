@@ -77,36 +77,24 @@ module.exports = {
               to: '/aspects/overview'
             },
             {
-              label: 'Builder',
-              to: '/aspects/builder'
-            },
-            {
-              label: 'Compiler',
-              to: '/aspects/compiler'
-            },
-            {
-              label: 'Envs',
-              to: '/aspects/envs'
-            },
-            {
-              label: 'Dependency Resolver',
-              to: '/aspects/dependency-resolver'
-            },
-            {
-              label: 'Node',
-              to: '/aspects/node'
+              label: 'Workspace',
+              to: '/aspects/workspace'
             },
             {
               label: 'React',
               to: '/aspects/react'
             },
             {
+              label: 'Node',
+              to: '/aspects/node'
+            },
+            {
               label: 'React Native',
               to: '/aspects/react-native'
             },
             {
-              label: 'TypeScript',
-              to: '/aspects/type-script'
+              label: 'Dependency Resolver',
+              to: '/aspects/dependency-resolver'
             },
             {
               label: 'Variants',
