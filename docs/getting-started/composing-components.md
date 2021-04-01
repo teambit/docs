@@ -15,7 +15,7 @@ You can compose components together from other components in your workspace or f
 
 ## Creating Components with Bit Create
 
-To create other components you can use `bit create react-component` followed by your component name and if you want it to appear in a specific folder then add the `--namespace` flag followed by the folder name.
+To create other components you can use `bit create react-component` followed by your component name and the namespace for that component.
 
 <BitCreateCardComponent />
 
@@ -58,7 +58,7 @@ To regenerate module-links for components run the `bit link` command.
 You can create multiple components by adding more component names after the command command.
 
 ```bash
-bit create react-component component1 component2 --namespace design
+bit create react-component ui/component1 ui/component2 design/component1
 ```
 
 ## Component Templates

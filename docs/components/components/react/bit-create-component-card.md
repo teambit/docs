@@ -7,6 +7,12 @@ title: Component Card
 bit create react-component ui/card
 ```
 
+is the same as
+
+```bash
+bit create react-component card --namespace ui
+```
+
 ```bash
 the following 1 component(s) were created
 
