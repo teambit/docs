@@ -19,6 +19,7 @@ values={[
 
 ```tsx title="index.ts"
 export { Button } from './button'
+export type { ButtonProps } from './button'
 ```
 
   </TabItem>
@@ -75,14 +76,13 @@ A simple Button component with some text
 ```tsx
 import React from 'react'
 import { render } from '@testing-library/react'
-import { expect } from 'chai'
 import { BasicButton } from './button.composition'
 
 describe('button', () => {
-  it('should render the component', () => {
+  it('should render with the correct text', () => {
     const { getByText } = render(<BasicButton />)
     const rendered = getByText('click me')
-    expect(rendered).to.exist
+    expect(rendered).toBeTruthy()
   })
 })
 ```
