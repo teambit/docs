@@ -6,9 +6,9 @@ description: A Bit development environment for Node Components
 labels: ['node', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The built-in Node Component Development Environment is a concrete composition of the [Env Aspect](/aspects/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
+The built-in Node Component Development Environment is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
 
-Node environment is composed out of the base [React Environment](/aspects/react) with some specific overrides for dependency management.
+Node environment is composed out of the base [React Environment](https://bit.dev/teambit/react/react) with some specific overrides for dependency management.
 
 ## Use Node environment
 
@@ -44,7 +44,7 @@ Node, like all over Environments must implement a set of Service Handlers. For e
 
 | Service              | Aspect                            | Base Configuration                                                                                                                 |
 | -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Compilation          | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
+| Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
 | Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
 | Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
 | DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
@@ -52,9 +52,9 @@ Node, like all over Environments must implement a set of Service Handlers. For e
 | Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
 | Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
 | Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
-| Build pipeline       | [Builder](aspects/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
+| Build pipeline       | [Builder](https://bit.dev/teambit/pipelines/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
 | Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts)                                                         |
-| Component Generator  | [Generator](/aspects/generator)   | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts)                                                 |
+| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)   | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts)                                                 |
 
 ## Customize environment
 
@@ -178,11 +178,11 @@ export class CustomNodeExtension {
 }
 ```
 
-## Transformers API docs
+### Transformers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
 
-### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
+#### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
 Merge the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
 
@@ -319,11 +319,11 @@ export class CustomNode {
 }
 ```
 
-## Service providers API docs
+### Service providers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 
-### `getTester(...args : any[]): Tester`
+#### `getTester(...args : any[]): Tester`
 
 Returns a test runner to be used by the Tester service.
 

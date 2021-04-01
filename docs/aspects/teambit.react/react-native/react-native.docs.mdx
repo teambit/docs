@@ -6,9 +6,9 @@ description: A Bit development environment for React Native Components
 labels: ['react-native', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The built-in React Native Component Development Environment is a concrete composition of the [Env Aspect](/aspects/envs). It compose different tools and configs that fit practices implemented in [Create React Native App](https://create-react-app.dev). Use it when getting started with React Native components with Bit and later as a base for any future customization of your React-Native-based workflow.
+The built-in React Native Component Development Environment is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React Native App](https://create-react-app.dev). Use it when getting started with React Native components with Bit and later as a base for any future customization of your React-Native-based workflow.
 
-React Native environment is composed out of the base [React Environment](aspects/react) with some specific configuration overrides.
+React Native environment is composed out of the base [React Environment](https://bit.dev/teambit/react/react) with some specific configuration overrides.
 
 ## Use React Native environment
 
@@ -38,7 +38,7 @@ bit create <template name> [components...]
 
 ## Runtime (framework) dependencies
 
-Similar to many Frontend frameworks React Native must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-native` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](/aspects/dependency-resolver) and set your prefered dependencies.  
+Similar to many Frontend frameworks React Native must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-native` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your prefered dependencies.  
 It is recommended to for you to extend the base React environment and define a semantic version rule to fit your current tech stack and guidelines for reuseable React components.
 
 ## Default Configuration and Services
@@ -49,7 +49,7 @@ React Native, like all over Environments must implement a set of Service Handler
 
 | Service              | Aspect                            | Base Configuration                                                                                                                 |
 | -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Compilation          | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
+| Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
 | Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react-native/~code/jest/jest.config.js)                                             |
 | Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
 | DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                        |
@@ -57,9 +57,9 @@ React Native, like all over Environments must implement a set of Service Handler
 | Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
 | Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                            |
 | Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
-| Build pipeline       | [Builder](aspects/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
+| Build pipeline       | [Builder](https://bit.dev/teambit/pipelines/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
 | Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/react/react-native/~code/react-native.main.runtime.ts)                                  |
-| Component Generator  | [Generator](/aspects/generator)   | [example template](https://bit.dev/react/react-native/~code/templates/reactnative-component.ts)                                    |
+| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)   | [example template](https://bit.dev/react/react-native/~code/templates/reactnative-component.ts)                                    |
 
 ## Customize environment
 
@@ -183,7 +183,7 @@ export class CustomReactNativeExtension {
 }
 ```
 
-## Transformers API docs
+### Transformers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
 
@@ -324,7 +324,7 @@ export class CustomReactNative {
 }
 ```
 
-## Service providers API docs
+### Service providers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 

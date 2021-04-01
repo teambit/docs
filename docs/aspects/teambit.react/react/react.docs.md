@@ -6,7 +6,7 @@ description: A Bit development environment for React Components
 labels: ['react', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The built-in React Component Development Environment is a concrete composition of the [Env Aspect](/aspects/envs). It compose different tools and configs that fit practices implemented in [Create React App](https://create-react-app.dev). Use it when getting started with React components with Bit and later as a base for any future customization of your React-based workflow.
+The built-in React Component Development Environment is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React App](https://create-react-app.dev). Use it when getting started with React components with Bit and later as a base for any future customization of your React-based workflow.
 
 ## Use React environment
 
@@ -37,7 +37,7 @@ bit create <template name> [components...]
 
 ## Runtime (framework) dependencies
 
-Similar to many Frontend frameworks React must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-dom` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](/aspects/dependency-resolver) and set your preferred dependencies.  
+Similar to many Frontend frameworks React must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-dom` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.  
 It is recommended to for you to extend the base React environment and define a semantic version rule to fit your current tech stack and guidelines for reuseable React components.
 
 ## Development services
@@ -46,7 +46,7 @@ React, like all over Environments must implement a set of Service Handlers. For 
 
 | Service              | Aspect                            | Base Configuration                                                                                                                 |
 | -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Compilation          | [TypeScript](/aspects/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
+| Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
 | Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
 | Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
 | DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
@@ -54,9 +54,9 @@ React, like all over Environments must implement a set of Service Handlers. For 
 | Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
 | Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
 | Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
-| Build pipeline       | [Builder](/aspects/builder)       | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
+| Build pipeline       | [Builder](https://bit.dev/teambit/pipelines/builder)       | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
 | Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                         |
-| Component Generator  | [Generator](/aspects/generator)   | [example template](https://bit.dev/teambit/react/react/~code/templates/react-component.ts)                                         |
+| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)   | [example template](https://bit.dev/teambit/react/react/~code/templates/react-component.ts)                                         |
 
 ## Customize environment
 
@@ -237,7 +237,7 @@ ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview)
 
 > See the full demo project [here](https://github.com/teambit/react-env-with-providers).
 
-## Transformers API docs
+### Transformers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
 
@@ -378,7 +378,7 @@ export class CustomReact {
 }
 ```
 
-## Service providers API docs
+### Service providers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 
