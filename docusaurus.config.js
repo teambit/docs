@@ -48,7 +48,7 @@ module.exports = {
               to: '/getting-started/installing-bit'
             },
             {
-              label: 'Essentials',
+              label: 'What is Bit?',
               to: '/essentials/what-is-bit'
             },
             {
