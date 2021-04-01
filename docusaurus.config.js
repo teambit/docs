@@ -13,8 +13,8 @@ module.exports = {
     [
       'docusaurus-plugin-plausible',
       {
-        domain: 'harmony-docs.bit.dev',
-      },
+        domain: 'harmony-docs.bit.dev'
+      }
     ]
   ],
   themeConfig: {
@@ -86,7 +86,8 @@ module.exports = {
           'aria-label': 'GitHub repository'
         },
         {
-          href: 'https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w',
+          href:
+            'https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w',
           className: 'slack-link',
           'aria-label': 'Slack',
           position: 'right'
@@ -171,6 +172,15 @@ module.exports = {
         href: 'https://bit.dev'
       },
       copyright: `Copyright © ${new Date().getFullYear()} Bit.dev`
+    },
+    image: 'img/bit-logo.png',
+    announcementBar: {
+      id: 'support_us', // Any value that will identify this message.
+      content:
+        'Welcome to Harmony Beta which at the moment supports <b>React</b>, <b>React Native</b> and <b>NodeJS</b>',
+      backgroundColor: '#fafbfc', // Defaults to `#fff`.
+      textColor: '#091E42', // Defaults to `#000`.
+      isCloseable: true // Defaults to `true`.
     }
   },
   presets: [
