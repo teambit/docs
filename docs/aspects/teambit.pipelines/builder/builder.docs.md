@@ -7,7 +7,7 @@ description: build components on isolated directories
 
 ## Background
 
-The build process is running either by `bit build` or `bit tag`. It does the following:
+The [build process](https://bit.dev/teambit/pipelines/builder) is running either by `bit build` or `bit tag`. It does the following:
 
 1. isolates components by coping them into a different directory on the filesystem.
 2. runs the package-manager for all isolated components.

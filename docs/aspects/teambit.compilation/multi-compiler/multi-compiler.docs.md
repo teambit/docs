@@ -3,10 +3,19 @@ id: multi-compiler
 title: Multi-compiler
 slug: /aspects/multi-compiler
 description: The multi-compiler aspect allows the configuration of multiple compilers on a component
-labels: ['multi-compiler', 'compiler', 'envs', 'compiler', 'bit', 'extension', 'aspect']
+labels:
+  [
+    'multi-compiler',
+    'compiler',
+    'envs',
+    'compiler',
+    'bit',
+    'extension',
+    'aspect'
+  ]
 ---
 
-The multi-compiler aspect allows the configuration of multiple compilers on a component. This determines which compiler to apply on a component file using the `isFileSupported()` compiler API.
+[The multi-compiler](https://bit.dev/teambit/compilation/multi-compiler) aspect allows the configuration of multiple compilers on a component. This determines which compiler to apply on a component file using the `isFileSupported()` compiler API.
 
 - `createCompiler(compilers: Compiler[], options: CompilerOptions)` API to support the creation a Multi-compiler instance which can be used in the Env API (the `overrideCompiler` and `getCompiler` APIs).
 - Supports the creation of a multi-compiler build tasks.
@@ -16,8 +25,8 @@ The multi-compiler aspect allows the configuration of multiple compilers on a co
 const compiler = multiCompiler.createCompiler([
   createBabelCompiler(),
   createTsCompiler()
-]);
+])
 
 // create a multi-compiler build task.
-compiler.createTask('MultiCompiler', compiler);
+compiler.createTask('MultiCompiler', compiler)
 ```

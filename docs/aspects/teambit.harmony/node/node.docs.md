@@ -6,7 +6,7 @@ description: A Bit development environment for Node Components
 labels: ['node', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The built-in Node Component Development Environment is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
+The built-in [Node Component Development Environment](https://bit.dev/teambit/harmony/node) is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). Use it when getting started with Node components with Bit and later as a base for any future customization of your Node-based workflow.
 
 Node environment is composed out of the base [React Environment](https://bit.dev/teambit/react/react) with some specific overrides for dependency management.
 
@@ -42,19 +42,19 @@ Node, like all over Environments must implement a set of Service Handlers. For e
 
 > Node is a composition of the React environment with some specific modifications. Most of the links here direct to the actual configs in React environment.
 
-| Service              | Aspect                            | Base Configuration                                                                                                                 |
-| -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Service              | Aspect                                                      | Base Configuration                                                                                                                 |
+| -------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
-| Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
-| Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
-| DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
-| Preview (simulation) | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
-| Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
-| Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
-| Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
+| Testing              | **Jest**                                                    | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
+| Linting              | **ESLint**                                                  | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
+| DevServer            | **Webpack**                                                 | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
+| Preview (simulation) | **Webpack**                                                 | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Package              | **PKG**                                                     | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
+| Bundling             | **Webpack**                                                 | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
+| Documentation        | _Core implementation_                                       | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
 | Build pipeline       | [Builder](https://bit.dev/teambit/pipelines/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
-| Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts)                                                         |
-| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)   | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts)                                                 |
+| Dependencies         | _Core implementation_                                       | [Env-dependencies](https://bit.dev/teambit/harmony/node/~code/node.env.ts)                                                         |
+| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)    | [example template](https://bit.dev/harmony/node/~code/templates/node-component.ts)                                                 |
 
 ## Customize environment
 
@@ -81,7 +81,7 @@ After you created your extension you need configure it to be a Bit Aspect. This 
     //...
     "extensions/custom-node": {
       "teambit.harmony/aspect": {}
-    },
+    }
     //...
   }
 }
@@ -98,7 +98,7 @@ Now that you have a base extension to start from, you can already go ahead and c
     //...
     "[some]/[variant]": {
       "[yourscope]/extensions/custom-node": {}
-    },
+    }
     //...
   }
 }
@@ -110,10 +110,10 @@ React implements a set of APIs you can use to merge you preferred configuration 
 In case of a conflict, your config will override the default.
 
 ```typescript {4,13} title="Customized TypeScript configuration"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { NodeAspect, NodeMain } from '@teambit/node';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { NodeAspect, NodeMain } from '@teambit/node'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class CustomNodeExtension {
   constructor(private node: NodeMain) {}
@@ -121,13 +121,11 @@ export class CustomNodeExtension {
   static dependencies: any = [EnvsAspect, NodeAspect]
 
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
-    const customReactEnv = node.compose([
-      node.overrideTsConfig(tsconfig)
-      ]);
+    const customReactEnv = node.compose([node.overrideTsConfig(tsconfig)])
 
-    envs.registerEnv(customNodeEnv);
+    envs.registerEnv(customNodeEnv)
 
-    return new CustomNodeExtension(node);
+    return new CustomNodeExtension(node)
   }
 }
 ```
@@ -149,31 +147,29 @@ The below example uses a Service Handler to change compilation service.
 1. use the `compose` Env API to register a new Service Hanlder
 
 ```typescript {3,5,10-13,15-16,19-21}
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { NodeAspect, NodeMain } from '@teambit/node';
-import { BabelAspect, BabelMain } from '@teambit/babel';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { NodeAspect, NodeMain } from '@teambit/node'
+import { BabelAspect, BabelMain } from '@teambit/babel'
 
-const babelConfig = require('./babel/babel.config');
+const babelConfig = require('./babel/babel.config')
 
 export class CustomNodeExtension {
   constructor(private node: NodeMain) {}
 
-  static dependencies: any = [EnvsAspect, NodeAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, NodeAspect, BabelAspect]
 
-  static async provider([envs, node, babel]: [
-    EnvsMain, NodeMain, BabelMain ]) {
-
+  static async provider([envs, node, babel]: [EnvsMain, NodeMain, BabelMain]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     const customNodeEnv = node.compose([
       node.overrideCompiler(babelCompiler),
-      node.overrideCompilerTasks([babelCompiler.createTask()]),
-    ]);
+      node.overrideCompilerTasks([babelCompiler.createTask()])
+    ])
 
-    envs.registerEnv(customNodeExtension);
-    return new CustomNodeExtension(node);
+    envs.registerEnv(customNodeExtension)
+    return new CustomNodeExtension(node)
   }
 }
 ```

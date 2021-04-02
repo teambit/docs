@@ -9,7 +9,7 @@ labels: ['ui', 'tests']
 import { UserHeroExample } from './docs/user-hero';
 import { UserProfileExample } from './docs/user-profile'
 
-The Compositions aspect renders component 'compositions' in isolation and displays them in the Workspace UI and Scope UI.
+The [Compositions aspect](https://bit.dev/teambit/compositions/compositions) renders component 'compositions' in isolation and displays them in the Workspace UI and Scope UI.
 'Compositions' are, essentially, small apps that exhibit and test a component in different contexts and variations.
 
 The Compositions aspect is an essential tool to authoring independent components as it renders component instances in "controlled environments", isolated and un-affected by code that was not purposefully included.

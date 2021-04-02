@@ -6,7 +6,7 @@ description: Handles the bundlings and rendering of component compositions and d
 labels: ['core aspect']
 ---
 
-The Preview aspect handles the bundling and rendering of component compositions and documentation, for the Workspace UI and Scope UI.
+The [Preview aspect](https://bit.dev/teambit/preview/preview) handles the bundling and rendering of component compositions and documentation, for the Workspace UI and Scope UI.
 
 Preview is used to display components in development (on `bit start`) as well as in their released versions (assets for the release version are generated as part of the build process).
 

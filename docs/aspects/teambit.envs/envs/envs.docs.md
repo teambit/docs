@@ -6,7 +6,7 @@ description: Manages Environments and Environment Services
 labels: ['environments', 'core aspect']
 ---
 
-The Envs aspect runs Bit environments and environment services, and defines their structure.
+The [Envs aspect](https://bit.dev/teambit/envs/envs) runs Bit environments and environment services, and defines their structure.
 
 A Bit environment is a development environment encapsulated in a Bit component. Just like other components, Bit environments can be instantly added to your workspace to start developing, testing, and building components with zero configurations.
 Different environments can be easily applied to multiple components in a workspace, and can be easily extended or customized to fit your needs and development stack. For example, try the React environment to start developing React components in your workspace.

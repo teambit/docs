@@ -4,7 +4,7 @@ title: Variants
 slug: /aspects/variants
 ---
 
-The `teambit.workspace/variants` extension enables a cascading, CSS-like, selection of components in the workspace configuration. It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
+The [`teambit.workspace/variants`](https://bit.dev/teambit/workspace/variants) extension enables a cascading, CSS-like, selection of components in the workspace configuration. It provides order and simplicity to the way we apply rules and settings to large number of independent components - all in a single workspace.
 
 Configurations set on a specific set of components will:
 
