@@ -10,6 +10,8 @@ import BitCreateCardComponent from '@site/docs/components/components/react/bit-c
 import CardExample from '@site/docs/components/examples/react/card.md'
 import Styles from '@site/docs/components/components/styles.md'
 import BitShow from '@site/docs/components/components/bit-show.md'
+import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
+import BitCreateMultipleComponents from '@site/docs/components/components/react/bit-create-multiple-components.md'
 
 You can compose components together from other components in your workspace or from components in the cloud.
 
@@ -55,11 +57,9 @@ To regenerate module-links for components run the `bit link` command.
 
 ## Creating multiple components
 
-You can create multiple components by adding more component names after the command command.
+<BitCreateMultipleComponents />
 
-```bash
-bit create react-component ui/component1 ui/component2 design/component1
-```
+<BitCreateWarning />
 
 ## Component Templates
 

@@ -5,13 +5,15 @@ title: Creating Components
 
 import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
 import ExampleButton from '@site/docs/components/examples/react/button.md'
-import BitCreateComponent from '@site/docs/components/components/react/bit-create-component.md'
+import BitCreateComponent from '@site/docs/components/components/react/bit-create-component-card.md'
+import BitCreateMultipleComponent from '@site/docs/components/components/react/bit-create-multiple-components.md'
 import BitCreateButton from '@site/docs/components/components/react/bit-create-button.md'
 import Styles from '@site/docs/components/components/styles.md'
 import BitTemplates from '@site/docs/components/commands/bit-templates.md'
 import NameSpaces from '@site/docs/components/components/namespaces.md'
 import BitShow from '@site/docs/components/components/bit-show.md'
 import BitmapExample from '@site/docs/components/components/bitmap-example.md'
+import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
@@ -104,6 +106,10 @@ The following files will have been created for you:
 ## Creating more Components
 
 <BitCreateComponent />
+
+<BitCreateMultipleComponent />
+
+<BitCreateWarning />
 
 ## Bit Templates
 
