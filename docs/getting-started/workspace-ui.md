@@ -3,6 +3,8 @@ id: workspace-ui
 title: Workspace UI
 ---
 
+import { Image } from '@site/src/components/image'
+
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
 ## Starting the dev server
@@ -30,11 +32,15 @@ The first time you run the start command it can take a bit of time as it needs t
 
 See an overview of your component complete with a live playground. Documentation of our component is created from the `button.docs.mdx` file.
 
+<Image src="/img/workspace-ui/overview.png" width="80%" />
+
 :arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting).
 
 ### Compositions
 
 Compositions show you how your component is composed. Compositions are created from the `buttom.compositions.tsx` file.
+
+<Image src="/img/workspace-ui/compositions.png" width="80%" />
 
 :arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions).
 
@@ -42,11 +48,15 @@ Compositions show you how your component is composed. Compositions are created f
 
 See passing or failing tests. Tests are created from the `button.spec.tsx` file.
 
+<Image src="/img/workspace-ui/tests.png" width="80%" />
+
 :arrow_right: Learn more about [Component Testing](/building-with-bit/testing-components).
 
 ### Dependencies
 
 Shows any dependencies that your component has.
+
+<Image src="/img/workspace-ui/dependencies.png" width="80%" />
 
 <!-- :arrow_right: Learn more about [Component Dependencies](/aspects/dependency-resolver). -->
 
@@ -54,17 +64,7 @@ Shows any dependencies that your component has.
 
 See all the code files your component has and inspect them as well as a list of your component's dependencies and dev dependencies.
 
-### ChangeLog
-
-See the changelog of your component for when you export and create new versions.
-
-### Use
-
-Shows you how to use your component either by importing a component into your workspace or installing a component into your application using a package manager.
-
-:arrow_right: Learn more about [Importing Components](/building-with-bit/importing-components).
-
-:arrow_right: Learn more about [Installing Components](/building-with-bit/installing-components).
+<Image src="/img/workspace-ui/code.png" width="80%" />
 
 ## What's Next?
 
