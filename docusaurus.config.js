@@ -69,17 +69,16 @@ module.exports = {
 
         {
           label: 'Aspects',
-          to: '/aspects/aspects-overview',
           activeBasePath: 'aspects',
           position: 'left',
           items: [
             {
               label: 'Overview',
-              to: '/aspects/overview'
+              to: '/aspects/aspects-overview'
             },
             {
               label: 'Workspace',
-              to: '/aspects/workspace'
+              to: '/aspects/variants'
             },
             {
               label: 'React',
