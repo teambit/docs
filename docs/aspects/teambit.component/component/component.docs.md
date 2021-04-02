@@ -4,7 +4,7 @@ title: Component
 slug: /aspects/component
 ---
 
-A Bit component is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block.
+A [Bit component](https://bit.dev/teambit/component/component) is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block.
 
 That includes its source code, version history, development environment configurations and documentation.
 
@@ -81,7 +81,7 @@ For example the component ID `my-org.design-system/component/base/button` will r
 
 > Why doesn't Bit keep the same module naming as node?
 >
-> The future of JavaScript development brings tools like ESM and Deno that have different approach for module consumption with namespacing support. As Bit components needs to be future-proof to support additional tooling it keeps its own naming scheme that can be translated according to the consumption method.
+> The future of JavaScript development brings tools like ESM and Deno that have a different approach for module consumption with namespacing support. As Bit components needs to be future-proof to support additional tooling it keeps its own naming scheme that can be translated according to the consumption method.
 
 ## Component configurations
 

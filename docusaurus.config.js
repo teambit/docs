@@ -31,6 +31,7 @@ module.exports = {
       //... other Algolia params
     },
     navbar: {
+      hideOnScroll: true,
       title: 'Harmony Beta',
       logo: {
         alt: 'v15 Harmony',

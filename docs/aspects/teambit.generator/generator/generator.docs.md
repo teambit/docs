@@ -4,7 +4,7 @@ title: Generator
 slug: /aspects/generator
 ---
 
-Generator extension enable generating new components by pre-defined templates
+The [Generator extension](https://bit.dev/teambit/generator/generator) enables generating new components by pre-defined templates
 
 ### Component location
 

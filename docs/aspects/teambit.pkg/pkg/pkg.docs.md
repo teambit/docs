@@ -10,7 +10,7 @@ labels: ['packages', 'aspect', 'pkg']
 Bit components can be thought of as a super-set of standard packaged node modules.
 Each component contains a consumable package in addition to its documentation, history and other information that enables it to be independently developed and maintained.
 
-The PKG aspect handles the configuration, publishing and packing of component packages.
+The [PKG aspect](https://bit.dev/teambit/pkg/pkg) handles the configuration, publishing and packing of component packages.
 It adds its own build task to the build pipeline, to create component packages and include them in as part of the component artifacts.
 This automation includes generating the package name and other properties according to the component's details.
 

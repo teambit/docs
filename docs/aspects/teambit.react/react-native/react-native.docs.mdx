@@ -6,7 +6,7 @@ description: A Bit development environment for React Native Components
 labels: ['react-native', 'environment', 'env', 'aspect', 'extension']
 ---
 
-The built-in React Native Component Development Environment is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React Native App](https://create-react-app.dev). Use it when getting started with React Native components with Bit and later as a base for any future customization of your React-Native-based workflow.
+The built-in [React Native Component Development Environment](https://bit.dev/teambit/react/react-native) is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React Native App](https://create-react-app.dev). Use it when getting started with React Native components with Bit and later as a base for any future customization of your React-Native-based workflow.
 
 React Native environment is composed out of the base [React Environment](https://bit.dev/teambit/react/react) with some specific configuration overrides.
 
@@ -47,19 +47,19 @@ React Native, like all over Environments must implement a set of Service Handler
 
 > React Native is a composition of the React environment with some specific modifications. Most of the links here direct to the actual configs in React environment.
 
-| Service              | Aspect                            | Base Configuration                                                                                                                 |
-| -------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Service              | Aspect                                                      | Base Configuration                                                                                                                 |
+| -------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
-| Testing              | **Jest**                          | [jest.config.js](https://bit.dev/teambit/react/react-native/~code/jest/jest.config.js)                                             |
-| Linting              | **ESLint**                        | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
-| DevServer            | **Webpack**                       | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                        |
-| Preview (simulation) | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                            |
-| Package              | **PKG**                           | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
-| Bundling             | **Webpack**                       | [webpack.config.preview.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                            |
-| Documentation        | _Core implementation_             | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
+| Testing              | **Jest**                                                    | [jest.config.js](https://bit.dev/teambit/react/react-native/~code/jest/jest.config.js)                                             |
+| Linting              | **ESLint**                                                  | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
+| DevServer            | **Webpack**                                                 | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                        |
+| Preview (simulation) | **Webpack**                                                 | [webpack.config.preview.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                            |
+| Package              | **PKG**                                                     | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
+| Bundling             | **Webpack**                                                 | [webpack.config.preview.ts](https://bit.dev/teambit/react/react-native/~code/webpack/webpack.config.js)                            |
+| Documentation        | _Core implementation_                                       | [Docs template](https://bit.dev/teambit/react/react/~code/docs/index.tsx)                                                          |
 | Build pipeline       | [Builder](https://bit.dev/teambit/pipelines/builder)        | [Build pipeline](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                           |
-| Dependencies         | _Core implementation_             | [Env-dependencies](https://bit.dev/teambit/react/react-native/~code/react-native.main.runtime.ts)                                  |
-| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)   | [example template](https://bit.dev/react/react-native/~code/templates/reactnative-component.ts)                                    |
+| Dependencies         | _Core implementation_                                       | [Env-dependencies](https://bit.dev/teambit/react/react-native/~code/react-native.main.runtime.ts)                                  |
+| Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)    | [example template](https://bit.dev/react/react-native/~code/templates/reactnative-component.ts)                                    |
 
 ## Customize environment
 
@@ -86,7 +86,7 @@ After you created your extension you need configure it to be a Bit Aspect. This 
     //...
     "extensions/custom-react-native": {
       "teambit.harmony/aspect": {}
-    },
+    }
     //...
   }
 }
@@ -103,7 +103,7 @@ Now that you have a base extension to start from, you can already go ahead and c
     //...
     "[some]/[variant]": {
       "[yourscope]/extensions/custom-react-native": {}
-    },
+    }
     //...
   }
 }
@@ -115,10 +115,10 @@ React implements a set of APIs you can use to merge you preferred configuration 
 In case of a conflict, your config will override the default.
 
 ```typescript {4,13} title="Customized TypeScript configuration"
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactNativeAspect, ReactNativeMain } from '@teambit/react-native';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactNativeAspect, ReactNativeMain } from '@teambit/react-native'
 
-const tsconfig = require('./typescript/tsconfig.json');
+const tsconfig = require('./typescript/tsconfig.json')
 
 export class CustomReactNativeExtension {
   constructor(private reactNative: ReactNativeMain) {}
@@ -128,11 +128,11 @@ export class CustomReactNativeExtension {
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
     const customReactNativeExtension = reactNative.compose([
       reactNative.overrideTsConfig(tsconfig)
-      ]);
+    ])
 
-    envs.registerEnv(customReactNativeExtension);
+    envs.registerEnv(customReactNativeExtension)
 
-    return new CustomReactNativeExtension(reactNative);
+    return new CustomReactNativeExtension(reactNative)
   }
 }
 ```
@@ -154,31 +154,33 @@ The below example uses a Service Handler to change compilation service.
 1. use the `compose` Env API to register a new Service Hanlder
 
 ```typescript {3,5,10-13,15-16,19-21}
-import { EnvsMain, EnvsAspect } from '@teambit/envs';
-import { ReactNativeAspect, ReactNativeMain } from '@teambit/react-native';
-import { BabelAspect, BabelMain } from '@teambit/babel';
+import { EnvsMain, EnvsAspect } from '@teambit/envs'
+import { ReactNativeAspect, ReactNativeMain } from '@teambit/react-native'
+import { BabelAspect, BabelMain } from '@teambit/babel'
 
-const babelConfig = require('./babel/babel.config');
+const babelConfig = require('./babel/babel.config')
 
 export class CustomReactNativeExtension {
   constructor(private reactNative: ReactNativeMain) {}
 
-  static dependencies: any = [EnvsAspect, ReactNativeAspect, BabelAspect];
+  static dependencies: any = [EnvsAspect, ReactNativeAspect, BabelAspect]
 
   static async provider([envs, reactNative, babel]: [
-    EnvsMain, ReactNativeMain, BabelMain ]) {
-
+    EnvsMain,
+    ReactNativeMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
-    });
+      babelTransformOptions: babelConfig
+    })
 
     const customReactNativeExtension = reactNative.compose([
       reactNative.overrideCompiler(babelCompiler),
-      reactNative.overrideCompilerTasks([babelCompiler.createTask()]),
-    ]);
+      reactNative.overrideCompilerTasks([babelCompiler.createTask()])
+    ])
 
-    envs.registerEnv(customReactNativeExtension);
-    return new CustomReactNativeExtension(reactNative);
+    envs.registerEnv(customReactNativeExtension)
+    return new CustomReactNativeExtension(reactNative)
   }
 }
 ```
@@ -270,7 +272,9 @@ export class ReactNative {
     const reactNativePipe = reactNative.env.getBuildPipe()
     // Add the custom task to the end of the build tasks sequence.
     const tasks = [...reactNativePipe, new CustomTask()]
-    const newReactNativeEnv = reactNative.compose([reactNative.overrideBuildPipe(tasks)])
+    const newReactNativeEnv = reactNative.compose([
+      reactNative.overrideBuildPipe(tasks)
+    ])
     // ...
   }
 }
