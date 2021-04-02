@@ -23,7 +23,7 @@ new components
      > ui/button@0.0.1
 ```
 
-:arrow_right: Learn more about the [Tagging Components](/building-with-bit/tagging-components).
+:arrow_right: Learn more about the [Versioning Components](/building-with-bit/versioning-components).
 
 ## Export Components
 
