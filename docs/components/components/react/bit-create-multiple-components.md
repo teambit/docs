@@ -10,6 +10,7 @@ Create multiple components by adding more component names after the command.
 
 <Tabs
 defaultValue="TypeScript"
+groupId="langs"
 values={[
 {label: 'TypeScript', value: 'TypeScript'},
 {label: 'JSX', value: 'JSX'},

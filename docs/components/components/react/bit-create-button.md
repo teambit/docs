@@ -10,6 +10,7 @@ We can use `bit create` to create an example button component with the namespace
 
 <Tabs
 defaultValue="TypeScript"
+groupId="langs"
 values={[
 {label: 'TypeScript', value: 'TypeScript'},
 {label: 'JSX', value: 'JSX'},
@@ -34,6 +35,7 @@ is the same as
 
 <Tabs
 defaultValue="TypeScript"
+groupId="langs"
 values={[
 {label: 'TypeScript', value: 'TypeScript'},
 {label: 'JSX', value: 'JSX'},

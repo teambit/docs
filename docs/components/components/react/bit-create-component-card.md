@@ -8,6 +8,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
 defaultValue="TypeScript"
+groupId="langs"
 values={[
 {label: 'TypeScript', value: 'TypeScript'},
 {label: 'JSX', value: 'JSX'},
@@ -32,6 +33,7 @@ is the same as
 
 <Tabs
 defaultValue="TypeScript"
+groupId="langs"
 values={[
 {label: 'TypeScript', value: 'TypeScript'},
 {label: 'JSX', value: 'JSX'},
