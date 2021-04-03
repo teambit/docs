@@ -77,10 +77,6 @@ module.exports = {
               to: '/aspects/aspects-overview'
             },
             {
-              label: 'Workspace',
-              to: '/aspects/variants'
-            },
-            {
               label: 'React',
               to: '/aspects/react'
             },
