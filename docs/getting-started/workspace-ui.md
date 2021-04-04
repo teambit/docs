@@ -3,24 +3,14 @@ id: workspace-ui
 title: Workspace UI
 ---
 
+import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 import { Image } from '@site/src/components/image'
 
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
 ## Starting the dev server
 
-The start command starts our dev server, compiles our component and watches for changes using Hot Module Replacement. It runs different workspace tasks through workers, such as testing, linters and any workspace tasks that are defined by the component.
-
-```bash
-bit start
-```
-
-This will open-up your browser on [localhost:3000](http://localhost:3000), or any other available port, and display your workspace with your components.
-
-:::note Building the UI
-
-The first time you run the start command it can take a bit of time as it needs to build the whole UI.
-:::
+<StartDevServer />
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
