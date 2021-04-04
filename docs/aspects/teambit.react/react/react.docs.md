@@ -42,7 +42,7 @@ It is recommended for you to extend the base React environment and define a sema
 
 ## Development services
 
-React, like all over Environments must implement a set of Service Handlers. Each service corresponds to a specific tool or stage in the component life-cycle, with a default config as set by the base React environment:
+React, like all other Bit Environments must implement a set of Service Handlers. Each service corresponds to a specific tool or stage in the component life-cycle, with a default config as set by the base React environment:
 
 | Service              | Aspect                                                      | Base Configuration                                                                                                                 |
 | -------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
