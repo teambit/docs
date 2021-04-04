@@ -15,6 +15,7 @@ import NameSpaces from '@site/docs/components/components/namespaces.md'
 import BitShow from '@site/docs/components/components/bit-show.md'
 import BitmapExample from '@site/docs/components/components/bitmap-example.md'
 import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
+import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
@@ -59,6 +60,10 @@ The following files will have been created for you:
 <BitShow />
 
 <ShowButton />
+
+## Starting the Dev Server
+
+<StartDevServer />
 
 ## Creating more Components
 
