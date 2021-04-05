@@ -143,9 +143,8 @@ export class CustomReactExtension {
 
 Environments use Environment Services by implementing a special class of methods called Service Handlers.
 The supplied transformers allow overriding of these services - for instance the `overrideCompiler` transformer allows overriding the environment's `getCompiler()` method.
-[Find all service handlers here](#service-providers-api-docs).
 
-The below example uses the overrideCompiler transformer to override the `getCompiler()` Service Handler to change the compilation service.
+The below example uses the `overrideCompiler` transformer to override the `getCompiler()` Service Handler to change the compilation service.
 
 1. Add a Babel config file to your custom environment and import/require it in your `.extension` file
 1. Create a new Babel compiler using the Babel aspect, and initialize it with the above babelConfig
