@@ -15,7 +15,7 @@ To use this environment for your components, add it to any of the `variants` in 
 ```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "[some]/[path]": {
+    "some/path": {
       "teambit.react/react": {}
     }
   }
@@ -26,8 +26,8 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-- `react-component` a bsaic React UI component.
-- `react-env` boilerplate for customizing configuration.
+- `react-component` a basic React UI component.
+- `react-env` boilerplate for a customized environment configuration.
 
 Use any of these templates with the `bit create` command:
 
@@ -37,12 +37,12 @@ bit create <template name> [components...]
 
 ## Runtime (framework) dependencies
 
-Similar to many Frontend frameworks React must have a singleton instance in your app's runtime. When building reuseable components we need to adhere to that and have `react` and `react-dom` set as `peerDependencies`, thus allowing the consuming app to determine runtime version. React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.  
-It is recommended to for you to extend the base React environment and define a semantic version rule to fit your current tech stack and guidelines for reuseable React components.
+As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.  
+It is recommended for you to extend the base React environment and define a semantic version rule and range to fit your current tech stack and guidelines for reuseable React components.
 
 ## Development services
 
-React, like all over Environments must implement a set of Service Handlers. For each service, React compose a different tool and config by default.
+React, like all other Bit Environments must implement a set of Service Handlers. Each service corresponds to a specific tool or stage in the component life-cycle, with a default config as set by the base React environment:
 
 | Service              | Aspect                                                      | Base Configuration                                                                                                                 |
 | -------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,10 +60,10 @@ React, like all over Environments must implement a set of Service Handlers. For 
 
 ## Customize environment
 
-All environments are extendible. You can take any pre-existing environment, and create a component to extend it. That component can then use APIs to:
+All environments are extendible. You can take any pre-existing environment, and create a component to extend it, creating a customized environment. That customized environment can use APIs from the environment it is extending to:
 
 - Override default configurations.
-- Replace composed tools with others (for example - use Babel instead of TypeScript).
+- Replace composed tools with others (for example - use Babel to transpile instead of TypeScript).
 - Add new services and capabilities.
 
 ### Create an extension
@@ -74,7 +74,7 @@ The first step is to create a component that extends React. Use the `react-env` 
 bit create react-env extensions/custom-react
 ```
 
-After you created your extension you need configure it to be a Bit Aspect. This is because environments are actually aspects that extends Bit's core functionality to support your development workflow. To do this edit your workspace.jsonc and set `teambit.harmony/aspect` as the environment applied on the extension you created:
+As with any component, environments must themselves have an environment which compiles, builds, transpiles, etc, them. Bit has a special environment that knows how to create other environments - `teambit.harmony/aspect`. So for any component that is meant to be a Bit environment, you must set `teambit.harmony/aspect` as the environment for that component 
 
 ```json title="add variant for the extension and set the aspect env"
 {
@@ -88,10 +88,11 @@ After you created your extension you need configure it to be a Bit Aspect. This 
   }
 }
 ```
+> You can create variants according to namespace by using {} around the variant key. By placing all your customized environments in a single namespace, let's say 'environments' or 'extensions' you can apply `teambit.harmony/aspect` to all items with that namespace to ensure that all the environments in your workspace have the correct configuration
 
-Validate it by running `bit env` and see that the extension-component has `teambit.harmony/aspect` set as an environment.
+Validate the above by running `bit env` and see that the extension-component has `teambit.harmony/aspect` set as its environment.
 
-Now that you have a base extension to start from, you can already go ahead and configure it for your components in `workspace.json`:
+Now that you have a basic customized extension to start from, you can go ahead and configure it for your components in `workspace.json`:
 
 ```json title="edit variants and set the new env"
 {
@@ -108,10 +109,10 @@ Now that you have a base extension to start from, you can already go ahead and c
 
 ### Customize configuration
 
-React implements a set of APIs you can use to merge you preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find all [Available transformers here](#transformers-api-docs).  
+React implements a set of APIs you can use to merge your preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find [Available transformers here](#transformers-api-docs).  
 In case of a conflict, your config will override the default.
 
-```typescript {4,13} title="Customized TypeScript configuration"
+```typescript {4,14} title="Customized TypeScript configuration"
 import { EnvsMain, EnvsAspect } from '@teambit/envs'
 import { ReactAspect, ReactMain } from '@teambit/react'
 
@@ -123,7 +124,11 @@ export class CustomReactExtension {
   static dependencies: any = [EnvsAspect, ReactAspect]
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const customReactEnv = react.compose([react.overrideTsConfig(tsconfig)])
+    const customReactEnv = react.compose(
+      [
+        react.overrideTsConfig(tsconfig)
+      ]
+    )
 
     envs.registerEnv(customReactEnv)
 
@@ -132,23 +137,20 @@ export class CustomReactExtension {
 }
 ```
 
-> To override any specific configuration it's recommended to create a config file for the specific tool and import it to any of the **transformers**.
+> To override any specific configuration it's recommended to create a separate config file with your customized configuration and import it into the main `.extension.ts` file where you can supply it to the relevant **transformers**. See the tsconfig example in the above snippet.
 
 ### Composing tools and services
 
-Environments use Environment Services by implementing a special class of methods called Service Handlers.  
-You can override an environment's compiler replacing its Compiler Service Handler with the method `getCompiler()`.  
-[Find all service handlers here](#service-providers-api-docs).
+Environments use Environment Services by implementing a special class of methods called Service Handlers.
+The supplied transformers allow overriding of these services - for instance the `overrideCompiler` transformer allows overriding the environment's `getCompiler()` method.
 
-The below example uses a Service Handler to change compilation service.
+The below example uses the `overrideCompiler` transformer to override the `getCompiler()` Service Handler to change the compilation service.
 
-1. Import the Babel extension component to configure it and set it as the new compiler
-1. Import your Babel config
-1. Set the necessary dependencies to be injected (by Bit) into the following 'provider' function
-1. Instantiate a new Babel compiler with the 'babelConfig' configurations
-1. use the `compose` Env API to register a new Service Hanlder
+1. Add a Babel config file to your custom environment and import/require it in your `.extension` file
+1. Create a new Babel compiler using the Babel aspect, and initialize it with the above babelConfig
+1. Use the `compose` Env API to apply the compiler override transformer and add Babel as a transpiler in the environment
 
-```typescript {3,5,10-13,15-16,19-21}
+```typescript {3,5,10-12,15,17-18,22-23}
 import { EnvsMain, EnvsAspect } from '@teambit/envs'
 import { ReactAspect, ReactMain } from '@teambit/react'
 import { BabelAspect, BabelMain } from '@teambit/babel'
@@ -180,19 +182,21 @@ export class CustomReactExtension {
 }
 ```
 
-## Composition Providers
+<!-- ## Composition Providers
 
-The React environment "wraps" every composition with an array of providers.
-These providers can be used to render compositions in a common context such as a theme or data that needs to be globally available.
+The React environment is able to "wrap" component compositions with an array of providers, each of which is simply a component which wraps its `children` with functionality, such as a context, styling, theme, etc.  
 
-A Provider is any React component that accepts compositions as children. This component is registered using the `registerProvider`.
+When Bit renders your component compositions and previews, it wraps each one with with the providers you configure.
+These providers can be used to render compositions with a theme or a react context such as an api context.
+
+These provider components are registered using the `registerProvider`.
 
 :::info
-Providers are part of the component compositions and documentation bundle that is served by the environment's server and rendered by the browser.
+Providers are added by Bit to the component compositions and documentation bundle that is served by the environment's server and rendered by the browser.
 As such, they run in the environment's Preview runtime and not the Main runtime.
 :::
 
-For example, a provider that centers compositions in their rendering page, will look like so:
+For example, a provider that centers compositions in their rendering page, will look like this:
 
 ```tsx title="A composition provider example"
 import React, { ReactReact, ReactElement } from 'react'
@@ -213,7 +217,7 @@ export const Center = ({
 }
 ```
 
-This provider will be registered using the registerProvider method in the React extension `*.preview.runtime.tsx` file:
+This `Center` provider component will be registered using the registerProvider method in the React extension's `*.preview.runtime.tsx` file:
 
 ```tsx title="react-with-providers.preview.runtime.tsx"
 import { PreviewRuntime } from '@teambit/preview'
@@ -235,15 +239,35 @@ export class ReactWithProvidersPreview {
 ReactWithProvidersAspect.addRuntime(ReactWithProvidersPreview)
 ```
 
-> See the full demo project [here](https://github.com/teambit/react-env-with-providers).
+> See the full demo project [here](https://github.com/teambit/react-env-with-providers). -->
 
 ### Transformers API docs
 
-Use these APIs to customize React environment default configuration with your extension. [React more here](#customizing-configuration).
+Use these APIs to customize the base React environment default configuration with your extension. [Read more here](#customizing-configuration).
 
 #### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
-Merge the environment's default TypeScript configurations with a new ([tsconfig.json](https://www.typescriptlang.org/handbook/tsconfig-json.html)) configuration file.
+Merges the environment's default TypeScript configuration with the contents of your [typescript configuration file](https://www.typescriptlang.org/handbook/tsconfig-json.html).
+This config affects the transpilation carried out when rendering components on the local dev UI. To override the config used when building components, use `overrideBuildTsConfig` below.
+
+```ts
+// ...
+const tsconfig = require('./typescript/tsconfig.json');
+export class ReactExtension {
+// ...
+
+  static async provider([envs, react]: [EnvsMain, ReactMain]) {
+    const newReactEnv = react.compose([
+      react.overrideTsConfig(tsconfig)
+    ]);
+}
+// ...
+```
+
+#### `overrideBuildTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
+
+Merges the environment's default TypeScript configuration with the contents of your [typescript configuration file](https://www.typescriptlang.org/handbook/tsconfig-json.html).
+This config affects transpilation of component code during the build process, i.e. in preparation for packaging and exporting the component. To override the local ts config used when rendering components in the local UI, please use `overrideTsConfig` above.
 
 ```ts
 // ...
@@ -261,7 +285,8 @@ export class ReactExtension {
 
 #### `overridePreviewConfig(config: Configuration): EnvTransformer`
 
-Merge the Webpack configurations for the 'Preview' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Merges the Webpack configuration for the 'Preview' environment service, with the contents of your [webpack configuration file](https://webpack.js.org/configuration/).
+This webpack configuration is used for building and rendering your components on the local dev server.
 
 ```ts
 // ...
@@ -278,7 +303,8 @@ export class ReactExtension {
 
 #### `overrideDevServerConfig(config: Configuration): EnvTransformer`
 
-Merge the Webpack configurations for the 'DevServer' environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Merges the Webpack configuration for the 'DevServer' environment service, with the contents of your [webpack configuration file](https://webpack.js.org/configuration/).
+This configuration is used for building and rendering the dev server UI (but not your components, which use the PreviewConfig)
 
 ```ts
 // ...
@@ -295,15 +321,16 @@ export class ReactExtension {
 
 #### `overrideJestConfig(jestConfigPath: string): EnvTransformer`
 
-This method receives a path (as a string) to a configuration file . Overrides the default configurations for the Jest test runner with a new ([jest.config](https://jestjs.io/en/configuration)) configuration file. This is done by passing the _path_ to the file as an argument.
+Merges the default configuration for the Jest test runner with the contents of your ([jest.config configuration file](https://jestjs.io/en/configuration)). 
 
 ```ts
 // ...
+const jestConfig = require.resolve('./jest/jest.config');
 export class ReactExtension {
 // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const newReactEnv = react.compose([
-      react.overrideJestConfig(require.resolve('./jest/jest.config'))
+      react.overrideJestConfig(jestConfig)
     ]);
 }
 // ...
@@ -311,7 +338,7 @@ export class ReactExtension {
 
 #### `overrideBuildPipe(tasks: BuildTask[]): EnvTransformer`
 
-This method receives an array of Bit tasks. It overrides the build pipeline of a component (initiated either on a `bit tag` or `bit build` command).
+This method receives an array of build tasks. It merges the provided tasks with the environment's default build pipeline (initiated either on a `bit tag` or `bit build` command).
 
 ```ts
 // ...
@@ -332,14 +359,20 @@ export class CustomReact {
 
 #### `overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer`
 
-This method receives a Bit dependency-policy object. It overrides the default dependency policy for components using this environment.  
-Each key-value pair in a dependency-policy object signifies the package and the version to be used. It also uses the `-` notation to signify a module should not be defined as a dependency of a certain type (dev, peer or standard).
+This method receives a dependency-policy object and merges it with the environment's default dependency policy for components using this environment.  
+Each key-value pair in a dependency-policy object signifies the package and the version to be used. Use also the `-` and `+` notation to signify a module should moved between dependency types (dev, peer or standard).
 
-```js
+```ts
 // ...
 const newDependencies = {
+  dependencies:{
+    react: '-'
+  },
   devDependencies: {
     '@types/jest': '~26.0.9'
+  },
+  peerDependencies:{
+    react: '^17.0.2'
   }
 }
 
@@ -358,7 +391,7 @@ export class CustomReact {
 
 #### `overridePackageJsonProps(props: PackageJsonProps): EnvTransformer`
 
-Overrides the default properties added to the `package.json` file of every package generated from components using this environment.
+Merges the provide props with the default properties added to the `package.json` file of every package generated from components using this environment.
 
 ```ts
 // ...
@@ -378,7 +411,7 @@ export class CustomReact {
 }
 ```
 
-### Service providers API docs
+<!-- ### Service providers API docs
 
 Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
 
@@ -550,4 +583,4 @@ export class ReactEnv implements Environment {
     ]
   }
 }
-```
+``` -->
