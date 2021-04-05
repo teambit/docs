@@ -174,7 +174,7 @@ export class CustomNodeExtension {
     ])
 
     envs.registerEnv(customNodeEnv)
-    return new CustomNodeExtension(react)
+    return new CustomNodeExtension(node)
   }
 }
 ```
