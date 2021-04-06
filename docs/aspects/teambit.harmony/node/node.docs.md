@@ -26,7 +26,7 @@ To use this environment for your components, add it to any of the `variants` in 
 
 ## Create Node components
 
-React implements several component templates:
+Node implements several component templates:
 
 - `node-env` boilerplate for customizing configuration.
 
@@ -66,7 +66,7 @@ All environments are extendible. You can take any pre-existing environment, and 
 
 ### Create an extension
 
-The first step is to create a component that extends Node. Use the `node-env` template from React env.
+The first step is to create a component that extends Node. Use the `node-env` template from Node env.
 
 ```sh
 bit create node-env extensions/custom-node
@@ -181,7 +181,7 @@ export class CustomNodeExtension {
 
 ### Transformers API docs
 
-Use these APIs to customize the base React environment default configuration with your extension. [Read more here](#customizing-configuration).
+Use these APIs to customize the base Node environment default configuration with your extension. [Read more here](#customizing-configuration).
 
 #### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
