@@ -31,7 +31,7 @@ module.exports = {
       //... other Algolia params
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       title: 'Harmony Beta',
       logo: {
         alt: 'v15 Harmony',
@@ -43,6 +43,7 @@ module.exports = {
           activeBasePath: '/getting-started',
           label: 'Docs',
           position: 'left',
+          to: '/getting-started/installing-bit',
           items: [
             {
               label: 'Getting Started',
@@ -71,6 +72,7 @@ module.exports = {
           label: 'Aspects',
           activeBasePath: 'aspects',
           position: 'left',
+          to: '/aspects/aspects-overview',
           items: [
             {
               label: 'Overview',
