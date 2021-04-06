@@ -28,7 +28,7 @@ See an overview of your component complete with a live playground. Documentation
 
 ### Compositions
 
-Compositions show you how your component is composed. Compositions are created from the `buttom.compositions.tsx` file.
+Compositions show you how your component is composed. Compositions are created from the `button.compositions.tsx` file.
 
 <Image src="/img/workspace-ui/compositions.png" width="80%" />
 
