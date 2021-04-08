@@ -104,7 +104,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Essentials',
-      items: ['essentials/what-is-bit', 'essentials/advantages-of-bit']
+      items: [
+        'essentials/what-is-bit',
+        'essentials/advantages-of-bit',
+        'essentials/working-with-bit'
+      ]
     },
 
     {
@@ -174,4 +178,4 @@ module.exports = {
       ]
     }
   ]
-}
+};
