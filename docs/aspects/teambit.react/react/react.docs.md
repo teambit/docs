@@ -74,7 +74,7 @@ The first step is to create a component that extends React. Use the `react-env` 
 bit create react-env extensions/custom-react
 ```
 
-As with any component, environments must themselves have an environment which compiles, builds, transpiles, etc, them. Bit has a special environment that knows how to create other environments - `teambit.harmony/aspect`. So for any component that is meant to be a Bit environment, you must set `teambit.harmony/aspect` as the environment for that component 
+As with any component, environments must themselves have an environment which compiles, builds, transpiles, etc, them. Bit has a special environment that knows how to create other environments - `teambit.harmony/aspect`. So for any component that is meant to be a Bit environment, you must set `teambit.harmony/aspect` as the environment for that component.
 
 ```json title="add variant for the extension and set the aspect env"
 {
@@ -88,7 +88,6 @@ As with any component, environments must themselves have an environment which co
   }
 }
 ```
-> You can create variants according to namespace by using {} around the variant key. By placing all your customized environments in a single namespace, let's say 'environments' or 'extensions' you can apply `teambit.harmony/aspect` to all items with that namespace to ensure that all the environments in your workspace have the correct configuration
 
 Validate the above by running `bit env` and see that the extension-component has `teambit.harmony/aspect` set as its environment.
 
@@ -321,7 +320,7 @@ export class ReactExtension {
 
 #### `overrideJestConfig(jestConfigPath: string): EnvTransformer`
 
-Merges the default configuration for the Jest test runner with the contents of your ([jest.config configuration file](https://jestjs.io/en/configuration)). 
+Merges the default configuration for the Jest test runner with the contents of your ([jest.config configuration file](https://jestjs.io/en/configuration)).
 
 ```ts
 // ...
@@ -410,177 +409,3 @@ export class CustomReact {
   }
 }
 ```
-
-<!-- ### Service providers API docs
-
-Use these APIs to customize React environment default configuration with your extension. [Read more here](#composing-tools-and-services).
-
-#### `getTester(...args : any[]): Tester`
-
-Returns a test runner to be used by the Tester service.
-
-```ts
-export class ReactEnv implements Environment {
-  constructor(
-    // ...
-
-    // The Jest Aspect
-    private jestAspect: JestMain
-  ) {}
-  // ...
-  getTester(jestConfigPath: string, jestModule = jest): Tester {
-    const jestConfig = require.resolve('./jest/jest.config')
-    return this.jestAspect.createTester(jestConfig)
-  }
-}
-```
-
-#### `getCompiler(...args : any[]): Compiler`
-
-Returns a compiler to be used by the Compiler service.
-
-```ts
-export class ReactEnv implements Environment {
-constructor(
-    // ...
-    // The TypeScript aspect
-    private tsAspect: TypescriptMain
-){}
-// ...
-getCompiler() {
-    const tsConfig = require.resolve('./typescript/tsconfig.json')
-    return this.tsAspect.createCompiler(tsConfig);
-}
-```
-
-#### `getLinter(...args : any[]): Linter`
-
-Returns a linter to be used by the Linter service.
-
-```ts
-export class ReactEnv implements Environment {
-    constructor(){
-        // ...
-        // The ESLint aspect
-        private eslint: ESLintMain
-    }
-    // ...
-    getLinter() {
-        const eslintConfig = require.resolve('./eslint/eslintrc')
-        return this.eslint.createLinter({
-            config: eslintConfig,
-            // resolve all plugins from the react environment
-            pluginPath: __dirname,
-        });
-    }
-}
-```
-
-#### `getDevServer(...args : any[]): DevServer`
-
-Returns a DevServer to be used by the DevServer service. (A DevServer is essentially the combination of the bundler configurations, together with a specified 'listen' port number)
-
-```ts
-export class ReactEnv implements Environment {
-  constructor(
-    // ...
-    // The Webpack aspect
-    private webpack: WebpackMain
-  ) {}
-  // ...
-  getDevServer(): DevServer {
-    const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')])
-    })
-    return this.webpack.createDevServer(withDocs, webpackConfig)
-  }
-}
-```
-
-> The above example runs the dev server with the environment's documentation template.
-
-#### `getDocsTemplate(...args : any[]): string`
-
-Returns the path to the documentation template files, to be used by the Documentation service.
-
-For example (see docs files [here](https://github.com/teambit/bit/tree/master/scopes/react/react/docs)):
-
-```ts
-export class ReactEnv implements Environment {
-  // ...
-  getDocsTemplate() {
-    return require.resolve('./docs')
-  }
-}
-```
-
-#### `getPackageJsonProps(...args : any[]): object`
-
-Returns an object that defines the `package.json` properties of the packages generated for components handled by this environment. This configuration is used by the Packager service.
-
-```ts
-export class ReactEnv implements Environment {
-  // ...
-  getPackageJsonProps() {
-    return {
-      main: 'dist/{main}.js',
-      types: '{main}.ts'
-    }
-  }
-}
-```
-
-> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.
-> Conflicting properties will be overridden by the properties that are set here.
-> Configurations that are set here may also be overridden, either by the 'pkg aspect' or by workspace configurations set using the 'variants API'.
-
-#### `getDependencies(component: any): Promise<DependencyList>`
-
-Returns an object that defines the default dependencies for components handled by this environment. The returned object is used by the Dependencies service.
-
-```ts
-export class ReactEnv implements Environment {
-  // ...
-  async getDependencies() {
-    return {
-      dependencies: {
-        react: '-'
-      },
-      devDependencies: {
-        '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9'
-      },
-      peerDependencies: {
-        react: '^16.13.1',
-        'react-dom': '^16.13.1'
-      }
-    }
-  }
-}
-```
-
-> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.
-> Conflicting properties will be overridden by the properties that are set here.
-> Configurations that are set here may also be overridden, either by the 'Dependency Resolver aspect' or by workspace configurations set using the 'variants API'.
-
-#### `getBuildPipe(...args : any[]): BuildTask[]`
-
-Returns an array of build tasks to be used by the Builder service. Tasks will be added after and before Bit's pre-configured build tasks.
-
-```ts
-export class ReactEnv implements Environment {
-  constructor(
-    // ...
-    // The Compiler aspect
-    private compiler: CompilerMain,
-    // The Tester aspect
-    private tester: TesterMain
-  ) {}
-  getBuildPipe(): BuildTask[] {
-    return [
-      this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task
-    ]
-  }
-}
-``` -->
