@@ -1,6 +1,6 @@
 ---
 id: composing-components
-title: Composing Components
+title: Using Components
 ---
 
 import BitTemplates from '@site/docs/components/commands/bit-templates.md'
