@@ -18,14 +18,14 @@ values={[
 <TabItem value="TypeScript">
 
 ```bash
-bit create react-button ui/button
+bit create react-component ui/button
 ```
 
   </TabItem>
   <TabItem value="JSX">
 
 ```bash
-bit create react-button-jsx ui/button
+bit create react-component-js ui/button
 ```
 
   </TabItem>
@@ -43,14 +43,14 @@ values={[
 <TabItem value="TypeScript">
 
 ```bash
-bit create react-button button --namespace ui
+bit create react-component button --namespace ui
 ```
 
   </TabItem>
   <TabItem value="JSX">
 
 ```bash
-bit create react-button-jsx button --namespace ui
+bit create react-component-js button --namespace ui
 ```
 
   </TabItem>

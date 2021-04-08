@@ -14,7 +14,7 @@ To see a component in the workspace you first need to [create a component](/gett
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/worksapce).
+:arrow_right: Learn more about the [Workspace UI](/building-with-bit/workspace).
 
 ## Local Workspace
 
@@ -24,7 +24,7 @@ See an overview of your component complete with a live playground. Documentation
 
 <Image src="/img/workspace-ui/overview.png" width="80%" />
 
-:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting).
+:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting-components).
 
 ### Compositions
 
@@ -32,7 +32,7 @@ Compositions show you how your component is composed. Compositions are created f
 
 <Image src="/img/workspace-ui/compositions.png" width="80%" />
 
-:arrow_right: Learn more about [Component Compositions](/building-with-bit/compositions).
+:arrow_right: Learn more about [Component Compositions](/building-with-bit/component-compositions).
 
 ### Tests
 

@@ -4,19 +4,19 @@ title: Bit.dev Authentication
 ---
 
 You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
-To export components to bit.dev and to import from private scopes you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
+To export components to bit.dev and to import from private scopes you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
 
 Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account.
 
 > A token or a key is associated with a single user, and the privileges, such as scopes visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses:  
+bit.dev server is using the following IP addresses:
 
-- 35.184.176.52:443  
+- 35.184.176.52:443
 
 ## Authenticate with Token
 
-Use [bit login](/docs/apis/cli-all#login) to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
+Use `bit login` to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
 
 To authenticate your Bit client, run the following command:
 
@@ -24,17 +24,17 @@ To authenticate your Bit client, run the following command:
 bit login
 ```
 
-The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to [bit config](/docs/apis/cli-all#config).
+The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to `bit config`.
 
 ### Additional Tokens
 
-bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:  
+bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:
 
 ```shell
 bit login --machine-name=ci_server
 ```
 
-To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
+To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).
 You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
 
 > You can send a specific token for each command you are running and is accessing a remote scope by specifying the `--token` flag with the relevant token.
@@ -46,7 +46,7 @@ When you run `bit login`, Bit automatically configures your token in your users'
 
 ## Configure local Bit client
 
-To set your username and email in Bit, use the [bit config command](/docs/apis/cli-all#config).
+To set your username and email in Bit, use the `bit config command`.
 
 - If you've used `bit login` to authenticate, the username and email is set according to the Bit account.
 - If no configuration values are defined for Bit, it falls back to read the values from `git config`.
