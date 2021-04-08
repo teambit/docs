@@ -39,13 +39,13 @@ Alternatively you can add [pre-existing components](/building-with-bit/pre-exist
 
 <NameSpaces />
 
-### Created Files
+<!-- ### Created Files
 
 The following files will have been created for you:
 
 <ExampleButton />
 
-<Styles />
+<Styles /> -->
 
 ## Bitmap File
 
