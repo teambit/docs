@@ -16,6 +16,7 @@ import BitShow from '@site/docs/components/components/bit-show.md'
 import BitmapExample from '@site/docs/components/components/bitmap-example.md'
 import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
 import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
+import Path from '@site/docs/components/components/path.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
@@ -38,6 +39,10 @@ Alternatively you can add [pre-existing components](/building-with-bit/pre-exist
 ### Namespaces
 
 <NameSpaces />
+
+### Component Location
+
+<Path />
 
 <!-- ### Created Files
 

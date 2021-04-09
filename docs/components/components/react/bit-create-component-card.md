@@ -23,7 +23,7 @@ bit create react-component ui/card
   <TabItem value="JSX">
 
 ```bash
-bit create react-component-jsx ui/card
+bit create react-component-js ui/card
 ```
 
   </TabItem>
@@ -48,7 +48,7 @@ bit create react-component card --namespace ui
   <TabItem value="JSX">
 
 ```bash
-bit create react-component card-jsx --namespace ui
+bit create react-component-js card --namespace ui
 ```
 
   </TabItem>
