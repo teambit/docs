@@ -1,6 +1,6 @@
 ---
-id: naming-components
-title: Naming Components
+id: theming-components
+title: Themeing Components
 ---
 
-Naming Components
+Theming Components

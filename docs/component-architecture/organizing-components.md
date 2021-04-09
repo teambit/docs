@@ -1,6 +1,6 @@
 ---
-id: theming-components
-title: Themeing Components
+id: organizing-components
+title: Organizing Components
 ---
 
-Theming Components
+Organizing Components
