@@ -36,7 +36,7 @@ Components should have a sole responsibility. In other words, a component repres
 
 - Sharing components to the cloud
 - Naming our components correctly
-- Organising our components
+- Organizing our components
 - Labeling our components
 
 ## How do we improve consumer’s dev experience?
