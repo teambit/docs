@@ -12,6 +12,7 @@ import Styles from '@site/docs/components/components/styles.md'
 import BitShow from '@site/docs/components/components/bit-show.md'
 import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
 import BitCreateMultipleComponents from '@site/docs/components/components/react/bit-create-multiple-components.md'
+import Path from '@site/docs/components/components/path.md'
 
 You can compose components together from other components in your workspace or from components in the cloud.
 
@@ -26,6 +27,10 @@ To create other components you can use `bit create react-component` followed by 
 ### Namespaces
 
 <NameSpaces />
+
+### Component Location
+
+<Path />
 
 ## Install Dependencies
 
