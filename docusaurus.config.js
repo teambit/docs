@@ -129,6 +129,10 @@ module.exports = {
             {
               label: 'Community',
               to: '/resources/community'
+            },
+            {
+              label: 'Migrating from legacy Bit',
+              to: '/resources/migration'
             }
           ]
         },
