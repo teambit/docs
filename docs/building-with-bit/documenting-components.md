@@ -150,7 +150,7 @@ To add live examples, insert the following in the `*.docs.*` file:
 
 ````mdx
     ```jsx live=true
-    const SayHi = () => {
+    () => {
         return <p>Hello!</p>
     }
     ```
