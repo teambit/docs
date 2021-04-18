@@ -15,6 +15,13 @@ To initialize Bit run the following command:
 bit init --harmony
 ```
 
+### Sync with Git
+
+Make sure to track the following files with your SCM:
+
+* `.bitmap`
+* `workspace.jsonc`
+
 ## Component is a Directory
 
 Bit requires all component files in the same directory including component's code, stylings, tests, documentation etc. You can also keep sub-directories as needed. Each component should also have an `index` file to rollup exports.
