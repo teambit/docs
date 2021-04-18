@@ -29,7 +29,7 @@ In addition to that, the Dependency Resolver offers an efficient API to manually
   components and installs it at the workspace root directory, where it can be shared by all relevant components.
   > dependency versions that are used by a minority of components will be installed in each component's directory.
 
-- **A single 'install command for packages and components:**
+- **A single `install` command for packages and components:**
   A single `bit install` command will not only install packages but will also import components listed in your `.bitmap` file.
   These components will then be linked to your `node_modules` directory, to keep the same import pattern for both module types, components and packages.
 
