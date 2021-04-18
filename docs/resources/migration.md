@@ -5,28 +5,43 @@ title: Migration
 
 ## Migrating components from bit v14- to Harmony
 
-Harmony and pre-Harmony components and scopes (aka collections) are mutually incompatible. So how do you migrate over your pre-Harmony bit components to Harmony and take advantage of all the great new features? Well, here's how.
+Harmony and pre-Harmony components and scopes (aka collections) are mutually incompatible. So how do you migrate over your pre-Harmony bit components to Harmony and take advantage of all the great new features? 
+
+Well, here's how.
+
+## What's changed
+
+First let's go through the fundamental changes between legacy version of Bit and Harmony:
+
+**Component structure** - Harmony is opinionated when it comes to structuring components in the file-system. Now each component must be in its own directory, so you'll potentially have to move some files around to suit this new requirement.   
+**Dependencies** - Harmony doesn't allow relative import statements between components. Each Bit component always has a local, compiled module in node_modules - use them for all Bit component import statements in your code.  
+**Environments** - Harmony features a new approach for compilers/testers/etc called environments. Take the base environment per your component's stack (react, node, react-native) and customize it to fit any specific configuration requirement.  
+**Configuration** - In harmony config is managed in a new file format - `workspace.jsonc` and not in your `package.json`.  
+**Module names** - In harmony we removed the @bit prefix, and instead components are now pre-fixed by @<account_name>. Your import statements are likely to need updating.  
+
 
 ### Moving from Legacy Bit to Harmony
 
-There are 3 major steps required to migrate components over from using legacy versions of Bit (14-) to Harmony.
+Now that we've outlined the above, there are essentially 4 major steps required to migrate components over from using legacy versions of Bit (14-) to Harmony.
 
-1. Configure your Harmony [Component Development Environment](/building-with-bit/environments)(s) with the compiler, tester, etc configurations (most likely, with those you used when using legacy Bit). If you don't have any complex configurations, it's worth starting with one of our base Environments, which may just do the job out of the box. 
+1. Reset your bit workspace to be a Harmony workspace, or if you would like to keep your legacy workspace
+1. Configure your Harmony [Component Development Environment](/building-with-bit/environments)(s) with the compiler, tester, etc configurations (most likely, with those you used when using legacy Bit). If you don't have any complex configurations, it's worth starting with one of our base Environments, which may just do the job out of the box, and if you need any customizations then [create your own custom environment](/building-with-bit/environments#customizing-environments) based on the base Environment.
 Understanding and configuring (where required) Environments is the central learning curve when using Bit - once the environment is configured correctly, the component life-cycle essentially takes care of itself.
-1. Copy over the component code, making sure all components files are contained under a single directory, inside which is the entry file into your component. Then track the components with Bit, in much the same way you would with previous Bit versions.
-1. Configure your workspace, specifically the variant/s section to create rules for mapping the relevant environment (built-in or customized) to your components
+1. Copy over the component code, making sure all components files are contained under a single directory, including the entry file into your component. Then track the components with Bit, in much the same way you would with previous Bit versions.
+1. Configure your workspace, specifically the variant/s section to create rules e.g. for mapping the relevant environment (built-in or customized) to your components
 
 Those are the major high-level steps that are required for the migration, which we'll elaborate on below. 
+
 In general Harmony works differently under the hood to legacy Bit versions, so some tinkering may be required with configurations such as compiler configs or dependency resolution rules. But in the main, issues you may come across are likely to be documented either in the general [Harmony docs](https://harmony-docs.bit.dev/), on our [community slack](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w) or on [github](https://github.com/teambit/bit/issues).
 
-Once you have the components tracked in your Bit workspace and have configured the relevant environment for them in the workspace's variants section, you should now be able to compile, tag and export them much as you would have with previous versions of Bit - though it's not all 100% the same, so it's worth going through the Harmony intro docs to make sure you're familiar with what's changed (and what hasn't). 
-And now you have a whole raft of new features at your disposal - not least the local development UI, try it by running `bit start`!
-
-:::note Harmony components can only be exported to Harmony scopes
-Make sure to create your Harmony scope/s on bit.dev as required and map your components to the relevant remote scope via the workspace configuration **before** exporting your ported components
-:::
 
 ## More Detail
+
+### Resetting a Bit Workspace
+
+Harmony and legacy workspaces are mutually incompatible, and a repo aint big enough for the two of them. So in order to now work in a Harmony workspace you have to reset your Bit workspace as follows (note, this step is relevant whether you move your existing repo to use Harmony, or clone the repo and use Harmony on the copy):
+1. Remove all bit-related files and directories from your project - `bit init --reset-hard`. This will remove any legacy bit configurations and files.
+1. Initialise a Harmony bit workspace in your project - `bit init --harmony`
 
 ### Environments rather than Compilers
 
@@ -44,10 +59,20 @@ This stage should mainly be a simple copy-paste job - see [here](/building-with-
 Our [workspace documentation](/building-with-bit/workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more as required.
 
 
+Once you have the components tracked in your Bit workspace and have configured the relevant environment for them in the workspace's variants section, you should now be able to compile, tag and export them much as you would have with previous versions of Bit - though it's not all 100% the same, so it's worth going through the Harmony intro docs to make sure you're familiar with what's changed (and what hasn't). 
+And now you have a whole raft of new features at your disposal - not least the local development UI, try it by running `bit start`!
+
+:::note Harmony components can only be exported to Harmony scopes
+Make sure to create your Harmony scope/s on bit.dev as required and map your components to the relevant remote scope via the workspace configuration **before** exporting your ported components
+:::
+
+
 ## New Features in Harmony
 
+Why go through all the trouble? you may ask yourself. Well, here's just a sample of the added features that Harmony provides, and the list is ever growing.
+
 One of the main leaps forward we've made with Harmony is that it is extremely extendible - both by ourselves and by users themselves - so Harmony's feature set is constantly expanding.
-That said, these are the major new features that have been introduced with Harmony
+That said, these are the major new features that have been introduced with Harmony:
 - **Component Development Environments** Shareable components which contain the configurations for the full component lifecycle, to both reduce setup time and to introduce component development standardization across the organization  
 - **Documentation** Use `.docs.` files to document your components at source
 - **Compositions** Use `.compositions.` files to demonstrate and illustrate your component with its variants and inside complex application contexts, all rendered as part of your component's documentation
