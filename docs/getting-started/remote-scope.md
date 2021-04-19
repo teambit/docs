@@ -40,4 +40,4 @@ Once you have setup a [remote scope](remote-scope) you may need to configure the
 
 ## What's Next?
 
-Once you have created your remote scope and configured your defaultScope you can then create more components, compose components or [export your components](/exporting-components) to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.
+Once you have created your remote scope and configured your defaultScope you can then create more components, compose components or [export your components](exporting-components) to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.
