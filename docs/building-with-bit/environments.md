@@ -1,9 +1,9 @@
 ---
 id: environments
-title: Environments
+title: Component Development Environments
 ---
 
-**Component Development Environment** (or Environment in short) standardize component development and maintenance. In general it allows you to create components that take direct inspiration from `react-scripts` in how they simplify dev-experience when building components.
+**Component Development Environment** (or Environment in short) standardize component development and maintenance. It takes direct inspiration from `react-scripts` in how they simplify dev-experience when building components.
 
 ## Benefits of Environments
 
