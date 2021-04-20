@@ -1,6 +1,6 @@
 ---
 id: welcome
-title: Welcome to Harmony
+title: Welcome to Bit Harmony
 slug: /
 ---
 
