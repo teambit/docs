@@ -52,7 +52,7 @@ Here are some of the open source scopes we build:
 
 - [Bit React](https://bit.dev/teambit/react) - The ingredients and features of Bit’s development environment for React projects, including React native!  
 
-- [Defender](https://bit.dev/teambit/defender) - Components that test, lin, and validate the code of other components using extensions like Jest and ESLint.  
+- [Defender](https://bit.dev/teambit/defender) - Components that test, lint, and validate the code of other components using extensions like Jest and ESLint.  
 
 - [PKG](https://bit.dev/teambit/pkg) - Generates, packs and publishes component packages.  
 
