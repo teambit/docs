@@ -139,7 +139,7 @@ This means that to add a dependency you should use the `install` command, which 
 bit install lodash
 ```
 
-Bit uses parse each component's code to find `import` and `require` statements. It then finds which module is required (another component or an external pacakge). Bit then uses file-name patterns to decide if the file importing the module is a dev-file, according to it - is that module a `dependnecy` or a `devDependency`.
+Bit uses parse each component's code to find `import` and `require` statements. It then finds which module is required (another component or an external pacakge). Bit then uses file-name patterns to decide if the file importing the module is a dev-file, according to it - is that module a `dependecy` or a `devDependency`.
 
 > If your project has a `package.json` file both the `install` command and Bit's dependency definition process will propagate to it and use its contents.
 
