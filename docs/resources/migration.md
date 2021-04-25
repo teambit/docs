@@ -3,13 +3,13 @@ id: migration
 title: Migration
 --- 
 
-Bit v15 (Harmony) and Bit v14 are mutually incompatible. To take advantage of the new features and capabilities of Harmony you need to manually migrate your workspace and collections.
+Bit v15 (Harmony) and Bit v14 are mutually incompatible. To take advantage of Harmony's new features and capabilities, you need to migrate your workspace and collections manually.
 
 ## Key Differences
 
-First let's go through the fundamental changes between legacy version of Bit and Harmony:
+First, let's go through the fundamental changes between the legacy version of Bit and Harmony:
 
-**Component structure** - Harmony is opinionated when it comes to structuring components in the file-system. Each component must be in its own directory.
+**Component structure** - Harmony is opinionated when it comes to structuring components in the file system. Each component must be in its own directory.
 **Dependencies** - Harmony doesn't allow relative import statements between components. Each Bit component always has a local, compiled module in `node_modules` - use them for all Bit component import statements in your code.  
 **Environments** - Harmony features a new approach for compilers/testers called [environments](building-with-bit/environments).
 **Configuration** - In harmony config is managed in a new file format - `workspace.jsonc`.  
@@ -20,23 +20,23 @@ First let's go through the fundamental changes between legacy version of Bit and
 
 ### New Features
 
-Here's just a sample of the added features that Harmony provides, and the list is ever growing.
+Here's just a sample of the added features that Harmony provides, and the list is ever-growing.
 
 One of the main leaps forward in Harmony is that it is extremely extendible - so Harmony's feature set is constantly expanding.  
 That said, these are the major new features that have been introduced with Harmony:
 
-* **Component Development Environments** Shareable components which contain the configurations for the full component lifecycle, to both reduce setup time and to introduce component development standardization across the organization  
+* **Component Development Environments** Shareable components which contain the configurations for the full component lifecycle, to both reduce setup time and introduce component development standardization across the organization  
 * **Documentation** Use `.docs.` files to document your components at source
 * **Compositions** Use `.compositions.` files to demonstrate and illustrate your component with its variants and inside complex application contexts, all rendered as part of your component's documentation
 * **Ripple CI** Propagating CI along the dependency tree, so you know how changes upstream will affect dependencies, even before they adopt the changes
 
 ## Version Incompatibility
 
-There are strickt limitations regarding using both v14 and v15
+There are strict limitations regarding using both v14 and v15
 
 * v14 components can't depend on v15 and vice-versa.
 * v14 and v15 components can't live in the same scope.
-* You must run two installations of Bit with different binary-names for using v14 and v15 simultaniously. [Learn more](/reference/using-bvm#using-v15-and-v14)
+* You must run two installations of Bit with different binary-names for using v14 and v15 simultaneously. [Learn more](/reference/using-bvm#using-v15-and-v14)
 * You can have the same local workspace with both v14 and v15 content in `.git/bit` directory.
 
 ## Moving from Legacy Bit to Harmony
@@ -45,7 +45,7 @@ Now that we've outlined the above, the major steps required to migrate component
 
 ### Resetting a Bit Workspace
 
-Harmony and legacy workspaces are mutually incompatible, and a repo aint big enough for the two of them. So in order to now work in a Harmony workspace you have to reset your Bit workspace as follows (we recommend cloning the current repo and Harmony-ising the clone):
+Harmony and legacy workspaces are mutually incompatible, and a repo ain't big enough for the two of them. So to now work in a Harmony workspace you have to reset your Bit workspace, as follows (we recommend cloning the current repo and Harmony-ising the clone):
 
 1. If you are maintaining your legacy Bit workspace, clone your repository.
 1. Create a new branch for Harmony migration.
@@ -60,7 +60,7 @@ As v15 mandates a structure where components are directories, you may need to re
 
 ### Configure the workspace
 
-Our [workspace documentation](/building-with-bit/workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more as required. It is important to configure `defaultScope` correctly in `variants`, as this defined the target remote scope for each component.
+Our [workspace documentation](/building-with-bit/workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations, and more as required. It is important to configure `defaultScope` correctly in `variants`, as this defined the target remote scope for each component.
 
 ### Environments rather than Compilers
 
