@@ -5,10 +5,10 @@ title: Documenting Components
 
 import { Image } from '@site/src/components/image'
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cKMghSe_1RU?rel=0" title="How to add Docs to your Bit components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation.
 The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.
-
-<Image src="/img/ws_getting_started_docs.png" width="60%"/>
 
 ## Environment-specific templates
 
@@ -64,7 +64,7 @@ displayName: Button
 **Using JS:**
 
 ```js
-export const title = 'my new customized title'
+export const title = 'my new customized title';
 ```
 
 ## Abstract / Description
@@ -82,7 +82,7 @@ description: my customized title
 **Using JS:**
 
 ```js
-export const abstract = 'my new customized title'
+export const abstract = 'my new customized title';
 ```
 
 ## Labels
@@ -102,7 +102,7 @@ labels: ['react', 'typescript', 'ui']
 **Using JS:**
 
 ```js
-export const labels = ['react', 'typescript', 'ui']
+export const labels = ['react', 'typescript', 'ui'];
 ```
 
 <Image src="/img/ws_getting_started_frontmatter.png" width="70%" padding={20}/>
@@ -118,7 +118,7 @@ This can be done by simply writing down MDX in the component's `*.docs.mdx` file
 > Never import React to MDX doc files as it is injected by default.
 
 ```mdx
-import { Card } from './card'
+import { Card } from './card';
 
 ### This is a custom section
 
@@ -136,7 +136,7 @@ Create a function with the name 'Overview' and export it as default:
 
 ```jsx
 export default function Overview() {
-  return <h3>My custom docs section</h3>
+  return <h3>My custom docs section</h3>;
 }
 ```
 
@@ -168,8 +168,8 @@ The `examples` variable receives an array of objects, each representing a single
 Import the 'Card' component and set the `examples` variable with a single object:
 
 ```jsx title="card.docs.tsx"
-import React from 'react'
-import { Card } from './card'
+import React from 'react';
+import { Card } from './card';
 
 export const examples = [
   {
@@ -183,7 +183,7 @@ export const examples = [
                 <p>- When they have arguments</p>
             </Card>`
   }
-]
+];
 ```
 
 ## Properties Table
@@ -205,12 +205,12 @@ export const Button = ({ children, variant, ...rest }: IButton) => {
     <button className={styles[variant]} {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 
 Button.defaultProps = {
   variant: 'primary'
-}
+};
 ```
 
 A few things to note here:
@@ -229,8 +229,8 @@ export const Button = ({ children, variant = 'primary', ...rest }: IButton) => {
     <button className={styles[variant]} {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 ```
 
 The above code shows 'variant' as a 'required' prop (since that is the default). However, the 'variant' prop receives a default value, making it 'optional'. The properties table will ignore TS and show the prop as 'optional'.
@@ -245,18 +245,18 @@ export const Button = ({ children, variant, ...rest }) => {
     <button className={styles[variant]} {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 
 Button.defaultProps = {
   variant: 'primary'
-}
+};
 
 Button.propTypes = {
   /** Choose between primary and secondary styling. */
   variant: PropTypes.oneOf(['primary', 'secondary']),
   children: PropTypes.any.isRequired
-}
+};
 ```
 
 A few things to note here:

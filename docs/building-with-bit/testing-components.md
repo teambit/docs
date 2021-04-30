@@ -3,7 +3,7 @@ id: testing-components
 title: Testing Components
 ---
 
-## Adding Tests
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R0LWV2gcbf8?rel=0" title="Testing your Components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
 
@@ -21,19 +21,19 @@ For example, the React environment runs tests in files named with the following 
 It is highly recommended to use the component compositions as test samples.
 
 ```tsx {4} title="button.tsx"
-import React from 'react'
-import { render } from '@testing-library/react'
-import { expect } from 'chai'
-import { BasicButton } from './button.composition'
+import React from 'react';
+import { render } from '@testing-library/react';
+import { expect } from 'chai';
+import { BasicButton } from './button.composition';
 
 describe('button', () => {
   it('should render', () => {
-    const { getByText } = render(<BasicButton />)
-    const rendered = getByText('click me')
+    const { getByText } = render(<BasicButton />);
+    const rendered = getByText('click me');
 
-    expect(rendered).to.exist
-  })
-})
+    expect(rendered).to.exist;
+  });
+});
 ```
 
 ## Choosing a test runner
