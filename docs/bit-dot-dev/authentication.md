@@ -10,9 +10,7 @@ Exporting components to bit.dev requires that Bit client (Bit cli) on your machi
 
 > A token or a key is associated with a single user, and the privileges, such as scopes visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses:
-
-- 35.184.176.52:443
+bit.dev server is using the following IP addresses: `35.184.176.52:443`
 
 ## Authenticate with Token
 
