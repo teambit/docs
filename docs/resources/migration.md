@@ -64,7 +64,7 @@ Our [workspace documentation](/building-with-bit/workspace) details exactly how 
 
 A major new introduction in Harmony is the [Component Development Environment](/building-with-bit/environments). While in the past you would select a single compiler, tester, etc for your entire workspace, now all component life-cycle processes (compilation, linting, testing, etc) are managed by the Environment, and all configurations for these environments are customizable.
 
-What this means is that a first step for migrating over your components is setting up the development Environment - either by simply selecting the relevant [base Environment](/building-with-bit/environments#pre-built-environments) that Bit supplies (react, node, react-native for now), or by [extending these base Environments](building-with-bit/environments#customizing-environments) with your own configuration files (e.g. `tsconfig`).
+What this means is that a first step for migrating over your components is setting up the development Environment - either by simply selecting the relevant [base Environment](/building-with-bit/environments#pre-built-environments) that Bit supplies (react, node, react-native for now), or by [extending these base Environments](/building-with-bit/environments#customizing-environments) with your own configuration files (e.g. `tsconfig`).
 
 ### Render components and add docs
 
