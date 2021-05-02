@@ -165,7 +165,6 @@ module.exports = {
       label: 'Reference',
       items: [
         'reference/using-bvm',
-        'reference/authentication',
         'reference/commands',
         'reference/ci-cd',
         'reference/usage-analytics'
