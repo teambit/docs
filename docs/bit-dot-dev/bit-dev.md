@@ -12,25 +12,25 @@ Bit.dev server provides these functions:
 
 <div style="margin: auto; width: 90%; padding: 30px;">
 <a href="#remote-collections-hosting">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200">
 </a>
 <a href="#package-registry">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.svg" alt="Packages registry" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.svg" alt="Packages registry" width="250" height="200">
 </a>
 <a href="#component-playground">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-playground.svg" alt="Component playground" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-playground.svg" alt="Component playground" width="250" height="200">
 </a>
 <a href="#component-ci">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-ci.svg" alt="Component CI" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-ci.svg" alt="Component CI" width="250" height="200">
 </a>
 <a href="#component-explorer">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-explorer.svg" alt="Component Explorer" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-explorer.svg" alt="Component Explorer" width="250" height="200">
 </a>
 <a href="#component-changes-prs">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200">
 </a>
 <a href="#integrations-and-notifications">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/integrations.svg" alt="Integrations and notifications" width="250" height="200" />
+    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/integrations.svg" alt="Integrations and notifications" width="250" height="200">
 </a>
 </div>
 

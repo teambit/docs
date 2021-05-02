@@ -1,5 +1,5 @@
 ---
-id: setup-authentication
+id: authentication
 title: bit.dev Authentication
 sidebar_label: Authentication
 ---
