@@ -1,7 +1,6 @@
 ---
 id: bit-dev
 title: bit.dev Functionality
-sidebar_label: Functionality
 ---
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
@@ -10,25 +9,26 @@ Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requ
 
 Bit.dev server provides these functions:  
 
-<div style="margin: auto; width: 90%; padding: 30px;">
-<a href="#remote-collections-hosting">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200" />
-</a>
-<a href="#package-registry">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.svg" alt="Packages registry" width="250" height="200" />
-</a>
-<a href="#component-ci">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-ci.svg" alt="Component CI" width="250" height="200" />
-</a>
-<a href="#component-explorer">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-explorer.svg" alt="Component Explorer" width="250" height="200" />
-</a>
-<a href="#component-changes-prs">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200" />
-</a>
-<a href="#integrations-and-notifications">
-    <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/integrations.svg" alt="Integrations and notifications" width="250" height="200" />
-</a>
+
+<div style={{margin: 'auto', width: "90%", padding: 30}}>
+    <a href="#remote-collections-hosting">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/remote-collections.svg" alt="remote hosting" width="250" height="200" />
+    </a>
+    <a href="#package-registry">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/pacakges-registry.svg" alt="Packages registry" width="250" height="200" />
+    </a>
+    <a href="#component-ci">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-ci.svg" alt="Component CI" width="250" height="200" />
+    </a>
+    <a href="#component-explorer">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-explorer.svg" alt="Component Explorer" width="250" height="200" />
+    </a>
+    <a href="#component-changes-prs">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/component-PRs.svg" alt="component changes PRs" width="250" height="200" />
+    </a>
+    <a href="#integrations-and-notifications">
+        <img src="https://storage.googleapis.com/static.bit.dev/docs/bit-dev/integrations.svg" alt="Integrations and notifications" width="250" height="200" />
+    </a>
 </div>
 
 ## Remote collections hosting
