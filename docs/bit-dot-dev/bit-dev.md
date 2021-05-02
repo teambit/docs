@@ -5,7 +5,7 @@ title: bit.dev Functionality
 
 Bit.dev server is a cloud service provided by Bit. Accessing bit.dev server requires registering a user account on the bit.dev server. To export and import components from a local workspace to the account, the developer must login from the local workspace.  
 
-> Unlike bit-cli tool which is open-source, the bit.dev server and its cloud features are proprietary and owned by Bit.
+> Unlike the bit-cli tool which is open-source, the bit.dev server and its cloud features are proprietary and owned by Bit.
 
 Bit.dev server provides these functions:  
 
