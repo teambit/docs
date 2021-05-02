@@ -149,6 +149,12 @@ module.exports = {
       ]
     },
 
+    {
+      type: 'category',
+      label: 'Bit.dev',
+      items: ['bit-dot-dev/bit-dev', 'bit-dot-dev/my-account', 'bit-dot-dev/authentication']
+    },
+
     // {
     //   type: 'doc',
     //   id: 'aspects/aspects-overview'
