@@ -3,6 +3,8 @@ id: component-compositions
 title: Compositions
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/so8CcUzTrn4?rel=0" title="How to Render your Component" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
 They serve as a way to run manual and automated integration tests, before such integrations are done by consumers of that component.
 
@@ -24,10 +26,10 @@ Each composition is a standard usage of a component (requiring no special syntax
 For example, the following is a composition of the 'button' component.
 
 ```js
-import React from 'react'
-import { Button } from './button'
+import React from 'react';
+import { Button } from './button';
 
 export const BasicButton = () => {
-  return <Button text="click me" />
-}
+  return <Button text="click me" />;
+};
 ```

@@ -7,7 +7,7 @@ Bit can be used on pre-existing projects and components can be added using the `
 
 ## Add Pre-existing Components
 
-Each component in a Bit workspace must have all its implementation files under the same directory. A component must have an entry file (`index.[ts|js]` is used as the default. Learn how to configure a different file, here).
+Each component in a Bit workspace must have all its implementation files under the same directory. A component must have an entry file (`index.[ts|js]` is used as the default.
 
 ```bash
 my-component

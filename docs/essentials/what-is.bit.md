@@ -3,99 +3,74 @@ id: what-is-bit
 title: What is Bit
 ---
 
-Bit is a platform for building with components and use them to compose apps and systems. Building with Bit gives a host of benefits for our codebase's modularity, composability, testability, and scalability.
+Bit is a tool for composing modern applications of independent components.  
 
-One of the key benefits is how Bit isolates components, giving us the freedom to build and work with each component as an isolated module. We then compose components into more concrete components, deploy them as apps or services, and collaborate with different product teams.
+It extends the benefits of micro-services to everything you build, front and back. With Bit teams can autonomously develop, build, and release components, while continuously collaborating and integrating to compose larger applications together.  
 
-## In a nutshell
+Bit's extendible toolset (and visual development UI) creates a simple yet powerful experience for every developer, while larger teams can smoothly scale to build many developers and projects in the component cloud.
 
-Bit allows us to compose apps and codebases from components. We use this approach to build using service-oriented architecture, where **components are services**. This simplifies our codebase, as it promotes composability and modularity.
+Modularity benefits almost every part of the development process, from speeding up releases to making debugging or refactoring much simpler. You can start enjoying Bit through one of many popular use-cases such as Micro Frontends, Design Systems, Development Speed, and Collaboration on components.
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/virtual-component-monorepo.png" width="200" alt="Bit in a Nutshell" />
-</div>
+## Develop modular web applications together in a fast and scalable way
 
-We sort components in **Scopes** where each Scope "implements" a cross-cutting concern of different business aspects of an end product(s). Each component in a Scope is essentially a service for other developers to use when composing their app.
+While the modern web makes components its first-class citizens, many modern web projects are still being built in a cumbersome monolithic way, as different features and the developers who build them are tightly coupled to each other, slowing down development and making it hard to build together.  
 
-Scopes allow us to achieve feature ownership as each Scope's components can implement different tools, libraries, SDKs, and UI relevant to that specific business concern/feature.
+**Bit modularizes the development of modern web applications**.      
 
-## Why Bit?
+With Bit large modern web applications can be composed by different teams building features side by side via scopes of components. Each team can autonomously develop, expose, and integrate components. All components are developed in isolation and can be easily integrated in build time as standalone versioned and updated building blocks. Through the cloud, this process can be effectively scaled to many teams building many web applications together.      
 
-Building software that scales is complex and gets more challenging for larger systems where the ability to collaborate and sync between many distributed teams on the same end-product(s) is crucial.  
-We need a new way of working with software that focuses on simplicity, productivity, and composability.
+Web development becomes **faster**, more **scalable** and highly **standardized**. Application users enjoy new features more frequently released, bugs can be quickly fixed or replaced, and user experience remains consistent at every touchpoint.  
 
-Solutions like monorepos can be a solution for a single codebase; we need to scale this architecture for the entire organization, which has many product teams, each with its codebase. We need a first-class development experience for discovering, navigating, and refactoring an organization's codebase while ensuring different product teams remain independent while depending on other team's code.
+### How?  
 
-We want to compose apps and services from ready-made components and share components as services for other teams to compose with. We want to build scalable products and improve collaboration between different teams in a consistent, repeatable, and non-intrusive manner.
-We don't want code duplications and build systems of any size.
+Bit is a standard infrastructure for component-driven development. It provides an extendable toolchain to develop, build, test, and integrate components in a modular and scalable way.  
 
-**We want to develop in harmony.**
+Bit’s workspace enables the distributed development of modular web projects, turning any web project into a “monorepo” composed of components. Every feature is a **scope of components**. Each scope of components contains everything its owner team needs in order to deliver: UI components, data-connected components, React hooks, Node modules, and even serverless functions.  
 
-## Virtual Component Monorepo
+All teams expose and share components with each other, and can continuously integrate components in build-time while constantly releasing fast automated updates to each other. Through the cloud, collaboration and integration are smoothly scaled to many teams building many modular web projects together.  
 
-Bit unlocks a unique software architecture that simplifies our frontend apps, backend services, and tools by enabling us to construct them as "modular codebases" using composable components.
+**Bit is used by thousands of teams**, including some of the world’s best and largest tech organizations. Join us to build modular web applications together too.  
 
-In Bit, we implement all our code in components, sort them into different scopes and use them to create different workspaces for features and bug fixes. By composing with components, we create dependency relationships across teams, so when we build new capabilities, we have full access to all available components, just like in a monorepo. However, we still use smaller repositories to collaborate on code changes.
+In the words of [Addy Osmani](https://addyosmani.com/first/): 
 
-### Component
+*“The secret to efficiently building ‘large’ things is generally to avoid building them in the first place. Instead, compose your large thing out of smaller, more focused pieces.”*  
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/component.png" width="50" alt="Component" />
-</div>
+### Developer Experience
 
-The component is the basic building block in Bit. A component can represent a UI primitive (button, text area), a middleware (authentication, log), SDK for a service, themes/styles...
+Bit is focused on creating a simple, performant, and highly flexible developer experience that makes it easy to scale the development of complex-multi component web projects. 
 
-Implement components as services to remove the need for layers (horizontal, vertical slice, or onion) in your architecture. This ensures all building of more concrete components is done by composing small and simple ones.
+With over 600 APIs every part of Bit - from dev environments to the UI - can be extended and customized to fit your best experience. And, any extension is a Bit component, so it can be easily integrated and reused in different projects and shared with more people.  
 
-Highly concrete and specialized components can be apps, backend services, micro-frontends, serverless functions, etc.
+Bit is extremely lightweight and leaves nearly 0 footprint on your project. Since everything happens in build-time, not code-changes or runtime dependencies are required. 
 
-### Scope
+### We build Bit with Bit
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/single-scope.png" width="100" alt="Scope" />
-</div>
+We build Bit with Bit. Every part of Bit and even Bit.dev is 100% made of Bit components. Bit makes it easy for us to open-source every component we can regardless of its parent project, so you can learn how we build and view the scopes/teams we work in at our [official TeamBit account](https://bit.dev/teambit). 
 
-A Scope is a product feature in the organization's "virtual" codebase. Scope hosts closely related and cross-dependent components that implement all cross-cutting concerns of a product aspect. For example, a **User** scope can have a `login-form` frontend component, `authentication` middleware, `user-settings` micro-frontend, and a `user-service` microservice.
+### Key Concepts
 
-All components of a Scope are available as services for other teams, apps, and components. Each scope is owned by a different product team responsible for that functionality.
+**Component** -  The word “component” can describe any software component that has a clear and well-defined business functionality. In the world of modern web development, components can be UI primitives, whether simple or “smart” data-connected components, Hooks, entire features like a search bar with buttons and filters, and even a full page. Components can also be used in the backend, as anything from simple utility functions to more complex Node modules.  
 
-Scopes allow for optimal reuse of components across multiple teams.
+While most people find it simpler to start with UI components, you can take a [look here]( to learn how we work with Bit and what’s really possible.  
 
-### Component Marketplace
+**Workspace** - The Bit component Workspace provides a monolithic dev experience for building fully distributed applications from independent components. It lets you develop each components in isolations and compose it with other components in the workspace. Components can be dynamically added, imported, or removed from the workspace so you can work on what you need when you need to, in a modular way.  
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/connected-scopes.png" width="280" alt="Component Marketplace" />
-</div>
+It helps developers build in a modular way, so each component is independently developed, tested, built, rendered, linted, documented, versioned, and published. All components and dependencies are managed in a simple harmonic “monolith-like” developer experience with smooth control over all changes to your code or your development environment.  
 
-A component marketplace happens naturally when we grow the number of scopes and create dependency relationships between components. Each scope contains all its dependencies cached to improve the performance and reliability, making the process of depending on others' code more stable.
+**Scope** - Scopes are next-gen, build-time "microservices” (i.e. “Billing”, “Users” or even “Marketing"). Each scope is made of a set of components required to deliver a feature, and can contain UI elements, data-connected components, widgets, hooks, and even backend modules or anything else required to deliver the service. Different scopes can be owned by different teams, giving each team the power to autonomously develop and deliver innovation.  
 
-A centralized component marketplace helps with the discoverability of components. All developers know where they can find components and decide to create new scopes to publish new components.
+Here are few examples of the scopes we build:  
 
-A growing component marketplace reduces the amount of work on each new feature.
+- [Evangelist](https://bit.dev/teambit/evangelist) - Our marketing team scope which is responsible for our marketing site and all marketing related pages and components on Bit.dev. It empowers the marketing team to ship new updates to production autonomously as well as provide services to other teams who can use these components to create better and faster marketing for their products. The marketing team gets to ensure a single and consistent tone and visual language across all experiences and products.  
 
-### Workspace
+- [Documenter](https://bit.dev/teambit/documenter)- Our component documentation team’s scope is responsible for the component documentation product on Bit.dev. This scope contains all documentation related components on Bit.dev. It empowers them to ship updates and component documentation services to the rest of our team internally and to the community.  
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/workspace.png" width="100" alt="Workspace" />
-</div>
+- [MDX Integration Scope](https://bit.dev/teambit/mdx) - A standalone service extending Bit to support the MDX file format from all ends (UI, modules, extensions, etc.) and acts as a service for other teams to consume and build new services and features on top. Thanks to this Scope you can use MDX to create awesome documentation for your components in Bit.  
 
-A workspace is a place where we use to work with all our components. It gives us a “monolithic development experience” with full code navigation, debugging, and refactoring across components. It is a place where we can work on all our components as building blocks, create new ones, manage configurations and collaborate on components.
 
-Workspaces are flexible and used to maintain components from many scopes.
+### The Bit.dev Platform
 
-We use Git repositories to collaborate in workspaces.
+The Bit and Bit.dev model is similar to the Git and Github model. Bit is open source and can be used by any team through a self-hosted Bit scope of components. Bit.dev is a platform that helps organizations scale to many scopes and many teams, inter-connecting them into a single collaboration experience with powerful enterprise-grade features for code discoverability, collaboration, security, and team management. It also features Ripple CI, the world's first component-driven CIbuilt for the modern web, which continuously builds changes on the component graph across all teams and projects in the organization.  
 
-### Lane (coming soon)
+**For enterprises see [Bit.dev enterprise-grade hosting vs. self-hosting->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**  
 
-A lane facilitates an overarching change across multiple components. Lane mirrors a software development swim lane where a change needs to happen for several components at once. Think about the capability of tying together Pull Requests from multiple Git repositories to a single "virtual" PR.
-
-We use Lanes to manage cross-team changes and communicate over API changes for components.
-
-## Benefits of Using Bit
-
-- Components simplify the design of our tools and services by giving us building blocks at the required level of abstraction.
-- Components maximize code reuse to the point of having zero code duplication across our entire codebase.
-- Composing apps and services with components removes the need for architecture layers in our codebase and allows for a much smoother dev-experience of working in a service-oriented codebase where each component is a service that can be composed with other components to solve concrete problems.
-- Bit's scopes implement feature ownership across the organization and host cross-cutting concern components that facilitate services.
-- Workspaces are flexible and can be used to maintain components from many scopes, making it easier to reuse and collaborate on available components.
-- Lanes helps distributed teams to communicate and collaborate on API changes by understanding the underline dependency graph of components and "bundling" together changes that affect many teams and should be synced.

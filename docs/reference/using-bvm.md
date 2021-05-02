@@ -10,14 +10,14 @@ import InstallBVMErrors from '@site/docs/components/install/install-bvm-errors.m
 [BVM](https://github.com/teambit/bvm) is a version manager for Bit.  
 Using BVM makes it easier to install and manage multiple versions of Bit in a single environment.
 
-### Features
+## Features
 
 - **Consistent installation:** All Bit dependencies are bundled together to ensure a consistent and predictable package installation that is not affected by SemVer rules.
 - **Fast installation:** A simple and quick installation process that requires no additional time-consuming operations (post-install scripts, etc.)
 - **Friendly UX:** Easy upgrades and version management
 - **Multiple Bit versions:** Easily switch between Bit versions or even use multiple versions in parallel
 
-### Install BVM
+## Install BVM
 
 <Tabs
 defaultValue="NPM"
@@ -43,111 +43,56 @@ yarn global add @teambit/bvm
 
 <InstallBVMErrors />
 
-### Install Bit
+## Install Bit
 
-#### Install Bit's latest version
-
-```bash
+```bash title="Install Bit's latest version"
 bvm install
 ```
 
-#### Install A specific Bit version
-
-```bash
-bvm install <bit-version>
-```
-
-#### Upgrade to Bit's latest version
-
-Install the latest version and remove the version previously used.
-
-```bash
+```bash title="Upgrade Bit's version"
 bvm upgrade
 ```
 
-### Manage versions
+## Using v15 and v14
 
-#### Get the current version of BVM
+If you have a previous version of Bit installed (`bit-bin`), the default binary name for v15 will be `bbit`.
 
-```bash
-bvm -v
+You can change the binary name for Harmony by running the following command after installing BVM and before installing Bit.
+
+```sh
+bvm config set DEFAULT_LINK <new-value>
 ```
 
-#### List all versions of BVM available to be installed
+## Manage versions
 
-```bash
-bvm list --remote
-```
-
-#### Get the local and remote versions of Bit and BVM
-
-Get the local used versions, local latest versions and remote latest versions of Bit and BVM
-
-```bash
+```bash title="Get version information"
 bvm version
 ```
 
-#### List all installed Bit versions
+```bash title="List available versions"
+bvm list --remote
+```
 
-```bash
+```bash title="List installed versions"
 bvm list
 ```
 
-#### Remove an installed Bit version
-
-```bash
+```bash title="Remove a local version"
 bvm remove <bit-version>
 ```
 
-#### Link to a specific Bit version
+## BVM configurations
 
-Link a command name to a Bit version (link to binaries in the `PATH` variable).
-
-```bash
-bvm link <command> <bit-version>
-```
-
-For example, the following line will link Bit's version `0.0.315` to the `bitty` command name
-(this will execute Bit's version `0.0.315` whenever the `bitty` command is used).
-
-```
-bvm link bitty 0.0.315
-```
-
-Validate the link by checking the version number of the new link:
-
-```bash
-$ bitty -v
-
-0.0.315 (@teambit/legacy: 1.0.28)
-```
-
-:::info Auto-Link Bit's latest version to `bbit`
-If a legacy version of Bit (Bit v14) is installed on your machine,
-BVM will automatically link the latest version to `bbit` (instead of `bit`) to allow you to use both versions in parallel.
-:::
-
-### BVM configurations
-
-#### Get BVM configurations
+BVM has several configurations
 
 - `DEFAULT_LINK` - The default command name to be linked to BVM's latest version.  
   `bit` is linked by default unless a legacy version of Bit is installed. In that case, `bbit` will be linked, instead.
-
 - `BVM_DIR` - The location for BVM
 
-```bash
+```bash title="Get BVM configurations"
 bvm config
 ```
 
-#### Set BVM configurations
-
-```bash
+```bash title="Set BVM configurations"
 bvm config set <property> <new-value>
-```
-
-For example, to change the default link for Bit, from `bit` to `bitty`:
-
-```bash
-bvm config set DEFAULT_LINK bitty
 ```

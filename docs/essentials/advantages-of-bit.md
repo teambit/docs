@@ -5,9 +5,7 @@ title: Advantages of Bit
 
 ## Development
 
-Bit Virtual Component Monorepo allows us to use any component as a building block for any other component, app, or service. This disconnects our development experience from our Git repository structure, as any repo can use a component that was originated in any other repo.
-
-Untangling development from codebase structure and architecture allows us to essentially build like Google, where all code is available for reuse (assuming it's JavaScript-based).
+Use any component as a building block for any other component, app, or service. This disconnects development experience from your application's code structure, as any repo can use a component that was originated in any other repo.
 
 ## Component Teamwork
 

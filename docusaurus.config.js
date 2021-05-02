@@ -129,6 +129,10 @@ module.exports = {
             {
               label: 'Community',
               to: '/resources/community'
+            },
+            {
+              label: 'Migrating From Legacy Bit',
+              to: '/resources/migration'
             }
           ]
         },
@@ -268,9 +272,9 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: [require.resolve('./src/css/custom.css')]
         }
       }
     ]
   ]
-}
+};
