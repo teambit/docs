@@ -40,7 +40,7 @@ When tagging a version, Bit creates an immutable version from the component's im
     <img src="/img/version-history.png" width="200" alt="Component Version History" />
 </div>
 
-Each component-version is a snapshot of a component in a specific point in time. This means you can use commands like `checkout` to revert a single components to a previous state, while keeping the rest of the components in the workspace in their latest version.
+Each component-version is a snapshot of a component in a specific point in time. This means you can use commands like `checkout` to revert a single component to a previous state, while keeping the rest of the components in the workspace in their latest version.
 
 #### Version Artifacts
 
@@ -50,12 +50,12 @@ For each immutable version in the component's history Bit keeps artifacts create
 * Compilation targets
 * Build logs
 
-Differnet features in Bit use later use these artifacts. For example, the [PKG Aspect](/aspects/pkg) that runs `npm pack` on each component exposes APIs for package managers to install components as if they where packages.
+Different features in Bit later use these artifacts. For example, the [PKG Aspect](/aspects/pkg) that runs `npm pack` on each component exposes APIs for package managers to install components as if they where packages.
 
 ## Component Scope
 
 The component's scope is the extent of the functionality that the component deals with. Each component must have a scope defined.  
 Bit uses the component's scope for two main purposes:
 
-* **Component ID** - used for refering to the component in many commands and the UI and calculate package name.
+* **Component ID** - used for refering to the component in many commands and the UI and to calculate the package name.
 * **Remote Bit server** - set as the target for exporting components.
