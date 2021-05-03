@@ -162,6 +162,7 @@ module.exports = {
         'reference/authentication',
         'reference/commands',
         'reference/ci-cd',
+        'reference/bit-oss-server',
         'reference/usage-analytics'
       ]
     },
