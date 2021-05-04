@@ -3,7 +3,6 @@ id: creating-components
 title: Creating Components
 ---
 
-import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
 import ExampleButton from '@site/docs/components/examples/react/button.md'
 import ShowButton from '@site/docs/components/examples/react/show-button.md'
 import BitCreateComponent from '@site/docs/components/components/react/bit-create-component-card.md'
@@ -27,10 +26,6 @@ Once you have [initialized a Bit workspace](/getting-started/initializing-worksp
 3. Use `bit install` to install dependencies for test files
 
 Alternatively you can add [pre-existing components](/building-with-bit/pre-existing-components) using the `bit add` command.
-
-## Setting a React Environment
-
-<ReactEnvironment />
 
 ## Use Bit Create
 
