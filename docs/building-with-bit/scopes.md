@@ -85,3 +85,12 @@ In case you want to export a component to a different scope you will need to mod
 Collaborating between Bit components require setting up a remote server accessible for all collaborators. You may use bit.dev as a remote server or setup your own.
 
 > You can host and share components on your own server. I.e. export components to it and import components from the server. Building, testing and rendering should be done on your own CI/CD. Search and npm / yarn install are only available for components exported to bit.dev.
+
+### Self Hosting on a local machine
+
+- `bit init --bare` in a new folder
+- `bit start`
+- Go to the workspace you want to use it
+- Then `bit remote add http://localhost:3000`
+- The scope name is the name of the folder where you init bare.
+- Then you can export into this scope.

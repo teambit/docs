@@ -1,4 +1,4 @@
---- 
+---
 id: react-environment
 title: React Environment
 ---
@@ -11,4 +11,11 @@ title: React Environment
     "teambit.react/react": { }
   }
 }
+```
+
+Install React and React Dom as peer dependencies:
+
+```bash
+bit install react --type peer
+bit install react-dom --type peer
 ```
