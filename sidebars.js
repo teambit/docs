@@ -104,7 +104,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Essentials',
-      items: ['essentials/what-is-bit', 'essentials/advantages-of-bit', 'essentials/components']
+      items: [
+        'essentials/what-is-bit',
+        'essentials/advantages-of-bit',
+        'essentials/components'
+      ]
     },
 
     {
@@ -134,6 +138,14 @@ module.exports = {
             'building-with-bit/installing-components'
           ]
         }
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Extending Bit',
+      items: [
+        'extending-bit/adding-a-new-tab',
+        'extending-bit/creating-a-custom-generator'
       ]
     },
 
@@ -176,4 +188,4 @@ module.exports = {
       ]
     }
   ]
-}
+};

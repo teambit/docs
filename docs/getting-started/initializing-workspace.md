@@ -17,7 +17,7 @@ A Bit Workspace enables you to author and manage multiple independent components
 git init
 ```
 
-<!-- ## Bit New React Workspace
+## Bit New React Workspace
 
 Start a new Bit workspace with a React environment.
 
@@ -33,7 +33,7 @@ bit install
 
 :::info Experimental Feature
 This is experimental and may change in the future. If your experience any issues with this command please let us know or feel free to use the manual process below
-::: -->
+:::
 
 ## Bit Init a Workspace
 
