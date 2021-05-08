@@ -58,6 +58,10 @@ module.exports = {
               to: '/building-with-bit/pre-existing-components'
             },
             {
+              label: 'Extending Bit',
+              to: '/extending-bit/adding-a-new-tab'
+            },
+            {
               label: 'Component Architecture',
               to: '/component-architecture/thinking-in-components'
             },
