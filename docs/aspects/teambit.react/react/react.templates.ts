@@ -1,14 +1,19 @@
-import { ComponentTemplate } from '@teambit/generator';
-import { reactButton } from './templates/react-button';
-import { reactButtonJSX } from './templates/react-button-jsx';
+import { ComponentTemplate, WorkspaceTemplate } from '@teambit/generator';
 import { reactComponent } from './templates/react-component';
-import { reactComponentJSX } from './templates/react-component-jsx';
+import { reactComponentJS } from './templates/react-component-js';
 import { reactEnvTemplate } from './templates/react-env';
+import { reactWorkspaceTemplate } from './templates/react-workspace';
+import { reactHook } from './templates/react-hook';
+import { reactContext } from './templates/react-context';
+import { MDXComponent } from './templates/mdx-component';
 
 export const componentTemplates: ComponentTemplate[] = [
-  reactButton,
   reactComponent,
-  reactButtonJSX,
-  reactComponentJSX,
+  reactContext,
+  reactHook,
+  reactComponentJS,
   reactEnvTemplate,
+  MDXComponent,
 ];
+
+export const workspaceTemplates: WorkspaceTemplate[] = [reactWorkspaceTemplate];

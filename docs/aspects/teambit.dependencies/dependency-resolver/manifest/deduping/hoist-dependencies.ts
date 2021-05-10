@@ -382,7 +382,7 @@ function findMostCommonVersion(versions: SemverVersion[]): MostCommonVersion {
 }
 
 /**
- * A wrapper function used to be passed to map on index items and add it to a component dependency in the deduped dependencies if its filter function return false
+ * A wrapper function used to be passed to map on index items and add it to a component dependency in the deduped dependencies if it's filter function return false
  *
  * @param {DedupedDependencies} dedupedDependencies
  * @param {PackageName} packageName

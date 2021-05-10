@@ -8,9 +8,10 @@ import camelcase from 'camelcase';
 import { PathOsBasedRelative } from '@teambit/legacy/dist/utils/path';
 import { AbstractVinyl } from '@teambit/legacy/dist/consumer/component/sources';
 import DataToPersist from '@teambit/legacy/dist/consumer/component/sources/data-to-persist';
+import { composeComponentPath } from '@teambit/legacy/dist/utils/bit/compose-component-path';
 import { ComponentID } from '@teambit/component-id';
-import { ComponentTemplate, File } from './component-template';
-import { GeneratorOptions } from './create.cmd';
+import { ComponentTemplate, ComponentFile } from './component-template';
+import { CreateOptions } from './create.cmd';
 
 export type GenerateResult = { id: ComponentID; dir: string; files: string[]; envId: string };
 
@@ -18,7 +19,7 @@ export class ComponentGenerator {
   constructor(
     private workspace: Workspace,
     private componentIds: ComponentID[],
-    private options: GeneratorOptions,
+    private options: CreateOptions,
     private template: ComponentTemplate,
     private envs: EnvsMain
   ) {}
@@ -85,7 +86,10 @@ export class ComponentGenerator {
   /**
    * writes the generated template files to the default directory set in the workspace config
    */
-  private async writeComponentFiles(componentPath: string, templateFiles: File[]): Promise<PathOsBasedRelative[]> {
+  private async writeComponentFiles(
+    componentPath: string,
+    templateFiles: ComponentFile[]
+  ): Promise<PathOsBasedRelative[]> {
     const dataToPersist = new DataToPersist();
     const vinylFiles = templateFiles.map((templateFile) => {
       const templateFileVinyl = new Vinyl({
@@ -104,6 +108,6 @@ export class ComponentGenerator {
 
   private getComponentPath(componentId: ComponentID) {
     if (this.options.path) return path.join(this.options.path, componentId.fullName);
-    return path.join(componentId.scope, componentId.fullName);
+    return composeComponentPath(componentId._legacy.changeScope(componentId.scope), this.workspace.defaultDirectory);
   }
 }
