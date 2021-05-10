@@ -13,7 +13,7 @@ Use your CI/CD tool to install Bit components on consuming apps or publish compo
 The first thing to do is get a Bit token that has access to scopes.  
 You can create a dedicated user such as `dev@company.com` for the deployment, or use an existing user's token.
 
-> If you are using an existing user's token, follow the steps described [here](/reference/authentication#additional-tokens) to generate a token that does not expire on local logins.
+> If you are using an existing user's token, follow the steps described [here](/bit-dot-dev/authentication#additional-tokens) to generate a token that does not expire on local logins.
 
 To get your token run the following command:
 
@@ -206,7 +206,7 @@ Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](/building-with-bit/exporting-components).
+[**Learn more**](building-with-bit/exporting-components).
 :::
 
 ### Using GitHub Actions

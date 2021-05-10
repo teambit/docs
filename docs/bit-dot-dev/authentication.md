@@ -1,6 +1,6 @@
 ---
 id: authentication
-title: Bit.dev Authentication
+title: Authentication
 ---
 
 You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
@@ -10,9 +10,7 @@ Exporting components to bit.dev requires that Bit client (Bit cli) on your machi
 
 > A token or a key is associated with a single user, and the privileges, such as scopes visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses:
-
-- 35.184.176.52:443
+bit.dev server is using the following IP addresses: `35.184.176.52:443`
 
 ## Authenticate with Token
 
@@ -58,7 +56,7 @@ bit config set user.email mickey@example.com
 
 ## Authentication issues
 
-Several things you can do if you encountered `fatal: permission to Scope <scopename> was denied` error message:
+Several things you can do if you encounter the `fatal: permission to Scope <scopename> was denied` error message:
 
 ### Timeout after a long hang time
 
@@ -67,7 +65,7 @@ To see if that's the case, try and connect to the Bit remote server directly. If
 
 ### Bit.dev account issues
 
-Some issues may relate to simply account configuration issues.
+Some issues may relate to simple account configuration issues.
 
 #### You are not signed up to bit.dev
 
@@ -76,12 +74,12 @@ If you haven't signed up already, head over [here](https://bit.dev/signup).
 
 #### Wrong username/password combination
 
-In case you are using `bit login`, Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
-In case you have forgotten your password, head to your [setting page](https://bit.dev/settings/profile) to reset it.
+When authenticating via `bit login`, Bit will ask for your username/password combination for the relevant [bit.dev](https://bit.dev) account. Make sure you have provided the login command with the correct combination.  
+In case you have forgotten your password, head over to your [settings page](https://bit.dev/settings/profile) to reset it.
 
-#### No permission to the Scope
+#### No permissions for the Scope
 
 It may be that you do not have permissions to access the Scope in question.
 
 - If the Scope is public, you can import component from it, but you have to have write permissions to export to it.
-- If the Scope is private, you must have read/write permission in order to import/export components to it.
+- If the Scope is private, you must have read/write permission in order to import/export components from/to it.

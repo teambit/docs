@@ -18,7 +18,7 @@ Bit is a platform for building with components and use them to compose apps and 
 
 #### Public Beta
 
-Bit v15 **Harmony** is used by many teams and is the underline infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS based systems, we urge you to get started with v15.
+Bit v15 **Harmony** is used by many teams and is the underlying infrastructure for Bit and [bit.dev](https://bit.dev). We decided to tag it as an **open beta** as there are still major features coming. If you are building any React/React-native and NodeJS based systems, we urge you to get started with v15.
 
 ## Additional Resources and Support
 

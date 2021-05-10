@@ -161,6 +161,12 @@ module.exports = {
       ]
     },
 
+    {
+      type: 'category',
+      label: 'Bit.dev',
+      items: ['bit-dot-dev/bit-dev', 'bit-dot-dev/my-account', 'bit-dot-dev/authentication']
+    },
+
     // {
     //   type: 'doc',
     //   id: 'aspects/aspects-overview'
@@ -171,7 +177,6 @@ module.exports = {
       label: 'Reference',
       items: [
         'reference/using-bvm',
-        'reference/authentication',
         'reference/commands',
         'reference/ci-cd',
         'reference/bit-oss-server',

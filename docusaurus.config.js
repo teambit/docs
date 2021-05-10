@@ -68,7 +68,15 @@ module.exports = {
             {
               label: 'Bit Commands',
               to: '/reference/commands'
-            }
+            },
+            {
+              label: 'Bit.dev',
+              to: '/bit-dot-dev/bit-dev'
+            },
+            // {  // TODO restore once we have a troubleshooting landing page
+            //   label: 'Troubleshooting',
+            //   to: '/troubleshooting/commands'
+            // }
           ]
         },
 
