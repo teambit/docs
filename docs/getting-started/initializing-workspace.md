@@ -19,6 +19,10 @@ git init
 
 ## Bit New React Workspace
 
+:::info Experimental Feature
+This is experimental and may change in the future. If your experience any issues with this command please let us know or feel free to use `bit init --harmony` as documented below
+:::
+
 Start a new Bit workspace with a React environment.
 
 ```bash
@@ -31,22 +35,17 @@ Install all dependencies
 bit install
 ```
 
-:::info Experimental Feature
-This is experimental and may change in the future. If your experience any issues with this command please let us know or feel free to use the manual process below
-:::
-
 ## Bit Init a Workspace
 
 <BitInit />
 
-## Created Files
-
-<FilesBitCreates />
-
-## Setting a React Environment
+### Setting a React Environment
 
 <ReactEnvironment />
 
+## Created Files
+
+<FilesBitCreates />
 ## What's Next
 
 Once you have initialized a workspace, you can start [creating components](creating-components).
