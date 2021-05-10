@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -31,7 +31,7 @@
     /**
      * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
      */
-    "packageManager": "teambit.dependencies/pnpm",
+    "packageManager": "teambit.dependencies/yarn",
     "policy": {
       "dependencies": {},
       "peerDependencies": {

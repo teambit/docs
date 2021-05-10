@@ -26,7 +26,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "rehype-truncate": "^1.2.2",
-    "remark-images": "^2.0.0"
+    "remark-images": "^2.0.0",
+    "sass": "^1.32.12"
   },
   "browserslist": {
     "production": [
@@ -41,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-alpha.70",
+    "@docusaurus/module-type-aliases": "^2.0.0-alpha.72",
     "@tsconfig/docusaurus": "^1.0.2",
     "@types/react": "^17.0.2",
     "@types/react-helmet": "^6.1.0",

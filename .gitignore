@@ -22,3 +22,4 @@ yarn-error.log*
 # bit related stuff
 public/
 my-scope/
+.yarn
