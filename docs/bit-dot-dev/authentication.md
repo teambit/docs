@@ -1,6 +1,6 @@
 ---
 id: authentication
-title: Bit.dev Authentication
+title: Authentication
 ---
 
 You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  

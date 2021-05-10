@@ -1,7 +1,6 @@
 ---
 id: my-account
-title: bit.dev Account
-sidebar_label: Account
+title: Account Features
 ---
 
 ## User settings
