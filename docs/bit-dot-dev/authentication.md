@@ -3,18 +3,18 @@ id: authentication
 title: Bit.dev Authentication
 ---
 
-You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
+You can install and import **public** components on anonymous mode, i.e. without authenticating with bit.dev.  
 To export components to bit.dev and to import from private scopes you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
 
-Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account.
+Exporting components to bit.dev requires that the Bit client (Bit cli) on your machine is logged in to the account.
 
 > A token or a key is associated with a single user, and the privileges, such as scopes visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses: `35.184.176.52:443`
+bit.dev server uses the following IP address: `35.184.176.52:443`
 
 ## Authenticate with Token
 
-Use `bit login` to generate an authentication token for a [bit.dev]. Bit uses the token to configure the local Bit configuration.
+Use `bit login` to generate an authentication token for bit.dev. Bit uses the token to configure the local Bit configuration.
 
 To authenticate your Bit client, run the following command:
 
@@ -22,11 +22,11 @@ To authenticate your Bit client, run the following command:
 bit login
 ```
 
-The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account credentials. The authentication token is generated and configured to `bit config`.
+Your browser should automatically open a bit.dev login page. Enter your [bit.dev](https://bit.dev) account credentials and upon successful login the authentication token will be generated and configured to `bit config`.
 
 ### Additional Tokens
 
-bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:
+bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login command. The token will be associated with that machine name, and only expires when performing another login with the same machine name:
 
 ```shell
 bit login --machine-name=ci_server
@@ -35,12 +35,12 @@ bit login --machine-name=ci_server
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).
 You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
 
-> You can send a specific token for each command you are running and is accessing a remote scope by specifying the `--token` flag with the relevant token.
+> You can send a specific token for each bit command (those which access a remote scope) by specifying the `--token` flag with the relevant token.
 
 ## Authenticating package managers
 
 It is possible to consume components exported to bit.dev using `npm` or `yarn`.  
-When you run `bit login`, Bit automatically configures your token in your users' [npmrc file](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc). Once done, any `npm i` or `yarn add` operation can fetch components from Bit.
+See [here](/components/install/scoped-registry/) for adding your registry to the `.npmrc` file. Once done, any `npm i` or `yarn add` operation can fetch components from your bit registry.
 
 ## Configure local Bit client
 
@@ -56,7 +56,7 @@ bit config set user.email mickey@example.com
 
 ## Authentication issues
 
-Several things you can do if you encounter the `fatal: permission to Scope <scopename> was denied` error message:
+There are several possible remedial steps to take if you encounter the `fatal: permission to Scope <scopename> was denied` error message:
 
 ### Timeout after a long hang time
 
