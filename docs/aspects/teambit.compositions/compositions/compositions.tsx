@@ -14,7 +14,9 @@ import { toPreviewUrl } from '@teambit/ui.component-preview';
 import { useIsMobile } from '@teambit/ui.hooks.use-is-mobile';
 import { CompositionsMenuBar } from '@teambit/ui.compositions-menu-bar';
 import { CompositionContextProvider } from '@teambit/ui.hooks.use-composition';
-
+import { NativeLink } from '@teambit/ui.routing.native-link';
+import { OptionButton } from '@teambit/ui.input.option-button';
+import { EmptyStateSlot } from './compositions.ui.runtime';
 import { Composition } from './composition';
 import styles from './compositions.module.scss';
 import { ComponentComposition } from './ui';
@@ -25,8 +27,9 @@ export type MenuBarWidget = {
   location: 'start' | 'end';
   content: ReactNode;
 };
+export type CompositionsProp = { menuBarWidgets?: CompositionsMenuSlot; emptyState?: EmptyStateSlot };
 
-export function Compositions({ menuBarWidgets }: { menuBarWidgets?: CompositionsMenuSlot }) {
+export function Compositions({ menuBarWidgets, emptyState }: CompositionsProp) {
   const component = useContext(ComponentContext);
   const [selected, selectComposition] = useState(head(component.compositions));
   const selectedRef = useRef(selected);
@@ -49,6 +52,7 @@ export function Compositions({ menuBarWidgets }: { menuBarWidgets?: Compositions
   const sidebarOpenness = isSidebarOpen ? Layout.row : Layout.left;
 
   const compositionUrl = toPreviewUrl(component, 'compositions');
+  const currentCompositionUrl = toPreviewUrl(component, 'compositions', selected?.identifier);
 
   const [compositionParams, setCompositionParams] = useState<Record<string, any>>({});
   const queryParams = useMemo(() => queryString.stringify(compositionParams), [compositionParams]);
@@ -60,8 +64,17 @@ export function Compositions({ menuBarWidgets }: { menuBarWidgets?: Compositions
     <CompositionContextProvider queryParams={compositionParams} setQueryParams={setCompositionParams}>
       <SplitPane layout={sidebarOpenness} size="85%" className={styles.compositionsPage}>
         <Pane className={styles.left}>
-          <CompositionsMenuBar menuBarWidgets={menuBarWidgets} />
-          <CompositionContent component={component} selected={selected} queryParams={queryParams} />
+          <CompositionsMenuBar menuBarWidgets={menuBarWidgets} className={styles.menuBar}>
+            <NativeLink external href={currentCompositionUrl} className={styles.openInNewTab}>
+              <OptionButton icon="open-tab" />
+            </NativeLink>
+          </CompositionsMenuBar>
+          <CompositionContent
+            emptyState={emptyState}
+            component={component}
+            selected={selected}
+            queryParams={queryParams}
+          />
         </Pane>
         <HoverSplitter className={styles.splitter}>
           <Collapser
@@ -104,10 +117,18 @@ type CompositionContentProps = {
   component: ComponentModel;
   selected?: Composition;
   queryParams?: string | string[];
+  emptyState?: EmptyStateSlot;
 };
 
-function CompositionContent({ component, selected, queryParams }: CompositionContentProps) {
-  if (component.compositions.length === 0)
+function CompositionContent({ component, selected, queryParams, emptyState }: CompositionContentProps) {
+  const env = component.environment?.id;
+  const EmptyStateTemplate = emptyState?.get(env || ''); // || defaultTemplate;
+
+  if (component.compositions.length === 0 && component.host === 'teambit.workspace/workspace' && EmptyStateTemplate) {
+    return <EmptyStateTemplate />;
+  }
+
+  if (component.compositions.length === 0) {
     return (
       <EmptyBox
         title="There are no compositions for this component."
@@ -115,6 +136,8 @@ function CompositionContent({ component, selected, queryParams }: CompositionCon
         link="https://harmony-docs.bit.dev/compositions/overview/"
       />
     );
+  }
+
   return (
     <ComponentComposition
       className={styles.compositionsIframe}

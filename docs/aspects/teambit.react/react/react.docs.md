@@ -27,6 +27,10 @@ To use this environment for your components, add it to any of the `variants` in 
 React implements several component templates:
 
 - `react-component` a basic React UI component.
+- `react-context` a react context component.
+- `react-hook` a react hook component.
+- `mdx-component` an MDX component.
+- `react-component-js` a basic React component in JS.
 - `react-env` boilerplate for a customized environment configuration.
 
 Use any of these templates with the `bit create` command:
@@ -37,7 +41,7 @@ bit create <template name> [components...]
 
 ## Runtime (framework) dependencies
 
-As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.  
+As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.
 It is recommended for you to extend the base React environment and define a semantic version rule and range to fit your current tech stack and guidelines for reuseable React components.
 
 ## Development services
@@ -48,7 +52,7 @@ React, like all other Bit Environments must implement a set of Service Handlers.
 | -------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Compilation          | [TypeScript](https://bit.dev/teambit/typescript/typescript) | [tsconfig.json](https://bit.dev/teambit/react/react/~code/typescript/tsconfig.json)                                                |
 | Testing              | **Jest**                                                    | [jest.config.js](https://bit.dev/teambit/react/react/~code/jest/jest.config.js)                                                    |
-| Linting              | **ESLint**                                                  | [eslintrc.js](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.js)                                                        |
+| Linting              | **ESLint**                                                  | [eslintrc.ts](https://bit.dev/teambit/react/react/~code/eslint/eslintrc.ts)                                                        |
 | DevServer            | **Webpack**                                                 | [webpack.config.preview.dev.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.dev.ts)                   |
 | Preview (simulation) | **Webpack**                                                 | [webpack.config.preview.ts](https://bit.dev/teambit/react/react/~code/webpack/webpack.config.preview.ts)                           |
 | Package              | **PKG**                                                     | Base `package.json` props from [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript/~code/typescript.main.runtime.ts) |
@@ -108,30 +112,26 @@ Now that you have a basic customized extension to start from, you can go ahead a
 
 ### Customize configuration
 
-React implements a set of APIs you can use to merge your preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find [Available transformers here](#transformers-api-docs).  
+React implements a set of APIs you can use to merge your preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find [Available transformers here](#transformers-api-docs).
 In case of a conflict, your config will override the default.
 
 ```typescript {4,14} title="Customized TypeScript configuration"
-import { EnvsMain, EnvsAspect } from '@teambit/envs'
-import { ReactAspect, ReactMain } from '@teambit/react'
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
 
-const tsconfig = require('./typescript/tsconfig.json')
+const tsconfig = require('./typescript/tsconfig.json');
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
-  static dependencies: any = [EnvsAspect, ReactAspect]
+  static dependencies: any = [EnvsAspect, ReactAspect];
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const customReactEnv = react.compose(
-      [
-        react.overrideTsConfig(tsconfig)
-      ]
-    )
+    const customReactEnv = react.compose([react.overrideTsConfig(tsconfig)]);
 
-    envs.registerEnv(customReactEnv)
+    envs.registerEnv(customReactEnv);
 
-    return new CustomReactExtension(react)
+    return new CustomReactExtension(react);
   }
 }
 ```
@@ -150,40 +150,36 @@ The below example uses the `overrideCompiler` transformer to override the `getCo
 1. Use the `compose` Env API to apply the compiler override transformer and add Babel as a transpiler in the environment
 
 ```typescript {3,5,10-12,15,17-18,22-23}
-import { EnvsMain, EnvsAspect } from '@teambit/envs'
-import { ReactAspect, ReactMain } from '@teambit/react'
-import { BabelAspect, BabelMain } from '@teambit/babel'
+import { EnvsMain, EnvsAspect } from '@teambit/envs';
+import { ReactAspect, ReactMain } from '@teambit/react';
+import { BabelAspect, BabelMain } from '@teambit/babel';
 
-const babelConfig = require('./babel/babel.config')
+const babelConfig = require('./babel/babel.config');
 
 export class CustomReactExtension {
   constructor(private react: ReactMain) {}
 
-  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect]
+  static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
 
-  static async provider([envs, react, babel]: [
-    EnvsMain,
-    ReactMain,
-    BabelMain
-  ]) {
+  static async provider([envs, react, babel]: [EnvsMain, ReactMain, BabelMain]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig
-    })
+      babelTransformOptions: babelConfig,
+    });
 
     const customReactEnv = react.compose([
       react.overrideCompiler(babelCompiler),
-      react.overrideCompilerTasks([babelCompiler.createTask()])
-    ])
+      react.overrideCompilerTasks([babelCompiler.createTask()]),
+    ]);
 
-    envs.registerEnv(customReactEnv)
-    return new CustomReactExtension(react)
+    envs.registerEnv(customReactEnv);
+    return new CustomReactExtension(react);
   }
 }
 ```
 
 <!-- ## Composition Providers
 
-The React environment is able to "wrap" component compositions with an array of providers, each of which is simply a component which wraps its `children` with functionality, such as a context, styling, theme, etc.  
+The React environment is able to "wrap" component compositions with an array of providers, each of which is simply a component which wraps its `children` with functionality, such as a context, styling, theme, etc.
 
 When Bit renders your component compositions and previews, it wraps each one with with the providers you configure.
 These providers can be used to render compositions with a theme or a react context such as an api context.
@@ -342,15 +338,15 @@ This method receives an array of build tasks. It merges the provided tasks with 
 ```ts
 // ...
 // Import the task
-import { CustomTask } from './custom.task'
+import { CustomTask } from './custom.task';
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // Get the environment's default build pipeline using the 'getBuildPipe' service handler
-    const reactPipe = react.env.getBuildPipe()
+    const reactPipe = react.env.getBuildPipe();
     // Add the custom task to the end of the build tasks sequence.
-    const tasks = [...reactPipe, new CustomTask()]
-    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)])
+    const tasks = [...reactPipe, new CustomTask()];
+    const newReactEnv = react.compose([react.overrideBuildPipe(tasks)]);
     // ...
   }
 }
@@ -358,29 +354,27 @@ export class CustomReact {
 
 #### `overrideDependencies(dependencyPolicy: DependenciesPolicy): EnvTransformer`
 
-This method receives a dependency-policy object and merges it with the environment's default dependency policy for components using this environment.  
+This method receives a dependency-policy object and merges it with the environment's default dependency policy for components using this environment.
 Each key-value pair in a dependency-policy object signifies the package and the version to be used. Use also the `-` and `+` notation to signify a module should moved between dependency types (dev, peer or standard).
 
 ```ts
 // ...
 const newDependencies = {
-  dependencies:{
-    react: '-'
+  dependencies: {
+    react: '-',
   },
   devDependencies: {
-    '@types/jest': '~26.0.9'
+    '@types/jest': '~26.0.9',
   },
-  peerDependencies:{
-    react: '^17.0.2'
-  }
-}
+  peerDependencies: {
+    react: '^17.0.2',
+  },
+};
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overrideDependencies(newDependencies)
-    ])
+    const newReactEnv = react.compose([react.overrideDependencies(newDependencies)]);
     // ...
   }
 }
@@ -396,15 +390,13 @@ Merges the provide props with the default properties added to the `package.json`
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts'
-}
+  types: '{main}.ts',
+};
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([
-      react.overridePackageJsonProps(newPackageProps)
-    ])
+    const newReactEnv = react.compose([react.overridePackageJsonProps(newPackageProps)]);
     // ...
   }
 }

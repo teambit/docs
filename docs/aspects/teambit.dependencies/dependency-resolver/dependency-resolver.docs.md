@@ -27,6 +27,7 @@ In addition to that, the Dependency Resolver offers an efficient API to manually
   The Dependency Resolver directs the package manager to install the correct packages in the correct location in the workspace file structure.
   When a dependency appears in the workspace dependency graph more than once, the Resolver searches for a common version that satisfies _most_ dependent
   components and installs it at the workspace root directory, where it can be shared by all relevant components.
+
   > dependency versions that are used by a minority of components will be installed in each component's directory.
 
 - **A single 'install command for packages and components:**
@@ -121,8 +122,10 @@ For example, to set version `1.0.0` of `classnames` as a dependency of all compo
 ```json
 {
   "teambit.workspace/variants": {
-    "components/react": { // this creates a variant for all components contained in the components/react directory and it's sub-directories
-      "teambit.dependencies/dependency-resolver": { // this creates dependencies overrides for the current variant
+    "components/react": {
+      // this creates a variant for all components contained in the components/react directory and it's sub-directories
+      "teambit.dependencies/dependency-resolver": {
+        // this creates dependencies overrides for the current variant
         "policy": {
           "dependencies": {
             "classnames": "1.0.0"
@@ -172,7 +175,8 @@ For example, the following configuration will set `classnames` version `1.0.0` o
     }
   },
   "teambit.workspace/variants": {
-    "{react-ui/*}": { // the {} notation sets the variant grouping via namespace, so in this case any (/*) components whose namespace begins with 'react-ui'
+    "{react-ui/*}": {
+      // the {} notation sets the variant grouping via namespace, so in this case any (/*) components whose namespace begins with 'react-ui'
       "teambit.dependencies/dependency-resolver": {
         "policy": {
           "classnames": "1.0.0"

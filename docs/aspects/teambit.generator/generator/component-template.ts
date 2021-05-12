@@ -1,6 +1,6 @@
 import { ComponentID } from '@teambit/component-id';
 
-export interface File {
+export interface ComponentFile {
   /**
    * relative path of the file within the component.
    */
@@ -17,7 +17,7 @@ export interface File {
   isMain?: boolean;
 }
 
-export interface GeneratorContext {
+export interface ComponentContext {
   /**
    * component-name as entered by the user, e.g. `use-date`.
    * without the scope and the namespace.
@@ -55,7 +55,12 @@ export interface ComponentTemplate {
   description?: string;
 
   /**
+   * hide this template so that it is not listed with `bit templates`
+   */
+  hidden?: boolean;
+
+  /**
    * template function for generating the file of a certain component.,
    */
-  generateFiles(context: GeneratorContext): File[];
+  generateFiles(context: ComponentContext): ComponentFile[];
 }
