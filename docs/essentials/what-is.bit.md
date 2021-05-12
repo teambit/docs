@@ -69,6 +69,6 @@ Here are few examples of the scopes we build:
 
 ### The Bit.dev Platform
 
-The Bit and Bit.dev model is similar to the Git and Github model. Bit is open source and can be used by any team through a self-hosted Bit scope of components. Bit.dev is a platform that helps organizations scale to many scopes and many teams, inter-connecting them into a single collaboration experience with powerful enterprise-grade features for code discoverability, collaboration, security, and team management. It also features Ripple CI, the world's first component-driven CIbuilt for the modern web, which continuously builds changes on the component graph across all teams and projects in the organization.
+The Bit and Bit.dev model is similar to the Git and Github model. Bit is open source and can be used by any team through a self-hosted Bit scope of components. Bit.dev is a platform that helps organizations scale to many scopes and many teams, inter-connecting them into a single collaboration experience with powerful enterprise-grade features for code discoverability, collaboration, security, and team management. It also features Ripple CI, the world's first component-driven CI built for the modern web, which continuously builds changes on the component graph across all teams and projects in the organization.
 
 **For enterprises see [Bit.dev enterprise-grade hosting vs. self-hosting->](https://www.slideshare.net/JonathanSaring/bitdev-hosting-vs-oss)**
