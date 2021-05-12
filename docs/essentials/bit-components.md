@@ -28,7 +28,7 @@ Independent components are components that are independently developed, versione
 
 * **Files** - List of all files containing the implementation of the component, including tests and any asset or stylesheet.
 * **Aspects** - The different [Aspects](/aspects/aspects-overview) (including [Component Development Environment](/building-with-bit/environments)) configured for controling operations like compilation, testing, documentation etc.
-* **Dependency graph** - All dependnecies, including packages and other components ([Read more on dependency resolution](/aspects/dependency-resolver)).
+* **Dependency graph** - All dependencies, including packages and other components ([Read more on dependency resolution](/aspects/dependency-resolver)).
 
 The combination of all the above makes each Bit component to be a "self-containing" module, as this is the information needed to reproduce the component in any workspace when using the `import` command.
 
