@@ -20,7 +20,7 @@ git init
 ## Bit New React Workspace
 
 :::info Experimental Feature
-This is experimental and may change in the future. If your experience any issues with this command please let us know or feel free to use `bit init --harmony` as documented below
+This is experimental and may change in the future. If you experience any issues with this command please let us know or feel free to use `bit init --harmony` as documented below
 :::
 
 Start a new Bit workspace with a React environment.
