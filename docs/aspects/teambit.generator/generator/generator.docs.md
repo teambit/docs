@@ -1,3 +1,10 @@
+---
+id: generator
+title: Generator
+slug: /aspect/generator
+description: Generator extension enable generating new components by pre-defined templates
+---
+
 Generator extension enable generating new components by pre-defined templates
 
 ### Component location
