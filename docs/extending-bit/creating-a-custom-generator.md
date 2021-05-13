@@ -158,17 +158,17 @@ Bit gives you some basic templates that you can use without having to create you
 
 [Tag and export](/getting-started/exporting-components) your generator component so you can use it in any other workspace. If you haven't already done so then setup a [remote scope](/getting-started/remote-scope) on [Bit.dev](https://bit.dev/) with the correct scope/collection where you want your generator component to be exported to.
 
-```bash
-bit tag --all
-bit export
-```
-
 Make sure the scope name is set correctly in the `*.aspect.ts` file before tagging and exporting.
 
 ```js {2} title="*.aspect.ts"
 export const MyComponentsAspect = Aspect.create({
   id: 'my-scope-name/my-components'
 });
+```
+
+```bash
+bit tag --all
+bit export
 ```
 
 Once you have tagged and exported the component you can add it to the `workspace.jsonc` file in the workspace/project where you want to use this generator. Bit will automatically install this for your
