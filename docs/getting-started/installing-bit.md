@@ -16,7 +16,7 @@ To use Bit you will need to install it. You can do this by first installing BVM,
 <BVMIntro />
 <InstallBVM />
 
-:arrow_right: Learn more about [BVM](/reference/using-bvm) and it's commands.
+:arrow_right: Learn more about [BVM](/reference/using-bvm) and it's commands, including troubleshooting information.
 
 ## 2. Install Bit
 

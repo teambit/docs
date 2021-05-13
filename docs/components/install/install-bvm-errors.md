@@ -6,8 +6,25 @@ title: Install BVM Errors
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-**If you get the following error while installing BVM:
-**
+___
+
+**If BVM isn't recognised in your terminal after installing it via npm, then please run the following:**
+<Tabs
+defaultValue="Windows"
+values={[
+{label: 'Windows', value: 'Windows'},
+]}>
+  <TabItem value="Windows">
+
+```bash
+setx path "%path%;%AppData%\npm" and re-open your terminal
+```
+  </TabItem>
+</Tabs>  
+
+___
+
+**If you get the following error while installing bit via BVM:**
 <Tabs
 defaultValue="MacOSLinux"
 values={[
@@ -39,31 +56,42 @@ setx path "%path%;C:\Users\USER\AppData\Local\.bvm" and re-open your terminal
 Run the following command:
 
 <Tabs
-defaultValue="Bash"
+defaultValue="MacOSLinux"
 values={[
-{label: 'Bash', value: 'Bash'},
-{label: 'ZSH', value: 'ZSH'},
-{label: 'Shell', value: 'Shell'},
+{label: 'MacOS / Linux', value: 'MacOSLinux'},
+{label: 'Windows', value: 'Windows'},
 ]}>
-<TabItem value="Bash">
+<TabItem value="MacOSLinux">
 
-```bash
-echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
-```
+  <Tabs
+    defaultValue="Bash"
+    values={[
+    {label: 'Bash', value: 'Bash'},
+    {label: 'ZSH', value: 'ZSH'},
+    ]}>
+  <TabItem value="Bash">
+
+    ```bash
+    echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+    ```
 
   </TabItem>
   <TabItem value="ZSH">
 
-```bash
-echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc && source ~/.zshrc
-```
-
+    ```bash
+    echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc && source ~/.zshrc
+    ```
   </TabItem>
-<TabItem value="Shell">
+  </Tabs>
 
-```bash
-setx path "%path%;%LocalAppData%\.bvm"
-```
+</TabItem>
+<TabItem value="Windows">
+  
 
-  </TabItem>
+      ```bash
+      setx path "%path%;%LocalAppData%\.bvm"
+      ```
+</TabItem>
 </Tabs>
+
+___
