@@ -3902,6 +3902,148 @@
     lodash "4.17.21"
     tty-table "2.8.13"
 
+"@teambit/aspect-docs.babel@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.babel/-/aspect-docs.babel-0.0.1.tgz#6a5b2c2540435919242b413e489d34fdd64e07a4"
+  integrity sha512-CjDOxPeW2eiw88G3R1cIF9eiZK26kkyEIvxR56j4Dd+QPfQydt1sIpi/OP3Vlk31a1IbuTAyGVn4OcBo09d7+g==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.builder@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.builder/-/aspect-docs.builder-0.0.1.tgz#f16967800548e20043f9c4504506eaaa867bfb97"
+  integrity sha512-iV4yGUp8iCy2+sUzxBxK8DphCLTtOvOTm8+UsVaJNKK7NsPp8yFJOcyfdtZAXNBtiUTQVQ66FEmX4Tj6WlNtpg==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.compiler@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.compiler/-/aspect-docs.compiler-0.0.1.tgz#f6d2d51258ca8dbb669940bab0b4c88483d9f52c"
+  integrity sha512-bAH0QtaD53Z6ovBwVE+hVwt+hsl9HGt5doKDjiwmzJQ40GPvVTdo/5BikrA6o37z+P610pNZ3ynudo4ZaZFvDQ==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.component@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.component/-/aspect-docs.component-0.0.1.tgz#989de95d57c0f3c1af43d858b6bf29cf3d93df51"
+  integrity sha512-MFcyX3JtJpGcCjwpl1vMXxaCjKD0/UCE9+rGDnuaP05XzYJcgY4il6MK8SeQK6a5wGBZdc0L/Z9ZxBOhUbubyg==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.compositions@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.compositions/-/aspect-docs.compositions-0.0.1.tgz#c1586f5624714392eb8d8e58cc9e4ea70cb996c3"
+  integrity sha512-D8q1vKyGev0VIFmDjPaRwgjBYrbEuYsNX4eoM2pdm6J0BVhndKDVZWcw/odkKE+6G4c9qVTMyNOB83EOJlRmJw==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.dependency-resolver@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.dependency-resolver/-/aspect-docs.dependency-resolver-0.0.1.tgz#881cf4b2faf0baff2d15226b5a17fe8578bc27bd"
+  integrity sha512-SoeVxv9/DxDUgfUhdWvynPqcptIcXKOHiKD3j9P+eDDYzr9mW0Waa8r+tL7o5sMZ43vPDz6RJOR1wGp+H4Ov4w==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.envs@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.envs/-/aspect-docs.envs-0.0.1.tgz#90b54227e9de9bb182c7e71ca0639d012abbaec2"
+  integrity sha512-2Ok+POhbOdEnmrpuoYhHlu6APGWGyVSSalyVD3CA0RIgxU4t3DoSAu91M7j3003VON2oQ5DGJJGWyvl3R05PIg==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.generator@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.generator/-/aspect-docs.generator-0.0.1.tgz#c490cc07ae1671c81f1b2389f3f142ed3e4bc79b"
+  integrity sha512-keuRo5rIxgJXMCIHWDv9jejmyxGOuuSMDPPZcuFcr1UaG7QN+GUUe7JSqtKVSApHUx9MgDXUmAg1nQDUSmjwfQ==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.logger@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.logger/-/aspect-docs.logger-0.0.1.tgz#72cb3c63bf578bd7b3d0992a4951b394c871ea56"
+  integrity sha512-DufS0TsxxQ/eGtWddmTrqIdKmLMaTo5IVWP9QMeHX+uOuen4Q6+Hft2vKr33W21Rl2xpJc0tJMglbR6jdrTKbw==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.mdx@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.mdx/-/aspect-docs.mdx-0.0.1.tgz#7d7fa7a46bc68936b8e0f7bb56852150786482b7"
+  integrity sha512-gCZDHlCULEXiVbc/ok0SOBRbiXVWXQzY7Pz1sOcLvNhVrid4WKIErOyJ8Ht3xltqzMQTNeSOshdfp8ZD+K/TnQ==
+  dependencies:
+    "@teambit/evangelist.elements.button" "0.5.20"
+    core-js "^3.0.0"
+    lodash "4.17.21"
+
+"@teambit/aspect-docs.multi-compiler@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.multi-compiler/-/aspect-docs.multi-compiler-0.0.1.tgz#67a1bb95c2758d1d6da67d2dea83b1be9460f5a8"
+  integrity sha512-TTjr/6TMyJBx7nu1HhFxHhC/CkAN9Re+fzNf6NW4doIjqM9oBWkuC1eJiiRyKA8T2NxLG6lhvRtKp62W7k3DBg==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.node@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.node/-/aspect-docs.node-0.0.1.tgz#57317166e05af4d9765b839c639785f058ebd87d"
+  integrity sha512-Z4qr9arVg4XaBrxqN5+Cy9u7swCd6BYRSrd15mXFXcZ3JZZWlu7YQw73rdHA4BuDJZKTDt2HZSD6dH9ym/qCHg==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.pkg@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.pkg/-/aspect-docs.pkg-0.0.1.tgz#b34ea9982c4561e72943b55b4928e73d9627e051"
+  integrity sha512-uaPKvUj+kB7wMUI6QkzZj9dm1i9iextNSrruQrAdfK+uOUmPDYuhxzhmTUUS8w2qTM+VOWr7XYLSUjoRMG56Ag==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.pnpm@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.pnpm/-/aspect-docs.pnpm-0.0.1.tgz#216d8dcfc32c228350a13fe8052420847c8398b8"
+  integrity sha512-INt/zTNCsiVM2gQ7p2aqnKh9dk5PjQz4eFMFSneK/kR1H8MIGBwxYVfDWbBp7T4fbUDV1n/GWD9K9awJcUTiwA==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.preview@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.preview/-/aspect-docs.preview-0.0.1.tgz#918855f306a4d58d21c30713bed6b1cf63c84174"
+  integrity sha512-vj4D9ELxDKwwKQ7NruHuf/d5IODLtZUp7QZudul1K06eFytZqO5fgHJR8kcQim0ih4CjQbGs6wb34CkBzj6W2Q==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.react-native@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.react-native/-/aspect-docs.react-native-0.0.1.tgz#febd16a9e40030543f73a2a91ee7cd8d20c98d58"
+  integrity sha512-zVuRZwpJ5J77MGHrrT2FG92yng5/3aFydClbzX3ohyk7X/W9K8LsBZGLVO2wtPyvG8OjXibr7CneEYSa0nDY2w==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.react@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.react/-/aspect-docs.react-0.0.1.tgz#976c1570efbfbea8b4dd6f7cf9fbcea291554e31"
+  integrity sha512-9NuX86YGZ5mErVNhGnNRLGlDrguDQzIw4xcG0MSzuJIsUqmTzScCf4hg339uFwN0UoD8n5H0aowM57fEmGmang==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.typescript@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.typescript/-/aspect-docs.typescript-0.0.1.tgz#5b6fe7fe0bf0d281796c0d06557cd708583f3391"
+  integrity sha512-Kg1+DX3wyc8tLZi/KH/rGvpvu506VSrmq3TYhJxWBS/jOBdrmyf5C9RgHgUGKnTtPlw5mn1DVDwb7dlOj6r8mQ==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.variants@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.variants/-/aspect-docs.variants-0.0.1.tgz#f18ee99ab8ff4fa43461f72ea8967dc1debd9b7a"
+  integrity sha512-ORpVo0nP057aEiExRU7b4kxDmzWs3YgUGI0wbK9QdGIrQWj7M216lXLCpTo+wD8DIhtrd14gK4Cx0gWJ3kP5wA==
+  dependencies:
+    core-js "^3.0.0"
+
+"@teambit/aspect-docs.yarn@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@teambit/aspect-docs.yarn/-/aspect-docs.yarn-0.0.1.tgz#41b81f149ec3b38e6a4988449f8a79d5c72f7ec3"
+  integrity sha512-xQiRcpAVkusWNxTWylJhVjMAYAvUCgFLL1BSwEPmdlIzjQMTD2rBN3ptcsbjqDQ2KZxU2kY+3u5BRTTJJ/Y8Xg==
+  dependencies:
+    core-js "^3.0.0"
+
 "@teambit/aspect-loader@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/aspect-loader/-/aspect-loader-0.0.387.tgz#f845580e8d49702fe54ba395374343e3e3b86104"

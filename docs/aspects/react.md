@@ -5,6 +5,6 @@ slug: /aspects/react
 description: A Bit development environment for React Components
 ---
 
-import { ReactAspect } from '@teambit/aspect-docs.React';
+import { ReactAspect } from '@teambit/aspect-docs.react';
 
 <ReactAspect />
