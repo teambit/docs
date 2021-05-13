@@ -107,7 +107,8 @@ module.exports = {
       items: [
         'essentials/what-is-bit',
         'essentials/advantages-of-bit',
-        'essentials/components'
+        'essentials/components',
+        'essentials/workspace',
       ]
     },
 
@@ -115,8 +116,8 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
+        'building-with-bit/manage-workspace',
         'building-with-bit/pre-existing-components',
-        'building-with-bit/workspace',
         'building-with-bit/environments',
         'building-with-bit/scopes',
         {
