@@ -124,7 +124,7 @@ module.exports = {
           label: 'Components',
           items: [
             'building-with-bit/creating-components',
-            'building-with-bit/tracking-components',
+            //'building-with-bit/tracking-components',
             'building-with-bit/removing-components',
             'building-with-bit/inspecting-components',
             'building-with-bit/component-compositions',
