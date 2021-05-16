@@ -98,3 +98,6 @@
 /open-source/open-source  /resources/community
 
 /reference/authentication /bit-dot-dev/authentication
+
+/building-with-bit/pre-existing-components /reference/pre-existing-components
+/building-with-bit/workspace /building-with-bit/manage-workspace

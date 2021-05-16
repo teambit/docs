@@ -117,7 +117,6 @@ module.exports = {
       label: 'Building with Bit',
       items: [
         'building-with-bit/manage-workspace',
-        'building-with-bit/pre-existing-components',
         'building-with-bit/environments',
         'building-with-bit/scopes',
         {
@@ -180,6 +179,7 @@ module.exports = {
         'reference/using-bvm',
         'reference/commands',
         'reference/ci-cd',
+        'reference/pre-existing-components',
         'reference/bit-oss-server',
         'reference/usage-analytics'
       ]
