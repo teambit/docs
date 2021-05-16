@@ -9,7 +9,7 @@ Are you ready to go deeper. We have so much more to show you.
 
 > **Using Bit on pre-existing projects**
 >
-> If you have components in projects you are actively working on, please refer to [this guide](/building-with-bit/pre-existing-components).
+> If you have components in projects you are actively working on, please refer to [this guide](/reference/pre-existing-components).
 
 ## Essentials
 
@@ -17,7 +17,7 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 ## Building with Bit
 
-Check out [Building with Bit](/building-with-bit/workspace), a more in-depth guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/building-with-bit/pre-existing-components).
+Check out [Building with Bit](/building-with-bit/manage-workspace), a more in-depth guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/reference/pre-existing-components).
 
 ## Component Architecture
 

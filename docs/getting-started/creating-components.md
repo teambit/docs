@@ -24,7 +24,7 @@ Once you have [initialized a Bit workspace](/getting-started/initializing-worksp
 1. Use `bit create` to create an example component and add it to the workspace
 2. Use `bit install` to install dependencies for test files
 
-Alternatively you can add [pre-existing components](/building-with-bit/pre-existing-components) using the `bit add` command.
+Alternatively you can add [pre-existing components](/reference/pre-existing-components) using the `bit add` command.
 
 ## Use Bit Create
 

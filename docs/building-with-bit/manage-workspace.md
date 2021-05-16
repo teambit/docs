@@ -3,9 +3,11 @@ id: manage-workspace
 title: Manage Workspace
 ---
 
+Bit Workspace provides a centralized dev-experience for managing components. Manage and configure your workspace to build your component based workflow.
+
 ## Initialize a Workspace
 
-A Bit workspace can be initialized on an empty directory to create a new workspace. It can also be initialized on an existing project to manage and export its components.
+A Bit workspace can be initialized on an empty directory to create a new workspace. It can be initialized on an existing project to manage and export its components.
 
 To initialize Bit run the following command:
 
@@ -13,48 +15,53 @@ To initialize Bit run the following command:
 bit init --harmony
 ```
 
-## Generate module links
-
-Bit automatically generates and manages module links. You can manually trigger this action:
-
-```sh
-bit link
-```
-
 ## Workspace configuration
 
-`workspace.jsonc` is the main configuration file for your workspace. Use this file to configure any of Bit's core aspects or add your own customized ones.  
-While in this file you can set configuration for any aspect, there are some key configurations to control your workspace and development workflow.
+`workspace.jsonc` is the main configuration file for your workspace. Use this file to list the different [Bit Aspcets](aspects/aspects-overview) and their respected configuration to customize your component development workflow and have a centralized control over component configuration.  
+The main aspect controling the workspace is [`teambit.workspace/workspace`](https://bit.dev/teambit/workspace/workspace), as it sets the basics for your workflow and component management.
 
-### Local dev experience
+### Defaul Scope
 
-Control local dev-experience and optimize the workspace to fit your workflow with the [`teambit.workspace/workspace`](https://bit.dev/teambit/workspace/workspace) aspect configuration. It has three key configurations you can set to determine defaults for various outputs and flows:
+Bit Components are scoped by default. When creating a workspace, Bit requires you to set a `defaultScope` for components. You can control default scope in [`teambit.workspace/variants`](aspects/variants) as well. Scope will be the prefix of each component-id and as such:
 
-- `name` - workspace name to be used in the local dev server and terminal outputs.
-- `defaultDirectory` - directory for all newly created and imported components.
-- `defaultScope` - sets default scoping for components.
+* Should not contain any of the following characters: `~)('!*`.
+* Can't start with `.` or `_`.
+* Must not contain any non-url-safe characters.
+
+Component's Scope defined the name of the remote Bit server to export the component to. So configure `defaultScope` according to how you want to structure and sort your components.
+
+> **`defaultScope` on Bit.dev**
+>
+> Scopes in Bit.dev are nested in their respected accounts. So when using Bit.dev for hosting Bit components define your `defaultScope` according to this pattern `AccountName.ScopeName`.
+
+### Default Component Directory
+
+New components will be created according to the pattern defined in `defaultDirectory`. You can put any path you want for your components. Use these variables to dynamically create components:
+
+* `{component}` - component name (including namespaces).
+* `{scope}` - component socpe.
+* `{owner}` - the account name managing the scope (Bit.dev only).
+* `{scope-id}` - concat of `{owner}.{scope}` (if not Bit.dev-component, falls back to `{scope}` only).
+
+This configuration applied by default when you use the `create` or `import` commands.
 
 ## Dependency resolution
 
-Bit spares us the tedious work of managing dependencies per component. Instead it implements the [`teambit.dependencies/dependency-resolver`](aspects/dependency-resolver) which allows to define a dependency policy for the workspace itself, which will then be used to set dependencies for all components.
+The [`teambit.dependencies/dependency-resolver`](aspects/dependency-resolver) aspect defines a dependencies for the workspace.
 
-This means that to add a dependency you should use the `install` command, which will add a dependency to the policy and install it to `node_modules`.
+```sh title="Install all workspace dependencies"
+bit install
+```
 
-```sh
+```sh title="Add a new dependency"
 bit install lodash
 ```
 
-Bit uses parse each component's code to find `import` and `require` statements. It then finds which module is required (another component or an external pacakge). Bit then uses file-name patterns to decide if the file importing the module is a dev-file, according to it - is that module a `dependecy` or a `devDependency`.
+[Dependency resolver aspect](aspects/dependency-resolver) parse each component's code to find `import` and `require` statements. It then uses file-name patterns to decide the dependency type (`dependency` or `devDependency`), and sets the dependency version according to the installed version of the package in `node_module` directory. This automates the tedious work of managing dependencies per component.
 
-> If your project has a `package.json` file both the `install` command and Bit's dependency definition process will propagate to it and use its contents.
+## Component Configuration Rules
 
-## Centralized component configuration
-
-Bit use a set of cascading configuration rules and policies to manage a centralize location for configuration. Similar to how CSS-selectors work you can define configurations on components according to their location in the workspace directory tree or namespace structure.
-
-This way, instead of managing `package.json` per-component, you can apply different rules and policies which Bit will then calculate and define configuration for each component.
-
-These rules are defined by [`teambit.workspace/variants`](aspects/variants) aspect.
+[`teambit.workspace/variants`](aspects/variants) aspect lets you define sub-sections of your workspace with different configuration. With this aspect you can set different configuration policies in a centralize location. Instead of managing `package.json` per-component, you can apply different rules and policies which Bit will then calculate and define configuration for each component.
 
 ```jsx
 {
@@ -76,6 +83,38 @@ You can see each component's configuration with the `show` command:
 bit show shopping-cart
 ```
 
+## Component Mapping
+
+The `.bitmap` file maps different sub-directories in your workspace to specific Bit components. This is how Bit gives you flexibility to organize the workspace to your liking. It helps decoupling the Bit component name from its location on the file system.
+
+### Remove components
+
+If you no longer need a component in your workspace use the `remove` command.
+
+```sh
+bit remove shopping-cart
+```
+
+### Move components
+
+Bit Components are decoupled from a specific location in the workspace. You can use the `move` command to move component to another location.
+
+```sh
+bit move shopping-cart some/other/path/
+```
+
+As components always use absolute `import` statements, there's no code-refactoring needed after component is moved.
+
+### Eject components
+
+You can remove a component from the codebase and turn it to a dependency with the `eject` command:
+
+```sh
+bit eject shopping-cart
+```
+
+Bit then removes the component code from your code base and adds that component as a dependency to your `workspace.json`.
+
 ## Vendor Components
 
 A fundamental feature of a Bit workspace is the ability to vendor components. This means you can use a single command, and instead of adding a component as a dependency, you import that component's implementation to your workspace, as-if you are its author.
@@ -94,32 +133,25 @@ If you need to eject it from your workspace and turn the component to a dependen
 bit eject teambit.documenter/button
 ```
 
-## Component Mapping
+## FAQ
 
-The `.bitmap` file maps different sub-directories in your workspace to specific Bit components. This is how Bit gives you flexibility to organize the workspace to your liking. It helps decoupling the Bit component name from its location on the file system.
+### Can I onboard pre-existing components?
 
-### Add new components
+When initializing a Bit Workspace in an existing project you may want to onboard some of the components already implemented in your project.  
+The `bit add` command "marks" directories as Bit Components. [Learn more](reference/pre-existing-components) about using it to onboard pre-existing components.
 
-You can either manually create a directory and contents to be tracked as a component using the `add` command, or use any of the templates with the `create` command. When you add a new component, Bit adds a new entry to the `.bitmap` file.
+### How to override `defaultDirectory`?
 
-```sh
-bit create react-component shopping-cart
-```
+Set a `defaultDirectory` per component when you run the `bit create` command by using the `--scope` option and override the default value for `{scope}` for the new component created.  
+Use the `--path` option to set the full component path and override the entire patten defined in `defaultDirectory`.
 
-### Remove components
+### Can I use `package.json`?
 
-You can remove a component from your local workspace with the `remove` command. This will also remove it from the `.bitmap` file.
+You can keep using `package.json` to manage dependencies. `bit install` propagates from `workspace.json` to `package.json` to find all dependencies to install for the workspace. However,if a the same dependency is defined in both files, `workspace.jsonc` will "win".
 
-```sh
-bit remove shopping-cart
-```
+### Can I use package manager directly?
 
-### Move components
+Bit uses the APIs of package manager to install and manage the workspace dependencies. You can decide not to adopt this feature and use a package manager directly with a `package.json` file. There are two things to note:
 
-As the component-name is decoupled from a specific location in the workspace you can use the `move` command and Bit will move the component's directory to a new location and update `.bitmap`
-
-```sh
-bit move shopping-cart some/other/path/
-```
-
-As components always use absolute `import` statements, there's no code-refactoring needed after component is moved.
+* Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/essentials/workspace#component-module-links).
+* Bit supports using different versions of the same dependency for components with the [variants aspect](aspects/variants), this will not be supported when using a package manager directly.

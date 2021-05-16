@@ -156,7 +156,7 @@ staged components
      > app-bar. versions: 0.0.1 ... ok
 ```
 
-- Learn more [here](/building-with-bit/workspace)
+- Learn more [here](/building-with-bit/manage-workspace)
 
 ## List components in the local scope
 

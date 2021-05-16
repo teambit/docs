@@ -55,7 +55,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/pre-existing-components'
+              to: '/reference/pre-existing-components'
             },
             {
               label: 'Extending Bit',
@@ -185,7 +185,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/workspace'
+              to: '/building-with-bit/manage-workspace'
             },
             {
               label: 'What is Bit',

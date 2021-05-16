@@ -248,7 +248,7 @@ bit deprecate <component-id> --remote
 
 #### Eject component configurations
 
-Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](/building-with-bit/workspace#eject-component-configurations-componentjson).
+Create a `component.json` file in the component's directory, to directly configure it. Learn more [here](/building-with-bit/manage-workspace#eject-component-configurations-componentjson).
 
 ```bash
 bit eject-conf <component>
