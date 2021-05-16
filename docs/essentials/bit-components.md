@@ -22,7 +22,7 @@ While the exact boundaries of the component are a design decision, we urge you t
 
 A component is any has to export a module that can be loaded by the Node.js `require()` function. This is so any Node application or service can load it as an additional functionality.
 
-## Component Scope
+### Component Scope
 
 Bit Components required to be scopeed. A component's Scope has several porpuses:
 
