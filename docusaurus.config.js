@@ -55,7 +55,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/pre-existing-components'
+              to: '/building-with-bit/manage-workspace'
             },
             {
               label: 'Extending Bit',
@@ -72,7 +72,7 @@ module.exports = {
             {
               label: 'Bit.dev',
               to: '/bit-dot-dev/bit-dev'
-            },
+            }
             // {  // TODO restore once we have a troubleshooting landing page
             //   label: 'Troubleshooting',
             //   to: '/troubleshooting/commands'
@@ -165,8 +165,7 @@ module.exports = {
           'aria-label': 'GitHub repository'
         },
         {
-          href:
-            'https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w',
+          href: 'https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w',
           className: 'slack-link',
           'aria-label': 'Slack',
           position: 'right'
@@ -185,7 +184,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/workspace'
+              to: '/building-with-bit/manage-workspace'
             },
             {
               label: 'What is Bit',

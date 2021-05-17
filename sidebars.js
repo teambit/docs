@@ -107,7 +107,8 @@ module.exports = {
       items: [
         'essentials/what-is-bit',
         'essentials/advantages-of-bit',
-        'essentials/components'
+        'essentials/components',
+        'essentials/workspace',
       ]
     },
 
@@ -115,8 +116,7 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
-        'building-with-bit/pre-existing-components',
-        'building-with-bit/workspace',
+        'building-with-bit/manage-workspace',
         'building-with-bit/environments',
         'building-with-bit/scopes',
         {
@@ -124,7 +124,7 @@ module.exports = {
           label: 'Components',
           items: [
             'building-with-bit/creating-components',
-            'building-with-bit/tracking-components',
+            //'building-with-bit/tracking-components',
             'building-with-bit/removing-components',
             'building-with-bit/inspecting-components',
             'building-with-bit/component-compositions',
@@ -178,6 +178,7 @@ module.exports = {
         'reference/using-bvm',
         'reference/commands',
         'reference/ci-cd',
+        'reference/pre-existing-components',
         'reference/bit-oss-server',
         'reference/usage-analytics'
       ]

@@ -34,7 +34,7 @@ bit install
 You can now use the component in your app by importing it from your node modules and then using it in your app or component.
 
 ```js title="app.js"
-import { Button } from '@yourUserName/componentScopeName.componentID'
+import { Button } from '@yourUserName/componentScopeName.componentID';
 ```
 
 ```js title="app.js"
@@ -43,4 +43,4 @@ import { Button } from '@yourUserName/componentScopeName.componentID'
 
 ## What's Next?
 
-We have just covered the basics and there is still so much to learn. Now it's time to really think about how you can use Bit to its full advantage. Learn more about [What Bit is](/essentials/what-is-bit) and the[ Advantages of Bit](/essentials/advantages-of-bit) or Dive deeper into our [Building with Bit](/building-with-bit/workspace) section and learn how to configure Bit.
+We have just covered the basics and there is still so much to learn. Now it's time to really think about how you can use Bit to its full advantage. Learn more about [What Bit is](/essentials/what-is-bit) and the[Advantages of Bit](/essentials/advantages-of-bit) or Dive deeper into our [Building with Bit](/building-with-bit/manage-workspace) section and learn how to configure Bit.

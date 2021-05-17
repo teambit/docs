@@ -14,7 +14,7 @@ To see a component in the workspace you first need to [create a component](/gett
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/workspace).
+:arrow_right: Learn more about the [Workspace UI](/building-with-bit/manage-workspace).
 
 ## Local Workspace
 
