@@ -9,13 +9,13 @@ import BitInit from '@site/docs/components/commands/bit-init.md'
 
 #### Get information about available CLI commands
 
-```
+```bash
 bit --help
 ```
 
 #### Get information about a specific CLI command
 
-```
+```bash
 bit <command> --help
 ```
 

@@ -17,16 +17,16 @@ bit init --harmony
 
 ## Workspace configuration
 
-`workspace.jsonc` is the main configuration file for your workspace. Use this file to list the different [Bit Aspcets](aspects/aspects-overview) and their respected configuration to customize your component development workflow and have a centralized control over component configuration.  
-The main aspect controling the workspace is [`teambit.workspace/workspace`](https://bit.dev/teambit/workspace/workspace), as it sets the basics for your workflow and component management.
+`workspace.jsonc` is the main configuration file for your workspace. Use this file to list the different [Bit Aspects](aspects/aspects-overview) and their respected configuration to customize your component development workflow and have a centralized control over component configuration.  
+The main aspect controlling the workspace is [`teambit.workspace/workspace`](https://bit.dev/teambit/workspace/workspace), as it sets the basics for your workflow and component management.
 
-### Defaul Scope
+### Default Scope
 
 Bit Components are scoped by default. When creating a workspace, Bit requires you to set a `defaultScope` for components. You can control default scope in [`teambit.workspace/variants`](aspects/variants) as well. Scope will be the prefix of each component-id and as such:
 
-* Should not contain any of the following characters: `~)('!*`.
-* Can't start with `.` or `_`.
-* Must not contain any non-url-safe characters.
+- Should not contain any of the following characters: `~)('!*`.
+- Can't start with `.` or `_`.
+- Must not contain any non-url-safe characters.
 
 Component's Scope defined the name of the remote Bit server to export the component to. So configure `defaultScope` according to how you want to structure and sort your components.
 
@@ -38,10 +38,10 @@ Component's Scope defined the name of the remote Bit server to export the compon
 
 New components will be created according to the pattern defined in `defaultDirectory`. You can put any path you want for your components. Use these variables to dynamically create components:
 
-* `{component}` - component name (including namespaces).
-* `{scope}` - component socpe.
-* `{owner}` - the account name managing the scope (Bit.dev only).
-* `{scope-id}` - concat of `{owner}.{scope}` (if not Bit.dev-component, falls back to `{scope}` only).
+- `{component}` - component name (including namespaces).
+- `{scope}` - component scope.
+- `{owner}` - the account name managing the scope (Bit.dev only).
+- `{scope-id}` - concat of `{owner}.{scope}` (if not Bit.dev-component, falls back to `{scope}` only).
 
 This configuration applied by default when you use the `create` or `import` commands.
 
@@ -153,5 +153,5 @@ You can keep using `package.json` to manage dependencies. `bit install` propagat
 
 Bit uses the APIs of package manager to install and manage the workspace dependencies. You can decide not to adopt this feature and use a package manager directly with a `package.json` file. There are two things to note:
 
-* Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/essentials/workspace#component-module-links).
-* Bit supports using different versions of the same dependency for components with the [variants aspect](aspects/variants), this will not be supported when using a package manager directly.
+- Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/essentials/workspace#component-module-links).
+- Bit supports using different versions of the same dependency for components with the [variants aspect](aspects/variants), this will not be supported when using a package manager directly.

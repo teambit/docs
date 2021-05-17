@@ -1,7 +1,7 @@
 ---
 id: migration
 title: Migration
---- 
+---
 
 Bit v15 (Harmony) and Bit v14 are mutually incompatible. To take advantage of Harmony's new features and capabilities, you need to migrate your workspace and collections manually.
 
@@ -16,26 +16,26 @@ First, let's go through the fundamental changes between the legacy version of Bi
 **Module names** - In harmony we removed the `@bit` prefix, and instead components are now pre-fixed by `@<account_name>`.  
 **Scopes** - Collections in v15 are called **Scopes**.  
 **Documentation** - Component docs is now a local development workflow feature using MD/MDX formats.  
-**Live playground** - Live component playground is now a local development workflow feature and not managed in [bit.dev](https://bit.dev)  
+**Live playground** - Live component playground is now a local development workflow feature and not managed in [bit.dev](https://bit.dev)
 
 ### New Features
 
 One of the main leaps forward in Harmony is that it is extremely extendible - so Harmony's feature set is constantly expanding.  
 That said, here's a sample of the major new features that have been introduced with Harmony:
 
-* **Component Development Environments** Shareable components which contain configurations for the full component lifecycle, to both reduce environment setup time and to introduce component development standardization across the organization  
-* **Documentation** Use `.docs.` files to document your components at source
-* **Compositions** Use `.compositions.` files to demonstrate and illustrate your component with its variants and inside complex application contexts, all rendered as part of your component's documentation
-* **Ripple CI** Propagating CI along the dependency tree, so you know how changes upstream will affect dependents, even before they adopt the changes
+- **Component Development Environments** Shareable components which contain configurations for the full component lifecycle, to both reduce environment setup time and to introduce component development standardization across the organization
+- **Documentation** Use `.docs.` files to document your components at source
+- **Compositions** Use `.compositions.` files to demonstrate and illustrate your component with its variants and inside complex application contexts, all rendered as part of your component's documentation
+- **Ripple CI** Propagating CI along the dependency tree, so you know how changes upstream will affect dependents, even before they adopt the changes
 
 ## Version Incompatibility
 
 There are strict limitations regarding using both v14 and v15
 
-* v14 components can't depend on v15 and vice-versa.
-* v14 and v15 components can't live in the same scope.
-* You must run two installations of Bit with different binary-names for using v14 and v15 simultaneously. [Learn more](/reference/using-bvm#using-v15-and-v14)
-* You can't have the same local workspace with both v14 and v15 content in `.git/bit` directory.
+- v14 components can't depend on v15 and vice-versa.
+- v14 and v15 components can't live in the same scope.
+- You must run two installations of Bit with different binary-names for using v14 and v15 simultaneously. [Learn more](/reference/using-bvm#using-v15-and-v14)
+- You can't have the same local workspace with both v14 and v15 content in `.git/bit` directory.
 
 ## Moving from Legacy Bit to Harmony
 
@@ -48,7 +48,7 @@ Harmony and legacy workspaces are mutually incompatible, and a repo ain't big en
 1. If you are maintaining your legacy Bit workspace, clone your repository.
 1. Create a new branch for Harmony migration.
 1. Remove all bit-related files and directories from your project - `bit init --reset-hard`.
-1. Initialise a Harmony bit workspace in your project - `bbit init --harmony`.
+1. Initialize a Harmony bit workspace in your project - `bbit init --harmony`.
 
 ### Sort components and track
 

@@ -3,7 +3,7 @@ id: whats-next
 title: What's Next?
 ---
 
-Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [intialized a workspace](initializing-workspace), [created a component](creating-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
+Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [initialized a workspace](initializing-workspace), [created a component](creating-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
 
 Are you ready to go deeper. We have so much more to show you.
 
