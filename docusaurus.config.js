@@ -197,7 +197,7 @@ module.exports = {
           items: [
             {
               label: 'Videos',
-              to: '/resources/conference-talks'
+              to: '/resources/videos'
             },
             {
               label: 'Podcasts',
