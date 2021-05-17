@@ -8,6 +8,8 @@ import { Image } from '@site/src/components/image'
 
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
+---
+
 ## Starting the dev server
 
 <StartDevServer />
@@ -15,6 +17,8 @@ To see a component in the workspace you first need to [create a component](/gett
 <!-- Once you click on your component it will take you to the Overview page. -->
 
 :arrow_right: Learn more about the [Workspace UI](/building-with-bit/manage-workspace).
+
+---
 
 ## Local Workspace
 
@@ -55,6 +59,8 @@ Shows any dependencies that your component has.
 See all the code files your component has and inspect them as well as a list of your component's dependencies and dev dependencies.
 
 <Image src="/img/workspace-ui/code.png" width="80%" />
+
+---
 
 ## What's Next?
 

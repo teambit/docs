@@ -3,7 +3,7 @@ id: bit-init
 title: Bit Init
 ---
 
-Initialize a Bit Harmony workspace.
+Initialize a Bit Harmony workspace and then manually configure the environnement and install any peer dependencies needed.
 
 ```bash
 bit init --harmony

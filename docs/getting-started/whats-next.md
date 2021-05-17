@@ -19,6 +19,10 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 Check out [Building with Bit](/building-with-bit/manage-workspace), a more in-depth guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/reference/pre-existing-components).
 
+## Extending Bit
+
+Bit is fully extendable meaning you can customize it to your liking. Learn how to [create your own component generator](/extending-bit/creating-a-custom-generator) or [add a new tab to the workspace](/extending-bit/adding-a-new-tab) for example.
+
 ## Component Architecture
 
 Check out [Component Architecture](/component-architecture/thinking-in-components) to learn more about how to think in Components.

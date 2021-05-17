@@ -1,15 +1,12 @@
 {
-    "cSpell.language": "en",
-    "css.validate": false,
-    "cSpell.words": [
-        "bitdev",
-        "whybit"
-    ],
-    "cSpell.enableFiletypes": [
-        "javascriptreact",
-        "jsonc",
-        "mdx",
-        "typescript",
-        "typescriptreact"
-    ]
+  "cSpell.language": "en",
+  "css.validate": false,
+  "cSpell.words": ["bitdev", "whybit", "autoplay", "allowfullscreen"],
+  "cSpell.enableFiletypes": [
+    "javascriptreact",
+    "jsonc",
+    "mdx",
+    "typescript",
+    "typescriptreact"
+  ]
 }

@@ -7,45 +7,59 @@ import FilesBitCreates from '@site/docs/components/workspace/files-bit-creates.m
 import BitInit from '@site/docs/components/commands/bit-init.md'
 import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
 
-In order to initialize a workspace you will need to first [install Bit](installing-bit).
+In order to initialize a workspace you will need to first [install Bit](installing-bit). A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. Bit works with Git so you can either add init a new git repo or add Bit to an existing git repo.
 
-## Bit Workspace
+**There are two ways you can initialize a workspace:**
 
-A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. First setup a new Git repo for your project and then initialize the Bit workspace.
+## Option 1: Use bit new to create a React workspace
 
-```bash
-git init
-```
-
-## Bit New React Workspace
+Create a new Bit workspace for a React environment. This command will initialize a Bit Harmony workspace configured for a React environment. To create a workspace and manually configure the env use the `bit init --harmony` command.
 
 :::info Experimental Feature
-This is experimental and may change in the future. If you experience any issues with this command please let us know or feel free to use `bit init --harmony` as documented below
+This is experimental and may change in the future. If you experience any issues with this command please let us know.
 :::
 
 Start a new Bit workspace with a React environment.
 
+:::note Action Required
+
 ```bash
-bit new react-workspace <my-project-name>
+bit new react-workspace <my-workspace-name>
 ```
 
-Install all dependencies
+:::
+
+Install all dependencies needed for your workspace.
+
+:::note Action Required
 
 ```bash
 bit install
 ```
 
-## Bit Init a Workspace
+:::
+
+## Option 2: Use bit init to initialize and manually configure your workspace
 
 <BitInit />
+
+:::tip
+
+Use `bit init --help` or `bit init -h` to get a list of available options for this command.
+
+:::
 
 ### Setting a React Environment
 
 <ReactEnvironment />
 
+---
+
 ## Created Files
 
 <FilesBitCreates />
+
+---
 
 ## What's Next
 

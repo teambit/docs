@@ -26,6 +26,8 @@ Once you have [initialized a Bit workspace](/getting-started/initializing-worksp
 
 Alternatively you can add [pre-existing components](/reference/pre-existing-components) using the `bit add` command.
 
+---
+
 ## Use Bit Create
 
 <BitCreateButton />
@@ -46,13 +48,19 @@ The following files will have been created for you:
 
 <Styles /> -->
 
+---
+
 ## Bitmap File
 
 <BitmapExample />
 
+---
+
 ## Install Dependencies
 
 <TestDependencies />
+
+---
 
 ## Show Component
 
@@ -60,9 +68,19 @@ The following files will have been created for you:
 
 <ShowButton />
 
+:::tip
+
+Use `bit show --help` or `bit show -h` to get a list of available options for this command.
+
+:::
+
+---
+
 ## Starting the Dev Server
 
 <StartDevServer />
+
+---
 
 ## Creating more Components
 
