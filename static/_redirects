@@ -38,8 +38,8 @@
 /components/tracking /building-with-bit/tracking-components
 /components/versioning /building-with-bit/removing-components
 /components/exporting /building-with-bit/inspecting-components
-/components/importing  /building-with-bit/importing-components
-/components/installing  /building-with-bit/installing-components
+/components/importing  /building-with-bit/consuming-components
+/components/installing  /building-with-bit/consuming-components
 /components/inspecting  /building-with-bit/inspecting-components
 /components/remove-deprecate-components  /building-with-bit/tracking-components
 
@@ -98,6 +98,8 @@
 /open-source/open-source  /resources/community
 
 /reference/authentication /bit-dot-dev/authentication
+
+/building-with-bit/publishing-components /aspects/pkg
 
 /building-with-bit/importing-components /building-with-bit/consuming-components
 /building-with-bit/installing-components /building-with-bit/consuming-components

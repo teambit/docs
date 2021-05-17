@@ -132,7 +132,7 @@ module.exports = {
             'building-with-bit/testing-components',
             'building-with-bit/compiling-components',
             'building-with-bit/exporting-components',
-            'building-with-bit/publishing-components',
+            //'building-with-bit/publishing-components',
             'building-with-bit/versioning-components',
             'building-with-bit/consuming-components'
           ]
