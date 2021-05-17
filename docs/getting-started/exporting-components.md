@@ -7,6 +7,10 @@ import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md
 
 Once you have created your [remote scope](remote-scope) and configured your defaultScope you can then export your components to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7aupBUi3m6I" title="Versioning and exporting-components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 ## Tagging Components
 
 Before exporting our components we need to tag them using the `bit tag` command. This will create a new version of your component.
@@ -24,6 +28,14 @@ new components
 ```
 
 :arrow_right: Learn more about the [Versioning Components](/building-with-bit/versioning-components).
+
+:::tip
+
+Use `bit tag --help` or `bit tag -h` to get a list of available options for this command.
+
+:::
+
+---
 
 ## Export Components
 
@@ -46,9 +58,19 @@ your-username.demo-scope/ui/button
 
 In your workspace go to `https://bit.dev/<user-name>/<scope-name>` to see your exported components.
 
+:::tip
+
+Use `bit export --help` or `bit export -h` to get a list of available options for this command.
+
+:::
+
+---
+
 ## Committing the Bitmap
 
 <GitCommitBitmap />
+
+---
 
 ## What's Next?
 

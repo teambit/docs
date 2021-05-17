@@ -16,7 +16,9 @@ import Path from '@site/docs/components/components/path.md'
 
 You can compose components together from other components in your workspace or from components in the cloud.
 
-## Creating Components with Bit Create
+---
+
+<!-- ## Creating Components with Bit Create
 
 To create other components you can use `bit create react-component` followed by your component name and the namespace for that component.
 
@@ -32,13 +34,19 @@ To create other components you can use `bit create react-component` followed by 
 
 <Path />
 
+---
+
 ## Install Dependencies
 
 <TestDependencies />
 
+---
+
 ## Show Component
 
 <BitShow />
+
+--- -->
 
 ## Composing Components
 
@@ -60,15 +68,27 @@ To import a component as a dependency you must use the module link. This way you
 
 To regenerate module-links for components run the `bit link` command.
 
-## Creating multiple components
+:::tip
+
+Use `bit link --help` or `bit link -h` to get a list of available options for this command.
+
+:::
+
+---
+
+<!-- ## Creating multiple components
 
 <BitCreateMultipleComponents />
 
 <BitCreateWarning />
 
+---
+
 ## Component Templates
 
 <BitTemplates />
+
+--- -->
 
 ## What's Next?
 

@@ -15,3 +15,9 @@ Once an account has been created successfully, your terminal will greet you with
 successfully added @bit as a scoped registry at /Users/<account>/.npmrc
 success! logged in as <account name>
 ```
+
+:::tip
+
+Use `bit login --help` or `bit login -h` to get a list of available options for this command.
+
+:::

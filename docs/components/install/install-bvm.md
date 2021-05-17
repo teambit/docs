@@ -27,5 +27,3 @@ yarn global add @teambit/bvm
 
   </TabItem>
 </Tabs>
-
-You should see a progress bar while BVM is installing and once finished you can use BVM to install Bit.

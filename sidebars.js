@@ -37,6 +37,7 @@ module.exports = {
       type: 'category',
       label: 'resources',
       items: [
+        'resources/videos',
         'resources/conference-talks',
         'resources/interviews',
         'resources/podcasts',
@@ -108,7 +109,7 @@ module.exports = {
         'essentials/what-is-bit',
         'essentials/advantages-of-bit',
         'essentials/components',
-        'essentials/workspace',
+        'essentials/workspace'
       ]
     },
 
@@ -163,7 +164,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Bit.dev',
-      items: ['bit-dot-dev/bit-dev', 'bit-dot-dev/my-account', 'bit-dot-dev/authentication']
+      items: [
+        'bit-dot-dev/bit-dev',
+        'bit-dot-dev/my-account',
+        'bit-dot-dev/authentication'
+      ]
     },
 
     // {
