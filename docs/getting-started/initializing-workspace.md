@@ -19,7 +19,7 @@ Create a new Bit workspace for a React environment. This command will initialize
 This is experimental and may change in the future. If you experience any issues with this command please let us know.
 :::
 
-Start a new Bit workspace with a React environment.
+Start a new Bit workspace with a React environment. This will create a new directory with the necessary files inside. 
 
 :::note Action Required
 
@@ -29,7 +29,7 @@ bit new react-workspace <my-workspace-name>
 
 :::
 
-Install all dependencies needed for your workspace.
+Once you are inside that directory you can then install all dependencies needed for your workspace.
 
 :::note Action Required
 
