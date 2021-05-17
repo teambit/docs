@@ -64,7 +64,7 @@ bit eject learn-harmony.hooks/use-counter
 
 ## Use Components
 
-Regardless of the consumtion menthod chosen, using the component in the project is just the same:
+Regardless of the consumption method chosen, using the component in the project is just the same:
 
 ```js title="app.js"
 import { Button } from '@yourUserName/componentScopeName.componentID'
@@ -78,4 +78,4 @@ import { Button } from '@yourUserName/componentScopeName.componentID'
 
 ### How to import component to a different path?
 
-In case you need to set a different path for a specific importend component, use the `--path` option with the `bit import` command.
+In case you need to set a different path for a specific imported component, use the `--path` option with the `bit import` command.
