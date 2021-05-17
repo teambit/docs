@@ -64,7 +64,7 @@ bit eject learn-harmony.hooks/use-counter
 
 ## Use Components
 
-Regardless of the consumtion menthod chosed, using the component in the project is just the same:
+Regardless of the consumtion menthod chosen, using the component in the project is just the same:
 
 ```js title="app.js"
 import { Button } from '@yourUserName/componentScopeName.componentID'
