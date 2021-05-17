@@ -35,13 +35,13 @@
 /environments/service-handlers  /aspects/envs
 
 /components/overview  /aspects/component
-/components/tracking /building-with-bit/tracking-components
+/components/tracking /reference/pre-existing-components
 /components/versioning /building-with-bit/removing-components
 /components/exporting /building-with-bit/inspecting-components
 /components/importing  /building-with-bit/importing-components
 /components/installing  /building-with-bit/installing-components
 /components/inspecting  /building-with-bit/inspecting-components
-/components/remove-deprecate-components  /building-with-bit/tracking-components
+/components/remove-deprecate-components  /reference/pre-existing-components
 
 /scope/overview  /building-with-bit/scopes
 /scope/set-up-remote-scope  /building-with-bit/scopes
@@ -101,4 +101,4 @@
 
 /building-with-bit/pre-existing-components /reference/pre-existing-components
 /building-with-bit/workspace /building-with-bit/manage-workspace
-/building-with-bit/tracking-components /building-with-bit/pre-existing-components
+/building-with-bit/tracking-components /reference/pre-existing-components
