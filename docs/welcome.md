@@ -8,9 +8,12 @@ Bit is a platform for building with components and use them to compose apps and 
 
 ## Get started
 
-* To get started follow [this guide](/getting-started/installing-bit) 
-* Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
-* Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
+- To get started follow [this guide](/getting-started/installing-bit)
+- Check out our short [videos](/resources/videos) to help you understand Bit better
+- Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
+- Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.+
+- If you are ready to dive deeper then check out [Building with Bit](/building-with-bit/manage-workspace)
+- For those who want to extend and customize Bit checkout [Extending Bit](/building-with-bit/manage-workspace)
 
 ### Bit v15 - Harmony
 
@@ -22,9 +25,9 @@ Bit v15 **Harmony** is used by many teams and is the underlying infrastructure f
 
 ## Additional Resources and Support
 
-* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
-* [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
-* Find more [resources](resources/conference-talks) and learn about Bit some more.
+- [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
+- [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
+- Find more [resources](resources/conference-talks) and learn about Bit some more.
 
 ## Host Components on [bit.dev](https://bit.dev)
 
