@@ -134,8 +134,7 @@ module.exports = {
             'building-with-bit/exporting-components',
             //'building-with-bit/publishing-components',
             'building-with-bit/versioning-components',
-            'building-with-bit/importing-components',
-            'building-with-bit/installing-components'
+            'building-with-bit/consuming-components'
           ]
         }
       ]
