@@ -25,7 +25,7 @@ During the onboarding process Bit marks directories to components. For each Bit 
 
 ### Initialize Bit Workspace
 
-Use the `init` command to initialzie a Bit Workspace
+Use the `init` command to initialize a Bit Workspace
 
 ```sh
 bit init --harmony
