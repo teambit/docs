@@ -9,14 +9,38 @@ Once you have created your [remote scope](remote-scope) and configured your defa
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7aupBUi3m6I" title="Versioning and exporting-components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Quick Guide:
+
+For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+
+1. Tag all components that have been modified
+
+```bash
+bit tag --all --message "first version"
+```
+
+2. Export your components
+
+```bash
+bit export
+```
+
 ---
 
 ## Tagging Components
 
 Before exporting our components we need to tag them using the `bit tag` command. This will create a new version of your component.
 
+You can tag each individual component
+
 ```bash
-bit tag --all
+bit tag button --patch --message "first version"
+```
+
+Or you can tag all components that have been modified
+
+```bash
+bit tag --all --message "first version"
 ```
 
 When component has finished tagging you should see the following message:

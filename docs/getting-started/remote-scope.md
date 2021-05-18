@@ -10,6 +10,19 @@ import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
 
 You can create a remote scope before or after [initializing a Bit workspace](initializing-workspace).
 
+## Quick Guide:
+
+For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+
+1. Create an account on [Bit.dev](https://bit.dev/) and login
+
+```bash
+bit login
+```
+
+2. Create a new scope/collection on [Bit.dev](https://bit.dev/)
+3. Update your default scope in the `workspace.jsonc` file with the name of your scope
+
 ---
 
 ## What is a Scope?

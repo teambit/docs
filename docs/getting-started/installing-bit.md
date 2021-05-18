@@ -11,15 +11,27 @@ import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 
 To use Bit you will need to install it globally. You can do this by first installing BVM, a version manger for Bit and then installing Bit.
 
+## Quick Guide:
+
+For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+
+1. Install BVM
+
+<InstallBVM />
+
+2. Install Bit
+
+```bash
+bvm install
+```
+
 ---
 
 ## 1. Install BVM
 
 <BVMIntro />
 
-:::note Action Required
 <InstallBVM />
-:::
 
 You should see a progress bar while BVM is installing and once finished you can use BVM to install Bit.
 
@@ -30,6 +42,11 @@ You should see a progress bar while BVM is installing and once finished you can 
 ## 2. Install Bit
 
 <InstallBit />
+
+:::tip
+Use `bit --help` or `bit -h` to get a list of available options.
+
+:::
 
 ---
 

@@ -126,16 +126,16 @@ module.exports = {
           items: [
             'building-with-bit/creating-components',
             //'building-with-bit/tracking-components',
-            'building-with-bit/removing-components',
             'building-with-bit/inspecting-components',
+            'building-with-bit/removing-components',
             'building-with-bit/component-compositions',
             'building-with-bit/documenting-components',
             'building-with-bit/testing-components',
             'building-with-bit/compiling-components',
-            'building-with-bit/exporting-components',
-            //'building-with-bit/publishing-components',
             'building-with-bit/versioning-components',
+            'building-with-bit/exporting-components',
             'building-with-bit/consuming-components'
+            //'building-with-bit/publishing-components',
           ]
         }
       ]

@@ -8,6 +8,18 @@ import { Image } from '@site/src/components/image'
 
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
+## Quick Guide:
+
+For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+
+1. Start the dev server
+
+```bash
+bit start
+```
+
+2. Explore the UI at [localhost:3000](http://localhost:3000/)
+
 ---
 
 ## Starting the dev server
