@@ -10,8 +10,6 @@ Use `bit create` to create an example button component with the namespace of `ui
 
 > To see a list of all available templates run the `bit templates` command.
 
-:::note Action Required
-
 <Tabs
 defaultValue="TypeScript"
 groupId="langs"
@@ -34,8 +32,6 @@ bit create react-component-js ui/button
 
   </TabItem>
 </Tabs>
-
-:::
 
 is the same as using the `--namespace` flag:
 

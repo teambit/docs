@@ -16,15 +16,33 @@ import BitmapExample from '@site/docs/components/components/bitmap-example.md'
 import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
 import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 import Path from '@site/docs/components/components/path.md'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
-Once you have [initialized a Bit workspace](/getting-started/initializing-workspace) you can:
+Once you have [initialized a Bit workspace](/getting-started/initializing-workspace) you can create components using the `bit create` command. Alternatively you can add [pre-existing components](/reference/pre-existing-components) using the `bit add` command.
 
-1. Use `bit create` to create an example component and add it to the workspace
-2. Use `bit install` to install dependencies for test files
+## Quick Guide
 
-Alternatively you can add [pre-existing components](/reference/pre-existing-components) using the `bit add` command.
+<QuickGuide />
+
+1. Create an example component and add it to the workspace
+
+```bash
+bit create react-component ui/button
+```
+
+2. Install dependencies for test files
+
+```bash
+bit install @testing-library/react
+```
+
+3. Start the dev server
+
+```bash
+bit start
+```
 
 ---
 
@@ -68,12 +86,6 @@ The following files will have been created for you:
 
 <ShowButton />
 
-:::tip
-
-Use `bit show --help` or `bit show -h` to get a list of available options for this command.
-
-:::
-
 ---
 
 ## Starting the Dev Server
@@ -90,9 +102,21 @@ Use `bit show --help` or `bit show -h` to get a list of available options for th
 
 <BitCreateWarning />
 
+---
+
 ## Bit Templates
 
 <BitTemplates />
+
+---
+
+## FAQ
+
+### 1 issue found with this component?
+
+Run `bit status` in the terminal to get a better understanding of what the issue is and what steps to take.
+
+---
 
 ## What's Next?
 

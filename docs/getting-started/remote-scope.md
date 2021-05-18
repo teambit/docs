@@ -7,8 +7,22 @@ import CreateBitAccount from '@site/docs/components/remote-scopes/create-bit-acc
 import CreateRemoteScope from '@site/docs/components/remote-scopes/create-remote-scope.md'
 import DefaultScopeName from '@site/docs/components/workspace/default-scope-name.md'
 import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 You can create a remote scope before or after [initializing a Bit workspace](initializing-workspace).
+
+## Quick Guide
+
+<QuickGuide />
+
+1. Create an account on [Bit.dev](https://bit.dev/) and login
+
+```bash
+bit login
+```
+
+2. Create a new scope/collection on [Bit.dev](https://bit.dev/)
+3. Update your default scope in the `workspace.jsonc` file with the name of your scope
 
 ---
 

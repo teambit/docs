@@ -63,3 +63,9 @@ my-scope/ui/card
     location: my-scope/ui/card
     env:      teambit.react/react
 ```
+
+:::tip
+
+Use `bit create --help` or `bit create -h` to get a list of available options for this command.
+
+:::
