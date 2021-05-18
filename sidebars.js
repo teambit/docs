@@ -107,7 +107,6 @@ module.exports = {
       label: 'Essentials',
       items: [
         'essentials/what-is-bit',
-        'essentials/advantages-of-bit',
         'essentials/components',
         'essentials/workspace'
       ]
