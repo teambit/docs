@@ -9,6 +9,7 @@ import InstallBit from '@site/docs/components/install/install-bit.md'
 import BVMVersion from '@site/docs/components/install/bvm-version.md'
 import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 import QuickGuide from '@site/docs/components/quick-guide.md'
+import InstallBVMSolution from '@site/docs/components/install/install-bvm-solution.md'
 
 To use Bit you will need to install it globally. You can do this by first installing BVM, a version manger for Bit and then installing Bit.
 
@@ -28,7 +29,7 @@ bvm install
 
 ---
 
-## 1. Install BVM
+## Install BVM
 
 <BVMIntro />
 
@@ -40,9 +41,16 @@ You should see a progress bar while BVM is installing and once finished you can 
 
 ---
 
-## 2. Install Bit
+## Install Bit
 
 <InstallBit />
+
+:::note
+
+If you get a warning or the `bvm` command is not available you will need to run the code below. You can learn more about this in the [BVM guide](/reference/using-bvm).
+
+<InstallBVMSolution />
+:::
 
 :::tip
 Use `bit --help` or `bit -h` to get a list of available options.

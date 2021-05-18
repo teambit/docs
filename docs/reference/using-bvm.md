@@ -6,6 +6,9 @@ title: Using BVM
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import InstallBVMErrors from '@site/docs/components/install/install-bvm-errors.md'
+import InstallBVMSolution from '@site/docs/components/install/install-bvm-solution.md'
+
+import InstallBVM from '@site/docs/components/install/install-bvm.md'
 
 [BVM](https://github.com/teambit/bvm) is a version manager for Bit.  
 Using BVM makes it easier to install and manage multiple versions of Bit in a single environment.
@@ -19,29 +22,15 @@ Using BVM makes it easier to install and manage multiple versions of Bit in a si
 
 ## Install BVM
 
-<Tabs
-defaultValue="NPM"
-values={[
-{label: 'NPM', value: 'NPM'},
-{label: 'Yarn', value: 'Yarn'},
-]}>
-<TabItem value="NPM">
-
-```bash
-npm i -g @teambit/bvm
-```
-
-  </TabItem>
-  <TabItem value="Yarn">
-
-```bash
-yarn global add @teambit/bvm
-```
-
-  </TabItem>
-</Tabs>
+<InstallBVM />
 
 <InstallBVMErrors />
+
+**Solution:**
+
+Run the following command:
+
+<InstallBVMSolution />
 
 ## Install Bit
 
