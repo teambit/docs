@@ -4,14 +4,16 @@ title: Welcome to Bit Harmony
 slug: /
 ---
 
-Bit is a platform for building with components and use them to compose apps and systems. Building with Bit gives a host of benefits for our codebase's modularity, composability, testability, and scalability.
+Bit is a tool for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture. Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more re-usable code.
+
+Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build. We can help you solve these problems with Bit as Bit works on the component model. If each of your components are individual you can just build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
 
 ## Get started
 
 - To get started follow [this guide](/getting-started/installing-bit)
 - Check out our short [videos](/resources/videos) to help you understand Bit better
-- Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
-- Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.+
+- Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit.
+- Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
 - If you are ready to dive deeper then check out [Building with Bit](/building-with-bit/manage-workspace)
 - For those who want to extend and customize Bit checkout [Extending Bit](/building-with-bit/manage-workspace)
 
