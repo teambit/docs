@@ -31,6 +31,8 @@ Bit is not a more efficient way to do things, it's a different way to do things.
 - Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
 - Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
 
+Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing of components whereas the consumption of components is handled by package managers such as npm or yarn.
+
 ### Bit v15 - Harmony
 
 **Harmony** introduces major improvements to Bit and how developers should build their components. At the moment it supports **React**, **React Native** and **NodeJS**. For teams using **Angular** or **Vue**, it is recommended to get started with Bit's v14 release [here](https://docs.bit.dev).
