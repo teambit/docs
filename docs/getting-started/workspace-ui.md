@@ -5,12 +5,13 @@ title: Workspace UI
 
 import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 import { Image } from '@site/src/components/image'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
 
-## Quick Guide:
+## Quick Guide
 
-For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+<QuickGuide />
 
 1. Start the dev server
 

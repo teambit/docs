@@ -16,14 +16,15 @@ import BitmapExample from '@site/docs/components/components/bitmap-example.md'
 import BitCreateWarning from '@site/docs/components/components/bit-create-warning.md'
 import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 import Path from '@site/docs/components/components/path.md'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 import TestDependencies from '@site/docs/components/components/react/test-dependencies.md'
 
 Once you have [initialized a Bit workspace](/getting-started/initializing-workspace) you can create components using the `bit create` command. Alternatively you can add [pre-existing components](/reference/pre-existing-components) using the `bit add` command.
 
-## Quick Guide:
+## Quick Guide
 
-For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+<QuickGuide />
 
 1. Create an example component and add it to the workspace
 

@@ -4,14 +4,15 @@ title: Exporting Components
 ---
 
 import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 Once you have created your [remote scope](remote-scope) and configured your defaultScope you can then export your components to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7aupBUi3m6I" title="Versioning and exporting-components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Quick Guide:
+## Quick Guide
 
-For those that don't like reading docs feel free to follow the quick guide at the top of each page.
+<QuickGuide />
 
 1. Tag all components that have been modified
 
