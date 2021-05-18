@@ -31,6 +31,12 @@ Tag all components and bump the patch number of each component version
 bit tag --all
 ```
 
+:::tip
+
+Use `bit tag --help` or `bit tag -h` to get a list of available options for this command.
+
+:::
+
 ### Soft and hard tags: component collaboration
 
 When collaborating on components it is not advisable to tag a new component release version locally, but instead to have it done by the CI.

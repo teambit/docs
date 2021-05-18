@@ -86,12 +86,6 @@ The following files will have been created for you:
 
 <ShowButton />
 
-:::tip
-
-Use `bit show --help` or `bit show -h` to get a list of available options for this command.
-
-:::
-
 ---
 
 ## Starting the Dev Server

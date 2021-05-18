@@ -34,13 +34,7 @@ To create new components use the `bit create` command. This will create a generi
 
 <TestDependencies />
 
-## Show Component
-
-<BitShow />
-
-## Creating more Components
-
-<BitCreateComponent />
+## Creating multiple Components
 
 <BitCreateMultipleComponent />
 

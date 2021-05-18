@@ -95,6 +95,12 @@ If you no longer need a component in your workspace use the `remove` command.
 bit remove shopping-cart
 ```
 
+:::tip
+
+Use `bit remove --help` or `bit remove -h` to get a list of available options for this command.
+
+:::
+
 ### Move components
 
 Bit Components are decoupled from a specific location in the workspace. You can use the `move` command to move component to another location.
@@ -105,6 +111,12 @@ bit move shopping-cart some/other/path/
 
 As components always use absolute `import` statements, there's no code-refactoring needed after component is moved.
 
+:::tip
+
+Use `bit move --help` or `bit move -h` to get a list of available options for this command.
+
+:::
+
 ### Eject components
 
 You can remove a component from the codebase and turn it to a dependency with the `eject` command:
@@ -114,6 +126,12 @@ bit eject shopping-cart
 ```
 
 Bit then removes the component code from your code base and adds that component as a dependency to your `workspace.json`.
+
+:::tip
+
+Use `bit eject --help` or `bit eject -h` to get a list of available options for this command.
+
+:::
 
 ## Vendor Components
 

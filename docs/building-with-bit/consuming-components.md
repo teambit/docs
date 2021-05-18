@@ -10,7 +10,7 @@ There are two ways a developer can consume a component in their project.
 
 ## Install Components as Packages
 
-To simplify the dev-expereince of consumers, all exported components are available to be installed as an npm package using any package manager.
+To simplify the dev-experience of consumers, all exported components are available to be installed as an npm package using any package manager.
 
 ### Installing Component
 
@@ -40,9 +40,9 @@ bit import teambit.mdx/*
 
 When importing components Bit will:
 
-* Place the component the workspace according to the `defaultDirectory` as defined in `workspace.jsonc`.
-* Add component to `.bitmap`.
-* Install component dependencies.
+- Place the component the workspace according to the `defaultDirectory` as defined in `workspace.jsonc`.
+- Add component to `.bitmap`.
+- Install component dependencies.
 
 > All imported components are visible on the local Dev Server (`bit start`).
 
@@ -54,13 +54,25 @@ To get the latest versions of every imported component in our workspace run:
 bit import
 ```
 
-### Eject Imported Componenta
+:::tip
+
+Use `bit import --help` or `bit import -h` to get a list of available options for this command.
+
+:::
+
+### Eject Imported Components
 
 To turn a vendor component to a dependency use the `eject` command.
 
 ```sh
 bit eject learn-harmony.hooks/use-counter
 ```
+
+:::tip
+
+Use `bit eject --help` or `bit eject -h` to get a list of available options for this command.
+
+:::
 
 ## Use Components
 

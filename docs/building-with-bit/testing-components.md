@@ -108,6 +108,12 @@ For example:
 bit test --scope my-org.react-design-system
 ```
 
+:::tip
+
+Use `bit test --help` or `bit test -h` to get a list of available options for this command.
+
+:::
+
 ## Bit processes that use the tester
 
 ### Local dev server

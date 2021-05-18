@@ -48,6 +48,12 @@ Run the `bit export` command to have Bit publish all versioned components. In ou
 bit export
 ```
 
+:::tip
+
+Use `bit export --help` or `bit export -h` to get a list of available options for this command.
+
+:::
+
 ## Post export operations
 
 The export process updates your workspace' `.bitmap` file. Make sure to commit these changes to Git.

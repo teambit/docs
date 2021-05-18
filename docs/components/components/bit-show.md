@@ -8,3 +8,9 @@ Use the `bit show` command followed by your ComponentID to see all details about
 ```bash
 bit show ui/button
 ```
+
+:::tip
+
+Use `bit show --help` or `bit show -h` to get a list of available options for this command.
+
+:::
