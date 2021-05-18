@@ -23,7 +23,7 @@ Bit takes the same approach and adds this functionality to anything you build. A
 
 Bit is a build tool. There are no SDKs or runtime dependencies added to your code. Aside from not affecting your app's performance, this also means you can decide to opt-out of Bit without the cost of refactoring your code.
 
-## Break Down the Monolith
+## Distribute the Monolith
 
 Modern web development made components its first-class citizens. Still many projects are built in monoliths.  
 Monolithic codebases can be cumbersome to maintain, especially with growing complexity and team size. Distributed teams collaborating on the same apps should happen in distributed codebases.
