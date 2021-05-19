@@ -16,7 +16,7 @@ Bit helps you focus on building components, and as such the workspace has a mini
 
 ## Flexible Directory Structure
 
-A it Workspace is a monorepo that supports nesting Bit Components in sub-directories. You can build a highly-nested structure for your workspace, a flat structure, or decide where in your project you want deep nesting and where you don't.
+A Bit Workspace is a monorepo that supports nesting Bit Components in sub-directories. You can build a highly-nested structure for your workspace, a flat structure, or decide where in your project you want deep nesting and where you don't.
 
 By Default Bit aims to create symmetry between component scoping and name-spacing on the one side, and how components are represented in the workspace UI.
 
