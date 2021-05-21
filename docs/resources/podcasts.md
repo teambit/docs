@@ -3,7 +3,7 @@ id: podcasts
 title: Podcasts
 ---
 
-import { Image } from '@teambit/documenter.ui.image'
+import { Image } from '@site/src/components/image'
 
 ## Developer Advocacy, Navigating Tech, & Frontend Dev
 

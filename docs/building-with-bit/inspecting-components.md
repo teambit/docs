@@ -3,7 +3,7 @@ id: inspecting-components
 title: Inspecting Components
 ---
 
-import { Image } from '@teambit/documenter.ui.image'
+import { Image } from '@site/src/components/image'
 
 This page lists different ways to inspect the workspace and its components using Bit's CLI and the Workspace/Scope UI.
 
