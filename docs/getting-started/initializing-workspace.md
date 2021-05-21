@@ -10,6 +10,8 @@ import QuickGuide from '@site/docs/components/quick-guide.md'
 
 In order to initialize a workspace you will need to first [install Bit](installing-bit). A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. Bit works with Git so you can either add init a new git repo or add Bit to an existing git repo.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Quick Guide
 
 <QuickGuide />

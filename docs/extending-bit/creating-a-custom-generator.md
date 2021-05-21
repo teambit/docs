@@ -26,7 +26,7 @@ You can also create your own generator using the `bit create` command followed b
 bit create generator <my-components>
 ```
 
-### Configuring your Generator
+### Configuring your Generator's Environment
 
 Edit your `workspace.jsonc` file and set your generator component to use the `teambit.harmony/aspect` env under the variants object.
 
@@ -39,6 +39,8 @@ Edit your `workspace.jsonc` file and set your generator component to use the `te
 ```
 
 To check if your generator component is using the correct env you can run `bit envs` or `bit show my-components`
+
+### Registering your Generator
 
 Edit your `workspace.jsonc` file and add the component id, (scope name / component name) to `teambit.generator/generator`. This should go at root level. The component id can be found in the `aspect.ts` file. In this example we are using `my-scope-name` you may already have a default scope name configured and therefore this should be used here.
 
@@ -140,6 +142,14 @@ export type { ${context.namePascalCase}Props } from './${context.name}';
 ]);
 ```
 
+### Compiling the Generator
+
+Make sure you run `bit compile` after any changes to your generator.
+
+```bash
+bit compile
+```
+
 ### Using your Generator
 
 Use your generator to create the component files. In our example we used the name _component1_ as our template name. We can use then `bit create component1` followed by the name of the component we want to create, for example a button component.
@@ -167,7 +177,7 @@ export const MyComponentsAspect = Aspect.create({
 ```
 
 ```bash
-bit tag --all
+bit tag --all --message="my custom generator"
 bit export
 ```
 

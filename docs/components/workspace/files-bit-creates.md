@@ -1,4 +1,4 @@
---- 
+---
 id: files-bit-creates
 title: Files Bit Creates
 ---
@@ -11,4 +11,4 @@ Bit creates the following files when initializing a new workspace:
 
 ### Committing to git
 
-Both the `workspace.jsonc` and the `.bitmap` should be commited to  git. The `.git/bit` folder will be automatically ignored by git.
+Both the `workspace.jsonc` and the `.bitmap` should be commited to git. The `.git/bit` folder will be automatically ignored by git. `pnpm-lock.yaml` should also be added to your git ignore file.

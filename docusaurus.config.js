@@ -72,6 +72,10 @@ module.exports = {
             {
               label: 'Bit.dev',
               to: '/bit-dot-dev/bit-dev'
+            },
+            {
+              label: 'Migrating From Legacy Bit',
+              to: '/reference/migration'
             }
             // {  // TODO restore once we have a troubleshooting landing page
             //   label: 'Troubleshooting',
@@ -141,10 +145,6 @@ module.exports = {
             {
               label: 'Community',
               to: '/resources/community'
-            },
-            {
-              label: 'Migrating From Legacy Bit',
-              to: '/resources/migration'
             }
           ]
         },
