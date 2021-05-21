@@ -1,7 +1,6 @@
 ---
 id: compositions
 title: Compositions
-slug: /aspects/compositions
 description: Renders component instances as part of different compositions.
 labels: ['ui', 'tests']
 ---

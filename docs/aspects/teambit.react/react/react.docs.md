@@ -1,7 +1,6 @@
 ---
 id: react
 title: React
-slug: /aspects/react
 description: A Bit development environment for React Components
 labels: ['react', 'environment', 'env', 'aspect', 'extension']
 ---
@@ -161,14 +160,18 @@ export class CustomReactExtension {
 
   static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
 
-  static async provider([envs, react, babel]: [EnvsMain, ReactMain, BabelMain]) {
+  static async provider([envs, react, babel]: [
+    EnvsMain,
+    ReactMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customReactEnv = react.compose([
       react.overrideCompiler(babelCompiler),
-      react.overrideCompilerTasks([babelCompiler.createTask()]),
+      react.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customReactEnv);
@@ -361,20 +364,22 @@ Each key-value pair in a dependency-policy object signifies the package and the 
 // ...
 const newDependencies = {
   dependencies: {
-    react: '-',
+    react: '-'
   },
   devDependencies: {
-    '@types/jest': '~26.0.9',
+    '@types/jest': '~26.0.9'
   },
   peerDependencies: {
-    react: '^17.0.2',
-  },
+    react: '^17.0.2'
+  }
 };
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([react.overrideDependencies(newDependencies)]);
+    const newReactEnv = react.compose([
+      react.overrideDependencies(newDependencies)
+    ]);
     // ...
   }
 }
@@ -390,13 +395,15 @@ Merges the provide props with the default properties added to the `package.json`
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
+  types: '{main}.ts'
 };
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([react.overridePackageJsonProps(newPackageProps)]);
+    const newReactEnv = react.compose([
+      react.overridePackageJsonProps(newPackageProps)
+    ]);
     // ...
   }
 }

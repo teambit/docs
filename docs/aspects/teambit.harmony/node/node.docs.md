@@ -1,7 +1,6 @@
 ---
 id: node
 title: Node
-slug: /aspects/node
 description: A Bit development environment for Node Components
 labels: ['node', 'environment', 'env', 'aspect', 'extension']
 ---
@@ -157,12 +156,12 @@ export class CustomNodeExtension {
 
   static async provider([envs, node, babel]: [EnvsMain, NodeMain, BabelMain]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customNodeEnv = node.compose([
       node.overrideCompiler(babelCompiler),
-      node.overrideCompilerTasks([babelCompiler.createTask()]),
+      node.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customNodeEnv);
@@ -295,14 +294,16 @@ Each key-value pair in a dependency-policy object signifies the package and the 
 // ...
 const newDependencies = {
   devDependencies: {
-    '@types/jest': '~26.0.9',
-  },
+    '@types/jest': '~26.0.9'
+  }
 };
 
 export class CustomNode {
   // ...
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
-    const newNodeEnv = node.compose([node.overrideDependencies(newDependencies)]);
+    const newNodeEnv = node.compose([
+      node.overrideDependencies(newDependencies)
+    ]);
     // ...
   }
 }
@@ -318,13 +319,15 @@ Merges the provide props with the default properties added to the `package.json`
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
+  types: '{main}.ts'
 };
 
 export class CustomNode {
   // ...
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
-    const newNodeEnv = node.compose([node.overridePackageJsonProps(newPackageProps)]);
+    const newNodeEnv = node.compose([
+      node.overridePackageJsonProps(newPackageProps)
+    ]);
     // ...
   }
 }

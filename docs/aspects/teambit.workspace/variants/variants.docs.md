@@ -1,16 +1,15 @@
 ---
 id: variants
 title: Variants
-slug: /aspects/variants
 ---
 
 `teambit.workspace/variants` enables cascading configurations by selection of component groupings or sets in the workspace and applying configurations to these cascading groups.
 Configurations set on a certain set of components can:
 
 1. Affect only the selected set of components
-1. Inherit policies set on a more general set of components (including the workspace default configs)
-1. Override conflicting configurations inherited from more general component selections
-1. Propagate configurations downwards to more specific sub-sets of components
+2. Inherit policies set on a more general set of components (including the workspace default configs)
+3. Override conflicting configurations inherited from more general component selections
+4. Propagate configurations downwards to more specific sub-sets of components
 
 ## Variants Selector Examples
 

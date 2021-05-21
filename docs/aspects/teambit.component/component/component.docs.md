@@ -1,7 +1,6 @@
 ---
 id: component
 title: Component
-slug: /aspects/component
 ---
 
 A [Bit component](https://bit.dev/teambit/component/component) is a super-set of a node package. In addition to its distributable code, a Bit component has everything it needs to be maintained and developed as an independent building block.

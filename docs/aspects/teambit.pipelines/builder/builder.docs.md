@@ -1,7 +1,6 @@
 ---
 id: builder
 title: Builder
-slug: /aspects/builder
 description: build components on isolated directories
 ---
 
@@ -113,7 +112,12 @@ The example task below, shown being used by a customized environment, prints out
 > Information returned by a build task will only persist if the build-pipeline was triggered by the 'hard-tag' command (`bit tag <component-id>`).
 
 ```ts title="print-cmp-name-task.ts"
-import { BuildTask, BuildContext, BuiltTaskResult, ComponentResult } from '@teambit/builder';
+import {
+  BuildTask,
+  BuildContext,
+  BuiltTaskResult,
+  ComponentResult
+} from '@teambit/builder';
 
 // A task is an implementation of 'BuildTask' provided by the 'builder' aspect
 export class PrintCmpNameTask implements BuildTask {
@@ -126,16 +130,18 @@ export class PrintCmpNameTask implements BuildTask {
 
     // Go through every isolated component instance
     context.capsuleNetwork.seedersCapsules.forEach((capsule) => {
-      console.log(`The current component name is: ${capsule.component.id.name}`);
+      console.log(
+        `The current component name is: ${capsule.component.id.name}`
+      );
 
       componentsResults.push({
         component: capsule.component,
-        metadata: { customProp: capsule.component.id.name },
+        metadata: { customProp: capsule.component.id.name }
       });
     });
     return {
       // An array of component objects, enriched with additional data produced by the task
-      componentsResults,
+      componentsResults
     };
   }
 }
@@ -160,7 +166,10 @@ export class CustomReact {
     // Add the custom task to the end of the build tasks sequence.
     // Provide the task with the component ID of the extension using it.
     // Provide the ask with a name.
-    const tasks = [...reactPipe, new PrintCompTask('extensions/custom-react', 'PrintCmpNameTask')];
+    const tasks = [
+      ...reactPipe,
+      new PrintCompTask('extensions/custom-react', 'PrintCmpNameTask')
+    ];
 
     // Create a new environment by merging these configurations with the env's default ones
     const customReactEnv = react.compose([react.overrideBuildPipe(tasks)]);
@@ -189,7 +198,12 @@ This methodology places the task at the start or end of the build pipeline seque
 Example:
 
 ```ts title="print-cmp-name-task.ts"
-import { BuildTask, BuildContext, BuiltTaskResult, ComponentResult } from '@teambit/builder';
+import {
+  BuildTask,
+  BuildContext,
+  BuiltTaskResult,
+  ComponentResult
+} from '@teambit/builder';
 
 export class PrintCmpNameTask implements BuildTask {
   constructor(readonly aspectId: string, readonly name: string) {}
@@ -203,15 +217,17 @@ export class PrintCmpNameTask implements BuildTask {
   async execute(context: BuildContext): Promise<BuiltTaskResult> {
     const componentsResults: ComponentResult[] = [];
     context.capsuleNetwork.seedersCapsules.forEach((capsule) => {
-      console.log(`The current component name is: ${capsule.component.id.name}`);
+      console.log(
+        `The current component name is: ${capsule.component.id.name}`
+      );
 
       componentsResults.push({
         component: capsule.component,
-        metadata: { customProp: capsule.component.id.name },
+        metadata: { customProp: capsule.component.id.name }
       });
     });
     return {
-      componentsResults,
+      componentsResults
     };
   }
 }
@@ -231,10 +247,16 @@ export class CustomReact {
   static dependencies: any = [EnvsAspect, ReactAspect];
 
   // Inject the builder
-  static async provider([envs, react, builder]: [EnvsMain, ReactMain, BuilderMain]) {
+  static async provider([envs, react, builder]: [
+    EnvsMain,
+    ReactMain,
+    BuilderMain
+  ]) {
     // Register this task using the registration slot, made available by the 'builder'.
     // Here, the environment has no say in the positioning of the task
-    builder.registerBuildTasks([new ExampleTask('extensions/custom-react', 'PrintCmpNameTask')]);
+    builder.registerBuildTasks([
+      new ExampleTask('extensions/custom-react', 'PrintCmpNameTask')
+    ]);
 
     const customReactEnv = react.compose([]);
 

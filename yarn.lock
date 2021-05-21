@@ -4010,6 +4010,14 @@
   resolved "https://registry.yarnpkg.com/@teambit/base-ui.css-components.roundness/-/base-ui.css-components.roundness-0.6.3.tgz#3a7fbd2e4bedb6660fce411a4c6e6a413c32fa7a"
   integrity sha512-e1lhjMdFX3+qF0rbU/cBXhIYfo0m1+hIHGB+HdLTGjIk1/HeCZwBBAAB8R/ClT+zQCodGtUedsw0EOlSNn7jMQ==
 
+"@teambit/base-ui.elements.dots-loader@0.6.12":
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/@teambit/base-ui.elements.dots-loader/-/base-ui.elements.dots-loader-0.6.12.tgz#c62d312d52d134f2bfb7d2755c72e1dc96e12f94"
+  integrity sha512-LCcz/aXYoA2G3oomXMEpfhnRMINFUqQRE924JwL/tUS5It5TkN+CNQ1OMA0tuiF/R41DDdsjdp3lTq9wU+wPcg==
+  dependencies:
+    classnames "^2.2.6"
+    core-js "^3.0.0"
+
 "@teambit/base-ui.elements.dots-loader@0.6.3":
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@teambit/base-ui.elements.dots-loader/-/base-ui.elements.dots-loader-0.6.3.tgz#0f6804e95827dfdf557c274e8278b348eec6181d"
@@ -4103,6 +4111,15 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@teambit/base-ui.hook.use-click-outside/-/base-ui.hook.use-click-outside-0.6.3.tgz#fd40b023d2ad775870af99a022a6ea95bdcf26a0"
   integrity sha512-4PZ6bLOUExOg+fuTdlrGwN1jrTy8F/tHi8ANoys/Pomj2W0d/rymoqDitIzOFdoTHZfNi/vW4ZdKZgjNPJ+QXw==
+
+"@teambit/base-ui.input.button@0.6.12":
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/@teambit/base-ui.input.button/-/base-ui.input.button-0.6.12.tgz#87b23b98367c42bb20979c182bf15e67ef78d446"
+  integrity sha512-9rQqGWQOVmBIe5CcJis4SfEeb44d03H357aio1oEUTSNOWh6dQKUeNpvs+0DFLq1nGm//4W22DoUv1mvPjCkug==
+  dependencies:
+    "@teambit/base-ui.elements.dots-loader" "0.6.12"
+    classnames "^2.2.6"
+    core-js "^3.0.0"
 
 "@teambit/base-ui.input.button@0.6.3":
   version "0.6.3"
@@ -4885,12 +4902,31 @@
     memoize-one "5.1.1"
     mousetrap "1.6.5"
 
-"@teambit/compilation.aspect-docs.babel@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.babel/-/compilation.aspect-docs.babel-0.0.6.tgz#587abe9a2239a965a54bb16d16c8dd721ea3adf0"
-  integrity sha512-138Ng9RUmkHcP8qGqIMAO+AGrr9QC4b2oteAPaC33kwQ+l71WxmKAyRElLMld+z/6CEePWsARd7nlDvCjRAr/Q==
+"@teambit/compilation.aspect-docs.babel@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.babel/-/compilation.aspect-docs.babel-0.0.7.tgz#51b205ad811fb8f73e6f3881f523d079e74cc06a"
+  integrity sha512-+r+AyXr2FT+5nLdBC013O6L0GLlcHniYGAvEZbB1LnCqpM4aSa2LV+wHr3pfYwpOdnob2nixsYil39uS7rXi3Q==
   dependencies:
-    "@teambit/mdx.ui.mdx-scope-context" "0.0.368"
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/compilation.aspect-docs.compiler@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.compiler/-/compilation.aspect-docs.compiler-0.0.7.tgz#a3ed4c92e83c08fd6041a793d14718db52046220"
+  integrity sha512-bGqIahHWOoWZx9WNeDcMLNyIREa6whkF6rO76Majta70Y9qi6tkumHNaClGJMaqSwn8JMBEmqksmwkJtxMG5oQ==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/compilation.aspect-docs.multi-compiler@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.multi-compiler/-/compilation.aspect-docs.multi-compiler-0.0.7.tgz#b86c94504b09ad23e78be2546b870e2684f75b67"
+  integrity sha512-7wAcZ8YJ5nXUQdsuptcXE/ceVU+PiTeSxLc5tByiAPBzcJPTFuNpd+lgzGbFklDj6Rdmb8Qnbxh6Kmru4MMQ8g==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
     core-js "^3.0.0"
 
 "@teambit/compiler@0.0.387":
@@ -4958,6 +4994,15 @@
     "@teambit/bit-error" "0.0.361"
     semver "7.3.4"
 
+"@teambit/component.aspect-docs.component@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/component.aspect-docs.component/-/component.aspect-docs.component-0.0.7.tgz#b323e75149fbbc16f4dc46cf3db5d948d6d8f403"
+  integrity sha512-WIevJpDEZCrg/f9AOJGJNvGvT6e6gP3C0S0BGlWIibysNUakHRJHtQLSKiDk/ssg5p8LikTBFNCr6mhiALwYJA==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
 "@teambit/component@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/component/-/component-0.0.387.tgz#11533ec15cd6515dc21d33e724d8eed52807afa8"
@@ -5010,6 +5055,15 @@
     react-router-dom "5.2.0"
     semver "7.3.4"
     tty-table "2.8.13"
+
+"@teambit/compositions.aspect-docs.compositions@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/compositions.aspect-docs.compositions/-/compositions.aspect-docs.compositions-0.0.7.tgz#ef018fbdf42d3aa181da9c2cacb0b1f024b2dfed"
+  integrity sha512-sEH8dlVbpi7X27Qn+1XLyrG772LkEQywHdR72t9JgyeSbUFb6BxZKU53iGvE2igxbnXXeGzc+6HBUoIjCrZOlQ==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
 
 "@teambit/compositions@0.0.387":
   version "0.0.387"
@@ -5072,6 +5126,33 @@
     core-js "^3.0.0"
     fs-extra "9.1.0"
     ramda "0.27.1"
+
+"@teambit/dependencies.aspect-docs.dependency-resolver@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/dependencies.aspect-docs.dependency-resolver/-/dependencies.aspect-docs.dependency-resolver-0.0.7.tgz#8ee1711364d706d0d9bf2805c79364bc7f987cf6"
+  integrity sha512-JWUEWHwAjj5Qm6DtsexaZ/P73BKOIPFxV4J4tnG4ErXLvh4BS6YIHvg+XSg++9Kzw4gciUg3iNtxGZpzo37QAA==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/dependencies.aspect-docs.pnpm@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/dependencies.aspect-docs.pnpm/-/dependencies.aspect-docs.pnpm-0.0.7.tgz#1f69f922cbe381ce21220cdeece93382f1467a3a"
+  integrity sha512-vFcL7ET0M4LXHVlfXzGGfAcE6WOn+l5S34ZWAdhbcQ6koh0ehb/7rC1eic6Qk8266BCmTBjndsiNxjjo+CQYAQ==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/dependencies.aspect-docs.yarn@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/dependencies.aspect-docs.yarn/-/dependencies.aspect-docs.yarn-0.0.7.tgz#f88ac879eed3ace81cdce55944b83da4660b3583"
+  integrity sha512-wBVmyelJYnknc0vQJtPdShV2eaHEZi6MKS5hsfembSdvGEipKFuzgKs3rX89o2D3GjbsjmtVk7ZzA+TIYXOnMA==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
 
 "@teambit/dependency-resolver@0.0.387":
   version "0.0.387"
@@ -5534,6 +5615,15 @@
     lodash "4.17.21"
     ramda "0.27.1"
 
+"@teambit/envs.aspect-docs.envs@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/envs.aspect-docs.envs/-/envs.aspect-docs.envs-0.0.7.tgz#f2db5172d88f22c27e71f8ea79aa8f0a633b58b5"
+  integrity sha512-+MsqGJbXpDcfYgm0LtM39V/nP4hisCh1i8P0fqPpYm1oqb88znqqBpPid/Ld8o9Ph1B+QmHvUpSgjjnIbHo1Qw==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
 "@teambit/envs@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/envs/-/envs-0.0.387.tgz#72bfa2134fdb98b37f70d6a08fef9cb72cf96425"
@@ -5593,6 +5683,15 @@
   dependencies:
     "@teambit/base-ui.input.button" "0.6.3"
     classnames "^2.2.6"
+
+"@teambit/evangelist.elements.button@0.5.41":
+  version "0.5.41"
+  resolved "https://registry.yarnpkg.com/@teambit/evangelist.elements.button/-/evangelist.elements.button-0.5.41.tgz#7ab191ebe90fe0333a331a78e02934c1d7d98301"
+  integrity sha512-223FgAHxeEY+1xjsu96wIV2frgjzpKa2xQyCZVS3hXDIyXv6QiWR7BjJuYduiKPZV9SEV39blZDTfNuLCUg7mQ==
+  dependencies:
+    "@teambit/base-ui.input.button" "0.6.12"
+    classnames "^2.2.6"
+    core-js "^3.0.0"
 
 "@teambit/evangelist.elements.icon@0.5.20":
   version "0.5.20"
@@ -5729,6 +5828,15 @@
     ramda "0.27.1"
     rxjs "6.6.3"
 
+"@teambit/generator.aspect-docs.generator@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@teambit/generator.aspect-docs.generator/-/generator.aspect-docs.generator-0.0.8.tgz#f95cce1dc41ebe20c885b7d0fc5638cd3176402a"
+  integrity sha512-oBNvpo/rvIH4P/xuD3bJmI9JaTN722kDJRAHuUgMvPUOPY6/KYJwVUaGm9BtihNXaujdEsEs3iJhstR6TobH8Q==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
 "@teambit/generator@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/generator/-/generator-0.0.387.tgz#acecc2e8ca966201ccccf0ee1b078e298e7c18e2"
@@ -5832,6 +5940,24 @@
     "@teambit/component" "0.0.387"
     "@teambit/harmony" "0.2.11"
     "@teambit/ui" "0.0.387"
+    core-js "^3.0.0"
+
+"@teambit/harmony.aspect-docs.logger@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/harmony.aspect-docs.logger/-/harmony.aspect-docs.logger-0.0.7.tgz#aeaf04bf707cab8aeb372d5e859de71718da1a34"
+  integrity sha512-/+A5FqaTEgp3RU/X4jBpzv5yGdKImybwsFa5KQyrWq0FeQ7RE2RUX6gE2jZelJN0kduWpb3CnFWs4AqRCo9nJw==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/harmony.aspect-docs.node@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/harmony.aspect-docs.node/-/harmony.aspect-docs.node-0.0.7.tgz#f103d050283cf16bf81a1845ee985b805c1b962c"
+  integrity sha512-KCWbE/u4kojcYryu/ycjpV1c2fmOrRr27zxNVBzSfKufXTK+kMgi0htdmlT9ZOJOpLRGhjd0tbX7U65JBCnGxw==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
     core-js "^3.0.0"
 
 "@teambit/harmony@0.2.11":
@@ -6075,10 +6201,21 @@
     pretty-time "1.1.0"
     string-to-color "2.2.2"
 
-"@teambit/mdx.ui.mdx-scope-context@0.0.368":
-  version "0.0.368"
-  resolved "https://registry.yarnpkg.com/@teambit/mdx.ui.mdx-scope-context/-/mdx.ui.mdx-scope-context-0.0.368.tgz#36c00313e73e8433855b569a8eccd33e2c7bdb6a"
-  integrity sha512-AoIdyGYo1JmN+3UCoyMJMYiI/CJ6P4x84TQFOJnqxrExxZgZbNx004df3cIsj92mljubGGGXTxd94loqon2G7w==
+"@teambit/mdx.aspect-docs.mdx@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/mdx.aspect-docs.mdx/-/mdx.aspect-docs.mdx-0.0.7.tgz#076863cf445b0fc7b21d368d9457d4cc9f00044b"
+  integrity sha512-sCtLdE0xOYX47q5/PoLGfa0UCo1UlhAF4Mv3YYZvzGr0cpCfDB7QAzgeMqTAoOzlpvQJBnMW6GHbGKioGU59+w==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/evangelist.elements.button" "0.5.41"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+    lodash "4.17.21"
+
+"@teambit/mdx.ui.mdx-scope-context@0.0.369":
+  version "0.0.369"
+  resolved "https://registry.yarnpkg.com/@teambit/mdx.ui.mdx-scope-context/-/mdx.ui.mdx-scope-context-0.0.369.tgz#9842c3eb438cfcda997bc2403555452b6314d3a8"
+  integrity sha512-l3ATVpfkUUydR9a85EPPexfKL9Z+LdLQAVJ81RLI1SxeYC/rWSTAqWYaRzndodwiOnb18kyPR/SOfS/cHLX/6w==
   dependencies:
     core-js "^3.0.0"
 
@@ -6281,6 +6418,24 @@
   resolved "https://registry.yarnpkg.com/@teambit/path.to-windows-compatible-path/-/path.to-windows-compatible-path-0.0.358.tgz#72d5568292cd59d565749458615b717bd70adc2d"
   integrity sha512-1zLPrtigSmqgPhddKmvXyls5zpbNIrNN+6Jzc1CP9NR2hY6iez38y9PD1M64+PvBdw6I6cvJNvg0XDR6EpmOwA==
 
+"@teambit/pipelines.aspect-docs.builder@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/pipelines.aspect-docs.builder/-/pipelines.aspect-docs.builder-0.0.7.tgz#7b5565baf48f8bdbcd36fb5df193b9fdfa34a10a"
+  integrity sha512-wKdC95YAKdsMzfZ2L9iSDsn6yNClpKul/QBp8VPNQh+uIN4pcY+EwThCkh0DP2JSA5CtEN6EFmYhiZhZr33nng==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/pkg.aspect-docs.pkg@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/pkg.aspect-docs.pkg/-/pkg.aspect-docs.pkg-0.0.7.tgz#384d6cf195a11cb634763fddbabf0f00e7962b77"
+  integrity sha512-afZbx2xLaH2B64YCvWNf3cNw1DuOCxko0rr1bJAOt7mUqL6SFg4iD5v9COKwFrlAd7wjNb2ddqtQo6QRX4DEtg==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
 "@teambit/pkg@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/pkg/-/pkg-0.0.387.tgz#aeed8a31b3252c82dfac9cedff9d9386cc385b6d"
@@ -6345,6 +6500,15 @@
     semver "7.3.4"
     supi "0.44.3"
     user-home "2.0.0"
+
+"@teambit/preview.aspect-docs.preview@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/preview.aspect-docs.preview/-/preview.aspect-docs.preview-0.0.7.tgz#2311f30f25f40dd041a178dad984a9242336427a"
+  integrity sha512-50Suyrd37Q1jabz7RyaBcIzX6HpIEISmE6EbQ7ByHCjBCx9TB12BvWXFT5ONCL8X3rJUC8e9Sh+ir2k0Xu3U5Q==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
 
 "@teambit/preview@0.0.387":
   version "0.0.387"
@@ -6429,6 +6593,24 @@
     core-js "^3.0.0"
     history "4.10.1"
     react-router-dom "5.2.0"
+
+"@teambit/react.aspect-docs.react-native@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/react.aspect-docs.react-native/-/react.aspect-docs.react-native-0.0.7.tgz#e3e2d5f540de4ca51e72eee92a80e784af5820c9"
+  integrity sha512-LFYLjI0LtyHvZxnUq8/kkKhfxItwGjW/NVT7PX6O1UngkxZjGtKc3xXO2/Q8vPkoEq+rjY34K/UtfKcJY4saiA==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
+
+"@teambit/react.aspect-docs.react@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/react.aspect-docs.react/-/react.aspect-docs.react-0.0.7.tgz#d9baa135336d43e5c1bc37d33cd06ed53ecaf2d1"
+  integrity sha512-e6rod1v4+iuIuq0EfeGleysUqUaIU1e5txVJQlgdjdTZ2E5BEAMJMnRVa/C3xyHzV0zt86s1xs0xX0PdPuxDvQ==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
 
 "@teambit/react@0.0.387":
   version "0.0.387"
@@ -6728,6 +6910,15 @@
   version "0.0.358"
   resolved "https://registry.yarnpkg.com/@teambit/types.serializable/-/types.serializable-0.0.358.tgz#e0f5024d80b14aee52d90a1f42de1be80e69eb2d"
   integrity sha512-66O3ZORssHwEy+4SIpwOREWy4Hp2pdZ+KHZwpvKqjZLRYDnJvkIDffBLwp/EE++N9d/yzunlcW246WWMF+5+UQ==
+
+"@teambit/typescript.aspect-docs.typescript@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/typescript.aspect-docs.typescript/-/typescript.aspect-docs.typescript-0.0.7.tgz#d23a89eedcac1bbbdbd56555611a68611b35b55b"
+  integrity sha512-Gfxy3f+P3C47lF69t5SMHS3Xhz8/lo5pY9UwX+GCYrD6MITKyPxXjd6gc+97X4AI08VoXaGoWK3J82CMP+rh4A==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    core-js "^3.0.0"
 
 "@teambit/typescript@0.0.387":
   version "0.0.387"
@@ -7981,6 +8172,15 @@
     "@teambit/harmony" "0.2.11"
     "@teambit/pkg" "0.0.387"
     comlink "4.3.0"
+    core-js "^3.0.0"
+
+"@teambit/workspace.aspect-docs.variants@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@teambit/workspace.aspect-docs.variants/-/workspace.aspect-docs.variants-0.0.7.tgz#81f9680b2715730c4be1557e8af3e2daa1cf565f"
+  integrity sha512-cwlMkp0mJJXibktoQDg/zB1s5vreYODD74j0az7JIiFJucf7rF7oCMmZTQUvKwdaRhIWfL2BjuDMOv2o2kVM/g==
+  dependencies:
+    "@mdx-js/react" "1.6.22"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
     core-js "^3.0.0"
 
 "@teambit/workspace@0.0.387":

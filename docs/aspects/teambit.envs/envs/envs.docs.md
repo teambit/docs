@@ -1,7 +1,6 @@
 ---
 id: envs
 title: Envs
-slug: /aspect/envs
 description: Manages Environments and Environment Services
 labels: ['environments', 'core aspect']
 ---
@@ -68,7 +67,6 @@ Runs the build pipeline (without tagging components with a new release version).
 bit build
 ```
 
-
 #### test
 
 Runs all tests.
@@ -112,9 +110,9 @@ For example:
 ```
 
 > <p style={{color: '#c31313'}}>Never use the '*' wildcard in a workspace that uses multiple environments!</p>
-Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment (see an example in the next section).
-<br />
-<br />
+> Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment (see an example in the next section).
+> <br />
+> <br />
 
 To learn more, see the 'Troubleshooting' section.
 
@@ -142,7 +140,7 @@ For example, to set the Node and React environments on two sets of components (s
 ### Extending an environment
 
 > This section goes through the steps of extending the 'main runtime'.
-See the 'Runtime Environment' section to learn how to extend multiple runtime environments.
+> See the 'Runtime Environment' section to learn how to extend multiple runtime environments.
 
 An environment extension is a component that extends an existing environment. An extension file will have the `.extension.ts` suffix as a convention.
 
@@ -324,14 +322,14 @@ export class CustomReactExtension {
   ]) {
     // Create a new Babel compiler with the 'babelConfig' configurations
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     // Use the 'override' method provided by the 'environments' aspect (not the React aspect)
     const compilerOverride = envs.override({
       getCompiler: () => {
         return babelCompiler;
-      },
+      }
     });
 
     // Compose the overrides into a single environment
@@ -535,7 +533,7 @@ export class ReactEnv implements Environment {
 
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
+      entry: context.entry.concat([require.resolve('./docs')])
     });
     return this.webpack.createDevServer(withDocs, webpackConfig);
   }
@@ -579,7 +577,7 @@ export class ReactEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
+      types: '{main}.ts'
     };
   }
 }
@@ -606,16 +604,16 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
+        'react-dom': '^16.13.1'
+      }
     };
   }
 }
@@ -650,7 +648,7 @@ export class ReactEnv implements Environment {
   getBuildPipe(): BuildTask[] {
     return [
       this.compiler.createTask('StencilCompiler', this.getCompiler()),
-      this.tester.task,
+      this.tester.task
     ];
   }
 }
@@ -676,6 +674,7 @@ An environment extension that runs on multiple runtimes is called "Aspect" an wi
 Create a `*.aspect.ts` file:
 
 For example:
+
 ```shell
 touch path/to/extension/env-extension.aspect.ts
 ```
@@ -690,12 +689,12 @@ import { Aspect } from '@teambit/harmony';
 export const ReactWithProvidersAspect = Aspect.create({
   // The ID should be your component's ID
   // Make sure to track your extension component before registering it as an Aspect
-  id: 'my-scope.react-with-providers',
+  id: 'my-scope.react-with-providers'
 });
-
 ```
 
 ### Registering a runtime extension
+
 An aspect is a collection of multiple extensions, each extending a specific runtime.
 
 Register each runtime extension to its corresponding runtime, using the `addRuntime` method.
@@ -709,7 +708,6 @@ import { PreviewRuntime } from '@teambit/preview';
 import { ReactAspect, ReactPreview } from '@teambit/react';
 import { ReactExtensionAspect } from './react-with-providers.aspect';
 
-
 export class ReactExtensionPreview {
   static runtime = PreviewRuntime;
 
@@ -722,8 +720,6 @@ export class ReactExtensionPreview {
 
 ReactExtensionAspect.addRuntime(ReactExtensionPreview);
 ```
-
-
 
 ### Runtime environments
 
@@ -758,7 +754,7 @@ export class ReactExtensionMain {
   static dependencies = [ReactAspect, EnvsAspect];
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
-    const reactExtension= envs.compose(react, [
+    const reactExtension = envs.compose(react, [
       react.overrideTsConfig(tsconfig)
     ]);
     envs.registerEnv(reactExtension);
@@ -767,7 +763,6 @@ export class ReactExtensionMain {
 }
 
 ReactExtensionAspect.addRuntime(ReactExtensionMain);
-
 ```
 
 #### UI
@@ -845,6 +840,7 @@ Remove the `*` general selection and use only specific and exclusive selectors t
 (that means your workspace directories/ namespaces need to be structured in a way that enables complete selection of all components using selectors that are exclusive).
 
 For example:
+
 ```json
 {
   "teambit.workspace/variants": {
@@ -872,12 +868,13 @@ Example:
     "components/utils": {
       "teambit.harmony/node": {},
       "teambit.envs/envs": {
-         "env": "teambit.harmony/node"
-       }
+        "env": "teambit.harmony/node"
+      }
     }
   }
 }
 ```
+
 > Notice how the Node environment was added also as a standalone aspect, to ensure that it is registered as a dependency of the selected components.
 
 ---

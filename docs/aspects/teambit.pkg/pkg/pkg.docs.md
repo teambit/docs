@@ -1,7 +1,6 @@
 ---
 id: pkg
 title: PKG
-slug: /aspects/pkg
 displayName: PKG
 description: Generates, packs and publishes component packages
 labels: ['packages', 'aspect', 'pkg']

@@ -1,7 +1,6 @@
 ---
 id: multi-compiler
 title: Multi-compiler
-slug: /aspects/multi-compiler
 description: The multi-compiler aspect allows the configuration of multiple compilers on a component
 labels:
   [
@@ -25,8 +24,8 @@ labels:
 const compiler = multiCompiler.createCompiler([
   createBabelCompiler(),
   createTsCompiler()
-])
+]);
 
 // create a multi-compiler build task.
-compiler.createTask('MultiCompiler', compiler)
+compiler.createTask('MultiCompiler', compiler);
 ```

@@ -1,7 +1,6 @@
 ---
 id: yarn
 title: Yarn
-slug: /aspects/yarn
 description: Enables the use of Yarn 2 in a Bit workspace
 labels: ['yarn', 'package manager']
 ---
