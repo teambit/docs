@@ -4,6 +4,8 @@ title: Variants
 slug: /aspects/variants
 ---
 
-import { Variants } from '@teambit/aspect-docs.variants';
+Check out the [Variants Aspect](https://bit.dev/teambit/workspace/variants) on Bit.dev
+
+import { Variants } from '@teambit/workspace.aspect-docs.variants';
 
 <Variants />

@@ -5,6 +5,8 @@ slug: /aspects/typescript
 description: Typescript compilation for Bit components.
 ---
 
-import { Typescript } from '@teambit/aspect-docs.typescript';
+Check out the [Typescript Aspect](https://bit.dev/teambit/typescript/typescript) on Bit.dev
+
+import { Typescript } from '@teambit/typescript.aspect-docs.typescript';
 
 <Typescript />

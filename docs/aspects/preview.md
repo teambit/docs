@@ -5,6 +5,8 @@ slug: /aspects/preview
 description: Handles the bundlings and rendering of component compositions and documentations
 ---
 
-import { Preview } from '@teambit/aspect-docs.preview';
+Check out the [Preview Aspect](https://bit.dev/teambit/preview/preview) on Bit.dev
+
+import { Preview } from '@teambit/preview.aspect-docs.preview';
 
 <Preview />

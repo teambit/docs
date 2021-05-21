@@ -5,6 +5,8 @@ slug: /aspects/logger
 description: Modern logging for component-driven applications.
 ---
 
-import { Logger } from '@teambit/aspect-docs.logger';
+Check out the [Logger Aspect](https://bit.dev/teambit/harmony/logger) on Bit.dev
+
+import { Logger } from '@teambit/harmony.aspect-docs.logger';
 
 <Logger />

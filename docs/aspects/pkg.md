@@ -5,6 +5,8 @@ slug: /aspects/pkg
 description: Generates, packs and publishes component packages
 ---
 
-import { Pkg } from '@teambit/aspect-docs.pkg';
+Check out the [Pkg Aspect](https://bit.dev/teambit/pkg/pkg) on Bit.dev
+
+import { } from '@teambit/pkg.aspect-docs.pkg';
 
 <Pkg />

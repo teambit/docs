@@ -5,6 +5,8 @@ slug: /aspects/react-native
 description: A Bit development environment for React Native Components
 ---
 
-import { ReactNative } from '@teambit/aspect-docs.react-native';
+Check out the [React Native Aspect](https://bit.dev/teambit/react/react-native) on Bit.dev
+
+import { ReactNative } from '@teambit/react.aspect-docs.react-native';
 
 <ReactNative />

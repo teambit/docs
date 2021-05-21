@@ -5,6 +5,8 @@ slug: /aspects/yarn
 description: Enables the use of Yarn 2 in a Bit workspace
 ---
 
-import { Yarn } from '@teambit/aspect-docs.yarn';
+Check out the [Yarn Aspect](https://bit.dev/teambit/dependencies/yarn) on Bit.dev
+
+import { Yarn } from '@teambit/dependencies.aspect-docs.yarn';
 
 <Yarn />

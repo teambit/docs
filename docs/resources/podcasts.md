@@ -3,7 +3,7 @@ id: podcasts
 title: Podcasts
 ---
 
-import { Image } from '@site/src/components/image'
+import { Image } from '@teambit/documenter.ui.image'
 
 ## Managing Component Architecture
 

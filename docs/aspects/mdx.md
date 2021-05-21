@@ -3,9 +3,10 @@ id: mdx
 title: MDX
 slug: /aspects/mdx
 description: A Bit-MDX integration for simple & powerful component documentation and independent content composition
-labels: ['mdx', 'bit', 'docs', 'md', 'markdown', 'ui']
 ---
 
-import { Mdx } from '@teambit/aspect-docs.mdx';
+Check out the [Mdx Aspect](https://bit.dev/teambit/mdx/mdx) on Bit.dev
+
+import { Mdx } from '@teambit/mdx.aspect-docs.mdx';
 
 <Mdx />;
