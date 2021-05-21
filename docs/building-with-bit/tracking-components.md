@@ -3,7 +3,7 @@ id: tracking-components
 title: Tracking Components
 ---
 
-import { Image } from '@site/src/components/image'
+import { Image } from '@teambit/documenter.ui.image'
 import BitCreate from '@site/docs/components/components/react/bit-create-component-card.md'
 import BitTemplates from '@site/docs/components/commands/bit-templates.md'
 import NameSpaces from '@site/docs/components/components/namespaces.md'

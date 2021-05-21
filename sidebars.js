@@ -1,37 +1,4 @@
 module.exports = {
-  // tutorials: [
-
-  //   {
-  //     type: 'category',
-  //     label: 'React',
-  //     items: [
-  //       {
-  //         type:'category',
-  //         label: 'Tech Jokes',
-  //         items: [
-  //           'tutorials/react/tech-jokes/try-bit',
-  //           'tutorials/react/tech-jokes/install-bit',
-  //           'tutorials/react/tech-jokes/create-remote-scope',
-  //           'tutorials/react/tech-jokes/set-up-workspace',
-  //           'tutorials/react/tech-jokes/choose-dev-env',
-  //           'tutorials/react/tech-jokes/add-components',
-  //           'tutorials/react/tech-jokes/render-component',
-  //           'tutorials/react/tech-jokes/document',
-  //           'tutorials/react/tech-jokes/test',
-  //           'tutorials/react/tech-jokes/version',
-  //           'tutorials/react/tech-jokes/import-components',
-  //           'tutorials/react/tech-jokes/explore-dependencies',
-  //           'tutorials/react/tech-jokes/auto-version-dependents',
-  //           "tutorials/react/tech-jokes/export-to-scope",
-  //           'tutorials/react/tech-jokes/install-components',
-  //           'tutorials/react/tech-jokes/ci-cd'
-  //         ]
-  //       }
-  //     ]
-  //   }
-
-  // ],
-
   resources: [
     {
       type: 'category',
@@ -54,26 +21,26 @@ module.exports = {
       type: 'category',
       label: 'aspects',
       items: [
-        'aspects/teambit.compilation/babel/babel',
-        'aspects/teambit.pipelines/builder/builder',
-        'aspects/teambit.compilation/compiler/compiler',
-        'aspects/teambit.component/component/component',
-        'aspects/teambit.compositions/compositions/compositions',
-        'aspects/teambit.dependencies/dependency-resolver/dependency-resolver',
-        'aspects/teambit.envs/envs/envs',
-        'aspects/teambit.generator/generator/generator',
-        'aspects/teambit.harmony/logger/logger',
-        'aspects/teambit.mdx/mdx/mdx',
-        'aspects/teambit.compilation/multi-compiler/multi-compiler',
-        'aspects/teambit.harmony/node/node',
-        'aspects/teambit.pkg/pkg/pkg',
-        'aspects/teambit.dependencies/pnpm/pnpm',
-        'aspects/teambit.preview/preview/preview',
-        'aspects/teambit.react/react/react',
-        'aspects/teambit.react/react-native/react-native',
-        'aspects/teambit.typescript/typescript/typescript',
-        'aspects/teambit.workspace/variants/variants',
-        'aspects/teambit.dependencies/yarn/yarn'
+        'aspects/babel',
+        'aspects/builder',
+        'aspects/compiler',
+        'aspects/component',
+        'aspects/compositions',
+        'aspects/dependency-resolver',
+        'aspects/envs',
+        'aspects/generator',
+        'aspects/logger',
+        'aspects/mdx',
+        'aspects/multi-compiler',
+        'aspects/node',
+        'aspects/pkg',
+        'aspects/pnpm',
+        'aspects/preview',
+        'aspects/react',
+        'aspects/react-native',
+        'aspects/typescript',
+        'aspects/variants',
+        'aspects/yarn'
       ],
       collapsed: false
     }
