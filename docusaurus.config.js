@@ -113,10 +113,6 @@ module.exports = {
             {
               label: 'Variants',
               to: '/aspects/variants'
-            },
-            {
-              label: 'Generator',
-              to: '/aspects/generator'
             }
           ]
         },

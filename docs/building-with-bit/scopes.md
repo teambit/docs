@@ -3,7 +3,7 @@ id: scopes
 title: Scopes
 ---
 
-import { Image } from '@teambit/documenter.ui.image'
+import { Image } from '@site/src/components/image'
 
 A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/essentials/workspace). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
 

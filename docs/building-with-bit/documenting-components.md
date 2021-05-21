@@ -3,7 +3,7 @@ id: documenting-components
 title: Documenting Components
 ---
 
-import { Image } from '@teambit/documenter.ui.image'
+import { Image } from '@site/src/components/image'
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cKMghSe_1RU?rel=0" title="How to add Docs to your Bit components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
