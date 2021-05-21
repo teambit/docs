@@ -5,6 +5,23 @@ title: Podcasts
 
 import { Image } from '@site/src/components/image'
 
+## Developer Advocacy, Navigating Tech, & Frontend Dev
+
+<div class="podcast-card">
+
+  <a href="https://rss.com/podcasts/harperdb-select-star/200839/">
+    <Image src="/img/podcasts/select-podcast.jpeg" alt="Select Podcasts" padding={20} width="65%" />
+  </a>
+  <div>
+    <p>
+    In SELECT* episode 6, Margo chats with Debbie O'Brien, a Head Developer Advocate for Bit.dev on her interesting journey into tech and across numerous roles, from leading a dev team into dev advocacy, and more! She shares a bit about her initial career shift and learning to code and what it's like to work at Bit.
+    </p>
+    <p>
+    <a href="https://rss.com/podcasts/harperdb-select-star/200839/">Select Podcast</a> - May 2021
+    </p>
+  </div>
+</div>
+
 ## Managing Component Architecture
 
 <div class="podcast-card">

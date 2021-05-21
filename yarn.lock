@@ -4885,6 +4885,14 @@
     memoize-one "5.1.1"
     mousetrap "1.6.5"
 
+"@teambit/compilation.aspect-docs.babel@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.babel/-/compilation.aspect-docs.babel-0.0.6.tgz#587abe9a2239a965a54bb16d16c8dd721ea3adf0"
+  integrity sha512-138Ng9RUmkHcP8qGqIMAO+AGrr9QC4b2oteAPaC33kwQ+l71WxmKAyRElLMld+z/6CEePWsARd7nlDvCjRAr/Q==
+  dependencies:
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.368"
+    core-js "^3.0.0"
+
 "@teambit/compiler@0.0.387":
   version "0.0.387"
   resolved "https://registry.yarnpkg.com/@teambit/compiler/-/compiler-0.0.387.tgz#64933262eea3dad2863351c99df9fb6a8681ad2d"
@@ -6066,6 +6074,13 @@
     core-js "^3.0.0"
     pretty-time "1.1.0"
     string-to-color "2.2.2"
+
+"@teambit/mdx.ui.mdx-scope-context@0.0.368":
+  version "0.0.368"
+  resolved "https://registry.yarnpkg.com/@teambit/mdx.ui.mdx-scope-context/-/mdx.ui.mdx-scope-context-0.0.368.tgz#36c00313e73e8433855b569a8eccd33e2c7bdb6a"
+  integrity sha512-AoIdyGYo1JmN+3UCoyMJMYiI/CJ6P4x84TQFOJnqxrExxZgZbNx004df3cIsj92mljubGGGXTxd94loqon2G7w==
+  dependencies:
+    core-js "^3.0.0"
 
 "@teambit/mdx@0.0.367":
   version "0.0.367"

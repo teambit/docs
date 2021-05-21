@@ -184,7 +184,8 @@ module.exports = {
         'reference/ci-cd',
         'reference/pre-existing-components',
         'reference/bit-oss-server',
-        'reference/usage-analytics'
+        'reference/usage-analytics',
+        'reference/migration'
       ]
     },
     {

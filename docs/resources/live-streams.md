@@ -7,7 +7,7 @@ title: Live Streams
 
 Intro to Bit and how to create components in Bit, compose components, version and export components to the Bit.dev cloud and then import them in a React application.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4" title="Building with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## How to Get Started with Bit
 
