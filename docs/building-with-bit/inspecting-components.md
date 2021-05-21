@@ -83,6 +83,12 @@ Example output:
   └──────────────┴───────────────────────────────────────────────────────────────┘
 ```
 
+:::tip
+
+Use `bit show --help` or `bit show -h` to get a list of available options for this command.
+
+:::
+
 ### Workspace/ Scope UI
 
 The UI analog is placed in two separate tabs, 'Dependencies' and 'Configurations'.
@@ -123,6 +129,12 @@ author: Jane Doe <jane_doe@my-org-mail.com>
 date: 09/24/2020, 4:48:51 PM
 ```
 
+:::tip
+
+Use `bit log --help` or `bit log -h` to get a list of available options for this command.
+
+:::
+
 ### Workspace/Scope UI
 
 The 'History' tab <img src="/img/log_icon.png" width="15rem"></img> shows a component's version history. The different versions can be explored further by clicking on their links.
@@ -156,9 +168,17 @@ staged components
      > app-bar. versions: 0.0.1 ... ok
 ```
 
-- Learn more [here](/building-with-bit/workspace)
+:::tip
 
-## List components in the local scope
+Use `bit status --help` or `bit status -h` to get a list of available options for this command.
+
+:::
+
+- Learn more [here](/building-with-bit/manage-workspace)
+
+## List Components
+
+### List components in the local scope
 
 Lists all components in the local scope. That includes staged components as well as imported components.
 
@@ -166,7 +186,7 @@ Lists all components in the local scope. That includes staged components as well
 bit list
 ```
 
-## List components in a remote scope
+### List components in a remote scope
 
 To list all components in a remote scope:
 
@@ -174,10 +194,16 @@ To list all components in a remote scope:
 bit list owner-name.scope-name
 ```
 
-## List versions of components in the local scope
+### List versions of components in the local scope
 
 Displays local and remote versions of components in the local scope.
 
 ```bash
 bit list --outdated
 ```
+
+:::tip
+
+Use `bit list --help` or `bit list -h` to get a list of available options for this command.
+
+:::

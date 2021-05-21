@@ -20,6 +20,12 @@ ui/button
 
 Bit triggers a warning when trying to remove modified components. Use the `--force` flag to force it.
 
+:::tip
+
+Use `bit remove --help` or `bit remove -h` to get a list of available options for this command.
+
+:::
+
 ### Effects of deleting components from a workspace
 
 Other components in the workspace may depend on removed components. Meaning that removing these dependencies affects dependent components. Several cases may occur when deleting a local component:
@@ -74,3 +80,9 @@ To deprecate a component in a workspace, specify the component ID.
 bit deprecate ui/button
 deprecated components: ui/button
 ```
+
+:::tip
+
+Use `bit deprecate --help` or `bit deprecate -h` to get a list of available options for this command.
+
+:::

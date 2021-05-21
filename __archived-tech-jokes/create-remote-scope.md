@@ -30,8 +30,8 @@ success! logged in as <account name>
 Head over the [create scope](https://bit.dev/~create-collection) screen:
 
 1. Choose your account name.
-1. Type `demo-scope` as the scope name.
-1. Select **Harmony** as "scope type".
-1. Click on "Create".
+2. Type `demo-scope` as the scope name.
+3. Select **Harmony** as "scope type".
+4. Click on "Create".
 
 <Image src="/img/create_scope_new.png" padding={10} width="60%" />

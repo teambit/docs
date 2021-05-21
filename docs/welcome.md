@@ -4,13 +4,34 @@ title: Welcome to Bit Harmony
 slug: /
 ---
 
-Bit is a platform for building with components and use them to compose apps and systems. Building with Bit gives a host of benefits for our codebase's modularity, composability, testability, and scalability.
+[Bit](/essentials/what-is-bit) is a tool for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture. Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more re-usable code.
+
+### Think more in components and less in apps
+
+Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build. We can help you solve these problems with Bit as Bit works on the component model. If each of your components are individual you can just build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
+
+### Use Bit if you want to:
+
+- Build a component eco system
+- Create a better collaboration workflow around your components
+- Publish individual components and scale the amount of components you are publishing
+- Organize components, consume components and create a development experience to do so
+- Standardize the way to build components
+- Organize components in a central place that allows you to easily onboard new people with discoverability of components.
+- Integrate different components
+- Easily managing dependencies of a variety of components
 
 ## Get started
 
-* To get started follow [this guide](/getting-started/installing-bit) 
-* Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit for building apps and systems.
-* Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities.
+- To get started follow [this guide](/getting-started/installing-bit)
+- Watch our short [videos](/resources/videos) to help you understand Bit better
+- Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit
+- Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities
+- Dive deeper into how Bit works in [Building with Bit](/building-with-bit/manage-workspace)
+- Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
+- Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
+
+Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing of components whereas the consumption of components is handled by package managers such as npm or yarn.
 
 ### Bit v15 - Harmony
 
@@ -22,9 +43,9 @@ Bit v15 **Harmony** is used by many teams and is the underlying infrastructure f
 
 ## Additional Resources and Support
 
-* [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
-* [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
-* Find more [resources](resources/conference-talks) and learn about Bit some more.
+- [Chat on Slack :beers:](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
+- [Start a discussion or suggest a feature or a fix on GitHub :wrench:](https://github.com/teambit/bit/issues)
+- Find more [resources](resources/conference-talks) and learn about Bit some more.
 
 ## Host Components on [bit.dev](https://bit.dev)
 

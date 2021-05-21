@@ -5,8 +5,23 @@ title: Workspace UI
 
 import StartDevServer from '@site/docs/components/workspace/starting-dev-server.md'
 import { Image } from '@site/src/components/image'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 To see a component in the workspace you first need to [create a component](/getting-started/creating-components). Starting the workspace with no component will result in an error.
+
+## Quick Guide
+
+<QuickGuide />
+
+1. Start the dev server
+
+```bash
+bit start
+```
+
+2. Explore the UI at [localhost:3000](http://localhost:3000/)
+
+---
 
 ## Starting the dev server
 
@@ -14,7 +29,9 @@ To see a component in the workspace you first need to [create a component](/gett
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/workspace).
+:arrow_right: Learn more about the [Workspace UI](/building-with-bit/manage-workspace).
+
+---
 
 ## Local Workspace
 
@@ -55,6 +72,8 @@ Shows any dependencies that your component has.
 See all the code files your component has and inspect them as well as a list of your component's dependencies and dev dependencies.
 
 <Image src="/img/workspace-ui/code.png" width="80%" />
+
+---
 
 ## What's Next?
 

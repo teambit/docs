@@ -78,6 +78,12 @@ Outputs (to the terminal) the compiled results in a JSON format.
 bit compile --json
 ```
 
+:::tip
+
+Use `bit compile --help` or `bit compile -h` to get a list of available options for this command.
+
+:::
+
 ## Bit processes that use the compiler
 
 ### Local dev server

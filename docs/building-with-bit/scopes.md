@@ -5,11 +5,11 @@ title: Scopes
 
 import { Image } from '@site/src/components/image'
 
-A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/building-with-bit/workspace). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
+A scope is a storage for components' tagged versions. The 'tagged versions' are the built and "committed" versions of a component. Tagged components are completely decoupled from their authoring [workspace](/essentials/workspace). That means, all configurations set by the workspace, and all generated artifacts, are stored and encapsulated in them.
 
 ## Remote scope
 
-A remote scope is a remote collection of Bit components that were 'tagged' and 'exported' from one or more [Bit workspaces](/building-with-bit/workspace). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
+A remote scope is a remote collection of Bit components that were 'tagged' and 'exported' from one or more [Bit workspaces](/essentials/workspace). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
 
 Each scope, or "collection", groups together components that are related by function or purpose. As such, a single remote scope should be maintained by a single group of stakeholders, developers and even non-developers (designers, product managers, etc.).
 

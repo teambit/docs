@@ -4,6 +4,7 @@ module.exports = {
       type: 'category',
       label: 'resources',
       items: [
+        'resources/videos',
         'resources/conference-talks',
         'resources/interviews',
         'resources/podcasts',
@@ -73,8 +74,8 @@ module.exports = {
       label: 'Essentials',
       items: [
         'essentials/what-is-bit',
-        'essentials/advantages-of-bit',
-        'essentials/components'
+        'essentials/components',
+        'essentials/workspace'
       ]
     },
 
@@ -82,8 +83,7 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
-        'building-with-bit/pre-existing-components',
-        'building-with-bit/workspace',
+        'building-with-bit/manage-workspace',
         'building-with-bit/environments',
         'building-with-bit/scopes',
         {
@@ -91,18 +91,17 @@ module.exports = {
           label: 'Components',
           items: [
             'building-with-bit/creating-components',
-            'building-with-bit/tracking-components',
-            'building-with-bit/removing-components',
+            //'building-with-bit/tracking-components',
             'building-with-bit/inspecting-components',
+            'building-with-bit/removing-components',
             'building-with-bit/component-compositions',
             'building-with-bit/documenting-components',
             'building-with-bit/testing-components',
             'building-with-bit/compiling-components',
-            'building-with-bit/exporting-components',
-            'building-with-bit/publishing-components',
             'building-with-bit/versioning-components',
-            'building-with-bit/importing-components',
-            'building-with-bit/installing-components'
+            'building-with-bit/exporting-components',
+            'building-with-bit/consuming-components'
+            //'building-with-bit/publishing-components',
           ]
         }
       ]
@@ -150,6 +149,7 @@ module.exports = {
         'reference/using-bvm',
         'reference/commands',
         'reference/ci-cd',
+        'reference/pre-existing-components',
         'reference/bit-oss-server',
         'reference/usage-analytics'
       ]

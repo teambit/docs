@@ -8,3 +8,9 @@ Any change in the `workspace.jsonc` file requires a restart of the local dev-ser
 ```bash
 bit start
 ```
+
+:::tip
+
+Use `bit start --help` or `bit start -h` to get a list of available options for this command.
+
+:::

@@ -7,16 +7,36 @@ import CreateBitAccount from '@site/docs/components/remote-scopes/create-bit-acc
 import CreateRemoteScope from '@site/docs/components/remote-scopes/create-remote-scope.md'
 import DefaultScopeName from '@site/docs/components/workspace/default-scope-name.md'
 import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
+import QuickGuide from '@site/docs/components/quick-guide.md'
 
 You can create a remote scope before or after [initializing a Bit workspace](initializing-workspace).
+
+## Quick Guide
+
+<QuickGuide />
+
+1. Create an account on [Bit.dev](https://bit.dev/) and login
+
+```bash
+bit login
+```
+
+2. Create a new scope/collection on [Bit.dev](https://bit.dev/)
+3. Update your default scope in the `workspace.jsonc` file with the name of your scope
+
+---
 
 ## What is a Scope?
 
 A scope is where the release versions of Bit components are stored. Remote scopes, either on [Bit.dev](https://bit.dev) or other self-hosted Bit servers, store exported components that are available to be used by other web projects.
 
+---
+
 ## Create a Bit.dev account
 
 <CreateBitAccount />
+
+---
 
 ## Create a Remote Scope
 
@@ -28,6 +48,8 @@ A scope is where the release versions of Bit components are stored. Remote scope
 
 :arrow_right: Learn more about [Self Hosting a Bit Scope](/building-with-bit/scopes). -->
 
+---
+
 ## Updating the Default Scope
 
 Once you have setup a [remote scope](remote-scope) you may need to configure the `workspace.jsonc` to reflect the correct username and scope.
@@ -37,6 +59,8 @@ Once you have setup a [remote scope](remote-scope) you may need to configure the
 ### Resetting the Dev Server
 
 <ResetDevServer />
+
+---
 
 ## What's Next?
 

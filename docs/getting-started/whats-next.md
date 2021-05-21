@@ -3,13 +3,13 @@ id: whats-next
 title: What's Next?
 ---
 
-Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [intialized a workspace](initializing-workspace), [created a component](creating-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
+Well done on making it to the end of the Getting Started section. So far you have [Installed Bit](installing-bit), [initialized a workspace](initializing-workspace), [created a component](creating-components), [explored the workspace UI](workspace-ui), [created a remote scope](creating-components), [exported a component](exporting-components) and [installed a component](installing-components).
 
 Are you ready to go deeper. We have so much more to show you.
 
 > **Using Bit on pre-existing projects**
 >
-> If you have components in projects you are actively working on, please refer to [this guide](/building-with-bit/pre-existing-components).
+> If you have components in projects you are actively working on, please refer to [this guide](/reference/pre-existing-components).
 
 ## Essentials
 
@@ -17,7 +17,11 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 ## Building with Bit
 
-Check out [Building with Bit](/building-with-bit/workspace), a more in-depth guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/building-with-bit/pre-existing-components).
+Check out [Building with Bit](/building-with-bit/manage-workspace), a more in-depth guide on using Bit including [documenting components](/building-with-bit/documenting-components), [testing components](/building-with-bit/testing-components), [versioning components](/building-with-bit/versioning-components) and much more as well as how to use [Bit with pre-existing components](/reference/pre-existing-components).
+
+## Extending Bit
+
+Bit is fully extendable meaning you can customize it to your liking. Learn how to [create your own component generator](/extending-bit/creating-a-custom-generator) or [add a new tab to the workspace](/extending-bit/adding-a-new-tab) for example.
 
 ## Component Architecture
 
