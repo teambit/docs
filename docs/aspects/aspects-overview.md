@@ -16,3 +16,5 @@ Below are some examples for Aspects in Bit:
 Each Aspect is implemented as a component in Bit and is composed from multiple components. Aspects communicate and compose with one another via APIs called `integration slots`.
 
 You can implement new Aspects, compose them with Bit's core Aspects and thus extending Bit's core functionality to support advanced features.
+
+Check out [Extending Bit](/extending-bit/adding-a-new-tab) for more ideas on what you can do with Aspects such as [Adding a new tab](/extending-bit/adding-a-new-tab) or [creating your own generator](/extending-bit/creating-a-custom-generator).
