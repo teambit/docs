@@ -18,6 +18,7 @@
     "@teambit/base-ui.elements.image": "^0.6.7",
     "@teambit/base-ui.elements.label": "^0.6.7",
     "@teambit/bit": "^0.0.389",
+    "@teambit/compilation.aspect-docs.babel": "^0.0.6",
     "@teambit/documenter.theme.theme-context": "^3.0.8",
     "clsx": "^1.1.1",
     "docusaurus-plugin-plausible": "^0.0.5",

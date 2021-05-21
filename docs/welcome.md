@@ -4,11 +4,19 @@ title: Welcome to Bit Harmony
 slug: /
 ---
 
-[Bit](/essentials/what-is-bit) is a tool for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture. Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more re-usable code.
+[Bit](/essentials/what-is-bit) is a tool for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture.
+
+Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more re-usable code.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Conference talk on Building Components in Harmony
 
 ### Think more in components and less in apps
 
-Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build. We can help you solve these problems with Bit as Bit works on the component model. If each of your components are individual you can just build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
+Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build.
+
+We can help you solve these problems with Bit as Bit works on the component model. If each of your components are individual you can just build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
 
 ### Use Bit if you want to:
 
@@ -21,6 +29,8 @@ Bit is not a more efficient way to do things, it's a different way to do things.
 - Integrate different components
 - Easily managing dependencies of a variety of components
 
+Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing of components whereas the consumption of components is handled by package managers such as npm or yarn.
+
 ## Get started
 
 - To get started follow [this guide](/getting-started/installing-bit)
@@ -31,7 +41,9 @@ Bit is not a more efficient way to do things, it's a different way to do things.
 - Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
 - Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
 
-Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing of components whereas the consumption of components is handled by package managers such as npm or yarn.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Workshop on Getting stated with Bit, Composing components, Exporting components and Consuming components in a React application.
 
 ### Bit v15 - Harmony
 
