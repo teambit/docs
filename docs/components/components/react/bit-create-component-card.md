@@ -54,7 +54,7 @@ bit create react-component-js card --namespace ui
   </TabItem>
 </Tabs>
 
-The following message will appear in the terminal and your component will be created at the location specified and using the [env](/aspect/envs) that has been set in your `workspace.jsonc`.
+The following message will appear in the terminal and your component will be created at the location specified and using the [env](/aspects/envs) that has been set in your `workspace.jsonc`.
 
 ```bash
 the following 1 component(s) were created

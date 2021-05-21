@@ -1,7 +1,6 @@
 ---
 id: react-native
 title: React Native
-slug: /aspects/react-native
 description: A Bit development environment for React Native Components
 labels: ['react-native', 'environment', 'env', 'aspect', 'extension']
 ---
@@ -121,7 +120,9 @@ export class CustomReactNativeExtension {
   static dependencies: any = [EnvsAspect, ReactNativeAspect];
 
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
-    const customReactNativeEnv = reactNative.compose([reactNative.overrideTsConfig(tsconfig)]);
+    const customReactNativeEnv = reactNative.compose([
+      reactNative.overrideTsConfig(tsconfig)
+    ]);
 
     envs.registerEnv(customreactNativeEnv);
 
@@ -155,14 +156,18 @@ export class CustomReactNativeExtension {
 
   static dependencies: any = [EnvsAspect, reactNative, BabelAspect];
 
-  static async provider([envs, reactNative, babel]: [EnvsMain, ReactNativeMain, BabelMain]) {
+  static async provider([envs, reactNative, babel]: [
+    EnvsMain,
+    ReactNativeMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customReactNativeEnv = reactNative.compose([
       reactNative.overrideCompiler(babelCompiler),
-      reactNative.overrideCompilerTasks([babelCompiler.createTask()]),
+      reactNative.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customReactNativeEnv);
@@ -452,7 +457,9 @@ export class CustomReactNativeExtension {
   static dependencies: any = [EnvsAspect, ReactNativeAspect];
 
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
-    const customReactNativeExtension = reactNative.compose([reactNative.overrideTsConfig(tsconfig)]);
+    const customReactNativeExtension = reactNative.compose([
+      reactNative.overrideTsConfig(tsconfig)
+    ]);
 
     envs.registerEnv(customReactNativeExtension);
 
@@ -489,14 +496,18 @@ export class CustomReactNativeExtension {
 
   static dependencies: any = [EnvsAspect, ReactNativeAspect, BabelAspect];
 
-  static async provider([envs, reactNative, babel]: [EnvsMain, ReactNativeMain, BabelMain]) {
+  static async provider([envs, reactNative, babel]: [
+    EnvsMain,
+    ReactNativeMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customReactNativeExtension = reactNative.compose([
       reactNative.overrideCompiler(babelCompiler),
-      reactNative.overrideCompilerTasks([babelCompiler.createTask()]),
+      reactNative.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customReactNativeExtension);
@@ -592,7 +603,9 @@ export class ReactNative {
     const reactNativePipe = reactNative.env.getBuildPipe();
     // Add the custom task to the end of the build tasks sequence.
     const tasks = [...reactNativePipe, new CustomTask()];
-    const newReactNativeEnv = reactNative.compose([reactNative.overrideBuildPipe(tasks)]);
+    const newReactNativeEnv = reactNative.compose([
+      reactNative.overrideBuildPipe(tasks)
+    ]);
     // ...
   }
 }
@@ -607,14 +620,16 @@ Each key-value pair in a dependency-policy object signifies the package and the 
 // ...
 const newDependencies = {
   devDependencies: {
-    '@types/jest': '~26.0.9',
-  },
+    '@types/jest': '~26.0.9'
+  }
 };
 
 export class CustomReactNative {
   // ...
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
-    const newReactNativeEnv = reactNative.compose([reactNative.overrideDependencies(newDependencies)]);
+    const newReactNativeEnv = reactNative.compose([
+      reactNative.overrideDependencies(newDependencies)
+    ]);
     // ...
   }
 }
@@ -630,13 +645,15 @@ Overrides the default properties added to the `package.json` file of every packa
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
+  types: '{main}.ts'
 };
 
 export class CustomReactNative {
   // ...
   static async provider([envs, reactNative]: [EnvsMain, ReactNativeMain]) {
-    const newReactNativeEnv = reactNative.compose([reactNative.overridePackageJsonProps(newPackageProps)]);
+    const newReactNativeEnv = reactNative.compose([
+      reactNative.overridePackageJsonProps(newPackageProps)
+    ]);
     // ...
   }
 }
@@ -721,7 +738,7 @@ export class ReactNativeEnv implements Environment {
   // ...
   getDevServer(): DevServer {
     const withDocs = Object.assign(context, {
-      entry: context.entry.concat([require.resolve('./docs')]),
+      entry: context.entry.concat([require.resolve('./docs')])
     });
     return this.webpack.createDevServer(withDocs, webpackConfig);
   }
@@ -755,7 +772,7 @@ export class ReactNativeEnv implements Environment {
   getPackageJsonProps() {
     return {
       main: 'dist/{main}.js',
-      types: '{main}.ts',
+      types: '{main}.ts'
     };
   }
 }
@@ -775,16 +792,16 @@ export class ReactNativeEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
+        'react-dom': '^16.13.1'
+      }
     };
   }
 }
@@ -808,7 +825,10 @@ export class ReactNativeEnv implements Environment {
     private tester: TesterMain
   ) {}
   getBuildPipe(): BuildTask[] {
-    return [this.compiler.createTask('StencilCompiler', this.getCompiler()), this.tester.task];
+    return [
+      this.compiler.createTask('StencilCompiler', this.getCompiler()),
+      this.tester.task
+    ];
   }
 }
 ```

@@ -1,7 +1,6 @@
 ---
 id: logger
 title: Logger
-slug: /aspects/logger
 description: Modern logging for component-driven applications.
 labels: ['logger', 'component-based', 'bit']
 ---

@@ -1,7 +1,6 @@
 ---
 id: pnpm
 title: pnpm
-slug: /aspects/pnmp
 description: Enables the use of pnpm in a Bit workspace
 labels: ['pnpm', 'package manager']
 ---

@@ -1,7 +1,6 @@
 ---
 id: babel
 title: Babel Compiler
-slug: /aspects/babel
 description: Babel compilation for Bit components
 labels: ['babel', 'compiler', 'bit', 'extension', 'aspect']
 ---

@@ -1,7 +1,6 @@
 ---
 id: compiler
 title: Compiler
-slug: /aspects/compiler
 ---
 
 ## Workspace Configuration
