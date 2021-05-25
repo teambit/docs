@@ -39,7 +39,7 @@ Bit.dev server provides these functions:
 The primary goal of bit.dev is to be a SaaS service for hosting remote scopes.  
 Bit.dev manages scopes in **collections** and determines the permissions users have for these collections:  
 
-- A **public** collection is is visible to all users.  
+- A **public** collection is visible to all users.  
 - A **private** collection is limited to the privileged users in the organization which owns the collection.
 
 Bit also ensures that code in private collections is not exposed via public collections and places the following restrictions on using components across collections:  
