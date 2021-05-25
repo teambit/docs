@@ -10,8 +10,6 @@ Instead of building an application that consists of lots of components we build 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Conference talk on Building Components in Harmony
-
 ### Think more in components and less in apps
 
 Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build.
