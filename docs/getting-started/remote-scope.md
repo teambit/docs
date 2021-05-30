@@ -28,7 +28,7 @@ bit login
 
 ## What is a Scope?
 
-A scope is where the release versions of Bit components are stored. Remote scopes, either on [Bit.dev](https://bit.dev) or other self-hosted Bit servers, store exported components that are available to be used by other web projects.
+[Scope](/essentials/scopes) is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/essentials/components) and access them as needed. Set Remote scopes on [Bit.dev](https://bit.dev) or self-hosted Bit servers to share components.
 
 ---
 
