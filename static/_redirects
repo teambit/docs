@@ -43,10 +43,11 @@
 /components/inspecting  /building-with-bit/inspecting-components
 /components/remove-deprecate-components  /reference/pre-existing-components
 
-/scope/overview  /building-with-bit/scopes
-/scope/set-up-remote-scope  /building-with-bit/scopes
-/scope/self-host-bit-scope  /building-with-bit/scopes
-/scope/scope-ui  /building-with-bit/scopes
+/scope/overview  /essentials/scopes
+/scope/set-up-remote-scope  /building-with-bit/scoping-components
+/scope/self-host-bit-scope  /reference/bit-oss-server
+/scope/scope-ui  /essentials/scopes
+/building-with-bit/scopes /essentials/scopes
 
 /dependencies/overview  /aspects/dependency-resolver
 /dependencies/dependency-resolution  /aspects/dependency-resolver
