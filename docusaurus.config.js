@@ -148,6 +148,18 @@ module.exports = {
             }
           ]
         },
+        {
+          label: 'Tutorials',
+          to: '/blog/',
+          activeBasePath: 'blog',
+          position: 'left',
+          items: [
+            {
+              label: 'Getting Started with Bit',
+              to: '/blog/getting-started-with-bit'
+            }
+          ]
+        },
 
         {
           type: 'docsVersionDropdown',
@@ -279,8 +291,7 @@ module.exports = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/'
+          editUrl: 'https://github.com/teambit/docs/edit/harmony'
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')]
