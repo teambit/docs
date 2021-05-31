@@ -52,7 +52,7 @@ A scope is where the release versions of Bit components are stored. Remote scope
 
 ## Updating the Default Scope
 
-Once you have setup a [remote scope](remote-scope) you may need to configure the `workspace.jsonc` to reflect the correct username and scope.
+Once you have setup a [remote scope](/getting-started/remote-scope) you may need to configure the `workspace.jsonc` to reflect the correct username and scope.
 
 <DefaultScopeName />
 
