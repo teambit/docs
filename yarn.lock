@@ -4840,13 +4840,13 @@
     memoize-one "5.1.1"
     mousetrap "1.6.5"
 
-"@teambit/compilation.aspect-docs.babel@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.babel/-/compilation.aspect-docs.babel-0.0.7.tgz#51b205ad811fb8f73e6f3881f523d079e74cc06a"
-  integrity sha512-+r+AyXr2FT+5nLdBC013O6L0GLlcHniYGAvEZbB1LnCqpM4aSa2LV+wHr3pfYwpOdnob2nixsYil39uS7rXi3Q==
+"@teambit/compilation.aspect-docs.babel@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@teambit/compilation.aspect-docs.babel/-/compilation.aspect-docs.babel-0.0.13.tgz#66fc8c62f8c8c2680a52a25ea77cbe97100bae40"
+  integrity sha512-RzEaWREcq6AiRNYprgGJb84UnaIbWcMJ9q8iNO+J4V7EcqzuaUuvAlQF0cCqnqTfVNEbe7PiDbOvjhkHXwVRHQ==
   dependencies:
     "@mdx-js/react" "1.6.22"
-    "@teambit/mdx.ui.mdx-scope-context" "0.0.369"
+    "@teambit/mdx.ui.mdx-scope-context" "0.0.374"
     core-js "^3.0.0"
 
 "@teambit/compilation.aspect-docs.compiler@^0.0.13":
@@ -6619,13 +6619,6 @@
     "@teambit/mdx.ui.docs.link" "0.0.374"
     "@teambit/mdx.ui.docs.paragraph" "0.0.374"
     "@teambit/mdx.ui.docs.snippet" "0.0.374"
-    core-js "^3.0.0"
-
-"@teambit/mdx.ui.mdx-scope-context@0.0.369":
-  version "0.0.369"
-  resolved "https://registry.yarnpkg.com/@teambit/mdx.ui.mdx-scope-context/-/mdx.ui.mdx-scope-context-0.0.369.tgz#9842c3eb438cfcda997bc2403555452b6314d3a8"
-  integrity sha512-l3ATVpfkUUydR9a85EPPexfKL9Z+LdLQAVJ81RLI1SxeYC/rWSTAqWYaRzndodwiOnb18kyPR/SOfS/cHLX/6w==
-  dependencies:
     core-js "^3.0.0"
 
 "@teambit/mdx.ui.mdx-scope-context@0.0.374":
