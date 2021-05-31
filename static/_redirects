@@ -108,3 +108,15 @@
 
 /essentials/advantages-of-bit /essentials/what-is-bit
 /resources/migration /reference/migration
+
+/aspects/teambit.compilation/babel/babel /aspects/babel
+/aspects/teambit.compilation/multi-compiler/multi-compiler/ /aspects/multi-
+/aspects/teambit.pipelines/builder/builder/ /aspects/builder
+/aspects/teambit.dependencies/dependency-resolver/dependency-resolver/ /aspects/dependency-resolver
+/aspects/teambit.harmony/node/node/ /aspects/node
+/aspects/teambit.harmony/logger/logger/ /aspects/logger
+/aspects/teambit.envs/envs/envs/ /aspects/envs
+/aspects/teambit.mdx/mdx/mdx/ /aspects/mdx
+/aspects/teambit.react/react/react/ /aspects/react
+/aspects/teambit.react/react-native/react-native/ /aspects/react-native
+/aspects/teambit.typescript/typescript/typescript/ /aspects/typescript
