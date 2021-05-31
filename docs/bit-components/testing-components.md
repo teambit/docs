@@ -1,6 +1,6 @@
 ---
 id: testing-components
-title: Testing Components
+title: Isolated Testing
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/R0LWV2gcbf8?rel=0" title="Testing your Components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

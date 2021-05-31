@@ -1,6 +1,6 @@
 ---
 id: component-compositions
-title: Compositions
+title: Render Compositions
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/so8CcUzTrn4?rel=0" title="How to Render your Component" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -74,10 +74,6 @@ module.exports = {
       label: 'Essentials',
       items: [
         'essentials/what-is-bit',
-        'essentials/components',
-        'essentials/workspace',
-        'essentials/scopes',
-        'essentials/environments'
       ]
     },
 
@@ -85,27 +81,55 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
-        'building-with-bit/manage-workspace',
-        'building-with-bit/environments',
-        'building-with-bit/scoping-components',
-        'building-with-bit/component-config',
-        'building-with-bit/scopes',
         {
           type: 'category',
-          label: 'Components',
+          label: 'Bit Components',
           items: [
-            'building-with-bit/creating-components',
-            'building-with-bit/inspecting-components',
-            'building-with-bit/removing-components',
-            'building-with-bit/component-compositions',
-            'building-with-bit/documenting-components',
-            'building-with-bit/testing-components',
-            'building-with-bit/compiling-components',
-            'building-with-bit/versioning-components',
-            'building-with-bit/exporting-components',
-            'building-with-bit/consuming-components'
+            'bit-components/what-are-components',
+            'bit-components/creating-components',
+            //'bit-components/inspecting-components', some of it should be in "creating components"
+            'bit-components/component-compositions',
+            'bit-components/documenting-components',
+            'bit-components/testing-components',
+            //'bit-components/compiling-components', redundant?
+            'bit-components/scoping-components',
+            'bit-components/consuming-components' // probably a dedicated category for consuming components and how to use it
           ]
-        }
+        },
+
+        {
+          type: 'category',
+          label: 'Local Workspace',
+          items: [
+            'bit-workspace/component-monorepo',
+            'bit-workspace/manage-workspace',
+            'bit-workspace/versioning-components',
+            'bit-workspace/removing-components',
+            'bit-workspace/workspace-scope',
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Development Environments',
+          items: [
+            'bit-environments/environments',
+            'bit-environments/component-config'
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Scopes',
+          items: [
+            'bit-scopes/remote-scope',
+            'bit-scopes/exporting-components',
+          ]
+        },
+
+        
+        
+
       ]
     },
     {

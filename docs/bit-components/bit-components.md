@@ -1,6 +1,6 @@
 ---
-id: components
-title: Bit Components
+id: what-are-components
+title: What Are Components?
 ---
 
 Components are the building blocks of modern web architectures. Encapsulated and composable components let developers build more robust software applications quickly.

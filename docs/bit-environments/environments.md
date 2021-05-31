@@ -1,6 +1,6 @@
 ---
 id: environments
-title: Development Environments
+title: Component Tooling
 ---
 
 **Component Development Environment** (or **Envs** in short) are [Bit Aspects](/aspects/overview) that standardize component development.

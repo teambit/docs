@@ -1,6 +1,6 @@
 ---
-id: workspace
-title: Local Workspace
+id: component-monorepo
+title: Component Monorepo
 ---
 
 The Bit Workspace is a local development environment for Bit Components. The local workspace gives you a monolithic development experience for building Bit Components and reusing components built by other teams.
