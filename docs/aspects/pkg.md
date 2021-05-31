@@ -7,6 +7,6 @@ description: Generates, packs and publishes component packages
 
 Check out the [Pkg Aspect](https://bit.dev/teambit/pkg/pkg) on Bit.dev
 
-import { } from '@teambit/pkg.aspect-docs.pkg';
+import { Pkg } from '@teambit/pkg.aspect-docs.pkg';
 
 <Pkg />
