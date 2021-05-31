@@ -108,7 +108,8 @@ module.exports = {
       items: [
         'essentials/what-is-bit',
         'essentials/components',
-        'essentials/workspace'
+        'essentials/workspace',
+        'essentials/environments'
       ]
     },
 
@@ -117,14 +118,13 @@ module.exports = {
       label: 'Building with Bit',
       items: [
         'building-with-bit/manage-workspace',
-        'building-with-bit/environments',
+        'building-with-bit/component-config',
         'building-with-bit/scopes',
         {
           type: 'category',
           label: 'Components',
           items: [
             'building-with-bit/creating-components',
-            //'building-with-bit/tracking-components',
             'building-with-bit/inspecting-components',
             'building-with-bit/removing-components',
             'building-with-bit/component-compositions',
@@ -134,7 +134,6 @@ module.exports = {
             'building-with-bit/versioning-components',
             'building-with-bit/exporting-components',
             'building-with-bit/consuming-components'
-            //'building-with-bit/publishing-components',
           ]
         }
       ]
