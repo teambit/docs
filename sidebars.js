@@ -85,17 +85,16 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Bit Components',
+          label: 'Components',
           items: [
             'bit-components/what-are-components',
-            //'bit-components/creating-components',
-            //'bit-components/inspecting-components', some of it should be in "creating components"
             'bit-components/component-compositions',
             'bit-components/documenting-components',
             'bit-components/testing-components',
-            //'bit-components/compiling-components', redundant?
             'bit-components/scoping-components',
-            'bit-components/consuming-components' // probably a dedicated category for consuming components and how to use it
+            'bit-workspace/versioning-components',     
+            //'bit-components/compiling-components', redundant?
+            'bit-components/consuming-components'
           ]
         },
 
@@ -105,7 +104,6 @@ module.exports = {
           items: [
             'bit-workspace/component-monorepo',
             'bit-workspace/manage-workspace',
-            'bit-workspace/versioning-components',
             'bit-workspace/removing-components',
             'bit-workspace/workspace-scope',
           ]
