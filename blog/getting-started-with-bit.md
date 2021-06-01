@@ -10,7 +10,7 @@ tags: [install, create, workspace, export, install]
 
 import { Image } from '@site/src/components/image'
 
-Let's get started with Bit and create a component that consumes another component, tag and version it and export it to the cloud and then use it in a React application.
+Let's get started with Bit and create a component that consumes another component, version and export it to the cloud and then use it in a React application.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -28,17 +28,18 @@ Once BVM has been installed we can then use it to install Bit
 bvm install
 ```
 
-You can check that Bit has been installed by running the `bvm version` command. If you run into any issues while installing then check out our [Using BVM](/reference/using-bvm) guide as you may need to configure the PATH global variable.
+You can check that Bit has been installed by running the `bit --version` command. If you run into any issues while installing then check out our [Using BVM](/reference/using-bvm) guide as you may need to configure the `PATH` global variable.
 
 ## Initialize a Workspace
 
 Next we need to initialize a new Bit harmony workspace as we want to use the harmony version of Bit. It is best to initialize a workspace in an empty directory using Git for version control.
 
 ```bash
+git init
 bit init --harmony
 ```
 
-This will give us a `workspace.jsonc` file, which is our main configuration file for our workspace, a `.bitmap` file, which is an auto generated file that maps your components when they are added to the workspace and a `.bit` directory, which is normally located in the `.git` folder when using git. This folder should be ignored by git whereas the `workspace.jsonc` file and the `.bitmap` file should be version controlled.
+This will give us a `workspace.jsonc` file, which is our main configuration file for our workspace, a `.bitmap` file, which is an auto generated file that maps your components when they are added to the workspace and a `.bit` directory, which is normally located in the `.git` folder when using Git. This folder should be ignored by git whereas the `workspace.jsonc` file and the `.bitmap` file should be version controlled.
 
 ### Installing Dependencies
 
@@ -48,7 +49,7 @@ First we will need to run the `bit install` command to install all needed depend
 bit install
 ```
 
-As we are going to be creating a React workspace we need to install react and react-dom as peer dependencies. [Peer dependencies](https://blog.bitsrc.io/understanding-peer-dependencies-in-javascript-dbdb4ab5a7be) provide the details of what the host application is expected to provide.
+As we are going to be creating a React workspace we need to install react and react-dom as `peerDependencies`. [Peer dependencies](https://blog.bitsrc.io/understanding-peer-dependencies-in-javascript-dbdb4ab5a7be) provide the details of what the host application is expected to provide.
 
 ```bash
 bit install react --type peer & bit install react-dom --type peer
@@ -294,7 +295,7 @@ As we want to show a primary and secondary variation of our button we will use t
 }
 ```
 
-To use our styles on our button we need to import the file and then we can use it by referring to `styles.button` as className.
+To use our styles on our button we need to import the file and then we can use it by referring to `styles.button` as `className`.
 
 ### Importing the styles
 
@@ -302,13 +303,20 @@ To use our styles on our button we need to import the file and then we can use i
 import styles from './button.module.scss';
 ```
 
-You may notice a warning in vscode saying it cannot find the css module or its type declarations for this file. Feel free to just ignore this warning.
+You may notice a warning in vscode saying it cannot find the css module or its type declarations for this file. Feel free to just ignore this warning. (OR - add a d.ts file for scss in the root of the project so the IDE reads it and does not scream at you on missing types):
+
+```js title="scss.d.ts"
+declare module '*.scss' {
+  const content: { [className: string]: string };
+  export = content;
+}
+```
 
 ### Setting the variation
 
 We can then set a prop of variation with the optional values of primary or secondary. When we pass down our prop we can give it the default value of primary meaning if the consumer doesn't add a variation for the button it will default to the primary variation. We then add our className passing in our button class from the styles we just imported. And in order for it to work we need to add our data-variation passing it the value of the variation prop we created.
 
-We should also modify the text prop to be something more explicit so we don't have any issues later if we have another prop called text. Let's change it to 'buttonText'.
+We should also modify the text prop to be something more explicit so we don't have any issues later if we have another prop called text. Let's change it to `buttonText`.
 
 ```jsx {14} title="button.tsx"
 import React from 'react';
@@ -340,7 +348,7 @@ As we have the dev server running we can check how our component looks on [local
 
 ## Creating Compositions
 
-We can now create another composition for our secondary button. First let's rename our BasicButton to PrimaryButton as this is the name that will be shown in the UI for our composition. We don't need to add a variation prop to the primary button as we already set a default value of primary. We can then copy and paste this composition and rename it to SecondaryButton and pass in the variation prop with the value of secondary.
+We can now create another composition for our secondary button. First let's rename our `BasicButton` to `PrimaryButton` as this is the name that will be shown in the UI for our composition. We don't need to add a variation prop to the primary button as we already set a default value of primary. We can then copy and paste this composition and rename it to `SecondaryButton` and pass in the variation prop with the value of secondary.
 
 ```jsx
 export const PrimaryButton = () => (
@@ -371,7 +379,7 @@ To improve our documentation we can update the live code block with secondary bu
 
 <Image src="/img/blog/getting-started-with-bit/docs-live.png" alt="Docs live feature showing the Button" padding={0} width="100%" />
 
-As we have modified our compositions you may notice that our test is now failing as it can't find the BasicButton composition anymore. We can fix our test and also test each variation.
+As we have modified our compositions you may notice that our test is now failing as it can't find the `BasicButton` composition anymore. We can fix our test and also test each variation.
 
 ```jsx title="button.spec.tsx"
 import React from 'react';
@@ -437,7 +445,7 @@ export function Card({ text }: CardProps) {
 
 ### Importing our component
 
-In order to add our button inside our card component we need to first import it. Bit doesn't allow using relative imports even though both components are in the same directory. The reason is that they might be in the same directory today but might not be tomorrow. This allows you to easily change your code directory structure without messing up your component imports. In order to import this component we need to find it's package name which we can see in the overview tab of the component.
+To add our button inside our card component we need to first import it. Bit doesn't allow using relative imports even though both components are in the same directory. The reason is that they might be in the same directory today but might not be tomorrow. This allows you to easily change your code directory structure without messing up your component imports, as your component becomes decoupled from the workspace directory structure. To import this component we need to find it's package name which we can see in the overview tab of the component.
 
 Once we import it we can then use it inside our card component and we can also import the Button Props and extend our Card Props to also take in the Button Props.
 
@@ -598,7 +606,7 @@ After you click on this link copy the code and paste it in the terminal to confi
 yarn add @debs-obrien/card.ui.card
 ```
 
-Now in your node_modules folder you will see we have the component installed and therefore it can be used just like you would any other npm package. As we installed the card component that depends on the button component you will see that the button component was also installed.
+Now in your `node_modules` folder you will see we have the component installed and therefore it can be used just like you would any other npm package. As we installed the card component that depends on the button component you will see that the button component was also installed.
 
 <Image src="/img/blog/getting-started-with-bit/node-modules2.png" alt="Node Modules showing component and dist folder" padding={20} width="60%" />
 
