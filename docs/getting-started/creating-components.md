@@ -29,7 +29,8 @@ Once you have [initialized a Bit workspace](/getting-started/initializing-worksp
 1. Create an example component and add it to the workspace
 
 ```bash
-bit create react-component ui/button
+bit create react-component ui/button     # TypeScript
+bit create react-component-js ui/button  # JavaScript
 ```
 
 2. Install dependencies for test files
