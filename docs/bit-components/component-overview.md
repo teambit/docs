@@ -1,11 +1,9 @@
 ---
-id: what-are-components
+id: component-overview
 title: Overview
 ---
 
-Components are the building blocks of modern web architectures. Encapsulated and composable components let developers build more robust software applications quickly.
-
-A Bit component a set of files, configuration and dependencies, implementing a reusable piece of code, such as:
+A Bit component a set of files, configuration and dependencies, implementing a reusable and composable functionality, such as:
 
 * A React, Vue or Angular component.
 * Shared stylesheet (e.g., CSS, SCSS).

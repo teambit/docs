@@ -3,33 +3,136 @@ id: component-compositions
 title: Render Compositions
 ---
 
+Compositions are the main dev tool for building with components. They provide a dedicated dev-server per each component where you can create fully featured apps with support for state management, theming and routing. Compositions act like consuming applications that compose and simulate components in various use cases.
+
+This topic describes how to use compositions for a Bit component with React.
+
+## Video Guide
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/so8CcUzTrn4?rel=0" title="How to Render your Component" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-'Compositions' are, essentially, small apps that exhibit and test a component in various potential usages.
-They serve as a way to run manual and automated integration tests, before such integrations are done by consumers of that component.
+---
 
-Moreover, a component's composition is a way to demonstrate that component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
+## Prerequisites
 
-Adding compositions to a component is done by creating a file in the component's directory, using the `*.composition.*` pattern.
+To use compositions, verify you met the following:
 
-For example:
+1. [Install Bit CLI.](TODO)
+1. [Create a Bit workspace](TODO) on a fresh Git repository.
+1. [Create a component.](TODO)
+
+---
+
+## Create Compositions
+
+Add compositions to a component by creating a file in the component's directory, using the `*.compositions.*` pattern.
 
 ```bash {3}
-└── ui/button
+└── ui/link
     ├── index.tsx
-    ├── button.composition.tsx
-    └── button.tsx
+    ├── link.composition.tsx
+    └── link.tsx
 ```
 
-Each composition is a standard usage of a component (requiring no special syntax) that is exported with a name.
+:::tip Component templates support for compositions
 
-For example, the following is a composition of the 'button' component.
+All available component templates support compositions out of the box. Use `bit create` to get started quickly.
+
+:::
+
+### Add simple composition
+
+Compositions are just name `const`s exported by the composition file.  
+A basic composition may look something like this:
 
 ```js
 import React from 'react';
-import { Button } from './button';
+import { Link } from './link';
 
-export const BasicButton = () => {
-  return <Button text="click me" />;
+export const BasicLink = () => {
+  return <Link href="/homepage">homepage</Link>;
 };
 ```
+
+### Use other components in composition
+
+In compositions you can `import` as many components as needed and build more complex simulations for your component.
+
+```js
+import React from 'react';
+import { Header } from '@acme/base-ui.header';
+import { Footer } from '@acme/base-ui.footer';
+import { Link } from './link';
+
+/**
+ * Compose header with links
+ */
+export const HeaderLinks = () => {
+  return <Header>
+          <Link href="/homepage">homepage</Link>
+          <Link href="/about">about</Link>
+          <Link href="/contact">contact</Link>
+        </Header>;
+};
+
+/**
+ * Compose footer with links
+ */
+export const FooterLinks = () => {
+  return <Footer>
+          <Link href="/homepage">homepage</Link>
+          <Link href="/about">about</Link>
+          <Link href="/contact">contact</Link>
+        </Footer>;
+};
+```
+
+### Sort compositions in many files
+
+Compositions are not limited to a single file. A component may have several files with the `*.composition.*` pattern.
+
+```bash {3}
+└── ui/link
+    ├── index.tsx
+    ├── basic-links.composition.tsx
+    ├── advanced-links.composition.tsx
+    └── link.tsx
+```
+
+---
+
+## Using Compositions for Tests
+
+MAJOR TODO HERE
+
+---
+
+## Control Composition Rendering
+
+Bit render compositions with their own dedicated dev server configuration, separated from the workspace UI.
+
+MAJOR TODO HERE
+
+---
+
+## Summary
+
+* Use compositions to create simulations of your components.
+* Compositions rendered as isolated apps with their own webpack configuration.
+* Use compositions as a drive for integration testing.
+
+---
+
+## Next Steps
+
+* For component configuration, see [configuring components](TODO).
+* For component development environment, see [component development environment](TODO).
+* For isolated testing, see [testing components](TODO).
+
+---
+
+## FAQ
+
+### Compositions & storybook
+
+TODO

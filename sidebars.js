@@ -87,7 +87,7 @@ module.exports = {
           type: 'category',
           label: 'Components',
           items: [
-            'bit-components/what-are-components',
+            'bit-components/component-overview',
             'bit-components/component-compositions',
             'bit-components/documenting-components',
             'bit-components/testing-components',
