@@ -11,6 +11,8 @@ What if we thought about building components so that they are extendable, theme-
 
 Components should have a sole responsibility. In other words, a component represents a clear and meaningful functionality. Each component should include the code, styling, unit tests, documentation, and usage examples.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Why Should Teams own Features?
 
 - Helps build mastery and allows autonomy

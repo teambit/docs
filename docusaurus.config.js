@@ -123,6 +123,10 @@ module.exports = {
           position: 'left',
           items: [
             {
+              label: 'Videos',
+              to: '/resources/videos'
+            },
+            {
               label: 'Conference Talks',
               to: '/resources/conference-talks'
             },
