@@ -81,12 +81,14 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
+
+
         {
           type: 'category',
           label: 'Bit Components',
           items: [
             'bit-components/what-are-components',
-            'bit-components/creating-components',
+            //'bit-components/creating-components',
             //'bit-components/inspecting-components', some of it should be in "creating components"
             'bit-components/component-compositions',
             'bit-components/documenting-components',
