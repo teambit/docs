@@ -18,7 +18,7 @@ We recommend names to be specific to the topic handled by components:
 
 :::tip Component Scope and Target Remote
 
-Component Scope name is used to determine the target remote Bit scope for exporting components. When defining scopes for components its important to also create remote scopes of the same names. [Lean more](#create-a-remote-scope)
+Component Scope name is used to determine the target remote Bit scope for exporting components. When defining scopes for components it's important to also create remote scopes of the same names. [Lean more](#create-a-remote-scope)
 :::
 
 ### Set Component Scope
@@ -79,10 +79,10 @@ In this example:
 * `ui` - namespace inside the scope.
 * `purchase-summary` - component name.
 
-When translating this to a component module name (for `import * from ....`) Bit does the following:
+When translating this to a component module name (for `import {...} from ....`) Bit does the following:
 
 * The `acme` part of the component ID translates to an [npm scope](https://docs.npmjs.com/cli/v7/using-npm/scope).
-* As npm only support 1 level of nesting components, all `/` becomes `.`.
+* As npm only supports 1 level of nesting components, all `/` becomes `.`.
 
 ```sh title="module name for component"
 @checkout/ui.purchase-summary
@@ -90,7 +90,7 @@ When translating this to a component module name (for `import * from ....`) Bit 
 
 :::tip Scopes with the `.` separator
 
-If your scope name has `.` as a separator (similar to [scopes on Bit.dev](TODO)) Bit splits it to two, and takes the first part (`{owner}`) and set as the npm scope. The second part becomes added as a namespace.
+If your scope name has `.` as a separator (similar to [scopes on Bit.dev](TODO)) Bit splits it to two, and takes the first part (`{owner}`) and sets it as the npm scope. The second part becomes the namespace.
 
 ```sh title="Module name with {owner}"
 acme.checkout/ui/purchase-summary => @acme/checkout.ui.purchase-summary
@@ -100,7 +100,7 @@ acme.checkout/ui/purchase-summary => @acme/checkout.ui.purchase-summary
 
 ## Component Scope and Workspace Structure
 
-Bit's default behavior for structuring a [workspace](/essentials/workspace) is sort components in directories according to their respected scopes. This is to make the workspace easier to navigate by creating symmetry between the logical structure of components and their physical location.
+Bit's default behavior for structuring a [workspace](/essentials/workspace) is to sort components in directories according to their respected scopes. This is to make the workspace easier to navigate by creating symmetry between the logical structure of components and their physical location.
 
 When creating new components you can define the component's scope with the following syntax:
 
