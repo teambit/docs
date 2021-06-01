@@ -1,6 +1,6 @@
 ---
 id: component-compositions
-title: Render Compositions
+title: Component Simulations
 ---
 
 Compositions are the main dev tool for building with components. They provide a dedicated dev-server per each component where you can create fully featured apps with support for state management, theming and routing. Compositions act like consuming applications that compose and simulate components in various use cases.
@@ -86,6 +86,16 @@ export const FooterLinks = () => {
         </Footer>;
 };
 ```
+
+### Explore and understand a composition
+
+To understand complex compositions...
+
+TODO
+
+component highlighter
+
+TODO
 
 ### Sort compositions in many files
 
