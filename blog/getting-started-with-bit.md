@@ -12,6 +12,8 @@ import { Image } from '@site/src/components/image'
 
 Let's get started with Bit and create a component that consumes another component, tag and version it and export it to the cloud and then use it in a React application.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Install Bit
 
 To use Bit we first need to install it BVM, Bit's version manager.
@@ -644,3 +646,9 @@ And there you have our beautiful card component rendered in our React applicatio
 <Image src="/img/blog/getting-started-with-bit/react-app.png" alt="React app showing our Bit components" padding={20} width="60%" />
 
 And that's it. Now it's time to start creating some more components and use them across your many applications and teams.
+
+## What's Next
+
+- Take a deeper look into Bit with our [Building with Bit](/building-with-bit/manage-workspace) section
+- Learn how to extend Bit and [create your own component generator](/extending-bit/creating-a-custom-generator)
+- See why you should be [Thinking in Components](/component-architecture/thinking-in-components) in our Architecture section
