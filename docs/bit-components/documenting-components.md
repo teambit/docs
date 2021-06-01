@@ -10,6 +10,12 @@ Documentation is a critical when building with components. Bit implements severa
 There are several ways to document components in Bit. Some of them are manual and some derived from your component-centric workflow.  
 Bit features a dynamic documentation template for components that aggregates several sources and generates a single documentation page per component.
 
+:::tip All components gets documentation
+
+Even if you haven't written any docs or used any feature, Bit still generates a basic documentation page for your component with basic installation instructions.
+
+:::
+
 This topic describes how to document a Bit component with React.
 
 ## Video Guide
@@ -29,6 +35,15 @@ To document component, verify you met the following:
 1. [Add tests](TODO) (optional).
 
 ---
+
+## See Component Documentation
+
+Documentation for components are rendered both on the local workspace UI and on remote Bit server.  
+Run the local dev server to see all component documentation when rendering them.
+
+```sh
+bit start
+```
 
 ## Automated Documentation
 
@@ -63,6 +78,12 @@ The most basic form of documentation is using markdown and writing docs. Add a `
 :::tip Component templates support for documentation
 
 All available component templates support MDX documentation out of the box. Use `bit create` to get started quickly.
+
+:::
+
+:::info react-fast-refresh
+
+Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your documentation.
 
 :::
 

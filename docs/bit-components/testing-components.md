@@ -1,111 +1,104 @@
 ---
 id: testing-components
-title: Isolated Testing
+title: Testing Components
 ---
+
+Tests become even more viable when working in a component based workflow. Components can be composed in many unique use cases, so having tests to check for them can reduce the amount of integration and experimentation needed in the future.
+
+Bit uses open source test runners to execute component tests.
+
+This topic describes how to test a Bit component written in React, with Jest.
+
+## Video Guide
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/R0LWV2gcbf8?rel=0" title="Testing your Components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Tests are added by placing test files inside the component's directory. Test files should be named with the pattern set by the component environment.
+---
 
-For example, the React environment runs tests in files named with the following pattern: `*.spec.[ts|tsx|js|jsx]` and `*.test.[ts|tsx|js|jsx]`
+## Prerequisites
 
-```bash {5}
-├── ui/button
+To document component, verify you met the following:
+
+1. [Install Bit CLI.](TODO)
+1. [Create a Bit workspace](TODO) on a fresh Git repository.
+1. [Create a component.](TODO)
+1. [Create a composition](TODO) (optional).
+
+---
+
+## Add Tests
+
+Add tests to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
+
+```bash {3}
+└── ui/link
     ├── index.tsx
-    ├── button.compositions.tsx
-    ├── button.docs.mdx
-    ├── button.spec.tsx
-    └── button.tsx
+    ├── link.specs.tsx
+    └── link.tsx
 ```
 
-It is highly recommended to use the component compositions as test samples.
+:::tip Component templates support for tests
 
-```tsx {4} title="button.tsx"
+All available component templates support testing out of the box. Use `bit create` to get started quickly.
+
+:::
+
+::: top tests are great addition for documentation
+
+A visual test result helps consumers to learn about the different edge cases supported by your component and makes it easy for them to want to adopt your code.
+
+:::
+
+### Install dependencies
+
+TODO
+
+```sh
+bit install @testing-library/react
+```
+
+### Write your first test
+
+Add a test case for your component.
+
+```js
 import React from 'react';
 import { render } from '@testing-library/react';
-import { expect } from 'chai';
-import { BasicButton } from './button.composition';
+import { BasicLink } from './link.composition';
 
-describe('button', () => {
-  it('should render', () => {
-    const { getByText } = render(<BasicButton />);
-    const rendered = getByText('click me');
-
-    expect(rendered).to.exist;
-  });
+it('should render with the correct text', () => {
+  const { getByText } = render(<BasicLink />);
+  const rendered = getByText('About');
+  expect(rendered).toBeTruthy();
 });
 ```
 
-## Choosing a test runner
+### Get visual component test report
 
-Bit's Tester is an Environment Service. The type of test runner (Jest, Mocha, etc.) as well as its configurations, are set by the various environments that use it as a service. That means test runners are never run directly but only via the Tester service. That also means, a single workspace may run different test runners for different components, each according to its own environment.
+To see all component tests start the local dev server and browse the component.
 
-To choose a test runner, choose an environment that uses it or extend an environment to have it run your preferred test runner.
-
-## Executing the tester manually
-
-To manually run the tester on a specific component use its component ID
-
-```bash
-bit test <component-id>
+```sh
+bit start
 ```
 
-For example:
+TODO - image
 
-```bash
+:::tip
+
+Keep the dev server running! UI will immediately refresh every time you modify your component or its tests.
+
+:::
+
+### Run tests from the CLI
+
+You can run component tests from the CLI either for specific components or your entire workspace.
+
+```bash title="Test specific component"
 bit test ui/button
 ```
 
-To manually run the tester on the entire workspace:
-
-```bash
+```bash title="Test all"
 bit test
-```
-
-### Options
-
-#### `--watch` `-w`
-
-Starts the tester in 'watch mode' (re-tests when changes are made to a component).
-
-```bash
-bit test --watch
-```
-
-#### `--debug` `-d`
-
-Starts the tester in 'debug mode'.
-
-```bash
-bit test --debug
-```
-
-#### `--env` `-e`
-
-Tests all components that use a specific environment.
-
-```bash
-bit test --env <component-id>
-```
-
-For example:
-
-```bash
-bit test --env teambit.react/react
-```
-
-#### `--scope` `-s`
-
-Tests all components in a specific scope.
-
-```bash
-bit test --scope <scope-name>
-```
-
-For example:
-
-```bash
-bit test --scope my-org.react-design-system
 ```
 
 :::tip
@@ -114,89 +107,53 @@ Use `bit test --help` or `bit test -h` to get a list of available options for th
 
 :::
 
-## Bit processes that use the tester
+### Run tests from the CLI in watch mode
 
-### Local dev server
-
-Bit's local dev server (which also runs the Workspace UI) re-tests components on each modification. This happens whenever a file is 'saved'.
-
-Test results will be shown in the terminal, as well as in the 'Tests' tab in your workspace.
-
-### Tests in `watch` mode
-
-Alongside the local dev server, Bit features a watch mode that runs different operations for modified components. Component testing is one of these tasks.
+The dev server runs tests in watch mode. Bit has the same capability from the CLI.
 
 ```bash
 bit watch
 ```
 
-### Tests in the Build Pipeline
+---
 
-Testing is also part of a component's build pipeline. As with any other Build Task, the testing task also happens in a 'component capsule', which is an isolated instance of a component. When executed as a Build Task, the tester runs tests for all new or changed dependencies of that component.
+## Using Compositions for Tests
 
-When a component's build pipeline is run as part of the tagging of a new release version, the tests output is stored in the component's new version.
+MAJOR TODO HERE
 
-## Tester workspace configurations
+---
 
-The Tester can be configured in the `workspace.jsonc` configuration file.
+## Change tests file pattern
 
-### watchOnStart
+If you use a different filename pattern for tests, you can configure Bit's [Tester aspect](TODO) with any pattern.  
+To do so, edit the `workspace.jsonc` file and add the following snippet:
 
-Determines whether to run the Tester in 'watch mode' when the running the development server.
-
-```json
+```json title="workspace.jsonc"
 {
-  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
-  "teambit.workspace/workspace": {
-    "name": "my-workspace-name",
-    "icon": "https://static.bit.dev/bit-logo.svg",
-    "defaultScope": "my-org.my-scope"
-  },
-  "teambit.defender/tester": {
-    "watchOnStart": false
-  }
-}
-```
-
-### patterns
-
-Determines the file extensions for test files.
-
-```json
-{
-  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
-  "teambit.workspace/workspace": {
-    "name": "my-workspace-name",
-    "icon": "https://static.bit.dev/bit-logo.svg",
-    "defaultScope": "my-org.my-scope"
-  },
   "teambit.defender/tester": {
     "patterns": ["*.spec.ts", "*.another-extension.ts"]
   }
 }
 ```
 
-## Testing Dependent Components
+---
 
-Bit makes the most out of your automated tests to help you maintain code in a network of independent components. It does so by:
+## Summary
 
-- **Testing components in isolated environments:**
-  Tests running as part of the build pipeline will test each component in a 'Bit Capsule' which is
-  an isolated instance of a component, generated in a separate directory in your filesystem.
-  That ensures the validity of your tests as each test runs unaffected by code that is not part of the component itself.
+* Bit runs tests for components.
+* Results in UI and terminal.
+* yeys.
 
-- **Automatically testing the dependents of a modified component:**
-  When tagging a component with a new release version, the 'build' and 'tag' processes automatically run on all dependent components, as well.
-  Since testing is part of the build process, tests of all dependent components run as well, to make sure nothing got broken due to that change.  
-  Use the `bit status` command to check the expected ripple effect of modifying a component.
+---
 
-```bash
-modified components
-(use "bit tag --all [version]" to lock a version with all your changes)
-(use "bit diff" to compare changes)
+## Next Steps
 
-     > ui/button ... ok
+* ???
 
-components pending to be tagged automatically (when their dependencies are tagged)
-     > ui/card/ ... ok
-```
+---
+
+## FAQ
+
+### Can I use different testers?
+
+atm only jest is supported :(

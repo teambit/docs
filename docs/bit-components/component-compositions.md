@@ -40,6 +40,12 @@ All available component templates support compositions out of the box. Use `bit 
 
 :::
 
+:::info react-fast-refresh
+
+Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your components.
+
+:::
+
 ### Add simple composition
 
 Compositions are just name `const`s exported by the composition file.  
@@ -52,6 +58,15 @@ import { Link } from './link';
 export const BasicLink = () => {
   return <Link href="/homepage">homepage</Link>;
 };
+```
+
+### View compositions
+
+Bit runs a dev server for components that shows all component compositions.  
+Run the dev server and browse components to see their compositions.
+
+```sh
+bit start
 ```
 
 ### Use other components in composition
@@ -108,14 +123,6 @@ Compositions are not limited to a single file. A component may have several file
     ├── advanced-links.composition.tsx
     └── link.tsx
 ```
-
----
-
-## Using Compositions for Tests
-
-MAJOR TODO HERE
-
----
 
 ## Control Composition Rendering
 
