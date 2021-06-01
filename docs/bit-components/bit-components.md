@@ -79,7 +79,9 @@ If you start using Bit from a pre-existing project and want to onboard component
 
 :::
 
-### Component contained in a directory
+---
+
+## Component contained in a directory
 
 Bit requires all of each component's implementation files to be contained in a single directory. This includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
 
@@ -107,9 +109,9 @@ You can keep sub-directories to sort internal files as needed. So you could put 
 
 ---
 
-## Bit Components are modules
+## Components are Modules
 
-Bit components differs, but complement JavaScript (ES2015) modules. For each component Bit creates a module in `node_modules` for other components to use.
+Bit components complement, and compiled to JavaScript (ES2015) modules. For each component Bit creates a module in `node_modules` for other components to use.
 
 <div style={{textAlign: 'center'}}>
     <img src="/img/module-link.png" width="240" alt="module link" />
@@ -124,6 +126,12 @@ import { ShoppingCart } from '@acme/cart.shopping-cart';
 :::info Decouple components from directory structure
 
 By using absolute paths and module links in `import` statements (as opposed to using relative paths) you decouple component's implementation from the project's file structure, making the component transferable.
+
+:::
+
+:::tip Customize compilation target output
+
+You can decide on the compilation output of components and even support multiple target outputs. [Learn more about customizing component compilation](TODO).
 
 :::
 
