@@ -47,7 +47,7 @@ Bit requires all of each component's implementation files to be contained in a s
 └── shopping-cart.tsx
 ```
 
-> You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.tsx` in a `tests` folder for instance.
+> You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.spec.tsx` in a `tests` folder for instance.
 
 This structure has several benefits:
 
@@ -81,7 +81,7 @@ When you want to `import` one component into another, even in the same workspace
 import { ShoppingCart } from '@acme/cart.shopping-cart';
 ```
 
-By using module links in `import` statements you treat treat all dependencies as regular npm packages (which they are), thereby decoupling the component's implementation from the project's file structure, making the component transferable.
+By using module links in `import` statements you treat all dependencies as regular npm packages (which they are), thereby decoupling the component's implementation from the project's file structure, making the component transferable.
 
 ## Build Affected Components
 
