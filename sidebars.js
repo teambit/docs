@@ -85,15 +85,23 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Components',
+          label: 'Component Basics',
           items: [
             'bit-components/component-overview',
+            'bit-components/compiling-components',
             'bit-components/component-compositions',
+            'bit-components/scoping-components',
             'bit-components/documenting-components',
             'bit-components/testing-components',
-            'bit-components/scoping-components',
-            'bit-workspace/versioning-components',     
-            //'bit-components/compiling-components', redundant?
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Export and Compose',
+          items: [
+            'bit-components/versioning-components',
+            'bit-components/exporting-components', 
             'bit-components/consuming-components'
           ]
         },
@@ -123,7 +131,7 @@ module.exports = {
           label: 'Scopes',
           items: [
             'bit-scopes/remote-scope',
-            'bit-scopes/exporting-components',
+
           ]
         },
 
