@@ -82,6 +82,13 @@ module.exports = {
       label: 'Building with Bit',
       items: [
 
+        {
+          type: 'category',
+          label: 'Local Workspace',
+          items: [
+            'bit-workspace/manage-workspace',
+          ]
+        },
 
         {
           type: 'category',
@@ -108,12 +115,11 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Local Workspace',
+          label: 'Manage Components',
           items: [
             'bit-workspace/component-monorepo',
-            'bit-workspace/manage-workspace',
-            'bit-workspace/removing-components',
             'bit-workspace/workspace-scope',
+            'bit-workspace/removing-components',
           ]
         },
 
