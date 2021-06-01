@@ -108,7 +108,8 @@ module.exports = {
       items: [
         'essentials/what-is-bit',
         'essentials/components',
-        'essentials/workspace'
+        'essentials/workspace',
+        'essentials/scopes'
       ]
     },
 
@@ -118,7 +119,7 @@ module.exports = {
       items: [
         'building-with-bit/manage-workspace',
         'building-with-bit/environments',
-        'building-with-bit/scopes',
+        'building-with-bit/scoping-components',
         {
           type: 'category',
           label: 'Components',
