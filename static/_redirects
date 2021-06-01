@@ -125,3 +125,5 @@
 
 /workspace/configurations /building-with-bit/manage-workspace
 /aspects/workspace /building-with-bit/manage-workspace
+
+/blog/getting-started-with-bit/ /tutorials/react/create-and-consume-components 

@@ -1,6 +1,7 @@
 ---
-slug: getting-started-with-bit
-title: Getting Started with Bit
+slug: create-and-consume-components
+title: Create and Consume Components
+description: Setup your Bit workspace, create Bit components and then version, export and consume them in a React app
 author: Debbie O'Brien
 author_title: Head Developer Advocate at Bit
 author_url: https://github.com/debs-obrien
