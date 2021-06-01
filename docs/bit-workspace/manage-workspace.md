@@ -1,6 +1,6 @@
 ---
 id: manage-workspace
-title: Manage Workspace
+title: Create Workspace
 ---
 
 Bit Workspace provides a centralized dev-experience for managing components. Manage and configure your workspace to build your component based workflow.

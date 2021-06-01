@@ -1,37 +1,4 @@
 module.exports = {
-  // tutorials: [
-
-  //   {
-  //     type: 'category',
-  //     label: 'React',
-  //     items: [
-  //       {
-  //         type:'category',
-  //         label: 'Tech Jokes',
-  //         items: [
-  //           'tutorials/react/tech-jokes/try-bit',
-  //           'tutorials/react/tech-jokes/install-bit',
-  //           'tutorials/react/tech-jokes/create-remote-scope',
-  //           'tutorials/react/tech-jokes/set-up-workspace',
-  //           'tutorials/react/tech-jokes/choose-dev-env',
-  //           'tutorials/react/tech-jokes/add-components',
-  //           'tutorials/react/tech-jokes/render-component',
-  //           'tutorials/react/tech-jokes/document',
-  //           'tutorials/react/tech-jokes/test',
-  //           'tutorials/react/tech-jokes/version',
-  //           'tutorials/react/tech-jokes/import-components',
-  //           'tutorials/react/tech-jokes/explore-dependencies',
-  //           'tutorials/react/tech-jokes/auto-version-dependents',
-  //           "tutorials/react/tech-jokes/export-to-scope",
-  //           'tutorials/react/tech-jokes/install-components',
-  //           'tutorials/react/tech-jokes/ci-cd'
-  //         ]
-  //       }
-  //     ]
-  //   }
-
-  // ],
-
   resources: [
     {
       type: 'category',
@@ -107,8 +74,6 @@ module.exports = {
       label: 'Essentials',
       items: [
         'essentials/what-is-bit',
-        'essentials/components',
-        'essentials/workspace'
       ]
     },
 
@@ -116,27 +81,57 @@ module.exports = {
       type: 'category',
       label: 'Building with Bit',
       items: [
-        'building-with-bit/manage-workspace',
-        'building-with-bit/environments',
-        'building-with-bit/scopes',
+
+
         {
           type: 'category',
-          label: 'Components',
+          label: 'Bit Components',
           items: [
-            'building-with-bit/creating-components',
-            //'building-with-bit/tracking-components',
-            'building-with-bit/inspecting-components',
-            'building-with-bit/removing-components',
-            'building-with-bit/component-compositions',
-            'building-with-bit/documenting-components',
-            'building-with-bit/testing-components',
-            'building-with-bit/compiling-components',
-            'building-with-bit/versioning-components',
-            'building-with-bit/exporting-components',
-            'building-with-bit/consuming-components'
-            //'building-with-bit/publishing-components',
+            'bit-components/what-are-components',
+            //'bit-components/creating-components',
+            //'bit-components/inspecting-components', some of it should be in "creating components"
+            'bit-components/component-compositions',
+            'bit-components/documenting-components',
+            'bit-components/testing-components',
+            //'bit-components/compiling-components', redundant?
+            'bit-components/scoping-components',
+            'bit-components/consuming-components' // probably a dedicated category for consuming components and how to use it
           ]
-        }
+        },
+
+        {
+          type: 'category',
+          label: 'Local Workspace',
+          items: [
+            'bit-workspace/component-monorepo',
+            'bit-workspace/manage-workspace',
+            'bit-workspace/versioning-components',
+            'bit-workspace/removing-components',
+            'bit-workspace/workspace-scope',
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Development Environments',
+          items: [
+            'bit-environments/environments',
+            'bit-environments/component-config'
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Scopes',
+          items: [
+            'bit-scopes/remote-scope',
+            'bit-scopes/exporting-components',
+          ]
+        },
+
+        
+        
+
       ]
     },
     {
@@ -169,12 +164,6 @@ module.exports = {
         'bit-dot-dev/authentication'
       ]
     },
-
-    // {
-    //   type: 'doc',
-    //   id: 'aspects/aspects-overview'
-    // },
-
     {
       type: 'category',
       label: 'Reference',
