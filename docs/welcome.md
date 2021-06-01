@@ -41,7 +41,7 @@ Bit makes the process of building modular applications and the development, publ
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Workshop on Getting stated with Bit, Composing components, Exporting components and Consuming components in a React application.
+Workshop on Getting started with Bit, Composing components, Exporting components and Consuming components in a React application.
 
 ### Bit v15 - Harmony
 
