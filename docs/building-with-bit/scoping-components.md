@@ -90,7 +90,7 @@ When translating this to a component module name (for `import {...} from ....`) 
 
 :::tip Scopes with the `.` separator
 
-If your scope name has `.` as a separator (similar to [scopes on Bit.dev](TODO)) Bit splits it to two, and takes the first part (`{owner}`) and sets it as the npm scope. The second part becomes the namespace.
+If your scope name has `.` as a separator (similar to scopes on Bit.dev) Bit splits it to two, and takes the first part (`{owner}`) and sets it as the npm scope. The second part becomes the namespace.
 
 ```sh title="Module name with {owner}"
 acme.checkout/ui/purchase-summary => @acme/checkout.ui.purchase-summary
