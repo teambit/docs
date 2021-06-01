@@ -15,6 +15,34 @@ module.exports = {
       {
         domain: 'harmony-docs.bit.dev'
       }
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'react',
+        path: 'tutorials/react',
+        routeBasePath: 'tutorials/react',
+        editUrl: 'https://github.com/teambit/docs/edit/harmony',
+        postsPerPage: 3,
+        feedOptions: {
+          type: 'all',
+          copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`
+        }
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'bit',
+        path: 'tutorials/bit',
+        routeBasePath: 'tutorials/bit',
+        editUrl: 'https://github.com/teambit/docs/edit/harmony',
+        postsPerPage: 3,
+        feedOptions: {
+          type: 'all',
+          copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`
+        }
+      }
     ]
   ],
   themeConfig: {
@@ -154,13 +182,13 @@ module.exports = {
         },
         {
           label: 'Tutorials',
-          to: '/blog/',
-          activeBasePath: 'blog',
+          to: '/tutorials/react',
+          activeBasePath: 'tutorials',
           position: 'left',
           items: [
             {
-              label: 'Getting Started with Bit',
-              to: '/blog/getting-started-with-bit'
+              label: 'Create and Consume Components',
+              to: '/tutorials/react/create-and-consume-components'
             }
           ]
         },
