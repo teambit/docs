@@ -26,7 +26,7 @@ All components in a scope are rendered and presented on a server. The web server
 
 ### Sort Components in Scopes
 
-Use scopes for logical and physical grouping of components according to their functionality, business concerns or any other topic. Components in a scope don't have to share technical similarities. You can keep frontend React components, SDKs, utils and even shared data types. This makes scopes be more like "features" grouping together related components implementing a cross-cutting concern with components relevant to different parts in your architecture.
+Use scopes for logical and physical grouping of components according to their functionality, business concerns or any other topic. Components in a scope don't have to share technical similarities. You can keep frontend React components, SDKs, utils and even shared data types. This makes scopes be more like "features", grouping together related components that implement a cross-cutting concern with components relevant to different parts in your architecture.
 
 <div style={{textAlign: 'center'}}>
     <img src="/img/scope-contents.png" width="500" alt="Scope Contents" />
@@ -46,11 +46,11 @@ By setting read/write access on scopes, and sorting components according to cros
 
 ### Cached Component Dependencies
 
-Scopes cache all external dependencies (i.e, components located in other scopes). This is done to ensure your own scope is completely independent, even when its different components use components maintained by others. Even in cases where a scope you depend on is no longer accessible, each scope ensures all its components are operational.
+Scopes cache all external dependencies (i.e, components located in other scopes). This is done to ensure your own scope is completely independent, even when it's different components use components maintained by others or in cases where a scope you depend on is no longer accessible, each scope ensures all its components are operational.
 
 ## Workspace Scope
 
-Every developer's [workspace](/essentials/workspace) holds a working copy of the components and their history in a local Scope. This allows browsing history, compare versions and checkout past revisions of components.
+Every developer's [workspace](/essentials/workspace) holds a working copy of the components and their history in a local Scope. This allows you to browse history, compare versions and checkout past revisions of components.
 
 A workspace scope may contain components from various remote scopes.
 
@@ -66,7 +66,8 @@ Components in Bit are independent from one another and each has its own revision
 
 ## Distributed Workflow
 
-A scope keeps a complete history of each component. This makes Bit compatible with practically any workflow, as a the "source of truth" of a component can be determined by you. It can be a Git repository or a remote scope.  
+A scope keeps a complete history of each component. This makes Bit compatible with practically any workflow, as the "source of truth" of a component can be determined by you. It can be a Git repository or a remote scope. 
+
 You may still use Git as the source of truth for all component development, and a network of remote scopes as a distribution and discovery platform for components.
 
 ## FAQ
