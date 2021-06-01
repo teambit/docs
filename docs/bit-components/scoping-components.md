@@ -281,6 +281,23 @@ You can change `defaultDirectory` to any form that fit your workflow.
 
 ## FAQ
 
+### Are there limitations on component ID?
+
+Similar to npm package, Bit Components must be require-able by a node program. Bit must fit the same naming constraints for modules in `node_modules` directory:
+
+* Component name length should be greater than zero
+* All the characters in the component name must be lowercase.
+* Component name can consist of hyphens
+* Component name must not contain any non-url-safe characters (since name ends up being part of a URL)
+* Component name should not contain any leading or trailing spaces
+* Component name should not contain any of the following characters: ~)('!*
+* Component name cannot be the same as a node.js/io.js core module nor a reserved/blacklisted name.
+* Component name length cannot exceed 214.
+
+### Can the same workspace have many scopes?
+
+Yes. Bit is a virtual layer on top of your SCM, this means the connection between the two is not a hard link. You can have components configured with different scopes and export components to many scopes from a single workspace.
+
 ### Can I decide not to scope components?
 
 No. When using Bit, the scale and granularity of components is very high, the way for Bit to manage configuration, publishing and discovery of components is according to how you scope and name components.
