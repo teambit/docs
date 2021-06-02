@@ -85,14 +85,6 @@ module.exports = {
 
         'bit-workspace/manage-workspace',
 
-       /* {
-          type: 'category',
-          label: 'Local Workspace',
-          items: [
-            'bit-workspace/manage-workspace',
-          ]
-        },*/
-
         'bit-components/component-overview',
 
         {
@@ -109,21 +101,22 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Export and Compose',
-          items: [
-            'bit-components/versioning-components',
-            'bit-components/exporting-components', 
-            'bit-components/consuming-components'
-          ]
-        },
-
-        {
-          type: 'category',
           label: 'Local Components',
           items: [
             'bit-workspace/component-monorepo',
             'bit-workspace/workspace-scope',
             'bit-workspace/removing-components',
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Hosting Components',
+          items: [
+            'bit-components/versioning-components',
+            'bit-components/exporting-components', 
+            'bit-components/consuming-components',
+            'bit-scopes/remote-scope'
           ]
         },
 
@@ -135,18 +128,6 @@ module.exports = {
             'bit-environments/component-config'
           ]
         },
-
-        {
-          type: 'category',
-          label: 'Hosting Components',
-          items: [
-            'bit-scopes/remote-scope',
-
-          ]
-        },
-
-        
-        
 
       ]
     },
