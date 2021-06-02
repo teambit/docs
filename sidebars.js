@@ -80,7 +80,7 @@ module.exports = {
 
     {
       type: 'category',
-      label: 'Building with Bit',
+      label: 'Building with Components',
       items: [
 
         'bit-workspace/manage-workspace',
@@ -91,9 +91,8 @@ module.exports = {
           type: 'category',
           label: 'Component Basics',
           items: [
-            'bit-components/compiling-components',
-            'bit-components/component-compositions',
             'bit-components/scoping-components',
+            'bit-components/component-compositions',
             'bit-components/documenting-components',
             'bit-components/testing-components',
           ]
@@ -120,17 +119,21 @@ module.exports = {
           ]
         },
 
-        {
-          type: 'category',
-          label: 'Development Tooling',
-          items: [
-            'bit-environments/environments',
-            'bit-environments/component-config'
-          ]
-        },
+        
 
       ]
     },
+
+    {
+      type: 'category',
+      label: 'Component Tooling',
+      items: [
+        'bit-environments/environments',
+        'bit-components/compiling-components',
+        'bit-environments/component-config'
+      ]
+    },
+
     {
       type: 'category',
       label: 'Extending Bit',

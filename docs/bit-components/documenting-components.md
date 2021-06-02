@@ -1,6 +1,6 @@
 ---
 id: documenting-components
-title: Document Components
+title: Documentation
 ---
 
 import { Image } from '@site/src/components/image'

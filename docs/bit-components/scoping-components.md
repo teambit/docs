@@ -1,6 +1,6 @@
 ---
 id: scoping-components
-title: Naming Components
+title: Naming
 ---
 
 import { Image } from '@site/src/components/image'
