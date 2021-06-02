@@ -1,9 +1,9 @@
 ---
 id: remote-scope
-title: Hosting Components
+title: Remote Components
 ---
 
-Scope is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/essentials/components) and access them as needed.
+Scope is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/bit-components/component-overview) and access them as needed.
 
 Set **Scopes** on remote servers to share components. Storing components on a remote scope makes them available for reuse in other projects. Use the `import` and `export` commands to fetch and push components from and to remote scopes.
 

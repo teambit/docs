@@ -55,7 +55,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/manage-workspace'
+              to: '/bit-workspace/manage-workspace'
             },
             {
               label: 'Extending Bit',
@@ -184,7 +184,7 @@ module.exports = {
             },
             {
               label: 'Building with Bit',
-              to: '/building-with-bit/manage-workspace'
+              to: '/bit-workspace/manage-workspace'
             },
             {
               label: 'What is Bit',

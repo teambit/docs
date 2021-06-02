@@ -10,9 +10,9 @@ title: Overview
 
 Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).
 
-The Build Pipeline is an [Environment Service](/building-with-bit/environments) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
+The Build Pipeline is an [Environment Service](/bit-environments/environments) responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
 
-A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/building-with-bit/environments).
+A component's default series of Build Tasks is composed of tasks set by Bit and by its [environment](/bit-environments/environments).
 
 ## Isolated builds
 

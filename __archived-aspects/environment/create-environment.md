@@ -108,8 +108,8 @@ An environment extension uses the following Bit components to extend an existing
 
 - The **'Environments' component** (`@teambit/envs`) is used to:
   1. Register the new environment
-  2. Override a ["service handler"](/building-with-bit/environments). This is done to replace a Bit component used by an environment service.
-     For example, to set the "compiler" service handler to use Babel instead of TypeScript (see an example, [here](/building-with-bit/environments)).
+  2. Override a ["service handler"](/bit-environments/environments). This is done to replace a Bit component used by an environment service.
+     For example, to set the "compiler" service handler to use Babel instead of TypeScript (see an example, [here](/bit-environments/environments)).
 
 ### Override the config for a service used by the environment
 

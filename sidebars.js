@@ -21,6 +21,7 @@ module.exports = {
       type: 'category',
       label: 'aspects',
       items: [
+        'aspects/aspects-overview',
         'aspects/babel',
         'aspects/builder',
         'aspects/compiler',
@@ -82,19 +83,22 @@ module.exports = {
       label: 'Building with Bit',
       items: [
 
-        {
+        'bit-workspace/manage-workspace',
+
+       /* {
           type: 'category',
           label: 'Local Workspace',
           items: [
             'bit-workspace/manage-workspace',
           ]
-        },
+        },*/
+
+        'bit-components/component-overview',
 
         {
           type: 'category',
           label: 'Component Basics',
           items: [
-            'bit-components/component-overview',
             'bit-components/compiling-components',
             'bit-components/component-compositions',
             'bit-components/scoping-components',
@@ -115,7 +119,7 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Manage Components',
+          label: 'Local Components',
           items: [
             'bit-workspace/component-monorepo',
             'bit-workspace/workspace-scope',
@@ -125,7 +129,7 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Development Environments',
+          label: 'Development Tooling',
           items: [
             'bit-environments/environments',
             'bit-environments/component-config'
@@ -134,7 +138,7 @@ module.exports = {
 
         {
           type: 'category',
-          label: 'Scopes',
+          label: 'Hosting Components',
           items: [
             'bit-scopes/remote-scope',
 

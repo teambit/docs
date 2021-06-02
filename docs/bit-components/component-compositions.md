@@ -17,9 +17,9 @@ This topic describes how to use compositions for a Bit component with React.
 
 To use compositions, verify you met the following:
 
-1. [Install Bit CLI.](TODO)
-1. [Create a Bit workspace](TODO) on a fresh Git repository.
-1. [Create a component.](TODO)
+1. [Install Bit CLI.](https://TODO)
+1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
+1. [Create a component.](https://TODO)
 
 ---
 
@@ -142,9 +142,9 @@ MAJOR TODO HERE
 
 ## Next Steps
 
-* For component configuration, see [configuring components](TODO).
-* For component development environment, see [component development environment](TODO).
-* For isolated testing, see [testing components](TODO).
+* For component configuration, see [configuring components](https://TODO).
+* For component development environment, see [component development environment](https://TODO).
+* For isolated testing, see [testing components](https://TODO).
 
 ---
 

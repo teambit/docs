@@ -25,9 +25,9 @@ Bit adds scoping for components by default as a way of grouping related componen
 
 To scope and name components, verify you met the following:
 
-1. [Install Bit CLI.](TODO)
-1. [Create a Bit workspace](TODO) on a fresh Git repository.
-1. Understand how to [create components](TODO).
+1. [Install Bit CLI.](https://TODO)
+1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
+1. Understand how to [create components](https://TODO).
 
 :::tip Deciding on Scopes ahead of time
 
@@ -273,9 +273,9 @@ You can change `defaultDirectory` to any form that fit your workflow.
 
 ## Next Steps
 
-* For managing many components in a workspace, see [managing components](TODO).
-* For learning more about workspace configuration, see [workspace configuration](TODO).
-* For exporting components according to their scopes, see [hosting components](TODO).
+* For managing many components in a workspace, see [managing components](https://TODO).
+* For learning more about workspace configuration, see [workspace configuration](https://TODO).
+* For exporting components according to their scopes, see [hosting components](https://TODO).
 
 ---
 

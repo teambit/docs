@@ -121,5 +121,3 @@ Run `bit status` in the terminal to get a better understanding of what the issue
 ## What's Next?
 
 Once you have created and added your component to the workspace the next step is to [render the Workspace UI](workspace-ui) so you can see the component locally.
-
-Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](/building-with-bit/removing-components)

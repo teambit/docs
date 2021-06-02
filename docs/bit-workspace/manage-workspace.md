@@ -1,6 +1,6 @@
 ---
 id: manage-workspace
-title: Create Workspace
+title: Local Workspace
 ---
 
 Bit Workspace provides a centralized dev-experience for managing components. Manage and configure your workspace to build your component based workflow.
@@ -171,5 +171,5 @@ You can keep using `package.json` to manage dependencies. `bit install` propagat
 
 Bit uses the APIs of package manager to install and manage the workspace dependencies. You can decide not to adopt this feature and use a package manager directly with a `package.json` file. There are two things to note:
 
-- Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/essentials/workspace#component-module-links).
+- Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/bit-workspace/manage-workspace#component-module-links).
 - Bit supports using different versions of the same dependency for components with the [variants aspect](aspects/variants), this will not be supported when using a package manager directly.

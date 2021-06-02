@@ -3,15 +3,15 @@ id: choose-dev-env
 title: Use a Dev Environment
 ---
 
-[A Bit Development Environment](/building-with-bit/environments) is a special type of component that configures and “bundles” together the different services required in a component development workflow.
+[A Bit Development Environment](/bit-environments/environments) is a special type of component that configures and “bundles” together the different services required in a component development workflow.
 That includes processes such as compiling, testing, linting and even documenting. Environments take direct inspiration from `react-scripts` ([CreateReactApp](https://github.com/facebook/create-react-app)).
 
 :::note
 The various services used by a Bit environment are provided by different Bit extension components.  
-Learn more about "Environment Services" [here](/building-with-bit/environments).
+Learn more about "Environment Services" [here](/bit-environments/environments).
 :::
 
-Bit provides various Environments to start from. Each Environment is [**customizable and extendible**](/building-with-bit/environments). Once you create your own environment, it can be shared and used by others just like any other Bit component.
+Bit provides various Environments to start from. Each Environment is [**customizable and extendible**](/bit-environments/environments). Once you create your own environment, it can be shared and used by others just like any other Bit component.
 
 ## Set all components to use the 'React' Environment
 

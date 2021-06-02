@@ -11,7 +11,7 @@ First, let's go through the fundamental changes between the legacy version of Bi
 
 **Component structure** - Harmony is opinionated when it comes to structuring components in the file system. Each component must be in its own directory.  
 **Dependencies** - Harmony doesn't allow relative import statements between components. Each Bit component always has a local, compiled module in `node_modules` - use them for all Bit component import statements in your code.  
-**Environments** - Harmony features a new approach for compilers/testers called [environments](building-with-bit/environments).  
+**Environments** - Harmony features a new approach for compilers/testers called [environments](/bit-environments/environments).  
 **Configuration** - In harmony config is managed in a new file format - `workspace.jsonc`.  
 **Module names** - In harmony we removed the `@bit` prefix, and instead components are now pre-fixed by `@<account_name>`.  
 **Scopes** - Collections in v15 are called **Scopes**.  
@@ -58,13 +58,13 @@ As v15 mandates a structure where components are directories, you may need to re
 
 ### Configure the workspace
 
-Our [workspace documentation](/building-with-bit/manage-workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more, as required. It is important to configure `defaultScope` correctly in `variants`, as this defines the target remote scope for each component.
+Our [workspace documentation](/bit-workspace/manage-workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more, as required. It is important to configure `defaultScope` correctly in `variants`, as this defines the target remote scope for each component.
 
 ### Environments rather than Compilers
 
-A major new introduction in Harmony is the [Component Development Environment](/building-with-bit/environments). While in the past you would select a single compiler, tester, etc for your entire workspace, now all component life-cycle processes (compilation, linting, testing, etc) are managed by the Environment, and all configurations for these environments are customizable.
+A major new introduction in Harmony is the [Component Development Environment](/bit-environments/environments). While in the past you would select a single compiler, tester, etc for your entire workspace, now all component life-cycle processes (compilation, linting, testing, etc) are managed by the Environment, and all configurations for these environments are customizable.
 
-What this means is that a first step for migrating over your components is setting up the development Environment - either by simply selecting the relevant [base Environment](/building-with-bit/environments#pre-built-environments) that Bit supplies (react, node, react-native for now), or by [extending these base Environments](/building-with-bit/environments#customizing-environments) with your own configuration files (e.g. `tsconfig`).
+What this means is that a first step for migrating over your components is setting up the development Environment - either by simply selecting the relevant [base Environment](/bit-environments/environments#pre-built-environments) that Bit supplies (react, node, react-native for now), or by [extending these base Environments](/bit-environments/environments#customizing-environments) with your own configuration files (e.g. `tsconfig`).
 
 ### Render components and add docs
 

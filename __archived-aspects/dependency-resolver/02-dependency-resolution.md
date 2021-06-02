@@ -11,7 +11,7 @@ Dependency resolution is handled by the [Dependency Resolver extension](https://
 Dependency Resolver parses out all `import` \ `require` statements in the component's files.
 It then determines if these dependencies are packages, components (listed in the workspace `.bitmap` file) or internal implementation files.
 The generated data is integrated with dependency policies that were set by various Bit extensions (mainly,
-[Environment](/building-with-bit/environments)) and by the manually configured policies set in the [workspace configuration file](/building-with-bit/workspace) (`workspace.jsonc`).
+[Environment](/bit-environments/environments)) and by the manually configured policies set in the [workspace configuration file](/building-with-bit/workspace) (`workspace.jsonc`).
 
 The result of that process determines the list of dependencies for each component, as well as their dependency-type (`dependencies`, `devDependencies` and `peerDependencies`) and version number.
 

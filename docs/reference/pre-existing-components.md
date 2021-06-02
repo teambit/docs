@@ -11,7 +11,7 @@ During the onboarding process Bit marks directories to components. For each Bit 
 - Sets the component ID.
 - Sets the component entry point.
 - Parse and resolve dependency graph.
-- Create a [Component Module Link](/essentials/workspace#component-module-links).
+- Create a [Component Module Link](/bit-workspace/manage-workspace#component-module-links).
 
 ## Recommendations
 
@@ -33,7 +33,7 @@ bit init --harmony
 
 ### Configure Workspace
 
-Configure your `workspace.json` to fit your requirements. Read more [here](/building-with-bit/manage-workspace).
+Configure your `workspace.json` to fit your requirements. Read more [here](/bit-workspace/manage-workspace).
 
 ### Run the Dev Server
 
@@ -65,7 +65,7 @@ Bit has mapped this component's files and registered them in the `.bitmap` file.
 
 In addition to that, Bit has generated a component ID, with the pattern `<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
 
-Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](building-with-bit/removing-components)
+Learn more about [tracking components](https://TODO/building-with-bit/tracking-components) and [removing components](/bit-workspace/removing-components)
 
 :::note Tip
 You can use -n which is short for --namespace
@@ -81,11 +81,11 @@ bit status
 
 ### Rendering Components
 
-To [render your component](/building-with-bit/component-compositions) - create a \*.compositions.tsx
+To [render your component](bit-components/component-compositions) - create a \*.compositions.tsx
 
 ### Documenting Components
 
-To add [documentation](/building-with-bit/documenting-components) to your component - create a \*.docs.md
+To add [documentation](/bit-components/documenting-components) to your component - create a \*.docs.md
 
 ## FAQ
 

@@ -28,11 +28,11 @@ This topic describes how to document a Bit component with React.
 
 To document component, verify you met the following:
 
-1. [Install Bit CLI.](TODO)
-1. [Create a Bit workspace](TODO) on a fresh Git repository.
-1. [Create a component.](TODO)
-1. [Create a composition](TODO) (optional).
-1. [Add tests](TODO) (optional).
+1. [Install Bit CLI.](https://TODO)
+1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
+1. [Create a component.](https://TODO)
+1. [Create a composition](https://TODO) (optional).
+1. [Add tests](https://TODO) (optional).
 
 ---
 

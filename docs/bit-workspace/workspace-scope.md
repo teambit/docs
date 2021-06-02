@@ -3,9 +3,9 @@ id: workspace-scope
 title: Component Revisioning
 ---
 
-Scope is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/essentials/components) and access them as needed.
+Scope is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/bit-components/component-overview) and access them as needed.
 
-Every developer's [workspace](/essentials/workspace) holds a working copy of the components and their history in a local Scope. This allows browsing history, compare versions and checkout past revisions of components.
+Every developer's [workspace](/bit-workspace/manage-workspace) holds a working copy of the components and their history in a local Scope. This allows browsing history, compare versions and checkout past revisions of components.
 
 A workspace scope may contain components from various remote scopes.
 

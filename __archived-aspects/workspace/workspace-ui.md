@@ -37,6 +37,6 @@ While you develop your components, Bit's UI will provide an exact picture of eve
 
 <Image src="/img/explore_deps_2.png" />
 
-#### [Run and view the tests of each component](/building-with-bit/testing-components)
+#### [Run and view the tests of each component](/bit-components/testing-components)
 
 <Image src="/img/ws_getting_started_test.png" />

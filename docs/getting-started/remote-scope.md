@@ -28,7 +28,7 @@ bit login
 
 ## What is a Scope?
 
-[Scope](/essentials/scopes) is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/essentials/components) and access them as needed. Set Remote scopes on [Bit.dev](https://bit.dev) or self-hosted Bit servers to share components.
+[Scope](/bit-scopes/remote-scope) is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/bit-components/component-overview) and access them as needed. Set Remote scopes on [Bit.dev](https://bit.dev) or self-hosted Bit servers to share components.
 
 ---
 

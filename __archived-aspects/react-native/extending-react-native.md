@@ -6,11 +6,11 @@ title: Extending React Native
 Use the React Native environment extension API to create your own customized environment extension. The extension component can then be exported to a remote scope to make it available for reuse by other workspaces. Doing so is not only a way to save time (otherwise lost on setting up a dev environment) but also a way to maintain a consistent development environment for independent React Native components authored in various decoupled workspaces.
 
 This page lists React Native's Environment Transformers. These are the 'override' methods that allow to add or override React Native's default configurations.
-**To learn how to create a new environment extension, [see here](/building-with-bit/environments).**
+**To learn how to create a new environment extension, [see here](/bit-environments/environments).**
 
 ## Environment transformers
 
-React Native's environment transformers enable merging new configurations for different [Bit aspects used by the React Native environment](/building-with-bit/environments).
+React Native's environment transformers enable merging new configurations for different [Bit aspects used by the React Native environment](/bit-environments/environments).
 
 The process of 'merging' or 'overriding' adds new properties to the existing configurations. In case of a conflict between two properties, the extension's configurations will override the extended environment's defaults.
 
@@ -50,7 +50,7 @@ export class ReactNativeExtension {
 overridePreviewConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [Preview](/building-with-bit/environments#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the [Preview](/bit-environments/environments#preview) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 
@@ -80,7 +80,7 @@ export class ReactNativeExtension {
 overrideDevServerConfig(config: Configuration): EnvTransformer
 ```
 
-Overrides the Webpack configurations for the [DevServer](/building-with-bit/environments#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
+Overrides the Webpack configurations for the [DevServer](/bit-environments/environments#devserver) environment service, with a new ([webpack.config.js](https://webpack.js.org/configuration/)) configuration file.
 
 For example:
 

@@ -5,7 +5,7 @@ title: Create a Custom Build Task
 
 // use in building with bit - cusotmising your workflow - managing tests/compilation etc
 
-Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new [environment extension](/building-with-bit/environments) or modify an existing one.
+Build pipelines are determined by the environments in use. That means, in order to override the default pipeline, we need to create a new [environment extension](/bit-environments/environments) or modify an existing one.
 
 The example task below, shown being used by a customized environment, prints out the component name of every component handled by it. In addition to that, the task returns the component name as custom metadata to be logged and/or stored in the component tagged version. [See a demo project here](https://github.com/teambit/harmony-build-examples).
 
@@ -87,7 +87,7 @@ A build task is positioned in the build pipeline sequence either by overriding t
 
 ### Override the build pipeline sequence
 
-This methodology leaves the task completely agnostic as to its position in the build pipeline. Instead, the task position is determined by the environment using the ['getBuildpipe' Environment Handler](/building-with-bit/environments#getbuildpipe).
+This methodology leaves the task completely agnostic as to its position in the build pipeline. Instead, the task position is determined by the environment using the ['getBuildpipe' Environment Handler](/bit-environments/environments#getbuildpipe).
 
 The example above shows the React environment `overrideBuildPipe` method being used to override its default pipeline. This method uses the `getBuildPipe()` Environment Handler, internally.
 

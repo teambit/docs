@@ -1,7 +1,9 @@
 ---
 id: compiling-components
-title: Compiling Components
+title: Compilation Target
 ---
+
+A MARJOR TODO HERE
 
 Compilation is a crucial step in making a component an independent module that can be used by other web projects as well as internally, by other components in the same workspace.
 When Bit starts tracking a component, a new directory is created for it inside the workspace' `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
@@ -28,9 +30,9 @@ When Bit starts tracking a component, a new directory is created for it inside t
 ## Choosing a Compiler
 
 Bit's Compiler is an Environment Service.
-The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/building-with-bit/environments) that use it as a service.
+The type of compiler (Babel, TypeScript, etc.) as well as its configurations, are set by the various [environments](/bit-environments/environments) that use it as a service.
 That means, the (specific) compiler is never run directly but only via the Compiler service. That also means, a single workspace may run different compilers for different components, each according to its own environment.
-To customize an environment's compiler, [see here](/building-with-bit/environments).
+To customize an environment's compiler, [see here](/bit-environments/environments).
 
 ## Running the compiler manually
 

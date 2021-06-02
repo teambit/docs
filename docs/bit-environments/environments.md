@@ -1,9 +1,9 @@
 ---
 id: environments
-title: Component Tooling
+title: Environment
 ---
 
-**Component Development Environment** (or **Envs** in short) are [Bit Aspects](/aspects/overview) that standardize component development.
+**Component Development Environment** (or **Envs** in short) are [Bit Aspects](/aspects/aspects-overview) that standardize component development.
 
 ## Standard Tools
 
@@ -23,7 +23,7 @@ There's no "single-config to rule them all" for component lifecycle, this is why
 
 ## Component Configuration
 
-Bit is a component-first platform where the dev-workflow is decided per-component. Envs are [aspects](/essentials/aspects) configured for components, not on the workspace. This have several benefits:
+Bit is a component-first platform where the dev-workflow is decided per-component. Envs are aspects configured for components, not on the workspace. This have several benefits:
 
 * Granular control over component operations and configurations.
 * Components using different frameworks and tools in the same workspace.

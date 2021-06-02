@@ -29,7 +29,7 @@ bit start
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-:arrow_right: Learn more about the [Workspace UI](/building-with-bit/manage-workspace).
+:arrow_right: Learn more about the [Workspace UI](/bit-workspace/manage-workspace).
 
 ---
 
@@ -41,7 +41,7 @@ See an overview of your component complete with a live playground. Documentation
 
 <Image src="/img/workspace-ui/overview.png" width="80%" />
 
-:arrow_right: Learn more about [Component Documenting](/building-with-bit/documenting-components).
+:arrow_right: Learn more about [Component Documenting](/bit-components/documenting-components).
 
 ### Compositions
 
@@ -49,7 +49,7 @@ Compositions show you how your component is composed. Compositions are created f
 
 <Image src="/img/workspace-ui/compositions.png" width="80%" />
 
-:arrow_right: Learn more about [Component Compositions](/building-with-bit/component-compositions).
+:arrow_right: Learn more about [Component Compositions](bit-components/component-compositions).
 
 ### Tests
 
@@ -57,7 +57,7 @@ See passing or failing tests. Tests are created from the `button.spec.tsx` file.
 
 <Image src="/img/workspace-ui/tests.png" width="80%" />
 
-:arrow_right: Learn more about [Component Testing](/building-with-bit/testing-components).
+:arrow_right: Learn more about [Component Testing](/bit-components/testing-components).
 
 ### Dependencies
 

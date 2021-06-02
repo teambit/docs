@@ -41,7 +41,7 @@ bit init --reset-hard
 
    - The component entry point (usually, the `index.js/ts` file).
    - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/building-with-bit/versioning-components) by the CI.
+   - Whether this component is [pending to be versioned](/bit-components/versioning-components) by the CI.
 
      <br />
 

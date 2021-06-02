@@ -1,6 +1,6 @@
 ---
 id: component-overview
-title: Overview
+title: Component Overview
 ---
 
 A Bit component a set of files, configuration and dependencies, implementing a reusable and composable functionality, such as:
@@ -25,12 +25,12 @@ The exact boundaries of the component are a design decision, we urge you to thin
 
 To create a Bit component, verify you met the following:
 
-1. [Install Bit CLI.](TODO)
-1. [Create a Bit workspace](TODO) on a fresh Git repository.
+1. [Install Bit CLI.](https://TODO)
+1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
 
 :::tip Onboarding pre-existing components
 
-To onboard components from a pre-existing project refer to [this guide](TODO).
+To onboard components from a pre-existing project refer to [this guide](https://TODO).
 
 :::
 
@@ -59,7 +59,7 @@ This command creates the following:
 
 :::tip customize component templates
 
-You can create your own component templates. For more information, [see here](TODO).
+You can create your own component templates. For more information, [see here](https://TODO).
 
 :::
 
@@ -129,7 +129,7 @@ By using absolute paths and module links in `import` statements (as opposed to u
 
 :::tip Customize compilation target output
 
-You can decide on the compilation output of components and even support multiple target outputs. [Learn more about customizing component compilation](TODO).
+You can decide on the compilation output of components and even support multiple target outputs. [Learn more about customizing component compilation](https://TODO).
 
 :::
 
@@ -151,7 +151,7 @@ Use the dev-server to see all components, get detailed information on them, see 
 
 :::tip Getting the most out of the workspace ui
 
-The workspace UI is a core dev tool for component driven development. For more information on it's contents and how to use it [click here](TODO).
+The workspace UI is a core dev tool for component driven development. For more information on it's contents and how to use it [click here](https://TODO).
 
 :::
 
@@ -181,11 +181,11 @@ Use `bit show --help` or `bit show -h` to get a list of available options for th
 
 ## Next Steps
 
-* For component configuration, see [configuring components](TODO).
-* For scoping and naming components, see [scoping components](TODO).
-* For component dependency management, see [component dependencies](TODO).
-* For managing components in a workspace, see [component monorepo](TODO).
-* For leaning about versioning, hosting and reusing of components, see [hosting components](TODO).
+* For component configuration, see [configuring components](https://TODO).
+* For scoping and naming components, see [scoping components](https://TODO).
+* For component dependency management, see [component dependencies](https://TODO).
+* For managing components in a workspace, see [component monorepo](https://TODO).
+* For leaning about versioning, hosting and reusing of components, see [hosting components](https://TODO).
 
 ---
 

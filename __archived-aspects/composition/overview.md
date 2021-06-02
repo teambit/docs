@@ -107,7 +107,7 @@ export const UserHeroWithScopeList = () => {
 
 ## Loading compositions
 
-The [Development Environment](/building-with-bit/environments) will automatically detect the composition file for each component
+The [Development Environment](/bit-environments/environments) will automatically detect the composition file for each component
 and use it to load its compositions to the workspace UI.
 
 ## Using compositions for automated testing
@@ -134,7 +134,7 @@ describe('Button', () => {
 })
 ```
 
-- Learn more about running tests in a Bit workspace, [here](/building-with-bit/testing-components)
+- Learn more about running tests in a Bit workspace, [here](/bit-components/testing-components)
 
 ## Setting providers for all your compositions
 
