@@ -18,11 +18,11 @@
     /**
      * default directory for all components in workspace.
      **/
-    "defaultDirectory": "docs/aspects/{scope}/{name}",
+    "defaultDirectory": "components/{name}",
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "my-scope"
+    "defaultScope": "bit-docs"
   },
   /**
    * main configuration for component dependency resolution.
@@ -53,7 +53,7 @@
       /**
        * uncomment to apply the react environment on all components.
        **/
-      // "teambit.react/react": { }
+      "teambit.react/react": {}
     }
   }
 }
