@@ -65,7 +65,7 @@ Bit has mapped this component's files and registered them in the `.bitmap` file.
 
 In addition to that, Bit has generated a component ID, with the pattern `<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
 
-Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](building-with-bit/removing-components)
+Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](/building-with-bit/removing-components)
 
 :::note Tip
 You can use -n which is short for --namespace

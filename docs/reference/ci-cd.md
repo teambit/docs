@@ -21,7 +21,7 @@ To get your token run the following command:
 bit config get user.token
 ```
 
-Set `user.token` as an environment parameter on your server named `BIT_TOKEN`.  
+Set `user.token` as an environment parameter on your server named `BIT_TOKEN`.
 
 ## Install Components on CI
 
@@ -29,7 +29,7 @@ Set `user.token` as an environment parameter on your server named `BIT_TOKEN`.
 
 Bit components are stored on the bit registry located in `https://node.bit.dev`.
 
-When installing components with npm or yarn, they will try to install the components starting with `@<account-name>` by resolving the `@<account-name>` registry. This configuration is stored in an `.npmrc` configuration file. Npm and yarn respect the following file locations:  
+When installing components with npm or yarn, they will try to install the components starting with `@<account-name>` by resolving the `@<account-name>` registry. This configuration is stored in an `.npmrc` configuration file. Npm and yarn respect the following file locations:
 
 - per-project config file (`/path/to/my/project/.npmrc`)
 - per-user config file (`~/.npmrc`)
@@ -53,15 +53,15 @@ failed running yarn install at /Users/user/devenv/example-npm-error/components/u
 error An unexpected error occurred: "https://registry.yarnpkg.com/@bit%2fbit.utils.string.pad-left: Not found".
 ```
 
-The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see below), but the main methods are:  
+The error is solved by making sure that one of the `.npmrc` files has the configuration prior to running npm install. The solutions vary per vendor (see below), but the main methods are:
 
 - Define `.npmrc` in the project.
 - Generate `.npmrc` file for the CI user
-- Extend `.npmrc` configuration with vendor's tools  
+- Extend `.npmrc` configuration with vendor's tools
 
 ### Manually create npmrc file
 
-You can add a `.npmrc` in your project with the following:  
+You can add a `.npmrc` in your project with the following:
 
 ```shell
 @<account-name>:registry=https://node.bit.dev
@@ -74,7 +74,7 @@ Define `BIT_TOKEN` as a secret global variable on the server.
 
 ### Generate `.npmrc` on server
 
-To generate the file dynamically, you need to run the following script (e.g. create a `bit_npm.sh` script):  
+To generate the file dynamically, you need to run the following script (e.g. create a `bit_npm.sh` script):
 
 ```shell
 echo "Adding bit.dev to npm registry"
@@ -87,7 +87,7 @@ echo "Completed adding bit.dev to npm registry"
 
 ### Netlify
 
-On Netlify, [you cannot generate the file dynamically](https://community.netlify.com/t/common-issue-using-private-npm-modules-on-netlify/795/11), and you should [add `.npmrc` file in your project](#define-npmrc-in-the-project).  
+On Netlify, [you cannot generate the file dynamically](https://community.netlify.com/t/common-issue-using-private-npm-modules-on-netlify/795/11), and you should [add `.npmrc` file in your project](#define-npmrc-in-the-project).
 
 Add the BIT_TOKEN as [environment variable](https://www.netlify.com/docs/continuous-deployment/#environment-variables)
 
@@ -95,7 +95,7 @@ Add the BIT_TOKEN as [environment variable](https://www.netlify.com/docs/continu
 
 On ZEIT Now, use the `now.json` configuration file to add an [environment variable](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets) containing the contents of your `~/.npmrc` file.
 
-First, add the following to `now.json`:  
+First, add the following to `now.json`:
 
 ```json
 {
@@ -119,7 +119,7 @@ Note that `my-app-npmrc` is the name of the secret and can be named anything you
 
 ### Gitlab
 
-In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as an initial step before running npm install.  
+In `.gitlab-ci.yml` run the script that [generates the file for the user](#generate-npmrc-on-server) as an initial step before running npm install.
 
 Add the BIT_TOKEN as an [environment variable](https://docs.gitlab.com/ee/ci/variables/)
 
@@ -160,10 +160,10 @@ NPM or Yarn throws 'package not found' when importing a component. This is likel
 
 #### Unauthorized (401) when installing a component
 
-Possible reasons:  
+Possible reasons:
 
 - npmrc is not properly [configured](#bit-installed-components)
-- You do not have the right permissions on the Collection that the components are hosted in, and are therefore unable to access its components. Make sure you have at least read permissions for the collection that host the components.  
+- You do not have the right permissions on the Collection that the components are hosted in, and are therefore unable to access its components. Make sure you have at least read permissions for the collection that host the components.
 - Yarn does not send an authentication token when installing packages from a `yarn.lock` file. This is a [known issue](https://github.com/yarnpkg/yarn/issues/4451). Make sure `always-auth` is [configured in `.npmrc`](#bit-installed-components).
 
 ## Version and Export Components on CI
@@ -178,7 +178,7 @@ npx @teambit/bvm install
 
 ### Configure Bit
 
-To configure bit on the server, you need to run the following commands:  
+To configure bit on the server, you need to run the following commands:
 
 ```shell
 bit config set analytics_reporting false
@@ -192,7 +192,7 @@ The flow for versioning and publishing components work as follows:
 
 1. On your local computer run `bit tag` with the `--soft` option to annotate that modified components should be versioned and exported.
 1. Bit updates `.bitmap` with information on new versions to publish.
-1. Collaboreate with your peers on the soon-to-be published components, their semantic version and changelog messages.
+1. Collaborate with your peers on the soon-to-be published components, their semantic version and changelog messages.
 1. Merge changes to main branch.
 1. CI/CD versions all marked components and publish them.
 1. CI/CD commits back to the repository the updated `.bitmap` without annotations on versions to be exported.
@@ -206,7 +206,7 @@ Components in local workspaces should be 'soft-tagged'.
 That means they are registered in the `.bitmap` file as pending to be versioned, but not yet versioned.
 The versioning process should only happen in the CI (once changes to the workspace are pushed to the remote repository).
 This enables collaboration on components before they are tagged and exported.  
-[**Learn more**](building-with-bit/exporting-components).
+[**Learn more**](/building-with-bit/exporting-components).
 :::
 
 ### Using GitHub Actions
@@ -225,9 +225,9 @@ name: Tag and Export Components
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   tag-and-export:
@@ -237,35 +237,35 @@ jobs:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: Install Bit Version Manager 
-      run: npm i -g @teambit/bvm
-    - name: Install latest Bit version 
-      run: bvm install
-    - name: add bvm bin folder to path
-      run: echo "$HOME/bin" >> $GITHUB_PATH
-    - name: Set up bit config
-      run: |
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Bit Version Manager
+        run: npm i -g @teambit/bvm
+      - name: Install latest Bit version
+        run: bvm install
+      - name: add bvm bin folder to path
+        run: echo "$HOME/bin" >> $GITHUB_PATH
+      - name: Set up bit config
+        run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
-    - name: Install packages using bit
-      run: bit install
-    - name: Hard-tag pending components
-      run: bit tag --persist
-    - name: Export components
-      run: bit export
-    - name: Commit changes made to .bitmap
-      run: |
-        git config --global user.name '${{ github.actor }}'
-        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
-        git add .bitmap
-        git commit -m "update .bitmap with new component versions (automated). --skip-ci"
-        git push
+      - name: Install packages using bit
+        run: bit install
+      - name: Hard-tag pending components
+        run: bit tag --persist
+      - name: Export components
+        run: bit export
+      - name: Commit changes made to .bitmap
+        run: |
+          git config --global user.name '${{ github.actor }}'
+          git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+          git add .bitmap
+          git commit -m "update .bitmap with new component versions (automated). --skip-ci"
+          git push
 ```
 
 ### Using GitLab CI
@@ -284,7 +284,7 @@ publish_components:
   only: master
   script:
     # Install Bit and configure permissions
-    - npm i -g @teambit/bvm 
+    - npm i -g @teambit/bvm
     - bvm install
     - export PATH=$HOME/bin:$PATH
     - bit config set analytics_reporting false
