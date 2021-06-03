@@ -17,12 +17,12 @@ bit init --harmony
 
 ## Workspace configuration
 
-`workspace.jsonc` is the main configuration file for your workspace. Use this file to list the different [Bit Aspects](aspects/aspects-overview) and their respected configuration to customize your component development workflow and have a centralized control over component configuration.  
+`workspace.jsonc` is the main configuration file for your workspace. Use this file to list the different [Bit Aspects](/aspects/aspects-overview) and their respected configuration to customize your component development workflow and have a centralized control over component configuration.  
 The main aspect controlling the workspace is [`teambit.workspace/workspace`](https://bit.dev/teambit/workspace/workspace), as it sets the basics for your workflow and component management.
 
 ### Default Scope
 
-Bit Components are scoped by default. When creating a workspace, Bit requires you to set a `defaultScope` for components. You can control default scope in [`teambit.workspace/variants`](aspects/variants) as well. Scope will be the prefix of each component-id and as such:
+Bit Components are scoped by default. When creating a workspace, Bit requires you to set a `defaultScope` for components. You can control default scope in [`teambit.workspace/variants`](/aspects/variants) as well. Scope will be the prefix of each component-id and as such:
 
 - Should not contain any of the following characters: `~)('!*`.
 - Can't start with `.` or `_`.
@@ -47,7 +47,7 @@ This configuration applied by default when you use the `create` or `import` comm
 
 ## Dependency resolution
 
-The [`teambit.dependencies/dependency-resolver`](aspects/dependency-resolver) aspect defines a dependencies for the workspace.
+The [`teambit.dependencies/dependency-resolver`](/aspects/dependency-resolver) aspect defines a dependencies for the workspace.
 
 ```sh title="Install all workspace dependencies"
 bit install
@@ -57,11 +57,11 @@ bit install
 bit install lodash
 ```
 
-[Dependency resolver aspect](aspects/dependency-resolver) parse each component's code to find `import` and `require` statements. It then uses file-name patterns to decide the dependency type (`dependency` or `devDependency`), and sets the dependency version according to the installed version of the package in `node_module` directory. This automates the tedious work of managing dependencies per component.
+[Dependency resolver aspect](/aspects/dependency-resolver) parse each component's code to find `import` and `require` statements. It then uses file-name patterns to decide the dependency type (`dependency` or `devDependency`), and sets the dependency version according to the installed version of the package in `node_module` directory. This automates the tedious work of managing dependencies per component.
 
 ## Component Configuration Rules
 
-[`teambit.workspace/variants`](aspects/variants) aspect lets you define sub-sections of your workspace with different configuration. With this aspect you can set different configuration policies in a centralize location. Instead of managing `package.json` per-component, you can apply different rules and policies which Bit will then calculate and define configuration for each component.
+[`teambit.workspace/variants`](/aspects/variants) aspect lets you define sub-sections of your workspace with different configuration. With this aspect you can set different configuration policies in a centralize location. Instead of managing `package.json` per-component, you can apply different rules and policies which Bit will then calculate and define configuration for each component.
 
 ```jsx
 {
@@ -156,7 +156,7 @@ bit eject teambit.documenter/button
 ### Can I onboard pre-existing components?
 
 When initializing a Bit Workspace in an existing project you may want to onboard some of the components already implemented in your project.  
-The `bit add` command "marks" directories as Bit Components. [Learn more](reference/pre-existing-components) about using it to onboard pre-existing components.
+The `bit add` command "marks" directories as Bit Components. [Learn more](/reference/pre-existing-components) about using it to onboard pre-existing components.
 
 ### How to override `defaultDirectory`?
 
@@ -172,4 +172,4 @@ You can keep using `package.json` to manage dependencies. `bit install` propagat
 Bit uses the APIs of package manager to install and manage the workspace dependencies. You can decide not to adopt this feature and use a package manager directly with a `package.json` file. There are two things to note:
 
 - Add `bit link` as a post-install script in `package.json` for Bit to generate all [Component Module Links](/essentials/workspace#component-module-links).
-- Bit supports using different versions of the same dependency for components with the [variants aspect](aspects/variants), this will not be supported when using a package manager directly.
+- Bit supports using different versions of the same dependency for components with the [variants aspect](/aspects/variants), this will not be supported when using a package manager directly.

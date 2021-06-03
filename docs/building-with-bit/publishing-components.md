@@ -118,23 +118,23 @@ For example:
 Creates a TAR file (to be published to a node package registry):
 
 ```bash
-$ bit pack <component-id>
+bit pack <component-id>
 ```
 
 Overrides the existing TAR file (in the same location):
 
 ```bash
-$ bit pack <component-id> --override
+bit pack <component-id> --override
 
-$ bit pack <component-id> -o
+bit pack <component-id> -o
 ```
 
 Returns the output in a JSON format:
 
 ```bash
-$ bit pack <component-id> --json
+bit pack <component-id> --json
 
-$ bit pack <component-id> -j
+bit pack <component-id> -j
 ```
 
 ### Publish
@@ -142,27 +142,27 @@ $ bit pack <component-id> -j
 Publishes an exported component:
 
 ```bash
-$ bit publish <componentId>
+bit publish <componentId>
 ```
 
 Publishes a staged component that has not yet been exported:
 
 ```bash
-$ bit publish <component-id> --allow-staged
+bit publish <component-id> --allow-staged
 ```
 
 Checks if the publishing process will be done successfully (without publishing):
 
 ```bash
-$ bit publish <component-id> --dry-run
+bit publish <component-id> --dry-run
 
-$ bit publish <component-id> -d
+bit publish <component-id> -d
 ```
 
 Returns the output as JSON:
 
 ```bash
-$ bit publish <component-id> --json
+bit publish <component-id> --json
 
-$ bit publish <component-id> --j
+bit publish <component-id> --j
 ```
