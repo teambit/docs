@@ -147,7 +147,7 @@ bit install @testing-library/react
 
 ### Docs File
 
-The `button.docs.mdx` file is where we document our component. We can modify the description of our component and labels to better categorize our component which is used when searching for components. As it is an mdx file we can import our component adn then use the live playground feature to show consumers of our component how to use it and let them play with the component and change things live to see it render with their changes.
+The `button.docs.mdx` file is where we document our component. We can modify the description of our component and labels to better categorize our component which is used when searching for components. As it is an mdx file we can import our component and then use the live playground feature to show consumers of our component how to use it and let them play with the component and change things live to see it render with their changes.
 
 ````jsx title="button.docs.mdx"
 ---
