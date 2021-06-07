@@ -1,6 +1,6 @@
 ---
 id: testing-components
-title: Testing
+title: Tests
 ---
 
 Tests become even more viable when working in a component based workflow. Components can be composed in many unique use cases, so having tests to check for them can reduce the amount of integration and experimentation needed in the future.
@@ -43,7 +43,7 @@ All available component templates support testing out of the box. Use `bit creat
 
 :::
 
-::: top tests are great addition for documentation
+:::info tests are great addition for documentation
 
 A visual test result helps consumers to learn about the different edge cases supported by your component and makes it easy for them to want to adopt your code.
 

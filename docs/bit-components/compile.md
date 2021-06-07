@@ -1,6 +1,6 @@
 ---
 id: compiling-components
-title: Compilation Target
+title: Compilation
 ---
 
 A MARJOR TODO HERE

@@ -17,9 +17,9 @@ This topic describes how to use compositions for a Bit component with React.
 
 To use compositions, verify you met the following:
 
-1. [Install Bit CLI.](https://TODO)
-1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
-1. [Create a component.](https://TODO)
+1. [Install Bit CLI.](/getting-started/installing-bit)
+1. [Create a Bit workspace](/getting-started/initializing-workspace) on a fresh Git repository.
+1. [Create a component.](/bit-components/component-overview)
 
 ---
 
@@ -102,16 +102,6 @@ export const FooterLinks = () => {
 };
 ```
 
-### Explore and understand a composition
-
-To understand complex compositions...
-
-TODO
-
-component highlighter
-
-TODO
-
 ### Sort compositions in many files
 
 Compositions are not limited to a single file. A component may have several files with the `*.composition.*` pattern.
@@ -123,12 +113,6 @@ Compositions are not limited to a single file. A component may have several file
     ├── advanced-links.composition.tsx
     └── link.tsx
 ```
-
-## Control Composition Rendering
-
-Bit render compositions with their own dedicated dev server configuration, separated from the workspace UI.
-
-MAJOR TODO HERE
 
 ---
 
@@ -153,3 +137,14 @@ MAJOR TODO HERE
 ### Compositions & storybook
 
 TODO
+
+### How can I control the devserver config?
+
+Bit render compositions with their own dedicated dev server configuration, separated from the workspace UI. The dev-server configuration for component preview is managed by the **Component Development Environment**.  
+In case you need to modify the devserver configuration, add runtime globals, etc - you need to either build your env to customize the available pre-made envs, or if you already have your own env, customize it further.
+
+:::info Preview and Devserver Runtimes
+
+Components have two different runtimes - a **Devserver** controlling local development environment and a **Preview** to handle how a build-pipeline for the component bundles it.
+
+:::

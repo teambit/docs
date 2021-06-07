@@ -11,7 +11,7 @@ During the onboarding process Bit marks directories to components. For each Bit 
 - Sets the component ID.
 - Sets the component entry point.
 - Parse and resolve dependency graph.
-- Create a [Component Module Link](/bit-workspace/manage-workspace#component-module-links).
+- Create a [Component Module Link](https://bit-workspace/manage-workspace#component-module-links).
 
 ## Recommendations
 
@@ -33,7 +33,7 @@ bit init --harmony
 
 ### Configure Workspace
 
-Configure your `workspace.json` to fit your requirements. Read more [here](/bit-workspace/manage-workspace).
+Configure your `workspace.json` to fit your requirements. Read more [here](https://bit-workspace/manage-workspace).
 
 ### Run the Dev Server
 

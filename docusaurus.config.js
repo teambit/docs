@@ -53,10 +53,10 @@ module.exports = {
               label: 'What is Bit?',
               to: '/essentials/what-is-bit'
             },
-            {
+            /*{
               label: 'Building with Bit',
               to: '/bit-workspace/manage-workspace'
-            },
+            },*/
             {
               label: 'Extending Bit',
               to: '/extending-bit/adding-a-new-tab'
@@ -182,10 +182,10 @@ module.exports = {
               label: 'Getting Started',
               to: '/getting-started/installing-bit'
             },
-            {
+            /*{
               label: 'Building with Bit',
               to: '/bit-workspace/manage-workspace'
-            },
+            },*/
             {
               label: 'What is Bit',
               to: '/essentials/what-is-bit'

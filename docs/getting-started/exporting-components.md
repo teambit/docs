@@ -52,7 +52,7 @@ new components
      > ui/button@0.0.1
 ```
 
-:arrow_right: Learn more about the [Versioning Components](/bit-components/versioning-components).
+:arrow_right: Learn more about the [Versioning Components](https://bit-components/versioning-components).
 
 :::tip
 
@@ -77,7 +77,7 @@ exported the following 1 component(s):
 your-username.demo-scope/ui/button
 ```
 
-:arrow_right: Learn more about the [Exporting Components](/bit-components/exporting-components).
+:arrow_right: Learn more about the [Exporting Components](https://bit-components/exporting-components).
 
 ### See your Component in the Workspace
 

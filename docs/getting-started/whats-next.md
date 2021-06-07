@@ -17,7 +17,7 @@ Check out [Essentials](/essentials/what-is-bit) to understand more about What Bi
 
 ## Building with Bit
 
-Check out [Building with Bit](/bit-workspace/manage-workspace), a more in-depth guide on using Bit including [documenting components](/bit-components/documenting-components), [testing components](/bit-components/testing-components), [versioning components](/bit-components/versioning-components) and much more as well as how to use [Bit with pre-existing components](/reference/pre-existing-components).
+Check out [Building with Bit](https://bit-workspace/manage-workspace), a more in-depth guide on using Bit including [documenting components](/bit-components/documenting-components), [testing components](/bit-components/testing-components), [versioning components](https://bit-components/versioning-components) and much more as well as how to use [Bit with pre-existing components](/reference/pre-existing-components).
 
 ## Extending Bit
 

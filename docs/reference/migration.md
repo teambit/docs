@@ -58,7 +58,7 @@ As v15 mandates a structure where components are directories, you may need to re
 
 ### Configure the workspace
 
-Our [workspace documentation](/bit-workspace/manage-workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more, as required. It is important to configure `defaultScope` correctly in `variants`, as this defines the target remote scope for each component.
+Our [workspace documentation](https://bit-workspace/manage-workspace) details exactly how to configure your `workspace.jsonc` file to set environments, dependency configurations and more, as required. It is important to configure `defaultScope` correctly in `variants`, as this defines the target remote scope for each component.
 
 ### Environments rather than Compilers
 

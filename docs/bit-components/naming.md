@@ -1,17 +1,17 @@
 ---
 id: scoping-components
-title: Naming
+title: Naming Components
 ---
 
 import { Image } from '@site/src/components/image'
 
-Component's ID describes the component's business concern in a descriptive form, improving discoverability and understanding the component's purpose. Bit uses three tools to define the full component ID:
+Component's name describes the component's business concern in a descriptive form, improving discoverability and understanding the component's purpose. Bit uses three tools to define the full component name:
 
 * Scope - representing the main business concern of a component. **Required**.
 * Name - the name of the component. **Required**.
 * Namespaces - a set of virtual directories to sort scoped components. **Optional**.
 
-This topic will walk you through the different ways you can decide on scoping and naming of components.
+This topic walks you through the different features around naming and scoping of components.
 
 :::note Scoping by default
 

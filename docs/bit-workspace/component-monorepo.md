@@ -1,9 +1,9 @@
 ---
 id: component-monorepo
-title: Component Monorepo
+title: Bit and Git
 ---
 
-The Bit Workspace is a local development environment for Bit Components. The local workspace gives you a monolithic development experience for building Bit Components and reusing components built by other teams.
+The Bit Workspace is a local development environment for Bit Components. The local workspace gives you development experience for building components.
 
 Create Workspaces for libraries, applications, services, teams or individuals. Manage, share and collaborate on workspaces with Git Repositories.
 
@@ -34,28 +34,6 @@ By Default Bit aims to create symmetry between component scoping and name-spacin
 ```
 
 This default behavior aims to improve the discovery experience for components in your codebase. The structure is not rigid. You can move components around as needed, or create and sort them in any way you see fit; as above, the bitmap file enables bit to track components wherever they are in your workspace.
-
-## Component as a Directory
-
-Bit requires all of each component's implementation files to be contained in a single directory in your Workspace. This directory includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
-
-```sh title="Basic component directory"
-├── index.ts
-├── shopping-cart.composition.tsx
-├── shopping-cart.docs.mdx
-├── shopping-cart.spec.tsx
-└── shopping-cart.tsx
-```
-
-> You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.tsx` in a `tests` folder for instance.
-
-This structure has several benefits:
-
-- Directory structure is easily consumable by placing all the related files together.
-- File references become shorter and more read-friendly.
-- Easy to move components around in the workspace.
-- Simple refactoring workflow, as changes are consolidated to the same place.
-- `index` is a single point for consumers and maintainers to start from when doing any operation on the component.
 
 ## Component Dev Server
 

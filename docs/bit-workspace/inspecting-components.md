@@ -174,7 +174,7 @@ Use `bit status --help` or `bit status -h` to get a list of available options fo
 
 :::
 
-- Learn more [here](/bit-workspace/manage-workspace)
+- Learn more [here](https://bit-workspace/manage-workspace)
 
 ## List Components
 

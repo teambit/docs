@@ -29,7 +29,7 @@ bit start
 
 <!-- Once you click on your component it will take you to the Overview page. -->
 
-:arrow_right: Learn more about the [Workspace UI](/bit-workspace/manage-workspace).
+:arrow_right: Learn more about the [Workspace UI](https://bit-workspace/manage-workspace).
 
 ---
 

@@ -45,6 +45,12 @@ The quickest way to create a new component is by using templates. You can also c
 From the CLI run the command:
 
 ```sh
+bit templates
+```
+
+Create a component with the `react-component` templates:
+
+```sh
 bit create react-component ui/card
 ```
 
@@ -79,7 +85,7 @@ If you start using Bit from a pre-existing project and want to onboard component
 
 ---
 
-## Component contained in a directory
+## Component Contained in a Directory
 
 Bit requires all of each component's implementation files to be contained in a single directory. This includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
 
@@ -107,9 +113,9 @@ You can keep sub-directories to sort internal files as needed. So you could put 
 
 ---
 
-## Components are Modules
+## Local Component Module
 
-Bit components complement, and compiled to JavaScript (ES2015) modules. For each component Bit creates a module in `node_modules` for other components to use.
+For each component Bit creates a module in `node_modules` for other components to use.
 
 <div style={{textAlign: 'center'}}>
     <img src="/img/module-link.png" width="240" alt="module link" />
@@ -127,9 +133,9 @@ By using absolute paths and module links in `import` statements (as opposed to u
 
 :::
 
-:::tip Customize compilation target output
+:::tip Generate modules
 
-You can decide on the compilation output of components and even support multiple target outputs. [Learn more about customizing component compilation](https://TODO).
+In case you can't find a module to import, run `bit link`.
 
 :::
 
@@ -191,7 +197,17 @@ Use `bit show --help` or `bit show -h` to get a list of available options for th
 
 ## FAQ
 
-### Are Bit Components the same as npm packages?
+### Can I control component config & tools?
+
+Yes. By now you probably noticed components has a property called **Environment** (or **Env** for short). Environments are a set of tools and their configuration bundled together, similar to [`react-scripts`](https://www.npmjs.com/package/react-scripts). Each component may have a different env configured, allowing a very granular control over component configurations in your project.
+
+Envs implement a programmatic approach for component operations. This replaces the notion of using scripts in a `package.json`, removing the need of keeping many dev-dependencies for tools and a set of local scripts.
+
+### How can I choose not to use TypeScript?
+
+By default Bit sets TypeScript based compilation for components. You can change the component development environment to a different one that does not use TypeScript and build your components with a Babel based compilation.
+
+### How Components differ from packages?
 
 The main difference between Bit Components and npm Packages is that Bit focuses on a component based workflow, where the implementation is a first class citizen, where npm packages concern about the compiled outputs. This key difference has the following implications:
 

@@ -35,7 +35,7 @@ Bit makes the process of building modular applications and the development, publ
 - Watch our short [videos](/resources/videos) to help you understand Bit better
 - Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit
 - Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities
-- Dive deeper into how Bit works in [Building with Bit](/bit-workspace/manage-workspace)
+- Dive deeper into how Bit works in [Building with Bit](https://bit-workspace/manage-workspace)
 - Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
 - Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
 

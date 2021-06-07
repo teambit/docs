@@ -67,7 +67,7 @@ module.exports = {
         'getting-started/installing-components',
         'getting-started/whats-next'
       ],
-      collapsed: false
+      // collapsed: false - need to uncomment, it's just annoying to have this open when i build
     },
 
     {
@@ -80,56 +80,46 @@ module.exports = {
 
     {
       type: 'category',
-      label: 'Building with Components',
+      label: 'Building Components',
       items: [
-
-        'bit-workspace/manage-workspace',
-
         'bit-components/component-overview',
-
-        {
-          type: 'category',
-          label: 'Component Basics',
-          items: [
-            'bit-components/scoping-components',
-            'bit-components/component-compositions',
-            'bit-components/documenting-components',
-            'bit-components/testing-components',
-          ]
-        },
-
-        {
-          type: 'category',
-          label: 'Local Components',
-          items: [
-            'bit-workspace/component-monorepo',
-            'bit-workspace/workspace-scope',
-            'bit-workspace/removing-components',
-          ]
-        },
-
-        {
-          type: 'category',
-          label: 'Hosting Components',
-          items: [
-            'bit-components/versioning-components',
-            'bit-components/exporting-components', 
-            'bit-components/consuming-components',
-            'bit-scopes/remote-scope'
-          ]
-        },
-
-        
-
+        'bit-components/component-compositions',
+        'bit-components/component-dependencies',
+        'bit-components/testing-components',
+        'bit-components/documenting-components',
+        'bit-components/scoping-components',
+        'bit-components/compiling-components',
+        'bit-components/building-components',
+        'bit-components/component-configuration',
       ]
     },
 
     {
       type: 'category',
-      label: 'Component Tooling',
+      label: 'Local Workspace',
+      items: [
+        'bit-workspace/component-monorepo',
+        'bit-workspace/removing-components',
+      ]
+    },
+
+    {
+      type: 'category',
+      label: 'Hosting Components',
+      items: [
+        'bit-workspace/workspace-scope',
+        'bit-scopes/versioning-components',
+        'bit-scopes/exporting-components', 
+        'bit-scopes/consuming-components',
+        'bit-scopes/remote-scope'
+      ]
+    },
+
+    {
+      type: 'category',
+      label: 'Development Environment',
       items: [
         'bit-environments/environments',
-        'bit-components/compiling-components',
         'bit-environments/component-config'
       ]
     },
