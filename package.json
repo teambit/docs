@@ -18,7 +18,6 @@
     "@mdx-js/react": "^1.6.21",
     "@teambit/base-ui.elements.image": "^0.6.7",
     "@teambit/base-ui.elements.label": "^0.6.7",
-    "@teambit/bit": "^0.0.408",
     "@teambit/compilation.aspect-docs.babel": "^0.0.13",
     "@teambit/compilation.aspect-docs.compiler": "^0.0.13",
     "@teambit/compilation.aspect-docs.multi-compiler": "^0.0.13",
