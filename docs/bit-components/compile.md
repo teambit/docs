@@ -1,6 +1,6 @@
 ---
 id: compiling-components
-title: Compilation
+title: Compile to Modules
 ---
 
 A MARJOR TODO HERE

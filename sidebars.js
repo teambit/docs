@@ -84,7 +84,7 @@ module.exports = {
       items: [
         'bit-components/component-overview',
         'bit-components/component-compositions',
-        'bit-components/component-dependencies',
+        'bit-components/dependencies',
         'bit-components/testing-components',
         'bit-components/documenting-components',
         'bit-components/scoping-components',

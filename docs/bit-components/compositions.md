@@ -73,7 +73,7 @@ bit start
 
 In compositions you can `import` as many components as needed and build more complex simulations for your component.
 
-```js
+```js {2,3}
 import React from 'react';
 import { Header } from '@acme/base-ui.header';
 import { Footer } from '@acme/base-ui.footer';

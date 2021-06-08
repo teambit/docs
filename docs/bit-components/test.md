@@ -51,7 +51,7 @@ A visual test result helps consumers to learn about the different edge cases sup
 
 ### Install dependencies
 
-TODO
+Add testing-library as a dependency, as we'll use it for testing our component.
 
 ```sh
 bit install @testing-library/react
@@ -80,8 +80,6 @@ To see all component tests start the local dev server and browse the component.
 ```sh
 bit start
 ```
-
-TODO - image
 
 :::tip
 
@@ -117,12 +115,6 @@ bit watch
 
 ---
 
-## Using Compositions for Tests
-
-MAJOR TODO HERE
-
----
-
 ## Change tests file pattern
 
 If you use a different filename pattern for tests, you can configure Bit's [Tester aspect](https://TODO) with any pattern.  
@@ -142,7 +134,6 @@ To do so, edit the `workspace.jsonc` file and add the following snippet:
 
 * Bit runs tests for components.
 * Results in UI and terminal.
-* yeys.
 
 ---
 

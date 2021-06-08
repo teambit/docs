@@ -51,7 +51,7 @@ bit templates
 Create a component with the `react-component` templates:
 
 ```sh
-bit create react-component ui/card
+bit create react-component ui/shopping-cart
 ```
 
 This command creates the following:
@@ -85,9 +85,33 @@ If you start using Bit from a pre-existing project and want to onboard component
 
 ---
 
-## Component Contained in a Directory
+## See Components
 
-Bit requires all of each component's implementation files to be contained in a single directory. This includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
+There are two ways to browse information on components. Using the local dev server in your workspace, or using the CLI.
+
+### Using workspace UI to see components
+
+Each component has its own dev-server. Bit's local workspace UI aggregates all component dev-servers to a single portal. Run it with the following command:
+
+```sh
+bit start
+```
+
+Use the dev-server to see all components, get detailed information on them, see how they are rendered in isolation, test results, etc.
+
+### Using the CLI to get component details
+
+The `show` command displays a component's essential information. For example, its dependencies, files and even documentation.
+
+```sh
+bit show ui/card
+```
+
+---
+
+## Building Component
+
+Notice that the `create` command generated a single directory. Bit requires all of each component's implementation files to be contained in a single directory. This includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
 
 ```sh title="Basic component directory"
 ├── index.ts
@@ -97,7 +121,9 @@ Bit requires all of each component's implementation files to be contained in a s
 └── shopping-cart.tsx
 ```
 
-This structure has several benefits:
+Build your component implementation in the `shopping-cart.tsx`.
+
+:::info Benefits of component-directory
 
 * Directory structure is easily consumable by placing all the related files together.
 * File references become shorter and more read-friendly.
@@ -105,15 +131,11 @@ This structure has several benefits:
 * Simple refactoring workflow, as changes are consolidated to the same place.
 * `index` is a single point for consumers and maintainers to start from when doing any operation on the component.
 
-:::tip Use sub-directories for complex components
-
-You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.tsx` in a `tests` folder for instance.
-
 :::
 
----
+### Composing in another components
 
-## Local Component Module
+Bit is a tool for component driven development. As such it focuses on composing components together to form functionality. This means creating other components, or apps, that use and compose with other components.
 
 For each component Bit creates a module in `node_modules` for other components to use.
 
@@ -139,41 +161,15 @@ In case you can't find a module to import, run `bit link`.
 
 :::
 
----
+### Component isolation
 
-## Inspecting Components
+Each Bit component is a module. This has several implications on your implementation:
 
-There are two ways to browse information on components. Using the local dev server in your workspace, or using the CLI.
+* Component may not use relative import statements to other components.
+* Component may depend on other components or npm packages.
+* Component is a directory.
 
-### Inspecting with the workspace UI
-
-All components in the workspace are represented in the workspace UI, as part of Bit's dev-server. Run it with the following command:
-
-```sh
-bit start
-```
-
-Use the dev-server to see all components, get detailed information on them, see how they are rendered in isolation, test results, etc.
-
-:::tip Getting the most out of the workspace ui
-
-The workspace UI is a core dev tool for component driven development. For more information on it's contents and how to use it [click here](https://TODO).
-
-:::
-
-### Inspecting with the CLI
-
-The `show` command displays a component's essential information. For example, its dependencies, files and even documentation.
-
-```sh
-bit show ui/card
-```
-
-:::tip get more from the show command
-
-Use `bit show --help` or `bit show -h` to get a list of available options for this command.
-
-:::
+This helps with building a more modular codebase where components are imported as modules.
 
 ---
 
@@ -196,6 +192,14 @@ Use `bit show --help` or `bit show -h` to get a list of available options for th
 ---
 
 ## FAQ
+
+### Can I add directories in a component dir?
+
+You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.specs.tsx` in a `tests` folder for instance.
+
+### Can I nest components in one another?
+
+No.
 
 ### Can I control component config & tools?
 
