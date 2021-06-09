@@ -1,0 +1,26 @@
+---
+description: Theme Component to define the theme colors, fonts etc
+labels: ['theme']
+---
+
+## Theme component
+
+Default colors are set and can be changed by passing in your own colors.
+
+Default font is set as BookFont but can be changed by passing in your own font.
+
+## Component Usage
+
+Use the Theme component to wrap your components at app level and include your own style sheet with colors class to override the colors and fonts class to override the default fonts if desired.
+
+```js
+<Theme colors={styles.colors} fonts={styles.fonts}>
+  render anything here
+</Theme>
+```
+
+Theme is set in the `env/learn-bit-react` component so that the theme is applied on all compositions without you having to wrap each composition individually
+
+```js
+react.registerProvider([Theme]);
+```

@@ -1,8 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/
- {
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -11,7 +10,7 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "my-workspace-name",
+    "name": "docs",
     /**
      * set the icon to be shown on the Bit server.
      **/
@@ -19,11 +18,11 @@
     /**
      * default directory for all components in workspace.
      **/
-    "defaultDirectory": "docs/aspects/{scope}/{name}",
+    "defaultDirectory": "ui/{name}",
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "my-scope"
+    "defaultScope": "learn-bit-react.bit-docs"
   },
   /**
    * main configuration for component dependency resolution.
@@ -34,12 +33,24 @@
      */
     "packageManager": "teambit.dependencies/yarn",
     "policy": {
-      "dependencies": {},
+      "dependencies": {
+        "@learn-bit-react/base-ui.styles.fonts.book": "1.0.0",
+        "@learn-bit-react/base-ui.ui.heading": "1.0.0",
+        "@learn-bit-react/base-ui.ui.img": "1.0.0",
+        "@learn-bit-react/base-ui.ui.link": "1.0.0",
+        "@learn-bit-react/base-ui.ui.text": "1.0.0",
+        "@teambit/ui.react-router.link": "0.0.368",
+        "@testing-library/react": "11.2.7",
+        "classnames": "2.3.1"
+      },
       "peerDependencies": {
         "react": "16.13.1",
         "react-dom": "16.13.1"
       }
-    }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": ["**/*.spec.ts"],
+    "strictPeerDependencies": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -50,11 +61,17 @@
     /**
      * "*" is a special rule which applied on all components in the workspace.
      **/
-    "*": {
-      /**
-       * uncomment to apply the react environment on all components.
-       **/
-      // "teambit.react/react": { }
+    // "*": {
+    //   /**
+    //    * uncomment to apply the react environment on all components.
+    //    **/
+    //   "teambit.react/react": {}
+    // },
+    "{ui/**}": {
+      "learn-bit-react.bit-docs/ui/env/docs": {}
+    },
+    "ui/env": {
+      "teambit.harmony/aspect": {}
     }
   }
 }

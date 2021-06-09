@@ -1,0 +1,23 @@
+@import './colors.module.scss';
+
+div[data-sample='true'] {
+  width: 90px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.tertiary {
+  background-color: var(--tertiary-color);
+}
+.complimentary {
+  background-color: var(--complimentary-color);
+}
+.text {
+  background-color: var(--text-color);
+}
