@@ -35,7 +35,7 @@ Bit.dev is a SaaS service for hosting remote Scopes (collections) of components,
 
 There is no limitation of the amount of Scopes that can be created by a developer or an organization on Bit.dev.
 
-All the documentation for components including examples, compositions, versions, dependencies, test results etc will be displayed on Bit.dev mirroring the Scope UI for Bit’s local development, and will updated with new versions of your components exported to Bit.dev.
+All the documentation for components including examples, compositions, versions, dependencies, test results etc will be displayed on Bit.dev mirroring the Scope UI for Bit’s local development, and will be updated with new versions of your components exported to Bit.dev.
 
 ### Organization and Permission Management
 
