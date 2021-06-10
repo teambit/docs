@@ -86,7 +86,7 @@ Learn more: [Bit with Artifactory on JFrog Blog](https://jfrog.com/blog/artifact
 
 **Ripple CI** (closed beta) unleashes the true power of components like never before possible.  
 
-It is the first and most powerful continuous integration system ever built for component-driven development. With Ripple, teams in the organization can constantly and independently release fast automated updated to components and continuously integrate these changes to all impacted teams and applications. It’s a better way to build together.
+It is the first and most powerful continuous integration system ever built for component-driven development. With Ripple, teams in the organization can constantly and independently release fast automated update to components and continuously integrate these changes to all impacted teams and applications. It’s a better way to build together.
 
 Thanks to its component-driven design, Ripple unlocks 4 game-changing features:
 
