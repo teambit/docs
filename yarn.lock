@@ -3655,13 +3655,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:*, @types/jest@npm:^26.0.0":
+"@types/jest@npm:*":
   version: 26.0.23
   resolution: "@types/jest@npm:26.0.23::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fjest%2F-%2Fjest-26.0.23.tgz"
   dependencies:
     jest-diff: ^26.0.0
     pretty-format: ^26.0.0
   checksum: 69db26061e6be34de2a440c8a470b651c53ba6ee0057614a278c4f756ff00281f46cc075b24e5bd761f399f175f49d0a5758b50dd921342a8592461548dea29a
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:26.0.20":
+  version: 26.0.20
+  resolution: "@types/jest@npm:26.0.20::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fjest%2F-%2Fjest-26.0.20.tgz"
+  dependencies:
+    jest-diff: ^26.0.0
+    pretty-format: ^26.0.0
+  checksum: db7730d2d70d2cdaef0ade7a5185fad844b21df827eafdd1690ce8053c399277ecce6b274ffd649e7a38008e192e8f0eb3ecc296b69e75407e30a9c8388d0d5c
   languageName: node
   linkType: hard
 
@@ -5172,8 +5182,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "colors-0b2399@workspace:ui/styles/colors"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
+    react: 16.13.1
   languageName: unknown
   linkType: soft
 
@@ -6070,7 +6079,7 @@ __metadata:
     "@teambit/workspace.aspect-docs.variants": ^0.0.13
     "@testing-library/react": 11.2.7
     "@tsconfig/docusaurus": ^1.0.2
-    "@types/jest": ^26.0.0
+    "@types/jest": 26.0.20
     "@types/node": 12.20.4
     "@types/react": ^17.0.8
     "@types/react-dom": ^17.0.5
@@ -7543,8 +7552,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "hero-d8162d@workspace:ui/hero"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
+    react: 16.13.1
   languageName: unknown
   linkType: soft
 

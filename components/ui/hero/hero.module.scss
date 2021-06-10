@@ -27,38 +27,36 @@ h1 {
   text-align: center;
   border-radius: 0.25rem;
   font-size: 0.875rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding: 0.25rem 0.75rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-}
-
-.cta {
-  color: var(--secondary-color, #edf2f7);
-  background-color: var(--primary-color, #1a202c);
-  border: 1px solid var(--secondary-color, #edf2f7);
-
   &:hover {
-    border: 1px solid var(--primary-color, #edf2f7);
-    color: var(--primary-color, #1a202c);
-    background-color: var(--secondary-color, #edf2f7);
     text-decoration: none;
   }
 }
 
-.ghost {
-  border: 1px solid var(--primary-color, #edf2f7);
-  color: var(--primary-color, #1a202c);
-  background-color: var(--secondary-color, #edf2f7);
+.cta {
+  color: #fff;
+  background-color: var(--primary-color, #1a202c);
+  border: 1px solid var(--primary-color, #1a202c);
 
   &:hover {
-    color: var(--secondary-color, #edf2f7);
+    border: 1px solid var(--primary-color, #1a202c);
+    color: var(--primary-color, #1a202c);
+    background-color: #fff;
+  }
+}
+
+.ghost {
+  border: 1px solid var(--primary-color, #1a202c);
+  color: var(--primary-color, #1a202c);
+  background-color: #fff;
+
+  &:hover {
+    color: #fff;
     background-color: var(--primary-color, #1a202c);
-    border: 1px solid var(--secondary-color, #edf2f7);
-    text-decoration: none;
+    border: 1px solid var(--primary-color, #1a202c);
   }
 }
 

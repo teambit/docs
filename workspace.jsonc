@@ -18,7 +18,7 @@
     /**
      * default directory for all components in workspace.
      **/
-    "defaultDirectory": "ui/{name}",
+    "defaultDirectory": "components/{scope}/{name}",
     /**
      * default scope for all components in workspace.
      **/
@@ -67,14 +67,14 @@
     //    **/
     //   "teambit.react/react": {}
     // },
-    "{ui/theme}": {
+    "{themes/**}, {styles/**}": {
       "teambit.react/react": {}
     },
-    "ui/env": {
+    "{env/**}": {
       "teambit.harmony/aspect": {}
     },
-    "{ui/**}, !{ui/env}, !{ui/theme}": {
-      "learn-bit-react.bit-docs/ui/env/docs": {}
+    "{ui/**}": {
+      "learn-bit-react.bit-docs/env/docs": {}
     }
   }
 }

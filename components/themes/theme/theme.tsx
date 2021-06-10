@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { bookFont } from '@learn-bit-react/base-ui.styles.fonts.book';
-import { colors as themeColors } from '@learn-bit-react/bit-docs.ui.styles.colors';
+import { colors as themeColors } from '@learn-bit-react/bit-docs.styles.colors';
 
 export type ThemeProps = {
   /**
