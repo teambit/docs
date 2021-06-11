@@ -18,7 +18,7 @@
     /**
      * default directory for all components in workspace.
      **/
-    "defaultDirectory": "components/{scope}/{name}",
+    "defaultDirectory": "{scope}/{name}",
     /**
      * default scope for all components in workspace.
      **/

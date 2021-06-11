@@ -1,0 +1,42 @@
+.content {
+  border-radius: 20px 20px 0 0;
+  padding: 2rem 4rem;
+  background: rgba(233, 233, 233, 0.5);
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.sub-headline {
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+.headline {
+  margin: 0 0 11px;
+  max-width: 470px;
+  font-size: 2.25rem;
+}
+.textWrapper {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 0 29px;
+  max-width: 962px;
+  margin: 0 0 27px;
+}
+.text {
+  font-size: 1.125rem;
+}
+
+.link {
+  background: transparent;
+  box-shadow: none;
+  color: #09b3af;
+  display: inline-block;
+  font-size: 20.928px;
+  font-size: 1.308rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  transition: none;
+}
