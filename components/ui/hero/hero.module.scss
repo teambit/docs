@@ -11,8 +11,12 @@
     text-align: center;
   }
 }
-h1 {
-  margin-top: 0;
+.heading {
+  margin: 0;
+}
+.description {
+  max-width: 450px;
+  margin: 1rem auto;
 }
 
 .buttons {

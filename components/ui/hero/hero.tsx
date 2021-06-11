@@ -41,8 +41,8 @@ export function Hero({
   return (
     <div className={styles.hero}>
       <div>
-        <Heading headingText={headingText} />
-        <Text text={text} />
+        <Heading headingText={headingText} className={styles.heading} />
+        <Text text={text} className={styles.description} />
         <div className={styles.buttons}>
           <Link
             href={(href = mainLinkHref)}
