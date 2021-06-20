@@ -2,6 +2,8 @@
 id: ci-cd
 title: CI/CD and Deployment
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Use your CI/CD tool to install Bit components on consuming apps or publish component automatically to [bit.dev](https://bit.dev) or any remote Bit scope.
 
@@ -168,15 +170,32 @@ Possible reasons:
 
 ## Version and Export Components on CI
 
-### Install Bit
+### Install and configure Bit
+
+<Tabs
+defaultValue="Docker"
+values={[
+{label: 'Docker', value: 'Docker'},
+{label: 'Manually', value: 'Manually'},
+]}>
+    <TabItem value="Docker">
+
+ Follow the instructions in [bit docker readme](https://github.com/teambit/bit/blob/master/scripts/docker-teambit-bit/README.md) to get a docker with bit installed.
+
+ To configure bit on the server, you need to run the following commands:
+
+```shell
+bit config set user.token ${BIT_TOKEN}
+```
+
+  </TabItem>
+  <TabItem value="Manually">
 
 To run any Bit-commands on CI you need to have Bit instsalled. You should have this ready as part of your image:
 
 ```sh
 npx @teambit/bvm install
 ```
-
-### Configure Bit
 
 To configure bit on the server, you need to run the following commands:
 
@@ -185,6 +204,8 @@ bit config set analytics_reporting false
 bit config set error_reporting false
 bit config set user.token ${BIT_TOKEN}
 ```
+  </TabItem>
+</Tabs>
 
 ### Versioning and Publishing
 
