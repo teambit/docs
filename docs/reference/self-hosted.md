@@ -3,6 +3,9 @@ id: bit-oss-server
 title: Self-hosted Bit Scope
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Collaborating between Bit components require setting up a remote Scope (server) accessible for all collaborators. You may use [bit.dev](https://bit.dev) as a remote server or setup your own.
 
 A remote Bit Scope is a host server that hosts components. Bit communication to server is done using HTTP/S protocol. Collaborators set up the Scope as remotes to their local workstation. Then, they export to and import from those scopes.  
@@ -13,7 +16,23 @@ A remote Bit Scope is a host server that hosts components. Bit communication to 
 
 ## Server Setup
 
+<Tabs
+defaultValue="Harmony"
+values={[
+{label: 'Harmony', value: 'Harmony'},
+{label: 'Legacy', value: 'Legacy'},
+]}>
+    <TabItem value="Harmony">
+
+ Follow the instructions in [bit docker readme](https://github.com/teambit/bit/blob/master/scripts/docker-teambit-bit/README.md) to setup a single remote Bit Scope.
+
+  </TabItem>
+  <TabItem value="Legacy">
+
 Clone and follow the instructions in [this repository](https://github.com/teambit/bit-docker) to setup a single remote Bit Scope.
+
+  </TabItem>
+</Tabs>
 
 ## Working with Remote Scopes
 
