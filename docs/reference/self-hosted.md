@@ -13,8 +13,7 @@ A remote Bit Scope is a host server that hosts components. Bit communication to 
 
 ## Server Setup
 
-Clone and follow the instructions in [this repository](https://github.com/teambit/bit-docker) to setup a single remote Bit Scope.
-
+Follow the instructions in [bit docker readme](https://github.com/teambit/bit/blob/master/scripts/docker-teambit-bit) to setup a single remote Bit Scope.
 ## Working with Remote Scopes
 
 ### Setup a remote scope

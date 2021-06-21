@@ -168,21 +168,13 @@ Possible reasons:
 
 ## Version and Export Components on CI
 
-### Install Bit
+### Install and configure Bit
 
-To run any Bit-commands on CI you need to have Bit instsalled. You should have this ready as part of your image:
-
-```sh
-npx @teambit/bvm install
-```
-
-### Configure Bit
+Follow the instructions in [bit docker readme](https://github.com/teambit/bit/blob/master/scripts/docker-teambit-bit) to get a docker with bit installed.
 
 To configure bit on the server, you need to run the following commands:
 
 ```shell
-bit config set analytics_reporting false
-bit config set error_reporting false
 bit config set user.token ${BIT_TOKEN}
 ```
 
