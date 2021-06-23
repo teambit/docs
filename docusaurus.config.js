@@ -189,6 +189,10 @@ module.exports = {
             {
               label: 'Create and Consume Components',
               to: '/tutorials/react/create-and-consume-components'
+            },
+            {
+              label: 'Embedding Figma into your Component docs',
+              to: '/tutorials/bit/embed-figma-in-bit'
             }
           ]
         },
