@@ -21,21 +21,23 @@ export type ProductDescriptionProps = {
    * text to be rendered in the link
    */
   linkText: string;
-} & TextProps &
-  HeadingProps &
-  LinkProps;
+  /**
+   * text to be rendered in the link
+   */
+  title: string;
+};
 
 export function ProductDescription({
   paragraph2,
   paragraph1,
   h3,
-  headingText,
+  title,
   linkText
 }: ProductDescriptionProps) {
   return (
     <div className={styles.content}>
       <h3 className={styles.subHeadline}>{h3}</h3>
-      <Heading headingText={headingText} className={styles.headline} />
+      <Heading headingText={title} className={styles.headline} />
       <div className={styles.textWrapper}>
         <Text text={paragraph1} className={styles.text} />
         <Text text={paragraph2} className={styles.text} />
