@@ -20,30 +20,30 @@ module.exports = {
       '@docusaurus/plugin-content-blog',
       {
         id: 'react',
-        path: 'tutorials/react',
-        routeBasePath: 'tutorials/react',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
         editUrl: 'https://github.com/teambit/docs/edit/harmony',
         postsPerPage: 3,
         feedOptions: {
           type: 'all',
-          copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`
-        }
-      }
-    ],
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'bit',
-        path: 'tutorials/bit',
-        routeBasePath: 'tutorials/bit',
-        editUrl: 'https://github.com/teambit/docs/edit/harmony',
-        postsPerPage: 3,
-        feedOptions: {
-          type: 'all',
-          copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`
+          copyright: `Copyright © ${new Date().getFullYear()} Bit.`
         }
       }
     ]
+    // [
+    //   '@docusaurus/plugin-content-blog',
+    //   {
+    //     id: 'bit',
+    //     path: 'tutorials/bit',
+    //     routeBasePath: 'tutorials/bit',
+    //     editUrl: 'https://github.com/teambit/docs/edit/harmony',
+    //     postsPerPage: 3,
+    //     feedOptions: {
+    //       type: 'all',
+    //       copyright: `Copyright © ${new Date().getFullYear()} Bit.`
+    //     }
+    //   }
+    // ]
   ],
   themeConfig: {
     algolia: {
@@ -182,17 +182,17 @@ module.exports = {
         },
         {
           label: 'Tutorials',
-          to: '/tutorials/react',
+          to: '/tutorials',
           activeBasePath: 'tutorials',
           position: 'left',
           items: [
             {
               label: 'Create and Consume Components',
-              to: '/tutorials/react/create-and-consume-components'
+              to: '/tutorials/create-and-consume-components'
             },
             {
               label: 'Embedding Figma into your Component docs',
-              to: '/tutorials/bit/embed-figma-in-bit'
+              to: '/tutorials/embed-figma-in-bit'
             }
           ]
         },
