@@ -9,7 +9,11 @@ author_image_url: https://avatars.githubusercontent.com/u/13063165?v=4
 tags: ['Figma', 'Design', 'Docs']
 ---
 
-We have often been faced with the problem of designs changing or being modified or developers not making the component exactly how the designer requested. When designs live in one place and component files in other it is often hard to keep things in sync. And once the component has been built the developer will probably never even open the designs again. But what if we could create a better experience? What if we could add the designs directly into the developers working environment and have those designs update in real time! With Bit and Figma that is exactly what you can do. Let me show you.
+We have often been faced with the problem of designs changing or being modified or developers not making the component exactly how the designer requested. When designs live in one place and component files in other it is often hard to keep things in sync. And once the component has been built the developer will probably never even open the designs again.
+
+> But what if we could create a better experience? What if we could add the designs directly into the developers working environment and have those designs update in real time!
+
+With **Bit** and **Figma** that is exactly what you can do. Let me show you.
 
 ## Update Design - See Changes in your dev Environment
 
@@ -56,10 +60,66 @@ This will work perfect and you will now see in your overview tab that you have y
 
 ## Create a Figma Component
 
-We can improve this further by creating a component for our Figma embed so that we add more styles or modify the width and height. This will make it easier to manage when we add further Figma embeds.
+We can improve this further by creating a component for our Figma embed so that we add more styles or modify the width and height. This will make it easier to manage when we add further Figma embeds. We can also add a height and width attribute with default value which will allow the consumer to override it should they need to.
+
+### Lazy Loading our iframes
+
+We can also add [lazy loading for our iframe](https://web.dev/iframe-lazy-loading/) which is fully supported in Chrome and Chromium-based browsers. This will defer the offscreen frame from being loaded until the user scrolls near to it which reduces memory usage. This is especially helpful for when adding Figma embeds to all our components as sometimes you might not scroll down to see the Figma file or might not need it and it will give users a much better user experience.
+
+```js
+loading = 'lazy';
+```
+
+### Figma Embed Component
+
+```js title="figma-embed.tsx"
+import React from 'react';
+import classNames from 'classnames';
+import styles from './figma-embed.module.scss';
+
+export type FigmaEmbedProps = {
+  /**
+   * src for figma embed. Click on Share button in Figma and click on 'Get embed code' and then copy the value of the src attribute from the iframe.
+   */
+  iframeSrc: string,
+  /**
+   * add lazy loading
+   */
+  loading?: 'lazy' | 'eager',
+  /**
+   * width of iframe
+   */
+  width?: string,
+  /**
+   * height of iframe
+   */
+  height?: string
+} & React.HTMLAttributes<HTMLIFrameElement>;
+
+export function FigmaEmbed({
+  iframeSrc,
+  loading = 'lazy',
+  width = '100%',
+  height = '600',
+  className
+}: FigmaEmbedProps) {
+  return (
+    <iframe
+      className={classNames(styles.iframe, className)}
+      width={width}
+      height={height}
+      src={iframeSrc}
+      loading={loading}></iframe>
+  );
+}
+```
+
+### Using your Figma Component
+
+You can now use your Figma Component in any of your component docs by just changing the src of the iframe. You can also modify the height, width, styles and lazy loading if you wish or just use the default values.
 
 ```js title="button.docs.mdx"
-<FigmaEmbed src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0EEVmHM5PG37THkzlbanjX%2FColor-Scheme%3Fnode-id%3D0%253A1" />
+<FigmaEmbed iframeSrc="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FDaShaxpMbyWlvOGMFFUHCl%2Fbutton%3Fnode-id%3D0%253A1" />
 ```
 
 ## See Examples
