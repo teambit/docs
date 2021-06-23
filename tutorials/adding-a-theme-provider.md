@@ -10,8 +10,6 @@ tags: ['env', 'extension', 'example', 'providers', 'context']
 draft: true
 ---
 
-import { Image } from '@site/src/components/image'
-
 ## Overview
 
 A customized React development environment for building and rendering modular and reusable MFEs. Using this customized environment you can override

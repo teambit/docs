@@ -1,12 +1,12 @@
 ---
-slug: create-and-consume-components
-title: Create and Consume Components
-description: Setup your Bit workspace, create Bit components and then version, export and consume them in a React app
+slug: build-and-share-components
+title: Build and Share Components
+description: Let's get started with Bit and create a component that consumes another component, version and export it to the cloud and then use it in a React application.
 author: Debbie O'Brien
 author_title: Head Developer Advocate at Bit
 author_url: https://github.com/debs-obrien
 author_image_url: https://avatars.githubusercontent.com/u/13063165?v=4
-tags: [install, create, workspace, export, install]
+tags: [install, create, workspace, export, React]
 ---
 
 import { Image } from '@site/src/components/image'
