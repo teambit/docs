@@ -187,8 +187,8 @@ module.exports = {
           position: 'left',
           items: [
             {
-              label: 'Create and Consume Components',
-              to: '/tutorials/create-and-consume-components'
+              label: 'Build and Share Components',
+              to: '/tutorials/build-and-share-components'
             },
             {
               label: 'Embedding Figma into your Component docs',
