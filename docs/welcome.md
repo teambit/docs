@@ -1,6 +1,6 @@
 ---
-id: 'Bit: An end-to-end solution for component-driven web development.'
-title: Bit Harmony Docs
+id: welcome
+title: 'Bit: An end-to-end solution for component-driven web development'
 slug: /
 description: Bit is an end-to-end solution for component driven development. It helps you build applications with independent components, and collaborate on components across the organization.
 ---
