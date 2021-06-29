@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Documentation',
+  title: 'Bit Docs',
   tagline: 'Bit Harmony',
   url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
