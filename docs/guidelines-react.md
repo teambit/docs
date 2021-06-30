@@ -4,10 +4,10 @@ title: React Guidelines
 sidebar_label: React
 ---
 
-Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulate specific functionality. This section adds React specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
+Bit is a generic platform that can use any type of Javascript (and its flavors) code that encapsulates specific functionality. This section adds React specific best practices on top of [Bit's general Best Practices](/docs/best-practices.html).
 
 Note: 
-- See [guidlines for designing reusable components](https://github.com/teambit/reusable-components-styleguide).
+- See [guidelines for designing reusable components](https://github.com/teambit/reusable-components-styleguide).
 - See [Bit for React tutorial](https://docs.bit.dev/docs/tutorials/bit-react-tutorial).
 
 ## React Compiler
@@ -21,7 +21,7 @@ The following compilers exist:
 - [Flow](https://bit.dev/bit/envs/compilers/flow) - supports jsx+flow
 - [Preact](https://bit.dev/bit/envs/compilers/preact)  
 
-The practices described bellow are aimed to work best with this Bit team compiler.  
+The practices described below are aimed to work best with this Bit team compiler.  
 
 To install the React Typescript compiler run:  
 
@@ -60,11 +60,11 @@ Read [here](/docs/best-practices#state-managers) for suggestion on how to share 
 
 ## Handling Assets and Styles
 
-Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) amd [styles](/docs/best-practices#handling-styles).
+Refer to the general guidelines on how to [handle assets](/docs/best-practices#handling-assets) and [styles](/docs/best-practices#handling-styles).
 
 ## Server Side Rendering
 
-When using SSR framework like Nextjs with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like:  
+When using SSR framework like Next.js with Typescript, the application is running using Nodejs. Node does not yet support the ES6 module format and you will get errors like:  
 
 ```shell
 SyntaxError: Cannot use import statement outside a module
@@ -93,7 +93,7 @@ This is because Node is not supporting ES Modules format. To do so, you need to 
 
 If you are using CRA (Create React App) with Jest, and you are installing Bit components (using NPM/Yarn/bit install), the component resides under `node_modules`. The format of the component is using ES Modules (i.e. `import` syntax). In CRA, Jest is instructed not to attempt to compile modules under the `node_modules` folder. 
 
-If you want to tell Jest NOT to ignore Bit components but without the need to eject CRA, you can change the scripts section in the pacakge.json as follow: 
+If you want to tell Jest NOT to ignore Bit components but without the need to eject CRA, you can change the scripts section in the package.json as follow: 
 
 ```json
 {
