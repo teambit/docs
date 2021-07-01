@@ -54,7 +54,7 @@ module.exports = {
       type: 'category',
       label: 'aspects',
       items: [
-        'aspects/babel',
+        'aspects/babel/babel',
         'aspects/builder',
         'aspects/compiler',
         'aspects/component',
@@ -182,6 +182,7 @@ module.exports = {
       items: [
         'reference/using-bvm',
         'reference/commands',
+        'reference/cli-reference',
         'reference/ci-cd',
         'reference/pre-existing-components',
         'reference/bit-oss-server',

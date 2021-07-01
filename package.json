@@ -9,7 +9,9 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear"
+    "clear": "docusaurus clear",
+    "generate-cli":"bit cli generate --metadata.id='cli-reference' --metadata.title='CLI Reference' > docs/reference/cli-reference.md",
+    "update-aspects": "bit import && bit checkout latest --all --skip-npm-install"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.0",
@@ -18,7 +20,6 @@
     "@mdx-js/react": "^1.6.21",
     "@teambit/base-ui.elements.image": "^0.6.7",
     "@teambit/base-ui.elements.label": "^0.6.7",
-    "@teambit/compilation.aspect-docs.babel": "^0.0.13",
     "@teambit/compilation.aspect-docs.compiler": "^0.0.13",
     "@teambit/compilation.aspect-docs.multi-compiler": "^0.0.13",
     "@teambit/component.aspect-docs.component": "^0.0.13",
