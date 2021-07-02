@@ -21,6 +21,7 @@
     "@teambit/base-ui.elements.image": "^0.6.7",
     "@teambit/base-ui.elements.label": "^0.6.7",
     "@teambit/documenter.theme.theme-context": "^3.0.8",
+    "@teambit/evangelist.elements.button": "1.0.3",
     "clsx": "^1.1.1",
     "docusaurus-plugin-plausible": "^0.0.5",
     "docusaurus-plugin-sass": "^0.2.0",
