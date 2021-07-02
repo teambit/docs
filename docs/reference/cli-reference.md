@@ -18,12 +18,12 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--shared <groupname>`|`-s`|add group write permissions to a scope properly|
 |`--standalone`|`-T`|do not nest component store within .git directory and do not write config data inside package.json|
 |`--reset`|`-r`|write missing or damaged Bit files|
-|`--reset-new`|`   `|reset .bitmap file as if the components were newly added and remove all model data (objects)|
-|`--reset-hard`|`   `|delete all Bit files and directories, including Bit configuration, tracking and model data. Useful for re-start using Bit from scratch|
+|`--reset-new`|   |reset .bitmap file as if the components were newly added and remove all model data (objects)|
+|`--reset-hard`|   |delete all Bit files and directories, including Bit configuration, tracking and model data. Useful for re-start using Bit from scratch|
 |`--default-directory <default-directory>`|`-d`|set up default directory to import components into|
 |`--package-manager <package-manager>`|`-p`|set up package manager (npm or yarn)|
 |`--force`|`-f`|force workspace initialization without clearing local objects|
-|`--harmony`|`   `|DEPRECATED. no need for this flag. Harmony is the default now|
+|`--harmony`|   |DEPRECATED. no need for this flag. Harmony is the default now|
 |`--interactive`|`-I`|EXPERIMENTAL. start an interactive process|
 
 ---  
@@ -48,14 +48,14 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--override`|`-O`|override local changes|
 |`--verbose`|`-v`|showing verbose output for inspection|
 |`--json`|`-j`|return the output as JSON|
-|`--ignore-dist`|`   `|skip writing the component's build files during import|
-|`--conf`|`   `|write the configuration file (component.json) of the component (harmony components only)|
-|`--skip-npm-install`|`   `|do not install packages of the imported components. (it automatically enables save-dependencies-as-components flag)|
-|`--ignore-package-json`|`   `|do not generate package.json for the imported component(s). (it automatically enables skip-npm-install and save-dependencies-as-components flags)|
+|`--ignore-dist`|   |skip writing the component's build files during import|
+|`--conf`|   |write the configuration file (component.json) of the component (harmony components only)|
+|`--skip-npm-install`|   |do not install packages of the imported components. (it automatically enables save-dependencies-as-components flag)|
+|`--ignore-package-json`|   |do not generate package.json for the imported component(s). (it automatically enables skip-npm-install and save-dependencies-as-components flags)|
 |`--merge [strategy]`|`-m`|merge local changes with the imported version. strategy should be "theirs", "ours" or "manual"|
-|`--dependencies`|`   `|EXPERIMENTAL. import all dependencies and write them to the workspace|
-|`--dependents`|`   `|EXPERIMENTAL. import component dependents to allow auto-tag updating them upon tag|
-|`--skip-lane`|`   `|EXPERIMENTAL. when checked out to a lane, do not import the component into the lane, save it on master|
+|`--dependencies`|   |EXPERIMENTAL. import all dependencies and write them to the workspace|
+|`--dependents`|   |EXPERIMENTAL. import component dependents to allow auto-tag updating them upon tag|
+|`--skip-lane`|   |EXPERIMENTAL. when checked out to a lane, do not import the component into the lane, save it on master|
 
 ---  
 
@@ -276,7 +276,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--all`|`-a`|revert tag for all tagged components|
-|`--soft`|`   `|harmony - revert only soft-tags (components tagged with --soft flag)|
+|`--soft`|   |harmony - revert only soft-tags (components tagged with --soft flag)|
 |`--force`|`-f`|revert the tag even if used as a dependency. WARNING: components that depend on this tag will corrupt|
 
 ---  
@@ -297,23 +297,23 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--all [version]`|`-a`|tag all new and modified components|
 |`--scope [version]`|`-s`|tag all components of the current scope|
 |`--patch`|`-p`|increment the patch version number|
-|`--minor`|`   `|increment the minor version number|
-|`--major`|`   `|increment the major version number|
-|`--pre-release [identifier]`|`   `|EXPERIMENTAL. increment a pre-release version (e.g. 1.0.0-dev.1)|
+|`--minor`|   |increment the minor version number|
+|`--major`|   |increment the major version number|
+|`--pre-release [identifier]`|   |EXPERIMENTAL. increment a pre-release version (e.g. 1.0.0-dev.1)|
 |`--force`|`-f`|force-tag even if tests are failing and even when component has not changed|
 |`--verbose`|`-v`|show specs output on failure|
-|`--ignore-missing-dependencies`|`   `|DEPRECATED. use --ignore-unresolved-dependencies instead|
+|`--ignore-missing-dependencies`|   |DEPRECATED. use --ignore-unresolved-dependencies instead|
 |`--ignore-unresolved-dependencies`|`-i`|ignore missing dependencies (default = false)|
 |`--ignore-newest-version`|`-I`|ignore existing of newer versions (default = false)|
-|`--skip-tests`|`   `|skip running component tests during tag process|
-|`--skip-auto-tag`|`   `|EXPERIMENTAL. skip auto tagging dependents|
-|`--build`|`   `|Harmony only. run the pipeline build and complete the tag|
-|`--soft`|`   `|Harmony only. do not persist. only keep note of the changes to be made|
-|`--persist`|`   `|Harmony only. persist the changes generated by --soft tag|
-|`--disable-deploy-pipeline`|`   `|DEPRECATED. use --disable-tag-pipeline instead|
-|`--disable-tag-pipeline`|`   `|Harmony only. skip the tag pipeline to avoid publishing the components|
-|`--force-deploy`|`   `|Harmony only. run the tag pipeline although the build failed|
-|`--increment-by <number>`|`   `|(default to 1) increment semver flag (patch/minor/major) by. e.g. incrementing patch by 2: 0.0.1 -> 0.0.3.|
+|`--skip-tests`|   |skip running component tests during tag process|
+|`--skip-auto-tag`|   |EXPERIMENTAL. skip auto tagging dependents|
+|`--build`|   |Harmony only. run the pipeline build and complete the tag|
+|`--soft`|   |Harmony only. do not persist. only keep note of the changes to be made|
+|`--persist`|   |Harmony only. persist the changes generated by --soft tag|
+|`--disable-deploy-pipeline`|   |DEPRECATED. use --disable-tag-pipeline instead|
+|`--disable-tag-pipeline`|   |Harmony only. skip the tag pipeline to avoid publishing the components|
+|`--force-deploy`|   |Harmony only. run the tag pipeline although the build failed|
+|`--increment-by <number>`|   |(default to 1) increment semver flag (patch/minor/major) by. e.g. incrementing patch by 2: 0.0.1 -> 0.0.3.|
 
 ---  
 
@@ -349,7 +349,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--delete-files`|`-d`|delete local component files (authored components only. for imported components the files are always deleted)|
 |`--force`|`-f`|removes the component from the scope, even if used as a dependency. WARNING: components that depend on this component will corrupt|
 |`--silent`|`-s`|skip confirmation|
-|`--lane`|`   `|EXPERIMENTAL. remove a lane|
+|`--lane`|   |EXPERIMENTAL. remove a lane|
 
 ---  
 
@@ -401,10 +401,10 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--reset`|`-r`|remove local changes|
 |`--all`|`-a`|all components|
 |`--verbose`|`-v`|showing verbose output for inspection|
-|`--skip-npm-install`|`   `|do not install packages of the imported components|
-|`--ignore-package-json`|`   `|do not generate package.json for the imported component(s). (it automatically enables skip-npm-install and save-dependencies-as-components flags)|
-|`--conf [path]`|`   `|write the configuration file (bit.json) and the envs configuration files (use --conf without path to write to the default dir)|
-|`--ignore-dist`|`   `|do not write dist files (when exist)|
+|`--skip-npm-install`|   |do not install packages of the imported components|
+|`--ignore-package-json`|   |do not generate package.json for the imported component(s). (it automatically enables skip-npm-install and save-dependencies-as-components flags)|
+|`--conf [path]`|   |write the configuration file (bit.json) and the envs configuration files (use --conf without path to write to the default dir)|
+|`--ignore-dist`|   |do not write dist files (when exist)|
 
 ---  
 
@@ -422,15 +422,15 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
-|`--ours`|`   `|in case of a conflict, override the used version with the current modification|
-|`--theirs`|`   `|in case of a conflict, override the current modification with the specified version|
-|`--manual`|`   `|in case of a conflict, leave the files with a conflict state to resolve them manually later|
-|`--abort`|`   `|EXPERIMENTAL. in case of an unresolved merge, revert to the state before the merge began|
-|`--resolve`|`   `|EXPERIMENTAL. mark an unresolved merge as resolved and create a new snap with the changes|
+|`--ours`|   |in case of a conflict, override the used version with the current modification|
+|`--theirs`|   |in case of a conflict, override the current modification with the specified version|
+|`--manual`|   |in case of a conflict, leave the files with a conflict state to resolve them manually later|
+|`--abort`|   |EXPERIMENTAL. in case of an unresolved merge, revert to the state before the merge began|
+|`--resolve`|   |EXPERIMENTAL. mark an unresolved merge as resolved and create a new snap with the changes|
 |`--lane`|`-l`|EXPERIMENTAL. merge lanes|
-|`--existing`|`   `|EXPERIMENTAL. relevant for lanes. checkout only components in a lane that exist in the workspace|
-|`--no-snap`|`   `|EXPERIMENTAL. do not auto snap in case the merge completed without conflicts|
-|`--build`|`   `|in case of snap during the merge, run the build-pipeline (similar to bit snap --build)|
+|`--existing`|   |EXPERIMENTAL. relevant for lanes. checkout only components in a lane that exist in the workspace|
+|`--no-snap`|   |EXPERIMENTAL. do not auto snap in case the merge completed without conflicts|
+|`--build`|   |in case of snap during the merge, run the build-pipeline (similar to bit snap --build)|
 |`--message <message>`|`-m`|EXPERIMENTAL. override the default message for the auto snap|
 
 ---  
@@ -464,10 +464,10 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--port <port>`|`-p`|port number to open for localhost server (default 8085)|
-|`--suppress-browser-launch`|`   `|do not open a browser for authentication|
-|`--npmrc-path <path>`|`   `|path to npmrc file to configure bit.dev registry|
-|`--skip-registry-config`|`   `|don't configure bit.dev registry|
-|`--machine-name <string>`|`   `|specify machine-name to pair with the token (useful for CI to avoid accidentally revoke the token)|
+|`--suppress-browser-launch`|   |do not open a browser for authentication|
+|`--npmrc-path <path>`|   |path to npmrc file to configure bit.dev registry|
+|`--skip-registry-config`|   |don't configure bit.dev registry|
+|`--machine-name <string>`|   |specify machine-name to pair with the token (useful for CI to avoid accidentally revoke the token)|
 
 ---  
 
@@ -490,7 +490,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--json`|`-j`|return diagnoses in json format|
-|`--list`|`   `|list all available diagnoses|
+|`--list`|   |list all available diagnoses|
 |`--save [filePath]`|`-s`|save diagnoses to a file|
 
 ---  
@@ -506,8 +506,8 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |---|:-----:|---|
 |`--image <image>`|`-i`|image path. use one of the following extensions: [gif, png, svg, pdf]|
 |`--remote [remoteName]`|`-r`|remote name (name is optional, leave empty when id is specified)|
-|`--all-versions`|`   `|enter all components versions into the graph, not only latest|
-|`--layout <name>`|`   `|GraphVis layout. default to "dot". options are [circo, dot, fdp, neato, osage, patchwork, sfdp, twopi]|
+|`--all-versions`|   |enter all components versions into the graph, not only latest|
+|`--layout <name>`|   |GraphVis layout. default to "dot". options are [circo, dot, fdp, neato, osage, patchwork, sfdp, twopi]|
 
 ---  
 
@@ -535,7 +535,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
-|`--metadata`|`   `|metadata/front-matter to place at the top of the .md file, enter as an object e.g. --metadata.id=cli --metadata.title=commands|
+|`--metadata`|   |metadata/front-matter to place at the top of the .md file, enter as an object e.g. --metadata.id=cli --metadata.title=commands|
 
 ---  
 
@@ -589,7 +589,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--port [number]`|`-p`|port of the UI server.|
 |`--rebuild`|`-r`|rebuild the UI|
 |`--verbose`|`-v`|showing verbose output for inspection and prints stack trace|
-|`--suppress-browser-launch`|`   `|do not automatically open browser when ready|
+|`--suppress-browser-launch`|   |do not automatically open browser when ready|
 
 ---  
 
@@ -616,9 +616,9 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 |`--variants <variants>`|`-v`|add packages to specific variants|
 |`--type [lifecycleType]`|`-t`|runtime (default), dev or peer dependency|
 |`--update-existing [updateExisting]`|`-u`|update existing dependencies version and types|
-|`--save-prefix [savePrefix]`|`   `|set the prefix to use when adding dependency to workspace.jsonc|
-|`--skip-dedupe [skipDedupe]`|`   `|do not dedupe dependencies on installation|
-|`--skip-import [skipImport]`|`   `|do not import bit objects post installation|
+|`--save-prefix [savePrefix]`|   |set the prefix to use when adding dependency to workspace.jsonc|
+|`--skip-dedupe [skipDedupe]`|   |do not dedupe dependencies on installation|
+|`--skip-import [skipImport]`|   |do not import bit objects post installation|
 
 ---  
 
@@ -692,9 +692,9 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
 |`--json`|`-j`|return the output as JSON|
-|`--verbose`|`   `|verbose output|
+|`--verbose`|   |verbose output|
 |`--rewire`|`-r`|Replace relative paths with module paths in code (e.g. "../foo" => "@bit/foo")|
-|`--target <dir>`|`   `|EXPERIMENTAL. link to an external directory (similar to npm-link) so other projects could use these components|
+|`--target <dir>`|   |EXPERIMENTAL. link to an external directory (similar to npm-link) so other projects could use these components|
 
 ---  
 
@@ -751,12 +751,12 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
-|`--install`|`   `|install core aspects in capsules|
-|`--reuse-capsules`|`   `|avoid deleting the capsules root-dir before starting the build|
-|`--tasks <string>`|`   `|build the specified task(s) only. for multiple tasks, separate by a comma and wrap with quotes.
+|`--install`|   |install core aspects in capsules|
+|`--reuse-capsules`|   |avoid deleting the capsules root-dir before starting the build|
+|`--tasks <string>`|   |build the specified task(s) only. for multiple tasks, separate by a comma and wrap with quotes.
 specify the task-name (e.g. "TypescriptCompiler") or the task-aspect-id (e.g. teambit.compilation/compiler)|
-|`--cache-packages-on-capsule-root`|`   `|set the package-manager cache on the capsule root|
-|`--list-tasks <string>`|`   `|list tasks of an env or a component-id for each one of the pipelines: build, tag and snap|
+|`--cache-packages-on-capsule-root`|   |set the package-manager cache on the capsule root|
+|`--list-tasks <string>`|   |list tasks of an env or a component-id for each one of the pipelines: build, tag and snap|
 
 ---  
 
@@ -849,7 +849,7 @@ specify the task-name (e.g. "TypescriptCompiler") or the task-aspect-id (e.g. te
 |---|:-----:|---|
 |`--force`|`-f`|ignore local version. remove the components even when they are staged or modified|
 |`--json`|`-j`|print the results in JSON format|
-|`--keep-files`|`   `|keep the component files in the workspace intact|
+|`--keep-files`|   |keep the component files in the workspace intact|
 
 ---  
 
@@ -891,9 +891,9 @@ alternatively, exporting to any one of the failed scopes, throws server-is-busy 
 |`--rewire`|`-r`|LEGACY ONLY. when exporting to a different or new scope, replace import/require statements in the source code to match the new scope|
 |`--force`|`-f`|force changing a component remote without asking for a confirmation|
 |`--lanes`|`-l`|HARMONY ONLY. export lanes|
-|`--all-versions`|`   `|export not only staged versions but all of them|
-|`--origin-directly`|`   `|HARMONY ONLY. avoid export to the central hub, instead, export directly to the original scopes. not recommended!|
-|`--resume <string>`|`   `|in case the previous export failed and suggested to resume with an export-id, enter the id|
+|`--all-versions`|   |export not only staged versions but all of them|
+|`--origin-directly`|   |HARMONY ONLY. avoid export to the central hub, instead, export directly to the original scopes. not recommended!|
+|`--resume <string>`|   |in case the previous export failed and suggested to resume with an export-id, enter the id|
 
 ---  
 
