@@ -55,25 +55,25 @@ module.exports = {
       label: 'aspects',
       items: [
         'aspects/babel/babel',
-        'aspects/builder',
-        'aspects/compiler',
-        'aspects/component',
-        'aspects/compositions',
-        'aspects/dependency-resolver',
+        'aspects/builder/builder',
+        'aspects/compiler/compiler',
+        'aspects/component/component',
+        'aspects/compositions/compositions',
+        'aspects/dependency-resolver/dependency-resolver',
         'aspects/envs',
         'aspects/generator',
         'aspects/logger',
         'aspects/mdx',
-        'aspects/multi-compiler',
+        'aspects/multi-compiler/multi-compiler',
         'aspects/node',
         'aspects/pkg',
-        'aspects/pnpm',
+        'aspects/pnpm/pnpm',
         'aspects/preview',
         'aspects/react',
         'aspects/react-native',
         'aspects/typescript',
         'aspects/variants',
-        'aspects/yarn'
+        'aspects/yarn/yarn'
       ],
       collapsed: false
     }
