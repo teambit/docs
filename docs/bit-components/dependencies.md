@@ -26,19 +26,19 @@ To create a Bit component, verify you met the following:
 
 ---
 
-## Automated Dependency Management
+## Manage Component Dependencies
 
-Each Bit component has its own dependency graph. This graph is managed by Bit according to the dependencies available in your workspace and the implementation of each component. This means you control dependencies from a single source, and Bit uses that to automate the dependencies per component.
+Each Bit component has its own dependencies. It is managed by Bit according to the `import` statements in your code and the installed dependencies in your workspace.
 
 ### Install dependency on workspace
 
 To install a dependency for your workspace, use the `install` command:
 
 ```sh
-bit install classnames
+bit install <TODO>
 ```
 
-Bit installs `classnames` as a dependency to your workspace and adds it to the dependency policy in your `workspace.json`:
+Bit installs `<TODO>` as a dependency to your workspace and adds it to the dependency policy in your `workspace.json`:
 
 ```js {6} title="workspace.jsonc"
 ...
@@ -46,18 +46,22 @@ Bit installs `classnames` as a dependency to your workspace and adds it to the d
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "classnames": "2.3.1"
+        "<TODO>": "2.3.1"
       }
     }
 }
 ...
 ```
 
-`classnames` is installed for the workspace but is not added as a dependency to any component.
+:::info Dependency is only installed
+
+`<TODO>` is installed for the workspace but is not added as a dependency to any component.
+
+:::
 
 ### Adding dependency for component
 
-To add `classnames` as a dependency, let's first create a component
+To add `<TODO>` as a dependency, let's first create a component
 
 ```sh
 bit create react-component image
@@ -141,7 +145,7 @@ If in your workspace you are required to set a dependency as a peer dependency, 
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "peerDependencies": {
-        "classnames": "2.3.1"
+        "<TODO>": "2.3.1"
       }
     }
 }
@@ -172,7 +176,7 @@ To do so, add a `variant` configuration to your workspace and set a different de
   "teambit.dependencies/dependency-resolver": {
     "policy": {
       "dependencies": {
-        "classnames": "2.0.0"
+        "<TODO>": "2.0.0"
       }
     }
   },
@@ -180,7 +184,7 @@ To do so, add a `variant` configuration to your workspace and set a different de
     "{react-ui/*}": {
       "teambit.dependencies/dependency-resolver": {
         "policy": {
-          "classnames": "1.0.0"
+          "<TODO>": "1.0.0"
         }
       }
     }

@@ -133,7 +133,7 @@ module.exports = {
       ]
     },
 
-    {
+   /* {
       type: 'category',
       label: 'Component Architecture',
       items: [
@@ -143,7 +143,7 @@ module.exports = {
         // "component-architecture/organizing-components",
         // "component-architecture/theming-components",
       ]
-    },
+    },*/
 
     {
       type: 'category',

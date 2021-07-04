@@ -3,7 +3,30 @@ id: compiling-components
 title: Compile to Modules
 ---
 
-A MARJOR TODO HERE
+In a Bit workspace each component is compiled to a module. This is so you can `import` individual components directly from other components, apps and services in the workspace.
+
+This topics describes how to compile a basic React component and use it by a React app in the same workspace.
+
+---
+
+## Prerequisites
+
+To create a Bit component, verify you met the following:
+
+1. [Install Bit CLI.](https://TODO)
+1. [Create a Bit workspace](https://TODO) on a fresh Git repository.
+1. [Create a component.](/bit-components/component-overview)
+1. []
+
+:::tip Onboarding pre-existing components
+
+To onboard components from a pre-existing project refer to [this guide](https://TODO).
+
+:::
+
+---
+
+---
 
 Compilation is a crucial step in making a component an independent module that can be used by other web projects as well as internally, by other components in the same workspace.
 When Bit starts tracking a component, a new directory is created for it inside the workspace' `node_modules` directory. When a component gets compiled, the output of that process is placed inside the root of that directory.
