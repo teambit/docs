@@ -3,7 +3,7 @@ id: mutate-webpack-config
 title: Custom Webpack Config
 ---
 
-Depending on the [Component Development Environments](https://harmony-docs.bit.dev/building-with-bit/environments) configured for a components, a different default Webpack config is applied. You can customize any Webpack config by creating an Environment and use the available APIs to mutate the provided configuration. Bit uses the Envs' WebPack configuration for the contents of the **overview** tab and **compositions**.
+Depending on the [Component Development Environments](https://harmony-docs.bit.dev/building-with-bit/environments) configured for components, a different default Webpack config is applied on each component. You can customize any Webpack config by creating an Environment and use the available APIs to mutate the provided configuration. Bit uses the Envs' WebPack configuration for the contents of the **overview** tab and **compositions**.
 
 ## `useWebpack`
 
