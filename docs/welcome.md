@@ -1,8 +1,7 @@
 ---
 id: welcome
-title: 'Bit: An end-to-end solution for component-driven web development'
+title: Welcome to Bit Harmony
 slug: /
-description: Bit is an end-to-end solution for component driven development. It helps you build applications with independent components, and collaborate on components across the organization.
 ---
 
 [Bit](/essentials/what-is-bit) is a tool for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture.
