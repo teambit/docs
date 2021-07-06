@@ -145,7 +145,8 @@ module.exports = {
       label: 'Extending Bit',
       items: [
         'extending-bit/adding-a-new-tab',
-        'extending-bit/creating-a-custom-generator'
+        'extending-bit/creating-a-custom-generator',
+        'extending-bit/mutate-webpack-config'
       ]
     },
 
