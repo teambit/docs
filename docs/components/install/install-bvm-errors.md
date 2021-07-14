@@ -11,18 +11,51 @@ import TabItem from '@theme/TabItem';
 **If BVM isn't recognized in your terminal after installing it via npm, then please run the following:**
 
 <Tabs
-defaultValue="Windows"
+defaultValue="MacOSLinux"
 values={[
+{label: 'MacOS / Linux', value: 'MacOSLinux'},
 {label: 'Windows', value: 'Windows'},
 ]}>
+<TabItem value="MacOSLinux">
+
+<Tabs
+defaultValue="Bash"
+values={[
+{label: 'Bash', value: 'Bash'},
+{label: 'ZSH', value: 'ZSH'},
+]}>
+<TabItem value="Bash">
+
+```bash
+# npm 
+echo 'export PATH=$(npm bin -g):$PATH' >> ~/.bashrc && source ~/.bashrc
+# yarn
+echo 'export PATH=$(yarn global bin):$PATH'  >> ~/.bashrc && source ~/.bashrc
+```
+
+  </TabItem>
+  <TabItem value="ZSH">
+
+```bash
+# npm 
+echo 'export PATH=$(npm bin -g):$PATH' >> ~/.zshrc && source ~/.zshrc
+# yarn
+echo 'export PATH=$(yarn global bin):$PATH'  >> ~/.zshrc && source ~/.zshrc
+```
+
+  </TabItem>
+  </Tabs>
+
+</TabItem>
 <TabItem value="Windows">
 
 ```bash
 setx path "%path%;%AppData%\npm" and re-open your terminal
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
+
 
 ---
 
@@ -53,3 +86,5 @@ setx path "%path%;C:\Users\USER\AppData\Local\.bvm" and re-open your terminal
 
   </TabItem>
 </Tabs>
+
+
