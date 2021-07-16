@@ -1,6 +1,6 @@
 ---
 id: welcome
-title: Welcome to Bit Harmony
+title: 'Collaborate on Components. Compose Apps.'
 slug: /
 ---
 

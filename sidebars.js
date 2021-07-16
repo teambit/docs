@@ -1,36 +1,4 @@
 module.exports = {
-  // tutorials: [
-
-  //   {
-  //     type: 'category',
-  //     label: 'React',
-  //     items: [
-  //       {
-  //         type:'category',
-  //         label: 'Tech Jokes',
-  //         items: [
-  //           'tutorials/react/tech-jokes/try-bit',
-  //           'tutorials/react/tech-jokes/install-bit',
-  //           'tutorials/react/tech-jokes/create-remote-scope',
-  //           'tutorials/react/tech-jokes/set-up-workspace',
-  //           'tutorials/react/tech-jokes/choose-dev-env',
-  //           'tutorials/react/tech-jokes/add-components',
-  //           'tutorials/react/tech-jokes/render-component',
-  //           'tutorials/react/tech-jokes/document',
-  //           'tutorials/react/tech-jokes/test',
-  //           'tutorials/react/tech-jokes/version',
-  //           'tutorials/react/tech-jokes/import-components',
-  //           'tutorials/react/tech-jokes/explore-dependencies',
-  //           'tutorials/react/tech-jokes/auto-version-dependents',
-  //           "tutorials/react/tech-jokes/export-to-scope",
-  //           'tutorials/react/tech-jokes/install-components',
-  //           'tutorials/react/tech-jokes/ci-cd'
-  //         ]
-  //       }
-  //     ]
-  //   }
-
-  // ],
 
   resources: [
     {
@@ -84,121 +52,23 @@ module.exports = {
       type: 'doc',
       id: 'welcome'
     },
-
     {
       type: 'category',
       label: 'Getting Started',
       items: [
-        'getting-started/installing-bit',
-        'getting-started/initializing-workspace',
-        'getting-started/creating-components',
-        'getting-started/workspace-ui',
-        'getting-started/composing-components',
-        'getting-started/remote-scope',
-        'getting-started/exporting-components',
-        'getting-started/installing-components',
-        'getting-started/whats-next'
+        'getting-started/install-bit',
+        'getting-started/create-workspace',
+        {
+          type: 'category',
+          label: 'Compose components',
+          items: [
+            'getting-started/compose-components/create-components',
+            'getting-started/compose-components/manage-dependencies',
+            'getting-started/compose-components/from-document-to-build'
+          ]
+        }
       ],
       collapsed: false
     },
-
-    {
-      type: 'category',
-      label: 'Essentials',
-      items: [
-        'essentials/what-is-bit',
-        'essentials/components',
-        'essentials/workspace',
-        'essentials/scopes'
-      ]
-    },
-
-    {
-      type: 'category',
-      label: 'Building with Bit',
-      items: [
-        'building-with-bit/manage-workspace',
-        'building-with-bit/environments',
-        'building-with-bit/scoping-components',
-        {
-          type: 'category',
-          label: 'Components',
-          items: [
-            'building-with-bit/creating-components',
-            //'building-with-bit/tracking-components',
-            'building-with-bit/inspecting-components',
-            'building-with-bit/removing-components',
-            'building-with-bit/component-compositions',
-            'building-with-bit/documenting-components',
-            'building-with-bit/testing-components',
-            'building-with-bit/compiling-components',
-            'building-with-bit/versioning-components',
-            'building-with-bit/exporting-components',
-            'building-with-bit/consuming-components'
-            //'building-with-bit/publishing-components',
-          ]
-        }
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Extending Bit',
-      items: [
-        'extending-bit/adding-a-new-tab',
-        'extending-bit/creating-a-custom-generator',
-        'extending-bit/mutate-webpack-config'
-      ]
-    },
-
-    {
-      type: 'category',
-      label: 'Component Architecture',
-      items: [
-        'component-architecture/thinking-in-components'
-        // "component-architecture/composing-components",
-        // "component-architecture/naming-components",
-        // "component-architecture/organizing-components",
-        // "component-architecture/theming-components",
-      ]
-    },
-
-    {
-      type: 'category',
-      label: 'Bit.dev',
-      items: [
-        'bit-dot-dev/bit-dev',
-        'bit-dot-dev/my-account',
-        'bit-dot-dev/authentication'
-      ]
-    },
-
-    // {
-    //   type: 'doc',
-    //   id: 'aspects/aspects-overview'
-    // },
-
-    {
-      type: 'category',
-      label: 'Reference',
-      items: [
-        'reference/using-bvm',
-        'reference/commands',
-        'reference/cli-reference',
-        'reference/ci-cd',
-        'reference/pre-existing-components',
-        'reference/bit-oss-server',
-        'reference/usage-analytics',
-        'reference/migration'
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Troubleshooting',
-      items: [
-        'troubleshooting/doctor-logs-cache',
-        'troubleshooting/multiple-peer-dep-versions',
-        'troubleshooting/set-runtime-globals'
-      ]
-    }
   ]
 };
