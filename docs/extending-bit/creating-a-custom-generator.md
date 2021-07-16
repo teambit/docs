@@ -48,8 +48,8 @@ Edit your `workspace.jsonc` file and add the component id, (scope name / compone
 {
   "teambit.generator/generator": {
     "aspects": ["my-scope-name/my-components"]
-  }
-  my-scope-name/my-components": {},
+  },
+  "my-scope-name/my-components": {},
 }
 ```
 
@@ -188,7 +188,7 @@ Once you have tagged and exported the component you can add it to the `workspace
 {
   "teambit.generator/generator": {
     "aspects": ["@my-scope-name/my-components"]
-  }
+  },
   "@my-scope-name/my-components": {},
 }
 ```
