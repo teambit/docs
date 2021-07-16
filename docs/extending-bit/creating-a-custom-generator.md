@@ -15,7 +15,7 @@ The output will look something like this:
 The following template(s) are available with the command bit create:
 
 teambit.generator/generator
-    generator (create your own component generator)
+    component-generator (create your own component generator)
 
 ...
 ```
@@ -23,7 +23,7 @@ teambit.generator/generator
 You can also create your own generator using the `bit create` command followed by the name you want to give your generator. In this example we will use the name `my-components` but feel free to use a name that better describes your use case.
 
 ```bash
-bit create generator <my-components>
+bit create component-generator <my-components>
 ```
 
 ### Configuring your Generator's Environment
@@ -42,13 +42,14 @@ To check if your generator component is using the correct env you can run `bit e
 
 ### Registering your Generator
 
-Edit your `workspace.jsonc` file and add the component id, (scope name / component name) to `teambit.generator/generator`. This should go at root level. The component id can be found in the `aspect.ts` file. In this example we are using `my-scope-name` you may already have a default scope name configured and therefore this should be used here.
+Edit your `workspace.jsonc` file and add the component id, (scope name / component name) to `teambit.generator/generator`. You also need to register the template. This should go at root level. The component id can be found in the `aspect.ts` file. In this example we are using `my-scope-name` you may already have a default scope name configured and therefore this should be used here.
 
 ```json {} title="workspace.jsonc"
 {
   "teambit.generator/generator": {
     "aspects": ["my-scope-name/my-components"]
   }
+  my-scope-name/my-components": {},
 }
 ```
 
@@ -64,7 +65,7 @@ The output should now look something like this:
 The following template(s) are available with the command bit create:
 
 teambit.generator/generator
-    generator (create your own component generator)
+    component-generator (create your own component generator)
 
 ...
 
@@ -188,6 +189,7 @@ Once you have tagged and exported the component you can add it to the `workspace
   "teambit.generator/generator": {
     "aspects": ["@my-scope-name/my-components"]
   }
+  "@my-scope-name/my-components": {},
 }
 ```
 
