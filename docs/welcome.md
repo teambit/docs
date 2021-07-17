@@ -1,6 +1,6 @@
 ---
 id: welcome
-title: 'Collaborate on Components. Compose Apps.'
+title: 'Compose Apps. Collaborate on Components.'
 slug: /
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: import-components
-title: Import Components (Clone into a WS)
+title: Import Components (clone into a workspace)
 ---
 
 ...

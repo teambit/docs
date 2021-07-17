@@ -1,6 +1,6 @@
 ---
 id: variants
-title: Variants (cascading component selection)
+title: Variants
 ---
 
 

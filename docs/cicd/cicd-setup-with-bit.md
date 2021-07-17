@@ -1,6 +1,6 @@
 ---
-id: ci-cd-setup
-title: CI/CD Setup
+id: cicd-setup-with-bit
+title: CI/CD Setup with Bit
 ---
 
 ...

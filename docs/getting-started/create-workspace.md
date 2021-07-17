@@ -1,6 +1,6 @@
 ---
 id: create-workspace
-title: Create a new workspace
+title: Create a New Workspace
 ---
 
 ...
