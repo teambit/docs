@@ -10,7 +10,7 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "generate-cli":"bit cli generate --metadata.id='cli-reference' --metadata.title='CLI Reference' > docs/reference/cli-reference.md",
+    "generate-cli": "bit cli generate --metadata.id='cli-reference' --metadata.title='CLI Reference' > docs/reference/cli-reference.md",
     "update-aspects": "bit import && bit checkout latest --all --skip-npm-install"
   },
   "dependencies": {
@@ -20,14 +20,17 @@
     "@mdx-js/react": "^1.6.21",
     "@teambit/base-ui.elements.image": "^0.6.7",
     "@teambit/base-ui.elements.label": "^0.6.7",
+    "@teambit/base-ui.theme.theme-provider": "^1.0.1",
     "@teambit/documenter.theme.theme-context": "^3.0.8",
     "@teambit/evangelist.elements.button": "1.0.3",
+    "classnames": "^2.3.1",
     "clsx": "^1.1.1",
     "docusaurus-plugin-plausible": "^0.0.5",
     "docusaurus-plugin-sass": "^0.2.0",
     "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-medium-image-zoom": "^4.3.4",
     "rehype-truncate": "^1.2.2",
     "remark-images": "^2.0.0",
     "sass": "^1.32.12"
