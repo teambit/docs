@@ -1,6 +1,6 @@
 ---
 id: compiling
-title: compiling
+title: Compiling
 ---
 
 ...

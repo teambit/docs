@@ -54,7 +54,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Start a New Project',
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
@@ -244,6 +244,15 @@ module.exports = {
         'testing/testing-during-build',
       ],
       collapsed: true
+    },
+    {
+      type: 'category',
+      label: 'Compiling',
+      items: [
+        'compiling/overview',
+        'compiling/compiling-during-development',
+        'compiling/compiling-during-build'
+      ]
     },
     {
       type: 'category',
