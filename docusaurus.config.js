@@ -46,18 +46,18 @@ module.exports = {
     // ]
   ],
   themeConfig: {
-    algolia: {
-      apiKey: '58b48f3589d91aba567e8709de785bdd',
-      indexName: 'harmony',
-      appId: 'BH4D9OD16A',
-      // Optional: see doc section bellow
-      contextualSearch: false,
+    // algolia: {
+    //   apiKey: '58b48f3589d91aba567e8709de785bdd',
+    //   indexName: 'harmony',
+    //   appId: 'BH4D9OD16A',
+    //   // Optional: see doc section bellow
+    //   contextualSearch: false,
 
-      // Optional: Algolia search parameters
-      searchParameters: {}
+    //   // Optional: Algolia search parameters
+    //   searchParameters: {}
 
-      //... other Algolia params
-    },
+    //   //... other Algolia params
+    // },
     navbar: {
       hideOnScroll: false,
       title: 'Harmony Beta',
@@ -316,7 +316,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/teambit/docs/edit/harmony',
+          editUrl: 'https://github.com/teambit/docs/edit/eden/restore-harmony-docs',
           routeBasePath: '/',
           versions: {
             current: {
