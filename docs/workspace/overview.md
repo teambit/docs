@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-A Bit workspace is a temporary hub for distributed independent components. It is where they are composed, configured and collaborated on, 
+A Bit workspace is a local hub for distributed independent components. It is where components are composed, configured and collaborated on, 
 while maintaining a simple monolith-like dev experience.
 
 Create a Bit workspace to compose components, applications, services, component libraries, or any other sort of a modular system.

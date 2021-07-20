@@ -1,6 +1,6 @@
 ---
 id: jenkins
-title: jenkins
+title: Jenkins
 ---
 
 ...

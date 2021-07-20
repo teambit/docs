@@ -169,9 +169,6 @@ module.exports = {
         'dependencies/installing-dependencies',
         'dependencies/configuring-dependencies',
         'dependencies/dependency-resolution',
-        'dependencies/dev-dependencies',
-        'dependencies/peer-dependencies',
-        'dependencies/env-dependencies',
         'dependencies/package-managers',
       ],
       collapsed: true
