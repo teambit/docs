@@ -4,9 +4,9 @@ title: Initializing a Workspace
 ---
 
 import FilesBitCreates from '@site/docs/components/workspace/files-bit-creates.md'
-import BitInit from '@site/docs/components/commands/bit-init.md'
-import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
-import QuickGuide from '@site/docs/components/quick-guide.md'
+import BitInit from '@site/docs/mdx-components/commands/bit-init.md'
+import ReactEnvironment from '@site/docs/mdx-components/workspace/react-environment.md'
+import QuickGuide from '@site/docs/mdx-components/quick-guide.md'
 
 In order to initialize a workspace you will need to first [install Bit](installing-bit). A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. Bit works with Git so you can either add init a new git repo or add Bit to an existing git repo.
 

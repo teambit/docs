@@ -1,5 +1,5 @@
 ---
-id: set-runtime-globals
+id: runtime-globals
 title: How to set runtime globals
 ---
 

@@ -316,7 +316,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/teambit/docs/edit/eden/restore-harmony-docs',
+          editUrl: 'https://github.com/teambit/docs/edit/new-harmony-docs',
           routeBasePath: '/',
           versions: {
             current: {

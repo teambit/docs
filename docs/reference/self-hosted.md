@@ -1,11 +1,15 @@
 ---
-id: hosting-remote-scope
-title: Hosting a Remote Scope
+id: bit-oss-server
+title: Self-hosted Bit Scope
 ---
 
 Collaborating between Bit components require setting up a remote Scope (server) accessible for all collaborators. You may use [bit.dev](https://bit.dev) as a remote server or setup your own.
 
 A remote Bit Scope is a host server that hosts components. Bit communication to server is done using HTTP/S protocol. Collaborators set up the Scope as remotes to their local workstation. Then, they export to and import from those scopes.  
+
+## Prerequisites
+
+- Docker
 
 ## Server Setup
 
@@ -17,22 +21,22 @@ Follow the instructions in [bit docker readme](https://github.com/teambit/bit/bl
 Your workstation may be configured to use many remote scopes. Use the `bit remote` command to manage them.
 
 ```shell
-bit remote add http://<hostname>:<port-number>
+bit remote add http://<hostname>:3000
 ```
 
 ### Export to a remote scope
 
 To export components to a remote scope make sure to configure your `workspace.jsonc` file with a `defaultScope`:
 
-```json title="set default scope for the workspace"
+```json title="set defaultWorkspace for a workspace
 {
     "teambit.workspace/workspace": {
-        "defaultScope": "<remote scope directory name>"
+        "defaultScope": "<remote scope name>"
     }
 }
 ```
 
-```json title="set default scope for a variant"
+```json title="set defaultWorkspace for a variant
 {
     "teambit.workspace/variants": {
         "ui/components": {

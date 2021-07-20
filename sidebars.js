@@ -121,9 +121,15 @@ module.exports = {
           type: 'category',
           label: 'Initialize a Workspace on an Existing Project',
           items: [
-            'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
+            'start-from-existing-project/init-workspace-on-existing-project/general-purpose',
+            'start-from-existing-project/init-workspace-on-existing-project/cra',
+            'start-from-existing-project/init-workspace-on-existing-project/nextjs',
+            'start-from-existing-project/init-workspace-on-existing-project/gatsby',
+            'start-from-existing-project/init-workspace-on-existing-project/angular-app',
+            'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
           ]
-        }
+        },
+        'start-from-existing-project/tracking-existing-components'
       ],
       collapsed: true
     },
@@ -350,6 +356,35 @@ module.exports = {
         'extending-bit/aspect-environment'
       ],
       collapsed: true
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      items: [
+        'reference/api-reference',
+        'reference/cli-reference',
+        'reference/common-commands',
+        {
+          type: 'category',
+          label: 'Troubleshooting',
+          items: [
+            'reference/troubleshooting/doctor-logs-cache',
+            'reference/troubleshooting/multiple-peer-dep-versions',
+            'reference/troubleshooting/runtime-globals'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          items: [
+            'reference/guides/publishing-components-to-external-registries',
+            'reference/guides/setting-up-remote-scope-server',
+            'reference/guides/component-driven-apps',
+            'reference/guides/cross-team-collaboration',
+            'reference/guides/upgrading-react-version'
+          ]
+        }
+      ]
     }
   ]
 };

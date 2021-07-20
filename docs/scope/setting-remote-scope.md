@@ -3,13 +3,13 @@ id: setting-remote-scope
 title: Setting a Remote Scope
 ---
 
-A remote scope is where the _shared_ release versions of components are stored. Each of these release versions packs in it the workspace configurations relevant to it, as well as artifacts produced by the ['build pipeline'](/build-pipeline/create-build-task). That means, each component is not only available to be used in other repositories, but it can also be maintained and modified in other workspaces, as it offers all the information needed for it.
+A remote scope is where the shared versions of components are stored. It is where components are made available to be consumed and maintained in other workspaces.
 
 To explore popular use-cases of remote scopes, [see here](/getting-started/what-is-bit#popular-use-cases).
 
 Setting up a remote scope is done in two steps:
 
-1. Create a scope on [Bit.dev](https://bit.dev) (or [self-host](/scope/self-host-bit-scope) on your own server).
+1. Create a scope on [Bit.dev](https://bit.dev) or [self-host](/scope/self-host-bit-scope) on your own server.
 
 2. Configure your workspace to export components to one or more scopes
 
