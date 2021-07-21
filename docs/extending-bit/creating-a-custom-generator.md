@@ -1,6 +1,6 @@
 ---
 id: creating-a-custom-generator
-title: Creating a Custom Generator
+title: Creating a Custom Component Generator
 ---
 
 You can use `bit templates` to see the available templates for generating components, aspects and environments.
@@ -49,7 +49,7 @@ Edit your `workspace.jsonc` file and add the component id, (scope name / compone
   "teambit.generator/generator": {
     "aspects": ["my-scope-name/my-components"]
   },
-  "my-scope-name/my-components": {},
+  "my-scope-name/my-components": {}
 }
 ```
 
@@ -187,9 +187,9 @@ Once you have tagged and exported the component you can add it to the `workspace
 ```json title="workspace.jsonc"
 {
   "teambit.generator/generator": {
-    "aspects": ["@my-scope-name/my-components"]
+    "aspects": ["my-org.my-scope-name/my-components"]
   },
-  "@my-scope-name/my-components": {},
+  "my-org.my-scope-name/my-components": {}
 }
 ```
 
