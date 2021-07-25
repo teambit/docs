@@ -222,3 +222,41 @@ Peer dependencies are usually used in the context of a single "hosting code". Th
 Bit may generate multiple "hosts", one for each environment being used, to run components of different types.
 That could translate into multiple versions of the same peer dependency, one for each environment. To manage multiple versions of a peer dependency [see here](/faq/multiple-peer-dep-versions).
 :::
+
+
+## Env dependencies
+
+
+```ts
+getDependencies(component: any): Promise<DependencyList>
+```
+
+Returns an object that defines the default dependencies for components handled by this environment. The returned object is used by the Dependencies service.
+
+For example:
+
+```ts
+export class ReactEnv implements Environment {
+  // ...
+
+  async getDependencies() {
+    return {
+      dependencies: {
+        react: '-',
+      },
+      devDependencies: {
+        '@types/react': '16.9.43',
+        '@types/jest': '~26.0.9',
+      },
+      peerDependencies: {
+        react: '^16.13.1',
+        'react-dom': '^16.13.1',
+      },
+    };
+  }
+}
+```
+
+> As with any other 'merging' process, the properties defined in the above returned object will be added to configurations set by Bit.
+> Conflicting properties will be overridden by the properties that are set here.
+> Configurations that are set here may also be overridden, either by the 'Dependency Resolver aspect' or by workspace configurations set using the 'variants API'.

@@ -3,14 +3,15 @@ id: publishing-to-commonjs-registries
 title: Publishing to CommonJS Registries
 ---
 
-Components are published to the [bit.dev platform](https://bit.dev/) to allow scalable collaboration and enjoy designated features. In addition, some people would like to publish their components to other registrieus such as NPN.
-A component can be published to NPM either by using the `publish` command or as an automated step in the versioning process (when a component is 'tagged').
+By default, component packages are published to [Bit Cloud](https://bit.dev). However, that can be changed to npm or a private registry.
 
-Publishing requires setting your `workspace.jsonc` configuration file with the name of the NPM scope and other properties. Components will not be published if the registry information is missing (either npm scope name or the details of another registry).
+A component package can be published either by using the `publish` command or as an automated step in the versioning process (when a component is 'tagged').
+
+Publishing requires setting your `workspace.jsonc` configuration file with the name of the npm scope and other properties. Components will not be published if the registry information is missing (either the npm scope name or the details of another registry).
 
 ## Publishing configurations
 
-> The publishing configurations (`teambit.pkg`) must be set under the 'variant' field and cannot be set at the workspace-level.
+> The publishing configurations (`teambit.pkg`) must be set under the 'variant' field. It cannot be set at the workspace-level.
 
 Example:
 
@@ -65,8 +66,6 @@ Available placeholders:
 - `{main}` - the name of the main file (leaving out the extension) - for example `index.js` will be `index`.
 
 ## CLI
-
-### Publish
 
 Publish an exported component
 

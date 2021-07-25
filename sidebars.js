@@ -184,17 +184,30 @@ module.exports = {
       label: 'Envs',
       items: [
         'envs/overview',
-        'envs/pre-configured-envs',
+        {
+          type: 'category',
+          label: 'Pre-Configured Envs',
+          items: [
+            'envs/pre-configured-envs/html',
+            'envs/pre-configured-envs/nodejs',
+            'envs/pre-configured-envs/react',
+            'envs/pre-configured-envs/react-native',
+            'envs/pre-configured-envs/angular',
+            'envs/pre-configured-envs/aspect'
+          ]
+        },
         'envs/customizing-env',
         'envs/creating-new-env',
         {
           type: 'category',
           label: 'Env Services',
           items: [
-            'envs/services/service-anatomy',
+            'envs/services/overview',
             'envs/services/compiling',
             'envs/services/building',
+            'envs/services/testing',
             'envs/services/linting',
+            'envs/services/formatting',
             'envs/services/packaging',
             'envs/services/documenting',
             'envs/services/component-generators',
@@ -370,7 +383,8 @@ module.exports = {
           items: [
             'reference/troubleshooting/doctor-logs-cache',
             'reference/troubleshooting/multiple-peer-dep-versions',
-            'reference/troubleshooting/runtime-globals'
+            'reference/troubleshooting/runtime-globals',
+            'reference/troubleshooting/multiple-envs'
           ]
         },
         {
@@ -381,7 +395,8 @@ module.exports = {
             'reference/guides/setting-up-remote-scope-server',
             'reference/guides/component-driven-apps',
             'reference/guides/cross-team-collaboration',
-            'reference/guides/upgrading-react-version'
+            'reference/guides/upgrading-react-version',
+            'reference/guides/using-global-types'
           ]
         }
       ]

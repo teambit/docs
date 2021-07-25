@@ -1,12 +1,13 @@
 ---
-id: linting
-title: Linting
+id: formatting
+title: Formatting
 ---
 
-Runs the environment's selected linter (for example, ESLint)
+Runs the environment's selected code formatter (for example, Prettier)
 
+## Using the service (service handler)
 ```ts
-getLinter(...args : any[]): Linter
+getFormatter?: (context: FormatterContext, transformers: any[]) => Formatter
 ```
 
 Returns a linter to be used by the Linter service.
@@ -15,25 +16,24 @@ For example:
 
 ```ts
 export class ReactEnv implements Environment {
+
     // ...
-    const eslintConfig = require('./eslint/eslintrc');
-    // ...
+    const prettierConfig = require('./prettier/prettier.config.js');
+    ///...
     constructor(){
         // ...
 
         // The ESLint aspect
-        private eslint: ESLintMain
+        private prettier: PrettierMain
     }
 
     // ...
 
-    getLinter(context: LinterContext, transformers: EslintConfigTransformer[] = []): Linter {
-        return this.eslint.createLinter(
+    getFormatter(context: FormatterContext, transformers: PrettierConfigTransformer[] = []): Formatter {
+        return this.prettier.createFormatter(
         context,
         {
-            config: eslintConfig,
-            // resolve all plugins from the react environment.
-            pluginPath: __dirname,
+            config: prettierConfig,
         },
         transformers
         );
@@ -54,10 +54,10 @@ export class CustomEnvExtension {
 
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const CustomEnvEnv = react.compose([
-      react.useEslint({
+      react.usePrettier({
         transformers: [
           (config) => {
-            config.setRule('no-console', ['error']);
+            config.setKey('tabWidth', 4);
             return config;
           },
         ],
@@ -69,5 +69,4 @@ export class CustomEnvExtension {
     return new CustomEnvExtension(react);
   }
 }
-
 ```
