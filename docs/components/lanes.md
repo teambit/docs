@@ -148,3 +148,4 @@ Component Tag is an immutable version meant to be consumed and is linked to the 
 - `bit reflog` shows all snaps... to be able to recover stuff. (need a way to point a l)
 - `bit reset`
 - two phase tag/snap? (similar to git)
+

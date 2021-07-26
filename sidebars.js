@@ -111,7 +111,7 @@ module.exports = {
           ]
         },
       ],
-      collapsed: false
+      collapsed: true
     },
     {
       type: 'category',
