@@ -136,7 +136,7 @@ Snaps are not meant to be consumed, so we should defer from letting projects dep
 - **status** should show snaps as **staged**.
 - **checkout** should allow checkout to a snap [TB: how? by hash?] [IM - yes, should also support abbreviated hash].
 - **merge** should allow merging to and from a snap.
-- **diff** should allow diffing snaps (and snap<>tags)
+- **diff** should allow diffing snaps (and snap tags)
 - **import** should import snaps alongside the rest of the component data.
 - **export** should export snaps alongside the rest of the component data.
 - **instal** TBD

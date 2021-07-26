@@ -8,7 +8,7 @@ Generates the node module package for components, with properties set by the env
 ## Using the service (service handler)
 
 ```ts
-getPackageJsonProps(...args : any[]): object
+getPackageJsonProps?: () => PackageJsonProps
 ```
 
 For example:

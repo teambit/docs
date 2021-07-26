@@ -9,7 +9,10 @@ Bundles all components using the Env and runs a server to display them in the wo
 
 
 ```ts
-getDevServer(...args : any[]): DevServer
+  getDevServer?: (
+    context: DevServerContext,
+    transformers: WebpackConfigTransformer[]
+  ) => DevServer | Promise<DevServer>;
 ```
 
 Returns a DevServer to be used by the DevServer service. (A DevServer is essentially the combination of the bundler configurations, together with a specified 'listen' port number)

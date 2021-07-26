@@ -8,7 +8,7 @@ Runs the environment's selected test runner (for example, Jest)
 ## Using the service (service handler)
 
 ```ts
-getTester(...args : any[]): Tester
+getTester?: (path: string, tester: any) => Tester
 ```
 
 For example:

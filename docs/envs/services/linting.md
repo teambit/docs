@@ -6,7 +6,7 @@ title: Linting
 Runs the environment's selected linter (for example, ESLint)
 
 ```ts
-getLinter(...args : any[]): Linter
+getLinter?: (context: LinterContext, transformers: any[]) => Linter
 ```
 
 Returns a linter to be used by the Linter service.
