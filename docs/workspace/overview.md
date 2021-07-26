@@ -6,7 +6,7 @@ title: Overview
 A Bit workspace is where modular & distributed apps are developed with a dev experience that resembles working on a CRA application.
 It is a new and radical take on the monorepo concept, made with simplicity, flexibility and performance in mind.
 
-Unlike a traditional monorepo, a Bit workspace is where components are composed - together, but versioned independently.
+Unlike a traditional monorepo, a Bit workspace is where components are composed together, but versioned independently.
 
 ## Benefits
 
