@@ -53,8 +53,13 @@ module.exports = {
       label: 'Welcome'
     },
     {
+      type: 'doc',
+      id: 'quick-start',
+      label: 'Quick Start'
+    },
+    {
       type: 'category',
-      label: 'Start a New Project',
+      label: 'Get Started',
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
@@ -115,7 +120,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Start from an Existing Project',
+      label: 'Start from an Existing Repository',
       items: [
         {
           type: 'category',
@@ -219,6 +224,28 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'CI/CD',
+      items: [
+        'cicd/overview',
+        'cicd/cicd-setup-with-bit',
+        'cicd/soft-tags',
+        {
+          type: 'category',
+          label: 'Configuring Bit on Your CI',
+          items: [
+            'cicd/configuring-bit-on-your-ci/circle-ci',
+            'cicd/configuring-bit-on-your-ci/github-actions',
+            'cicd/configuring-bit-on-your-ci/gitlab-ci',
+            'cicd/configuring-bit-on-your-ci/jenkins',
+          ],
+          collapsed: true
+        },
+        'cicd/ripple-ci',
+      ],
+      collapsed: true
+    },
+    {
+      type: 'category',
       label: 'Builder',
       items: [
         'builder/overview',
@@ -230,46 +257,46 @@ module.exports = {
       ],
       collapsed: true
     },
-    {
-      type: 'category',
-      label: 'Docs',
-      items: [
-        'docs/overview',
-        'docs/doc-files',
-        'docs/rendering-docs',
-        'docs/doc-templates',
-      ],
-      collapsed: true
-    },
-    {
-      type: 'category',
-      label: 'Compositions',
-      items: [
-        'compositions/overview',
-        'compositions/composition-format',
-        'compositions/visualizing-components',
-      ],
-      collapsed: true
-    },
-    {
-      type: 'category',
-      label: 'Testing',
-      items: [
-        'testing/overview',
-        'testing/testing-during-development',
-        'testing/testing-during-build',
-      ],
-      collapsed: true
-    },
-    {
-      type: 'category',
-      label: 'Compiling',
-      items: [
-        'compiling/overview',
-        'compiling/compiling-during-development',
-        'compiling/compiling-during-build'
-      ]
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Docs',
+    //   items: [
+    //     'docs/overview',
+    //     'docs/doc-files',
+    //     'docs/rendering-docs',
+    //     'docs/doc-templates',
+    //   ],
+    //   collapsed: true
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Compositions',
+    //   items: [
+    //     'compositions/overview',
+    //     'compositions/composition-format',
+    //     'compositions/visualizing-components',
+    //   ],
+    //   collapsed: true
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Testing',
+    //   items: [
+    //     'testing/overview',
+    //     'testing/testing-during-development',
+    //     'testing/testing-during-build',
+    //   ],
+    //   collapsed: true
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Compiling',
+    //   items: [
+    //     'compiling/overview',
+    //     'compiling/compiling-during-development',
+    //     'compiling/compiling-during-build'
+    //   ]
+    // },
     {
       type: 'category',
       label: 'Scope',
@@ -303,28 +330,6 @@ module.exports = {
         'packages/packing-components',
         'packages/publishing-to-commonjs-registries',
         'packages/build-tasks',
-      ],
-      collapsed: true
-    },
-    {
-      type: 'category',
-      label: 'CI/CD',
-      items: [
-        'cicd/overview',
-        'cicd/cicd-setup-with-bit',
-        'cicd/soft-tags',
-        {
-          type: 'category',
-          label: 'Configuring Bit on Your CI',
-          items: [
-            'cicd/configuring-bit-on-your-ci/circle-ci',
-            'cicd/configuring-bit-on-your-ci/github-actions',
-            'cicd/configuring-bit-on-your-ci/gitlab-ci',
-            'cicd/configuring-bit-on-your-ci/jenkins',
-          ],
-          collapsed: true
-        },
-        'cicd/ripple-ci',
       ],
       collapsed: true
     },

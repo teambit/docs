@@ -3,12 +3,23 @@ id: overview
 title: Overview
 ---
 
-A Bit workspace is a local hub for distributed independent components. It is where components are composed, configured and collaborated on, 
-while maintaining a simple monolith-like dev experience.
+Component development workspace designed for development of distributed systems with a monolithic and seamless dev experience.
+It provides a CRA/Next.JS like dev experience for building fully distributed apps where every component is its own independent
+component. It is like outer-space monorepo built for simplicity, flexibility, consistency and performance.
 
-Create a Bit workspace to compose components, applications, services, component libraries, or any other sort of a modular system.
+- **Structure components anywhere**. Have components in any directory structure.
+- **Configuration**. Automated configuration management.
+- **Linking** Linking Workspace components and external dependencies.
+- **Dependencies** Configuration management.
 
-## The anatomy of a workspace
+## The Workspace Anatomy
+
+### Workspace config (e.g. `workspace.json`)
+
+### Component mapping (e.g. `.bitmap`)
+
+### External modules (e.g. `node_modules`)
+
 
 1. [**Workspace configurations**](/workspace/configurations) (the `workspace.jsonc` file).  
    This is where rules and policies are set for the workspace itself but also for each component managed by it.  

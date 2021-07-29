@@ -1,33 +1,38 @@
 ---
 id: welcome
-title: 'Compose & Collaborate on Components.'
+title: What is Bit?
 slug: /
 ---
 
-[Bit](/essentials/what-is-bit) is an [open-source toolchain](https://github.com/teambit/bit) for composing modern applications from independent components. In Bit we build components not apps. In the workspace we only have components and the app is just another component. A component can be a composition of many other components that eventually compose an entire app. In Bit we never have a project, we never have an application, as having an application is against the nature of Component Driven Architecture.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for composing component-driven systems from independent components. It helps developers compose and collaborate on modern applications with independent components and dependencies and makes development of component-driven simple, fast, standard, consistent and scalable.
 
-Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more modular, maintainable, testable, and reusable code.
+## Thinking in components
 
-[Bit Cloud](https://bit.dev/) is a cloud hosting service for components. It provides developers and teams with an end-to-end solution for hosting, organizing, discovering, conduming, updating, and collaboarting on components. It is possible to use Bit with or without Bit Cloud.
+In Bit we first build independent components, then compose them into apps. We build every component independently as its own module and the app is just another component composed from different components. 
+Instead of building a monolithic application that consists lots of "internal" components, which has no additional value,
+we build independent components that could compose to build many different applications. This is different way of thinking, thinking in components. Building with Bit helps you build more modular, maintainable, testable, and reusable code.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Think more in components and less in apps
+### Rapid app development
 
-Bit is not a more efficient way to do things, it's a different way to do things. When you think about more efficient you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain, in the existing manner. This is not what Bit does. Bit doesn't help here. If you are building things the wrong way: if you are building apps and not building components then this is the wrong way to build.
+### Consistency
 
-We can help you solve these problems with Bit as Bit works on the component model. If each of your components are individual you can just build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
+### Cross team collaboration
 
-### Use Bit if you want to:
+### Team and developer autonomy
 
-- Build a component eco system
-- Create a better collaboration workflow around your components
-- Publish individual components and scale the amount of components you are publishing
-- Organize components, consume components and create a development experience to do so
-- Standardize the way to build components
-- Organize components in a central place that allows you to easily onboard new people with discoverability of components.
-- Integrate different components
-- Easily managing dependencies of a variety of components
+### Write component (code) once. Use anywhere. Really.
+
+### Standardizing developer experiences
+
+
+## Common use cases for Bit
+
+- Micro Frontends.
+- Design system component libraries.
+- Distributed Monorepo.
+- Modular server side development.
 
 Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing of components whereas the consumption of components is handled by package managers such as npm or yarn.
 
