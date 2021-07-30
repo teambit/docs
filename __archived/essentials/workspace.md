@@ -1,6 +1,6 @@
 ---
 id: workspace
-title: Local Workspace
+title: Workspace
 ---
 
 The Bit Workspace is a local development environment for Bit Components. The local workspace gives you a monolithic development experience for building Bit Components and reusing components built by other teams.

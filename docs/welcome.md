@@ -4,7 +4,22 @@ title: What is Bit?
 slug: /
 ---
 
-Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for composing component-driven systems from independent components. It helps developers compose and collaborate on modern applications with independent components and dependencies and makes development of component-driven simple, fast, standard, consistent and scalable.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for composing component-driven systems from independent components. 
+
+
+
+It helps developers compose and collaborate on modern applications with independent components and dependencies and makes development of component-driven simple, fast, standard, consistent and scalable.
+
+### What is a component driven system?
+
+- React app
+- Component Library
+- Angular app
+- Angular Library
+- Vue app
+
+
+### What is Independent component.
 
 ## Thinking in components
 
