@@ -5,12 +5,29 @@ title: Podcasts
 
 import { Image } from '@site/src/components/image'
 
+## Bit with Debbie O'Brien
+
+<div class="podcast-card">
+
+  <a href="https://fsjam.org/episodes/episode-35-bit-with-debbie-obrien">
+    <Image src="/img/podcasts/fsjam.jpeg" alt="Select Podcasts" padding={10} width="80%" />
+  </a>
+  <div>
+    <p>
+    In this episode we discuss workflows to enable sharing components across large codebases, how to make reusable frontend code, and techniques for navigating digital work environments.
+    </p>
+    <p>
+    <a href="https://fsjam.org/episodes/episode-35-bit-with-debbie-obrien">FS JAM Podcast</a> - July 2021
+    </p>
+  </div>
+</div>
+
 ## Developer Advocacy, Navigating Tech, & Frontend Dev
 
 <div class="podcast-card">
 
   <a href="https://rss.com/podcasts/harperdb-select-star/200839/">
-    <Image src="/img/podcasts/select-podcast.jpeg" alt="Select Podcasts" padding={20} width="65%" />
+    <Image src="/img/podcasts/select-podcast.jpeg" alt="Select Podcasts" padding={10} width="65%" />
   </a>
   <div>
     <p>
@@ -27,7 +44,7 @@ import { Image } from '@site/src/components/image'
 <div class="podcast-card">
 
   <a href="https://www.podbean.com/pu/pbblog-3m5bz-f0593">
-    <Image src="/img/podcasts/modern-web.jpg" alt="Modern Web" padding={20} width="50%" />
+    <Image src="/img/podcasts/modern-web.jpg" alt="Modern Web" padding={10} width="50%" />
   </a>
   <div>
     <p>
@@ -44,7 +61,7 @@ import { Image } from '@site/src/components/image'
 <div class="podcast-card">
 
   <a href="https://www.heavybit.com/library/podcasts/jamstack-radio/ep-59-the-component-marketplace-with-alexander-karan-of-climateclever/">
-    <Image src="/img/podcasts/jamstack-radio.jpg" alt="Jamstack Radio" padding={20} width="50%" />
+    <Image src="/img/podcasts/jamstack-radio.jpg" alt="Jamstack Radio" padding={10} width="50%" />
   </a>
 
   <div>
@@ -62,7 +79,7 @@ import { Image } from '@site/src/components/image'
 <div class="podcast-card">
 
   <a href="https://devchat.tv/views-on-vue/vue-142-from-nuxt-to-react-catching-up-with-debbie-obrien/">
-    <Image src="/img/podcasts/views-on-vue.jpg" alt="Views on Vue" padding={20} width="50%" />
+    <Image src="/img/podcasts/views-on-vue.jpg" alt="Views on Vue" padding={10} width="50%" />
   </a>
 <div>
     <p>
