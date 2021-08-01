@@ -59,6 +59,7 @@ Learn more about [Workspaces](/)
 ### Create Components
 
 [Creating Components](/) can be doing using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
+Components must be in their own directory and have an index file that exports the component.
 
 ```bash
 bit create react my-component
@@ -96,8 +97,6 @@ Version your components and host them remotely to collaborate with others.
 
 ### Version Components
 
-<!-- debbie decide here -->
-
 With Bit status, you can see which components have changes and need to be versioned as well as how dependents are affected
 from these changes.
 
@@ -114,12 +113,16 @@ bit tag --all 1.0.0 --message 'my first version'
 
 ### Export Components
 
-To export your components you would have to create your remote scope. Creating a remote Scope can be done
-by [hosting your own](/scope/host) or create a Scope on [bit.dev](#).
+To export your components you need to create a remote scope. Creating a remote Scope can be done
+by [hosting your own](/scope/host) or creating a Scope on [Bit's cloud provider](https://bit.dev),
 
 ```bash
 bit export
 ```
+
+:::note
+Before exporting make sure you have set the default scope to be your remote scope in the workspace.jsonc file.
+:::
 
 ## Use and Collaborate on Components
 
@@ -143,13 +146,13 @@ Also, components can be installed with any package manager from any other app wh
 npm install @teambit/base-ui.my-component
 ```
 
-Just make sure to [configure the Bit registry](/) if you are using bit.dev.
+Just make sure to [configure the Bit registry](/) if you are using Bit's cloud provider.
 Also, components can be published to any registry or integrated with Artifactory or Nexus.
 
 ### Importing Components
 
 Components can be imported to any Bit Workspace. By importing components you can make changes to any component
-from any project or Bit Workspace.
+from any project or Bit Workspace. You can then export a new version and even eject it from your workspace.
 
 ```bash
 bit import teambit.base-ui/my-component
