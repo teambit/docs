@@ -313,7 +313,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Configurations',
+      label: 'Config',
       items: [
         'configurations/overview',
         'configurations/config-files',

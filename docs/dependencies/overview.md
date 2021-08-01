@@ -26,3 +26,24 @@ The 'dependency-resolver' simplifies dependency management by providing the foll
    In addition to that, it provide a single `bit install` command to take care of installing all package dependencies and importing all component dependencies.
 
 <Image src="/img/dependencies_graph.png" />
+
+
+## Immutable Dependencies
+
+## Dependency Safety
+
+## Dependency Automation
+
+
+## Dependency Policies
+
+## Dependency Installation
+
+
+## Dependency Insights
+
+## Peer Dependencies
+
+## Dependency Standardization (Envs)
+
+

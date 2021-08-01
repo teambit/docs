@@ -3,79 +3,144 @@ id: overview
 title: Overview
 ---
 
-Component development workspace designed for development of distributed systems with a monolithic and seamless dev experience.
-It provides a CRA/Next.JS like dev experience for building fully distributed apps where every component is its own independent
-component. It is like outer-space monorepo built for simplicity, flexibility, consistency and performance.
+The Bit Workspace allows development of component-driven systems from independent components. It is like building a component-level Monorepo while getting the development experience of building just a regular app using tools like NodeJS, CRA, Next.JS and others.
 
-- **Structure components anywhere**. Have components in any directory structure.
-- **Configuration**. Automated configuration management.
-- **Linking** Linking Workspace components and external dependencies.
-- **Dependencies** Configuration management.
+The Bit Workspace allows the development and management of [Bit Components](/components/overview). The Workspace includes
+and manages an array of Bit Components, each is like an independent repo, connected and versioned with dependencies to other components.
 
-## The Workspace Anatomy
+The Bit Workspace is a local development environment for Bit Components. The local workspace gives you a monolithic development experience for building Bit Components and reusing components built by other teams.
 
-### Workspace config (e.g. `workspace.json`)
+Workspaces are used for building and maintaining [Component Libraries](/), [Apps](/), [Modules](/)
 
-### Component mapping (e.g. `.bitmap`)
+## Workspace Anatomy
 
-### External modules (e.g. `node_modules`)
+Bit helps you focus on building components, and as such the workspace has a minimal footprint on the codebase. There are only two files Bit needs to manage components and the workspace.
 
+- `.bitmap` - Mapping of the location of Bit Components in the workspace.
+- `workspace.jsonc` - Main file for the Workspace configuration.
 
-1. [**Workspace configurations**](/workspace/configurations) (the `workspace.jsonc` file).  
-   This is where rules and policies are set for the workspace itself but also for each component managed by it.  
-   These rules include component dependencies, development environments, default scopes, and so on.  
-   Rules are defined by referencing to the relevant Bit aspect (the field) and setting it with  configurations (the value).   
-   For example: `"teambit.react/react": { "mdx": true }`.
-   
+## Flexible Directory Structure
 
-2. **Files-to-component mapping** (the `.bitmap` file). This is where Bit maps multiple files to single units, components. This process happens once a component is tracked by Bit (`bit add path/to/component`). This mapping will also include the following information:
+A Bit Workspace is a monorepo that supports nesting Bit Components in sub-directories. You can build a highly-nested structure for your workspace, a flat structure, or decide where in your project you want deep nesting and where you don't.
 
-   - The component entry point (usually, the `index.js/ts` file).
-   - The component version (if a component has been versioned).
-   - Whether this component is [pending to be versioned](/components/versioning#soft-and-hard-tags-component-collaboration) by the CI.
+By Default Bit aims to create symmetry between component scoping and name-spacing on the one side, and how components are represented in the workspace UI.
 
-     <br />
+```sh title="Components in workspace sorted according to functionality"
+├── cart
+│   ├── purchase-summary
+│   └── shopping-cart
+└── design
+    ├── base-ui
+    │   ├── button
+    │   └── card
+    └── theme
+        ├── color-pallet
+        └── theme-context
+```
 
-   ```json title="An example .bitmap file"
-   {
-     "org.extensions/environments/custom-react@0.0.9": {
-       "mainFile": "index.ts",
-       "rootDir": "cet/environments/dell-react"
-     },
-     "org.design/base-ui/search-box-with-button@0.0.5": {
-       "mainFile": "index.ts",
-       "rootDir": "design/base-ui/searchBoxWithButton",
-       "exported" false,
-       "nextVersion": {
-           "version": "0.0.7",
-           "message": "add debouncing",
-           "username": "John",
-           "email": "john@my-mail.com"
-       }
-     },
-     "version": "14.8.9-dev.298"
-   }
-   ```
+This default behavior aims to improve the discovery experience for components in your codebase. The structure is not rigid. You can move components around as needed, or create and sort them in any way you see fit; as above, the bitmap file enables bit to track components wherever they are in your workspace.
 
-3. [**Local scope**](/scope/overview#local-scope) (the `.bit` or `.git/.bit` directory). This is where versioned or tagged components (either authored or imported) are stored.
+## Component as a Directory
 
-4. **Component packages** (located in the `node_modules/@scope-name` directory). This is where the distributable, compiled, code of a component is placed. Components in the workspace refer to each other only via their packages. This is crucial to keeping each component independent and context-agnostic.
+Bit requires all of each component's implementation files to be contained in a single directory in your Workspace. This directory includes the component's code, stylings, tests, documentation etc and an `index` barrel file to roll-up exports.
 
-5. **Workspace UI**. The workspace UI is a visual real-time representation of the workspace.
-   Components managed by the workspace can be views as they are rendered in isolation.
-   In addition to that, different aspects of a component, such as its history, documentation and even test logs, can be explored to get a better understanding of it and assist in developing it as and independent building block.
+```sh title="Basic component directory"
+├── index.ts
+├── shopping-cart.composition.tsx
+├── shopping-cart.docs.mdx
+├── shopping-cart.spec.tsx
+└── shopping-cart.tsx
+```
 
-## Get the most out of a Bit Workspace
+> You can keep sub-directories to sort internal files as needed. So you could put `shopping-cart.spec.tsx` in a `tests` folder for instance.
 
-While components can be added and managed by a Workspace on an ad-hoc basis, we envisage workspaces as the interface between your code repo and the Bit eco-system. By creating a Bit workspace at the root of your repo file system for instance, you can then manage each component as a separate module - with it's own versioning, build and CI, and much more; all the while keeping the existing file structure of your repo or mono repo (Bit is entirely agnostic to how you organise and track your code). That way Bit works seamlessly with your source control, while providing entirely isolated control over the individual components the repo contains.
+This structure has several benefits:
 
-Bit Workspaces are focused on composing applications with components. We recommend breaking down your frontend application to its most basic building blocks (buttons, text inputs, etc) and then successively composing pages, data-flows, forms, and applications using your components and APIs they expose. Components can be implemented in React, Angular, Vue, Stencil, and Node.
+- Directory structure is easily consumable by placing all the related files together.
+- File references become shorter and more read-friendly.
+- Easy to move components around in the workspace.
+- Simple refactoring workflow, as changes are consolidated to the same place.
+- `index` is a single point for consumers and maintainers to start from when doing any operation on the component.
 
-## Bit workspace and Git
+## Build different type of Components in the same Workspace
 
-Make sure to track the following files with your SCM:
+## Workspace UI
 
-- `.bitmap`
-- `worksapce.jsonc`
+All components in your workspace are rendered and presented on a local development server. To start it run the following command:
 
-> You should not track the local scope (`.bit` or `.git/bit`) with Git.
+```sh
+bit start
+```
+
+- [Docs](/)
+- [Compositions](/)
+- [Tests](/)
+- [Dependencies](/)
+
+By default Bit generates a local build for the dev server in `public/bit` directory.
+
+## Component Module Links
+
+Bit compiles all components in the workspace, even those which have never been exported, to modules and places the compiled output in the `node_modules` directory.
+
+<div style={{textAlign: 'center'}}>
+    <img src="/img/module-link.png" width="240" alt="module link" />
+</div>
+
+When you want to `import` one component into another, even in the same workspace, use these module links as absolute `import` statements:
+
+```jsx
+import { ShoppingCart } from '@acme/cart.shopping-cart';
+```
+
+By using module links in `import` statements you treat all dependencies as regular npm packages (which they are), thereby decoupling the component's implementation from the project's file structure, making the component transferable.
+
+By default, `bit install` links all components tracked in your Workspace.
+```bash
+bit install
+```
+
+To link all components you can use:
+```bash
+bit link
+```
+
+## Dependencies
+
+Bit keeps a dependency graph representing all components in the workspace according to their `import` statements.  
+When you make any change to a component, Bit finds all its dependents and runs operations on them recursively. This is to ensure that not only your modified component works and updates as expected, but that all components affected from the change are updated and validated too.
+
+This also helps save time and resources by building (or testing) only affected components.
+
+## Centralized Component Management
+
+A Bit Workspace is the main interface for managing components. Bit uses the configurations and actions carried out in the workspace to manage Components.
+
+### Component Configuration
+
+In an effort to keep the workspace clean of any unwanted configuration files and focus only on code, there's no `package.json` required for each Bit Component. Instead use the workspace to manage a set of configuration rules and policies that Bit then applies on each component.
+
+### Per-component Versioning
+
+A Bit Component has its own versioning history and changelog. The Bit Workspace supports this workflow by only versioning modified components.  
+In a similar way to how Bit builds only affected components, it recursively finds all affected components (i.e. dependents), and promotes their `patch` version.
+
+### Dependency Policy
+
+Any component in your workspace can `import` any of the dependencies available in the workspace. Moreover, a package which is a `dependency` for one component may be a `devDependency` for another. Instead of having to manually define dependencies per component, the Workspace calculates dependencies for each component according to its respective list of `import`s. And per dependency, it's dependency type is decided by the file/s requesting it.
+
+The workspace's policy also allows setting different versions of the same dependencies for different components in the same workspace, via the variants section.
+
+## FAQ
+
+### Git and a Bit Workspace
+
+You should use Git, or any other SCM, to share and collaborate on a workspace. To do that, ensure to track changes for both `.bitmap` and `workspace.jsonc` files.
+
+### Where is my `src` or `components` directories?
+
+Bit's default configuration assumes the workspace is for Bit Components. This means the directories in the workspace root should help standardize and sort components. The recommended approach is for sorting components according to their scoping and functionality. While this is the default behavior, you can configure it to fit any workflow or practices.
+
+### Where can I see each component's config?
+
+Rules and policies set for the workspace are applied on its components. To see the specific configuration as applied on a specific component use component-oriented commands like `bit show <component_id>`.
