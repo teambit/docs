@@ -1,0 +1,143 @@
+---
+title: Micro Frontend
+---
+
+import { Image } from '@site/src/components/image'
+
+# What is Micro Frontends?
+
+What is a Micro Frontend? I think this is an open question that many are trying to answer these days.   
+In my humble option, Micro Frontends is simply numerous autonomous teams collaborating on one or more web applications. 
+[EXPAND ON THIS].
+
+Bit helps build a great component model and scale it among different autonomous teams.
+[Dan Abramov tweet]
+
+### What is a Component Model?
+
+React Components, Angular Modules, 
+
+<Image src="/img/dependencies_graph.png" />
+
+### Scaling to Micro Frontends through a Component Model
+
+Distributing a single Component Model to autonomous teams, owning features.
+
+
+### Benefits
+
+#### Performance
+In many known Micro Frontends approaches in which dependencies are consumed at runtime, applications might get big a performance hit. 
+Such approaches couple collaboration challenges of how different teams may collaborate with each other with performance
+challenges trying to provide the best user experience to the app users.
+
+Using the Component Model allows to achieve the best performance.
+
+- Consuming most components at build time allows most control over performance.
+- Code Splitting at the app level assures optimal performance.
+- Runtime dependencies can be used to shorten deployments for certain components as long as making sure it doesn't 
+hit performance.
+
+#### Consistency
+In many known MFE appraoches, it is hard to deliver a consistent user experience. 
+- State
+- Atomic components.
+
+- All components are shared.
+- Any level of granularity - Share buttons, icons and even cards.
+- Making sure same behavior
+- Native state management.
+
+#### Cross Team Collaboration
+
+#### Rapid App Development
+
+#### Effective and quick on-boarding of new developers
+
+Component are 
+
+#### Pros and Cons
+
+#### How to achieve
+
+## Standardization
+
+- Standardizing on frameworks.
+- Standardization of code quality (testing, linting, security, etc.).
+- Easy and repeatable experience for creating components, MFEs, etc.
+- Standardizing the process of creating new features and APIs.
+
+## Simple, decoupled codebases
+In a micro-service architecture, teams get little and focused codebases which highly ease on-boarding of new developers
+and developer productivity.
+With Bit, each team can its own dynamic component codebase... which allows them to maintain and own only the components they
+are responsible for.
+
+- Dynamic workspaces, for a team, or individual.
+- Access and change any component from your workspace.
+- Reuse any component/API built by any other team. 
+
+Charts showing and demonstrating the Bit Workspace.
+
+## Autonomous teams
+Every team with Bit owns a Scope.
+
+
+Illustration: Image of a Scope (Documenter, MDX?)
+
+Illustration: Two teams collaborating with each other.
+
+## State Management
+
+### Preserving team Autonomy
+
+- Any one can change and modify any code.
+- Pin to older versions of components.
+- Never break, never be break.
+
+
+## Composition approaches
+Every team can independently release new versions to components, used across all in other applications. 
+
+### Build-time
+
+
+### Run-time
+Solutions like Module Federation and Code Splitting help fetch modules during runtime. 
+
+
+## Standardization
+
+## Autonomy
+
+## Performance
+
+### Updates
+
+### API Feedbacks
+
+### CI/CD
+
+## Data fetching
+
+
+## Combining multiple frameworks in the same App
+
+## Styling and Theming
+
+
+## Testing
+Each component is testing itself and its dependencies.
+
+## Application performance
+
+
+## Share components in any level of granularity.
+Components can be shared in any level of granularity.
+
+### Presentation components
+
+### Applications.
+
+## Server-side and micro-services
+Server micro-services are not 

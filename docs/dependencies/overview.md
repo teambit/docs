@@ -27,13 +27,18 @@ The 'dependency-resolver' simplifies dependency management by providing the foll
 
 <Image src="/img/dependencies_graph.png" />
 
+## Dependency Automation
+Bit automates the management of dependencies
 
 ## Immutable Dependencies
+One of the design goals of Bit was to make consumption of dependencies predictable and consistent. Means that for every
+time you install a dependency, you will get the exact same code.
+
+Traditionally, resolution of dependencies is done on Installation time and cached via Lock file (e.g. yarn.lock, package-lock.json) by package managers.
+The Bit default and best practice is to compute and set dependencies for each version upon [tag](/) (e.g. instead of setting pad-left@~1.0.0, Bit will set pad-left@1.0.1) to make sure 
 
 ## Dependency Safety
-
-## Dependency Automation
-
+Using dependencies might couple to  
 
 ## Dependency Policies
 

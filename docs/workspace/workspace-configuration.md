@@ -1,6 +1,6 @@
 ---
 id: workspace-configuration
-title: Workspace Configuration
+title: Configuring the Workspace
 ---
 
 The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
