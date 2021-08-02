@@ -122,7 +122,7 @@ If we then open it in our editor and inspect it we will see the custom message w
 
 Ok now it's time to really put this to use. The `workspace.json` file is the file that we will configure the most as this will set up our workspace for all projects across our organization. We want different teams to own different features and have their own workspaces but we want to have standards across all of them and this is how we can do it. Let's take a look at some of the things we can configure, however you really can configure anything you want.
 
-### Change the logo
+### Add a Logo
 
 Let's start by making sure the logo for our workspace has our company logo instead of Bit's logo.
 
@@ -142,7 +142,7 @@ export async function workspaceConfig({
 }
 ```
 
-### Add the default Scope
+### Add a Default Scope
 
 The default scope can be added when we generate our workspace but if users forget to add the `--default-scope <myScope>` flag then we can set a default scope for them.
 
@@ -163,7 +163,7 @@ export async function workspaceConfig({
 }
 ```
 
-### Add the component generator
+### Add a Component Generator
 
 It is more than likely that you have already created your own component generator to generate components to you organization's liking that include the correct styling method, docs etc. We can register this component generator aspect so that it will be available for our workspace to use.
 
@@ -178,15 +178,15 @@ export async function workspaceConfig({
   ...
   configParsed['teambit.generator/generator'] = {
     aspects: ['learn-bit-react.base-ui/component-generator']
-  },
-  configParsed['learn-bit-react.base-ui/component-generator'] = {},
+  };
+  configParsed['learn-bit-react.base-ui/component-generator'] = {};
   ...
 
   return stringifyWorkspaceConfig(configParsed);
 }
 ```
 
-### Add your variants
+### Add Variants
 
 Generally your organization might have a specific way of name spacing components under specific environments such as all aspects should be under the aspect environments, ui components might be under the react env for example and entity components might be under the node env. Instead of having to configure this for each project we can configure this here and then it will be generated for each one.
 
@@ -215,7 +215,33 @@ export async function workspaceConfig({
 }
 ```
 
-### Using our Generator
+### Add Dependencies
+
+You may need to add some components as dependencies to your workspace or you may need to add peerDependencies.
+
+```jsx {9-16} title="workspace-config.ts"
+...
+export async function workspaceConfig({
+  name,
+  defaultScope
+}: WorkspaceContext) {
+  const configParsed = await getWorkspaceConfigTemplateParsed();
+  configParsed['teambit.workspace/workspace'].name = name;
+  ...
+  configParsed['teambit.dependencies/dependency-resolver'].policy = {
+    "dependencies": {
+      "@company/scope.namespace.component": "0.0.1",
+    },
+    "peerDependencies": {
+      "react": "^16.8.0 || ^17.0.2",
+      "react-dom": "^16.8.0 || ^17.0.2"
+    }
+  ...
+ return stringifyWorkspaceConfig(configParsed);
+}
+```
+
+### Using the Generator
 
 And that's it. We can now run `bit compile`.
 
@@ -223,7 +249,7 @@ And that's it. We can now run `bit compile`.
 bit compile
 ```
 
-Our template Generator is now ready to use again just like we did before.
+The template Generator is now ready to use again just like we did before.
 
 ```bash
 bit new learn-bit-workspace sports-store2 --load-from /Users/me/path/to/this/dir --aspect learn-bit-react.base-ui/workspace-generator
