@@ -6,47 +6,56 @@ import { Image } from '@site/src/components/image'
 
 # What is Micro Frontends?
 
-What is a Micro Frontend? I think this is an open question that many are trying to answer these days.   
-In my humble option, Micro Frontends is simply numerous autonomous teams collaborating on one or more web applications. 
-[EXPAND ON THIS].
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications.  
+Teams can break down the Frontend monolith to smaller pieces (components) which are then composed to building larger applications.  
+The details around how these web applications are composed or developed are an implementation detail tied to specific technical concerns an organization may have.
 
-Bit helps build a great component model and scale it among different autonomous teams.
-[Dan Abramov tweet]
+[Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet? what can we do here?
 
-### What is a Component Model?
+## What is a Component Model?
 
-React Components, Angular Modules, 
+A component model is a way to construct software components to build a system, where components are independent, modular and reuseable. Components should also be built to allow composition of other specialized/specific components.  
+Building a component model facilitates a bottom-top approach, as with atomic components teams can compose more specialized components, all the way to composing applications.  
+Modern web frameworks come with their flavor of software components. For example [React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html).
+
+With a solid component model we can build more modular and flexible applications.
 
 <Image src="/img/dependencies_graph.png" />
 
-### Scaling to Micro Frontends through a Component Model
+## Scaling Component Model to Micro Frontends
 
-Distributing a single Component Model to autonomous teams, owning features.
+Think of your entire organization as a large system where each team is building a specific part of its component model. For example, a team may build the "part" of the model associating with user management while another may handle video streaming components. This way a third team that is building a new application may use the required components by the former two teams, and deploy a new application / user experience.  
+In most organization this is already happening - different teams are implementing cross-cutting business concerns, however, they don't share the same "organization level" component model. If the many distributed teams would been able to collaborate on the same component model, they could consume each other's components.
 
+Bit allows teams to publish their components according to each component's scope, thus making them available for any other team to compose with. The result of this is a distributed approach for an organization-wide component model.
 
 ### Benefits
 
+Scaling component model to building Micro Frontends can help teams deliver higher quality user experiences.  
+
 #### Performance
-In many known Micro Frontends approaches in which dependencies are consumed at runtime, applications might get big a performance hit. 
-Such approaches couple collaboration challenges of how different teams may collaborate with each other with performance
-challenges trying to provide the best user experience to the app users.
 
-Using the Component Model allows to achieve the best performance.
+Most MFE approaches rely on runtime consumption of deployed applications. This means they couple a cross team collaboration issue with how application is build and deployed.  
+The result of this coupling is that if not being careful the end-user experience may result in a significant performance hit.
 
-- Consuming most components at build time allows most control over performance.
-- Code Splitting at the app level assures optimal performance.
-- Runtime dependencies can be used to shorten deployments for certain components as long as making sure it doesn't 
-hit performance.
+By using Bit to share and build a single component model, and consuming most components in build time, we build a single component model for each application. As this happens during build time we decouple team collaboration from the application's runtime.  
+This means the application itself can better manage it's performance:
+
+- More optimized bundling.
+- Code splitting.
+- Better de-duping of shared dependencies.
+- Single application runtime.
+
+Now we can make more informed decisions for when to use runtime dependencies for when they are needed most, like shorten deployment time for certain parts of our technology.
 
 #### Consistency
-In many known MFE appraoches, it is hard to deliver a consistent user experience. 
-- State
-- Atomic components.
 
-- All components are shared.
-- Any level of granularity - Share buttons, icons and even cards.
-- Making sure same behavior
-- Native state management.
+The main concern when using any MFE approach is how to deliver a consistent user experience. A consistent user experience is built on top of two main items
+
+**Atomic components** usually refers to a "design system", a set of base components we use to compose our UI. These components have to be consistent across all MFEs. We can include the set of base UI components into our component model for all teams to compose with, thus building a consistent UI.  
+Another interesting usage for a component model is "componentizing" more than just the base UI components in the component model. We can include data-fetching, SDKs, and other components, streamlining more parts of the user-experience.
+
+**Application state and MFE communication** is a fundamental part of the user experience. Building with a component model means you have no such problem to resolve. All components communicate via their APIs and the application has a single state. On the other end, runtime dependencies forces the application to sync between the state of each MFE and ensure they can communicate. This adds a lot of complexity and is hard to scale when more MFEs are introduced.
 
 #### Cross Team Collaboration
 
@@ -56,10 +65,6 @@ In many known MFE appraoches, it is hard to deliver a consistent user experience
 
 Component are 
 
-#### Pros and Cons
-
-#### How to achieve
-
 ## Standardization
 
 - Standardizing on frameworks.
@@ -68,6 +73,7 @@ Component are
 - Standardizing the process of creating new features and APIs.
 
 ## Simple, decoupled codebases
+
 In a micro-service architecture, teams get little and focused codebases which highly ease on-boarding of new developers
 and developer productivity.
 With Bit, each team can its own dynamic component codebase... which allows them to maintain and own only the components they

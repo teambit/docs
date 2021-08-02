@@ -147,7 +147,7 @@ module.exports = {
         'workspace/initializing-workspace-on-existing-project',
         'workspace/workspace-ui',
         'workspace/workspace-status',
-        'workspace/workspace-',
+        //'workspace/workspace-',
         'workspace/variants',
         'workspace/importing-components',
         'workspace/creating-components',
