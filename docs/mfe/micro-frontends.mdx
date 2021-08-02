@@ -12,10 +12,14 @@ The details around how these web applications are composed or developed are an i
 
 [Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet? what can we do here?
 
+Example Project: [Learn-Bit-React](/)
+Repo of team ECommerce -> 
+Repo of team Stores team -> 
+
 ## What is a Component Model?
 
 A component model is a way to construct software components to build a system, where components are independent, modular and reuseable. Components should also be built to allow composition of other specialized/specific components.  
-Building a component model facilitates a bottom-top approach, as with atomic components teams can compose more specialized components, all the way to composing applications.  
+Building a component model facilitates a bottom-up approach, as with atomic components teams can compose more specialized components, all the way to composing applications.  
 Modern web frameworks come with their flavor of software components. For example [React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html).
 
 With a solid component model we can build more modular and flexible applications.
@@ -29,14 +33,19 @@ In most organization this is already happening - different teams are implementin
 
 Bit allows teams to publish their components according to each component's scope, thus making them available for any other team to compose with. The result of this is a distributed approach for an organization-wide component model.
 
+[Visual] -> Showing Graph distributed to different teams owning features (groups of components/NGModules/etc.)
+
 ### Benefits
 
-Scaling component model to building Micro Frontends can help teams deliver higher quality user experiences.  
+Scaling component model to building Micro Frontends can help teams deliver higher quality user experiences and avoid the constrains of
+the browser.  
 
 #### Performance
 
 Most MFE approaches rely on runtime consumption of deployed applications. This means they couple a cross team collaboration issue with how application is build and deployed.  
 The result of this coupling is that if not being careful the end-user experience may result in a significant performance hit.
+
+
 
 By using Bit to share and build a single component model, and consuming most components in build time, we build a single component model for each application. As this happens during build time we decouple team collaboration from the application's runtime.  
 This means the application itself can better manage it's performance:
@@ -60,6 +69,9 @@ Another interesting usage for a component model is "componentizing" more than ju
 #### Cross Team Collaboration
 
 #### Rapid App Development
+
+- reusing components.
+
 
 #### Effective and quick on-boarding of new developers
 
@@ -97,9 +109,9 @@ Illustration: Two teams collaborating with each other.
 
 ### Preserving team Autonomy
 
-- Any one can change and modify any code.
+- Any one can change and modify any code. (import)
 - Pin to older versions of components.
-- Never break, never be break.
+- Never break, never be break
 
 
 ## Composition approaches
@@ -126,24 +138,14 @@ Solutions like Module Federation and Code Splitting help fetch modules during ru
 
 ## Data fetching
 
-
 ## Combining multiple frameworks in the same App
 
 ## Styling and Theming
-
+Encapsulating styles in components will allow better control over using APIs and dependencies.
 
 ## Testing
 Each component is testing itself and its dependencies.
 
-## Application performance
-
-
-## Share components in any level of granularity.
-Components can be shared in any level of granularity.
-
 ### Presentation components
 
-### Applications.
-
-## Server-side and micro-services
-Server micro-services are not 
+### Applications
