@@ -10,27 +10,23 @@ Unlike a traditional monorepo, a Bit workspace is where components are composed 
 
 ## Benefits
 
-* __Elegant component configuration__: rules and policies are applied on groups of components selected in a CSS-like fashion. No need to manually configure every individual component.
+- **Elegant component configuration**: rules and policies are applied on groups of components selected in a CSS-like fashion. No need to manually configure every individual component.
 
-* __Multiple development environments__: a single workspace can handle different development environments and build workflows for different components.
+- **Multiple development environments**: a single workspace can handle different development environments and build workflows for different components.
 
-* __A rich development UI__:  a single place to visually inspect components and the workspace as a whole.
+- **A rich development UI**: a single place to visually inspect components and the workspace as a whole.
 
-* __An unopinionated directory structure__: design your systems and apps the way _you_ like it. No special directory for modules or components.
-
-* __Extensible configuration__: the workspace configuration is a hub for all configurable aspects and extensions. Added a new extension? set your configs by adding it to the workspace configuration.
-
+- **An unopinionated directory structure**: design your systems and apps the way _you_ like it. No special directory for modules or components.
 
 ## The anatomy of a workspace
 
 ### Workspace configuration
 
-The workspace configuration file (`workspace.jsonc`) is where rules and policies are set for the workspace itself but also for each component managed by it.  
+The workspace configuration file (`workspace.jsonc`) is where rules and policies are set for the workspace itself but also for each component managed by it.
 
 These rules include component dependencies, development environments, default scopes, and so on.  
-Rules are set by referencing to the relevant Bit aspect (the field) and setting it with  configurations (the value).   
+Rules are set by referencing to the relevant Bit aspect (the field) and setting it with configurations (the value).  
 For example: `"teambit.react/react": { "mdx": true }`.
-   
 
 ### Files-to-component mapping
 
@@ -41,28 +37,28 @@ A mapping of a component will also include the following information:
 
 - The component root directory and entry point (usually, the `index.js/ts` file).
 - The component version (if a component has been versioned).
-- Whether this component is [suggested to be versioned](#).  
+- Whether this component is [suggested to be versioned](#).
 
-   ```json title="An example .bitmap file"
-   {
-     "org.extensions/environments/custom-react@0.0.9": {
-       "mainFile": "index.ts",
-       "rootDir": "cet/environments/dell-react"
-     },
-     "org.design/base-ui/search-box-with-button@0.0.5": {
-       "mainFile": "index.ts",
-       "rootDir": "design/base-ui/searchBoxWithButton",
-       "exported" false,
-       "nextVersion": {
-           "version": "0.0.7",
-           "message": "add debouncing",
-           "username": "John",
-           "email": "john@my-mail.com"
-       }
-     },
-     "version": "14.8.9-dev.298"
-   }
-   ```
+  ```json title="An example .bitmap file"
+  {
+    "org.extensions/environments/custom-react@0.0.9": {
+      "mainFile": "index.ts",
+      "rootDir": "cet/environments/dell-react"
+    },
+    "org.design/base-ui/search-box-with-button@0.0.5": {
+      "mainFile": "index.ts",
+      "rootDir": "design/base-ui/searchBoxWithButton",
+      "exported" false,
+      "nextVersion": {
+          "version": "0.0.7",
+          "message": "add debouncing",
+          "username": "John",
+          "email": "john@my-mail.com"
+      }
+    },
+    "version": "14.8.9-dev.298"
+  }
+  ```
 
 ### Modules
 
@@ -75,9 +71,9 @@ The JSON structure is a composition of various configurable Bit aspects used by 
 
 The workspace Aspect (`teambit.workspace/workspace`) configuration consists of:
 
-- **name** - the workspace name.  <br />Example: `"name": "my-workspace"`
-- **icon** - the workspace icon (displayed in the workspace UI).  <br /> Example: `"icon": "https://path/to/icon.svg"`
-- **description** - a description of the workspace.  <br /> Example: `"description": "a design system for my organization."`
+- **name** - the workspace name. <br />Example: `"name": "my-workspace"`
+- **icon** - the workspace icon (displayed in the workspace UI). <br /> Example: `"icon": "https://path/to/icon.svg"`
+- **description** - a description of the workspace. <br /> Example: `"description": "a design system for my organization."`
 - **defaultScope** - the default scope for all components (when used with Bit Cloud, specify both owner and scope name) <br /> Example: `"defaultScope": "my-org"."my-scope-name"`
 - **extensions** - component extensions to apply, by default, on all components.
 - **defaultDirectory** - the default directory for imported components. <br /> Example: `"defaultDirectory": "components\{owner}\{scope}\{name}"`
@@ -96,8 +92,8 @@ Example:
 
 ## Next steps
 
-* [Learn how to configure other Aspects using the `workspace.jsonc`](#TODO)
+- [Learn how to configure other Aspects using the `workspace.jsonc`](#TODO)
 
-* [Learn how to set configurations on groups of components.](#TODO)
+- [Learn how to set configurations on groups of components.](#TODO)
 
-* [Learn how to inspect components with the workspace UI](#TODO)
+- [Learn how to inspect components with the workspace UI](#TODO)
