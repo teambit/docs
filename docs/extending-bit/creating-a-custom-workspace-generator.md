@@ -75,11 +75,11 @@ export const workspaceTemplate: WorkspaceTemplate = {
 
 ## Customizing the ReadMe
 
-We are now ready to modify our template and we can test it out by adding something very simple to see if it works. Let's modify the title of the readme.
+We are now ready to modify our template and we can test it out by adding something very simple to see if it works. Let's modify the readme to include a new line at the top.
 
 ```jsx title="readme-file.ts"
 export function readme() {
-  return 'hello world from my workspace generator';
+  return `hello world from my workspace generator`;
 }
 ```
 
@@ -240,6 +240,10 @@ export async function workspaceConfig({
  return stringifyWorkspaceConfig(configParsed);
 }
 ```
+
+### Further Configuration
+
+You can add any config to the `workspace.json` file using `configParse[...].keyName ={}`
 
 ### Using the Generator
 
