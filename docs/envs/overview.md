@@ -16,7 +16,6 @@ A single Bit workspace can use multiple Envs for different components.
 
 ## Using Envs
 
-
 ### Using a default Env for the workspace
 
 Envs can only be configured using the `teambit.workspace/variants` workspace API. That means the `teambit.workspace/workspace` cannot be utilized to set an environment as the default for all components. To achieve a similar result, select all components using the `*` wildcard.
@@ -37,7 +36,7 @@ For example:
 > Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment
 > (see an example in the next section).
 
-* **For a list of all available pre-configured Envs, [see here.](./pre-configured-envs.md)**
+- **For a list of all available pre-configured Envs, [see here.](/pre-configured-envs)**
 
 ### Using multiple Envs
 
@@ -58,11 +57,9 @@ For example, to set the Node and React environments on two sets of components (s
 }
 ```
 
-
 ## CLI Commands
 
 Bit Envs hook into Bit's CLI to execute their different services. For example, `bit test`, will execute different test runners, depending on the environment in use.
-
 
 #### start
 

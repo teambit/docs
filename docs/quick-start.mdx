@@ -51,6 +51,7 @@ A Workspace is where you will compose and manage your components. Creating a [Wo
 ```bash
 bit new react my-workspace
 cd my-workspace
+bit install get david to fix this
 bit start
 ```
 
@@ -61,8 +62,10 @@ Learn more about [Workspaces](/)
 [Creating Components](/) can be doing using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
 Components must be in their own directory and have an index file that exports the component.
 
+The following command will add a new component to your workspace under the [namespace](/) of 'ui' and in the [path](/) of 'templates'.
+
 ```bash
-bit create react my-component
+bit create react templates/ui/my-component --path templates
 ```
 
 :::note
@@ -77,16 +80,16 @@ Bit helps to simplify and standardize common operations required for developing 
 To learn more about the different services available in Bit go to [Env Services](/envs/core-services).
 
 ```bash
-bit compile // compile your components and output in the `node_modules` directory.
-bit test // test your components.
-bit lint // lint your components.
+bit compile // compile your components and output in the `node_modules` directory
+bit test // test your components
+bit lint // lint your components
 bit format // format your components
 ```
 
 You can use the `--help` flag for each of these commands to learn more.
 
 :::note
-Bit automatically watches and re-executes your component tests when using `bit start`,
+Bit automatically watches and re-executes your component tests when using `bit start`.
 :::
 
 Learn more about [component testing](/).
@@ -120,8 +123,10 @@ by [hosting your own](/scope/host) or creating a Scope on [Bit's cloud provider]
 bit export
 ```
 
+TODO: Improve cli message here so it points to the right place
+
 :::note
-Before exporting make sure you have set the default scope to be your remote scope in the workspace.jsonc file.
+Before exporting make sure you have set the default scope to be your [remote scope](/) in the `workspace.jsonc` file.
 :::
 
 ## Use and Collaborate on Components
@@ -136,22 +141,20 @@ bit install @teambit/base-ui.my-component
 ```
 
 :::note
-You can configure the package manager of your choice in the workspace.json file. Supported package managers
+You can configure the package manager of your choice in the `workspace.jsonc` file. Supported package managers
 for `bit install` are currently [Yarn 2.0](/) and [pnpm](/).
 :::
 
-Also, components can be installed with any package manager from any other app whether it is a Bit Workspace or not.
+Components can be installed with any package manager in any other app, whether it is a Bit Workspace or not.
 
-```bash
-npm install @teambit/base-ui.my-component
-```
+- NPM: `npm install @teambit/base-ui.my-component`
+- Yarn: `yarn add @teambit/base-ui.my-component`
 
-Just make sure to [configure the Bit registry](/) if you are using Bit's cloud provider.
-Also, components can be published to any registry or integrated with Artifactory or Nexus.
+Make sure you [configure the Bit registry](/) if you are using Bit's cloud provider. Components can be published to any registry or integrated with Artifactory or Nexus.
 
 ### Importing Components
 
-Components can be imported to any Bit Workspace. By importing components you can make changes to any component
+Components can be imported(cloned) to any Bit Workspace. By importing components you can make changes to any component
 from any project or Bit Workspace. You can then export a new version and even eject it from your workspace.
 
 ```bash
@@ -160,12 +163,10 @@ bit import teambit.base-ui/my-component
 
 ### Change requests
 
-```bash
-bit switch my-feature --create
-bit snap --all
-bit export
-```
+Create a new branch for your component, commit your changes and then export your components to a remote scope.
 
-- What it is.
-- How to use.
-- How to learn more.
+```bash
+bit switch my-feature --create // create and switch to a new branch called my-feature
+bit snap --all // commit all changes
+bit export // export your components to a remote scope
+```
