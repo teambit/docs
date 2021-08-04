@@ -5,7 +5,7 @@ title: Workspace Configuration
 
 The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
 
-The workspace configuration JSON reflects the way Bit is designed and built - that is, using Bit extension components. Each of these components exposes a workspace configuration API. That means, your "workspace configurations" are set across multiple Bit components.
+The workspace configuration JSON reflects the way Bit is designed and built - that is, using Bit Aspect components. Each of these components exposes a workspace configuration API. That means, your "workspace configurations" are set across multiple Bit components.
 
 As you will see, the names of these JSON fields, each representing an component, follow Bit's component name pattern `<scope-owner>.<scope-name>/<component-name>`, for example: `teambit.workspace/variants`.
 

@@ -263,11 +263,14 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Compiling',
+      label: 'Compiler',
       items: [
-        'compiling/overview',
-        'compiling/compiling-during-development',
-        'compiling/compiling-during-build'
+        'compiler/overview',
+        'compiler/compiling-during-development',
+        'compiler/compiling-during-build',
+        'compiler/customize-your-envs-compiler',
+        'compiler/implement-new-compiler',
+        'compiler/compiler-standards'
       ]
     },
     {

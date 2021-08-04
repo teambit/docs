@@ -8,15 +8,17 @@ It is a new and radical take on the monorepo concept, made with simplicity, flex
 
 Unlike a traditional monorepo, a Bit workspace is where components are composed together, but versioned independently.
 
-## Benefits
+## Key features
 
-- **Elegant component configuration**: rules and policies are applied on groups of components selected in a CSS-like fashion. No need to manually configure every individual component.
+- **Monolith-like dev experience**: Develop and compose components with a centralized interface.
 
-- **Multiple development environments**: a single workspace can handle different development environments and build workflows for different components.
+- **Elegant component configuration**: Set rules and policies on groups of components instead of manually configuring every individual one. Override configs using more specific selectors, similarly to the way styling is applied to CSS.
 
-- **A rich development UI**: a single place to visually inspect components and the workspace as a whole.
+- **Multiple development environments**: Easily set different development environments and build workflows to different component types.
 
-- **An unopinionated directory structure**: design your systems and apps the way _you_ like it. No special directory for modules or components.
+- **A rich development UI**: Visually inspect components and the workspace as a whole - all in one place.
+
+- **An unopinionated directory structure**: Design your systems and apps the way _you_ like it. No special directory for modules or components.
 
 ## The anatomy of a workspace
 
