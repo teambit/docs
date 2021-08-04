@@ -80,6 +80,18 @@ If you extended an environment with your own configuration you can apply it as t
 }
 ```
 
+Note: when using your custom environment outside the workspace it was developed in, you must add a version number, e.g.:
+```json title="workspace.jsonc"
+{
+  "teambit.workspace/variants": {
+    "movies/pages": {
+      "acme/my-react-extension@1.2.2": {}
+    },
+  }
+}
+```
+You don't need to install or import the environment, bit will do that for you in the background.
+
 ### Publish your extension
 
 An extension works just like any other component in Bit. You can version it with `bit tag` and export to a Bit Scope with the `bit export` command.  
