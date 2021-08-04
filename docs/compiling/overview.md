@@ -56,4 +56,4 @@ To learn more on compilation for distribution, please refer to [Compiling for di
 ## Configuring and Implmenting Compilers
 Compilers are configured in the [Env](/) which is configured on your [Component](/). Customizing the Compiler can be done by [customizing an existing env with your compiler](/) or by [implementing your own Env](/).
 
-Compilers can also be implemented into Bit through few interfaces. For more information on implmenting your own compiler please refer to [Implement a Compiler](/).
+Compilers can also be implemented into Bit through few interfaces. For more information on implmenting your own Compiler please refer to [Implement a Compiler](/).
