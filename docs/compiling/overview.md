@@ -24,7 +24,7 @@ If a compiler is configured in an env, Bit resolves the component's main file fr
 ```
 
 ## Compiling for development
-Bit is simplifying and standardizing compilation of components in the [Workspace](/) for all components, regardless of the specific env configured for each, and as a result the compiler and the configuration applied, through a single command.
+Bit is simplifying and standardizing compilation of components in the development [Workspace](/) for all components, regardless of the specific env configured for each, and as a result the compiler and the configuration applied, through a single command.
 
 Compilation of components in the [Workspace](/) optimized for dev experience, performance and debugging by default.
 This means [Source Maps](/) are generated and components are just transpiled (without types) into in the `node_modules` directory to ensure consistency between using a component for development or consumption purposes.
