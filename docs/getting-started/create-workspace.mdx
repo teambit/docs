@@ -1,0 +1,99 @@
+---
+id: create-workspace
+title: Create a New Workspace
+---
+
+A [Workspace](/workspace/overview) is where you will compose and manage your components. Creating a Workspace can be done with a single command. A workspace can be created in an empty directory or in an existing project.
+
+To see a list of available workspaces templates, run `bit templates`. The workspace templates are only available when ran outside of a bit workspace.
+
+```bash
+bit templates
+```
+
+## Creating a Workspace
+
+The `bit new` command will create a new workspace, configured to use a specific environment, with the name `my-workspace`. The `bit start` command will start the development server and open the application in your default browser.
+
+```bash
+bit new react my-workspace
+cd my-workspace
+bit start
+```
+
+When you create a workspace the following files and folders are created:
+
+- **[workspace.jsonc](/)** - The workspace configuration file.
+- **[.bitmap](/)** - An auto generated file that maps your components from your local directory.
+- **.gitignore** - A git ignore file that tells git which files to ignore.
+- **README.md** - A readme file that describes your workspace.
+- **pnpm-lock.yaml** - A lock file that tells pnpm to install packages in the workspace.
+- **types** - A directory that contains the type definitions for your components.
+- **demo** - A folder that contains demo components.
+- **node_modules** - A directory that contains all modules needed for Bit to work.
+
+### Setting the Default Scope
+
+A default scope is the collection, or remote scope, that you want your components to be exported to. By default all components will be exported to this scope. The default scope is made up of the 'owner' of the collection, for example a username or organization, followed by the name of the collection and is separated by a dot.
+
+```bash
+bit new react my-workspace --default-scope my-org.my-project
+```
+
+When components are created they use the default scope
+
+:::info
+You can also set components to be exported to different scopes by configuring them under the [variants](/) in the `workspace.jsonc` file. This means you can have one workspace that exports to multiple remote scopes.
+:::
+
+### Creating an Empty Workspace
+
+An empty workspace is a workspace configured with the correct environment but with no components. This can be created using the `--empty` flag.
+
+```bash
+bit new react my-workspace --empty
+```
+
+### Creating a Workspace without git
+
+This will create a workspace without git. This is useful when you want to create a workspace in an existing project.
+
+```bash
+bit new react my-workspace --standalone
+```
+
+:::warning
+@David this is not working - issue submitted
+:::
+
+## Creating a Workspace for a Component Library
+
+The `bit new react-lib` command will create a new workspace with the name `my-lib` that includes demo components for building a Component Library.
+
+```bash
+bit new react-lib my-lib
+```
+
+## Creating a Workspace for an App
+
+The `bit new react-app` command will create a new workspace with the name `my-app` that includes demo components for building an application.
+
+```bash
+bit new react-app my-app
+```
+
+## Initializing a Workspace
+
+Use the `bit init` command to an initialize a workspace with no configuration
+
+```bash
+bit init
+```
+
+### Resetting a Workspace
+
+To reset a workspace to its initial state, use the `bit reset` command.
+
+```bash
+bit reset --hard
+```
