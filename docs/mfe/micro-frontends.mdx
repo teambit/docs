@@ -5,35 +5,23 @@ id: mfe
 
 import depGraph from './graph.png';
 
-Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications. Teams can break down the Frontend monolith to smaller pieces (components/modules) which are then composed to building larger applications.
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications. Bit helps distributed teams collaborate on building a component model where components are versioned and release separately so they can be orchestrated to form features, pages and applications.
 
-While web applications are modular they are normally built in a monolithic codebase. This approach make it hard to scale frontend development in large organizations as it is hard for many developers to build in a single codebase. With Bit you can distribute your frontend development across multiple teams and codebases. A team will still own, build and take responsibility on a different cross-cutting business concern, and these will be then integrated together to form apps and user-experiences.
+This fits how modern web frameworks are designed to build and maintain modular systems ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)). It facilitates a bottom-up approach for systems engineering, meaning teams can build a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications.
 
-This is Bit's approach for implementing Micro Frontends. It fits with how modern web frameworks are designed to maintain modular systems ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)) and how the browser treats JavaScript applications. This bottom-up approach for systems engineering means teams can build a set of atomic components and then quickly ramp up and compose more concrete and specialized components like widgets, forms, features, pages and even applications. With this in mind, the ability to collaboratively build a component model can help organizations deliver faster.
-
-In a nutshell it makes systems building more modular, the development of apps native to modern web frameworks and more importantly decouples application runtime from team collaboration.
+In a nutshell it makes systems building more modular and the development of apps native to modern web frameworks.
 
 [Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet?
 
-:::tip The Microservice Analogy
-
-While sharing a similar name and benefiting from splitting systems and teams according to business capabilities, Microservices and Micro Frontends are very different.  
-Micro Frontends run on the browser and share the same runtime. This means that unlike Microservices, teams has different costs on tech stack independence.
-
-However, sharing the same runtime means we can build better and faster inner-communication between MFEs, as we don't need to "pay" the premium of network requests between Microservices. Moreover, MFEs has the possible benefit of using programmatic APIs to improve dev-experience and improve integration workflow between teams.
-
-:::
-
 ## Benefits
 
-Our goal is to put the end-user experience at the top and see what is the optimal way to get to it. This means the reasons teams should consider adopting and MFE workflow should derived by how they can improve their application. However, when adopting this workflow with Bit there are some inherit organizational benefits.
+The main benefit of using Bit for building an MFE workflow is that it is a native way for how modern web frameworks are designed. This means an organization gains all the benefits of integrating between teams and components as part of an application build pipeline while still being able to distribute development efforts across different teams and make any component reuseable.
 
 ### Control Application Performance
 
-Most MFE approaches rely on runtime consumption of deployed applications. This means they couple team collaboration with how application operating in runtime. The result of this coupling is that if not being careful the end-user experience may result in a significant performance hit.
+Most MFE approaches rely on runtime consumption of deployed applications. If not being careful the end-user experience may result in a significant performance hit.
 
-By using Bit to share and build a single component model, and consuming most components in build time, developers build a single component model for each application. As this happens during build time the application's runtime is decoupled from how team collaboration is managed.  
-This means the application itself can better manage it's performance:
+By using Bit to build a single component model and consuming most components in build time, the result application will have a single component model and bundle. This means the application itself can better manage it's performance:
 
 - Optimized bundle.
 - Code splitting.
@@ -41,7 +29,7 @@ This means the application itself can better manage it's performance:
 - Single application runtime.
 - Minimal JavaScript payload size.
 
-With this approach teams can make more informed decisions for when to use runtime dependencies for when they are needed most, like shorten deployment time for certain parts of our technology or embedding legacy/third-party code.
+Runtime dependencies can still be used (see below), however with Bit teams can make more informed decisions for when to use this pattern. This is because Bit decouples the organization structure of how teams collaborate from how an application is deployed.
 
 ### Consistent User Experience
 
@@ -73,32 +61,32 @@ Codebase can also become more dynamic when wanting to scale a team. Bit can "sou
 
 ### Autonomous Teams
 
-- Any one can change and modify any code.
-- Pin to older versions of components.
-- Never break, never be break.
+Teams build independently versioned components, where each component has its own dependency graph. This means that cross team collaboration and integration is done primarily using dependencies. Developers to decide how and when they want to adopt any change, and when a change is dangerous for them, they can decide to adopt it gradually.
+
+By managing versioning in the component model teams can move forward quickly without the constant fear of breaking their dependents. The result of it is a huge gain in the speed of delivery.
 
 ### Code Reuse
 
-- core capability
-- component reuse
+With bottom-up approach for systems engineering, where individual components consumed as dependencies teams get instant ability to reuse all previously implemented components and use them to compose more complex functionality. The organization gains the benefits of working in a single monolith, where all code is available to consume as a dependency but still keep each codebase small and focused on a single cross cutting concern.
+
+The end result with such degree and granularity of code reuse is gaining an almost Rapid Application Development type of workflow for developers.
 
 ### Standardization
 
-- Standardizing on frameworks.
-- Standardization of code quality (testing, linting, security, etc.).
-- Easy and repeatable experience for creating components, MFEs, etc.
-- Standardizing the process of creating new features and APIs.
+Ramping up the production of components requires solving many small problems many times. For example, how a component should be constructed, testing components, keeping code quality are some of the basic requirements each developer needs to think about when building new components. When working with components its also important to provide global context for components like theme, API gateway, globalization and others.  
+Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keep different types of standards according to the specific type of component making the process of creating new features and APIs repeatable and quick.
+
+Organizations can build a set of environments with dependencies between them for cases where a team may need to extend of further customize their components.
 
 ## In Practice
 
-Bit allows to distirbuted a single a large scale component model of a frontend to many teams. The following example shows an ecommerence organization building several apps. Each team is responsible on a different cross-cutting concern while consuming and components built by other teams.
+Bit allows to distributed a single a large scale component model of a frontend to many teams. The following example shows an e-commerce organization building several apps. Each team is responsible on a different cross-cutting concern while consuming and components built by other teams.
 
 // TODO IMAGE
 
 ### Git Repositories
 
-- collaboration
-- shared workspace
+Bit is a monorepo tool for components. Teams use Git to collaborate on a shared Bit workspace with any number of components. Each component in a repository will have its own independent version and build pipeline. By maitnaining closely related components in the same repository a team can quickly iterate on changes and rely on Bit to propagate changes locally to 
 
 ### Build-time Composition
 
@@ -131,7 +119,7 @@ Bit allows to distirbuted a single a large scale component model of a frontend t
 - build
 - ripple ci
 
-### Multiple Frameworks
+### Multiple Frameworks (Runtimes)
 
 - possible
 - do it only if really needed
@@ -156,6 +144,17 @@ Each component is testing itself and its dependencies.
 ## Summary
 
 - yup
+
+### Decouple application runtime from collaboration model
+
+- make the right decisions
+
+### The Microservice Analogy
+
+While sharing a similar name and benefiting from splitting systems and teams according to business capabilities, Microservices and Micro Frontends are very different.  
+Micro Frontends run on the browser and share the same runtime. This means that unlike Microservices, teams has different costs on tech stack independence.
+
+However, sharing the same runtime means we can build better and faster inner-communication between MFEs, as we don't need to "pay" the premium of network requests between Microservices. Moreover, MFEs has the possible benefit of using programmatic APIs to improve dev-experience and improve integration workflow between teams.
 
 ### Not just for frontend
 
