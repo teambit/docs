@@ -1,0 +1,23 @@
+---
+id: create-components
+title: Create Components
+---
+
+A Bit component is a reusable piece of code such as a react or angular component, a shared stylesheet (eg CSS, SASS, LESS) or a utility function. Bit makes your component completely independent. This means your component contains everything it needs to be able to be consumed in any other application. allowing you to version your component similar to how you version a package in npm.
+
+## Create your first components
+
+Creating components can be done with a single command using our component generator.
+
+```bash
+bit create react my-component     # TypeScript
+bit create react-js my-component  # JavaScript
+```
+
+When you create a component the following files are created inside your component folder. All Bit components must be
+
+- **index.ts** - Entry point for the component.
+- **my-component.tsx** - Main component file.
+- **my-component.spec.tsx** - Test file for the component.
+- **my-component.docs.mdx** - Documentation file for the component.
+- **my-component.composition.tsx** - Composition file so you can render your component and visualize it in different contexts.
