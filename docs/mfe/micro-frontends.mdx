@@ -86,19 +86,31 @@ Bit allows to distributed a single a large scale component model of a frontend t
 
 ### Git Repositories
 
-Bit is a monorepo tool for components. Teams use Git to collaborate on a shared Bit workspace with any number of components. Each component in a repository will have its own independent version and build pipeline. By maitnaining closely related components in the same repository a team can quickly iterate on changes and rely on Bit to propagate changes locally to 
+A Bit workspace is a monorepo for components. A teams can use a single Git repository to manage the lifecycle of many components from a single place. This can simplify the flow of managing closely-related components that may have the same dependencies, or need to depend on each other.  
+While components share the same workspace, they each get its own build pipeline and independent versions without overwhelming your workspace with many configuration files. This has several benefits:
+
+1. Only changed components and their dependents get a new version.
+1. Components from the same workspace may be built with different tools and frameworks.
+1. Focus on the implementation and less on managing configurations and dependencies.
+
+The structure of components on the filesystem is non-opinionated, meaning you can have components nested in complex directory hierarchy or have them flatten, however it fits your use case. Moreover, you can move components around in the workspace without it affecting their functionality, allowing for better flexibility when amount of components grow and you want to reorder the workspace.
+
+Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.
 
 ### Build-time Composition
 
-- todo
+To achieve build time compositions all shared components and MFEs are consumable as packages for different applications and even other components. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application.
+
+With build time integration the MFE introduced becomes a core part of the consumer's component model, making it easier and more efficient to work with and share the same runtime. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.
+
+// TODO diagram + example
 
 ### Run-time Composition
 
 - possible
 - when we should do it (deployment startegy)
 - build SDK for it
-- third party js from a cdn
-- html from a server
+- loading 3rd party code from CDN / remote server
 - serverside includes
 - module federation
 - es modules
