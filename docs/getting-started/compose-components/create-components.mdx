@@ -3,21 +3,102 @@ id: create-components
 title: Create Components
 ---
 
-A Bit component is a reusable piece of code such as a react or angular component, a shared stylesheet (eg CSS, SASS, LESS) or a utility function. Bit makes your component completely independent. This means your component contains everything it needs to be able to be consumed in any other application. allowing you to version your component similar to how you version a package in npm.
+A Bit component is a reusable piece of code such as a react or angular component, a shared stylesheet (eg CSS, SASS, LESS) or a utility function. Bit makes your component completely independent. This means your component contains everything it needs to be able to be consumed in any other application of the same environment.
+
+Bit allows you to version your component similar to how you version a package in npm and once versioned it includes everything it needs to be independent as it becomes it's own module complete with package.json, dependencies and configurations. This is all done for you in the versioning process so that you don't have to maintain these for each component. Making your components independent helps with scaling as you can easily share them with other developers and reuse them in other projects.
 
 ## Create your first components
 
-Creating components can be done with a single command using our component generator.
+Creating components can be done with a single command using our component generator. To see a list of available component templates run the `bit templates` command.
 
 ```bash
 bit create react my-component     # TypeScript
 bit create react-js my-component  # JavaScript
 ```
 
-When you create a component the following files are created inside your component folder. All Bit components must be
+When you create a component the following files are created inside your component folder. All Bit components must be contained within a folder and have an index file as the main entry point.
 
 - **index.ts** - Entry point for the component.
 - **my-component.tsx** - Main component file.
 - **my-component.spec.tsx** - Test file for the component.
 - **my-component.docs.mdx** - Documentation file for the component.
 - **my-component.composition.tsx** - Composition file so you can render your component and visualize it in different contexts.
+
+You can of course choose to not include tests files, docs files or even the composition files, however we highly recommend in including all of these as it encourages best practices and makes it easier for other developers to understand and trust your component.
+
+### Adding Styles to your Component
+
+We have not included any styles in our component templates. This is simply because there are many ways to add styling to your project. You can of course use any CSS preprocessor you want, such as SASS, LESS or Stylus. With Bit components CSS is compiled when consuming the component therefore you will need to make sure you have the appropriate CSS preprocessor in the application where you choose to consume the component.
+
+If you want to add styles to your component you can do so by adding a `my-component.styles.scss` file to your component folder and importing it in the component file.
+
+You can also create your own component templates with with your preferred styling using our [component generator](/).
+
+### Component Environments
+
+When creating a component it is important to make sure you are using the correct environment. React components should use the React environment, Angular components should use the Angular environment, Node components should use the Node environment and so on. You can check the components environment by running the `bit env` command.
+
+```bash
+bit env
+```
+
+We configure the environment in the `workspace.jsonc` file under the [variants](/) section.
+
+```bash
+"teambit.workspace/variants": {
+    "{my-component}": {
+      "teambit.harmony/react": {}
+    }
+  }
+```
+
+:::tip
+You can also create your own [custom environments](/) for your components by extending the available environments. This allows you to override configs, apply themes to all your compositions and more.
+
+### Component Namespaces
+
+Namespaces are a way of grouping your components together. When creating ui components, for example, we might want to create them under the namespace of 'ui'. This makes it easier to find all 'ui' components as well as apply specific environments to a set of components. You can have more than one level of namespaces such as 'ui/styles', this namespace will then become part of the components id which is used when installing and consuming the component.
+
+Namespaces do not have to be the same as the directory structure of your project however we encourage you to use the same structure for ease of use.
+
+You can add namespaces to your components when creating them by adding the namespace followed by a slash before your component name or by using the `--namespace` flag.
+
+```bash
+bit create react ui/my-component
+bit create react my-component --namespace ui
+```
+
+## Component Path
+
+Component are created with the default path of `<scope>/<namespace>/<name>`. If you want to have a different directory structure for your components you can specify it when creating them by using the `--path` flag.
+
+```bash
+bit create react ui/my-component --path my-ui
+```
+
+## Component Scope
+
+Component are created using the default scope set in your `workspace.jsonc` file. If you want to set a different scope for your component you can specify it when creating the component by using the `--scope` flag.
+
+```bash
+bit create react ui/my-component --scope my-org.different-scope
+```
+
+:::note
+With Bit it is possible to have one workspace but at the same time have components be exported to different remote scopes. This gives you the experience of working in a monorepo yet having your components distributed to smaller and more manageable remote scopes.
+
+## Removing Components
+
+When we create components they are added to the `.bitmap` file. This file maps your component from the directory structure to it's namespace. The `.bitmap` file is an auto generated file that is generated every time you create a new component therefore you should not edit this file directly..In order to remove a component you can use the `bit remove` command followed by the components ID. The component ID is made up of its namespace followed by the component name.
+
+```bash
+bit remove ui/my-component
+```
+
+:::tip
+To delete the components files as well as delete them from the bitmap use the `--delete` flag.
+:::
+
+## Moving Components
+
+TODO
