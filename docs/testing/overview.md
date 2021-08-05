@@ -50,4 +50,4 @@ To learn more on testing during build, please refer to [Testing During Build](#)
 
 Testers are configured in the [Env](#) which is configured on your [Component](/). Customizing the Tester can be done by [customizing an existing env with your tester](/) or by [implementing your own Env](/).
 
-Tester can also be implemented into Bit through few interfaces. For more information on implmenting your own compiler please refer to [Implement a Compiler](/).
+Tester can also be implemented into Bit through few interfaces. For more information on implementing your own compiler please refer to [Implement a Compiler](/).

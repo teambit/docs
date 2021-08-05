@@ -3,12 +3,12 @@ title: Workspace Compilation
 id: workspace-compilation
 ---
 
-During development, Bit compiles your components using the `bit compile` and `bit watch` commands. This commands 
+During development, Bit compiles your components using the `bit compile` and `bit watch` commands. This commands
 are providing a standard dev experience for compiling any kind of [Component](/), whether it is a NodeJS modules,
 a React component or anything else.
 
 Compilation of components in the [Workspace](/) is optimized for dev experience, performance and debugging by default.
-This means [Source Maps](/) are generated and components are just transpiled (without types) into in the `node_modules` directory to 
+This means [Source Maps](/) are generated and components are just transpiled (without types) into in the `node_modules` directory to
 ensure consistency between using a component for development or consumption purposes.
 
 ```bash
@@ -23,16 +23,17 @@ ensure consistency between using a component for development or consumption purp
           ├── ...
 ```
 
-
 ## Compile all components in the Workspace
-Bit allows to compile all components in the [Workspace](/) regardless to the configured [Env](/) and therefore Compiler 
+
+Bit allows to compile all components in the [Workspace](/) regardless to the configured [Env](/) and therefore Compiler
 with a single command.
 
 ```bash
 bit compile
 ```
 
-## Compile only components which changed
+## Compile only components that changed
+
 You can also use the `--changed` flag to compile only `new` and `modified` components. Use `bit status` to learn
 which components are either `new` or `modified`.
 
@@ -41,7 +42,8 @@ bit compile --changed
 ```
 
 ## Compile with a verbose output
-Using the `--verbose` flag you can easily which files got generated for each component and where they were 
+
+Using the `--verbose` flag you can easily which files got generated for each component and where they were
 persisted.
 
 ```bash

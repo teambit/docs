@@ -1,0 +1,62 @@
+---
+title: Workspace Linting
+id: workspace-linting
+---
+
+During development, Bit lints your components using the `bit lint`. That command
+provides a standard dev experience for linting any kind of [Component](#), whether it is a NodeJS modules,
+a React component or anything else.
+
+## Lint all components in the Workspace
+
+Bit lints all components in the [Workspace](/) regardless to the configured [Env](/) and therefor tester,
+with a single command.
+
+```bash
+bit test
+```
+
+## Lint only components that changed
+
+Use the `--changed` flag to lint only `new` and `modified` components. Use `bit status` to learn
+which components are either `new` or `modified`.
+
+```bash
+bit compile --changed
+```
+
+## CLI References
+
+- [bit lint](/)
+
+## Linter workspace configurations
+
+The Linter can be configured in the `workspace.jsonc` configuration file.
+
+### fixTypes
+
+Determines whether to automatically fix issues found.
+
+For example:
+
+```json
+{
+  "teambit.defender/linter": {
+    "fixTypes": ["problem", "suggestion", "layout']
+  }
+}
+```
+
+### extensionFormats
+
+Determines the files to lint by their extension.
+
+For example:
+
+```json
+{
+  "teambit.defender/linter": {
+    "extensionFormats": ["*.ts", "*.tsx"]
+  }
+}
+```
