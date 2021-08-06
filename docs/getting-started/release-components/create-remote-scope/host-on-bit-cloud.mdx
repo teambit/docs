@@ -1,0 +1,51 @@
+---
+id: host-on-bit-cloud
+title: Host on Bit Cloud
+---
+
+By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider. Run the bit login command for Bit to open a login/sign-up form for a new personal account.
+
+```bash
+bit login
+```
+
+Once logged in you can create a remote scope for your Bit project. This is done on the [bit.dev](https://bit.dev) website. Start by choosing if it is a team project or personal project. Then give your remote scope a name and select if you want your scope to be public or private.
+
+## Updating the Default Scope
+
+Once you have setup a remote scope you need to make sure the defaultScope is set to the name of your remote scope in the `workspace.jsonc` file.
+
+```json title="workspace.jsonc"
+{
+  "teambit.workspace/workspace": {
+    "defaultScope": "your-username.your-scope"
+  }
+}
+```
+
+## Updating the Scope for a set of Components
+
+With Bit you can export different sets of components to different scopes. This is done by adding a `defaultScope` property in the variants section of your `workspace.jsonc` file.
+
+```json title="workspace.jsonc"
+"teambit.workspace/variants": {
+    "{ecommerce/**}": {
+      "defaultScope": "my-org.ecommerce"
+    },
+    "{ui/**}": {
+      "defaultScope": "my-org.base-ui"
+    },
+  }
+```
+
+## Updating your Components
+
+If you have created components with a different scope name and want to update them to the new scope you can do so by running the `bit rewire` command. When importing a component, even locally, the scope is used as part of the import path.
+
+```bash
+bit rewire
+```
+
+:::warning
+@David is this actually working? or leave out for now?
+:::

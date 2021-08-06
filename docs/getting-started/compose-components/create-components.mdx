@@ -32,7 +32,11 @@ We have not included any styles in our component templates. This is simply becau
 
 If you want to add styles to your component you can do so by adding a `my-component.styles.scss` file to your component folder and importing it in the component file.
 
-You can also create your own component templates with with your preferred styling using our [component generator](/).
+```ts
+import styles from './my-component.module.scss';
+```
+
+You can also create your own component templates with your preferred styling using our [component generator](/).
 
 ### Component Environments
 
@@ -54,6 +58,7 @@ We configure the environment in the `workspace.jsonc` file under the [variants](
 
 :::tip
 You can also create your own [custom environments](/) for your components by extending the available environments. This allows you to override configs, apply themes to all your compositions and more.
+:::
 
 ### Component Namespaces
 
@@ -68,7 +73,7 @@ bit create react ui/my-component
 bit create react my-component --namespace ui
 ```
 
-## Component Path
+### Component Path
 
 Component are created with the default path of `<scope>/<namespace>/<name>`. If you want to have a different directory structure for your components you can specify it when creating them by using the `--path` flag.
 
@@ -76,7 +81,7 @@ Component are created with the default path of `<scope>/<namespace>/<name>`. If 
 bit create react ui/my-component --path my-ui
 ```
 
-## Component Scope
+### Component Scope
 
 Component are created using the default scope set in your `workspace.jsonc` file. If you want to set a different scope for your component you can specify it when creating the component by using the `--scope` flag.
 
@@ -86,6 +91,7 @@ bit create react ui/my-component --scope my-org.different-scope
 
 :::note
 With Bit it is possible to have one workspace but at the same time have components be exported to different remote scopes. This gives you the experience of working in a monorepo yet having your components distributed to smaller and more manageable remote scopes.
+:::
 
 ## Removing Components
 
@@ -96,7 +102,7 @@ bit remove ui/my-component
 ```
 
 :::tip
-To delete the components files as well as delete them from the bitmap use the `--delete` flag.
+To delete the component's files as well as delete them from the bitmap use the `--delete` flag.
 :::
 
 ## Moving Components

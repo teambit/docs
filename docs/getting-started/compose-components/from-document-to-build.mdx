@@ -1,0 +1,75 @@
+---
+id: from-document-to-build
+title: Document. Visualize. Test. Lint. Compile. Build.
+---
+
+## Document your components
+
+Documenting your components is done by creating a `.docs` file. By creating good documentation you can help other developers understand your components and how they work. We use [JSDoc](http://usejsdoc.org/) to generate documentation from your code however sometimes this isn't enough which is why we have a `.docs` file. Written explanations as well as Codeblocks and live playgrounds can be added to enhance the documentation.
+
+````
+```js
+<Text text="hello from Text" />
+```
+
+```js live
+<Text text="hello from Text" />
+```
+````
+
+## Visualize your components
+
+To visualize components we use the `.compositions` file. Compositions allow us to create our components in different states. This also means we can test our components in different states. To visualize your components with a part
+
+## Test your components
+
+Component testing is done through [Jest](https://jestjs.io/) with the default `teambit.react/react` environment.
+
+To test your components run the following command:
+
+```bash
+bit test
+```
+
+To run your components in watch mode run the following command:
+
+```bash
+bit test --watch
+```
+
+## Lint your components
+
+Bit uses ESLint to lint your components.
+
+To use ESLint run the following command:
+
+```bash
+bit lint
+bit lint --fix
+```
+
+## Format your components
+
+Bit uses Prettier to format your components.
+
+To use Prettier run the following command:
+
+```bash
+bit format --check
+bit format
+```
+
+## Compile your components
+
+By default, Component compilation is done with the TypeScript compiler. The target format is `ES2015` which
+supports execution from both NodeJS and browser runtimes for server-side rendering. The TypeScript compiler will compile both TypeScript and JavaScript components.
+
+To compile your components run the following command:
+
+```bash
+bit compile
+```
+
+## Build
+
+?
