@@ -61,8 +61,7 @@ bit format
 
 ## Compile your Components
 
-By default, Component compilation is done with the TypeScript compiler. The target format is `ES2015` which
-supports execution from both NodeJS and browser runtimes for server-side rendering. The TypeScript compiler will compile both TypeScript and JavaScript components.
+Compile happens in your workspace and creates the dist folder for the component. You can use the `compile` command to ensure your components are working correctly. By default, component compilation is done with the TypeScript compiler. The target format is `ES2015` which supports execution from both NodeJS and browser runtimes for server-side rendering. The TypeScript compiler will compile both TypeScript and JavaScript components.
 
 To compile your components run the following command:
 
@@ -72,12 +71,10 @@ bit compile
 
 ## Build your Components
 
+Bit builds your components in 'capsules' meaning they are 100% isolated. This is needed for when running CI as Bit runs the complete build pipeline when running this command.
+
 You can build your components with the following command:
 
 ```bash
 bit build
 ```
-
-:::warning
-@ran what is the difference between build and compile?
-:::
