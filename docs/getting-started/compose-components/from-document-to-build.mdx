@@ -3,7 +3,7 @@ id: from-document-to-build
 title: Document. Visualize. Test. Lint. Compile. Build.
 ---
 
-## Document your components
+## Document your Components
 
 Documenting your components is done by creating a `.docs` file. By creating good documentation you can help other developers understand your components and how they work. We use [JSDoc](http://usejsdoc.org/) to generate documentation from your code however sometimes this isn't enough which is why we have a `.docs` file. Written explanations as well as Codeblocks and live playgrounds can be added to enhance the documentation.
 
@@ -17,11 +17,11 @@ Documenting your components is done by creating a `.docs` file. By creating good
 ```
 ````
 
-## Visualize your components
+## Visualize your Components
 
 To visualize components we use the `.compositions` file. Compositions allow us to create our components in different states. This also means we can test our components in different states. To visualize your components with a part
 
-## Test your components
+## Test your Components
 
 Component testing is done through [Jest](https://jestjs.io/) with the default `teambit.react/react` environment.
 
@@ -37,7 +37,7 @@ To run your components in watch mode run the following command:
 bit test --watch
 ```
 
-## Lint your components
+## Lint your Components
 
 Bit uses ESLint to lint your components.
 
@@ -48,7 +48,7 @@ bit lint
 bit lint --fix
 ```
 
-## Format your components
+## Format your Components
 
 Bit uses Prettier to format your components.
 
@@ -59,7 +59,7 @@ bit format --check
 bit format
 ```
 
-## Compile your components
+## Compile your Components
 
 By default, Component compilation is done with the TypeScript compiler. The target format is `ES2015` which
 supports execution from both NodeJS and browser runtimes for server-side rendering. The TypeScript compiler will compile both TypeScript and JavaScript components.
@@ -70,6 +70,14 @@ To compile your components run the following command:
 bit compile
 ```
 
-## Build
+## Build your Components
 
-?
+You can build your components with the following command:
+
+```bash
+bit build
+```
+
+:::warning
+@ran what is the difference between build and compile?
+:::

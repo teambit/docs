@@ -9,7 +9,13 @@ Bit allows you to version your component similar to how you version a package in
 
 ## Create your first components
 
-Creating components can be done with a single command using our component generator. To see a list of available component templates run the `bit templates` command.
+To see a list of available component templates run the `bit templates` command.
+
+```bash
+bit templates
+```
+
+Creating components can be done with a single command using the component generator.
 
 ```bash
 bit create react my-component     # TypeScript
@@ -25,6 +31,10 @@ When you create a component the following files are created inside your componen
 - **my-component.composition.tsx** - Composition file so you can render your component and visualize it in different contexts.
 
 You can of course choose to not include tests files, docs files or even the composition files, however we highly recommend in including all of these as it encourages best practices and makes it easier for other developers to understand and trust your component.
+
+:::tip
+You can create your own [component generator](/) with custom templates to suit your needs.
+:::
 
 ### Adding Styles to your Component
 
@@ -105,6 +115,28 @@ bit remove ui/my-component
 To delete the component's files as well as delete them from the bitmap use the `--delete` flag.
 :::
 
+## Adding Components
+
+You can add components to Bit using the `bit add` command. This command will track the component by adding it to your `.bitmap` file.
+
+```bash
+bit add ui/my-component
+```
+
+Use the `--namespace` flag to specify the namespace of the component.
+
+```bash
+bit add ui/my-component --namespace ui
+```
+
 ## Moving Components
 
-TODO
+To move a component you can use the `bit move` command. This command will move the component from the current directory to the new directory.
+
+```bash
+bit move ui/my-component design/my-component
+```
+
+:::tip
+This will only affect how your components are ordered in your workspace and not in your `.bitmap` file. If you want to move a component to a different namespace you will need to first remove it and then add it again with the correct namespace.
+:::
