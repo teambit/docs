@@ -37,7 +37,7 @@ If you want to make your package a public package on npm add `["--access public"
 
 ### Override the Package.json
 
-We can override the properties of the `package.json` for all our components at once. To do this we add the `"packageJson"` key and inside our object we add any of the properties we want to override. For the name property we add the dynamic value `"@scope/component-name"`. This will take the scope value from the `defaultScope` property in the `workspace.jsonc` file and append it to the name of your component.
+We can override the properties of the `package.json` for all our components at once. To do this we add the `"packageJson"` key and inside our object we add any of the properties we want to override. For the name property we add the dynamic value `"@{scope}/{name}"`. This will take the scope value from the `defaultScope` property in the `workspace.jsonc` file and append it to the name of your component.
 
 ```json {8-11} title=workspace.jsonc
 "teambit.workspace/variants": {
