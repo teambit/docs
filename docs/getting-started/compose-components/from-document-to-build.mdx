@@ -1,0 +1,343 @@
+---
+id: from-document-to-build
+title: Document. Visualize. Test. Lint. Compile. Build.
+---
+
+## Document your Components
+
+Documentation is a critical when building with components. Bit implements several features for component documentation to improve the dev experience and increase component adoption.
+
+There are several ways to document components in Bit. Some of them are manual and some derived from your component-centric workflow. Bit features a dynamic documentation template for components that aggregates several sources and generates a single documentation page per component.
+
+:::tip All components get documentation
+Even if you haven't written any docs or used any feature, Bit still generates a basic documentation page for your component with basic installation instructions.
+:::
+
+### Video Guide
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/cKMghSe_1RU?rel=0"
+  title="How to add Docs to your Bit components"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### See Component Documentation
+
+Documentation for components are rendered both on the local workspace UI and on remote server. Run the local dev server to see all component documentation when rendering them.
+
+```sh
+bit start
+```
+
+### Automated Documentation
+
+There are several features that are automatically generated from your component code which enhances the documentation experience.
+
+### Compositions to showcase components
+
+Rendering components to simulate how they are working is a fundamental part of a component based workflow. All compositions added to any component will be rendered as a gallery with their names. This way consumers can quickly see where and how to use a component.
+
+### Using prop-types to generate docs
+
+Bit auto generates the properties table from the code itself using [react-docgen](https://github.com/reactjs/react-docgen). At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the run-time code itself.
+
+### Using markdown and MDX
+
+The most basic form of documentation is using markdown and writing docs. Add a `*.docs.md/x` to your component to add documentation.
+
+:::tip Component templates support for documentation
+
+All available component templates support MDX documentation out of the box. Use `bit create` to get started quickly.
+
+:::
+
+:::info react-fast-refresh
+
+Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your documentation.
+
+:::
+
+### Write documentation
+
+Markdown gives you the freedom to extend the documentation page as you like. You can use either Markdown or even MDX for enriching your documentation with React components.
+
+### Add live playground for components
+
+You can transform any code snippet on your markdown or MDX file to a live component playground. To do so add `live` to your code snippet:
+
+````mdx
+```jsx live=true
+() => {
+  return <p>Hello!</p>;
+};
+```
+````
+
+### Customize template with metadata
+
+You can add a YAML at the top of any MD/MDX file to add more metadata for the documentation template to use.
+
+```md
+---
+displayName: Title for component overview
+description: Abstract description for the component.
+labels: ['category1', 'category1', 'category1']
+---
+```
+
+## Visualize your Components
+
+To visualize components we use the `.compositions` file. Compositions allow us to create our components in different states. This also means we can test our components in different states. Compositions are the main dev tool for building with components. They provide a dedicated dev-server per each component where you can create fully featured apps with support for state management, theming and routing. Compositions act like consuming applications that compose and simulate components in various use cases.
+
+Bit runs a dev server for components that shows all component compositions. Run the dev server and browse components to see their compositions.
+
+```sh
+bit start
+```
+
+### Video Guide
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/so8CcUzTrn4?rel=0"
+  title="How to Render your Component"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### Create Compositions
+
+Add compositions to a component by creating a file in the component's directory, using the `*.compositions.*` pattern.
+
+```bash {3}
+└── ui/my-component
+    ├── my-component.tsx
+    ├── my-component.composition.tsx
+    └── my-component.tsx
+```
+
+:::tip Component templates support for compositions
+
+All available component templates support compositions out of the box. Use `bit create` to get started quickly.
+
+:::
+
+:::info react-fast-refresh
+
+Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your components.
+
+:::
+
+### Sort Compositions in Multiple Files
+
+Compositions are not limited to a single file. A component may have several files with the `*.composition.*` pattern.
+
+```bash {3}
+└── ui/link
+    ├── index.tsx
+    ├── my-component.composition.tsx
+    ├── advanced-my-component.composition.tsx
+    └── link.tsx
+```
+
+### Add a Simple Composition
+
+Compositions are just names `const`s exported by the composition file.  
+A basic composition may look something like this:
+
+```js title="my-component.composition.tsx"
+import React from 'react';
+import { MyComponent } from './my-component';
+
+export const BasicMyComponent = () => {
+  return <MyComponent />;
+};
+```
+
+### Use Other Components in Compositions
+
+In compositions you can `import` as many components as needed and build more complex simulations for your component.
+
+```js {2,3} title="my-component.composition.tsx"
+import React from 'react';
+import { Header } from '@my-org/base-ui.header';
+import { Footer } from '@my-org/base-ui.footer';
+import { MyComponent } from './my-component';
+
+/**
+ * Compose header with my-component
+ */
+export const HeaderComponent = () => {
+  return (
+    <Header>
+      <MyComponent />
+    </Header>
+  );
+};
+
+/**
+ * Compose footer with my-component
+ */
+export const FooterComponent = () => {
+  return (
+    <Footer>
+      <MyComponent />
+    </Footer>
+  );
+};
+```
+
+## Test your Components
+
+Tests become even more viable when working in a component based workflow. Components can be composed in many unique use cases, so having tests to check for them can reduce the amount of integration and experimentation needed in the future.
+
+Bit uses open source test runners to execute component tests.
+
+This topic describes how to test a Bit component written in React, with Jest.
+
+### Video Guide
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/R0LWV2gcbf8?rel=0"
+  title="Testing your Components"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### Add Tests
+
+Add tests to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
+
+```bash {3}
+└── ui/my-component
+    ├── index.tsx
+    ├── my-component.specs.tsx
+    └── my-component.tsx
+```
+
+:::tip Component templates support for tests
+
+All available component templates support testing out of the box. Use `bit create` to get started quickly.
+
+:::
+
+:::info tests are great addition for documentation
+
+A visual test result helps consumers to learn about the different edge cases supported by your component and makes it easy for them to want to adopt your code.
+
+:::
+
+### Write your first test
+
+Add a test case for your component.
+
+```js title=my-component.spec.tsx
+import React from 'react';
+import { render } from '@testing-library/react';
+import { BasicMyComponent } from './my-component.composition';
+
+it('should render with the correct text', () => {
+  const { getByText } = render(<BasicMyComponent />);
+  const rendered = getByText('About');
+  expect(rendered).toBeTruthy();
+});
+```
+
+### Get visual component test report
+
+The Bit UI will immediately refresh every time you modify your components tests.
+
+### Run tests from the CLI
+
+You can run component tests from the CLI either for specific components or your entire workspace.
+
+```bash title="Test specific component"
+bit test ui/my-component
+```
+
+```bash title="Test all Components"
+bit test
+```
+
+### Run tests from the CLI in watch mode
+
+The dev server runs tests in watch mode. Bit has the same capability from the CLI.
+
+```bash title="Watch mode for the CLI"
+bit test --watch
+```
+
+---
+
+### Change tests file pattern
+
+If you use a different filename pattern for tests, you can configure Bit's [Tester aspect](/) with any pattern. To do so, edit the `workspace.jsonc` file and add the following snippet:
+
+```json title="workspace.jsonc"
+{
+  "teambit.defender/tester": {
+    "patterns": ["*.spec.ts", "*.another-extension.ts"]
+  }
+}
+```
+
+## Lint your Components
+
+Bit uses ESLint to lint your components. [Linting](/) is configured in the environment component that is then applied to your components under the variants section of the `workspace.jsonc`.
+
+To use ESLint run the following command:
+
+```bash
+bit lint
+bit lint --fix
+```
+
+## Format your Components
+
+Bit uses Prettier to format your components. [Formatting](/) is configured in the environment component that is then applied to your components under the variants section of the `workspace.jsonc`.
+
+To use Prettier run the following command:
+
+```bash
+bit format --check
+bit format
+```
+
+## See the Status of your Components
+
+You can see the status of components to see if there are any issues that need to be resolved.
+
+To see the status of your components run the following command:
+
+```bash
+bit status
+```
+
+## Compile your Components
+
+Compile happens in your workspace and creates the dist folder for the component. You can use the `compile` command to ensure your components are working correctly. By default, component compilation is done with the TypeScript compiler. The target format is `ES2015` which supports execution from both NodeJS and browser runtimes for server-side rendering. The TypeScript compiler will compile both TypeScript and JavaScript components.
+
+To compile your components run the following command:
+
+```bash
+bit compile
+```
+
+## Build your Components
+
+Bit builds your components in 'capsules' meaning they are 100% isolated. This is needed for when running CI as Bit runs the complete build pipeline when running this command.
+
+You can build your components with the following command:
+
+```bash
+bit build
+```

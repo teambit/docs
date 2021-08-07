@@ -9,7 +9,13 @@ Bit allows you to version your component similar to how you version a package in
 
 ## Create your first components
 
-Creating components can be done with a single command using our component generator. To see a list of available component templates run the `bit templates` command.
+To see a list of available component templates run the `bit templates` command.
+
+```bash
+bit templates
+```
+
+Creating components can be done with a single command using the component generator.
 
 ```bash
 bit create react my-component     # TypeScript
@@ -26,13 +32,21 @@ When you create a component the following files are created inside your componen
 
 You can of course choose to not include tests files, docs files or even the composition files, however we highly recommend in including all of these as it encourages best practices and makes it easier for other developers to understand and trust your component.
 
+:::tip
+You can create your own [component generator](/) with custom templates to suit your needs.
+:::
+
 ### Adding Styles to your Component
 
-We have not included any styles in our component templates. This is simply because there are many ways to add styling to your project. You can of course use any CSS preprocessor you want, such as SASS, LESS or Stylus. With Bit components CSS is compiled when consuming the component therefore you will need to make sure you have the appropriate CSS preprocessor in the application where you choose to consume the component.
+We have not included any styles in our component templates. This is simply because there are many ways to add styling to your project. You can of course use CSS, any SASS, Less and other CSS-preprocessors and CSS-in-JS frameworks.
 
 If you want to add styles to your component you can do so by adding a `my-component.styles.scss` file to your component folder and importing it in the component file.
 
-You can also create your own component templates with with your preferred styling using our [component generator](/).
+```ts
+import styles from './my-component.module.scss';
+```
+
+You can also create your own component templates with your preferred styling using our [component generator](/).
 
 ### Component Environments
 
@@ -54,6 +68,7 @@ We configure the environment in the `workspace.jsonc` file under the [variants](
 
 :::tip
 You can also create your own [custom environments](/) for your components by extending the available environments. This allows you to override configs, apply themes to all your compositions and more.
+:::
 
 ### Component Namespaces
 
@@ -68,7 +83,7 @@ bit create react ui/my-component
 bit create react my-component --namespace ui
 ```
 
-## Component Path
+### Component Path
 
 Component are created with the default path of `<scope>/<namespace>/<name>`. If you want to have a different directory structure for your components you can specify it when creating them by using the `--path` flag.
 
@@ -76,7 +91,7 @@ Component are created with the default path of `<scope>/<namespace>/<name>`. If 
 bit create react ui/my-component --path my-ui
 ```
 
-## Component Scope
+### Component Scope
 
 Component are created using the default scope set in your `workspace.jsonc` file. If you want to set a different scope for your component you can specify it when creating the component by using the `--scope` flag.
 
@@ -86,6 +101,7 @@ bit create react ui/my-component --scope my-org.different-scope
 
 :::note
 With Bit it is possible to have one workspace but at the same time have components be exported to different remote scopes. This gives you the experience of working in a monorepo yet having your components distributed to smaller and more manageable remote scopes.
+:::
 
 ## Removing Components
 
@@ -96,9 +112,31 @@ bit remove ui/my-component
 ```
 
 :::tip
-To delete the components files as well as delete them from the bitmap use the `--delete` flag.
+To delete the component's files as well as delete them from the bitmap use the `--delete` flag.
 :::
+
+## Adding Components
+
+You can add components to Bit using the `bit add` command. This command will track the component by adding it to your `.bitmap` file.
+
+```bash
+bit add ui/my-component
+```
+
+Use the `--namespace` flag to specify the namespace of the component.
+
+```bash
+bit add ui/my-component --namespace ui
+```
 
 ## Moving Components
 
-TODO
+To move a component you can use the `bit move` command. This command will move the component from the current directory to the new directory.
+
+```bash
+bit move ui/my-component design/my-component
+```
+
+:::tip
+This will only affect how your components are ordered in your workspace and not in your `.bitmap` file. If you want to move a component to a different namespace you will need to first remove it and then add it again with the correct namespace.
+:::

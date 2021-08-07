@@ -5,11 +5,10 @@ id: mfe
 
 import depGraph from './graph.png';
 
-Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications. Bit helps distributed teams collaborate on building a component model where components are versioned and release separately so they can be orchestrated to form features, pages and applications.
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by integrating composing wep applications from independently versioned components. A single team could be responsible for implementing cross-cutting business concerns and publishing features as components, while depending on other teams components if needed. The idea is to break down the monolithic frontend application into smaller components, which can be developed and tested independently and composed into larger applications.
 
-This fits how modern web frameworks are designed to build and maintain modular systems ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)). It facilitates a bottom-up approach for systems engineering, meaning teams can build a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications.
-
-In a nutshell it makes systems building more modular and the development of apps native to modern web frameworks.
+Bit facilitates a bottom-up approach for systems engineering, meaning teams can build a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications.  
+This fits how modern web frameworks are focused on building modular systems from atomic and functional components ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)) while also decouple the frontend runtime from how its codebase is managed.
 
 [Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet?
 
@@ -86,22 +85,82 @@ Bit allows to distributed a single a large scale component model of a frontend t
 
 ### Git Repositories
 
-Bit is a monorepo tool for components. Teams use Git to collaborate on a shared Bit workspace with any number of components. Each component in a repository will have its own independent version and build pipeline. By maitnaining closely related components in the same repository a team can quickly iterate on changes and rely on Bit to propagate changes locally to 
+A Bit workspace is a monorepo for components. A teams can use a single Git repository to manage the lifecycle of many components from a single place. This can simplify the flow of managing closely-related components that may have the same dependencies, or need to depend on each other.  
+While components share the same workspace, they each get its own build pipeline and independent versions without overwhelming your workspace with many configuration files. This has several benefits:
+
+1. Only changed components and their dependents get a new version.
+1. Components from the same workspace may be built with different tools and frameworks.
+1. Focus on the implementation and less on managing configurations and dependencies.
+
+The structure of components on the filesystem is non-opinionated, meaning you can have components nested in complex directory hierarchy or have them flatten, however it fits your use case. Moreover, you can move components around in the workspace without it affecting their functionality, allowing for better flexibility when amount of components grow and you want to reorder the workspace.
+
+Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.
 
 ### Build-time Composition
 
-- todo
+To achieve build time compositions all shared components and MFEs are consumable as packages for different applications and even other components. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application.
+
+With build time composition the MFE becomes a core part of the consumer's component model and build pipeline. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.
+
+// TODO diagram + example
 
 ### Run-time Composition
 
+Runtime composed frontends is about using different strategies to load code that is not a part of the application when a user access a page or feature. This makes critical parts of the end-user journey within a single application to be loosely coupled. This approach has several drawbacks:
+
+- No de-duping of shared code and dependencies as this is a bundle feature which runs during a build pipeline.
+- Complex communication between the application and composed MFEs is often moved to a message bus or eventing system that is hard to scale when the number of MFE grows.
+- Application maintainers get less control over their production runtime, as skipping application-MFE integration tests my result in MFE-teams delivering potentially breaking changes or bugs directly to the consumer's runtime.
+- Runtime metrics, KPIs, logs and reports for applications with runtime MFEs are harder to achieve, as they are distributed between it and the various MFEs composed.
+- Integrating MFEs can be complicated and required more work to get routing, history and deep-linking more complex, making it a challenge to build responsive applications.
+
+There are cases where its reasonable to utilize this approach. This can be useful as a deployment strategy where we know APIs will not change often or for integrating with legacy systems.
+
+#### SDK Library
+
+A way to mitigate some of the issues around runtime compositions is building an SDK for each MFE. An SDK is a library that wraps a runtime integrated MFE in a way the consumer can use it as if it was a dependency. Regardless of how the runtime MFE is deployed, an SDK can provide several benefits:
+
+- Decouple the MFE deployment strategy from how it is integrated.
+- Provide programmatic APIs simplify dev-experience with auto-complete, types (with TypeScript), functions and other APIs.
+- Abstract complex situations and error handling by the MFE publisher.
+- Provide framework-specific APIs for consumers to simplify and reduce integration time for consumers
+- Less documentation needed to integrate MFE.
+
+// TODO diagram + example
+
+#### Module Federation
+
+[Module Federation](https://webpack.js.org/concepts/module-federation) is a new plugin introduced with Webpack 5 release. According to the Webpack documentation it is "Multiple separate builds should form a single application. These separate builds should not have dependencies between each other, so they can be developed and deployed individually". With this in mind many teams have began using this new tool as a way to create runtime composition for their frontend.
+
+MF is a game changer in regards to runtime composition, it allows the browser to have runtime-composed MFEs share a single application-runtime and even shared dependencies. However, it still suffers from some issues we see hurting teams that chose this approach to scale when implemented in large organizations. The main issue is 
+
+- Only supports Webpack 5, so teams using other bundlers can't use shared MFEs.
+- No shared types and IDE auto-complete when teams opt for separating repositories.
+- `peerDependencies` need to be in-sync.
+
+
+
+:::info
+
+Native Webpack 5 Module Federation support is in development. [See here](https://github.com/teambit/bit/discussions/4640) for more details.
+
+:::
+
+#### Bundle from CDN
+
+third party JS
+
+#### ES Modules in the browser
+
+Future of runtime frontend composition is ES Modules. This means that we can use ES modules in the browser and use them in the Node.js runtime.
+
+### Multiple Frameworks
+
 - possible
-- when we should do it (deployment startegy)
-- build SDK for it
-- third party js from a cdn
-- html from a server
-- serverside includes
-- module federation
-- es modules
+  - buildtime
+  - runtime
+- do it only if really needed
+- how
 
 ### Data Fetching
 
@@ -119,11 +178,7 @@ Bit is a monorepo tool for components. Teams use Git to collaborate on a shared 
 - build
 - ripple ci
 
-### Multiple Frameworks (Runtimes)
 
-- possible
-- do it only if really needed
-- how
 
 ### Feature Ownership
 
@@ -151,10 +206,10 @@ Each component is testing itself and its dependencies.
 
 ### The Microservice Analogy
 
-While sharing a similar name and benefiting from splitting systems and teams according to business capabilities, Microservices and Micro Frontends are very different.  
-Micro Frontends run on the browser and share the same runtime. This means that unlike Microservices, teams has different costs on tech stack independence.
+While sharing a similar name and benefiting from splitting system engineering and teams according to business capabilities, Microservices and Micro Frontends architectures are very different.  
+Micro Frontends still run by the browser as a monolithic application with a shared runtime while Microservices are deployed to different servers and communicate over the network.
 
-However, sharing the same runtime means we can build better and faster inner-communication between MFEs, as we don't need to "pay" the premium of network requests between Microservices. Moreover, MFEs has the possible benefit of using programmatic APIs to improve dev-experience and improve integration workflow between teams.
+Modern web frameworks already solve the problem of building modular applications from independent and decoupled services to scale frontend development (React/Vue component, Angular modules). The pragmatic approach for scaling delivery of large scale applications is adopting their approach but finding a way to distributed the development of an application across teams and repositories. This requires a different set of tools and thinking than scaling backend development.
 
 ### Not just for frontend
 

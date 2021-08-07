@@ -34,7 +34,7 @@ When you create a workspace the following files and folders are created:
 
 ### Setting the Default Scope
 
-A default scope is the collection, or remote scope, that you want your components to be exported to. By default all components will be exported to this scope. The default scope is made up of the 'owner' of the collection, for example a username or organization, followed by the name of the collection and is separated by a dot.
+The default scope is the collection, or remote scope, that you want your components to be exported to. By default all components will be exported to this scope. The default scope is made up of the 'owner' of the collection, for example a username or organization, followed by the name of the collection and is separated by a dot.
 
 ```bash
 bit new react my-workspace --default-scope my-org.my-project
@@ -96,4 +96,12 @@ To reset a workspace to its initial state, use the `bit reset` command.
 
 ```bash
 bit reset --hard
+```
+
+## Generating a Custom Workspace
+
+You can generate your own [workspace template](/workspace/templates) and customize it to your needs.
+
+```bash
+bit create workspace-generator my-workspace
 ```

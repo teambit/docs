@@ -1,0 +1,52 @@
+---
+id: install-dependencies
+title: Install Dependencies
+---
+
+We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components as dependencies. To install a dependency in your workspace, use the `bit install` command:
+
+```sh
+bit install @my-org.scope/my-component
+```
+
+Bit installs `@my-org.scope/my-component` as a dependency to your workspace and automatically adds it to the dependency policy in your `workspace.jsonc` file:
+
+```js {6} title="workspace.jsonc"
+...
+"teambit.dependencies/dependency-resolver": {
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@my-org.scope/my-component": "1.0.0"
+      }
+    }
+}
+...
+```
+
+`@my-org.scope/my-component` is installed in the workspace but is not added as a dependency to any component.
+
+### Adding a Dependency to a Component
+
+Bit automates dependency management by finding all `import` statements in your code and resolving them to the installed dependency in your workspace. To add the component as a dependency:
+
+```js title="my-component.tsx"
+import { MyComponent } from '@my-org.scope/my-component';
+```
+
+## Viewing Component Dependencies
+
+To view component dependencies run the `bit show` command followed by the component id:
+
+```sh
+bit show <component-id>
+```
+
+## Install Components in Other projects
+
+Components once exported to a remote scope can be consumed in any other project/app with the package manager of your choice.
+
+```bash
+npm install @my-org.scope/my-component
+yarn add @my-org.scope/my-component
+```
