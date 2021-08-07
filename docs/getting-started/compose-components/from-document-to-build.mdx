@@ -292,18 +292,18 @@ If you use a different filename pattern for tests, you can configure Bit's [Test
 
 ## Lint your Components
 
-Bit uses ESLint to lint your components. To use ESLint run the following command:
+Bit uses ESLint to lint your components. [Linting](/) is configured in the environment component that is then applied to your components under the variants section of the `workspace.jsonc`.
+
+To use ESLint run the following command:
 
 ```bash
 bit lint
 bit lint --fix
 ```
 
-Learn how to configure the linter in the [Lint guide](/).
-
 ## Format your Components
 
-Bit uses Prettier to format your components.
+Bit uses Prettier to format your components. [Formatting](/) is configured in the environment component that is then applied to your components under the variants section of the `workspace.jsonc`.
 
 To use Prettier run the following command:
 
@@ -312,7 +312,15 @@ bit format --check
 bit format
 ```
 
-Learn how to configure the linter in the [Formatting guide](/).
+## See the Status of your Components
+
+You can see the status of components to see if there are any issues that need to be resolved.
+
+To see the status of your components run the following command:
+
+```bash
+bit status
+```
 
 ## Compile your Components
 
