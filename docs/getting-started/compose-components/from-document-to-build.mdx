@@ -13,7 +13,7 @@ There are several ways to document components in Bit. Some of them are manual an
 Even if you haven't written any docs or used any feature, Bit still generates a basic documentation page for your component with basic installation instructions.
 :::
 
-## Video Guide
+### Video Guide
 
 <iframe
   width="560"
@@ -25,7 +25,7 @@ Even if you haven't written any docs or used any feature, Bit still generates a 
   allowfullscreen
 ></iframe>
 
-## See Component Documentation
+### See Component Documentation
 
 Documentation for components are rendered both on the local workspace UI and on remote server. Run the local dev server to see all component documentation when rendering them.
 
@@ -33,7 +33,7 @@ Documentation for components are rendered both on the local workspace UI and on 
 bit start
 ```
 
-## Automated Documentation
+### Automated Documentation
 
 There are several features that are automatically generated from your component code which enhances the documentation experience.
 
@@ -45,7 +45,7 @@ Rendering components to simulate how they are working is a fundamental part of a
 
 Bit auto generates the properties table from the code itself using [react-docgen](https://github.com/reactjs/react-docgen). At the bottom of the overview page you'll find all the component props listed and characterized in a table. These props are extracted from the JSDoc, prop-types and typescript type definitions, as well as the run-time code itself.
 
-## Using markdown and MDX
+### Using markdown and MDX
 
 The most basic form of documentation is using markdown and writing docs. Add a `*.docs.md/x` to your component to add documentation.
 
@@ -99,7 +99,7 @@ Bit runs a dev server for components that shows all component compositions. Run 
 bit start
 ```
 
-## Video Guide
+### Video Guide
 
 <iframe
   width="560"
@@ -111,7 +111,7 @@ bit start
   allowfullscreen
 ></iframe>
 
-## Create Compositions
+### Create Compositions
 
 Add compositions to a component by creating a file in the component's directory, using the `*.compositions.*` pattern.
 
@@ -201,7 +201,7 @@ Bit uses open source test runners to execute component tests.
 
 This topic describes how to test a Bit component written in React, with Jest.
 
-## Video Guide
+### Video Guide
 
 <iframe
   width="560"
@@ -213,7 +213,7 @@ This topic describes how to test a Bit component written in React, with Jest.
   allowfullscreen
 ></iframe>
 
-## Add Tests
+### Add Tests
 
 Add tests to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
 
@@ -278,7 +278,7 @@ bit test --watch
 
 ---
 
-## Change tests file pattern
+### Change tests file pattern
 
 If you use a different filename pattern for tests, you can configure Bit's [Tester aspect](/) with any pattern. To do so, edit the `workspace.jsonc` file and add the following snippet:
 
