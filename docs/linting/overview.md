@@ -5,7 +5,7 @@ title: Overview
 
 Linting helps us maintain consistent code styling and avoid potential bugs by analyzing our source code, statically, before it is compiled and executed.
 
-The Linter aspect simplifies and standardizes the process of component linting, for [Components](#). It does so for linting during development (in the workspace) and for linting during component build (in a capsule, as part of the [Build Pipeline](#))
+The Linter aspect simplifies and standardizes the process of component linting. It does so for linting during development (in the workspace) and for linting during component build (in a capsule, as part of the [Build Pipeline](#))
 
 ## Testing in development
 
