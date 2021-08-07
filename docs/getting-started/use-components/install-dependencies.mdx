@@ -41,3 +41,12 @@ To view component dependencies run the `bit show` command followed by the compon
 ```sh
 bit show <component-id>
 ```
+
+## Install Components in Other projects
+
+Components once exported to a remote scope can be consumed in any other project/app with the package manager of your choice.
+
+```bash
+npm install @my-org.scope/my-component
+yarn add @my-org.scope/my-component
+```
