@@ -19,6 +19,7 @@ Bit has a set of ready-made Environments you can use for building your component
 - [React](/aspects/react) - for building React components and hooks
 - [React Native](/aspects/react-native) - for building React Native components and hooks
 - [Node](/aspects/node) - for building components as node modules; relevant for any backend, middleware and even framework-less components in the browser
+- [Html](/aspects/html) - for building framework-less components which interact natively with the DOM. AKA VanillaJs UI components (if your component does not have any UI interaction consider using the Node environment instead)
 - **Aspect** - for building new [Bit Aspects](/aspects/aspects-overview)
 
 These environments offer Bit's support for different frameworks. You can use either of them, customize them for your needs or even implement a new environment to add support for additional frameworks.
