@@ -14,7 +14,9 @@ The benefit of using Bit for building an MFE workflow is that it is a native way
 
 ## Benefits
 
-Using Bit for building Micro Frontends focuses on the developer experience for both MFE maintainers and application builders. Bit MFE workflow has unique attributes and characteristics.
+Bit implements a build time approach for Micro Frontends allowing as a pragmatic approach for scaling frontend development across multiple teams. It is the middle-ground between two extremes - monolithic repository and loading JS code at runtime.
+
+In short it allows you to reuse all components you have, gain benefits of build-time optimizations and decide when and where to pay the cost of runtime composition.
 
 ### Autonomous Teams
 
@@ -67,15 +69,13 @@ Bit also provides a dynamic way to scale decoupled codebases, especially in case
 Ramping up the production of MFEs requires solving many small problems many times. For example, how an MFE should be constructed, testing and code quality are some of the basic requirements each developer needs to think about when building new MFE.  
 Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keep different types of standards according to the specific type of MFE making the process of creating new features and APIs repeatable and quick.
 
-## In Practice
+## Practices and Recommendations
 
-Bit allows to distributed a single a large scale component model of a frontend to many teams. The following example shows an e-commerce organization building several apps. Each team is responsible on a different cross-cutting concern while consuming and components built by other teams.
-
-// TODO IMAGE
+When building Micro Frontends with Bit, we recommend the following practices:
 
 ### Git Repositories
 
-A Bit workspace is a monorepo for components. A teams can use a single Git repository to manage the lifecycle of many components from a single place. This can simplify the flow of managing closely-related components that may have the same dependencies, or need to depend on each other.  
+A Bit workspace is a monorepo for components. A teams can use a single Git repository to manage the lifecycle of many components from a single place. This can simplify the flow of managing closely-related components.  
 While components share the same workspace, they each get its own build pipeline and independent versions without overwhelming your workspace with many configuration files. This has several benefits:
 
 1. Only changed components and their dependents get a new version.
@@ -86,17 +86,57 @@ The structure of components on the filesystem is non-opinionated, meaning you ca
 
 Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.
 
-// TODO IMAGE + 
+```sh title="Components in workspace sorted according to functionality"
+├── cart
+│   ├── purchase-summary
+│   └── shopping-cart
+└── design
+    ├── base-ui
+    │   ├── button
+    │   └── card
+    └── theme
+        ├── color-pallet
+        └── theme-context
+```
 
 ### Build-time Composition
 
-To achieve build time compositions all shared components and MFEs are consumable as packages for different applications and even other components. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application.
+To achieve build time compositions each Micro Frontend is consumable as a package. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application. This package is then logged in the consumer's `package.json` and is used also to monitor which project is using which Micro Frontend and in what version.
 
-// TODO diagram + example
+```sh title="Install Micro Frontend as a dependency"
+npm install @my-org.scope/my-mfe
+```
 
 ### Run-time Composition
 
-Runtime composed frontends is about using different strategies to load code that is not a part of the application when a user access a page or feature. This makes critical parts of the end-user journey within a single application to be loosely coupled. This approach has several drawbacks:
+Runtime composed frontends is about using different strategies to load code that is not a part of the application when a user access a page or feature. This makes critical parts of the end-user journey within a single application to be loosely coupled.
+
+#### SDK For Runtime Integration
+
+We recommend building an SDK for each Micro Frontend that is meant to be integrated in runtime and manage that SDK with Bit. That SDK will handle all aspects of loading and managing the Micro Frontend during the application's runtime.  
+This approach simplify and scale the process of integrating MFEs by providing programmatic APIs with types and autocomplete for consumers, provides error handling, abstract cross-application communication, and even reduce the need for complex documentation. Moreover, when an organization use multiple frameworks like React and Angular, we recommend building an SDK per framework.  
+
+The experience of using the MFE "feels" for the developer like working with a dependency, even if the MFE is a JavaScript bundle with its own runtime which is loaded from a CDN/Server or an HTML returns from a Microservice.
+
+// TODO diagram + example
+
+#### Module Federation
+
+[Module Federation](https://webpack.js.org/concepts/module-federation) is a new plugin introduced in Webpack 5. It aims to make it easier to compose applications in runtime. While composing with Module Federation requires additional configuration on the consumer's `webpack.config.js`, we still recommend [building an SDK](#sdk-for-runtime-integration) that provides types and autocomplete.
+
+:::info
+
+Native Webpack 5 Module Federation support is in development. [See here](https://github.com/teambit/bit/discussions/4640) for more details.
+
+:::
+
+#### ES6 Modules
+
+Future of runtime frontend composition is ES Modules. This means that we can use ES modules in the browser and use them in the Node.js runtime.
+
+#### Drawbacks
+
+Runtime composition approach has several drawbacks:
 
 - No de-duping of shared code and dependencies as this is a bundle feature which runs during a build pipeline.
 - Complex communication between the application and composed MFEs is often moved to a message bus or eventing system that is hard to scale when the number of MFE grows.
@@ -105,45 +145,8 @@ Runtime composed frontends is about using different strategies to load code that
 
 There are cases where its reasonable to utilize this approach. This can be useful as a deployment strategy where we know APIs will not change often or for integrating with legacy systems.
 
-#### SDK Library
 
-A way to mitigate some of the issues around runtime compositions is building an SDK for each MFE. An SDK is a library that wraps a runtime integrated MFE in a way the consumer can use it as if it was a dependency. Regardless of how the runtime MFE is deployed, an SDK can provide several benefits:
-
-- Decouple the MFE deployment strategy from how it is integrated.
-- Provide programmatic APIs simplify dev-experience with auto-complete, types (with TypeScript), functions and other APIs.
-- Abstract complex situations and error handling by the MFE publisher.
-- Provide framework-specific APIs for consumers to simplify and reduce integration time for consumers
-- Less documentation needed to integrate MFE.
-
-// TODO diagram + example
-
-#### Module Federation
-
-[Module Federation](https://webpack.js.org/concepts/module-federation) is a new plugin introduced with Webpack 5 release. According to the Webpack documentation it is "Multiple separate builds should form a single application. These separate builds should not have dependencies between each other, so they can be developed and deployed individually". With this in mind many teams have began using this new tool as a way to create runtime composition for their frontend.
-
-MF is a game changer in regards to runtime composition, it allows the browser to have runtime-composed MFEs share a single application-runtime and even shared dependencies. However, it still suffers from some issues we see hurting teams that chose this approach to scale when implemented in large organizations. The main issue is 
-
-- Only supports Webpack 5, so teams using other bundlers can't use shared MFEs.
-- No shared types and IDE auto-complete when teams opt for separating repositories.
-- `peerDependencies` need to be in-sync.
-
-
-
-:::info
-
-Native Webpack 5 Module Federation support is in development. [See here](https://github.com/teambit/bit/discussions/4640) for more details.
-
-:::
-
-#### Bundle from CDN
-
-third party JS
-
-#### ES Modules in the browser
-
-Future of runtime frontend composition is ES Modules. This means that we can use ES modules in the browser and use them in the Node.js runtime.
-
-### Multiple Frameworks
+## Multiple Frameworks
 
 - possible
   - buildtime
@@ -151,17 +154,17 @@ Future of runtime frontend composition is ES Modules. This means that we can use
 - do it only if really needed
 - how
 
-### Data Fetching
+## Data Fetching
 
 - api gateway
 - BFF pattern
 
-### Modeling data entities
+## Modeling data entities
 
 - more than shared types
 - mock data
 
-### Updates
+## Updates
 
 - npm i
 - build
@@ -169,19 +172,19 @@ Future of runtime frontend composition is ES Modules. This means that we can use
 
 
 
-### Feature Ownership
+## Feature Ownership
 
 - hi
 
-### Styling and Theming
+## Styling and Theming
 
 - encapsulation
 
-### Testing
+## Testing
 
 Each component is testing itself and its dependencies.
 
-### Applications D& Deployment
+## Applications D& Deployment
 
 - apps are just very concrete components
 
