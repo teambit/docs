@@ -5,77 +5,67 @@ id: mfe
 
 import depGraph from './graph.png';
 
-Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by integrating composing wep applications from independently versioned components. A single team could be responsible for implementing cross-cutting business concerns and publishing features as components, while depending on other teams components if needed. The idea is to break down the monolithic frontend application into smaller components, which can be developed and tested independently and composed into larger applications.
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by composing them from independently versioned components.  
+The idea is to break down the monolithic frontend application into smaller components, which can be developed and tested independently and composed into larger applications.
 
-Bit facilitates a bottom-up approach for systems engineering, meaning teams can build a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications.  
-This fits how modern web frameworks are focused on building modular systems from atomic and functional components ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)) while also decouple the frontend runtime from how its codebase is managed.
+The benefit of using Bit for building an MFE workflow is that it is a native way for how modern web frameworks are designed. Bit allows an organization gains all the benefits of integrating between teams and components as part of an application build pipeline while still distribute development efforts across different teams and make any component reuseable.
 
 [Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet?
 
 ## Benefits
 
-The main benefit of using Bit for building an MFE workflow is that it is a native way for how modern web frameworks are designed. This means an organization gains all the benefits of integrating between teams and components as part of an application build pipeline while still being able to distribute development efforts across different teams and make any component reuseable.
-
-### Control Application Performance
-
-Most MFE approaches rely on runtime consumption of deployed applications. If not being careful the end-user experience may result in a significant performance hit.
-
-By using Bit to build a single component model and consuming most components in build time, the result application will have a single component model and bundle. This means the application itself can better manage it's performance:
-
-- Optimized bundle.
-- Code splitting.
-- Better de-duping of dependencies.
-- Single application runtime.
-- Minimal JavaScript payload size.
-
-Runtime dependencies can still be used (see below), however with Bit teams can make more informed decisions for when to use this pattern. This is because Bit decouples the organization structure of how teams collaborate from how an application is deployed.
-
-### Consistent User Experience
-
-The main concern when using any MFE approach is how to deliver a consistent user experience. A consistent user experience is built on top of two main items
-
-**Atomic components** usually refers to a "design system", a set of base components we use to compose our UI. These components have to be consistent across all MFEs. We can include the set of base UI components into our component model for all teams to compose with, thus building a consistent UI.  
-Another interesting usage for a component model is "componentizing" more than just the base UI components in the component model. We can include data-fetching, SDKs, and other components, streamlining more parts of the user-experience.
-
-**Application state** is a fundamental part of the user experience. Building with a component model means all components communicate natively, making the user experience more responsive and easy to build. When introducing runtime dependencies we force the application to sync MFEs and ensure they can communicate. This adds a lot of complexity and is hard to scale when more MFEs are introduced, eventually hurting the flow of the product.
-
-### Stable, Safe and Incremental Updates
-
-Teams invest time in making sure their application is tested and validated before shipped to our end-users. When integrating components and building modular apps teams get to run their build pipeline to validate their dependencies does not break them. This way they ensure the stability of their application.
-
-Each change to a component propagates in the component model to all components interacting with it, making each change testable from the consumer's perspective. This makes it easier to know which change caused a performance decrease or introduced unwanted behaviors.
-
-### Improve Developer Experience
-
-Building with components or modules is at the core of modern web development. Having autonomous teams building components and having consumers adopting them is as native for the consumer as if they would use a component from their own codebase. This improves the delivery of new capabilities by making the component integration using native framework features instead of using complex messaging or eventing systems for integrations.
-
-When it's easy for a developer to integrate different components to build their module feature/app, it makes the development process work more like **rapid application development** where a developer pieces together self-contained pieces of functionality to compose a larger user-experience.
-
-### Simple, decoupled codebase
-
-Smaller codebases are easier for developers to maintain as they simply have less code. When distributing a single component model across multiple teams and multiple repositories we get this exact benefit. It results with increase in developer productivity.  
-The rest of the components are available to be installed as dependencies, making it even easier to build more complex features and compose more concrete components.
-
-Codebase can also become more dynamic when wanting to scale a team. Bit can "source" a component to any codebase including its complete version history. This means that when a codebase grows too large we can split it to several smaller codebases without loosing any of the past versions. Developers can use this capability to quickly spin up new codebases for specific requirements and use them for different experimentations POCs.
+Using Bit for building Micro Frontends focuses on the developer experience for both MFE maintainers and application builders. Bit MFE workflow has unique attributes and characteristics.
 
 ### Autonomous Teams
 
-Teams build independently versioned components, where each component has its own dependency graph. This means that cross team collaboration and integration is done primarily using dependencies. Developers to decide how and when they want to adopt any change, and when a change is dangerous for them, they can decide to adopt it gradually.
+Bit's MFE workflow focuses on having multiple teams building and collaborating on a large, overarching component model. Much like how a single team would build a component model for a single application in a single repository - in Bit all team's components are available for other teams to compose with regardless of where they were developed.
 
-By managing versioning in the component model teams can move forward quickly without the constant fear of breaking their dependents. The result of it is a huge gain in the speed of delivery.
+A single team could be responsible for implementing all components related to a specific business domain and publishing them for other teams to use. The team can manage components in a single, or several, repositories, depending on their needs.
 
-### Code Reuse
+### Developer Experience
 
-With bottom-up approach for systems engineering, where individual components consumed as dependencies teams get instant ability to reuse all previously implemented components and use them to compose more complex functionality. The organization gains the benefits of working in a single monolith, where all code is available to consume as a dependency but still keep each codebase small and focused on a single cross cutting concern.
+Bit facilitates a bottom-up approach for systems engineering. Meaning team builds a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications. This fits how modern web frameworks are focused on building modular systems from atomic components ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)).  
 
-The end result with such degree and granularity of code reuse is gaining an almost Rapid Application Development type of workflow for developers.
+Building with components or modules is at the core of modern web development. Teams building components and others adopting them is as native for the consumer as if they would use a component from their own codebase. When it's easy and native for a developer to integrate different components to build their component/feature/app, it makes the development process work more like **rapid application development** where a developer compose together self-contained pieces of functionality to a larger user-experience.
+
+### Better Runtime Performance
+
+Most MFE approaches rely on runtime consumption of deployed applications. If not being careful the end-user experience may result in a significant performance hit.  
+By using Bit to build a single component model for an application the target build will have a single component model and bundle. This means the application itself can better manage it's performance with an optimized bundle for its requirement using code splitting, better de-duping of dependencies, a single application runtime which all results in a minimal JavaScript payload size.
+
+### Consistent User Experience
+
+We want to build progressive web applications that combine data from various sources, allow complex interactions and still keep consistent look and feel. Building this level of complexity and consistency requires high level of code reuse. This granular level of code reuse is a fundamental aspect of Bit and a key requirement for building consistent use experiences.  
+Bit achieves consistent user experience by allowing reuse of components. These component can be a part of the organization design system, features that several apps need or even middleware and SDKs for integrating with other services. By opting for reuse rather then re-implement we also future proof our apps to remain consistent with future updates and changes.
+
+### Deep Integration and Communication
+
+Bit helps MFEs become a core part of the consumer's app. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.
+
+This deep integration enables building responsive application, as it allows us to better handle routing, history and deep-linking, even when MFEs were built by different teams.
+
+### Stable and Safe Incremental Updates
+
+Each MFE has its own semantic version and independent build-pipeline, this helps consumers in two important ways: first of all, they know which of the MFEs they use has a pending update and secondly the semantic version communicates the type of change applied the MFE has. All this flow happens during the app's build. It means consumers know how an MFE update may affect their app and handle it accordingly. When integrating during a build, we can be sure we don't introduce bugs to the app.
+
+In a nutshell Bit allows developers to decide how and when they want to adopt any change, and when a change is dangerous for them, they can decide to adopt it gradually. On the other hand, MFE builders can move forward quickly without the constant fear of breaking their dependents. The result of it is a huge gain in the speed of delivery.
+
+### Decouple Team Collaboration from Runtime Composition TODO
+
+Often we see organizations opt to use runtime composition of frontend applications as a "do all" solution without considering the drawbacks it may have on performance, SEO and MFE composition. But we need to understand the teams requirements and needs to properly consider the tradeoffs. Defaulting to build-time composition lets teams focus and collaborate on building a coherent component model for their large scale application. This makes the discussion about runtime composition (with its different flavors) to be more pragmatic as we can decide to use it when needed.  
+
+When runtime composition is needed, there are different methods where Bit can be used to answer some of the questions it raises. [See here.](/)
+
+### Simple, decoupled codebase
+
+Smaller codebases are easier to maintain as they simply have less code. When distributing a single component model across multiple teams and multiple repositories we make each repository to be as small as it can be. Moreover, as all other components are available to be dependencies it makes it even easier to ensure a single codebase contains a very focused set of components.
+
+Bit also provides a dynamic way to scale decoupled codebases, especially in cases where a codebase grows and needed to be split to several others. Bit can "source" a component to any codebase including its complete version history. So when a codebase grows too large we can split it to several smaller codebases without loosing history and context. Developers can use this capability to quickly spin up new codebases for specific requirements and use them for different experimentations POCs.
 
 ### Standardization
 
-Ramping up the production of components requires solving many small problems many times. For example, how a component should be constructed, testing components, keeping code quality are some of the basic requirements each developer needs to think about when building new components. When working with components its also important to provide global context for components like theme, API gateway, globalization and others.  
-Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keep different types of standards according to the specific type of component making the process of creating new features and APIs repeatable and quick.
-
-Organizations can build a set of environments with dependencies between them for cases where a team may need to extend of further customize their components.
+Ramping up the production of MFEs requires solving many small problems many times. For example, how an MFE should be constructed, testing and code quality are some of the basic requirements each developer needs to think about when building new MFE.  
+Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keep different types of standards according to the specific type of MFE making the process of creating new features and APIs repeatable and quick.
 
 ## In Practice
 
@@ -96,11 +86,11 @@ The structure of components on the filesystem is non-opinionated, meaning you ca
 
 Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.
 
+// TODO IMAGE + 
+
 ### Build-time Composition
 
 To achieve build time compositions all shared components and MFEs are consumable as packages for different applications and even other components. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application.
-
-With build time composition the MFE becomes a core part of the consumer's component model and build pipeline. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.
 
 // TODO diagram + example
 
@@ -112,7 +102,6 @@ Runtime composed frontends is about using different strategies to load code that
 - Complex communication between the application and composed MFEs is often moved to a message bus or eventing system that is hard to scale when the number of MFE grows.
 - Application maintainers get less control over their production runtime, as skipping application-MFE integration tests my result in MFE-teams delivering potentially breaking changes or bugs directly to the consumer's runtime.
 - Runtime metrics, KPIs, logs and reports for applications with runtime MFEs are harder to achieve, as they are distributed between it and the various MFEs composed.
-- Integrating MFEs can be complicated and required more work to get routing, history and deep-linking more complex, making it a challenge to build responsive applications.
 
 There are cases where its reasonable to utilize this approach. This can be useful as a deployment strategy where we know APIs will not change often or for integrating with legacy systems.
 
