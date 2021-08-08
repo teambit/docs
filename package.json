@@ -10,7 +10,7 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "generate-cli":"bit cli generate --metadata.id='cli-reference' --metadata.title='CLI Reference' > docs/reference/cli-reference.md",
+    "generate-cli": "bit cli generate --metadata.id='cli-reference' --metadata.title='CLI Reference' > docs/reference/cli-reference.md",
     "update-aspects": "bit import && bit checkout latest --all --skip-npm-install"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@teambit/base-ui.elements.label": "^0.6.7",
     "@teambit/documenter.theme.theme-context": "^3.0.8",
     "@teambit/evangelist.elements.button": "1.0.3",
+    "@teambit/html.aspect-docs.html": "^0.0.15",
     "clsx": "^1.1.1",
     "docusaurus-plugin-plausible": "^0.0.5",
     "docusaurus-plugin-sass": "^0.2.0",

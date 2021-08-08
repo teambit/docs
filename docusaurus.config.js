@@ -135,6 +135,10 @@ module.exports = {
               to: '/aspects/react-native'
             },
             {
+              label: 'Html (vanillaJs)',
+              to: '/aspects/html'
+            },
+            {
               label: 'Dependency Resolver',
               to: '/aspects/dependency-resolver'
             },
