@@ -223,7 +223,7 @@ Another benefit of this approach is it allows different Micro Frontends to acces
 
 ### BFF Pattern
 
-BFF (Backend-For-Frontend) can be seen as an extension to the API Gateway pattern. BFF provides a layer for the frontend that handles data-fetching and further decouples the frontend concerns from the backend, allowing frontend developers focus on rendering data, consistency and frontend performance.  
+BFF (Backend-For-Frontend) can be seen as an extension to the API Gateway pattern but can also be built separately. BFF provides a layer for the frontend that handles data-fetching and further decouples the frontend concerns from the backend, allowing frontend developers focus on rendering data, consistency and frontend performance.  
 We recommend creating Bit components that implement the different BFFs for your Micro Frontends and sharing them as dependencies to standardize backend integration.
 
 ### Shared Data Model
@@ -239,6 +239,10 @@ It's not recommended to tie either a Shared Data Model or a Shared Type to the B
 
 :::
 
+## Shared Dependencies
+
+Bit is all about 
+
 ## Updates
 
 - npm i
@@ -252,6 +256,49 @@ It's not recommended to tie either a Shared Data Model or a Shared Type to the B
 ## Styling and Theming
 
 - encapsulation
+
+Styling on the browser is often a challenge, as CSS is global, and when opting for a Micro Frontend workflow the challenge is even grater. There are two main concerns- what is the best way to encapsulate the styles each MFE brings (if any) and how to ensure the styles are consistent between MFEs.
+
+### Standardize with Design System
+
+A design system is a set of reusable, consistent, and accessible design patterns for a product or service. It is a collection of guidelines and style libraries that help teams build consistent UIs. We recommend looking at a design system as a composition of two solutions: shared theme and theme-able components.
+
+#### Shared Theme
+
+It's recommended to provide a theme that is consistent across all MFEs. This way, the team can build the frontend they want and still have a consistent design across all MFEs. This way we can build the design in a decoupled manner from any framework (React/Angular) and only provide a context for them to apply the theme for any MFE. See [this example](https://bit.dev/teambit/design/theme/theme-context) for a theme shared as React context. The same can be repeated for Angular.  
+This allows us to decouple the styling from component implementation, making it easier to update styling without affecting components.
+
+It's recommended not to couple an MFE with a theme, but instead allow the consumer to compose together the MFEs on the page and apply theme on them. This way we can support theming our UI as well.
+
+:::tip providing context for Micro Frontends
+
+This pattern is applicable for more than just theming. We can use this approach for globalization and even data fetching.
+
+:::
+
+#### Theme-able Components
+
+To have better UI look and feel we want to share a set of base-ui components to be used as shared dependencies for all MFEs and applications. This means we save time by not re-implementing the same components. When building these basic elements, we need to consider how they are themed, and ensure they are compatible with our design system.
+
+### Encapsulation
+
+Depending on the styling strategy you choose, you have different options for encapsulation.
+
+#### Native CSS
+
+This method refers to having a basic `.css` file alongside the component. While there are inherent issues with the global scope, which makes it inadvisable for styling components, some projects still prefer this method (some issues can be resolved with BEM or other methods).
+
+If using native CSS we recommend using strict naming convention like [BEM](http://getbem.com/introduction/) or [SMACSS](https://smacss.com/).
+
+#### Style pre-processors and CSS Modules
+
+This method refers to using CSS transpilers like [Less](https://lesscss.org) , [SASS and SCSS](https://sass-lang.com). Using such tools is very helpful, as different bundlers can use these styles to create vars, scoped classes, and other features. This styling method, much like the way native CSS works, needs to be managed by the consuming project's bundler. This is usually done by configuring a specific plugin that handles the type of pre-processor.
+
+CSS modules help with the encapsulation of styles and the ability to use CSS variables, making the composition of components easier.
+
+#### CSS in JS
+
+CSS-in-JS is a methodology that uses Javascript objects which describe the different styles. It styles the component during runtime, while the JavaScript code is being evaluated. Using CSS-in-JS will require a consumer to add a dependency to their application, potentially resulting in a larger bundle size. There are some tools that evaluate CSS-in-JS in build time that might mitigate this concern at the cost of adding a build-time task to the build process.
 
 ## Testing
 
