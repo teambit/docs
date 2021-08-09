@@ -241,9 +241,23 @@ It's not recommended to tie either a Shared Data Model or a Shared Type to the B
 
 ### Updates
 
-- npm i
-- build
-- ripple ci
+Teams invest a lot of time and efforts into building and maintaining their build pipeline so they know when any build passed it can be safely deployed. This is a critical process for updating dependent Micro Frontends. If your goal is to scale your frontend teams you need to ensure teams can safely and separately update their Micro Frontends without causing any side effects for applications that use them.
+
+#### Update Installed Micro Frontends
+
+Having Micro Frontends to be integrated in build time allows the consumer to be aware of updates and manage them. As MFEs are managed in a `package.json` the way for updating composed MFEs is native for all package managers:
+
+```sh title="Update MFEs"
+npm update <MFE>
+```
+
+This way a team can update specific MFEs, or even configure their `package.json` to use semantic version ranges to streamline the process.
+
+#### Propagate Updates with RippleCI
+
+Ripple CI propagates updates across published MFEs on the bit.dev platform. When an MFE is updated Bit.dev will run its build pipeline and run simulated changes for all dependent MFEs, components and apps managed by Bit. This allows MFE maintainers to understand if they are breaking any of their dependent apps, but more importantly, can manage the scale of large frontends with complex build-train.
+
+<Image src="https://miro.medium.com/max/2000/0*nh-jLwy0b5sxvZLD.jpeg" width="80%" padding={20}/>
 
 ### Feature Ownership
 
