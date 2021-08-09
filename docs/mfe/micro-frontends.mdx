@@ -5,10 +5,10 @@ id: mfe
 
 import depGraph from './graph.png';
 
-Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by composing them from independently versioned components.  
-The idea is to break down the monolithic frontend application into smaller components, which can be developed and tested independently and composed into larger applications.
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by composing them from independently versioned components.
+Bit breaks the requirement of run-time integration of MFEs, with all the associated issues of unclear communication paths, hidden side-effects and others, by facilitating consumption of MFEs at build-time. Bit does this by providing a varied tool set for creating, isolating and sharing components. With Bit all your UI and logic becomes shareable modules, building blocks for your entire organization.
 
-The benefit of using Bit for building an MFE workflow is that it is a native way for how modern web frameworks are designed. Bit allows an organization gains all the benefits of integrating between teams and components as part of an application build pipeline while still distribute development efforts across different teams and make any component reuseable.
+Bit allows an organization gains all the benefits of integrating between teams and components as part of an application build pipeline in a native way to how modern web frameworks operate, while still distribute development efforts across different teams and make any component reuseable.
 
 [Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet?
 
@@ -109,12 +109,16 @@ npm install @my-org.scope/my-mfe
 
 ### Run-time Composition
 
-Runtime composed frontends is about using different strategies to load code that is not a part of the application when a user access a page or feature. This makes critical parts of the end-user journey within a single application to be loosely coupled.
+Runtime composed frontends is about using different strategies to load code that is not a part of an application when a user access a page or feature. This means we make our app (and Micro Frotnends) loosely-coupled, potentially causing production issues harder to debug and build additional infrastructure in our frontend for sharing data/state between MFEs.  
+Two other factors to consider are the potential an MFE-upgrade can break an application's runtime by publishing a breaking change, and also hurt performance due to [loading foreign JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript) or MFEs with duplicated dependencies or their own runtime.  
+There are different approaches for runtime compositions where each has its own way of mitigating some of these drawbacks. While Bit doesn't aim to solve these issues, it can help improve and scale runtime composition approach by adding a layer of build-time integration.  
+
+We recommend carefully considering when to use runtime composition.
 
 #### SDK For Runtime Integration
 
-We recommend building an SDK for each Micro Frontend that is meant to be integrated in runtime and manage that SDK with Bit. That SDK will handle all aspects of loading and managing the Micro Frontend during the application's runtime.  
-This approach simplify and scale the process of integrating MFEs by providing programmatic APIs with types and autocomplete for consumers, provides error handling, abstract cross-application communication, and even reduce the need for complex documentation. Moreover, when an organization use multiple frameworks like React and Angular, we recommend building an SDK per framework.  
+We recommend building an SDK for each runtime-integrated Micro Frontend with a Bit component. The SDK handle all aspects of loading and managing the Micro Frontend lifecycle in runtime.  
+This approach simplify and scale the process of integrating MFEs by providing programmatic APIs with types and autocomplete for consumers, adding error handling and logs, abstract cross-application communication, and even reduce the need for complex documentation. When an organization use multiple frameworks like React and Angular, we recommend building an SDK per framework.  
 
 The experience of using the MFE "feels" for the developer like working with a dependency, even if the MFE is a JavaScript bundle with its own runtime which is loaded from a CDN/Server or an HTML returns from a Microservice.
 
@@ -122,37 +126,88 @@ The experience of using the MFE "feels" for the developer like working with a de
 
 #### Module Federation
 
-[Module Federation](https://webpack.js.org/concepts/module-federation) is a new plugin introduced in Webpack 5. It aims to make it easier to compose applications in runtime. While composing with Module Federation requires additional configuration on the consumer's `webpack.config.js`, we still recommend [building an SDK](#sdk-for-runtime-integration) that provides types and autocomplete.
+[Module Federation](https://webpack.js.org/concepts/module-federation) is a new plugin introduced in Webpack 5. While solving many of the drawbacks of runtime composition, MF requires the entire organization to use Webpack 5 as their bundler.  
+If you use decided to use Module Federation, we still recommend [building an SDK](#sdk-for-runtime-integration) that provides types and autocomplete for simplifying developer-experience.
 
 :::info
 
-Native Webpack 5 Module Federation support is in development. [See here](https://github.com/teambit/bit/discussions/4640) for more details.
+We are adding Native Webpack 5 Module Federation for Bit that aims to simplify the process of adopting this technology. We aim to provide versioning support for module to scale development workflow. [Click here](https://github.com/teambit/bit/discussions/4640) for more details.
 
 :::
 
 #### ES6 Modules
 
-Future of runtime frontend composition is ES Modules. This means that we can use ES modules in the browser and use them in the Node.js runtime.
-
-#### Drawbacks
-
-Runtime composition approach has several drawbacks:
-
-- No de-duping of shared code and dependencies as this is a bundle feature which runs during a build pipeline.
-- Complex communication between the application and composed MFEs is often moved to a message bus or eventing system that is hard to scale when the number of MFE grows.
-- Application maintainers get less control over their production runtime, as skipping application-MFE integration tests my result in MFE-teams delivering potentially breaking changes or bugs directly to the consumer's runtime.
-- Runtime metrics, KPIs, logs and reports for applications with runtime MFEs are harder to achieve, as they are distributed between it and the various MFEs composed.
-
-There are cases where its reasonable to utilize this approach. This can be useful as a deployment strategy where we know APIs will not change often or for integrating with legacy systems.
-
+In-browser module system is the "holy grail" of composing frontends. This will streamline the process of composing a frontend application from components by our runtime - the browser. ES Modules may still not be ready for large scale adoption, mainly due to performance issues, we believe the future of frontend composition is ES Modules.  
+When using Bit's for Micro Frontend you essentially build modules consumed in build-time making the transition to consuming the same modules in runtime in the future easier.
 
 ## Multiple Frameworks
 
-- possible
-  - buildtime
-  - runtime
-- do it only if really needed
-- how
+Choosing to mix different frontend technologies could result in hurting performance and bundle size, thus degrading end user experience.
+
+Micro Frontends are not imposing different technology stacks. The fact they enable this approach doesn't mean we need to follow it.  
+Like in the Microservice works, we don't want to end up with 20 different languages in the same system because each of them is opinionated and brings their own vision inside the system. Maintaining different eco-systems is very expensive and potentially confusing without providing too many benefits.
+
+Tools that allow multi-framework builds [warn us](https://single-spa.js.org/docs/faq/#can-i-use-more-than-one-framework) from such practices. There are times where we have to use such capabilities, and it is a good tool in our toolbox (for example, when loading legacy code or migrating for new technologies).
+
+:::note
+
+In this context, multiple framework is also loading different versions of the same framework.
+
+:::
+
+### Web Components
+
+Web Components can help encapsulate UI functionality. With Web Components we can extend our browser with new components. They use HTML and DOM API that every frontend framework uses and a common way of receiving and sending data using props and events.  
+Bit supports building Web Components using [Lit](https://lit.dev) as a way to build framework agnostic Micro Frontends that can be integrated in build time with no need for handling running multiple frameworks on the browser.
+
+Web Components are not a silver bullet to solve all problems as they are still force some constraints don't provide many of the additional features frontend frameworks offer. But more importantly, when opting for Web Components, it's critical to understand [which browsers](https://caniuse.com/?search=web%20components) will support them.
+
+### Building Adapters
+
+There are many patterns and OSS solutions for loading multiple frameworks using adapters. When publishing an MFE that requires a specific framework you can either share a "wrapped" version of it, or build an external adapter that can consume the MFE and load the required framework. This approach allows a project maintainer to keep track of how many, and where, they use MFEs that need to run with a different framework.
+
+```TypeScript title="React Adapter"
+import React from 'react';
+
+export class Adapter extends React.Component {
+  constructor(props: any) {
+    super(props);
+    this.refHold;
+  }
+  refHold?: any;
+  private init = (hydrate?: boolean) => {
+    (async () => {
+      // @ts-ignore
+      const ReactDOM = (await import('../node_modules/react-dom')).default;
+      // @ts-ignore
+      const React = (await import('../node_modules/react')).default;
+      const { children, ...rest } = this.props;
+      const renderMethod = hydrate ? ReactDOM.hydrate : ReactDOM.render;
+      renderMethod(
+        React.createElement(
+          'div',
+          this.props,
+          children
+        ),
+        this.refHold
+      );
+    })();
+  };
+  componentDidUpdate(prevProps: any, prevState: any, snapshot: any) {
+    this.init(true);
+  }
+
+  componentDidMount() {
+    this.init();
+  }
+
+  render() {
+    return <div ref={(ref) => (this.refHold = ref)} />;
+  }
+}
+
+export default Adapter;
+```
 
 ## Data Fetching
 
@@ -170,8 +225,6 @@ There are cases where its reasonable to utilize this approach. This can be usefu
 - build
 - ripple ci
 
-
-
 ## Feature Ownership
 
 - hi
@@ -184,7 +237,7 @@ There are cases where its reasonable to utilize this approach. This can be usefu
 
 Each component is testing itself and its dependencies.
 
-## Applications D& Deployment
+## Applications & Deployment
 
 - apps are just very concrete components
 
