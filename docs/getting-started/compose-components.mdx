@@ -2,3 +2,105 @@
 id: compose-components
 title: Compose Components
 ---
+
+To visualize components we use the `.compositions` file. Compositions allow us to create our components in different states. This also means we can test our components in different states. Compositions are the main dev tool for building with components. They provide a dedicated dev-server per each component where you can create fully featured apps with support for state management, theming and routing. Compositions act like consuming applications that compose and simulate components in various use cases.
+
+Bit runs a dev server for components that shows all component compositions. Run the dev server and browse components to see their compositions.
+
+```sh
+bit start
+```
+
+### Video Guide
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/so8CcUzTrn4?rel=0"
+  title="How to Render your Component"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### Create Compositions
+
+Add compositions to a component by creating a file in the component's directory, using the `*.compositions.*` pattern.
+
+```bash {3}
+└── ui/my-component
+    ├── my-component.tsx
+    ├── my-component.composition.tsx
+    └── my-component.tsx
+```
+
+:::tip Component templates support for compositions
+
+All available component templates support compositions out of the box. Use `bit create` to get started quickly.
+
+:::
+
+:::info react-fast-refresh
+
+Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your components.
+
+:::
+
+### Sort Compositions in Multiple Files
+
+Compositions are not limited to a single file. A component may have several files with the `*.composition.*` pattern.
+
+```bash {3}
+└── ui/link
+    ├── index.tsx
+    ├── my-component.composition.tsx
+    ├── advanced-my-component.composition.tsx
+    └── link.tsx
+```
+
+### Add a Simple Composition
+
+Compositions are just names `const`s exported by the composition file.  
+A basic composition may look something like this:
+
+```js title="my-component.composition.tsx"
+import React from 'react';
+import { MyComponent } from './my-component';
+
+export const BasicMyComponent = () => {
+  return <MyComponent />;
+};
+```
+
+### Use Other Components in Compositions
+
+In compositions you can `import` as many components as needed and build more complex simulations for your component.
+
+```js {2,3} title="my-component.composition.tsx"
+import React from 'react';
+import { Header } from '@my-org/base-ui.header';
+import { Footer } from '@my-org/base-ui.footer';
+import { MyComponent } from './my-component';
+
+/**
+ * Compose header with my-component
+ */
+export const HeaderComponent = () => {
+  return (
+    <Header>
+      <MyComponent />
+    </Header>
+  );
+};
+
+/**
+ * Compose footer with my-component
+ */
+export const FooterComponent = () => {
+  return (
+    <Footer>
+      <MyComponent />
+    </Footer>
+  );
+};
+```
