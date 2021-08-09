@@ -3,6 +3,9 @@ id: from-document-to-build
 title: Document. Visualize. Test. Lint. Compile. Build.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Document your Components
 
 Documentation is a critical when building with components. Bit implements several features for component documentation to improve the dev experience and increase component adoption.
@@ -50,20 +53,16 @@ Bit auto generates the properties table from the code itself using [react-docgen
 The most basic form of documentation is using markdown and writing docs. Add a `*.docs.md/x` to your component to add documentation.
 
 :::tip Component templates support for documentation
-
 All available component templates support MDX documentation out of the box. Use `bit create` to get started quickly.
-
 :::
 
 :::info react-fast-refresh
-
 Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your documentation.
-
 :::
 
 ### Write documentation
 
-Markdown gives you the freedom to extend the documentation page as you like. You can use either Markdown or even MDX for enriching your documentation with React components.
+Markdown gives you the freedom to extend the documentation page as you like. You can use either Markdown for your Angular/React components or even MDX for enriching your documentation with React components.
 
 ### Add live playground for components
 
@@ -115,41 +114,95 @@ bit start
 
 Add compositions to a component by creating a file in the component's directory, using the `*.compositions.*` pattern.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash {3}
 └── ui/my-component
+    ├── index.tsx
     ├── my-component.tsx
-    ├── my-component.composition.tsx
-    └── my-component.tsx
+    └── my-component.composition.tsx
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash {6}
+└── ui/my-component
+    ├── my-component.component.ts
+    ├── my-component.module.ts
+    ├── my-component.service.ts
+    └── compositions
+        └── my-component.composition.ts
+```
+
+  </TabItem>
+</Tabs>
+
 :::tip Component templates support for compositions
-
 All available component templates support compositions out of the box. Use `bit create` to get started quickly.
-
 :::
 
 :::info react-fast-refresh
-
 Bit uses Fast Refresh. It gives the best performance for hot module reload and feedback on edits made to your components.
-
 :::
 
 ### Sort Compositions in Multiple Files
 
 Compositions are not limited to a single file. A component may have several files with the `*.composition.*` pattern.
 
-```bash {3}
-└── ui/link
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash {4,5}
+└── ui/my-component
     ├── index.tsx
+    ├── my-component.tsx
     ├── my-component.composition.tsx
-    ├── advanced-my-component.composition.tsx
-    └── link.tsx
+    └── advanced-my-component.composition.tsx
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash {6,7}
+└── ui/my-component
+    ├── my-component.component.ts
+    ├── my-component.module.ts
+    ├── my-component.service.ts
+    └── compositions
+        ├── my-component.composition.ts
+        └── advanced-my-component.composition.ts
+```
+
+  </TabItem>
+</Tabs>
 
 ### Add a Simple Composition
 
 Compositions are just names `const`s exported by the composition file.  
 A basic composition may look something like this:
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```js title="my-component.composition.tsx"
 import React from 'react';
@@ -160,9 +213,42 @@ export const BasicMyComponent = () => {
 };
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```js title="compositions/my-component.composition.tsx"
+import { Component, NgModule } from '@angular/core';
+import { MyComponentModule } from '../my-component.module';
+
+@Component({
+  selector: 'composition-cmp',
+  template: `Composition: <my-component></my-component>`
+})
+class CompositionComponent {}
+
+@NgModule({
+  declarations: [CompositionComponent],
+  imports: [MyComponentModule],
+  bootstrap: [CompositionComponent]
+})
+export class CompositionModule {}
+```
+
+  </TabItem>
+</Tabs>
+
 ### Use Other Components in Compositions
 
 In compositions you can `import` as many components as needed and build more complex simulations for your component.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```js {2,3} title="my-component.composition.tsx"
 import React from 'react';
@@ -193,6 +279,36 @@ export const FooterComponent = () => {
 };
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```js title="compositions/my-component.composition.tsx"
+import { Component, NgModule } from '@angular/core';
+import { MyComponentModule } from '../my-component.module';
+import { Header } from '@my-org/base-ui.header';
+import { Footer } from '@my-org/base-ui.footer';
+
+@Component({
+  selector: 'composition-cmp',
+  template: `Composition: <Header><my-component></my-component></Header>`
+})
+@Component({
+  selector: 'composition-cmp2',
+  template: `Composition: <Footer><my-component></my-component></Footer>`
+})
+class CompositionComponent {}
+
+@NgModule({
+  declarations: [CompositionComponent],
+  imports: [MyComponentModule],
+  bootstrap: [CompositionComponent]
+})
+export class CompositionModule {}
+```
+
+  </TabItem>
+</Tabs>
+
 ## Test your Components
 
 Tests become even more viable when working in a component based workflow. Components can be composed in many unique use cases, so having tests to check for them can reduce the amount of integration and experimentation needed in the future.
@@ -217,6 +333,15 @@ This topic describes how to test a Bit component written in React, with Jest.
 
 Add tests to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash {3}
 └── ui/my-component
     ├── index.tsx
@@ -224,23 +349,42 @@ Add tests to a component by creating a file in the component's directory, using 
     └── my-component.tsx
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash {5}
+└── ui/my-component
+    ├── my-component.component.ts
+    ├── my-component.module.ts
+    ├── my-component.service.ts
+    └── my-component.spec.ts
+```
+
+  </TabItem>
+</Tabs>
+
 :::tip Component templates support for tests
-
 All available component templates support testing out of the box. Use `bit create` to get started quickly.
-
 :::
 
 :::info tests are great addition for documentation
-
 A visual test result helps consumers to learn about the different edge cases supported by your component and makes it easy for them to want to adopt your code.
-
 :::
 
 ### Write your first test
 
 Add a test case for your component.
 
-```js title=my-component.spec.tsx
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```ts title=my-component.spec.tsx
 import React from 'react';
 import { render } from '@testing-library/react';
 import { BasicMyComponent } from './my-component.composition';
@@ -252,6 +396,44 @@ it('should render with the correct text', () => {
 });
 ```
 
+  </TabItem>
+    <TabItem value="Angular">
+
+```ts title=my-component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { MyComponent } from './my-component.component';
+
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture<MyComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [MyComponent]
+    }).compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MyComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should have a service', () => {
+    expect(component.service).toBeDefined();
+    expect(component.service.content).toEqual('Content from service');
+  });
+});
+```
+
+  </TabItem>
+</Tabs>
+
 ### Get visual component test report
 
 The Bit UI will immediately refresh every time you modify your components tests.
@@ -260,11 +442,15 @@ The Bit UI will immediately refresh every time you modify your components tests.
 
 You can run component tests from the CLI either for specific components or your entire workspace.
 
-```bash title="Test specific component"
+Test specific component:
+
+```bash
 bit test ui/my-component
 ```
 
-```bash title="Test all Components"
+Test all Components:
+
+```bash
 bit test
 ```
 
@@ -272,7 +458,7 @@ bit test
 
 The dev server runs tests in watch mode. Bit has the same capability from the CLI.
 
-```bash title="Watch mode for the CLI"
+```bash
 bit test --watch
 ```
 

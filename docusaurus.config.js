@@ -303,7 +303,7 @@ module.exports = {
     announcementBar: {
       id: 'support_us', // Any value that will identify this message.
       content:
-        'Welcome to Harmony Beta which at the moment supports <b>React</b>, <b>React Native</b> and <b>NodeJS</b>',
+        'Welcome to Harmony Beta which at the moment supports <b>React</b>, <b>React Native</b>, <b>Angular</b> and <b>NodeJS</b>',
       backgroundColor: '#fafbfc', // Defaults to `#fff`.
       textColor: '#091E42', // Defaults to `#000`.
       isCloseable: true // Defaults to `true`.

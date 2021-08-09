@@ -118,7 +118,7 @@ To do so, add a `variant` configuration to your workspace and set a different de
     }
   },
   "teambit.workspace/variants": {
-    "{react-ui/*}": {
+    "{ui/*}": {
       "teambit.dependencies/dependency-resolver": {
         "policy": {
           "classnames": "1.0.0"
@@ -138,7 +138,7 @@ When setting a dependency policy for the entire workspace Bit only adds these de
 ```js {6} title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "{react-ui/*}": {
+    "{ui/*}": {
       "teambit.dependencies/dependency-resolver": {
         "policy": {
           "lodash.zip": "1.0.0"

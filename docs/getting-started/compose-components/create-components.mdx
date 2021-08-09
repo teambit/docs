@@ -3,6 +3,9 @@ id: create-components
 title: Create Components
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 A Bit component is a reusable piece of code such as a react or angular component, a shared stylesheet (eg CSS, SASS, LESS) or a utility function. Bit makes your component completely independent. This means your component contains everything it needs to be able to be consumed in any other application of the same environment.
 
 Bit allows you to version your component similar to how you version a package in npm and once versioned it includes everything it needs to be independent as it becomes it's own module complete with package.json, dependencies and configurations. This is all done for you in the versioning process so that you don't have to maintain these for each component. Making your components independent helps with scaling as you can easily share them with other developers and reuse them in other projects.
@@ -17,12 +20,31 @@ bit templates
 
 Creating components can be done with a single command using the component generator.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit create react my-component     # TypeScript
 bit create react-js my-component  # JavaScript
 ```
 
-:::tip
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib my-component
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip TypeScript Native
 Bit is TypeScript first meaning we not just fully support but recommend using TypeScript for various reasons such as:
 
 - type checking at compile time instead of at run time when just using JavaScript.
@@ -42,7 +64,7 @@ When you create a component the following files are created inside your componen
 
 You can of course choose to not include tests files, docs files or even the composition files, however we highly recommend in including all of these as it encourages best practices and makes it easier for other developers to understand and trust your component.
 
-:::tip
+:::tip Component Generator
 You can create your own [component generator](/) with custom templates to suit your needs.
 :::
 
@@ -68,15 +90,44 @@ bit env
 
 We configure the environment in the `workspace.jsonc` file under the [variants](/) section.
 
-```bash
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```json title="workspace.jsonc"
 "teambit.workspace/variants": {
-    "{my-component}": {
+    "{ui/**}": {
       "teambit.harmony/react": {}
     }
   }
 ```
 
-:::tip
+  </TabItem>
+  <TabItem value="Angular">
+
+```json title="workspace.jsonc"
+"teambit.angular/angular-v12@x.x.x": {}, // Registers the Angular Aspect
+"teambit.workspace/variants": {
+  "{ui/**}": {
+    // Replace `v12` by the version of Angular that you want to use
+    "teambit.angular/angular-v12@x.x.x": { }
+  }
+},
+```
+
+  </TabItem>
+</Tabs>
+
+:::note
+You can have more than one environment in your workspace meaning you can have React and Angular components in the same workspace. When setting up the variants make sure you add a namespace to distinguish between them such as react/ui and angular/ui.
+:::
+
+:::tip Custom Environments
 You can also create your own [custom environments](/) for your components by extending the available environments. This allows you to override configs, apply themes to all your compositions and more.
 :::
 
@@ -88,26 +139,84 @@ Namespaces do not have to be the same as the directory structure of your project
 
 You can add namespaces to your components when creating them by adding the namespace followed by a slash before your component name or by using the `--namespace` flag.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit create react ui/my-component
 bit create react my-component --namespace ui
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib ui/my-component
+bit create ng-lib my-component --namespace ui
+```
+
+  </TabItem>
+</Tabs>
+
 ### Component Path
 
 Component are created with the default path of `<scope>/<namespace>/<name>`. If you want to have a different directory structure for your components you can specify it when creating them by using the `--path` flag.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
 bit create react ui/my-component --path my-ui
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib ui/my-component --path my-ui
+```
+
+  </TabItem>
+</Tabs>
+
 ### Component Scope
 
 Component are created using the default scope set in your `workspace.jsonc` file. If you want to set a different scope for your component you can specify it when creating the component by using the `--scope` flag.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit create react ui/my-component --scope my-org.different-scope
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib ui/my-component --scope my-org.different-scope
+```
+
+  </TabItem>
+</Tabs>
 
 :::note
 With Bit it is possible to have one workspace but at the same time have components be exported to different remote scopes. This gives you the experience of working in a monorepo yet having your components distributed to smaller and more manageable remote scopes.
@@ -121,7 +230,7 @@ When we create components they are added to the `.bitmap` file. This file maps y
 bit remove ui/my-component
 ```
 
-:::tip
+:::tip Delete Component Files
 To delete the component's files as well as delete them from the bitmap use the `--delete` flag.
 :::
 
@@ -147,6 +256,6 @@ To move a component you can use the `bit move` command. This command will move t
 bit move ui/my-component design/my-component
 ```
 
-:::tip
+:::tip Move v Remove Components
 This will only affect how your components are ordered in your workspace and not in your `.bitmap` file. If you want to move a component to a different namespace you will need to first remove it and then add it again with the correct namespace.
 :::

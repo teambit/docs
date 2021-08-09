@@ -48,12 +48,60 @@ as building components in a Monorepo where every component gets the benefits of 
 
 A Workspace is where you will compose and manage your components. Creating a [Workspace](/workspace/overview) can be done with a single command.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit new react my-workspace
 cd my-workspace
-bit install get david to fix this
 bit start
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+mkdir my-workspace && cd my-workspace
+bit init
+```
+
+To use the Angular environment, you first need to check what is the latest version available:
+
+```bash
+npm dist-tag ls @teambit/angular-v12
+```
+
+Then add the following lines in your workspace.jsonc file to apply the Angular development environment on all components in this workspace (replace x.x.x by the latest version available):
+
+```bash
+"teambit.angular/angular-v12@x.x.x": {},
+"teambit.workspace/variants": {
+  "*": {
+    // Replace `v12` by the version of Angular that you want to use
+    "teambit.angular/angular-v12@x.x.x": { }
+  }
+},
+"teambit.generator/generator": {
+  "aspects": [
+    // Replace `v12` by the version of Angular that you want to use
+    "teambit.angular/angular-v12"
+  ]
+}
+```
+
+```bash
+bit install
+bit start
+```
+
+  </TabItem>
+</Tabs>
 
 Learn more about [Workspaces](/)
 
@@ -62,17 +110,36 @@ Learn more about [Workspaces](/)
 [Creating Components](/) can be doing using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
 Components must be in their own directory and have an index file that exports the component.
 
-The following command will add a new component to your workspace under the [namespace](/) of 'ui' and in the [path](/) of 'templates'.
+The following command will add a new component to your workspace under the [namespace](/) of 'ui'.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
-bit create react templates/ui/my-component --path templates
+bit create react ui/my-component
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib ui/my-component
+```
+
+  </TabItem>
+</Tabs>
 
 :::note
 Use the `bit templates` command to see a list of available templates.
 :::
 
-Learn more about [Creating Components](/) including how to create your own templates.
+Learn more about [Creating Components](/) including how to [create your own templates](/).
 
 ### Common Component Operations
 
@@ -89,7 +156,7 @@ bit format # format your components
 You can use the `--help` flag for each of these commands to learn more.
 
 :::note
-Bit automatically watches and re-executes your component tests when using `bit start`.
+Bit automatically watches and re-executes your component's tests when using `bit start`.
 :::
 
 Learn more about [component testing](/).
@@ -147,8 +214,8 @@ for `bit install` are currently [Yarn 2.0](/) and [pnpm](/).
 
 Components can be installed with any package manager in any other app, whether it is a Bit Workspace or not.
 
-- NPM: `npm install @teambit/base-ui.my-component`
-- Yarn: `yarn add @teambit/base-ui.my-component`
+- NPM: `npm install @some-org.scope/my-component`
+- Yarn: `yarn add @some-org.scope/my-component`
 
 Make sure you [configure the Bit registry](/) if you are using Bit's cloud provider. Components can be published to any registry or integrated with Artifactory or Nexus.
 
@@ -158,10 +225,10 @@ Components can be [imported(cloned)](/) to any Bit Workspace. By importing compo
 from any Bit Workspace and then export a new version and eject it from your workspace.
 
 ```bash
-bit import teambit.base-ui/my-component
+bit import some-org.scope/my-component
 ```
 
-### Change requests
+<!-- ### Change requests
 
 Create a new branch for your component, commit your changes and then export your components to a remote scope.
 
@@ -173,4 +240,4 @@ bit export # export your components to a remote scope
 
 :::warning
 @Ran This is not working yet and not ready to be documented
-:::
+::: -->
