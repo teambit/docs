@@ -140,7 +140,7 @@ We are adding Native Webpack 5 Module Federation for Bit that aims to simplify t
 In-browser module system is the "holy grail" of composing frontends. This will streamline the process of composing a frontend application from components by our runtime - the browser. ES Modules may still not be ready for large scale adoption, mainly due to performance issues, we believe the future of frontend composition is ES Modules.  
 When using Bit's for Micro Frontend you essentially build modules consumed in build-time making the transition to consuming the same modules in runtime in the future easier.
 
-## Multiple Frameworks
+### Multiple Frameworks
 
 Choosing to mix different frontend technologies could result in hurting performance and bundle size, thus degrading end user experience.
 
@@ -155,14 +155,14 @@ In this context, multiple framework is also loading different versions of the sa
 
 :::
 
-### Web Components
+#### Web Components
 
 Web Components can help encapsulate UI functionality. With Web Components we can extend our browser with new components. They use HTML and DOM API that every frontend framework uses and a common way of receiving and sending data using props and events.  
 Bit supports building Web Components using [Lit](https://lit.dev) as a way to build framework agnostic Micro Frontends that can be integrated in build time with no need for handling running multiple frameworks on the browser.
 
 Web Components are not a silver bullet to solve all problems as they are still force some constraints don't provide many of the additional features frontend frameworks offer. But more importantly, when opting for Web Components, it's critical to understand [which browsers](https://caniuse.com/?search=web%20components) will support them.
 
-### Building Adapters
+#### Building Adapters
 
 There are many patterns and OSS solutions for loading multiple frameworks using adapters. When publishing an MFE that requires a specific framework you can either share a "wrapped" version of it, or build an external adapter that can consume the MFE and load the required framework. This approach allows a project maintainer to keep track of how many, and where, they use MFEs that need to run with a different framework.
 
@@ -211,22 +211,22 @@ export class Adapter extends React.Component {
 export default Adapter;
 ```
 
-## Data Fetching
+### Data Fetching
 
 While organizations slice teams according front-to-back functionality, within these teams there is still a divide between frontend and backend developers. From a high-level perspective this seems like a non-issue, but it can be a challenge when it comes to how systems are built, especially the frontend (read more on the [Microservice analogy](#microservice-analogy))]). Instead we recommend against thinking of an MFE as a "fullstack" and opt for separating backend from frontend functionality.
 
-### API Gateway
+#### API Gateway
 
 We recommend looking into adopting the [API Gateway pattern](https://microservices.io/patterns/apigateway.html) to decouple backend and frontend functionality. This pattern is a great way to decouple the backend from the frontend and make it easier to test and reason about the system. An advanced approach for this would also be incorporating a [Graph QL](https://graphql.org/) to simplify frontend interaction with the backend.
 
 Another benefit of this approach is it allows different Micro Frontends to access data from other parts of the organization directly from the frontend without a complex backend integration.
 
-### BFF Pattern
+#### BFF Pattern
 
 BFF (Backend-For-Frontend) can be seen as an extension to the API Gateway pattern but can also be built separately. BFF provides a layer for the frontend that handles data-fetching and further decouples the frontend concerns from the backend, allowing frontend developers focus on rendering data, consistency and frontend performance.  
 We recommend creating Bit components that implement the different BFFs for your Micro Frontends and sharing them as dependencies to standardize backend integration.
 
-### Shared Data Model
+#### Shared Data Model
 
 Shared data model is an extension of the [Shared Types](https://www.thoughtworks.com/radar/techniques/ui-bff-shared-types) pattern we found to be helpful when wanting to streamline integration efforts between frontend and backend. By building a Bit component that implements the shared data model, you can share the same data model between frontend and backend, between backends and between frontends.  
 Similar to Shared Types, a Shared Model is a simple component containing the a type-definition for a managed entity. In addition to that we recommend adding a class to represent the shared model in memory, alongside methods to interact with it. To help consumers use this model without doing any backend calls, we found it to be easy to provide mock data for the model in the same components. By providing mock data teams that need to use an entity in their application already have built-in mocks for their tests and development requirements.
@@ -239,27 +239,21 @@ It's not recommended to tie either a Shared Data Model or a Shared Type to the B
 
 :::
 
-## Shared Dependencies
-
-Bit is all about 
-
-## Updates
+### Updates
 
 - npm i
 - build
 - ripple ci
 
-## Feature Ownership
+### Feature Ownership
 
 - hi
 
-## Styling and Theming
-
-- encapsulation
+### Styling and Theming
 
 Styling on the browser is often a challenge, as CSS is global, and when opting for a Micro Frontend workflow the challenge is even grater. There are two main concerns- what is the best way to encapsulate the styles each MFE brings (if any) and how to ensure the styles are consistent between MFEs.
 
-### Standardize with Design System
+#### Standardize with Design System
 
 A design system is a set of reusable, consistent, and accessible design patterns for a product or service. It is a collection of guidelines and style libraries that help teams build consistent UIs. We recommend looking at a design system as a composition of two solutions: shared theme and theme-able components.
 
@@ -300,11 +294,11 @@ CSS modules help with the encapsulation of styles and the ability to use CSS var
 
 CSS-in-JS is a methodology that uses Javascript objects which describe the different styles. It styles the component during runtime, while the JavaScript code is being evaluated. Using CSS-in-JS will require a consumer to add a dependency to their application, potentially resulting in a larger bundle size. There are some tools that evaluate CSS-in-JS in build time that might mitigate this concern at the cost of adding a build-time task to the build process.
 
-## Testing
+### Testing
 
 Each component is testing itself and its dependencies.
 
-## Applications & Deployment
+### Applications & Deployment
 
 - apps are just very concrete components
 
