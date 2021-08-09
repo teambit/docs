@@ -28,7 +28,7 @@ During the onboarding process Bit marks directories to components. For each Bit 
 Use the `init` command to initialize a Bit Workspace
 
 ```sh
-bit init --harmony
+bit init
 ```
 
 ### Configure Workspace
@@ -45,31 +45,54 @@ bit start
 
 ### Add Pre-existing Components
 
-Each component in a Bit workspace must have all its implementation files under the same directory. A component must have an entry file (`index.[ts|js]` is used as the default.
+Each component in a Bit workspace must have all its implementation files under the same directory. A component must have an entry file, (`index.[ts|js]`) is used as the default. Angular components use `public-api.[ts|js]` as the entry file.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash {4,5}
+└── ui/my-component
+    ├── index.tsx
+    ├── my-component.tsx
+    └── my-component.composition.tsx
+```
+
+  </TabItem>
+  <TabItem value="Angular">
 
 ```bash
-my-component
-├── index.ts
-├── my-component.compositions.tsx
-├── my-component.docs.md
-└── my-component.ts
+└── my-component
+    ├── public-api.ts
+    └── src
+        ├── my-component.component.ts
+        ├── my-component.module.ts
+        ├── my-component.spec.ts
+        └── compositions
+            └── my-component.composition.ts
 ```
+
+  </TabItem>
+</Tabs>
 
 To add your component to the workspace run the `bit add` command followed by the namespace. The namespace is the the component folder structure you would like to see in your workspace.
 
 ```bash
-bit add button --namespace ui
+bit add ui/my-component
+#or
+bit add my-component --namespace ui
 ```
 
-Bit has mapped this component's files and registered them in the `.bitmap` file. This enables Bit to treat a collection of files as a single unit, a component.
+Bit will map this component's files and register them in the `.bitmap` file. This enables Bit to treat a collection of files as a single unit, a component.
 
-In addition to that, Bit has generated a component ID, with the pattern `<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
+In addition to that, Bit will generate a component ID, with the pattern `<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
 
-Learn more about [tracking components](/building-with-bit/tracking-components) and [removing components](/building-with-bit/removing-components)
-
-:::note Tip
-You can use -n which is short for --namespace
-:::
+Learn more about [tagging components](/) and [removing components](/)
 
 ### Component Isolation Status
 
@@ -81,32 +104,32 @@ bit status
 
 ### Rendering Components
 
-To [render your component](/building-with-bit/component-compositions) - create a \*.compositions.tsx
+To [render your component](/) - create a \*.compositions.tsx
 
 ### Documenting Components
 
-To add [documentation](/building-with-bit/documenting-components) to your component - create a \*.docs.md
+To add [documentation](/) to your component - create a \*.docs.md
 
-## FAQ
+### Add multiple components at once?
 
-### Can I track many components at once?
-
-To track multiple components, set the path to the common directory and use the `*` wildcard.
+To add multiple components, set the path to the common directory and use the `*` wildcard.
 
 For example:
 
 ```bash
-bit add path/to/common/path/*
+bit add path/to/common/dir/*
 ```
 
-### I want to use a different entry point
+### Use a different entry point
 
-The default entry point is `index.ts`/`index.js`. To set a different entry point:
+The default entry point for non Angular components is `index.ts`/`index.js`. To set a different entry point:
 
 ```bash
 bit add <path to component> --main <entry file>
 ```
 
-```bash title="Set main.js as entry point"
-bit add components/ui/button --main main.js
+Set main.js as entry point:
+
+```bash
+bit add components/ui/my-component --main main.js
 ```

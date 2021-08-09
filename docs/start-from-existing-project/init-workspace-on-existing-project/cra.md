@@ -1,6 +1,6 @@
 ---
 id: cra
-title: CRA
+title: Create React App
 ---
 
-... 
+...

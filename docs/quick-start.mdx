@@ -80,18 +80,22 @@ npm dist-tag ls @teambit/angular-v12
 Then add the following lines in your workspace.jsonc file to apply the Angular development environment on all components in this workspace (replace x.x.x by the latest version available):
 
 ```bash
-"teambit.angular/angular-v12@x.x.x": {},
-"teambit.workspace/variants": {
-  "*": {
-    // Replace `v12` by the version of Angular that you want to use
-    "teambit.angular/angular-v12@x.x.x": { }
+{
+...
+  // replace x.x.x by the latest version available
+  "teambit.angular/angular-v12@x.x.x": {},
+  "teambit.workspace/variants": {
+    "*": {
+      // replace x.x.x by the latest version available
+      "teambit.angular/angular-v12@x.x.x": { }
+    }
+  },
+  "teambit.generator/generator": {
+    "aspects": [
+      // Replace `v12` by the version of Angular that you want to use
+      "teambit.angular/angular-v12"
+    ]
   }
-},
-"teambit.generator/generator": {
-  "aspects": [
-    // Replace `v12` by the version of Angular that you want to use
-    "teambit.angular/angular-v12"
-  ]
 }
 ```
 
@@ -189,8 +193,6 @@ by [hosting your own](/scope/host) or creating a Scope on [Bit's cloud provider]
 ```bash
 bit export
 ```
-
-TODO: Improve cli message here so it points to the right place
 
 :::note
 Before exporting make sure you have set the default scope to be your [remote scope](/) in the `workspace.jsonc` file.

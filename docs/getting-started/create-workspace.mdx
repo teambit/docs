@@ -100,7 +100,13 @@ values={[
 <TabItem value="React">
 
 ```bash
-bit new react my-workspace --default-scope my-org.my-project
+bit new react my-workspace --default-scope my-org.my-scope
+```
+
+Or configure it manually
+
+```jsonc title=worksapce.jsonc
+"defaultScope": "my-org.my-scope"
 ```
 
   </TabItem>
@@ -108,10 +114,16 @@ bit new react my-workspace --default-scope my-org.my-project
 
 This can be configured manually in the `workspace.jsonc` file.
 
+```jsonc title=worksapce.jsonc
+"defaultScope": "my-org.my-scope"
+```
+
   </TabItem>
 </Tabs>
 
-When components are created they use the default scope
+:::warning
+When components are created they use the default scope as part of the component id. If you modify the default scope after creating components and consuming them, you will need to update any import statements of these components. Then run `bit link` and `bit compile`and the components will work as expected.
+:::
 
 :::info Exporting to Different Scopes
 You can also set components to be exported to different scopes by configuring them under the [variants](/) in the `workspace.jsonc` file. This means you can have one workspace that exports to multiple remote scopes.
@@ -137,9 +149,7 @@ bit new react my-workspace --empty
   </TabItem>
   <TabItem value="Angular">
 
-```bash
-bit init
-```
+feature not available yet for Angular
 
   </TabItem>
 </Tabs>

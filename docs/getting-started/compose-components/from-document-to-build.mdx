@@ -133,13 +133,14 @@ values={[
   </TabItem>
   <TabItem value="Angular">
 
-```bash {6}
-└── ui/my-component
-    ├── my-component.component.ts
-    ├── my-component.module.ts
-    ├── my-component.service.ts
-    └── compositions
-        └── my-component.composition.ts
+```bash {8}
+└── my-component
+    ├── public-api.ts
+    └── src
+        ├── my-component.component.ts
+        ├── my-component.module.ts
+        └── compositions
+            └── my-component.composition.ts
 ```
 
   </TabItem>
@@ -177,14 +178,15 @@ values={[
   </TabItem>
   <TabItem value="Angular">
 
-```bash {6,7}
-└── ui/my-component
-    ├── my-component.component.ts
-    ├── my-component.module.ts
-    ├── my-component.service.ts
-    └── compositions
-        ├── my-component.composition.ts
-        └── advanced-my-component.composition.ts
+```bash {8,9}
+└── my-component
+    ├── public-api.ts
+    └── src
+        ├── my-component.component.ts
+        ├── my-component.module.ts
+        └── compositions
+            ├── my-component.composition.ts
+            └── advanced-my-component.composition.ts
 ```
 
   </TabItem>
@@ -353,11 +355,12 @@ values={[
   <TabItem value="Angular">
 
 ```bash {5}
-└── ui/my-component
-    ├── my-component.component.ts
-    ├── my-component.module.ts
-    ├── my-component.service.ts
-    └── my-component.spec.ts
+└── my-component
+    ├── public-api.ts
+    └── src
+        ├── my-component.component.ts
+        ├── my-component.module.ts
+        └── my-component.spec.ts
 ```
 
   </TabItem>
@@ -422,11 +425,6 @@ describe('MyComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should have a service', () => {
-    expect(component.service).toBeDefined();
-    expect(component.service.content).toEqual('Content from service');
   });
 });
 ```
