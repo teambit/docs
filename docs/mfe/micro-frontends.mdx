@@ -166,7 +166,9 @@ Web Components are not a silver bullet to solve all problems as they are still f
 
 There are many patterns and OSS solutions for loading multiple frameworks using adapters. When publishing an MFE that requires a specific framework you can either share a "wrapped" version of it, or build an external adapter that can consume the MFE and load the required framework. This approach allows a project maintainer to keep track of how many, and where, they use MFEs that need to run with a different framework.
 
-```TypeScript title="React Adapter"
+Each Bit component has its own dependencies and it automates the creation of a `node_modules` workspace by using [pnpm](https://docs.npmjs.com/cli/v7/using-npm/workspaces) or [yarn](https://yarnpkg.com/features/workspaces) (and soon [npm](https://docs.npmjs.com/cli/v7/using-npm/workspaces)). This makes the process of setting up the runtime framework and its version a lot easier and allow the integration in build-time, so if needed you can configure lazy loading, dependency deduping or other ways to mitigate the performance hit of loading multiple frameworks.
+
+```TypeScript title="React adapter for rendering a component with a different React version"
 import React from 'react';
 
 export class Adapter extends React.Component {
@@ -211,13 +213,31 @@ export default Adapter;
 
 ## Data Fetching
 
-- api gateway
-- BFF pattern
+While organizations slice teams according front-to-back functionality, within these teams there is still a divide between frontend and backend developers. From a high-level perspective this seems like a non-issue, but it can be a challenge when it comes to how systems are built, especially the frontend (read more on the [Microservice analogy](#microservice-analogy))]). Instead we recommend against thinking of an MFE as a "fullstack" and opt for separating backend from frontend functionality.
 
-## Modeling data entities
+### API Gateway
 
-- more than shared types
-- mock data
+We recommend looking into adopting the [API Gateway pattern](https://microservices.io/patterns/apigateway.html) to decouple backend and frontend functionality. This pattern is a great way to decouple the backend from the frontend and make it easier to test and reason about the system. An advanced approach for this would also be incorporating a [Graph QL](https://graphql.org/) to simplify frontend interaction with the backend.
+
+Another benefit of this approach is it allows different Micro Frontends to access data from other parts of the organization directly from the frontend without a complex backend integration.
+
+### BFF Pattern
+
+BFF (Backend-For-Frontend) can be seen as an extension to the API Gateway pattern. BFF provides a layer for the frontend that handles data-fetching and further decouples the frontend concerns from the backend, allowing frontend developers focus on rendering data, consistency and frontend performance.  
+We recommend creating Bit components that implement the different BFFs for your Micro Frontends and sharing them as dependencies to standardize backend integration.
+
+### Shared Data Model
+
+Shared data model is an extension of the [Shared Types](https://www.thoughtworks.com/radar/techniques/ui-bff-shared-types) pattern we found to be helpful when wanting to streamline integration efforts between frontend and backend. By building a Bit component that implements the shared data model, you can share the same data model between frontend and backend, between backends and between frontends.  
+Similar to Shared Types, a Shared Model is a simple component containing the a type-definition for a managed entity. In addition to that we recommend adding a class to represent the shared model in memory, alongside methods to interact with it. To help consumers use this model without doing any backend calls, we found it to be easy to provide mock data for the model in the same components. By providing mock data teams that need to use an entity in their application already have built-in mocks for their tests and development requirements.
+
+You can find an example for this pattern implemented by this [Bit component](https://bit.dev/harmony-mfe/scopes/scope-descriptor/~code/scope-descriptor.ts).
+
+:::note Not for data fetching
+
+It's not recommended to tie either a Shared Data Model or a Shared Type to the BFF data fetching pattern. It's best to allow both as a separate items in the architecture. This allows a backend team to be responsible for the Data Entity and the Shared Model and Frontend teams to build the BFF that best fit their needs, according to their requirements and framework.
+
+:::
 
 ## Updates
 
