@@ -6,6 +6,12 @@ title: Create a New Workspace
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Overview
+
+Learn how to create a workspace as well as how to reset a workspace or create your own custom workspace.
+
+## What's a Workspace?
+
 A [Workspace](/workspace/overview) is where you will compose and manage your components. Creating a Workspace can be done with a single command. A workspace can be created in an empty directory or in an existing project.
 
 To see a list of available workspaces templates, run `bit templates`. The workspace templates are only available when ran outside of a bit workspace.
@@ -77,14 +83,39 @@ bit start
 
 When you create a new workspace the following files and folders are created:
 
-- **[workspace.jsonc](/)** - The workspace configuration file.
-- **[.bitmap](/)** - An auto generated file that maps your components from your local directory.
-- **.gitignore** - A git ignore file that tells git which files to ignore.
-- **README.md** - A readme file that describes your workspace.
-- **pnpm-lock.yaml** - A lock file that tells pnpm to install packages in the workspace.
-- **types** - A directory that contains the type definitions for your components.
-- **demo** - A folder that contains demo components if using bit new.
-- **node_modules** - A directory that contains all modules needed for Bit to work.
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+└── my-component
+    ├── public-api.ts # Entry point for the component.
+    └── src
+        ├── my-component.component.ts # Main component file.
+        ├── my-component.module.ts # Module file.
+        ├── my-component.spec.ts # Test file for the component.
+        ├── my-component.docs.md # Documentation file for the component.
+        └── compositions
+            └── my-component.composition.ts # Composition file so you can render your component and visualize it in different contexts.
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+├── workspace.jsonc  # workspace configuration file
+├── .bitmap  # maps your components from your local directory
+├── .bit #  this should be added to .gitignore
+└── public  # this should be added to .gitignore
+```
+
+  </TabItem>
+</Tabs>
 
 ### Setting the Default Scope
 

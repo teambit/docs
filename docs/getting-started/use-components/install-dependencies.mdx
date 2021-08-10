@@ -3,6 +3,12 @@ id: install-dependencies
 title: Install Dependencies
 ---
 
+## Overview
+
+Learn how to install a dependency to your workspace and how Bit automates dependency management. Learn how to install components to other projects and how to install components on CI.
+
+## Install Dependencies
+
 We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components as dependencies. To install a dependency in your workspace, use the `bit install` command:
 
 ```sh
@@ -58,16 +64,16 @@ When using bit.dev for hosting components and as a source for installing compone
 1. First of all - [install Bit](/getting-started/install-bit) on your system.
 1. Run the following command:
 
-  ```sh
-  bit login
-  ```
+```sh
+bit login
+```
 
 1. Bit generated a `.npmrc` in your user-home directory (`~` in macOS/Linux, `%USERPROFILE%` in Windows) with a basic config containing your authentication token.
 1. Open the `.npmrc` file and add the following line (complete the account name according to where components are hosted)
 
-  ```sh
-  @ACCOUNT:registry=https://node.bit.dev
-  ```
+```sh
+@ACCOUNT:registry=https://node.bit.dev
+```
 
 An example configured `.npmrc` file looks something like this:
 
