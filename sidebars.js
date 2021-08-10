@@ -66,6 +66,7 @@ module.exports = {
         'aspects/mdx/mdx',
         'aspects/multi-compiler/multi-compiler',
         'aspects/node/node',
+        'aspects/html/html',
         'aspects/pkg/pkg',
         'aspects/pnpm/pnpm',
         'aspects/preview/preview',
