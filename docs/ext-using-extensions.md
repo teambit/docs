@@ -7,7 +7,7 @@ Using [extensions](/docs/ext-concepts.html) is fairly straightforward. Let's lea
 
 ## Importing an extension
 
-In order to use an extension, just [import](/docs/apis/cli-all#import) it from [bit.dev](https://bit.dev/) or another remote Collection:
+In order to use an extension, just [import](/docs/apis/cli-all#import) it from [bit.dev](https://bit.dev/) or another remote scope:
 
 ```shell
 bit import bit.extensions/commands/pack --extension
@@ -33,9 +33,9 @@ Extensions' configuration and options are part of the [bit config](/docs/conf-bi
 
 System-wide options that are relevant for every Bit extension.
 
-* `core` - Determines whether the extension is a core extension (bool).
-* `disabled` - When `true`, Bit won't load the extension (bool).
-* `file` - A path to the extension's main file. The file path is relative to the working directory's location, or an absolute path. When provided, Bit will load the extension from this path, and not from the [usual location](#storage).
+- `core` - Determines whether the extension is a core extension (bool).
+- `disabled` - When `true`, Bit won't load the extension (bool).
+- `file` - A path to the extension's main file. The file path is relative to the working directory's location, or an absolute path. When provided, Bit will load the extension from this path, and not from the [usual location](#storage).
 
 ### Configuration
 
@@ -79,20 +79,28 @@ Here's an example:
 const bit = require('bit-bin');
 
 const extensionName = 'bit-npm-pack';
-const extensionFilePath = '/Users/giladshoham/dev/temp/pluginTest/dist/bit-pack';
+const extensionFilePath =
+  '/Users/giladshoham/dev/temp/pluginTest/dist/bit-pack';
 const extensionConfig = {
-  "rawConfigKey": "rawConfigVal",
-}
+  rawConfigKey: 'rawConfigVal',
+};
 
-bit.loadExtension(extensionName, extensionFilePath, extensionConfig)
+bit
+  .loadExtension(extensionName, extensionFilePath, extensionConfig)
   .then((extension) => {
     console.log(extension.loaded);
-    const packCommand = extension.commands.find(cmd => {
+    const packCommand = extension.commands.find((cmd) => {
       return cmd.name.indexOf('plugin-pack') > -1;
-    })
-    packCommand.action(["scoop/plugin-test/component", "/Users/giladshoham/dev/temp/pluginTest/scoop"], 
-                        {outDir: "/Users/giladshoham/dev/temp/pluginTest"})
-  }).catch(err => {
+    });
+    packCommand.action(
+      [
+        'scoop/plugin-test/component',
+        '/Users/giladshoham/dev/temp/pluginTest/scoop',
+      ],
+      { outDir: '/Users/giladshoham/dev/temp/pluginTest' }
+    );
+  })
+  .catch((err) => {
     console.log(err);
   });
 ```

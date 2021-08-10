@@ -59,7 +59,7 @@ $ bit import <component ID> --conf   # fetches the package.json
 $ vim <path to package.json>  # edit package.json
 $ bit status # to see that Bit registered the change
 $ bit tag --patch  # create a new patch version for the update
-$ bit export <remote collection> # share patch component
+$ bit export <remote scope> # share patch component
 ```
 
 > **Note**
@@ -77,5 +77,5 @@ $ bit import <component ID> --conf   # fetches the package.json
 $ vim <path to package.json>  # edit package.json
 $ bit status # to see that Bit registered the change
 $ bit tag --patch  # create a new patch version for the update
-$ bit export <remote collection> # share patch component
+$ bit export <remote scope> # share patch component
 ```

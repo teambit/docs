@@ -2,6 +2,7 @@
 id: bit-vue-tutorial
 title: Bit for Vue
 ---
+
 <img src="../../img/vue.svg" height="128">
 
 ## Overview
@@ -20,7 +21,7 @@ This tutorial assumes that you are familiar with:
 
 ### What Do You Need?
 
-You need to verify that you have:  
+You need to verify that you have:
 
 - Node 10.9+.
 
@@ -34,7 +35,7 @@ npm install
 
 ### What Will You Learn?
 
-In this tutorial you will learn how to:  
+In this tutorial you will learn how to:
 
 - Setup Bit
 - Share a Vue component from an existing project
@@ -43,26 +44,26 @@ In this tutorial you will learn how to:
 - Modify the Vue component on the new project
 - Get component updates
 
-## Setup Bit  
+## Setup Bit
 
 First things first, we need to setup Bit.
 
-### Create a Free bit.dev Account  
+### Create a Free bit.dev Account
 
 Head over to [bit.dev](https://bit.dev/) and create your free account. Enter a username and password or use your GitHub account to authenticate.
 **Welcome to Bit!**
 Make sure that you remember your username; you'll need it during this tutorial. Every time you see `<username>`, replace it with your own username.
 
-### Create a Component Collection  
+### Create a Component scope
 
-When you are logged into bit.dev you can create a **collection**. A collection is a remotely-hosted set of components that are ready to be shared and used across your applications.  
+When you are logged into bit.dev you can create a **scope**. A scope is a remotely-hosted set of components that are ready to be shared and used across your applications.
 
-1. Click the **New** button in the header and choose **Collection**.
-2. Name the new collection `vue-tutorial` (or choose a different name, as long as you remember it).
-3. Decide if the collection is private or public.
+1. Click the **New** button in the header and choose **scope**.
+2. Name the new scope `vue-tutorial` (or choose a different name, as long as you remember it).
+3. Decide if the scope is private or public.
 
-- Public - Components in public collections are visible to everyone.
-- Private - Components in private collections are available to invitees only.
+- Public - Components in public scopes are visible to everyone.
+- Private - Components in private scopes are available to invitees only.
 
 ### Install Bit CLI
 
@@ -70,7 +71,7 @@ Install Bit CLI on your computer using npm:
 
 ```shell
 npm install bit-bin -g
-```  
+```
 
 Visit [Install Bit](/docs/installing-bit.html) for other installation methods.
 
@@ -129,7 +130,7 @@ Notice two other changes have happened:
 
 Now, we will track the product-list component from the Vue tutorial project. The component will be tracked with the id `product-list`.
 
-### Track a New Component  
+### Track a New Component
 
 To track the product list component, we will need to tell Bit about the component and the files that are related to it. In Vue, a component is typically a single file so we can directly add this file. We also tell Bit to track the file under the id `product-list`
 
@@ -143,7 +144,7 @@ added src/components/ProductList/products.js
 
 When creating new components, you need to make sure that Bit properly tracks all of the files required for the component. Bit can analyze the component for you and verify that all files are included. You can do that by checking the status of the component:
 
-Our component is using `src/assets/products.js` - Bit will identify it and alert us:  
+Our component is using `src/assets/products.js` - Bit will identify it and alert us:
 
 ```shell
 $ bit status
@@ -156,9 +157,9 @@ new components
 
 So far, we have provided Bit with the source file of the component. But in order to consume the files in other projects, the component needs to be built.
 
->Bit is storing the source code of the component, but the code should still remain in your version control system (VCS) such as your Git repository.
+> Bit is storing the source code of the component, but the code should still remain in your version control system (VCS) such as your Git repository.
 
-Bit has a large collection of compilers that are open source and maintained by the Bit team. In addition, the community has created compilers that you can use by searching [Bit collections](https://bit.dev/).
+Bit has a large scope of compilers that are open source and maintained by the Bit team. In addition, the community has created compilers that you can use by searching [Bit scopes](https://bit.dev/).
 
 To build the vue component, you'll need the [Vue compiler](https://bit.dev/bit/envs/compilers/vue).
 Install the compiler and run this command inside the Vue tutorial repository:
@@ -176,9 +177,9 @@ You can check the `package.json` and verify that the compiler is installed by lo
 
 ```json
 {
- "env": {
+  "env": {
     "compiler": "bit.envs/compilers/vue@0.0.7"
-  },
+  }
 }
 ```
 
@@ -191,7 +192,7 @@ Now that the compiler is installed, build the component. Building the component 
 
 Right now the component lives inside your project and may consume some dependencies from your project.
 Bit build is taking place in an **isolated environment** to make sure the process will also succeed on the cloud or in any other project.
-To build your component, run this command inside your Vue project:  
+To build your component, run this command inside your Vue project:
 
 ```shell
 $ bit build
@@ -225,7 +226,7 @@ To tag your component with a version, run the following command:
 ```shell
 $ bit tag --all 0.0.1
 1 component(s) tagged
-(use "bit export [collection]" to push these components to a remote")
+(use "bit export [scope]" to push these components to a remote")
 (use "bit untag" to unstage versions)
 
 new components
@@ -247,16 +248,16 @@ staged components
 
 The important thing to notice here is that the component is considered `staged`. That means that it is now ready to be exported.
 
-To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as  `<username>.<collection>`:
+To export the component to your bit.dev scope, we will use the export command and the full name of the scope, structured as `<username>.<scope>`:
 
 ```shell
 $ bit export <username>.vue-tutorial
 exported 1 components to scope <username>.vue-tutorial
 ```
 
-The component is now visible in your collection on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo at: https://bit.dev/learn-bit/vue-tutorial/product-list
+The component is now visible in your scope on bit.dev. You can access it in `https://bit.dev/<username>/vue-tutorial`. You can also visit the component created for this demo at: https://bit.dev/learn-bit/vue-tutorial/product-list
 
-At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
+At this point, checking bit's status will no longer display the component as the component is now hosted on the remote scope:
 
 ```shell
 $ bit status
@@ -277,8 +278,8 @@ Right now, the component code is in your local project (and should be committed 
 
 The Vue component is also available on the bit.dev cloud. Go to [`https://bit.dev`](https://bit.dev) and log into your account (if you are not logged in yet):
 
-1. Select the collections navigator on the left panel and select collections.
-2. Click on your collection--you׳ll see your product-list component.
+1. Select the scopes navigator on the left panel and select scopes.
+2. Click on your scope--you׳ll see your product-list component.
 3. Click on the product-list component to see its playground.
 
 You can also access the page at the following url: `https://bit.dev/<username>/vue-tutorial/product-list`
@@ -293,13 +294,13 @@ On the component's page, you can also see the different commands available for i
 
 ### Create a New Vue Application
 
-You are now going to create another Vue application and use the product-list component. The fastest way to do that is use the Vue CLI (version 3) to generate a new Application. Switch to a new directory.  
+You are now going to create another Vue application and use the product-list component. The fastest way to do that is use the Vue CLI (version 3) to generate a new Application. Switch to a new directory.
 
 ```shell
 npx @vue/cli create my-new-vue
 ```
 
-If you already have vue-cli installed globally you can run: 
+If you already have vue-cli installed globally you can run:
 
 ```shell
 vue create my-new-vue
@@ -309,10 +310,10 @@ Make sure you are using babel and es6.
 
 In your terminal, switch to the `my-new-app` directory.
 
-### Install the Component in Your Project  
+### Install the Component in Your Project
 
 Use your favorite package installer (npm or yarn) to install the component.  
-The component is stored in the Bit registry, so the full path to the component will be: `@bit/<username>.<collection name>.<component name>`
+The component is stored in the Bit registry, so the full path to the component will be: `@bit/<username>.<scope name>.<component name>`
 
 Run the install command using npm:
 
@@ -320,7 +321,7 @@ Run the install command using npm:
 npm install @bit/<username>.vue-tutorial.product-list --save
 ```
 
-The component is now added to your `package.json`: 
+The component is now added to your `package.json`:
 
 ```shell
 "@bit/<username>.vue-tutorial.product-list": "0.0.1"
@@ -344,9 +345,9 @@ import ProductList from '@bit/<username>.vue-tutorial.product-list';
 export default {
   name: 'app',
   components: {
-    ProductList
-  }
-}
+    ProductList,
+  },
+};
 </script>
 ```
 
@@ -360,7 +361,7 @@ npm run serve
 
 ## Modify the Component
 
-Next, we are going to make a change to the component and export it back to the collection.
+Next, we are going to make a change to the component and export it back to the scope.
 We will add a **View** button to the product list. For simplicity, it will only show an alert saying the product has been viewed.
 
 ### Import the Component
@@ -404,36 +405,28 @@ Let's modify the product-list component.
 Change the `components/product-list/ProductList.vue` to include the following method:
 
 ```vue
-view() {
-    window.alert('The product has been viewed!');
- }
+view() { window.alert('The product has been viewed!'); }
 ```
 
 Change the template to include the new button:
 
 ```vue
 <template>
-    <div>
-        <h2>Products</h2>
-        <template v-for="(product, index ) of products">
-            <div v-bind:key={index}>
-                <h3>
-                    <a>
-                        {{ product.name }}
-                    </a>
-                </h3>
-                <p v-if="product.description">
-                    Description: {{ product.description }}
-                </p>
-                <button @click="share">
-                    Share
-                </button>
-                <button @click="view">
-                    View
-                </button>
-            </div>
-        </template>
-    </div>
+  <div>
+    <h2>Products</h2>
+    <template v-for="(product, index) of products">
+      <div v-bind:key="{ index }">
+        <h3>
+          <a>
+            {{ product.name }}
+          </a>
+        </h3>
+        <p v-if="product.description">Description: {{ product.description }}</p>
+        <button @click="share">Share</button>
+        <button @click="view">View</button>
+      </div>
+    </template>
+  </div>
 </template>
 ```
 
@@ -454,7 +447,7 @@ That will be followed by a successful compilation of the main file.
 
 Run the `my-new-app` again and you'll now see the changed component with the view button.
 
-> In a real project, it is recommended to commit those changes to your GitHub repository.  
+> In a real project, it is recommended to commit those changes to your GitHub repository.
 
 ### Export the Changes
 
@@ -474,12 +467,12 @@ modified components
      > product-list ... ok
 ```
 
-Tag and export the component as a new version. By default this is a semver `patch` version: 
+Tag and export the component as a new version. By default this is a semver `patch` version:
 
 ```shell
 $ bit tag product-list
 1 component(s) tagged
-(use "bit export [collection]" to push these components to a remote")
+(use "bit export [scope]" to push these components to a remote")
 (use "bit untag" to unstage versions)
 
 changed components
@@ -487,7 +480,7 @@ changed components
      > <username>.vue-tutorial/product-list@0.0.2
 ```
 
-Export it back to the collection:
+Export it back to the scope:
 
 ```shell
 $ bit export <username>.vue-tutorial
@@ -544,6 +537,6 @@ Run the application again to see it is working properly with the updated compone
 npm run serve
 ```
 
-That's it. A change was moved between the two projects. Your application is running with an updated component.  
+That's it. A change was moved between the two projects. Your application is running with an updated component.
 
 Happy coding!

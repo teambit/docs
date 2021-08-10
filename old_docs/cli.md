@@ -115,7 +115,7 @@ This will create two components: `jaja/bar`, `jaja/hi`.
 
 **Tracking a single directory as multiple components**
 
-You can use [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to track a single directory as multiple components.
+You can use [glob pattern](<https://en.wikipedia.org/wiki/Glob_(programming)>) to track a single directory as multiple components.
 
 ```shell
 bit add src/foo/*
@@ -129,7 +129,7 @@ This will create as many components as there are files inside the directory, all
 
 **Tracking a component for each sub-directory**
 
-You can use [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to track a each sub-directory as a component.
+You can use [glob pattern](<https://en.wikipedia.org/wiki/Glob_(programming)>) to track a each sub-directory as a component.
 
 ```shell
 bit add src/**/
@@ -278,7 +278,7 @@ You can exclude a whole directory.
 bit add src/** --exclude src/utils
 ```
 
-You can exclude using [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
+You can exclude using [glob pattern](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
 ```shell
 bit add src/**/* --exclude src/**/*.jpg
@@ -294,14 +294,14 @@ bit add src/foo --exclude 'dont-want.js,thumb.jpg'
 
 **-i, --id** <name>
 
-Component id - *\[namespaces/\]name*.
-Whenever you specify this flag, bit will try to track a single component with the specified id. 
+Component id - _\[namespaces/\]name_.
+Whenever you specify this flag, bit will try to track a single component with the specified id.
 The id can contain either just a name, or any number of namespaces nested by `/`, and finally the id, separated by a `/` as well. For example: `namespace1/namespace2/some-name`.
 
 If not specified, the id will be as follows:
 
-- When adding a file: *file_name*
-- When adding a directory: *dir_name*
+- When adding a file: _file_name_
+- When adding a directory: _dir_name_
 
 ```shell
 bit add src/foo/bar.js --id moon/sun/earth
@@ -379,7 +379,7 @@ You can exclude a whole directory.
 bit add src/** --exclude src/utils
 ```
 
-You can exclude using [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
+You can exclude using [glob pattern](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
 ```shell
 bit add src/**/* --exclude src/**/*.jpg
@@ -446,15 +446,15 @@ bit checkout|c [-i|--interactive-merge] [-o|--ours] [-t|--theirs] [-m|--manual] 
 ```
 
 Options:
-  -i, --interactive-merge  when a component is modified and the merge process found conflicts, display options to resolve them
-  -o, --ours               in case of a conflict, override the used version with the current modification
-  -t, --theirs             in case of a conflict, override the current modification with the specified version
-  -m, --manual             in case of a conflict, leave the files with a conflict state to resolve them manually later
-  -r, --reset              remove local changes
-  -a, --all                all components
-  -v, --verbose            showing verbose output for inspection
-  --skip-npm-install       do not install packages of the imported components
-  --ignore-dist            do not write dist files (when exist)
+-i, --interactive-merge when a component is modified and the merge process found conflicts, display options to resolve them
+-o, --ours in case of a conflict, override the used version with the current modification
+-t, --theirs in case of a conflict, override the current modification with the specified version
+-m, --manual in case of a conflict, leave the files with a conflict state to resolve them manually later
+-r, --reset remove local changes
+-a, --all all components
+-v, --verbose showing verbose output for inspection
+--skip-npm-install do not install packages of the imported components
+--ignore-dist do not write dist files (when exist)
 
 **Switch between component versions in your working tree**
 
@@ -618,17 +618,17 @@ bit deprecate foo/bar
 **Mark a remote component as deprecated**
 
 ```shell
-bit deprecate full.collection-name/foo/bar --remote
+bit deprecate full.scope-name/foo/bar --remote
 ```
 
 **Options**
 
 **-r, --remote**
 
-Deprecate a component from a remote Collection.
+Deprecate a component from a remote scope.
 
 ```shell
-bit deprecate full.collection-name/foo/bar --remote
+bit deprecate full.scope-name/foo/bar --remote
 ```
 
 ## diff
@@ -641,7 +641,7 @@ bit diff <component IDs> [version]
 
 **Compare all modified components to their model version**
 
-Runs `diff` for all components in local Collection. Comparing local state in the working tree to the component objets in the Collection.
+Runs `diff` for all components in local scope. Comparing local state in the working tree to the component objets in the scope.
 
 ```shell
 bit diff
@@ -721,19 +721,19 @@ export components to a remote scope.
 bit export [remote] [id...]
 ```
 
-**Export all staged components to the same Collection**
+**Export all staged components to the same scope**
 
 ```shell
 bit export scope-name
 ```
 
-**Export a specific component to a Collection**
+**Export a specific component to a scope**
 
 ```shell
 bit export scope-name component-id
 ```
 
-**Export multiple to a Collection**
+**Export multiple to a scopes**
 
 ```shell
 bit export scope-name component-id component-id2
@@ -752,11 +752,11 @@ bit export bit.examples string/pad-left --eject
 **-a, --all**  
 Export all components include non-staged components to the remote scope. This includes both authored and imported components.
 
-**-f, --force**  
+**-f, --force**
 
 force changing a component remote without asking for a confirmation.
 
-**-e, --eject**  
+**-e, --eject**
 
 Remove the component from the repository and consume it as a dependency using a common package manager.
 
@@ -790,23 +790,23 @@ Path to the generated image. use one of the following extensions: [gif, png, svg
 
 Remote name (name is optional, leave empty when id is specified)
 
-**--all-versions**  
+**--all-versions**
 
 Display all components versions not only latest
 
 **--layout <name>**
 
-[GraphViz layout](https://graphviz.gitlab.io/documentation/) to be applied. `dot` is the default layout. Other options are: circo, dot, fdp, neato, osage, patchwork, sfdp, twopi. 
+[GraphViz layout](https://graphviz.gitlab.io/documentation/) to be applied. `dot` is the default layout. Other options are: circo, dot, fdp, neato, osage, patchwork, sfdp, twopi.
 
 ## import
 
-Imports a component to your project from a remote Collection.
+Imports a component to your project from a remote scope.
 
 ```shell
-bit import|i [-t|--tester]  [-c|--compiler] [-x|--extension] [-e|--environment]  [-p|--path <directory>] [-o|--objects] [-d|--display-dependencies] [-O|--override] [-v|--verbose] [--json] [--dist] [--conf] [--ignore-package-json]  [--skip-npm-install] [-m|--merge] [ids...] 
+bit import|i [-t|--tester]  [-c|--compiler] [-x|--extension] [-e|--environment]  [-p|--path <directory>] [-o|--objects] [-d|--display-dependencies] [-O|--override] [-v|--verbose] [--json] [--dist] [--conf] [--ignore-package-json]  [--skip-npm-install] [-m|--merge] [ids...]
 ```
 
-**Import a single component from a remote Collection**
+**Import a single component from a remote scope**
 
 When importing a component, it will be imported to the default location listed in the [bit config](/docs/conf-bit-json.html).
 Component is imported without its [environments](/docs/ext-concepts.html#extensions-vs-environments) by default.
@@ -833,16 +833,16 @@ In order to import a component's specific version, use the `@` sign:
 bit import username.foo/bar@1.0.4
 ```
 
-**Import collection**
+**Import scope**
 
-You can use glob patterns to import an entire collection, or a part of it.
+You can use glob patterns to import an entire scope, or a part of it.
 
 ```
-bit import bit.utils/*        # import entire collection
+bit import bit.utils/*        # import entire scope
 bit import bit.utils/array/*  # import entire namespace
 ```
 
-**Import project's component objects from their remote Collection**
+**Import project's component objects from their remote scope**
 
 The [bit config](/docs/conf-bit-json.html) contains a list of the project's sourced components. In order to import all of their updated objects (similar to running `git fetch`) at once.
 
@@ -984,19 +984,19 @@ bit import bit.extensions/commands/pack --extension
 
 ## init
 
-Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates  Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files.  
+Initializes a [bit workspace](/docs/concepts.html#bit-workspace) and creates Bit's configuration, and a `.bit` directory, which will contain Bit's objects & models. You can specify workspace defaults as parameters, that can later be changed in the configuration files.
 
 ```shell
 bit init [-b|--bare] [-s|--shared <group-name>] [-T|--standalone] [--reset] [--reset-hard] [-c|--compiler] [-t|--tester] [-p|--package-manager] [-d|--default-directory]
 ```
 
-and create the needed directories.  
+and create the needed directories.
 
 **Options**
 
 **-b, --bare [name]**
 
-Initializes an empty bit bare Collection.
+Initializes an empty bit bare scope.
 
 ```shell
 bit init --bare
@@ -1044,7 +1044,7 @@ Specifies default compiler to used in the workspace
 bit init --compiler @bit/bit.envs.compilers.react-typescript
 ```
 
-**--tester `<tester name>`** 
+**--tester `<tester name>`**
 
 Specifies default tester to use in the workspace
 
@@ -1053,14 +1053,14 @@ bit init --tester @bit/bit.envs.testers.jest
 ```
 
 **--package-manager `<npm | yarn>`**
-Specifies the default package manager to use when installing components. 
+Specifies the default package manager to use when installing components.
 
 ```shell
-bit init --package-manager yarn  
+bit init --package-manager yarn
 ```
 
 **--default-directory `<directory name>`**
-Specifies up the default directory to which components will be imported. 
+Specifies up the default directory to which components will be imported.
 
 ```shell
 bit init --default-directory src/imports
@@ -1095,10 +1095,11 @@ This will install all the dependencies for a specific component.
 **Pass an extra arguments to npm**
 
 In order to pass extra arguments to an npm client, place the arguments after `--`.
-  
+
 ```shell
 bit import -- --production --no-optional
 ```
+
 **Options**
 
 **-v, --versbose**
@@ -1125,10 +1126,10 @@ For more info, see the [Linking components section](/docs/importing-components.h
 
 ## list
 
-Shows a list of all available components in a local workspace or a remote Collection.
+Shows a list of all available components in a local workspace or a remote scope.
 
 ```shell
-bit list|ls [-ids|--ids <ids...>] [-r|--raw] [-s|--scope] [-o|--outdated] [-j|--json] [Collection]
+bit list|ls [-ids|--ids <ids...>] [-r|--raw] [-s|--scope] [-o|--outdated] [-j|--json] [scope]
 ```
 
 **List all components in local workspace**
@@ -1137,10 +1138,10 @@ bit list|ls [-ids|--ids <ids...>] [-r|--raw] [-s|--scope] [-o|--outdated] [-j|--
 bit list
 ```
 
-**List all components in a remote Collection**
+**List all components in a remote scope**
 
 ```shell
-bit list [Collection name]
+bit list [scope name]
 ```
 
 **Show the local and remote versions of all local components**
@@ -1247,7 +1248,6 @@ $ bit login --npmrc-path ~/my-configuation
 $ bit login --port 8086
 ```
 
-
 ## logout
 
 Log the CLI out of Bit.
@@ -1258,7 +1258,7 @@ bit logout
 
 **Logout from an account**
 
-```shell
+````shell
 $ bit logout
 succsesfully loged out
 
@@ -1269,7 +1269,7 @@ Join two development histories of a component together.
 
 ```shell
 bit merge [-o|--ours] | [-t|--theirs] | [-m|--manual] <version> <component_ids>
-```
+````
 
 **Choose local file modifications to resolve a merge conflict**
 
@@ -1309,7 +1309,6 @@ bit merge --theirs 0.0.1 foo/bar
 bit merge --manual 0.0.1 foo/bar
 ```
 
-
 ## move
 
 Moves a file/directory that's part of a tracked component to a new location.
@@ -1342,13 +1341,13 @@ $ bit move <oldFileName> <newFileName>
 
 ## remote
 
-Displays, adds and removes remote Collections.
+Displays, adds and removes remote scopes.
 
 ```shell
 bit remote [add <url>] | [rm <name>] [-g|--global]
 ```
 
-**Display existing remote Collections**
+**Display existing remote scopes**
 
 ```shell
 bit remote
@@ -1368,12 +1367,12 @@ Or add a remote globally
 bit remote add <url> --global
 ```
 
-Remote name will be the remote Collection name.
+Remote name will be the remote scope name.
 
 **Remove a remote (from local workspace/global config).**
 
 ```shell
-bit remote rm <collection-name>
+bit remote rm <scope-name>
 ```
 
 ## remove
@@ -1410,7 +1409,7 @@ bit remove username.your-scope/foo/bar --force
 
 **Remove a component from your local Scope**
 
-In order to remove a component from your [local Collection](/docs/concepts#collection), just specify the [local component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) (meaning - just namespace and name).
+In order to remove a component from your [local scope](/docs/concepts#scope), just specify the [local component id](/docs/isolating-and-tracking-components.html#automatic-component-id-resolution) (meaning - just namespace and name).
 
 ```shell
 bit remove foo/bar
@@ -1442,7 +1441,7 @@ bit remove foo/bar --force
 
 **Remove a staged component from your local Scope**
 
-Removing a [staged](/docs/workspace#workspace-statuses) component will remove and untrack it (meaning - it will be removed from the [.bitmap file](/docs/initializing-bit.html#bitmap)). 
+Removing a [staged](/docs/workspace#workspace-statuses) component will remove and untrack it (meaning - it will be removed from the [.bitmap file](/docs/initializing-bit.html#bitmap)).
 If you want Bit to also delete the component files, use the `--delete-files` flag:
 
 ```shell
@@ -1541,7 +1540,7 @@ bit show foo/bar --versions 4.3.1
 
 **-o, --outdated**
 
-Shows the component's latest version from the remote Collection (if exists).
+Shows the component's latest version from the remote scope (if exists).
 
 ```shell
 bit show foo/bar --outdated
@@ -1592,7 +1591,7 @@ staged components
 Locks the version of a 'new' or 'modified' component(s). Component's status will then be 'staged'. Read about [versioning components](/docs/tag-component-version).
 
 ```shell
-bit tag|t [id] [version] [-m|--message <message>] [-a|--all] [-s|--scope <collection-name>] [-p|--patch] [-mi|--minor] [-ma|--major] [-f|--force] [-v|--verbose] [-i|--ignore-unresolved-dependencies] [--skip-tests]
+bit tag|t [id] [version] [-m|--message <message>] [-a|--all] [-s|--scope <scope-name>] [-p|--patch] [-mi|--minor] [-ma|--major] [-f|--force] [-v|--verbose] [-i|--ignore-unresolved-dependencies] [--skip-tests]
 ```
 
 **Options**
@@ -1613,9 +1612,9 @@ Tag all new and modified components
 bit tag -all
 ```
 
-**-b, --scope <collection-name>**
+**-b, --scope <scope-name>**
 
-Tag all components of the specified Collection.
+Tag all components of the specified scope.
 
 ```shell
 bit tag --scope foo

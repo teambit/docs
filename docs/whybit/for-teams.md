@@ -23,7 +23,7 @@ Bit is the most effective way to publish and manage multiple components from any
 
 **Instantly publish components from any repository**
 
-With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months. If you have many libraries, the difference becomes that much more dramatic.  
+With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months. If you have many libraries, the difference becomes that much more dramatic.
 
 **Automatic dependency definition & management**
 
@@ -35,7 +35,7 @@ Bit helps you easily get control, bump and manage versions for components on you
 
 **Granularity is unlimited**
 
-A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase.  
+A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase.
 
 **Component testing is part of the workflow**
 
@@ -45,13 +45,13 @@ Bit can isolate components, so it can also run their tests in isolation. You can
 
 Bit provides enhanced discoverability for the components you share. It's designed to help developers quickly find and choose the components they need through a universal hub with a rich, visual and interactive experience:
 
-**Visual component collections with example previews**
+**Visual component scopes with example previews**
 
-When you share the components from the library they are organized in a visual collection with preview examples [example](https://bit.dev/grommet/grommet). Developers can explore this collection with their eyes and find the components they need and like to use.
+When you share the components from the library they are organized in a visual scope with preview examples [example](https://bit.dev/grommet/grommet). Developers can explore this scope with their eyes and find the components they need and like to use.
 
 **Designated component search**
 
-Bit's search is designed and built for code components, so you can use it to quickly find components in the collection or in the community. The search factors in much more than just text, it factors in context and functionality to help developers find and choose components. 
+Bit's search is designed and built for code components, so you can use it to quickly find components in the scope or in the community. The search factors in much more than just text, it factors in context and functionality to help developers find and choose components.
 
 **Interactive playground for every component**
 
@@ -63,7 +63,7 @@ Bit extracts the API documentation from the React component's source code and pr
 
 **Component testing**
 
- When you have test files for a component, Bit uses them to test and component (in isolation) and presents the results in the component page. So, the tests become an indicator of the status and usage of the component. Knowing if tests pass can also be used to decide whether or not to update components when working with the CLI.
+When you have test files for a component, Bit uses them to test and component (in isolation) and presents the results in the component page. So, the tests become an indicator of the status and usage of the component. Knowing if tests pass can also be used to decide whether or not to update components when working with the CLI.
 
 **Component labels**
 

@@ -5,11 +5,11 @@ title: What is Bit?
 
 ## Bit lets you easily build, distribute and collaborate over reusable components across projects and teams
 
-*Bit makes it easy to share and manage components between projects and apps at any scale*. [Bit's CLI](https://github.com/teambit/bit) tool is an open-source tool that departs components from their repositories and lets you build and use them independently anywhere. The [bit.dev platform](https://bit.dev) lets teams organize, manage and collaborate over shared components without limits.
+_Bit makes it easy to share and manage components between projects and apps at any scale_. [Bit's CLI](https://github.com/teambit/bit) tool is an open-source tool that departs components from their repositories and lets you build and use them independently anywhere. The [bit.dev platform](https://bit.dev) lets teams organize, manage and collaborate over shared components without limits.
 
 Key features:
 
-It lets you **isolate components** from existing projects with **0 refactoring**, with **fully-automated dependancy definition/resolution** that seamlessly wraps any component as a standalone reusable unit.  
+It lets you **isolate components** from existing projects with **0 refactoring**, with **fully-automated dependancy definition/resolution** that seamlessly wraps any component as a standalone reusable unit.
 
 It lets you **build and test components in isolation** from their project, with **zero build configurations** required. Each component can be built on its own and run out-of-the-box in any other project's environment.
 
@@ -21,30 +21,30 @@ It lets you **control the entire dependency graph** of your components, inside a
 
 Through the **bit.dev platform**, Bit provides **teams with a unified hub where they can host, discover, manage and collaborate over their components across projects and teams at any scale**.
 
-*Bit is a [collaborative open source project](https://github.com/teambit/bit), actively developed and maintained by a venture-backed team and used by more teams and communities every day*.  
+_Bit is a [collaborative open source project](https://github.com/teambit/bit), actively developed and maintained by a venture-backed team and used by more teams and communities every day_.
 
 ## Why?
 
 **Modern components** are the building blocks of our software applications.
-Their **reusable nature** can be leveraged to **standardize and speed development**, while building a better **consistent UX/UI** across different projects and teams. However, the ecosystem built around repositories can be limiting in the workflow around building with smaller components.  **Bit unleashes your components from the barriers of repositories** so that different teams and projects can easily build, share and sync components between them.
+Their **reusable nature** can be leveraged to **standardize and speed development**, while building a better **consistent UX/UI** across different projects and teams. However, the ecosystem built around repositories can be limiting in the workflow around building with smaller components. **Bit unleashes your components from the barriers of repositories** so that different teams and projects can easily build, share and sync components between them.
 
 ## Popular use-cases
 
 ### Instantly share and sync components between applications
 
-*No repo-splitting, refactoring, boilerplating or code changes needed.*
+_No repo-splitting, refactoring, boilerplating or code changes needed._
 
-* Watch a [**5 minutes demo with React**](https://www.youtube.com/watch?v=E5lgoz6-nfs)
+- Watch a [**5 minutes demo with React**](https://www.youtube.com/watch?v=E5lgoz6-nfs)
 
 [![Bit Component](https://storage.googleapis.com/bit-docs/reuse-react-components.jpeg)](https://www.youtube.com/watch?v=E5lgoz6-nfs)
 
 Small teams and solo developers are often building more than one application. Through Bit, they can easily reuse their components in multiple applications, make changes from any end, and keep changes synced between them. Bit kills the overhead so that reuse becomes a simple choice and they can focus on building their apps.
 
-Bit liberates components from the boundaries of repositories, so you can use it in any repo-architecture you like. No need to split or refactor anything. 
+Bit liberates components from the boundaries of repositories, so you can use it in any repo-architecture you like. No need to split or refactor anything.
 
 ### Component design systems made of real code
 
-*Let everyone see and use what you really build, to bring design and development together**.
+\*Let everyone see and use what you really build, to bring design and development together\*\*.
 
 ![Bit Component](https://storage.googleapis.com/bit-docs/discover-components-aug19-gif.gif)
 
@@ -57,15 +57,15 @@ Developers share components to bit.dev, where the code is rendered and visualize
 
 Discoverability is enhanced through advanced features like a smart semantic component search, context labels, filters for key parameters bundle-size and dependencies, and more. Screenshots of the components make it simple to visually explore the design system. When you bring development and design together, your user experience becomes that much better now and over time.
 
-Since all your components are visualized and sandboxed in bit.dev, designers and developers can collaborate over a single unified platform and make sure that what you design is what your users really get. Everywhere, and always.  
+Since all your components are visualized and sandboxed in bit.dev, designers and developers can collaborate over a single unified platform and make sure that what you design is what your users really get. Everywhere, and always.
 
 #### You can build your design system gradually!
 
-Since Bit makes it easy and seamless to collect components from different projects into your collection, you don't have to build your library first- you can just organize the components you already have, standardize your design, and there you go, everybody is now using the same code with the same design!
+Since Bit makes it easy and seamless to collect components from different projects into your scope, you don't have to build your library first- you can just organize the components you already have, standardize your design, and there you go, everybody is now using the same code with the same design!
 
 #### Enhance component libraries
 
-*Build with a modular monorepo experience like never before, and distribute components that people actually adopt*.
+_Build with a modular monorepo experience like never before, and distribute components that people actually adopt_.
 
 ![Bit Component](https://storage.googleapis.com/bit-docs/UI%20library%20monorepo.jpg)
 
@@ -89,15 +89,15 @@ It helps component consumers and app developers easily find, modify and install 
 
 building a shared-component economy throughout larger organizations is a game-changer. It speeds developments, standardizes your stack, simplifies development and makes sure your brand and UI stays consistent everywhere.
 
-But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves and their apps to your large project and its development.  
+But... it can be easier said than done. Getting developers to adopt your libraries can be hard, as they have to couple themselves and their apps to your large project and its development.
 
 Through Bit, your organization's component-economy becomes a collaborative and unified ecosystem build around components and not projects. Everyone can share components, discover components, and suggest updates right from their own projects. After all, regulation and legalization is better than enforcement right? Well, at least if you want to get adoption.
 
 ## Share components with [bit.dev](https://bit.dev)
 
-The bit.dev provides you a robust cloud based components' hub to share components. bit.dev can be used to host shared components. When using bit.dev, you also get:  
+The bit.dev provides you a robust cloud based components' hub to share components. bit.dev can be used to host shared components. When using bit.dev, you also get:
 
-- Organizing components in collections with access control
+- Organizing components in scopes with access control
 - Build and test CI for each component
 - Components installation using NPM and Yarn
 - Components display with multiple examples per component

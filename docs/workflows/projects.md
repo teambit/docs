@@ -2,6 +2,7 @@
 id: projects
 title: Ad-hoc Sharing
 ---
+
 ![workflow-projects](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-projects.svg)
 
 This workflow is useful for teams that:
@@ -14,7 +15,7 @@ This workflow is useful for teams that:
 
 It is typical for a company to grow from developing a single application to a stage where it needs to cater for multiple applications service different business needs or different customers’ segments.  
 The introduction of new systems is likely to go as a rolling process, and the company does not always have the time to set up a designated design library. However, as the applications live in the same business domain, there will be similarities between them where code reuse is appropriate.  
-The company is likely to assess one of the following options:  
+The company is likely to assess one of the following options:
 
 ### Option 1 - Copy the product-list source code
 
@@ -52,12 +53,12 @@ In addition to everything described there, it is worth noting that unless you st
 
 ## Benefits
 
-Bit lets teams gradually build a component collection by curating components from different projects and bringing them together. Bit lets many repositories to behave as if they are a mono-repo for sharing components across them. Bit introduces the following benefits:
+Bit lets teams gradually build a component scope by curating components from different projects and bringing them together. Bit lets many repositories to behave as if they are a mono-repo for sharing components across them. Bit introduces the following benefits:
 
 - No need to go a lengthy process of building and maintaining a shared library for UI components.
 - Share components that are already developed in existing projects.
 - No need to create an additional repository or package for the shared components.
-- Use bit.dev for a discovery portal for all components in collection, including a live playground and documentation.  
+- Use bit.dev for a discovery portal for all components in scope, including a live playground and documentation.
 - Making changes to components code is possible from any project.
 - Local modifications for components in consuming projects can be kept and still merged with incoming updates.
 - Components can be installed using npm / yarn, so they fit the normal workflow of projects’ developers.

@@ -19,7 +19,7 @@ Most actions using Bit are done locally, and not all errors are reported back to
 
 ### Masking Sensitive Information
 
-Error messages and commands may contain private information such as the name of a component, remote Collection and occasionally names of files in a project. We consider it as private data, and thus will not send it to the analytics platform. Bit masks all private data in a command or an error message prior to sending it, so only actual usage data is sent.
+Error messages and commands may contain private information such as the name of a component, remote scope and occasionally names of files in a project. We consider it as private data, and thus will not send it to the analytics platform. Bit masks all private data in a command or an error message prior to sending it, so only actual usage data is sent.
 
 > If you want to unmask information, as this would help to better triage issues, you can do it by simply changing the default value of the `anonymous_reporting` configuration to `false`:
 >
@@ -39,7 +39,7 @@ An event is sent on any command triggered. The name of the event is the command�
 
 Additionally, some properties are added on specific events:
 
-- Authentication method - The authentication method a user used when communicating with a remote Collection. This is sent only when a local command requires accessing a remote Collection.
+- Authentication method - The authentication method a user used when communicating with a remote scope. This is sent only when a local command requires accessing a remote scope.
 - Local components issue statistics - When running `bit status`, to see data and status of your workspace, Bit sends statistics such as ‘total number of components with missing dependencies’, and ‘total number of components with untracked files’.
 
 ### Anonymous Error Reporting
@@ -62,7 +62,7 @@ Bit’s detailed analytics are accessible only to Bit’s current maintainers. [
 
 ## Opting Out
 
-Bit analytics helps us maintainers and leaving it on is appreciated. By default, Bit *does not* track your usage and errors. However, if you have opted-in and wish to opt out of Bit analytics, you can unset the `analytics_reporting` and `error_reporting` configuration variables:
+Bit analytics helps us maintainers and leaving it on is appreciated. By default, Bit _does not_ track your usage and errors. However, if you have opted-in and wish to opt out of Bit analytics, you can unset the `analytics_reporting` and `error_reporting` configuration variables:
 
 ```shell
 bit config set analytics_reporting false

@@ -9,7 +9,7 @@
 /tutorial/react-app-tutorial.html   /tutorials/bit-react-tutorial
 /docs/installing-bit.html           /docs/installation
 /docs/install-components.html       /docs/installing-components
-/docs/scopes-on-bitsrc.html         /docs/bit-dev#remote-collections-hosting
+/docs/scopes-on-bitsrc.html         /docs/bit-dev#remote-scopes-hosting
 /docs/importing-components.html     /docs/sourcing-components
 /docs/versioning-tracked-components.html   /docs/tag-component-version
 /docs/faq-understanding-bit-status.html  /docs/workspace#workspace-statuses
@@ -26,11 +26,11 @@
 /docs/updating-sourced-components.html      /docs/sourcing-components#receive-component-changes
 /docs/merge-changes.html                    /docs/sourcing-components#merge-incoming-changes
 /docs/bitsrc-components-ci.html         /docs/bit-dev
-/docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-collections
+/docs/bitdev-permissions.html        /docs/bit-dev#permissions-for-scopes
 /docs/initializing-bit.html             /docs/workspace
 /docs/conf-bit.html                     /docs/workspace
 /docs/organizing-components.html        /docs/export
-/docs/bitdev-permissions.html           /docs/bit-dev#permissions-for-collections
+/docs/bitdev-permissions.html           /docs/bit-dev#permissions-for-scopes
 /docs/bitsrc-plans.html                 /docs/my-account#organization-billing
 /docs/latest-version.html               /docs/installation#latest-version
 /docs/handling-errors                   /docs/workspace#errors-amp-troubleshooting

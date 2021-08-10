@@ -11,12 +11,11 @@ title: Quick Start
 
 **[> Watch Video Demo](https://www.youtube.com/watch?v=E5lgoz6-nfs&lc=UgxK6L53Vny5S1zvIDh4AaABAg&feature=em-comments)**
 
-
 Bit is an [open-source](https://github.com/teambit/bit) cli tool for collaborating on isolated components across projects and repositories.  
 Use Bit to distribute discrete components from a design library or a project into a standalone reusable package and utilize it across applications.  
 You can set up your own server for components collaboration, or use the [bit.dev cloud](#bitdev-cloud-%f0%9f%8c%a9%ef%b8%8f) hosting for private and public components sharing.
 
-Bit facilitates the process of collaborating on UI components. Team members can share, maintain, and synchronize isolated components from different projects.  
+Bit facilitates the process of collaborating on UI components. Team members can share, maintain, and synchronize isolated components from different projects.
 
 Bit allows teams to:
 
@@ -25,7 +24,7 @@ Bit allows teams to:
 - Retain UI and UX consistency
 - Increase project's stability
 
-Key Features:  
+Key Features:
 
 - Extract a component for sharing directly from an existing library or project.
 - Validate the component's independence by building and testing each component separately from the rest of the project.
@@ -35,10 +34,10 @@ Key Features:
 - Automatically wrap each component as an npm package.
 - Distribute discrete components instead of a single massive package.
 - Automate component versioning according to changes in its dependencies.
-- Use with leading frameworks and tools: React, Vue, Angular, Mocha, Jest.  
+- Use with leading frameworks and tools: React, Vue, Angular, Mocha, Jest.
 - Works alongside Git, NPM, and Yarn.
 
-Bit is working with Javascript and Javascript frameworks:  
+Bit is working with Javascript and Javascript frameworks:
 
 <img src="https://storage.googleapis.com/static.bit.dev/docs/images/js_logos.png">
 
@@ -86,10 +85,10 @@ To achieve this, you need to configure your bit workspace. In your `package.json
 ```json
 {
   "peerDependencies": {
-  "react": ">=16.9.0",
-  "react-dom": ">=16.9.0",
-  "styles-components": ">=4.0.0",
-  "@storybook/react": ">=5.2.0"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "styles-components": ">=4.0.0",
+    "@storybook/react": ">=5.2.0"
   }
 }
 ```
@@ -181,7 +180,7 @@ the following component environments were installed
 
 When a component is ready to be shared with others, the developer tags it with a version number following the semver conventions.  
 Bit stores the snapshot of the component's source code, enabling it to notify consumers when any changes are made.  
-The developer can export a tagged version of the component to a centralized server. The centralized server can be self owned or the [bit.dev](/docs/bit-dev) cloud service can be used as the centralized server.  
+The developer can export a tagged version of the component to a centralized server. The centralized server can be self owned or the [bit.dev](/docs/bit-dev) cloud service can be used as the centralized server.
 
 ### Tag component's version
 
@@ -205,7 +204,7 @@ To setup your own Bit server follow the instructions [here](/docs/bit-server).
 Alternatively, you can use [bit.dev](https://bit.dev) cloud hosting to share components. To share components via bit.dev server.
 
 - [Create an account](https://bit.dev/signup) on bit.dev
-- Follow the steps on bit.dev to create a collection. On your newly created collection page you can see the export command that you will later use to export the components.  
+- Follow the steps on bit.dev to create a scope. On your newly created scope page you can see the export command that you will later use to export the components.
 
 [Run bit login](/docs/apis/cli-all#login) to your own server or to bit.dev (if you are already logged in the browser, bit login will automatically log in to that account).
 
@@ -214,7 +213,7 @@ $ bit login
 Your browser has been opened to visit: http://bit.dev/bit-login?redirect_uri=http://localhost:8085...
 ```
 
-You now have a collection. On bit.dev you can see the export command that you will use later to export components to this collection.  
+You now have a scope. On bit.dev you can see the export command that you will use later to export components to this scope.
 
 <div class="learn-more">
 
@@ -227,11 +226,11 @@ You now have a collection. On bit.dev you can see the export command that you wi
 Use the `bit export` command to publish the components from your workspace to [bit.dev](https://bit.dev).
 
 ```shell
-$ bit export user-name.collection-name
-exported 3 components to collection user-name.collection-name
+$ bit export user-name.scope-name
+exported 3 components to scope user-name.scope-name
 ```
 
-Head over to your [bit.dev](https://bit.dev/) collection. All the components are exported. Try creating and saving examples for your components, which Bit will also show as previews in the collection’s page.
+Head over to your [bit.dev](https://bit.dev/) scope. All the components are exported. Try creating and saving examples for your components, which Bit will also show as previews in the scope’s page.
 
 ## Install component
 
@@ -270,7 +269,7 @@ To develop a component from the [consuming repository](/docs/sourcing-components
 
 ```shell
 bit import mui-org.material-ui/button
- ```
+```
 
 **Note**: If your changes are temporary, and you would like to revert to using the components from `node_modules`, you can use the `eject` command to remove components from the local workspace and install them with the NPM client.
 
@@ -283,9 +282,9 @@ bit import mui-org.material-ui/button
 
 ### Publish component changes
 
-Changes made to imported components can be updated in the collection and consumed across projects.  
-When you’re done making changes, you can update them as a new version of the component in the collection (given you have permission to update the collection). Alternatively, the changed component can be exported as a new component.  
-When a component is updated with a new version in the collection, every repository that houses that component can get the changes.
+Changes made to imported components can be updated in the scope and consumed across projects.  
+When you’re done making changes, you can update them as a new version of the component in the scope (given you have permission to update the scope). Alternatively, the changed component can be exported as a new component.  
+When a component is updated with a new version in the scope, every repository that houses that component can get the changes.
 
 <div class="learn-more">
 
@@ -300,9 +299,9 @@ With Bit, when a component is imported and modified inside a project, it still r
 ```shell
 bit import mui-org.material-ui/button
 bit checkout mui-org.material-ui/button --interactive-merge
- ```
+```
 
-<div class="learn-more">  
+<div class="learn-more">
 
 - [Merging changes](/docs/sourcing-components#merge-incoming-changes) for components.
 - [Handling merge conflicts](/docs/sourcing-components#handle-merge-conflicts).

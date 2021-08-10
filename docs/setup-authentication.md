@@ -5,16 +5,16 @@ sidebar_label: Authentication
 ---
 
 You can install and import public components on anonymous mode, i.e. without authenticating with bit.dev.  
-To export components to bit.dev and to import from private collections you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).  
+To export components to bit.dev and to import from private scopes you need to setup [a free account](https://bit.dev/signup) on [bit.dev](https://bit.dev).
 
-Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication).  
+Exporting components to bit.dev requires that Bit client (Bit cli) on your machine is logged in to the account. Bit tries to log into the server according to the steps defined [here](/docs/bit-server#authentication).
 
-> A token or a key is associated with a single user, and the privileges, such as collections visibility and access, are determined according to that user's privileges.  
+> A token or a key is associated with a single user, and the privileges, such as scopes visibility and access, are determined according to that user's privileges.
 
-bit.dev server is using the following IP addresses:  
+bit.dev server is using the following IP addresses:
 
-- 104.154.235.126:22  
-- 35.184.176.52:443  
+- 104.154.235.126:22
+- 35.184.176.52:443
 
 ## Authenticate with Token
 
@@ -31,7 +31,7 @@ The browser opens to a login page. Enter your [bit.dev](https://bit.dev) account
 
 ### Additional Tokens
 
-bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:  
+bit.dev stores a token per machine. When re-logging on the same machine, the previous token expires and a new token is created. If you want to a permanent token (e.g. for CI), you can set a machine name in the login. The token will be associated with that machine name, and only expires when performing another login with the same machine name:
 
 ```shell
 bit login --machine-name=ci_server
@@ -40,16 +40,16 @@ bit login --machine-name=ci_server
 To see a list of all logged-in devices, go to [profile settings](https://bit.dev/settings).  
 You can remove tokens, forcing Bit clients to re-authenticate themselves with the account.
 
-> You can send a specific token for each command you are running and is accessing a remote collection by specifying the `--token` flag with the relevant token.
+> You can send a specific token for each command you are running and is accessing a remote scope by specifying the `--token` flag with the relevant token.
 
 ## Authenticate with SSH
 
-It is also possible to work with SSH key pair to authenticate with bit.dev.  
+It is also possible to work with SSH key pair to authenticate with bit.dev.
 
 Follow the steps described [here](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for generating SSH keys.
 
 If you know how to generate your SSH key, you can skip the next part and move to [authenticate your SSH Key to bit.dev](#upload-public-ssh-key-to-bitsrcio).
-Follow the steps below to generate SSH keys:  
+Follow the steps below to generate SSH keys:
 
 ### Generate SSH key
 
@@ -81,20 +81,20 @@ Follow the steps below to generate SSH keys:
 1. In the ‘SSH Keys’ section, click on ‘new SSH key’.
 1. Type a name for the key. The key name documents the key, and will not affect the behavior of the system.
 1. `Key` - Copy the content of the file that you generated and ends with `.pub`.
-1. Click on ‘Add SSH key’.  
+1. Click on ‘Add SSH key’.
 
 A new item is added to the SSH key list. This means that you are now connected via SSH and can export and import components from the [bit.dev](https://bit.dev).
 
 ## Authenticate without Installing bit CLI
 
 It is possible to consume components exported to bit.dev using `npm` or `yarn` without installing Bit. You still need a bit.dev account.
-To do that run the following command:  
+To do that run the following command:
 
 ```shell
 npm login --registry=https://node.bit.dev --scope=@bit
 ```
 
-After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.  
+After entering your bit.dev credentials, bit updates the global `.npmrc` file, so you can start installing components.
 
 ## Configure local Bit client
 
@@ -110,14 +110,14 @@ bit config set user.email mickey@example.com
 
 ## Authentication issues
 
-Several things you can do if you encountered `fatal: permission to Collection <collectionname> was denied` error message:
+Several things you can do if you encountered `fatal: permission to scope <scopename> was denied` error message:
 
 ### Timeout after a long hang time
 
 Bit uses SSH to communicate with remote servers. A long hang time and authentication failure is usually the result of a firewall blocking the relevant port (22).  
 To see if that's the case, try and connect to the Bit remote server directly. If you are unable to connect, check the firewall configuration. If this test passes, email us at [support@bit.dev](mailto:support@bit.dev).
 
-Make sure you have telnet installed, and run the following command. If you get the response bellow, you have access to your account with SSH.  
+Make sure you have telnet installed, and run the following command. If you get the response bellow, you have access to your account with SSH.
 
 ```shell
 $ telnet hub.bit.dev 22
@@ -141,20 +141,20 @@ If you haven't signed up already, head over [here](https://bit.dev/signup).
 In case you are using `bit login`, Bit will ask for your username/password combination for your [bit.dev](https://bit.dev) account. Make sure you have provided with the correct combination of it.  
 In case you have forgotten your password, head to your [setting page](https://bit.dev/settings/profile) to reset it.
 
-#### No permission to the Collection
+#### No permission to the scope
 
-It may be that you do not have permissions to access the Collection in question.
+It may be that you do not have permissions to access the scope in question.
 
-- If the Collection is public, you can import component from it, but you have to have write permissions to export to it.
-- If the Collection is private, you must have read/write permission in order to import/export components to it.
+- If the scope is public, you can import component from it, but you have to have write permissions to export to it.
+- If the scope is private, you must have read/write permission in order to import/export components to it.
 
 ### SSH keys issues
 
-Several configuration issues may occur if you hit any permission issues when working with SSH keys and remote collections.
+Several configuration issues may occur if you hit any permission issues when working with SSH keys and remote scopes.
 
 **If the SSH connection is not established due to issues with SSH keys, Bit will fail to authenticate.**
 
-> *Bit and SSH Agent*
+> _Bit and SSH Agent_
 >
 > In you are using SSH agent to store and manage your private SSH keys, Bit will communicate with it to use them when opening a remote connection.
 
@@ -178,4 +178,4 @@ In case you use `bit config ssh_key_file` to point Bit to the location of your p
 
 #### No/Wrong public key uploaded to bit.dev
 
-Check if you are using the right public SSH key for your profile.  
+Check if you are using the right public SSH key for your profile.

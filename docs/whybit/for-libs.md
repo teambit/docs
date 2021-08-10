@@ -3,7 +3,7 @@ id: for-libs
 title: Bit for Libraries
 ---
 
-**Bit is a  powerful and scalable way to build, distribute and get adoption for components in your library**
+**Bit is a powerful and scalable way to build, distribute and get adoption for components in your library**
 
 Shared libraries are a popular way to build and share components between teams and applications- to save time, prevent duplications and encourage consistency.
 
@@ -17,7 +17,7 @@ As such, it’s a powerful tool for publishing components from any library (comp
 
 **Increasing the adoption** of shared components by removing the main barriers and encouraging collaboration. [Learn more](#increasing-adoption-and-usage-for-your-librarys-components)
 
-**Examples**: [Semantic-UI React](https://bit.dev/semantic-org/semantic-ui-react), [Grommet](https://bit.dev/grommet/grommet), [Grommet Icons](https://bit.dev/grommet/grommet-icons), [Material-UI](https://bit.dev/mui-org/material-ui), [PrimeReact](https://bit.dev/primefaces/primereact), [Lodash](https://bit.dev/lodash/lodash), [Ramda](https://bit.dev/ramda/ramda), [Date-fns](https://bit.dev/date-fns/date-fns) and [more](https://bit.dev/collections).
+**Examples**: [Semantic-UI React](https://bit.dev/semantic-org/semantic-ui-react), [Grommet](https://bit.dev/grommet/grommet), [Grommet Icons](https://bit.dev/grommet/grommet-icons), [Material-UI](https://bit.dev/mui-org/material-ui), [PrimeReact](https://bit.dev/primefaces/primereact), [Lodash](https://bit.dev/lodash/lodash), [Ramda](https://bit.dev/ramda/ramda), [Date-fns](https://bit.dev/date-fns/date-fns) and [more](https://bit.dev/scopes).
 
 ## Publishing and managing components at any scale without overhead
 
@@ -25,7 +25,7 @@ Bit is the most effective way to publish and manage multiple components in your 
 
 **Instantly publish multiple components from your library**
 
-With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months of work. If you have many libraries, the difference becomes that much more dramatic.  
+With Bit, you don't need to refactor anything to publish components from your library. No structure changes to your repository, no code changes. You can track and publish all of your library's components without refactoring your codebase and without adding extra maintenance overhead. Bit allows a component to be tracked in any path or using any convention in your repo. All you need to do is [let Bit seamlessly isolate](https://docs.bit.dev/docs/add-and-isolate-components.html) and pack the components. For the average library, Bit saves weeks if not months of work. If you have many libraries, the difference becomes that much more dramatic.
 
 **Automatic dependency definition & management**
 
@@ -37,7 +37,7 @@ Bit helps you easily get control, bump and manage versions for components on you
 
 **Granularity is unlimited**
 
-A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase.  
+A Bit component is basically a set of files. Since Bit doesn't require any overhead for publishing and managing components, everything can be a component, and larger components can be composed of smaller components. This means building faster and spending less time maintaining your codebase.
 
 **Component testing is part of the workflow**
 
@@ -47,13 +47,13 @@ Bit can isolate components, so it can also run their tests in isolation. You can
 
 Bit provides enhanced discoverability for the components you share from your library. It's designed to help developers quickly find and choose the components they need through a universal hub with a rich, visual and interactive experience:
 
-**Visual component collections with example previews**
+**Visual component scopes with example previews**
 
-When you share the components from the library they are organized in a visual collection with preview examples [example](https://bit.dev/grommet/grommet). Developers can explore this collection with their eyes and find the components they need and like to use.
+When you share the components from the library they are organized in a visual scope with preview examples [example](https://bit.dev/grommet/grommet). Developers can explore this scope with their eyes and find the components they need and like to use.
 
 **Designated component search**
 
-Bit's search is designed and built for code components, so you can use it to quickly find components in the collection or in the community. The search factors in much more than just text, it factors in context and functionality to help developers find and choose components ([Example](https://bit.dev/components?q=loader)).
+Bit's search is designed and built for code components, so you can use it to quickly find components in the scope or in the community. The search factors in much more than just text, it factors in context and functionality to help developers find and choose components ([Example](https://bit.dev/components?q=loader)).
 
 **Interactive playground for every component**
 
@@ -82,4 +82,3 @@ Every component can be installed from Bit's registry as a package using the **NP
 **De-coupling component development from the library**
 
 Bit enables a distributed and democratized development of components. A big issue that hurts the adoption of libraries is that the concern of developers who don't want to couple their own development to that of the library. This means that the consuming developer will have to work hard to make a PR to the library to change even a single code line and then depend on the maintainers to decide of they want to adopt the change. Even then, they might have to wait a long time for the maintainers to accept the change - if they will. Bit changes this picture altogether. Any developer can `bit import` any component into any project and develop it right these from that project. Changes can be kept locally, or easily published as a new component/new version. It's up to you what degree of freedom you want to give your consumers, but the choice is yours.
-

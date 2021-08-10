@@ -2,6 +2,7 @@
 id: centralized
 title: Centralized Library
 ---
+
 ![Centralized library workflow](https://storage.googleapis.com/static.bit.dev/docs/images/workflow-centralized.svg)
 This workflow is suggested for organizations that have:
 
@@ -11,7 +12,7 @@ This workflow is suggested for organizations that have:
 
 ## Challenge of centralized library
 
-Introducing a design system inside an organization can bring tremendous value for reducing the amount of code and increasing the effectiveness of the development teams. However, these benefits come with a price tag that should be considered:  
+Introducing a design system inside an organization can bring tremendous value for reducing the amount of code and increasing the effectiveness of the development teams. However, these benefits come with a price tag that should be considered:
 
 ### External Dependence
 
@@ -19,11 +20,11 @@ Dependence on other teams is, by far, the most crucial problem. Teams aim to be 
 
 ### Usability
 
-Writing good components is hard. As a developer, you are now the consumer of the infrastructure team. If the shared component exposes 30 mandatory parameters, when all you need is a simple button with no icon, you are likely to develop your own component and not rely on the shared one.  
+Writing good components is hard. As a developer, you are now the consumer of the infrastructure team. If the shared component exposes 30 mandatory parameters, when all you need is a simple button with no icon, you are likely to develop your own component and not rely on the shared one.
 
 ### Granularity
 
-Infrastructure teams tend to create a single package (e.g. npm package) that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle and the infrastructure team themselves are forced to create new versions of the entire library when only one component has changed.  
+Infrastructure teams tend to create a single package (e.g. npm package) that includes all components. It is easier for them to manage and deliver this way. While this can be useful at the beginning, it becomes a real burden when the project grows and the shared library contains components that are only used by some of the projects. The developers of the projects are forced to receive a new version of the library when a change is made on any component included in the bundle and the infrastructure team themselves are forced to create new versions of the entire library when only one component has changed.
 
 ## Benefits
 
@@ -35,12 +36,12 @@ Bit simplifies the process of sharing components for both the library maintainer
 - Bit automatically versions components that were altered based on changes in their dependencies
 - Building components locally without the project context shorten the feedback loop on the way components impact other projects
 - Publishing components to bit.dev increases component adoption by making them visible to all teams
-- This visibility also enables designers and product managers to monitor the end product and produce targeted feedback per component 
+- This visibility also enables designers and product managers to monitor the end product and produce targeted feedback per component
 - Bit helps to control who is making changes to the components
-  
+
 ### For Projects
 
-Projects developers can benefit from retaining their existing workflow of using NPM for fetching components. Using smaller, discrete components that are required by each project is useful for:  
+Projects developers can benefit from retaining their existing workflow of using NPM for fetching components. Using smaller, discrete components that are required by each project is useful for:
 
 - Reducing the bundle size of the application. Only the components they need are included.
 - This is a double (and often more) saving - the bundle will also only include the 3rd party libraries that are relevant to components actually used in the project, not those required by the entire component library.
@@ -51,8 +52,8 @@ Projects developers can benefit from retaining their existing workflow of using 
 ## How does it work?
 
 1. Library maintainers are publishing components from the shared library with documentation.
-1. Projects developers access the collection on bit.dev to locate the components they need and install them using npm or yarn
-1. If a change is required in a project, the project's developer is importing the component into their project.  
+1. Projects developers access the scope on bit.dev to locate the components they need and install them using npm or yarn
+1. If a change is required in a project, the project's developer is importing the component into their project.
    1. The project developer is making a change in the component and tests it inside their project.
    1. If a new version of the component exists, the project developers get the changes on top of their local changes
 1. Project's developer submit a request or an issue on the component to the library maintainer, with their suggested change

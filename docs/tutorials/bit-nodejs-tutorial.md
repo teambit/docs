@@ -165,7 +165,7 @@ tracking 74 new components
 >
 > Bit can nest components in namespaces. Choose a namespace for a component, or omit it completely.
 >
-> The syntax above adds the components to the `internal` namespace. This is a unique namespace, designed for components that are required as part of the dependency graph of components, but should not be visible in the collection's components grid.
+> The syntax above adds the components to the `internal` namespace. This is a unique namespace, designed for components that are required as part of the dependency graph of components, but should not be visible in the scope's components grid.
 
 Now Bit can traverse every dependency graph in its entirety and model all components. Run `bit status` to confirm:
 
@@ -217,29 +217,29 @@ added components:  t@0.9.6, f@0.9.6, __@0.9.6, add@0.9.6, ...
 
 You might have noticed that during the tagging process Bit ran the build task we have defined. Bit runs all components' extensions during the tagging process. It does that in order to validate that it is able to recreate all components in an [isolated environment](/docs/how-bit-works#component-isolationt) and run all tasks (build and test, for example). Bit fails the versioning process if it is unable to isolate a component.
 
-### Creating a Collection and Sharing Components
+### Creating a scope and Sharing Components
 
-Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a collection](https://bit.dev/~create-collection).  
-Now that you have a collection, run this command:
+Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a scope](https://bit.dev/~create-scope).  
+Now that you have a scope, run this command:
 
 ```shell
-$ bit export <account-name>.<collection-name>
-exported 26 components to scope <account-name>.<collection-name>
+$ bit export <account-name>.<scope-name>
+exported 26 components to scope <account-name>.<scope-name>
 ```
 
 > **Commit Your Progress**
 >
 > Now is a good time to commit and push all of the progress you've made. Making sure that the data in Bit is synced with the codebase is very important for proper collaboration between the project's maintainers.
 
-Head back to the collection: you'll now see all components properly exported. Note that they all have a status indicator. Bit runs a CI cycle for each of the components according to the extensions configured for it.
+Head back to the scope: you'll now see all components properly exported. Note that they all have a status indicator. Bit runs a CI cycle for each of the components according to the extensions configured for it.
 
 ## Component Discovery and Consumption
 
-Bit's UI is focused around the discoverability of components. The collection you have created features a preview for each component in the form of a card and an integrated search engine. In addition, each component gets automatically labeled according to its functionality.
+Bit's UI is focused around the discoverability of components. The scope you have created features a preview for each component in the form of a card and an integrated search engine. In addition, each component gets automatically labeled according to its functionality.
 
-### Browsing the Component Collection
+### Browsing the Component scope
 
-The collection page itself is rather simple. You can filter components according to their labels, invite collaborators, edit its description, etc. It also presents previews of the component examples.
+The scope page itself is rather simple. You can filter components according to their labels, invite collaborators, edit its description, etc. It also presents previews of the component examples.
 
 ### Installing Components with Package Managers
 
@@ -250,8 +250,8 @@ Create a new project directory and install the `add` component with npm:
 $ cd ..
 $ mkdir test-install
 $ cd test-install
-$ npm install @bit/<account-name>.<collection-name>.add
-+ @bit/<account-name>.<collection-name>.add@0.9.6
+$ npm install @bit/<account-name>.<scope-name>.add
++ @bit/<account-name>.<scope-name>.add@0.9.6
 added 50 packages in 12.435s
 ```
 
@@ -288,7 +288,7 @@ Switched to branch 'master'
 $ git merge update-component
 ```
 
-Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote collection. This is similar to performing a `git pull` before merging.
+Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote scope. This is similar to performing a `git pull` before merging.
 
 ```shell
 $ bit import
@@ -306,7 +306,7 @@ modified components
      > ...
 
 components pending to be tagged automatically (when their dependencies are tagged)
-     > <account-name>.<collection-name> ... ok
+     > <account-name>.<scope-name> ... ok
 ```
 
 Bit notices a diff in the contents of the tracked files of the `_curry2` component. Note that Bit is still able to traverse the component's dependency graph.  
@@ -316,15 +316,15 @@ Trigger the entire versioning process by tagging a new version:
 ```shell
 $ bit tag --all --patch --message 'update_curry2 comments'
 2 components tagged | 0 added, 1 changed, 40 auto-tagged
-changed components:  <account-name>.<collection-name>/_curry2@0.9.7
-auto-tagged components (as a result of tagging their dependencies):  <account-name>.<collection-name>/
+changed components:  <account-name>.<scope-name>/_curry2@0.9.7
+auto-tagged components (as a result of tagging their dependencies):  <account-name>.<scope-name>/
 ```
 
 Now publish both updated components:
 
 ```shell
-$ bit export <account-name>.<collection-name>
-exported 40 components to scope <account-name>.<collection-name>
+$ bit export <account-name>.<scope-name>
+exported 40 components to scope <account-name>.<scope-name>
 ```
 
 Commit the changes to `.bitmap` back to the code repository.
@@ -367,7 +367,7 @@ Once the server is configured with the correct account, add these steps to your 
 bit init
 bit import
 bit tag --all <--patch,--minor,--major>
-bit export <collection name>
+bit export <scope name>
 ```
 
 Don't forget to commit the modifications to `.bitmap` and push them back to the code repository.

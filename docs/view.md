@@ -4,7 +4,7 @@ title: Viewing
 ---
 
 Bit provides a set of tools to view the state of the workspace and of the components.
-These tools are useful when you need to analyze and debug issues with components.  
+These tools are useful when you need to analyze and debug issues with components.
 
 ## Status
 
@@ -30,15 +30,15 @@ staged components
      > moon/sun... ok
 ```
 
-You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses).  
+You can find a full description of all possible component statuses [here](/docs/workspace#workspace-statuses).
 
 ### View untracked files
 
-The `status` command also shows files that are untracked in the components. You will get notified on all the files that are imported in the component and are not part of any Bit component.  
+The `status` command also shows files that are untracked in the components. You will get notified on all the files that are imported in the component and are not part of any Bit component.
 
 ## List
 
-The list command display the components in the local workspace or in remote scope.  
+The list command display the components in the local workspace or in remote scope.
 
 To list all components in local workspace:
 
@@ -46,15 +46,15 @@ To list all components in local workspace:
 bit list
 ```
 
-To list all components in a remote Collection:
+To list all components in a remote scope:
 
 ```shell
-bit list my-collection
+bit list my-scope
 ```
 
 ### List versions
 
-You can compare the component version in the local scope against the remote scope, and also view which version of the component can be checked out using the `outdated` flag.  
+You can compare the component version in the local scope against the remote scope, and also view which version of the component can be checked out using the `outdated` flag.
 
 ```shell
 $bit list --outdated
@@ -70,9 +70,9 @@ $bit list --outdated
   └────────────────────────────────────────────────────────────┴───────┴───────┴───────┘
 ```
 
-## Show  
+## Show
 
-The show command is useful to see the specific details of each component:  
+The show command is useful to see the specific details of each component:
 
 ```shell
 $ bit show navbar

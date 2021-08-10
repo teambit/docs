@@ -25,9 +25,9 @@ You can see the final result [here](https://bit.dev/digiaonline/react-foundation
   <a href="https://bit.dev/digiaonline/react-foundation"><img src="https://i.imagesup.co/images2/0__05c740dc39b7e2.jpg"></a>
 </p>
 
-* All of the components from the library are now individual packages.
-* No changes were made to the library’s structure or code.
-* Components can now be shared and played with in Bit’s hub.
+- All of the components from the library are now individual packages.
+- No changes were made to the library’s structure or code.
+- Components can now be shared and played with in Bit’s hub.
 
 > **Note: Bit components are not limited to React**
 >
@@ -44,7 +44,7 @@ $ bit login
 
 > **Logging In**
 >
-> The `bit login` command will enable Bit to authenticate to your account at Bit’s hub.  
+> The `bit login` command will enable Bit to authenticate to your account at Bit’s hub.
 >
 > Apart from authenticating the Bit client with your account, it also configures a local `.npmrc` file with the `@bit` scoped package registry so the component you share can be installed as packages using the npm/yarn clients.
 
@@ -60,10 +60,10 @@ $ npm install
 
 Bit tracks sets of files as components. When tracking components, it's important to understand the project's file structure. Before we dive deeper, here's a short description of the project we'll share components from.
 
-* `src/components` is a directory that contains all components in the library. Each component is implemented in its own file. Some components require each other.
-* `src/enums.js` and `src/utils.js` are two internal files that contain utility functions and data for the components.
-* `test/components` is a directory containing a spec file for each component. All files have the same naming convention of `<component-name>-spec.js`.
-* `test/utils-spec.js` is a small module containing some utility functions for running tests.
+- `src/components` is a directory that contains all components in the library. Each component is implemented in its own file. Some components require each other.
+- `src/enums.js` and `src/utils.js` are two internal files that contain utility functions and data for the components.
+- `test/components` is a directory containing a spec file for each component. All files have the same naming convention of `<component-name>-spec.js`.
+- `test/utils-spec.js` is a small module containing some utility functions for running tests.
 
 ```shell
 ├── package.json
@@ -111,7 +111,7 @@ $ git commit -am "initialized an emtpy bit workspace"
 
 ### Tracking Files as Components
 
-Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/apis/cli-all#add) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.  
+Now that you have a Bit workspace, you can start creating Bit components. For this we use the [add](/docs/apis/cli-all#add) command. With this command we map groups of files as components. Bit logs the relations of tracked files and components in the `.bitmap` file.
 
 In this library, every component is a file. Run the `bit add` command to mark each file as a separated component and mark its test files.
 
@@ -155,7 +155,7 @@ import { GeneralPro ... objectKeys } from '../utils';
 ...
 ```
 
-Bit traverses all tracked files to form a dependency graph for each component. All of a component’s files should be tracked by Bit. When a file Bit tracks requires an untracked file, Bit asks that you track the untracked file as well. [Learn more](/docs/add-and-isolate-components) about the ins and outs of handling component dependencies.  
+Bit traverses all tracked files to form a dependency graph for each component. All of a component’s files should be tracked by Bit. When a file Bit tracks requires an untracked file, Bit asks that you track the untracked file as well. [Learn more](/docs/add-and-isolate-components) about the ins and outs of handling component dependencies.
 
 Run these commands to track the additional files:
 
@@ -173,7 +173,7 @@ added test/utils-spec.js
 >
 > Bit can nest components in namespaces. Choose a namespace for a component, or omit it completely.
 >
-> The syntax above adds the components to the `internal` namespace. This is a unique namespace, designed for components that are required as part of the dependency graph of components, but should not be visible in the collection's components grid.
+> The syntax above adds the components to the `internal` namespace. This is a unique namespace, designed for components that are required as part of the dependency graph of components, but should not be visible in the scope's components grid.
 
 Now Bit can traverse every dependency graph in its entirety and model all components. Run `bit status` to confirm:
 
@@ -224,67 +224,81 @@ added components:  accordion@0.9.6, badge@0.9.6, ...
 
 You might have noticed that during the tagging process Bit ran the build task we have defined. Bit runs all components' extensions during the tagging process. It does that in order to validate that it is able to recreate all components in an [isolated environment](/docs/how-bit-works#component-isolation) and run all tasks (build and test, for example). Bit fails the versioning process if it is unable to isolate a component.
 
-### Creating a Collection and Sharing Components
+### Creating a scope and Sharing Components
 
-Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a collection](https://bit.dev/~create-collection).  
-Now that you have a collection, run this command:
+Once you have versioned components, it's time to share them with other developers. To do so, head over to [bit.dev](https://bit.dev) and [create a scope](https://bit.dev/~create-scope).  
+Now that you have a scope, run this command:
 
 ```shell
-$ bit export <account-name>.<collection-name>
-exported 26 components to scope <account-name>.<collection-name>
+$ bit export <account-name>.<scope-name>
+exported 26 components to scope <account-name>.<scope-name>
 ```
 
 > **Commit Your Progress**
 >
 > Now is a good time to commit and push all of the progress you've made. Making sure that the data in Bit is synced with the codebase is very important for proper collaboration between the project's maintainers.
 
-Head back to the collection: you'll now see all components properly exported. Note that they all have a status indicator. Bit runs a CI cycle for each of the components according to the extensions configured for it.
+Head back to the scope: you'll now see all components properly exported. Note that they all have a status indicator. Bit runs a CI cycle for each of the components according to the extensions configured for it.
 
 ## Component Discovery and Consumption
 
-Bit's UI is focused around the discoverability of components. The collection you have created features a preview for each component in the form of a card and an integrated search engine. In addition, each component gets automatically labeled, according to its functionality.
+Bit's UI is focused around the discoverability of components. The scope you have created features a preview for each component in the form of a card and an integrated search engine. In addition, each component gets automatically labeled, according to its functionality.
 
-### Browsing the Component Collection
+### Browsing the Component scope
 
-The collection page itself is rather simple. You can filter components according to their labels, invite collaborators, edit its description, etc. It also presents previews of the component examples.
+The scope page itself is rather simple. You can filter components according to their labels, invite collaborators, edit its description, etc. It also presents previews of the component examples.
 
 Use Bit’s playground to create and save examples for components.
 
 ### Using the Playground
 
-To see the component playground, click on any of the component cards. For this example, we'll use the `badge` component. Find it and click on the card. In the component page, scroll to see the full view of the component playground.  
+To see the component playground, click on any of the component cards. For this example, we'll use the `badge` component. Find it and click on the card. In the component page, scroll to see the full view of the component playground.
 
 The playground runs a [create-react-app](https://github.com/facebook/create-react-app) dev server, so all you need to do to create an example is write React code and CRA will render it. If you need to add any dependencies to the example code (component or package), simply `import` them: the playground will install them.
 
-Copy the example code from here to the playground of the `badge` component (fix the `import` statements according to your collection name):
+Copy the example code from here to the playground of the `badge` component (fix the `import` statements according to your scope name):
 
 ```javascript
-import {Badge} from '@bit/<account-name>.<collection-name>.badge';
-import { Colors } from '@bit/<account-name>.<collection-name>.internal.enums';
-import {Icon} from '@bit/<account-name>.<collection-name>.icon';
+import { Badge } from '@bit/<account-name>.<scope-name>.badge';
+import { Colors } from '@bit/<account-name>.<scope-name>.internal.enums';
+import { Icon } from '@bit/<account-name>.<scope-name>.icon';
 import React from 'react';
 
 export default (
   <div>
-    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/css/foundation-float.min.css' />
-    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' />
-    <div className='badge-colors-example'>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/css/foundation-float.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"
+    />
+    <div className="badge-colors-example">
       <Badge>1</Badge>
       <Badge color={Colors.SECONDARY}>2</Badge>
       <Badge color={Colors.SUCCESS}>3</Badge>
       <Badge color={Colors.ALERT}>A</Badge>
       <Badge color={Colors.WARNING}>B</Badge>
     </div>
-    <div className='badge-icons-example'>
-      <Badge color={Colors.INFO}><Icon name='fi-share'/></Badge>
-      <Badge color={Colors.SUCCESS}><Icon name='fi-check'/></Badge>
-      <Badge color={Colors.WARNING}><Icon name='fi-wrench'/></Badge>
+    <div className="badge-icons-example">
+      <Badge color={Colors.INFO}>
+        <Icon name="fi-share" />
+      </Badge>
+      <Badge color={Colors.SUCCESS}>
+        <Icon name="fi-check" />
+      </Badge>
+      <Badge color={Colors.WARNING}>
+        <Icon name="fi-wrench" />
+      </Badge>
     </div>
   </div>
 );
 ```
 
-Now you can save the example. When an example is saved, Bit takes a screenshot of it. Bit uses it in the preview card. Head back to the collection page (refresh the page), and see that the card for the `badge` component now contains a preview image.
+Now you can save the example. When an example is saved, Bit takes a screenshot of it. Bit uses it in the preview card. Head back to the scope page (refresh the page), and see that the card for the `badge` component now contains a preview image.
 
 > **Code Preview**
 >
@@ -292,16 +306,16 @@ Now you can save the example. When an example is saved, Bit takes a screenshot o
 
 ### Installing Components with Package Managers
 
-All components exported to Bit are available to install using any node package manager, such as npm/yarn. If you already ran `bit login` on your computer, Bit has already configured your package manager to be able to fetch components as packages.  
+All components exported to Bit are available to install using any node package manager, such as npm/yarn. If you already ran `bit login` on your computer, Bit has already configured your package manager to be able to fetch components as packages.
 
-Create a new project directory and install the `badge` component with npm:  
+Create a new project directory and install the `badge` component with npm:
 
 ```shell
 $ cd ..
 $ mkdir test-install
 $ cd test-install
-$ npm install @bit/<account-name>.<collection-name>.badge
-+ @bit/<account-name>.<collection-name>.badge@0.9.6
+$ npm install @bit/<account-name>.<scope-name>.badge
++ @bit/<account-name>.<scope-name>.badge@0.9.6
 added 50 packages in 12.435s
 ```
 
@@ -339,13 +353,13 @@ Switched to branch 'master'
 $ git merge update-component
 ```
 
-Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote collection. This is similar to performing a `git pull` before merging.
+Now that the component is changed, let's see how this modification reflects in the tracked Bit components. Before you check the state of the components, you need to make sure Bit is in sync with the remote scope. This is similar to performing a `git pull` before merging.
 
 ```shell
 $ bit import
 successfully imported 26 components
-- up to date <account-name>.<collection-name>/accordion
-- up to date <account-name>.<collection-name>/badge
+- up to date <account-name>.<scope-name>/accordion
+- up to date <account-name>.<scope-name>/badge
 ...
 ```
 
@@ -360,27 +374,27 @@ modified components
      > top-bar ... ok
 
 components pending to be tagged automatically (when their dependencies are tagged)
-     > <account-name>.<collection-name>/responsive ... ok
+     > <account-name>.<scope-name>/responsive ... ok
 ```
 
-Bit notices a diff in the contents of the tracked files of the `top-bar` component. Note that Bit is still able to traverse the component's dependency graph.  
+Bit notices a diff in the contents of the tracked files of the `top-bar` component. Note that Bit is still able to traverse the component's dependency graph.
 
-We also see that Bit notifies us that `responsive` will also be tagged with a new version. This is because `responsive` depends on `top-bar`. When you tag `top-bar`, Bit automatically tags the dependent `responsive`. The diff between the versions of `responsive` is an updated dependency graph that contains the new version of `top-bar`.  
+We also see that Bit notifies us that `responsive` will also be tagged with a new version. This is because `responsive` depends on `top-bar`. When you tag `top-bar`, Bit automatically tags the dependent `responsive`. The diff between the versions of `responsive` is an updated dependency graph that contains the new version of `top-bar`.
 
 Trigger the entire versioning process by tagging a new version:
 
 ```shell
 $ bit tag --all --patch --message 'update top-bar comments'
 2 components tagged | 0 added, 1 changed, 1 auto-tagged
-changed components:  <account-name>.<collection-name>/top-bar@0.9.7
-auto-tagged components (as a result of tagging their dependencies):  <account-name>.<collection-name>/responsive@0.9.7
+changed components:  <account-name>.<scope-name>/top-bar@0.9.7
+auto-tagged components (as a result of tagging their dependencies):  <account-name>.<scope-name>/responsive@0.9.7
 ```
 
 Now publish both updated components:
 
 ```shell
-$ bit export <account-name>.<collection-name>
-exported 2 components to scope <account-name>.<collection-name>
+$ bit export <account-name>.<scope-name>
+exported 2 components to scope <account-name>.<scope-name>
 ```
 
 Commit the changes to `.bitmap` back to the code repository.
@@ -399,7 +413,7 @@ $ npm update
 
 ## Bit CI Automation
 
-You can automate one of two tasks in order for this workflow to be fully implemented in your CI cycle:  
+You can automate one of two tasks in order for this workflow to be fully implemented in your CI cycle:
 
 - Exporting the components from the CI.
 - Installing components during CI.
@@ -426,7 +440,7 @@ Once the server is configured with the correct account, add these steps to your 
 bit init
 bit import
 bit tag --all <--patch,--minor,--major>
-bit export <collection name>
+bit export <scope name>
 ```
 
 Don't forget to commit the modifications to `.bitmap` and push them back to the code repository.
@@ -436,7 +450,7 @@ Don't forget to commit the modifications to `.bitmap` and push them back to the 
 To install Bit components in your application during CI, you need to configure the `@bit` node registry in your CI server.
 
 1. Make sure you have a valid token generated for the CI server. To generate a token, run the following command:
-`npm login --registry=https://node.bit.dev --scope=@bit`
+   `npm login --registry=https://node.bit.dev --scope=@bit`
 2. The token will be available for you in your `~/.npmrc` file.
 3. Set a secret to your CI environment variable called `BIT_NODE_TOKEN`. This step differs from one CI to another. Consult your CI provider’s documentation to understand how to do it. An abstract way of configuring the client is running this command:
 

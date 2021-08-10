@@ -9,9 +9,9 @@ Bit provides free hosting for open source projects. To host private code, Bit pr
 
 Bit offers several billing plans. A billing plan is a Bit Organization subscription and does not require a developer to purchase a subscription to use Bit. Furthermore, developers can collaborate in any number of organizations.
 
-* **Community plan** - The basic subscription plan in Bit. This plan is active for all registered users. The Community plan allows every developer to start working with Bit, and use it for their public and private projects, as it includes a limited amount of private Collections.
-* **Team plan** - This subscription allows organizations to collaborate on an unlimited amount of private code. The plan includes a premium support model and can be purchased only if you have created an organization in Bit.
-* **Business plan** - The business subscription plan is aimed at larger teams and organizations with a need for improved support and SLA.
+- **Community plan** - The basic subscription plan in Bit. This plan is active for all registered users. The Community plan allows every developer to start working with Bit, and use it for their public and private projects, as it includes a limited amount of private scopes.
+- **Team plan** - This subscription allows organizations to collaborate on an unlimited amount of private code. The plan includes a premium support model and can be purchased only if you have created an organization in Bit.
+- **Business plan** - The business subscription plan is aimed at larger teams and organizations with a need for improved support and SLA.
 
 [Click here to compare plans](https://bit.dev/pricing).
 
@@ -40,7 +40,7 @@ Use one of the following credit cards: American Express, Diners Club, Discover, 
 
 ### Upgrade your account
 
-You can upgrade your account at any point. When you upgrade your plan you can use all the  new plan features immediately, and the upgrade cost is only charged at your next billing cycle.
+You can upgrade your account at any point. When you upgrade your plan you can use all the new plan features immediately, and the upgrade cost is only charged at your next billing cycle.
 
 ## Plan cancellation, issues, and limits
 
@@ -48,18 +48,18 @@ You can cancel your plan and stop your recurring payments, at any time.
 
 ### Canceling a plan
 
-When you cancel a subscription, you retain access to all private Collections and components and to all of your plan features, until the end of the current billing cycle. After that, the Community plan takes affect, and you will no longer be able to access your private Collections or create new ones for your organization.
+When you cancel a subscription, you retain access to all private scopes and components and to all of your plan features, until the end of the current billing cycle. After that, the Community plan takes affect, and you will no longer be able to access your private scopes or create new ones for your organization.
 
-> **Canceling a plan does NOT delete private Collections.**
+> **Canceling a plan does NOT delete private scopes.**
 
 ### Reactivate a canceled plan
 
-Reactivating a subscription will renew the monthly subscription fee. If the account had private Collections, you would regain access to them immediately.
+Reactivating a subscription will renew the monthly subscription fee. If the account had private scopes, you would regain access to them immediately.
 
 ### Recurring charge issues
 
 If there is an issue charging the payment method, your account will retain a 60 days grace period, in which all account members will still have access to premium features and private code components.
-If the issue was not resolved by the end of the grace period, all access to premium features and private Collections is removed from the organization account.
+If the issue was not resolved by the end of the grace period, all access to premium features and private scopes is removed from the organization account.
 
 ## Examples
 
@@ -77,5 +77,5 @@ Lia's organization pays for 20 members on the 21st of every month. Lia removed 5
 
 ### Canceling a paid subscription (Team or Business)
 
-Diana is a team leader. She pays for her Team subscription plan on the 5th of every month. If Diana wants to downgrade from the paid subscription to the Community free subscription on June 10th, she'll remain on the paid plan and have access to her private Collections until the end of her current billing cycle on July 4th. On July 5th, the free community plan will take effect.
+Diana is a team leader. She pays for her Team subscription plan on the 5th of every month. If Diana wants to downgrade from the paid subscription to the Community free subscription on June 10th, she'll remain on the paid plan and have access to her private scopes until the end of her current billing cycle on July 4th. On July 5th, the free community plan will take effect.
 This process also applies to the Business subscription.

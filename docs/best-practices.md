@@ -3,7 +3,7 @@ id: best-practices
 title: Best Practices
 ---
 
-Below you can find some guidelines that can help make Bit an efficient tool in your organization:  
+Below you can find some guidelines that can help make Bit an efficient tool in your organization:
 
 Check out the [Reusable components styleguide](https://github.com/Tallyb/reusable-components-styleguide) to learn how to make your components more robust for sharing.
 
@@ -17,18 +17,18 @@ Each component should include the code, styling, unit tests, documentation, and 
 
 Some libraries need to be singleton in a project. For example, you cannot have more than one instance of framework libraries during run time such as React or Angular. To ensure the libraries are singletons, and assuming the containing project has those libraries, we should define them as peerDependencies for our component.  
 The peerDependencies version should also be as relaxed as possible, e.g. `"react": ">=16.9.0"`. This will cover a wide range of versions used in the consuming project. If the peerDependency version range does not cover the range installed in the consuming project, the package is installed with multiple versions.  
-Two methods to define peerDependencies for Bit components:  
+Two methods to define peerDependencies for Bit components:
 
 - Define the dependency in the authoring project. Bit [dependency algorithm](/docs/dependencies#dependencies) takes the package as peer dependency.
 - Provide [override rules](/docs/overrides) for setting the packages as peer dependencies.
 
-You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has and verify the dependencies are marked as peers.  
+You can run `bit show` to view the components dependencies before tagging and tracking the component. There you can see the exact dependencies the component has and verify the dependencies are marked as peers.
 
 ## Use Namespaces
 
-You can use namespaces inside a collection to group related components. Namespaces act as folders inside a Bit workspace, or inside a collection on bit.dev.  
+You can use namespaces inside a scope to group related components. Namespaces act as folders inside a Bit workspace, or inside a scope on bit.dev.
 
-To track a component under a namespace, add the namespace with a slash on the component's id:  
+To track a component under a namespace, add the namespace with a slash on the component's id:
 
 ```shell
 $bit add src/utils/my-util.js --id utils/my-utils
@@ -36,9 +36,9 @@ tracking component utils/my-utils:
 added src/utils/my-util.js
 ```
 
-You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all#add) command and use a namespace.  
+You can also use the bit [DSL](/docs/add-and-isolate-components#tracking-dsl) to add multiple components in a single [`add`](/docs/apis/cli-all#add) command and use a namespace.
 
-Specifying a namespace lets you perform actions on multiple components at once:  
+Specifying a namespace lets you perform actions on multiple components at once:
 
 ```shell
 $ bit tag "utils/*"
@@ -46,83 +46,83 @@ $ bit tag "utils/*"
 
 Namespaces are also useful in specifying overriding rules for specific components. For example, you can override a compiler for all components under the `utils/*` namespace:
 
-```json  
+```json
 {
-    "overrides": {
-        "utils/*": {
-            "env": {
-                "compiler": "@bit.envs/compilers/typescript@3.0.34"
-            }
-        }
+  "overrides": {
+    "utils/*": {
+      "env": {
+        "compiler": "@bit.envs/compilers/typescript@3.0.34"
+      }
     }
+  }
 }
 ```
 
-## Publish shared files  
+## Publish shared files
 
-If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.  
+If multiple components use the same file or directory, e.g., `helpers` or `utils`, extract the common code into its own Bit component. Consider splitting those components by their functionality.
 
 Publishing a shared file together with another component creates an undesired and unneeded coupling between components that is not inherent to their functionality. By splitting shared modules into smaller ones, consumers can import the specific functionality they desire, with a slimmer dependency graph.  
 It is recommended that all such files resides under the same [namespace](#use-namespaces).
 
 ## Handling Assets
 
-Components may require using assets from your projects, such as images, graphics, or fonts.  
+Components may require using assets from your projects, such as images, graphics, or fonts.
 
-You can define assets component that do not require a compiler. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`. Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:  
-
-```json  
-{
-    "overrides": {
-        "assets/*": {
-            "env": {
-                "compiler": "-"
-            }
-        }
-    }
-}
-```
-
-### Images  
-
-Multiple ways to handle images and fonts:
-
-1) Publish the assets to [a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them in the components via full path URL.  
-1) Include the assets files in the components that use them and share the component, or wrap the asset in a dedicated component and include the image and publish it.  
-1) Share the image as component and import it. See [this example](https://bit.dev/bit/examples/kitty?example=5df107a635c5d500126d8a8b).  
-
-### SVGs
-
-SVGs are in fact plain html. A good approach for handling SVGs is described in [this article](https://open.nytimes.com/flexible-icons-with-react-svg-973f310e6382).  
-
-It is also possible to include the assets in their own components and reuse them, among other components.  
-Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation.  
-
-## Handling Styles  
-
-Typically, an application contains style files that shared between different components in the application. Styling files may be pure CSS or using a pre-processor such as `scss` or `less`.  
-
-An application may also contain a set of variables (e.g., scss variables) used as [design tokens](https://css-tricks.com/what-are-design-tokens/) to denote reusable elements such as colors or breakpoints.  
-
-Those variables are reused across multiple components, and thus should be created as their own components. You can define them as a single component or as a set of separate components. If the styles are split across multiple components, it is highly recommended to group them under a dedicated [namespace](#use-namespaces) such as `styles`, to facilitate working with them.  
-
-The style files are targeted to be eventually processed by the containing project. This is especially critical if a matching process runs that aligns styles with the relevant HTML (as an example, React CSS Modules is creating a style hash that matches the class in the generated Html). Therefore, components that only contain styles do not need a compiler associated with them.  
-
-The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow:  
+You can define assets component that do not require a compiler. To simplify removing a compiler, group all assets under a dedicated [namespace](#use-namespaces), such as `assets`. Then, in the package.json, you can specify that all components under the `assets` namespace do not include a compiler, by using the [overrides](/docs/overrides) option:
 
 ```json
 {
-    "overrides": {
-        "styles/*": {
-            "env": {
-                "compiler": "-"
-            }
-        }
+  "overrides": {
+    "assets/*": {
+      "env": {
+        "compiler": "-"
+      }
     }
+  }
 }
 ```
 
-Styles only components are now available for consumption, and in the target application, the CSS files are processed and bundled by the application's bundler.  
+### Images
+
+Multiple ways to handle images and fonts:
+
+1. Publish the assets to [a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) and access them in the components via full path URL.
+1. Include the assets files in the components that use them and share the component, or wrap the asset in a dedicated component and include the image and publish it.
+1. Share the image as component and import it. See [this example](https://bit.dev/bit/examples/kitty?example=5df107a635c5d500126d8a8b).
+
+### SVGs
+
+SVGs are in fact plain html. A good approach for handling SVGs is described in [this article](https://open.nytimes.com/flexible-icons-with-react-svg-973f310e6382).
+
+It is also possible to include the assets in their own components and reuse them, among other components.  
+Assets only components should not be associated with a compiler, as the compiler cannot find a proper entry point to start the compilation.
+
+## Handling Styles
+
+Typically, an application contains style files that shared between different components in the application. Styling files may be pure CSS or using a pre-processor such as `scss` or `less`.
+
+An application may also contain a set of variables (e.g., scss variables) used as [design tokens](https://css-tricks.com/what-are-design-tokens/) to denote reusable elements such as colors or breakpoints.
+
+Those variables are reused across multiple components, and thus should be created as their own components. You can define them as a single component or as a set of separate components. If the styles are split across multiple components, it is highly recommended to group them under a dedicated [namespace](#use-namespaces) such as `styles`, to facilitate working with them.
+
+The style files are targeted to be eventually processed by the containing project. This is especially critical if a matching process runs that aligns styles with the relevant HTML (as an example, React CSS Modules is creating a style hash that matches the class in the generated Html). Therefore, components that only contain styles do not need a compiler associated with them.
+
+The simplest way to remove the compiler from the style only components is to specify an [override](/docs/overrides) rule in the package.json. Grouping all the styles components under a single namespace simplifies the rule as follow:
+
+```json
+{
+  "overrides": {
+    "styles/*": {
+      "env": {
+        "compiler": "-"
+      }
+    }
+  }
+}
+```
+
+Styles only components are now available for consumption, and in the target application, the CSS files are processed and bundled by the application's bundler.
 
 ## Components' Paths
 
@@ -143,15 +143,15 @@ Just like a committed code, it is essential to:
 ## State managers
 
 Components may use state managers such as Redux, MobX, React Context or VueX.
-These managers may be difficult to encapsulate, since they tend to be *contextual* and *global*.
-For example, a user avatar component may read ```state.data.profile.user``` from the Redux global state, and use action ```Logout(username)```.
+These managers may be difficult to encapsulate, since they tend to be _contextual_ and _global_.
+For example, a user avatar component may read `state.data.profile.user` from the Redux global state, and use action `Logout(username)`.
 To use this avatar in another project, the consumer would be forced to use Redux, with the same structure, in their project.
 This clearly makes the component less reusable, and less attractive to consumers.
 Here are some workarounds:
 
 ### Decouple component from the state manager
 
-This is the recommended method. If the component receives its state and actions directly as arguments, and *does not use the context api*, it is completely reusable, and can even be used with another state manager.
+This is the recommended method. If the component receives its state and actions directly as arguments, and _does not use the context api_, it is completely reusable, and can even be used with another state manager.
 Most state managers support this, and only provide a thin state injector on top of the component.
 For example:
 
@@ -175,20 +175,20 @@ A great example of this is [ReactDnD](https://github.com/react-dnd/react-dnd/blo
 
 ### State component
 
-If the component cannot be isolated from the state, it is possible to encapsulate the state as part of the  component.
+If the component cannot be isolated from the state, it is possible to encapsulate the state as part of the component.
 To make encapsulation easy, it is better to use micro-state, that follow the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).  
 For example, Current-User can be a shared component that has both UI and a state. The component can export a state, a Context class, a Redux reducer or a Mobx observable.  
-However, it is unlikely that the component can be really usable across projects, especially when they scale.  This may create undesired coupling between projects.  
+However, it is unlikely that the component can be really usable across projects, especially when they scale. This may create undesired coupling between projects.
 
 ## Working with VCS (git)
 
-It is recommended to commit the following to your VCS (e.g., git) from your [workspace](/docs/workspace):  
+It is recommended to commit the following to your VCS (e.g., git) from your [workspace](/docs/workspace):
 
 - Workspace configuration. The configuration may reside in `package.json` or `bit.json` in the root of the workspace.
-- Bit index, i.e. `.bitmap` file in the root of the workspace. This file is used to restore all the components exported to the server by using the `bit import` command.  
-- Optionally, you can commit imported components, but you can also restore them from the server. However, any changes made to local components after they are imported and are not re-exported to the server should be committed.  
+- Bit index, i.e. `.bitmap` file in the root of the workspace. This file is used to restore all the components exported to the server by using the `bit import` command.
+- Optionally, you can commit imported components, but you can also restore them from the server. However, any changes made to local components after they are imported and are not re-exported to the server should be committed.
 
-The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default, it is created under the `git` folder, so they are gitignored.  
+The [components storage (scope)](/docs/workspace#components-storage-scope) should not be committed. By default, it is created under the `git` folder, so they are gitignored.
 
 ## Build Components for Discovery
 
@@ -196,4 +196,4 @@ Build components in a way that they can be easily discovered by other developers
 
 Non-descriptive naming (such as utils) or bad tags makes the components hard to find. Developers are more likely to select and reuse components that they can interact with and quickly evaluate their functionality. Good documentation promotes quick, widespread adoption.
 
-Add multiple examples of component usage, showing how the different inputs should be used. 
+Add multiple examples of component usage, showing how the different inputs should be used.

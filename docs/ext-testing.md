@@ -11,19 +11,19 @@ The tester interface you should adhere to is pretty simple:
 
 ```javascript
 function run(specFile) {
-    // Your code here...
+  // Your code here...
 
-    return testResults;
+  return testResults;
 }
 
 module.exports = {
-    run,
-    globals: {
-        // Your globals here...
-    },
-    modules: {
-        // Your modules here...
-    }
+  run,
+  globals: {
+    // Your globals here...
+  },
+  modules: {
+    // Your modules here...
+  },
 };
 ```
 
@@ -63,16 +63,16 @@ Each item in the array represents one test result object:
 }
 ```
 
-* `title`:`string` - test case title
-* `pass`: `bool` - has test successfully passed
-* `err`: `object` - error object, contains a `message` and `stack` strings. If no error, value is `null`.
-* `duration`: `number` - amount of ms that took the test case to complete.
+- `title`:`string` - test case title
+- `pass`: `bool` - has test successfully passed
+- `err`: `object` - error object, contains a `message` and `stack` strings. If no error, value is `null`.
+- `duration`: `number` - amount of ms that took the test case to complete.
 
 An empty array will be sent when no test cases were run.
 
 #### stats
 
-An object that contains the `start` and `end` times of the tester run. 
+An object that contains the `start` and `end` times of the tester run.
 Both are `Date` objects.
 
 #### failures
@@ -90,8 +90,8 @@ Each item in the array will represents one failure object:
 }
 ```
 
-* `title`:`string` - failure title
-* `err`:`object` - error object, contains a `message` and `stack` strings.
+- `title`:`string` - failure title
+- `err`:`object` - error object, contains a `message` and `stack` strings.
 
 An empty array will be sent when there are no failures.
 
@@ -112,9 +112,9 @@ Usually, references for the testing tools and frameworks are exported as part of
 
 As we've gained experience in developing testers for bit components, we've noticed there's a pattern, a number of stages for the testing algorithm:
 
-* The `run` function receives the spec file full path, and then passes it on to the testing tool. 
-* The testing tool does its job, and returns the raw test results.
-* As we've just explained, bit expects its testers to return the test results in a specific format. This means that after getting the raw test results from the testing tool, the testers should act as an adapter, and format the test results appropriately.
+- The `run` function receives the spec file full path, and then passes it on to the testing tool.
+- The testing tool does its job, and returns the raw test results.
+- As we've just explained, bit expects its testers to return the test results in a specific format. This means that after getting the raw test results from the testing tool, the testers should act as an adapter, and format the test results appropriately.
 
 > **Note**
 >
@@ -125,8 +125,8 @@ As we've gained experience in developing testers for bit components, we've notic
 When a tester is imported to a workspace, its dependencies are installed as well.
 You should make sure bit recognizes the tester's dependencies, so it will later install them properly. A `require`/`import` statement is enough for bit, but there are two edge-cases where you should add `require` statements:
 
-* Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with plugins (for example, [karma plugins](http://karma-runner.github.io/1.0/config/plugins.html). [Here's a good example](https://bit.dev/bit/envs/testers/karma-mocha-react/~code#testers/karma-mocha-react/karma.conf.js).
-* Sometimes the tools you use require [peer dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/). There may not be `require` statements for those dependencies, so just make sure to add them if needed, if you want those to be installed.
+- Invoking a dependency with `require.resolve` won't help bit recognize it. That's one case in which you should add another require statement. This usually happens with plugins (for example, [karma plugins](http://karma-runner.github.io/1.0/config/plugins.html). [Here's a good example](https://bit.dev/bit/envs/testers/karma-mocha-react/~code#testers/karma-mocha-react/karma.conf.js).
+- Sometimes the tools you use require [peer dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/). There may not be `require` statements for those dependencies, so just make sure to add them if needed, if you want those to be installed.
 
 ## So you've written a tester. What's next?
 
@@ -145,4 +145,4 @@ This line invokes the `run` function with a spec file path of your choice. Now y
 
 ## Learn straight from the source
 
-The best examples for testers can be found in [bit's environments Collection](https://bit.dev/bit/envs/). Take a look and learn from us.
+The best examples for testers can be found in [bit's environments scope](https://bit.dev/bit/envs/). Take a look and learn from us.

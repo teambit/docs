@@ -166,7 +166,7 @@ In order to resolve this, you need to understand that Bit creates a link file fo
 To resolve this issue you will need to refactor the `import` or `require` statement in your code to the component dependencies, using Bit's package naming convention, and save the changes.
 
 ```javascript
-require('@bit/<owner>.<collection>.<namespace>.<component-name>');
+require('@bit/<owner>.<scope>.<namespace>.<component-name>');
 ```
 
 ### Non-existing Dependency Files

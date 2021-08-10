@@ -1,66 +1,62 @@
 ---
-id: remote-collection
-title: Creating a Remote Collection
+id: remote-scope
+title: Creating a Remote scope
 ---
 
-A Remote Collection is a components' scope hosted on bit.dev. 
+A Remote scope is a components' scope hosted on bit.dev.
 
-## Collection Information
+## scope Information
 
- and dynamic list of shared components on a remote server. Use collection for collaborating on components between repositories.
+and dynamic list of shared components on a remote server. Use scope for collaborating on components between repositories.
 
+Each remote scope contains the bit scope of its components as well as additional information on the scope:
 
-Each remote collection contains the bit scope of its components as well as additional information on the collection:  
+- **scope name** - The name by which the bit scope in the scope is available to developers for sharing or consuming components.
+- Visibility - Determines who can view the scope: A public scope is a free scope that is visible for all registered users. A private scope is limited to the organizations registered users.
+- License - The default code license that is applicable for all the components shared in the scope (such as MIT, GPL or other licenses)
+- Users & Roles - the users that have access to the scope and their roles on the scope (admin, developer, or viewer).
 
-- **Collection name** - The name by which the bit scope in the collection is available to developers for sharing or consuming components.  
-- Visibility - Determines who can view the Collection: A public collection is a free collection that is visible for all registered users. A private collection is limited to the organizations registered users.  
-- License - The default code license that is applicable for all the components shared in the collection (such as MIT, GPL or other licenses)  
-- Users & Roles - the users that have access to the collection and their roles on the collection (admin, developer, or viewer).
+### Permissions for scopes
 
-### Permissions for Collections
+bit.dev provides a secured and reliable hub for sharing both public and private code. There are few cases where dependencies between components that are hosted in different scopes and owners may harm reliability to provide with working components and not exposing private code.  
+To ensure this does not happen, bit.dev enforces the following rules on components exported to multiple scopes:
 
-bit.dev provides a secured and reliable hub for sharing both public and private code. There are few cases where dependencies between components that are hosted in different collections and owners may harm reliability to provide with working components and not exposing private code.  
-To ensure this does not happen, bit.dev enforces the following rules on components exported to multiple collections:
+- Components in public scopes cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in public scopes.
+- Components in private scope cannot depend on components in other organizations: Dependencies in private scopes may depend on public scopes or on private scopes that belong to the same account (personal or organization).
 
-- Components in public collections cannot depend on private components: A public component is available for the entire Bit community. Therefore, it may not depend on components that reside in public collections.  
-- Components in private collection cannot depend on components in other organizations: Dependencies in private collections may depend on public collections or on private collections that belong to the same account (personal or organization).  
+You can create a scope for specific projects, ideas, teams and more. Components in remote scopes are discoverable by other developers.
 
+## Creating a remote scope on [bit.dev](https://bit.dev/)
 
-You can create a Collection for specific projects, ideas, teams and more. Components in remote collections are discoverable by other developers.
+Once signed-in, click on the ’+ ADD PROJECTS’ button in the top-right corner of the screen. Choose ‘Create scope’ from the menu. In the ‘Create scope’ page, enter the following information:
 
-## Creating a remote Collection on [bit.dev](https://bit.dev/)
+- scope name
+- Visibility - Determines who can view the scope:
+  - Public - A free scope that is visible and searchable by the [bit.dev](https://bit.dev/) community. [bit.dev](https://bit.dev/) offers free hosting for public open source scopes, now and forever.
+  - Private - A closed scope. You choose who has access permissions to the scope.
+- License - Code license for all the scope’s contents.
 
-Once signed-in, click on the ’+ ADD PROJECTS’ button in the top-right corner of the screen. Choose ‘Create Collection’ from the menu. In the ‘Create Collection’ page, enter the following information:
+Click on ‘Create scope’. Bit redirects you to the new scope.
 
-* Collection name
-* Visibility - Determines who can view the Collection:
-  * Public - A free Collection that is visible and searchable by the [bit.dev](https://bit.dev/)  community. [bit.dev](https://bit.dev/) offers free hosting for public open source Collections, now and forever.
-  * Private - A closed Collection. You choose who has access permissions to the collection.
-* License - Code license for all the Collection’s contents.
+## scope role types
 
-Click on ‘Create Collection’. Bit redirects you to the new Collection.
+There are 3 role types in a [bit.dev](https://bit.dev/) scope:
 
-## Collection role types
+- Admin - a scope admin has root access. Including the ability to set permissions and manage the scope memberships.
+- Developer - a developer can contribute, view and discover the scope’s components. A developer can’t invite new members.
+- Viewer - a viewer can view and use the scope’s components. A viewer can’t contribute to the scope.
 
-There are 3 role types in a [bit.dev](https://bit.dev/) Collection:
+### Update scope settings
 
-* Admin - a collection admin has root access. Including the ability to set permissions and manage the Collection memberships.
-* Developer - a developer can contribute, view and discover the Collection’s components. A developer can’t invite new members.
-* Viewer - a viewer can view and use the Collection’s components. A viewer can’t contribute to the Collection.
-
-
-
-### Update Collection settings
-
-To update a Collection's settings, click on 'Settings' in the Collection page.
+To update a scope's settings, click on 'Settings' in the scope page.
 
 #### Update visibility
 
-Changing a Collection’s visibility affects all the components within that Collection. Thus affects other developers that use components in that collection.
+Changing a scope’s visibility affects all the components within that scope. Thus affects other developers that use components in that scope.
 
 #### Add members
 
-A Collection admin can add an unlimited amount of signed-up users as members.
+A scope admin can add an unlimited amount of signed-up users as members.
 
 To add a member:
 
@@ -78,6 +74,6 @@ To remove a member:
 
 Note: removing people might hurt their feelings :)
 
-## Create a remote Collection on your server
+## Create a remote scope on your server
 
-To create a Collection on a self-managed server, [learn more here](/docs/conf-bit-on-the-server.html).
+To create a scope on a self-managed server, [learn more here](/docs/conf-bit-on-the-server.html).

@@ -25,7 +25,7 @@ nothing to tag or export
 
 Components that have been tracked, but not yet tagged.
 
-Bit tries to to validate if a *new component* can be isolated, and will print all isolation issues it finds (if any).  
+Bit tries to to validate if a _new component_ can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```shell
@@ -38,14 +38,14 @@ new components
 
 ### Staged components
 
-All tagged components that are ready to be [exported](/docs/apis/cli-all#export) and shared to a remote Collection.
+All tagged components that are ready to be [exported](/docs/apis/cli-all#export) and shared to a remote scope.
 
 Staged component are fully isolated by Bit.
 
 ```shell
 $ bit status
 staged components
-  (use "bit export <remote_collection> to push these components to a remote Collection")
+  (use "bit export <remote_scope> to push these components to a remote scope")
 
   > string/index. versions: 0.0.1, 0.0.2, 0.0.3 ... ok
   > string/is-string. versions: 0.0.1 ... ok
@@ -57,7 +57,7 @@ staged components
 Components that have already been staged, exported or sourced, and then modified - meaning there's at least one tagged version, and untagged changes on top of it.
 Modified components are meant to be tagged and set as a new version.
 
-Bit tries to to validate if a *modified component* can be isolated, and will print all isolation issues it finds (if any).  
+Bit tries to to validate if a _modified component_ can be isolated, and will print all isolation issues it finds (if any).  
 [Read more about the different isolation issues and how to resolve them](/docs/add-and-isolate-components#isolation-errors).
 
 ```shell

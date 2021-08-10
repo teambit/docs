@@ -61,9 +61,9 @@ modified components
 
 When Git can’t resolve a conflict between components, you need to resolve the conflict. There are three possible options:
 
-* `--theirs` - the remote version overrides the local modifications.
-* `--ours` - the local implementation overrides the remote changes.
-* `--manual` - resolve the conflict manually.
+- `--theirs` - the remote version overrides the local modifications.
+- `--ours` - the local implementation overrides the remote changes.
+- `--manual` - resolve the conflict manually.
 
 Let's go back to the previous example. This time the versions cannot be auto-merged:
 
@@ -145,4 +145,4 @@ Now `tag` a new version for the component.
 $ bit tag --all
 ```
 
-Version `1.0.6` can be now exported to the remote collection.
+Version `1.0.6` can be now exported to the remote scope.

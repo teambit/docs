@@ -116,7 +116,7 @@ You can use override to perform the following changes:
 
 ### Bit Tools
 
-Use the `env` key under overrides to set Bit tools, such as compiler and tester, you need to specify the path to the collection of the compiler and a specific version.
+Use the `env` key under overrides to set Bit tools, such as compiler and tester, you need to specify the path to the scope of the compiler and a specific version.
 
 ```json
 {
@@ -206,7 +206,7 @@ Here is an example of specifying dependencies:
 
 You may specify a specific version of the package, or you may use a special annotations to determine the version from the package.json. Use "+" to specify Bit to use the version that exists in the workspace `package.json`. Use "-" to specify Bit to remove the dependency for specific components.
 
-> To add bit dependencies as packages use the package name syntax: `<user>.<collection>/<component name>`
+> To add bit dependencies as packages use the package name syntax: `<user>.<scope>/<component name>`
 
 ### Ignore Dependency Files
 

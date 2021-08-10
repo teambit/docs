@@ -11,7 +11,7 @@ See an example of a rendered component [here](https://bit.dev/bit/movie-app/comp
 - Add annotations to your component, documenting how it should be rendered.
 - Bundle your component as a [UMD](https://github.com/umdjs/umd) using bundler. You can use one of Bit’s existing bundlers, see [Building Components](/docs/building-components.html).
 - [Tag](/docs/apis/cli-all#tag) & [Export](/docs/apis/cli-all#export) your component.
-- Preview your component in your bit.dev [Collection](/docs/export).
+- Preview your component in your bit.dev [scope](/docs/export).
 
 ### Annotations
 
@@ -57,8 +57,8 @@ To render your component, bundle it as a [UMD](https://github.com/umdjs/umd).
 
 #### Bundling components
 
-To bundle your component, use a bundler webpack which is a type of a [compiler](/docs/ext-compiling.html). You can use one of Bit bundlers avilable at the [Bit envs Collection](https://bit.dev/bit/envs/).  
-Note that the React bundler comes in 2 configurations:  
+To bundle your component, use a bundler webpack which is a type of a [compiler](/docs/ext-compiling.html). You can use one of Bit bundlers avilable at the [Bit envs scope](https://bit.dev/bit/envs/).  
+Note that the React bundler comes in 2 configurations:
 
 - [with](https://bit.dev/bit/envs/bundlers/webpack) css modules.
 - [without](https://bit.dev/bit/envs/bundlers/webpack-css-modules) css modules.
@@ -68,7 +68,7 @@ You can extend or modify bundlers according to your needs. Learn more [here](/do
 Bit bundles the component as an isolated environment **without** the component’s dependencies, making it slim and efficient.
 If other Bit components are used as dependencies, we recommend that these components will be consumed from the [package manager](/docs/installing-components-using-package-managers.html) and not as relative dependencies.
 Today, when you consume a component relatively with Bit, it will be bundled as part of the same file which is less efficiant process.
-Support for relative dependencies will be added in the near future. 
+Support for relative dependencies will be added in the near future.
 
 For example, let’s take a look at our [movie-app repository](https://github.com/teambit/movie-app), and its corresponding [components](https://bit.dev/bit/movie-app/). The **Hero** component depends on the **HeroButton** component.
 When you consume the **HeroButton** component relatively, it will be bundled along with the **Hero** component:
@@ -112,7 +112,7 @@ bit import bit.envs/bundlers/webpack -c
 If your component exports more than one render function, for example:
 
 ```javascript
-export default () => <div>Main component</div>; 
+export default () => <div>Main component</div>;
 
 export const Secondary = () => <div>secondary mon</div>;
 ```
