@@ -3,41 +3,33 @@ id: talk-to-us
 title: Talk To Us
 ---
 
+## Bit.dev
 
-## Bit.dev  
+- #### [Explore our OSS components](https://bit.dev/teambit/~scopes)
 
+## Slack
 
-- #### [Explore our OSS components](https://bit.dev/teambit/~collections)  
+- #### [Join Slack community](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)
 
+## GitHub
 
-## Slack  
+- #### [Bit on GitHub](https://github.com/teambit/bit)
 
-- #### [Join Slack community](https://join.slack.com/t/bit-dev-community/shared_invite/zt-o2tim18y-UzwOCFdTafmFKEqm2tXE4w)  
-
-
-## GitHub  
-
-- #### [Bit on GitHub](https://github.com/teambit/bit)  
-
-- #### [Team Bit on GitHub](https://github.com/teambit/bit)  
-
+- #### [Team Bit on GitHub](https://github.com/teambit/bit)
 
 ## Twitter
 
-- #### [@bitdev_ on Twitter](https://twitter.com/bitdev_)  
-
+- #### [@bitdev\_ on Twitter](https://twitter.com/bitdev_)
 
 ## Medium
 
-- #### Join 2M developers reading [Bits and Pieces](https://blog.bitsrc.io/)  
+- #### Join 2M developers reading [Bits and Pieces](https://blog.bitsrc.io/)
 
-- #### [Bit related articles](https://blog.bitsrc.io/tagged/bit)  
-
+- #### [Bit related articles](https://blog.bitsrc.io/tagged/bit)
 
 ## Youtube
 
 - #### [Build with Bit on YouTube](https://www.youtube.com/channel/UCuNkM3qIO79Q3-VrkcDiXfw)
-
 
 ## Monthly Newsletter
 

@@ -3,7 +3,7 @@ id: migration
 title: Migration
 ---
 
-Bit v15 (Harmony) and Bit v14 are mutually incompatible. To take advantage of Harmony's new features and capabilities, you need to migrate your workspace and collections manually.
+Bit v15 (Harmony) and Bit v14 are mutually incompatible. To take advantage of Harmony's new features and capabilities, you need to migrate your workspace and scopes manually.
 
 ## Key Differences
 
@@ -14,7 +14,6 @@ First, let's go through the fundamental changes between the legacy version of Bi
 **Environments** - Harmony features a new approach for compilers/testers called [environments](building-with-bit/environments).  
 **Configuration** - In harmony config is managed in a new file format - `workspace.jsonc`.  
 **Module names** - In harmony we removed the `@bit` prefix, and instead components are now pre-fixed by `@<account_name>`.  
-**Scopes** - Collections in v15 are called **Scopes**.  
 **Documentation** - Component docs is now a local development workflow feature using MD/MDX formats.  
 **Live playground** - Live component playground is now a local development workflow feature and not managed in [bit.dev](https://bit.dev)
 
@@ -78,7 +77,7 @@ This starts the local development server. See that components can render, add do
 
 ## Export Harmony Components
 
-It's recommended to start with creating a different set of scopes for this flow when you get started, as you can't create Harmony scopes with the same names as existing v14 collections.
+It's recommended to start with creating a different set of scopes for this flow when you get started, as you can't create Harmony scopes with the same names as existing v14 scopes.
 
 ### Create scopes
 

@@ -5,7 +5,7 @@ title: Component Cloud Platform
 
 [Bit.dev](https://bit.dev) is Bit’s enterprise-grade component cloud. It is a service for hosting and collaborating on Bit components with out-of-the-box features and enterprise-grade standards for teams of all shapes and sizes.
 
-With Bit.dev organizations can grow a standard component ecosystem for all teams to drive the development of modern applications in a fast, consistent, and scalable manner.  
+With Bit.dev organizations can grow a standard component ecosystem for all teams to drive the development of modern applications in a fast, consistent, and scalable manner.
 
 ## Free for Open Source
 
@@ -28,9 +28,9 @@ For help or more information [get in touch](https://bit.dev/support) with our ex
 
 ![remote bit scope hosted on bit.dev](/img/scope-hosting.jpg)
 
-Bit.dev is a SaaS service for hosting remote Scopes (collections) of components, which you can create and host on demand. Scopes on Bit.dev can be:
+Bit.dev is a SaaS service for hosting remote Scopes of components, which you can create and host on demand. Scopes on Bit.dev can be:
 
-- **Public** scopes containing OSS components, visible to all users.  
+- **Public** scopes containing OSS components, visible to all users.
 - **Private** scopes, visible only to the members of the organization which owns the scope.
 
 There is no limitation of the amount of Scopes that can be created by a developer or an organization on Bit.dev.
@@ -58,7 +58,7 @@ As you scale development to many component and developers it become critical to 
 
 Bit.dev provides the **world’s most advanced component explorer**, which combines smart search and filtering features with an amazing visual experience to indulge your team.
 
-Bit.dev's component explorer allows searching across all the remote collections that the user has access to, such as the public collections and the user/organization's own components.  
+Bit.dev's component explorer allows searching across all the remote scopes that the user has access to, such as the public scopes and the user/organization's own components.  
 The component explorer uses metadata of the component - tags, language, framework, and size - for advanced semantic searching capabilities, making it quick and simple to find any component that already exists in your team’s codebase.
 
 Reuse and collaboration on components is key to accelerating development and creating a consistent experience for your users across pages and applications.
@@ -84,7 +84,7 @@ Learn more: [Bit with Artifactory on JFrog Blog](https://jfrog.com/blog/artifact
 
 ![RippleCI propogating a modification of a component to its dependents](/img/ripple.png)
 
-**Ripple CI** (closed beta) unleashes the true power of components like never before possible.  
+**Ripple CI** (closed beta) unleashes the true power of components like never before possible.
 
 It is the first and most powerful continuous integration system ever built for component-driven development. With Ripple, teams in the organization can constantly and independently release fast automated update to components and continuously integrate these changes to all impacted teams and applications. It’s a better way to build together.
 
@@ -92,8 +92,8 @@ Thanks to its component-driven design, Ripple unlocks 4 game-changing features:
 
 - Ripple builds changes to components and their affected dependants, nothing else. This makes Ripple the **fastest CI** ever built for large applications with many components.
 - Ripple builds every component in isolation and presents its build and test results, so you can instantly learn which components will break, where, and why, on every change.
-- Ripple builds changes to components across applications and repositories. When a new component version is released with Ripple, it will be integrated to all pages and applications that consume it in the organization, making it easy for all teams to get and adopt the update, without breaking anything or waiting a long time for updates.  
+- Ripple builds changes to components across applications and repositories. When a new component version is released with Ripple, it will be integrated to all pages and applications that consume it in the organization, making it easy for all teams to get and adopt the update, without breaking anything or waiting a long time for updates.
 
-Lastly, Ripple **visualizes the build process on the component-graph** of your applications, and presents **visual previews** for changes to all impacted components.  
+Lastly, Ripple **visualizes the build process on the component-graph** of your applications, and presents **visual previews** for changes to all impacted components.
 
 When a new component version is released, everybody can see and learn exactly how the change will **look and feel for every impacted component**, everywhere. This means that product teams can build and release together like never before.

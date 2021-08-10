@@ -3,7 +3,7 @@ id: namespaces
 title: Namespaces
 ---
 
-Namespaces serve as folders that organize components in the Workspace or inside a collection on bit.dev. You can use namespaces inside a collection to group related components.
+Namespaces serve as folders that organize components in the Workspace or inside a scope on bit.dev. You can use namespaces inside a scope to group related components.
 
 To namespace a component use the `--namespace` or `-n` option.
 
