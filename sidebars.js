@@ -66,6 +66,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Compose Components',
+          collapsed: true,
           items: [
             'getting-started/compose-components/create-components',
             'getting-started/compose-components/manage-dependencies',
