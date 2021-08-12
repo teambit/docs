@@ -59,14 +59,14 @@ module.exports = {
     {
       type: 'category',
       label: 'Get Started',
-
+      collapsed: false,
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
         {
           type: 'category',
           label: 'Compose Components',
-
+          collapsed: true,
           items: [
             'getting-started/compose-components/create-components',
             'getting-started/compose-components/manage-dependencies',
@@ -76,6 +76,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Release Components',
+          collapsed: true,
           items: [
             'getting-started/release-components/version-components',
             'getting-started/release-components/export-components',
@@ -101,6 +102,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Use Components',
+          collapsed: true,
           items: [
             'getting-started/use-components/install-dependencies',
             'getting-started/use-components/import-components',
@@ -119,6 +121,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Start from an Existing Repository',
+          collapsed: true,
           items: [
             {
               type: 'category',
@@ -141,11 +144,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Deep Dive',
-
+      collapsed: false,
       items: [
         {
           type: 'category',
           label: 'Workspace',
+          collapsed: true,
           items: [
             'workspace/overview',
             'workspace/creating-new-workspace',
@@ -163,6 +167,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Components',
+          collapsed: true,
           items: [
             'components/overview',
             'components/component-id',
@@ -178,6 +183,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Dependencies',
+          collapsed: true,
           items: [
             'dependencies/overview',
             'dependencies/installing-dependencies',
@@ -189,6 +195,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Envs',
+          collapsed: true,
           items: [
             'envs/overview',
             {
@@ -226,6 +233,7 @@ module.exports = {
         {
           type: 'category',
           label: 'CI/CD',
+          collapsed: true,
           items: [
             'cicd/overview',
             'cicd/cicd-setup-with-bit',
@@ -246,6 +254,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Builder',
+          collapsed: true,
           items: [
             'builder/overview',
             'builder/component-isolation',
@@ -264,7 +273,7 @@ module.exports = {
         //     'docs/rendering-docs',
         //     'docs/doc-templates',
         //   ],
-        //
+        //   collapsed: true
         // },
         // {
         //   type: 'category',
@@ -274,11 +283,11 @@ module.exports = {
         //     'compositions/composition-format',
         //     'compositions/visualizing-components',
         //   ],
-        //
         // },
         {
           type: 'category',
           label: 'Tester',
+          collapsed: true,
           items: [
             'tester/overview',
             'tester/workspace-testing',
@@ -288,6 +297,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Compiler',
+          collapsed: true,
           items: [
             'compiler/overview',
             'compiler/workspace-compilation',
@@ -298,16 +308,19 @@ module.exports = {
         {
           type: 'category',
           label: 'Linter',
+          collapsed: true,
           items: ['linter/overview', 'linter/workspace-linting']
         },
         {
           type: 'category',
           label: 'Formatter',
+          collapsed: true,
           items: ['formatter/overview', 'formatter/workspace-formatting']
         },
         {
           type: 'category',
           label: 'Scope',
+          collapsed: true,
           items: [
             'scope/overview',
             'scope/hosting-remote-scope',
@@ -321,6 +334,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Config',
+          collapsed: true,
           items: [
             'configurations/config-files',
             'configurations/global-configurations'
@@ -329,6 +343,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Packages',
+          collapsed: true,
           items: [
             'packages/overview',
             'packages/managing-packagejson',
@@ -340,6 +355,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Apps',
+          collapsed: true,
           items: [
             'apps/overview',
             'apps/create-app',
@@ -358,6 +374,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Extending Bit',
+          collapsed: true,
           items: [
             'extending-bit/overview',
             'extending-bit/extension-capabilities',
@@ -378,6 +395,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Reference',
+          collapsed: true,
           items: [
             'reference/api-reference',
             'reference/cli-reference',

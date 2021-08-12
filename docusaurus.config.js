@@ -315,7 +315,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          sidebarCollapsible: false,
+          sidebarCollapsible: true,
           sidebarCollapsed: false,
           // Please change this to your repo.
           editUrl: 'https://github.com/teambit/docs/edit/new-harmony-docs',
