@@ -1,12 +1,33 @@
 ---
-id: welcome
-title: What is Bit?
+id: intro
+title: Introduction to Bit
 slug: /
 ---
 
-Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into modern component-driven systems.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into high-performance and consistent component-driven systems at speed. 
 
-It helps developers compose and collaborate on modern applications with independent components and dependencies and makes development of component-driven simple, fast, standard, consistent and scalable.
+It helps to standardize, scale and distribute software projects into independently versioned components, connected through a dependency graph and possibly owned by autonomous teams, collaborating together to deliver modern apps at speed, consistency and scale.
+
+Bit is designed to enable a component-first approach, where components are built independently and composed into apps. This approach increases the value of each [Component](/components/overview) by making it a decoupled, collaborative, discoverable and composable unit of source code, promoting [rapid app development](/), [consistency](/) and [cross team collaboration](/).
+
+In Bit, each [Component](/components/overview) is independent and acts as a standalone versioned unit of source code, connected through dependencies to others. Each component can be independently developed, built, and shipped to ensure scalable collaboration, consistency, resilience.
+
+### Philosophy
+
+### Standardization
+
+### 
+
+
+### Monorepos
+Bit works great for [Monorepos](/). Allowing to scale 
+
+
+Ownership
+
+Efficient and parallelized builds
+
+
 
 ### What is a component driven system?
 

@@ -87,4 +87,4 @@ bvm upgrade
 
 ## What's next?
 
-Once you have installed Bit and BVM you can then [initialize a workspace](/getting-started/initializing-workspace) so you can manage your components.
+Once you have installed Bit and BVM you can then [create a workspace](/getting-started/initializing-workspace) to compose and ship your first components.
