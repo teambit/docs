@@ -59,14 +59,14 @@ module.exports = {
     {
       type: 'category',
       label: 'Get Started',
-      collapsed: true,
+
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
         {
           type: 'category',
           label: 'Compose Components',
-          collapsed: true,
+
           items: [
             'getting-started/compose-components/create-components',
             'getting-started/compose-components/manage-dependencies',
@@ -133,8 +133,7 @@ module.exports = {
               ]
             },
             'start-from-existing-project/tracking-existing-components'
-          ],
-          collapsed: true
+          ]
         }
       ]
     },
@@ -142,7 +141,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Deep Dive',
-      collapsed: true,
+
       items: [
         {
           type: 'category',
@@ -159,8 +158,7 @@ module.exports = {
             'workspace/creating-components',
             'workspace/workspace-starters',
             'workspace/workspace-templates'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -175,8 +173,7 @@ module.exports = {
             'components/lanes',
             'components/snaps',
             'components/tags'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -187,8 +184,7 @@ module.exports = {
             'dependencies/configuring-dependencies',
             'dependencies/dependency-resolution',
             'dependencies/package-managers'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -225,8 +221,7 @@ module.exports = {
                 'envs/services/visualizing-components'
               ]
             }
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -243,12 +238,10 @@ module.exports = {
                 'cicd/configuring-bit-on-your-ci/github-actions',
                 'cicd/configuring-bit-on-your-ci/gitlab-ci',
                 'cicd/configuring-bit-on-your-ci/jenkins'
-              ],
-              collapsed: true
+              ]
             },
             'cicd/ripple-ci'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -260,8 +253,7 @@ module.exports = {
             'builder/build-pipelines',
             'builder/build-pipeline-customization',
             'builder/build-on-ci'
-          ],
-          collapsed: true
+          ]
         },
         // {
         //   type: 'category',
@@ -272,7 +264,7 @@ module.exports = {
         //     'docs/rendering-docs',
         //     'docs/doc-templates',
         //   ],
-        //   collapsed: true
+        //
         // },
         // {
         //   type: 'category',
@@ -282,7 +274,7 @@ module.exports = {
         //     'compositions/composition-format',
         //     'compositions/visualizing-components',
         //   ],
-        //   collapsed: true
+        //
         // },
         {
           type: 'category',
@@ -291,8 +283,7 @@ module.exports = {
             'tester/overview',
             'tester/workspace-testing',
             'tester/testing-during-build'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -325,8 +316,7 @@ module.exports = {
             'scope/importing-components',
             'scope/exporting-components',
             'scope/scope-ui'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -334,8 +324,7 @@ module.exports = {
           items: [
             'configurations/config-files',
             'configurations/global-configurations'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -346,8 +335,7 @@ module.exports = {
             'packages/packing-components',
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -362,12 +350,10 @@ module.exports = {
                 'apps/deploy-app/netlify',
                 'apps/deploy-app/vercel',
                 'apps/deploy-app/aws'
-              ],
-              collapsed: true
+              ]
             },
             'apps/recomposing-apps'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
@@ -384,12 +370,10 @@ module.exports = {
                 'extending-bit/guides/creating-custom-generator',
                 'extending-bit/guides/adding-cli-command',
                 'extending-bit/guides/adding-graphql-route'
-              ],
-              collapsed: true
+              ]
             },
             'extending-bit/aspect-environment'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
