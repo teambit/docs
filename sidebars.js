@@ -59,13 +59,14 @@ module.exports = {
     {
       type: 'category',
       label: 'Get Started',
-      collapsed: true,
+      collapsed: false,
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
         {
           type: 'category',
           label: 'Compose Components',
+          collapsed: true,
           items: [
             'getting-started/compose-components/create-components',
             'getting-started/compose-components/manage-dependencies',
@@ -75,6 +76,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Release Components',
+          collapsed: true,
           items: [
             'getting-started/release-components/version-components',
             'getting-started/release-components/export-components',
@@ -100,6 +102,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Use Components',
+          collapsed: true,
           items: [
             'getting-started/use-components/install-dependencies',
             'getting-started/use-components/import-components',
@@ -118,6 +121,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Start from an Existing Repository',
+          collapsed: true,
           items: [
             {
               type: 'category',
@@ -132,8 +136,7 @@ module.exports = {
               ]
             },
             'start-from-existing-project/tracking-existing-components'
-          ],
-          collapsed: true
+          ]
         }
       ]
     },
@@ -141,11 +144,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Deep Dive',
-      collapsed: true,
+      collapsed: false,
       items: [
         {
           type: 'category',
           label: 'Workspace',
+          collapsed: true,
           items: [
             'workspace/overview',
             'workspace/creating-new-workspace',
@@ -158,12 +162,12 @@ module.exports = {
             'workspace/creating-components',
             'workspace/workspace-starters',
             'workspace/workspace-templates'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Components',
+          collapsed: true,
           items: [
             'components/overview',
             'components/component-id',
@@ -174,24 +178,24 @@ module.exports = {
             'components/lanes',
             'components/snaps',
             'components/tags'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Dependencies',
+          collapsed: true,
           items: [
             'dependencies/overview',
             'dependencies/installing-dependencies',
             'dependencies/configuring-dependencies',
             'dependencies/dependency-resolution',
             'dependencies/package-managers'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Envs',
+          collapsed: true,
           items: [
             'envs/overview',
             {
@@ -224,12 +228,12 @@ module.exports = {
                 'envs/services/visualizing-components'
               ]
             }
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'CI/CD',
+          collapsed: true,
           items: [
             'cicd/overview',
             'cicd/cicd-setup-with-bit',
@@ -242,16 +246,15 @@ module.exports = {
                 'cicd/configuring-bit-on-your-ci/github-actions',
                 'cicd/configuring-bit-on-your-ci/gitlab-ci',
                 'cicd/configuring-bit-on-your-ci/jenkins'
-              ],
-              collapsed: true
+              ]
             },
             'cicd/ripple-ci'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Builder',
+          collapsed: true,
           items: [
             'builder/overview',
             'builder/component-isolation',
@@ -259,8 +262,7 @@ module.exports = {
             'builder/build-pipelines',
             'builder/build-pipeline-customization',
             'builder/build-on-ci'
-          ],
-          collapsed: true
+          ]
         },
         // {
         //   type: 'category',
@@ -281,21 +283,21 @@ module.exports = {
         //     'compositions/composition-format',
         //     'compositions/visualizing-components',
         //   ],
-        //   collapsed: true
         // },
         {
           type: 'category',
           label: 'Tester',
+          collapsed: true,
           items: [
             'tester/overview',
             'tester/workspace-testing',
             'tester/testing-during-build'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Compiler',
+          collapsed: true,
           items: [
             'compiler/overview',
             'compiler/workspace-compilation',
@@ -306,16 +308,19 @@ module.exports = {
         {
           type: 'category',
           label: 'Linter',
+          collapsed: true,
           items: ['linter/overview', 'linter/workspace-linting']
         },
         {
           type: 'category',
           label: 'Formatter',
+          collapsed: true,
           items: ['formatter/overview', 'formatter/workspace-formatting']
         },
         {
           type: 'category',
           label: 'Scope',
+          collapsed: true,
           items: [
             'scope/overview',
             'scope/hosting-remote-scope',
@@ -324,33 +329,33 @@ module.exports = {
             'scope/importing-components',
             'scope/exporting-components',
             'scope/scope-ui'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Config',
+          collapsed: true,
           items: [
             'configurations/config-files',
             'configurations/global-configurations'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Packages',
+          collapsed: true,
           items: [
             'packages/overview',
             'packages/managing-packagejson',
             'packages/packing-components',
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Apps',
+          collapsed: true,
           items: [
             'apps/overview',
             'apps/create-app',
@@ -361,16 +366,15 @@ module.exports = {
                 'apps/deploy-app/netlify',
                 'apps/deploy-app/vercel',
                 'apps/deploy-app/aws'
-              ],
-              collapsed: true
+              ]
             },
             'apps/recomposing-apps'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Extending Bit',
+          collapsed: true,
           items: [
             'extending-bit/overview',
             'extending-bit/extension-capabilities',
@@ -383,16 +387,15 @@ module.exports = {
                 'extending-bit/guides/creating-custom-generator',
                 'extending-bit/guides/adding-cli-command',
                 'extending-bit/guides/adding-graphql-route'
-              ],
-              collapsed: true
+              ]
             },
             'extending-bit/aspect-environment'
-          ],
-          collapsed: true
+          ]
         },
         {
           type: 'category',
           label: 'Reference',
+          collapsed: true,
           items: [
             'reference/api-reference',
             'reference/cli-reference',
