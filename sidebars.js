@@ -278,25 +278,42 @@ module.exports = {
     //   ],
     //   collapsed: true
     // },
-    // {
-    //   type: 'category',
-    //   label: 'Testing',
-    //   items: [
-    //     'testing/overview',
-    //     'testing/testing-during-development',
-    //     'testing/testing-during-build',
-    //   ],
-    //   collapsed: true
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'Compiling',
-    //   items: [
-    //     'compiling/overview',
-    //     'compiling/compiling-during-development',
-    //     'compiling/compiling-during-build'
-    //   ]
-    // },
+    {
+      type: 'category',
+      label: 'Tester',
+      items: [
+        'tester/overview',
+        'tester/workspace-testing',
+        'tester/testing-during-build',
+      ],
+      collapsed: true
+    },
+    {
+      type: 'category',
+      label: 'Compiler',
+      items: [
+        'compiler/overview',
+        'compiler/workspace-compilation',
+        'compiler/compiling-during-build',
+        'compiler/configure-env'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Linter',
+      items: [
+        'linter/overview',
+        'linter/workspace-linting',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Formatter',
+      items: [
+        'formatter/overview',
+        'formatter/workspace-formatting',
+      ]
+    },
     {
       type: 'category',
       label: 'Scope',
@@ -315,7 +332,6 @@ module.exports = {
       type: 'category',
       label: 'Config',
       items: [
-        'configurations/overview',
         'configurations/config-files',
         'configurations/global-configurations',
       ],

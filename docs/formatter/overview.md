@@ -1,6 +1,6 @@
 ---
 id: overview
-title: overview
+title: Overview
 ---
 
 Formatter helps you format your components' code according to a pre-defined set of styling rules.

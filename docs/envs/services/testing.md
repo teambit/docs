@@ -3,12 +3,12 @@ id: testing
 title: Testing
 ---
 
-Runs the environment's selected test runner (for example, Jest)
+Set the environment's Tester implementation (for example, Jest)
 
 ## Using the service (service handler)
 
 ```ts
-getTester?: (path: string, tester: any) => Tester
+getTester: (path: string, tester: any) => Tester;
 ```
 
 For example:

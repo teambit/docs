@@ -3,6 +3,12 @@ id: create-workspace
 title: Create a New Workspace
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## What's a Workspace?
+
 A [Workspace](/workspace/overview) is where you will compose and manage your components. Creating a Workspace can be done with a single command. A workspace can be created in an empty directory or in an existing project.
 
 Workspaces can be created from templates. To see a list of available workspaces templates, run `bit templates`. The Workspace templates are only available when ran outside of a Bit Workspace.
@@ -13,7 +19,18 @@ bit templates
 
 ## Creating a Workspace
 
-The `bit new` command will create a new workspace, configured to use a specific environment, with the name `my-workspace`. The `bit start` command will start the development server and open the application in your default browser.
+The `bit new` command will create a new workspace, configured to use a specific environment, with the name `my-workspace`. The `bit init` command will create a workspace in which you must configure the environment.
+
+> The `bit start` command will start the development server and open the application in your default browser.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
 bit new react my-workspace
@@ -21,28 +38,122 @@ cd my-workspace
 bit start
 ```
 
-When you create a workspace the following files and folders are created:
+  </TabItem>
+<TabItem value="Angular">
 
-- **[workspace.jsonc](/)** - The workspace configuration file.
-- **[.bitmap](/)** - An auto generated file that maps your components from your local directory.
-- **.gitignore** - A git ignore file that tells git which files to ignore.
-- **README.md** - A readme file that describes your workspace.
-- **pnpm-lock.yaml** - A lock file that tells pnpm to install packages in the workspace.
-- **types** - A directory that contains the type definitions for your components.
-- **demo** - A folder that contains demo components.
-- **node_modules** - A directory that contains all modules needed for Bit to work.
+```bash
+mkdir my-workspace && cd my-workspace
+bit init
+```
+
+To use the Angular environment, you first need to check what is the latest version available:
+
+```bash
+npm dist-tag ls @teambit/angular-v12
+```
+
+Then add the following lines in your workspace.jsonc file to apply the Angular development environment on all components in this workspace (replace x.x.x by the latest version available):
+
+```bash
+"teambit.angular/angular-v12@x.x.x": {},
+"teambit.workspace/variants": {
+  "*": {
+    // Replace `v12` by the version of Angular that you want to use
+    "teambit.angular/angular-v12@x.x.x": { }
+  }
+},
+"teambit.generator/generator": {
+  "aspects": [
+    // Replace `v12` by the version of Angular that you want to use
+    "teambit.angular/angular-v12"
+  ]
+}
+```
+
+```bash
+bit install
+bit start
+```
+
+  </TabItem>
+</Tabs>
+
+When you create a new workspace the following files and folders are created:
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+└── my-component
+    ├── public-api.ts # Entry point for the component.
+    └── src
+        ├── my-component.component.ts # Main component file.
+        ├── my-component.module.ts # Module file.
+        ├── my-component.spec.ts # Test file for the component.
+        ├── my-component.docs.md # Documentation file for the component.
+        └── compositions
+            └── my-component.composition.ts # Composition file so you can render your component and visualize it in different contexts.
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+├── workspace.jsonc  # workspace configuration file
+├── .bitmap  # maps your components from your local directory
+├── .bit #  this should be added to .gitignore
+└── public  # this should be added to .gitignore
+```
+
+  </TabItem>
+</Tabs>
 
 ### Setting the Default Scope
 
 The default scope is the collection, or remote scope, that you want your components to be exported to. By default all components will be exported to this scope. The default scope is made up of the 'owner' of the collection, for example a username or organization, followed by the name of the collection and is separated by a dot.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
-bit new react my-workspace --default-scope my-org.my-project
+bit new react my-workspace --default-scope my-org.my-scope
 ```
 
-When components are created they use the default scope
+Or configure it manually
 
-:::info
+```jsonc title=worksapce.jsonc
+"defaultScope": "my-org.my-scope"
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+This can be configured manually in the `workspace.jsonc` file.
+
+```jsonc title=worksapce.jsonc
+"defaultScope": "my-org.my-scope"
+```
+
+  </TabItem>
+</Tabs>
+
+:::warning
+When components are created they use the default scope as part of the component id. If you modify the default scope after creating components and consuming them, you will need to update any import statements of these components. Then run `bit link` and `bit compile`and the components will work as expected.
+:::
+
+:::info Exporting to Different Scopes
 You can also set components to be exported to different scopes by configuring them under the [variants](/) in the `workspace.jsonc` file. This means you can have one workspace that exports to multiple remote scopes.
 :::
 
@@ -50,37 +161,101 @@ You can also set components to be exported to different scopes by configuring th
 
 An empty workspace is a workspace configured with the correct environment but with no components. This can be created using the `--empty` flag.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit new react my-workspace --empty
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+feature not available yet for Angular
+
+  </TabItem>
+</Tabs>
 
 ### Creating a Workspace without git
 
 This will create a workspace without git. This is useful when you want to create a workspace in an existing project.
 
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
 ```bash
 bit new react my-workspace --standalone
 ```
 
-:::warning
-@David this is not working - issue submitted
-:::
+  </TabItem>
+  <TabItem value="Angular">
+
+Feature not available yet in Angular.
+
+  </TabItem>
+</Tabs>
 
 ## Creating a Workspace for a Component Library
 
-The `bit new react-lib` command will create a new workspace with the name `my-lib` that includes demo components for building a Component Library.
+The `bit new *-lib` command will create a new workspace with the name `my-lib` that includes demo components for building a Component Library.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
 bit new react-lib my-lib
 ```
 
+  </TabItem>
+  <TabItem value="Angular">
+
+Feature not available yet in Angular.
+
+  </TabItem>
+</Tabs>
+
 ## Creating a Workspace for an App
 
-The `bit new react-app` command will create a new workspace with the name `my-app` that includes demo components for building an application.
+The `bit new *-app` command will create a new workspace with the name `my-app` that includes demo components for building an application.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
 bit new react-app my-app
 ```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+Feature not available yet in Angular.
+
+  </TabItem>
+</Tabs>
 
 ## Initializing a Workspace
 
@@ -95,7 +270,13 @@ bit init
 To reset a workspace to its initial state, use the `bit reset` command.
 
 ```bash
-bit reset --hard
+bit init --reset
+```
+
+Delete all Bit files and directories, including Bit configuration, tracking and model data. Useful when you need to re-start and use Bit from scratch.
+
+```bash
+bit --init reset-hard
 ```
 
 ## Generating a Custom Workspace

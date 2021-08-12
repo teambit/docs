@@ -3,9 +3,9 @@ id: manage-dependencies
 title: Manage Dependencies
 ---
 
-We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components and npm packages as dependencies.
-
 ## Automated Dependency Management
+
+We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components and npm packages as dependencies.
 
 Each Bit component has its own dependency graph. This graph is managed by Bit according to the dependencies available in the workspace. In the `workspace.jsonc` file you control a single dependency policy. Components may `import` any of the dependencies listed in that policy. Bit automates per-component dependencies according to their `import` statements. The result is a centralized control over component dependencies. The workspace provides the possible libraries, and components can choose which libraries to depend on. Because we have a central location for all dependencies you don't have to manually manage a `package.json` per component.
 
@@ -118,7 +118,7 @@ To do so, add a `variant` configuration to your workspace and set a different de
     }
   },
   "teambit.workspace/variants": {
-    "{react-ui/*}": {
+    "{ui/*}": {
       "teambit.dependencies/dependency-resolver": {
         "policy": {
           "classnames": "1.0.0"
@@ -138,7 +138,7 @@ When setting a dependency policy for the entire workspace Bit only adds these de
 ```js {6} title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "{react-ui/*}": {
+    "{ui/*}": {
       "teambit.dependencies/dependency-resolver": {
         "policy": {
           "lodash.zip": "1.0.0"

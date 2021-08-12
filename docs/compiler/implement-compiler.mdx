@@ -1,0 +1,12 @@
+---
+title: Implement a Compiler
+id: implement-compiler
+---
+
+The compiler should implement `transpileFile` function as follows:
+
+```jsx
+transpileFile: (fileContent: string, options: { componentDir: string, filePath: string }) => Array<{ outputText: string, outputPath: string }> | null;
+```
+
+In case the compiler receives an unsupported file, it should return null.

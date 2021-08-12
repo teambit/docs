@@ -3,6 +3,12 @@ id: install-dependencies
 title: Install Dependencies
 ---
 
+## Overview
+
+Learn how to install a dependency to your workspace and how Bit automates dependency management. Learn how to install components to other projects and how to install components on CI.
+
+## Install Dependencies
+
 We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components as dependencies. To install a dependency in your workspace, use the `bit install` command:
 
 ```sh
@@ -42,7 +48,7 @@ To view component dependencies run the `bit show` command followed by the compon
 bit show <component-id>
 ```
 
-## Install Components in Other projects
+## Install Components in Other Projects
 
 Components once exported to a remote scope can be consumed in any other project/app with the package manager of your choice.
 
@@ -51,6 +57,35 @@ npm install @my-org.scope/my-component
 yarn add @my-org.scope/my-component
 ```
 
+### Authenticate Package Manager with Bit.dev
+
+When using bit.dev for hosting components and as a source for installing components, consumers will need to configure their package manager to know where to fetch components from. Do this by configuring [`npmrc`](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) file:
+
+1. First of all - [install Bit](/getting-started/install-bit) on your system.
+1. Run the following command:
+
+```sh
+bit login
+```
+
+1. Bit generated a `.npmrc` in your user-home directory (`~` in macOS/Linux, `%USERPROFILE%` in Windows) with a basic config containing your authentication token.
+1. Open the `.npmrc` file and add the following line (complete the account name according to where components are hosted)
+
+```sh
+@ACCOUNT:registry=https://node.bit.dev
+```
+
+An example configured `.npmrc` file looks something like this:
+
+```sh
+@teambit:registry=https://node.bit.dev
+//node.bit.dev/:_authToken=<TOKEN>
+```
+
+### For Self-hosted Components
+
+When self hosting Bit on your own server you need to publish the components as packages to any package registry. The authentication process for the pakage manager is very much the same other then the fact you can't use `bit login` to set your token.
+
 ## Install Components on CI
 
 Use your CI/CD tool to install Bit components on consuming apps or publish component automatically to [bit.dev](https://bit.dev) or any remote Bit scope.
@@ -58,7 +93,7 @@ Use your CI/CD tool to install Bit components on consuming apps or publish compo
 - If you want to only install components on the CI using NPM or Yarn, follow the steps bellow to [get a token](#get-a-bit-token), and [configure .npmrc on CI](#configure-npmrc-on-ci). [Go here](#common-errors) for information on common errors.
 - If you want to version and export components, first [get a token](#get-a-bit-token) and [follow these steps](#version-and-export-components-on-ci).
 
-## Get a Bit token
+### Get a Bit token
 
 The first thing to do is get a Bit token that has access to scopes.  
 You can create a dedicated user such as `dev@company.com` for the deployment, or use an existing user's token.
@@ -178,13 +213,13 @@ Add the `BIT_TOKEN` as an [environment variable](https://devcenter.heroku.com/ar
 
 Use the [npm authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/npm-authenticate?view=azure-devops) to setup the `.npmrc` configuration in your pipeline.
 
-### Common Errors
+## Common Errors
 
-#### 'package not found' (404) when importing a component
+### 'package not found' (404) when importing a component
 
 NPM or Yarn throws 'package not found' when importing a component. This is likely because the component has a dependency on a @bit component. Make sure [npmrc is configured](#bit-installed-components).
 
-#### Unauthorized (401) when installing a component
+### Unauthorized (401) when installing a component
 
 Possible reasons:
 

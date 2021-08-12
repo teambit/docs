@@ -3,20 +3,18 @@ title: Micro Frontend
 id: mfe
 ---
 
-import depGraph from './graph.png';
+Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by composing them from independently published and versioned components. Bit breaks the requirement of run-time integration of MFEs, with all the associated issues of unclear communication paths, hidden side-effects, and others, by facilitating consumption of MFEs at build-time. Bit does this by providing a varied toolset for creating, isolating, and sharing components. With Bit, all your UI and logic becomes shareable modules, building blocks for your entire organization.  
+Bit allows an organization to gain all the benefits of integrating between teams and components as part of an application build pipeline in a native way to how modern web frameworks operate, while still distribute development efforts across different teams and make any component reuseable.
 
-Micro Frontends is a way for autonomous Frontend teams to collaborate on one or more web applications by composing them from independently versioned components.
-Bit breaks the requirement of run-time integration of MFEs, with all the associated issues of unclear communication paths, hidden side-effects and others, by facilitating consumption of MFEs at build-time. Bit does this by providing a varied tool set for creating, isolating and sharing components. With Bit all your UI and logic becomes shareable modules, building blocks for your entire organization.
-
-Bit allows an organization gains all the benefits of integrating between teams and components as part of an application build pipeline in a native way to how modern web frameworks operate, while still distribute development efforts across different teams and make any component reuseable.
-
-[Dan Abramov tweet](https://twitter.com/dan_abramov/status/1132493678730252288?lang=en) // screenshot? embed tweet?
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/mfe-graph.png" width="600" alt="Homepage MFE composed by other MFEs" />
+</div>
 
 ## Benefits
 
-Bit implements a build time approach for Micro Frontends allowing as a pragmatic approach for scaling frontend development across multiple teams. It is the middle-ground between two extremes - monolithic repository and loading JS code at runtime.
+Bit implements a build time approach for Micro Frontends allowing a pragmatic approach for scaling frontend development across multiple teams. It is the middle-ground between two extremes - monolithic repository and loading JS code at runtime.
 
-In short it allows you to reuse all components you have, gain benefits of build-time optimizations and decide when and where to pay the cost of runtime composition.
+In short, it allows you to reuse all components you have, gain the benefits of build-time optimizations, and decide when and where to pay the cost of runtime composition.
 
 ### Autonomous Teams
 
@@ -24,50 +22,50 @@ Bit's MFE workflow focuses on having multiple teams building and collaborating o
 
 A single team could be responsible for implementing all components related to a specific business domain and publishing them for other teams to use. The team can manage components in a single, or several, repositories, depending on their needs.
 
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/teams.png" width="700" alt="Teams depending on each other" />
+</div>
+
 ### Developer Experience
 
-Bit facilitates a bottom-up approach for systems engineering. Meaning team builds a set of components and then quickly ramp up and compose more concrete and specialized components with them; like widgets, forms, features, pages and even applications. This fits how modern web frameworks are focused on building modular systems from atomic components ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules) and [Vue components](https://vuejs.org/v2/guide/components.html)).  
+Bit facilitates a bottom-up approach for systems engineering. Meaning the team builds a set of components and then quickly ramp up and composes more concrete and specialized components with them; like widgets, forms, features, pages, and even applications. This fits how modern web frameworks are focused on building modular systems from atomic  components ([React Components](https://reactjs.org/docs/components-and-props.html), [Angular Modules](https://angular.io/guide/feature-modules), and [Vue components](https://vuejs.org/v2/guide/components.html)).  
 
-Building with components or modules is at the core of modern web development. Teams building components and others adopting them is as native for the consumer as if they would use a component from their own codebase. When it's easy and native for a developer to integrate different components to build their component/feature/app, it makes the development process work more like **rapid application development** where a developer compose together self-contained pieces of functionality to a larger user-experience.
+Building with components or modules is at the core of modern web development. Teams building components and others adopting them are as native for the consumer as if they would use a component from their own codebase. When it's easy and native for a developer to integrate different components to build their component/feature/app, it makes the development process work more like **rapid application development** where a developer composes together self-contained pieces of functionality to a larger user experience.
 
 ### Better Runtime Performance
 
-Most MFE approaches rely on runtime consumption of deployed applications. If not being careful the end-user experience may result in a significant performance hit.  
-By using Bit to build a single component model for an application the target build will have a single component model and bundle. This means the application itself can better manage it's performance with an optimized bundle for its requirement using code splitting, better de-duping of dependencies, a single application runtime which all results in a minimal JavaScript payload size.
+Most MFE approaches rely on the runtime consumption of deployed applications. If not being careful the end-user experience may result in a significant performance hit.  
+By using Bit to build a single component model for an application the target build will have a single component model and bundle. This means the application itself can better manage its performance with an optimized bundle for its requirement using code-splitting, better de-duping of dependencies, a single application runtime which all results in a minimal JavaScript payload size.
 
 ### Consistent User Experience
 
-We want to build progressive web applications that combine data from various sources, allow complex interactions and still keep consistent look and feel. Building this level of complexity and consistency requires high level of code reuse. This granular level of code reuse is a fundamental aspect of Bit and a key requirement for building consistent use experiences.  
-Bit achieves consistent user experience by allowing reuse of components. These component can be a part of the organization design system, features that several apps need or even middleware and SDKs for integrating with other services. By opting for reuse rather then re-implement we also future proof our apps to remain consistent with future updates and changes.
+We want to build progressive web applications that combine data from various sources, allow complex interactions and still keep a consistent look and feel. Building this level of complexity and consistency requires a high level of code reuse. This granular level of code reuse is a fundamental aspect of Bit and a key requirement for building consistent user experiences.  
+Bit achieves a consistent user experience by allowing the reuse of components. These components can be a part of the organization's design system, features that several apps need, or even middleware and SDKs for integrating with other services. By opting for reuse rather than re-implement we also future-proof our apps to remain consistent with future updates and changes.
 
 ### Deep Integration and Communication
 
-Bit helps MFEs become a core part of the consumer's app. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.
-
-This deep integration enables building responsive application, as it allows us to better handle routing, history and deep-linking, even when MFEs were built by different teams.
+Bit helps MFEs become a core part of the consumer's app. It allows for more complex and dynamic interactions. For example, when using this approach in Angular developers can compose modules together using the `@NgModule` decorator, meaning they can use advanced patterns like dependency injection and lazy loading. In React they can provide context to components and even utilize hooks to compose their components together with the rest of the application.  
+This deep integration enables building responsive applications, as it allows us to better handle routing, history, and deep-linking, even when MFEs were built by different teams.
 
 ### Stable and Safe Incremental Updates
 
-Each MFE has its own semantic version and independent build-pipeline, this helps consumers in two important ways: first of all, they know which of the MFEs they use has a pending update and secondly the semantic version communicates the type of change applied the MFE has. All this flow happens during the app's build. It means consumers know how an MFE update may affect their app and handle it accordingly. When integrating during a build, we can be sure we don't introduce bugs to the app.
-
-In a nutshell Bit allows developers to decide how and when they want to adopt any change, and when a change is dangerous for them, they can decide to adopt it gradually. On the other hand, MFE builders can move forward quickly without the constant fear of breaking their dependents. The result of it is a huge gain in the speed of delivery.
+Bit allows developers to decide how and when they want to adopt any change, and when a change is dangerous for them, they can decide to adopt it gradually. On the other hand, MFE builders can move forward quickly without the constant fear of breaking their dependents. The result of it is a huge gain in the speed of delivery.
 
 ### Decouple Collaboration from Runtime
 
-Often we see organizations opt to use runtime composition of frontend applications as a "do all" solution without considering the drawbacks it may have on performance, SEO and MFE composition. But we need to understand the teams requirements and needs to properly consider the tradeoffs. Defaulting to build-time composition lets teams focus and collaborate on building a coherent component model for their large scale application. This makes the discussion about runtime composition (with its different flavors) to be more pragmatic as we can decide to use it when needed.  
+Often we see organizations opt to use runtime composition of frontend applications as a "do all" solution without considering the drawbacks it may have on performance, SEO and MFE composition. But we need to understand the teams' requirements and needs to properly consider the tradeoffs. Defaulting to build-time composition lets teams focus and collaborate on building a coherent component model for their large-scale application. This makes the discussion about runtime composition (with its different flavors) to be more pragmatic as we can decide to use it when needed.
 
-When runtime composition is needed, there are different methods where Bit can be used to answer some of the questions it raises. [See here.](/)
+When runtime composition is needed, there are different methods where Bit can be used to answer some of the questions it raises. [See here.](#run-time-composition)
 
 ### Simple, decoupled codebase
 
-Smaller codebases are easier to maintain as they simply have less code. When distributing a single component model across multiple teams and multiple repositories we make each repository to be as small as it can be. Moreover, as all other components are available to be dependencies it makes it even easier to ensure a single codebase contains a very focused set of components.
-
-Bit also provides a dynamic way to scale decoupled codebases, especially in cases where a codebase grows and needed to be split to several others. Bit can "source" a component to any codebase including its complete version history. So when a codebase grows too large we can split it to several smaller codebases without loosing history and context. Developers can use this capability to quickly spin up new codebases for specific requirements and use them for different experimentations POCs.
+Smaller codebases are easier to maintain as they simply have less code. When distributing a single component model across multiple teams and multiple repositories we make each repository to be as small as it can be. Moreover, as all other components are available to be dependencies it makes it even easier to ensure a single codebase contains a very focused set of components.  
+Bit also provides a dynamic way to scale decoupled codebases, especially in cases where a codebase grows and needed to be split into several others. Bit can "source" a component to any codebase including its complete version history. So when a codebase grows too large we can split it into several smaller codebases without losing history and context. Developers can use this capability to quickly spin up new codebases for specific requirements and use them for different experimentations POCs.
 
 ### Standardization
 
-Ramping up the production of MFEs requires solving many small problems many times. For example, how an MFE should be constructed, testing and code quality are some of the basic requirements each developer needs to think about when building new MFE.  
-Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keep different types of standards according to the specific type of MFE making the process of creating new features and APIs repeatable and quick.
+Ramping up the production of MFEs requires solving many small problems many times. For example, how an MFE should be constructed, testing, and code quality are some of the basic requirements each developer needs to think about when building a new MFE.  
+Bit helps make this process repeatable and scale-able with using **environments**. This way an organization keeps different types of standards according to the specific type of MFE making the process of creating new features and APIs repeatable and quick.
 
 ## Practices and Recommendations
 
@@ -75,16 +73,9 @@ When building Micro Frontends with Bit, we recommend the following practices:
 
 ### Git Repositories
 
-A Bit workspace is a monorepo for components. A teams can use a single Git repository to manage the lifecycle of many components from a single place. This can simplify the flow of managing closely-related components.  
-While components share the same workspace, they each get its own build pipeline and independent versions without overwhelming your workspace with many configuration files. This has several benefits:
-
-1. Only changed components and their dependents get a new version.
-1. Components from the same workspace may be built with different tools and frameworks.
-1. Focus on the implementation and less on managing configurations and dependencies.
-
-The structure of components on the filesystem is non-opinionated, meaning you can have components nested in complex directory hierarchy or have them flatten, however it fits your use case. Moreover, you can move components around in the workspace without it affecting their functionality, allowing for better flexibility when amount of components grow and you want to reorder the workspace.
-
-Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.
+Bit makes the team's workspace dynamic and flexible to their needs, enabling teams to scale to more components without locking them down to past decisions regarding workspace structure.  
+Each Bit workspace is managed and collaborated in with a Git repository and may contain numerous components built-in various platforms.  
+The structure of components on the filesystem is non-opinionated. A team can organize components how they see fit. Moreover, you can move components around in the workspace without it affecting their functionality, allowing for better flexibility when the amount of components grow and you want to reorder the works
 
 ```sh title="Components in workspace sorted according to functionality"
 ├── cart
@@ -101,28 +92,153 @@ Bit makes the team's workspace dynamic and flexible to their needs, enabling tea
 
 ### Build-time Composition
 
-To achieve build time compositions each Micro Frontend is consumable as a package. With a simple `npm install` command any developer can compose any ready-made components to their application and embed a new feature to their application. This package is then logged in the consumer's `package.json` and is used also to monitor which project is using which Micro Frontend and in what version.
+To achieve build time compositions each Micro Frontend is consumable as a package. With a simple `npm install` command, any developer can compose any ready-made components to their application and embed a new feature to their application. This package is then logged in the consumer's `package.json` and is used also to monitor which project is using which Micro Frontend and in what version.
 
-```sh title="Install Micro Frontend as a dependency"
+```sh title="Install a Micro Frontend"
 npm install @my-org.scope/my-mfe
 ```
 
+```javascript title="Using a Micro Frontend"
+import { MyComponent } from '@my-org.scope/my-component';
+
+...
+
+<MyComponent/>
+```
+
+### Data Fetching
+
+While organizations slice teams according to front-to-back functionality, within these teams there is still a divide between frontend and backend developers. From a high-level perspective, this seems like a non-issue, but it can be a challenge when it comes to how systems are built, especially the frontend (read more on the [Microservice analogy](#microservice-analogy)). Instead, we recommend against thinking of an MFE as a "fullstack" and opt for separating backend from frontend functionality.
+
+#### API Gateway
+
+We recommend looking into adopting the [API Gateway pattern](https://microservices.io/patterns/apigateway.html) to decouple backend and frontend functionality. This pattern is a great way to decouple the backend from the frontend and make it easier to test and reason about the system. An advanced approach for this would also be incorporating a [Graph QL](https://graphql.org/) to simplify frontend interaction with the backend.  
+
+Another benefit of this approach is it allows different Micro Frontends to access data from other parts of the organization directly from the frontend without a complex backend integration.
+
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/api-gateway.png" width="400" alt="API Gateway to simplify data fetching for consumers" />
+</div>
+
+#### Shared Types
+
+As more teams move to adopt TypeScript we see the potential in adding type-safety to data models. Creating components that implement the shared type for an entity can simplify integration between frontend and backend, and even integration between how MFEs communicate with each other.  
+Read [this tutorial](https://blog.bitsrc.io/sharing-types-between-backend-and-frontend-with-the-bff-pattern-553872842463) to learn how to implement this with Bit.
+
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/shared-type.png" width="400" alt="Shared data type between backend and frontend" />
+</div>
+
+#### Shared Data Model
+
+Shared data model is an extension of the [Shared Types](#shared-types) pattern.  
+Alongside the shared types, a Shared Model contains an in-memory representation of the data model - a Class. This way consumers get a quick and easy way to work with the data model, as it may contain a set of methods and additional functionality. Moreover, we found it to be beneficial to provide mock data for the model in the same component, so consumers can run their tests and apps with mock data instead of doing network calls.
+
+You can find an example for this pattern implemented by this [Bit component](https://bit.dev/harmony-mfe/scopes/scope-descriptor/~code/scope-descriptor.ts).
+
+### Team Autonomy and Independence
+
+`bit import` feature allows a team to fork a dependency right in their workspace. It allows any team to remain independent while still using dependencies. For example - in case a dependency has a bug or a new feature is needed, the team can fork the dependency and add the new feature or fix the bug. That fix can be either `git commit`ed to their workspace and still be merged with incoming upstream changes or suggested to the team's upstream dependency.  
+Bit liberates a team from the need to be fully self-sufficient and to be in charge of the entire dependency.
+
+### Updates
+
+Teams invest a lot of time and effort into building and maintaining their build pipeline so they know when any build passed it can be safely deployed. This is a critical process for updating dependent Micro Frontends. If your goal is to scale the frontend teams you need to ensure teams can safely and separately update their Micro Frontends without causing any side effects for applications that use them.
+
+#### Safe Updates
+
+Each MFE has its own semantic version and independent build-pipeline, this helps consumers in two important ways: first of all, they know which of the MFEs they use has a pending update, and secondly, the semantic version communicates the type of change applied to the MFE has. All this flow happens during the app's build. It means consumers know how an MFE update may affect their app and handle it accordingly. When integrating during a build, we can be sure we don't introduce bugs to the app.
+
+#### Update Installed Micro Frontends
+
+Having Micro Frontends to be integrated in build time allows the consumer to be aware of updates and manage them. As MFEs are managed in a `package.json` the way for updating composed MFEs is native for all package managers:
+
+```sh title="Update MFEs"
+npm update <MFE>
+```
+
+This way a team can update specific MFEs, or even configure their `package.json` to use semantic version ranges to streamline the process.
+
+#### Propagate Updates with RippleCI
+
+Ripple CI propagates updates across published MFEs on the bit.dev platform. When an MFE is updated Bit.dev will run its build pipeline and run simulated changes for all dependent MFEs, components and apps managed by Bit. This allows MFE maintainers to understand if they are breaking any of their dependent apps, but more importantly, can manage the scale of large frontends with complex build-train.
+
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/ripple-ci.jpeg" width="600" alt="Ripple CI" />
+</div>
+
+### Feature Ownership
+
+Ownership on a component is ownership on a feature. To ensure a single team is responsible for a component we recommend creating different Bit Scopes to sort components according to their business functionality. When you have this structure, you can set team ownership on the Bit Scope, thus ensuring a single team is responsible for a feature.
+Other teams may compose the feature in their application as a dependency, which is then logged to Bit so teams can monitor who uses their features, making it easier to learn how changes propagate and provide better visibility.
+
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/ownership.jpeg" width="600" alt="Team owns all components as features" />
+</div>
+
+### Styling and Theming
+
+Styling on the browser is often a challenge, as CSS is global, and when opting for a Micro Frontend workflow the challenge is even greater. There are two main concerns- what is the best way to encapsulate the styles each MFE brings (if any) and how to ensure the styles are consistent between MFEs.
+
+#### Standardize with Design System
+
+A design system is a set of reusable, consistent, and accessible design patterns for a product or service. It is a collection of guidelines and style libraries that help teams build consistent UIs. We recommend looking at a design system as a composition of two solutions: shared theme and theme-able components.
+
+#### Shared Theme
+
+It's recommended to provide a theme that is consistent across all MFEs. This way, the team can build the frontend they want and still have a consistent design across all MFEs. This way we can build the design in a decoupled manner from any framework (React/Angular) and only provide a context for them to apply the theme for any MFE. See [this example](https://bit.dev/teambit/design/theme/theme-context) for a theme shared as React context. The same can be repeated for Angular.  
+This allows us to decouple the styling from component implementation, making it easier to update styling without affecting components.
+
+It's recommended not to couple an MFE with a theme, but instead allow the consumer to compose together the MFEs on the page and apply the theme to them. This way we can support theming our UI as well.
+
+:::tip providing context for Micro Frontends
+
+This pattern is applicable for more than just theming. We can use this approach for globalization and other contexts.
+
+:::
+
+#### Theme-able Components
+
+To have a better UI look and feel we want to share a set of base-ui components to be used as shared dependencies for all MFEs and applications. This means we save time by not re-implementing the same components. When building these basic elements, we need to consider how they are themed, and ensure they are compatible with our design system.
+
+#### Encapsulation
+
+Depending on the styling strategy you choose, you have different options for encapsulation.
+
+- **Native CSS** refers to having a basic `.css` file alongside the component. While there are inherent issues with the global scope, which makes it inadvisable for styling components, some projects still prefer this method (some issues can be resolved with BEM or other methods).  
+If using native CSS we recommend using strict naming conventions like [BEM](http://getbem.com/introduction/) or [SMACSS](https://smacss.com/).
+- **Style pre-processors and CSS Modules** refer to using CSS transpilers like [Less](https://lesscss.org) , [SASS and SCSS](https://sass-lang.com). Using such tools is very helpful, as different bundlers can use these styles to create vars, scoped classes, and other features. This styling method, much like the way native CSS works, needs to be managed by the consuming project's bundler. This is usually done by configuring a specific plugin that handles the type of pre-processor.  
+CSS modules help with the encapsulation of styles and the ability to use CSS variables, making the composition of components easier.
+- **CSS in JS** is a methodology that uses Javascript objects which describe the different styles. It styles the component during runtime, while the JavaScript code is being evaluated. Using CSS-in-JS will require a consumer to add a dependency to their application, potentially resulting in larger bundle size. There are some tools that evaluate CSS-in-JS in build time that might mitigate this concern at the cost of adding a build-time task to the build process.
+
+### Testing
+
+Bit treats each MFE as an isolated module, forcing tests to run in complete isolation. To test an MFE you need to use the **composition** feature and compose that MFE in a mock application, providing context for the MFE. Then use your tests to test against that composed application and validate that the MFE is working as expected. You can even have multiple compositions and run your test suite against each composition, or run different tests.
+
+## Microservice Frontends
+
+While sharing a similar name and benefiting from splitting system engineering and teams according to business capabilities, Microservices and Micro Frontends architectures are very different.
+Micro Frontends are still run by the browser as a monolithic application with a shared runtime while Microservices are deployed to different servers and communicate over the network.  
+Modern web frameworks already solve the problem of building modular applications from independent and decoupled services to scale frontend development (React/Vue component, Angular modules). The pragmatic approach for scaling delivery of large-scale applications is adopting their approach but finding a way to distribute the development of an application across teams and repositories. This requires a different set of tools and thinking than scaling backend development.  
+There are several practices teams can adopt when wanting a Microservice-like approach for the Frontend.
+
 ### Run-time Composition
 
-Runtime composed frontends is about using different strategies to load code that is not a part of an application when a user access a page or feature. This means we make our app (and Micro Frotnends) loosely-coupled, potentially causing production issues harder to debug and build additional infrastructure in our frontend for sharing data/state between MFEs.  
+Runtime composed frontends are about using different strategies to load code that is not a part of an application when a user accesses a page or feature. This means we make our app (and Micro Frontends) loosely coupled, potentially causing production issues harder to debug and build additional infrastructure in our frontend for sharing data/state between MFEs.  
 Two other factors to consider are the potential an MFE-upgrade can break an application's runtime by publishing a breaking change, and also hurt performance due to [loading foreign JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript) or MFEs with duplicated dependencies or their own runtime.  
-There are different approaches for runtime compositions where each has its own way of mitigating some of these drawbacks. While Bit doesn't aim to solve these issues, it can help improve and scale runtime composition approach by adding a layer of build-time integration.  
+There are different approaches for runtime compositions where each has its own way of mitigating some of these drawbacks. While Bit doesn't aim to solve these issues, it can help improve and scale the runtime composition approach by adding a layer of build-time integration.  
 
 We recommend carefully considering when to use runtime composition.
 
 #### SDK For Runtime Integration
 
-We recommend building an SDK for each runtime-integrated Micro Frontend with a Bit component. The SDK handle all aspects of loading and managing the Micro Frontend lifecycle in runtime.  
-This approach simplify and scale the process of integrating MFEs by providing programmatic APIs with types and autocomplete for consumers, adding error handling and logs, abstract cross-application communication, and even reduce the need for complex documentation. When an organization use multiple frameworks like React and Angular, we recommend building an SDK per framework.  
-
+We recommend building an SDK for each runtime-integrated Micro Frontend with a Bit component. The SDK handles all aspects of loading and managing the Micro Frontend lifecycle in runtime.
+This approach simplifies and scales the process of integrating MFEs by providing programmatic APIs with types and autocomplete for consumers, adding error handling and logs, abstract cross-application communication, and even reduce the need for complex documentation. When an organization uses multiple frameworks like React and Angular, we recommend building an SDK per framework.  
 The experience of using the MFE "feels" for the developer like working with a dependency, even if the MFE is a JavaScript bundle with its own runtime which is loaded from a CDN/Server or an HTML returns from a Microservice.
 
-// TODO diagram + example
+<div style={{textAlign: 'center'}}>
+    <img src="/img/mfe/wrapper.png" width="600" alt="Team owns all components as features" />
+</div>
 
 #### Module Federation
 
@@ -211,112 +327,12 @@ export class Adapter extends React.Component {
 export default Adapter;
 ```
 
-### Data Fetching
-
-While organizations slice teams according front-to-back functionality, within these teams there is still a divide between frontend and backend developers. From a high-level perspective this seems like a non-issue, but it can be a challenge when it comes to how systems are built, especially the frontend (read more on the [Microservice analogy](#microservice-analogy))]). Instead we recommend against thinking of an MFE as a "fullstack" and opt for separating backend from frontend functionality.
-
-#### API Gateway
-
-We recommend looking into adopting the [API Gateway pattern](https://microservices.io/patterns/apigateway.html) to decouple backend and frontend functionality. This pattern is a great way to decouple the backend from the frontend and make it easier to test and reason about the system. An advanced approach for this would also be incorporating a [Graph QL](https://graphql.org/) to simplify frontend interaction with the backend.
-
-Another benefit of this approach is it allows different Micro Frontends to access data from other parts of the organization directly from the frontend without a complex backend integration.
-
-#### BFF Pattern
-
-BFF (Backend-For-Frontend) can be seen as an extension to the API Gateway pattern but can also be built separately. BFF provides a layer for the frontend that handles data-fetching and further decouples the frontend concerns from the backend, allowing frontend developers focus on rendering data, consistency and frontend performance.  
-We recommend creating Bit components that implement the different BFFs for your Micro Frontends and sharing them as dependencies to standardize backend integration.
-
-#### Shared Data Model
-
-Shared data model is an extension of the [Shared Types](https://www.thoughtworks.com/radar/techniques/ui-bff-shared-types) pattern we found to be helpful when wanting to streamline integration efforts between frontend and backend. By building a Bit component that implements the shared data model, you can share the same data model between frontend and backend, between backends and between frontends.  
-Similar to Shared Types, a Shared Model is a simple component containing the a type-definition for a managed entity. In addition to that we recommend adding a class to represent the shared model in memory, alongside methods to interact with it. To help consumers use this model without doing any backend calls, we found it to be easy to provide mock data for the model in the same components. By providing mock data teams that need to use an entity in their application already have built-in mocks for their tests and development requirements.
-
-You can find an example for this pattern implemented by this [Bit component](https://bit.dev/harmony-mfe/scopes/scope-descriptor/~code/scope-descriptor.ts).
-
-:::note Not for data fetching
-
-It's not recommended to tie either a Shared Data Model or a Shared Type to the BFF data fetching pattern. It's best to allow both as a separate items in the architecture. This allows a backend team to be responsible for the Data Entity and the Shared Model and Frontend teams to build the BFF that best fit their needs, according to their requirements and framework.
-
-:::
-
-### Updates
-
-- npm i
-- build
-- ripple ci
-
-### Feature Ownership
-
-- hi
-
-### Styling and Theming
-
-Styling on the browser is often a challenge, as CSS is global, and when opting for a Micro Frontend workflow the challenge is even grater. There are two main concerns- what is the best way to encapsulate the styles each MFE brings (if any) and how to ensure the styles are consistent between MFEs.
-
-#### Standardize with Design System
-
-A design system is a set of reusable, consistent, and accessible design patterns for a product or service. It is a collection of guidelines and style libraries that help teams build consistent UIs. We recommend looking at a design system as a composition of two solutions: shared theme and theme-able components.
-
-#### Shared Theme
-
-It's recommended to provide a theme that is consistent across all MFEs. This way, the team can build the frontend they want and still have a consistent design across all MFEs. This way we can build the design in a decoupled manner from any framework (React/Angular) and only provide a context for them to apply the theme for any MFE. See [this example](https://bit.dev/teambit/design/theme/theme-context) for a theme shared as React context. The same can be repeated for Angular.  
-This allows us to decouple the styling from component implementation, making it easier to update styling without affecting components.
-
-It's recommended not to couple an MFE with a theme, but instead allow the consumer to compose together the MFEs on the page and apply theme on them. This way we can support theming our UI as well.
-
-:::tip providing context for Micro Frontends
-
-This pattern is applicable for more than just theming. We can use this approach for globalization and even data fetching.
-
-:::
-
-#### Theme-able Components
-
-To have better UI look and feel we want to share a set of base-ui components to be used as shared dependencies for all MFEs and applications. This means we save time by not re-implementing the same components. When building these basic elements, we need to consider how they are themed, and ensure they are compatible with our design system.
-
-### Encapsulation
-
-Depending on the styling strategy you choose, you have different options for encapsulation.
-
-#### Native CSS
-
-This method refers to having a basic `.css` file alongside the component. While there are inherent issues with the global scope, which makes it inadvisable for styling components, some projects still prefer this method (some issues can be resolved with BEM or other methods).
-
-If using native CSS we recommend using strict naming convention like [BEM](http://getbem.com/introduction/) or [SMACSS](https://smacss.com/).
-
-#### Style pre-processors and CSS Modules
-
-This method refers to using CSS transpilers like [Less](https://lesscss.org) , [SASS and SCSS](https://sass-lang.com). Using such tools is very helpful, as different bundlers can use these styles to create vars, scoped classes, and other features. This styling method, much like the way native CSS works, needs to be managed by the consuming project's bundler. This is usually done by configuring a specific plugin that handles the type of pre-processor.
-
-CSS modules help with the encapsulation of styles and the ability to use CSS variables, making the composition of components easier.
-
-#### CSS in JS
-
-CSS-in-JS is a methodology that uses Javascript objects which describe the different styles. It styles the component during runtime, while the JavaScript code is being evaluated. Using CSS-in-JS will require a consumer to add a dependency to their application, potentially resulting in a larger bundle size. There are some tools that evaluate CSS-in-JS in build time that might mitigate this concern at the cost of adding a build-time task to the build process.
-
-### Testing
-
-Each component is testing itself and its dependencies.
-
-### Applications & Deployment
-
-- apps are just very concrete components
-
 ## Summary
 
-- yup
+The need to scale frontends is every growing. Many of the different solutions that are proposed to solve this problem add more questions than answers. We see Bit as a pragmatic approach to solving the scaling issues of building large and complex frontends and still work within the benefits and limitations of modern JavaScript. The need to scale and decouple different teams in the organizations so they can progress independently should not have implications on the end-user experience.
 
-### Decouple application runtime from collaboration model
+When choosing to solve a problem, we need to make sure we ask the right questions and find the simple solution to each question.
 
-- make the right decisions
+### Micro Everything
 
-### The Microservice Analogy
-
-While sharing a similar name and benefiting from splitting system engineering and teams according to business capabilities, Microservices and Micro Frontends architectures are very different.  
-Micro Frontends still run by the browser as a monolithic application with a shared runtime while Microservices are deployed to different servers and communicate over the network.
-
-Modern web frameworks already solve the problem of building modular applications from independent and decoupled services to scale frontend development (React/Vue component, Angular modules). The pragmatic approach for scaling delivery of large scale applications is adopting their approach but finding a way to distributed the development of an application across teams and repositories. This requires a different set of tools and thinking than scaling backend development.
-
-### Not just for frontend
-
-?
+Bit's Micro Frontends model can be extended to be used in other areas of our systems. For example, we can share components as shared functionality across Microservices, middleware and any other part of our technology stack. This can eventually lead us to a **Micro Everything** architecture where organization structure and collaboration patterns are decoupled from an application runtime.
