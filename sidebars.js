@@ -135,7 +135,7 @@ module.exports = {
           collapsed: true
         }
       ],
-      collapsed: false
+      collapsed: true
     },
 
     {
