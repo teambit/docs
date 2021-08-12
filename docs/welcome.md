@@ -8,9 +8,15 @@ Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) fo
 
 It helps to standardize, scale and distribute software projects into independently versioned components, connected through a dependency graph and possibly owned by autonomous teams, collaborating together to deliver modern apps at speed, consistency and scale.
 
-Bit is designed to enable a component-first approach, where components are built independently and composed into apps. This approach increases the value of each [Component](/components/overview) by making it a decoupled, collaborative, discoverable and composable unit of source code, promoting [rapid app development](/), [consistency](/) and [cross team collaboration](/).
+Bit is designed to enable a component-first approach, where [Components](/components/overview) are built independently and composed into [Apps](/apps/overview). This approach increases the value of each [Component](/components/overview) by making it a decoupled, collaborative, discoverable and composable unit of source code, promoting [rapid app development](/), [consistency](/) and [cross team collaboration](/).
 
 In Bit, each [Component](/components/overview) is independent and acts as a standalone versioned unit of source code, connected through dependencies to others. Each component can be independently developed, built, and shipped to ensure scalable collaboration, consistency, resilience.
+ 
+While Bit is tech-agnostic, development environments for specific tech are components are automated through [Envs](/envs/overview) to provide a customizable, repeatable and standard dev experience for development of [Components](components/overview). 
+Officially supported [Envs](/) exist for [Node](node/overview), [React](react/overview), [Angular](/angular/overview) and [more](/envs/official-envs). An [Env](/envs/env) can be composed of all the great tools the community offers like [TypeScript](/typescript/overview), [Babel](babel/overview), [Jest](/jest/overview).
+
+
+You can build and extend Bit just like us. Bit is a composition of [Aspects](extending-bit/overview). It comes built in with a set of configured Aspects and can be extended by configuring new Aspects to it. Every [Aspect](/extending-bit/overview) is a feature in Bit. Main core features are: [Workspace](/workspace/overview), [Component](components/overview), [Envs](envs/overview) and [Scope](scope/overview).
 
 ### Philosophy
 
