@@ -60,6 +60,7 @@ module.exports = {
       type: 'category',
       label: 'Get Started',
       collapsed: false,
+      collapsible: false,
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
@@ -145,6 +146,7 @@ module.exports = {
       type: 'category',
       label: 'Deep Dive',
       collapsed: false,
+      collapsible: false,
       items: [
         {
           type: 'category',
