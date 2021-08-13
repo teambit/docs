@@ -60,7 +60,7 @@ module.exports = {
       type: 'category',
       label: 'Get Started',
       collapsed: false,
-      collapsible: false,
+      // collapsible: false,
       items: [
         'getting-started/install-bit',
         'getting-started/create-workspace',
@@ -141,12 +141,21 @@ module.exports = {
         }
       ]
     },
-
     {
       type: 'category',
-      label: 'Deep Dive',
-      collapsed: false,
-      collapsible: false,
+      label: 'Understanding Bit',
+      items: [
+        'understanding-bit/why-bit',
+        'understanding-bit/component-driven-software',
+        'understanding-bit/monorepos',
+        'understanding-bit/economy-of-scale',
+        'understanding-bit/micro-architecture',
+        'understanding-bit/dogfooding'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Fundamentals',
       items: [
         {
           type: 'category',
@@ -234,6 +243,20 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Scope',
+          collapsed: true,
+          items: [
+            'scope/overview',
+            'scope/hosting-remote-scope',
+            'scope/configuring-scope',
+            'scope/setting-remote-scope',
+            'scope/importing-components',
+            'scope/exporting-components',
+            'scope/scope-ui'
+          ]
+        },
+        {
+          type: 'category',
           label: 'CI/CD',
           collapsed: true,
           items: [
@@ -266,26 +289,62 @@ module.exports = {
             'builder/build-on-ci'
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Docs',
-        //   items: [
-        //     'docs/overview',
-        //     'docs/doc-files',
-        //     'docs/rendering-docs',
-        //     'docs/doc-templates',
-        //   ],
-        //   collapsed: true
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Compositions',
-        //   items: [
-        //     'compositions/overview',
-        //     'compositions/composition-format',
-        //     'compositions/visualizing-components',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: 'Apps',
+          collapsed: true,
+          items: [
+            'apps/overview',
+            'apps/create-app',
+            {
+              type: 'category',
+              label: 'Deploy an App',
+              items: [
+                'apps/deploy-app/netlify',
+                'apps/deploy-app/vercel',
+                'apps/deploy-app/aws'
+              ]
+            },
+            'apps/recomposing-apps'
+          ]
+        },
+      ]
+    },
+
+    {
+      type: 'category',
+      label: 'Advanced',
+      // collapsed: false,
+      // collapsible: false,
+      items: [
+        {
+          type: 'category',
+          label: 'Docs',
+          items: [
+            'docs/overview',
+            'docs/doc-files',
+            'docs/rendering-docs',
+            'docs/doc-templates',
+          ],
+          collapsed: true
+        },
+        {
+          type: 'category',
+          label: 'Compositions',
+          items: [
+            'compositions/overview',
+            'compositions/composition-format',
+            'compositions/visualizing-components',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Generator',
+          collapsed: true,
+          items: [
+            'generator/overview',
+          ]
+        },
         {
           type: 'category',
           label: 'Tester',
@@ -321,20 +380,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Scope',
-          collapsed: true,
-          items: [
-            'scope/overview',
-            'scope/hosting-remote-scope',
-            'scope/configuring-scope',
-            'scope/setting-remote-scope',
-            'scope/importing-components',
-            'scope/exporting-components',
-            'scope/scope-ui'
-          ]
-        },
-        {
-          type: 'category',
           label: 'Config',
           collapsed: true,
           items: [
@@ -354,46 +399,29 @@ module.exports = {
             'packages/build-tasks'
           ]
         },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Extending Bit',
+      collapsed: true,
+      items: [
+        'extending-bit/overview',
+        'extending-bit/extension-capabilities',
+        'extending-bit/getting-started-with-extensions',
         {
           type: 'category',
-          label: 'Apps',
-          collapsed: true,
+          label: 'Guides',
           items: [
-            'apps/overview',
-            'apps/create-app',
-            {
-              type: 'category',
-              label: 'Deploy an App',
-              items: [
-                'apps/deploy-app/netlify',
-                'apps/deploy-app/vercel',
-                'apps/deploy-app/aws'
-              ]
-            },
-            'apps/recomposing-apps'
+            'extending-bit/guides/adding-tab-to-workspace-ui',
+            'extending-bit/guides/creating-custom-generator',
+            'extending-bit/guides/adding-cli-command',
+            'extending-bit/guides/adding-graphql-route'
           ]
         },
-        {
-          type: 'category',
-          label: 'Extending Bit',
-          collapsed: true,
-          items: [
-            'extending-bit/overview',
-            'extending-bit/extension-capabilities',
-            'extending-bit/getting-started-with-extensions',
-            {
-              type: 'category',
-              label: 'Guides',
-              items: [
-                'extending-bit/guides/adding-tab-to-workspace-ui',
-                'extending-bit/guides/creating-custom-generator',
-                'extending-bit/guides/adding-cli-command',
-                'extending-bit/guides/adding-graphql-route'
-              ]
-            },
-            'extending-bit/aspect-environment'
-          ]
-        },
+        'extending-bit/aspect-environment'
+      ]
+    },
         {
           type: 'category',
           label: 'Reference',
@@ -426,7 +454,5 @@ module.exports = {
             }
           ]
         }
-      ]
-    }
   ]
 };

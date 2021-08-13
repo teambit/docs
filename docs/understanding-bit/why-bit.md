@@ -1,3 +1,8 @@
+---
+id: why-bit
+title: Why Bit?
+---
+
 # Why Bit?
 
 - Component driven development takes over everything - e.g. React, Angular, Vue.
