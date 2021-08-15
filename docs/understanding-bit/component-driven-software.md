@@ -11,3 +11,12 @@ A component-driven system is a system designed and built in a modular,
 - Angular app
 - Angular Library
 - Vue app
+
+### Pragmatic (Bottom up)
+
+### Think of every component as an independent Git repo
+
+### API first, implantation second
+
+### Dogfooding
+
