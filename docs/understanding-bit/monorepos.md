@@ -8,6 +8,7 @@ title: Monorepos
 A Monorepo is a single Git repository that holds the source code for multiple projects (application and libraries) along with everything required for them.
 
 ### Why do teams use Monorepos?
+Teams use Monorepos to resolve variety of issues
 
 ### Code sharing and reuse
 Reuse 
@@ -63,6 +64,7 @@ Bit enables teams to work in a Polyrepo architecture but still get all the benef
 
 ### Simple, decoupled codebases
 
+
 ### Easy developer on-boarding
 
 ### Code sharing and reuse
@@ -74,7 +76,6 @@ Bit enables teams to work in a Polyrepo architecture but still get all the benef
 ### Atomic changes
 
 ### Consistent tooling
-
 
 
 
