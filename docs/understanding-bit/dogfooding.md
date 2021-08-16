@@ -3,6 +3,7 @@ id: dogfooding
 title: Dogfooding
 ---
 
+## Why dogfooding?
 
 ## Dogfooding in Component Driven Software
 

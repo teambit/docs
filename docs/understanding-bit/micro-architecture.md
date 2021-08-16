@@ -3,7 +3,7 @@ id: micro-architecture
 title: Micro Architecture
 ---
 
-## What is Micro-Architecture?
+## What is Micro Architecture?
 
 
 
