@@ -3,6 +3,7 @@ id: monorepos
 title: Monorepos
 ---
 
+Monorepos are a solution to help through collaboration and dev experience issues at scale.
 
 ## What is a Monorepo?
 A Monorepo is a single Git repository that holds the source code for multiple projects (application and libraries) along with everything required for them.
@@ -23,6 +24,7 @@ Reuse
 ### Cross team collaboration
 
 ### Team boundaries and ownership
+Team boundries are 
 
 ### Code visibility and ownership
 
@@ -50,12 +52,6 @@ Reuse
 ## Bit and Monorepos
 
 ### Bit in a Monorepo
-
-#### Discoverability
-
-#### Consistent tooling
-
-#### Efficient builds and CI
 
 
 ### Bit in a Polyrepo

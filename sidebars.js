@@ -147,7 +147,15 @@ module.exports = {
       items: [
         'understanding-bit/why-bit',
         'understanding-bit/component-driven-software',
-        'understanding-bit/monorepos',
+        {
+          type: 'category',
+          label: 'Monorepos',
+          items: [
+            'understanding-bit/monorepos/monorepos',
+            'understanding-bit/monorepos/bit-polyrepo',
+            'understanding-bit/monorepos/bit-monorepo'
+          ]
+        },
         'understanding-bit/economy-of-scale',
         'understanding-bit/micro-architecture',
         'understanding-bit/dogfooding'
