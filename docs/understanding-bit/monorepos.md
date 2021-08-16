@@ -12,7 +12,7 @@ A Monorepo is a single Git repository that holds the source code for multiple pr
 Teams use Monorepos to resolve variety of issues related to cross team collaboration, standardization, dev experience and visibility.
 
 ### Code sharing and reuse
-Reuse 
+Code sharing and reuse across repositories is hard and requires different methods to be applied.
 
 ### Dev Experience
 
@@ -24,30 +24,12 @@ Reuse
 ### Cross team collaboration
 
 ### Team boundaries and ownership
-Team boundries are 
+Team boundaries are 
 
 ### Code visibility and ownership
 
 
 ## Problems of Monorepos
-
-### Versioning
-
-### API Adoption
-
-### Tooling
-
-### Discovery
-
-### Gradual API changes
-
-### On-boarding developers
-
-### Non developers
-
-### Inconsistent tooling
-
-### CI/CD
 
 ## Bit and Monorepos
 
