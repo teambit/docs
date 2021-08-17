@@ -24,30 +24,43 @@ Acting repositories:
 
 ### Simple, decoupled codebases
 
+Every team is responsible for their own codebase allowing them to work independently.
 
 ### API and source code accessibility
 
+All components are available on the Bit.dev cloud and can be accessed from any browser. Each component comes with it's own documentation, example usage and the full source code is available to view.
 
 ### Diverge to more repos and scale over time
 
-
 <img src={multiRepoDivergedPng} />
+
+More repos can easily be created if new teams are onboarded. All components will
+still get exported to the remote scope and therefore be easily available to all teams.
 
 ### Easy developer on-boarding
 
-Since every codebase
+Since every codebase is a standalone repo, it's easy to onboard new developers. Developers only have to worry about the code written by their team.
 
 ### Code sharing and reuse
 
+Teams can use components from each other even though they are in separate repos. Components can be installed and used anywhere just like any package. This makes it easy to reuse components, especially base components and domain specific components which increases productivity
+
 ### Update automation
+
+Components that depend on updated components within the same team are automatically tagged and versioned. Other teams that use one of these updated components can choose if they want to update to the latest version or not. This means they have full control over the version of the component they want to use and can update it whenever they want. All versions of the component are available to all teams and can be seen in the Bit.dev cloud.
 
 ### Visibility
 
+All components are published to the same organization on Bit.dev under different scope names. These scopes are the collection of components owned by a team. All scopes are visible to all teams therefore all teams can see all components. Teams can search for components and therefore discover components that they can then use when composing their own components. This means teams don't have to reinvent the wheel and constantly create the same components.
+
 ### Cross team collaboration
+
+Teams can import(clone) components from other teams into their own repo. This allows teams to work together on the same components, make adjustments and create a new version of the component and then eject it out of their workspace.
 
 ### Atomic changes
 
+?
+
 ### Consistent tooling
 
-
-
+Workspace templates are available so new teams can quickly get started with the same configurations and tooling. This provides a consistent experience across teams. Component generators are also available so teams can create components with the same styling and structure. Teams also share the same environment which keeps configurations the same across projects.
