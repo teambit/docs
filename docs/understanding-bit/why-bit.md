@@ -3,18 +3,6 @@ id: why-bit
 title: Why Bit?
 ---
 
-# What is Bit?
-
-Bit is an extensible, open-source toolchain for composing component-driven systems of independent components. 
-It helps developers compose and collaborate on modern applications with independent 
-components and dependencies and makes development of component-driven simple, fast, standard, consistent and scalable.
-
-In Bit we build components first, then apps. We build every component independently as its own module and the app is just another component composed from all these components. 
-Instead of building a monolithic application that consists lots of "internal" components, which has no additional value, we build independent 
-components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. 
-It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more modular, maintainable, testable, and reusable code.
-
-
 # Why Bit?
 
 Modern app development is component-driven.
