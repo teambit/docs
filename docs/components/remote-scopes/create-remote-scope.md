@@ -12,4 +12,4 @@ Open the [create scope](https://bit.dev/~create-scope) tab:
 1. Select **Harmony** as "scope type".
 1. Click on "Create".
 
-<Image src="../../static/img/scopes_bitdev_screenshot.png" width="60%" />
+<Image src="/img/scopes_bitdev_screenshot.png" width="60%" />
