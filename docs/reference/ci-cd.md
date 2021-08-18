@@ -163,7 +163,7 @@ NPM or Yarn throws 'package not found' when importing a component. This is likel
 Possible reasons:
 
 - npmrc is not properly [configured](#bit-installed-components)
-- You do not have the right permissions on the Collection that the components are hosted in, and are therefore unable to access its components. Make sure you have at least read permissions for the collection that host the components.
+- You do not have the right permissions on the scope that the components are hosted in, and are therefore unable to access its components. Make sure you have at least read permissions for the scope that host the components.
 - Yarn does not send an authentication token when installing packages from a `yarn.lock` file. This is a [known issue](https://github.com/yarnpkg/yarn/issues/4451). Make sure `always-auth` is [configured in `.npmrc`](#bit-installed-components).
 
 ## Version and Export Components on CI

@@ -91,36 +91,36 @@ generator.registerComponentTemplate([
           isMain: true,
           content: `export { ${context.namePascalCase} } from './${context.name}';
 export type { ${context.namePascalCase}Props } from './${context.name}';
-`
+`,
         },
 
         // component file
         {
           relativePath: `${context.name}.tsx`,
-          content: `import React from 'react';`
+          content: `import React from 'react';`,
         },
 
         // docs file
         {
           relativePath: `${context.name}.docs.mdx`,
-          content: `docs content goes here`
+          content: `docs content goes here`,
         },
 
         // composition file
         {
           relativePath: `${context.name}.composition.tsx`,
           content: `composition content goes here
-`
+`,
         },
 
         // test file
         {
           relativePath: `${context.name}.spec.tsx`,
-          content: `test content goes here`
-        }
+          content: `test content goes here`,
+        },
         // add more files here such as css/sass
       ];
-    }
+    },
   },
 
   // component 2
@@ -133,12 +133,12 @@ export type { ${context.namePascalCase}Props } from './${context.name}';
         {
           relativePath: 'index.ts',
           isMain: true,
-          content: `add content here`
-        }
+          content: `add content here`,
+        },
         // add more files
       ];
-    }
-  }
+    },
+  },
   // add more components
 ]);
 ```
@@ -167,13 +167,13 @@ Bit gives you some basic templates that you can use without having to create you
 
 ### Exporting your Generator
 
-[Tag and export](/getting-started/exporting-components) your generator component so you can use it in any other workspace. If you haven't already done so then setup a [remote scope](/getting-started/remote-scope) on [Bit.dev](https://bit.dev/) with the correct scope/collection where you want your generator component to be exported to.
+[Tag and export](/getting-started/exporting-components) your generator component so you can use it in any other workspace. If you haven't already done so then setup a [remote scope](/getting-started/remote-scope) on [Bit.dev](https://bit.dev/) with the correct scope where you want your generator component to be exported to.
 
 Make sure the scope name is set correctly in the `*.aspect.ts` file before tagging and exporting.
 
 ```js {2} title="*.aspect.ts"
 export const MyComponentsAspect = Aspect.create({
-  id: 'my-scope-name/my-components'
+  id: 'my-scope-name/my-components',
 });
 ```
 

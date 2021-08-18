@@ -36,15 +36,15 @@ generateFiles: async (context: WorkspaceContext) => {
   },
 ```
 
-In this file you will also see an array of components that you can add to be generated in your workspace. Perhaps each workspace should have it's own logo component specific to that workspace for example or an entity component for the product for when building an ecommerce workspace. By importing this component here we can then modify it to our liking as really we are getting a carbon copy of the component to then do with it what we want. It will no longer be tied to the collection we are cloning it from.
+In this file you will also see an array of components that you can add to be generated in your workspace. Perhaps each workspace should have it's own logo component specific to that workspace for example or an entity component for the product for when building an ecommerce workspace. By importing this component here we can then modify it to our liking as really we are getting a carbon copy of the component to then do with it what we want. It will no longer be tied to the scope we are cloning it from.
 
 ```jsx title="index.ts"
 importComponents: () => {
   return [
     {
       id: 'learn-bit-react.ecommerce/entity/product',
-      path: 'ecommerce/entity/product'
-    }
+      path: 'ecommerce/entity/product',
+    },
   ];
 };
 ```

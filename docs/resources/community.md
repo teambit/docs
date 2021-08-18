@@ -5,7 +5,7 @@ title: Community
 
 ## Bit.dev
 
-- ### [Explore our OSS components](https://bit.dev/teambit/~collections)
+- ### [Explore our OSS components](https://bit.dev/teambit/~scopes)
 
 ## Slack
 

@@ -104,7 +104,7 @@ export type ButtonProps = {
   /**
    * a text to be rendered in the component.
    */
-  text: string
+  text: string,
 };
 
 export function Button({ text }: ButtonProps) {
@@ -331,7 +331,7 @@ export type ButtonProps = {
   /**
    * sets the primary color of the button
    */
-  variation?: 'primary' | 'secondary'
+  variation?: 'primary' | 'secondary',
 };
 
 export function Button({ buttonText, variation = 'primary' }: ButtonProps) {
@@ -459,7 +459,7 @@ export type CardProps = {
   /**
    * a text to be rendered in the component.
    */
-  text: string
+  text: string,
 } & ButtonProps;
 
 export function Card({ text, buttonText, variation }: CardProps) {
@@ -519,13 +519,13 @@ To export components we need to have a scope already setup. We can do this by go
 bit login
 ```
 
-Once you have logged in you can then create a new scope/collection. As our components are UI components they should probably be in a scope called base-ui so lets create that collection.
+Once you have logged in you can then create a new scope. As our components are UI components they should probably be in a scope called base-ui so lets create that scope.
 
-<Image src="/img/blog/getting-started-with-bit/create-collection.png" alt="Creating a collection on Bit.dev" padding={0} width="100%" />
+<Image src="/img/blog/getting-started-with-bit/create-collection.png" alt="Creating a scope on Bit.dev" padding={0} width="100%" />
 
 ### Updating your Default Scope
 
-Once we have created our scope we will need to update the scope name in the `workspace.jsonc` file to be same as your scope name. The scope name is made up of your organization or team name followed by the name of the collection.
+Once we have created our scope we will need to update the scope name in the `workspace.jsonc` file to be same as your scope name. The scope name is made up of your organization or team name followed by the name of the scope.
 
 ```json title="workspace.jsonc"
 defaultScope: debs-obrien.base-ui

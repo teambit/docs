@@ -32,7 +32,7 @@ The `defaultScope` field suggests it can be overridden. To learn about setting d
 
 ### Scope on bit.dev
 
-To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-collection) (or "collection").
+To host components on [Bit.dev](https://bit.dev), [create a scope](https://bit.dev/~create-scope).
 
 <Image src="/img/scope_type.png" alt="create a scope" padding={20} width="60%" />
 

@@ -3,7 +3,7 @@ id: path
 title: Path
 ---
 
-Components are created in a directory using the name configured in your defaultScope in your workspace.jsonc. The defaultScope should be configured as your `username.collectionName` and cannot contain a `/`. If you would like to change the default behavior of where you components are created you should use the `--path` flag.
+Components are created in a directory using the name configured in your defaultScope in your workspace.jsonc. The defaultScope should be configured as your `username.scope-name` and cannot contain a `/`. If you would like to change the default behavior of where you components are created you should use the `--path` flag.
 
 ```bash
 bit create react-component ui/button --path bit/components

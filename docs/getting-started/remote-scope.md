@@ -21,7 +21,7 @@ You can create a remote scope before or after [initializing a Bit workspace](ini
 bit login
 ```
 
-2. Create a new scope/collection on [Bit.dev](https://bit.dev/)
+2. Create a new scope on [Bit.dev](https://bit.dev/)
 3. Update your default scope in the `workspace.jsonc` file with the name of your scope
 
 ---
