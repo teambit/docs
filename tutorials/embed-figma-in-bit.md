@@ -21,7 +21,9 @@ With **Bit** and **Figma** that is exactly what you can do. Let me show you.
 
 ## Figma Embeds
 
-[Figma](https://www.figma.com/) is of the most used tools for designers today and it is what we use at Bit. When a designer creates a component in Figma all we need to do to add this to our Bit component is use the share button in Figma which is located at the top right in the header. Then click on the 'Get embed code' link. This will give you an embed code that you can then use to embed directly into your docs file. Figma allows us to choose the permissions we want to give for this file, to be visible to anyone or just members on our team. As Bit is an open source product we have left our designs open for anyone to see them.
+[Figma](https://www.figma.com/) is of the most used tools for designers today and it is what we use at Bit. When a designer creates a component in Figma all we need to do to add this to our Bit component is use the share button in Figma which is located at the top right in the header. Then click on the 'Get embed code' link. This will give you an embed code that you can then use to embed directly into your docs file. If you have more than one file on the canvas you can select the 'link to selected frame'. This will embed only the selected frame(component) and not the whole canvas.
+
+Figma allows us to choose the permissions we want to give for this file, to be visible to anyone or just members on our team. As Bit is an open source product we have left our designs open for anyone to see them.
 
 <img src="/img/blog/embed-figma-in-bit/share-figma-file.png" alt="Sharing Figma file" width="60%" />
 
