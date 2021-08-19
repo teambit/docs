@@ -53,7 +53,7 @@ git push
 ### 3. Accept new tag suggestions (done by the CI)
 
 ```bash
-bit tag --persist --all
+bit tag --persist
 ```
 
 ### CLI Reference

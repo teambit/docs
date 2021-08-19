@@ -50,7 +50,7 @@ bit tag --soft <component-id>
 3. Have the CI run the following command to tag all components suggested to be versioned (suggested by the previous 'soft tag')
 
 ```shell
-bit tag --persist --all
+bit tag --persist
 ```
 
 - **Learn more about adding Bit to your CI, [here](/tutorial/ci-cd)**
@@ -115,4 +115,5 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 > // soft-tag
 > $ bit tag <component-id>
 > ```
-{"mode":"full","isActive":false}
+>
+> {"mode":"full","isActive":false}
