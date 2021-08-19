@@ -9,7 +9,7 @@ Bit adds a semantic layer on top of repositories that maps files into components
 
 ## Understanding Bit Components
 
-A Bit component a set of files, configuration and dependencies, implementing a reusable piece of code, such as:
+A Bit component is a set of files, configuration and dependencies, implementing a reusable piece of code, such as:
 
 - A React, Vue or Angular component.
 - Shared stylesheet (e.g., CSS, SCSS).
@@ -24,7 +24,7 @@ A component is any has to export a module that can be loaded by the Node.js `req
 
 ### Component Scope
 
-Bit Components required to be scoped. A component's Scope has several purposes:
+Bit Components are required to be scoped. A component's Scope has several purposes:
 
 - **Component ID** - used for referring to the component in many commands and the UI and to calculate the package name.
 - **Remote Bit server** - set as the target for exporting components (Bit servers are also called **Scopes**).
@@ -32,7 +32,7 @@ Bit Components required to be scoped. A component's Scope has several purposes:
 
 ### Independent components
 
-Bit Components are self-contained and independent from any specific codebase. To ensure each component can be independently developed, versioned, and collaborated on Bit models a component as follows:
+Bit Components are self-contained and independent from any specific codebase. To ensure each component can be independently developed, versioned, and collaborated on, Bit models a component as follows:
 
 <div style={{textAlign: 'center'}}>
     <img src="/img/component-contents.png" width="200" alt="Component Contents" />
@@ -42,7 +42,7 @@ Bit Components are self-contained and independent from any specific codebase. To
 - **Aspects** - The different [Aspects](/aspects/aspects-overview) (including [Component Development Environment](/building-with-bit/environments)) configured for controlling operations like compilation, testing, documentation etc.
 - **Dependency graph** - All dependencies, including packages and other components ([Read more on dependency resolution](/aspects/dependency-resolver)).
 
-The combination of all the above makes each Bit component to be a "self-containing" module, as this is the information needed to reproduce the component in any workspace.
+The combination of all the above makes each Bit Component a "self-containing" module, as this is the information needed to reproduce the component in any workspace.
 
 ### Component history
 
@@ -56,7 +56,7 @@ Each component-version is a snapshot of a component in a specific point in time.
 
 #### Version Artifacts
 
-For each immutable version in the component's history Bit keeps artifacts created during the versioning process. They are generated according to the component's Aspects. Some of these artifacts are:
+For each immutable version in the component's history, Bit keeps artifacts created during the versioning process. They are generated according to the component's Aspects. Some of these artifacts are:
 
 - Node package with a `package.json`
 - Test results
@@ -69,7 +69,7 @@ Different features in Bit later use these artifacts. For example, the [PKG Aspec
 
 ### Are Bit Components the same as npm packages?
 
-The main difference between Bit Components and npm Packages is that Bit focuses on a component based workflow, where the implementation is a first class citizen, where npm packages concern about the compiled outputs. This key difference has the following implications:
+The main difference between Bit Components and npm packages is that Bit focuses on a component based workflow, where the implementation is a first class citizen, where npm packages concern about the compiled outputs. This key difference has the following implications:
 
 - Bit Components produce an _npm package_ as part of their build and keep it as a **version artifact**. Consumers can use package managers (npm, yarn and pnpm) to install components.
 - Vendor component with the `bit import` and use it as a core component in your codebase (think about - `git clone` + `npm link` automated, inside the consuming codebase).
@@ -85,5 +85,5 @@ Similar to npm package, Bit Components must be `require`-able by a node program.
 - Component name must not contain any non-url-safe characters (since name ends up being part of a URL)
 - Component name should not contain any leading or trailing spaces
 - Component name should not contain any of the following characters: ~)('!\*
-- Component name cannot be the same as a node.js/io.js core module nor a reserved/blacklisted name.
-- Component name length cannot exceed 214.
+- Component name cannot be the same as a node.js/io.js core module nor a reserved/blacklisted name
+- Component name length cannot exceed 214
