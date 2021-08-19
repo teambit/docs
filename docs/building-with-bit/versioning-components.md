@@ -54,7 +54,7 @@ bit tag --soft <component-id>
 3. Have the CI run the following command to tag all components suggested to be versioned (suggested by the previous 'soft tag')
 
 ```bash
-bit tag --persist --all
+bit tag --persist
 ```
 
 ### Untag a component
