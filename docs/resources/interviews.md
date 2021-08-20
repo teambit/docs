@@ -3,6 +3,13 @@ id: interviews
 title: Interviews
 ---
 
+## Case Study: How Climate Clever use Bit
+
+"If you want a platform for sharing code and forcing the development process on you, that is going to help you ship product quicker, help you work with a distributed asynchronous team, then Bit is definitely the way." Listen to Alex from Climate Clever tell his story on how he built with Bit and was able to scale faster with Component driven development and distributed team collaboration.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tSQY0Sjd8xU" title="Case Study - Climate Clever | Bit
+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Bit - A better way to build with modern components
 
 Debbie O'Brien works as a head of Developer Advocate at bit, she is joining for this about to talk about the bit platform, advantages of using bit, frameworks supported, and how to get started.

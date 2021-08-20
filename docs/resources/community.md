@@ -6,6 +6,7 @@ title: Community
 ## Bit.dev
 
 - ### [Explore our OSS components](https://bit.dev/teambit/~scopes)
+- ### [Explore our Demos](https://bit.dev/learn-bit-react/~scopes)
 
 ## Slack
 
@@ -15,7 +16,9 @@ title: Community
 
 - ### [Bit on GitHub](https://github.com/teambit/bit)
 
-- #### [Team Bit on GitHub](https://github.com/teambit/bit)
+- #### [GitHub Discussions](https://github.com/teambit/bit/discussions)
+
+- ### [Demo Projects](https://github.com/bit-demos)
 
 ## Twitter
 
