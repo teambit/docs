@@ -19,10 +19,10 @@ In order to initialize a workspace you will need to first [install Bit](installi
 1. Start a new bit project
 
 ```bash
-bit new react-workspace <my-workspace-name>
+bit new react <my-workspace-name>
 ```
 
-2. Open the directory that has just been created and run install dependencies
+2. Open the directory that has just been created and run `bit start`
 
 ```bash
 cd <my-workspace-name>
@@ -35,23 +35,22 @@ bit install
 
 ## Option 1: Use bit new to create a React workspace
 
-Create a new Bit workspace for a React environment. This command will initialize a Bit Harmony workspace configured for a React environment. To create a workspace and manually configure the env use the `bit init --harmony` command.
-
-:::info Experimental Feature
-This is experimental and may change in the future. If you experience any issues with this command please let us know.
-:::
-
-Start a new Bit workspace with a React environment. This will create a new directory with the necessary files inside.
+Create a new Bit workspace for a React environment. This command will initialize a Bit Harmony workspace configured for a React environment complete with demo components and a custom env.
 
 ```bash
-bit new react-workspace <my-workspace-name>
+bit new react <my-workspace-name>
 ```
 
-Once you are inside that directory you can then install all dependencies needed for your workspace.
-
 ```bash
+cd <my-workspace-name>
 bit install
 ```
+
+:::tip
+
+Use `bit new --help` or `bit new -h` to get a list of available options for this command.
+
+:::
 
 ## Option 2: Use bit init to initialize and manually configure your workspace
 
