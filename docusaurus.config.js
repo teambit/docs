@@ -145,6 +145,10 @@ module.exports = {
             {
               label: 'Variants',
               to: '/aspects/variants'
+            },
+            {
+              label: 'More Aspects...',
+              to: '/aspects/aspects-overview'
             }
           ]
         },
@@ -154,6 +158,10 @@ module.exports = {
           activeBasePath: 'resources',
           position: 'left',
           items: [
+            {
+              label: 'Demos',
+              to: 'https://bit.dev/learn-bit-react/~scopes'
+            },
             {
               label: 'Videos',
               to: '/resources/videos'
