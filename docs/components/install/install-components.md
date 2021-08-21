@@ -19,14 +19,14 @@ values={[
 <TabItem value="NPM">
 
 ```bash
-npm install @YourUserName/componentScopeName.componentID
+npm install @bit/YourUserName.componentScopeName.componentID
 ```
 
   </TabItem>
   <TabItem value="Yarn">
 
 ```bash
-yarn add @YourUserName/componentScopeName.componentID
+yarn add @bit/YourUserName.componentScopeName.componentID
 ```
 
   </TabItem>
