@@ -4,6 +4,18 @@ title: Why Bit?
 ---
 
 # Why Bit?
+Bit is 
+Because all we ever wanted we wanted to build a model that promotes modular, decoupled and fast of development of simple apps that can be scaled to huge opportunities.  
+
+We built Bit to be able to build simple application in a modular, decoupled design and scale them.
+
+
+## Building a single App with Bit
+
+## Scaling development with Bit
+
+## Component Driven Development
+
 
 - Component driven development takes over everything - e.g. React, Angular, Vue.
 - Current ecosystem and tooling were not built for component-driven architectures.

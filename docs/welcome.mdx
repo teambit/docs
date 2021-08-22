@@ -15,7 +15,6 @@ In Bit, each [Component](/components/overview) is independent and acts as a stan
 While Bit is tech-agnostic, development environments for specific tech are automated through [Envs](/envs/overview) to provide a customizable, repeatable and standard dev experience for development of [Components](components/overview). 
 Officially supported [Envs](/) exist for [Node](node/overview), [React](react/overview), [Angular](/angular/overview) and [more](/envs/official-envs). An [Env](/envs/env) can be composed of all the great tools the community offers like [TypeScript](/typescript/overview), [Babel](babel/overview), [Jest](/jest/overview), [ESLint](eslint/overview), [Webpack](webpack/overview) and dozens of others. Bit was designed to be fully compatible with community standards and therefore can easily be used with any standard tool throughout the JS ecosystem. 
 
-
 You can build and extend Bit just like us. Bit is a composition of [Aspects](extending-bit/overview). It comes built in with a set of configured Aspects and can be extended by configuring new Aspects to it. Every [Aspect](/extending-bit/overview) is a feature in Bit. Main core features are: [Workspace](/workspace/overview), [Component](components/overview), [Envs](envs/overview) and [Scope](scope/overview). Moreover, Bit is composed from over [60 core Aspects](/aspects) available as APIs and variety of interfaces including [CLI](cli-reference), GraphQL APIs and UIs.
 
 TODO: ADD VIDEO OF INTRO TO BIT.
@@ -31,6 +30,16 @@ bvm install
 ```
 
 To learn more about [Installing Bit, click here](getting-started/install-bit).
+
+
+### Why build with components?
+
+- Better software design. SOLID and DRY.
+- Simple and fast development experience.
+- Blazing fast component builds. Build only affected components.
+- Large scale collaboration through API usage, discovery and source-code visibility and accessability.
+- Achieve cross-organization consistency and predictability.
+- Autonomy.
 
 ### Create your first component development Workspace
 [Workspaces](workspace/overview) can be easily generated from [Workspace Templates](workspace/templates) or [initiated on existing repositories](start-from-existing). For more Workspace Templates use the `bit templates` command or search [Bit.dev](https://bit.dev/templates). 
@@ -67,6 +76,13 @@ bit new node my-first-workspace
 
 Head over to [Quick Start](quick-start) to learn on next steps.
 
+## TypeScript Native
+Bit was designed to be [TypeScript](https://www.typescriptlang.org) native as Type Systems are helpful in decoupling and collaborating on source code at scale. Our official [Envs](/envs/overview) ship with the TypeScript compiler by default which also supports JS compilation but can be customized to use [Babel](https://babeljs.io).
+
+- Doc generation is more accurate.
+- Better completions and type checking is provided in IDE.
+- Type checking helps catch error quickly and fail fast. 
+
 ## Common use cases for Bit
 Building from [Components](components/overview) helps and solves numerous common pains and use cases. Either technical or structural issues where tech limits architecture.
 
@@ -85,8 +101,6 @@ You can learn of more [use cases for Bit here](/use-cases).
 - Dive deeper into how Bit works in [Building with Bit](/building-with-bit/manage-workspace)
 - Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
 - Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Additional Resources and Support
 

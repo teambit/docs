@@ -1,6 +1,6 @@
 ---
-id: initializing-workspace-on-existing-project
-title: Initializing a New Workspace on an Existing Project
+id: initializing-workspaces
+title: Initializing Workspaces
 ---
 
 import FilesBitCreates from '@site/docs/mdx-components/workspace/files-bit-creates.md'

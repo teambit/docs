@@ -1,0 +1,5 @@
+---
+title: Symlink
+id: symlink
+---
+

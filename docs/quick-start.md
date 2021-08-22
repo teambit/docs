@@ -6,8 +6,7 @@ title: Quick Start
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Bit helps developers compose and collaborate on modern applications with [independent components](/components/overview) and dependencies.
-It makes development of component-driven and modular systems fast, standard, consistent and scalable.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into highly performing and consistent [component-driven apps](/component-driven-apps) at speed. Instead of building a monolithic app, with Bit you build Components and compose them into [Apps](apps/overview), driving [SOLID](https://en.wikipedia.org/wiki/SOLID) design principles, helping developers build better software while allowing organizations and communities to scale through autonomous teams and cross-team collaboration.
 
 ## Installing Bit
 
@@ -41,12 +40,11 @@ Learn more about upgrading Bit to the latest version in our [upgrading guide](/g
 
 ## Compose Components
 
-Bit is all about creating [Independent Components](/components/overview) and composing them together. You can think if it
-as building components in a Monorepo where every component gets the benefits of being an independent repo with the simplicity of developing a regular app.
+Bit is all about creating [Independent Components](/components/overview) and composing them together. Every [Component](/components/overview) is an independent module, promoting modular and SOLID design principles and scalable for collaboration in all team sizes.
 
 ### Creating a Workspace
 
-A [Workspace](workspace/overview) is where you build components and compose them into applications. Creating a [Workspace](/workspace/overview) can be done with a single command through 
+A [Workspace](/workspace/overview) is where you build components and compose them into applications. Creating a [Workspace](/workspace/overview) can be easily with the `bit new` command.
 [Workspace Templates](workspace/templates). For more Workspace Templates search [Bit.dev](https://bit.dev/templates). 
 
 <Tabs

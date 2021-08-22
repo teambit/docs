@@ -5,7 +5,19 @@ title: Overview
 
 import { Image } from '../../src/components/image'
 
-A scope is a storage for independent components.
+A scope is the Components Host. It sets clear ownership and team boundaries for autonomous teams and empowers to collaborate on Components together.
+
+- Collaboration
+- Ownership and team boundaries
+
+## Component hosting
+
+## Ownership and team boundaries
+
+## Using components
+
+## Collaborating on components
+
 
 ## Remote scope
 

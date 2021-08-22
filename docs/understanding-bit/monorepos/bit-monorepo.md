@@ -1,10 +1,11 @@
 ---
-title: Bit and Monorepo
+title: Bit in a Monorepo
 id: bit-monorepo
 ---
 
 import bitMonorepoImg from './bit-monorepo.png';
 
+Bit empowers the management and 
 Here is an example Monorepo, built with Bit: http://github.com/bit-demos/monorepo
 
 <img src={bitMonorepoImg} />
@@ -45,7 +46,20 @@ Directory structure for a Monorepo:
 
 ### Efficient incremental builds and CI
 
+
+
+
 ### Smart rebuilds of affected Components
+
+See which components got affected from your changes
+```bash
+$ bit status
+```
+
+Test the affected components
+```bash
+$ bit test --changed
+```
 
 ### Team boundaries and ownership
 

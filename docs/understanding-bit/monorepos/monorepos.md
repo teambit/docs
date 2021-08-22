@@ -1,6 +1,6 @@
 ---
 id: monorepos
-title: Monorepos
+title: Overview
 ---
 
 ## What is a Monorepo?
@@ -69,8 +69,13 @@ Team boundaries and ownership is usually defined by the directory structure, per
 
 
 ## Bit and Monorepos
-Bit can be very helpful in either a Monorepo or a Polyrepo architectures. It makes it smart, efficient to build in a Monorepo while providing the same benefits a Monorepo does, also in a Polyrepo architecture.
+Bit can be very helpful in either a Monorepo or a Polyrepo architectures. It makes it smart, efficient to build in a Monorepo while providing the same benefits a Monorepo does, also in a Polyrepo architecture. Because the same amount of value 
 
 ### Bit and Multi-repo (Polyrepo)
+
+
+### Repo migration
+
+### Lerna/NX/Rush
 
 

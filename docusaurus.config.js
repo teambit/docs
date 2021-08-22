@@ -60,7 +60,7 @@ module.exports = {
     // },
     navbar: {
       hideOnScroll: false,
-      title: 'Harmony Beta',
+      title: '',
       logo: {
         alt: 'v15 Harmony',
         src: 'img/logo.svg',

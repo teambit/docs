@@ -67,11 +67,10 @@ module.exports = {
         {
           type: 'category',
           label: 'Compose Components',
-          collapsed: true,
           items: [
             'getting-started/compose-components/create-components',
-            'getting-started/compose-components/manage-dependencies',
-            'getting-started/compose-components/from-document-to-build'
+            'getting-started/compose-components/use-dependencies',
+            'getting-started/compose-components/component-ops'
           ]
         },
         {
@@ -79,6 +78,7 @@ module.exports = {
           label: 'Release Components',
           collapsed: true,
           items: [
+            // 'getting-started/release-components/building-components',
             'getting-started/release-components/version-components',
             'getting-started/release-components/export-components',
             {
@@ -108,15 +108,15 @@ module.exports = {
             'getting-started/use-components/install-dependencies',
             'getting-started/use-components/import-components',
             'getting-started/use-components/propose-changes',
-            {
-              type: 'category',
-              label: 'Composition Strategies',
-              items: [
-                'getting-started/use-components/composition-strategies/build-time-integration',
-                'getting-started/use-components/composition-strategies/esmodules',
-                'getting-started/use-components/composition-strategies/module-federation'
-              ]
-            }
+            // {
+            //   type: 'category',
+            //   label: 'Composition Strategies',
+            //   items: [
+            //     'getting-started/use-components/composition-strategies/build-time-integration',
+            //     'getting-started/use-components/composition-strategies/esmodules',
+            //     'getting-started/use-components/composition-strategies/module-federation'
+            //   ]
+            // }
           ]
         },
         {
@@ -149,7 +149,7 @@ module.exports = {
         'understanding-bit/component-driven-software',
         {
           type: 'category',
-          label: 'Monorepos',
+          label: 'Repository Architecture',
           items: [
             'understanding-bit/monorepos/monorepos',
             'understanding-bit/monorepos/bit-polyrepo',
@@ -157,7 +157,8 @@ module.exports = {
           ]
         },
         'understanding-bit/economy-of-scale',
-        'understanding-bit/micro-architecture',
+        'understanding-bit/package-managers',
+        'understanding-bit/micro-architecture/micro-architecture',
         'understanding-bit/dogfooding'
       ]
     },
@@ -171,11 +172,18 @@ module.exports = {
           collapsed: true,
           items: [
             'workspace/overview',
-            'workspace/creating-new-workspace',
-            'workspace/initializing-workspace-on-existing-project',
+            'workspace/creating-workspaces',
+            'workspace/component-link',
+            'workspace/directory-structure',
+            'workspace/resetting-workspace',
+            'workspace/workspace-component',
+            'workspace/bitmap',
+            'workspace/node-modules',
+            'workspace/component-directory',
+            'workspace/initializing-workspaces',
             'workspace/workspace-ui',
             'workspace/workspace-status',
-            //'workspace/workspace-',
+            'workspace/workspace-json',
             'workspace/variants',
             'workspace/importing-components',
             'workspace/creating-components',
@@ -190,6 +198,7 @@ module.exports = {
           items: [
             'components/overview',
             'components/component-id',
+            'components/main-file',
             'components/creating-components',
             'components/inspecting-components',
             'components/comparing-components',
@@ -402,6 +411,7 @@ module.exports = {
           items: [
             'packages/overview',
             'packages/managing-packagejson',
+            'packages/package-json',
             'packages/packing-components',
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'

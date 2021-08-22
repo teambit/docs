@@ -84,3 +84,18 @@ bit untrack <component id>
 - Plan and arrange components in namespaces according to their functionality, similar to the way you would arrange them in folders in a project.
 - Review the package.json in your original projects to ensure proper definition of dependencies.
 - If you are using path aliases in your `import` statements, make sure you define Bit's custom paths resolution configuration.
+
+## Adding Components
+
+You can add components to Bit using the `bit add` command. This command will track the component by adding it to your `.bitmap` file. Use `bit add` followed by the components path/directory structure.
+
+```bash
+bit add my-scope/ui/my-component
+```
+
+Use the `--namespace` flag to specify the namespace of the component.
+
+```bash
+bit add my-scope/ui/my-component --namespace ui
+```
+

@@ -12,7 +12,7 @@ To use this environment for your components, add it to any of the `variants` in 
 ```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "some/path": {
+    "some/selector": {
       "teambit.react/react": {}
     }
   }
@@ -23,7 +23,7 @@ To use this environment for your components, add it to any of the `variants` in 
 
 React implements several component templates:
 
-- `react-component` a basic React UI component.
+- `react` a basic React UI component.
 - `react-context` a react context component.
 - `react-hook` a react hook component.
 - `mdx-component` an MDX component.
@@ -36,7 +36,7 @@ Use any of these templates with the `bit create` command:
 bit create <template name> [components...]
 ```
 
-## Runtime (framework) dependencies
+## Peer dependencies
 
 As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.
 It is recommended for you to extend the base React environment and define a semantic version rule and range to fit your current tech stack and guidelines for reuseable React components.
