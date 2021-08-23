@@ -2129,16 +2129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:1.6.22":
-  version: 1.6.22
-  resolution: "@mdx-js/react@npm:1.6.22::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40mdx-js%2Freact%2F-%2Freact-1.6.22.tgz"
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0
-  checksum: bc84bd514bc127f898819a0c6f1a6915d9541011bd8aefa1fcc1c9bea8939f31051409e546bdec92babfa5b56092a16d05ef6d318304ac029299df5181dc94c8
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:^1.6.21":
+"@mdx-js/react@npm:1.6.22, @mdx-js/react@npm:^1.6.21":
   version: 1.6.22
   resolution: "@mdx-js/react@npm:1.6.22"
   peerDependencies:
@@ -9156,14 +9147,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21":
-  version: 4.17.21
-  resolution: "lodash@npm:4.17.21::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Flodash%2F-%2Flodash-4.17.21.tgz"
-  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
-  languageName: node
-  linkType: hard
-
-"lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21":
+"lodash@npm:4.17.21, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -13910,17 +13894,7 @@ typescript@^4.2.2:
   languageName: node
   linkType: hard
 
-"url-parse@npm:1.5.1":
-  version: 1.5.1
-  resolution: "url-parse@npm:1.5.1::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Furl-parse%2F-%2Furl-parse-1.5.1.tgz"
-  dependencies:
-    querystringify: ^2.1.1
-    requires-port: ^1.0.0
-  checksum: ce5c400db52d83b941944502000081e2338e46834cf16f2888961dc034ea5d49dbeb85ac8fdbe28c3fe738c09320a71a2f6d9286b748895cd464b1e208b6b991
-  languageName: node
-  linkType: hard
-
-"url-parse@npm:^1.4.3, url-parse@npm:^1.5.1":
+"url-parse@npm:1.5.1, url-parse@npm:^1.4.3, url-parse@npm:^1.5.1":
   version: 1.5.1
   resolution: "url-parse@npm:1.5.1"
   dependencies:

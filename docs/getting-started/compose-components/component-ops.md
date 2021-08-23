@@ -7,7 +7,7 @@ import envServiceImg from './envs.png';
 import testingImg from './testing.png';
 import builderImg from './builder.png';
 
-Component operations are made simplified and standardized with [Envs](/envs/overview) and or more specifically through [Env Services](/envs/services). [Env Services](/envs/services) allowing the creation of a [Service](/envs/service) which is meant to make a certain a development operation simplified and standard across all components. Examples to services in Bit are: [Compiler](/compiler/overview), [Tester](/tester/overview), [Builder](/builder/overview), [Linter](/linter/overview), [Bundler](/bundler/overview). Services are implemented by tool-specific Aspects like [TypeScript](/typescript/overview) or [Jest](/jest/overview) and used from [Env](/envs/env) like [React](/react/overview) or [Node](/node/overview), composing them together to form an entire development experience to a certain type of a component. This makes the development of every component simple and standard for all developers regardless to the specific tools used. 
+Component operations are made simplified and standard with [Envs](/envs/overview) and or more specifically through [Env Services](/envs/services). [Env Services](/envs/services) allowing the creation of a [Service](/envs/service) which is meant to make a certain a development operation simplified and standard across all components. Examples to services in Bit are: [Compiler](/compiler/overview), [Tester](/tester/overview), [Builder](/builder/overview), [Linter](/linter/overview), [Bundler](/bundler/overview). Services are implemented by tool-specific Aspects like [TypeScript](/typescript/overview) or [Jest](/jest/overview) and used from [Env](/envs/env) like [React](/react/overview) or [Node](/node/overview), composing them together to form an entire development experience to a certain type of a component. This makes the development of every component simple and standard for all developers regardless to the specific tools used. 
 
 Below chart is demonstrating how a `bit compile` command flows in Bit until invokes the right `TypeScript` compiler which is defined in the component's configured Env.
 
@@ -45,7 +45,10 @@ To learn more on Compiler, head to over to the [Compiler documentation](/compile
 Same is applied on Testing. In this case, all components are configured to use an [Env](/envs/env) which uses [Jest](/jest/overview) but with two different configuration, one for Aspects and other for React components.
 
 ```bash
-$ bit test
+bit test
+```
+
+```bash
 testing total of 6 components in workspace 'my-workspace'
 testing 5 components with environment company.scope/templates/envs/my-react
 
@@ -81,18 +84,23 @@ $ bit build
 To learn about building components and the Builder, head over to the [Builder documentation](/builder/overview) section.
 
 ## Linting
-TODO: @debbie to complete
+By default, [React Env](/react/overview) uses [ESLint](/eslint/overview) to lint components.
 
 ```bash
-$ bit lint
+bit lint
+bit lint --fix
 ```
 
+To learn more about linting components and the Linter, head over to the [Linter documentation](/linter/overview) section.
+
 ## Formatting
-TODO: @debbie to complete
+By default, component formatting is configured to work with [Prettier](/prettier/overview) on all official envs.
 
 ```bash
 $ bit format
 ```
+
+To learn more about the Formatter, please head over to the [Formatter documentation](/formatter/overview) section.
 
 ## Customizing envs to use different tools
 TODO: @debbie to complete

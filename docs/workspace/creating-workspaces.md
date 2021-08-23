@@ -1,6 +1,6 @@
 ---
 id: creating-workspaces
-title: Creating a New Workspace
+title: Creating Workspaces
 ---
 
 import FilesBitCreates from '@site/docs/mdx-components/workspace/files-bit-creates.md'

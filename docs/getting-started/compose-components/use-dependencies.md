@@ -18,7 +18,7 @@ import { Heading } from '@bitorg/experience.templates.ui.heading';
 
 Congrats you have added a new dependency for your component! You can view your new component dependency with `bit show`. Bit now recognizes `templates/ui/heading` as a dependency of your component.
 
-```bash
+```bash {30,31}
 $ bit show ui/my-welcome
 ┌───────────────────┬────────────────────────────────────────────────────────────────┐
 │ id                │ bitorg.experience/ui/my-welcome                                │
@@ -98,7 +98,7 @@ Going to to the `Dependencies` UI tab computes and shows the evolved dependency 
 
 A list of the component's direct dependencies can be seen using `bit show` or in the [Code UI tab](/code/ui).
 
-```bash
+```bash {30,31}
 $ bit show ui/my-welcome
 ┌───────────────────┬────────────────────────────────────────────────────────────────┐
 │ id                │ bitorg.experience/ui/my-welcome                                │
@@ -140,9 +140,15 @@ $ bit show ui/my-welcome
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
 
+
+Dependency policy.
+Once you remove an `import` statement, 
+
+## Dev dependencies
+
 ## Peer dependencies
 
 Bit helps to standardize component dependencies.
 
-## Controlling dependencies
+## Overriding dependencies
 

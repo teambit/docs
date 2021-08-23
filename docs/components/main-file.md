@@ -17,13 +17,12 @@ export type { ButtonProps }  from './button';
 ```
 
 ### Requiring internal files of components
-Requiring internal files of components is highly not recommended and might cause inconsistencies due to compiling of the Component. If requiring an internal file makes sure to only `require` files which are not compiled by the [Component](/components/overview) defined [Compiler](/compiler/overview).
+Requiring internal files of components is highly not recommended and might cause inconsistencies due to compiling of the Component. If requiring an internal file makes sure to only `require` files which are not compiled by the [Component](/components/overview) defined [Compiler](/compiler/overview) like `scss`, `less` or `png` files.
 
 ```ts
 import { Button } from '@teambit/base-ui.button'; // good!
-import { Button } from '@teambit/base-ui.button/button'; // bad!
-import styles from '@teambit/base-ui.button/button.modules.scss'; // resources like `scss` and `png` which are expected static files handled by the bundler.
-import img from 
+import { Button } from '@teambit/base-ui.button/button'; // bad! requires internal file of the component.
+import styles from '@teambit/base-ui.button/button.modules.scss'; // resources like `scss` and `png` since they are not compiled and handles by the consuming app.
 ```
 
 ## Main file resolution

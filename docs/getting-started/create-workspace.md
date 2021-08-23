@@ -20,11 +20,11 @@ Templates are used to ease the ramp up for starting a new project with skeleton 
 
 Create the Workspace and head over to it as following. To learn in depth on [Creating Workspace head here](/workspace/creating-workspaces).
 
-:::note
+:::tip
 It might be easier to create a [Scope](/scopes/overview) at this moment to spare few steps next on. You can quickly [create a free Scope on the Bit Cloud](https://bit.dev/create-scope) or [host your own Scope](/scopes/host-your-own-scope). Use the `--scope` flag for all generated components to include your Remote Scope.
 :::
 
-Creating the Workspace should be done by configuring a [Scope name](/scopes/scope-name). For this example, I would use the `bitorg.experience` reflecting the Scope owned by the `experience` team at the `bitorg`.
+Creating the Workspace should be done by configuring a [Scope name](/scopes/scope-name). For this example, I would use the `bitorg.experience` scope name, which is a combination my organization name `bitorg` and the `experience` team owning it.
 
 <Tabs
 groupId="frameworks"
@@ -51,8 +51,8 @@ cd my-workspace
   </TabItem>
 </Tabs>
 
-Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the minimal footprint required for a [Workspace](workspace/overview) and generated the workspace according to the [Workspace Files](/workspace/workspace-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-configuration) defined in the chosen [Workspace Template](/workspace/workspace-generator).
-These are the file structure generated be the [Workspace Generator](/workspace/overview).
+Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the [minimal footprint](/workspace/initializing-bit) required for a [Workspace](/workspace/overview), and generated the workspace according to the [Workspace Files](/workspace/workspace-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-configuration) defined in the chosen [Workspace Template](/workspace/workspace-generator).
+This is the file structure generated be the [Workspace Generator](/workspace/overview).
 
 ```
 ├── .git/bit --> Local Scope associated with the Workspace.
@@ -106,7 +106,7 @@ new components
 
 `ok` means a component has no known issues. Head here to learn more on [Workspace Status](/workspace/status) and its different states.
 
-[Workspaces come with a UI interface](/workspace/workspace-ui) for enable consistent UI for Components built anywhere. It helps during development and ease common development tasks as component documentation, discovery, testing, visualization and even explore history logs and explore architectural dependency graphs. It is customizable to work with every tool. You can initiate the Workspace UI for the first time with `bit start` command. 
+[Workspaces come with a UI interface](/workspace/workspace-ui) to enable a consistent UI for Components built anywhere. It helps during development and ease common development tasks as component documentation, discovery, testing, visualization and even explore history logs and explore architectural dependency graphs. It is customizable to work with every tool. You can initiate the Workspace UI for the first time with `bit start` command. 
 
 ```bash
 $ bit start
@@ -124,7 +124,7 @@ Use `Ctrl-K` to open the Workspace UI quick search and toggle between components
 
 
 ### Workspace directory structure
-By default, [directory structure in the Workspace](/workspace/directory-structure) is structured in [Scopes](/scope/overview), which help define team boundaries and ownership as well as namespaces which are helpful for organizing and configuring Components. Every Component is in its own [Component Directory](/workspace/component-directory). Workspaces can be scaled over time, include new components or distributed to more Workspaces for more teams to take ownership over specific features.
+By default, [directory structure in the Workspace](/workspace/directory-structure) is structured in [Scopes](/scope/overview), which help define team boundaries and ownership as well as [Namespaces](/components/namespaces) which are helpful for organizing and configuring Components. Every Component is in its own [Component Directory](/workspace/component-directory). Workspaces can be scaled over time, include new components or distributed to more Workspaces for more teams to take ownership over specific features.
 To learn more on [Repository Architecture head over here](/understanding-bit/repository-architecture).
 
 ```bash
@@ -173,7 +173,7 @@ $ bit install
 It can also be used for adding new [External Dependencies](dependencies/external-dependencies).
 
 ```bash
-bit install lodash
+bit install @teambit/base-ui.button
 ```
 
 ### Configure Aspects (Bit Extensions) on the Worksapce
@@ -186,6 +186,7 @@ bit install lodash
 
 ### Debugging in the Workspace
 
-[Base Templates](/) comes built in with an example `launch.json` for VSCode Debugging Configuration. To learn more on IDE debugger configuration head here.
+[Base Templates](/) comes built in with an example launch.json for [VSCode Debugging Configuration](https://code.visualstudio.com/docs/editor/debugging). To learn more on IDE debugger configuration head here.
 
+Webstorm to be added here.
 

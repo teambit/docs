@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import componentImg from './component.png';
 
-In Bit, you create Components and compose them together through [Dependencies](dependencies/overview). Components can be created in different types, which are set by the configured [Env](/envs/env). [Envs](/envs/overview) automate the development environment for a specific type of [Component](/components/overview). Officially supported [Envs](/envs/overview) available for creating components are [Node](/node/overview), [React](/react/overview), [Angular](/angular/overview) and [Aspect](/extending-bit/aspect). 
+In Bit, you create Components and compose them together through [Dependencies](dependencies/overview). Components can be created in different types, which are set by the configured [Env](/envs/env). [Envs](/envs/overview) automate the development environment for a specific type of [Component](/components/overview). Officially supported [Envs](/envs/overview) available for creating components are [Node](/node/overview), [React](/react/overview), [Angular](/angular/overview), [LitHTML](/lithtml/overview) and [Aspect](/extending-bit/aspect). 
 
 Our official envs come built-in with a set of pre-configured templates to make the process of creating components repeatable, easy and directing towards best practices. To view available templates use the `bit templates` command.
 
@@ -15,20 +15,26 @@ Our official envs come built-in with a set of pre-configured templates to make t
 bit templates
 ```
 
-Creating your first React Component is as simple as using the `bit create` which is powered by the [Component Generator](/generator/overview). By default, components are created in the `defaultScope` defined in the [Workspace Configuration](/workspace/config), to specify a different scope use the `--scope` flag.
+:::note
+Templates are shown from all Envs configured in your Workspace.
+:::
+
+Creating your first React Component is as simple as using the `bit create` command which is powered by the [Component Generator](/generator/overview). By default, components are created in the `defaultScope` defined in the [Workspace Configuration](/workspace/config), to specify a different scope use the `--scope` flag.
 
 Official Workspace templates come with pre-configured [workspace.json](/workspace/workspace-configuration) which sets components created that include either the `ui` or `pages` namespace to be associated to the React env, Default env is the [Node env](/node/overview). `envs` and `extensions` namespaces are expected to include [Bit Aspects](extending-bit/aspect) associated by default with the [Aspect env](extending-bit/aspect-env).
 
 ```json
   "teambit.workspace/variants": {
-    "{**/ui/**}, {**/pages/**}": {
-      "company.scope/templates/envs/my-react": {}
+    "{ui/**}, {pages/**}": {
+      "teambit.react/react": {}
     },
-    "{**/envs/**}, {**/extensions/**}": {
+    "{envs/**}, {extensions/**}": {
       "teambit.harmony/aspect": {}
     }
   }
 ```
+
+In the above example, [Variants](/workspace/variants) are used to "select" components by their namespace and configure them with the [React Env](/react/overview).
 
 <Tabs
 groupId="frameworks"
