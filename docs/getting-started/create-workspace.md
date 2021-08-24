@@ -36,7 +36,10 @@ values={[
 <TabItem value="React">
 
 ```bash
-bit new react my-workspace --scope bitorg.experience
+bit new react-workspace my-first-workspace --default-scope bitorg.experience
+```
+
+```bash
 cd my-workspace
 ```
 
