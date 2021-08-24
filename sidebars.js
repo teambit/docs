@@ -151,9 +151,9 @@ module.exports = {
           type: 'category',
           label: 'Repository Architecture',
           items: [
-            'understanding-bit/monorepos/monorepos',
-            'understanding-bit/monorepos/bit-polyrepo',
-            'understanding-bit/monorepos/bit-monorepo'
+            'understanding-bit/repository-architecture/overview',
+            'understanding-bit/repository-architecture/bit-polyrepo',
+            'understanding-bit/repository-architecture/bit-monorepo'
           ]
         },
         'understanding-bit/economy-of-scale',
@@ -360,6 +360,8 @@ module.exports = {
           collapsed: true,
           items: [
             'generator/overview',
+            'generator/workspace-template',
+            'generator/template-components',
           ]
         },
         {
@@ -401,7 +403,7 @@ module.exports = {
           collapsed: true,
           items: [
             'configurations/config-files',
-            'configurations/global-configurations'
+            'configurations/global-configurations',
           ]
         },
         {
@@ -448,6 +450,8 @@ module.exports = {
             'reference/api-reference',
             'reference/cli-reference',
             'reference/common-commands',
+            'reference/bvm',
+            'reference/migration',
             {
               type: 'category',
               label: 'Troubleshooting',

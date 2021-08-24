@@ -5,7 +5,7 @@ title: Overview
 
 Formatter helps you format your components' code according to a pre-defined set of styling rules.
 
-Code formatting is the process of styling code to make it "cleaner", clearer and consistent. Having your team's code formatted automatically saves time otherwise wasted on discussions and code reviews about code styling.
+Code formatting is the process of styling code to make it "cleaner", clearer and more consistent. Having your team's code formatted automatically saves time otherwise wasted on discussions and code reviews about code styling.
 
 The Formatter aspect simplifies and standardizes the process of code formatting for [Components](#). It does so for code formatting during development (in the workspace) and for code formatting during component build (in a capsule, as part of the [Build Pipeline](#))
 

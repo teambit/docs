@@ -3,11 +3,11 @@ title: Use Dependencies
 id: use-dependencies
 ---
 
+import { Image } from '@site/src/components/image'
 import depImg from './deps.png';
 import depGraphImg from './dep-graph.png';
 
-
-Now that we have our first Component created, let's add the first dependency. Dependencies allow to compose components together and use them from each other. 
+Now that we have our first Component created, let's add the first dependency. Dependencies allow to compose components together and use them from each other.
 
 Go to `my-welcome.ts` and add the following `import` statement just below the `react` import statement.
 
@@ -54,7 +54,7 @@ $ bit show ui/my-welcome
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
 
-<img src={depImg} />
+<Image src={depImg} />
 
 Congrats! You have added the your first dependency for your component!
 Now, we will add a second dependency, `ui/card` and the initial implementation for our new component.
@@ -68,33 +68,31 @@ export type MyWelcomeProps = {
   /**
    * a text to be rendered in the component.
    */
-  title?: string
+  title?: string;
 };
 
 export function MyWelcome({ title }: MyWelcomeProps) {
   return (
     <>
-      <Heading>
-        {title}
-      </Heading>
+      <Heading>{title}</Heading>
       <Card
-          link="https://harmony-docs.bit.dev/building-with-bit/removing-components"
-          heading="Remove"
-          text="remove components and their files"
-          command={`bit remove "ui/*" --delete-files`}
-        />
+        link="https://harmony-docs.bit.dev/building-with-bit/removing-components"
+        heading="Remove"
+        text="remove components and their files"
+        command={`bit remove "ui/*" --delete-files`}
+      />
     </>
   );
 }
 
 MyWelcome.defaultProps = {
-  text: 'My Welcome Page'
-}
+  text: 'My Welcome Page',
+};
 ```
 
-Going to to the `Dependencies` UI tab computes and shows the evolved dependency graph including the entire dependency graph of  your component rather not just the direct ones.
+Going to to the `Dependencies` UI tab computes and shows the evolved dependency graph including the entire dependency graph of your component rather not just the direct ones.
 
-<img src={depGraphImg} />
+<Image src={depGraphImg} />
 
 A list of the component's direct dependencies can be seen using `bit show` or in the [Code UI tab](/code/ui).
 
@@ -140,9 +138,8 @@ $ bit show ui/my-welcome
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
 
-
 Dependency policy.
-Once you remove an `import` statement, 
+Once you remove an `import` statement,
 
 ## Dev dependencies
 
@@ -151,4 +148,3 @@ Once you remove an `import` statement,
 Bit helps to standardize component dependencies.
 
 ## Overriding dependencies
-

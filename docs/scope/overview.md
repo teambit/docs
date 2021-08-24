@@ -18,7 +18,6 @@ A scope is the Components Host. It sets clear ownership and team boundaries for 
 
 ## Collaborating on components
 
-
 ## Remote scope
 
 A remote scope is a remote collection of independent components that were 'snapped'/['tagged'](/getting-started/version) and ['exported'](/getting-started/export-to-scope) from one or more [Bit workspaces](/workspace/overview). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
@@ -34,6 +33,8 @@ A scope is visually represented by the [Scope UI](TODO) (similarly to the way a 
 <br />
 
 To set up a remote scope, [see here](/scope/set-up-remote-scope).
+
+### Scope name
 
 ### Cached dependencies
 
@@ -51,4 +52,4 @@ The local scope serves two main functions:
 - It enables the workspace to recognize whether a component has been modified by comparing the immutable version stored in the local scope to the component files tracked by the workspace.
 
 > The local scope (`.bit` or `.git/.bit`) should not be tracked by Git.
-{"mode":"full","isActive":false}
+> {"mode":"full","isActive":false}

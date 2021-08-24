@@ -6,11 +6,11 @@ title: Quick Start
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into highly performing and consistent [component-driven apps](/component-driven-apps) at speed. Instead of building a monolithic app, with Bit you build Components and compose them into [Apps](apps/overview), driving [SOLID](https://en.wikipedia.org/wiki/SOLID) design principles, helping developers build better software while allowing organizations and communities to scale through autonomous teams and cross-team collaboration.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into highly performing and consistent [component-driven apps](/understanding-bit/component-driven-software) at speed. Instead of building a monolithic app, with Bit you build Components and compose them into [Apps](apps/overview), driving [SOLID](https://en.wikipedia.org/wiki/SOLID) design principles, helping developers build better software while allowing organizations and communities to scale through autonomous teams and cross-team collaboration.
 
 ## Installing Bit
 
-Install Bit using [BVM](/), Bit's version manager.
+Install Bit using [BVM](/reference/bvm), Bit's version manager.
 
 <Tabs
 defaultValue="NPM"
@@ -45,7 +45,7 @@ Bit is all about creating [Independent Components](/components/overview) and com
 ### Creating a Workspace
 
 A [Workspace](/workspace/overview) is where you build components and compose them into applications. Creating a [Workspace](/workspace/overview) can be easily with the `bit new` command.
-[Workspace Templates](workspace/templates). For more Workspace Templates search [Bit.dev](https://bit.dev/templates). 
+[Workspace Templates](workspace/templates). For more Workspace Templates search [Bit.dev](https://bit.dev/templates).
 
 <Tabs
 groupId="frameworks"
@@ -106,14 +106,14 @@ bit start
   </TabItem>
 </Tabs>
 
-Learn more about [Workspaces](/)
+Learn more about [Workspaces](/workspace/overview)
 
 ### Create Components
 
-[Creating Components](/) can be doing using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
+[Creating Components](/getting-started/compose-components/create-components) can be done using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
 Components must be in their own directory and have an index file that exports the component.
 
-The following command will add a new component to your workspace under the [namespace](/) of 'ui'.
+The following command will add a new component to your workspace under the [namespace](/components/component-id#sub-categories-with-namespaces) of 'ui'.
 
 <Tabs
 groupId="frameworks"
@@ -142,11 +142,11 @@ bit create ng-lib ui/my-component
 Use the `bit templates` command to see a list of available templates.
 :::
 
-Learn more about [Creating Components](/) including how to [create your own templates](/).
+Learn more about [Creating Components](/getting-started/compose-components/create-components) including how to [create your own templates](/).
 
 ### Common Component Operations
 
-Bit helps to simplify and standardize common operations required for developing components like [compiling](/), [testing](/), [linting](/), [formatting](/) and more.
+Bit helps to simplify and standardize common operations required for developing components like [compiling](/compiler/overview), [testing](/tester/overview), [linting](/linter/overview), [formatting](/formatter/overview) and more.
 To learn more about the different services available in Bit go to [Env Services](/envs/core-services).
 
 ```bash
@@ -162,7 +162,7 @@ You can use the `--help` flag for each of these commands to learn more.
 Bit automatically watches and re-executes your component's tests when using `bit start`.
 :::
 
-Learn more about [component testing](/).
+Learn more about [component testing](/tester/overview).
 
 ## Release Components
 
@@ -194,7 +194,7 @@ bit export
 ```
 
 :::note
-Before exporting make sure you have set the default scope to be your [remote scope](/) in the `workspace.jsonc` file.
+Before exporting make sure you have set the default scope to be your [remote scope](/scope/setting-remote-scope) in the `workspace.jsonc` file.
 :::
 
 ## Use and Collaborate on Components
@@ -218,11 +218,11 @@ Components can be installed with any package manager in any other app, whether i
 - NPM: `npm install @some-org.scope/my-component`
 - Yarn: `yarn add @some-org.scope/my-component`
 
-Make sure you [configure the Bit registry](/) if you are using Bit's cloud provider. Components can be published to any registry or integrated with Artifactory or Nexus.
+Make sure you [configure the Bit registry](/configurations/config-files#npm-config-npmrc) if you are using Bit's cloud provider. Components can be published to any registry or integrated with Artifactory or Nexus.
 
 ### Importing Components
 
-Components can be [imported(cloned)](/) to any Bit Workspace. By importing components you can make changes to any component
+Components can be [imported (cloned)](/workspace/importing-components) to any Bit Workspace. By importing components you can make changes to any component
 from any Bit Workspace and then export a new version and eject it from your workspace.
 
 ```bash
