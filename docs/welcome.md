@@ -8,7 +8,7 @@ slug: /
 
 Instead of building an application that consists of lots of components we build lots of components that compose to build many different applications. This is another way of thinking. The application is just a deployment therefore it has no meaning. It's just a composition of everything that is deployed to somewhere. Building with Bit helps you build more modular, maintainable, testable, and reusable code.
 
-[Bit Cloud](https://bit.dev/) is a cloud hosting service for components. It provides developers and teams with an end-to-end solution for hosting, organizing, discovering, conduming, updating, and collaboarting on components. It is possible to use Bit with or without Bit Cloud.
+[Bit Cloud](https://bit.dev/) is a cloud hosting service for components. It provides developers and teams with an end-to-end solution for hosting, organizing, discovering, consuming, updating, and collaborating on components. It is possible to use Bit with or without Bit Cloud.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
