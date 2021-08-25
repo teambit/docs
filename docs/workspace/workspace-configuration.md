@@ -3,13 +3,26 @@ id: workspace-configuration
 title: Configuring the Workspace
 ---
 
-The workspace configuration file (`workspace.jsonc`) is where rules and settings are applied to the workspace itself, and to every component managed by it.
+A [Workspace](/workspace/overview) can be configured in the `workspace.jsonc` file, where each [Aspect](/extending-bit/aspect) used in the Workspace can be configured according to its [accepted configuration](/extending-bit/aspect#config).
 
-The workspace configuration JSON reflects the way Bit is designed and built - that is, composed from Aspect. Each of these components exposes a workspace configuration API. That means, your "workspace configurations" are set across multiple Bit components.
+Each entry in the `workspace.jsonc` file is a definition of an [Aspect](/aspect/overview), where the key is a [Component ID](/components/id) of the used [Aspect](/extending-bit/aspect), and the value its his configuration.
 
-As you will see, the names of these JSON fields, each representing an component, follow Bit's component name pattern `<scope-owner>.<scope-name>/<component-name>`, for example: `teambit.workspace/variants`.
+```json
+{
+  // An Aspect entry.
+  "teambit.workspace/workspace": {
+    "name": "My First Bit Workspace", 
+    "icon": "https://static.bit.dev/bit-logo.svg"
+  }
+}
+```
 
-## Main workspace config APIs
+At the above example, we are defining the [Workspace](/workspace/overview) Aspect to be configured with a specific `name` and an `icon`. In the same sense, [Core Aspects](/extending-bit/core-aspects) can be configured and [External Aspects](/external-aspects) can be used.
+
+
+
+
+
 
 ### teambit.workspace/workspace
 

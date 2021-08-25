@@ -5,16 +5,23 @@ id: overview
 
 import { Image } from '@site/src/components/image'
 import scopeWorkspace from './images/workspace-scope.png';
+import componentImg from './component.png';
 
-Stateful micro-repository for components that are connected through dependencies. Designed for versioning, composition and isolation of components.
+It is a decoupled, versioned source-code container designed for the purpose of containing a single module or component. It is the most fundamental building block of Bit and what enables the composition of software from independent pieces.
 
-Components are hosted and managed in [Scope](/scope/overview) and maintained, edited and versioned in any [Workspace](/). Upon every Tag or Snap
-a new object is persisted to the Scope. Operations like [Import](/) and [Export](/) allows to transfer components between
+Each Component has a [Component ID](/components/component-id) and contains [Source Code](/components/source-code), [Artifacts](/components/artifact), [Configuration of Aspects](/extending-bit/aspect) and [Metadata](/components/metadata). Components are connected and composed with each other through [Dependencies](/dependencies/overview).
+
+<img src={componentImg} alt="Bit Components" height={450} />
+
+To learn more about how components connect through dependencies, head over to the [Dependencies documentation section](/dependencies/overview).
+
+Components are hosted and managed in [Scope](/scope/overview) and can be maintained, edited and versioned in any [Workspace](/workspace/overview). 
+Upon every Tag or Snap a new object is persisted to the Scope. Operations like [Import](/) and [Export](/) allows to transfer components between
 different Scopes.
 
 A Bit Component
 
-<img src={scopeWorkspace} />
+<img src={scopeWorkspace} height={500} />
 
 ## Component Anatomy
 
@@ -55,4 +62,3 @@ A component tracked by Bit can be built, tagged with a release version, and expo
 
 The exported independent component will contain the component's source code, dependency graph, development setup, and artifacts (including its auto-generated Node package).
 
-<Image src="/img/diagrams/component_diagram_2.png" alt="a diagram of an independent component" />

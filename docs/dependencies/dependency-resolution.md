@@ -3,6 +3,16 @@ id: dependency-resolution
 title: Dependency Resolution
 ---
 
+Bit's dependency resolution favours consistency and predictability, making sure each time a component is installed 
+
+Component dependencies are resolved and determined during component versioning. Depen 
+
+Depndencies
+
+```bash
+bit tag --all
+```
+
 Dependency resolution is handled by the [Dependency Resolver extension](https://bit.dev/teambit/dependencies/dependency-resolver).
 
 Dependency Resolver parses out all `import` \ `require` statements in the component's files.
@@ -11,11 +21,6 @@ The generated data is integrated with dependency policies that were set by vario
 [Environment](/environments/overview)) and by the manually configured policies set in the [workspace configuration file](/workspace/configurations) (`workspace.jsonc`).
 
 The result of that process determines the list of dependencies for each component, as well as their dependency-type (`dependencies`, `devDependencies` and `peerDependencies`) and version number.
-
-## Workspace dependency graph
-
-When all import statements in all components in the workspace have been parsed, Bit creates a complete dependency graph for the workspace.
-This allows Bit to understand which component in the workspace is affected by a change made to another component and perform the needed actions to handle that (notify of a change in the Workspace UI, test and re-compile affected components, etc.).
 
 ## The dependency policies hierarchy
 

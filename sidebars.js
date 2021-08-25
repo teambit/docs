@@ -214,6 +214,7 @@ module.exports = {
           collapsed: true,
           items: [
             'dependencies/overview',
+            'dependencies/external-dependencies',
             'dependencies/installing-dependencies',
             'dependencies/configuring-dependencies',
             'dependencies/dependency-resolution',

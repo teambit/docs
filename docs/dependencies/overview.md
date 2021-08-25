@@ -3,6 +3,15 @@ id: overview
 title: Overview
 ---
 
+Common dependency managers
+
+
+```
+bit install
+```
+
+
+
 ## Dependency Automation
 
 Bit greatly simplifies component dependency management by automating most of it. It auto-generates the dependency graph for each component and for the entire workspace.
