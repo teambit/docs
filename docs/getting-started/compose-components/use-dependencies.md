@@ -7,7 +7,7 @@ import { Image } from '@site/src/components/image'
 import depImg from './deps.png';
 import depGraphImg from './dep-graph.png';
 
-Now that we have our first Component created, let's add the first dependency. Dependencies allow to compose components together and use them from each other.
+Now that we have our first [Component](/components/overview) created, let's add our first dependency. Dependencies allow us to compose components out of other components.
 
 Go to `my-welcome.ts` and add the following `import` statement just below the `react` import statement.
 
@@ -18,7 +18,7 @@ import { Heading } from '@bitorg/experience.templates.ui.heading';
 
 Congrats you have added a new dependency for your component! You can view your new component dependency with `bit show`. Bit now recognizes `templates/ui/heading` as a dependency of your component.
 
-```bash {30,31}
+```bash {28}
 $ bit show ui/my-welcome
 ┌───────────────────┬────────────────────────────────────────────────────────────────┐
 │ id                │ bitorg.experience/ui/my-welcome                                │
@@ -56,8 +56,7 @@ $ bit show ui/my-welcome
 
 <Image src={depImg} />
 
-Congrats! You have added the your first dependency for your component!
-Now, we will add a second dependency, `ui/card` and the initial implementation for our new component.
+We will now add a second dependency, `ui/card` and the initial implementation for our new component.
 
 ```ts
 import React from 'react';
@@ -90,7 +89,7 @@ MyWelcome.defaultProps = {
 };
 ```
 
-Going to to the `Dependencies` UI tab computes and shows the evolved dependency graph including the entire dependency graph of your component rather not just the direct ones.
+By going to the component's [Dependencies UI](/dependencies/ui) tab, we can inspect the computed dependency graph, which includes direct and indirect dependencies.
 
 <Image src={depGraphImg} />
 
@@ -138,8 +137,14 @@ $ bit show ui/my-welcome
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
 
-Dependency policy.
-Once you remove an `import` statement,
+## Dependency automation
+
+Bit greatly simplifies component dependency management by automating most of it. It auto-generates the dependency graph of each component, and that of the entire workspace.
+This is done by statically analyzing the component's files and parsing out all `import` \ `require` statements.
+
+To **remove a dependency**, simply remove the corresponding `import`/`require`statements from the component's files.
+
+## Dependency policy
 
 ## Dev dependencies
 
