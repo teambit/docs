@@ -4,29 +4,42 @@ title: Component ID
 ---
 
 import { Image } from '@site/src/components/image'
+import nestedNamespaces from './images/namespaces_nested.png'
 
-The component's ID is the concatenation of the component's name, scope name, and namespaces -  all separated by `/`. 
+A component ID is a unique string that serves as a global reference to a versioned [Component](/components/overview).
 
-Component IDs are unique. They are used as the interface between the component files, in your working directory, and Bit.
-They are essential to treating multiple files as a discrete unit, a component.
+For example:
 
-```sh title="Component ID structure"
-<scope name>/<namespaces>/<component name>
+- When importing a component: `bit import <component-id>`
+- When configuring an Aspect in the workspace configuration file: `{ "<component-id>": {"<key>": <value>} }`.
+
+The component ID is composed of the component's scope and full name (which includes its namespaces).
+
+```sh
+<scope name>/<component full name>
 ```
 
-* Scope name - describing the domain or high-level concern of a component. **Required**.
-* Component name - describing the component's immediate or concrete concern. **Required**.
-* Namespaces - a set of names used as virtual directories to sort scoped components. **Optional**.
+For example, the component ID `my-org.my-scope/ui/inputs/button` is composed of:
+
+- Scope name: `my-org.my-scope`
+
+- Component full name: `ui/inputs/button`
+
+A component ID may reference a specific component release version using the `@` sign: 
+
+`my-org.my-scope/ui/inputs/button@1.0.0`
 
 ### Scope name
 
-A scope describes an overarching business concern in your product, system or company. Good scope names are descriptive:
+A scope name describes the common purpose of its components, and by that, the goal of the team maintaining it.
 
-* `base-ui` - all basic UI elements and components for building web-ui.
-* `inventory` - set of components relevant for inventory management in an e-commerce app.
-* `authentication` - components for managing user authentication and tokens.
+- `base-ui` - all basic UI elements and components for building web-ui.
+- `inventory` - a set of components relevant for inventory management in an e-commerce app.
+- `authentication` - components for managing user authentication and tokens.
 
-Set scope name for components by configuring `workspace.jsonc`:
+
+#### Setting a scope name
+Set the scope name for components by configuring the `workspace.jsonc`:
 
 ```jsonc {4} title="workspace.jsonc"
 {
@@ -39,195 +52,94 @@ Set scope name for components by configuring `workspace.jsonc`:
 
 :::tip Pre-fix scopes with the `.` separator
 
-Scopes can be pre-fixed with an owner name (usually, an organization or sub-organization name).
+Scopes can be pre-fixed with an owner name (usually, an organization or sub-organization name).  
+When hosting on Bit Cloud, the `<owner>.<scope-name` pattern is mandatory.
 
 :::
 
-### Component Name
+### Component full name
 
-The component's name describe the concrete responsibility of a component. Decide on a name for each component when generating a component:
+A component's full name serves as a unique identifier of a [Component](/components/overview) in the local workspace.
+Most local operations require referencing a component using its full name rather than its ID. 
+A component's full name is composed of its namespaces (if there are any), and name.
+
+```
+<namespaces>/<component name>
+```
+
+#### Setting a component full name
+
+A component's full name is set when creating a new component using a template.
+The below command will create a new component with the name `button` and the namespaces `ui` and `inputs`.
+
+For example:
+
+```bash
+$ bit create react ui/inputs/button
+```
+
+When tracking a component manually, a component's full name is determined by the name of its Component Directory. Namespaces can be added using the `--namespace` option.
+
+For example:
+
+```bash
+$ bit add my-scope/button --namespace ui/inputs
+```
+
+A component name can be manually set by using the `--id` option (this will override the name received by  its Component Directory).
+
+### Component name
+
+A component name describes the concrete responsibility of a component.
+It is determined by its Component Directory name, when added manually, or by the given name, when created using a template.
+
+See the ['component full name'](#component-full-name) section, to learn more.
+
+### Namespaces
+
+Namespaces are used to organize components into categories in the Workspace and Remote Scope. They also help in preventing name conflicts in the same scope or workspace, by prefixing a component name with the relevant categories.
+
+Namespaces can form a hierarchal order. For example, the following command creates a component, `button`, with the namespace `ui` and, nested inside it, the namespace `inputs`.
 
 ```sh
-bit create react-component stock-table
+$ bit create react ui/inputs/button
 ```
 
-The component ID will be:
+This will show up in the Workspace UI and Scope UI, like so:
 
-```sh
-acme.inventory/stock-table
-```
+<Image src={nestedNamespaces} />
 
-### Sub-categories with namespaces
+The hierarchal order formed by namespacing, allows us to select sets of components using semantic structures rather than our concrete (and prone to change) workspace directory structure.
 
-Sort components in different sub-categories in the same scope using namespaces. You can have either none or many nested namespaces.
+For example, the following configuration will set the React env on all components under the `ui` namespace, regardless or their physical location inside the workspace:
 
-When generating components use `/` to add namespaces:
-
-```sh
-bit create react-component forms/add-product
-```
-
-The component ID will be:
-
-```sh
-acme.inventory/forms/add-product
-```
-
----
-
-## Get Component ID
-
-There are several options to ensure component ID is set correctly:
-
-1. Run `bit start` and explore the component tree. It is logically structured according to component IDs.
-1. `bit show <component>` to see all information on a component.
-1. `bit env` shows a table of all components and their applied environment config, including scope name.
-
-The above flows will also print the component module name for using your component as a module by apps or other components.
-
-### Component Module Name
-
-All components in a workspace are available for consumption as node modules. Bit does it by creating a module for each component in `node_modules` according to it's component ID. However, as Bit heavily utilizes scoping and namespaces, it needs to transform component IDs to module names Node can resolve.
-
-Let's take the following component ID as an example:
-
-```sh title="Component ID with an organization pre-fix"
-acme.inventory/forms/add-product
-```
-
-Bit will generate:
-
-```sh title="Organization prefix transforms to npm scope, name is separated by ."
-@acme/inventory.forms.add-product
-```
-
-Use the result module name in all your `import * from ...` statements.
-
-:::tip Generate module links
-
-Bit generates module links in `node_module` dir for all components by default. To trigger this action run `bit link`.
-
-:::
-
----
-
-## Change Component ID
-
-:::info Sugar syntax is coming
-
-Renaming components is a manual task. A `rename` functionality is coming.
-
-:::
-
-Update a component ID is a two step process. The first step is to create a new component and ensure it hsa the right ID defined:
-
-```sh
-bit create react-component new/component/name --scope acme.scope
-```
-
-When you have the right ID:
-
-* Copy the implementation.
-* Run `bit dependents <old-component-id>` to get a list of dependent components.
-* Refactor all `import {...} from <old-module-name>` to `import {...} from <new-module-name>` for dependent components.
-
-Now your components all use the right component. You can either `deprecate` or `remove` the previous component.
-
----
-
-## Multiple Scopes in a Workspace
-
-Unlike component name and namespaces, scopes are a part of the workspace configuration. A single workspace can manage multiple scopes for its components. To do that, open `workspace.jsonc` and configure multiple variants, each with a different `defaultScope`.
-
-```json {4,7} title="workspace.json"
+```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "...": {
-      "defaultScope": "acme.authentication"
-    },
-    "...": {
-      "defaultScope": "acme.base-ui"
-    },
+    "{ui/**}": {
+      "teambit.react/react": {}
+    }
   }
 }
 ```
 
-This way Bit uses variants to control which will be the scope for each component.
+## View component IDs
 
-:::tip Deciding on variants for scoping
+### List all component IDs in the local scope 
+(i.e, versioned components in the workspace)
 
-It's recommended to have a set of variants responsible only for component scoping, and try to keep them as shallow as possible without many nested directories.
-
-:::
-
-### Deciding on component scope
-
-Bit still adheres to the `defaultScope` setup in `teambit.workspace/workspace` by default. To tell Bit in which scope a component should be created, use the `--scope` option:
-
-```sh
-bit create react-component forms/login --scope authentication
+```bash
+bit list
 ```
 
-Bit then creates the component in a directory according to the scope passed as an argument.
+### View the component ID of a specific component 
 
----
-
-## Workspace Component Layout
-
-Bit's default behavior for structuring a components in a workspace is sort them in directories by destructuring the component ID and creating a directory tree. This is to make the workspace easier to navigate by creating symmetry between the logical structure of components and their physical location.
-
-When creating new components you can define the component's scope with the following syntax:
-
-```sh
-bit create react-component forms/add-product
+```bash
+bit show <component-full-name>
 ```
 
-Bit will create the component in the following directory:
+## Change a component ID
 
-```sh
-.
-└── inventory
-    └── forms
-        └── add-product
-```
+A component's ID cannot be changed. Instead, [deprecate](#) the current component and create a new one.
 
-### Move component to a different path
-
-Use the `move` command to move an existing component to a new path.
-
-```sh
-bit move inventory/forms/add-product some/new/path
-```
-
-:::tip Component Id is decoupled from physical location
-
-The location of a component in your workspace does not determine the component ID. When you move a component this has no effect on the component module name.
-
-:::
-
-### Manually set a component path
-
-You can manually decide on a component path upon creating with the `--path` option. This option supports nested directory structure:
-
-```sh
-bit create react-component ui/card --path my/folder
-```
-
-### Change component default directory
-
-Your workspace uses a default pattern for managing the component layout. This is managed in `workspace.jsonc` in the `defaultDirectory` property. This property accepts string that supports a basic DSL to structure workspace layout with different parts of the component ID:
-
-* `{scopeId}` - component's full scope (`acme.inventory`).
-* `{name}` - namespaces and component name, concat together (`forms/add-product`)
-* `{owner}` - scope pre-fix, if available (`acme`).
-* `{scope}` - component scope, excluding the pre-fix (`inventory`).
-
-```jsonc {3} title="Default configuration"
-{
-  "teambit.workspace/workspace": {
-    "defaultDirectory": "{scope}/{name}"
-  }
-}
-```
-
-You can change `defaultDirectory` to any form that fit your workflow.
+It is advisable to exchange links (between the old and the new component) in the components' documentation.
