@@ -29,7 +29,7 @@ A component ID may reference a specific component release version using the `@` 
 
 `my-org.my-scope/ui/inputs/button@1.0.0`
 
-### Scope name
+## Scope name
 
 A scope name describes the common purpose of its components, and by that, the goal of the team maintaining it.
 
@@ -38,7 +38,7 @@ A scope name describes the common purpose of its components, and by that, the go
 - `authentication` - components for managing user authentication and tokens.
 
 
-#### Setting a scope name
+### Setting a scope name
 Set the scope name for components by configuring the `workspace.jsonc`:
 
 ```jsonc {4} title="workspace.jsonc"
@@ -57,7 +57,7 @@ When hosting on Bit Cloud, the `<owner>.<scope-name` pattern is mandatory.
 
 :::
 
-### Component full name
+## Component full name
 
 A component's full name serves as a unique identifier of a [Component](/components/overview) in the local workspace.
 Most local operations require referencing a component using its full name rather than its ID. 
@@ -67,7 +67,7 @@ A component's full name is composed of its namespaces (if there are any), and na
 <namespaces>/<component name>
 ```
 
-#### Setting a component full name
+### Setting a component full name
 
 A component's full name is set when creating a new component using a template.
 The below command will create a new component with the name `button` and the namespaces `ui` and `inputs`.
@@ -88,14 +88,14 @@ $ bit add my-scope/button --namespace ui/inputs
 
 A component name can be manually set by using the `--id` option (this will override the name received by  its Component Directory).
 
-### Component name
+## Component name
 
 A component name describes the concrete responsibility of a component.
 It is determined by its Component Directory name, when added manually, or by the given name, when created using a template.
 
 See the ['component full name'](#component-full-name) section, to learn more.
 
-### Namespaces
+## Namespaces
 
 Namespaces are used to organize components into categories in the Workspace and Remote Scope. They also help in preventing name conflicts in the same scope or workspace, by prefixing a component name with the relevant categories.
 
