@@ -9,7 +9,7 @@ Tracking is the step that converts a set of source files in a repository into a 
 
 ### Process
 
-When tracking a component Bit does the follow:
+When tracking a component Bit does the following:
 
 - Calculate all the files to be included in the component.
 - Exclude the following files: `package.json`, `bit.json`, `node_modules`, `yarn.lock`, `package-lock.json`, `.gitignore`, `.bit.map.json` and `.bitmap` and files ignored in the `.gitignore` file, if available.
