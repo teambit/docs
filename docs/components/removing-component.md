@@ -1,8 +1,7 @@
 ---
-id: removing-component
+id: removing-components
 title: Removing/Deprecating a Component
 ---
-
 
 Refactoring code often causes components to become obsolete or irrelevant. This is where removing and deprecating components becomes useful and necessary.
 

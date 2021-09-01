@@ -9,9 +9,6 @@ Bit helps with version control for independent components and dependencies with 
 bit tag --all 1.0.0
 ```
 
-You can also use [Snap](/components/snap).
+You can also use [Snap](/components/snaps).
 
-## Building components
-
-
-
+<!-- TODO ## Building components -->

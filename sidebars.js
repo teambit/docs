@@ -95,6 +95,8 @@ module.exports = {
               label: 'Set Up Your CI',
               items: [
                 'getting-started/release-components/set-up-ci/use-your-own-ci',
+                'getting-started/release-components/set-up-ci/github-actions',
+                'getting-started/release-components/set-up-ci/gitlab',
                 'getting-started/release-components/set-up-ci/use-ripple-ci'
               ]
             }
@@ -106,8 +108,8 @@ module.exports = {
           collapsed: true,
           items: [
             'getting-started/use-components/install-dependencies',
-            'getting-started/use-components/import-components',
-            'getting-started/use-components/propose-changes'
+            'getting-started/use-components/import-components'
+            /* TODO 'getting-started/use-components/propose-changes' */
             // {
             //   type: 'category',
             //   label: 'Composition Strategies',
@@ -128,12 +130,12 @@ module.exports = {
               type: 'category',
               label: 'Initialize a Workspace on an Existing Project',
               items: [
-                'start-from-existing-project/init-workspace-on-existing-project/general-purpose',
-                'start-from-existing-project/init-workspace-on-existing-project/cra',
-                'start-from-existing-project/init-workspace-on-existing-project/nextjs',
-                'start-from-existing-project/init-workspace-on-existing-project/gatsby',
-                'start-from-existing-project/init-workspace-on-existing-project/angular-app',
-                'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
+                'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
+                // 'start-from-existing-project/init-workspace-on-existing-project/cra',
+                // 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
+                // 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
+                // 'start-from-existing-project/init-workspace-on-existing-project/angular-app',
+                // 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
               ]
             },
             'start-from-existing-project/tracking-existing-components'
