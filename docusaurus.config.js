@@ -68,47 +68,43 @@ module.exports = {
       },
       items: [
         {
-          activeBasePath: '/getting-started',
+          activeBasePath: '/',
           label: 'Docs',
           position: 'left',
-          to: '/getting-started/installing-bit',
+          to: '/',
           items: [
             {
-              label: 'Getting Started',
-              to: '/getting-started/installing-bit'
+              label: 'Introduction',
+              to: '/'
             },
             {
-              label: 'What is Bit?',
-              to: '/essentials/what-is-bit'
+              label: 'Quick Start',
+              to: '/quick-start'
             },
             {
-              label: 'Building with Bit',
-              to: '/building-with-bit/manage-workspace'
+              label: 'Install Bit',
+              to: '/getting-started/install-bit'
+            },
+            {
+              label: 'Why Bit',
+              to: '/understanding-bit/why-bit'
+            },
+            {
+              label: 'Fundamentals',
+              to: '/workspace/overview'
+            },
+            {
+              label: 'Advanced',
+              to: '/docs/overview'
             },
             {
               label: 'Extending Bit',
-              to: '/extending-bit/adding-a-new-tab'
+              to: '/extending-bit/overview'
             },
             {
-              label: 'Component Architecture',
-              to: '/component-architecture/thinking-in-components'
-            },
-            {
-              label: 'Bit Commands',
-              to: '/reference/commands'
-            },
-            {
-              label: 'Bit.dev',
-              to: '/bit-dot-dev/bit-dev'
-            },
-            {
-              label: 'Migrating From Legacy Bit',
-              to: '/reference/migration'
+              label: 'Reference',
+              to: '/reference/cli-reference'
             }
-            // {  // TODO restore once we have a troubleshooting landing page
-            //   label: 'Troubleshooting',
-            //   to: '/troubleshooting/commands'
-            // }
           ]
         },
 
