@@ -45,7 +45,7 @@ Scopes cache all external dependencies (i.e, components located in other scopes)
 
 ### How to create a Scope on Bit.dev?
 
-[Bit.dev](https://bit.dev) is a managed hosting platform for scopes. To create a new remote scope on [Bit.dev](https://bit.dev), [follow these steps](/getting-started/remote-scope).
+[Bit.dev](https://bit.dev) is a managed hosting platform for scopes.
 
 Scopes hosted on [Bit.dev](https://bit.dev) should be prefixed by their **owner account** and use a `.` as a separator. This is so different organizations on the platform can create similarly named scopes of their own.
 

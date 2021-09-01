@@ -5,18 +5,18 @@ slug: /
 ---
 
 
-Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into high-performance and consistent modular and [component-driven apps](/component-driven-apps) at speed.
+Bit is an extensible, [open-source toolchain](https://github.com/teambit/bit) for building independent components, and composing them into high-performance and consistent modular and component-driven apps at speed.
 
 It makes it easy to develop modular software projects from independently versioned components, connected through a dependency graph and which can be owned by numerous autonomous teams, collaborating together to deliver modern apps at speed, consistency and scale. It is a simple, modular and efficient way to build a single web application, while allowing to scale to any amount on teams collaborating together.
 
 Bit is designed to enable a component-first approach, where [Components](/components/overview) are built independently and composed into [Apps](/apps/overview). This approach highly increases the value of each [Component](/components/overview) by making it a decoupled, collaborative, discoverable and composable unit of source code, promoting [rapid app development](/), [consistency](/) and [cross team collaboration](/).
 
-In Bit, each [Component](/components/overview) is independent and acts as a standalone versioned unit of source code, connected through [Dependencies](/dependencies/overview) to others. Each component can be independently developed, built and shipped to [Scopes](/scopes/overview) to ensure cross-team collaboration, consistency, resilience and performance at any scale.
+In Bit, each [Component](/components/overview) is independent and acts as a standalone versioned unit of source code, connected through [Dependencies](/dependencies/overview) to others. Each component can be independently developed, built and shipped to Scopes to ensure cross-team collaboration, consistency, resilience and performance at any scale.
 
 While Bit is tech-agnostic, development environments for specific tech are automated through [Envs](/envs/overview) to provide a customizable, repeatable and standard dev experience for development of [Components](components/overview).  
-Officially supported [Envs](/) exist for [Node](node/overview), [React](react/overview), [Angular](/angular/overview) and [more](/envs/official-envs). An [Env](/envs/env) can be composed of all the great tools the community offers like [TypeScript](/typescript/overview), [Babel](babel/overview), [Jest](/jest/overview), [ESLint](eslint/overview), [Webpack](webpack/overview) and dozens of others. Bit was designed to be fully compatible with community standards and therefore can easily be used with any standard tool throughout the JS ecosystem. 
+Officially supported Envs exist for Node, React, Angular and more. An Env can be composed of all the great tools the community offers like TypeScript, Babel, Jest, ESLint, Webpack and dozens of others. Bit was designed to be fully compatible with community standards and therefore can easily be used with any standard tool throughout the JS ecosystem. 
 
-You can build and extend Bit just like us. Bit is a composition of [Aspects](extending-bit/overview). It comes built in with a set of configured Aspects and can be extended by configuring new Aspects to it. Every [Aspect](/extending-bit/overview) is a feature in Bit. Main core features are: [Workspace](/workspace/overview), [Component](components/overview), [Envs](envs/overview) and [Scope](scope/overview). Moreover, Bit is composed from over [60 core Aspects](/aspects) available as APIs and variety of interfaces including [CLI](cli-reference), GraphQL APIs and UIs.
+You can build and extend Bit just like us. Bit is a composition of Aspects. It comes built in with a set of configured Aspects and can be extended by configuring new Aspects to it. Every Aspect is a feature in Bit. Main core features are: [Workspace](/workspace/overview), [Component](components/overview), [Envs](envs/overview) and [Scope](scope/overview). Moreover, Bit is composed from over 60 core Aspects available as APIs and variety of interfaces including CLI, GraphQL APIs and UIs.
 
 TODO: ADD VIDEO OF INTRO TO BIT.
 
@@ -24,18 +24,16 @@ TODO: ADD VIDEO OF INTRO TO BIT.
 
 ### Install Bit
 
-Bit can be installed with [BVM](/bvm/overview), the Bit version manager.
+Bit can be installed with BVM, the Bit version manager.
 
 ```bash
 npm i -g @teambit/bvm
 bvm install
 ```
 
-To learn more about [Installing Bit, click here](getting-started/install-bit).
-
 ### Create your first component development Workspace
 
-[Workspaces](workspace/overview) can be easily generated from [Workspace Templates](workspace/templates) or [initiated on existing repositories](start-from-existing). For more Workspace Templates use the `bit templates` command or search [Bit.dev](https://bit.dev/templates). 
+[Workspaces](workspace/overview) can be easily generated from Workspace Templates or initiated on existing repositories. For more Workspace Templates use the `bit templates` command or search [Bit.dev](https://bit.dev).
 
 <Tabs
 defaultValue="React"
@@ -73,12 +71,10 @@ Head over to [Quick Start](quick-start) to learn on next steps.
 
 Building from [Components](components/overview) helps and solves numerous common pains and use cases. Either technical or structural issues where tech limits architecture.
 
-- [Micro Frontends](mfe/overview)
-- [Design system component libraries](component-lib/overview).
-- [Monorepos](monorepos).
-- [Modular server side development](server-side/overview).
-
-You can learn of more [use cases for Bit here](/use-cases).
+- Micro Frontends.
+- Design system component libraries.
+- Monorepos.
+- Modular server side development.
 
 ## Additional links
 
@@ -86,7 +82,7 @@ You can learn of more [use cases for Bit here](/use-cases).
 - Watch our short [videos](/resources/videos) to help you understand Bit better
 - Read [next steps](getting-started/whats-next) to start learning how you can adopt and use Bit
 - Learn [what is Bit](essentials/what-is-bit) to have a better understanding of its capabilities
-- Dive deeper into how Bit works in [Building with Bit](/building-with-bit/manage-workspace)
+- Dive deeper into how Bit works in Building with Bit.
 - Extend and customize Bit in [Extending Bit](/extending-bit/adding-a-new-tab)
 - Discover the Building blocks of Bit in our [Aspects](/aspects/aspects-overview) section
 

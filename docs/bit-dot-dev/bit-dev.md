@@ -16,7 +16,7 @@ Bit.dev is, and forever will be free for open source usage. Any developer or a t
 To work with Bit.dev and enjoy its features you will need to:
 
 1. [Create a Bit account](https://bit.dev/signup).
-1. [Authenticate to Bit.dev](https://harmony-docs.bit.dev/getting-started/remote-scope) from your local workspace, to export components to Bit.dev.
+1. Authenticate to Bit.dev from your local workspace, to export components to Bit.dev.
 
 ## Key Features of Bit.dev
 

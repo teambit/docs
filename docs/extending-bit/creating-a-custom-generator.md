@@ -166,7 +166,7 @@ Bit gives you some basic templates that you can use without having to create you
 
 ### Exporting your Generator
 
-[Tag and export](/getting-started/exporting-components) your generator component so you can use it in any other workspace. If you haven't already done so then setup a [remote scope](/getting-started/remote-scope) on [Bit.dev](https://bit.dev/) with the correct scope/collection where you want your generator component to be exported to.
+[Tag and export](/getting-started/exporting-components) your generator component so you can use it in any other workspace. If you haven't already done so then setup a remote scope on [Bit.dev](https://bit.dev/) with the correct scope/collection where you want your generator component to be exported to.
 
 Make sure the scope name is set correctly in the `*.aspect.ts` file before tagging and exporting.
 
