@@ -1,6 +1,6 @@
 ---
 id: dependencies
-title: Dependencies
+title: External Dependencies
 ---
 
 We depend on each other's code and components so we don't have to re-implement code. Bit implements a set of features for a mostly hands-off work for component dependency management.

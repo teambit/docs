@@ -1,0 +1,71 @@
+---
+id: host-on-bit-cloud
+title: Use Bit Cloud Hosting
+---
+
+import CreateBitAccount from '@site/docs/components/remote-scopes/create-bit-account.md'
+import CreateRemoteScope from '@site/docs/components/remote-scopes/create-remote-scope.md'
+
+## Create a Bit.dev account
+
+<CreateBitAccount />
+
+---
+
+## Create a Remote Scope
+
+<CreateRemoteScope />
+
+<br />
+
+<!-- :arrow_right: Learn more about [Setting up a Remote Scope](/building-with-bit/scoping-components).
+
+:arrow_right: Learn more about [Self Hosting a Bit Scope](/reference/bit-oss-server). -->
+
+---
+
+
+Once logged in you can create a remote scope for your Bit project. This is done on the [bit.dev](https://bit.dev) website. Start by choosing if it is a team project or personal project. Then give your remote scope a name and select if you want your scope to be public or private.
+
+## Setting the Default Scope
+
+Once you have setup a remote scope you need to make sure the defaultScope is set to the name of your remote scope in the `workspace.jsonc` file.
+
+```json title="workspace.jsonc"
+{
+  "teambit.workspace/workspace": {
+    "defaultScope": "your-username.your-scope"
+  }
+}
+```
+
+## Setting Multiple Default Scopes
+
+With Bit you can export different sets of components to different scopes. This is done by adding a `defaultScope` property to each set of components in the variants section of your `workspace.jsonc` file.
+
+```json title="workspace.jsonc"
+"teambit.workspace/variants": {
+    "{ecommerce/**}": {
+      "defaultScope": "my-org.ecommerce"
+    },
+    "{ui/**}": {
+      "defaultScope": "my-org.base-ui"
+    },
+  }
+```
+
+### Publish your Components
+
+In order to publish components to the Bit Cloud they must be tagged by using the `bit tag` command. Bit will run all tests and build a new version of each component as well as generate a `package.json` file for each one. It is during this process that your components get published to Bit Cloud.
+
+```bash
+bit tag --all --message "first version"
+```
+
+### Exporting your Components
+
+After tagging is complete components can be exported to your remote scope on Bit.dev using the `bit export` command.
+
+```bash
+bit export
+```

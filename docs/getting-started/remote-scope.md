@@ -1,30 +1,9 @@
 ---
-id: remote-scope
-title: Creating a Remote Scope
+id: export-to-remote-scope
+title: Export to Remote Scope
 ---
 
-import CreateBitAccount from '@site/docs/components/remote-scopes/create-bit-account.md'
-import CreateRemoteScope from '@site/docs/components/remote-scopes/create-remote-scope.md'
-import DefaultScopeName from '@site/docs/components/workspace/default-scope-name.md'
-import ResetDevServer from '@site/docs/components/workspace/reset-dev-server.md'
-import QuickGuide from '@site/docs/components/quick-guide.md'
-
-You can create a remote scope before or after [initializing a Bit workspace](initializing-workspace).
-
-## Quick Guide
-
-<QuickGuide />
-
-1. Create an account on [Bit.dev](https://bit.dev/) and login
-
-```bash
-bit login
-```
-
-2. Create a new scope/collection on [Bit.dev](https://bit.dev/)
-3. Update your default scope in the `workspace.jsonc` file with the name of your scope
-
----
+import GitCommitBitmap from '@site/docs/components/commands/git-commit-bitmap.md'
 
 ## What is a Scope?
 
@@ -32,36 +11,37 @@ bit login
 
 ---
 
-## Create a Bit.dev account
+## Export Components
 
-<CreateBitAccount />
+Once you have tagged your component you can then run the `bit export` command.
+
+```bash
+bit export
+```
+
+When your component has finished exporting you should see the following message:
+
+```bash
+exported the following 1 component(s):
+your-username.demo-scope/ui/button
+```
+
+:arrow_right: Learn more about the [Exporting Components](https://bit-components/exporting-components).
+
+### See your Component in the Workspace
+
+In your workspace go to `https://bit.dev/<user-name>/<scope-name>` to see your exported components.
+
+:::tip
+
+Use `bit export --help` or `bit export -h` to get a list of available options for this command.
+
+:::
 
 ---
 
-## Create a Remote Scope
+## Committing the Bitmap
 
-<CreateRemoteScope />
-
-<br />
-
-<!-- :arrow_right: Learn more about [Setting up a Remote Scope](/building-with-bit/scoping-components).
-
-:arrow_right: Learn more about [Self Hosting a Bit Scope](/reference/bit-oss-server). -->
+<GitCommitBitmap />
 
 ---
-
-## Updating the Default Scope
-
-Once you have setup a [remote scope](/getting-started/remote-scope) you may need to configure the `workspace.jsonc` to reflect the correct username and scope.
-
-<DefaultScopeName />
-
-### Resetting the Dev Server
-
-<ResetDevServer />
-
----
-
-## What's Next?
-
-Once you have created your remote scope and configured your defaultScope you can then create more components, compose components or [export your components](exporting-components) to the remote scope so they can be published and installed in other Bit workspaces or in other web projects.

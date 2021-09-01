@@ -16,38 +16,6 @@ import Path from '@site/docs/components/components/path.md'
 
 You can compose components together from other components in your workspace or from components in the cloud.
 
----
-
-<!-- ## Creating Components with Bit Create
-
-To create other components you can use `bit create react-component` followed by your component name and the namespace for that component.
-
-<BitCreateCardComponent />
-
-<Styles />
-
-### Namespaces
-
-<NameSpaces />
-
-### Component Location
-
-<Path />
-
----
-
-## Install Dependencies
-
-<TestDependencies />
-
----
-
-## Show Component
-
-<BitShow />
-
---- -->
-
 ## Composing Components
 
 When importing a component into another component Bit doesn't allow for relative require/import statements, as this couples your component to a specific directory structure, instead you use the component's package name. In the workspace UI you will see the package name for your component which you can copy to import it.
@@ -75,21 +43,3 @@ Use `bit link --help` or `bit link -h` to get a list of available options for th
 :::
 
 ---
-
-<!-- ## Creating multiple components
-
-<BitCreateMultipleComponents />
-
-<BitCreateWarning />
-
----
-
-## Component Templates
-
-<BitTemplates />
-
---- -->
-
-## What's Next?
-
-It's time to create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.

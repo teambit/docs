@@ -1,0 +1,246 @@
+---
+id: quick-start
+title: Quick Start
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Bit helps developers compose and collaborate on modern applications with [independent components](/components/overview) and dependencies.
+It makes development of component-driven and modular systems fast, standard, consistent and scalable.
+
+## Installing Bit
+
+Install Bit using [BVM](/), Bit's version manager.
+
+<Tabs
+defaultValue="NPM"
+values={[
+{label: 'NPM', value: 'NPM'},
+{label: 'Yarn', value: 'Yarn'},
+]}>
+<TabItem value="NPM">
+
+```bash
+npm i -g @teambit/bvm
+bvm install
+```
+
+  </TabItem>
+  <TabItem value="Yarn">
+
+```bash
+yarn global add @teambit/bvm
+bvm install
+```
+
+  </TabItem>
+</Tabs>
+
+Learn more about upgrading Bit to the latest version in our [upgrading guide](/guides/upgrading/).
+
+## Compose Components
+
+Bit is all about creating [Independent Components](/components/overview) and composing them together. You can think if it
+as building components in a Monorepo where every component gets the benefits of being an independent repo with the simplicity of developing a regular app.
+
+### Creating a Workspace
+
+A [Workspace](workspace/overview) is where you build components and compose them into applications. Creating a [Workspace](/workspace/overview) can be done with a single command through 
+[Workspace Templates](workspace/templates). For more Workspace Templates search [Bit.dev](https://bit.dev/templates). 
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace
+cd my-workspace
+bit start
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+mkdir my-workspace && cd my-workspace
+bit init
+```
+
+To use the Angular environment, you first need to check what is the latest version available:
+
+```bash
+npm dist-tag ls @teambit/angular-v12
+```
+
+Then add the following lines in your workspace.jsonc file to apply the Angular development environment on all components in this workspace (replace x.x.x by the latest version available):
+
+```bash
+{
+...
+  // replace x.x.x by the latest version available
+  "teambit.angular/angular-v12@x.x.x": {},
+  "teambit.workspace/variants": {
+    "*": {
+      // replace x.x.x by the latest version available
+      "teambit.angular/angular-v12@x.x.x": { }
+    }
+  },
+  "teambit.generator/generator": {
+    "aspects": [
+      // Replace `v12` by the version of Angular that you want to use
+      "teambit.angular/angular-v12"
+    ]
+  }
+}
+```
+
+```bash
+bit install
+bit start
+```
+
+  </TabItem>
+</Tabs>
+
+Learn more about [Workspaces](/)
+
+### Create Components
+
+[Creating Components](/) can be doing using our pre-defined templates which generates all necessary files for your component including compositions, docs and test files.
+Components must be in their own directory and have an index file that exports the component.
+
+The following command will add a new component to your workspace under the [namespace](/) of 'ui'.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit create react ui/my-component
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit create ng-lib ui/my-component
+```
+
+  </TabItem>
+</Tabs>
+
+:::note
+Use the `bit templates` command to see a list of available templates.
+:::
+
+Learn more about [Creating Components](/) including how to [create your own templates](/).
+
+### Common Component Operations
+
+Bit helps to simplify and standardize common operations required for developing components like [compiling](/), [testing](/), [linting](/), [formatting](/) and more.
+To learn more about the different services available in Bit go to [Env Services](/envs/core-services).
+
+```bash
+bit compile # compile your components and output in the `node_modules` directory
+bit test # test your components
+bit lint # lint your components
+bit format # format your components
+```
+
+You can use the `--help` flag for each of these commands to learn more.
+
+:::note
+Bit automatically watches and re-executes your component's tests when using `bit start`.
+:::
+
+Learn more about [component testing](/).
+
+## Release Components
+
+Version your components and host them remotely to collaborate with others.
+
+### Version Components
+
+With Bit status, you can see which components have changes and need to be versioned as well as how dependents are affected
+from these changes.
+
+```bash
+bit status
+```
+
+Bit helps version multiple components and dependencies at ease. Version changed components and their dependents
+with a single command.
+
+```bash
+bit tag --all 1.0.0 --message 'my first version'
+```
+
+### Export Components
+
+To export your components you need to create a remote scope. Creating a remote Scope can be done
+by [hosting your own](/scope/host) or creating a Scope on [Bit's cloud provider](https://bit.dev),
+
+```bash
+bit export
+```
+
+:::note
+Before exporting make sure you have set the default scope to be your [remote scope](/) in the `workspace.jsonc` file.
+:::
+
+## Use and Collaborate on Components
+
+### Install Components
+
+Bit helps you install and resolve packages in your workspace with the Bit install command. It makes sure that every
+component in your Workspace is resolved with the right package dependencies and their corresponding versions.
+
+```bash
+bit install @teambit/base-ui.my-component
+```
+
+:::note
+You can configure the package manager of your choice in the `workspace.jsonc` file. Supported package managers
+for `bit install` are currently [Yarn 2.0](/) and [pnpm](/).
+:::
+
+Components can be installed with any package manager in any other app, whether it is a Bit Workspace or not.
+
+- NPM: `npm install @some-org.scope/my-component`
+- Yarn: `yarn add @some-org.scope/my-component`
+
+Make sure you [configure the Bit registry](/) if you are using Bit's cloud provider. Components can be published to any registry or integrated with Artifactory or Nexus.
+
+### Importing Components
+
+Components can be [imported(cloned)](/) to any Bit Workspace. By importing components you can make changes to any component
+from any Bit Workspace and then export a new version and eject it from your workspace.
+
+```bash
+bit import some-org.scope/my-component
+```
+
+<!-- ### Change requests
+
+Create a new branch for your component, commit your changes and then export your components to a remote scope.
+
+```bash
+bit switch my-feature --create # create and switch to a new branch called my-feature
+bit snap --all # commit all changes
+bit export # export your components to a remote scope
+```
+
+:::warning
+@Ran This is not working yet and not ready to be documented
+::: -->

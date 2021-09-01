@@ -1,6 +1,6 @@
 ---
 id: workspace-scope
-title: Component Revisioning
+title: Overview
 ---
 
 Scope is a virtual storage for components. Bit uses Scopes to save versions of [Bit Components](/bit-components/component-overview) and access them as needed.

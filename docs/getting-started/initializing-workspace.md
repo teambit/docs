@@ -1,80 +1,197 @@
 ---
 id: initializing-workspace
-title: Initializing a Workspace
+title: Create workspace from template
 ---
 
-import FilesBitCreates from '@site/docs/components/workspace/files-bit-creates.md'
-import BitInit from '@site/docs/components/commands/bit-init.md'
-import ReactEnvironment from '@site/docs/components/workspace/react-environment.md'
-import QuickGuide from '@site/docs/components/quick-guide.md'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import workspaceUi from './workspace-ui.png';
+import { Image } from '@site/src/components/image';
 
-In order to initialize a workspace you will need to first [install Bit](installing-bit). A Bit Workspace enables you to author and manage multiple independent components in a simple and elegant way. Bit works with Git so you can either add init a new git repo or add Bit to an existing git repo.
+A Bit [Workspace](/workspace/overview) is where components are built and composed. Workspaces can be generated with the `bit new` command or [initialized on an existing project](/start-from-existing-project/init-workspace-on-existing-project/general-purpose).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Quick Guide
-
-<QuickGuide />
-
-1. Start a new bit project
+Workspaces can be created from templates. To see a list of available workspaces templates, run `bit templates`. The Workspace templates are only available when ran outside of a Bit Workspace.
 
 ```bash
-bit new react-workspace <my-workspace-name>
+bit templates
 ```
 
-2. Open the directory that has just been created and run install dependencies
+Templates are used to ramp-up a new project with skeleton components. You can use one of these common templates, or find additional templates on the [bit.dev community](https://bit.dev/).
 
-```bash
-cd <my-workspace-name>
-bit install
-```
-
----
-
-**There are two ways you can initialize a workspace:**
-
-## Option 1: Use bit new to create a React workspace
-
-Create a new Bit workspace for a React environment. This command will initialize a Bit Harmony workspace configured for a React environment. To create a workspace and manually configure the env use the `bit init --harmony` command.
-
-:::info Experimental Feature
-This is experimental and may change in the future. If you experience any issues with this command please let us know.
+:::note
+It might be easier to create a [Scope](/scopes/overview) at this moment to spare few steps next on. You can quickly [create a free Scope on the Bit Cloud](https://bit.dev/create-scope) or [host your own Scope](/scopes/host-your-own-scope). Use the `--scope` flag for all generated components to include your Remote Scope.
 :::
 
-Start a new Bit workspace with a React environment. This will create a new directory with the necessary files inside.
+Creating the Workspace should be done by configuring a [Scope name](/scope/overview#scope-name). For this example, I would use the `bitorg.experience` scope name, which is a combination of my organization's name `bitorg` and the `experience` team owning it.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
 
 ```bash
-bit new react-workspace <my-workspace-name>
+bit new react-workspace my-first-workspace --default-scope bitorg.experience
 ```
-
-Once you are inside that directory you can then install all dependencies needed for your workspace.
 
 ```bash
-bit install
+cd my-workspace
 ```
 
-## Option 2: Use bit init to initialize and manually configure your workspace
+  </TabItem>
+<TabItem value="Angular">
 
-<BitInit />
+```bash
+bit new angular my-workspace
+cd my-workspace
+```
 
-:::tip
+  </TabItem>
+</Tabs>
 
-Use `bit init --help` or `bit init -h` to get a list of available options for this command.
+To learn in depth on [Creating Workspace head here](/workspace/creating-workspaces).
 
+Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the [minimal footprint](/workspace/initializing-workspaces#created-files) required for a [Workspace](/workspace/overview), and generated the workspace according to the [Workspace Files](/workspace/workspace-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-configuration) defined in the chosen [Workspace Template](/workspace/workspace-generator).
+This is the file structure generated be the [Workspace Generator](/workspace/overview).
+
+```
+├── .git/bit --> Local Scope associated with the Workspace.
+├── .gitignore
+├── README.md
+├── pnpm-lock.yaml --> chosen package manager lock file
+├── node_modules --> includes external workspace modules and Workspace Component Links.
+├── public
+    └── ... --> The Workspace public assets, generated upon new Aspect configuration or the first time.
+├── templates --> Components generated by the chosen template
+│   ├── pages
+│   │   └── welcome
+│   │       ├── index.ts
+│   │       ├── wecome.spec.tsx
+│   │       ├── welcome.composition.tsx
+│   │       ├── welcome.docs.mdx
+│   │       ├── welcome.module.scss
+│   │       └── welcome.tsx
+│   └── ... -> more components defined in chosen the Workspace Template.
+├── types --> `types` directory generated as Workspace files generated by the template.
+│   ├── asset.d.ts
+│   └── style.d.ts
+├── tsconfig.json --> Workspace file defined in the template.
+├── .eslintrc.js --> Workspace file defined in the template.
+└── workspace.jsonc --> main configuration file for the Workspace
+```
+
+As seen above, the following assets were created:
+
+- [.bitmap file](/workspace/bitmap). `.bitmap` maps Components to corresponding [Component Directory](/workspace/component-directory) in the file system.
+- [workspace.jsonc](/workspace/workspace-json) file. Main configuration file for the Bit Workspace.
+- `pnpm-lock.yaml`. [Lock file](/dependencies/lock-file) generated by [pnpm](/understanding-bit/package-managers#pnpm), the default package manager.
+- [node_modules](/workspace/node-modules) directory. Including [External Dependencies](/dependencies/external-dependencies) and [Workspace Components Links](/workspace/component-link).
+- [Template Components](/generator/template-components) as defined in the [Workspace Template](/generator/workspace-template).
+- [Workspace files](/workspace/creating-workspaces#created-files). Files generated defined in the Workspace Template including `tsconfig.json`, `.eslintrc.js` and `types` directory.
+- [.git/bit](/scopes/local-scope). [Local Scope](/scope/overview#local-scope) associated with the Workspace.
+- Newly initiated [Git repository](/understanding-bit/monorepos/overview). Can be skipped with the `--skip-git` flag.
+
+You can check the [Workspace Status](/workspace/workspace-status) for the first time using the `bit status`, and notice all components are under `new` status. `new` status means these components were just created and never versioned before.
+
+```bash
+$ bit status
+new components
+(use "bit tag --all [version]" to lock a version with all your changes)
+
+     > templates/envs/my-react ... ok
+     > templates/pages/welcome ... ok
+     > templates/ui/card ... ok
+     > templates/ui/heading ... ok
+     > templates/ui/text ... ok
+```
+
+`ok` means a component has no known issues. Head here to learn more on [Workspace Status](/workspace/workspace-status) and its different states.
+
+[Workspaces come with a UI interface](/workspace/workspace-ui) to enable a consistent UI for Components built anywhere. It helps during development and ease common development tasks as component documentation, discovery, testing, visualization and even explore history logs and explore architectural dependency graphs. It is customizable to work with every tool. You can initiate the Workspace UI for the first time with `bit start` command.
+
+```bash
+$ bit start
+```
+
+`bit start` will initiate the Bit Workspace UI and [required dev servers](/bundlers/dev-server) and open the UI in your default browser.
+
+<Image src={workspaceUi} />
+
+In the component sidebar above, please note every Component has its status (`N` represents `new`), which shows the above [Workspace Status](/workspace/status) in the UI.
+
+:::note
+Use `Ctrl-K` to open the Workspace UI quick search and toggle between components quickly!
 :::
 
-### Setting a React Environment
+### Workspace directory structure
 
-<ReactEnvironment />
+By default, [directory structure in the Workspace](/workspace/directory-structure) is structured in [Scopes](/scope/overview), which help define team boundaries and ownership as well as [Namespaces](/components/namespaces) which are helpful for organizing and configuring Components. Every Component is in its own [Component Directory](/workspace/component-directory). Workspaces can be scaled over time, include new components or distributed to more Workspaces for more teams to take ownership over specific features.
+To learn more on [Repository Architecture head over here](/understanding-bit/repository-architecture).
 
----
+```bash
+templates --> `Scope` used to define team boundaries and ownership
+├── ...
+├── pages --> `Component Namespaces` to assist with organization and configuration of components used
+│   └── welcome --> `Component Directory` includes a specific Component implantation.
+│       ├── index.ts
+│       ├── wecome.spec.tsx
+│       ├── welcome.composition.tsx
+│       ├── welcome.docs.mdx
+│       ├── welcome.module.scss
+│       └── welcome.tsx
+└── ui
+    ├── card
+    │   ├── card.composition.tsx
+    │   ├── card.docs.mdx
+    │   ├── card.module.scss
+    │   ├── card.spec.tsx
+    │   ├── card.tsx
+    │   └── index.ts
+    └── ...
+```
 
-## Created Files
+:::note
+Directory structures in the Bit Workspace are fully flexible and can structured in any way as long as a Component has its own directory. To learn more on structuring Workspaces head over to [Workspace Structure](/workspace/workspace-structure) section.
+:::
 
-<FilesBitCreates />
+### Configure your Workspace name and icon
 
----
+Workspace specific configurations such as `name` and `icon` can be configured in [workspace.json](/workspace/workspace-json) through the `teambit.workspace/workspace` Aspect configuration.
 
-## What's Next
+```json
+  "teambit.workspace/workspace": {
+    "name": "My first Bit Workspace",
+    "icon": "https://static.bit.dev/bit-logo.svg",
+  }
+```
 
-Once you have initialized a workspace, you can start [creating components](creating-components).
+### Dependencies
+
+`bit install` keeps your [Workspace](/workspace/overview) up to date with external dependencies, [Component Objects](/) and [Workspace Component Links](/workspace/component-link), usually after a `git pull`. Allowed workspace dependencies are configured in the [Dependency Policy](dependencies/policy) in the [Workspace Configuration](/workspace/config).
+
+```bash
+$ bit install
+```
+
+It can also be used for adding new [External Dependencies](dependencies/external-dependencies).
+
+```bash
+bit install @teambit/base-ui.button
+```
+
+### Configure Aspects (Bit Extensions) on the Worksapce
+
+```json
+{
+  "owner.scope/some-extension": {}
+}
+```
+
+### Debugging in the Workspace
+
+[Base Templates](/generator/workspace-template) comes built in with an example launch.json for [VSCode Debugging Configuration](https://code.visualstudio.com/docs/editor/debugging). To learn more on IDE debugger configuration head here.
+
+Webstorm to be added here.

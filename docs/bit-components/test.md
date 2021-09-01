@@ -1,6 +1,6 @@
 ---
 id: testing-components
-title: Tests
+title: Adding Tests
 ---
 
 Tests become even more viable when working in a component based workflow. Components can be composed in many unique use cases, so having tests to check for them can reduce the amount of integration and experimentation needed in the future.

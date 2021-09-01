@@ -1,0 +1,26 @@
+---
+id: import-components
+title: Clone Components
+---
+
+## Import Components
+
+A fundamental feature of a Bit workspace is the ability to vendor components. This means you can use a single command, and instead of adding a component as a dependency, you import that component's implementation to your workspace, as-if you are its author.
+
+```sh
+bit import my-org.my-scope/my-teams-component
+```
+
+> Components you `import` will be visible on the local dev server.
+
+You can do local modifications to it, commit to your Git repository and work with it as if it is yours, even to the point of exporting a new version for that component.
+
+### Eject components
+
+You can remove a component from the codebase and turn it to a dependency with the `eject` command:
+
+```sh
+bit eject my-teams-component
+```
+
+Bit then removes the component code from your code base and adds that component as a dependency to your `workspace.json`.
