@@ -107,7 +107,7 @@ module.exports = {
           items: [
             'getting-started/use-components/install-dependencies',
             'getting-started/use-components/import-components',
-            'getting-started/use-components/propose-changes',
+            'getting-started/use-components/propose-changes'
             // {
             //   type: 'category',
             //   label: 'Composition Strategies',
@@ -177,6 +177,7 @@ module.exports = {
             'workspace/directory-structure',
             'workspace/resetting-workspace',
             'workspace/workspace-component',
+            'workspace/workspace-configuration',
             'workspace/bitmap',
             'workspace/node-modules',
             'workspace/component-directory',
@@ -197,6 +198,7 @@ module.exports = {
           collapsed: true,
           items: [
             'components/overview',
+            'components/namespaces',
             'components/component-id',
             'components/main-file',
             'components/creating-components',
@@ -326,7 +328,7 @@ module.exports = {
             },
             'apps/recomposing-apps'
           ]
-        },
+        }
       ]
     },
 
@@ -343,7 +345,7 @@ module.exports = {
             'docs/overview',
             'docs/doc-files',
             'docs/rendering-docs',
-            'docs/doc-templates',
+            'docs/doc-templates'
           ],
           collapsed: true
         },
@@ -353,8 +355,8 @@ module.exports = {
           items: [
             'compositions/overview',
             'compositions/composition-format',
-            'compositions/visualizing-components',
-          ],
+            'compositions/visualizing-components'
+          ]
         },
         {
           type: 'category',
@@ -363,7 +365,7 @@ module.exports = {
           items: [
             'generator/overview',
             'generator/workspace-template',
-            'generator/template-components',
+            'generator/template-components'
           ]
         },
         {
@@ -405,7 +407,7 @@ module.exports = {
           collapsed: true,
           items: [
             'configurations/config-files',
-            'configurations/global-configurations',
+            'configurations/global-configurations'
           ]
         },
         {
@@ -420,7 +422,7 @@ module.exports = {
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'
           ]
-        },
+        }
       ]
     },
     {
@@ -444,39 +446,39 @@ module.exports = {
         'extending-bit/aspect-environment'
       ]
     },
+    {
+      type: 'category',
+      label: 'Reference',
+      collapsed: true,
+      items: [
+        'reference/api-reference',
+        'reference/cli-reference',
+        'reference/common-commands',
+        'reference/bvm',
+        'reference/migration',
         {
           type: 'category',
-          label: 'Reference',
-          collapsed: true,
+          label: 'Troubleshooting',
           items: [
-            'reference/api-reference',
-            'reference/cli-reference',
-            'reference/common-commands',
-            'reference/bvm',
-            'reference/migration',
-            {
-              type: 'category',
-              label: 'Troubleshooting',
-              items: [
-                'reference/troubleshooting/doctor-logs-cache',
-                'reference/troubleshooting/multiple-peer-dep-versions',
-                'reference/troubleshooting/runtime-globals',
-                'reference/troubleshooting/multiple-envs'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Guides',
-              items: [
-                'reference/guides/publishing-components-to-external-registries',
-                'reference/guides/setting-up-remote-scope-server',
-                'reference/guides/component-driven-apps',
-                'reference/guides/cross-team-collaboration',
-                'reference/guides/upgrading-react-version',
-                'reference/guides/using-global-types'
-              ]
-            }
+            'reference/troubleshooting/doctor-logs-cache',
+            'reference/troubleshooting/multiple-peer-dep-versions',
+            'reference/troubleshooting/runtime-globals',
+            'reference/troubleshooting/multiple-envs'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          items: [
+            'reference/guides/publishing-components-to-external-registries',
+            'reference/guides/setting-up-remote-scope-server',
+            'reference/guides/component-driven-apps',
+            'reference/guides/cross-team-collaboration',
+            'reference/guides/upgrading-react-version',
+            'reference/guides/using-global-types'
           ]
         }
+      ]
+    }
   ]
 };
