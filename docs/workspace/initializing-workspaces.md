@@ -26,7 +26,3 @@ Use `bit init --help` or `bit init -h` to get a list of available options for th
 <FilesBitCreates />
 
 ---
-
-## What's Next
-
-Once you have initialized a workspace, you can start [creating components](creating-components).

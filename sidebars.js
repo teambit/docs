@@ -386,6 +386,7 @@ module.exports = {
           collapsed: true,
           items: [
             'compiler/overview',
+            'compiler/workspace-compiler',
             'compiler/workspace-compilation',
             'compiler/compiling-during-build',
             'compiler/configure-env'

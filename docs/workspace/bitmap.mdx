@@ -3,7 +3,7 @@ name: .bitmap
 id: bitmap
 ---
 
-`.bitmap` is a file auto-generated and managed by Bit in the [Workspace](workspace/overview) for mapping component to their corresponding directory in the project's file system.
+`.bitmap` is a file auto-generated and managed by Bit in the [Workspace](/workspace/overview) for mapping component to their corresponding directory in the project's file system.
 The `.bitmap` file is meant to be tracked and committed to the VCS repository (Git/Mercurial)
 
 An example `.bitmap` file can be found on [this example project](https://github.com/bit-demos/ecommerce/blob/main/.bitmap).
@@ -13,23 +13,24 @@ Please note, `.bitmap` file should is not meant or designed to be manually chang
 :::
 
 ## Component entry
-A Component entry in the bitmap file is mapping a single component to is corresponding directory in the [Workspace](workspace/overview) file system. 
+
+A Component entry in the bitmap file is mapping a single component to is corresponding directory in the [Workspace](/workspace/overview) file system.
 
 ```json
 {
-    "ui/avatar": {
-        "scope": "deepblue.people",
-        "version": "1.0.4",
-        "mainFile": "index.ts",
-        "rootDir": "people/ui/avatar"
-    }
+  "ui/avatar": {
+    "scope": "deepblue.people",
+    "version": "1.0.4",
+    "mainFile": "index.ts",
+    "rootDir": "people/ui/avatar"
+  }
 }
 ```
 
-- `scope` / [Scope](scope/overview) owning the [Component](component/overview).
+- `scope` / [Scope](/scope/overview) owning the [Component](/components/overview).
 - `version` / Current component version.
-- `mainFile` / Component's [Main File](components/main-file)
-- `rootDir` / The [Component](components/overview) root directory in the [Workspace](workspace/overview) file system.
+- `mainFile` / Component's [Main File](/components/main-file)
+- `rootDir` / The [Component](/components/overview) root directory in the [Workspace](/workspace/overview) file system.
 
 ## Schema Version
 
@@ -42,7 +43,7 @@ A Component entry in the bitmap file is mapping a single component to is corresp
 }
 ```
 
-## Resolving conflicts
+<!--TODO ## Resolving conflicts
 
 // @david anything to add here.
-
+ -->

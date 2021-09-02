@@ -10,7 +10,7 @@ and manages an array of Bit Components, each is like an independent repo, connec
 
 The Bit Workspace is a local development environment for Bit Components. The local workspace gives you a monolithic development experience for building Bit Components and reusing components built by other teams.
 
-Workspaces are used for building and maintaining [Component Libraries](/), [Apps](/), [Modules](/)
+Workspaces are used for building and maintaining Component Libraries, Apps or Modules. <!--TODO [Component Libraries](/), [Apps](/), [Modules](/) -->
 
 ## Workspace Anatomy
 
@@ -72,10 +72,10 @@ All components in your workspace are rendered and presented on a local developme
 bit start
 ```
 
-- [Docs](/)
-- [Compositions](/)
-- [Tests](/)
-- [Dependencies](/)
+- [Docs](/docs/overview)
+- [Compositions](/compositions/overview)
+- [Tests](/tester/overview)
+- [Dependencies](/dependencies/overview)
 
 By default Bit generates a local build for the dev server in `public/bit` directory.
 
@@ -83,8 +83,8 @@ By default Bit generates a local build for the dev server in `public/bit` direct
 
 Bit compiles all components in the workspace, even those which have never been exported, to modules and places the compiled output in the `node_modules` directory.
 
-<div style={{textAlign: 'center'}}>
-    <img src="/img/module-link.png" width="240" alt="module link" />
+<div style={{ textAlign: 'center' }}>
+  <img src="/img/module-link.png" width="240" alt="module link" />
 </div>
 
 When you want to `import` one component into another, even in the same workspace, use these module links as absolute `import` statements:
@@ -96,18 +96,21 @@ import { ShoppingCart } from '@acme/cart.shopping-cart';
 By using module links in `import` statements you treat all dependencies as regular npm packages (which they are), thereby decoupling the component's implementation from the project's file structure, making the component transferable.
 
 By default, `bit install` links all components tracked in your Workspace.
+
 ```bash
 bit install
 ```
 
 To link all components you can use:
+
 ```bash
 bit link
 ```
 
 ## Dependencies
 
-Bit keeps a dependency graph representing all components in the workspace according to their `import` statements.  
+Bit keeps a dependency graph representing all components in the workspace according to their `import` statements.
+
 When you make any change to a component, Bit finds all its dependents and runs operations on them recursively. This is to ensure that not only your modified component works and updates as expected, but that all components affected from the change are updated and validated too.
 
 This also helps save time and resources by building (or testing) only affected components.

@@ -3,26 +3,21 @@ id: workspace-configuration
 title: Configuring the Workspace
 ---
 
-A [Workspace](/workspace/overview) can be configured in the `workspace.jsonc` file, where each [Aspect](/extending-bit/aspect) used in the Workspace can be configured according to its [accepted configuration](/extending-bit/aspect#config).
+A [Workspace](/workspace/overview) can be configured in the `workspace.jsonc` file, where each [Aspect](/extending-bit/overview) used in the Workspace can be configured according to its [accepted configuration](//extending-bit/overview#config).
 
-Each entry in the `workspace.jsonc` file is a definition of an [Aspect](/aspect/overview), where the key is a [Component ID](/components/id) of the used [Aspect](/extending-bit/aspect), and the value its his configuration.
+Each entry in the `workspace.jsonc` file is a definition of an [Aspect](/extending-bit/overview), where the key is a [Component ID](/components/id) of the used [Aspect](/extending-bit/overview), and the value its his configuration.
 
 ```json
 {
   // An Aspect entry.
   "teambit.workspace/workspace": {
-    "name": "My First Bit Workspace", 
+    "name": "My First Bit Workspace",
     "icon": "https://static.bit.dev/bit-logo.svg"
   }
 }
 ```
 
-At the above example, we are defining the [Workspace](/workspace/overview) Aspect to be configured with a specific `name` and an `icon`. In the same sense, [Core Aspects](/extending-bit/core-aspects) can be configured and [External Aspects](/external-aspects) can be used.
-
-
-
-
-
+At the above example, we are defining the [Workspace](/workspace/overview) Aspect to be configured with a specific `name` and an `icon`. In the same sense, Core Aspects <!--TODO [Core Aspects](/extending-bit/core-aspects) --> can be configured and External Aspects <!--TODO [External Aspects](/external-aspects) --> can be used.
 
 ### teambit.workspace/workspace
 

@@ -3,7 +3,7 @@ title: Directory Structure
 id: directory-structure
 ---
 
-The Bit [Workspace](workspace/overview) is flexible in directory structure to preserve a seamless dev experience for building distributed apps. It is flexible for teams to decide how they prefer to structure their [Workspace](workspace/overview).  
+The Bit [Workspace](/workspace/overview) is flexible in directory structure to preserve a seamless dev experience for building distributed apps. It is flexible for teams to decide how they prefer to structure their [Workspace](/workspace/overview).
 
 Components can be tracked in any directory in the project's file system with the `bit add` command.
 
@@ -11,23 +11,23 @@ Components can be tracked in any directory in the project's file system with the
 bit add path/to/dir/button
 ```
 
-The default directory structure for a Bit Workspace is defined in [workspace.json](workspace/workspace-json). The default directory structure is as a pattern used by commands placing Components in the Workspace like `bit create` or `bit import`.
+The default directory structure for a Bit Workspace is defined in [workspace.json](/workspace/workspace-json). The default directory structure is as a pattern used by commands placing Components in the Workspace like `bit create` or `bit import`.
 
 ```json
 {
   "teambit.workspace/workspace": {
-    "defaultDirectory": "{scope}/{name}",
+    "defaultDirectory": "{scope}/{name}"
   }
 }
 ```
 
 Other available params for the pattern are: `{namespaces}` and `{componentName}`.
 
-By default, we configure `Scope` to be the top level directory to preserve team boundaries and ownership on Components in the Workspace. 
+By default, we configure `Scope` to be the top level directory to preserve team boundaries and ownership on Components in the Workspace.
 
 ```bash
 ├── base-ui --> `Scope` used to define team boundaries and ownership
-    ├── ui --> `Component Namespaces` to assist with organization and configuration of componentsused
+    ├── ui --> `Component Namespaces` to assist with organization and configuration of components used
         ├── button --> `Component Directory` includes a specific Component implantation
           ├── index.ts
           ├── button.ts

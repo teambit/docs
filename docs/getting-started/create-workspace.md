@@ -37,71 +37,30 @@ values={[
 bit new react my-workspace
 ```
 
-```bash
-cd my-workspace
-```
-
-```bash
-bit start
-```
-
   </TabItem>
   <TabItem value="Angular">
 
 ```bash
-mkdir my-workspace
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12
 ```
+
+  </TabItem>
+</Tabs>
 
 ```bash
 cd my-workspace
 ```
 
 ```bash
-bit init
-```
-
-To use the Angular environment, you first need to check what is the latest version available:
-
-```bash
-npm dist-tag ls @teambit/angular-v12
-```
-
-Then add the following lines in your workspace.jsonc file to apply the Angular development environment on all components in this workspace (replace x.x.x by the latest version available):
-
-```bash
-{
-...
-  // replace x.x.x by the latest version available
-  "teambit.angular/angular-v12@x.x.x": {},
-  "teambit.workspace/variants": {
-    "*": {
-      // replace x.x.x by the latest version available
-      "teambit.angular/angular-v12@x.x.x": { }
-    }
-  },
-  "teambit.generator/generator": {
-    "aspects": [
-      // Replace `v12` by the version of Angular that you want to use
-      "teambit.angular/angular-v12"
-    ]
-  }
-}
-```
-
-```bash
-bit install
 bit start
 ```
-
-  </TabItem>
-</Tabs>
 
 To learn in depth on [Creating Workspace head here](/workspace/creating-workspaces).
 
 Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the [minimal footprint](/workspace/initializing-workspaces#created-files) required for a [Workspace](/workspace/overview), and generated the workspace according to the [Workspace Files](/workspace/creating-workspaces#created-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-configuration) defined in the chosen [Workspace Template](/workspace/workspace-templates).
 This is the file structure generated be the [Workspace Generator](/workspace/overview).
 
-```
+```bash
 ├── .git/bit --> Local Scope associated with the Workspace.
 ├── .gitignore
 ├── README.md

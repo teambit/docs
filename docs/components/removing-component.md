@@ -1,5 +1,5 @@
 ---
-id: removing-components
+id: removing-component
 title: Removing/Deprecating a Component
 ---
 
