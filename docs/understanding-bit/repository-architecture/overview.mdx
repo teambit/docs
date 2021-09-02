@@ -7,7 +7,7 @@ title: Overview
 
 A Monorepo is a single Git repository that holds the source code for multiple projects (application and libraries) along with everything required for them.
 
-Here is an example Monorepo, built with Bit:
+<!--TODO Here is an example Monorepo, built with Bit: -->
 
 ## Why teams use Monorepos?
 
@@ -17,17 +17,17 @@ Teams use Monorepos to improve velocity, dev experience and collaboration across
 
 Code sharing becomes easier as all source code existing and accessible under the same repo. APIs can be just "used" assuming they can exist on the same Runtime. In other cases, like where IPC is required, different approaches are taken.
 
-### Dev experience
+<!--TODO ### Dev experience
 
-Dev experience
+Dev experience -->
 
 ### Large scale refactoring
 
 It is easier to do large scale refactoring in a single repo, rather than cloning countless different repos which depend on each other through a certain method (which might be runtime, build time or any other kind of dependency), then figuring out the right repos to clone and understand how to contribute to them all is close to impossible. In a Monorepo, all source code is hosted accessible in the same repo, meaning it is easier to make an atomic set of changes in a "Feature branch", even if these are changes to someone elses source code and propose them. Once feature is completed and accepted by all teams, an atomic merge can be applied, later triggering the deployment.
 
-### Atomic changes
+<!--TODO ### Atomic changes
 
-Making changes
+Making changes -->
 
 ### Cross team collaboration
 
@@ -36,7 +36,7 @@ This usually
 
 Still, discoverability and visibility for APIs and source code is still a rough challenge as the codebase grows.
 
-### API and source code accessability
+<!--TODO ### API and source code accessability -->
 
 ## Challenges building in Monorepos
 
@@ -48,7 +48,7 @@ The overhead of adding a module to be reusable in a Monorepo might be overwhelmi
 
 ### API Adoption
 
-Developers are afraid to adopt APIs as they get coupled to other teams,
+Developers are afraid to adopt APIs as they get coupled to other teams.
 
 ### Tooling
 
@@ -70,15 +70,15 @@ On-boarding new developers to a Monorepo gets more cumbersome as the codebase ge
 
 Build computation gets slower, IDE takes longer to respond and understanding how each change affects others is hard to track and maintain and more. This increases feedback loop over time. Long feedback loops highly decrease velocity and delivery speed. As an example: A developer waiting for his build to complete for 15 mins to en
 
-### Non-developers
+<!--TODO ### Non-developers
 
 ### Inconsistent tooling
 
 ### Team boundaries and ownership
 
-Team boundaries and ownership is usually defined by the directory structure, permissions
+Team boundaries and ownership is usually defined by the directory structure, permissions -->
 
-### CI/CD
+<!--TODO ### CI/CD
 
 ## Bit and Monorepos
 
@@ -88,4 +88,4 @@ Bit can be very helpful in either a Monorepo or a Polyrepo architectures. It mak
 
 ### Repo migration
 
-### Lerna/NX/Rush
+### Lerna/NX/Rush -->

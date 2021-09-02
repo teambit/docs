@@ -131,11 +131,11 @@ module.exports = {
               label: 'Initialize a Workspace on an Existing Project',
               items: [
                 'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
-                // 'start-from-existing-project/init-workspace-on-existing-project/cra',
-                // 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
-                // 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
-                // 'start-from-existing-project/init-workspace-on-existing-project/angular-app',
-                // 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/cra',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/angular-app',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
               ]
             },
             'start-from-existing-project/tracking-existing-components'
@@ -148,7 +148,7 @@ module.exports = {
       label: 'Understanding Bit',
       items: [
         'understanding-bit/why-bit',
-        'understanding-bit/component-driven-software',
+        // TODO 'understanding-bit/component-driven-software',
         {
           type: 'category',
           label: 'Repository Architecture',
@@ -158,10 +158,10 @@ module.exports = {
             'understanding-bit/repository-architecture/bit-monorepo'
           ]
         },
-        'understanding-bit/economy-of-scale',
-        'understanding-bit/package-managers',
-        'understanding-bit/micro-architecture/micro-architecture',
-        'understanding-bit/dogfooding'
+        // TODO 'understanding-bit/economy-of-scale',
+        'understanding-bit/package-managers'
+        // TODO 'understanding-bit/micro-architecture/micro-architecture',
+        // TODO 'understanding-bit/dogfooding'
       ]
     },
     {
