@@ -3,22 +3,21 @@ id: overview
 title: Overview
 ---
 
-import { Image } from '@site/src/components/image'
+import { Image } from '@site/src/components/image';
 
 'Compositions' are, essentially, small apps that exhibit and test a component in different contexts and variations.
+
 They provide insight into the component's look and behavior in various likely usages.
+
 They help component maintainers to deliver components that are "true to their promise" and behave as expected when consumed by other web projects.
 
-Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments",
-isolated and un-affected by the rest of their authoring workspace, or by any other code that was not purposefully included.
+Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments", isolated and un-affected by the rest of their authoring workspace, or by any other code that was not purposefully included.
 
-Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers,
-such as designers and product managers, looking to inspect it.
+Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
 
 ## Viewing compositions
 
-To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bit start`),
-browse to a specific component and select the compositions tab.
+To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bit start`), browse to a specific component and select the compositions tab.
 There, you will see the full list of compositions available for that component,along with additional component meta-data.
 
 Compositions are also available to be viewed in the remote **Scope UI** (for example, on [Bit.dev](https://bit.dev)).
@@ -59,7 +58,6 @@ const UserHero = () => {
 };
 ```
 
-
 ```tsx title="example #2: user-hero.compositions.tsx"
 import { Hero } from './user-hero';
 
@@ -93,7 +91,7 @@ export const UserHeroWithScopeList = () => {
 
 ## Loading compositions
 
-The [Development Environment](/environments/overview) will automatically detect the composition file for each component
+The [Development Environment](/envs/overview) will automatically detect the composition file for each component
 and use it to load its compositions to the workspace UI.
 
 ## Using compositions for automated testing
@@ -120,11 +118,11 @@ describe('Button', () => {
 });
 ```
 
-- Learn more about running tests in a Bit workspace, [here](/testing/overview)
+- Learn more about running tests in a Bit workspace, [here](/tester/overview)
 
 ## Setting providers for all your compositions
 
-Extend the [React environment](/react/overview/) to customize its list of providers with your own composition providers.
+Extend the [React environment](/envs/pre-configured-envs/react) to customize its list of providers with your own composition providers.
 The extended environment will then wrap every composition with these providers to make sure your themes or mock data are accessible to all of them,
 without you having to repeat that task ever again.
 

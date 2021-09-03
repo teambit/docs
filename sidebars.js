@@ -357,9 +357,9 @@ module.exports = {
           type: 'category',
           label: 'Compositions',
           items: [
-            'compositions/overview',
-            'compositions/composition-format',
-            'compositions/visualizing-components'
+            'compositions/overview'
+            // TODO 'compositions/composition-format',
+            // TODO 'compositions/visualizing-components'
           ]
         },
         {
