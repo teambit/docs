@@ -70,23 +70,23 @@ Available placeholders:
 Publish an exported component
 
 ```shell
-$ bit publish <componentId>
+bit publish <componentId>
 ```
 
 Publish a staged component that has not yet been published:
 
 ```shell
-$ bit publish <componentId> --allow-staged
+bit publish <componentId> --allow-staged
 ```
 
 To check if the publishing process will be done successfully (without publishing):
 
 ```shell
-$ bit publish <componentId> --dry-run
+bit publish <componentId> --dry-run
 ```
 
 To return the output as JSON:
 
 ```shell
-$ bit publish <componentId> --json
+bit publish <componentId> --json
 ```

@@ -179,7 +179,6 @@ module.exports = {
             'workspace/directory-structure',
             'workspace/resetting-workspace',
             'workspace/workspace-component',
-            'workspace/workspace-configuration',
             'workspace/bitmap',
             'workspace/node-modules',
             'workspace/component-directory',
@@ -190,6 +189,8 @@ module.exports = {
             'workspace/variants',
             'workspace/importing-components',
             'workspace/creating-components',
+            'workspace/moving-components',
+            'workspace/versioning-components',
             'workspace/workspace-starters',
             'workspace/workspace-templates'
           ]

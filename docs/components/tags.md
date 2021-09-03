@@ -60,7 +60,7 @@ bit tag --persist --all
 To untag our a component run the following:
 
 ```shell
-$ bit untag <component-id>
+bit untag <component-id>
 ```
 
 ### List all 'tagged' components
@@ -68,7 +68,7 @@ $ bit untag <component-id>
 'tagged' or versioned components are components stored in your local scope.
 
 ```shell
-$ bit list
+bit list
 ```
 
 Example output:
@@ -113,6 +113,7 @@ To see a diagram of the dependencies in your workspace or scope, take a look at 
 >
 > ```shell
 > // soft-tag
-> $ bit tag <component-id>
+> bit tag <component-id>
 > ```
-{"mode":"full","isActive":false}
+>
+> {"mode":"full","isActive":false}

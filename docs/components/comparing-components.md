@@ -6,7 +6,7 @@ title: Comparing Components (diff)
 ### Compare all modified components to their latest release or Snap
 
 ```bash
-$ bit diff
+bit diff
 
 -----------------------------------
 showing diff for ui/button

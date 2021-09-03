@@ -18,7 +18,10 @@ Bit shows the state of each component in the workspace' component list using ann
 No components have pending changes. Either no files are tracked in the workspace, or the tracked components have no pending changes.
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 nothing to tag or export
 ```
 
@@ -27,10 +30,14 @@ nothing to tag or export
 Components that have been tracked, but not yet tagged.
 
 Bit tries to validate if a _new component_ can be isolated, and will print all isolation issues it finds (if any).
-[Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors).
+
+<!--TODO [Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors). -->
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 new components
  (use "bit tag --all [version]" to lock a version with all your changes)
 
@@ -39,13 +46,17 @@ new components
 
 ### Staged components
 
-All tagged components that are ready to be [exported](/apis/cli-all#export) and shared to a remote Collection.
+All tagged components that are ready to be [exported](/reference/cli-reference#export) and shared to a remote Collection.
+
 In Git status terms, the equivalent would be changes which have been committed but not pushed to the server.
 
 Staged components have been verified by Bit as fully isolated.
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 staged components
  (use "bit export <remote_collection> to push these components to a remote Collection")
 
@@ -60,10 +71,14 @@ Components that have already been staged exported or sourced, and then modified 
 Modified components are meant to be tagged and set as a new version.
 
 Bit tries to validate if a _modified component_ can be isolated, and will print all isolation issues it finds (if any).
-[Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors).
+
+<!--TODO [Read more about the different isolation issues and how to resolve them](/add-and-isolate-components#isolation-errors). -->
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 modified components
  (use "bit tag --all [version]" to lock a version with all your changes)
  (use "bit diff" to compare changes)
@@ -73,10 +88,13 @@ modified components
 
 ### Pending updates
 
-Components with newer versions fetched by `bit import` and available to use. Use [bit checkout](/apis/cli-all#checkout) to start using the newer version.
+Components with newer versions fetched by `bit import` and available to use. Use [bit checkout](/reference/cli-reference#checkout) to start using the newer version.
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 pending updates
  (use "bit checkout [version] [component_id]" to merge changes)
  (use "bit diff [component_id] [new_version]" to compare changes)
@@ -90,7 +108,10 @@ pending updates
 A component's files were physically deleted from the filesystem, but the component is still listed by Bit. The component should be removed using `bit remove <component-id>`.
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 deleted components
  these components were deleted from your project.
  use "bit remove [component_id]" to remove these component from your workspace
@@ -103,7 +124,10 @@ deleted components
 Component (not in state new) for whom at least one of its dependencies is in `modified` state.
 
 ```shell
-$ bit status
+bit status
+```
+
+```shell
 components pending to be tagged automatically (when their dependencies are tagged)
  > string/index ... ok
 ```

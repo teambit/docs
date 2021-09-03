@@ -57,7 +57,7 @@ bit start
 
 To learn in depth on [Creating Workspace head here](/workspace/creating-workspaces).
 
-Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the [minimal footprint](/workspace/initializing-workspaces#created-files) required for a [Workspace](/workspace/overview), and generated the workspace according to the [Workspace Files](/workspace/creating-workspaces#created-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-configuration) defined in the chosen [Workspace Template](/workspace/workspace-templates).
+Congrats! You have created your first [Workspace](/workspace/overview). `bit new` has initialized the [minimal footprint](/workspace/initializing-workspaces#created-files) required for a [Workspace](/workspace/overview), and generated the workspace according to the [Workspace Files](/workspace/creating-workspaces#created-files), [components](/workspace/workspace-component) and [configuration](/workspace/workspace-json) defined in the chosen [Workspace Template](/workspace/workspace-templates).
 This is the file structure generated be the [Workspace Generator](/workspace/overview).
 
 ```bash
@@ -176,7 +176,7 @@ Workspace specific configurations such as `name` and `icon` can be configured in
 
 ### Dependencies
 
-`bit install` keeps your [Workspace](/workspace/overview) up to date with external dependencies, Component Objects <!--TODO [Component Objects](/) --> and [Workspace Component Links](/workspace/component-link), usually after a `git pull`. Allowed workspace dependencies are configured in the [Dependency Policy](/dependencies/overview#dependency-policies) in the [Workspace Configuration](/workspace/workspace-configuration).
+`bit install` keeps your [Workspace](/workspace/overview) up to date with external dependencies, Component Objects <!--TODO [Component Objects](/) --> and [Workspace Component Links](/workspace/component-link), usually after a `git pull`. Allowed workspace dependencies are configured in the [Dependency Policy](/dependencies/overview#dependency-policies) in the [Workspace Configuration](/workspace/workspace-json).
 
 ```bash
 bit install

@@ -16,13 +16,13 @@ The `show` command displays a component's essential information. For example, it
 Since Bit components are not configured directly but through the various extensions that are used by them (either the extensions' default values or manual configurations in workspace configurations file), it is much easier to review their configurations by using the `show` command than it is by doing so manually.
 
 ```shell
-$ bit show <component-id>
+bit show <component-id>
 ```
 
 For example:
 
 ```shell
-$ bit show my-org.my-scope/ui-primitives/button
+bit show my-org.my-scope/ui-primitives/button
 ```
 
 Example output:
@@ -110,7 +110,7 @@ For example:
 The log command shows the version history of a component:
 
 ```shell
-$ bit log button
+bit log button
 ```
 
 Example output:
@@ -181,5 +181,5 @@ bit list owner-name.scope-name
 Displays local and remote versions of components in the local scope.
 
 ```shell
-$ bit list --outdated
+bit list --outdated
 ```

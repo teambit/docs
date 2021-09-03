@@ -25,7 +25,7 @@ For example, the component ID `my-org.my-scope/ui/inputs/button` is composed of:
 
 - Component full name: `ui/inputs/button`
 
-A component ID may reference a specific component release version using the `@` sign: 
+A component ID may reference a specific component release version using the `@` sign:
 
 `my-org.my-scope/ui/inputs/button@1.0.0`
 
@@ -37,8 +37,8 @@ A scope name describes the common purpose of its components, and by that, the go
 - `inventory` - a set of components relevant for inventory management in an e-commerce app.
 - `authentication` - components for managing user authentication and tokens.
 
-
 ### Setting a scope name
+
 Set the scope name for components by configuring the `workspace.jsonc`:
 
 ```jsonc {4} title="workspace.jsonc"
@@ -60,7 +60,7 @@ When hosting on Bit Cloud, the `<owner>.<scope-name` pattern is mandatory.
 ## Component full name
 
 A component's full name serves as a unique identifier of a [Component](/components/overview) in the local workspace.
-Most local operations require referencing a component using its full name rather than its ID. 
+Most local operations require referencing a component using its full name rather than its ID.
 A component's full name is composed of its namespaces (if there are any), and name.
 
 ```
@@ -75,7 +75,7 @@ The below command will create a new component with the name `button` and the nam
 For example:
 
 ```bash
-$ bit create react ui/inputs/button
+bit create react ui/inputs/button
 ```
 
 When tracking a component manually, a component's full name is determined by the name of its Component Directory. Namespaces can be added using the `--namespace` option.
@@ -83,10 +83,10 @@ When tracking a component manually, a component's full name is determined by the
 For example:
 
 ```bash
-$ bit add my-scope/button --namespace ui/inputs
+bit add my-scope/button --namespace ui/inputs
 ```
 
-A component name can be manually set by using the `--id` option (this will override the name received by  its Component Directory).
+A component name can be manually set by using the `--id` option (this will override the name received by its Component Directory).
 
 ## Component name
 
@@ -102,7 +102,7 @@ Namespaces are used to organize components into categories in the Workspace and 
 Namespaces can form a hierarchal order. For example, the following command creates a component, `button`, with the namespace `ui` and, nested inside it, the namespace `inputs`.
 
 ```sh
-$ bit create react ui/inputs/button
+bit create react ui/inputs/button
 ```
 
 This will show up in the Workspace UI and Scope UI, like so:
@@ -125,14 +125,15 @@ For example, the following configuration will set the React env on all component
 
 ## View component IDs
 
-### List all component IDs in the local scope 
+### List all component IDs in the local scope
+
 (i.e, versioned components in the workspace)
 
 ```bash
 bit list
 ```
 
-### View the component ID of a specific component 
+### View the component ID of a specific component
 
 ```bash
 bit show <component-full-name>

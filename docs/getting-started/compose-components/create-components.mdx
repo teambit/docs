@@ -22,7 +22,7 @@ Templates are shown from all Envs configured in your Workspace.
 
 Creating your first React Component is as simple as using the `bit create` command which is powered by the [Component Generator](/generator/overview). By default, components are created in the `defaultScope` defined in the [Workspace Configuration](/workspace/workspace-json), to specify a different scope use the `--scope` flag.
 
-Official Workspace templates come with pre-configured [workspace.json](/workspace/workspace-configuration) which sets components created that include either the `ui` or `pages` namespace to be associated to the React env, Default env is the [Node env](/aspects/node). `envs` and `extensions` namespaces are expected to include [Bit Aspects](/aspects/aspects-overview) associated by default with the Aspect Env <!-- TODO [Aspect env](/extending-bit/aspect-env) -->.
+Official Workspace templates come with pre-configured [workspace.json](/workspace/workspace-json) which sets components created that include either the `ui` or `pages` namespace to be associated to the React env, Default env is the [Node env](/aspects/node). `envs` and `extensions` namespaces are expected to include [Bit Aspects](/aspects/aspects-overview) associated by default with the Aspect Env <!-- TODO [Aspect env](/extending-bit/aspect-env) -->.
 
 ```json title="workspace.json"
   "teambit.workspace/variants": {
@@ -107,7 +107,7 @@ You can choose to not include tests files, docs files or even the composition fi
 To check which envs are configured on your components you can use the `bit env` command or check the icon on its left on the UI.
 
 ```bash
-$ bit env
+bit env
 ┌───────────────────────────────────────┬───────────────────────────────────────┐
 │ component                             │ env                                   │
 ├───────────────────────────────────────┼───────────────────────────────────────┤

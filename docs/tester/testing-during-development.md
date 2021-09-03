@@ -17,9 +17,9 @@ To customize your environment's test runner, first [create an environment extens
 
 ```shell
 // In the workspace's root directory
-$ mkdir -p extensions/custom-react
-$ touch extensions/custom-react/react.extension.ts
-$ touch extensions/custom-react/index.ts
+mkdir -p extensions/custom-react
+touch extensions/custom-react/react.extension.ts
+touch extensions/custom-react/index.ts
 ```
 
 ### Option #1: Override the environment's default tester configurations
@@ -46,7 +46,7 @@ export class CustomReactExtension {
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     const customReactEnv = react.compose([
       // Override the environment's default Jest configuration by providing the path to its config file.
-      react.overrideJestConfig(require.resolve('./jest.config')),
+      react.overrideJestConfig(require.resolve('./jest.config'))
     ]);
 
     envs.registerEnv(customReactEnv);
@@ -62,8 +62,8 @@ export class CustomReactExtension {
 module.exports = {
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
-    '^.+\\.module\\.(css|sass|scss|less)$',
-  ],
+    '^.+\\.module\\.(css|sass|scss|less)$'
+  ]
 };
 ```
 
@@ -117,7 +117,7 @@ export class CustomReactExtension {
     const testerOverride = envs.override({
       getTester: () => {
         return mochaTestRunner;
-      },
+      }
     });
 
     const customReactEnv = react.compose([testerOverride]);
@@ -138,4 +138,5 @@ export default CustomReactExtension;
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
 {"mode":"full","isActive":false}

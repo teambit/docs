@@ -3,7 +3,7 @@ id: lanes
 title: Lanes (component branches)
 ---
 
-`Lanes` is designed to help developers apply and collaborate on changes across multiple components without interfering with the main development course. It lets developers manage cross-component dependency graph changes.  
+`Lanes` is designed to help developers apply and collaborate on changes across multiple components without interfering with the main development course. It lets developers manage cross-component dependency graph changes.
 
 `Lanes` are highly inspired by Branches, implemented in SCMs such as Git. Imagine a git-branch that can sync changes between different repositories. Lanes are lightweight, making diverging to new lines of development very fast.
 
@@ -24,7 +24,7 @@ When you take a snapshot to tag a component, Bit creates a pointer from the comp
 To visualize it let's assume that we have a project with a modified component.
 
 ```sh
-$ bit snap comp-a
+bit snap comp-a
 ```
 
 When you create a snap using `bit snap`, Bit checksums each the component's implementation, dependency graph, configuration and extensions, and stores it as an object in the Bit scope. Bit then creates a snapshot object that holds additional metadata (date, message).
@@ -56,7 +56,7 @@ We've covered the flow for a single component. But a lane can point to multiple 
 What happens when we create a new Lane? Doing so creates a new pointer for you to move.
 
 ```sh
-$ bit lane new-auth
+bit lane new-auth
 ```
 
 This creates a new pointer to the same snap/tag you are already working on.
@@ -78,7 +78,7 @@ You can see it by running `bit X` command that shows you where the Lane pointer 
 To diverge to a different lane, use the `checkout` command.
 
 ```sh
-$ bit checkout new-auth
+bit checkout new-auth
 ```
 
 This moves the `HEAD` pointer to the `new-auth` lane.
@@ -89,7 +89,7 @@ Now let's modify a component and take a snap.
 
 ```
 # dome modification command
-$ bit snap comp-a
+bit snap comp-a
 ```
 
 [IMAGE SHOULD BE HERE]
@@ -97,7 +97,7 @@ $ bit snap comp-a
 The `new-auth` lane has moved forward, but `master` still points to the previous snap. You can switch back to `master`.
 
 ```sh
-$ bit checkout master
+bit checkout master
 ```
 
 [IMAGE SHOULD BE HERE]
@@ -111,7 +111,7 @@ This also means that all changes you make from this point onward will diverge fr
 
 ```sh
 # some change
-$ bit snap comp-a
+bit snap comp-a
 ```
 
 Now the Lane contains a set of changes that **diverged**. Both changes are isolated in separate Lanes. You can switch back and forth between them. You can merge them together when you are ready.
