@@ -285,20 +285,20 @@ module.exports = {
           label: 'CI/CD',
           collapsed: true,
           items: [
-            'cicd/overview',
+            // TODO 'cicd/overview',
             'cicd/cicd-setup-with-bit',
             'cicd/soft-tags',
             {
               type: 'category',
               label: 'Configuring Bit on Your CI',
               items: [
-                'cicd/configuring-bit-on-your-ci/circle-ci',
+                // TODO 'cicd/configuring-bit-on-your-ci/circle-ci',
                 'cicd/configuring-bit-on-your-ci/github-actions',
-                'cicd/configuring-bit-on-your-ci/gitlab-ci',
-                'cicd/configuring-bit-on-your-ci/jenkins'
+                'cicd/configuring-bit-on-your-ci/gitlab-ci'
+                // TODO 'cicd/configuring-bit-on-your-ci/jenkins'
               ]
-            },
-            'cicd/ripple-ci'
+            }
+            // TODO 'cicd/ripple-ci'
           ]
         },
         {
