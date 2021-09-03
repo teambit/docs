@@ -16,7 +16,7 @@ title: How to Write Docs
 1. **Build vs development**: dev experience (performance, debugging, etc) vs consistency, reusability and runtime performance.  
    For example:
 
-   - "Compilation of components in the [Workspace](/) optimized for dev experience, performance and debugging by default.
+   - "Compilation of components in the [Workspace](/workspace/overview) optimized for dev experience, performance and debugging by default.
      This means [Source Maps](/) are generated and components are just transpiled (without types) into in the `node_modules` directory to ensure consistency between using a component for development or consumption purposes."
 
    - "Compilation for distribution is optimized for runtime performance, consistency and reusability.

@@ -30,9 +30,9 @@ To learn more on formatting code during development, please refer to [Workspace 
 
 ## Format during build
 
-Formatting components' code for distribution is done during `build` by the Bit [Builder](/).
+Formatting components' code for distribution is done during `build` by the Bit [Builder](/builder/overview).
 
-Component build can be simulated with `bit build` and done through [Tag](/) or [Snap](/)
+Component build can be simulated with `bit build` and done through [Tag](/components/tags) or [Snap](/components/snaps)
 
 ```bash
 bit build
@@ -44,6 +44,6 @@ To learn more on formatting code during build and how to add a formatter [Build 
 
 ## Configuring and implementing Linters
 
-The [Formatter implementation](#) is configured in the [Env](#) which is configured on your [Component](/). Customizing it can be done by [customizing an existing env with your formatter](/) or by [implementing your own Env](/).
+The [Formatter implementation](#) is configured in the [Env](#) which is configured on your [Component](/components/overview). Customizing it can be done by [customizing an existing env with your formatter](/) or by [implementing your own Env](/).
 
 Formatter can also be implemented into Bit through few interfaces. For more information on implementing your own linter please refer to [Implement a Formatter](/).

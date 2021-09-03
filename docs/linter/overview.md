@@ -19,9 +19,9 @@ To learn more on linting during development, please refer to [Workspace Linting]
 
 ## Testing during build
 
-Testing components for distribution is done during `build` by the Bit [Builder](/).
+Testing components for distribution is done during `build` by the Bit [Builder](/builder/overview).
 
-Component build can be simulated with `bit build` and done through [Tag](/) or [Snap](/)
+Component build can be simulated with `bit build` and done through [Tag](/components/tags) or [Snap](/components/snaps)
 
 ```bash
 bit build
@@ -33,6 +33,6 @@ To learn more on linting during build and how to add a lint [Build Task](#), ple
 
 ## Configuring and implementing Linters
 
-The [Linter implementation](#) is configured in the [Env](#) which is configured on your [Component](/). Customizing it can be done by [customizing an existing env with your linter](/) or by [implementing your own Env](/).
+The [Linter implementation](#) is configured in the [Env](#) which is configured on your [Component](/components/overview). Customizing it can be done by [customizing an existing env with your linter](/) or by [implementing your own Env](/).
 
 Linter can also be implemented into Bit through few interfaces. For more information on implementing your own linter please refer to [Implement a Linter](/).
