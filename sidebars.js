@@ -346,10 +346,10 @@ module.exports = {
           type: 'category',
           label: 'Docs',
           items: [
-            'docs/overview',
-            'docs/doc-files',
-            'docs/rendering-docs',
-            'docs/doc-templates'
+            'docs/overview'
+            // TODO 'docs/doc-files',
+            // TODO 'docs/rendering-docs',
+            // TODO 'docs/doc-templates'
           ],
           collapsed: true
         },
