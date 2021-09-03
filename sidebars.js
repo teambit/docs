@@ -308,10 +308,10 @@ module.exports = {
           items: [
             'builder/overview',
             'builder/component-isolation',
-            'builder/component-build',
+            // TODO 'builder/component-build',
             'builder/build-pipelines',
-            'builder/build-pipeline-customization',
-            'builder/build-on-ci'
+            'builder/build-pipeline-customization'
+            // TODO 'builder/build-on-ci'
           ]
         },
         {
