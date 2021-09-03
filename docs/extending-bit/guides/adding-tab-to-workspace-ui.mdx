@@ -7,11 +7,15 @@ Bit is fully extendable which means you can create a workspace tailored to your 
 
 Once you have created an aspect you can then publish your aspect as a component and then share it with the rest of your team or in your other workspaces.
 
+## Creating an Aspect
+
 You can create an aspect by using our aspect template generator.
 
 ```bash
 bit create aspect aspects/hello-world
 ```
+
+## Registering an Aspect
 
 Make sure it is configured with the aspects environment which is the environment for building Bit extensions. The aspects slash asterisk is a wildcard which sets everything in the aspects folder to be using the aspect env.
 
@@ -23,11 +27,15 @@ Make sure it is configured with the aspects environment which is the environment
   }
 ```
 
+## Checking the Aspect Environment
+
 You can then use bit show to see if you are using the correct environment.
 
 ```bash
 bit show aspects/hello-world
 ```
+
+## Inspecting the Created Files
 
 Let's take a look at what was created. It is a very basic Bit extension. The first important thing in a Bit extension is the API. Any public method or any property you have on the class of your extension or on the object is a public API that will be available to anyone else using your extension.
 
@@ -48,6 +56,8 @@ export class HelloWorldMain {
 HelloWorldAspect.addRuntime(HelloWorldMain);
 ```
 
+## Importing the files
+
 To add a new tab into the component page in our workspace UI we need to import the `componentAspect` and the `ComponentMain` from Bit. Extensions can depend on extensions. What we are trying to extend is the extension in the UI to add another tab to the UI for the new content we have.
 
 In Bit there are a few runtimes. In the file that was created, `hello-world.main.runtime`, is for extending the workspace CLI or the workspace server. It's not the workspace UI. In order to extend the workspace UI we need to create a `hello-world.ui.runtime.tsx`
@@ -55,6 +65,8 @@ In Bit there are a few runtimes. In the file that was created, `hello-world.main
 ```bash
 touch hello-world.ui.runtime.tsx
 ```
+
+## Understanding the Runtimes
 
 Basically Bit can live in different runtimes because you have the runtime of the UI and you have the runtime of the Bit server. In order to step into each of them you have to create a separate file. Creating the `hello-world.ui.runtime.tsx` allows you to tap into UI extensions and extend them.
 
@@ -81,6 +93,8 @@ export class HelloWorldUI extends React.Component<any> {
 HelloWorldAspect.addRuntime(HelloWorldUI);
 ```
 
+## Register a new Route
+
 What we want to do is register a new route and a new navigation. In Bit everything has types so you can quickly understand what each component accepts. How we built the tester aspect in Bit was we instantiated a new test section. The test section is basically a class with a few properties that gives you the route that renders the children of the route which is the test page and decides on the path of the route because you want to add the new route to each component and add a navigation link.
 
 We can do the same here. We register a new route on the component and add a simple hello world as the children to be rendered and hello as the path. We have now registered a new extension. This extension adds a new route to the component called hello that renders hello world.
@@ -99,6 +113,8 @@ static async provider([component]: [ComponentUI]) {
 ...
 ```
 
+## Add the Navigation to the Component
+
 We can then add the Navigation to the component so we can see our new tab with a href of `~hello` for the children we can render a string of Hello. The word Hello will appear as our new tab which when clicked will go to the `~hello` path which will render the hello world.
 
 ```jsx
@@ -107,6 +123,8 @@ component.registerNavigation({
   children: 'Hello'
 });
 ```
+
+## Configure the Workspace
 
 To see if it works we first have to configure it. Any extension that you build must be configured on the workspace if you want it to be applied on a specific workspace. We add our aspect id, which you can find in the the `hello-world.aspects.ts` file, followed by an empty object as we have no configuration.
 
@@ -120,6 +138,8 @@ Any extension can accept configuration from the `workspace.json`. This is an imp
 }
 
 ```
+
+## Starting the Server in Dev Mode
 
 Once you have configured the extension on your workspace Bit automatically loads it. We then need to start our workspace by using `bit start --dev` as when you build a Bit extension you need to use the `--dev` flag
 
@@ -140,6 +160,8 @@ component.registerNavigation(
   100
 );
 ```
+
+## Customizing the Navigation
 
 Now our navigation appears at the end. You can use a way to control the order of different things. This is a different concept called a slot. You can register to a specific part of the Bit UI and add components to them and then modify and extend the Bit workspace UI behavior. From this component you can get access to the component object. For example you can render specific information from the component itself like the component name.
 
@@ -187,6 +209,8 @@ export class HelloWorldUI extends React.Component<any> {
 HelloWorldAspect.addRuntime(HelloWorldUI);
 ```
 
+## Exporting the Aspect
+
 An aspect is a component so now we can export our component to the [Bit.dev](http://bit.dev) cloud and use it in other projects. First we create a new version of our component.
 
 ```jsx
@@ -198,6 +222,8 @@ We then export it
 ```jsx
 bit export
 ```
+
+## Using the Aspect in Other Projects
 
 Add our hello aspect in the `workspace.json` file in another Bit project. Bit will automatically install it for you.
 
@@ -214,6 +240,8 @@ Then we can run the start command to see that the extension is working and that 
 ```bash
 bit start
 ```
+
+## Conclusion
 
 If we modify the aspect and export a new version we just have to run bit install to get the latest version.
 
