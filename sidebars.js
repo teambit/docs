@@ -210,7 +210,8 @@ module.exports = {
             'components/merging-components',
             'components/lanes',
             'components/snaps',
-            'components/tags'
+            'components/tags',
+            'components/removing-components'
           ]
         },
         {
@@ -368,7 +369,7 @@ module.exports = {
           items: [
             'generator/overview',
             'generator/workspace-template',
-            'generator/template-components'
+            'generator/components-template'
           ]
         },
         {

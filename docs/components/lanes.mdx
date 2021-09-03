@@ -35,21 +35,21 @@ The Bit scope now contains 3 objects:
 - 1 snapshot to hold the metadata and point to the blob.
 - 1 component that points to the snapshot.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 If you make some changes and take another snap, Bit stores a pointer in the next snap to point to the commit that came before.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 A Lane in Bit is simply a lightweight movable pointer to one of these snapshots. The default Lane name is **master**. As you start doing tags and snaps, you'r given a lane that points to the last snapshot. With every new snap/tag, the master lane moves forward automatically.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 #### Lane can point to several components
 
 We've covered the flow for a single component. But a lane can point to multiple snaps at the same time if they are of different components.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 ## Creating a new lane
 
@@ -61,17 +61,17 @@ bit lane new-auth
 
 This creates a new pointer to the same snap/tag you are already working on.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 How does Bit know which Lane you are on? It keeps a **special pointer** called `HEAD`.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 You can see it by running `bit X` command that shows you where the Lane pointer are pointing to.
 
-```
+<!-- ```
 ## TODO FIGURE OUT LOG FOR WORKSPACE
-```
+``` -->
 
 ## Switching lanes
 
@@ -83,7 +83,7 @@ bit checkout new-auth
 
 This moves the `HEAD` pointer to the `new-auth` lane.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 Now let's modify a component and take a snap.
 
@@ -92,7 +92,7 @@ Now let's modify a component and take a snap.
 bit snap comp-a
 ```
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 The `new-auth` lane has moved forward, but `master` still points to the previous snap. You can switch back to `master`.
 
@@ -100,7 +100,7 @@ The `new-auth` lane has moved forward, but `master` still points to the previous
 bit checkout master
 ```
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 This command did two things:
 
@@ -109,20 +109,19 @@ This command did two things:
 
 This also means that all changes you make from this point onward will diverge from an older version of the component.
 
-```sh
-# some change
+```sh title="some change"
 bit snap comp-a
 ```
 
 Now the Lane contains a set of changes that **diverged**. Both changes are isolated in separate Lanes. You can switch back and forth between them. You can merge them together when you are ready.
 
-[IMAGE SHOULD BE HERE]
+<!--TODO [IMAGE SHOULD BE HERE] -->
 
 You can also see in the the log.
 
-```sh
+<!-- ```sh
 # NEED TO DEFINE OUTPUT FORMAT TO SHOW LANE PROGRESSION
-```
+``` -->
 
 Lanes allow to track changes across components and sync them to ensure that if a change in a component has affects on other components, the side-effects are isolated to the lane, so they can be tested and verified before being applied. This means that you can create major breaking changes to several components, and only when their entire dependency graph complies with the changes - merge.
 
@@ -145,6 +144,6 @@ Component Tag is an immutable version meant to be consumed and is linked to the 
 - importing a lane and create a workspace for it
 - merge a part of a lane
 - remove components from a lane
-- `bit reflog` shows all snaps... to be able to recover stuff. (need a way to point a l)
+- `bit reflog` shows all snaps... to be able to recover stuff.<!-- TODO (need a way to point a l) -->
 - `bit reset`
 - two phase tag/snap? (similar to git)
