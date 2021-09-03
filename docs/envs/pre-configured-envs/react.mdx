@@ -39,6 +39,7 @@ bit create <template name> [components...]
 ## Peer dependencies
 
 As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.
+
 It is recommended for you to extend the base React environment and define a semantic version rule and range to fit your current tech stack and guidelines for reuseable React components.
 
 ## Development services
@@ -158,14 +159,18 @@ export class CustomReactExtension {
 
   static dependencies: any = [EnvsAspect, ReactAspect, BabelAspect];
 
-  static async provider([envs, react, babel]: [EnvsMain, ReactMain, BabelMain]) {
+  static async provider([envs, react, babel]: [
+    EnvsMain,
+    ReactMain,
+    BabelMain
+  ]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customReactEnv = react.compose([
       react.overrideCompiler(babelCompiler),
-      react.overrideCompilerTasks([babelCompiler.createTask()]),
+      react.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customReactEnv);
@@ -358,20 +363,22 @@ Each key-value pair in a dependency-policy object signifies the package and the 
 // ...
 const newDependencies = {
   dependencies: {
-    react: '-',
+    react: '-'
   },
   devDependencies: {
-    '@types/jest': '~26.0.9',
+    '@types/jest': '~26.0.9'
   },
   peerDependencies: {
-    react: '^17.0.2',
-  },
+    react: '^17.0.2'
+  }
 };
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([react.overrideDependencies(newDependencies)]);
+    const newReactEnv = react.compose([
+      react.overrideDependencies(newDependencies)
+    ]);
     // ...
   }
 }
@@ -387,13 +394,15 @@ Merges the provide props with the default properties added to the `package.json`
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
+  types: '{main}.ts'
 };
 
 export class CustomReact {
   // ...
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
-    const newReactEnv = react.compose([react.overridePackageJsonProps(newPackageProps)]);
+    const newReactEnv = react.compose([
+      react.overridePackageJsonProps(newPackageProps)
+    ]);
     // ...
   }
 }

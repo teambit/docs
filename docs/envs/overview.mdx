@@ -32,19 +32,21 @@ For example:
 }
 ```
 
-> <p style={{ color: '#c31313' }}>Never use the '*' wildcard in a workspace that uses multiple environments!</p>
-> Instead, use exclusive namespaces or directories to select and configure each group of components to use its own environment
-> (see an example in the next section).
+> <p style={{ color: '#c31313' }}>
+>   Never use the '*' wildcard in a workspace that uses multiple environments!
+> </p>
+> Instead, use exclusive namespaces or directories to select and configure each group
+> of components to use its own environment (see an example in the next section).
 
-- **For a list of all available pre-configured Envs, [see here.](/pre-configured-envs)**
+- **For a list of all available pre-configured Envs, [see here.](/pre-configured-envs/angular)**
 
 ### Using multiple Envs
 
-A single workspace can use different Envs for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using [Variants](../workspace/variants.md).
+A single workspace can use different Envs for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using [Variants](/workspace/variants).
 
 For example, to set the Node and React environments on two sets of components (selected by their directory):
 
-```json
+```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
     "components/ui": {
@@ -61,16 +63,15 @@ For example, to set the Node and React environments on two sets of components (s
 
 Bit Envs hook into Bit's CLI to execute their different services. For example, `bit test`, will execute different test runners, depending on the environment in use.
 
-#### start
+### start
 
 Runs the development serve (that includes running the Workspace UI).
 
-```shell
-// run the dev server
+```shell title="run the dev server"
 bit start
 ```
 
-#### build
+### build
 
 Runs the build pipeline (without tagging components with a new release version).
 
@@ -78,7 +79,7 @@ Runs the build pipeline (without tagging components with a new release version).
 bit build
 ```
 
-#### test
+### test
 
 Runs all tests.
 
@@ -86,7 +87,7 @@ Runs all tests.
 bit test
 ```
 
-#### compile
+### compile
 
 Compiles all components.
 
@@ -94,12 +95,21 @@ Compiles all components.
 bit compile
 ```
 
-#### lint
+### lint
 
-Get lint results for all components.
+Lints all components.
 
 ```shell
 bit lint
 ```
 
-## Env Anatomy
+### format
+
+Formats all components.
+
+```shell
+bit format
+```
+
+<!--TODO ## Env Anatomy
+ -->

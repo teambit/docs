@@ -104,6 +104,7 @@ Now that you have a basic customized extension to start from, you can go ahead a
 ### Customize configuration
 
 Node implements a set of APIs you can use to merge your preferred configuration with its defaults. These APIs are called **transformers** and they all start with the `override` pre-fix. Find [Available transformers here](#transformers-api-docs).
+
 In case of a conflict, your config will override the default.
 
 ```typescript {4,14} title="Customized TypeScript configuration"
@@ -154,12 +155,12 @@ export class CustomNodeExtension {
 
   static async provider([envs, node, babel]: [EnvsMain, NodeMain, BabelMain]) {
     const babelCompiler = babel.createCompiler({
-      babelTransformOptions: babelConfig,
+      babelTransformOptions: babelConfig
     });
 
     const customNodeEnv = node.compose([
       node.overrideCompiler(babelCompiler),
-      node.overrideCompilerTasks([babelCompiler.createTask()]),
+      node.overrideCompilerTasks([babelCompiler.createTask()])
     ]);
 
     envs.registerEnv(customNodeEnv);
@@ -170,11 +171,12 @@ export class CustomNodeExtension {
 
 ### Transformers API docs
 
-Use these APIs to customize the base Node environment default configuration with your extension. [Read more here](#customizing-configuration).
+Use these APIs to customize the base Node environment default configuration with your extension. [Read more here](#customize-configuration).
 
 #### `overrideTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
 Merges the environment's default TypeScript configuration with the contents of your [typescript configuration file](https://www.typescriptlang.org/handbook/tsconfig-json.html).
+
 This config affects the transpilation carried out when rendering components on the local dev UI. To override the config used when building components, use `overrideBuildTsConfig` below.
 
 ```ts
@@ -194,6 +196,7 @@ export class NodeExtension {
 #### `overrideBuildTsConfig(tsconfig: TsConfigSourceFile): EnvTransformer`
 
 Merges the environment's default TypeScript configuration with the contents of your [typescript configuration file](https://www.typescriptlang.org/handbook/tsconfig-json.html).
+
 This config affects transpilation of component code during the build process, i.e. in preparation for packaging and exporting the component. To override the local ts config used when rendering components in the local UI, please use `overrideTsConfig` above.
 
 ```ts
@@ -213,6 +216,7 @@ export class NodeExtension {
 #### `overridePreviewConfig(config: Configuration): EnvTransformer`
 
 Merges the Webpack configuration for the 'Preview' environment service, with the contents of your [webpack configuration file](https://webpack.js.org/configuration/).
+
 This webpack configuration is used for building and rendering your components on the local dev server.
 
 ```ts
@@ -231,6 +235,7 @@ export class NodeExtension {
 #### `overrideDevServerConfig(config: Configuration): EnvTransformer`
 
 Merges the Webpack configuration for the 'DevServer' environment service, with the contents of your [webpack configuration file](https://webpack.js.org/configuration/).
+
 This configuration is used for building and rendering the dev server UI (but not your components, which use the PreviewConfig)
 
 ```ts
@@ -292,14 +297,16 @@ Each key-value pair in a dependency-policy object signifies the package and the 
 // ...
 const newDependencies = {
   devDependencies: {
-    '@types/jest': '~26.0.9',
-  },
+    '@types/jest': '~26.0.9'
+  }
 };
 
 export class CustomNode {
   // ...
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
-    const newNodeEnv = node.compose([node.overrideDependencies(newDependencies)]);
+    const newNodeEnv = node.compose([
+      node.overrideDependencies(newDependencies)
+    ]);
     // ...
   }
 }
@@ -315,13 +322,15 @@ Merges the provide props with the default properties added to the `package.json`
 // ...
 const newPackageProps = {
   main: 'dist/{main}.js',
-  types: '{main}.ts',
+  types: '{main}.ts'
 };
 
 export class CustomNode {
   // ...
   static async provider([envs, node]: [EnvsMain, NodeMain]) {
-    const newNodeEnv = node.compose([node.overridePackageJsonProps(newPackageProps)]);
+    const newNodeEnv = node.compose([
+      node.overridePackageJsonProps(newPackageProps)
+    ]);
     // ...
   }
 }

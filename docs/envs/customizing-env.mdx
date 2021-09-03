@@ -10,7 +10,7 @@ You can extend and customize an Env by using it in your own Env extension [compo
 
 This is done by following these steps:
 
-1. Create the a new extension file. 
+1. Create the a new extension file.
 
 2. Place in the boilerplate code for the Env extension and use the Env you wish to extend.
 
@@ -26,8 +26,7 @@ This is done by following these steps:
 
 ## 1. Create the extension files
 
-```shell
-// In the workspace's root directory
+```shell title="In the workspace's root directory"
 mkdir -p extensions/custom-react
 touch extensions/custom-react/custom-react.extension.ts
 touch extensions/custom-react/index.ts
@@ -40,22 +39,19 @@ touch extensions/custom-react/index.ts
 
 > The `*.extensions.ts` pattern should only be used when no other 'runtime environment' is being extended other than the 'main runtime.' For more details, see the 'runtime environments' section.
 
-
 ## 2. Place in the boilerplate for the Env extension and use the Env you wish to extend
 
-> For demonstration purposes, we'll extend the React Env. 
-
+> For demonstration purposes, we'll extend the React Env.
 
 <Tabs
-  defaultValue="custom-react.extension"
-  values={[
-    {label: 'custom-react.extension.ts', value: 'custom-react.extension'},
-    {label: 'index.ts', value: 'index'}
-  ]}>
+defaultValue="custom-react.extension"
+values={[
+{label: 'custom-react.extension.ts', value: 'custom-react.extension'},
+{label: 'index.ts', value: 'index'}
+]}>
 <TabItem value="custom-react.extension">
 
 ```tsx
-
 // Import from the Environments aspect to register this extension as an environment
 import { EnvsMain, EnvsAspect } from '@teambit/envs';
 // Import from the React aspect to extend it
@@ -71,9 +67,7 @@ export class CustomReactExtension {
   static async provider([envs, react]: [EnvsMain, ReactMain]) {
     // The 'compose' methods to compose the overrides into a single environment
     const customReactEnv = react.compose([
-
       // This is where you use the extended Env's API to customize it
-
     ]);
 
     // Register this extension as an environment using the "registerEnv" slot (provided by the Environments aspect).
@@ -95,7 +89,6 @@ export default CustomReactExtension;
 
 </TabItem>
 </Tabs>
-
 
 ## 3. Use the extended Env API to customize it.
 
@@ -143,7 +136,6 @@ bit add extensions/custom-react -n my-extensions
 ```
 
 > The `my-extensions` namespace is optional
-
 
 ## 5. Configure the new Env extension (component) to use the Aspect Env
 
@@ -214,15 +206,13 @@ touch path/to/extension/env-extension.aspect.ts
 
 Place the following lines to register your environment as a multiple runtime extension (a.k.a, an Aspect):
 
-```ts
-// env-extension.aspect.ts
-
+```ts title="env-extension.aspect.ts"
 import { Aspect } from '@teambit/harmony';
 
 export const ReactWithProvidersAspect = Aspect.create({
   // The ID should be your component's ID
   // Make sure to track your extension component before registering it as an Aspect
-  id: 'my-scope.react-with-providers',
+  id: 'my-scope.react-with-providers'
 });
 ```
 
@@ -234,9 +224,7 @@ Register each runtime extension to its corresponding runtime, using the `addRunt
 
 For example:
 
-```typescript
-// react-extension.preview.ts
-
+```typescript title="react-extension.preview.ts"
 import { PreviewRuntime } from '@teambit/preview';
 import { ReactAspect, ReactPreview } from '@teambit/react';
 import { ReactExtensionAspect } from './react-with-providers.aspect';
@@ -265,9 +253,7 @@ Node files that run in a node runtime environments and outputs to the terminal.
 **Example:**
 The React environment TypeScript compiler will be extended in the main runtime.
 
-```typescript
-// react-extension.main.ts
-
+```typescript title="react-extension.main.ts"
 import { MainRuntime } from '@teambit/cli';
 import { EnvsAspect, EnvsMain } from '@teambit/envs';
 import { ReactAspect, ReactMain } from '@teambit/react';
@@ -287,7 +273,9 @@ export class ReactExtensionMain {
   static dependencies = [ReactAspect, EnvsAspect];
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
-    const reactExtension = envs.compose(react, [react.overrideTsConfig(tsconfig)]);
+    const reactExtension = envs.compose(react, [
+      react.overrideTsConfig(tsconfig)
+    ]);
     envs.registerEnv(reactExtension);
     return new ReactWithProvidersMain(react, envs);
   }
@@ -312,9 +300,7 @@ These files are served by the environment's server, as part of the environment's
 **Example:**
 A new composition provider that will "wrap" every composition using that environment will be added using the preview runtime since it is part of the component compositions (which are being served to the browser by the environment's server).
 
-```typescript
-// react-extension.preview.ts
-
+```typescript title="react-extension.preview.ts"
 import { PreviewRuntime } from '@teambit/preview';
 import { ReactAspect, ReactPreview } from '@teambit/react';
 import { ReactExtensionAspect } from './react-with-providers.aspect';

@@ -247,7 +247,7 @@ module.exports = {
               ]
             },
             'envs/customizing-env',
-            'envs/creating-new-env',
+            // TODO 'envs/creating-new-env',
             {
               type: 'category',
               label: 'Env Services',
@@ -260,7 +260,7 @@ module.exports = {
                 'envs/services/formatting',
                 'envs/services/packaging',
                 'envs/services/documenting',
-                'envs/services/component-generators',
+                //TODO 'envs/services/component-generators',
                 'envs/services/visualizing-components'
               ]
             }
