@@ -17,7 +17,7 @@ A common example component for a directory can be as following.
     └── my-welcome.docs.mdx # Docs file for the component.
 ```
 
-## Tracking a directory as a Component
+## Adding a directory as a Component
 Tracking a directory as a Component can be done with the `bit add` command.
 
 ```bash
@@ -26,8 +26,8 @@ bit add path/to/component-dir --id ui/my-component
 
 To learn more on tracking components in the Workspace. Head over to the [Tracking Components section](/workspace/tracking-components).
 
-## Untracking a component directory
-Untracking a specific Component Directory in the Workspace can be achieved by using the `bit remove` command without the `--delete-files` flag which also removes the entire directory.
+## Removing a component directory
+Removing a specific Component Directory in the Workspace can be achieved by using the `bit remove` command without the `--delete-files` flag which also removes the entire directory.
 
 ```bash
 bit remove ui/my-welcome
