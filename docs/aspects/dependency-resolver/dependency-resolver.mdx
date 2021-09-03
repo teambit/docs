@@ -7,7 +7,6 @@ description: Simplifies the dependency management of components in a Bit workspa
 
 Check out the [Dependency Resolver Aspect](https://bit.dev/teambit/dependencies/dependency-resolver) on Bit.dev
 
-
 The [Dependency Resolver](https://bit.dev/teambit/dependencies/dependency-resolver) configures and installs dependencies for components in a Bit workspace. It auto-generates the dependency graph for components to spare us the tedious work of manually configuring it ourselves.
 It does so by integrating the dependency policies set by various Bit extensions (primarily the workspace) with the components' parsed and analyzed `import`/`require` statements.
 In addition to that, the Dependency Resolver offers an efficient API to manually modify the generated graph using policies that can be applied on groups of components.
@@ -256,9 +255,9 @@ Set the `devFilePatterns` property to add your own list of file extensions to be
 
 #### peer dependencies
 
-Setting a package as a peer dependency ensures the package manager installs only a single version of that package. If that is not possible, i.e. if there is no single “agreed upon” version for all components in the workspace, then an error will be thrown.
+Setting a package as a peer dependency ensures the package manager installs only a single version of that package. If that is not possible, i.e. if there is no single "agreed upon" version for all components in the workspace, then an error will be thrown.
 
-This can be crucial when different components communicate with each other using shared objects that are instantiated by an installed package (the dependency). If different versions of the same package create different object instances then the “means of communication” is broken. There is no single object to address, no single source of truth. This can turn out to be critical when working with modules that are used as “plugins” of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
+This can be crucial when different components communicate with each other using shared objects that are instantiated by an installed package (the dependency). If different versions of the same package create different object instances then the "means of communication" is broken. There is no single object to address, no single source of truth. This can turn out to be critical when working with modules that are used as "plugins" of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
 
 To set a package as a peer dependency, place it under the `peerDependencies` entry, like so:
 
@@ -349,8 +348,8 @@ Read about setting a proxy in NPM's global configuration [here](https://docs.npm
 > If that token cannot be found in the `.npmrc` file, Bit will look for it in your global Bit configurations (use the `bit config` command to output your `user.token` property).
 >
 > <br />
-> If your npm is configured to use a registry other than npmjs's, then the Dependency Resolver will use that configured registry,
-> instead.
+> If your npm is configured to use a registry other than npmjs's, then the Dependency
+> Resolver will use that configured registry, instead.
 
 > The 'install' process includes importing components and linking them to the `node_modules` directory.
 

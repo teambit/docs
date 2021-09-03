@@ -224,7 +224,7 @@ module.exports = {
             'dependencies/installing-dependencies',
             'dependencies/configuring-dependencies',
             'dependencies/dependency-resolution',
-            'dependencies/ui',
+            // TODO 'dependencies/ui',
             'dependencies/package-managers'
           ]
         },

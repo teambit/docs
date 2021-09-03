@@ -51,7 +51,7 @@ For example:
 
 ## Apply policies on a selected group of components
 
-Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/workspace/cascading-rules) configuration API.
+Dependency policies can be applied on a specific group of components. This is done using the [`@teambit.workspace/variants`](/workspace/variants#merging-configurations) configuration API.
 
 For example, to set the `1.0.0` version of `classnames` as a dependency of all components located inside the `./components/react` directory (or any of its sub-directories):
 
@@ -70,12 +70,13 @@ For example, to set the `1.0.0` version of `classnames` as a dependency of all c
 ```
 
 :::info learn how to use the 'variants' extension
-To learn how to select components using `@teambit.workspace/variants`, [see here](/workspace/cascading-rules).
+To learn how to select components using `@teambit.workspace/variants`, [see here](/workspace/variants#merging-configurations).
 :::
 
 ## Remove a dependency
 
 Dependency policies can also be used to remove a dependency. That's especially useful when a dependency is not defined with the correct dependency type.
+
 For example, a module can be "moved" from `dependencies` to `peerDependencies` by removing it from `dependencies` and listing it under `peerDependencies`.
 
 ```json title="Removing a dependency and setting it as a peer dependency"
@@ -126,9 +127,10 @@ This policy will override the workspace-level policy that uses version `2.0.0` o
 ## "Forcibly" add dependencies to a component
 
 Dependency policies applied on a selected group of components will "forcibly" add the listed packages to any [selected] component that does not have them already listed as a dependency.
+
 This can be useful when a component depends on another module but has no `import`/`require` statement to be parsed by the Dependency Resolver (for example, in a Webpack configuration file).
 
-In the below example, classnames@1.0.0 will be "forcibly" added as a dependency to any component using the react-ui namespace.
+In the below example, `classnames@1.0.0` will be "forcibly" added as a dependency to any component using the react-ui namespace.
 
 ```json
 "teambit.workspace/variants": {
@@ -147,7 +149,7 @@ In the below example, classnames@1.0.0 will be "forcibly" added as a dependency 
 ### Configure specific dependencies as devDependencies
 
 :::caution
-Dependencies can be directly configured as `devDependencies` only by nesting the dependency policies inside [variants](/workspace/cascading-rules).
+Dependencies can be directly configured as `devDependencies` only by nesting the dependency policies inside [variants](/workspace/variants#merging-configurations).
 :::
 
 ```json title="Setting a dependency as dev dependency using variants"
@@ -169,7 +171,9 @@ Dependencies can be directly configured as `devDependencies` only by nesting the
 ### Dependencies resolved as dev dependencies by file pattern
 
 Dev dependencies are determined by the type of file that uses the dependency.
+
 If it is a development file (e.g, `doSomething.test.ts`) then the files consumed by it are also considered to be used for development and will therefore be registered as `devDependencies`.
+
 In cases where a module is consumed by both a runtime file and a development file, the module will be considered as a runtime (regular) dependency.
 
 :::info dev dependencies missing from the policies
@@ -179,6 +183,7 @@ To validate a dependency is registered as a dev dependency, use the `bit show <c
 
 The list of file patterns to be considered as development files is determined by the various Bit extensions.
 For example, the `@teambit.react/react` environment lists all `*.spec.tsx` files as dev files.
+
 Any component using that environment will have its .spec.tsx files considered as dev files and all these files' dependencies considered as `devDependencies`.
 
 #### Register file patterns to be considered as dev files
@@ -196,11 +201,13 @@ Set the `devFilePatterns` property to add your own list of file extensions to be
 ### Peer dependencies
 
 Setting a package as a peer dependency ensures the package manager installs only a single version of that package.
-If that is not possible, if there is no single “agreed upon” version for all components in the workspace then an error will be thrown.
+If that is not possible, if there is no single "agreed upon" version for all components in the workspace then an error will be thrown.
 
 This can be crucial when different components communicate with each other using shared objects that are instantiated by an installed package (the dependency).
-If different versions of the same package create different object instances then the “means of communication” is broken. There is no single object to address, no single source of truth.
-This can turn out to be critical when working with modules that are used as “plugins” of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
+
+If different versions of the same package create different object instances then the "means of communication" is broken. There is no single object to address, no single source of truth.
+
+This can turn out to be critical when working with modules that are used as "plugins" of another module (for example, Babel), or when working with components that are coordinated in runtime using a shared library (for example, React).
 
 To set a package as a peer dependency, place it under the peerDependencies entry, like so:
 
@@ -223,9 +230,7 @@ Bit may generate multiple "hosts", one for each environment being used, to run c
 That could translate into multiple versions of the same peer dependency, one for each environment. To manage multiple versions of a peer dependency [see here](/faq/multiple-peer-dep-versions).
 :::
 
-
 ## Env dependencies
-
 
 ```ts
 getDependencies(component: any): Promise<DependencyList>
@@ -242,16 +247,16 @@ export class ReactEnv implements Environment {
   async getDependencies() {
     return {
       dependencies: {
-        react: '-',
+        react: '-'
       },
       devDependencies: {
         '@types/react': '16.9.43',
-        '@types/jest': '~26.0.9',
+        '@types/jest': '~26.0.9'
       },
       peerDependencies: {
         react: '^16.13.1',
-        'react-dom': '^16.13.1',
-      },
+        'react-dom': '^16.13.1'
+      }
     };
   }
 }
