@@ -32,24 +32,29 @@ bit config del <key>
 ## User configuration
 
 ### ssh_key_file
+
 Defines the path the ssh key files that will be used to log into Bit cloud. If not set, it will default to `~/.ssh/id_rsa`.
 
 ### user.token
+
 Authentication token for a [Bit Cloud](https://bit.dev) account. The token is auto-generated when running `bit login`.
 
 ### user.email
-The user's email. This will be used for the component version history log. 
+
+The user's email. This will be used for the component version history log.
 The `user.email` value is copied from the user's git `user.email` property, when running `bit init`.
 
 ## A proxy for outgoing HTTP/HTTPS requests
+
 Bit can be configured to use a proxy for outgoing http/s network requests.
 
 ### proxy
+
 A URL for a proxy to be used in both HTTP and HTTPS requests.
 
-### httpsProxy 
-A URL specific for HTTPS requests (this will override the value set in proxy for HTTPS requests).
+### httpsProxy
 
+A URL specific for HTTPS requests (this will override the value set in proxy for HTTPS requests).
 
 ## Bit Cloud Configuration
 
@@ -57,7 +62,7 @@ These values need to be changed only if a private server or private registry is 
 
 ### hub_domain
 
-The domain of the default bit cloud component hub. Optional and defaulted to bit cloud hub  `hub.bit.dev`.  
+The domain of the default bit cloud component hub. Optional and defaulted to bit cloud hub `hub.bit.dev`.
 
 ### hub_domain_login
 
@@ -81,9 +86,9 @@ By default, analytics data is sent as anonymous data. Set the value to `false` t
 
 Send anonymous errors data to Bit. Defaulted to false.
 
-### log_level  
+### log_level
 
-Log errors that are output. Values are:  error (least verbose), warn, info, http, verbose, debug, silly (most verbose). The default level is debug.
+Log errors that are output. Values are: error (least verbose), warn, info, http, verbose, debug, silly (most verbose). The default level is debug.
 
 ## Local Configuration
 
