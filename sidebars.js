@@ -313,26 +313,26 @@ module.exports = {
             'builder/build-pipeline-customization'
             // TODO 'builder/build-on-ci'
           ]
-        },
-        {
-          type: 'category',
-          label: 'Apps',
-          collapsed: true,
-          items: [
-            'apps/overview',
-            'apps/create-app',
-            {
-              type: 'category',
-              label: 'Deploy an App',
-              items: [
-                'apps/deploy-app/netlify',
-                'apps/deploy-app/vercel',
-                'apps/deploy-app/aws'
-              ]
-            },
-            'apps/recomposing-apps'
-          ]
         }
+        // {
+        //   type: 'category',
+        //   label: 'Apps',
+        //   collapsed: true,
+        //   items: [
+        //     // TODO 'apps/overview',
+        //     // TODO 'apps/create-app',
+        //     {
+        //       type: 'category',
+        //       label: 'Deploy an App',
+        //       items: [
+        //         // TODO 'apps/deploy-app/netlify',
+        //         // TODO 'apps/deploy-app/vercel',
+        //         // TODO 'apps/deploy-app/aws'
+        //       ]
+        //     }
+        //     // TODO 'apps/recomposing-apps'
+        //   ]
+        // }
       ]
     },
 
