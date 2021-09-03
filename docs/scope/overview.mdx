@@ -1,32 +1,32 @@
 ---
 id: overview
-title: Overview
+title: Scope Overview
 ---
 
-import { Image } from '../../src/components/image'
+import { Image } from '../../src/components/image';
 
 A scope is the Components Host. It sets clear ownership and team boundaries for autonomous teams and empowers to collaborate on Components together.
 
 - Collaboration
 - Ownership and team boundaries
 
-## Component hosting
+<!--TODO ## Component hosting
 
 ## Ownership and team boundaries
 
 ## Using components
 
-## Collaborating on components
+## Collaborating on components -->
 
 ## Remote scope
 
-A remote scope is a remote collection of independent components that were 'snapped'/['tagged'](/getting-started/version) and ['exported'](/getting-started/export-to-scope) from one or more [Bit workspaces](/workspace/overview). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
+A remote scope is a remote collection of independent components that were ['snapped'](/components/snaps)/['tagged'](/components/tags) and ['exported'](/getting-started/release-components/export-components) from one or more [Bit workspaces](/workspace/overview). Storing components on a remote scope makes them available to be consumed and further maintained, by other Bit workspaces (in various repositories).
 
 Each scope, or "collection", groups together components that are related by function or purpose. As such, a single remote scope should be maintained by a single group of stakeholders, developers and even non-developers (designers, product managers, etc.).
 
-Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/scope/self-host-bit-scope). Each Bit server can host multiple scopes.
+Remote scopes are hosted on [Bit.dev](https://bit.dev) or [self-hosted Bit servers](/scope/hosting-remote-scope). Each Bit server can host multiple scopes.
 
-A scope is visually represented by the [Scope UI](TODO) (similarly to the way a workspace UI visually represents your workspace).
+A scope is visually represented by the Scope UI <!--TODO [Scope UI](/scope/scope-ui) --> (similarly to the way a workspace UI visually represents your workspace).
 
 <Image src="/img/scope_ui.png" />
 
@@ -34,7 +34,7 @@ A scope is visually represented by the [Scope UI](TODO) (similarly to the way a 
 
 To set up a remote scope, [see here](/scope/set-up-remote-scope).
 
-### Scope name
+<!--TODO ### Scope name -->
 
 ### Cached dependencies
 
@@ -52,4 +52,7 @@ The local scope serves two main functions:
 - It enables the workspace to recognize whether a component has been modified by comparing the immutable version stored in the local scope to the component files tracked by the workspace.
 
 > The local scope (`.bit` or `.git/.bit`) should not be tracked by Git.
-> {"mode":"full","isActive":false}
+
+```JSON
+{"mode":"full","isActive":false}
+```

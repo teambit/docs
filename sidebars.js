@@ -273,11 +273,11 @@ module.exports = {
           items: [
             'scope/overview',
             'scope/hosting-remote-scope',
-            'scope/configuring-scope',
-            'scope/setting-remote-scope',
-            'scope/importing-components',
-            'scope/exporting-components',
-            'scope/scope-ui'
+            // TODO 'scope/configuring-scope',
+            'scope/setting-remote-scope'
+            // TODO 'scope/importing-components',
+            // TODO 'scope/exporting-components'
+            // TODO'scope/scope-ui'
           ]
         },
         {
@@ -285,20 +285,20 @@ module.exports = {
           label: 'CI/CD',
           collapsed: true,
           items: [
-            'cicd/overview',
+            // TODO 'cicd/overview',
             'cicd/cicd-setup-with-bit',
             'cicd/soft-tags',
             {
               type: 'category',
               label: 'Configuring Bit on Your CI',
               items: [
-                'cicd/configuring-bit-on-your-ci/circle-ci',
+                // TODO 'cicd/configuring-bit-on-your-ci/circle-ci',
                 'cicd/configuring-bit-on-your-ci/github-actions',
-                'cicd/configuring-bit-on-your-ci/gitlab-ci',
-                'cicd/configuring-bit-on-your-ci/jenkins'
+                'cicd/configuring-bit-on-your-ci/gitlab-ci'
+                // TODO 'cicd/configuring-bit-on-your-ci/jenkins'
               ]
-            },
-            'cicd/ripple-ci'
+            }
+            // TODO 'cicd/ripple-ci'
           ]
         },
         {
@@ -308,31 +308,31 @@ module.exports = {
           items: [
             'builder/overview',
             'builder/component-isolation',
-            'builder/component-build',
+            // TODO 'builder/component-build',
             'builder/build-pipelines',
-            'builder/build-pipeline-customization',
-            'builder/build-on-ci'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Apps',
-          collapsed: true,
-          items: [
-            'apps/overview',
-            'apps/create-app',
-            {
-              type: 'category',
-              label: 'Deploy an App',
-              items: [
-                'apps/deploy-app/netlify',
-                'apps/deploy-app/vercel',
-                'apps/deploy-app/aws'
-              ]
-            },
-            'apps/recomposing-apps'
+            'builder/build-pipeline-customization'
+            // TODO 'builder/build-on-ci'
           ]
         }
+        // {
+        //   type: 'category',
+        //   label: 'Apps',
+        //   collapsed: true,
+        //   items: [
+        //     // TODO 'apps/overview',
+        //     // TODO 'apps/create-app',
+        //     {
+        //       type: 'category',
+        //       label: 'Deploy an App',
+        //       items: [
+        //         // TODO 'apps/deploy-app/netlify',
+        //         // TODO 'apps/deploy-app/vercel',
+        //         // TODO 'apps/deploy-app/aws'
+        //       ]
+        //     }
+        //     // TODO 'apps/recomposing-apps'
+        //   ]
+        // }
       ]
     },
 
@@ -346,10 +346,10 @@ module.exports = {
           type: 'category',
           label: 'Docs',
           items: [
-            'docs/overview',
-            'docs/doc-files',
-            'docs/rendering-docs',
-            'docs/doc-templates'
+            'docs/overview'
+            // TODO 'docs/doc-files',
+            // TODO 'docs/rendering-docs',
+            // TODO 'docs/doc-templates'
           ],
           collapsed: true
         },
@@ -357,9 +357,9 @@ module.exports = {
           type: 'category',
           label: 'Compositions',
           items: [
-            'compositions/overview',
-            'compositions/composition-format',
-            'compositions/visualizing-components'
+            'compositions/overview'
+            // TODO 'compositions/composition-format',
+            // TODO 'compositions/visualizing-components'
           ]
         },
         {
@@ -378,8 +378,8 @@ module.exports = {
           collapsed: true,
           items: [
             'tester/overview',
-            'tester/workspace-testing',
-            'tester/testing-during-build'
+            'tester/workspace-testing'
+            // TODO 'tester/testing-during-build'
           ]
         },
         {
