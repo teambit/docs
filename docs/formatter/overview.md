@@ -7,11 +7,11 @@ Formatter helps you format your components' code according to a pre-defined set 
 
 Code formatting is the process of styling code to make it "cleaner", clearer and more consistent. Having your team's code formatted automatically saves time otherwise wasted on discussions and code reviews about code styling.
 
-The Formatter aspect simplifies and standardizes the process of code formatting for [Components](#). It does so for code formatting during development (in the workspace) and for code formatting during component build (in a capsule, as part of the [Build Pipeline](#))
+The Formatter aspect simplifies and standardizes the process of code formatting for [Components](#). It does so for code formatting during development (in the workspace) and for code formatting during component build (in a capsule, as part of the [Build Pipeline](/builder/build-pipelines))
 
 ## Format in development
 
-Bit formats all components in the [Workspace](#) using just a single command. That is true for components of all types, regardless of their specific [Env](#), and as a consequence of that, their specific [Formatter implementation](#) and configuration.
+Bit formats all components in the [Workspace](/workspace/overview) using just a single command. That is true for components of all types, regardless of their specific [Env](/envs/overview), and as a consequence of that, their specific [Formatter implementation](#) and configuration.
 
 ```bash
 bit format
@@ -38,12 +38,12 @@ Component build can be simulated with `bit build` and done through [Tag](/compon
 bit build
 ```
 
-By default, formatting is **not** part of the [Build Pipeline](#).
+By default, formatting is **not** part of the [Build Pipeline](/builder/build-pipelines).
 
-To learn more on formatting code during build and how to add a formatter [Build Task](#), please refer to [Formatting During Build](#).
+To learn more on formatting code during build and how to add a formatter [Build Task](/builder/overview#build-task), please refer to [Formatting During Build](#).
 
 ## Configuring and implementing Linters
 
-The [Formatter implementation](#) is configured in the [Env](#) which is configured on your [Component](/components/overview). Customizing it can be done by [customizing an existing env with your formatter](/) or by [implementing your own Env](/).
+The [Formatter implementation](#) is configured in the [Env](/envs/overview) which is configured on your [Component](/components/overview). Customizing it can be done by [customizing an existing env with your formatter](/) or by [implementing your own Env](/).
 
 Formatter can also be implemented into Bit through few interfaces. For more information on implementing your own linter please refer to [Implement a Formatter](/).
