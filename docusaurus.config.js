@@ -223,16 +223,17 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Getting Started',
-              to: '/getting-started/installing-bit'
+              label: 'Quick Start',
+              to: '/quick-start'
             },
             {
-              label: 'Building with Bit',
-              to: '/building-with-bit/manage-workspace'
+              label: 'Getting Started',
+              to: '/getting-started/install-bit'
             },
+
             {
               label: 'What is Bit',
-              to: '/essentials/what-is-bit'
+              to: '/understanding-bit/why-bit'
             }
           ]
         },
