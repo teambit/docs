@@ -15,7 +15,7 @@ Instead of building an application that consists of lots of components, we build
 ### Think more in components and less in apps
 
 Bit is not only a more efficient way of doing things, it's a **revolutionary** way of doing it. It's a totaly new mindset.
-When you think only about efficienty, you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain - in the existing manner. But If you are thinking wrong way - if you are thinking in apps and not in components - then your core assemptions are wrong.
+When you think only about efficienty, you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain - in the existing manner. But If you are thinking the wrong way - if you are thinking in apps and not in components - then your core assemptions are wrong.
 
 We can help you solve this mental model. Bit works on the component model. If each of your components are individual you can build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
 
@@ -28,7 +28,7 @@ We can help you solve this mental model. Bit works on the component model. If ea
 - Standardize the way to build components.
 - Organize components in a central place which allows you to easily onboard new people with discoverability of components.
 - Integrate different components.
-- Easily manage dependencies of a variety of components.
+- Easily manage dependencies for a variety of components.
 
 Bit makes the process of building modular applications and the development, publishing and management of independent components really easy. It focuses on the publishing process of components whereas the consumption of components is handled by package managers such as npm or yarn.
 
