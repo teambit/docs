@@ -96,8 +96,8 @@ module.exports = {
               items: [
                 'getting-started/release-components/set-up-ci/use-your-own-ci',
                 'getting-started/release-components/set-up-ci/github-actions',
-                'getting-started/release-components/set-up-ci/gitlab',
-                'getting-started/release-components/set-up-ci/use-ripple-ci'
+                'getting-started/release-components/set-up-ci/gitlab'
+                // TODO 'getting-started/release-components/set-up-ci/use-ripple-ci'
               ]
             }
           ]
@@ -130,7 +130,7 @@ module.exports = {
               type: 'category',
               label: 'Initialize a Workspace on an Existing Project',
               items: [
-                'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
+                'getting-started/start-from-existing-project/init-workspace-on-existing-project/general-purpose'
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/cra',
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
@@ -138,7 +138,7 @@ module.exports = {
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
               ]
             },
-            'start-from-existing-project/tracking-existing-components'
+            'getting-started/start-from-existing-project/tracking-existing-components'
           ]
         }
       ]
