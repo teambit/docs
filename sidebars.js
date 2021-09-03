@@ -378,8 +378,8 @@ module.exports = {
           collapsed: true,
           items: [
             'tester/overview',
-            'tester/workspace-testing',
-            'tester/testing-during-build'
+            'tester/workspace-testing'
+            // TODO 'tester/testing-during-build'
           ]
         },
         {
