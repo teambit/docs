@@ -1,0 +1,100 @@
+---
+id: workspace-starters
+title: Workspace Starters
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## New Workspace
+
+Generate a new workspace starter project with demo components.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12
+```
+
+  </TabItem>
+</Tabs>
+
+Generate an empty workspace.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace --empty
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12 --empty
+```
+
+  </TabItem>
+</Tabs>
+
+Generate a workspace without git.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace --no-git
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12 --no-git
+```
+
+  </TabItem>
+</Tabs>
+
+## React App
+
+Generate a new React app with demo components.
+
+```bash
+bit new react-app my-app
+```
+
+## React Library
+
+Generates a new React lib with demo components.
+
+```bash
+bit new react-lib my-lib
+```

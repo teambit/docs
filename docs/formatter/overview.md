@@ -14,7 +14,7 @@ The Formatter aspect simplifies and standardizes the process of code formatting 
 Bit formats all components in the [Workspace](#) using just a single command. That is true for components of all types, regardless of their specific [Env](#), and as a consequence of that, their specific [Formatter implementation](#) and configuration.
 
 ```bash
-$ bit format
+bit format
 
 formatting total of 2 component(s) in workspace 'my-workspace'
 

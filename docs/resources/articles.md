@@ -19,7 +19,7 @@ Independent components revolutionize the way we build web projects.
 They replace or transform much of today’s software development strategies and architectural styles, and offer more effective ways to collaborate on code.
 Even so, it seems like they have kept themselves behind a veil of mist — misunderstood and unexplained.
 
-This article is an attempt to provide a clear explanation that will enable you to draw your own conclusions, from “first principles”, as to how independent components can be used to fit your own needs.
+This article is an attempt to provide a clear explanation that will enable you to draw your own conclusions, from "first principles", as to how independent components can be used to fit your own needs.
 
 [Independent Components: The Web’s New Building Blocks](https://blog.bitsrc.io/independent-components-the-webs-new-building-blocks-59c893ef0f65) - _Eden Ella, April 2021_
 

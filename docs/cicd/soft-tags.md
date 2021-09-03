@@ -12,7 +12,7 @@ Soft tags are registered in the workspace `.bitmap` file.
 For example:
 
 ```bash
-$ bit tag --soft ui/button --ver 1.0.0 --message "change font"
+bit tag --soft ui/button --ver 1.0.0 --message "change font"
 ```
 
 The `.bitmap` file will be updated with the following details:

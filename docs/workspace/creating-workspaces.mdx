@@ -1,0 +1,118 @@
+---
+id: creating-workspaces
+title: Creating Workspaces
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Workspaces can be created from templates. To see a list of available workspaces templates, run `bit templates`. The Workspace templates are only available when ran outside of a Bit Workspace.
+
+```bash
+bit templates
+```
+
+Templates are used to ramp-up a new project with skeleton components. You can use one of these common templates, or find additional templates on the [bit.dev community](https://bit.dev/templates).
+
+:::note
+It might be easier to create a [Scope](/scopes/overview) at this moment to spare few steps next on. You can quickly [create a free Scope on the Bit Cloud](https://bit.dev/create-scope) or [host your own Scope](/scopes/host-your-own-scope). Use the `--scope` flag for all generated components to include your Remote Scope.
+:::
+
+Creating the Workspace should be done by configuring a [Scope name](/scope/overview#scope-name). For this example, I would use the `bitorg.experience` scope name, which is a combination of my organization's name `bitorg` and the `experience` team owning it.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12
+```
+
+  </TabItem>
+</Tabs>
+
+```bash
+cd my-workspace
+```
+
+```bash
+bit start
+```
+
+### Creating an Empty Workspace
+
+An empty workspace is a workspace configured with the correct environment but with no components. This can be created using the `--empty` flag.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace --empty
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12 --empty
+```
+
+  </TabItem>
+</Tabs>
+
+### Creating a Workspace without git
+
+This will create a workspace without git. This is useful when you want to create a workspace in an existing project.
+
+<Tabs
+groupId="frameworks"
+defaultValue="React"
+values={[
+{label: 'React', value: 'React'},
+{label: 'Angular', value: 'Angular'},
+]}>
+<TabItem value="React">
+
+```bash
+bit new react my-workspace --no-git
+```
+
+  </TabItem>
+  <TabItem value="Angular">
+    
+```bash
+bit new ng-workspace my-workspace --aspect teambit.angular/angular-v12 --no-git
+```
+
+  </TabItem>
+</Tabs>
+
+## Created Files
+
+<FilesBitCreates />
+
+## Generating a Custom Workspace Template
+
+You can generate your own [workspace template](/workspace/templates) and customize it to your needs.
+
+```bash
+bit create workspace-generator my-workspace
+```

@@ -1,0 +1,77 @@
+---
+id: importing-components
+title: Importing Components
+---
+
+import { Image } from '@site/src/components/image';
+
+<Image
+  src="/img/diagrams/import_diagram.png"
+  alt="A diagram showing a component being imported into a Bit workspace"
+/>
+
+Once you start building your project with Bit, it essentially becomes part of one virtual monorepo. A vast and rapidly-growing number of independent components instantly become available for you to use and maintain in your local workspace. These could be either private components, maintained by your own organization, or public components maintained by the open-source community.
+
+In addition to that, components can be installed as standard node packages, either in a Bit workspace or even in a non-Bit project.
+
+## Bit Import components
+
+It's important to be clear on terminology here - when we say Bit import of a component, we don't mean importing it as a node_module dependency for a component via the line `import {x} from 'component-name'`.
+
+Instead we mean a Bit import which vendors the code into your workspace so that you can work on and debug the source code files of the component. This can be useful in a number of scenarios, from forking a component down to IDE debugging of a potential issue and creating a local fix (which you can then notify the component maintainers about).
+
+When you make any changes to an imported component and compile those changes, the compiled output is linked as a node_module - in fact, as soon as you import the component Bit automatically creates a node_module for consuming it. But in this case you are consuming the local version of the component, including any changes you might make to it.
+
+### Import a single component
+
+A single component is imported using its ID. A component ID has the following pattern:
+
+`scope-owner.scope-name/namespace/component-name`
+
+For example, to import the `dots-loader` component from the `teaching` scope, owned by `teambit` and namespaced as `ui/elements`, we'll run the following command:
+
+```shell
+bit import teambit.teaching/ui/elements/dots-loader
+```
+
+To replace the default directory for that component, we'll add the `--path` flag and the preferred directory.
+
+### Import all components in a scope or namespace
+
+To import all components from the `teaching` scope, we'll replace the namespace and component name with the `*` sign:
+
+```shell
+bit import teambit.teaching/*
+```
+
+To limit our import to components under the `ui/elements` namespaces, we'll replace just the component name:
+
+```shell
+bit import teambit.teaching/ui/*
+```
+
+### Import latest versions of components in a workspace
+
+To get the latest versions of every imported component in our workspace, we'll run:
+
+```shell
+bit import
+```
+
+> Component updates are only possible for components stored in your local scope (these are either imported or 'tagged' components)
+
+### Change the configurations of an imported component
+
+Imported components expose their configurations in the `component.json` file. Its configuration structure is quite similar to the workplace's.
+
+## Using local/remote components
+
+Bit does not allow referencing one component to another, using relative paths. This is done in order to keep components independent and context-agnostic.
+
+Tracked components, locally tagged components and imported components should all be `imported` / `required` into other components using their node module name.
+
+For example:
+
+```js
+import { Button } from '@my-scope/button';
+```

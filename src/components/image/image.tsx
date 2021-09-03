@@ -10,7 +10,7 @@ export type ImageProps = {
     alt?: string,
     padding?: number,
     width?: string | number,
-    shadow?: boolean
+    shadow?: boolean,
 }
 
 export const Image = ({src, alt, padding, width, shadow} : ImageProps) => {

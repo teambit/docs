@@ -31,10 +31,10 @@ You can also follow along with this [example project.](https://github.com/teambi
 
 To perform [Bit.dev](https://bit.dev) operations from the CI runner, use the authentication key of a registered Bit.dev user. It is advisable to create a user solely for that purpose.
 
-To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `$ bit login`)
+To get the authentication token, run the following command (in your local terminal) and copy the `user.token` value (make sure the user is logged-in in your machine using `bit login`)
 
 ```shell
-$ bit config
+bit config
 
 analytics_id                  xxxxxxxxxxxxx
 analytics_reporting           false
@@ -84,17 +84,17 @@ jobs:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: Install Bit Version Manager 
-      run: npm i -g @teambit/bvm
-    - name: Install latest Bit version 
-      run: bvm install
-    - name: Add bvm bin folder to PATH
-      run: echo "$HOME/bin" >> $GITHUB_PATH
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Bit Version Manager
+        run: npm i -g @teambit/bvm
+      - name: Install latest Bit version
+        run: bvm install
+      - name: Add bvm bin folder to PATH
+        run: echo "$HOME/bin" >> $GITHUB_PATH
 ```
 
 ### 6. Disable any type of analytics reporting and set the user authentication token
@@ -139,4 +139,5 @@ The previously soft-tagged components are no longer registered as pending to be 
     git commit -m "update .bitmap with new component versions (automated)."
     git push
 ```
+
 {"mode":"full","isActive":false}

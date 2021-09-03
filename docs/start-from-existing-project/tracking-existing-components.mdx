@@ -6,7 +6,7 @@ title: Tracking Existing Components
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You can onboard an existing set of components to be Bit components using the `bit add` command. If you would like to [create new components](/getting-started/creating-components) we suggest you use the `bit create` command.
+You can onboard an existing set of components to be Bit components using the `bit add` command. If you would like to [create new components](/getting-started/compose-components/create-components) we suggest you use the `bit create` command.
 
 During the onboarding process Bit marks directories to components. For each Bit Component, Bit does the following:
 
@@ -14,7 +14,7 @@ During the onboarding process Bit marks directories to components. For each Bit 
 - Sets the component ID.
 - Sets the component entry point.
 - Parse and resolve dependency graph.
-- Create a [Component Module Link](/essentials/workspace#component-module-links).
+- Create a [Component Module Link](/workspace/component-link).
 
 ## Recommendations
 
@@ -34,7 +34,7 @@ bit init
 
 ### Configure Workspace
 
-Configure your `workspace.json` to fit your requirements. Read more [here](/building-with-bit/manage-workspace).
+Configure your `workspace.json` to fit your requirements. Read more [here](/workspace/workspace-json).
 
 ## Run the Dev Server
 
@@ -86,9 +86,15 @@ values={[
 
 To add your component to the workspace run the `bit add` command followed by the namespace. The namespace is the the component folder structure you would like to see in your workspace.
 
+Adding the namespace directly:
+
 ```bash
 bit add ui/my-component
-#or
+```
+
+Using the namespace flag:
+
+```bash
 bit add my-component --namespace ui
 ```
 
@@ -96,7 +102,7 @@ Bit will map this component's files and register them in the `.bitmap` file. Thi
 
 In addition to that, Bit will generate a component ID, with the pattern `<namespaces>/<component-name>`. The component ID will be prefixed with the scope name once it has been exported to a remote scope (`<owner>.<scope>/<namespaces>/<component-name>`).
 
-Learn more about [tagging components](/) and [removing components](/)
+<!--TODO Learn more about [adding components](/) and [removing components](/) -->
 
 ### Add multiple components at once?
 
@@ -116,7 +122,7 @@ bit status
 
 ## Rendering Components
 
-To [render your component](/) - create a \*.compositions.tsx
+To [render your component](/compositions/overview) - create a \*.compositions.tsx
 To visualize components we use the `.compositions` file. Compositions allow us to create our components in different states. This also means we can test our components in different states. Compositions are the main dev tool for building with components. They provide a dedicated dev-server per each component where you can create fully featured apps with support for state management, theming and routing. Compositions act like consuming applications that compose and simulate components in various use cases.
 
 Bit runs a dev server for components that shows all component compositions. Run the dev server and browse components to see their compositions.
@@ -161,7 +167,7 @@ Even if you haven't written any docs or used any feature, Bit still generates a 
   allowfullscreen
 ></iframe>
 
-To add [documentation](/) to your component - create a \*.docs.md
+To add [documentation](/docs/overview) to your component - create a \*.docs.md
 
 ## Testing Components
 
@@ -181,7 +187,7 @@ Tests become even more viable when working in a component based workflow. Compon
 
 ### Add Tests
 
-Add tests to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
+Add [tests](tester/overview)to a component by creating a file in the component's directory, using the `*.spec/test.*` pattern.
 
 :::info tests are great addition for documentation
 A visual test result helps consumers to learn about the different edge cases supported by your component and makes it easy for them to want to adopt your code.

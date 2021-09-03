@@ -33,4 +33,4 @@ title: Community
 
 ## Monthly Newsletter
 
-We send short monthly updates on new features, interesting stories, and stuff that we really think is worth the space in your inbox. To subscribe, just [sign up to Bit.dev](https://bit.dev/signup) and check the “I agree to get occasional updates” box. We do not spam.
+We send short monthly updates on new features, interesting stories, and stuff that we really think is worth the space in your inbox. To subscribe, just [sign up to Bit.dev](https://bit.dev/signup) and check the "I agree to get occasional updates" box. We do not spam.

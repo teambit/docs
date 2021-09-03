@@ -95,6 +95,8 @@ module.exports = {
               label: 'Set Up Your CI',
               items: [
                 'getting-started/release-components/set-up-ci/use-your-own-ci',
+                'getting-started/release-components/set-up-ci/github-actions',
+                'getting-started/release-components/set-up-ci/gitlab',
                 'getting-started/release-components/set-up-ci/use-ripple-ci'
               ]
             }
@@ -106,8 +108,8 @@ module.exports = {
           collapsed: true,
           items: [
             'getting-started/use-components/install-dependencies',
-            'getting-started/use-components/import-components',
-            'getting-started/use-components/propose-changes',
+            'getting-started/use-components/import-components'
+            /* TODO 'getting-started/use-components/propose-changes' */
             // {
             //   type: 'category',
             //   label: 'Composition Strategies',
@@ -128,12 +130,12 @@ module.exports = {
               type: 'category',
               label: 'Initialize a Workspace on an Existing Project',
               items: [
-                'start-from-existing-project/init-workspace-on-existing-project/general-purpose',
-                'start-from-existing-project/init-workspace-on-existing-project/cra',
-                'start-from-existing-project/init-workspace-on-existing-project/nextjs',
-                'start-from-existing-project/init-workspace-on-existing-project/gatsby',
-                'start-from-existing-project/init-workspace-on-existing-project/angular-app',
-                'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
+                'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/cra',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/angular-app',
+                // TODO 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
               ]
             },
             'start-from-existing-project/tracking-existing-components'
@@ -146,7 +148,7 @@ module.exports = {
       label: 'Understanding Bit',
       items: [
         'understanding-bit/why-bit',
-        'understanding-bit/component-driven-software',
+        // TODO 'understanding-bit/component-driven-software',
         {
           type: 'category',
           label: 'Repository Architecture',
@@ -156,10 +158,10 @@ module.exports = {
             'understanding-bit/repository-architecture/bit-monorepo'
           ]
         },
-        'understanding-bit/economy-of-scale',
-        'understanding-bit/package-managers',
-        'understanding-bit/micro-architecture/micro-architecture',
-        'understanding-bit/dogfooding'
+        // TODO 'understanding-bit/economy-of-scale',
+        'understanding-bit/package-managers'
+        // TODO 'understanding-bit/micro-architecture/micro-architecture',
+        // TODO 'understanding-bit/dogfooding'
       ]
     },
     {
@@ -187,6 +189,8 @@ module.exports = {
             'workspace/variants',
             'workspace/importing-components',
             'workspace/creating-components',
+            'workspace/moving-components',
+            'workspace/versioning-components',
             'workspace/workspace-starters',
             'workspace/workspace-templates'
           ]
@@ -197,6 +201,7 @@ module.exports = {
           collapsed: true,
           items: [
             'components/overview',
+            'components/namespaces',
             'components/component-id',
             'components/main-file',
             'components/creating-components',
@@ -205,7 +210,8 @@ module.exports = {
             'components/merging-components',
             'components/lanes',
             'components/snaps',
-            'components/tags'
+            'components/tags',
+            'components/removing-components'
           ]
         },
         {
@@ -218,7 +224,7 @@ module.exports = {
             'dependencies/installing-dependencies',
             'dependencies/configuring-dependencies',
             'dependencies/dependency-resolution',
-            'dependencies/ui',
+            // TODO 'dependencies/ui',
             'dependencies/package-managers'
           ]
         },
@@ -241,7 +247,7 @@ module.exports = {
               ]
             },
             'envs/customizing-env',
-            'envs/creating-new-env',
+            // TODO 'envs/creating-new-env',
             {
               type: 'category',
               label: 'Env Services',
@@ -254,7 +260,7 @@ module.exports = {
                 'envs/services/formatting',
                 'envs/services/packaging',
                 'envs/services/documenting',
-                'envs/services/component-generators',
+                //TODO 'envs/services/component-generators',
                 'envs/services/visualizing-components'
               ]
             }
@@ -326,7 +332,7 @@ module.exports = {
             },
             'apps/recomposing-apps'
           ]
-        },
+        }
       ]
     },
 
@@ -343,7 +349,7 @@ module.exports = {
             'docs/overview',
             'docs/doc-files',
             'docs/rendering-docs',
-            'docs/doc-templates',
+            'docs/doc-templates'
           ],
           collapsed: true
         },
@@ -353,8 +359,8 @@ module.exports = {
           items: [
             'compositions/overview',
             'compositions/composition-format',
-            'compositions/visualizing-components',
-          ],
+            'compositions/visualizing-components'
+          ]
         },
         {
           type: 'category',
@@ -363,7 +369,7 @@ module.exports = {
           items: [
             'generator/overview',
             'generator/workspace-template',
-            'generator/template-components',
+            'generator/components-template'
           ]
         },
         {
@@ -382,6 +388,7 @@ module.exports = {
           collapsed: true,
           items: [
             'compiler/overview',
+            'compiler/workspace-compiler',
             'compiler/workspace-compilation',
             'compiler/compiling-during-build',
             'compiler/configure-env'
@@ -405,7 +412,7 @@ module.exports = {
           collapsed: true,
           items: [
             'configurations/config-files',
-            'configurations/global-configurations',
+            'configurations/global-configurations'
           ]
         },
         {
@@ -420,7 +427,7 @@ module.exports = {
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'
           ]
-        },
+        }
       ]
     },
     {
@@ -444,39 +451,39 @@ module.exports = {
         'extending-bit/aspect-environment'
       ]
     },
+    {
+      type: 'category',
+      label: 'Reference',
+      collapsed: true,
+      items: [
+        'reference/api-reference',
+        'reference/cli-reference',
+        'reference/common-commands',
+        'reference/bvm',
+        'reference/migration',
         {
           type: 'category',
-          label: 'Reference',
-          collapsed: true,
+          label: 'Troubleshooting',
           items: [
-            'reference/api-reference',
-            'reference/cli-reference',
-            'reference/common-commands',
-            'reference/bvm',
-            'reference/migration',
-            {
-              type: 'category',
-              label: 'Troubleshooting',
-              items: [
-                'reference/troubleshooting/doctor-logs-cache',
-                'reference/troubleshooting/multiple-peer-dep-versions',
-                'reference/troubleshooting/runtime-globals',
-                'reference/troubleshooting/multiple-envs'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Guides',
-              items: [
-                'reference/guides/publishing-components-to-external-registries',
-                'reference/guides/setting-up-remote-scope-server',
-                'reference/guides/component-driven-apps',
-                'reference/guides/cross-team-collaboration',
-                'reference/guides/upgrading-react-version',
-                'reference/guides/using-global-types'
-              ]
-            }
+            'reference/troubleshooting/doctor-logs-cache',
+            'reference/troubleshooting/multiple-peer-dep-versions',
+            'reference/troubleshooting/runtime-globals',
+            'reference/troubleshooting/multiple-envs'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          items: [
+            'reference/guides/publishing-components-to-external-registries',
+            'reference/guides/setting-up-remote-scope-server',
+            'reference/guides/component-driven-apps',
+            'reference/guides/cross-team-collaboration',
+            'reference/guides/upgrading-react-version',
+            'reference/guides/using-global-types'
           ]
         }
+      ]
+    }
   ]
 };
