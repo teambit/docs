@@ -273,11 +273,11 @@ module.exports = {
           items: [
             'scope/overview',
             'scope/hosting-remote-scope',
-            'scope/configuring-scope',
-            'scope/setting-remote-scope',
-            'scope/importing-components',
-            'scope/exporting-components',
-            'scope/scope-ui'
+            // TODO 'scope/configuring-scope',
+            'scope/setting-remote-scope'
+            // TODO 'scope/importing-components',
+            // TODO 'scope/exporting-components'
+            // TODO'scope/scope-ui'
           ]
         },
         {
