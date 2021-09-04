@@ -96,8 +96,8 @@ module.exports = {
               items: [
                 'getting-started/release-components/set-up-ci/use-your-own-ci',
                 'getting-started/release-components/set-up-ci/github-actions',
-                'getting-started/release-components/set-up-ci/gitlab',
-                'getting-started/release-components/set-up-ci/use-ripple-ci'
+                'getting-started/release-components/set-up-ci/gitlab'
+                // TODO 'getting-started/release-components/set-up-ci/use-ripple-ci'
               ]
             }
           ]
@@ -130,7 +130,7 @@ module.exports = {
               type: 'category',
               label: 'Initialize a Workspace on an Existing Project',
               items: [
-                'start-from-existing-project/init-workspace-on-existing-project/general-purpose'
+                'getting-started/start-from-existing-project/init-workspace-on-existing-project/general-purpose'
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/cra',
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/nextjs',
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/gatsby',
@@ -138,7 +138,7 @@ module.exports = {
                 // TODO 'start-from-existing-project/init-workspace-on-existing-project/docusaurus'
               ]
             },
-            'start-from-existing-project/tracking-existing-components'
+            'getting-started/start-from-existing-project/tracking-existing-components'
           ]
         }
       ]
@@ -436,19 +436,20 @@ module.exports = {
       collapsed: true,
       items: [
         'extending-bit/overview',
-        'extending-bit/extension-capabilities',
-        'extending-bit/getting-started-with-extensions',
+        // TODO 'extending-bit/extension-capabilities',
+        // TODO 'extending-bit/getting-started-with-extensions',
         {
           type: 'category',
           label: 'Guides',
           items: [
             'extending-bit/guides/adding-tab-to-workspace-ui',
-            'extending-bit/guides/creating-custom-generator',
-            'extending-bit/guides/adding-cli-command',
-            'extending-bit/guides/adding-graphql-route'
+            'extending-bit/guides/creating-component-templates',
+            'extending-bit/guides/creating-workspace-templates'
+            // TODO 'extending-bit/guides/adding-cli-command',
+            // TODO 'extending-bit/guides/adding-graphql-route'
           ]
-        },
-        'extending-bit/aspect-environment'
+        }
+        // TODO 'extending-bit/aspect-environment'
       ]
     },
     {
@@ -456,9 +457,9 @@ module.exports = {
       label: 'Reference',
       collapsed: true,
       items: [
-        'reference/api-reference',
+        // TODO 'reference/api-reference',
         'reference/cli-reference',
-        'reference/common-commands',
+        // TODO 'reference/common-commands',
         'reference/bvm',
         'reference/migration',
         {
@@ -470,19 +471,19 @@ module.exports = {
             'reference/troubleshooting/runtime-globals',
             'reference/troubleshooting/multiple-envs'
           ]
-        },
-        {
-          type: 'category',
-          label: 'Guides',
-          items: [
-            'reference/guides/publishing-components-to-external-registries',
-            'reference/guides/setting-up-remote-scope-server',
-            'reference/guides/component-driven-apps',
-            'reference/guides/cross-team-collaboration',
-            'reference/guides/upgrading-react-version',
-            'reference/guides/using-global-types'
-          ]
         }
+        // {
+        //   type: 'category',
+        //   label: 'Guides',
+        //   items: [
+        //     // TODO'reference/guides/publishing-components-to-external-registries',
+        //     // TODO'reference/guides/setting-up-remote-scope-server',
+        //     // TODO'reference/guides/component-driven-apps',
+        //     // TODO'reference/guides/cross-team-collaboration',
+        //     // TODO'reference/guides/upgrading-react-version',
+        //     // TODO'reference/guides/using-global-types'
+        //   ]
+        // }
       ]
     }
   ]

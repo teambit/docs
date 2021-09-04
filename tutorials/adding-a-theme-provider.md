@@ -68,7 +68,7 @@ they were being consumed by an application.
 
 Please see the following docs entries for more details on Bit Environments and customization:
 
-1. https://harmony-docs.bit.dev/building-with-bit/environments
+1. https://harmony-docs.bit.dev/envs/overvew
 1.
 
 ### Important reminder

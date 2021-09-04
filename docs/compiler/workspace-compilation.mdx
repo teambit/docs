@@ -4,12 +4,11 @@ id: workspace-compilation
 ---
 
 During development, Bit compiles your components using the `bit compile` and `bit watch` commands. This commands
-are providing a standard dev experience for compiling any kind of [Component](/), whether it is a NodeJS modules,
-a React component or anything else.
+are providing a standard dev experience for compiling any kind of [Component](/components/overview), whether it is a NodeJS modules, a React component or anything else.
 
-Compilation of components in the [Workspace](/) is optimized for dev experience, performance and debugging by default.
-This means [Source Maps](/) are generated and components are just transpiled (without types) into in the `node_modules` directory to
-ensure consistency between using a component for development or consumption purposes.
+Compilation of components in the [Workspace](/workspace/overview) is optimized for dev experience, performance and debugging by default.
+
+This means Source Maps <!--TODO [Source Maps](/) --> are generated and components are just transpiled (without types) into in the `node_modules` directory to ensure consistency between using a component for development or consumption purposes.
 
 ```bash
 ├── node_modules
@@ -25,7 +24,7 @@ ensure consistency between using a component for development or consumption purp
 
 ## Compile all components in the Workspace
 
-Bit allows to compile all components in the [Workspace](/) regardless to the configured [Env](/) and therefore Compiler
+Bit allows to compile all components in the [Workspace](/workspace/overview) regardless to the configured [Env](/envs/overview) and therefore Compiler
 with a single command.
 
 ```bash
@@ -48,7 +47,9 @@ persisted.
 
 ```bash
 bit compile --verbose
-...
+```
+
+```bash
 ✔ SUCCESS	aspect-docs/variants:
 		 - /Users/ranmizrahi/Bit/docs/node_modules/@teambit/workspace.aspect-docs.variants/dist/index.js
 		 - /Users/ranmizrahi/Bit/docs/node_modules/@teambit/workspace.aspect-docs.variants/dist/index.js.map
@@ -79,7 +80,7 @@ Watching for component changes and recompiling can be done with a single command
 bit watch
 ```
 
-Watch starts by default when starting the [Workspace](/) UI.
+Watch starts by default when starting the [Workspace](/workspace/overview) UI.
 
 ```bash
 bit start
@@ -87,6 +88,6 @@ bit start
 
 ## CLI References
 
-- [bit compile](/)
-- [bit watch](/)
-- [bit start](/)
+- [bit compile](/reference/cli-reference#compile)
+- [bit watch](/reference/cli-reference#watch)
+- [bit start](/reference/cli-reference#start)
