@@ -87,7 +87,7 @@ module.exports = {
               items: [
                 'getting-started/release-components/create-remote-scope/self-host-scope',
                 'getting-started/release-components/create-remote-scope/host-on-bit-cloud',
-                'getting-started/release-components/create-remote-scope/publish-on-external-reg'
+                'getting-started/release-components/create-remote-scope/publish-to-external-reg'
               ]
             },
             {
@@ -204,6 +204,7 @@ module.exports = {
             'components/namespaces',
             'components/component-id',
             'components/main-file',
+            'components/component-config',
             'components/creating-components',
             'components/inspecting-components',
             'components/comparing-components',

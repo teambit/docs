@@ -7,7 +7,7 @@ import { Image } from '@site/src/components/image';
 import depImg from './deps.png';
 import depGraphImg from './dep-graph.png';
 
-Now that we have our first [Component](/components/overview) created, let's add our first dependency. Dependencies allow us to compose components out of other components.
+Now that we have our first [Component](/components/overview) created, let's add our first dependency. [Dependencies](/dependencies) allow us to compose components out of other components. Dependencies for a component can be either [External Dependencies](/dependencies/external-dependencies) or [Workspace Components](/workspace/workspace-component) and added.
 
 Go to `my-welcome.ts` and add the following `import` statement just below the `react` import statement.
 
@@ -61,7 +61,7 @@ bit show ui/my-welcome
 
 We will now add a second dependency, `ui/card` and the initial implementation for our new component.
 
-```ts title="my-welcome.ts"
+```ts {3} title="my-welcome.ts"
 import React from 'react';
 import { Heading } from '@bitorg/experience.templates.ui.heading';
 import { Card } from '@bitorg/experience.templates.ui.card';
@@ -96,13 +96,13 @@ By going to the component's [Dependencies UI](/dependencies/ui) tab, we can insp
 
 <Image src={depGraphImg} />
 
-A list of the component's direct dependencies can be seen using `bit show` or in the [Code UI tab](/code/ui).
+As seen above, Bit understands more than just just the list of direct dependencies for a component and capable of showing the entire dependency / dependents graph of each component. A list of the component's direct dependencies can be seen using `bit show` or in the [Code UI tab](/code/ui).
 
 ```bash
 bit show ui/my-welcome
 ```
 
-```bash {32,33}
+```bash {29,30}
 ┌───────────────────┬────────────────────────────────────────────────────────────────┐
 │ id                │ bitorg.experience/ui/my-welcome                                │
 ├───────────────────┼────────────────────────────────────────────────────────────────┤
@@ -142,6 +142,10 @@ bit show ui/my-welcome
 │                   │ react@^16.8.0 || ^17.0.0------ (package)                       │
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
+
+Import and `require` statements added in files defined as [Dev Files](/components/dev-files) are classified as `devDependencies` of the component.
+As seen at the `bit show` output demonstrated above, Bit recognizes three files as [Dev Files](/dev-files) and adds classifies.
+
 
 ## Dependency automation
 

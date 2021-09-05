@@ -7,13 +7,15 @@ import { Image } from '@site/src/components/image';
 import scopeWorkspace from './images/workspace-scope.png';
 import componentImg from './component.png';
 
-It is a decoupled, versioned source-code container designed for the purpose of containing a single module or component. It is the most fundamental building block of Bit and what enables the composition of software from independent pieces.
+`Component` is a decoupled, versioned source-code container designed for the purpose of containing a single module or component. It is the most fundamental building block of Bit and what enables the composition of software from independent pieces.
 
-Each Component has a [Component ID](/components/component-id) and contains Source Code <!--TODO [Source Code](/components/source-code) -->, Artifacts <!--TODO [Artifacts](/components/artifact) -->, [Configuration of Aspects](/extending-bit/overview) and Metadata <!-- [Metadata](/components/metadata) -->. Components are connected and composed with each other through [Dependencies](/dependencies/overview).
+Each Component has a [Component ID](/components/component-id) and contains Source Code <!--TODO [Source Code](/components/source-code) -->, Artifacts <!--TODO [Artifacts](/components/artifact) -->, [Configuration](/components/component-config) and Metadata <!-- [Metadata](/components/metadata) -->. Components are connected and composed with each other through [Dependencies](/dependencies/overview).
+Common artifacts for a Component usually include a [Package](/packages/package), [Distribution](/compiler/dist), [Preview](/preview/preview). 
 
 <img src={componentImg} alt="Bit Components" height={450} />
 
 To learn more about how components connect through dependencies, head over to the [Dependencies documentation section](/dependencies/overview).
+
 
 Components are hosted and managed in [Scope](/scope/overview) and can be maintained, edited and versioned in any [Workspace](/workspace/overview).
 

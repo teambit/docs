@@ -3,6 +3,8 @@ id: variants
 title: Variants
 ---
 
+Variants allows to configure subsets of components in the Workspace, with [Component configuration](/components/component-config). 
+
 `teambit.workspace/variants` enables cascading configurations by selection of component groupings or sets in the workspace and applying configurations to these cascading groups.
 Configurations set on a certain set of components can:
 
@@ -13,20 +15,21 @@ Configurations set on a certain set of components can:
 
 ## Variants Selector Examples
 
-### Select a rule set by directory
+### Configure components in a directory
 
 To select a set using a directory path, use the relative path to the components' parent directory from the workspace root. In the following example, all components under the `components/utility-functions` directory
 (and any sub-directories) will be included in this set:
 
+This examples configures all components contained in the `design` directory with the [React env](/react).
 ```json
 "teambit.workspace/variants": {
-    "components/utility-functions": {
-        "teambit.harmony/node": {}
+    "design": {
+        "teambit.react/react": {}
     },
 }
 ```
 
-### Select a rule set via namespace
+### Configure components using Namespaces
 
 This option is recommended as it decouples your components' configurations from the workspace's file structure. It handles components using fundamental definitions that pertain to function and purpose, via their namespace.
 The namespace selector behaves like a glob pattern, with the component name (including its namespace) being the equivalent of a file path being matched against the pattern.
