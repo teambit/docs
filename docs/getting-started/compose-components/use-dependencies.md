@@ -6,8 +6,9 @@ id: use-dependencies
 import { Image } from '@site/src/components/image';
 import depImg from './deps.png';
 import depGraphImg from './dep-graph.png';
+import devDepGraphImg from './dev-dep-graph.png';
 
-Now that we have our first [Component](/components/overview) created, let's add our first dependency. [Dependencies](/dependencies) allow us to compose components out of other components. Dependencies for a component can be either [External Dependencies](/dependencies/external-dependencies) or [Workspace Components](/workspace/workspace-component) and are resolved from an `import` or a `require` statement to the [Component Metadata](/components/component-metadata), and later to a generated `package.json` which allows the independent consumption of the Component.
+Now that we have our first [Component](/components/overview) created, let's add our first dependency. [Dependencies](/dependencies) allow us to compose components out of other components. Dependencies for a component can be either [External Dependencies](/dependencies/external-dependencies) or [Workspace Components](/workspace/workspace-component) and are resolved from the `import` or the `require` statements added in your components.
 
 Go to `my-welcome.ts` and add the following `import` statement just below the `react` import statement.
 
@@ -149,8 +150,13 @@ bit show ui/my-welcome
 `import` and `require` statements added in files classified as [Dev Files](/components/dev-files) are classified as `devDependencies` of the component.
 As seen at the `bit show` output demonstrated above, Bit recognizes three files as [Dev Files](/dev-files) and classifies each dependency as a dev one, and configures it into the `devDependencies` property in the Component Metadata and package.json.
 
-**Removing a dependency** is as simple as removing the corresponding `import`/`require` statements from the Component's Source Code.
+Dev dependencies can be viewed either using `bit show` as seen in the example above or by selecting `show non-runtime` option in the Dependencies UI.
 
+<img src={devDepGraphImg} />
+
+Dotted edges represent a dev dependency between two components.
+
+**Removing a dependency** is as simple as removing the corresponding `import`/`require` statements from the Component's Source Code
 
 To learn more about dev dependencies, please read the [Dev Dependencies](/dependencies/overview#dev-dependencies) section of the docs.
 

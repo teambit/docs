@@ -10,6 +10,10 @@ Compilation of components in the [Workspace](/workspace/overview) is optimized f
 
 This means Source Maps <!--TODO [Source Maps](/) --> are generated and components are just transpiled (without types) into in the `node_modules` directory to ensure consistency between using a component for development or consumption purposes.
 
+:::note
+For type resolution in the Workspace we rely on the [Workspace Component Link](/workspace/component-link) which symlinks the source code from within the link to the corresponding [Component Directory](/workspace/component-directory).
+:::
+
 ```bash
 ├── node_modules
     ├── @my-org
