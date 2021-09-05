@@ -3,6 +3,9 @@ id: component-config
 title: Component Configuration
 ---
 
+import { Image } from '@site/src/components/image';
+import componentConfig from './comp-config.png'
+
 Components in Bit can be configured components and used for variety of purposes such as setting dependencies, envs, remote scopes and controlling the generated package.json and anything else you might imagine. 
 
 Components are configured with [Aspects](/extending-bit/aspect), each can accept user configurations and do useful operations accordingly. Components configuration are commonly controlled by a [component.json](/components/component-json), or through [Variants](/variants/overview) and possibly through any Aspect offering this kind of functionality. Component configuration can be viewed in different methods including the `bit show` command and the UI.
@@ -63,7 +66,7 @@ Component configuration can be viewed in different methods including the `bit sh
 ```bash
 bit show ui/my-welcome
 ```
-```bash {26,27,28,29,30,31}
+```bash {26-31}
 ┌───────────────────┬────────────────────────────────────────────────────────────────┐
 │ id                │ company.scope/ui/my-welcome                                    │
 ├───────────────────┼────────────────────────────────────────────────────────────────┤
@@ -113,4 +116,4 @@ In the example above, all highlighted extensions are the configured [Aspects](/e
 
 Configuration can also be seen from the Component UI.
 
-<-- add UI screenshot of config here -->
+<Image src={componentConfig} />
