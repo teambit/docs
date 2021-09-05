@@ -201,10 +201,9 @@ module.exports = {
           collapsed: true,
           items: [
             'components/overview',
-            'components/namespaces',
             'components/component-id',
             'components/main-file',
-            'components/component-config',
+            'components/component-confi',
             'components/creating-components',
             'components/inspecting-components',
             'components/comparing-components',
