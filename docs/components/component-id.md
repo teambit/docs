@@ -5,7 +5,7 @@ title: Component ID
 
 import { Image } from '@site/src/components/image';
 import nestedNamespaces from './images/namespaces_nested.png';
-
+import componentDiagram from './component-id.png'
 
 The Component ID is designed to be a unique, human-readable name that simplifies and help organize components while empowering team autonomy by avoiding cross-team naming conflicts. Every [Component](/components/overview) in Bit is identified and referenced by a Component ID. 
 
@@ -23,7 +23,7 @@ A reference to a specific component version can be achieved by following with th
 teambit.base-ui/ui/button@1.0.0
 ```
 
-<Image src="./component-id_diagram.png" />
+<Image src={componentDiagram} />
 
 ## Scope name
 
