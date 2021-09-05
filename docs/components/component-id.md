@@ -7,7 +7,7 @@ import { Image } from '@site/src/components/image';
 import nestedNamespaces from './images/namespaces_nested.png';
 
 
-The Component ID is designed to be a unique, human-readable name that simplifies and help organize components while empowering team autonomy by avoiding cross-team naming conflicts. Every [Component](/components/overview) in Bit is identified and referenced by a Component ID.
+The Component ID is designed to be a unique, human-readable name that simplifies and help organize components while empowering team autonomy by avoiding cross-team naming conflicts. Every [Component](/components/overview) in Bit is identified and referenced by a Component ID. 
 
 Simple example for a Component ID is: 
 
@@ -61,61 +61,50 @@ Head over to [Configuring Scopes](/workspace/configuring-scopes) to learn more.
 
 ## Component full name
 
-A component's full name serves as a unique identifier of a [Component](/components/overview) in the local workspace.
-Most local operations require referencing a component using its full name rather than its ID.
+A component's full name serves as a unique identifier of a [Component](/components/overview) in the Workspace.
+Throughout various Bit commands, components can be referenced with their full name instead of using the full Component ID.
 A component's full name is composed of its namespaces (if there are any), and name.
 
-```
-<namespaces>/<component name>
-```
-
-### Setting a component full name
-
-A component's full name is set when creating a new component using a template.
-The below command will create a new component with the name `button` and the namespaces `ui` and `inputs`.
-
-For example:
+In the below example, we are inspecting the `ui/button` component in the Workspace. Since the `ui/button` name in unique in the Workspace there is no need to mention the Scope.
 
 ```bash
-bit create react ui/inputs/button
+bit show ui/welcome
 ```
 
-When tracking a component manually, a component's full name is determined by the name of its Component Directory. Namespaces can be added using the `--namespace` option.
-
-For example:
+Components can also be referenced with their Scope Name after they are first exported.
 
 ```bash
-bit add my-scope/button --namespace ui/inputs
+bit show teambit.design/ui/button
 ```
 
-A component name can be manually set by using the `--id` option (this will override the name received by its Component Directory).
+Component full names are defined when [Creating Components](/) and [Adding Components](/) in the Workspace and matched to directories via [.bitmap](/workspace/bitmap).
 
-## Component name
+### Namespaces
 
-A component name describes the concrete responsibility of a component.
-It is determined by its Component Directory name, when added manually, or by the given name, when created using a template.
+Namespaces are used to organize components into taxonomy and help avoid conflicts on component names in Workspaces and Scopes.
+Namespaces in Bit are separated by `/` from the [Component Full Name](/components/component-id#component-full-name), where the last element represents the [Component Name](/components/component-id#component-name)
 
-See the ['component full name'](#component-full-name) section, to learn more.
+In this simple example, the namespace for the Component is just `ui`.
 
-## Namespaces
+```
+teambit.base-ui/ui/button
+```
 
-Namespaces are used to organize components into categories in the Workspace and Remote Scope. They also help in preventing name conflicts in the same scope or workspace, by prefixing a component name with the relevant categories.
-
-Namespaces can form a hierarchal order. For example, the following command creates a component, `button`, with the namespace `ui` and, nested inside it, the namespace `inputs`.
+In the below example, there are two hierarchical namespaces for the Component where `ui` is the top-level one, followed by `inputs` to define a more specific responsibility for certain UI components.
 
 ```sh
-bit create react ui/inputs/button
+teambit.base-ui/ui/inputs/button
 ```
 
-This will show up in the Workspace UI and Scope UI, like so:
+Now your components are also easier to find in the Workspace and Scope UIs, like so:
 
 <Image src={nestedNamespaces} />
 
 The hierarchal order formed by namespacing, allows us to select sets of components using semantic structures rather than our concrete (and prone to change) workspace directory structure.
 
-For example, the following configuration will set the React env on all components under the `ui` namespace, regardless or their physical location inside the workspace:
+Using [Variants](/workspace/variants) for example, Components can be selected using their namespace which allows to easily configure all UI components in a Workspace with the [React env](/), regardless or their physical filesystem location inside the Workspace.
 
-```json title="workspace.jsonc"
+```json title="workspace.jsonc" {3}
 {
   "teambit.workspace/variants": {
     "{ui/**}": {
@@ -125,24 +114,11 @@ For example, the following configuration will set the React env on all component
 }
 ```
 
-## View component IDs
+### Component name
 
-### List all component IDs in the local scope
+The component name is the last part of the ID, coming right after the namespace, starting from the last `/`. It usually describes the specific responsibility of a component.
 
-(i.e, versioned components in the workspace)
-
-```bash
-bit list
+In the below example, `button` represents the component name.
 ```
-
-### View the component ID of a specific component
-
-```bash
-bit show <component-full-name>
+teambit.base-ui/ui/button
 ```
-
-## Change a component ID
-
-A component's ID cannot be changed. Instead, deprecate <!--TODO [deprecate](#) --> the current component and create a new one.
-
-It is advisable to exchange links (between the old and the new component) in the components' documentation.

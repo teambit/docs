@@ -7,7 +7,7 @@ import { Image } from '@site/src/components/image';
 import depImg from './deps.png';
 import depGraphImg from './dep-graph.png';
 
-Now that we have our first [Component](/components/overview) created, let's add our first dependency. [Dependencies](/dependencies) allow us to compose components out of other components. Dependencies for a component can be either [External Dependencies](/dependencies/external-dependencies) or [Workspace Components](/workspace/workspace-component) and added.
+Now that we have our first [Component](/components/overview) created, let's add our first dependency. [Dependencies](/dependencies) allow us to compose components out of other components. Dependencies for a component can be either [External Dependencies](/dependencies/external-dependencies) or [Workspace Components](/workspace/workspace-component) and are resolved from an `import` or a `require` statement to the [Component Metadata](/components/component-metadata), and later to a generated `package.json` which allows the independent consumption of the Component.
 
 Go to `my-welcome.ts` and add the following `import` statement just below the `react` import statement.
 
@@ -143,30 +143,21 @@ bit show ui/my-welcome
 └───────────────────┴────────────────────────────────────────────────────────────────┘
 ```
 
-Import and `require` statements added in files defined as [Dev Files](/components/dev-files) are classified as `devDependencies` of the component.
-As seen at the `bit show` output demonstrated above, Bit recognizes three files as [Dev Files](/dev-files) and adds classifies.
+## Dev dependencies
+
+`import` and `require` statements added in files classified as [Dev Files](/components/dev-files) are classified as `devDependencies` of the component.
+As seen at the `bit show` output demonstrated above, Bit recognizes three files as [Dev Files](/dev-files) and classifies each dependency as a dev one, and configures it into the `devDependencies` property in the Component Metadata and package.json.
+
+**Removing a dependency** is as simple as removing the corresponding `import`/`require` statements from the Component's Source Code.
 
 
-## Dependency automation
+To learn more about dev dependencies, please read the [Dev Dependencies](/dependencies/overview#dev-dependencies) section of the docs.
 
-Bit greatly simplifies component dependency management by automating most of it. It auto-generates the dependency graph of each component, and that of the entire workspace.
-This is done by statically analyzing the component's files and parsing out all `import` \ `require` statements.
-
-To **remove a dependency**, simply remove the corresponding `import`/`require`statements from the component's files.
-
-To learn more about Dependency automaton please visit the [Dependency Automaton](/dependencies/overview#dependency-automation) section of the docs.
-
-## Dependency policy
+## External dependencies
 
 The dependency policies for components in a workspace can all be configured in a single place, the workspace configuration file. These policies augment and modify the components' auto-generated dependency graphs.
 
 To learn more about dependency policies, please read the [Dependency Policy](/dependencies/overview#dependency-policies) section of the docs.
-
-## Dev dependencies
-
-The decision between dependency and devDependency is contextual and in most cases driven by when and where a dependency is used. For a dependency be a devDependency all we need is to ensure it is required only by the component's dev files.
-
-To learn more about dev dependencies, please read the [Dev Dependencies](/dependencies/overview#dev-dependencies) section of the docs.
 
 ## Peer dependencies
 

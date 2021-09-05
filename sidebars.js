@@ -203,7 +203,7 @@ module.exports = {
             'components/overview',
             'components/component-id',
             'components/main-file',
-            'components/component-confi',
+            'components/component-config',
             'components/creating-components',
             'components/inspecting-components',
             'components/comparing-components',

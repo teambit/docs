@@ -4,6 +4,7 @@ id: bit-monorepo
 ---
 
 import bitMonorepoImg from './bit-monorepo.png';
+import scopeGraph from './scope-graph.png';
 
 Bit empowers the management and
 Here is an example Monorepo, built with Bit: http://github.com/bit-demos/monorepo
@@ -38,6 +39,10 @@ Directory structure for a Monorepo:
           ├── ...
 ├── ...
 ```
+
+Ownership and team boundaries is determined through the use of [Scopes](/scope/overview). Components from different Scopes can depend on one another as demonstrated from the Bit Cloud UI.
+
+<img src={scopeGraph} />
 
 <!-- TODO ### Visibility and discoverability
 
