@@ -161,6 +161,11 @@ Dotted edges represent a dev dependency between two components.
 To learn more about dev dependencies, please read the [Dev Dependencies](/dependencies/overview#dev-dependencies) section of the docs.
 
 ## External dependencies
+[External dependencies](/dependencies/external-dependencies) are defined in the Dependency Policy and can be installed using the `bit install` command.
+
+```bash
+bit install @teambit/base-ui.button
+```
 
 The dependency policies for components in a workspace can all be configured in a single place, the workspace configuration file. These policies augment and modify the components' auto-generated dependency graphs.
 

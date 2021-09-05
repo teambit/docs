@@ -66,7 +66,7 @@ module.exports = {
         'getting-started/create-workspace',
         {
           type: 'category',
-          label: 'Compose Components',
+          label: 'Compose',
           items: [
             'getting-started/compose-components/create-components',
             'getting-started/compose-components/use-dependencies',
@@ -75,36 +75,26 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Release Components',
+          label: 'Collaborate',
           collapsed: true,
           items: [
             // 'getting-started/release-components/building-components',
             'getting-started/release-components/version-components',
             'getting-started/release-components/export-components',
+            // 'getting-started/release-components/create-remote-scope/publish-to-external-reg',
             {
               type: 'category',
               label: 'Create a Remote Scope',
               items: [
                 'getting-started/release-components/create-remote-scope/self-host-scope',
                 'getting-started/release-components/create-remote-scope/host-on-bit-cloud',
-                'getting-started/release-components/create-remote-scope/publish-to-external-reg'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Set Up Your CI',
-              items: [
-                'getting-started/release-components/set-up-ci/use-your-own-ci',
-                'getting-started/release-components/set-up-ci/github-actions',
-                'getting-started/release-components/set-up-ci/gitlab'
-                // TODO 'getting-started/release-components/set-up-ci/use-ripple-ci'
               ]
             }
           ]
         },
         {
           type: 'category',
-          label: 'Use Components',
+          label: 'Use',
           collapsed: true,
           items: [
             'getting-started/use-components/install-dependencies',
@@ -119,6 +109,16 @@ module.exports = {
             //     'getting-started/use-components/composition-strategies/module-federation'
             //   ]
             // }
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Set Up Your CI',
+          items: [
+            'getting-started/release-components/set-up-ci/use-your-own-ci',
+            'getting-started/release-components/set-up-ci/github-actions',
+            'getting-started/release-components/set-up-ci/gitlab'
+            // TODO 'getting-started/release-components/set-up-ci/use-ripple-ci'
           ]
         },
         {

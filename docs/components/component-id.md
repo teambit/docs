@@ -38,7 +38,7 @@ Common example to Scope names might be:
 
 :::note Scope names in the Bit Cloud
 Scopes names in the Bit Cloud include the Scope owner and Scope name as a convention for referencing Scopes.
-In the example above, `teambit` refers to the [teambit organization](https://bit.dev/acme) which own the [`base-ui`](https://bit.dev/teambit/base-ui).
+In the example above, `teambit` refers to the [teambit organization](https://bit.dev/acme) which own the [`base-ui`](https://bit.dev/teambit/base-ui) scope.
 :::
 
 Setting the scope name for components can be done by configuring the `defaultScope` property on the Component configuration.

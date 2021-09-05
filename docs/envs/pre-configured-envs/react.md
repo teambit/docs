@@ -3,25 +3,25 @@ id: react
 title: React
 ---
 
-The built-in [React Component Development Environment](https://bit.dev/teambit/react/react) is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React App](https://create-react-app.dev). Use it when getting started with React components with Bit and later as a base for any future customization of your React-based workflow.
+The built-in [React Component Development Env](https://bit.dev/teambit/react/react) is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React App](https://create-react-app.dev). Use it when getting started with React components with Bit and later as a base for any future customization of your React-based workflow.
 
-## Use React environment
+## Use the React env
 
-To use this environment for your components, add it to any of the `variants` in your `workspace.jsonc` file as follows:
+To use this environment for your components, add it to any of the `variants` in your `workspace.jsonc` file as follows
 
 ```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "some/selector": {
+    "{ui}/*": {
       "teambit.react/react": {}
     }
   }
 }
 ```
 
-## Create React components
+## Component templates
 
-React implements several component templates:
+React env adds a set of useful component templates to your workspace.
 
 - `react` a basic React UI component.
 - `react-context` a react context component.
@@ -30,17 +30,16 @@ React implements several component templates:
 - `react-component-js` a basic React component in JS.
 - `react-env` boilerplate for a customized environment configuration.
 
-Use any of these templates with the `bit create` command:
+Use any of these templates with the `bit create` command.
 
-```sh
-bit create <template name> [components...]
+```bash
+bit templates # view all available templates.
+bit create react ui/my-welcome # create a simple react component called `ui/my-welcome` 
 ```
 
 ## Peer dependencies
 
-As with many Frontend frameworks React requires a singleton instance in your app's runtime. When building reuseable components that means setting `react` and `react-dom` as `peerDependencies`, thus allowing the consuming app to determine the runtime version. Bit's base React environment implements this via the **Dependencies** service which is used to override [dependency-resolver](https://bit.dev/teambit/dependencies/dependency-resolver) and set your preferred dependencies.
-
-It is recommended for you to extend the base React environment and define a semantic version rule and range to fit your current tech stack and guidelines for reuseable React components.
+By default, components using the React env get a peer dependency range of X for `react` and `react-dom` and Development version of React and React DOM is set to X.
 
 ## Development services
 
@@ -60,13 +59,55 @@ React, like all other Bit Environments must implement a set of Service Handlers.
 | Dependencies         | _Core implementation_                                       | [Env-dependencies](https://bit.dev/teambit/react/react/~code/react.env.ts)                                                         |
 | Component Generator  | [Generator](https://bit.dev/teambit/generator/generator)    | [example template](https://bit.dev/teambit/react/react/~code/templates/react-component.ts)                                         |
 
-## Customize environment
+## Customize an environment
 
 All environments are extendible. You can take any pre-existing environment, and create a component to extend it, creating a customized environment. That customized environment can use APIs from the environment it is extending to:
 
 - Override default configurations.
 - Replace composed tools with others (for example - use Babel to transpile instead of TypeScript).
 - Add new services and capabilities.
+
+
+
+
+
+
+
+
+
+
+
+### Customize the tsconfig
+
+### Replace the tester
+
+### Change Compiler to Babel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Create an extension
 
