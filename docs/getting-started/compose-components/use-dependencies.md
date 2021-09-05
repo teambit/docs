@@ -15,6 +15,7 @@ Go to `my-welcome.ts` and add the following `import` statement just below the `r
 import React from 'react';
 import { Heading } from '@bitorg/experience.templates.ui.heading';
 ```
+[`Package name`](/packages/package-name) for a component is by default, computed from its [Component ID](/components/component-id) and can be customized to different conventions.
 
 Congrats you have added a new dependency for your component! You can view your new component dependency with `bit show`. Bit now recognizes `templates/ui/heading` as a dependency of your component.
 
