@@ -109,7 +109,7 @@ module.exports = {
         },
 
         {
-          label: 'Plugins',
+          label: 'Aspects',
           activeBasePath: 'aspects',
           position: 'left',
           to: '/aspects/aspects-overview',
@@ -223,17 +223,16 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Quick Start',
-              to: '/quick-start'
+              label: 'Getting Started',
+              to: '/getting-started/installing-bit'
             },
             {
-              label: 'Getting Started',
-              to: '/getting-started/install-bit'
+              label: 'Building with Bit',
+              to: '/building-with-bit/manage-workspace'
             },
-
             {
               label: 'What is Bit',
-              to: '/understanding-bit/why-bit'
+              to: '/essentials/what-is-bit'
             }
           ]
         },
