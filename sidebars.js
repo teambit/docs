@@ -89,7 +89,7 @@ module.exports = {
                 'getting-started/release-components/create-remote-scope/self-host-scope',
                 'getting-started/release-components/create-remote-scope/host-on-bit-cloud',
               ]
-            }
+            },
           ]
         },
         {
@@ -97,9 +97,10 @@ module.exports = {
           label: 'Use',
           collapsed: true,
           items: [
-            'getting-started/use-components/install-dependencies',
-            'getting-started/use-components/import-components'
-            /* TODO 'getting-started/use-components/propose-changes' */
+            'getting-started/use-components/install-components',
+            'getting-started/use-components/import-components',
+            // 'getting-started/use-components/propose-changes',
+            'getting-started/use-components/update-dependencies'
             // {
             //   type: 'category',
             //   label: 'Composition Strategies',
@@ -115,10 +116,8 @@ module.exports = {
           type: 'category',
           label: 'Set Up Your CI',
           items: [
+            'getting-started/release-components/set-up-ci/use-ripple-ci',
             'getting-started/release-components/set-up-ci/use-your-own-ci',
-            'getting-started/release-components/set-up-ci/github-actions',
-            'getting-started/release-components/set-up-ci/gitlab'
-            // TODO 'getting-started/release-components/set-up-ci/use-ripple-ci'
           ]
         },
         {

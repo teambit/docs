@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 import workspaceUi from './workspace-ui.png';
 import { Image } from '@site/src/components/image';
 
-A Bit [Workspace](/workspace/overview) is where components are built and composed. Workspaces can be generated with the `bit new` command or initialized on an existing project <!--TODO [initialized on an existing project](/start-from-existing-project/init-workspace-on-existing-project/general-purpose) -->.
+A Bit [Workspace](/workspace/overview) is where components are built and composed. Workspaces can be generated with the `bit new` command or [initialized on an existing project](/getting-started/start-from-existing-project/init-workspace-on-existing-project/general-purpose).
 
 Workspaces can be created from templates. To see a list of available workspaces templates, run `bit templates`. The Workspace templates are only available when ran outside of a Bit Workspace.
 
