@@ -109,7 +109,7 @@ module.exports = {
         },
 
         {
-          label: 'Aspects',
+          label: 'Plugins',
           activeBasePath: 'aspects',
           position: 'left',
           to: '/aspects/aspects-overview',

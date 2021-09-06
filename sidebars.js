@@ -100,7 +100,7 @@ module.exports = {
             'getting-started/use-components/install-components',
             'getting-started/use-components/import-components',
             // 'getting-started/use-components/propose-changes',
-            'getting-started/use-components/update-dependencies'
+            'getting-started/use-components/update-components'
             // {
             //   type: 'category',
             //   label: 'Composition Strategies',
@@ -147,7 +147,8 @@ module.exports = {
       label: 'Understanding Bit',
       items: [
         'understanding-bit/why-bit',
-        // TODO 'understanding-bit/component-driven-software',
+        'understanding-bit/component-driven-software',
+        // TODO 'understanding-bit/economy-of-scale',
         {
           type: 'category',
           label: 'Repository Architecture',
@@ -156,16 +157,15 @@ module.exports = {
             'understanding-bit/repository-architecture/bit-polyrepo',
             'understanding-bit/repository-architecture/bit-monorepo'
           ]
-        },
-        // TODO 'understanding-bit/economy-of-scale',
-        'understanding-bit/package-managers'
-        // TODO 'understanding-bit/micro-architecture/micro-architecture',
+        },    
+        // 'understanding-bit/package-managers',
+        'understanding-bit/micro-architecture/micro-architecture',
         // TODO 'understanding-bit/dogfooding'
       ]
     },
     {
       type: 'category',
-      label: 'Fundamentals',
+      label: 'Aspects',
       items: [
         {
           type: 'category',
@@ -281,7 +281,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'CI/CD',
+          label: 'CI',
           collapsed: true,
           items: [
             // TODO 'cicd/overview',
@@ -300,19 +300,6 @@ module.exports = {
             // TODO 'cicd/ripple-ci'
           ]
         },
-        {
-          type: 'category',
-          label: 'Builder',
-          collapsed: true,
-          items: [
-            'builder/overview',
-            'builder/component-isolation',
-            // TODO 'builder/component-build',
-            'builder/build-pipelines',
-            'builder/build-pipeline-customization'
-            // TODO 'builder/build-on-ci'
-          ]
-        }
         // {
         //   type: 'category',
         //   label: 'Apps',
@@ -337,10 +324,54 @@ module.exports = {
 
     {
       type: 'category',
-      label: 'Advanced',
+      label: 'Dev Services',
       // collapsed: false,
       // collapsible: false,
       items: [
+        {
+          type: 'category',
+          label: 'Generator',
+          collapsed: true,
+          items: [
+            'generator/overview',
+            'generator/workspace-template',
+            'generator/components-template'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Compiler',
+          collapsed: true,
+          items: [
+            'compiler/overview',
+            'compiler/workspace-compilation',
+            'compiler/compiling-during-build',
+            'compiler/configure-env'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Tester',
+          collapsed: true,
+          items: [
+            'tester/overview',
+            'tester/workspace-testing'
+            // TODO 'tester/testing-during-build'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Builder',
+          collapsed: true,
+          items: [
+            'builder/overview',
+            'builder/component-isolation',
+            // TODO 'builder/component-build',
+            'builder/build-pipelines',
+            'builder/build-pipeline-customization'
+            // TODO 'builder/build-on-ci'
+          ]
+        },
         {
           type: 'category',
           label: 'Docs',
@@ -359,37 +390,6 @@ module.exports = {
             'compositions/overview'
             // TODO 'compositions/composition-format',
             // TODO 'compositions/visualizing-components'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Generator',
-          collapsed: true,
-          items: [
-            'generator/overview',
-            'generator/workspace-template',
-            'generator/components-template'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Tester',
-          collapsed: true,
-          items: [
-            'tester/overview',
-            'tester/workspace-testing'
-            // TODO 'tester/testing-during-build'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Compiler',
-          collapsed: true,
-          items: [
-            'compiler/overview',
-            'compiler/workspace-compilation',
-            'compiler/compiling-during-build',
-            'compiler/configure-env'
           ]
         },
         {
@@ -425,6 +425,38 @@ module.exports = {
             'packages/publishing-to-commonjs-registries',
             'packages/build-tasks'
           ]
+        }
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Platforms',
+      items: [
+        {
+          type: 'category',
+          label: 'NodeJS',
+          items: [
+            'platforms/nodejs/node-overview'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'React',
+          items: [
+            'platforms/react/react-overview',
+            'platforms/react/data-fetching',
+            'platforms/react/fonts',
+            'platforms/react/react-hooks',
+            'platforms/react/styling-react-components',
+            'platforms/react/theming'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Angular',
+          items: [
+            'platforms/angular/angular-overview'
+          ],
         }
       ]
     },
