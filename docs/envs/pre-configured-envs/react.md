@@ -3,25 +3,27 @@ id: react
 title: React
 ---
 
-The built-in [React Component Development Env](https://bit.dev/teambit/react/react) is a concrete composition of the [Env Aspect](https://bit.dev/teambit/envs/envs). It compose different tools and configs that fit practices implemented in [Create React App](https://create-react-app.dev). Use it when getting started with React components with Bit and later as a base for any future customization of your React-based workflow.
+Bit's out-of-the-box [React Component Development Environment](https://bit.dev/teambit/react/react) ('React env') is  a concrete implementation of [Envs](https://bit.dev/teambit/envs/envs). It composes together different tools and configs that conform to best practices implemented by [Create React App](https://create-react-app.dev).
 
-## Use the React env
+Use React Env to start developing React components, right away, and later on, as a base for your own customized React-based development workflow.
 
-To use this environment for your components, add it to any of the `variants` in your `workspace.jsonc` file as follows
+## Using the React env
+
+To use this environment, add it to any of the `variants` (component selections) in your `workspace.jsonc` file. For example, the below config sets all components with the `ui` namespace to use the React Env.
 
 ```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "{ui}/*": {
+    "{ui/*}": {
       "teambit.react/react": {}
     }
   }
 }
 ```
 
-## Component templates
+## Creating components using the React env
 
-React env adds a set of useful component templates to your workspace.
+React env provides a set of component templates that can be used to speed-up and standardize your component development:
 
 - `react` a basic React UI component.
 - `react-context` a react context component.
@@ -34,14 +36,18 @@ Use any of these templates with the `bit create` command.
 
 ```bash
 bit templates # view all available templates.
-bit create react ui/my-welcome # create a simple react component called `ui/my-welcome` 
+bit create react ui/my-welcome # create a simple react component with the full name: `ui/my-welcome` 
 ```
 
-## Peer dependencies
+## Default React versions
+By default, the React env sets the following dependency versions for components using it:
 
-By default, components using the React env get a peer dependency range of X for `react` and `react-dom` and Development version of React and React DOM is set to X.
+* __react__ (peer dependency): `^16.8.0 || ^17.0.0`
+* __react-dom__ (peer dependency): `^16.8.0 || ^17.0.0`
+* __@types/react__: `^17.0.8`
+* __@types/react-dom__: `^17.0.5`
 
-## Development services
+## Development services and configurations
 
 React, like all other Bit Environments must implement a set of Service Handlers. Each service corresponds to a specific tool or stage in the component life-cycle, with a default config as set by the base React environment:
 

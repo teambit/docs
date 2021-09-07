@@ -116,7 +116,7 @@ module.exports = {
           type: 'category',
           label: 'Set Up Your CI',
           items: [
-            'getting-started/release-components/set-up-ci/use-ripple-ci',
+            // 'getting-started/release-components/set-up-ci/use-ripple-ci',
             'getting-started/release-components/set-up-ci/use-your-own-ci',
           ]
         },
@@ -147,7 +147,7 @@ module.exports = {
       label: 'Understanding Bit',
       items: [
         'understanding-bit/why-bit',
-        'understanding-bit/component-driven-software',
+        // 'understanding-bit/component-driven-software',
         // TODO 'understanding-bit/economy-of-scale',
         {
           type: 'category',
@@ -430,32 +430,32 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Platforms',
+      label: 'Frameworks & Runtimes',
       items: [
         {
           type: 'category',
           label: 'NodeJS',
           items: [
-            'platforms/nodejs/node-overview'
+            'frameworks/nodejs/node-overview'
           ],
         },
         {
           type: 'category',
           label: 'React',
           items: [
-            'platforms/react/react-overview',
-            'platforms/react/data-fetching',
-            'platforms/react/fonts',
-            'platforms/react/react-hooks',
-            'platforms/react/styling-react-components',
-            'platforms/react/theming'
+            'frameworks/react/react-overview',
+            'frameworks/react/data-fetching',
+            'frameworks/react/fonts',
+            'frameworks/react/react-hooks',
+            'frameworks/react/styling-react-components',
+            'frameworks/react/theming'
           ],
         },
         {
           type: 'category',
           label: 'Angular',
           items: [
-            'platforms/angular/angular-overview'
+            'frameworks/angular/angular-overview'
           ],
         }
       ]
