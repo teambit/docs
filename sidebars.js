@@ -114,10 +114,11 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Set Up Your CI',
+          label: 'Set Up CI',
           items: [
             // 'getting-started/release-components/set-up-ci/use-ripple-ci',
-            'getting-started/release-components/set-up-ci/use-your-own-ci',
+            'getting-started/set-up-ci/use-your-own-ci',
+            'getting-started/set-up-ci/install-during-ci',
           ]
         },
         {
