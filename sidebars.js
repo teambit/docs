@@ -429,6 +429,7 @@ module.exports = {
           items: [
             'packages/overview',
             'packages/managing-packagejson',
+            'packages/package-name',
             'packages/package-json',
             'packages/packing-components',
             'packages/publishing-to-commonjs-registries',

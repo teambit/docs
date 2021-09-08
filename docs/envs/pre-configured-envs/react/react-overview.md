@@ -43,7 +43,7 @@ bit create react ui/my-welcome # create a simple react component with the full n
 
 The table below lists services that are provided by the React env. Each service handles a specific component development operation. Each is implemented by the React env, using a specific Bit Aspect and a set of configurations.
 
-To customize and extend the React env, create you own React env extension. You can replace the Aspects used by the env, or override their configurations (use the links provided in the 'customization' column).
+To customize and extend the React env, [create you own React env extension](/envs/pre-configured-envs/react/extending-react#using-your-own-react-env-extension). You can replace the Aspects used by the env, or override their configurations (use the links provided in the 'customization' column).
 
 
 | Service                                    | Aspect                                                      | Default config                                                                                                                     |Customization|
