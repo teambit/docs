@@ -47,8 +47,16 @@ The example below, uses [Variants](/workspace/variants) to configure all compone
 ### Apply configuration from an Env
 
 ```ts
+export class ReactEnv implements PackageEnv {
+  // ...
 
-
+  getPackageJsonProps() {
+    return {
+      main: 'dist/{main}.js',
+      types: '{main}.ts',
+    };
+  }
+}
 ```
 
 ### Apply configuration from an Aspect

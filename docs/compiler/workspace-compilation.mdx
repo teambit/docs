@@ -14,7 +14,7 @@ This means Source Maps <!--TODO [Source Maps](/) --> are generated and component
 For type resolution in the Workspace we rely on the [Workspace Component Link](/workspace/component-link) which symlinks the source code from within the link to the corresponding [Component Directory](/workspace/component-directory).
 :::
 
-```bash
+```bash title="workspace component link"
 ├── node_modules
     ├── @my-org
         ├── ui.button
@@ -35,14 +35,14 @@ with a single command.
 bit compile
 ```
 
-## Compile only components that changed
+<!-- ## Compile only components that changed
 
 You can also use the `--changed` flag to compile only `new` and `modified` components. Use `bit status` to learn
 which components are either `new` or `modified`.
 
 ```bash
 bit compile --changed
-```
+``` -->
 
 ## Compile with a verbose output
 

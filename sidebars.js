@@ -440,32 +440,32 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Frameworks & Runtimes',
+      label: 'Platforms',
       items: [
         {
           type: 'category',
           label: 'NodeJS',
           items: [
-            'frameworks/nodejs/node-overview'
+            'platforms/nodejs/node-overview'
           ],
         },
         {
           type: 'category',
           label: 'React',
           items: [
-            'frameworks/react/react-overview',
-            'frameworks/react/data-fetching',
-            'frameworks/react/fonts',
-            'frameworks/react/react-hooks',
-            'frameworks/react/styling-react-components',
-            'frameworks/react/theming'
+            'platforms/react/react-overview',
+            'platforms/react/data-fetching',
+            'platforms/react/fonts',
+            'platforms/react/react-hooks',
+            'platforms/react/styling-react-components',
+            'platforms/react/theming'
           ],
         },
         {
           type: 'category',
           label: 'Angular',
           items: [
-            'frameworks/angular/angular-overview'
+            'platforms/angular/angular-overview'
           ],
         }
       ]

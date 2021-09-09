@@ -3,8 +3,64 @@ id: compiling-during-build
 title: Compiling During Build
 ---
 
-## As a task
+By default, Bit includes a Build Task for compiling components in the Build Pipeline using the Compiler of your choice which is configured in the Env. Compilation for distribution is optimized for runtime performance, consistency and reusability. This means target is preferred to be compatible with vast majority of browsers, bundlers and JS execution engines and Types are generated for the component, which can be costly in performance.
 
-A task is running with `bit build` or during the tag process on the capsules or the workspace (depends on the specific compiler implementation).
+```bash
+bit build
+```
 
-The env extension should have this compiler extension as a dependency first, then add to the `getBuildPipe()` array the following: `this.compiler.createTask()`.
+The output of the compilation is placed in the `dist` directory of the generated component capsule.
+
+```bash title="A capsule example"
+.
+└── capsule-root
+    └── my-company.my-scope_ui_card
+        ├── card.composition.tsx
+        ├── card.docs.mdx
+        ├── card.spec.tsx
+        ├── card.tsx
+        ├── dist
+        │   ├── card.composition.d.ts
+        │   ├── card.composition.js
+        │   ├── card.composition.js.map
+        │   ├── card.d.ts
+        │   ├── card.docs.mdx
+        │   ├── card.js
+        │   ├── card.js.map
+        │   ├── card.spec.d.ts
+        │   ├── card.spec.js
+        │   ├── card.spec.js.map
+        │   ├── index.d.ts
+        │   ├── index.js
+        │   ├── index.js.map
+        │   └── tsconfig.tsbuildinfo
+        ├── index.ts
+        ├── package.json
+        ├── tsconfig.json
+        └── types
+            ├── asset.d.ts
+            └── style.d.ts
+```
+
+## Adding a compiler task to your build pipeline
+
+Bit's out-of-the-box Envs all come with pre-configured compiler tasks. To add your own compiler task or multiple compiler tasks:
+
+```ts
+  getBuildPipe(modifiers: GetBuildPipeModifiers = {}): BuildTask[] {
+    const transformers: TsConfigTransformer[] =
+      (modifiers?.tsModifier?.transformers as any as TsConfigTransformer[]) || [];
+    return [this.getCompilerTask(transformers, modifiers?.tsModifier?.module || ts), this.tester.task];
+  }
+```
+
+
+To implement your own Compiler, [see here](#).
+
+
+
+## CLI References
+
+- [bit build](/reference/cli-reference#build)
+- [bit tag](/reference/cli-reference#tag)
+- [bit snap](/reference/cli-reference#snap)
