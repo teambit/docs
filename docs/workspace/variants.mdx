@@ -3,21 +3,17 @@ id: variants
 title: Variants
 ---
 
-Variants allows to configure subsets of components in the Workspace, with [Component configuration](/components/component-config). 
+Variants enables you to configure group of components with [Component configuration](/components/component-config). Components are selected using their common directory path or namespace, and then set with an Aspect and its corresponding configuration.
 
-`teambit.workspace/variants` enables cascading configurations by selection of component groupings or sets in the workspace and applying configurations to these cascading groups.
-Configurations set on a certain set of components can:
+Since each component can be selected more than once using different selectors, Variants looks for all available configurations and [merges them together](#merging-configurations).
 
-1. Affect only the selected set of components
-1. Inherit policies set on a more general set of components (including the workspace default configs)
-1. Override conflicting configurations inherited from more general component selections
-1. Propagate configurations downwards to more specific sub-sets of components
+Use Variants as an efficient alternative to manually configuring each component's `component.json`.
 
 ## Variants Selector Examples
 
 ### Configure components in a directory
 
-To select a set using a directory path, use the relative path to the components' parent directory from the workspace root. In the following example, all components under the `components/utility-functions` directory
+To select a group of components using a directory path, use the relative path to the components' parent directory from the workspace root. In the following example, all components under the `components/utility-functions` directory
 (and any sub-directories) will be included in this set:
 
 This examples configures all components contained in the `design` directory with the [React env](/react).

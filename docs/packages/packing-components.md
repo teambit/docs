@@ -8,7 +8,10 @@ Component packages are generated during execution of the Component [Build Pipeli
 Tagging or snapping a component will result in a newly generated package for the Component.
 
 ```bash
+$ bit tag ui/heading
 
+...
+✔ env "company.scope/envs/my-react@0.0.1", task "teambit.pkg/pkg:PackComponents" has completed successfully in 1s
 ```
 
 The generated artifact can be viewed with the `bit artifacts` command.
