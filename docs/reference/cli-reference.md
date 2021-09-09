@@ -30,7 +30,7 @@ Commands that are marked as workspace only must be executed inside a workspace. 
 **Workspace only**: yes  
 **Description**: list all registered applications  
 
-`bit app-list`  
+`bit app list`  
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
@@ -61,7 +61,7 @@ specify the task-name (e.g. "TypescriptCompiler") or the task-aspect-id (e.g. te
 **Workspace only**: yes  
 **Description**: create capsules  
 
-`bit capsule-create [componentIds...]`  
+`bit capsule create [componentIds...]`  
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
@@ -80,7 +80,7 @@ specify the task-name (e.g. "TypescriptCompiler") or the task-aspect-id (e.g. te
 **Workspace only**: yes  
 **Description**: list all capsules  
 
-`bit capsule-list`  
+`bit capsule list`  
 
 | **Option** | **Option alias** | **Description**|  
 |---|:-----:|---|
