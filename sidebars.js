@@ -234,44 +234,44 @@ module.exports = {
           collapsed: true,
           items: [
             'envs/overview',
-            {
-              type: 'category',
-              label: 'Pre-Configured Envs',
-              items: [
-                {
-                  type: 'category',
-                  label: 'React',
-                  items: [
-                    'envs/pre-configured-envs/react/react-overview',
-                    'envs/pre-configured-envs/react/compose-react-app',
-                    'envs/pre-configured-envs/react/extending-react'
-                  ]
-                },
-                'envs/pre-configured-envs/html',
-                'envs/pre-configured-envs/nodejs',
-                'envs/pre-configured-envs/react-native',
-                'envs/pre-configured-envs/angular',
-                'envs/pre-configured-envs/aspect'
-              ]
-            },
+            // {
+            //   type: 'category',
+            //   label: 'Pre-Configured Envs',
+            //   items: [
+            //     {
+            //       type: 'category',
+            //       label: 'React',
+            //       items: [
+            //         'envs/pre-configured-envs/react/react-overview',
+            //         'envs/pre-configured-envs/react/compose-react-app',
+            //         'envs/pre-configured-envs/react/extending-react'
+            //       ]
+            //     },
+            //     'envs/pre-configured-envs/html',
+            //     'envs/pre-configured-envs/nodejs',
+            //     'envs/pre-configured-envs/react-native',
+            //     'envs/pre-configured-envs/angular',
+            //     'envs/pre-configured-envs/aspect'
+            //   ]
+            // },
             'envs/customizing-env',
             // TODO 'envs/creating-new-env',
-            {
-              type: 'category',
-              label: 'Env Services',
-              items: [
-                'envs/services/overview',
-                'envs/services/compiling',
-                'envs/services/building',
-                'envs/services/testing',
-                'envs/services/linting',
-                'envs/services/formatting',
-                'envs/services/packaging',
-                'envs/services/documenting',
-                //TODO 'envs/services/component-generators',
-                'envs/services/visualizing-components'
-              ]
-            }
+            // {
+            //   type: 'category',
+            //   label: 'Env Services',
+            //   items: [
+            //     'envs/services/overview',
+            //     'envs/services/compiling',
+            //     'envs/services/building',
+            //     'envs/services/testing',
+            //     'envs/services/linting',
+            //     'envs/services/formatting',
+            //     'envs/services/packaging',
+            //     'envs/services/documenting',
+            //     //TODO 'envs/services/component-generators',
+            //     'envs/services/visualizing-components'
+            //   ]
+            // }
           ]
         },
         {
@@ -454,6 +454,7 @@ module.exports = {
           label: 'React',
           items: [
             'platforms/react/react-overview',
+            'platforms/react/customizing-react-env',
             'platforms/react/data-fetching',
             'platforms/react/fonts',
             'platforms/react/react-hooks',

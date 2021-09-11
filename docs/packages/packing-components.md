@@ -16,8 +16,13 @@ $ bit tag ui/heading
 
 The generated artifact can be viewed with the `bit artifacts` command.
 
-```bash
+```
+$ bit artifacts ui/heading --task PackComponents
 
+my-workspace/ui/heading@0.0.1
+  teambit.pkg/pkg
+    PackComponents
+      package-tar/company-scope.ui.heading-0.0.1.tgz
 ```
 
 :::note
