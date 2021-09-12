@@ -91,31 +91,9 @@ On Netlify, [you cannot generate the file dynamically](https://community.netlify
 
 Add the BIT_TOKEN as [environment variable](https://www.netlify.com/docs/continuous-deployment/#environment-variables)
 
-### ZEIT Now
+### Vercel
 
-On ZEIT Now, use the `now.json` configuration file to add an [environment variable](https://zeit.co/docs/v2/build-step#using-environment-variables-and-secrets) containing the contents of your `~/.npmrc` file.
-
-First, add the following to `now.json`:
-
-```json
-{
-  "name": "my-app",
-  "version": 2,
-  "build": {
-    "env": {
-      "NPM_RC": "@my-app-npmrc"
-    }
-  }
-}
-```
-
-Then, create a secret with the contents of your `~/.npmrc`.
-
-```shell
-now secrets add my-app-npmrc "$(cat ~/.npmrc)"
-```
-
-Note that `my-app-npmrc` is the name of the secret and can be named anything you wish.
+Learn how to use [private dependencies with Vercel](https://vercel.com/support/articles/using-private-dependencies-with-vercel) and add the contents of your `~/.npmrc` file as an [environment variable](https://vercel.com/docs/projects/environment-variables).
 
 ### Gitlab
 
