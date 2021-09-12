@@ -355,7 +355,8 @@ module.exports = {
             'compiler/overview',
             'compiler/workspace-compilation',
             'compiler/compiling-during-build',
-            'compiler/configure-env'
+            'compiler/configure-env',
+            'compiler/implement-compiler'
           ]
         },
         {
