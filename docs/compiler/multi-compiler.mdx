@@ -15,6 +15,8 @@ const compiler = multiCompiler.createCompiler([createBabelCompiler(), createTsCo
 compiler.createTask('MultiCompiler', compiler);
 ```
 
+An example of using the multi compiler can be found in the [mdx env](https://bit.dev/teambit/mdx/mdx/~code/mdx.main.runtime.ts)
+
 ## Special implementations details
 ### transpileFile
 The `transpileFile` of the multi compiler is taking each one of the files and run it through the compilers.
