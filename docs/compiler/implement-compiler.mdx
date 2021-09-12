@@ -1,0 +1,156 @@
+---
+title: Implement a Compiler
+id: implement-compiler
+---
+All the compilation process and interfaces are defined under the [`teambit.compilations/compiler` aspect](https://bit.dev/teambit/compilation/aspect-docs/compiler)
+
+The easiest way to start implementing a compiler is to create a new bit aspect using the `Aspect` template.
+
+<!--TODO add links to real compilers like babel/ts -->
+
+```
+bit create aspect extensions/my-compiler
+```
+The aspect main runtime should have a methods to easily:
+* create an instance of a class that should implement the [`Compiler` interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts). This is usually implemented in a file called `<compiler-name>.compiler.ts`
+```js
+createCompiler(options: BabelCompilerOptions, babelModule = babel): BabelCompiler {
+    return new BabelCompiler(BabelAspect.id, this.logger, this.compiler, options, babelModule);
+  }
+```
+* get `package.json` modifications (for example set the `main` property or the `types` property)
+```js
+getPackageJsonProps(): PackageJsonProps {
+    return {
+      main: 'dist/{main}.js',
+      types: '{main}.ts',
+    };
+  }
+```
+The compiler should know to handle both - [compilation in workspace](./workspace-compilation) and for [build](./compiling-for-build)
+
+## Compilation for workspace
+When implementing a workspace compilation you should optimize for dev experience, performance and debugging by default
+The compiler should implement `transpileFile` or `transpileComponent`.
+* transpileFile - transpile a single file that gets saved into the workspace
+* transpileComponent - transpile all the files of a component, use this when you can't use `transpileFile` 
+- there are cases where you can't transpile file by file, but need the entire context to be compiled together. an example for this
+is the angular compiler (ng packager and ngcc) which need the entire context (module) for compilation.
+
+### transpileFile
+```jsx
+transpileFile: (fileContent: string, options: { componentDir: string, filePath: string }) => Array<{ outputText: string, outputPath: string }> | null;
+```
+This function get a fileContent and return the compiled content and the output path.
+:::note
+In case the compiler receives an unsupported file, it should return null.
+:::
+
+### transpileComponent
+```jsx
+transpileComponent: (params: { component: ConsumerComponent, componentDir: string, outputDir: string }) => Promise<void>;
+```
+This function get the component itself, the component dir (source dir) and the output dir (the component path in the node_modules).
+The function should compile the files, and write them into the output folder.
+:::note
+The function should create a sub folder in the output dir to put the files inside.
+:::
+
+## Compilation during build
+When implementing the compilation during build you should optimize for runtime performance, consistency and reusability.
+
+The [compiler task](https://bit.dev/teambit/compilation/compiler/~code/compiler.task.ts) is implemented by the abstract compiler.
+It implements a build task <!--TODO add link --> and get's a name of the compiler (for example `babel` or `typescript`) and an instance of something that implements the Compiler interface.
+
+The compiler should implement `build`.
+```js
+build(context: BuildContext): Promise<BuiltTaskResult>;
+```
+[see `BuildContext`](https://bit.dev/teambit/pipelines/builder/~code/build-task.ts)<!-- TODO: maybe change link to point to the builder docs here-->
+[see `BuiltTaskResult`](https://bit.dev/teambit/pipelines/builder/~code/build-task.ts)<!-- TODO: maybe change link to point to the builder docs here-->
+
+The build is running in a capsules network <!--TODO add link -->.
+For each one of the component you should return the `ComponentResult` <!--TODO add link --> 
+You should also return an array of [`ArtifactDefinition`](https://bit.dev/teambit/pipelines/builder/~code/artifact/artifact-definition.ts) <!-- TODO: maybe change link to point to the builder docs here-->.
+The artifacts are the compiled files written into the capsules and any other necessary files created by the compiler (for example the ts compiler also generate d.ts files).
+
+## more options <!--TODO better naming -->
+
+### name
+name of the compiler.
+
+### distDir
+relative path of the dist directory inside the capsule. e.g. "dist".
+
+### distGlobPatterns
+determines which ones of the generated files will be saved in the bit objects when tagging.
+e.g. distGlobPatterns = [`${this.distDir}/**`, `!${this.distDir}/tsconfig.tsbuildinfo`];
+see https://github.com/mrmlnc/fast-glob for the supported glob patters syntax.
+```js
+distGlobPatterns?: string[];
+```
+
+### shouldCopyNonSupportedFiles
+whether or not [unsupported files](#isFileSupported) (such as assets) should be copied into the dist directory
+```js
+shouldCopyNonSupportedFiles?: boolean;
+```
+
+### artifactName
+optional. default to "dist".
+useful when the build pipeline has multiple compiler tasks of the same compiler.
+e.g. using the same Babel compiler for two different tasks, one for creating "es5" files, and
+the second for creating "esm". the artifact names would be "es5" and "esm" accordingly.
+```js
+artifactName?: string;
+```
+
+### version
+returns the version of the current compiler instance (e.g. '4.0.1').
+This represent for example the typescript or babel version.
+```js
+version(): string;
+```
+
+### displayName
+returns the display name of the current compiler instance (e.g. 'TypeScript')
+```js
+displayName(): string;
+```
+
+### getDistPathBySrcPath
+given a source file, return its parallel in the dists. e.g. "index.ts" => "dist/index.js"
+both, the return path and the given path are relative paths.
+This is used for example for auto calculating the main dist file by the main file of the component.
+It is also used to calculating different links bit reference to when bundling the component.
+```js
+getDistPathBySrcPath(srcPath: string): string;
+```
+### isFileSupported
+only supported files matching get compiled. others, are copied to the dist dir.
+```js
+isFileSupported(filePath: string): boolean;
+```
+
+### displayConfig (optional)
+the `displayConfig` function helps the user to see the compiler config when using the `bit env <comp-id>` command.
+It shoud return a string represntaion of the compiler config. (for example JSON.stringify of the tsconfig file)
+<!--TODO add output example -->
+
+### createTask (optional)
+sugar to create a Compiler task via the concrete compiler
+```js
+createTask?(name?: string): BuildTask;
+```
+
+### pre/post build (optional)
+run before the build pipeline has started. this is useful when some preparation are needed to
+be done on all envs before the build starts.
+```js
+preBuild?(context: BuildContext): Promise<void>;
+```
+
+run after the build pipeline completed for all envs. useful for some cleanups
+```js
+postBuild?(context: BuildContext, tasksResults: TaskResultsList): Promise<void>;
+```
