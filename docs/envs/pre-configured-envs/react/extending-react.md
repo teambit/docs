@@ -1,6 +1,6 @@
 ---
-id: customizing-react-env
-title: Customizing the React Env
+id: extending-react
+title: Extending the React Env
 ---
 
 ## Using your own React env extension

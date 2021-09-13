@@ -114,10 +114,11 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Set Up Your CI',
+          label: 'Set Up CI',
           items: [
-            'getting-started/release-components/set-up-ci/use-ripple-ci',
-            'getting-started/release-components/set-up-ci/use-your-own-ci',
+            // 'getting-started/release-components/set-up-ci/use-ripple-ci',
+            'getting-started/set-up-ci/use-your-own-ci',
+            'getting-started/set-up-ci/install-during-ci',
           ]
         },
         {
@@ -147,7 +148,7 @@ module.exports = {
       label: 'Understanding Bit',
       items: [
         'understanding-bit/why-bit',
-        'understanding-bit/component-driven-software',
+        // 'understanding-bit/component-driven-software',
         // TODO 'understanding-bit/economy-of-scale',
         {
           type: 'category',
@@ -233,36 +234,44 @@ module.exports = {
           collapsed: true,
           items: [
             'envs/overview',
-            {
-              type: 'category',
-              label: 'Pre-Configured Envs',
-              items: [
-                'envs/pre-configured-envs/html',
-                'envs/pre-configured-envs/nodejs',
-                'envs/pre-configured-envs/react',
-                'envs/pre-configured-envs/react-native',
-                'envs/pre-configured-envs/angular',
-                'envs/pre-configured-envs/aspect'
-              ]
-            },
+            // {
+            //   type: 'category',
+            //   label: 'Pre-Configured Envs',
+            //   items: [
+            //     {
+            //       type: 'category',
+            //       label: 'React',
+            //       items: [
+            //         'envs/pre-configured-envs/react/react-overview',
+            //         'envs/pre-configured-envs/react/compose-react-app',
+            //         'envs/pre-configured-envs/react/extending-react'
+            //       ]
+            //     },
+            //     'envs/pre-configured-envs/html',
+            //     'envs/pre-configured-envs/nodejs',
+            //     'envs/pre-configured-envs/react-native',
+            //     'envs/pre-configured-envs/angular',
+            //     'envs/pre-configured-envs/aspect'
+            //   ]
+            // },
             'envs/customizing-env',
             // TODO 'envs/creating-new-env',
-            {
-              type: 'category',
-              label: 'Env Services',
-              items: [
-                'envs/services/overview',
-                'envs/services/compiling',
-                'envs/services/building',
-                'envs/services/testing',
-                'envs/services/linting',
-                'envs/services/formatting',
-                'envs/services/packaging',
-                'envs/services/documenting',
-                //TODO 'envs/services/component-generators',
-                'envs/services/visualizing-components'
-              ]
-            }
+            // {
+            //   type: 'category',
+            //   label: 'Env Services',
+            //   items: [
+            //     'envs/services/overview',
+            //     'envs/services/compiling',
+            //     'envs/services/building',
+            //     'envs/services/testing',
+            //     'envs/services/linting',
+            //     'envs/services/formatting',
+            //     'envs/services/packaging',
+            //     'envs/services/documenting',
+            //     //TODO 'envs/services/component-generators',
+            //     'envs/services/visualizing-components'
+            //   ]
+            // }
           ]
         },
         {
@@ -346,7 +355,9 @@ module.exports = {
             'compiler/overview',
             'compiler/workspace-compilation',
             'compiler/compiling-during-build',
-            'compiler/configure-env'
+            'compiler/configure-env',
+            'compiler/implement-compiler',
+            'compiler/multi-compiler'
           ]
         },
         {
@@ -355,8 +366,8 @@ module.exports = {
           collapsed: true,
           items: [
             'tester/overview',
-            'tester/workspace-testing'
-            // TODO 'tester/testing-during-build'
+            'tester/workspace-testing',
+            'tester/testing-during-build'
           ]
         },
         {
@@ -420,6 +431,7 @@ module.exports = {
           items: [
             'packages/overview',
             'packages/managing-packagejson',
+            'packages/package-name',
             'packages/package-json',
             'packages/packing-components',
             'packages/publishing-to-commonjs-registries',
@@ -444,6 +456,7 @@ module.exports = {
           label: 'React',
           items: [
             'platforms/react/react-overview',
+            'platforms/react/customizing-react-env',
             'platforms/react/data-fetching',
             'platforms/react/fonts',
             'platforms/react/react-hooks',

@@ -9,7 +9,7 @@ Modern apps in the JS ecosystem are usually compiled using compilers like [Babel
 
 The responsibility of the Bit `Compiler` aspect is standardize this process among component, by providing a simple and standard dev experience for compiling components during development and distribution.
 
-If a compiler is configured in an env, Bit resolves the component's main file from its distribution which is ny default in the `dist` directory of the component's package by changing the `main` property in the generated `package.json`.
+If a compiler is configured in an env, Bit resolves the component's main file from its distribution which is by default in the `dist` directory of the component's package by changing the `main` property in the generated `package.json`.
 
 ```bash
 ├── node_modules
@@ -45,7 +45,7 @@ To learn more on compilation during development, please refer to [Workspace Comp
 
 ## Compiling for distribution
 
-Compiling components for distribution is done during `build` by the Bit [Builder](/builder/overview).
+Compiling components for distribution is done in a Capsule, as part of the [Build Pipeline](/builder/build-pipelines).
 
 Component build can be simulated with `bit build` and done through [Tag](/components/tags) or [Snap](/components/snaps)
 
@@ -61,5 +61,4 @@ By default, Bit includes a [Build Task](/) for compiling components in the [Buil
 
 Compilers are configured in the [Env](/envs/overview) which is configured on your [Component](/components/overview). Customizing the Compiler can be done by [customizing an existing env with your compiler](/compiler/configure-env) or by [implementing your own Env](/).
 
-Compilers can also be implemented into Bit through few interfaces. <!--TODO For more information on implementing your own Compiler please refer to [Implement a Compiler](/).
- -->
+
