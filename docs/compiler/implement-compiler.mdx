@@ -39,7 +39,7 @@ getPackageJsonProps(): PackageJsonProps {
   }
 ```
 
-The compiler should know to handle both - [compilation in workspace](./workspace-compilation) and for [build](./compiling-for-build)
+The compiler should know to handle both - [compilation in workspace](./workspace-compilation) and for [build](./compiling-during-build)
 
 ## Implementation file
 
@@ -178,7 +178,7 @@ isFileSupported(filePath: string): boolean;
 ### displayConfig (optional)
 
 the `displayConfig` function helps the user to see the compiler config when using the `bit env <comp-id>` command.
-It shoud return a string represntaion of the compiler config. (for example JSON.stringify of the tsconfig file)
+It should return a string representation of the compiler config. (for example JSON.stringify of the tsconfig file)
 
 <!--TODO add output example -->
 
