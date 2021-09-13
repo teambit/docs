@@ -3,7 +3,7 @@ id: configure-env
 title: Configure an Env with a Compiler
 ---
 
-The `getCompiler` method set the Compiler implementation to be sued by the Env (for example, TypeScript).
+The `getCompiler` method sets the Env to use a Compiler implementation (for example, the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript)).
 
 ```ts
 getCompiler: () => Compiler;
@@ -11,22 +11,22 @@ getCompiler: () => Compiler;
 
 For example:
 
-```ts
+```ts title="my-env.env.ts"
 // ...
+import { CompilerEnv } from '@teambit/envs';
 
-export class ReactEnv implements Environment {
-
-constructor(
+export class MyEnv implements CompilerEnv {
+  constructor(
     // ...
 
-    // The TypeScript aspect
     private tsAspect: TypescriptMain
-){}
+  ) {}
 
-// ...
+  // ...
 
-getCompiler() {
-    const tsConfig = require.resolve('./typescript/tsconfig.json')
+  getCompiler() {
+    const tsConfig = require.resolve('./typescript/tsconfig.json');
     return this.tsAspect.createCompiler(tsConfig);
+  }
 }
 ```
