@@ -447,6 +447,7 @@ module.exports = {
             'platforms/react/data-fetching',
             'platforms/react/fonts',
             'platforms/react/react-hooks',
+            'platforms/react/react-context',
             'platforms/react/styling-react-components',
             'platforms/react/theming'
           ],
