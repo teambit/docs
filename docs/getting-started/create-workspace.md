@@ -56,9 +56,9 @@ Bit creates a base [Bit Workspace](/workspace/overview) with a set of demo compo
 ├── .gitignore
 ├── demo # Directory tree a demo project for this guide
 │   ├── envs # Customized component development environment
-│   ├── pages # Pages managed by Bit
+│   ├── pages
 │   │   └── welcome
-│   └── ui # React components managed by Bit
+│   └── ui
 │       ├── card
 │       ├── heading
 │       └── text
@@ -134,7 +134,7 @@ Workspaces in Bit are not rigid, they may grow and have more components or scope
 
 ### Define Scope for Components
 
-In most cases components from the same workspace share will share scope. Set the `defaultScope` property in `teambit.workspace/workspace`:
+In most cases components from the same workspace will share scope. Set the `defaultScope` property in `teambit.workspace/workspace`:
 
 ```json title="workspace.jsonc"
 {
