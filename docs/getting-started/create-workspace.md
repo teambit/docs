@@ -137,10 +137,8 @@ Workspaces in Bit are not rigid, they may grow and have more components or scope
 In most cases components from the same workspace will share scope. Set the `defaultScope` property in `teambit.workspace/workspace`:
 
 ```json title="workspace.jsonc"
-{
-  "teambit.workspace/workspace": {
-    "defaultScope": "bitorg.base-ui"
-  }
+"teambit.workspace/workspace": {
+  "defaultScope": "bitorg.base-ui"
 }
 ```
 
@@ -164,10 +162,10 @@ For better control when distributing components use `.` as a delimiter between y
 To customize the dev experience and terminal outputs its recommended to set the workspace name and icon in `workspace.jsonc`:
 
 ```json
-  "teambit.workspace/workspace": {
-    "name": "My first Bit Workspace",
-    "icon": "https://static.bit.dev/bit-logo.svg",
-  }
+"teambit.workspace/workspace": {
+  "name": "My first Bit Workspace",
+  "icon": "https://static.bit.dev/bit-logo.svg",
+}
 ```
 
 ## Git and Bit
