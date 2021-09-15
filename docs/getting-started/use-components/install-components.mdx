@@ -3,63 +3,30 @@ id: install-components
 title: Install Components
 ---
 
-## Overview
-
-Learn how to install a dependency to your workspace and how Bit automates dependency management. Learn how to install components to other projects and how to install components on CI.
-
-## Install Dependencies
-
-We depend on each other's code and components so we don't have to re-implement code. With Bit we can install components as dependencies. To install a dependency in your workspace, use the `bit install` command:
-
-```sh
-bit install @my-org.scope/my-component
-```
-
-Bit installs `@my-org.scope/my-component` as a dependency to your workspace and automatically adds it to the dependency policy in your `workspace.jsonc` file:
-
-```js {6} title="workspace.jsonc"
-...
-"teambit.dependencies/dependency-resolver": {
-    "packageManager": "teambit.dependencies/pnpm",
-    "policy": {
-      "dependencies": {
-        "@my-org.scope/my-component": "1.0.0"
-      }
-    }
-}
-...
-```
-
-`@my-org.scope/my-component` is installed in the workspace but is not added as a dependency to any component.
-
-### Adding a Dependency to a Component
-
-Bit automates dependency management by finding all `import` statements in your code and resolving them to the installed dependency in your workspace. To add the component as a dependency:
-
-```js title="my-component.tsx"
-import { MyComponent } from '@my-org.scope/my-component';
-```
-
-## Viewing Component Dependencies
-
-To view component dependencies run the `bit show` command followed by the component id:
-
-```sh
-bit show <component-id>
-```
-
-## Install Components in Other Projects
-
 Components once exported to a remote scope can be consumed in any other project/app with the package manager of your choice.
 
 ```bash
-npm install @my-org.scope/my-component
-yarn add @my-org.scope/my-component
+npm install @my-org/scope.my-component
+yarn add @my-org/scope.my-component
+```
+
+You may also use Bit to install components:
+
+```bash
+bit install @my-org/scope.my-component
+```
+
+Once installing the component, the component resides in the `node_modules` directory.
+
+To use the component in the code, import the code as follow:
+
+```js
+import { myComponent } from '@my-org/scope.my-component';
 ```
 
 ### Authenticate Package Manager with Bit.dev
 
-When using bit.dev for hosting components and as a source for installing components, consumers will need to configure their package manager to know where to fetch components from. Do this by configuring [`npmrc`](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) file:
+When using [bit.dev](https://bit.dev) for hosting components, consumers will need to configure their package manager to know where to fetch components from. Do this by configuring [`.npmrc`](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) file:
 
 1. First of all - [install Bit](/getting-started/install-bit) on your system.
 1. Run the following command:
@@ -84,4 +51,4 @@ An example configured `.npmrc` file looks something like this:
 
 ### For Self-hosted Components
 
-When self hosting Bit on your own server you need to publish the components as packages to any package registry. The authentication process for the pakage manager is very much the same other then the fact you can't use `bit login` to set your token.
+When self hosting Bit on your own server you need to publish the components as packages to any package registry. The authentication process for the package manager is very much the same other then the fact you can't use `bit login` to set your token.

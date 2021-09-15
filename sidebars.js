@@ -78,18 +78,17 @@ module.exports = {
           label: 'Collaborate',
           collapsed: true,
           items: [
-            // 'getting-started/release-components/building-components',
             'getting-started/release-components/version-components',
-            'getting-started/release-components/export-components',
-            // 'getting-started/release-components/create-remote-scope/publish-to-external-reg',
             {
               type: 'category',
               label: 'Create a Remote Scope',
               items: [
-                'getting-started/release-components/create-remote-scope/self-host-scope',
+                'getting-started/release-components/create-remote-scope/scope-overview',
                 'getting-started/release-components/create-remote-scope/host-on-bit-cloud',
+                'getting-started/release-components/create-remote-scope/self-host-scope',
               ]
             },
+            'getting-started/release-components/export-components',
           ]
         },
         {

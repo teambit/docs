@@ -3,9 +3,12 @@ id: host-on-bit-cloud
 title: Host on Bit Cloud
 ---
 
+By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider.  
+We recommend running your first POC with hosting your components on the cloud to reduce the amount of resources required to run your POC.
+
 ## Login to the Bit Cloud
 
-By default, Bit is connected to [bit.dev](https://bit.dev) as its default hosting provider. Run the bit login command for Bit to open a login/sign-up form for a new personal account.
+Run the bit login command for Bit to open a login/sign-up form for a new personal account.
 
 ```bash
 bit login
@@ -38,20 +41,4 @@ With Bit you can export different sets of components to different scopes. This i
       "defaultScope": "my-org.base-ui"
     },
   }
-```
-
-### Publish your Components
-
-In order to publish components to the Bit Cloud they must be tagged by using the `bit tag` command. Bit will run all tests and build a new version of each component as well as generate a `package.json` file for each one. It is during this process that your components get published to Bit Cloud.
-
-```bash
-bit tag --all --message "first version"
-```
-
-### Exporting your Components
-
-After tagging is complete components can be exported to your remote scope on Bit.dev using the `bit export` command.
-
-```bash
-bit export
 ```

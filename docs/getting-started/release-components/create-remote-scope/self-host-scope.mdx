@@ -3,11 +3,11 @@ id: self-host-scope
 title: Self-Host a Scope
 ---
 
-Bit components can be hosted on the [Bit cloud](https://www.bit.dev) or can be self-hosted.
+When self-hosting Bit on your own infrastructure you will also need to publish components to an external registry so components will be available to install with package managers.
 
 ## Creating your own Server
 
-To create your own remote server you can run the `bit init --bare` command. This will create a bare version of Bit.dev that you can use to host your own components.
+To create your own remote server you will need to provision your own server and run the `bit init --bare` command. This will create a bare scope that you can use to host your own components.
 
 ```bash
 mkdir my-server
@@ -35,13 +35,9 @@ In the `workspace.jsonc` file in the project where your components are, change t
 }
 ```
 
-:::note
-If you have already created some components you will need to modify the import statements in your components to point to the new default Scope. Once you do that run `bit link` to update the links and `bit compile` to compile your components.
-:::
-
 ### Add your Remote Scope
 
-In the workspace where you want to export your components run the `bit remote add` command followed by the url of where your remote scope is.
+On any computer you want to export to your scope configure the remote:
 
 ```bash
 bit remote add http://localhost:3001 # url of the scope
@@ -49,9 +45,7 @@ bit remote add http://localhost:3001 # url of the scope
 
 ## Publish your Components to NPM
 
-Although we recommend using Bit Cloud to host your components you can publish your components to the npm registry if you prefer. Bit will create and manage a `package.json` file for each of your components. The `package.json` file can be found in your component's folder inside your node_modules directory. (node_modules/@scope/component-name/package.json). As this file is an auto generated file created and managed by Bit you cannot edit this file directly. Instead Bit provides us with the Pkg aspect which handles the configuration, publishing and packaging or our components.
-
-The `teambit.pkg/pkg` is added to the variants section in your `workspace.jsonc` file. We can apply this to all components by using the `"{*}"` wildcard or to a specific set of components. This gives us better control over publishing our components as we can decide which ones we want to publish and to which remote scopes.
+The `teambit.pkg/pkg` is added to the variants section in your `workspace.jsonc` file. We can apply this to all components by using the `"{*}"` wildcard or to a specific set of components. This gives us better control over publishing our components as we can decide which ones we want to publish and to which remote scopes. `teambit.pkg/pkg` is used for managing `package.json` for components.
 
 ```json {4} title=workspace.jsonc
 "teambit.workspace/variants": {
@@ -79,7 +73,7 @@ If you want to make your package a public package on npm add `["--access public"
 }
 ```
 
-### Override the Package.json
+### Override the `package.json`
 
 We can override the properties of the `package.json` for all our components at once. To do this we add the `"packageJson"` key and inside our object we add any of the properties we want to override. For the name property we add the dynamic value `"@{scope}/{name}"`. This will take the scope value from the `defaultScope` property in the `workspace.jsonc` file and append it to the name of your component.
 
@@ -141,31 +135,11 @@ In the terminal login to npm so that you can use Bit to publish your components 
 npm login
 ```
 
-## Tagging your Components
+## Building a Scope Network
 
-In order to publish components they must be tagged by using the `bit tag` command. Bit will run all tests and build a new version of each component as well as generate a `package.json` file for each one. It is during this process that your components get published to npm.
+If you build components with several scopes in your projects that have cross-dependencies, you will need to configure remote scopes for each scope. The steps for it are:
 
-```bash
-bit tag --all
-```
-
-## Exporting your Components
-
-After tagging is complete components can be exported to your remote scope on your self hosted server using the `bit export` command.
-
-```bash
-bit export
-```
-
-## Use your Components
-
-Your components are now visible on npm as well as on your remote scope and can now be installed to any project or application using the package manager of your choice.
-
-```bash
-npm install @scope/component-name
-yarn add @scope/component-name
-```
-
-:::tip Add a README.md
-You can add a README.md file to your component's directories to provide more information about your component.
-:::
+1. Provision a server and initialize a remote Bit scope for each component-scope.
+1. Start the server for each scope with `bit start-scope` command.
+1. In each server run `bit remote add <url>` for each of the other remote scopes.
+1. In each client machine run `bit remote add <url>` to all scopes.
