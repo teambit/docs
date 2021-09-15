@@ -9,7 +9,7 @@ import { Image } from '@site/src/components/image';
 import componentImg from './component.png';
 
 Bit centralize your development workflow around components, composing with them to build features and apps. A basic component may be a simple module, utility or common, SDK, React component or hook, Angular module, shared style etc.  
-Each component is isolated and may have its own build and configuration for compilation, testing, lint, formatting and others. By shifting from building all components together we can build a more modular and scalable development workflow where components are not locked in an application or repository.
+Each component is isolated and may have its own build and configuration for compilation, testing, lint, formatting and others.  
 
 ## Generate Component
 
