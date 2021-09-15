@@ -51,6 +51,8 @@ Bit creates a base [Bit Workspace](/workspace/overview) with a set of demo compo
 
 ```bash title="Demo Bit workspace"
 ├── .bitmap # File mapping components with their location in the workspace
+├── .eslintrc.js
+├── .prettierrc.js
 ├── .gitignore
 ├── demo # Directory tree a demo project for this guide
 │   ├── envs # Customized component development environment
