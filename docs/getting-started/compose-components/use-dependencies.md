@@ -14,8 +14,10 @@ Dependencies are our way of building with other people's code. Component may dep
 
 Components from the same workspace can be imported using an absolute `import` statement. By using absolute paths (as opposed to using relative paths) you decouple component's implementation from the project's file structure.
 
-```sh title="Adding dependency to another component with import statement"
-import { Heading } from '@company/scope.ui.heading';
+Go to `my-welcome.tsx` and add the following `import` statement:
+
+```sh title="my-welcome.ts"
+import { Heading } from '@bitorg/experience.templates.ui.heading';
 ```
 
 To see that your component has a new dependency, go to the component's **Dependencies** tab.
@@ -123,10 +125,8 @@ When you set a dependency as peerDependency Bit forces this config on all compon
 
 To learn more about peer dependencies, please read the [Peer Dependencies](/dependencies/overview#peer-dependencies) section of the docs.
 
-## Automated Dependency Definition
+## Override Automated Dependency Definition
 
 Bit calculates component dependencies by running static code analysis and resolving dependencies for each component. From this output, Bit automates per-component `package.json` file.
-
-### Manual Overrides
 
 While Bit tries to automate as much of the work around dependency management, there are still cases where you need to take control and manage dependencies (or some of them). Learn more about it [here](/dependencies/overview#dependency-policies).

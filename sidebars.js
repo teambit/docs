@@ -69,8 +69,8 @@ module.exports = {
           label: 'Compose',
           items: [
             'getting-started/compose-components/create-components',
+            'getting-started/compose-components/component-ops',
             'getting-started/compose-components/use-dependencies',
-            'getting-started/compose-components/component-ops'
           ]
         },
         {

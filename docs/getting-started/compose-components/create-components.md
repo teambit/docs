@@ -8,10 +8,14 @@ import TabItem from '@theme/TabItem';
 import { Image } from '@site/src/components/image';
 import componentImg from './component.png';
 
-Bit centralize your development workflow around components, composing with them to build features and apps. A basic component may be a simple module, utility or common, SDK, React component or hook, Angular module, shared style etc.  
-Each component is isolated and may have its own build and configuration for compilation, testing, lint, formatting and others.  
+Bit centralize your development workflow around components, composing through [dependencies](/dependencies/overview/) with them to build features and apps. A basic component may be a simple module, utility or common, SDK, React component or hook, Angular module, shared style etc.  
+Each component is isolated and may have its own build and configuration for compilation, testing, lint, formatting defined in its [component development environment](envs/overview/).  
 
-## Generate Component
+:::info supported frameworks
+
+Bit officially supports Node, React, Angular, LitHTML.
+
+:::
 
 Bit supports generating components with templates. This make the process of creating components repeatable, easy and directing towards best practices. To see all available templates for your workspace run:
 
@@ -19,11 +23,20 @@ Bit supports generating components with templates. This make the process of crea
 bit templates
 ```
 
-:::tip add your templates
-You can extend Bit component generator and add your own templates. Follow the steps in [this guide](https://TODO).
-:::
+The component configuration will be determined according to the component name, according to the [variants](/workspace/variants) aspect in `workspace.jsonc` by defining it's [Component Development Environment](/envs/overview) (**envs**).
 
-Create a new component with a template by running the following command:
+```json title="workspace.jsonc template uses variants to set env for components"
+"teambit.workspace/variants": {
+  "{ui/**}, {pages/**}": { // Finds components with "ui" or "pages" namespace
+    "teambit.react/react": {} // Sets these components as React component
+  },
+  "{envs/**}, {extensions/**}": { // Finds components with "envs" or "extensions" namespace
+    "teambit.harmony/aspect": {} // Sets these components as Bit extensions
+  }
+}
+```
+
+Use the [component generator](generator/overview) to create a new component with the `create` command. The command also support namespacing for components when using `/`:
 
 <Tabs
 groupId="frameworks"
@@ -38,17 +51,39 @@ values={[
 bit create react ui/my-welcome
 ```
 
+```bash title="New component created"
+the following 1 component(s) were created
+
+company.demo/ui/my-welcome
+    location: base-ui/ui/my-welcome
+    env:      teambit.react/react
+```
+
   </TabItem>
   <TabItem value="Node">
 
 ```bash
-bit create node my-welcome
+bit create node utils/my-welcome
+```
+
+```bash title="New component created"
+the following 1 component(s) were created
+
+company.demo/utils/my-welcome
+    location: base-ui/utils/my-welcome
+    env:      teambit.harmony/node
 ```
 
   </TabItem>
 </Tabs>
 
-That's it! Your first React component is created. Bit has created a new [Component Directory](/workspace/component-directory) in the Workspace.
+That's it! Your first React component is created. You can see the new component in the Workspace UI.
+
+:::tip non-default scope
+
+When creating a component Bit will set it with a scope from the workspace `defaultScope` [config](/workspace/workspace-json). You can override the scope by passing the `--scope` flag.
+
+:::
 
 ### Component is a Directory
 
@@ -97,63 +132,7 @@ The component will be created in a the workspace according to the configured [di
 
 :::
 
-## Component Name
-
-Component's name describes the component's business concern in a descriptive form, improving discoverability and understanding of its purpose. Component Name is a concatenation of the following:
-
-- Scope - representing the main business concern of a component. **Required**.
-- Name - the name of the component. **Required**.
-- Namespaces - a set of virtual directories to sort scoped components. **Optional**.
-
-```bash
-<scope name>/<list of namespaces>/<component name>
-```
-
-If not stated otherwise the component's scope will be taken from the `defaultScope` config in `workspace.jsonc`. You can override it when creating a component:
-
-```bash title="Using defaultScope setting from workspace.jsonc"
-bit create react my-welcome
-```
-
-```bash title="Create with scope"
-bit create react my-welcome --scope my-scope
-```
-
-Sort components in different sub-categories in the same scope using namespaces. You can have either none or many nested namespaces.
-
-When generating components use `/` to add namespaces:
-
-```bash title="Namespace for component"
-bit create react-component forms/add-product
-```
-
-:::tip Using all name features
-
-You can create a component on any scope you want with nested namespaced:
-
-```bash
-bit create react-component general/forms/login --scope authentication
-```
-
-:::
-
-## Component Configuration
-
-Bit manages each component configuration by a combination of static code analysis and a policy defined in [`workspace.jsonc`](/workspace/workspace-json).
-
-```json title="Variants defines which component is a React component"
-  "teambit.workspace/variants": {
-    "{ui/**}, {pages/**}": {
-      "teambit.react/react": {}
-    },
-    "{envs/**}, {extensions/**}": {
-      "teambit.harmony/aspect": {}
-    }
-  }
-```
-
-The above [variants](/workspace/variants) define components with the namespace `ui` or `pages` to be React components using the `teambit.react/react` [Component Development Environment](/envs/overview) (**env**).  
-Components namespaced with `envs` or `extensions` will be applied with the configuration for Bit extensions ([Aspects](/aspects/aspects-overview)).
+## Get Component Configuration
 
 To check which envs are configured on your components you can use the `bit env` command or check the component's configuration on the workspace UI.
 

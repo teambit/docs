@@ -10,9 +10,8 @@ import { Image } from '@site/src/components/image';
 
 The Bit [Workspace](/workspace/overview) is where components you build and compose components. You can use the `new` command to get started with with a new workspace template and some base components or [initialized on an existing project](/getting-started/start-from-existing-project/init-workspace-on-existing-project/general-purpose).
 
-## Using Templates
-
-To see a list of available workspaces templates, run `bit templates`. The Workspace templates are only available when ran outside of a Bit Workspace.
+You can start with an empty project or a predefined template.  
+To see a list of templates, run `bit templates`:
 
 ```bash
 bit templates
@@ -81,7 +80,8 @@ Bit has a [minimal footprint](/workspace/initializing-workspaces#created-files) 
 
 ## Workspace UI
 
-All components are visible with their documentation and other features when starting the [Workspaces UI](/workspace/workspace-ui):
+All components are visible with their documentation, testing, visualization, changelogs and understand their dependency graphs and other features.  
+Start the [Workspaces UI](/workspace/workspace-ui):
 
 ```bash title="Start workspace UI"
 bit start
@@ -106,6 +106,12 @@ The first page is a gallery showcasing all components and a sidebar listing them
 
 <Image src={workspaceUi} />
 
+:::info component status
+
+In the component sidebar, notice that all components are marked with `N`. This means they are new components. Learn more about [workspace statuses](/workspace/workspace-status).
+
+:::
+
 :::tip quick search
 Use `Ctrl-K` to open the Workspace UI quick search and navigate between components.
 :::
@@ -118,10 +124,10 @@ The [default structure](/workspace/directory-structure) solidifies this by sorti
 ```bash
 └── demo # Directory tree a demo project for this guide
     ├── envs
-    ├── pages # Pages managed by Bit
-    │   └── welcome # Bit component
-    └── ui # React components managed by Bit
-        ├── card # Bit component
+    ├── pages # Namespace directory for sorting the pages in the demo
+    │   └── welcome
+    └── ui # Namespace directory for sorting the base ui components of the demo
+        ├── card
         ├── heading
         └── text
 ```
@@ -180,6 +186,15 @@ In case you choose to skip Git init, ensure to track changes for both `.bitmap` 
 <!--TODO Webstorm to be added here.
  -->
 
-## `workspace.jsonc` Configuration Format
+## Configure Extensions in `workspace.jsonc`
 
-`workspace.jsonc` is a compositions of different extensions and plugins for Bit called [Aspects](/aspect/overview). Each aspect is responsible for a different part of your workflow, feature or experience in Bit. You can add/remove any Aspect you need for your workflow. The base template comes with an array of the basic Aspects required to get you started. [Learn more.](.workspace/workspace-json)
+`workspace.jsonc` is a compositions of different extensions and plugins for Bit called [Aspects](/aspect/overview). Each aspect is responsible for a different part of your workflow, feature or experience. You can add/remove any Aspect. The base template comes with an array of the basic Aspects required to get you started. [Learn more.](/workspace/workspace-json)  
+Adding an aspect to your workspace is as easy as composing it directly to the `workspace.jsonc` file:
+
+```json title="Adding Aspect to workspace.jsonc"
+{
+  // ...
+  "owner.scope/some-aspect": {}
+  // ...
+}
+```
