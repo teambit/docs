@@ -367,7 +367,8 @@ module.exports = {
           items: [
             'tester/overview',
             'tester/workspace-testing',
-            'tester/testing-during-build'
+            'tester/testing-during-build',
+            'tester/implement-tester',
           ]
         },
         {

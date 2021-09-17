@@ -1,7 +1,11 @@
 ---
-title: Implement a tester
+title: Implement a Tester
 id: implement-tester
 ---
+
+Standard compilers like [Babel](https://babeljs.io/) and [TypeScript](https://www.typescriptlang.org/) are integrated into Bit using a Bit Aspect. For example, the [Babel Aspect](https://bit.dev/teambit/compilation/babel) and the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript).
+These Aspects implement the [Compiler's interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts).
+
 All the tester process and interfaces are defined under the [`teambit.defender/tester` aspect](https://bit.dev/teambit/defender/tester)
 
 The easiest way to start implementing a tester is to create a new bit aspect using the `Aspect` template.
@@ -11,7 +15,9 @@ The easiest way to start implementing a tester is to create a new bit aspect usi
 ```
 bit create aspect extensions/my-tester
 ```
+
 The aspect main runtime should have a methods to easily:
+
 ```### createTester(jestConfig: any, jestModulePath = require.resolve('jest')) {
 create an instance of a class that should implement the [`Tester` interface](https://bit.dev/teambit/defender/tester/~code/tester.ts). This is usually implemented in a file called `<compiler-name>.compiler.ts`
     return new JestTester(JestAspect.id, jestConfig, jestModulePath, this.jestWorker, this.logger);
@@ -21,56 +27,63 @@ create an instance of a class that should implement the [`Tester` interface](htt
 The tester should know to handle both - [testing in workspace](./workspace-testing) and for [build](./testing-during-build)
 
 ## testing for workspace
+
 When implementing a workspace testing you should make sure that your tester knows to transpile your source file during testing.
 As during the testing in the workspace the tester gets the source files before the compilation.
 For example your tester should know to handle import statements, and `ts` files.
 For example using jest we use the `transform` option to do so.
 
 ## testing during build
-When implementing the testing during build you 
+
+When implementing the testing during build you
 
 The [tester task](https://bit.dev/teambit/defender/tester/~code/tester.task.ts) is implemented by the abstract tester.
 It implements a build task <!--TODO add link -->
 
 The tester should implement `test` method.
+
 ```js
 test(context: TesterContext): Promise<Tests>;
 ```
+
 [see `TesterContext`](https://bit.dev/teambit/defender/tester/~code/tester.ts)<!-- TODO: maybe change link to point to the builder docs here-->
 [see `Tests`](https://bit.dev/teambit/defender/tester/~code/tester.ts)<!-- TODO: maybe change link to point to the builder docs here-->
 
 The build is running in a capsules network <!--TODO add link -->.
-For each one of the component you should return the [`ComponentResult`](https://bit.dev/teambit/defender/tester/~code/tester.ts) 
+For each one of the component you should return the [`ComponentResult`](https://bit.dev/teambit/defender/tester/~code/tester.ts)
 
 ## watch?(context: TesterContext): `Promise<Tests>`;
+
 watch tests on all components
 
 ### onTestRunComplete?(callback: CallbackFn): `Promise<void>`
+
 on test run complete. (applies only during watch)
 
 ## more options <!--TODO better naming -->
 
 ### id
+
 id of the tester.
 
 ### displayName
+
 display name of the tester
 
 ### version(): string;
+
 return the tester version.
 
 ### icon?: string;
+
 icon of the tester.
 
 ### displayConfig?(): string;
+
 the `displayConfig` function helps the user to see the tester config when using the `bit env <comp-id>` command.
 It should return a string representation of the tester config. (for example JSON.stringify of the tsconfig file)
 
 ### configPath?: string;
+
 a path to the config of the specific tester in the filesystem.
 for example path to the jest config file.
-
-
-
-
-
