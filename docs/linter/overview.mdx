@@ -19,6 +19,8 @@ To learn more on linting during development, please refer to [Workspace Linting]
 
 ## Linting during build
 
+During build, the lint task is only used for checking linting issues. it will not re-write the components with the auto fix option.
+
 Testing components for distribution is done during `build` by the Bit [Builder](/builder/overview).
 
 Component build can be simulated with `bit build` and done through [Tag](/components/tags) or [Snap](/components/snaps)
