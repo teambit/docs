@@ -3,29 +3,127 @@ id: overview
 title: Overview
 ---
 
-import { Image } from '../../src/components/image'
+Docs are handled by the preview aspect. You can turn them off using:
 
-For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation.
-The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.
+```json
+"teambit.preview/preview": {
+  "disabled": false
+},
+```
 
-<Image src="/img/ws_getting_started_docs.png" width="50%"/>
+at you `workspace.jsonc`. (this will skip the docs step during tag, potentially saving build time)
 
-## Environment-specific templates
+### Compositions:
 
-Bit automates component documentation by parsing its code and displaying the output in a template provided by the [environment](/envs/overview) used by that component.
+Compositions are "usage examples" of a component, and appear in the overview page in the "Compositions" section, or in the "Compositions" tab as full standalone pages. You can open them in a new tab, and share them to anyone who has access to the component.
+Compositions are loaded from a `*.compositions?.(j|t)sx?`, and automatically include everything exported from the file. The file has a similar structure to Storybook's Compact Story Format.
+https://docs.google.com/document/d/1-C9KDwRxGDAL-d1OcWucUIkf2OJmOTmvfvIFjyyuRiI/edit?usp=sharing
+for example:
 
-Using different templates for different types of components (each using a different environment) means your components get documented in a way that makes sense for them. In addition to that, each documentation template provides a different API that uses the JS flavor or framework in use by the documented component. That means an Angular component will be documented using Angular and not, for instance, React.
+```tsx
+import { Button } from './button';
+export HeavyButton = () => <Button>HEAVY<Button>
+```
 
-## Development vs Production
+- The export named `Preview` is the default composition. (`export default () => {}` has no special meaning, and will be repurposed in the future)
+- You can also apply styles with the `canvas` syntax, but this only applies to the overview page.
 
-Documentation in development, for authored or modified components, will be shown in the Workspace UI. These docs will be generated using the 'DevServer' <!--TODO ['DevServer'](/environments/environment-services#devserver) --> environment service to enable features needed for development, like "hot reloading".
+```tsx
+export WideButton = () => <Button>wide button</Button>
+WideButton.canvas = {
+    width: '200px'
+}
+```
 
-The "production" version of the documentation, for component release versions, will be shown in the Scope UI and in the Workspace UI, for previous tag releases. The "production" version is generated using the 'Preview' service and provides an optimized built.
+- it's better to just apply size directly to the composition, though
 
-## Customizing the documentation
+```tsx
+export WideButton = () => <div style={{width: '200px'}}><Button>wide button</Button></div>
+// even better:
+export WideButton = () => <Button style={{width: '200px'}}>wide button</Button>
+```
 
-The documentation can be customized in two ways:
+### docs / overview
 
-1. Using the documentation template API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation. Learn about the React, React Native and Node environments API here.
+The component "overview" tab presents information about the component.
+Automatic properties:
 
-2. Creating a new documentation template. This can be done as part of an [environment extension](/envs/services/building) or as part of a new environment aspect.
+- Description (sub title) - is automatically calculated from js-docs on the component. Assume this will be markdown in the future
+- Compositions - preview the compositions for this component.
+- Properties - bit automatically calculates props using `react-docgen-typescript` (TODO - verify!), showing default value, required, jsdocs description. We are going to greatly improve this in the near future.
+  Manual properties:
+- Simplest way to document a component is using a `*.docs.mdx` file.  
+  Simply write everything there in markdown format, and it will appear in the overview page.
+
+````md
+<!-- MDX allow import assets from other files -->
+
+import { Button } from './button';
+A useful button with automatic `loading` state management
+
+### state
+
+...
+
+```ts
+code example
+```
+
+<Button>you can embed regular jsx in MDX </Button>
+
+```ts live
+<button loading={true}>this will turn into a WYSIWYG live editor!</button>
+```
+````
+
+- You can achieve the same result with a plain javascript es module:
+
+```ts
+export default = () => (
+  <div>Buttons communicate actions that users can take. For examples:
+    <ul>
+      <li>forms</li>
+      <li>menus</li>
+      <li>basically everywhere</li>
+    </ul>
+  </div>
+);
+export const labels = ["react", "ui", "button"]
+export const abstract = "A reusable button component.";
+export const examples = [
+  {
+    title: "Outlined button";
+    description: "The outline prop can be used to add border to the button";
+    scope: { Button: Button };
+    code: `<Button outline={true}>outlined</Button>`;
+  },
+  {
+    title: "full button";
+    description: "The full prop can be used to set background to the button";
+    scope: { Button: Button };
+    code: `<Button background={true}>outlined</Button>`;
+  },
+]
+```
+
+The format for docs.ts file is available here - https://bit.dev/teambit/documenter/types/docs-file
+Finally, you can express the same properties in the MDX file as well. Simply add a yaml at the top of the MDX file:
+
+```yaml
+---
+description: 'Renders text in a p element'
+labels: ['paragraph']
+---
+import { Text } from "./text";
+export const examples = [
+    {
+        title: "full button",
+        description:
+            "The full prop can be used to set background to the button",
+        scope: { Text: Text },
+        code: `<Text  text="some content"/>`,
+    },
+];
+```
+
+(examples should be expressible in the top yaml, but it doesn't seem to be, at the moment)
