@@ -6,7 +6,7 @@ title: Configure an Env with a Compiler
 The `getCompiler` method sets the Env to use a Compiler implementation (for example, the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript)).
 
 ```ts
-getCompiler: () => Compiler;
+getCompiler(): Compiler
 ```
 
 For example:
@@ -14,6 +14,7 @@ For example:
 ```ts title="my-env.env.ts"
 // ...
 import { CompilerEnv } from '@teambit/envs';
+import { TypescriptMain } from '@teambit/typescript';
 
 export class MyEnv implements CompilerEnv {
   constructor(

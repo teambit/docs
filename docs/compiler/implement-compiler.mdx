@@ -3,16 +3,21 @@ title: Implement a Compiler
 id: implement-compiler
 ---
 
-Standard compilers like [Babel](https://babeljs.io/) and [TypeScript](https://www.typescriptlang.org/) are integrated into Bit using a Bit Aspect. For example, the [Babel Aspect](https://bit.dev/teambit/compilation/babel) and the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript).
-These Aspects implement the [Compiler's interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts). A compiler implementation should be able to provide [compilation in the workspace](./workspace-compilation) as well as [compilation during build](./compiling-during-build).
+Standard compilers are integrated into Bit using a Bit Aspect. For example, [Babel](https://babeljs.io/) is integrated using the [Babel Aspect](https://bit.dev/teambit/compilation/babel) and [TypeScript](https://www.typescriptlang.org/) is integrated using the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript).
+These Aspects implement the [Compiler interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts). A compiler implementation should be able to provide [compilation in the workspace](./workspace-compilation) as well as [compilation during build](./compiling-during-build).
 
 The easiest way to start implementing a [Compiler](/compiler/overview) is to create a new Bit Aspect using the `Aspect` template:
 
-```
+```bash title="Create a new Aspect component"
 bit create aspect extensions/my-compiler
 ```
 
 As a convention, the compiler interface is implemented in a file named with the `compiler` prefix. Since it is a specific implementation file, it is not part of the generic Aspect component template and therefore needs to be created manually:
+
+```bash title="Create a compiler implementation file"
+cd extensions/my-compiler
+touch my-compiler.compiler.ts
+```
 
 ```bash title="Create an implementation file"
 cd extensions/my-compiler
@@ -174,7 +179,7 @@ Runs after the build pipeline completes (on all envs). Useful for "cleanups".
 postBuild?(context: BuildContext, tasksResults: TaskResultsList): Promise<void>;
 ```
 
-## Shared methods and attributes
+## Shared methods and properties
 
 ### name (optional)
 
@@ -255,7 +260,7 @@ createCompiler(options: BabelCompilerOptions, babelModule = babel): BabelCompile
 getPackageJsonProps(): PackageJsonProps
 ```
 
-Updates the main dist file relative location, in every component's `package.json` file.
+The `getPackageJsonProps` method is a [PKG Service](https://bit.dev/teambit/pkg/pkg) handler. Use it to update the main dist file relative location, in every component's `package.json` file.
 
 For example:
 

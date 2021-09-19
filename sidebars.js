@@ -368,6 +368,7 @@ module.exports = {
             'tester/overview',
             'tester/workspace-testing',
             'tester/testing-during-build',
+            'tester/configure-env',
             'tester/implement-tester',
           ]
         },
@@ -408,7 +409,7 @@ module.exports = {
           type: 'category',
           label: 'Linter',
           collapsed: true,
-          items: ['linter/overview', 'linter/workspace-linting']
+          items: ['linter/overview', 'linter/workspace-linting','linter/configure-env', 'linter/implement-linter']
         },
         {
           type: 'category',

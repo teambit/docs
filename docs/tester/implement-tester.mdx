@@ -3,37 +3,32 @@ title: Implement a Tester
 id: implement-tester
 ---
 
-Standard compilers like [Babel](https://babeljs.io/) and [TypeScript](https://www.typescriptlang.org/) are integrated into Bit using a Bit Aspect. For example, the [Babel Aspect](https://bit.dev/teambit/compilation/babel) and the [TypeScript Aspect](https://bit.dev/teambit/typescript/typescript).
-These Aspects implement the [Compiler's interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts).
+Standard test runners are integrated into Bit using a Bit Aspect. For example, [Jest](https://jestjs.io/) is integrated into Bit using the [Jest Aspect](https://bit.dev/teambit/defender/jest).
+These Aspects implement the [Tester interface](https://bit.dev/teambit/defender/tester/~code/tester.ts). A tester implementation should be able to provide [testing in the workspace](./workspace-testing) as well as [testing during build](./testing-during-build).
 
-All the tester process and interfaces are defined under the [`teambit.defender/tester` aspect](https://bit.dev/teambit/defender/tester)
+The easiest way to start implementing a tester is to create a new Bit Aspect using the `Aspect` template.
 
-The easiest way to start implementing a tester is to create a new bit aspect using the `Aspect` template.
-
-<!--TODO add links to real tester like jest -->
-
-```
+```bash title="Create a new Aspect component"
 bit create aspect extensions/my-tester
 ```
 
-The aspect main runtime should have a methods to easily:
+As a convention, the tester interface is implemented in a file named with the `tester` prefix. Since it is a specific implementation file, it is not part of the generic Aspect component template and therefore needs to be created manually:
 
-```### createTester(jestConfig: any, jestModulePath = require.resolve('jest')) {
-create an instance of a class that should implement the [`Tester` interface](https://bit.dev/teambit/defender/tester/~code/tester.ts). This is usually implemented in a file called `<compiler-name>.compiler.ts`
-    return new JestTester(JestAspect.id, jestConfig, jestModulePath, this.jestWorker, this.logger);
-  }
+```bash title="Create a tester implementation file"
+cd extensions/my-tester
+touch my-tester.tester.ts
 ```
 
-The tester should know to handle both - [testing in workspace](./workspace-testing) and for [build](./testing-during-build)
+## Tester implementation file
 
-## testing for workspace
+:::tip
+When implementing testing in the workspace, make sure the tester implementation transpiles source files during testing. The tester receives the compiled code (compiled by the Env's [Compiler](/compiler/overview)) only during build.
+For example, the Jest Aspect uses the `transform` option to do so.
+:::
 
-When implementing a workspace testing you should make sure that your tester knows to transpile your source file during testing.
-As during the testing in the workspace the tester gets the source files before the compilation.
-For example your tester should know to handle import statements, and `ts` files.
-For example using jest we use the `transform` option to do so.
+## Tester main runtime file
 
-## testing during build
+## Methods for testing during build
 
 When implementing the testing during build you
 
@@ -51,6 +46,18 @@ test(context: TesterContext): Promise<Tests>;
 
 The build is running in a capsules network <!--TODO add link -->.
 For each one of the component you should return the [`ComponentResult`](https://bit.dev/teambit/defender/tester/~code/tester.ts)
+
+## Shared methods and properties
+
+## Methods for the main runtime
+
+Create an instance of a class that implements the Tester` interface
+
+```ts
+createTester(jestConfig: any, jestModulePath = require.resolve('jest')) {
+    return new JestTester(JestAspect.id, jestConfig, jestModulePath, this.jestWorker, this.logger);
+  }
+```
 
 ## watch?(context: TesterContext): `Promise<Tests>`;
 
