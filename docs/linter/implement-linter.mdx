@@ -18,30 +18,32 @@ The aspect main runtime (e.g, `my-linter.main.ts`) should have the following met
 
 ### createLinter
 
-Create an instance of a class that should implement the [`Compiler` interface](https://bit.dev/teambit/compilation/compiler/~code/types.ts). This is usually implemented in a file called `<compiler-name>.compiler.ts`
+Create an instance of a class that should implement the [`Linter` interface](https://bit.dev/teambit/defender/linter/~code/linter.ts). This is usually implemented in a file called `<linter-name>.linter.ts`
 
 ```js
 /**
-   * create a eslint linter instance.
-   * @param options eslint options.
-   * @param ESLintModule reference to an `eslint` module.
-   */
-  createLinter(
-    context: LinterContext,
-    options: ESLintOptions,
-    transformers: EslintConfigTransformer[] = [],
-    ESLintModule?: any
-  ): Linter {
-    const mergedOptions = getOptions(options, context);
-    const configMutator = new EslintConfigMutator(mergedOptions);
-    const transformerContext: EslintConfigTransformContext = { fix: !!context.fix };
-    const afterMutation = runTransformersWithContext(configMutator.clone(), transformers, transformerContext);
+ * create a eslint linter instance.
+ * @param options eslint options.
+ * @param ESLintModule reference to an `eslint` module.
+ */
+createLinter(
+  context: LinterContext,
+  options: ESLintOptions,
+  transformers: EslintConfigTransformer[] = [],
+  ESLintModule?: any
+): Linter {
+  const mergedOptions = getOptions(options, context);
+  const configMutator = new EslintConfigMutator(mergedOptions);
+  const transformerContext: EslintConfigTransformContext = { fix: !!context.fix };
+  const afterMutation = runTransformersWithContext(configMutator.clone(), transformers, transformerContext);
 
-    return new ESLintLinter(this.logger, afterMutation.raw, ESLintModule);
-  }
+  return new ESLintLinter(this.logger, afterMutation.raw, ESLintModule);
+}
 ```
 
 The linter should know to handle both - [lint in workspace](./workspace-linting) and for [build](./linting-during-build) <!-- TODO: add link -->
+
+<!-- Add createTask method once it's implemented in the code -->
 
 ## Implementation file
 
