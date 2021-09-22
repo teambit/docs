@@ -1,6 +1,6 @@
 ---
-title: Implement a Formatter
 id: implement-formatter
+title: Implement a Formatter
 ---
 
 Standard formatter like [Prettier](https://prettier.io/) are integrated into Bit using a Bit Aspect <!-- TODO: add link -->. For example, the [Prettier Aspect](https://bit.dev/teambit/defender/prettier).
@@ -52,6 +52,7 @@ The formatter implementation uses the `formatter` extension as a convention. For
 The formatter should implement `format` and `check` methods.
 
 #### format
+
 Run the formatter and change the files on the file system
 
 ```js
@@ -59,7 +60,8 @@ format(context: FormatterContext): Promise<FormatResults>;
 ```
 
 #### check
-Run the formatter but *do not* change the files on the file system
+
+Run the formatter but _do not_ change the files on the file system
 
 ```js
 check(context: FormatterContext): Promise<FormatResults>;
@@ -68,37 +70,40 @@ check(context: FormatterContext): Promise<FormatResults>;
 The `formatterContext` contains the regular `ExecutionContext` <!--TODO add link --> and the `formatterOptions`.
 
 ## FormatResults
+
 ```js
 type FormatResults = {
-  results: ComponentFormatResult[];
-  errors: Error[];
+  results: ComponentFormatResult[],
+  errors: Error[],
 };
 
 type ComponentFormatResult = {
   /**
    * the formatted component.
    */
-  component: Component;
+  component: Component,
 
-  results: FileFormatResult[];
+  results: FileFormatResult[],
 };
 
 type FileFormatResult = {
   /**
    * path of the formatted file.
    */
-  filePath: string;
+  filePath: string,
 
   /**
    * Does the file has formatting issues (needs format)
    */
-  hasIssues: boolean;
+  hasIssues: boolean,
 
   /**
    * The new file content after the formatting
    */
-  newContent?: string;
+  newContent?: string,
 };
 ```
 
-### formatting during build
+### Formatting during build
+
+Formatting during build will soon be available.

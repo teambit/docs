@@ -337,6 +337,7 @@ module.exports = {
       // collapsed: false,
       // collapsible: false,
       items: [
+        'envs/services/dev-services-overview',
         {
           type: 'category',
           label: 'Generator',
@@ -415,7 +416,7 @@ module.exports = {
           type: 'category',
           label: 'Formatter',
           collapsed: true,
-          items: ['formatter/overview', 'formatter/workspace-formatting']
+          items: ['formatter/overview', 'formatter/workspace-formatting', 'formatter/implement-formatter']
         },
         {
           type: 'category',
