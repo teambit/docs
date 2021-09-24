@@ -3,127 +3,133 @@ id: overview
 title: Overview
 ---
 
-Docs are handled by the preview aspect. You can turn them off using:
+import { Image } from '@site/src/components/image';
+import docsRenderingImg from './docs_rendering.png';
 
-```json
-"teambit.preview/preview": {
-  "disabled": false
-},
-```
+The Docs Service simplifies and standardizes component documentation. It loads doc files, from each Component Directory, and generates each component documentation according to the template set by the its Env.
 
-at you `workspace.jsonc`. (this will skip the docs step during tag, potentially saving build time)
+The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 
-### Compositions:
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/cKMghSe_1RU?rel=0"
+  title="How to add Docs to your Bit components"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-Compositions are "usage examples" of a component, and appear in the overview page in the "Compositions" section, or in the "Compositions" tab as full standalone pages. You can open them in a new tab, and share them to anyone who has access to the component.
-Compositions are loaded from a `*.compositions?.(j|t)sx?`, and automatically include everything exported from the file. The file has a similar structure to Storybook's Compact Story Format.
-https://docs.google.com/document/d/1-C9KDwRxGDAL-d1OcWucUIkf2OJmOTmvfvIFjyyuRiI/edit?usp=sharing
-for example:
+## Loading the component docs
 
-```tsx
-import { Button } from './button';
-export HeavyButton = () => <Button>HEAVY<Button>
-```
+The docs service automatically loads component docs by searching in each Component Directory for files named with certain patterns.
+The default glob pattern for doc file is: `**/*.docs.*`.
 
-- The export named `Preview` is the default composition. (`export default () => {}` has no special meaning, and will be repurposed in the future)
-- You can also apply styles with the `canvas` syntax, but this only applies to the overview page.
+To add other glob patterns use the Docs config interface:
 
-```tsx
-export WideButton = () => <Button>wide button</Button>
-WideButton.canvas = {
-    width: '200px'
+```json title="workspace.jsonc"
+{
+  "teambit.docs/docs": {
+    "pattern": ["**/*.docs.*"]
+  }
 }
 ```
 
-- it's better to just apply size directly to the composition, though
+## The docs structure
 
-```tsx
-export WideButton = () => <div style={{width: '200px'}}><Button>wide button</Button></div>
-// even better:
-export WideButton = () => <Button style={{width: '200px'}}>wide button</Button>
+### Display name
+
+The display name is determined by the [component name](/components/component-id#component-name).
+
+### Abstract
+
+The abstract is a one or two liner description of a component. It should characterize the component's main concern.
+
+By default, the abstract is parsed out from the component's JSDocs annotations. It can be manually set using the `abstract` API:
+
+```js title="heading.docs.js"
+export const abstract = 'Renders a heading with customizable element prop';
 ```
 
-### docs / overview
+### Labels
 
-The component "overview" tab presents information about the component.
-Automatic properties:
+Keywords that describe and categorize the component. Labels are also used by [Bit Cloud](https://bit.dev)'s search and filters.
 
-- Description (sub title) - is automatically calculated from js-docs on the component. Assume this will be markdown in the future
-- Compositions - preview the compositions for this component.
-- Properties - bit automatically calculates props using `react-docgen-typescript` (TODO - verify!), showing default value, required, jsdocs description. We are going to greatly improve this in the near future.
-  Manual properties:
-- Simplest way to document a component is using a `*.docs.mdx` file.  
-  Simply write everything there in markdown format, and it will appear in the overview page.
+To manually set the labels use the `labels` API:
 
-````md
-<!-- MDX allow import assets from other files -->
+```js title="heading.docs.js"
+export const labels = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+```
 
-import { Button } from './button';
-A useful button with automatic `loading` state management
+### Content
 
-### state
+The body of the component documentation. This is where the unstructured content goes.
 
-...
+Set the content by exporting, as default, a component. The type of component varies according to the Env being used. For example, when using the React Env, a React component will be exported.
+
+```js title=heading.docs.js
+import React from 'react';
+
+export default function Content() {
+  return (
+    <>
+        <h3>Heading<h3>
+        <div>
+            A heading component that renders a different heading element depending on
+            what you pass into it.
+        </div>
+    <>
+  );
+}
+```
+
+### Live examples
+
+Live examples are small interactive tutorials that instruct on how a component can be used.
+
+Use the `example` API to set an array of examples.
 
 ```ts
-code example
+Example: {
+    scope: object, // All dependencies necessary for the live example to run
+    title: string, // The example's title
+    description: string, // The example's description
+    code: string // A template literal for the example code
+}
+
+examples: Example[]
 ```
 
-<Button>you can embed regular jsx in MDX </Button>
+For example:
 
-```ts live
-<button loading={true}>this will turn into a WYSIWYG live editor!</button>
-```
-````
+```jsx title="card.docs.tsx"
+import React from 'react';
+import { Header } from './header';
 
-- You can achieve the same result with a plain javascript es module:
-
-```ts
-export default = () => (
-  <div>Buttons communicate actions that users can take. For examples:
-    <ul>
-      <li>forms</li>
-      <li>menus</li>
-      <li>basically everywhere</li>
-    </ul>
-  </div>
-);
-export const labels = ["react", "ui", "button"]
-export const abstract = "A reusable button component.";
 export const examples = [
   {
-    title: "Outlined button";
-    description: "The outline prop can be used to add border to the button";
-    scope: { Button: Button };
-    code: `<Button outline={true}>outlined</Button>`;
-  },
-  {
-    title: "full button";
-    description: "The full prop can be used to set background to the button";
-    scope: { Button: Button };
-    code: `<Button background={true}>outlined</Button>`;
-  },
-]
-```
-
-The format for docs.ts file is available here - https://bit.dev/teambit/documenter/types/docs-file
-Finally, you can express the same properties in the MDX file as well. Simply add a yaml at the top of the MDX file:
-
-```yaml
----
-description: 'Renders text in a p element'
-labels: ['paragraph']
----
-import { Text } from "./text";
-export const examples = [
-    {
-        title: "full button",
-        description:
-            "The full prop can be used to set background to the button",
-        scope: { Text: Text },
-        code: `<Text  text="some content"/>`,
+    scope: {
+      Header,
     },
+    title: 'Live Playground',
+    description: 'Modify the text to see it change live:',
+    code: `<Heading element="h2">
+                heading<div>more heading</div>
+            </Heading>`,
+  },
 ];
 ```
 
-(examples should be expressible in the top yaml, but it doesn't seem to be, at the moment)
+## Doc Templates
+
+Doc templates are apps that present doc files content using a specific layout, and may also enrich it with additional data provided by the templates.
+Templates are set by Envs to provide doc automation that best fits the Envs components.
+
+For example, the React Env uses the [`@teambit/react.ui.docs-app`](https://bit.dev/teambit/react/ui/docs-app) template to display react docs.
+This template is able to render React components, and provides layout and theme for MDX files. Moreover, the template enriches the docs with a 'property table' that presents the components prop types.
+
+See here, to learn how to create your own doc templates.
+
+## Docs bundling and rendering
+
+<Image src={docsRenderingImg} />

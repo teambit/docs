@@ -43,9 +43,9 @@ export class MyReactEnv implements DevEnv, CompilerEnv, TesterEnv {
 
 Service Handlers are the link that binds an Env to a Dev Service. They are methods that are implemented the Env class, and invoked by their corresponding Env Service.
 
-For example, the React Env uses the Service Handler `getCompiler()` to configure the Compiler Env Service to run the TypeScript aspect. The `getCompiler()` method is expected to be found by the Compiler, which will invoke it
+For example, the 'MyReactEnv' Env, shown above, uses the Service Handler `getCompiler()` to configure the Compiler Env Service to run the Babel aspect. The `getCompiler()` method is expected to be found by the Compiler, which will invoke it
 
-Environment services run on various events. Whenever a service runs, it executes its corresponding service handler which consequently runs the configured aspect (in the previous example, that would be TypeScript).
+Environment services run on various events. Whenever a service runs, it executes its corresponding service handler which consequently runs the configured Dev service implementation (in that example, that would be the Babel Aspect).
 
 Different components in a Bit workspace may use different environments. That means environment services need to execute their corresponding service handlers in the specific environment applied on the component currently being processed.
 
@@ -88,20 +88,19 @@ Dev Service Implementations can be used to integrate standard tools to Bit. In t
 For example, the `bit env ui/text` command, shown below, lists information regarding the Env used by the `ui/text` component. This information contains the different services used by that Env.
 As you can see, that information includes details regarding the integrated tools, their name, version, config, etc.
 
-```bash {11,49}
+```bash {11,34}
 $ bit env ui/text
 
 
 Environment: company.scope/envs/my-react@0.0.1
 teambit.pipelines/builder
 
-<....>
+// ...
 
 teambit.defender/tester
 
 configured tester: teambit.defender/jest (Jest @ 26.6.3)
 tester config:
-"use strict";
 
 module.exports = {
   // "roots": [
@@ -117,21 +116,7 @@ module.exports = {
   // "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
   // "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
   // ],
-  testEnvironment: require.resolve('jest-environment-jsdom'),
-  transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': require.resolve('./transformer'),
-    '^.+\\.css$': require.resolve('./css-transform.js'),
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': require.resolve('./file-transform.js')
-  },
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$', '^.+\\.module\\.(css|sass|scss)$'],
-  modulePaths: [],
-  moduleNameMapper: {
-    '^react-native$': require.resolve('react-native-web'),
-    '^.+\\.module\\.(css|sass|scss)$': require.resolve('identity-obj-proxy')
-  },
-  moduleFileExtensions: ['web.js', 'js', 'web.ts', 'ts', 'web.tsx', 'tsx', 'json', 'web.jsx', 'jsx', 'node'] // watchPlugins: [require.resolve('jest-watch-typeahead/filename'),
-require.resolve('jest-watch-typeahead/testname')],
-
+  // ...
 };
 
 //# sourceMappingURL=jest.config.js.map
@@ -152,10 +137,7 @@ compiler config:
     "jsx": "react",
     "declaration": true,
     "sourceMap": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "outDir": "dist"
+    // ...
   },
   "exclude": [
     "dist"
@@ -207,7 +189,7 @@ The version of that integrated tool (e.g, '1.2.3')
 
 ## Execution in the workspace VS Execution during build
 
-Dev Services can offer processes to be used in the workspace, during development, or in the capsule, during the component build. When used during a build that runs as part of the `tag` or `snap` processes, Dev Services often persist output data in the component metadata and artifacts.
+Dev Services can be used in the workspace, during development, or in the capsule, during the component build. When used during a build that runs as part of the `tag` or `snap` processes, Dev Services often persist output data in the component metadata and artifacts.
 
 For example, Compiler persists compilation results in the component metadata, and adds the dist files to the component artifacts.
 
