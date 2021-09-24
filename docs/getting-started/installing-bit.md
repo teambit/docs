@@ -11,7 +11,7 @@ import LegacyWarning from '@site/docs/components/install/legacy-warning.md'
 import QuickGuide from '@site/docs/components/quick-guide.md'
 import InstallBVMSolution from '@site/docs/components/install/install-bvm-solution.md'
 
-To use Bit you will need to install it globally. You can do this by first installing BVM, a version manger for Bit and then installing Bit.
+To use Bit you will need to install it globally. You can do this by first installing BVM, a version manager for Bit and then installing Bit.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7afMBwj5fR4?start=135" title="Let's Build with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
