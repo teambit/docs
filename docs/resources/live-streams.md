@@ -3,6 +3,12 @@ id: live-streams
 title: Live Streams
 ---
 
+## Component Driven Development with Bit
+
+In this episode we'll learn how to build React components with Bit so that we can more easily scale our websites and apps!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SRK-8UEVleY" title="Component Driven Development with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Building with Bit
 
 Intro to Bit and how to create components in Bit, compose components, version and export components to the Bit.dev cloud and then import them in a React application.

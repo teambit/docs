@@ -1,0 +1,32 @@
+---
+id: configure-env
+title: Configure an Env with a Tester
+---
+
+The `getTester` method sets the Env to use a Tester implementation (for example, the [Jest Aspect](https://bit.dev/teambit/defender/jest)).
+
+```ts
+getTester(path: string, tester: any): Tester
+```
+
+For example:
+
+```ts
+import { TesterEnv } from '@teambit/envs';
+import { JestMain } from '@teambit/jest';
+
+export class ReactEnv implements TesterEnv {
+  constructor(
+    // ...
+
+    private jestAspect: JestMain
+  ) {}
+
+  // ...
+
+  getTester(jestConfigPath: string, jestModule = jest): Tester {
+    const jestConfig = require.resolve('./jest/jest.config');
+    return this.jestAspect.createTester(jestConfig);
+  }
+}
+```

@@ -3,29 +3,133 @@ id: overview
 title: Overview
 ---
 
-import { Image } from '../../src/components/image'
+import { Image } from '@site/src/components/image';
+import docsRenderingImg from './docs_rendering.png';
 
-For a component to be usable as an independent building block, not only by machines but also by humans, it needs to have its own documentation.
-The documentation for each component is displayed in the 'Overview' tab of the Workspace UI and the Scope UI.
+The Docs Service simplifies and standardizes component documentation. It loads doc files, from each Component Directory, and generates each component documentation according to the template set by the its Env.
 
-<Image src="/img/ws_getting_started_docs.png" width="50%"/>
+The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 
-## Environment-specific templates
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/cKMghSe_1RU?rel=0"
+  title="How to add Docs to your Bit components"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-Bit automates component documentation by parsing its code and displaying the output in a template provided by the [environment](/envs/overview) used by that component.
+## Loading the component docs
 
-Using different templates for different types of components (each using a different environment) means your components get documented in a way that makes sense for them. In addition to that, each documentation template provides a different API that uses the JS flavor or framework in use by the documented component. That means an Angular component will be documented using Angular and not, for instance, React.
+The docs service automatically loads component docs by searching in each Component Directory for files named with certain patterns.
+The default glob pattern for doc file is: `**/*.docs.*`.
 
-## Development vs Production
+To add other glob patterns use the Docs config interface:
 
-Documentation in development, for authored or modified components, will be shown in the Workspace UI. These docs will be generated using the 'DevServer' <!--TODO ['DevServer'](/environments/environment-services#devserver) --> environment service to enable features needed for development, like "hot reloading".
+```json title="workspace.jsonc"
+{
+  "teambit.docs/docs": {
+    "pattern": ["**/*.docs.*"]
+  }
+}
+```
 
-The "production" version of the documentation, for component release versions, will be shown in the Scope UI and in the Workspace UI, for previous tag releases. The "production" version is generated using the 'Preview' service and provides an optimized built.
+## The docs structure
 
-## Customizing the documentation
+### Display name
 
-The documentation can be customized in two ways:
+The display name is determined by the [component name](/components/component-id#component-name).
 
-1. Using the documentation template API for ad-hoc modifications. This is done to add custom components or to override a section in a specific component documentation. Learn about the React, React Native and Node environments API here.
+### Abstract
 
-2. Creating a new documentation template. This can be done as part of an [environment extension](/envs/services/building) or as part of a new environment aspect.
+The abstract is a one or two liner description of a component. It should characterize the component's main concern.
+
+By default, the abstract is parsed out from the component's JSDocs annotations. It can be manually set using the `abstract` API:
+
+```js title="heading.docs.js"
+export const abstract = 'Renders a heading with customizable element prop';
+```
+
+### Labels
+
+Keywords that describe and categorize the component. Labels are also used by [Bit Cloud](https://bit.dev)'s search and filters.
+
+To manually set the labels use the `labels` API:
+
+```js title="heading.docs.js"
+export const labels = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+```
+
+### Content
+
+The body of the component documentation. This is where the unstructured content goes.
+
+Set the content by exporting, as default, a component. The type of component varies according to the Env being used. For example, when using the React Env, a React component will be exported.
+
+```js title=heading.docs.js
+import React from 'react';
+
+export default function Content() {
+  return (
+    <>
+        <h3>Heading<h3>
+        <div>
+            A heading component that renders a different heading element depending on
+            what you pass into it.
+        </div>
+    <>
+  );
+}
+```
+
+### Live examples
+
+Live examples are small interactive tutorials that instruct on how a component can be used.
+
+Use the `example` API to set an array of examples.
+
+```ts
+Example: {
+    scope: object, // All dependencies necessary for the live example to run
+    title: string, // The example's title
+    description: string, // The example's description
+    code: string // A template literal for the example code
+}
+
+examples: Example[]
+```
+
+For example:
+
+```jsx title="card.docs.tsx"
+import React from 'react';
+import { Header } from './header';
+
+export const examples = [
+  {
+    scope: {
+      Header,
+    },
+    title: 'Live Playground',
+    description: 'Modify the text to see it change live:',
+    code: `<Heading element="h2">
+                heading<div>more heading</div>
+            </Heading>`,
+  },
+];
+```
+
+## Doc Templates
+
+Doc templates are apps that present doc files content using a specific layout, and may also enrich it with additional data provided by the templates.
+Templates are set by Envs to provide doc automation that best fits the Envs components.
+
+For example, the React Env uses the [`@teambit/react.ui.docs-app`](https://bit.dev/teambit/react/ui/docs-app) template to display react docs.
+This template is able to render React components, and provides layout and theme for MDX files. Moreover, the template enriches the docs with a 'property table' that presents the components prop types.
+
+See here, to learn how to create your own doc templates.
+
+## Docs bundling and rendering
+
+<Image src={docsRenderingImg} />

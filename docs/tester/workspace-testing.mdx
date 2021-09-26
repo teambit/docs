@@ -37,7 +37,7 @@ bit start
 
 ## Tester workspace configurations
 
-The Tester can be configured in the `workspace.jsonc` configuration file.
+The Tester aspect can be configured in the `workspace.jsonc` configuration file.
 
 ### watchOnStart
 
@@ -62,7 +62,7 @@ For example:
 ```json
 {
   "teambit.defender/tester": {
-    "patterns": ["*.spec.ts", "*.another-extension.ts"]
+    "patterns": ["**/*.spec.+(js|ts|jsx|tsx)", "**/*.another-prefix.+(js|ts|jsx|tsx)"]
   }
 }
 ```

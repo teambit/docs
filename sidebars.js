@@ -337,6 +337,7 @@ module.exports = {
       // collapsed: false,
       // collapsible: false,
       items: [
+        'envs/services/dev-services-overview',
         {
           type: 'category',
           label: 'Generator',
@@ -367,7 +368,9 @@ module.exports = {
           items: [
             'tester/overview',
             'tester/workspace-testing',
-            'tester/testing-during-build'
+            'tester/testing-during-build',
+            'tester/configure-env',
+            'tester/implement-tester',
           ]
         },
         {
@@ -407,13 +410,13 @@ module.exports = {
           type: 'category',
           label: 'Linter',
           collapsed: true,
-          items: ['linter/overview', 'linter/workspace-linting']
+          items: ['linter/overview', 'linter/workspace-linting','linter/configure-env', 'linter/implement-linter']
         },
         {
           type: 'category',
           label: 'Formatter',
           collapsed: true,
-          items: ['formatter/overview', 'formatter/workspace-formatting']
+          items: ['formatter/overview', 'formatter/workspace-formatting', 'formatter/implement-formatter']
         },
         {
           type: 'category',
