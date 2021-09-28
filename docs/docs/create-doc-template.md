@@ -14,9 +14,11 @@ getDocsTemplate {
 
 ```ts
 export interface PreviewDefinition {
-  /* sets prefix for the link file name */
+  /* Sets the name for the link file */
   prefix: string;
+  /* Returns a file to be used as the rendering template for the files */
   renderTemplatePath?: (context: ExecutionContext) => Promise<string>;
+  /* Returns an array of files to render (from a received array of components) */
   getModuleMap(components: Component[]): Promise<ComponentMap<AbstractVinyl[]>>;
 }
 ```

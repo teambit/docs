@@ -4,9 +4,9 @@ title: Overview
 ---
 
 import { Image } from '@site/src/components/image';
-import docsRenderingImg from './docs_rendering.png';
+import docsOverviewImg from './docs_overview.png';
 
-The Docs Service simplifies and standardizes component documentation. It loads doc files, from each Component Directory, and generates each component documentation according to the template set by the its Env.
+The Docs Service simplifies and standardizes component documentation. It loads the doc files from the Component Directories, and displays them using the doc template that was set by each component's Env.
 
 The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 
@@ -25,6 +25,21 @@ The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 The docs service automatically loads component docs by searching in each Component Directory for files named with certain patterns.
 The default glob pattern for doc file is: `**/*.docs.*`.
 
+For example, the following `ui/card` component will have its docs file, `card.docs.mdx` automatically loaded. The docs file will be rendered in the 'Overview' section, using the docs template set by that component's Env.
+
+```bash {6} title="my-workspace"
+.
+├── demo
+│   └── ui
+│       ├── card
+│       │   ├── card.composition.tsx
+│       │   ├── card.docs.mdx
+│       │   ├── card.module.scss
+│       │   ├── card.spec.tsx
+│       │   ├── card.tsx
+│       │   └── index.ts
+```
+
 To add other glob patterns use the Docs config interface:
 
 ```json title="workspace.jsonc"
@@ -36,6 +51,8 @@ To add other glob patterns use the Docs config interface:
 ```
 
 ## The docs structure
+
+<Image src={docsOverviewImg} />
 
 ### Display name
 
@@ -120,16 +137,6 @@ export const examples = [
 ];
 ```
 
-## Doc Templates
+### Compositions
 
-Doc templates are apps that present doc files content using a specific layout, and may also enrich it with additional data provided by the templates.
-Templates are set by Envs to provide doc automation that best fits the Envs components.
-
-For example, the React Env uses the [`@teambit/react.ui.docs-app`](https://bit.dev/teambit/react/ui/docs-app) template to display react docs.
-This template is able to render React components, and provides layout and theme for MDX files. Moreover, the template enriches the docs with a 'property table' that presents the components prop types.
-
-See here, to learn how to create your own doc templates.
-
-## Docs bundling and rendering
-
-<Image src={docsRenderingImg} />
+The component compositions, embedded in the docs.
