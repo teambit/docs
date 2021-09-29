@@ -6,7 +6,7 @@ title: Overview
 import { Image } from '@site/src/components/image';
 import docsOverviewImg from './docs_overview.png';
 
-The Docs Service simplifies and standardizes component documentation. It loads the doc files from the Component Directories, and displays them using the doc template that was set by each component's Env.
+The Docs service simplifies and standardizes component documentation. It loads the doc files from the workspace's [component directories](/workspace/component-directory), and displays them using the [doc template](/doc-templates) that was set by each component's Env.
 
 The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 
@@ -22,7 +22,7 @@ The docs are presented in the 'Overview' tab of the Workspace UI/Scope UI.
 
 ## Loading the component docs
 
-The docs service automatically loads component docs by searching in each Component Directory for files named with certain patterns.
+The docs service automatically loads component docs by searching in each [component directory](/workspace/component-directory) for files named with certain patterns.
 The default glob pattern for doc file is: `**/*.docs.*`.
 
 For example, the following `ui/card` component will have its docs file, `card.docs.mdx` automatically loaded. The docs file will be rendered in the 'Overview' section, using the docs template set by that component's Env.
@@ -40,7 +40,7 @@ For example, the following `ui/card` component will have its docs file, `card.do
 │       │   └── index.ts
 ```
 
-To add other glob patterns use the Docs config interface:
+To override the default glob patterns, use the Docs config interface:
 
 ```json title="workspace.jsonc"
 {
@@ -56,11 +56,11 @@ To add other glob patterns use the Docs config interface:
 
 ### Display name
 
-The display name is determined by the [component name](/components/component-id#component-name).
+The 'display name' is determined by the [component name](/components/component-id#component-name).
 
 ### Abstract
 
-The abstract is a one or two liner description of a component. It should characterize the component's main concern.
+The 'abstract' is a one or two liner description of a component. It should characterize the component's main concern.
 
 By default, the abstract is parsed out from the component's JSDocs annotations. It can be manually set using the `abstract` API:
 
@@ -70,7 +70,7 @@ export const abstract = 'Renders a heading with customizable element prop';
 
 ### Labels
 
-Keywords that describe and categorize the component. Labels are also used by [Bit Cloud](https://bit.dev)'s search and filters.
+'Labels' are keywords that describe and categorize the component. 'Labels' are also used by [Bit Cloud](https://bit.dev)'s search and filters.
 
 To manually set the labels use the `labels` API:
 
@@ -80,9 +80,9 @@ export const labels = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
 
 ### Content
 
-The body of the component documentation. This is where the unstructured content goes.
+'Content' is the body of the component documentation. This is where the unstructured docs content goes.
 
-Set the content by exporting, as default, a component. The type of component varies according to the Env being used. For example, when using the React Env, a React component will be exported.
+Set the content by exporting as default a component. The type of component varies according to the Env being used. For example, when using the React Env, a React component will be exported.
 
 ```js title=heading.docs.js
 import React from 'react';

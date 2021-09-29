@@ -74,6 +74,7 @@ export class DocsPreview {
       render: docsPreview.render.bind(docsPreview),
       // Returns the docs files to render
       selectPreviewModel: docsPreview.selectPreviewModel.bind(docsPreview),
+      // Includes the 'composition' preview as part of the 'overview' preview
       include: ['compositions'],
     });
 
