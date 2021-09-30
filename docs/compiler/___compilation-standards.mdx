@@ -1,17 +1,27 @@
 
 
-## Target Formats
+## Module formats
 
-### ES2015
-
-### ESM2015
+### ESM
+ESM is the preferred format by bundlers. Bundlers use that for important features like Code Splitting and Tree Shaking.
+ESM module targets would require an additional compilation step to execute from a NodeJS app. 
 
 ### CommonJS
+CommonJS is the format used widely by NodeJS. CommonJS compiled components can be consumed from any Node application without
+any further compilation steps. This NodeJS usability benefits come on the expanse of being optimized for the use of common
+browsers since bundler optimization features such as: Code Splitting or Tree Shaking would be not apply.
 
+## Target formats
 
-TODO: consult @gilad and @olivier re further relevant formats to document. 
+Bit uses ES2015 as an ECMA specification target by default. This ensures out-of-the-box support from both NodeJS and common
+bundlers such as Webpack or Rollup. 
+
+### Compiling to multiple formats
+@eden/@gilad: show how to do this with the Multi Compiler.
 
 ## Source Maps
+During development, components should be compiled with source maps to ease debugging across browsers and IDEs.
 
 ## Types
-
+Types are being generated upon component build. During development, Bit links component types through symlinks that point
+directly to the component source files for types to be resolved by IDEs efficiently and without latency.
