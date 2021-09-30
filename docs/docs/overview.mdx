@@ -52,6 +52,8 @@ To override the default glob patterns, use the Docs config interface:
 
 ## The docs structure
 
+> The below overview page uses React's default template which follows Bit's recommendations
+
 <Image src={docsOverviewImg} />
 
 ### Display name
@@ -113,17 +115,15 @@ Example: {
     description: string, // The example's description
     code: string // A template literal for the example code
 }
-
-examples: Example[]
 ```
 
 For example:
 
-```jsx title="card.docs.tsx"
+```tsx title="card.docs.tsx"
 import React from 'react';
 import { Header } from './header';
 
-export const examples = [
+export const examples: Examples[] = [
   {
     scope: {
       Header,

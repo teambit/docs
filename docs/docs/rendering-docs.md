@@ -7,12 +7,12 @@ import { Image } from '@site/src/components/image';
 import docsBundlingImg from './docs_bundling.png';
 import docsPreviewImg from './docs_preview.png';
 
-The Docs aspect uses Preview to register its doc file and templates for bundling and for rendering in the workspace UI/Scope UI.
+The Docs aspect uses the Preview aspect to register its docs file and templates for bundling and for rendering in the browser.
 
 ## Bundling (Main runtime)
 
 1. The docs template is registered by the Envs via the `getDocsTemplate()` service handler.
-2. The Docs Aspect then registers the template returned from the Env, as well as the env's component docs files to the Preview aspect.
+2. The Docs Aspect then registers the template returned from the Env, as well as the env's component docs files, to the Preview aspect.
 
 ```ts title="docs.main.runtime.ts"
 // ...
@@ -53,7 +53,7 @@ The glob pattern for doc files (for all Envs) is set as default by the Docs aspe
 
 ## Rendering (Preview runtime)
 
-To make the bundled doc files and templates available for fetching and rendering by the browser:
+To make the bundled doc files and templates available for the browser:
 
 1. The docs Aspect registers to the Preview aspect for rendering.
 

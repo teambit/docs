@@ -7,13 +7,13 @@ import { Image } from '@site/src/components/image';
 import { staticCodeblockImg} from './static_codeblock.png';
 import { livePlaygroundImg } from './live_playground.png';
 
-The [MDX format](https://mdxjs.com/) is perfect for writing documentation for components as it joins together the ease-of-use and readability of the Markdown syntax with the great flexibility that's enabled by JSX.
+The [MDX format](https://mdxjs.com/) is perfect for writing documentation for components, as it joins together the ease-of-use and readability of the Markdown syntax with the great flexibility that's enabled by JSX.
 
 MDX docs use a Bit-specific flavor of MDX that [extends the docs front matter](https://bit.dev/teambit/mdx/modules/mdx-compiler) and renders them using [Bit's MDX layout](https://bit.dev/teambit/mdx/ui/mdx-layout).
 
 ## Using MDX for component docs
 
-MDX is supported by Envs using [Bit's MDX Webpack loader](https://bit.dev/teambit/mdx/modules/mdx-loader) for component previews.
+MDX is supported by Envs that use [Bit's MDX Webpack loader](https://bit.dev/teambit/mdx/modules/mdx-loader) for their component previews.
 These include the React Env, Node Env, and many others.
 
 To use MDX for component documentation, create a docs file with the `mdx` or `md` extensions.
@@ -30,7 +30,7 @@ For example:
 └── index.ts
 ```
 
-## Using MDX as independent content components
+## Using MDX as standalone components
 
 MDX can be used to create independent content components. That is, content that is not an internal dependency of a component, but a component in and of itself (that can be used by other components as an external dependency).
 This is done by setting the MDX component to use the [MDX Env](https://bit.dev/teambit/mdx/mdx).
@@ -92,7 +92,7 @@ labels: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
 ### Content
 
-The MDX file content is compiled by Bit and exported as the default. Unlike other JS docs, there's no need to wrap the [content section](/overview#content) in a class or a function.
+The MDX file content is compiled by Bit and exported as the default. There's no need to wrap the [content section](/overview#content) in a class or a function.
 
 For example:
 

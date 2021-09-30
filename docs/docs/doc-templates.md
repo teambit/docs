@@ -4,14 +4,14 @@ title: Doc Templates
 ---
 
 Doc templates are apps that display doc files content using a specific layout. This layout may also be enriched with additional data provided by the template.
-Templates are set by Envs to provide doc automation that best fits the Envs components.
+Templates are set by Envs to provide doc layout that best fits the Envs components.
 
 For example, the React Env uses the [`@teambit/react.ui.docs-app`](https://bit.dev/teambit/react/ui/docs-app) template to display react docs.
 This template is able to render React components, and provides layout and theme for MDX files. This template also enriches the docs with a 'property table' that presents the components prop types. The data for the property table is fetched by this template.
 
 ## Setting a doc template
 
-To set your own template, create a new Env or an Env extension, and implement the `getDocsTemplate()` service handler.
+To set your own template, create a new Env (or extend and existing one), and implement the `getDocsTemplate()` [service handler](/envs/services/dev-services-overview#service-handlers).
 
 ```ts
 getDocsTemplate(...args : any[]): string
