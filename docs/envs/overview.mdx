@@ -21,7 +21,7 @@ A single Bit workspace can use multiple Envs for different components.
 Envs can only be configured using the `teambit.workspace/variants` workspace API. That means the `teambit.workspace/workspace` cannot be utilized to set an environment as the default for all components. To achieve a similar result, select all components using the `*` wildcard.
 
 For example:
-<!-- TODO: consider removing the options to use * (replace with other example) -->
+
 ```json
 {
   "teambit.workspace/variants": {
@@ -44,28 +44,35 @@ For example:
 
 A single workspace can use different Envs for different sets of components. Setting an environment on a specific group of components is done by selecting the group and applying the environment. This is done using [Variants](/workspace/variants).
 
-For example, to set the Node and React environments on two sets of components (selected by their directory):
+For example, to set the Node and React environments on two sets of components (selected by their namespaces):
 
 ```json title="workspace.jsonc"
 {
   "teambit.workspace/variants": {
-    "components/ui": {
+    "{ui/**}": {
       "teambit.react/react": {}
     },
-    "components/utils": {
+    "{utils/**}": {
       "teambit.harmony/node": {}
     }
   }
 }
 ```
 
-### verify components' using Envs 
-To make sure each component configured with the correct env, is recommended to run
+### Verify an Env is configured correctly
+
+#### List all components and their corresponding Envs
+
+To make sure each component is configured with the intended env run:
+
 ```bash
 bit envs
 ```
+
+This will list all components in the workspace and their corresponding Env.
+
 This will show a list of all of the workspace components and their corresponding env.
-<!-- TODO: add cli output example of bit envs -->
+
 ```
 ┌─────────────────────────────┬─────────────────────────────┐
 │ component                   │ env                         │
@@ -85,41 +92,30 @@ This will show a list of all of the workspace components and their corresponding
 Also, a component is not allowed to use more than one env at the same time.
 To make sure you don't have any issues with your components' envs, run `bit status`
 In case you have a comopnent with more than one env, you will see a section like this:
+
 <!-- TODO: add cli output example of bit envs -->
+
+#### Validate only a single Env is configured on each component
+
+A component can only use a single Env at a time. To validate no component uses more than one Env, run:
+
 ```bash
+bit status
+```
+
+Issues regarding the incorrect use of multiple Envs will show up like so:
+
+```bash {4}
 new components
 (use "bit tag --all [version]" to lock a version with all your changes)
 
-     > envs/my-react ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
-          teambit.harmony/aspect, teambit.react/react
-
-     > pages/welcome ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
+     > ui/text ...  issues found
+       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ):
           company.scope/envs/my-react, teambit.react/react
 
-     > ui/card ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
-          company.scope/envs/my-react, teambit.react/react
-
-     > ui/heading ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
-          company.scope/envs/my-react, teambit.react/react
-
-     > ui/text ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
-          company.scope/envs/my-react, teambit.react/react
-
-see troubleshooting at https://docs.bit.dev/docs/add-and-isolate-components#common-isolation-errors
 ```
 
-This might happen when you have a component which is matched by more than one selector in the variants, and each one of the rules configure a different env.
-
-In order to solve it, see envs Troubleshooting <!-- TODO: add link to envs Troubleshooting -->
-
-## Inspecting an env
-To see the env services configuration use `bit env <component-id>`.
-See inspecting-an-env <!-- TODO: add link  --> for more details
+To solve this, see the [troubleshooting section](#)
 
 ## CLI Commands
 

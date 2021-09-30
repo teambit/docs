@@ -234,46 +234,10 @@ module.exports = {
           collapsed: true,
           items: [
             "envs/overview",
-            // {
-            //   type: 'category',
-            //   label: 'Pre-Configured Envs',
-            //   items: [
-            //     {
-            //       type: 'category',
-            //       label: 'React',
-            //       items: [
-            //         'envs/pre-configured-envs/react/react-overview',
-            //         'envs/pre-configured-envs/react/compose-react-app',
-            //         'envs/pre-configured-envs/react/extending-react'
-            //       ]
-            //     },
-            //     'envs/pre-configured-envs/html',
-            //     'envs/pre-configured-envs/nodejs',
-            //     'envs/pre-configured-envs/react-native',
-            //     'envs/pre-configured-envs/angular',
-            //     'envs/pre-configured-envs/aspect'
-            //   ]
-            // },
-            "envs/customizing-env",
-            "envs/inspecting-an-env",
+            "envs/inspecting-env",
+            "envs/extending-env",
+            "envs/implement-new-env",
             "envs/envs-troubleshooting",
-            // TODO 'envs/creating-new-env',
-            // {
-            //   type: 'category',
-            //   label: 'Env Services',
-            //   items: [
-            //     'envs/services/overview',
-            //     'envs/services/compiling',
-            //     'envs/services/building',
-            //     'envs/services/testing',
-            //     'envs/services/linting',
-            //     'envs/services/formatting',
-            //     'envs/services/packaging',
-            //     'envs/services/documenting',
-            //     //TODO 'envs/services/component-generators',
-            //     'envs/services/visualizing-components'
-            //   ]
-            // }
           ],
         },
         {

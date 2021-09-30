@@ -1,6 +1,6 @@
 ---
-id: customizing-env
-title: Customizing an Env (composing an env)
+id: extending-env
+title: Extending an Env
 ---
 
 import Tabs from '@theme/Tabs';
@@ -212,7 +212,7 @@ import { Aspect } from '@teambit/harmony';
 export const ReactWithProvidersAspect = Aspect.create({
   // The ID should be your component's ID
   // Make sure to track your extension component before registering it as an Aspect
-  id: 'my-scope.react-with-providers'
+  id: 'my-scope.react-with-providers',
 });
 ```
 
@@ -274,7 +274,7 @@ export class ReactExtensionMain {
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
     const reactExtension = envs.compose(react, [
-      react.overrideTsConfig(tsconfig)
+      react.overrideTsConfig(tsconfig),
     ]);
     envs.registerEnv(reactExtension);
     return new ReactWithProvidersMain(react, envs);

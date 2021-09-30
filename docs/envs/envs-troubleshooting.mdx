@@ -1,13 +1,22 @@
+---
+id: envs-troubleshooting
+title: Envs Troubleshooting
+---
+
 ## multiple envs
+
 When you see on your `bit status` command something like
+
 ```bash
-     > pages/welcome ...  issues found       
-       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ): 
+     > pages/welcome ...  issues found
+       multiple envs (remove the old envs by setting them with "-" sign in the variants. see https://harmony-docs.bit.dev/aspects/variants#removing-aspects ):
           company.scope/envs/my-react, teambit.react/react
 ```
+
 It means that your component configured with more than one env, which is not allowed.
 In order to solve it you can do different things.
 Lets take a workspace.jsonc example which lead to this state:
+
 ```json
 {
   //...
@@ -21,17 +30,22 @@ Lets take a workspace.jsonc example which lead to this state:
     },
 }
 ```
+
 In this case the pages/welcome component get both the `teambit.react/react` env by the `"*"` rule and the `"company.scope/envs/my-react"` by the `"{pages/**}"`.
 What you can do is either:
+
 - exclude the `{pages/**}` selector from the `"*"` selector by changing `"*"` -> `"*", !{pages/**}`.
 - remove the `teambit.react/react` from the `{pages/**}` config by changing:
+
 ```
 "{pages/**}": {
   // uses the custom env
   "company.scope/envs/my-react": {}
 },
 ```
-to 
+
+to
+
 ```
 "{pages/**}": {
   // removing the default react env configured by the "*" selector
@@ -40,6 +54,7 @@ to
   "company.scope/envs/my-react": {}
 },
 ```
+
 (see the added `"teambit.react/react": "-"`)
 
 :::note
