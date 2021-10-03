@@ -35,6 +35,29 @@ In this case the pages/welcome component get both the `teambit.react/react` env 
 What you can do is either:
 
 - exclude the `{pages/**}` selector from the `"*"` selector by changing `"*"` -> `"*", !{pages/**}`.
+- mention the env you want to use explicitly using the `teambit.envs/envs` config.
+by changing
+```js
+"{pages/**}": {
+  // uses the custom env
+  "company.scope/envs/my-react": {}
+},
+```
+to 
+```js
+"{pages/**}": {
+  // uses the custom env
+  "company.scope/envs/my-react": {},
+  // explicitly mention the env to use
+  "teambit.envs/envs": {
+    "env": "company.scope/envs/my-react"
+  }
+},
+```
+:::note
+This solution will not remove the `"teambit.react/react"` from being an aspect dependency of the `pages/**` components.
+so unless you really need both aspects to be applied it's better to use one of the other methods.
+:::
 - remove the `teambit.react/react` from the `{pages/**}` config by changing:
 
 ```
