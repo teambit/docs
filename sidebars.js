@@ -275,6 +275,13 @@ module.exports = {
             // TODO 'cicd/ripple-ci'
           ],
         },
+        {
+          type: "category",
+          label: "Webpack",
+          items: [
+            "webpack/config-webpack"
+          ]
+        }
         // {
         //   type: 'category',
         //   label: 'Apps',
@@ -416,6 +423,13 @@ module.exports = {
             "packages/build-tasks",
           ],
         },
+        {
+          type: "category",
+          label: "Preview",
+          items: [
+            "preview/overview"
+          ]
+        }
       ],
     },
     {
