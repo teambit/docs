@@ -1,15 +1,102 @@
 ---
 id: overview
-title: Overview
+title: Preview Overview
 ---
 
-Check out the [Preview Aspect](https://bit.dev/teambit/preview/preview) on Bit.dev
+import { Image } from '@site/src/components/image';
+import overviewScreenshotImg from './overview_screenshot.png'
 
-The Preview aspect handles the bundling and rendering of component compositions and documentation, for the Workspace UI and Scope UI.
+The Preview Aspect enables component visualizations to be displayed by the browser. Component visualizations include the component compositions and documentation, but may also include other custom component previews.
 
-Preview is used to display components in development (on `bit start`) as well as in their released versions (assets for the release version are generated as part of the build process).
+Preview assists other Aspects by providing them with a simple API to bundle and display their component visualizations.
 
-The Preview aspect handles each component according to the configurations set by the environment that is used by that component. That means both the documentation and the component compositions will be bundled and displayed differently for different environments.
+Component previewing is done in an isolated [Preview environment](#preview-runtime--environment) and is rendered inside an iframe, in the Workspace/Scope UI (allowing you to preview components of all types in the same UI).
+
+For example, the following screenshot shows a components 'Overview' (its docs and docs template) rendered in a preview environment and displayed in an iframe.
+
+<Image src={overviewScreenshotImg} />
+
+## Preview runtime / environment
+
+The preview runtime is, essentially, an application that uses an Env's specific configurations to bundle and render its components' visualizations.
+
+The preview runtime may consist of more than a single application.
+
+## Previewing components in development
+
+When running `bit start` the Preview aspect runs the DevServers needed to bundle and serve component visualizations. Components are bundled using the DevServer configurations that were set by their Envs.
+The number of DevServers that run is determined by the number of different DevServer configurations. For performance optimization, Envs that use identical DevServer configs will share a single DevServer.
+
+Preview uses the DevServer service to provide an optimized dev experience, with large bundle size that are generated quickly and easily debbugable, and with Hot Module Replacement.
+
+The devServer generates files in the `public/bit` directory...
+
+The example below shows 2 servers running, the UI server and the Preview DevServer.
+
+```bash
+ENVIRONMENT NAME                    URL                                  STATUS
+teambit.harmony/aspect on behalf    http://localhost:3300                RUNNING
+of teambit.harmony/aspect,
+company.scope/envs/my-react
+
+
+You can now view 'my-workspace' components in the browser.
+Bit server is running on http://localhost:3000
+```
+
+## Building the component previews
+
+The Preview Aspect registers its own Build Task to generate preview artifacts during build time. This build task uses the Bundler (and not the DevServer) to generate static webpages and minimized assets, for optimized page loads.
+
+```bash
+$ bit build ui/text
+
+✔ env "company.scope/envs/my-react", task "teambit.preview/preview:GeneratePreview" has completed successfully in 39s
+✔ env "teambit.harmony/aspect", task "teambit.preview/preview:GeneratePreview" has completed successfully in 25s
+```
+
+Artifacts that are generated as part of the `snap` or `tag` pipelines, will be persisted in the component objects, and will later be loaded by the Workspace/Scope UI.
+
+For example:
+
+```bash
+# run tag
+$ bit tag ui/text
+
+# list the component artifacts
+$ bit artifacts ui/text
+# ...
+  teambit.preview/preview
+    GeneratePreview
+      public/asset-manifest.json
+      public/index.html
+      public/service-worker.js
+      public/workbox-4979716c.js
+      public/static/css/173.00004871.css
+      public/static/css/main.e10f3a52.css
+      public/static/js/173.67a47fd6.js
+      public/static/js/173.67a47fd6.js.LICENSE.txt
+      public/static/js/main.8f2d7ca0.js
+      public/static/js/runtime-main.f8aedb2c.js
+```
+
+When running the preview build task
+
+## Previewing
+
+## Bundling (Main Runtime)
+
+The Preview Aspect services different
+
+The bundling process is executed in the Main Runtime.
+
+The Preview Aspect is used by various Aspects
+
+Aspects, like Docs and Compositions, uses t
+
+## Rendering (Preview Runtime)
+
+The rendering process is executed in the Preview runtime.
 
 ## Rational
 

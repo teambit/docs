@@ -3,13 +3,14 @@ id: overview
 title: Compiler Overview
 ---
 
-The Compiler aspect simplifies and standardized the process of the compiling components.
+The Compiler aspect simplifies and standardizes the process of the compiling components.
 
-Modern apps in the JS ecosystem are usually compiled using compilers like [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/) and others into a standard format which is compatible and acceptable by browsers, bundlers (such as [Webpack](https://webpack.js.org/) and [Rollup](https://rollupjs.org)) and JS execution engines such as [NodeJS](https://nodejs.org) and [Deno](https://deno.land/) through standards like [ES2015](https://262.ecma-international.org/6.0/), [ESM](https://nodejs.org/api/esm.html), [CommonsJS](https://nodejs.org/docs/latest/api/modules.html) and others.
+Modern JS apps are usually compiled, using compilers like [Babel](https://babeljs.io/) and [TypeScript](https://www.typescriptlang.org/), into standard formats that are compatible with browsers, bundlers (such as [Webpack](https://webpack.js.org/) and [Rollup](https://rollupjs.org)) and JS execution engines such as [NodeJS](https://nodejs.org) and [Deno](https://deno.land/).
+Compilation standards include [ES2015](https://262.ecma-international.org/6.0/), [ESM](https://nodejs.org/api/esm.html), [CommonsJS](https://nodejs.org/docs/latest/api/modules.html) and others.
 
-The responsibility of the Bit `Compiler` aspect is standardize this process among component, by providing a simple and standard dev experience for compiling components during development and distribution.
+The role of the Compiler Aspect is to standardize this process across different components, by providing a simple and standard dev experience for compilation during development and build.
 
-If a compiler is configured in an env, Bit resolves the component's main file from its distribution which is by default in the `dist` directory of the component's package by changing the `main` property in the generated `package.json`.
+Compiled code is generated in the components' corresponding package (in development, this package can be found in the workspace `node_modules` directory). By default, the Compiler sets the `main` property of each component's `package.json` to `dist/{main}.js` (the component's main file, inside the `dist` directory).
 
 ```bash
 ├── node_modules
@@ -25,11 +26,11 @@ If a compiler is configured in an env, Bit resolves the component's main file fr
 
 ## Compiling for development
 
-Bit simplifies and standardizes compilation of components in the development [Workspace](/workspace/overview) for all components, regardless of the specific env configured for each, and as a result the compiler and the configuration applied, through a single command.
+The Compiler Aspect standardizes compilation during development (in the Workspace) by providing the `bit compile` command, to compile all components, regardless of the specific compiler set by their corresponding Envs.
 
-Compilation of components in the [Workspace](/workspace/overview) optimized for dev experience, performance and debugging by default.
+Compilation of components in the [Workspace](/workspace/overview) is configured to deliver a great dev experience by by optimizing performance and debugging.
 
-This means Source Maps <!-- TODO [Source Maps](/) --> are generated and components are just transpiled (without types) into in the `node_modules` directory to ensure consistency between using a component for development or consumption purposes.
+This means Source Maps <!-- TODO [Source Maps](/) --> are generated and components are only transpiled (without types), into in the `node_modules` directory.
 
 ```bash
 bit compile
@@ -60,5 +61,3 @@ By default, Bit includes a [Build Task](/) for compiling components in the [Buil
 ## Configuring and Implementing Compilers
 
 Compilers are configured in the [Env](/envs/overview) which is configured on your [Component](/components/overview). Customizing the Compiler can be done by [customizing an existing env with your compiler](/compiler/configure-env) or by [implementing your own Env](/).
-
-

@@ -427,7 +427,10 @@ module.exports = {
           type: "category",
           label: "Preview",
           items: [
-            "preview/overview"
+            "preview/overview",
+            "preview/preview-during-development",
+            "preview/preview-during-build",
+            "preview/register-custom-preview"
           ]
         }
       ],
