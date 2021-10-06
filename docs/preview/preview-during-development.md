@@ -6,7 +6,7 @@ title: Preview During Development
 import { Image } from '@site/src/components/image';
 import devserverImg from './devserver.png'
 
-During development, in the workspace, component previews are generated using dedicated dev servers that run in parallel to the UI server.
+During development (in the workspace) component previews are generated using dedicated dev servers that run in parallel to the UI server.
 
 ```bash {4}
 $ bit start
@@ -23,8 +23,8 @@ Bit server is running on http://localhost:3000
 
 The dev servers are configured, by default (via the DevServer Aspect), to use Hot Module Replacement (HMR), for quick page updates and persisted states.
 The link files, provided to them by the Preview Aspect, are updated whenever preview modules are added or removed.
-This joint operation provides the same dev experience you would get working on a single monolithic app.
+This joint operation results in a dev experience that is identical to working on a single monolithic app.
 
-Since component previews are bundled using the DevServer, the number of running dev servers is determined by the number of different DevServer configurations, set by the various Envs. For performance optimization, Envs that use identical DevServer configs will share a single DevServer.
+Since component previews are bundled using the DevServer, the number of running dev servers is determined by the number of different DevServer configurations, set by the various Envs. For performance optimization, Envs that use identical DevServer configs will share a single dev server (as can be seen in the example above).
 
 <Image src={devserverImg} />
