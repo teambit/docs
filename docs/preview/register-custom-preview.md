@@ -156,7 +156,7 @@ import {
   PreviewModule,
 } from '@teambit/preview';
 
-import { DocsAspect } from './docs.aspect';
+// ...
 
 export class DocsPreview {
   constructor(private preview: PreviewPreview) {}
@@ -177,27 +177,26 @@ export class DocsPreview {
     const relevant = modules.componentMap[componentId];
     if (!relevant) return undefined;
 
-    // only one doc file is supported.
-    return relevant[0];
+    return relevant;
   }
 
   static runtime = PreviewRuntime;
   static dependencies = [PreviewAspect];
 
   static async provider([preview]: [PreviewPreview]) {
-    const docsPreview = new DocsPreview(preview);
+    const myAspectPreview = new MyAspectPreview(preview);
     preview.registerPreview({
       name: 'my_preview_id',
-      render: docsPreview.render.bind(docsPreview),
-      selectPreviewModel: docsPreview.selectPreviewModel.bind(docsPreview),
-      include: ['compositions'],
+      render: myAspectPreview.render.bind(docsPreview),
+      selectPreviewModel: myAspectPreview.selectPreviewModel.bind(docsPreview),
+      include: ['another-preview'],
     });
 
-    return docsPreview;
+    return myAspectPreview;
   }
 }
 
-DocsAspect.addRuntime(DocsPreview);
+// ...
 ```
 
 ### PreviewType
