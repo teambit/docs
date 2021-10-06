@@ -131,8 +131,6 @@ export class ComponentImagesMain {
       },
     });
 
-    // claim dev files
-    // TODO - might support for regex
     devFilesMain.registerDevPattern([devFilePattern]);
 
     return customPreviewMain;
@@ -274,7 +272,7 @@ export default function MyTemplate(
   context: RenderingContext
 ) {
   ReactDOM.render(
-    <DocsApp
+    <PreviewTemplate
       includes={includes}
       modules={modules}
       componentId={componentId}
