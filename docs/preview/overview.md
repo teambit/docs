@@ -19,8 +19,10 @@ The preview environment or runtime, is integrated into Bit's UI using an iframe.
 
 ## Preview runtime
 
-The preview runtime is, essentially, an application, isolated from Bit's UI, and integrated into it using an iframe. This application uses an Env's specific configurations to bundle and render its components' visualizations.
-That gives you the freedom to render any component preview, regardless of the set of technologies used to implement it.
+The preview runtime is an isolated execution environment that is integrated into Bit's UI using an iframe. It is essentially, an application that renders component previews, using the technologies and configurations that are right for them.
+
+Having an isolated preview environment or multiple isolated preview environments, means that your component previews can be implemented in any way.
+For example, you can implement and render component previews as Angular components, even though Bit's UI is implemented using React.
 
 <Image src={fetchPreviewsImg} />
 
