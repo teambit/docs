@@ -5,15 +5,14 @@ title: Overview
 
 import { Image } from '@site/src/components/image';
 
-'Compositions' are, essentially, small apps that exhibit and test a component in different contexts and variations.
+The Compositions Aspect loads and displays component 'compositions' in an isolated [preview environment](../preview/overview#preview-runtime).
 
-They provide insight into the component's look and behavior in various likely usages.
+A 'composition' is the rendering of a component in a certain state and context.
 
-They help component maintainers to deliver components that are "true to their promise" and behave as expected when consumed by other web projects.
+Compositions provide insight into a component's look and behavior in various likely usages.
+They help component maintainers deliver components that are "true to their promise" and behave as expected when consumed by other components or projects.
 
-Compositions play an important role in authoring and testing _independent_ components as they render component instances in "controlled environments", isolated and un-affected by the rest of their authoring workspace, or by any other code that was not purposefully included.
-
-Moreover, compositions are a way to demonstrate a component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
+Moreover, compositions demonstrate a component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
 
 ## Viewing compositions
 
@@ -54,37 +53,6 @@ const UserHero = () => {
       data-testid="test-hero"
       userName="jessica"
     />
-  );
-};
-```
-
-```tsx title="example #2: user-hero.compositions.tsx"
-import { Hero } from './user-hero';
-
-import React, { useEffect } from 'react';
-import { DotsLoader } from '@teambit/base-ui.elements.dots-loader';
-import { Error } from '@teambit/base-ui.input.error';
-import { ScopeList } from '@harmony-mfe/scopes.ui.scopes.scopes-list';
-import { useUser } from '@harmony-mfe/people.ui.hooks.use-user';
-import styles from './user-profile.module.scss';
-
-export const UserHeroWithScopeList = () => {
-  const [getUser, scopes, user, isLoading, error] = useUser();
-
-  useEffect(() => {
-    getUser();
-  }, []);
-
-  if (isLoading) return <DotsLoader active={isLoading} />;
-  return (
-    <div className={styles.userProfile}>
-      <Hero
-        title={user.title}
-        description={user.description}
-        profileImage={user.image}
-      />
-      {error !== '' ? <Error>{error}</Error> : <ScopeList list={scopes} />}
-    </div>
   );
 };
 ```

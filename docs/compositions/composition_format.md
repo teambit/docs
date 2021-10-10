@@ -1,7 +1,6 @@
 ---
 id: composition-format
-title: Composition Format
+title: Compositions Format
 ---
-
 
 ...

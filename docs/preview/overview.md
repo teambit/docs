@@ -11,7 +11,7 @@ import fetchPreviewsImg from './fetch_previews.png'
 
 The Preview Aspect enables component visualizations to be displayed by the browser, in an isolated [Preview environment](#preview-runtime--environment) that is agnostic to the way visualizations are implemented (their framework, etc).
 
-Component visualizations include the component compositions and documentation, but may also include other custom component previews. Preview provides other Aspects with an API to register their own component visualization. The content of these visualizations is retrieved from the component directories, using a set of glob patterns that is defined by the Aspect (for example, the Docs Aspect uses the Preview Aspect to preview all `*.docs.*` files).
+Component visualizations include the component compositions and documentation, but may also include other custom component previews. Preview provides other Aspects with an API to register their own component visualization. The content of these visualizations is retrieved from the component directories using a set of glob patterns defined by the Aspect (for example, the Docs Aspect uses the Preview Aspect to preview all `*.docs.*` files).
 
 The preview environment or runtime, is integrated into Bit's UI using an iframe. For example, the following screenshot shows a preview (a component's 'Overview') rendered in a preview environment and displayed in an iframe, inside the workspace UI.
 
@@ -19,25 +19,25 @@ The preview environment or runtime, is integrated into Bit's UI using an iframe.
 
 ## Preview runtime
 
-The preview runtime is an isolated execution environment that is integrated into Bit's UI using an iframe. It is essentially, an application that renders component previews, using the technologies and configurations that are right for them.
+The preview runtime is an isolated execution environment that is integrated into Bit's UI using an iframe. It is essentially, an application that renders component previews, using the technologies and configurations that are right for them (configured by the components' Envs).
 
-Having an isolated preview environment or multiple isolated preview environments, means that your component previews can be implemented in any way.
+Having an isolated preview environment or multiple isolated preview environments, means that your component previews can be implemented in any way, and will not be affected by anything other than themselves.
 For example, you can implement and render component previews as Angular components, even though Bit's UI is implemented using React.
 
-<Image src={fetchPreviewsImg} />
+[See here](#the-previewing-process) to learn more about the previewing process.
 
 ## Previewing components in development
 
 When running `bit start` the Preview aspect runs the dev servers that are needed to bundle and serve component visualizations.
 
-The preview's dev servers are configured by default (via the DevServer Aspect), to use Hot Module Replacement (HMR), for quick page updates and persisted states. The link files, provided to them by the Preview Aspect, are updated whenever preview modules are added or removed. This joint operation results in a dev experience that is identical to working on a single monolithic app.
+The preview's dev servers are configured by default (via the DevServer Aspect), to use Hot Module Replacement (HMR), for quick page updates and persisted states.
 
 Since component previews are bundled using the DevServer, the number of running dev servers is determined by the number of different DevServer configurations, set by the various Envs.
-For performance optimization, Envs that use identical DevServer configs will share a single DevServer.
+For performance optimization, Envs that use identical DevServer configs will share a single dev server.
 
-The example below shows 2 servers running, the UI server and Preview's dev server.
+The example below shows the Preview's dev server running (along with the main UI server):
 
-```bash
+```bash {2}
 ENVIRONMENT NAME                    URL                                  STATUS
 teambit.harmony/aspect on behalf    http://localhost:3300                RUNNING
 of teambit.harmony/aspect,
@@ -86,21 +86,33 @@ $ bit artifacts ui/text
 
 Previews for component versions are loaded to the preview runtime from the component objects.
 
+## The previewing process
+
+**Main runtime**
+
+1. Collects all relevant files for a preview and registers them in a [link file](#link-files). The collected files include component files (using a specific glob pattern), templates, setup code, etc. Learn how to extend this step, [here](/register-custom-preview#register-files-for-bundling).
+
+2. Bundles the collected files to make them browser-ready. This process is done via the Bundler Aspect (for distributions) or the DevServer Aspect (in development). The specific implementations and configurations for the Bundler and DevServer services are set by the components' Envs.
+
+3. Registers its plugins to the express server (provided by the Express Aspect) to provide routing to the generated bundles.
+
+**Preview runtime**
+
+4. [Loads all link files](#link-modules) (from step 1)
+
+5. Executes all `*.preview.runtime.ts` files, provided by the various Aspects in use (with the most prominent ones being the Envs)
+
+6. Retrieves and renders the relevant preview in the browser, according to the URL sent by the browser. Learn how to extend this step, [here](/register-custom-preview#register-files-for-routing-and-rendering).
+
+<Image src={fetchPreviewsImg} />
+
 ## Link files
 
-A link file is a pseudo entry file that requires all the modules (component files and a templates) of a specific preview. It is generated by the Preview Aspect and served to the bundler.
+A link file is a pseudo entry file that `require`s all modules, component files and a templates, of a specific preview. It is generated by the Preview Aspect and served to the bundler. The bundler, then, crawls over the link file's dependencies (the `require`ed modules) and processes them, as it would in a standard application.
 
-Bundlers process and concatenate modules of an application by crawling over a network of dependencies that starts from the app's entry file. Components, however, are not all dependencies (direct or indirect) of a single entry file. They do not provide the bundler with a single network of modules to process.
+**Link files generated in development** are placed in the `node_modules/.cache/bit/teambit.preview/preview/{env-id}/` directory (inside the workspace).
 
-<Image src={dependenciesImg} width="90%" />
-
-To solve that, the Preview aspect requires all the modules of a single preview into a single link file, named using a timestamp and prefixed by the preview name. For example: `__overview-1633481243984.js`.
-
-<Image src={dependenciesLinkFileImg} width="70%"/>
-
-Link files generated in development are placed in the `node_modules/.cache/bit/teambit.preview/preview/{env-id}/` directory (inside the workspace).
-
-Link files generated for distribution, as part of the build process, are placed in the capsule, under the `{env-id}_{env-name}-preview` directory (for example, `~/Library/Caches/Bit/capsules/06b995f03584ade4d8468fcf2d1e422dff4bccbe/ teambit.react__react-preview/__overview-1608752075118.js`)
+**Link files generated for distribution**, as part of the build process, are placed in a capsule, under the `{env-id}_{env-name}-preview` directory (for example, `~/Library/Caches/Bit/capsules/06b995f03584ade4d8468fcf2d1e422dff4bccbe/ teambit.react__react-preview/__overview-1608752075118.js`)
 
 ```ts title="__overview-1633481243984.js"
 import { linkModules } from '/Users/user/.config/yarn/global/node_modules/@teambit/preview/dist/preview.preview.runtime.js';
@@ -122,7 +134,16 @@ linkModules('overview', defaultModule, {
 });
 ```
 
-:::info linkModules
-The `linkModules` function generates an object with mapped preview modules. This object is used by the Preview aspect to render specific previews for specific components.
+### link Modules
 
-:::
+The `linkModules` function registers the preview name, the main module, and the mapping of component names to their dist paths. This enables Preview to retrieve specific modules from the generated bundles, and use them to render specific previews for specific components.
+
+### The rational behind link files
+
+Bundlers process and concatenate modules of an application by crawling over a network of dependencies that starts from the app's entry file. Components, however, are not all dependencies (direct or indirect) of a single entry file. They do not provide the bundler with a single network of modules to process.
+
+<Image src={dependenciesImg} width="90%" />
+
+To solve that, the Preview aspect imports all the modules of a single preview into a single link file, named using a timestamp and prefixed by the preview name. For example: `__overview-1633481243984.js`.
+
+<Image src={dependenciesLinkFileImg} width="70%"/>
