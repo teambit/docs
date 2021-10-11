@@ -49,6 +49,15 @@ bit login
 :arrow_right: Learn more about [Self Hosting a Bit Scope](/reference/bit-oss-server). -->
 
 ---
+### Linking your Node Modules
+
+As we have changed the default scope we now need to make sure our node modules are linked correctly. We can do that with the `bit link` command.
+
+```jsx
+bit link
+```
+
+Now in our node modules we can see we have these components under the correct scope.
 
 ## Updating the Default Scope
 
