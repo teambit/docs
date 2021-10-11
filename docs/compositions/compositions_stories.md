@@ -6,11 +6,9 @@ title: Compositions and Stories
 Compositions and [Stories](https://storybook.js.org/docs/react/get-started/whats-a-story) can appear quite similar. Almost like two sibling solutions that solve the same problem.
 
 Compositions could be used as a way to examine components in a context-free environment (much like Storybook is often used), however that is not their main goal.
-Compositions are primarily used as simulated integration tests. They are a way to validate that a component will be able to integrate successfully in its future consuming projects (before sharing it).
+Compositions are primarily used as simulated integration tests. They are a way to validate that a component is able to integrate successfully in its future consuming projects (before sharing it).
 
-Bit promotes effective collaboration by enabling teams to work autonomously and deliver their features (i.e, components) independently.
-However, for this to work, each team must also be responsible for the way their products, their components, affect all consumers in their organization.
-This is where ‘compositions’ play an important role.
+Moreover, unlike stories, compositions are not limited to UI components. They are often used to visualize the behavior of a logical components.
 
 ## Setting up Storybook in a Bit workspace
 
