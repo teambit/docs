@@ -76,6 +76,7 @@ For example:
 
 ```ts title="card.stories.tsx"
 import React from 'react';
+import { Card } from './card';
 import { BasicCard } from './card.composition';
 
 export default {
@@ -110,8 +111,6 @@ export const BasicCardComposition = () => <BasicCard />;
 
 ```ts title="card.stories.tsx"
 import React from 'react';
-// import { Meta } from '@storybook/react/types-6-0';
-
 import { Card } from './card';
 
 export default {
