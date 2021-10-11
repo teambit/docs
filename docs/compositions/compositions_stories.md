@@ -22,32 +22,6 @@ Use Storybook's `--type` option to manually set the type of components, when ini
 $ npx sb init --type react
 ```
 
-Install packages for storybook sass webpack preset:
-
-```
-yarn add -D @storybook/preset-scss css-loader sass sass-loader style-loader
-```
-
-configure `.storybook/main.js` to use the sass preset:
-
-```js
-module.exports = {
-  stories: ['../demo/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    {
-      name: '@storybook/preset-scss',
-      options: {
-        cssLoaderOptions: {
-          modules: { localIdentName: '[name]__[local]--[hash:base64:5]' },
-        },
-      },
-    },
-  ],
-};
-```
-
 :::note
 An alternative to manually configuring Storybook would be to initialize a `package.json` and install the dependencies (like, react) that will help Storybook understand the project requirements.
 :::
@@ -100,6 +74,67 @@ For example:
 
 ## Use Compositions in a Story
 
+```ts title="card.stories.tsx"
+import React from 'react';
+import { BasicCard } from './card.composition';
+
+export default {
+  title: 'UI/Card',
+  component: Card,
+};
+
+export const BasicCardStory = () => <BasicCard />;
+```
+
+```ts title="card.compositions.tsx"
+import React from 'react';
+import { Card } from './card';
+
+export const BasicCard = () => (
+  <Card
+    link="https://harmony-docs.bit.dev/reference/bit-oss-server"
+    heading="Self Host"
+    text="lean how to self host these components"
+  />
+);
+```
+
 ## Use a Story in Compositions
 
+```ts title="card.composition.tsx"
+import React from 'react';
+import { BasicCard } from './card.stories';
+
+export const BasicCardComposition = () => <BasicCard />;
+```
+
+```ts title="card.stories.tsx"
+import React from 'react';
+// import { Meta } from '@storybook/react/types-6-0';
+
+import { Card } from './card';
+
+export default {
+  title: 'UI/Card',
+  component: Card,
+};
+
+export const BasicCard = () => (
+  <Card
+    link="https://harmony-docs.bit.dev/reference/bit-oss-server"
+    heading="Self Host"
+    text="lean how to self host these components"
+  />
+);
+```
+
 ## Limitations
+
+### Collaboration
+
+Storybook is designed for projects. Its configurations are set globally on all components in the project.
+That means, collaboration on [the components'] stories must also be done using their workspace as "the project". They cannot be maintained independently (in other workspaces) as the Storybook config is not part of the components' metadata.
+
+### Multiple Envs
+
+Bit Workspaces are not limited to just one Env. A single workspace can, for example, maintain both React an Angular components. Storybook, on the other hand, is not able to process and render components of different types, in the same Storybook workspace.
