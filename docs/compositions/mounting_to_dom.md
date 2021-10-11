@@ -73,7 +73,7 @@ export default (
 
 The Compositions Aspect invokes the mounter function and passes the following arguments:
 
-1. `Composition: any`: The composition to render. The type of `Compositions` varies from on Env to another.
+1. `Composition: any`: The composition to render. The type of `Compositions` varies from one Env to another (for example, compositions for React components will be of type `React.ComponentType`)
 
 2. `previewContext: RenderingContext`: The rendering context provides information regarding the executed aspects.
 
@@ -118,3 +118,7 @@ export function CompositionsApp({
   );
 }
 ```
+
+:::tip
+Bit provides the [Composer](https://bit.dev/teambit/base-ui/utils/composer) component to wrap components with multiple providers/decorators in a simple and elegant way.
+:::

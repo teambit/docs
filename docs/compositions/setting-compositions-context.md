@@ -3,7 +3,7 @@ id: setting-composition-context
 title: Setting the Composition Context
 ---
 
-It often happens that compositions need to run in the same context. One obvious example of that is a common theme provider.
+Compositions often use the same context. One example of that is a common theme. Instead of manually wrapping each composition with providers, set your Env to inject a pre-configured set of provider components.
 
 To configure one or more composition contexts, create an Env extension and use the `registerProvider()` API in the Env's `.preview.runtime.ts` file, to set the components to use as permanent context.
 
