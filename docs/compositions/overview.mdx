@@ -5,62 +5,76 @@ title: Overview
 
 import { Image } from '@site/src/components/image';
 
+import screenshotImg from './screenshot.png';
+
 The Compositions Aspect loads and displays component 'compositions' in an isolated [preview environment](../preview/overview#preview-runtime).
 
-A 'composition' is the rendering of a component in a certain state and context.
-
+A component's 'composition' is the rendering of that component in a certain state and context.  
 Compositions provide insight into a component's look and behavior in various likely usages.
 They help component maintainers deliver components that are "true to their promise" and behave as expected when consumed by other components or projects.
 
-Moreover, compositions demonstrate a component for other developers looking to use it, and non-developers, such as designers and product managers, looking to inspect it.
+Compositions also demonstrate components for other developers looking to use them, and non-developers, such as designers and product managers, looking to inspect them.
 
 ## Viewing compositions
 
-To explore compositions in your **Workspace UI**, start the local development server for your workspace (`bit start`), browse to a specific component and select the compositions tab.
-There, you will see the full list of compositions available for that component,along with additional component meta-data.
+To explore compositions in your Workspace UI, start the local development server (`bit start`), browse to a specific component and select the compositions tab.
+Use the right sidebar to navigate to other available compositions.
 
-Compositions are also available to be viewed in the remote **Scope UI** (for example, on [Bit.dev](https://bit.dev)).
+<Image src={screenshotImg} />
 
-<Image src="/img/mfe_compositions.png" />
+Compositions are also available to be viewed in the remote Scope UI (for example, on [Bit.dev](https://bit.dev)).
 
 ## Creating compositions
 
-Create a `*.compositions.*` file inside your component's directory. Import the component into the compositions file to use it in a new composition.
-Export that composition (the new component) with a name. The name of that export will be converted from PascalCase/camelCase and used for the composition name (e.g, "CompositionName" --> "Composition name").
+Create a `*.composition.*` file inside your component's directory.
 
-For example, a composition for a 'user hero' component will looks like so:
-
-```shell title="The 'user hero' component file structure"
-├── user-hero
-    ├── index.tsx
-    ├── user-hero.compositions.tsx
-    ├── user-hero.docs.mdx
-    ├── user-hero.spec.tsx
-    └── user-hero.tsx
+```bash {2}
+└── heading
+    ├── heading.composition.tsx
+    ├── heading.docs.mdx
+    ├── heading.module.scss
+    ├── heading.spec.tsx
+    ├── heading.tsx
+    └── index.ts
 ```
 
-```tsx title="example #1: user-hero.compositions.tsx"
-import { Hero } from './user-hero';
+Import the component into the compositions file to use it in a new composition.
+Export that composition with a name. The PascalCase/camelCase name of the exported composition serves as the composition title in the UI, after it is converted to a [human-friendly format](https://www.npmjs.com/package/humanize-string).
 
-const profileImage = 'https://storage.googleapis.com/docs-images/jessica.jpg';
+```tsx title="Example: heading.composition.tsx"
+import React from 'react';
+import { Heading } from './heading';
 
-const UserHero = () => {
-  return (
-    <Hero
-      title="Jessica Pegula"
-      description="Frontend developer and designer."
-      profileImage={profileImage}
-      data-testid="test-hero"
-      userName="jessica"
-    />
-  );
-};
+export const H1DefaultHeading = () => <Heading>H1 Heading</Heading>;
+
+export const H2Heading = () => <Heading element="h2">H2 Heading</Heading>;
+
+export const H3Heading = () => <Heading element="h3">H3 Heading</Heading>;
 ```
 
 ## Loading compositions
 
-The [Development Environment](/envs/overview) will automatically detect the composition file for each component
-and use it to load its compositions to the workspace UI.
+The Compositions Aspect is set, by default, to detect all `*.composition?(s).*` files from the [component directories](../workspace/component-directory).
+It uses the [Preview](../preview/overview) Aspect to display the content of composition files with the `*.{t,j}s?(x)` extension. Learn more about this process, [here](#) <!-- TODO -->.
+
+Change the glob pattern for the files to detect, and (of that group of files) the files to preview, by using the Workspace Aspect config interface:
+
+```json title="Example: workspace.jsonc"
+{
+  "teambit.compositions/compositions": {
+    // Glob pattern to detect composition files. This includes all related files, like styles and JSONs.
+    "compositionFilePattern": ["**/*.simulations.*"],
+    // Glob pattern to select Preview files. This will only include files matched by compositionFilePattern.
+    "compositionPreviewFilePattern": ["**/*.tsx"]
+  }
+}
+```
+
+<!-- TODO: above config does not work -->
+
+:::info dev files
+Composition files are defined by the Composition Aspect, as dev files <!-- TODO -->. That is because compositions are only used in development, and not in runtime.
+:::
 
 ## Using compositions for automated testing
 
@@ -86,16 +100,4 @@ describe('Button', () => {
 });
 ```
 
-- Learn more about running tests in a Bit workspace, [here](/tester/overview)
-
-## Setting providers for all your compositions
-
-Extend the [React environment](/envs/pre-configured-envs/react) to customize its list of providers with your own composition providers.
-The extended environment will then wrap every composition with these providers to make sure your themes or mock data are accessible to all of them,
-without you having to repeat that task ever again.
-
-## Compositions and storybook
-
-Storybook displays individual components in different states and variations. It is designed to help in authoring and displaying standalone components, each of which is usually part of a design system. In contrast, 'Compositions' is mainly about examining how an independent component looks and behaves when used with other components. These component integrations serve as a way to examine compositions that are likely to be part of real applications, using manual and automated testing.
-
-If you're looking for a Storybook-like solution, you can find that either in the Storybook extension (currently in development) or by using 'Compositions' for that use-case as well.
+See here to learn more about running component tests.

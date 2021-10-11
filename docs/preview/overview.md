@@ -9,7 +9,7 @@ import dependenciesImg from './dependencies.png'
 import dependenciesLinkFileImg from './dependencies_link_file.png'
 import fetchPreviewsImg from './fetch_previews.png'
 
-The Preview Aspect enables component visualizations to be displayed by the browser, in an isolated [Preview environment](#preview-runtime--environment) that is agnostic to the way visualizations are implemented (their framework, etc).
+The Preview Aspect enables component visualizations to be displayed by the browser, in an isolated [Preview environment](#preview-runtime) that is agnostic to the way visualizations are implemented (their framework, etc).
 
 Component visualizations include the component compositions and documentation, but may also include other custom component previews. Preview provides other Aspects with an API to register their own component visualization. The content of these visualizations is retrieved from the component directories using a set of glob patterns defined by the Aspect (for example, the Docs Aspect uses the Preview Aspect to preview all `*.docs.*` files).
 
@@ -134,7 +134,7 @@ linkModules('overview', defaultModule, {
 });
 ```
 
-### link Modules
+### link modules
 
 The `linkModules` function registers the preview name, the main module, and the mapping of component names to their dist paths. This enables Preview to retrieve specific modules from the generated bundles, and use them to render specific previews for specific components.
 
