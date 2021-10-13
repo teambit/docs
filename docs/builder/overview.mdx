@@ -5,10 +5,13 @@ title: Overview
 
 The Builder Aspect manages the component build pipelines. It executes build tasks in sequence, according to their dependency on other tasks, as well as the tasks' own "requests".
 
+The build process is an essential part of making a component independent. It includes re-generating the component in an isolated environment, testing, compiling, generating previews, packaging and more.
+
+When the build process runs in the context of a snap or tag operations, the generated metadata and artifacts are persisted in the component objects (the component version).
+
+The Builder Aspect executes three different pipelines, one for basic build, one for snaps, and one for tags.
+
 A component's build pipelines are determined by the Aspects it uses. Consequently, different components may use different build pipelines.
-
-Builder executes three different pipelines, one for basic build, one for snaps, and one for tags.
-
 To run the build pipelines on all components, regardless of their specific build pipeline configuration, run:
 
 ```bash title="Build pipeline (output does not persist"

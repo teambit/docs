@@ -109,7 +109,7 @@ context: BuildContext;
 The context of the build pipeline. Use this object (provided by Builder) to get information regarding all components handled by the build pipeline.
 For example, `context.capsuleNetwork.seedersCapsules` are models representing isolated instances of components handled by the build pipeline. These isolated instances are independent projects, generated in your local filesystem (by the build pipeline).
 
-Learn more about BuildContext [here](#).
+Learn more about `BuildContext` [here](#build-context-buildcontext).
 
 #### return (BuiltTaskResult)
 

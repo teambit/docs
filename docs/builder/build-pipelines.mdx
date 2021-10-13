@@ -3,7 +3,12 @@ id: build-pipelines
 title: Build Pipelines
 ---
 
-Components are built using different build pipelines when running `bit build`, `bit snap`, and `bit tag`.
+import { Image } from '@site/src/components/image';
+import pipelinesImg from './pipelines.png';
+
+The Builder runs three separate build pipelines, the basic build pipeline, the snap pipeline and the tag pipeline.
+
+<Image src={pipelinesImg} />
 
 To get a list of the build tasks included in each pipeline for a specific component, run `bit build --list-tasks <id>`.
 For example:
