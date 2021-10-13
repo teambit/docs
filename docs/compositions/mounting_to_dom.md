@@ -31,7 +31,7 @@ export class MyReactEnv implements DevEnv {
   // ...
 
   getMounter() {
-    return require.resolve('./path-to-mounter-file');
+    return require.resolve('./path-to-mounter');
   }
 }
 ```

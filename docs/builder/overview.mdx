@@ -3,13 +3,25 @@ id: overview
 title: Overview
 ---
 
-## Background
+The Builder Aspect manages the component build pipelines. It executes build tasks in sequence, according to their dependency on other tasks, as well as the tasks' own "requests".
 
-Bit's build process is an extensible CI for independent components. It validates a component is not dependent on its context (the workspace), tests it, and generates all artifacts necessary for it to be viewed and consumed as an independent module (its distributable code, bundled preview, etc.).
+A component's build pipelines are determined by the Aspects it uses. Consequently, different components may use different build pipelines.
 
-The Build Pipeline is an Environment Service responsible for sequencing and executing a component's Build Tasks. As mentioned earlier, these tasks are performed on a component only after it's been isolated from the rest of the workspace.
+Builder executes three different pipelines, one for basic build, one for snaps, and one for tags.
 
-A component's default series of Build Tasks is composed of tasks set by Bit and by its environment.
+To run the build pipelines on all components, regardless of their specific build pipeline configuration, run:
+
+```bash title="Build pipeline (output does not persist"
+bit build
+```
+
+```bash title="Build pipeline + snap pipeline (output is persisted in component versions)"
+bit snap --all
+```
+
+```bash title="Build pipeline + tag pipeline (output is persisted in component versions)"
+bit tag --all
+```
 
 ## Isolated builds
 
@@ -20,7 +32,7 @@ For example, we may get false-positive results when testing for dependency-graph
 
 ## Incremental builds
 
-When a component "goes through" the build pipeline, all of its dependencies are built as well. If a dependency has not changed since its last build, the build process will use its artifacts from the previous build (and will not process it again). This optimization to the build process supplements the "innate optimization" that naturally comes from developing (and building) independent components instead of a single monolithic codebase.
+When a component goes through the build pipeline, its dependencies are built as well. If a dependency has not changed since its last build, the build process will use its artifacts from the previous build (and will not process it again). This optimization to the build process supplements the "innate optimization" that naturally comes from developing (and building) independent components instead of a single monolithic codebase.
 
 ## Environment-specific builds
 

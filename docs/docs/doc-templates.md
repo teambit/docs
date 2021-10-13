@@ -3,7 +3,7 @@ id: doc-templates
 title: Doc Templates
 ---
 
-Doc templates are apps that display doc files content using a specific layout. This layout may also be enriched with additional data provided by the template.
+Doc templates display doc files content using a specific layout. This layout may also be enriched with additional data provided by the template.
 Templates are set by Envs to provide doc layout that best fits the Envs components.
 
 For example, the React Env uses the [`@teambit/react.ui.docs-app`](https://bit.dev/teambit/react/ui/docs-app) template to display react docs.
@@ -35,9 +35,9 @@ export class MyReactEnv implements DevEnv {
 }
 ```
 
-- See the DevServer service to learn how customize the bundling of the docs in development.
+See the DevServer service to learn how customize the bundling of the docs in development.
 
-- See the Bundler service to learn how to customize the bundling of the docs for distribution.
+See the Bundler service to learn how to customize the bundling of the docs for distribution.
 
 ## Creating a doc template
 

@@ -257,7 +257,7 @@ selectPreviewModel?: (componentId: string, module: PreviewModule) => any;
 
 Selects the relevant information to include in the preview context.
 
-## Preview template (optional)
+## Preview template (main module)
 
 The preview template is a component that renders a preview module <!--TODO --> i.e, it updates the DOM. The template component must be exported as `default`.
 

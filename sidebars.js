@@ -249,6 +249,7 @@ module.exports = {
             'scope/hosting-remote-scope',
             // TODO 'scope/configuring-scope',
             'scope/setting-remote-scope',
+            'scope/scope-api',
             // TODO 'scope/importing-components',
             // TODO 'scope/exporting-components'
             // TODO'scope/scope-ui'
@@ -350,10 +351,11 @@ module.exports = {
           collapsed: true,
           items: [
             'builder/overview',
-            'builder/component-isolation',
-            // TODO 'builder/component-build',
             'builder/build-pipelines',
-            'builder/build-pipeline-customization',
+            'builder/build-tasks',
+            'builder/build-artifacts',
+            'builder/capsule',
+            // 'builder/build-pipeline-customization',
             // TODO 'builder/build-on-ci'
           ],
         },

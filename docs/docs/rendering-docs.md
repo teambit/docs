@@ -3,10 +3,6 @@ id: rendering-docs
 title: Rendering Docs
 ---
 
-import { Image } from '@site/src/components/image';
-import docsBundlingImg from './docs_bundling.png';
-import docsPreviewImg from './docs_preview.png';
-
 The Docs aspect uses the Preview aspect to register its docs file and templates for bundling and for rendering in the browser.
 
 ## Bundling (Main runtime)
@@ -49,8 +45,6 @@ export class DocsMain {
 The glob pattern for doc files (for all Envs) is set as default by the Docs aspect and can be configured using the [config interface](#loading-the-component-docs).
 :::
 
-<Image src={docsBundlingImg} />
-
 ## Rendering (Preview runtime)
 
 To make the bundled doc files and templates available for the browser:
@@ -86,4 +80,4 @@ export class DocsPreview {
 
 2. The Preview Aspect registers routes to the docs files and templates in the Express Aspect.
 
-<Image src={docsPreviewImg} />
+[See here](/preview/overview), to learn more about the previewing process.
