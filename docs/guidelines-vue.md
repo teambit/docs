@@ -16,7 +16,7 @@ _Note: Try the [Bit for Vue tutorial](https://docs.bit.dev/docs/tutorials/bit-vu
 ## Vue Compiler
 
 The Bit vue compiler can be found [here](https://bit.dev/bit/envs/compilers/vue).  
-The compiler is generating a [Vue library](https://cli.vuejs.org/guide/build-targets.html#library). The pacakge.json reference the compiled files as follow:
+The compiler is generating a [Vue library](https://cli.vuejs.org/guide/build-targets.html#library). The package.json reference the compiled files as follow:
 
 - The main file is pointing to a commonjs format.
 - The browser entry is pointing to the UMD format.
