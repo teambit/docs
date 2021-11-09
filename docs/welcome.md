@@ -10,12 +10,12 @@ Instead of building an application that consists of lots of components, we build
 
 [Bit Cloud](https://bit.dev/) is a cloud hosting service for components. It provides developers and teams with an end-to-end solution for hosting, organizing, discovering, consuming, updating, and collaborating on components. It is possible to use Bit with or without Bit Cloud.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mbURSw1fhoc" title="Building Components in Harmony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nuDwgjkRNSI" title="Component Driven" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Think more in components and less in apps
 
-Bit is not only a more efficient way of doing things, it's a **revolutionary** way of doing it. It's a totaly new mindset.
-When you think only about efficienty, you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain - in the existing manner. But If you are thinking the wrong way - if you are thinking in apps and not in components - then your core assemptions are wrong.
+Bit is not only a more efficient way of doing things, it's a **revolutionary** way of doing it. It's a totally new mindset.
+When you think only about efficiency, you keep on building more applications trying to improve the process of working and building these applications in the existing tool chain - in the existing manner. But If you are thinking the wrong way - if you are thinking in apps and not in components - then your core assumptions are wrong.
 
 We can help you solve this mental model. Bit works on the component model. If each of your components are individual you can build micro frontends with just the component model. With Bit we want you to think in components, to think in a more modular way, to think differently about how you start to build new features. Think more in components and less in apps.
 
