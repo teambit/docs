@@ -3,6 +3,12 @@ id: interviews
 title: Interviews
 ---
 
+## Composing Modern Applications with Bit
+
+Alex and Brittney sit down with Debbie O'Brien to talk about bit (bit.dev). We dive deep into how you can use bit to compose your application one bit at a time.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n5UpjCWVQAU" title="Composing Modern Applications with Bit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Case Study: How Climate Clever use Bit
 
 "If you want a platform for sharing code and forcing the development process on you, that is going to help you ship product quicker, help you work with a distributed asynchronous team, then Bit is definitely the way." Listen to Alex from Climate Clever tell his story on how he built with Bit and was able to scale faster with Component driven development and distributed team collaboration.
