@@ -77,4 +77,4 @@ See all the code files your component has and inspect them as well as a list of 
 
 ## What's Next?
 
-After Rending the workspace UI you can either create more components, [compose components](composing-components) or create a [Remote Scope](remote-scope) so you can see you component on the [Bit.dev](https://bit.dev) cloud and then export it and import it into another application.
+After rendering the workspace UI you can either create more components, [compose components](composing-components) or create a [Remote Scope](remote-scope) so you can see your component on the [Bit.dev](https://bit.dev) cloud, then export it and import it into another application.
