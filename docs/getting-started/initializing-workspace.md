@@ -26,7 +26,7 @@ bit new react <my-workspace-name>
 
 ```bash
 cd <my-workspace-name>
-bit install
+bit start
 ```
 
 ---
