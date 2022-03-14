@@ -87,7 +87,7 @@ To achieve this, you need to configure your bit workspace. In your `package.json
   "peerDependencies": {
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0",
-    "styles-components": ">=4.0.0",
+    "styled-components": ">=4.0.0",
     "@storybook/react": ">=5.2.0"
   }
 }
