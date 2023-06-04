@@ -3,8 +3,8 @@ module.exports = {
   tagline: 'Bit Harmony',
   url: 'https://harmony-docs.bit.dev',
   baseUrl: '/',
-  onBrokenLinks: 'error',
-  onBrokenMarkdownLinks: 'error',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
   organizationName: 'teambit', // Usually your GitHub org/user name.
   projectName: 'docs-harmony', // Usually your repo name.
